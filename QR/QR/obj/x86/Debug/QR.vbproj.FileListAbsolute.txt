@@ -1,0 +1,16 @@
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\x86\Debug\QR.exe.config
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\x86\Debug\QR.exe.manifest
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\x86\Debug\QR.application
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\x86\Debug\QR.exe
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\x86\Debug\QR.pdb
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\x86\Debug\QR.xml
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\x86\Debug\QR.Form1.resources
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\x86\Debug\QR.Resources.resources
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\x86\Debug\QR.vbproj.GenerateResource.Cache
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\x86\Debug\QR.vbproj.CoreCompileInputs.cache
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\x86\Debug\QR.exe.manifest
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\x86\Debug\QR.application
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\x86\Debug\QR.exe
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\x86\Debug\QR.xml
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\x86\Debug\QR.pdb
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\x86\Debug\QR.vbprojResolveAssemblyReference.cache

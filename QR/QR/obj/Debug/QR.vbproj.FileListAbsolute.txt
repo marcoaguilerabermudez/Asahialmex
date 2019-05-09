@@ -1,0 +1,20 @@
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\Debug\QR.exe.config
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\Debug\QR.exe
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\Debug\QR.pdb
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\Debug\QR.xml
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\Debug\QR.vbprojResolveAssemblyReference.cache
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\Debug\QR.Form1.resources
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\Debug\QR.Resources.resources
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\Debug\QR.vbproj.GenerateResource.Cache
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\Debug\QR.vbproj.CoreCompileInputs.cache
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\Debug\QR.exe
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\Debug\QR.xml
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\Debug\QR.pdb
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\Debug\QR.exe.manifest
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\bin\Debug\QR.application
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\Debug\QR.exe.manifest
+C:\Users\Marco.Aguilera\Documents\Visual Studio 2017\Projects\QR\QR\obj\Debug\QR.application
+C:\Users\Marco.Aguilera\Documents\GitHub\Asahialmex\QR\QR\obj\Debug\QR.vbprojAssemblyReference.cache
+C:\Users\Marco.Aguilera\Documents\GitHub\Asahialmex\QR\QR\obj\Debug\QR.exe
+C:\Users\Marco.Aguilera\Documents\GitHub\Asahialmex\QR\QR\obj\Debug\QR.xml
+C:\Users\Marco.Aguilera\Documents\GitHub\Asahialmex\QR\QR\obj\Debug\QR.pdb
