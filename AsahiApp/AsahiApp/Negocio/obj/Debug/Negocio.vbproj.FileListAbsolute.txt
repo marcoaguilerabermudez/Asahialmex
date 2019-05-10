@@ -1,0 +1,9 @@
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Negocio\bin\Debug\Negocio.dll
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Negocio\bin\Debug\Negocio.xml
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Negocio\obj\Debug\Negocio.Resources.resources
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Negocio\obj\Debug\Negocio.vbproj.GenerateResource.cache
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Negocio\obj\Debug\Negocio.vbproj.CoreCompileInputs.cache
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Negocio\obj\Debug\Negocio.dll
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Negocio\obj\Debug\Negocio.xml
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Negocio\obj\Debug\Negocio.pdb
