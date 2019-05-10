@@ -10,3 +10,5 @@ C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\A
 C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.pdb
 C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.inicio.resources
 C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.visual.resources
+C:\Users\Marco.Aguilera\source\repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.vbprojAssemblyReference.cache
+C:\Users\Marco.Aguilera\source\repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.test_vs_csh.resources

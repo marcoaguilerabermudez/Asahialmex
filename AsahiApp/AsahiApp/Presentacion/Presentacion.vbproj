@@ -95,6 +95,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="test vs csh.Designer.vb">
+      <DependentUpon>test vs csh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="test vs csh.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrmLogin.resx">
@@ -105,6 +111,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test vs csh.resx">
+      <DependentUpon>test vs csh.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
