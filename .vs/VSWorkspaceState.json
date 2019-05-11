@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\AsahiApp",
-    "\\AsahiApp\\AsahiApp",
-    "\\AsahiApp\\AsahiApp\\Presentacion"
+    "\\AsahiApp\\AsahiApp"
   ],
-  "SelectedNode": "\\AsahiApp",
+  "SelectedNode": "\\AsahiApp\\AsahiApp\\AsahiApp.sln",
   "PreviewInSolutionExplorer": true
 }
