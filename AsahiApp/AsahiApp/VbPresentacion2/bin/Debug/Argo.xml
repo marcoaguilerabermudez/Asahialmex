@@ -1,0 +1,1409 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Argo
+</name>
+</assembly>
+<members>
+<member name="T:Presentacion.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.borde">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.cabecera_web">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.document_save">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.escoba__2_">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.gnome_edit_delete">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.Refresh">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.usuario">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="M:Presentacion.FrmBuscadorBancos.TxtFiltroBancos_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ proceso que filtra un texto
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmBuscadorProveedor.TxtFiltroProveedor_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ eveento que se disppara cuando escribes un letra en textbox, te busca un filtrado
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCotizaciones.btnF3_Click(System.Object,System.EventArgs)">
+ <summary>
+ muestra los formularios dependiendo la poscion que se encuentra el boton F3
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCotizaciones.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+ <summary>
+ AL presionar enter el focus es hacia la derecha y no hacia abajo
+ </summary>
+ <param name="msg"></param>
+ <param name="keyData"></param>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmCotizaciones.CargaId">
+ <summary>
+ proceso principal para llenar el formulario de pedidos, el cual llama a tres procesos, pero solo la de las direcciones es funcionaal para verificar si tiene direccion fiscal
+ en caso de que el cliente no tenga direccion fiscal, arroja un mensaje al usuario
+ </summary>
+</member>
+<member name="M:Presentacion.FrmCuentaBancaria.TxtNoCuenta_GotFocus(System.Object,System.EventArgs)">
+ <summary>
+ evento que activa el boton F3Cuenta
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCuentaBancaria.TxtNombre_Click(System.Object,System.EventArgs)">
+ <summary>
+ evento cuando se la clikc al textbox quita el boton F3 de TxtCuenta
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCuentaBancaria.TxtCodBanco_GotFocus(System.Object,System.EventArgs)">
+ <summary>
+ evento que activa el boton F3Banco
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCuentaBancaria.BtnF3Banco_Click(System.Object,System.EventArgs)">
+ <summary>
+ rellena la informacion del banco
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCuentaBancaria.BtnF3Cuenta_Click(System.Object,System.EventArgs)">
+ <summary>
+ recupera las cuentas x sucursal
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCuentaBancaria.BtnCuentasCliente_Click(System.Object,System.EventArgs)">
+ <summary>
+ para que primero busque el cliente y despues la informacion del banco
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCuentaBancaria.RellenaInfoCuentaCliente">
+ <summary>
+ rellena el formulario de bancos de cliente
+ </summary>
+</member>
+<member name="M:Presentacion.FrmCuentaBancaria.RbtInactiva_CheckedChanged(System.Object,System.EventArgs)">
+ <summary>
+ proceso que inactiva cuenta
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCuentaBancaria.RbtActivar_CheckedChanged(System.Object,System.EventArgs)">
+ <summary>
+ proceso que activa cuenta 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmFirma.#ctor(System.String,Clases.Usuario,System.Byte,Clases.LProducto,Clases.Pedido,Clases.Cliente,Clases.LProducto)">
+ <summary>
+ Constructor para las Firmas de Pedidos
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="usuario"></param>
+ <param name="origen"></param>
+ <param name="lst"></param>
+ <param name="Pedido"></param>
+ <param name="Cliente"></param>
+ <param name="lstSurte"></param>
+</member>
+<member name="M:Presentacion.FrmFirma.#ctor(System.String,Clases.Usuario,System.Byte,Clases.LProducto,Clases.Factura,Clases.Cliente)">
+ <summary>
+ Constructor para las firmas de Facturas
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="usuario"></param>
+ <param name="origen"></param>
+ <param name="lst"></param>
+ <param name="Pedido"></param>
+ <param name="Cliente"></param>
+</member>
+<member name="M:Presentacion.FrmAgentes.RellenaAgente">
+ <summary>
+ Metodo para rellenar mi objeto RellenaAgente con un TextBox
+ </summary>
+ <returns>Regresa un valor de tipo Agente</returns>
+</member>
+<member name="M:Presentacion.FrmAgentes.InsertaAgente">
+ <summary>
+ metodo para llenar el objeto con una funcion
+ </summary>
+</member>
+<member name="M:Presentacion.FrmAgentes.MuestraAgentesDgv">
+ <summary>
+ Metodo para mostrar la lista de agentes en el datagridview
+ </summary>
+</member>
+<member name="M:Presentacion.FrmAgentes.FrmAgentes_Load(System.Object,System.EventArgs)">
+ <summary>
+ 'pone la columna(0)solo lectura(no modificar)
+ 'pone la columna(1)solo lectura(no modificar)
+ 'inhabilita los botones
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmAgentes.MedidasColumDgv">
+ <summary>
+ 'medidas de las columnas del DataDrigView
+ </summary>
+</member>
+<member name="M:Presentacion.FrmAgentes.RellenaAgenteSql">
+ <summary>
+ 'metodo para rellenar el objeto
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmAgentes.RellenaTxtAgente(Clases.Agente)">
+ <summary>
+ 'function para seleccion lo de una columna del Dgv con el objeto agente
+ </summary>
+ <param name="agente"></param>
+ <returns>regresa una variable de tipo Agente</returns>
+</member>
+<member name="M:Presentacion.FrmAgentes.RellenaTxtDgvAgent">
+ <summary>
+ metodo para lllenar el objeto agente
+ </summary>
+</member>
+<member name="M:Presentacion.FrmAgentes.DgvAgentes_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ cuando se da click a una celda del Dgv se pasa al proceso "RellenaTxtDgvAgent"
+ los botones se habilitan
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmBuscador.#ctor(System.SByte,System.Int32,System.String)">
+ <summary>
+ Para buscar Clientes y productos
+ </summary>
+ <param name="origen">De donde es llamado para cargar la lista correspondiente</param>
+</member>
+<member name="M:Presentacion.FrmBuscador.#ctor(System.SByte,System.String,System.Int32,System.String)">
+ <summary>
+ Para buscar Precios
+ </summary>
+ <param name="origen"></param>
+ <param name="codigo"></param>
+</member>
+<member name="M:Presentacion.FrmBuscador.RellenaClientesFiltro(System.String,System.String)">
+ <summary>
+ Rellena DGV con el listado de clientes filtrado
+ </summary>
+ <param name="texto">cadena de texto a filtrar</param>
+ <param name="filtro">columna que filtrar</param>
+</member>
+<member name="M:Presentacion.FrmBuscador.DgvBuscador_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ Al dar Enter corre el evento btnAceptar_Click (recupera el elemento seleccionado)
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmClase.FrmClase_Load(System.Object,System.EventArgs)">
+ <summary>
+ evento que se muestra al momento de abrir el formulario
+ </summary>
+</member>
+<member name="M:Presentacion.FrmClase.RellenaObjClase">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmClase.DgvClases_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ Evento cuando seleccionas algo de tu DatagridView, lo pone en TextBox, habilita los botones
+ </summary>
+</member>
+<member name="M:Presentacion.FrmClase.RellenaObjClaseTxt(Clases.Clase)">
+ <summary>
+ Rellena el objclase, de las columnas datagrieview
+ </summary>
+ <param name="objClase"></param>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmClase.TamañoColumnDgv">
+ <summary>
+ tamaño de las columnas que tiene el Datagrieview
+ </summary>
+</member>
+<member name="M:Presentacion.FrmCodigos.FrmInventario_Load(System.Object,System.EventArgs)">
+ <summary>
+ evento que se dispara cuando se abre el formulario
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCodigos.RellenaCmbMarca">
+ <summary>
+ Rellena combox de marca
+ </summary>
+</member>
+<member name="M:Presentacion.FrmCodigos.RellenaCmbClase">
+ <summary>
+ Rellena combox de clase
+ </summary>
+</member>
+<member name="M:Presentacion.FrmCodigos.RellenaCmbUnidad">
+ <summary>
+ Rellena combox de unidad de medida
+ </summary>
+</member>
+<member name="M:Presentacion.FrmCodigos.RellenaTxtGeneral">
+ <summary>
+ Rellena el objeto "Rellenacodigo" con los textbox y combox del formulario
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmCodigos.RellenaPreciosCodigo">
+ <summary>
+ rellena los precios de un codigo
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmCodigos.RellenaInforCodigo(Clases.Producto)">
+ <summary>
+ Rellena el formulario con el objeto "codigo", en caso de que no haya informacion acerca de ese producto arroja informacion
+ se habilitan los tetxtbox's de las precios y pone el formato en pesos
+ </summary>
+ <param name="codigo"></param>
+</member>
+<member name="M:Presentacion.FrmCodigos.BtnElimi_Click(System.Object,System.EventArgs)">
+ <summary>
+ proceso que elimina ña informacion de un codigo y la ubicacion
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCodigos.InhabilitaBotones">
+ <summary>
+ evento que inhabilita botones y textbox del formulario
+ </summary>
+</member>
+<member name="M:Presentacion.FrmCodigos.Verifica(System.Byte)">
+ <summary>
+ funcion que revisa los campos antes de insertar un codigo 
+ </summary>
+ <returns>Regresa variable si es 1(aceptado) y 0(Rechazado)</returns>
+</member>
+<member name="M:Presentacion.FrmCodigos.DeshabilitaTextBox">
+ <summary>
+ habilita los textbox's y combox's del formulario, cuando se le da al boton de limpiar
+ </summary>
+</member>
+<member name="M:Presentacion.FrmCodigos.TxtCodigo_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ evento que se dispara cuando le das enter al textcodigo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCodigos.InsertaUbicacion">
+ <summary>
+ proceso para inserta una ubicacion x codigo
+ </summary>
+</member>
+<member name="M:Presentacion.FrmCodigos.RellenaCmbUbicacion">
+ <summary>
+ proceso para obtener todas las ubicaciones x codigo pero en forma de lista
+ </summary>
+</member>
+<member name="M:Presentacion.FrmCodigos.CmbUbicacion_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+ <summary>
+ evento que pone las letras en mayusculas
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmCliente.RecuperarProspecto">
+ <summary>
+ Funcion envia el idProspecto 
+ recibe informacion en objeto
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmCliente.RellenarProspecto(Clases.Prospecto)">
+ <summary>
+ Recibe informacion en un objeto
+ Rellana los campos
+ </summary>
+ <param name="objProspecto"></param>
+</member>
+<member name="M:Presentacion.FrmConfiguracionGral.InsertaConfiguracion">
+ <summary>
+ Inserta Configuracion y Sucursales al mismo tiempo
+ por medio de un XML
+ </summary>
+</member>
+<member name="M:Presentacion.FrmFactura.RellenaCliente(Clases.Cliente)">
+ <summary>
+ Obtiene Informacion del cliente y la rellena en el Formulario
+ </summary>
+ <param name="Cliente">Obj Cliente con el Id</param>
+</member>
+<member name="M:Presentacion.FrmFactura.RellenaControlesCabecera(Clases.Factura,Clases.Cliente)">
+ <summary>
+ Descarga la cabecera de la factura en los controles correspondientes
+ </summary>
+ <param name="Factura">Informacion de la cabecera</param>
+ <param name="Cliente">Nombre y Condiciones de Credito del Cliente</param>
+</member>
+<member name="M:Presentacion.FrmFactura.RellenaDgvDetalle(Clases.LProducto)">
+ <summary>
+ Descarga la lista de productos en el DGV
+ </summary>
+ <param name="Detalle">Lista de Productos</param>
+</member>
+<member name="M:Presentacion.FrmFactura.DgvFactura_UserAddedRow(System.Object,System.Windows.Forms.DataGridViewRowEventArgs)">
+ <summary>
+ Limita la cantidad de filas
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmFactura.DgvFactura_CellEnter(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ Mueve el Boton F3 en txtCodCte, y en el Dgv(Codigo,Precio) 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmFactura.DgvFactura_SelectionChanged(System.Object,System.EventArgs)">
+ <summary>
+ Rellena los Labels de Existencia y Disponible al seleccionar un codigo en el DGV
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmFactura.DgvFactura_CellEndEdit(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ Proceso para Recuperar informacion de un codigo al presionar Enter en el DGV
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmFactura.DgvFactura_EditingControlShowing(System.Object,System.Windows.Forms.DataGridViewEditingControlShowingEventArgs)">
+ <summary>
+ Forzar a escribir en mayuscula el codigo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmFactura.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+ <summary>
+ AL presionar enter el focus es hacia la derecha y no hacia abajo
+ </summary>
+ <param name="msg"></param>
+ <param name="keyData"></param>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmFactura.RellenaProducto(Clases.Producto)">
+ <summary>
+ Obtiene la informacion del producto y la plasma en el Dgv
+ </summary>
+ <param name="Producto">objeto Producto con el Id</param>
+</member>
+<member name="M:Presentacion.FrmFactura.CalculaNumeros(System.Windows.Forms.DataGridViewRow)">
+ <summary>
+ Hace todos los calculos de los numeros, impuestos, subtotales, totales, etc
+ </summary>
+ <param name="row">fila dentro del DGV</param>
+</member>
+<member name="M:Presentacion.FrmFactura.RellenaObjetoFactura(Clases.Factura)">
+ <summary>
+ 
+ </summary>
+ <param name="Factura"></param>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmFactura.RellenaListaProductos(Clases.LProducto)">
+ <summary>
+ Creas una lista de productos contenida en el DGV
+ </summary>
+ <param name="lst">Lista de productos</param>
+ <returns>Lista de productos</returns>
+</member>
+<member name="M:Presentacion.FrmFactura.LimpiarLabels">
+ <summary>
+ Limpiar Labels de la parte inferior
+ </summary>
+</member>
+<member name="M:Presentacion.FrmFactura.CamposNecesarios">
+ <summary>
+ Campos necesarios para Insertar y/o Modificar
+ </summary>
+ <returns>True o False</returns>
+</member>
+<member name="M:Presentacion.FrmFactura.VerificarCancelada(Clases.Factura)">
+ <summary>
+ Al obtener los registros de una factura revisa si está cancelada
+ </summary>
+</member>
+<member name="M:Presentacion.FrmFactura.TxtIdCte_GotFocus(System.Object,System.EventArgs)">
+ <summary>
+ Focus en el Textbox del ID del Cliente
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmFactura.TabFactura_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ Al presionar el boton F3 se dirige al evento click de ese mismo boton
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmFactura.TxtIdCte_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ Recupera la informacion de un cliente al dar enter en el txtIdCliente
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmFactura.Cambios_Formulario(System.Object,System.EventArgs)">
+ <summary>
+ Evento creado desde el Load para detectar los cambios de cualquier control dentro del frm
+ </summary> 
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmFactura.CargaCreditoCliente(Clases.Cliente)">
+ <summary>
+ Guarda informacion del credito del cliente que se recupera para
+ despues utilizarla y poder timbrarla sólo si las condiciones son
+ las correctas
+ </summary>
+ <param name="Cliente">Objeto Cliente cargado con la informacion crediticia</param>
+</member>
+<member name="M:Presentacion.FrmFactura.RellenarDatosCFDI(Clases.Timbre)">
+ <summary>
+ rellena la pestaña de DatosCFDI
+ </summary>
+ <param name="timbrar"></param>
+</member>
+<member name="M:Presentacion.FrmMarcas.FrmMarcas_Load(System.Object,System.EventArgs)">
+ <summary>
+ Carga LA INFORMACIÓN al abrir el FORMULARIO MARCAS
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmMarcas.CleanMarca">
+ <summary>
+ VACIA LA INFORMACION DEL TEXTMARCA  E ID
+ </summary>
+</member>
+<member name="M:Presentacion.FrmMarcas.ObtenerMarcar">
+ <summary>
+ RECIBE INFORMACION  
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmMarcas.RellenoDgvMarcas">
+ <summary>
+ RELLENA EL DATAGRIDVIEW  PARA MOSTRAR
+ </summary>
+</member>
+<member name="M:Presentacion.FrmMarcas.RellenaInsertMarca">
+ <summary>
+ RELLENA LA INFORMACIÓN PARA INSERTAR
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmMarcas.InsertMarca">
+ <summary>
+ PROCESO  PARA INSERTAR
+ </summary>
+</member>
+<member name="M:Presentacion.FrmMarcas.BtnInserta_Click(System.Object,System.EventArgs)">
+ <summary>
+REALIZA LA FUNCIÓN DE INSERTAR
+ </summary>
+</member>
+<member name="M:Presentacion.FrmMarcas.Validar">
+ <summary>
+ VALIDA SI EL CAMPO TEXTMARCA CONTIENE INFORMACIÓN SI ES DE LO CONTRARIO  ENVIA MENSAJE 
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmMarcas.RellenaObjMarca">
+ <summary>
+ RELLENA EN LOS CAMPOS LO SELECCIONADO  
+ </summary>
+</member>
+<member name="M:Presentacion.FrmMarcas.DgvMarcas_SelectionChanged(System.Object,System.EventArgs)">
+ <summary>
+ MUESTRA LO SELECCIONADO
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmMarcas.ModifiMarca">
+ <summary>
+ PROCESO DE MODIFICACIÓN
+ </summary>
+</member>
+<member name="M:Presentacion.FrmMarcas.BtnModifica_Click(System.Object,System.EventArgs)">
+ <summary>
+ 'REALIZA LA FUNCIÓN DE MODIFICAR
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmMarcas.BtnEliminar_Click(System.Object,System.EventArgs)">
+ <summary>
+ REALIZA LA FUNCIÓN ELIMINAR
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmMarcas.RellenaElimMarca">
+ <summary>
+ ENVIA EL ID 
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmMarcas.EliminaMarca">
+ <summary>
+ PROCESO DE ELIMINACIÓN
+ </summary>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.ObtenerPaq">
+ <summary>
+ HACE CONEXIO Y RECIBE LA LISTA DE PAQUETERIA DE LA CLASE NEGOCIO 
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.LlenaDgvPaq">
+ <summary>
+ LLENA EL DATAGRIDVIEW DE LA INFORMACIÓN OBTENIDA Y ESTABLECE LAS MEDIDAS DE LAS COLUMNAS
+ ''' </summary>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.FrmPaqueterias_Load(System.Object,System.EventArgs)">
+ <summary>
+  CARGA INFORMACIÓN EN EL DATAGRIDVIEW AL MOMENTO DE INICIAR EL FORMULARIO
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.cleanPaq">
+ <summary>
+ LIMPIA LOS CAMPOS 
+ </summary>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.rellenaInsertPaq">
+ <summary>
+ RELLENA LOS CAMPOS PARA INSERTAR
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.InsertPaq">
+ <summary>
+ PROCESO DE INSERTAR
+ RELLENA EL OBJETOPAQUETERIA
+ ENVIA LA INFORMACION A PROCESO INSERTARPAQ
+ E INSERTA
+ </summary>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.BtnNuevo_Click(System.Object,System.EventArgs)">
+ <summary>
+ RECIBE TRUE SI CONTIENE INFORMACION
+ LLAMA AL PROCESO INSERTAR
+ DE LO CONTRARIO  SE CIERRA
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.validar">
+ <summary>
+ 'VALIDA SI NOMBRE, EL NOMBRE CORTE CONTIENE INFORMACIÓN 
+ ENVIA TRUE
+ DE LO CONTRARIO ENVIA FALSE Y UN MENSAJE
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.ModificarPaq">
+ <summary>
+ PROCESO DE MODFICAR
+ RELLENA EL OBJETO PAQUETERIA
+ HACE CONEXION
+  ENVIA AL PROCESO MODIFICAPAQ
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.BtnModifica_Click(System.Object,System.EventArgs)">
+ <summary>
+ ENVIA MENSAJE PARA CORROBORAR Y ES ASI
+ LLAMA AL PROCESO Y MUESTRA EL CAMBIO
+ DE LO CONTRARIO SE CIERRa
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.rellenaInfPaq">
+ <summary>
+ RELLENA LOS CAMPOS DE TEXTOS LO SELECCIONADO
+ </summary>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.DgvPaqueteria_SelectionChanged(System.Object,System.EventArgs)">
+ <summary>
+ LLAMA AL PROCESO PARA LLENAR LOS CAMPOS
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.EliminarPaq">
+ <summary>
+ PROCESO DE ELIMINACIÓN
+ RELLENA LA INFORMACIÓN EN UN OBJETOPAQ
+ Y LO ENVIA AL PROCESO RELLENAINSERTPAQ
+ ELIMINA
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmPaqueterias.BtnEliminar_Click(System.Object,System.EventArgs)">
+ <summary>
+ ENVIA UN MENSAJE PARA CORROBORAR
+ LLAMA AL PROCESO PARA SER ELIMINADO
+ MUESTRA MODIFICACIONES
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmReembolso.TxtProveedor_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ evento que se dispara cuando se empieza a escribir en un textbox, habilita o inhabilita boton
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmReembolso.DgvReembolso_CellEnter(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ evento que se muestra el boton F3 en la columna de Nombre en el datagriview
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmReembolso.BtnF3_Click(System.Object,System.EventArgs)">
+ <summary>
+ evento que se dispara cuando se le da click al boton F3
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmReembolso.InsertaReembolso">
+ <summary>
+ despues del msgbox se obtiene el ultimo registro del cheque al cual se le suma uno y compararlo con el cheque que el usuario ingreso, para asi verificar que vayan consecutivos
+ en caso que no coincida el numero de chuque el procedimiento no sigue corriendo
+ </summary>
+</member>
+<member name="M:Presentacion.FrmReembolso.DgvReembolso_EditingControlShowing(System.Object,System.Windows.Forms.DataGridViewEditingControlShowingEventArgs)">
+ <summary>
+ evento que obliga a poner todo el texto en mayusculas dentro del datagriview
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmReembolso.CalculaTotal">
+ <summary>
+ sumas las columnas de subtotal, otros, iva
+ </summary>
+</member>
+<member name="M:Presentacion.FrmReembolso.CalculaTotalNeto">
+ <summary>
+ resta las columnas de total, retenIva, retenIsr
+ </summary>
+</member>
+<member name="M:Presentacion.FrmReembolso.CalculaSumaSubtotal">
+ <summary>
+ suma toda la columna de susbtotaL
+ </summary>
+</member>
+<member name="M:Presentacion.FrmAbono.#ctor(Clases.Usuario,System.Int32,System.String,Clases.Abono)">
+ <summary>
+ Llamado desde una factura en concreto
+ </summary>
+ <param name="usuario"></param>
+ <param name="suc"></param>
+ <param name="cadenaConex"></param>
+ <param name="Abono">Info de la factura en cuestion</param>
+</member>
+<member name="M:Presentacion.FrmAbono.#ctor(Clases.Usuario,System.Int32,System.String)">
+ <summary>
+ Llamado desde el Menú: Un Abono para una o varias Facturas
+ </summary>
+ <param name="usuario"></param>
+ <param name="suc"></param>
+ <param name="cadenaConex"></param>
+</member>
+<member name="M:Presentacion.FrmAbono.RellenaCliente(Clases.Cliente)">
+ <summary>
+ Obtiene Informacion del cliente y la rellena en el Formulario
+ </summary>
+ <param name="Cliente">Obj Cliente con el Id</param>
+</member>
+<member name="M:Presentacion.FrmAbono.RellenaDGV(Clases.Abono)">
+ <summary>
+ Rellenar DGV con una factura
+ </summary>
+ <param name="a"></param>
+</member>
+<member name="M:Presentacion.FrmAbono.RellenaDGV(Clases.LAbono)">
+ <summary>
+ Rellenar DGV con MAS de una Factura
+ </summary>
+ <param name="lst"></param>
+</member>
+<member name="M:Presentacion.FrmSoporte.FrmSoporte_Load(System.Object,System.EventArgs)">
+ <summary>
+ Al Abrir el Formulario
+ y manda a llamar los siguientes procedimientos
+ carga la lista de prioridades
+ el tipo de conexiones
+ el tipo de programa
+ el datagridview carga los tickets creados 
+ limpia los campos
+     ''' </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSoporte.BtnEnviar_Click(System.Object,System.EventArgs)">
+ <summary>
+ Este botón su funcion 
+  llama al funcion  validar y recibe true si cumple con los requerimientos y false  manda un mensaje
+   en caso de true manda a llamar al proceso insertaMess  
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSoporte.BtnInsertar_Click(System.Object,System.EventArgs)">
+ <summary>
+ Proceso para insertar imagen
+ Boton manda llama a la galeria de imagenes
+ lo guarda en una lista de imagenes
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSoporte.BtnModificar_Click(System.Object,System.EventArgs)">
+ <summary>
+ Boton Elimina imagen seleccionada 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSoporte.BtnFinalizar_Click(System.Object,System.EventArgs)">
+ <summary>
+ boton de  Finalizar
+ verifica que el ticket seleccionado su estado sea "Revisado" para finalizar
+ y de lo contrario manda un mensaje
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSoporte.TextId_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ Limita los digitos de texto id 
+ máximo 9 digitos
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSoporte.TextContraseña_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ Limita los digitos de texto contraseña del id
+ máximo 6 digitos
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSoporte.BtnLimpiar_Click(System.Object,System.EventArgs)">
+ <summary>
+ Botón Limpiar
+ llama al proceso CLeanSoporte
+ Vacia todo los campos del formulario
+ excepto datagridview
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSoporte.DgvSoport_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSoporte.CleanSoporte">
+ <summary>
+ deja los  campos en vacio
+ </summary>
+</member>
+<member name="M:Presentacion.FrmSoporte.FinTicket">
+ <summary>
+ Proceso para finalizar el ticket
+ declara dos objetos
+ un para rellenar el objeto soporte
+ y otro para llamar a la funcion y enviar los datos
+ </summary>
+</member>
+<member name="M:Presentacion.FrmSoporte.validar">
+ <summary>
+ Verifica que los campos no esten vacios al momento de insertar
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmSoporte.RellenaDvgSoporte">
+ <summary>
+ llena el datagridview con la información recibida
+ se ocultan algunas columnas y se muestran las necesarias
+ </summary>
+</member>
+<member name="M:Presentacion.FrmSoporte.RellenarPrioridad">
+ <summary>
+ Le da Valores al combo llamdo prioridad
+ </summary>
+</member>
+<member name="M:Presentacion.FrmSoporte.RellenaConexion">
+ <summary>
+ le da valores al combo conexion
+ </summary>
+</member>
+<member name="M:Presentacion.FrmSoporte.RellenaPrograma">
+ <summary>
+ Le da valores al combo Programa
+ </summary>
+</member>
+<member name="M:Presentacion.FrmSoporte.RellenaInsertSoporte(Clases.Soporte)">
+ <summary>
+  Recupera la sucursal del usuario 
+  Recupera si es admin 
+  Le da  valor a cada propiedades
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmSoporte.ObtenerCorreo">
+ <summary>
+ Esta funcion recibe la informacion de la lista 
+ envia el Id del usario
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmSoporte.ObtenerComentario">
+ <summary>
+ Esta funcion  obtiene los mensajes de cada ticket
+ envia el id del ticket al proceso ObtenerMess
+ hace conexion
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmSoporte.InsertaSoporte">
+ <summary>
+ Proceso de Inserción de un ticket
+ declara dos variables 
+ una para llamar la funcion y hacer conexion
+ la segunda para cargar los datos que seran insertados
+  </summary>
+</member>
+<member name="M:Presentacion.FrmSoporte.InsertaMess">
+ <summary>
+ Proceso de Insertar Mensajes al ticket correspondiente
+ llama a la funcion rellena el objeto con datos
+  hace conexión
+  envia la informacion a la funcion InsertarMess 
+ </summary>
+</member>
+<member name="M:Presentacion.FrmEstatus.DgvEstatus_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ evento que se genera cuando se le da enter a una columna del datagriview
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.FrmStatusSoporte_Load(System.Object,System.EventArgs)">
+ <summary>
+ Al  abrir el  formulario se carga 
+ La lista de tickets 
+ limpiara los campos
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.DgvStatuSoporte_SelectionChanged(System.Object,System.EventArgs)">
+ <summary>
+ Este proceso es un seleccionador del datagridview 
+ para obtener la información seleccionada
+  llama al proceso rellenarCampos
+  llama al proceso rellenarListSoporte
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.InsertaMensajeEStatus">
+ <summary>
+ Proceso Inserta los Mensajes en el status de tickets
+ declara dos objetos
+ uno donde llama al clase Negocios para realizar la conexion
+ el segundo para obtener información de la funcion RellenaMessSoport
+ hace conexion y envia los información
+ </summary>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.BtnMessenger_Click(System.Object,System.EventArgs)">
+ <summary>
+  al dar clic llamara al 2 procesos
+  uno para llamar al proceso y  ser la insercion del mensaje
+  segundo para llamar al proceso y actualizar la información del datagridview 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.RevisaTicket">
+ <summary>
+ proceso para revisar
+ declara dos objetos
+ un para llamar al clase negocio y hacer conexión
+ segundo para llamar al proceso RellenaMenssSoport 
+ carga información y lo envia
+ </summary>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.cleanTicket">
+ <summary>
+ Deja los campos en vacio
+ </summary>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.validar">
+ <summary>
+ verifica si describio la solución
+ de lo contrario envia un mensaje
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.ObtenerTicket">
+ <summary>
+  Esta función carga la lista de tickets
+  llama a la funcion Obtenerticket 
+  hace conexión
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.ObtenerComentario">
+ <summary>
+ Esta función se encarga de enviar el id del ticket
+ para si traer los mensajes de ticket especifico
+ llama al función ObtenerMess y hace la conexion
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.RellenaDgvTicket">
+ <summary>
+ Este proceso llena el datagridview
+ llama al proceso obtenerTicket para obtener la información
+ y asi mostrarla
+ se oculta columnas y se muestra las necesarias
+ </summary>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.RellenaMensajesSoporte(Clases.Soporte)">
+ <summary>
+ Esta Función envia la propiedades 
+ con su contenido
+ </summary>
+ <param name="Soporte"></param>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.RellenarListSoporte">
+ <summary>
+Este proceso obtiene  la información 
+y llena la información en una listView 
+ </summary>
+</member>
+<member name="M:Presentacion.FrmStatusSoporte.RellenarCampos">
+ <summary>
+ Llena los campos con los datos especificados
+ al selecciona el datagridview
+ </summary>
+</member>
+<member name="M:Presentacion.FrmTipo.TamañoColumnDgv">
+ <summary>
+ tamaño de las columnas que tiene el Datagrieview
+ </summary>
+</member>
+<member name="M:Presentacion.FrmSucursales.FrmSucursales_Load(System.Object,System.EventArgs)">
+ <summary>
+ Al abrir el Formulario Sucursales
+ carga el datagridview 
+ con la lista de sucursales
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSucursales.FindCadena(System.String)">
+ <summary>
+ este proceso recibe el nombre de la sucursal
+ realiza la conexión
+ </summary>
+ <param name="suc"></param>
+</member>
+<member name="M:Presentacion.FrmSucursales.ObtenerSucursales">
+ <summary>
+ Esta función envia la lista de sucursales
+ declara un objeto tipo negocios
+ envia la función obtener suc la cadena de conexión
+ 
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmSucursales.enviaSuc">
+ <summary>
+  Carga la variable Suc  con el dataGridview seleccionado
+  llama a la funcion Findcadena y envia la sucursal
+  se envia la cadena de conexiona al formulario principal 
+  y llama al proceso ActivaMenu
+  cierra el formulario sucursales
+ </summary>
+</member>
+<member name="M:Presentacion.FrmSucursales.BtnAbrir_Click(System.Object,System.EventArgs)">
+ <summary>
+  Llama al  formulario Principal 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmSucursales.RellenarDgvSucursal">
+ <summary>
+ Proceso rellena el datagridview
+ llama un objeto tipo clase de la lista heredada
+ obtiene la información 
+ lo rellena
+ realiza ajustes en las columnas
+ tamaño por columna
+ </summary>
+</member>
+<member name="M:Presentacion.FrmSucursales.DgvSucursales_CellDoubleClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ al seleccionar la sucursal
+ con doble click
+ llama al formulario principal
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmUsuarios.Panel1_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Proceso que permite que se mueva el formulario desde el Panel superior
+ ya que se quitaron los border de windows
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="T:Presentacion.Numalet">
+ <summary>
+ Convierte números en su expresión numérica a su numeral cardinal
+ </summary>
+</member>
+<member name="P:Presentacion.Numalet.Decimales">
+ <summary>
+ Indica la cantidad de decimales que se pasarán a entero para la conversión
+ </summary>
+ <remarks>Esta propiedad cambia al cambiar MascaraDecimal por un valor que empieze con '0'</remarks>
+</member>
+<member name="P:Presentacion.Numalet.CultureInfo">
+ <summary>
+ Objeto CultureInfo utilizado para convertir las cadenas de entrada en números
+ </summary>
+</member>
+<member name="P:Presentacion.Numalet.SeparadorDecimalSalida">
+ <summary>
+ Indica la cadena a intercalar entre la parte entera y la decimal del número
+ </summary>
+</member>
+<member name="P:Presentacion.Numalet.MascaraSalidaDecimal">
+ <summary>
+ Indica el formato que se le dara a la parte decimal del número
+ </summary>
+</member>
+<member name="P:Presentacion.Numalet.LetraCapital">
+ <summary>
+ Indica si la primera letra del resultado debe estár en mayúscula
+ </summary>
+</member>
+<member name="P:Presentacion.Numalet.ConvertirDecimales">
+ <summary>
+ Indica si se deben convertir los decimales a su expresión nominal
+ </summary>
+</member>
+<member name="P:Presentacion.Numalet.ApocoparUnoParteEntera">
+ <summary>
+ Indica si de debe cambiar "uno" por "un" en las unidades.
+ </summary>
+</member>
+<member name="P:Presentacion.Numalet.ApocoparUnoParteDecimal">
+ <summary>
+ Determina si se debe apococopar el "uno" en la parte decimal
+ </summary>
+ <remarks>El valor de esta propiedad cambia al setear ConvertirDecimales</remarks>
+</member>
+<member name="M:Presentacion.PUtilerias.LimpiarComboBox(System.Windows.Forms.Control,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.String)">
+ <summary>
+ Herramienta para todos los combobox de un formulario,
+ se pueden limpiar solo algunos elementos o todo
+ </summary>
+ <param name="container"></param>
+ <param name="ds">DataSource</param>
+ <param name="vm">ValueMember</param>
+ <param name="dm">DisplayMember</param>
+ <param name="sv">SelectedValue</param>
+ <param name="si">SelectedItem</param>
+ <param name="tx">Text</param>
+ <param name="ex1">Excepcion 1</param>
+ <param name="ex2">Excepcion 2</param>
+</member>
+<member name="M:Presentacion.PUtilerias.LimpiarUnComboBox(System.Windows.Forms.Control,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+ <summary>
+ Herramienta para sólo un combobox de un formulario,
+ se pueden limpiar solo algunos elementos o todo
+ </summary>
+ <param name="container">formulario</param>
+ <param name="nombre">Nombre del Combobox</param>
+ <param name="ds">DataSource</param>
+ <param name="vm">ValueMember</param>
+ <param name="dm">DisplayMember</param>
+ <param name="sv">SelectedValue</param>
+ <param name="si">SelectedItem</param>
+ <param name="tx">Text</param>
+</member>
+<member name="M:Presentacion.PUtilerias.AgregarEventoCambiosFormulario(System.Windows.Forms.Control,System.String)">
+ <summary>
+ Se agrega un Evento que involucra el cambio en todos los controles de un formulario
+ </summary>
+ <param name="container">contenedor con los controles correspondientes</param>
+</member>
+<member name="M:Presentacion.PUtilerias.HabilitarBotones(System.Windows.Forms.Control)">
+ <summary>
+ Habilitar todos los botones de un Formulario
+ </summary>
+ <param name="container"></param>
+</member>
+<member name="M:Presentacion.PUtilerias.BuscarRutaArchivo(System.String)">
+ <summary>
+ Regresa la ruta de un archivo seleccionado con el Explorador de Windows
+ </summary>
+ <param name="tipo">tipo de archivo ejemplo: "XML|*.xml" </param>
+ <returns>ruta completa del archivo</returns>
+</member>
+<member name="M:Presentacion.PUtilerias.UbicaBtnF3(System.Object,System.Object)">
+ <summary>
+ Mueve y muestra el boton F3 a la posicion del textbox que se deseee
+ </summary>
+ <param name="control">textbox</param>
+ <param name="btn">nombre del boton a mover</param>
+</member>
+<member name="M:Presentacion.FrmPedidos.#ctor(Clases.Usuario,System.Int32,System.String)">
+ <summary>
+ este sub new es del formulario d estatus de ventas
+ </summary>
+ <param name="objUsuario"></param>
+ <param name="idPedido"></param>
+ <param name="cadenaConex"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.CargaId">
+ <summary>
+ proceso principal para llenar el formulario de pedidos, el cual llama a tres procesos, pero solo la de las direcciones es funcionaal para verificar si tiene direccion fiscal
+ en caso de que el cliente no tenga direccion fiscal, arroja un mensaje al usuario
+ </summary>
+</member>
+<member name="M:Presentacion.FrmPedidos.btnF3_Click(System.Object,System.EventArgs)">
+ <summary>
+ muestra los formularios dependiendo la poscion que se encuentra el boton F3
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.TxtCodCte_GotFocus(System.Object,System.EventArgs)">
+ <summary>
+ poscision del boton F3 que esta en la celda de cliente
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.RellenarProducto(Clases.Producto)">
+ <summary>
+ rellena el datagrievew 
+ </summary>
+ <param name="objProducto"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.RellenaDireccion(Clases.Direccion)">
+ <summary>
+ rellena el la pestaña de direccion fiscal
+ </summary>
+ <param name="objDireccion"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.RellenaCliente(Clases.Cliente)">
+ <summary>
+ rellena los textbox's del formulario
+ </summary>
+ <param name="objCliente"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.dgvPedidos_CellEndEdit(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ Evento que se dispara cuando se termina de editar una celda del DataGridView
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+ <summary>
+ AL presionar enter el focus es hacia la derecha y no hacia abajo
+ </summary>
+ <param name="msg"></param>
+ <param name="keyData"></param>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmPedidos.dgvPedidos_UserAddedRow(System.Object,System.Windows.Forms.DataGridViewRowEventArgs)">
+ <summary>
+ Limitar la cantidad de filas
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.RellenaDgvPedidos(Clases.Producto,System.Windows.Forms.DataGridViewRow)">
+ <summary>
+ rellena la informacion en el datagriview de la informacion del codigo
+ </summary>
+ <param name="Producto"></param>
+ <param name="row"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.DgvPedidos_CellEnter(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ evento que se ejecuta cuando se le da click a una columna del datagrivew y se les da las medidas
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.FrmPedidos_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ Evento que se ejecuta cuando se presiona una tecla dentro del formulario
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.RellenaFormaPago">
+ <summary>
+ rellena el combox
+ </summary>
+</member>
+<member name="M:Presentacion.FrmPedidos.RellenaObjetoPedido(Clases.Pedido,System.String)">
+ <summary>
+ rellena el objeto pedido
+ </summary>
+ <param name="ObjPedido"></param>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmPedidos.FormaDeEntrega(Clases.CondicionesEnvio,System.String)">
+ <summary>
+ rellena el objeto de las condiciones de envio
+ </summary>
+ <param name="condEnvio"></param>
+ <returns></returns>
+</member>
+<member name="M:Presentacion.FrmPedidos.DgvPedidos_EditingControlShowing(System.Object,System.Windows.Forms.DataGridViewEditingControlShowingEventArgs)">
+ <summary>
+ pone todas las letras en mayuscula de la columba "codigo" del datagrivew
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.TxtPedido_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ evento que se dispara cuando se da enter en txtPedido
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.recuperarCotizacion">
+ <summary>
+ se hacen 7 llamadas a precesos diferentes para rellenar el frmPedidos
+ </summary>
+ 
+</member>
+<member name="M:Presentacion.FrmPedidos.RellenarCotizacion(Clases.Cotizacion,Clases.LProducto)">
+ <summary>
+ Obtener Información
+ Rellena los campos de formulario Pedidos
+ </summary>
+ <param name="objCotizacion"></param>
+ <param name="objdetalle"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.RelleneCabeceraPedido(Clases.Pedido)">
+ <summary>
+ rellena la cabecera del formualario de pedidos
+ </summary>
+ <param name="cabeceraPedido"></param>
+</member>
+<member name="M:Presentacion.FrmPedidos.RellenaDgvDetalleProductos(Clases.LProducto,Clases.Usuario,Clases.Pedido)">
+ <summary>
+ descarga la lita de productos en el DGV, se manda el usuario para mostrar las cantidades surtidas en caso de 
+ el usuario tenga permisos de almacen
+ </summary>
+ <param name="detallePedido"></param>
+</member>
+</members>
+</doc>

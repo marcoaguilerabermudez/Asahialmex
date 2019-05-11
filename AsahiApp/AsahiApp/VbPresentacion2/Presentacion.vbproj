@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{511F5009-7817-4823-8F1F-BB74DA2489F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Erp Leal</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>ftp://ftp.calexander.com.mx/Erp/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://www.abasleal.com/Erp/</UpdateUrl>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Erp Leal.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Erp Leal.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>Presentacion.My.MyApplication</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>EA8F1AF0EDD070A304B17BCFB30FF3419813B1B5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Presentacion_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Printing.PrintForm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmFirma.Designer.vb">
+      <DependentUpon>FrmFirma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFirma.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImagen.Designer.vb">
+      <DependentUpon>FrmImagen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmImagen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgentes.Designer.vb">
+      <DependentUpon>FrmAgentes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgentes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscadores\FrmBuscador.Designer.vb">
+      <DependentUpon>FrmBuscador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Buscadores\FrmBuscador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmCiudad.Designer.vb">
+      <DependentUpon>frmCiudad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmCiudad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAcercaDe.Designer.vb">
+      <DependentUpon>FrmAcercaDe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClase.Designer.vb">
+      <DependentUpon>FrmClase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCodigos.Designer.vb">
+      <DependentUpon>FrmCodigos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCodigos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCodigosSat.Designer.vb">
+      <DependentUpon>FrmCodigosSat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCodigosSat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\FrmCliente.Designer.vb">
+      <DependentUpon>FrmCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\FrmCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfiguracionGral.Designer.vb">
+      <DependentUpon>FrmConfiguracionGral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfiguracionGral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFactura.Designer.vb">
+      <DependentUpon>FrmFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFiltro.designer.vb">
+      <DependentUpon>FrmFiltro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFiltro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMarcas.Designer.vb">
+      <DependentUpon>FrmMarcas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMarcas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPaqueterias.Designer.vb">
+      <DependentUpon>FrmPaqueterias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPaqueterias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPdfA.Designer.vb">
+      <DependentUpon>FrmPdfA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPdfA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSoporte.Designer.vb">
+      <DependentUpon>FrmSoporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSoporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstatus.designer.vb">
+      <DependentUpon>FrmEstatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEstatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStatusSoporte.Designer.vb">
+      <DependentUpon>FrmStatusSoporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStatusSoporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\FrmTipo.Designer.vb">
+      <DependentUpon>FrmTipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\FrmTipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSucursales.Designer.vb">
+      <DependentUpon>FrmSucursales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSucursales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuarios.Designer.vb">
+      <DependentUpon>FrmUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Numalet.vb" />
+    <Compile Include="PUtilerias.vb" />
+    <Compile Include="Ventas\FrmPedidos.Designer.vb">
+      <DependentUpon>FrmPedidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\FrmPedidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.vb">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Buscadores\FrmBuscador.resx">
+      <DependentUpon>FrmBuscador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmCiudad.resx">
+      <DependentUpon>frmCiudad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFirma.resx">
+      <DependentUpon>FrmFirma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImagen.resx">
+      <DependentUpon>FrmImagen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAcercaDe.resx">
+      <DependentUpon>FrmAcercaDe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgentes.resx">
+      <DependentUpon>FrmAgentes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClase.resx">
+      <DependentUpon>FrmClase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCodigos.resx">
+      <DependentUpon>FrmCodigos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCodigosSat.resx">
+      <DependentUpon>FrmCodigosSat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\FrmCliente.resx">
+      <DependentUpon>FrmCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfiguracionGral.resx">
+      <DependentUpon>FrmConfiguracionGral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFactura.resx">
+      <DependentUpon>FrmFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFiltro.resx">
+      <DependentUpon>FrmFiltro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMarcas.resx">
+      <DependentUpon>FrmMarcas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPaqueterias.resx">
+      <DependentUpon>FrmPaqueterias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSoporte.resx">
+      <DependentUpon>FrmSoporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstatus.resx">
+      <DependentUpon>FrmEstatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStatusSoporte.resx">
+      <DependentUpon>FrmStatusSoporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\FrmTipo.resx">
+      <DependentUpon>FrmTipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSucursales.resx">
+      <DependentUpon>FrmSucursales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FrmPedidos.resx">
+      <DependentUpon>FrmPedidos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Clases\Clases.vbproj">
+      <Project>{9397bd83-19c6-48c1-a265-355d50d25095}</Project>
+      <Name>Clases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Datos\Datos.vbproj">
+      <Project>{36bd0dcd-42bf-4041-845b-e3fd88c96005}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.vbproj">
+      <Project>{5b87c02f-4472-42e1-822d-6efe20d273d2}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Presentacion_TemporaryKey.pfx" />
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gnome_edit_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ICSharpCode.SharpZipLib.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MySql.Data.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

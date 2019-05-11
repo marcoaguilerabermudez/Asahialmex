@@ -1,0 +1,302 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Negocio
+</name>
+</assembly>
+<members>
+<member name="T:Negocio.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:Negocio.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:Negocio.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="M:Negocio.NFactura.XmlInsertar(Clases.Factura,Clases.LProducto)">
+ <summary>
+ Forma el xml necesario para mandarlo al SP
+ </summary>
+ <param name="f">Informacion de la Cabecera</param>
+ <param name="lst">Lista de productos incluidos en la factura</param>
+ <returns></returns>
+</member>
+<member name="M:Negocio.NFactura.XmlModificar(Clases.Factura,Clases.LProducto)">
+ <summary>
+ Crea el xml con estructura para Modificar
+ </summary>
+ <param name="f">informacion de la cabecera</param>
+ <param name="lst">Lista de productos dentro de la factura</param>
+ <returns></returns>
+</member>
+<member name="M:Negocio.NTimbrar.FacturaTimbrada(System.String,Clases.Factura,Clases.Sucursales,Clases.Timbre)">
+ <summary>
+ Cuando la Factura es timbrada se requiere descontar los creditos y marcar
+ la factura como timbrada
+ </summary>
+</member>
+<member name="M:Negocio.NTimbrar.PreparacionTimbre(System.String,Clases.Factura,Clases.Sucursales,Clases.Documento,Clases.Moneda)">
+ <summary>
+ Recuperar toda la informacion necesaria para timbrar
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="Factura"></param>
+ <param name="Suc"></param>
+ <param name="Documento"></param>
+ <param name="Moneda"></param>
+</member>
+<member name="M:Negocio.NSoporte.ObtenerListaTicket(System.String,System.Int32)">
+ <summary>
+ Hace conexión y envia el el id para obtener la lista de tickets
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="id"></param>
+ <returns></returns>
+</member>
+<member name="M:Negocio.NSoporte.InsertSuport(System.String,Clases.Soporte)">
+ <summary>
+ Hace conexion y envia la información obtenida para insertar ticket
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="objSoporte"></param>
+ <returns></returns>
+</member>
+<member name="M:Negocio.NSoporte.ObtnerMesse(System.String,System.Int32)">
+ <summary>
+ hace conexion y envia id  para obtener los mensajes del ticket
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="id"></param>
+ <returns></returns>
+</member>
+<member name="M:Negocio.NSoporte.FinalizaTicket(System.String,Clases.Soporte)">
+ <summary>
+ Hace conexión obtiene información para finalizar ticket
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="soporteFin"></param>
+</member>
+<member name="M:Negocio.NSoporte.ObtenerMessegerStatus(System.String,System.String)">
+ <summary>
+ hace conexión 
+ obtiene el id
+ llama a la clase para ser envida
+ y recibir la información
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="id"></param>
+ <returns></returns>
+</member>
+<member name="M:Negocio.NSoporte.InsertarMess(System.String,Clases.Soporte)">
+ <summary>
+ hace conexión 
+ obtiene información para ser enviada a la clase de Datos
+  de la función InsertarComentarioSuport
+ y ser insertada
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="Messenger"></param>
+</member>
+<member name="M:Negocio.NSoporte.RevisarTicket(System.String,Clases.Soporte)">
+ <summary>
+ hace conexión
+ llama a la clase Datos 
+ envia la información obtenida
+  </summary>
+ <param name="cadenaConex"></param>
+ <param name="Revisar"></param>
+</member>
+<member name="M:Negocio.NClase.ObtenerClase(System.String)">
+ <summary>
+ Procedimiento para obtener para entrar a la capa de DClase y ahi al procedimiento "ObtenerClases"
+ </summary>
+ <param name="cadenaConex"></param>
+ <returns>regresa todas las clases </returns>
+</member>
+<member name="M:Negocio.NDireccion.ObtenerDireccion(System.String,Clases.Direccion)">
+ <summary>
+ entra a la capa DDireccion
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="direccion"></param>
+ <returns>regresa el valora para mandarlo con el objeto principal</returns>
+</member>
+<member name="T:Negocio.NMarca">
+ <summary>
+ hace la conexión
+ </summary>
+</member>
+<member name="M:Negocio.NMarca.InsertMarca(System.String,Clases.Marca)">
+ <summary>
+ llama a la función InsertarMarcaId
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="objMarca"></param>
+</member>
+<member name="M:Negocio.NMarca.ModifMarca(System.String,Clases.Marca)">
+ <summary>
+ llama a la función ModificaId
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="objMarca"></param>
+</member>
+<member name="M:Negocio.NMarca.EliminaMarca(System.String,Clases.Marca)">
+ <summary>
+ llama a la función Eliminar
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="objMarca"></param>
+</member>
+<member name="M:Negocio.NPaqueteria.ObtenerPaqid(System.String)">
+ <summary>
+ REALIZA LA CONEXION Y OBTIENE LA INFORMACION  DESDE DATOS 
+ </summary>
+ <param name="cadenaConex"></param>
+ <returns></returns>
+</member>
+<member name="M:Negocio.NPaqueteria.InsertarPaq(System.String,Clases.Paqueteria)">
+ <summary>
+ REALIZA LA CONEXION Y ENVIA LA INFORMACIÓN OBTENIDA AL PROCESO INSERTPAQUETID PARA SER INSERTADA
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="objPaq"></param>
+</member>
+<member name="M:Negocio.NPaqueteria.ModificaPaq(System.String,Clases.Paqueteria)">
+ <summary>
+ HACE LA CONEXION Y ENVIA LA INFORMACION OBTENIDA AL PROCESO MODIFICADOPAQUETERIAID PARA SER MODIFICADO
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="objPaq"></param>
+</member>
+<member name="M:Negocio.NPaqueteria.EliminaPaq(System.String,Clases.Paqueteria)">
+ <summary>
+ HACE CONEXION Y ENVIA EL NOMBRE AL PROCESO ELIMINAPAQUETRIAID PARA SER ELIMINADO
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="objPaq"></param>
+</member>
+<member name="M:Negocio.NPc.InformacionPC(Clases.Pc)">
+ <summary>
+ Obtiene informacion de la PC para seguridad de inicio de sesion
+ </summary>
+ <param name="objPc">Objeto Usuario</param>
+ <returns>ObjPc con NombrePC,SerialHdd,SerialBoard,SerialProcesador</returns>
+</member>
+<member name="M:Negocio.NPedido.CreaXml(Clases.Pedido,Clases.LProducto)">
+ <summary>
+ creacion de xml para la insercion de un pedido
+ </summary>
+ <param name="pedido"></param>
+ <param name="lst"></param>
+ <returns>regresa la variable pedido, ya estructurado como XML</returns>
+</member>
+<member name="M:Negocio.NPedido.CreaXmlCondEnvio(Clases.CondicionesEnvio)">
+ <summary>
+ creacion de un XML para la insercion de las condiciones de envio
+ </summary>
+ <param name="envio"></param>
+ <returns>regresa la variable envio, ya esctructurada como XML</returns>
+</member>
+<member name="M:Negocio.NPedido.RevisarPreciosSegunCliente(Clases.LProducto,Clases.Cliente)">
+ <summary>
+ Precios permitidos: Distribuidores P3, Prospectos y Usuarios P2
+ </summary>
+ <param name="lst">Lista de productos en el pedido</param>
+ <param name="ObjCliente">Objeto con el tipo de cliente</param>
+ <returns>True o False </returns>
+</member>
+<member name="M:Negocio.NPedido.XmlModifica(Clases.Pedido,Clases.LProducto)">
+ <summary>
+ Estructura XML para modificar un pedido
+ </summary>
+ <param name="pedido"></param>
+ <param name="lst"></param>
+ <returns>regresa valor pedido</returns>
+</member>
+<member name="M:Negocio.NProducto.ObtenerProductoPedidos(System.String,Clases.Producto)">
+ <summary>
+ Obtener Datos de un producto
+ </summary>
+ <param name="cadenaConex">cadena de conexion</param>
+ <param name="objProducto">codigo del producto</param>
+ <returns>descripcion,disponible,costo</returns>
+</member>
+<member name="M:Negocio.NProducto.ObtenerProductoBuscadorFiltro(System.String,System.String,System.String,Clases.Producto)">
+ <summary>
+ Obtener productos filtrados para el buscador
+ </summary>
+ <param name="cadenaConex">cadena de conexion</param>
+ <param name="texto">texto a filtrar</param>
+ <param name="filtro">campo a filtrar</param>
+ <returns>Lproducto con lista de productos</returns>
+</member>
+<member name="M:Negocio.NProducto.DescifraPrecios(Clases.Producto,Clases.Sat)">
+ <summary>
+ decifra los precios de la formula 1 hasta la 8
+ </summary>
+ <param name="codigo"></param>
+ <param name="Sat"></param>
+ <returns>regresa una variable de tipo Existencias</returns>
+</member>
+<member name="M:Negocio.NProducto.InfoCodigoXml(System.String,Clases.Producto,Clases.Sat)">
+ <summary>
+ XML formado para insertar un nuevo codigo
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="codigo"></param>
+ <returns>regersa la variable codigo, ya estructurado como un XML</returns>
+</member>
+<member name="M:Negocio.NProducto.ModificaInventarioXml(System.String,Clases.Producto,Clases.Sat)">
+ <summary>
+ Estructura de un XML para modificar la informacion de un codigo
+ </summary>
+ <param name="cadenaConex"></param>
+ <param name="codigo"></param>
+ <returns></returns>
+</member>
+<member name="T:Negocio.NSucursales">
+ <summary>
+ haceconexíón
+ obtiene la lista   
+ y la  envia
+ </summary>
+</member>
+<member name="M:Negocio.NCliente.ObtenerClientesBuscador(System.String)">
+ <summary>
+ Busqueda de clientes en el buscador sin filtro
+ </summary>
+ <param name="cadenaConex">Cadena de conexion</param>
+ <returns>Objeto LCliente</returns>
+</member>
+<member name="M:Negocio.NUtilerias.ImagenToByte(System.Drawing.Image)">
+ <summary>
+ Convierte imamgen a byte para insertar en SQL
+ </summary>
+ <param name="img"></param>
+ <returns></returns>
+</member>
+<member name="M:Negocio.NUtilerias.imagenTobyteLista(Clases.LSoporte)">
+ <summary>
+ COn error
+ </summary>
+ <param name="lst"></param>
+ <returns></returns>
+</member>
+<member name="M:Negocio.NUtilerias.ByteToImagenLista(Clases.LSoporte)">
+ <summary>
+ ob
+ </summary>
+ <param name="lst"></param>
+ <returns></returns>
+</member>
+</members>
+</doc>

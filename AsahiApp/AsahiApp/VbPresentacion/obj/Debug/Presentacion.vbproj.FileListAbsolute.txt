@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\bin\Debug\Presentacion.xml
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.vbprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.FrmLogIn.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.Resources.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.vbproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.vbproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.xml
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\Presentacion\obj\Debug\Presentacion.exe
