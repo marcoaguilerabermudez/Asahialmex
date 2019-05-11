@@ -1,0 +1,9 @@
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Datos\bin\Debug\Datos.dll
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Datos\bin\Debug\Datos.pdb
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Datos\bin\Debug\Datos.xml
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Datos\obj\Debug\Datos.Resources.resources
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Datos\obj\Debug\Datos.vbproj.GenerateResource.cache
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Datos\obj\Debug\Datos.vbproj.CoreCompileInputs.cache
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Datos\obj\Debug\Datos.dll
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Datos\obj\Debug\Datos.xml
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Datos\obj\Debug\Datos.pdb

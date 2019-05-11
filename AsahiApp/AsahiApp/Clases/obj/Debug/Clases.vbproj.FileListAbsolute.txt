@@ -1,0 +1,10 @@
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Clases\bin\Debug\Clases.dll
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Clases\bin\Debug\Clases.pdb
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Clases\bin\Debug\Clases.xml
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Clases\obj\Debug\Clases.vbprojAssemblyReference.cache
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Clases\obj\Debug\Clases.Resources.resources
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Clases\obj\Debug\Clases.vbproj.GenerateResource.cache
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Clases\obj\Debug\Clases.vbproj.CoreCompileInputs.cache
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Clases\obj\Debug\Clases.dll
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Clases\obj\Debug\Clases.xml
+C:\Users\Marco.Aguilera\Source\Repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Clases\obj\Debug\Clases.pdb

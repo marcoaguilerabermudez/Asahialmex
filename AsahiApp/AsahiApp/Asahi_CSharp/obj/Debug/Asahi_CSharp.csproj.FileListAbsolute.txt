@@ -1,0 +1,6 @@
+C:\Users\Marco.Aguilera\source\repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Asahi_CSharp\bin\Debug\Asahi_CSharp.dll
+C:\Users\Marco.Aguilera\source\repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Asahi_CSharp\bin\Debug\Asahi_CSharp.pdb
+C:\Users\Marco.Aguilera\source\repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Asahi_CSharp\obj\Debug\Asahi_CSharp.csprojAssemblyReference.cache
+C:\Users\Marco.Aguilera\source\repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Asahi_CSharp\obj\Debug\Asahi_CSharp.csproj.CoreCompileInputs.cache
+C:\Users\Marco.Aguilera\source\repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Asahi_CSharp\obj\Debug\Asahi_CSharp.dll
+C:\Users\Marco.Aguilera\source\repos\marcoaguilerabermudez\Asahialmex\AsahiApp\AsahiApp\Asahi_CSharp\obj\Debug\Asahi_CSharp.pdb
