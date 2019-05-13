@@ -17,7 +17,7 @@ Public Class FrmLogin
     End Sub
     Private Sub BtnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAceptar.Click
         Dim principal As New FrmPrincipal(cadenaConex)
-        If TxtNombreUsusario.Text <> "" And TxtNombreUsusario.Text <> "" Then
+        If TxtNombreUsuario.Text <> "" And TxtContraseña.Text <> "" Then
             principal.Show()
             Me.Close()
         Else

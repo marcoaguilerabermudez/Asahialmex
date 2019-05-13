@@ -92,5 +92,10 @@
       <Name>VbNegocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmProduccion.resx">
+      <DependentUpon>FrmProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

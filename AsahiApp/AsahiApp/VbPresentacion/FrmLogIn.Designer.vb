@@ -17,7 +17,7 @@ Partial Class FrmLogin
     Friend WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents UsernameLabel As System.Windows.Forms.Label
     Friend WithEvents PasswordLabel As System.Windows.Forms.Label
-    Friend WithEvents TxtNombreUsusario As System.Windows.Forms.TextBox
+    Friend WithEvents TxtNombreUsuario As System.Windows.Forms.TextBox
     Friend WithEvents TxtContraseña As System.Windows.Forms.TextBox
     Friend WithEvents BtnAceptar As System.Windows.Forms.Button
     Friend WithEvents BtnCancelar As System.Windows.Forms.Button
@@ -34,7 +34,7 @@ Partial Class FrmLogin
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.PasswordLabel = New System.Windows.Forms.Label()
-        Me.TxtNombreUsusario = New System.Windows.Forms.TextBox()
+        Me.TxtNombreUsuario = New System.Windows.Forms.TextBox()
         Me.TxtContraseña = New System.Windows.Forms.TextBox()
         Me.BtnAceptar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
@@ -68,12 +68,12 @@ Partial Class FrmLogin
         Me.PasswordLabel.Text = "&Contraseña"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'TxtNombreUsusario
+        'TxtNombreUsuario
         '
-        Me.TxtNombreUsusario.Location = New System.Drawing.Point(174, 44)
-        Me.TxtNombreUsusario.Name = "TxtNombreUsusario"
-        Me.TxtNombreUsusario.Size = New System.Drawing.Size(220, 20)
-        Me.TxtNombreUsusario.TabIndex = 1
+        Me.TxtNombreUsuario.Location = New System.Drawing.Point(174, 44)
+        Me.TxtNombreUsuario.Name = "TxtNombreUsuario"
+        Me.TxtNombreUsuario.Size = New System.Drawing.Size(220, 20)
+        Me.TxtNombreUsuario.TabIndex = 1
         '
         'TxtContraseña
         '
@@ -110,7 +110,7 @@ Partial Class FrmLogin
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnAceptar)
         Me.Controls.Add(Me.TxtContraseña)
-        Me.Controls.Add(Me.TxtNombreUsusario)
+        Me.Controls.Add(Me.TxtNombreUsuario)
         Me.Controls.Add(Me.PasswordLabel)
         Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.LogoPictureBox)

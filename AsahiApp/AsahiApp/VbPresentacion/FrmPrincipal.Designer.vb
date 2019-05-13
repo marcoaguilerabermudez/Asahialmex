@@ -28,7 +28,7 @@ Partial Class FrmPrincipal
         '
         'BtnPreNomina
         '
-        Me.BtnPreNomina.Location = New System.Drawing.Point(118, 84)
+        Me.BtnPreNomina.Location = New System.Drawing.Point(46, 29)
         Me.BtnPreNomina.Name = "BtnPreNomina"
         Me.BtnPreNomina.Size = New System.Drawing.Size(89, 55)
         Me.BtnPreNomina.TabIndex = 0
@@ -37,7 +37,7 @@ Partial Class FrmPrincipal
         '
         'BtnControlProduc
         '
-        Me.BtnControlProduc.Location = New System.Drawing.Point(479, 84)
+        Me.BtnControlProduc.Location = New System.Drawing.Point(243, 29)
         Me.BtnControlProduc.Name = "BtnControlProduc"
         Me.BtnControlProduc.Size = New System.Drawing.Size(89, 55)
         Me.BtnControlProduc.TabIndex = 1
@@ -48,7 +48,7 @@ Partial Class FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(853, 501)
+        Me.ClientSize = New System.Drawing.Size(665, 335)
         Me.Controls.Add(Me.BtnControlProduc)
         Me.Controls.Add(Me.BtnPreNomina)
         Me.Name = "FrmPrincipal"
