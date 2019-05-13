@@ -6,11 +6,13 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub BtnPreNomina_Click(sender As Object, e As EventArgs) Handles BtnPreNomina.Click
-
+        Dim prenomina As New FrmPrenomina()
+        prenomina.Show()
     End Sub
 
     Private Sub BtnControlProduc_Click(sender As Object, e As EventArgs) Handles BtnControlProduc.Click
-        'Dim Control As New CsPresentacion
+        Dim Control As New FrmProduccion()
+        Control.Show()
     End Sub
 End Class
 

@@ -109,5 +109,23 @@
   <ItemGroup>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CsClases\CsClases.csproj">
+      <Project>{9fa7ed77-cc2e-4326-a2c6-9e41a2a483f5}</Project>
+      <Name>CsClases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CsDatos\CsDatos.csproj">
+      <Project>{fcb3ca6d-59ad-4096-97c9-68343a8b7737}</Project>
+      <Name>CsDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CsNegocio\CsNegocio.csproj">
+      <Project>{cf035bf9-e88b-436f-801e-75f87aba41e2}</Project>
+      <Name>CsNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VbClases\VbClases.vbproj">
+      <Project>{5e668f1d-bdd5-4d49-a73a-c9637606ef64}</Project>
+      <Name>VbClases</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

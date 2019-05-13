@@ -89,17 +89,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
-    <Compile Include="CsPresentacion.vb" />
-    <Compile Include="FrmPrincipal.Designer.vb">
-      <DependentUpon>FrmPrincipal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPrincipal.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.vb">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Application.Designer.vb">

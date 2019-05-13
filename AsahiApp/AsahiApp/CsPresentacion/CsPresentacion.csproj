@@ -51,6 +51,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProduccion.Designer.cs">
+      <DependentUpon>FrmProduccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>

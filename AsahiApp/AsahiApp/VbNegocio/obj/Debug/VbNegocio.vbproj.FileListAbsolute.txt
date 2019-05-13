@@ -1,0 +1,10 @@
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.xml
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.Resources.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.xml
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.pdb
