@@ -1,0 +1,10 @@
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.xml
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.Resources.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.xml
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.pdb

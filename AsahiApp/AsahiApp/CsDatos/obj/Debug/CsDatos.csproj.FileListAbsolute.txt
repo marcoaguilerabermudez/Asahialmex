@@ -1,0 +1,6 @@
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\bin\Debug\CsDatos.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\bin\Debug\CsDatos.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.pdb
