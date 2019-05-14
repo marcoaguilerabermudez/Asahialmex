@@ -57,6 +57,12 @@
     <Compile Include="Frm_Produccion.Designer.cs">
       <DependentUpon>Frm_Produccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Test.Designer.cs">
+      <DependentUpon>Frm_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,6 +97,14 @@
       <Project>{f8e11a2a-b5a7-4cbc-ad33-93c20826324b}</Project>
       <Name>VbNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Frm_Produccion.resx">
+      <DependentUpon>Frm_Produccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Test.resx">
+      <DependentUpon>Frm_Test.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
