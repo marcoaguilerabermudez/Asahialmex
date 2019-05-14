@@ -1,6 +1,6 @@
 ﻿namespace CsPresentacion
 {
-    partial class Frm_Produccion
+    partial class Frm_Test
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(331, 126);
+            this.button1.Location = new System.Drawing.Point(193, 61);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -41,14 +41,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // Frm_Produccion
+            // Frm_Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(467, 211);
             this.Controls.Add(this.button1);
-            this.Name = "Frm_Produccion";
-            this.Text = "FrmProduccion";
+            this.Name = "Frm_Test";
+            this.Text = "Frm_Test";
             this.ResumeLayout(false);
 
         }
