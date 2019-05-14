@@ -45,3 +45,6 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentaci
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csproj.CopyComplete
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Produccion.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Test.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csproj.GenerateResource.cache

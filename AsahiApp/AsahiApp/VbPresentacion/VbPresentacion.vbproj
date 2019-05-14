@@ -62,6 +62,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
@@ -116,22 +117,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RH\Frm_Prenomina.Designer.vb">
-      <DependentUpon>Frm_Prenomina.vb</DependentUpon>
-    </Compile>
-    <Compile Include="RH\Frm_Prenomina.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="RH\Frm_ListaPrenomina.Designer.vb">
       <DependentUpon>Frm_ListaPrenomina.vb</DependentUpon>
     </Compile>
     <Compile Include="RH\Frm_ListaPrenomina.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RH\Frm_RecursosHumanos.Designer.vb">
-      <DependentUpon>Frm_RecursosHumanos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="RH\Frm_RecursosHumanos.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -148,14 +137,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_Prenomina.resx">
-      <DependentUpon>Frm_Prenomina.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RH\Frm_ListaPrenomina.resx">
       <DependentUpon>Frm_ListaPrenomina.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_RecursosHumanos.resx">
-      <DependentUpon>Frm_RecursosHumanos.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
