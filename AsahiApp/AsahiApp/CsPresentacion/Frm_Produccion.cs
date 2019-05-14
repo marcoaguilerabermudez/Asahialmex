@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CsPresentacion
 {
-    public partial class FrmProduccion : Form
+    public partial class Frm_Produccion : Form
     {
-        public FrmProduccion()
+        public Frm_Produccion()
         {
             InitializeComponent();
         }

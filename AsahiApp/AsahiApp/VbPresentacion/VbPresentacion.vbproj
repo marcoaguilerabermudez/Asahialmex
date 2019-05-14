@@ -89,16 +89,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
-    <Compile Include="FrmLogin.Designer.vb">
-      <DependentUpon>FrmLogin.vb</DependentUpon>
+    <Compile Include="Frm_Login.Designer.vb">
+      <DependentUpon>Frm_Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmLogin.vb">
+    <Compile Include="Frm_Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPrincipal.Designer.vb">
-      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    <Compile Include="Frm_Principal.Designer.vb">
+      <DependentUpon>Frm_Principal.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmPrincipal.vb">
+    <Compile Include="Frm_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Application.Designer.vb">
@@ -116,19 +116,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RH\FrmPrenomina.Designer.vb">
-      <DependentUpon>FrmPrenomina.vb</DependentUpon>
+    <Compile Include="RH\Frm_Prenomina.Designer.vb">
+      <DependentUpon>Frm_Prenomina.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\FrmPrenomina.vb">
+    <Compile Include="RH\Frm_Prenomina.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RH\Frm_ListaPrenomina.Designer.vb">
+      <DependentUpon>Frm_ListaPrenomina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_ListaPrenomina.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RH\Frm_RecursosHumanos.Designer.vb">
+      <DependentUpon>Frm_RecursosHumanos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_RecursosHumanos.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmLogin.resx">
-      <DependentUpon>FrmLogin.vb</DependentUpon>
+    <EmbeddedResource Include="Frm_Login.resx">
+      <DependentUpon>Frm_Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPrincipal.resx">
-      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    <EmbeddedResource Include="Frm_Principal.resx">
+      <DependentUpon>Frm_Principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -136,8 +148,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\FrmPrenomina.resx">
-      <DependentUpon>FrmPrenomina.vb</DependentUpon>
+    <EmbeddedResource Include="RH\Frm_Prenomina.resx">
+      <DependentUpon>Frm_Prenomina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_ListaPrenomina.resx">
+      <DependentUpon>Frm_ListaPrenomina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_RecursosHumanos.resx">
+      <DependentUpon>Frm_RecursosHumanos.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +202,9 @@
       <Project>{f8e11a2a-b5a7-4cbc-ad33-93c20826324b}</Project>
       <Name>VbNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prenomina.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

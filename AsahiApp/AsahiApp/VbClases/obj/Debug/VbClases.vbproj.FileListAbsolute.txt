@@ -8,3 +8,10 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbCl
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.xml
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsClases.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsDatos.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsNegocio.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsClases.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsDatos.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsNegocio.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CopyComplete

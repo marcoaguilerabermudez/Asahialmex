@@ -1,6 +1,6 @@
 ﻿namespace CsPresentacion
 {
-    partial class FrmProduccion
+    partial class Frm_Produccion
     {
         /// <summary>
         /// Required designer variable.
