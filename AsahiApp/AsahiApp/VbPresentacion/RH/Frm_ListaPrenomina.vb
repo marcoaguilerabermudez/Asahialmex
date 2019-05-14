@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 Imports Clases
 Imports CsPresentacion
-Public Class Frm_Prenomina
+Public Class Frm_ListaPrenomina
 #Region "Variables de Clase"
     Dim cadenaConex As SqlConnection
 #End Region
@@ -24,11 +24,8 @@ Public Class Frm_Prenomina
         Me.cadenaConex = cadenaConex
     End Sub
 #End Region
-    Private Sub FrmPrenomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Frm_Prenomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Lbl_año.Text = Format(DateTime.Now, "yyyy")
+    End Sub
 
-    End Sub
-    Private Sub Btn_ListaPrenomina_Click(sender As Object, e As EventArgs) Handles Btn_ListaPrenomina.Click
-        Dim lista As New Frm_ListaPrenomina(cadenaConex)
-        lista.Show()
-    End Sub
 End Class

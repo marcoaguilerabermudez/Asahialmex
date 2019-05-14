@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class Frm_Prenomina
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,31 +20,55 @@ Partial Class Frm_Prenomina
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Btn_ListaPrenomina = New System.Windows.Forms.Button()
+        Me.Btn_GlobalPrenomina = New System.Windows.Forms.Button()
+        Me.Btn_Checadas = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'DateTimePicker1
+        'Btn_ListaPrenomina
         '
-        Me.DateTimePicker1.CustomFormat = ""
-        Me.DateTimePicker1.Location = New System.Drawing.Point(183, 49)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(204, 20)
-        Me.DateTimePicker1.TabIndex = 0
-        Me.DateTimePicker1.Value = New Date(2019, 5, 14, 0, 0, 0, 0)
+        Me.Btn_ListaPrenomina.Location = New System.Drawing.Point(36, 63)
+        Me.Btn_ListaPrenomina.Name = "Btn_ListaPrenomina"
+        Me.Btn_ListaPrenomina.Size = New System.Drawing.Size(75, 35)
+        Me.Btn_ListaPrenomina.TabIndex = 0
+        Me.Btn_ListaPrenomina.Text = "Lista Prenomina"
+        Me.Btn_ListaPrenomina.UseVisualStyleBackColor = True
+        '
+        'Btn_GlobalPrenomina
+        '
+        Me.Btn_GlobalPrenomina.Location = New System.Drawing.Point(157, 63)
+        Me.Btn_GlobalPrenomina.Name = "Btn_GlobalPrenomina"
+        Me.Btn_GlobalPrenomina.Size = New System.Drawing.Size(75, 35)
+        Me.Btn_GlobalPrenomina.TabIndex = 1
+        Me.Btn_GlobalPrenomina.Text = "Global Prenomina"
+        Me.Btn_GlobalPrenomina.UseVisualStyleBackColor = True
+        '
+        'Btn_Checadas
+        '
+        Me.Btn_Checadas.Location = New System.Drawing.Point(288, 63)
+        Me.Btn_Checadas.Name = "Btn_Checadas"
+        Me.Btn_Checadas.Size = New System.Drawing.Size(75, 35)
+        Me.Btn_Checadas.TabIndex = 2
+        Me.Btn_Checadas.Text = "Checadas"
+        Me.Btn_Checadas.UseVisualStyleBackColor = True
         '
         'Frm_Prenomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(950, 523)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.ClientSize = New System.Drawing.Size(403, 178)
+        Me.Controls.Add(Me.Btn_Checadas)
+        Me.Controls.Add(Me.Btn_GlobalPrenomina)
+        Me.Controls.Add(Me.Btn_ListaPrenomina)
         Me.Name = "Frm_Prenomina"
         Me.Text = "Prenomina"
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Btn_ListaPrenomina As Button
+    Friend WithEvents Btn_GlobalPrenomina As Button
+    Friend WithEvents Btn_Checadas As Button
 End Class
