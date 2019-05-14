@@ -23,9 +23,6 @@ Partial Class Frm_ListaPrenomina
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Lbl_Semana = New System.Windows.Forms.Label()
-        Me.Lbl_año = New System.Windows.Forms.Label()
         Me.Dgv_ListaPrenomina = New System.Windows.Forms.DataGridView()
         Me.Lbl_Dia1 = New System.Windows.Forms.Label()
         Me.Lbl_Dia2 = New System.Windows.Forms.Label()
@@ -34,6 +31,11 @@ Partial Class Frm_ListaPrenomina
         Me.lbl_Dia7 = New System.Windows.Forms.Label()
         Me.lbl_Dia6 = New System.Windows.Forms.Label()
         Me.Lbl_Dia5 = New System.Windows.Forms.Label()
+        Me.Lbl_año = New System.Windows.Forms.Label()
+        Me.CmbSemanas = New System.Windows.Forms.ComboBox()
+        Me.Lbl_Semana = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Txt_FechaInicioSem = New System.Windows.Forms.TextBox()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.horarioEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,32 +59,6 @@ Partial Class Frm_ListaPrenomina
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(12, 63)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(87, 21)
-        Me.ComboBox1.TabIndex = 1
-        '
-        'Lbl_Semana
-        '
-        Me.Lbl_Semana.AutoSize = True
-        Me.Lbl_Semana.Location = New System.Drawing.Point(13, 44)
-        Me.Lbl_Semana.Name = "Lbl_Semana"
-        Me.Lbl_Semana.Size = New System.Drawing.Size(46, 13)
-        Me.Lbl_Semana.TabIndex = 2
-        Me.Lbl_Semana.Text = "Semana"
-        '
-        'Lbl_año
-        '
-        Me.Lbl_año.AutoSize = True
-        Me.Lbl_año.Location = New System.Drawing.Point(106, 67)
-        Me.Lbl_año.Name = "Lbl_año"
-        Me.Lbl_año.Size = New System.Drawing.Size(25, 13)
-        Me.Lbl_año.TabIndex = 3
-        Me.Lbl_año.Text = "año"
-        '
         'Dgv_ListaPrenomina
         '
         Me.Dgv_ListaPrenomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -95,10 +71,11 @@ Partial Class Frm_ListaPrenomina
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Dgv_ListaPrenomina.Enabled = False
         Me.Dgv_ListaPrenomina.Location = New System.Drawing.Point(4, 100)
         Me.Dgv_ListaPrenomina.Name = "Dgv_ListaPrenomina"
         Me.Dgv_ListaPrenomina.RowHeadersWidth = 20
-        Me.Dgv_ListaPrenomina.Size = New System.Drawing.Size(1155, 398)
+        Me.Dgv_ListaPrenomina.Size = New System.Drawing.Size(1195, 438)
         Me.Dgv_ListaPrenomina.TabIndex = 0
         '
         'Lbl_Dia1
@@ -113,7 +90,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia2
         '
         Me.Lbl_Dia2.AutoSize = True
-        Me.Lbl_Dia2.Location = New System.Drawing.Point(569, 84)
+        Me.Lbl_Dia2.Location = New System.Drawing.Point(576, 84)
         Me.Lbl_Dia2.Name = "Lbl_Dia2"
         Me.Lbl_Dia2.Size = New System.Drawing.Size(29, 13)
         Me.Lbl_Dia2.TabIndex = 5
@@ -122,7 +99,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia4
         '
         Me.Lbl_Dia4.AutoSize = True
-        Me.Lbl_Dia4.Location = New System.Drawing.Point(709, 84)
+        Me.Lbl_Dia4.Location = New System.Drawing.Point(728, 84)
         Me.Lbl_Dia4.Name = "Lbl_Dia4"
         Me.Lbl_Dia4.Size = New System.Drawing.Size(29, 13)
         Me.Lbl_Dia4.TabIndex = 7
@@ -131,7 +108,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia3
         '
         Me.Lbl_Dia3.AutoSize = True
-        Me.Lbl_Dia3.Location = New System.Drawing.Point(639, 84)
+        Me.Lbl_Dia3.Location = New System.Drawing.Point(652, 84)
         Me.Lbl_Dia3.Name = "Lbl_Dia3"
         Me.Lbl_Dia3.Size = New System.Drawing.Size(29, 13)
         Me.Lbl_Dia3.TabIndex = 6
@@ -140,7 +117,7 @@ Partial Class Frm_ListaPrenomina
         'lbl_Dia7
         '
         Me.lbl_Dia7.AutoSize = True
-        Me.lbl_Dia7.Location = New System.Drawing.Point(917, 84)
+        Me.lbl_Dia7.Location = New System.Drawing.Point(955, 84)
         Me.lbl_Dia7.Name = "lbl_Dia7"
         Me.lbl_Dia7.Size = New System.Drawing.Size(29, 13)
         Me.lbl_Dia7.TabIndex = 10
@@ -149,7 +126,7 @@ Partial Class Frm_ListaPrenomina
         'lbl_Dia6
         '
         Me.lbl_Dia6.AutoSize = True
-        Me.lbl_Dia6.Location = New System.Drawing.Point(848, 84)
+        Me.lbl_Dia6.Location = New System.Drawing.Point(879, 84)
         Me.lbl_Dia6.Name = "lbl_Dia6"
         Me.lbl_Dia6.Size = New System.Drawing.Size(29, 13)
         Me.lbl_Dia6.TabIndex = 9
@@ -158,11 +135,53 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia5
         '
         Me.Lbl_Dia5.AutoSize = True
-        Me.Lbl_Dia5.Location = New System.Drawing.Point(779, 84)
+        Me.Lbl_Dia5.Location = New System.Drawing.Point(804, 84)
         Me.Lbl_Dia5.Name = "Lbl_Dia5"
         Me.Lbl_Dia5.Size = New System.Drawing.Size(29, 13)
         Me.Lbl_Dia5.TabIndex = 8
         Me.Lbl_Dia5.Text = "día5"
+        '
+        'Lbl_año
+        '
+        Me.Lbl_año.AutoSize = True
+        Me.Lbl_año.Location = New System.Drawing.Point(106, 67)
+        Me.Lbl_año.Name = "Lbl_año"
+        Me.Lbl_año.Size = New System.Drawing.Size(25, 13)
+        Me.Lbl_año.TabIndex = 3
+        Me.Lbl_año.Text = "año"
+        '
+        'CmbSemanas
+        '
+        Me.CmbSemanas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbSemanas.FormattingEnabled = True
+        Me.CmbSemanas.Location = New System.Drawing.Point(12, 63)
+        Me.CmbSemanas.Name = "CmbSemanas"
+        Me.CmbSemanas.Size = New System.Drawing.Size(87, 21)
+        Me.CmbSemanas.TabIndex = 1
+        '
+        'Lbl_Semana
+        '
+        Me.Lbl_Semana.AutoSize = True
+        Me.Lbl_Semana.Location = New System.Drawing.Point(13, 44)
+        Me.Lbl_Semana.Name = "Lbl_Semana"
+        Me.Lbl_Semana.Size = New System.Drawing.Size(46, 13)
+        Me.Lbl_Semana.TabIndex = 2
+        Me.Lbl_Semana.Text = "Semana"
+        '
+        'Label1
+        '
+        Me.Label1.Location = New System.Drawing.Point(148, 63)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(66, 26)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Fecha inicio semana" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Txt_FechaInicioSem
+        '
+        Me.Txt_FechaInicioSem.Location = New System.Drawing.Point(220, 67)
+        Me.Txt_FechaInicioSem.Name = "Txt_FechaInicioSem"
+        Me.Txt_FechaInicioSem.Size = New System.Drawing.Size(109, 20)
+        Me.Txt_FechaInicioSem.TabIndex = 12
         '
         'idEmpleado
         '
@@ -194,85 +213,85 @@ Partial Class Frm_ListaPrenomina
         '
         Me.entrada1.HeaderText = "E1"
         Me.entrada1.Name = "entrada1"
-        Me.entrada1.Width = 35
+        Me.entrada1.Width = 38
         '
         'salida1
         '
         Me.salida1.HeaderText = "S1"
         Me.salida1.Name = "salida1"
-        Me.salida1.Width = 35
+        Me.salida1.Width = 38
         '
         'entrada2
         '
         Me.entrada2.HeaderText = "E2"
         Me.entrada2.Name = "entrada2"
-        Me.entrada2.Width = 35
+        Me.entrada2.Width = 38
         '
         'salida2
         '
         Me.salida2.HeaderText = "S2"
         Me.salida2.Name = "salida2"
-        Me.salida2.Width = 35
+        Me.salida2.Width = 38
         '
         'entrada3
         '
         Me.entrada3.HeaderText = "E3"
         Me.entrada3.Name = "entrada3"
-        Me.entrada3.Width = 35
+        Me.entrada3.Width = 38
         '
         'salida3
         '
         Me.salida3.HeaderText = "S3"
         Me.salida3.Name = "salida3"
-        Me.salida3.Width = 35
+        Me.salida3.Width = 38
         '
         'entrada4
         '
         Me.entrada4.HeaderText = "E4"
         Me.entrada4.Name = "entrada4"
-        Me.entrada4.Width = 35
+        Me.entrada4.Width = 38
         '
         'salida4
         '
         Me.salida4.HeaderText = "S4"
         Me.salida4.Name = "salida4"
-        Me.salida4.Width = 35
+        Me.salida4.Width = 38
         '
         'entrada5
         '
         Me.entrada5.HeaderText = "E5"
         Me.entrada5.Name = "entrada5"
-        Me.entrada5.Width = 35
+        Me.entrada5.Width = 38
         '
         'salida5
         '
         Me.salida5.HeaderText = "S5"
         Me.salida5.Name = "salida5"
-        Me.salida5.Width = 35
+        Me.salida5.Width = 38
         '
         'entrada6
         '
         Me.entrada6.HeaderText = "E6"
         Me.entrada6.Name = "entrada6"
-        Me.entrada6.Width = 35
+        Me.entrada6.Width = 38
         '
         'salida6
         '
         Me.salida6.HeaderText = "S6"
         Me.salida6.Name = "salida6"
-        Me.salida6.Width = 35
+        Me.salida6.Width = 38
         '
         'entrada7
         '
         Me.entrada7.HeaderText = "E7"
         Me.entrada7.Name = "entrada7"
-        Me.entrada7.Width = 35
+        Me.entrada7.Width = 38
         '
         'salida7
         '
         Me.salida7.HeaderText = "S7"
         Me.salida7.Name = "salida7"
-        Me.salida7.Width = 35
+        Me.salida7.Width = 38
         '
         'comentarios
         '
@@ -290,7 +309,9 @@ Partial Class Frm_ListaPrenomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1163, 503)
+        Me.ClientSize = New System.Drawing.Size(1204, 542)
+        Me.Controls.Add(Me.Txt_FechaInicioSem)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbl_Dia7)
         Me.Controls.Add(Me.lbl_Dia6)
         Me.Controls.Add(Me.Lbl_Dia5)
@@ -300,7 +321,7 @@ Partial Class Frm_ListaPrenomina
         Me.Controls.Add(Me.Lbl_Dia1)
         Me.Controls.Add(Me.Lbl_año)
         Me.Controls.Add(Me.Lbl_Semana)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.CmbSemanas)
         Me.Controls.Add(Me.Dgv_ListaPrenomina)
         Me.Name = "Frm_ListaPrenomina"
         Me.Text = "Lista Prenomina"
@@ -309,9 +330,6 @@ Partial Class Frm_ListaPrenomina
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Lbl_Semana As Label
-    Friend WithEvents Lbl_año As Label
     Friend WithEvents Dgv_ListaPrenomina As DataGridView
     Friend WithEvents Lbl_Dia1 As Label
     Friend WithEvents Lbl_Dia2 As Label
@@ -320,6 +338,11 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents lbl_Dia7 As Label
     Friend WithEvents lbl_Dia6 As Label
     Friend WithEvents Lbl_Dia5 As Label
+    Friend WithEvents Lbl_año As Label
+    Friend WithEvents CmbSemanas As ComboBox
+    Friend WithEvents Lbl_Semana As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Txt_FechaInicioSem As TextBox
     Friend WithEvents idEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents nombreEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents horarioEmpleado As DataGridViewTextBoxColumn
