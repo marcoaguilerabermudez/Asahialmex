@@ -28,12 +28,11 @@ Public Class Frm_Principal
 
     End Sub
 #Region "Botónes"
-    Private Sub BtnPreNomina_Click(sender As Object, e As EventArgs) Handles Btn_Rh.Click
-        Dim rh As New Frm_RecursosHumanos(cadenaConex)
-        rh.Show()
+    Private Sub PreNominaListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaListadoToolStripMenuItem.Click
+        Dim lista As New Frm_ListaPrenomina(cadenaConex)
+        lista.Show()
     End Sub
-
-    Private Sub BtnControlProduc_Click(sender As Object, e As EventArgs) Handles Btn_ControlProduc.Click
+    Private Sub ControlDeProducciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeProducciónToolStripMenuItem.Click
         Dim Control As New Frm_Produccion()
         Control.Show()
     End Sub
