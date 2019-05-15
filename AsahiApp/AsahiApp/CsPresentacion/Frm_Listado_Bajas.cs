@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CsPresentacion
 {
-    public partial class Frm_Test : Form
+    public partial class Frm_Listado_Bajas : Form
     {
-        public Frm_Test()
+        public Frm_Listado_Bajas()
         {
             InitializeComponent();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Hola mundo");
         }
     }
 }
