@@ -11,18 +11,18 @@ namespace CsPresentacion
         public Frm_Empleados_Detalle()
         {
             InitializeComponent();
+            timer1.Enabled = true;
             var tt = new ToolTip();
             tt.SetToolTip(btn_buscar, "BUSCAR");
             tt.SetToolTip(btn_nuevo, "NUEVO");
+            tt.SetToolTip(btn_agregar, "AGREGAR");
+            tt.SetToolTip(btn_guardar, "GUARDAR");
             tt.SetToolTip(btn_exportar, "EXPORTAR");
-            tt.SetToolTip(btn_agregar, "AGREGAR A REPORTE");
             timer1.Enabled = true;
         }
 
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
-        SqlConnection con2 = new SqlConnection("data source =GIRO\\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word");
-
-
+        
         private void cargar_informacion()
         {
             DataTable dt = new DataTable();
@@ -40,7 +40,7 @@ namespace CsPresentacion
                 txt_nombre.Text = dt.Rows[0]["NOMBRE_EMPLEADO"].ToString();
                 txt_direccion.Text = dt.Rows[0]["DIRECCION"].ToString();
                 txt_municipio.Text = dt.Rows[0]["MUNICIPIO"].ToString();
-                txt_estado.Text = dt.Rows[0]["ESTADO"].ToString();
+                cmb_estado.Text = dt.Rows[0]["ESTADO"].ToString();
                 txt_telefono.Text = dt.Rows[0]["TELEFONO"].ToString();
                 txt_departamento.Text = dt.Rows[0]["DEPARTAMENTO"].ToString();
                 txt_puesto.Text = dt.Rows[0]["PUESTO"].ToString();
@@ -62,6 +62,7 @@ namespace CsPresentacion
                 txt_meses.Text = dt.Rows[0]["MESES"].ToString();
                 txt_años.Text = dt.Rows[0]["AÑOS"].ToString();
                 btn_guardar.Enabled = true;
+                txt_clave.Enabled = false;
             }
             con.Close();
         }
@@ -90,7 +91,7 @@ namespace CsPresentacion
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [asahi16].[dbo].[Consulta_informacion_empleado](CLAVE, NOMBRE, DIRECCION, MUNICIPIO, ESTADO, TELEFONO, DEPARTAMENTO , PUESTO, RFC, AFILIACION, CURP, ALTA, BAJA, REINGRESO, BAJA_2, REINGRESO_2, BAJA_3, SUELDO, E_CIVIL , GENERO,  VIGENCIA, MOTIVO , DIAS, MESES, AÑOS, FECHA) VALUES (" + txt_clave.Text + ", '" + txt_nombre.Text + "', '" + txt_direccion.Text + "', '" + txt_municipio.Text + "', '" + txt_estado.Text + "', '" + txt_telefono.Text + "', '" + txt_departamento.Text + "' , '" + txt_puesto.Text + "', '" + txt_rfc.Text + "',  '" + txt_afiliacion.Text + "', '" + txt_curp.Text + "'  , '" + txt_alta.Text + "',  '" + txt_baja.Text + "', '" + txt_reingreso.Text + "' , '" + txt_baja_2.Text + "', '" + txt_reingreso_2.Text + "', '" + txt_baja_3.Text + "', " + txt_sueldo.Text + " , '" + cmb_Civil.Text + "' , '" + cmb_genero.Text + "',   '" + txt_vigencia.Text + "', '" + txt_motivo.Text + "' , " + txt_dias.Text + ",  " + txt_meses.Text + ", " + txt_años.Text + " , '" + l_fecha.Text + "' )", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [asahi16].[dbo].[Consulta_informacion_empleado](CLAVE, NOMBRE, DIRECCION, MUNICIPIO, ESTADO, TELEFONO, DEPARTAMENTO , PUESTO, RFC, AFILIACION, CURP, ALTA, BAJA, REINGRESO, BAJA_2, REINGRESO_2, BAJA_3, SUELDO, E_CIVIL , GENERO,  VIGENCIA, MOTIVO , DIAS, MESES, AÑOS, FECHA) VALUES (" + txt_clave.Text + ", '" + txt_nombre.Text + "', '" + txt_direccion.Text + "', '" + txt_municipio.Text + "', '" + cmb_estado.Text + "', '" + txt_telefono.Text + "', '" + txt_departamento.Text + "' , '" + txt_puesto.Text + "', '" + txt_rfc.Text + "',  '" + txt_afiliacion.Text + "', '" + txt_curp.Text + "'  , '" + txt_alta.Text + "',  '" + txt_baja.Text + "', '" + txt_reingreso.Text + "' , '" + txt_baja_2.Text + "', '" + txt_reingreso_2.Text + "', '" + txt_baja_3.Text + "', " + txt_sueldo.Text + " , '" + cmb_Civil.Text + "' , '" + cmb_genero.Text + "',   '" + txt_vigencia.Text + "', '" + txt_motivo.Text + "' , " + txt_dias.Text + ",  " + txt_meses.Text + ", " + txt_años.Text + " , '" + l_fecha.Text + "' )", con);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Se agregó correctamento");
@@ -167,6 +168,39 @@ namespace CsPresentacion
             }
         }
 
+        private void Actualizar()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[Emprh] set ESTADO='"+ cmb_estado.Text + "',  MUNICIPIO = '"+txt_municipio.Text+ "', TELEFONO_CELULAR = '"+txt_telefono.Text + "', ESTADO_CIVIL = '"+ cmb_Civil.Text+ "', SEXO = '"+ cmb_genero.Text+"'  WHERE CLAVE = " + txt_clave.Text+"", con);             
+                cmd.Parameters.AddWithValue("@Clave", txt_clave.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se actualizó " + error.ToString());
+            }
+        }
+        private void Actualizar2()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] set RFC='" + txt_rfc.Text + "',  AFILIACION = '" + txt_afiliacion.Text + "', CURP = '" + txt_curp.Text + "' WHERE CLAVE = " + txt_clave.Text + "", con);
+                cmd.Parameters.AddWithValue("@Clave", txt_clave.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se actualizó " + error.ToString());
+            }
+        }
+
+
+
         private void nuevo()
         {
             foreach (Control ctrl in this.Controls)
@@ -177,6 +211,7 @@ namespace CsPresentacion
                 }
             }
             txt_clave.Text = "";
+            txt_clave.Focus();
             txt_baja.Text = "";
             txt_reingreso.Text = "";
             txt_baja_2.Text = "";
@@ -199,7 +234,6 @@ namespace CsPresentacion
             btn_agregar.Enabled = false;
             btn_exportar.Enabled = false;
             btn_guardar.Enabled = false;
-
             txt_vigencia.Enabled = false;
             txt_nombre.Enabled = false;
             txt_puesto.Enabled = false;
@@ -217,8 +251,9 @@ namespace CsPresentacion
             txt_motivo.Enabled = false;
             cmb_genero.Text = "";
             cmb_Civil.Text = "";
+            txt_clave.Enabled = true;
+            cmb_estado.Text = "";
         }
-
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
@@ -295,6 +330,7 @@ namespace CsPresentacion
         private void Frm_Empleados_Detalle_Load(object sender, EventArgs e)
         {
             nuevo();
+            
         }
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
@@ -328,6 +364,27 @@ namespace CsPresentacion
         private void Cmb_Civil_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void Frm_Empleados_Detalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Cmb_estado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void Btn_guardar_Click(object sender, EventArgs e)
+        {
+            Actualizar();
+            Actualizar2();
+            nuevo();
+        }
+
+        private void Cmb_Civil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -55,7 +55,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txt_estado = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_direccion = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -92,6 +91,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmb_genero = new System.Windows.Forms.ComboBox();
             this.cmb_Civil = new System.Windows.Forms.ComboBox();
+            this.cmb_estado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleado)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -324,13 +324,6 @@
             this.label15.TabIndex = 80;
             this.label15.Text = "TELEFONO:";
             // 
-            // txt_estado
-            // 
-            this.txt_estado.Location = new System.Drawing.Point(200, 148);
-            this.txt_estado.Name = "txt_estado";
-            this.txt_estado.Size = new System.Drawing.Size(150, 20);
-            this.txt_estado.TabIndex = 79;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -560,7 +553,7 @@
             this.btn_buscar.FlatAppearance.BorderSize = 0;
             this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_buscar.Image = global::CsPresentacion.Properties.Resources.funnel_icon;
-            this.btn_buscar.Location = new System.Drawing.Point(108, 39);
+            this.btn_buscar.Location = new System.Drawing.Point(113, 38);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(29, 26);
             this.btn_buscar.TabIndex = 104;
@@ -574,7 +567,7 @@
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(153, 42);
+            this.btn_nuevo.Location = new System.Drawing.Point(162, 41);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(18, 23);
             this.btn_nuevo.TabIndex = 105;
@@ -623,6 +616,7 @@
             this.btn_guardar.Size = new System.Drawing.Size(40, 34);
             this.btn_guardar.TabIndex = 108;
             this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
             // btn_agregar
             // 
@@ -675,7 +669,6 @@
             // 
             this.cmb_Civil.FormattingEnabled = true;
             this.cmb_Civil.Items.AddRange(new object[] {
-            "xxx",
             "VIU",
             "SOL",
             "CAS",
@@ -685,7 +678,52 @@
             this.cmb_Civil.Name = "cmb_Civil";
             this.cmb_Civil.Size = new System.Drawing.Size(68, 21);
             this.cmb_Civil.TabIndex = 110;
+            this.cmb_Civil.SelectedIndexChanged += new System.EventHandler(this.Cmb_Civil_SelectedIndexChanged);
             this.cmb_Civil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_Civil_KeyPress);
+            // 
+            // cmb_estado
+            // 
+            this.cmb_estado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_estado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cmb_estado.FormattingEnabled = true;
+            this.cmb_estado.Items.AddRange(new object[] {
+            "AGU",
+            "BCN",
+            "BCS",
+            "CAM",
+            "CHP",
+            "CHH",
+            "CMX",
+            "COA",
+            "COL",
+            "DUR",
+            "GUA",
+            "GRO",
+            "HID",
+            "JAL",
+            "MEX",
+            "MIC",
+            "MOR",
+            "NAY",
+            "NLE",
+            "OAX",
+            "PUE",
+            "QUE",
+            "ROO",
+            "SLP",
+            "SIN",
+            "SON",
+            "TAB",
+            "TAM",
+            "TLA",
+            "VER",
+            "YUC",
+            "ZAC"});
+            this.cmb_estado.Location = new System.Drawing.Point(198, 148);
+            this.cmb_estado.Name = "cmb_estado";
+            this.cmb_estado.Size = new System.Drawing.Size(151, 21);
+            this.cmb_estado.TabIndex = 111;
+            this.cmb_estado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_estado_KeyPress);
             // 
             // Frm_Empleados_Detalle
             // 
@@ -693,7 +731,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(588, 542);
+            this.ClientSize = new System.Drawing.Size(591, 542);
+            this.Controls.Add(this.cmb_estado);
             this.Controls.Add(this.cmb_Civil);
             this.Controls.Add(this.cmb_genero);
             this.Controls.Add(this.btn_guardar);
@@ -717,7 +756,6 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txt_telefono);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.txt_estado);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txt_direccion);
             this.Controls.Add(this.label13);
@@ -748,6 +786,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Frm_Empleados_Detalle_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Frm_Empleados_Detalle_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleado)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -787,7 +826,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txt_estado;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txt_direccion;
         private System.Windows.Forms.Label label13;
@@ -824,5 +862,6 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.ComboBox cmb_genero;
         private System.Windows.Forms.ComboBox cmb_Civil;
+        public System.Windows.Forms.ComboBox cmb_estado;
     }
 }
