@@ -28,7 +28,7 @@ Partial Class Frm_Principal
         Me.PreNominaListadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PreNominaGlobalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChecadasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ComidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDePruducciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDeProducciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
@@ -39,20 +39,21 @@ Partial Class Frm_Principal
         Me.Men_Principal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecursosHumanosToolStripMenuItem, Me.ControlDePruducciónToolStripMenuItem})
         Me.Men_Principal.Location = New System.Drawing.Point(0, 0)
         Me.Men_Principal.Name = "Men_Principal"
-        Me.Men_Principal.Size = New System.Drawing.Size(743, 24)
+        Me.Men_Principal.Size = New System.Drawing.Size(751, 24)
         Me.Men_Principal.TabIndex = 2
         Me.Men_Principal.Text = "MenuStrip1"
         '
         'RecursosHumanosToolStripMenuItem
         '
         Me.RecursosHumanosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem})
+        Me.RecursosHumanosToolStripMenuItem.Image = Global.Presentacion.My.Resources.Resources.iconfinder_General_Office_37_2530816
         Me.RecursosHumanosToolStripMenuItem.Name = "RecursosHumanosToolStripMenuItem"
-        Me.RecursosHumanosToolStripMenuItem.Size = New System.Drawing.Size(121, 20)
+        Me.RecursosHumanosToolStripMenuItem.Size = New System.Drawing.Size(137, 20)
         Me.RecursosHumanosToolStripMenuItem.Text = "Recursos Humanos"
         '
         'PreNominaToolStripMenuItem
         '
-        Me.PreNominaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaListadoToolStripMenuItem, Me.PreNominaGlobalToolStripMenuItem, Me.ChecadasToolStripMenuItem, Me.ComidasToolStripMenuItem})
+        Me.PreNominaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaListadoToolStripMenuItem, Me.PreNominaGlobalToolStripMenuItem, Me.ChecadasToolStripMenuItem, Me.ComedorToolStripMenuItem})
         Me.PreNominaToolStripMenuItem.Image = Global.Presentacion.My.Resources.Resources.prenomina
         Me.PreNominaToolStripMenuItem.Name = "PreNominaToolStripMenuItem"
         Me.PreNominaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
@@ -76,11 +77,11 @@ Partial Class Frm_Principal
         Me.ChecadasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ChecadasToolStripMenuItem.Text = "Checadas"
         '
-        'ComidasToolStripMenuItem
+        'ComedorToolStripMenuItem
         '
-        Me.ComidasToolStripMenuItem.Name = "ComidasToolStripMenuItem"
-        Me.ComidasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ComidasToolStripMenuItem.Text = "Comedor"
+        Me.ComedorToolStripMenuItem.Name = "ComedorToolStripMenuItem"
+        Me.ComedorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ComedorToolStripMenuItem.Text = "Comedor"
         '
         'ControlDePruducciónToolStripMenuItem
         '
@@ -99,11 +100,12 @@ Partial Class Frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(743, 440)
+        Me.ClientSize = New System.Drawing.Size(751, 450)
         Me.Controls.Add(Me.Men_Principal)
         Me.MainMenuStrip = Me.Men_Principal
         Me.Name = "Frm_Principal"
         Me.Text = "AsahiApp"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Men_Principal.ResumeLayout(False)
         Me.Men_Principal.PerformLayout()
         Me.ResumeLayout(False)
@@ -117,6 +119,6 @@ Partial Class Frm_Principal
     Friend WithEvents PreNominaListadoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PreNominaGlobalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ChecadasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ComidasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ComedorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ControlDeProducciónToolStripMenuItem As ToolStripMenuItem
 End Class

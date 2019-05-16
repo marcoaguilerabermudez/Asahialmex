@@ -31,8 +31,15 @@ Public Class Frm_ListaPrenomina
     End Sub
     Private Sub Dtp_FechaInicioSemana_TextChanged(sender As Object, e As EventArgs) Handles Dtp_FechaInicioSemana.TextChanged
         If Dtp_FechaInicioSemana.Value < DateTime.Now Or Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyy") = Format(DateTime.Now, "dd/MM/yyy") Then
+            Dim conex As New conexion()
+            Dim cadenaConexContpaq = conex.conexionContpaq 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
             Dim fechaI As Date = Dtp_FechaInicioSemana.Value
             Dim fechaF As Date = DateAdd(DateInterval.Day, 6, fechaI)
+            Dim lstFechasSemana As New LHorarios()
+            Dim nWeek As Integer
+
+            nWeek = CInt(DatePart(DateInterval.WeekOfYear, fechaI, FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFullWeek)) + 1 'En base a la fecha seleccionada se pone el numero de semana
+            CmbSemanas.SelectedItem = nWeek
 
             Lbl_Dia1.Text = Format(fechaI, "dd/MM")
             Lbl_Dia2.Text = Format(DateAdd(DateInterval.Day, 1, fechaI), "dd/MM")
@@ -42,11 +49,8 @@ Public Class Frm_ListaPrenomina
             lbl_Dia6.Text = Format(DateAdd(DateInterval.Day, 5, fechaI), "dd/MM")
             lbl_Dia7.Text = Format(fechaF, "dd/MM")
 
-            Dim nWeek As Integer
-            nWeek = CInt(DatePart(DateInterval.WeekOfYear, fechaI, FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFullWeek)) + 1
-
-            CmbSemanas.SelectedItem = nWeek
             Dgv_ListaPrenomina.Enabled = True
+
         Else
             Dgv_ListaPrenomina.Enabled = False
             MsgBox("Tienes que ingresar una fecha menor a la actual")

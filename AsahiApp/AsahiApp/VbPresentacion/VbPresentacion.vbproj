@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
+    <Compile Include="DPrenomina.vb" />
     <Compile Include="Frm_Login.Designer.vb">
       <DependentUpon>Frm_Login.vb</DependentUpon>
     </Compile>
@@ -188,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\prenomina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_General_Office_37_2530816.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
