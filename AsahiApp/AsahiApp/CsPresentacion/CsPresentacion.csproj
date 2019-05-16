@@ -51,17 +51,34 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_Empleados_informacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Empleados_informacion.Designer.cs">
+      <DependentUpon>Frm_Empleados_informacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Listado_Altas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Listado_Altas.Designer.cs">
+      <DependentUpon>Frm_Listado_Altas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Listado_Bajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Listado_Bajas.Designer.cs">
+      <DependentUpon>Frm_Listado_Bajas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Produccion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Produccion.Designer.cs">
       <DependentUpon>Frm_Produccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Test.Designer.cs">
-      <DependentUpon>Frm_Test.cs</DependentUpon>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -99,12 +116,90 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_Empleados_informacion.resx">
+      <DependentUpon>Frm_Empleados_informacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Listado_Altas.resx">
+      <DependentUpon>Frm_Listado_Altas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Listado_Bajas.resx">
+      <DependentUpon>Frm_Listado_Bajas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Produccion.resx">
       <DependentUpon>Frm_Produccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Test.resx">
-      <DependentUpon>Frm_Test.cs</DependentUpon>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filtro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Action-file-new-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funnel-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Access.Dao">
+      <Guid>{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VSTOEE100">
+      <Guid>{AAB9C2AA-6036-4AE1-A41C-A40AB7F39520}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floppy-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

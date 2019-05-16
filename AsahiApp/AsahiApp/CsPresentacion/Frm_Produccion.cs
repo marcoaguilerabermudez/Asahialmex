@@ -19,8 +19,7 @@ namespace CsPresentacion
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Frm_Test FRM  = new Frm_Test();
-            FRM.ShowDialog();
+            
         }
     }
 }

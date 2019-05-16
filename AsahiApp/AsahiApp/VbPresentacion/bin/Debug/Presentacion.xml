@@ -22,7 +22,22 @@ Presentacion
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
-<member name="P:Presentacion.My.Resources.Resources.iconfinder_General_Office_37_2530816">
+<member name="P:Presentacion.My.Resources.Resources.Alta">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.Alta2">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.Baja2">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.Logo">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
