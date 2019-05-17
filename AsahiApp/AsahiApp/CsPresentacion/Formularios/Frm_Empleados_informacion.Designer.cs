@@ -80,7 +80,6 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -337,7 +336,7 @@
             // 
             this.txt_direccion.Location = new System.Drawing.Point(20, 109);
             this.txt_direccion.Name = "txt_direccion";
-            this.txt_direccion.Size = new System.Drawing.Size(330, 20);
+            this.txt_direccion.Size = new System.Drawing.Size(295, 20);
             this.txt_direccion.TabIndex = 77;
             // 
             // label13
@@ -405,6 +404,7 @@
             this.txt_clave.Name = "txt_clave";
             this.txt_clave.Size = new System.Drawing.Size(81, 20);
             this.txt_clave.TabIndex = 25;
+            this.txt_clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_clave_KeyPress);
             // 
             // txt_afiliacion
             // 
@@ -518,7 +518,7 @@
             // 
             this.txt_nombre.Location = new System.Drawing.Point(20, 70);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(272, 20);
+            this.txt_nombre.Size = new System.Drawing.Size(295, 20);
             this.txt_nombre.TabIndex = 60;
             // 
             // lbl_nombre
@@ -535,7 +535,6 @@
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.l_hora);
             this.panel1.Controls.Add(this.l_fecha);
-            this.panel1.Controls.Add(this.btn_buscar);
             this.panel1.Controls.Add(this.btn_nuevo);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_clave);
@@ -545,21 +544,6 @@
             this.panel1.Size = new System.Drawing.Size(600, 67);
             this.panel1.TabIndex = 58;
             // 
-            // btn_buscar
-            // 
-            this.btn_buscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_buscar.FlatAppearance.BorderSize = 0;
-            this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.Image = global::CsPresentacion.Properties.Resources.funnel_icon;
-            this.btn_buscar.Location = new System.Drawing.Point(113, 38);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(29, 26);
-            this.btn_buscar.TabIndex = 104;
-            this.btn_buscar.UseVisualStyleBackColor = false;
-            this.btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
-            // 
             // btn_nuevo
             // 
             this.btn_nuevo.BackColor = System.Drawing.Color.SteelBlue;
@@ -567,7 +551,7 @@
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(162, 41);
+            this.btn_nuevo.Location = new System.Drawing.Point(105, 42);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(18, 23);
             this.btn_nuevo.TabIndex = 105;
@@ -721,13 +705,12 @@
             "ZAC"});
             this.cmb_estado.Location = new System.Drawing.Point(198, 148);
             this.cmb_estado.Name = "cmb_estado";
-            this.cmb_estado.Size = new System.Drawing.Size(151, 21);
+            this.cmb_estado.Size = new System.Drawing.Size(69, 21);
             this.cmb_estado.TabIndex = 111;
             this.cmb_estado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_estado_KeyPress);
             // 
             // Frm_Empleados_Detalle
             // 
-            this.AcceptButton = this.btn_buscar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -854,7 +837,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_fecha;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.Button btn_exportar;

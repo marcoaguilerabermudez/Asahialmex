@@ -13,12 +13,11 @@ namespace CsPresentacion
             InitializeComponent();
             timer1.Enabled = true;
             var tt = new ToolTip();
-            tt.SetToolTip(btn_buscar, "BUSCAR");
-            tt.SetToolTip(btn_nuevo, "NUEVO");
+            tt.SetToolTip(btn_nuevo, "NUEVA BUSQUEDA");
             tt.SetToolTip(btn_agregar, "AGREGAR");
             tt.SetToolTip(btn_guardar, "GUARDAR");
             tt.SetToolTip(btn_exportar, "EXPORTAR");
-            timer1.Enabled = true;
+       
         }
 
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
@@ -257,80 +256,13 @@ namespace CsPresentacion
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
-            cargar_informacion();
-
-            pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
-
-            txt_vigencia.Visible = true;
-            lbl_estado.Visible = true;
-            btn_agregar.Enabled = true;
-
-            if (txt_vigencia.Text == "VIGENTE")
-            {   
-                txt_vigencia.Visible = true;
-                lbl_estado.Visible = true;
-                lbl_motivo.Visible = false;
-                lbl_dias.Visible = false;
-                lbl_años.Visible = false;
-                txt_motivo.Visible = false;
-                txt_años.Visible = false;
-                txt_meses.Visible = false;
-                txt_años.Visible = false;
-                lbl_meses.Visible = false;
-                txt_dias.Visible = false;
-                txt_vigencia.BackColor = Color.Green;
-            }
-            else if (txt_vigencia.Text == "BAJA")
-            {
-                txt_vigencia.Visible = true;
-                lbl_estado.Visible = true;
-                dgv_empleado.Visible = false;
-                lbl_motivo.Visible = true;
-                lbl_dias.Visible = true;
-                lbl_años.Visible = true;
-                txt_motivo.Visible = true;
-                txt_años.Visible = true;
-                txt_meses.Visible = true;
-                txt_años.Visible = true;
-                lbl_meses.Visible = true;
-                txt_dias.Visible = true;
-                txt_vigencia.BackColor = Color.Red;
-            }
-            else
-            {
-                txt_vigencia.Visible = true;
-                lbl_estado.Visible = true;
-                lbl_motivo.Visible = false;
-                lbl_dias.Visible = false;
-                lbl_años.Visible = false;
-                txt_motivo.Visible = false;
-                txt_años.Visible = false;
-                txt_meses.Visible = false;
-                txt_años.Visible = false;
-                lbl_meses.Visible = false;
-                txt_dias.Visible = false;
-                txt_vigencia.Visible = false;
-                lbl_estado.Visible = false;
-                pictureBox1.ImageLocation = "V:/Sistemas/Listado de bajas/LogoFinal" + ".png";
-            }
-
-            if (string.IsNullOrEmpty(txt_dias.Text))
-            {
-                txt_dias.Text = "0";
-            }
-            if (string.IsNullOrEmpty(txt_meses.Text))
-            {
-                txt_meses.Text = "0";
-            }
-            if (string.IsNullOrEmpty(txt_años.Text))
-            {
-                txt_años.Text = "0";
-            }
+            
         }
         private void Frm_Empleados_Detalle_Load(object sender, EventArgs e)
         {
             nuevo();
-            
+            l_fecha.Visible = false;
+            l_hora.Visible =  false;
         }
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
@@ -385,6 +317,99 @@ namespace CsPresentacion
         private void Cmb_Civil_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Txt_clave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                cargar_informacion();
+
+                pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
+
+                txt_vigencia.Visible = true;
+                lbl_estado.Visible = true;
+                btn_agregar.Enabled = true;
+
+                if (txt_vigencia.Text == "VIGENTE")
+                {
+                    txt_vigencia.Visible = true;
+                    lbl_estado.Visible = true;
+                    lbl_motivo.Visible = false;
+                    lbl_dias.Visible = false;
+                    lbl_años.Visible = false;
+                    txt_motivo.Visible = false;
+                    txt_años.Visible = false;
+                    txt_meses.Visible = false;
+                    txt_años.Visible = false;
+                    lbl_meses.Visible = false;
+                    txt_dias.Visible = false;
+                    txt_vigencia.BackColor = Color.Green;
+                }
+                else if (txt_vigencia.Text == "BAJA")
+                {
+                    txt_vigencia.Visible = true;
+                    lbl_estado.Visible = true;
+                    dgv_empleado.Visible = false;
+                    lbl_motivo.Visible = true;
+                    lbl_dias.Visible = true;
+                    lbl_años.Visible = true;
+                    txt_motivo.Visible = true;
+                    txt_años.Visible = true;
+                    txt_meses.Visible = true;
+                    txt_años.Visible = true;
+                    lbl_meses.Visible = true;
+                    txt_dias.Visible = true;
+                    txt_vigencia.BackColor = Color.Red;
+                }
+                else
+                {
+                    txt_vigencia.Visible = true;
+                    lbl_estado.Visible = true;
+                    lbl_motivo.Visible = false;
+                    lbl_dias.Visible = false;
+                    lbl_años.Visible = false;
+                    txt_motivo.Visible = false;
+                    txt_años.Visible = false;
+                    txt_meses.Visible = false;
+                    txt_años.Visible = false;
+                    lbl_meses.Visible = false;
+                    txt_dias.Visible = false;
+                    txt_vigencia.Visible = false;
+                    lbl_estado.Visible = false;
+                    pictureBox1.ImageLocation = "V:/Sistemas/Listado de bajas/LogoFinal" + ".png";
+                }
+
+                if (string.IsNullOrEmpty(txt_dias.Text))
+                {
+                    txt_dias.Text = "0";
+                }
+                if (string.IsNullOrEmpty(txt_meses.Text))
+                {
+                    txt_meses.Text = "0";
+                }
+                if (string.IsNullOrEmpty(txt_años.Text))
+                {
+                    txt_años.Text = "0";
+                }
+            }
         }
     }
 }
