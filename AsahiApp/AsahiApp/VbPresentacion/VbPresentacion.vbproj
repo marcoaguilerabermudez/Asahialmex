@@ -219,5 +219,8 @@
   <ItemGroup>
     <None Include="Resources\Logo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bulleted-List-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

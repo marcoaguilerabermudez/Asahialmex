@@ -2,9 +2,12 @@
 Imports Datos
 Imports System.Data.SqlClient
 Public Class NPrenomina
-    Public Function RecuperarDiasSemana(ByVal oCon As SqlConnection, ByVal semana As Integer, ByVal año As Integer) As LHorarios
-        Dim lst As New LHorarios()
+    Public Function RecuperarDiasSemana(ByVal oCon As SqlConnection, ByVal fecha As Date) As Horarios
         Dim DPrenomina As New DPrenomina()
-        Return lst
+        Return DPrenomina.RecuperarDiasSemana(oCon, fecha)
+    End Function
+    Public Function EmpleadosRecuperar(ByVal oCon As SqlConnection, ByVal fecha As Date) As LEmpleado
+        Dim DEmple As New DEmpleado()
+        Return DEmple.EmpleadosRecuperar(oCon, fecha)
     End Function
 End Class
