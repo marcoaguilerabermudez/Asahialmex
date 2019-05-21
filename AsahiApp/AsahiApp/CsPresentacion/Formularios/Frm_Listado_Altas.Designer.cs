@@ -326,6 +326,7 @@
             this.Name = "Frm_Listado_Altas";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Altas de Empleados";
             this.Load += new System.EventHandler(this.Frm_Listado_Altas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

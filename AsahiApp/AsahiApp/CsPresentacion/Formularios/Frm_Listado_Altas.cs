@@ -32,6 +32,7 @@ namespace CsPresentacion
 
         private void Frm_Listado_Altas_Load(object sender, EventArgs e)
         {
+            nuevo();
             Var = 0;
             Llenar_dgv();
             Diseño_dgv(dgv_altas);
@@ -55,6 +56,7 @@ namespace CsPresentacion
             txt_semana.Enabled = false;
             cmb_departamento.Enabled = false;
             cmb_puesto.Enabled = false;
+            btn_buscar.Enabled = false;
         }
         public void cargar_departemento(ComboBox inte)//Cargar departamento en cmb
         {
@@ -228,6 +230,10 @@ namespace CsPresentacion
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
             nuevo();
+            Var = 0;
+            Llenar_dgv();
+            lbl_total.Text = dgv_altas.Rows.Count.ToString();
+
         }
         private void Dgv_altas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -265,7 +271,6 @@ namespace CsPresentacion
             {
                 e.Handled = true;
             }
-
         }
 
         private void Cmb_mes_KeyPress(object sender, KeyPressEventArgs e)
@@ -282,7 +287,6 @@ namespace CsPresentacion
             {
                 e.Handled = true;
             }
-
         }
 
         private void Cmb_año_SelectedIndexChanged(object sender, EventArgs e)
@@ -438,6 +442,140 @@ namespace CsPresentacion
         }
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_año.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //Todo el reporte
+
+                DialogResult dialogo = MessageBox.Show("¿Desea generar reporte de todas las altas?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogo == DialogResult.Yes)
+                {
+                    Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                    rep.Var = Convert.ToInt32(0);
+                    rep.ShowDialog();
+                }
+                else
+                {
+                }
+            }
+
+            if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //  MessageBox.Show("Filtro por año 3");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(3);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.ShowDialog();
+            }
+
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //  MessageBox.Show("Filtro por año y mes 1");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(1);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //  MessageBox.Show("Filtro por año y semana 2");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(2);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text);
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //  MessageBox.Show("Filtro por año y departamento 4");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(4);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Departamento = cmb_departamento.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                //MessageBox.Show("Filtro por año y puesto 5");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(5);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //MessageBox.Show("Filtro por año mes y departamento 6");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(6);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.Departamento = cmb_departamento.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                //MessageBox.Show("Filtro por año, mes y puesto 7");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(7);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //MessageBox.Show("Filtro por año, semana y departamento 8");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(8);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text); ;
+                rep.Departamento = cmb_departamento.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                // MessageBox.Show("Filtro  por año, semana y puesto 9");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(9);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text); ;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text))
+            {
+                //MessageBox.Show("Filtro  por año, departamento y puesto 10");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(10);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Departamento = cmb_departamento.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text))
+            {
+                //  MessageBox.Show("Filtro  por año, mes, departamento y puesto 11");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(11);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.Departamento = cmb_departamento.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                //MessageBox.Show("Filtro  por año, semana, departamento  y puesto  12");
+                Frm_Reporte_altas rep = new Frm_Reporte_altas();
+                rep.Var = Convert.ToInt32(12);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text);
+                rep.Departamento = cmb_departamento.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
         }
     }
 }
