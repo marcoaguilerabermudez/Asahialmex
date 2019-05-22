@@ -77,3 +77,10 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentaci
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_Acerca.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_Acerca.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_Soporte.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\RdlCompile.cache
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\RdlCompile.compiled
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\AlanJuden.MvcReportViewer.NetCore.dll
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\Newtonsoft.Json.dll

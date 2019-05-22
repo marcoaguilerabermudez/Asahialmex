@@ -107,6 +107,33 @@
             tp_ = value
         End Set
     End Property
+    Private horaEntradaReal0_ As Date
+    Public Property HoraEntradaReal0() As Date
+        Get
+            Return horaEntradaReal0_
+        End Get
+        Set(ByVal value As Date)
+            horaEntradaReal0_ = value
+        End Set
+    End Property
+    Private horaSalidaReal0_ As Date
+    Public Property HoraSalidaReal0() As Date
+        Get
+            Return horaSalidaReal0_
+        End Get
+        Set(ByVal value As Date)
+            horaSalidaReal0_ = value
+        End Set
+    End Property
+    Private tipoRegistro0_ As String
+    Public Property TipoRegistro0() As String
+        Get
+            Return tipoRegistro0_
+        End Get
+        Set(ByVal value As String)
+            tipoRegistro0_ = value
+        End Set
+    End Property
     Private horaEntradaReal1_ As Date
     Public Property HoraEntradaReal1() As Date
         Get
@@ -296,6 +323,33 @@
             tipoRegistro7_ = value
         End Set
     End Property
+    Private horaEntradaReal8_ As Date
+    Public Property HoraEntradaReal8() As Date
+        Get
+            Return horaEntradaReal8_
+        End Get
+        Set(ByVal value As Date)
+            horaEntradaReal8_ = value
+        End Set
+    End Property
+    Private horaSalidaReal8_ As Date
+    Public Property HoraSalidaReal8() As Date
+        Get
+            Return horaSalidaReal8_
+        End Get
+        Set(ByVal value As Date)
+            horaSalidaReal8_ = value
+        End Set
+    End Property
+    Private tipoRegistro8_ As String
+    Public Property TipoRegistro8() As String
+        Get
+            Return tipoRegistro8_
+        End Get
+        Set(ByVal value As String)
+            tipoRegistro8_ = value
+        End Set
+    End Property
     Private horaEntrada_ As String
     Public Property HoraEntrada() As String
         Get
@@ -312,6 +366,15 @@
         End Get
         Set(ByVal value As String)
             horaSalida_ = value
+        End Set
+    End Property
+    Private err_ As Boolean
+    Public Property Err() As Boolean
+        Get
+            Return err_
+        End Get
+        Set(ByVal value As Boolean)
+            err_ = value
         End Set
     End Property
 End Class

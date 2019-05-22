@@ -1,13 +1,15 @@
 ﻿Imports Clases
 Imports System.Data.SqlClient
 Public Class DEmpleado
-    Public Function EmpleadosRecuperar(ByVal oCon As SqlConnection, ByVal fecha As Date) As LEmpleado
+    Public Function EmpleadosRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
+        Dim oCon As New SqlConnection(cadConex)
         Dim lstEmp As New LEmpleado()
         Try
             oCon.Open()
             Dim query As New SqlCommand("asahi16.dbo.LLInfoGralYChPrenomina", oCon)
             query.Parameters.AddWithValue("@fecha", fecha)
             query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read)
@@ -23,6 +25,9 @@ Public Class DEmpleado
                 empleados.FechaBaja = Convert.ToDateTime(dr("BAJA").ToString)
                 empleados.HoraEntrada = Convert.ToDateTime(dr("Entrada").ToString)
                 empleados.HoraSalida = Convert.ToDateTime(dr("Salida").ToString)
+                empleados.HoraEntradaReal0 = Convert.ToDateTime(dr("ERF0").ToString)
+                empleados.HoraSalidaReal0 = Convert.ToDateTime(dr("SRF0").ToString)
+                empleados.TipoRegistro0 = dr("TRF0").ToString
                 empleados.HoraEntradaReal1 = Convert.ToDateTime(dr("ERF1").ToString)
                 empleados.HoraSalidaReal1 = Convert.ToDateTime(dr("SRF1").ToString)
                 empleados.TipoRegistro1 = dr("TRF1").ToString
@@ -44,10 +49,16 @@ Public Class DEmpleado
                 empleados.HoraEntradaReal7 = Convert.ToDateTime(dr("ERF7").ToString)
                 empleados.HoraSalidaReal7 = Convert.ToDateTime(dr("SRF7").ToString)
                 empleados.TipoRegistro7 = dr("TRF7").ToString
+                empleados.HoraEntradaReal8 = Convert.ToDateTime(dr("ERF8").ToString)
+                empleados.HoraSalidaReal8 = Convert.ToDateTime(dr("SRF8").ToString)
+                empleados.TipoRegistro8 = dr("TRF8").ToString
                 lstEmp.Add(empleados)
             End While
         Catch ex As Exception
             MsgBox(ex.Message)
+            Dim empleados As New Empleado
+            empleados.Err = True
+            lstEmp.Add(empleados)
         Finally
             If (oCon.State = ConnectionState.Open) Then
                 oCon.Close()

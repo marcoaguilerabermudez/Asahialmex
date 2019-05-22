@@ -58,6 +58,7 @@ Partial Class Frm_ListaPrenomina
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Btn_Mostrar = New System.Windows.Forms.Button()
+        Me.Bgw_HiloSeundoPlano = New System.ComponentModel.BackgroundWorker()
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -208,7 +209,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia1
         '
         Me.Lbl_Dia1.AutoSize = True
-        Me.Lbl_Dia1.Location = New System.Drawing.Point(499, 63)
+        Me.Lbl_Dia1.Location = New System.Drawing.Point(481, 63)
         Me.Lbl_Dia1.Name = "Lbl_Dia1"
         Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia1.TabIndex = 4
@@ -216,7 +217,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia2
         '
         Me.Lbl_Dia2.AutoSize = True
-        Me.Lbl_Dia2.Location = New System.Drawing.Point(576, 63)
+        Me.Lbl_Dia2.Location = New System.Drawing.Point(558, 63)
         Me.Lbl_Dia2.Name = "Lbl_Dia2"
         Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia2.TabIndex = 5
@@ -224,7 +225,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia4
         '
         Me.Lbl_Dia4.AutoSize = True
-        Me.Lbl_Dia4.Location = New System.Drawing.Point(728, 63)
+        Me.Lbl_Dia4.Location = New System.Drawing.Point(710, 63)
         Me.Lbl_Dia4.Name = "Lbl_Dia4"
         Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia4.TabIndex = 7
@@ -232,7 +233,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia3
         '
         Me.Lbl_Dia3.AutoSize = True
-        Me.Lbl_Dia3.Location = New System.Drawing.Point(652, 63)
+        Me.Lbl_Dia3.Location = New System.Drawing.Point(634, 63)
         Me.Lbl_Dia3.Name = "Lbl_Dia3"
         Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia3.TabIndex = 6
@@ -240,7 +241,7 @@ Partial Class Frm_ListaPrenomina
         'lbl_Dia7
         '
         Me.lbl_Dia7.AutoSize = True
-        Me.lbl_Dia7.Location = New System.Drawing.Point(955, 63)
+        Me.lbl_Dia7.Location = New System.Drawing.Point(937, 63)
         Me.lbl_Dia7.Name = "lbl_Dia7"
         Me.lbl_Dia7.Size = New System.Drawing.Size(0, 13)
         Me.lbl_Dia7.TabIndex = 10
@@ -248,7 +249,7 @@ Partial Class Frm_ListaPrenomina
         'lbl_Dia6
         '
         Me.lbl_Dia6.AutoSize = True
-        Me.lbl_Dia6.Location = New System.Drawing.Point(879, 63)
+        Me.lbl_Dia6.Location = New System.Drawing.Point(861, 63)
         Me.lbl_Dia6.Name = "lbl_Dia6"
         Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
         Me.lbl_Dia6.TabIndex = 9
@@ -256,7 +257,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia5
         '
         Me.Lbl_Dia5.AutoSize = True
-        Me.Lbl_Dia5.Location = New System.Drawing.Point(804, 63)
+        Me.Lbl_Dia5.Location = New System.Drawing.Point(786, 63)
         Me.Lbl_Dia5.Name = "Lbl_Dia5"
         Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia5.TabIndex = 8
@@ -330,6 +331,11 @@ Partial Class Frm_ListaPrenomina
         Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Btn_Mostrar.UseVisualStyleBackColor = True
         '
+        'Bgw_HiloSeundoPlano
+        '
+        Me.Bgw_HiloSeundoPlano.WorkerReportsProgress = True
+        Me.Bgw_HiloSeundoPlano.WorkerSupportsCancellation = True
+        '
         'Frm_ListaPrenomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -393,4 +399,5 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents Dtp_FechaInicioSemana As DateTimePicker
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Btn_Mostrar As Button
+    Friend WithEvents Bgw_HiloSeundoPlano As System.ComponentModel.BackgroundWorker
 End Class
