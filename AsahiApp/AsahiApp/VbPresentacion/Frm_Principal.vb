@@ -33,8 +33,6 @@ Public Class Frm_Principal
         lista.Show()
     End Sub
     Private Sub ControlDeProducciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeProducciónToolStripMenuItem.Click
-        Dim Control As New Frm_Produccion()
-        Control.Show()
     End Sub
 
     Private Sub Men_Principal_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles Men_Principal.ItemClicked

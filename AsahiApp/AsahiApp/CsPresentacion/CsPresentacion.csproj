@@ -30,6 +30,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.Compatibility" />
     <Reference Include="PresentationCore" />
@@ -51,35 +69,57 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frm_Empleados_informacion.cs">
+    <Compile Include="DS_Altas1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Altas1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_Bajas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Bajas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_Empleados_informacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Empleados_informacion.Designer.cs">
+    <Compile Include="Formularios\Frm_Empleados_informacion.Designer.cs">
       <DependentUpon>Frm_Empleados_informacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Listado_Altas.cs">
+    <Compile Include="Formularios\Frm_Listado_Altas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Listado_Altas.Designer.cs">
+    <Compile Include="Formularios\Frm_Listado_Altas.Designer.cs">
       <DependentUpon>Frm_Listado_Altas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Listado_Bajas.cs">
+    <Compile Include="Formularios\Frm_Listado_Bajas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Listado_Bajas.Designer.cs">
+    <Compile Include="Formularios\Frm_Listado_Bajas.Designer.cs">
       <DependentUpon>Frm_Listado_Bajas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Produccion.cs">
+    <Compile Include="Reportes\Frm_Reporte_Bajas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Produccion.Designer.cs">
-      <DependentUpon>Frm_Produccion.cs</DependentUpon>
+    <Compile Include="Reportes\Frm_Reporte_Bajas.Designer.cs">
+      <DependentUpon>Frm_Reporte_Bajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Reporte_altas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Reporte_altas.Designer.cs">
+      <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,24 +156,58 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Frm_Empleados_informacion.resx">
+    <EmbeddedResource Include="Formularios\Frm_Empleados_informacion.resx">
       <DependentUpon>Frm_Empleados_informacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Listado_Altas.resx">
+    <EmbeddedResource Include="Formularios\Frm_Listado_Altas.resx">
       <DependentUpon>Frm_Listado_Altas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Listado_Bajas.resx">
+    <EmbeddedResource Include="Formularios\Frm_Listado_Bajas.resx">
       <DependentUpon>Frm_Listado_Bajas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Produccion.resx">
-      <DependentUpon>Frm_Produccion.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\Frm_Reporte_altas.resx">
+      <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Reporte_Bajas.resx">
+      <DependentUpon>Frm_Reporte_Bajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Altas1.rdlc" />
+    <EmbeddedResource Include="Rep_bajas.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DS_Altas1.xsc">
+      <DependentUpon>DS_Altas1.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Altas1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Altas1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Altas1.xss">
+      <DependentUpon>DS_Altas1.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Bajas.xsc">
+      <DependentUpon>DS_Bajas.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Bajas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Bajas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Bajas.xss">
+      <DependentUpon>DS_Bajas.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\add-icon2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +274,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\floppy-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adobe-PDF-Document-icon.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
