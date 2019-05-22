@@ -445,7 +445,6 @@ namespace CsPresentacion
             if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_año.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //Todo el reporte
-
                 DialogResult dialogo = MessageBox.Show("¿Desea generar reporte de todas las altas?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogo == DialogResult.Yes)
                 {

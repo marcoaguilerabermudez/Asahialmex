@@ -69,6 +69,11 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS_Altas1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Altas1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Empleados_informacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,27 +92,21 @@
     <Compile Include="Formularios\Frm_Listado_Bajas.Designer.cs">
       <DependentUpon>Frm_Listado_Bajas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\Frm_Reporte_altas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Frm_Reporte_altas.Designer.cs">
       <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Rep_Listado_altas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rep_Listado_altas.Designer.cs">
-      <DependentUpon>Rep_Listado_altas.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
@@ -155,20 +154,29 @@
     <EmbeddedResource Include="Formularios\Frm_Listado_Bajas.resx">
       <DependentUpon>Frm_Listado_Bajas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Reporte_altas.resx">
+      <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Frm_Reporte_altas.resx">
-      <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Rep_Listado_altas.resx">
-      <DependentUpon>Rep_Listado_altas.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Altas1.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DS_Altas1.xsc">
+      <DependentUpon>DS_Altas1.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Altas1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Altas1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Altas1.xss">
+      <DependentUpon>DS_Altas1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -22,15 +22,11 @@ namespace CsPresentacion
         public Int32 Semana;
         public String Departamento;
         public String Puesto;
-
-
         private void Frm_Reporte_altas_Load(object sender, EventArgs e)
-        {  
-        }
-
-        private void ReportViewer1_Load(object sender, EventArgs e)
         {
-
+            // TODO: esta línea de código carga datos en la tabla 'DS_Altas1.FM_LISTADO_ALTAS' Puede moverla o quitarla según sea necesario.
+            this.FM_LISTADO_ALTASTableAdapter.Fill(this.DS_Altas1.FM_LISTADO_ALTAS, Var, Año, Mes, Semana, Departamento, Puesto);
+            this.reportViewer1.RefreshReport();
         }
     }
 }

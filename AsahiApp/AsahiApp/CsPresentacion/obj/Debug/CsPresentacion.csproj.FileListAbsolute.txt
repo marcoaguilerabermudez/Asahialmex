@@ -52,7 +52,6 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentaci
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Properties.Resources.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csproj.ResolveComReference.cache
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\Interop.VSTOEE100.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Rep_Listado_altas.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -139,3 +138,5 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentaci
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Reporte_altas.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\CsPresentacion.dll.config
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\RdlCompile.cache
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\RdlCompile.compiled
