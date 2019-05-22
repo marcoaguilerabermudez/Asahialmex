@@ -30,18 +30,18 @@ namespace CsPresentacion
         {
             Var = 0;
             Llenar_dgv();
-            cargar_año(cmb_año2);
+            cargar_año(cmb_año);
             cargar_departemento(cmb_departamento);
             cargar_puesto(cmb_puesto);
             dgv_bajas.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
             dgv_bajas.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             Diseño_dgv(dgv_bajas);
-            cmb_año2.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmb_año.DropDownStyle = ComboBoxStyle.DropDownList;
             btn_buscar.Enabled = false;
             cmb_departamento.Enabled = false;
             cmb_puesto.Enabled = false;
-            txt_semana2.Enabled = false;
-            cmb_mes2.Enabled = false;
+            txt_semana.Enabled = false;
+            cmb_mes.Enabled = false;
             lbl_filtro.Text = "Total:";
             lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             lbl_fecha.Visible = false;
@@ -103,18 +103,18 @@ namespace CsPresentacion
         private void Nuevo()// Limpiar form
         {
             
-            cmb_año2.Text = "";
-            cmb_mes2.Text = "";
-            txt_semana2.Text = "";
+            cmb_año.Text = "";
+            cmb_mes.Text = "";
+            txt_semana.Text = "";
             cmb_departamento.Text = "";
             cmb_puesto.Text = "";
-            cmb_año2.Enabled = true;
+            cmb_año.Enabled = true;
             btn_buscar.Enabled = false;
             cmb_departamento.Enabled = false;
             cmb_puesto.Enabled = false;
-            txt_semana2.Enabled = false;
-            cmb_mes2.Enabled = false;
-            cmb_año2.DropDownStyle = ComboBoxStyle.DropDownList;
+            txt_semana.Enabled = false;
+            cmb_mes.Enabled = false;
+            cmb_año.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void Diseño_dgv(DataGridView dgv)
@@ -146,9 +146,9 @@ namespace CsPresentacion
                 SqlCommand cmd = new SqlCommand("[dbo].[FM_LISTADO_BAJAS]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Var", Var);
-                cmd.Parameters.AddWithValue("@Año", cmb_año2.Text);
-                cmd.Parameters.AddWithValue("@Mes", cmb_mes2.Text);
-                cmd.Parameters.AddWithValue("@Semana", txt_semana2.Text);
+                cmd.Parameters.AddWithValue("@Año", cmb_año.Text);
+                cmd.Parameters.AddWithValue("@Mes", cmb_mes.Text);
+                cmd.Parameters.AddWithValue("@Semana", txt_semana.Text);
                 cmd.Parameters.AddWithValue("@Departamento", cmb_departamento.Text);
                 cmd.Parameters.AddWithValue("@Puesto", cmb_puesto.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -225,7 +225,7 @@ namespace CsPresentacion
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_semana2.Text) && string.IsNullOrEmpty(cmb_mes2.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //  MessageBox.Show("Filtro por año 3");
                 Var = 3;
@@ -236,7 +236,7 @@ namespace CsPresentacion
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
 
-            else if (string.IsNullOrEmpty(txt_semana2.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //  MessageBox.Show("Filtro por año y mes 1");
                 Var = 1;
@@ -246,7 +246,7 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
-            else if (string.IsNullOrEmpty(cmb_mes2.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //  MessageBox.Show("Filtro por año y semana 2");
                 Var = 2;
@@ -256,7 +256,7 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
-            else if (string.IsNullOrEmpty(cmb_mes2.Text) && string.IsNullOrEmpty(txt_semana2.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //  MessageBox.Show("Filtro por año y departamento 4");
                 Var = 4;
@@ -266,7 +266,7 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
-            else if (string.IsNullOrEmpty(cmb_mes2.Text) && string.IsNullOrEmpty(txt_semana2.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
             {
                 //MessageBox.Show("Filtro por año y puesto 5");
                 Var = 5;
@@ -276,7 +276,7 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
-            else if (string.IsNullOrEmpty(txt_semana2.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //MessageBox.Show("Filtro por año mes y departamento 6");
                 Var = 6;
@@ -285,9 +285,8 @@ namespace CsPresentacion
                 lbl_total.Visible = true;
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
-
             }
-            else if (string.IsNullOrEmpty(txt_semana2.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
             {
                 //MessageBox.Show("Filtro por año, mes y puesto 7");
                 Var = 7;
@@ -297,7 +296,7 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
-            else if (string.IsNullOrEmpty(cmb_mes2.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //MessageBox.Show("Filtro por año, semana y departamento 8");
                 Var = 8;
@@ -307,7 +306,7 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
-            else if (string.IsNullOrEmpty(cmb_mes2.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
             {
                 // MessageBox.Show("Filtro  por año, semana y puesto 9");
                 Var = 9;
@@ -317,7 +316,7 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
-            else if (string.IsNullOrEmpty(cmb_mes2.Text) && string.IsNullOrEmpty(txt_semana2.Text))
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text))
             {
                 //MessageBox.Show("Filtro  por año, departamento y puesto 10");
                 Var = 10;
@@ -327,7 +326,7 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
-            else if (string.IsNullOrEmpty(txt_semana2.Text))
+            else if (string.IsNullOrEmpty(txt_semana.Text))
             {
                 //  MessageBox.Show("Filtro  por año, mes, departamento y puesto 11");
                 Var = 11;
@@ -337,7 +336,7 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
-            else if (string.IsNullOrEmpty(cmb_mes2.Text))
+            else if (string.IsNullOrEmpty(cmb_mes.Text))
             {
                 //MessageBox.Show("Filtro  por año, semana, departamento  y puesto  12");
                 Var = 12;
@@ -347,11 +346,6 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_bajas.Rows.Count.ToString();
             }
-            cmb_año2.Enabled = false;
-            cmb_mes2.Enabled = false;
-            cmb_departamento.Enabled = false;
-            cmb_puesto.Enabled = false;
-            txt_semana2.Enabled = false;
         }
 
         private void Dgv_bajas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -383,26 +377,26 @@ namespace CsPresentacion
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)//cmb_mes
         {
-            if (string.IsNullOrEmpty(cmb_mes2.Text))
+            if (string.IsNullOrEmpty(cmb_mes.Text))
             {
             }
             else
             {
-                txt_semana2.Enabled = false;
-                txt_semana2.Text = "";
+                txt_semana.Enabled = false;
+                txt_semana.Text = "";
             }
         }
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)//cmb_año
         {
-            if (string.IsNullOrEmpty(cmb_año2.Text))
+            if (string.IsNullOrEmpty(cmb_año.Text))
             {
             }
             else
             {
                 btn_buscar.Enabled = true;
-                cmb_mes2.Enabled = true;
-                txt_semana2.Enabled = true;
+                cmb_mes.Enabled = true;
+                txt_semana.Enabled = true;
                 cmb_departamento.Enabled = true;
                 cmb_puesto.Enabled = true;
             }
@@ -427,7 +421,7 @@ namespace CsPresentacion
         private void Btn_exportar_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txt_semana2.Text) && string.IsNullOrEmpty(cmb_mes2.Text) && string.IsNullOrEmpty(cmb_año2.Text))
+            if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_año.Text))
             {
                 //Todo el reporte
 
@@ -461,7 +455,141 @@ namespace CsPresentacion
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
+        }
 
+        private void Btn_reporte_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_año.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //Todo el reporte
+                DialogResult dialogo = MessageBox.Show("¿Desea generar reporte de todas las bajas?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogo == DialogResult.Yes)
+                {
+                    Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                    rep.Var = Convert.ToInt32(0);
+                    rep.ShowDialog();
+                }
+                else
+                {
+                }
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //  MessageBox.Show("Filtro por año 3");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(3);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.ShowDialog();
+            }
+
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //  MessageBox.Show("Filtro por año y mes 1");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(1);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //  MessageBox.Show("Filtro por año y semana 2");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(2);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text);
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //  MessageBox.Show("Filtro por año y departamento 4");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(4);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Departamento = cmb_departamento.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                //MessageBox.Show("Filtro por año y puesto 5");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(5);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //MessageBox.Show("Filtro por año mes y departamento 6");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(6);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.Departamento = cmb_departamento.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                //MessageBox.Show("Filtro por año, mes y puesto 7");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(7);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                //MessageBox.Show("Filtro por año, semana y departamento 8");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(8);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text); ;
+                rep.Departamento = cmb_departamento.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                // MessageBox.Show("Filtro  por año, semana y puesto 9");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(9);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text); ;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text))
+            {
+                //MessageBox.Show("Filtro  por año, departamento y puesto 10");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(10);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Departamento = cmb_departamento.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text))
+            {
+                //  MessageBox.Show("Filtro  por año, mes, departamento y puesto 11");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(11);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.Departamento = cmb_departamento.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                //MessageBox.Show("Filtro  por año, semana, departamento  y puesto  12");
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(12);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text);
+                rep.Departamento = cmb_departamento.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
         }
     }
 }

@@ -328,6 +328,7 @@ namespace CsPresentacion
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_altas.Rows.Count.ToString();
             }
+
             else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //  MessageBox.Show("Filtro por año y mes 1");
@@ -440,6 +441,8 @@ namespace CsPresentacion
                 lbl_total.Text = dgv_altas.Rows.Count.ToString();
             }
         }
+
+
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_año.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
@@ -457,7 +460,7 @@ namespace CsPresentacion
                 }
             }
 
-            if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //  MessageBox.Show("Filtro por año 3");
                 Frm_Reporte_altas rep = new Frm_Reporte_altas();
@@ -521,7 +524,6 @@ namespace CsPresentacion
                 rep.Mes = cmb_mes.Text;
                 rep.Puesto = cmb_puesto.Text;
                 rep.ShowDialog();
-
             }
             else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
