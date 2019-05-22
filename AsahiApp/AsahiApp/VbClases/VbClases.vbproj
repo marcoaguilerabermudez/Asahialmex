@@ -70,11 +70,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ausentismo.vb" />
+    <Compile Include="Baja.vb" />
+    <Compile Include="Empleado.vb" />
+    <Compile Include="Horarios.vb" />
+    <Compile Include="HorasExtra.vb" />
+    <Compile Include="Incapacidad.vb" />
+    <Compile Include="Listas Heredadas\LAusentismo.vb" />
+    <Compile Include="Listas Heredadas\LBaja.vb" />
+    <Compile Include="Listas Heredadas\LEmpleado.vb" />
+    <Compile Include="Listas Heredadas\LHorarios.vb" />
+    <Compile Include="Listas Heredadas\LHorasExtra.vb" />
+    <Compile Include="Listas Heredadas\LIncapacidad.vb" />
+    <Compile Include="Listas Heredadas\LVacaciones.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
-    <Compile Include="Productos.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -86,6 +98,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Vacaciones.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -123,5 +136,6 @@
       <Name>CsNegocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
