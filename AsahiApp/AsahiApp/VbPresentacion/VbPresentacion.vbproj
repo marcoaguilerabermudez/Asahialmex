@@ -90,6 +90,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
+    <Compile Include="Frm_Acerca.Designer.vb">
+      <DependentUpon>Frm_Acerca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Acerca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Soporte.Designer.vb">
+      <DependentUpon>Frm_Soporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Soporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Login.Designer.vb">
       <DependentUpon>Frm_Login.vb</DependentUpon>
     </Compile>
@@ -125,6 +137,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_Acerca.resx">
+      <DependentUpon>Frm_Acerca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Soporte.resx">
+      <DependentUpon>Frm_Soporte.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +206,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\prenomina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alta.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alta2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baja2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
