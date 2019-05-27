@@ -44,6 +44,7 @@ Partial Class Frm_ListaPrenomina
         Me.salida7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.comentarios = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bonoEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idTurno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Lbl_Dia1 = New System.Windows.Forms.Label()
         Me.Lbl_Dia2 = New System.Windows.Forms.Label()
         Me.Lbl_Dia4 = New System.Windows.Forms.Label()
@@ -57,8 +58,9 @@ Partial Class Frm_ListaPrenomina
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Btn_Mostrar = New System.Windows.Forms.Button()
         Me.Bgw_HiloSeundoPlano = New System.ComponentModel.BackgroundWorker()
+        Me.Btn_Mostrar = New System.Windows.Forms.Button()
+        Me.manual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -66,7 +68,7 @@ Partial Class Frm_ListaPrenomina
         'Dgv_ListaPrenomina
         '
         Me.Dgv_ListaPrenomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.entrada1, Me.salida1, Me.entrada2, Me.salida2, Me.entrada3, Me.salida3, Me.entrada4, Me.salida4, Me.entrada5, Me.salida5, Me.entrada6, Me.salida6, Me.entrada7, Me.salida7, Me.comentarios, Me.bonoEmpleado})
+        Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.entrada1, Me.salida1, Me.entrada2, Me.salida2, Me.entrada3, Me.salida3, Me.entrada4, Me.salida4, Me.entrada5, Me.salida5, Me.entrada6, Me.salida6, Me.entrada7, Me.salida7, Me.comentarios, Me.bonoEmpleado, Me.idTurno, Me.manual})
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -206,6 +208,12 @@ Partial Class Frm_ListaPrenomina
         Me.bonoEmpleado.Name = "bonoEmpleado"
         Me.bonoEmpleado.Width = 40
         '
+        'idTurno
+        '
+        Me.idTurno.HeaderText = "IdTurno"
+        Me.idTurno.Name = "idTurno"
+        Me.idTurno.Visible = False
+        '
         'Lbl_Dia1
         '
         Me.Lbl_Dia1.AutoSize = True
@@ -266,6 +274,7 @@ Partial Class Frm_ListaPrenomina
         '
         Me.Lbl_año.AutoSize = True
         Me.Lbl_año.BackColor = System.Drawing.Color.SteelBlue
+        Me.Lbl_año.ForeColor = System.Drawing.Color.White
         Me.Lbl_año.Location = New System.Drawing.Point(108, 22)
         Me.Lbl_año.Name = "Lbl_año"
         Me.Lbl_año.Size = New System.Drawing.Size(25, 13)
@@ -286,6 +295,7 @@ Partial Class Frm_ListaPrenomina
         '
         Me.Lbl_Semana.AutoSize = True
         Me.Lbl_Semana.BackColor = System.Drawing.Color.SteelBlue
+        Me.Lbl_Semana.ForeColor = System.Drawing.Color.White
         Me.Lbl_Semana.Location = New System.Drawing.Point(15, 5)
         Me.Lbl_Semana.Name = "Lbl_Semana"
         Me.Lbl_Semana.Size = New System.Drawing.Size(46, 13)
@@ -295,6 +305,7 @@ Partial Class Frm_ListaPrenomina
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(150, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 26)
@@ -305,7 +316,7 @@ Partial Class Frm_ListaPrenomina
         '
         Me.Dtp_FechaInicioSemana.Checked = False
         Me.Dtp_FechaInicioSemana.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_FechaInicioSemana.Location = New System.Drawing.Point(258, 31)
+        Me.Dtp_FechaInicioSemana.Location = New System.Drawing.Point(258, 40)
         Me.Dtp_FechaInicioSemana.Name = "Dtp_FechaInicioSemana"
         Me.Dtp_FechaInicioSemana.Size = New System.Drawing.Size(109, 20)
         Me.Dtp_FechaInicioSemana.TabIndex = 13
@@ -314,27 +325,34 @@ Partial Class Frm_ListaPrenomina
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
         Me.Panel1.Controls.Add(Me.Dtp_FechaInicioSemana)
-        Me.Panel1.Location = New System.Drawing.Point(-36, -10)
+        Me.Panel1.Location = New System.Drawing.Point(-36, -22)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1288, 67)
+        Me.Panel1.Size = New System.Drawing.Size(1288, 79)
         Me.Panel1.TabIndex = 14
-        '
-        'Btn_Mostrar
-        '
-        Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.Bulleted_List_icon
-        Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Mostrar.Location = New System.Drawing.Point(350, 4)
-        Me.Btn_Mostrar.Name = "Btn_Mostrar"
-        Me.Btn_Mostrar.Size = New System.Drawing.Size(53, 49)
-        Me.Btn_Mostrar.TabIndex = 15
-        Me.Btn_Mostrar.Text = "Mostrar"
-        Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Mostrar.UseVisualStyleBackColor = True
         '
         'Bgw_HiloSeundoPlano
         '
         Me.Bgw_HiloSeundoPlano.WorkerReportsProgress = True
         Me.Bgw_HiloSeundoPlano.WorkerSupportsCancellation = True
+        '
+        'Btn_Mostrar
+        '
+        Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
+        Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Mostrar.Location = New System.Drawing.Point(349, 8)
+        Me.Btn_Mostrar.Name = "Btn_Mostrar"
+        Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 39)
+        Me.Btn_Mostrar.TabIndex = 15
+        Me.Btn_Mostrar.Text = "Mostrar"
+        Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Mostrar.UseVisualStyleBackColor = True
+        '
+        'manual
+        '
+        Me.manual.HeaderText = "Manual"
+        Me.manual.Name = "manual"
+        Me.manual.ReadOnly = True
+        Me.manual.Visible = False
         '
         'Frm_ListaPrenomina
         '
@@ -376,6 +394,10 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents CmbSemanas As ComboBox
     Friend WithEvents Lbl_Semana As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Dtp_FechaInicioSemana As DateTimePicker
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Btn_Mostrar As Button
+    Friend WithEvents Bgw_HiloSeundoPlano As System.ComponentModel.BackgroundWorker
     Friend WithEvents idEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents nombreEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents horarioEmpleado As DataGridViewTextBoxColumn
@@ -396,8 +418,6 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents salida7 As DataGridViewTextBoxColumn
     Friend WithEvents comentarios As DataGridViewTextBoxColumn
     Friend WithEvents bonoEmpleado As DataGridViewTextBoxColumn
-    Friend WithEvents Dtp_FechaInicioSemana As DateTimePicker
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Btn_Mostrar As Button
-    Friend WithEvents Bgw_HiloSeundoPlano As System.ComponentModel.BackgroundWorker
+    Friend WithEvents idTurno As DataGridViewTextBoxColumn
+    Friend WithEvents manual As DataGridViewTextBoxColumn
 End Class

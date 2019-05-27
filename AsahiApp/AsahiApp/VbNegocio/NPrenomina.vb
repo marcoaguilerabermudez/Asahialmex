@@ -30,4 +30,8 @@ Public Class NPrenomina
         Dim DPrenomina As New DPrenomina()
         Return DPrenomina.RecuperarBajas(cadConex, fechaI, fechaF)
     End Function
+    Public Function RecuperarComedor(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LComedor
+        Dim DPrenomina As New DPrenomina()
+        Return DPrenomina.RecuperarComedor(cadConex, fechaI, fechaF)
+    End Function
 End Class

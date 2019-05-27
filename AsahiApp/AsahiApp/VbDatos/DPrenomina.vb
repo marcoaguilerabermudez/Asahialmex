@@ -174,4 +174,30 @@ Public Class DPrenomina
         End Try
         Return lstBja
     End Function
+    Public Function RecuperarComedor(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LComedor
+        Dim lstCom As New LComedor()
+        Dim oCon As New SqlConnection(cadConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT Empcome.CLAVE/1 ID, Empcome.FECHA, Empcome.HORA, ISNULL(Empcome.TIPO,'') TIPO FROM asahi16.Supervisor_giro.Empcome Empcome WHERE (Empcome.FECHA>= " + "'" + fechaI + "'" + " And Empcome.FECHA<= " + "'" + fechaF + "'" + ")", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim come As New Comedor()
+                come.IdEmpleado = Convert.ToInt32(dr("ID").ToString)
+                come.FechaComedor = Convert.ToDateTime(dr("FECHA").ToString)
+                come.HoraComedor = Convert.ToDateTime(dr("HORA").ToString)
+                come.TipoComida = Convert.ToInt32(dr("TIPO").ToString)
+                lstCom.Add(come)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstCom
+    End Function
 End Class

@@ -22,6 +22,11 @@ Presentacion
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
+<member name="P:Presentacion.My.Resources.Resources._1486504328_bullet_list_menu_lines_points_items_options_81334">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Presentacion.My.Resources.Resources.Alta">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -38,6 +43,16 @@ Presentacion
 </summary>
 </member>
 <member name="P:Presentacion.My.Resources.Resources.Bulleted_List_icon">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

@@ -1,8 +1,6 @@
 ﻿Imports System.Windows.Forms
 Imports System.Data.SqlClient
-'Imports System.Threading
 Imports System.Diagnostics
-'Imports System.ComponentModel
 Imports Clases
 Imports Negocio
 Imports CsPresentacion
@@ -100,6 +98,9 @@ Public Class Frm_ListaPrenomina
     Private Sub Bgw_HiloSeundoPlano_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Bgw_HiloSeundoPlano.DoWork
 
     End Sub
+    Private Sub Dgv_ListaPrenomina_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListaPrenomina.CellEndEdit
+
+    End Sub
 #End Region
 #Region "Rellena cmb"
     Private Sub RellenaCmbSemanas()
@@ -117,7 +118,9 @@ Public Class Frm_ListaPrenomina
         Return NPre.EmpleadosRecuperar(cadConex, fecha)
     End Function
     Private Sub RecuperarIncidencias()
-        Dim lstAus As New LAusentismo, lstVac As New LVacaciones, lstInc As New LIncapacidad, lstHE As New LHorasExtra, lstBja As New LBaja
+        Dim lstAus As New LAusentismo(), lstVac As New LVacaciones(), lstInc As New LIncapacidad(), lstHE As New LHorasExtra(), lstBja As New LBaja(),
+            lstCom As New LComedor()
+        Dim NPre As New NPrenomina()
         Dim fechaI As Date
         Dim fechaF As Date
         Dim conex As New conexion
@@ -126,33 +129,14 @@ Public Class Frm_ListaPrenomina
         fechaI = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
         fechaF = Format(DateAdd(DateInterval.Day, 6, fechaI), "dd/MM/yyyy")
 
-        lstAus = RecuperarAusentismo(cadConex, fechaI, fechaF)
-        lstVac = RecuperarVacaciones(cadConex, DateAdd(DateInterval.Day, -10, fechaI), DateAdd(DateInterval.Day, 10, fechaF))
-        lstInc = RecuperarIncapacidades(cadConex)
-        lstHE = RecuperarHorasExtra(cadConex, fechaI, fechaF)
-        lstBja = RecuperarBajas(cadConex, fechaI, fechaF)
-        RellenaIncidenciasDgvPrenomina(lstAus, lstVac, lstInc, lstHE, lstBja)
+        lstAus = NPre.RecuperarAusentismo(cadConex, fechaI, fechaF)
+        lstVac = NPre.RecuperarVacaciones(cadConex, DateAdd(DateInterval.Day, -10, fechaI), DateAdd(DateInterval.Day, 10, fechaF))
+        lstInc = NPre.RecuperarIncapacidades(cadConex)
+        lstHE = NPre.RecuperarHorasExtra(cadConex, fechaI, fechaF)
+        lstBja = NPre.RecuperarBajas(cadConex, fechaI, fechaF)
+        lstCom = NPre.RecuperarComedor(cadConex, fechaI, fechaF)
+        RellenaIncidenciasDgvPrenomina(lstAus, lstVac, lstInc, lstHE, lstBja, lstCom)
     End Sub
-    Private Function RecuperarAusentismo(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LAusentismo
-        Dim NPre As New NPrenomina()
-        Return NPre.RecuperarAusentismo(cadConex, fechaI, fechaF)
-    End Function
-    Private Function RecuperarVacaciones(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LVacaciones
-        Dim NPre As New NPrenomina()
-        Return NPre.RecuperarVacaciones(cadConex, fechaI, fechaF)
-    End Function
-    Private Function RecuperarIncapacidades(ByVal cadConex As String) As LIncapacidad
-        Dim NPre As New NPrenomina()
-        Return NPre.RecuperarIncapacidades(cadConex)
-    End Function
-    Public Function RecuperarHorasExtra(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LHorasExtra
-        Dim NPre As New NPrenomina()
-        Return NPre.RecuperarHorasExtra(cadConex, fechaI, fechaF)
-    End Function
-    Public Function RecuperarBajas(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LBaja
-        Dim NPre As New NPrenomina()
-        Return NPre.RecuperarBajas(cadConex, fechaI, fechaF)
-    End Function
 #End Region
 #Region "Rellena formulario"
     Private Sub RellenaChecadasDgvPrenomina(ByVal lstEmp As LEmpleado)
@@ -175,127 +159,242 @@ Public Class Frm_ListaPrenomina
             Dgv_ListaPrenomina.Rows(fila).Cells("horarioEmpleado").Style.BackColor = Color.White
             Dgv_ListaPrenomina.Rows(fila).Cells("departamentoEmpleado").Value = item.Departamento
             Dgv_ListaPrenomina.Rows(fila).Cells("departamentoEmpleado").Style.BackColor = Color.White
-            If item.HoraEntradaReal1 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value = Format(item.HoraEntradaReal1, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.White
-                If item.HoraEntrada < item.HoraEntradaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.Red
-            End If
-            If item.HoraSalidaReal1 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value = Format(item.HoraSalidaReal1, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.White
-                If item.HoraSalida > item.HoraSalidaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.Red
-            End If
-            If item.HoraEntradaReal2 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Value = Format(item.HoraEntradaReal2, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.White
-                If item.HoraEntrada < item.HoraEntradaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.Red
-            End If
-            If item.HoraSalidaReal2 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Value = Format(item.HoraSalidaReal2, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.White
-                If item.HoraSalida > item.HoraSalidaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.Red
-            End If
-            If item.HoraEntradaReal3 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Value = Format(item.HoraEntradaReal3, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.White
-                If item.HoraEntrada < item.HoraEntradaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.Red
-            End If
-            If item.HoraSalidaReal3 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Value = Format(item.HoraSalidaReal3, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.White
-                If item.HoraSalida > item.HoraSalidaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.Red
-            End If
-            If item.HoraEntradaReal4 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Value = Format(item.HoraEntradaReal4, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.White
-                If item.HoraEntrada < item.HoraEntradaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.Red
-            End If
-            If item.HoraSalidaReal4 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Value = Format(item.HoraSalidaReal4, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.White
-                If item.HoraSalida > item.HoraSalidaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.Red
-            End If
-            If item.HoraEntradaReal5 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value = Format(item.HoraEntradaReal5, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.White
-                If item.HoraEntrada < item.HoraEntradaReal5 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.Red
-            End If
-            If item.HoraSalidaReal5 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value = Format(item.HoraSalidaReal5, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.White
-                If item.HoraSalida > item.HoraSalidaReal5 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.Red
-            End If
-            If item.HoraEntradaReal6 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value = Format(item.HoraEntradaReal6, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.White
-                If (item.HoraEntrada < item.HoraEntradaReal6) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.Red
-            End If
-            If item.HoraSalidaReal6 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value = Format(item.HoraSalidaReal6, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.White
-                If (item.HoraSalida > item.HoraSalidaReal6) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.Red
-            End If
-            If item.HoraEntradaReal7 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value = Format(item.HoraEntradaReal7, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.White
-                If (item.HoraEntrada < item.HoraEntradaReal7) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.Red
-            End If
-            If item.HoraSalidaReal7 <> "1/1/1900 12:00:00 AM" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value = Format(item.HoraSalidaReal7, "HH:mm")
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.White
-                If (item.HoraSalida > item.HoraSalidaReal7) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.Red
-            End If
             Dgv_ListaPrenomina.Rows(fila).Cells("comentarios").Style.BackColor = Color.White
             Dgv_ListaPrenomina.Rows(fila).Cells("bonoEmpleado").Style.BackColor = Color.White
-            If item.TipoRegistro1 = "M" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.Green
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.Green
+            If item.IdTurno <> 3 Then
+                If item.HoraEntradaReal1 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value = Format(item.HoraEntradaReal1, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.White
+                    If item.HoraEntrada < item.HoraEntradaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal1 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value = Format(item.HoraSalidaReal1, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.White
+                    If item.HoraSalida > item.HoraSalidaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal2 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Value = Format(item.HoraEntradaReal2, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.White
+                    If item.HoraEntrada < item.HoraEntradaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal2 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Value = Format(item.HoraSalidaReal2, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.White
+                    If item.HoraSalida > item.HoraSalidaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal3 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Value = Format(item.HoraEntradaReal3, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.White
+                    If item.HoraEntrada < item.HoraEntradaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal3 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Value = Format(item.HoraSalidaReal3, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.White
+                    If item.HoraSalida > item.HoraSalidaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal4 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Value = Format(item.HoraEntradaReal4, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.White
+                    If item.HoraEntrada < item.HoraEntradaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal4 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Value = Format(item.HoraSalidaReal4, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.White
+                    If item.HoraSalida > item.HoraSalidaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal5 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value = Format(item.HoraEntradaReal5, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.White
+                    If item.HoraEntrada < item.HoraEntradaReal5 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal5 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value = Format(item.HoraSalidaReal5, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.White
+                    If item.HoraSalida > item.HoraSalidaReal5 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal6 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value = Format(item.HoraEntradaReal6, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.White
+                    If (item.HoraEntrada < item.HoraEntradaReal6) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal6 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value = Format(item.HoraSalidaReal6, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.White
+                    If (item.HoraSalida > item.HoraSalidaReal6) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal7 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value = Format(item.HoraEntradaReal7, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.White
+                    If (item.HoraEntrada < item.HoraEntradaReal7) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal7 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value = Format(item.HoraSalidaReal7, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.White
+                    If (item.HoraSalida > item.HoraSalidaReal7) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.Red
+                End If
+                If item.TipoRegistro1 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro2 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro3 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro4 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro5 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro6 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro7 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.Green
+                End If
+            ElseIf item.IdTurno = 3 Then
+                If item.HoraEntradaReal0 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value = Format(item.HoraEntradaReal0, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.White
+                    If item.HoraEntrada < item.HoraEntradaReal0 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal0 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value = Format(item.HoraSalidaReal0, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.White
+                    If item.HoraSalida > item.HoraSalidaReal0 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal1 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Value = Format(item.HoraEntradaReal1, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.White
+                    If item.HoraEntrada < item.HoraEntradaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal1 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Value = Format(item.HoraSalidaReal1, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.White
+                    If item.HoraSalida > item.HoraSalidaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal2 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Value = Format(item.HoraEntradaReal2, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.White
+                    If item.HoraEntrada < item.HoraEntradaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal2 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Value = Format(item.HoraSalidaReal2, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.White
+                    If item.HoraSalida > item.HoraSalidaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal3 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Value = Format(item.HoraEntradaReal3, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.White
+                    If item.HoraEntrada < item.HoraEntradaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal3 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Value = Format(item.HoraSalidaReal3, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.White
+                    If item.HoraSalida > item.HoraSalidaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal4 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value = Format(item.HoraEntradaReal4, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.White
+                    If item.HoraEntrada < item.HoraEntradaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal4 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value = Format(item.HoraSalidaReal4, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.White
+                    If item.HoraSalida > item.HoraSalidaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal5 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value = Format(item.HoraEntradaReal5, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.White
+                    If (item.HoraEntrada < item.HoraEntradaReal5) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal5 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value = Format(item.HoraSalidaReal5, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.White
+                    If (item.HoraSalida > item.HoraSalidaReal5) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.Red
+                End If
+                If item.HoraEntradaReal6 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value = Format(item.HoraEntradaReal6, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.White
+                    If (item.HoraEntrada < item.HoraEntradaReal6) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.Red
+                End If
+                If item.HoraSalidaReal6 <> "1/1/1900 12:00:00 AM" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value = Format(item.HoraSalidaReal6, "HH:mm")
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.White
+                    If (item.HoraSalida > item.HoraSalidaReal6) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.Red
+                End If
+                If item.TipoRegistro0 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro1 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro2 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro3 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro4 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro5 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.Green
+                End If
+                If item.TipoRegistro6 = "M" Then
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.White
+                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.Green
+                End If
             End If
-            If item.TipoRegistro2 = "M" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.Green
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.Green
-            End If
-            If item.TipoRegistro3 = "M" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.Green
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.Green
-            End If
-            If item.TipoRegistro4 = "M" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.Green
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.Green
-            End If
-            If item.TipoRegistro5 = "M" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.Green
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.Green
-            End If
-            If item.TipoRegistro6 = "M" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.Green
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.Green
-            End If
-            If item.TipoRegistro7 = "M" Then
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.Green
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.White
-                Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.Green
-            End If
+            Dgv_ListaPrenomina.Rows(fila).Cells("idTurno").Value = item.IdTurno
             fila += 1
         Next
         Dgv_ListaPrenomina.Enabled = True
     End Sub
-    Private Sub RellenaIncidenciasDgvPrenomina(ByVal lstAus As LAusentismo, ByVal lstVac As LVacaciones, ByVal lstInc As LIncapacidad,
-                                               ByVal lstHE As LHorasExtra, lstBja As LBaja)
-
+    Private Sub RellenaIncidenciasDgvPrenomina(ByVal lstAus As LAusentismo, ByVal lstVac As LVacaciones, ByVal lstInc As LIncapacidad, ByVal lstHE As LHorasExtra,
+                                               ByVal lstBja As LBaja, ByVal lstCom As LComedor)
         Dim fecha As Date = Format((Lbl_Dia1.Text + "/" + Lbl_año.Text))
         Dim totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count()
 
@@ -304,6 +403,8 @@ Public Class Frm_ListaPrenomina
         RellenaVacaciones(lstVac, fecha, totalFilas)
         RellenarHrsExtraDTFeriadoRet(lstHE, fecha, totalFilas)
         RellenaAusentismo(lstAus, fecha, totalFilas)
+        RellenaComedor(lstCom, fecha, totalFilas)
+        RellenaDescanso(totalFilas)
     End Sub
     Private Sub RellenaBajas(ByVal lstBja As LBaja, ByVal fecha As Date, ByVal totalFilas As Integer)
         Dim fila As Integer
@@ -711,6 +812,83 @@ Public Class Frm_ListaPrenomina
                     Next
                 End If
             Next
+        Next
+    End Sub
+    Private Sub RellenaComedor(ByVal lstCom As LComedor, ByVal fecha As Date, ByVal totalFilas As Integer)
+        Dim fila As Integer
+        Dim fechaI As Date
+        Dim inc As String
+        For Each item In lstCom
+            For fila = 0 To totalFilas - 1
+                If Dgv_ListaPrenomina.Rows(fila).Cells("idEmpleado").Value = item.IdEmpleado Then
+                    Dim colum As Integer
+                    Select Case item.TipoComida
+                        Case 0 : inc = "M-"
+                        Case 1 : inc = "J-"
+                        Case Else : inc = "ERROR"
+                    End Select
+                    fechaI = fecha
+                    For colum = 1 To 7
+                        If item.FechaComedor = fechaI Then
+                            Dim ce As String = "entrada" + Convert.ToString(colum) + ""
+                            Dim cs As String = "salida" + Convert.ToString(colum) + ""
+                            If Not IsDate(Dgv_ListaPrenomina.Rows(fila).Cells(ce).FormattedValue) And
+                                Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value <> "" Then
+                                Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = inc + Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value
+                                Dgv_ListaPrenomina.Rows(fila).Cells(ce).Style.BackColor = Color.Orange
+                            End If
+                            If Not IsDate(Dgv_ListaPrenomina.Rows(fila).Cells(cs).FormattedValue) And
+                                Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value <> "" Then
+                                Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value = inc + Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value
+                                Dgv_ListaPrenomina.Rows(fila).Cells(cs).Style.BackColor = Color.Orange
+                            End If
+                        End If
+                        fechaI = Format(DateAdd(DateInterval.Day, 1, fechaI), "dd/MM/yyyy")
+                    Next
+                End If
+            Next
+        Next
+    End Sub
+    Private Sub RellenaDescanso(ByVal totalFilas As Integer)
+        Dim fila As Integer, colum As Integer, idTurno As Integer
+        For fila = 0 To totalFilas - 2
+            idTurno = Dgv_ListaPrenomina.Rows(fila).Cells("idTurno").Value
+            If idTurno < 7 Then
+                For colum = 5 To 7
+                    If colum > 5 Then
+                        If idTurno >= 4 Then
+                            Dim ce As String = "entrada" + Convert.ToString(colum) + ""
+                            Dim cs As String = "salida" + Convert.ToString(colum) + ""
+                            If Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "" Then
+                                Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "D"
+                                Dgv_ListaPrenomina.Rows(fila).Cells(ce).Style.BackColor = Color.Black
+                                Dgv_ListaPrenomina.Rows(fila).Cells(ce).Style.ForeColor = Color.White
+                            End If
+                            If Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value = "" Then
+                                Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value = "D"
+                                Dgv_ListaPrenomina.Rows(fila).Cells(cs).Style.BackColor = Color.Black
+                                Dgv_ListaPrenomina.Rows(fila).Cells(cs).Style.ForeColor = Color.White
+                            End If
+                        Else
+                            If colum > 6 Then
+                                Dim ce As String = "entrada" + Convert.ToString(colum) + ""
+                                Dim cs As String = "salida" + Convert.ToString(colum) + ""
+                                If Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "" Then
+                                    Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "D"
+                                    Dgv_ListaPrenomina.Rows(fila).Cells(ce).Style.BackColor = Color.Black
+                                    Dgv_ListaPrenomina.Rows(fila).Cells(ce).Style.ForeColor = Color.White
+                                End If
+                                If Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value = "" Then
+                                    Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value = "D"
+                                    Dgv_ListaPrenomina.Rows(fila).Cells(cs).Style.BackColor = Color.Black
+                                    Dgv_ListaPrenomina.Rows(fila).Cells(cs).Style.ForeColor = Color.White
+                                End If
+                            End If
+                        End If
+                    End If
+                Next
+            End If
+
         Next
     End Sub
 #End Region
