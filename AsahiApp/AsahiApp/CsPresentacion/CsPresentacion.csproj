@@ -79,6 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Bajas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_Finiquito.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Finiquito.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Empleados_informacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +129,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Rep_Finiquito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Rep_Finiquito.Designer.cs">
+      <DependentUpon>Rep_Finiquito.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
@@ -187,6 +198,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Altas1.rdlc" />
     <EmbeddedResource Include="Rep_bajas.rdlc" />
+    <EmbeddedResource Include="Reportes\Rep_Finiquito.resx">
+      <DependentUpon>Rep_Finiquito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Finiquito.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -211,6 +226,17 @@
     </None>
     <None Include="DS_Bajas.xss">
       <DependentUpon>DS_Bajas.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Finiquito.xsc">
+      <DependentUpon>DS_Finiquito.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Finiquito.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Finiquito.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Finiquito.xss">
+      <DependentUpon>DS_Finiquito.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -30,11 +30,13 @@ namespace CsPresentacion
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;User ID=sa;Password=Pa55word");
         SqlConnection con2 = new SqlConnection("data source =GIRO\\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word");
 
+        
         private void Frm_Finiquito_Load(object sender, EventArgs e)
         {
             nuevo();
             cmb_dias.DropDownStyle = ComboBoxStyle.DropDownList;
             btn_reporte.Enabled = false;
+            dgv_empleados.Visible = false;
         }
 
         private void Buscar()
@@ -181,7 +183,8 @@ namespace CsPresentacion
             txt_clave.Focus();
             lbl_fecha.Visible = false;
             pictureBox1.ImageLocation = "V:Sistemas/Sistema_Reporte_Pago_Finiquito/LogoFinal" + ".png";
-            
+            lbl_total.Visible = false;
+           
         }
 
         private void Cambiar_Estado()
@@ -219,6 +222,7 @@ namespace CsPresentacion
             Mostrar_Grid();
             Diseño_Grid(dgv_empleados);
             nuevo();
+            dgv_empleados.Visible = true;
             btn_reporte.Enabled = true;
         }
 
@@ -270,6 +274,13 @@ namespace CsPresentacion
             nuevo();
             txt_clave.Text = "";
             txt_clave.Enabled = true;
+            
+            lbl_total.Text = dgv_empleados.Rows.Count.ToString();
+           if ( lbl_total.Text == ("0"))
+            {
+                btn_reporte.Enabled = false;
+                dgv_empleados.Visible = false;
+            }
         }
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
@@ -302,6 +313,25 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
+        private void Txt_clave_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_clave.Text))
+            {
+                btn_buscar.Enabled = false;
+            }
+            else
+            {
+                btn_buscar.Enabled = true;
+            }
+        }
 
+        private void Btn_reporte_Click(object sender, EventArgs e)
+        {
+            Rep_Finiquito rep = new Rep_Finiquito();
+            rep.ShowDialog();
+            Cambiar_Estado();
+            Mostrar_Grid();
+            nuevo();
+        }
     }
 }
