@@ -139,5 +139,15 @@ namespace CsPresentacion.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Recycle_Bin_full_icon2 {
+            get {
+                object obj = ResourceManager.GetObject("Recycle-Bin-full-icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

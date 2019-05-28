@@ -327,7 +327,7 @@ namespace CsPresentacion
                 lbl_total.Visible = true;
                 lbl_filtro.Text = "Total:";
                 lbl_total.Text = dgv_altas.Rows.Count.ToString();
-       ;
+       
             }
 
             else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))

@@ -75,6 +75,13 @@ Public Class Frm_Principal
         Dim Detalle As New Frm_Empleados_Detalle()
         Detalle.ShowDialog()
     End Sub
+
+    Private Sub FiniquitoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FiniquitoToolStripMenuItem.Click
+        Dim Finiquito As New Frm_Finiquito()
+        Finiquito.ShowDialog()
+        Finiquito.Hide()
+
+    End Sub
 #End Region
 End Class
 

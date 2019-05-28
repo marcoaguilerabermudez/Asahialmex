@@ -97,6 +97,12 @@
     <Compile Include="Formularios\Frm_Listado_Bajas.Designer.cs">
       <DependentUpon>Frm_Listado_Bajas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Finiquito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Finiquito.Designer.cs">
+      <DependentUpon>Frm_Finiquito.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Frm_Reporte_Bajas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Listado_Bajas.resx">
       <DependentUpon>Frm_Listado_Bajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Finiquito.resx">
+      <DependentUpon>Frm_Finiquito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Reporte_altas.resx">
       <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>
@@ -280,6 +289,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\Recycle-Bin-full-icon2.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
