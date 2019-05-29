@@ -341,9 +341,7 @@ namespace CsPresentacion
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 cargar_informacion();
-
                 pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
-
                 txt_vigencia.Visible = true;
                 lbl_estado.Visible = true;
                 btn_agregar.Enabled = true;
@@ -395,19 +393,6 @@ namespace CsPresentacion
                     txt_vigencia.Visible = false;
                     lbl_estado.Visible = false;
                     pictureBox1.ImageLocation = "V:/Sistemas/Listado de bajas/LogoFinal" + ".png";
-                }
-
-                if (string.IsNullOrEmpty(txt_dias.Text))
-                {
-                    txt_dias.Text = "0";
-                }
-                if (string.IsNullOrEmpty(txt_meses.Text))
-                {
-                    txt_meses.Text = "0";
-                }
-                if (string.IsNullOrEmpty(txt_años.Text))
-                {
-                    txt_años.Text = "0";
                 }
             }
         }

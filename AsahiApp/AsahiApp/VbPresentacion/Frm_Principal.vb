@@ -82,6 +82,12 @@ Public Class Frm_Principal
         Finiquito.Hide()
 
     End Sub
+
+    Private Sub BajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaToolStripMenuItem.Click
+        Dim Baja As New Frm_bajas()
+        Baja.ShowDialog()
+        Baja.Hide()
+    End Sub
 #End Region
 End Class
 

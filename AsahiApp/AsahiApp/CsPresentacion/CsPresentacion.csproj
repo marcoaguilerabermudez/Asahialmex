@@ -108,6 +108,18 @@
     <Compile Include="Formularios\Frm_Finiquito.Designer.cs">
       <DependentUpon>Frm_Finiquito.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_bajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_bajas.Designer.cs">
+      <DependentUpon>Frm_bajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Fecha_Baja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Fecha_Baja.Designer.cs">
+      <DependentUpon>Frm_Fecha_Baja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Frm_Reporte_Bajas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Finiquito.resx">
       <DependentUpon>Frm_Finiquito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_bajas.resx">
+      <DependentUpon>Frm_bajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Fecha_Baja.resx">
+      <DependentUpon>Frm_Fecha_Baja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Reporte_altas.resx">
       <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>
@@ -316,6 +334,7 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Recycle-Bin-full-icon2.png" />
+    <None Include="Resources\Thumb-down-icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

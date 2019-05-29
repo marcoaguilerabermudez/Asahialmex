@@ -1175,8 +1175,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.40226cm</Top>
-        <Left>0.90634cm</Left>
+        <Top>1.71976cm</Top>
+        <Left>0.90633cm</Left>
         <Height>6.23062cm</Height>
         <Width>18.90418cm</Width>
         <Style>
@@ -1229,7 +1229,6 @@
             </Paragraphs>
             <rd:DefaultName>Textbox60</rd:DefaultName>
             <Top>0.41688cm</Top>
-            <Left>0.91926cm</Left>
             <Height>0.72348cm</Height>
             <Width>6.27cm</Width>
             <Style>
@@ -1244,9 +1243,9 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>0.03288cm</Top>
+        <Left>0.90634cm</Left>
         <Height>1.3341cm</Height>
-        <Width>21.74495cm</Width>
+        <Width>18.90418cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1256,10 +1255,10 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>3.28125in</Height>
+    <Height>3.48958in</Height>
     <Style />
   </Body>
-  <Width>8.561in</Width>
+  <Width>8.26934in</Width>
   <Page>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>

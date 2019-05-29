@@ -332,6 +332,7 @@ namespace CsPresentacion
             Cambiar_Estado();
             Mostrar_Grid();
             nuevo();
+            btn_reporte.Enabled = false;
         }
     }
 }
