@@ -1,5 +1,6 @@
 ﻿Imports Clases
 Imports System.Data.SqlClient
+Imports System
 Public Class DPrenomina
     Public Function RecuperarDiasSemana(ByVal oCon As SqlConnection, ByVal fecha As Date) As Horarios
         Dim hrs As New Horarios()
@@ -167,6 +168,7 @@ Public Class DPrenomina
             End While
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
             If (oCon.State = ConnectionState.Open) Then
                 oCon.Close()
             End If
@@ -193,11 +195,55 @@ Public Class DPrenomina
             End While
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
             If (oCon.State = ConnectionState.Open) Then
                 oCon.Close()
             End If
             oCon.Dispose()
         End Try
         Return lstCom
+    End Function
+    Public Sub InsertarModificacionesIncidencias(ByVal cadenaConex As String, ByVal objEmp As Empleado)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("rh_Insertar_Incidencias_Modificadas", oCon)
+            query.Parameters.AddWithValue("@XML", objEmp.Xml)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar() 'En un Insert de XML, NO olvidar esta línea si no, no inserta mi madres
+
+            MsgBox("Registros insertados en temporal")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
+    Private Function RecuperarInc(ByVal cadenaConex As String, ByVal tipoM As String, ByVal sem As Integer, ByVal fechaI As Date, ByVal fechaF As Date) As LEmpleado
+        Dim LstEmp As New LEmpleado()
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("select rim.IdEmpleado,rim.fecha,rim.incidencia1,rim.incidencia2,rim.tipoModificacion1,rim.tipoModificacion2 from rh_incidencias_Modificadas where rim.tipoModificacion1 = '" & tipoM & "' and (rim.semana = " & sem & " and (rim.fecha >= '" & fechaI & "' and rim.fecha <= '" & fechaF & "'))", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado
+                emp.IdEmpleado = Convert.ToInt32(dr("IdEmpleado").ToString)
+                emp.Fecha1 = Convert.ToDateTime(dr("fecha").ToString)
+                emp.Incidencia1 = dr("incidencia1").ToString
+                emp.Incidencia2 = dr("incidencia2").ToString
+                emp.TipoIncidencia1 = dr("tipoModificacion1").ToString
+                emp.TipoIncidencia2 = dr("tipoModificacion2").ToString
+                LstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+
+        End Try
+        Return LstEmp
     End Function
 End Class

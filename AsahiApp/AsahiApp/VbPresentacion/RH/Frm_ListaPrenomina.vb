@@ -6,9 +6,11 @@ Imports Negocio
 Imports CsPresentacion
 Public Class Frm_ListaPrenomina
 #Region "Variables de Clase"
-    Dim cadenaConex As SqlConnection
+    Dim cadConex As SqlConnection
+    Dim cadenaConex As String
     Dim open As Boolean
     'Dim super As Thread
+    Dim valor
 #End Region
 #Region "Constructores"
     Sub New()
@@ -19,12 +21,13 @@ Public Class Frm_ListaPrenomina
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
-    Sub New(ByVal cadenaConex As SqlConnection)
+    Sub New(ByVal cadConex As SqlConnection, ByVal cadenaConex As String)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Me.cadConex = cadConex
         Me.cadenaConex = cadenaConex
     End Sub
 #End Region
@@ -99,7 +102,52 @@ Public Class Frm_ListaPrenomina
 
     End Sub
     Private Sub Dgv_ListaPrenomina_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListaPrenomina.CellEndEdit
+        Dim fila As Integer
+        Dim columna As String, colum As String
+        Dim val As Object
+        fila = Dgv_ListaPrenomina.CurrentRow.Index
+        columna = Dgv_ListaPrenomina.Columns(e.ColumnIndex).Name
+        If columna = "entrada1" Or columna = "entrada2" Or columna = "entrada3" Or columna = "entrada4" Or columna = "entrada5" Or columna = "entrada6" Or
+           columna = "entrada7" Or columna = "salida1" Or columna = "salida2" Or columna = "salida3" Or columna = "salida4" Or columna = "salida5" Or
+           columna = "salida6" Or columna = "salida7" Then
+            Dgv_ListaPrenomina.Rows(fila).Cells(columna).Value = UCase(Dgv_ListaPrenomina.Rows(fila).Cells(columna).Value)
+            val = Dgv_ListaPrenomina.Rows(fila).Cells(columna).Value
+            colum = Mid(columna, Len(columna))
+            colum = "manual" + colum + ""
+            If Me.valor <> val Then
+                If val <> "VAC" And val <> "INC" And val <> "BAJA" Then
+                    colum = Mid(columna, Len(columna))
+                    colum = "manual" + colum + ""
+                    Dgv_ListaPrenomina.Rows(fila).Cells("manual").Value = "M"
+                    Dgv_ListaPrenomina.Rows(fila).Cells(colum).Value = "M"
+                    Btn_Guardar.Visible = True
+                    ColorearCeldas(val, fila, columna)
+                Else
+                    MsgBox("No puedes ingresar vacaciones, incapacidades o bajas de manera manual")
+                    Dgv_ListaPrenomina.Rows(fila).Cells(columna).Value = ""
+                    Dgv_ListaPrenomina.Rows(fila).Cells(columna).Style.BackColor = Color.Gray
+                    Dgv_ListaPrenomina.Rows(fila).Cells(columna).Style.ForeColor = Color.Black
+                End If
+            End If
+        End If
+    End Sub
+    Private Sub Dgv_ListaPrenomina_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListaPrenomina.CellEnter
+        Dim fila As Integer
+        Dim columna As String
+        fila = Dgv_ListaPrenomina.CurrentRow.Index
+        columna = Dgv_ListaPrenomina.Columns(e.ColumnIndex).Name
 
+        Me.valor = Dgv_ListaPrenomina.Rows(fila).Cells(columna).Value
+    End Sub
+    Private Sub Btn_Guardar_Click(sender As Object, e As EventArgs) Handles Btn_Guardar.Click
+        Dim lstEmp As New LEmpleado()
+        Dim NPren As New NPrenomina()
+        lstEmp = RellenaObjetoEmpleado()
+        If lstEmp(0).Err = False Then
+            NPren.InsertarModificacionesIncidencias(Me.cadenaConex, lstEmp, CmbSemanas.Text)
+        Else
+            MsgBox("No hubo ningún cambio")
+        End If
     End Sub
 #End Region
 #Region "Rellena cmb"
@@ -892,6 +940,95 @@ Public Class Frm_ListaPrenomina
         Next
     End Sub
 #End Region
+#Region "Rellena objetos"
+    Private Function RellenaObjetoEmpleado() As LEmpleado
+        Dim lstEmp As New LEmpleado()
+        Dim fila As Integer, coun As Integer = 0, colum As Integer
+        Dim fecha As Date
+        Dim c As String
+        Dim totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count()
+        For fila = 0 To totalFilas - 1
+            With Dgv_ListaPrenomina.Rows(fila)
+                Dim modif As Object = .Cells("manual").Value
+                fecha = Lbl_Dia1.Text + "/" + Lbl_año.Text
+                If modif = "M" Then
+                    For colum = 1 To 7
+                        c = "manual" + Convert.ToString(colum) + ""
+                        If .Cells(c).Value = "M" Then
+                            Dim objEmp As New Empleado()
+                            Dim ce As String = "entrada" + Convert.ToString(colum) + ""
+                            Dim cs As String = "salida" + Convert.ToString(colum) + ""
+                            objEmp.IdEmpleado = .Cells("idEmpleado").Value
+                            objEmp.Incidencia1 = .Cells(ce).Value
+                            Select Case objEmp.Incidencia1
+                                Case "FL"
+                                    objEmp.TipoIncidencia1 = "HE"
+                                Case "RET"
+                                    objEmp.TipoIncidencia1 = "HE"
+                                Case "RT"
+                                    objEmp.TipoIncidencia1 = "HE"
+                                Case "PS"
+                                    objEmp.TipoIncidencia1 = "HE"
+                                Case "PM"
+                                    objEmp.TipoIncidencia1 = "A"
+                                Case "F"
+                                    objEmp.TipoIncidencia1 = "A"
+                                Case "PCS"
+                                    objEmp.TipoIncidencia1 = "A"
+                                Case "PSS"
+                                    objEmp.TipoIncidencia1 = "A"
+                                Case "FJ"
+                                    objEmp.TipoIncidencia1 = "A"
+                                Case "SUS"
+                                    objEmp.TipoIncidencia1 = "A"
+                                Case "DT"
+                                    objEmp.TipoIncidencia1 = "HE"
+                                Case Else
+                                    objEmp.TipoIncidencia1 = "CH"
+                            End Select
+                            objEmp.Incidencia2 = .Cells(cs).Value
+                            Select Case objEmp.Incidencia2
+                                Case "FL"
+                                    objEmp.TipoIncidencia2 = "HE"
+                                Case "RET"
+                                    objEmp.TipoIncidencia2 = "HE"
+                                Case "RT"
+                                    objEmp.TipoIncidencia2 = "HE"
+                                Case "PS"
+                                    objEmp.TipoIncidencia2 = "HE"
+                                Case "PM"
+                                    objEmp.TipoIncidencia2 = "A"
+                                Case "F"
+                                    objEmp.TipoIncidencia2 = "A"
+                                Case "PCS"
+                                    objEmp.TipoIncidencia2 = "A"
+                                Case "PSS"
+                                    objEmp.TipoIncidencia2 = "A"
+                                Case "FJ"
+                                    objEmp.TipoIncidencia2 = "A"
+                                Case "SUS"
+                                    objEmp.TipoIncidencia2 = "A"
+                                Case "DT"
+                                    objEmp.TipoIncidencia2 = "HE"
+                                Case Else
+                                    objEmp.TipoIncidencia2 = "CH"
+                            End Select
+                            objEmp.Fecha1 = DateAdd(DateInterval.Day, colum - 1, fecha)
+                            coun = coun + 1
+                            lstEmp.Add(objEmp)
+                        End If
+                    Next
+                End If
+            End With
+        Next
+        If coun = 0 Then
+            Dim objEmp As New Empleado()
+            objEmp.Err = True
+            lstEmp.Add(objEmp)
+        End If
+        Return lstEmp
+    End Function
+#End Region
 #Region "Otros Procesos"
     Private Sub ProcesoPrenomina(ByVal lstEmp As LEmpleado, ByVal fecha As Date)
         lstEmp = RecuperarEmpleados(fecha)
@@ -923,6 +1060,60 @@ Public Class Frm_ListaPrenomina
         fecha = Format(DateAdd(DateInterval.Day, res, DateTime.Now()), "dd/MM/yyyy")
 
         Dtp_FechaInicioSemana.Value = fecha
+    End Sub
+    Private Sub ColorearCeldas(ByVal valor As Object, ByVal fila As Integer, ByVal columna As String)
+        Dim cb As Color
+        Dim cf As Color
+        Select Case valor
+            Case "BAJA"
+                cb = Color.FromArgb(64, 64, 0)
+                cf = Color.White
+            Case "DT"
+                cb = Color.LightSlateGray
+                cf = Color.White
+            Case "FL"
+                cb = Color.Plum
+                cf = Color.Black
+            Case "Ret"
+                cb = Color.White
+                cf = Color.Red
+            Case "RT"
+                cb = Color.White
+                cf = Color.Red
+            Case "PS"
+                cb = Color.White
+                cf = Color.Red
+            Case "PM"
+                cb = Color.SteelBlue
+                cf = Color.Black
+            Case "F"
+                cb = Color.Red
+                cf = Color.Black
+            Case "PCS"
+                cb = Color.Yellow
+                cf = Color.Black
+            Case "PSS"
+                cb = Color.Yellow
+                cf = Color.Red
+            Case "FJ"
+                cb = Color.Red
+                cf = Color.Orange
+            Case "SUS"
+                cb = Color.Red
+                cf = Color.Orange
+            Case "D"
+                cb = Color.Black
+                cf = Color.White
+            Case ""
+                cb = Color.Gray
+                cf = Color.Black
+            Case Else
+                cb = Color.Green
+                cf = Color.White
+        End Select
+
+        Dgv_ListaPrenomina.Rows(fila).Cells(columna).Style.BackColor = cb
+        Dgv_ListaPrenomina.Rows(fila).Cells(columna).Style.ForeColor = cf
     End Sub
 #End Region
 End Class

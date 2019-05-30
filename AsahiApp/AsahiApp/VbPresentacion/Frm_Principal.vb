@@ -4,7 +4,8 @@ Imports Clases
 Imports CsPresentacion
 Public Class Frm_Principal
 #Region "Variables de clase"
-    Dim cadenaConex As SqlConnection
+    Dim cadenaConex As String
+    Dim cadConex As SqlConnection
 #End Region
 #Region "Constructores"
     Sub New()
@@ -15,12 +16,13 @@ Public Class Frm_Principal
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
-    Sub New(ByVal cadenaConex As SqlConnection)
+    Sub New(ByVal cadConex As SqlConnection, ByVal cadenaConex As String)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Me.cadConex = cadConex
         Me.cadenaConex = cadenaConex
     End Sub
 #End Region
@@ -29,7 +31,7 @@ Public Class Frm_Principal
     End Sub
 #Region "Botónes"
     Private Sub PreNominaListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaListadoToolStripMenuItem.Click
-        Dim lista As New Frm_ListaPrenomina(cadenaConex)
+        Dim lista As New Frm_ListaPrenomina(cadConex, cadenaConex)
         lista.ShowDialog()
     End Sub
     Private Sub ControlDeProducciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeProducciónToolStripMenuItem.Click

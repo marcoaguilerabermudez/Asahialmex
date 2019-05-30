@@ -181,3 +181,4 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debu
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\es\Microsoft.VisualStudio.Data.Services.resources.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_GlobalPrenomina.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ReporteEjemplo.resources

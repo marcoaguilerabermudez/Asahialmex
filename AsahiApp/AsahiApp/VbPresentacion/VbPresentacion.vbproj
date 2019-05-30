@@ -88,6 +88,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
@@ -153,6 +154,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Reportes\dtsEjemplo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsEjemplo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteEjemplo.Designer.vb">
+      <DependentUpon>ReporteEjemplo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteEjemplo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_GlobalPrenomina.Designer.vb">
       <DependentUpon>Frm_GlobalPrenomina.vb</DependentUpon>
     </Compile>
@@ -186,6 +198,10 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteEjemplo.resx">
+      <DependentUpon>ReporteEjemplo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Reporte_Ejemplo.rdlc" />
     <EmbeddedResource Include="RH\Frm_GlobalPrenomina.resx">
       <DependentUpon>Frm_GlobalPrenomina.vb</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +220,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Reportes\dtsEjemplo.xsc">
+      <DependentUpon>dtsEjemplo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dtsEjemplo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsEjemplo.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Reportes\dtsEjemplo.xss">
+      <DependentUpon>dtsEjemplo.xsd</DependentUpon>
     </None>
     <None Include="Views\Report\ReportViewer.cshtml" />
   </ItemGroup>
@@ -264,6 +291,7 @@
     <None Include="Resources\1486504328-bullet-list-menu-lines-points-items-options_81334.png" />
     <None Include="Resources\iconfinder_115_List_183241 %281%29.png" />
     <None Include="Resources\iconfinder_115_List_183241 %282%29.png" />
+    <None Include="Resources\save.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -279,6 +307,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="wwwroot\css\mvcreportviewer-bootstrap.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
