@@ -72,7 +72,7 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub InformaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformaciónToolStripMenuItem.Click
-        Dim Detalle As New Frm_Empleados_Detalle()
+        Dim Detalle As New Frm_Modificaciones()
         Detalle.ShowDialog()
     End Sub
 
@@ -87,6 +87,18 @@ Public Class Frm_Principal
         Dim Baja As New Frm_bajas()
         Baja.ShowDialog()
         Baja.Hide()
+    End Sub
+
+    Private Sub EvaluacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EvaluacionesToolStripMenuItem.Click
+        Dim Evaluaciones As New Frm_Evaluacion()
+        Evaluaciones.ShowDialog()
+        Evaluaciones.Hide()
+    End Sub
+
+    Private Sub MejoraContinuaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MejoraContinuaToolStripMenuItem.Click
+        Dim Mejora As New Frm_Mejora_Param()
+        Mejora.ShowDialog()
+        Mejora.Hide()
     End Sub
 #End Region
 End Class

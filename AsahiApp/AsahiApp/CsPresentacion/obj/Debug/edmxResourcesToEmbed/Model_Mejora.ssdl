@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AsahiSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="Reporte_Mejoras_Continuas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VAR" Type="int" Mode="In" />
+    <Parameter Name="CLAVE" Type="int" Mode="In" />
+    <Parameter Name="MES" Type="varchar" Mode="In" />
+    <Parameter Name="DEPARTAMENTO" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="AsahiSystemModelStoreContainer" />
+</Schema>

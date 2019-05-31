@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -53,9 +59,12 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,52 +93,87 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Finiquito.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Frm_Empleados_informacion.cs">
+    <Compile Include="DS_Mejoras3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Mejoras3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Frm_Empleados_informacion.Designer.cs">
-      <DependentUpon>Frm_Empleados_informacion.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Frm_Listado_Altas.cs">
+    <Compile Include="Formularios\RH\Frm_Modifica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Frm_Listado_Altas.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_Modifica.Designer.cs">
+      <DependentUpon>Frm_Modifica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Listado_Altas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Listado_Altas.Designer.cs">
       <DependentUpon>Frm_Listado_Altas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Frm_Listado_Bajas.cs">
+    <Compile Include="Formularios\RH\Frm_Listado_Bajas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Frm_Listado_Bajas.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_Listado_Bajas.Designer.cs">
       <DependentUpon>Frm_Listado_Bajas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Frm_Finiquito.cs">
+    <Compile Include="Formularios\RH\Frm_Finiquito.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Frm_Finiquito.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_Finiquito.Designer.cs">
       <DependentUpon>Frm_Finiquito.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Frm_bajas.cs">
+    <Compile Include="Formularios\RH\Frm_bajas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Frm_bajas.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_bajas.Designer.cs">
       <DependentUpon>Frm_bajas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Fecha_Baja.cs">
+    <Compile Include="Formularios\RH\Frm_Fecha_Baja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Fecha_Baja.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_Fecha_Baja.Designer.cs">
       <DependentUpon>Frm_Fecha_Baja.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Frm_Reporte_Bajas.cs">
+    <Compile Include="Formularios\RH\Frm_cambio_puesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Frm_Reporte_Bajas.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_cambio_puesto.Designer.cs">
+      <DependentUpon>Frm_cambio_puesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Cambio_Depto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Cambio_Depto.Designer.cs">
+      <DependentUpon>Frm_Cambio_Depto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Calidad\Frm_Evaluacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Calidad\Frm_Evaluacion.Designer.cs">
+      <DependentUpon>Frm_Evaluacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Mejora_Param.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Mejora_Param.Designer.cs">
+      <DependentUpon>Frm_Mejora_Param.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Frm_Reporte_Bajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Frm_Reporte_Bajas.Designer.cs">
       <DependentUpon>Frm_Reporte_Bajas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Frm_Reporte_altas.cs">
+    <Compile Include="Reportes\RH\Frm_Reporte_altas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Frm_Reporte_altas.Designer.cs">
+    <Compile Include="Reportes\RH\Frm_Reporte_altas.Designer.cs">
       <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -142,10 +186,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Rep_Finiquito.cs">
+    <Compile Include="Reportes\RH\Rep_Finiquito.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Rep_Finiquito.Designer.cs">
+    <Compile Include="Reportes\RH\Rep_Finiquito.Designer.cs">
       <DependentUpon>Rep_Finiquito.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -156,6 +200,7 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -185,25 +230,40 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formularios\Frm_Empleados_informacion.resx">
-      <DependentUpon>Frm_Empleados_informacion.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm_Listado_Altas.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_Modifica.resx">
+      <DependentUpon>Frm_Modifica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Listado_Altas.resx">
       <DependentUpon>Frm_Listado_Altas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm_Listado_Bajas.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_Listado_Bajas.resx">
       <DependentUpon>Frm_Listado_Bajas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm_Finiquito.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_Finiquito.resx">
       <DependentUpon>Frm_Finiquito.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm_bajas.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_bajas.resx">
       <DependentUpon>Frm_bajas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Fecha_Baja.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_Fecha_Baja.resx">
       <DependentUpon>Frm_Fecha_Baja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Frm_Reporte_altas.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_cambio_puesto.resx">
+      <DependentUpon>Frm_cambio_puesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Cambio_Depto.resx">
+      <DependentUpon>Frm_Cambio_Depto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Calidad\Frm_Evaluacion.resx">
+      <DependentUpon>Frm_Evaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Mejora_Param.resx">
+      <DependentUpon>Frm_Mejora_Param.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Frm_Reporte_altas.resx">
       <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -211,15 +271,16 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Frm_Reporte_Bajas.resx">
+    <EmbeddedResource Include="Reportes\RH\Frm_Reporte_Bajas.resx">
       <DependentUpon>Frm_Reporte_Bajas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Altas1.rdlc" />
     <EmbeddedResource Include="Rep_bajas.rdlc" />
-    <EmbeddedResource Include="Reportes\Rep_Finiquito.resx">
+    <EmbeddedResource Include="Reportes\RH\Rep_Finiquito.resx">
       <DependentUpon>Rep_Finiquito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
+    <EmbeddedResource Include="Rep_Mejoras3.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -255,6 +316,17 @@
     </None>
     <None Include="DS_Finiquito.xss">
       <DependentUpon>DS_Finiquito.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Mejoras3.xsc">
+      <DependentUpon>DS_Mejoras3.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Mejoras3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Mejoras3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Mejoras3.xss">
+      <DependentUpon>DS_Mejoras3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -335,6 +407,11 @@
   <ItemGroup>
     <None Include="Resources\Recycle-Bin-full-icon2.png" />
     <None Include="Resources\Thumb-down-icon.png" />
+    <None Include="Resources\Gear-icon.png" />
+    <None Include="Resources\Gear-icon1.png" />
+    <None Include="Resources\Gear-icon2.png" />
+    <None Include="Resources\Pencil-icon.png" />
+    <None Include="Resources\Pencil-icon2.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
