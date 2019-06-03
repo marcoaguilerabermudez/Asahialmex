@@ -27,7 +27,6 @@ namespace CsPresentacion
         {
             // TODO: esta línea de código carga datos en la tabla 'DS_Mejoras3.Reporte_Mejoras_Continuas' Puede moverla o quitarla según sea necesario.
             this.Reporte_Mejoras_ContinuasTableAdapter.Fill(this.DS_Mejoras3.Reporte_Mejoras_Continuas, VAR, CLAVE, MES, DEPARTAMENTO);
-
             this.reportViewer1.RefreshReport();
         }
     }

@@ -62,6 +62,7 @@ namespace CsPresentacion
         {
             Var = 0;
             lbl_var.Text = "0";
+            lbl_var.Visible = false;
             cargar_departemento(cmb_departamento);
             Nuevo();
             

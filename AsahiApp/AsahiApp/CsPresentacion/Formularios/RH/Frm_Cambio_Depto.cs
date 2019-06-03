@@ -26,8 +26,31 @@ namespace CsPresentacion
             cargar_departemento(cmb_departamento);
             l_fecha.Visible = false;
             l_hora.Visible = false;
-            lbl_clave.Visible = false;
+            // lbl_clave.Visible = false;
+            btn_aceptar.Enabled = false;
         }
+
+        private void Inserta_cambio_depto()// Método para modificar el departamento
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CLAVE", lbl_clave.Text);
+                cmd.Parameters.AddWithValue("@CATALOGO", cmb_departamento.Text);
+                con.Close();
+                MessageBox.Show("Se modificó correctamente.");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+     
 
         public void cargar_departemento(ComboBox inte)//Cargar departamento en cmb
         {
@@ -63,6 +86,16 @@ namespace CsPresentacion
         private void Cmb_departamento_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void Btn_aceptar_Click(object sender, EventArgs e)
+        {
+            Inserta_cambio_depto();            
+        }
+
+        private void Cmb_departamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btn_aceptar.Enabled = true;
         }
     }
 }
