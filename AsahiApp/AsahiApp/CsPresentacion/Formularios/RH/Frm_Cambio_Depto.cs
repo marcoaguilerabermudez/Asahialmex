@@ -26,31 +26,33 @@ namespace CsPresentacion
             cargar_departemento(cmb_departamento);
             l_fecha.Visible = false;
             l_hora.Visible = false;
-            // lbl_clave.Visible = false;
+            lbl_clave.Visible = false;
             btn_aceptar.Enabled = false;
         }
 
-        private void Inserta_cambio_depto()// Método para modificar el departamento
+
+        private void Inserta_depto()
         {
             try
             {
+                DataTable dt = new DataTable();
+                String str;
+                str = "[dbo].[Modifica_depto_fm]";
+                SqlDataAdapter da = new SqlDataAdapter(str, con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CLAVE", lbl_clave.Text);
-                cmd.Parameters.AddWithValue("@CATALOGO", cmb_departamento.Text);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@CLAVE", lbl_clave.Text);
+                da.SelectCommand.Parameters.AddWithValue("@CATALOGO", cmb_departamento.Text);
+       
+                da.Fill(dt);
                 con.Close();
                 MessageBox.Show("Se modificó correctamente.");
-                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
-
-
-     
 
         public void cargar_departemento(ComboBox inte)//Cargar departamento en cmb
         {
@@ -90,7 +92,7 @@ namespace CsPresentacion
 
         private void Btn_aceptar_Click(object sender, EventArgs e)
         {
-            Inserta_cambio_depto();            
+            Inserta_depto();            
         }
 
         private void Cmb_departamento_SelectedIndexChanged(object sender, EventArgs e)
