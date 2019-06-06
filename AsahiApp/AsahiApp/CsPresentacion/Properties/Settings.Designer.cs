@@ -42,5 +42,16 @@ namespace CsPresentacion.Properties {
                 return ((string)(this["asahi16ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=GIRO\\SQLEXPRESS;Initial Catalog=AsahiSystem;Persist Security Info=Tru" +
+            "e;User ID=sa;Password=Pa55word")]
+        public string AsahiSystemConnectionString {
+            get {
+                return ((string)(this["AsahiSystemConnectionString"]));
+            }
+        }
     }
 }

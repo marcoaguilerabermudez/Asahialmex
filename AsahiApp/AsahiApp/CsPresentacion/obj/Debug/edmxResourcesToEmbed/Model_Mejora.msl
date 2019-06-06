@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AsahiSystemModelStoreContainer" CdmEntityContainer="AsahiSystemEntities">
+    <FunctionImportMapping FunctionImportName="Reporte_Mejoras_Continuas" FunctionName="AsahiSystemModel.Store.Reporte_Mejoras_Continuas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AsahiSystemModel.Reporte_Mejoras_Continuas_Result">
+          <ScalarProperty Name="Id_propuestamejora" ColumnName="Id_propuestamejora" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="Responsable" ColumnName="Responsable" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Propuesta" ColumnName="Propuesta" />
+          <ScalarProperty Name="t1" ColumnName="t1" />
+          <ScalarProperty Name="t2" ColumnName="t2" />
+          <ScalarProperty Name="t3" ColumnName="t3" />
+          <ScalarProperty Name="t4" ColumnName="t4" />
+          <ScalarProperty Name="t5" ColumnName="t5" />
+          <ScalarProperty Name="t6" ColumnName="t6" />
+          <ScalarProperty Name="t7" ColumnName="t7" />
+          <ScalarProperty Name="t8" ColumnName="t8" />
+          <ScalarProperty Name="t9" ColumnName="t9" />
+          <ScalarProperty Name="c1" ColumnName="c1" />
+          <ScalarProperty Name="c2" ColumnName="c2" />
+          <ScalarProperty Name="c3" ColumnName="c3" />
+          <ScalarProperty Name="c4" ColumnName="c4" />
+          <ScalarProperty Name="calificacion" ColumnName="calificacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Fechac" ColumnName="Fechac" />
+          <ScalarProperty Name="Fechav" ColumnName="Fechav" />
+          <ScalarProperty Name="Tema" ColumnName="Tema" />
+          <ScalarProperty Name="cf" ColumnName="cf" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

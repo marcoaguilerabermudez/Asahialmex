@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AsahiSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AsahiSystemEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="Reporte_Mejoras_Continuas" ReturnType="Collection(AsahiSystemModel.Reporte_Mejoras_Continuas_Result)">
+      <Parameter Name="VAR" Mode="In" Type="Int32" />
+      <Parameter Name="CLAVE" Mode="In" Type="Int32" />
+      <Parameter Name="MES" Mode="In" Type="String" />
+      <Parameter Name="DEPARTAMENTO" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Reporte_Mejoras_Continuas_Result">
+    <Property Type="Int32" Name="Id_propuestamejora" Nullable="false" />
+    <Property Type="String" Name="Area" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Supervisor" Nullable="true" />
+    <Property Type="Int32" Name="Responsable" Nullable="true" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Propuesta" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="t1" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="t2" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="t3" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="t4" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="t5" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="t6" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="t7" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="t8" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="t9" Nullable="true" MaxLength="Max" />
+    <Property Type="Byte" Name="c1" Nullable="true" />
+    <Property Type="Byte" Name="c2" Nullable="true" />
+    <Property Type="Byte" Name="c3" Nullable="true" />
+    <Property Type="Byte" Name="c4" Nullable="true" />
+    <Property Type="Byte" Name="calificacion" Nullable="true" />
+    <Property Type="Byte" Name="Estado" Nullable="true" />
+    <Property Type="DateTime" Name="Fechac" Nullable="true" />
+    <Property Type="DateTime" Name="Fechav" Nullable="true" />
+    <Property Type="Byte" Name="Tema" Nullable="true" />
+    <Property Type="Byte" Name="cf" Nullable="true" />
+  </ComplexType>
+</Schema>

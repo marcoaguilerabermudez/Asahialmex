@@ -1,10 +1,10 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-<Global.System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1726")> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+<Global.System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1726")>
 Partial Class Frm_Login
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -14,13 +14,9 @@ Partial Class Frm_Login
             MyBase.Dispose(disposing)
         End Try
     End Sub
-    Friend WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
-    Friend WithEvents UsernameLabel As System.Windows.Forms.Label
-    Friend WithEvents PasswordLabel As System.Windows.Forms.Label
     Friend WithEvents Txt_NombreUsuario As System.Windows.Forms.TextBox
     Friend WithEvents Txt_Contraseña As System.Windows.Forms.TextBox
     Friend WithEvents Btn_Aceptar As System.Windows.Forms.Button
-    Friend WithEvents Btn_Cancelar As System.Windows.Forms.Button
 
     'Requerido por el Diseñador de Windows Forms
     Private components As System.ComponentModel.IContainer
@@ -28,103 +24,116 @@ Partial Class Frm_Login
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Login))
-        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
-        Me.UsernameLabel = New System.Windows.Forms.Label()
-        Me.PasswordLabel = New System.Windows.Forms.Label()
         Me.Txt_NombreUsuario = New System.Windows.Forms.TextBox()
         Me.Txt_Contraseña = New System.Windows.Forms.TextBox()
         Me.Btn_Aceptar = New System.Windows.Forms.Button()
-        Me.Btn_Cancelar = New System.Windows.Forms.Button()
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LogoPictureBox
-        '
-        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
-        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
-        Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(165, 193)
-        Me.LogoPictureBox.TabIndex = 0
-        Me.LogoPictureBox.TabStop = False
-        '
-        'UsernameLabel
-        '
-        Me.UsernameLabel.Location = New System.Drawing.Point(172, 24)
-        Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
-        Me.UsernameLabel.TabIndex = 0
-        Me.UsernameLabel.Text = "&Nombre de usuario"
-        Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'PasswordLabel
-        '
-        Me.PasswordLabel.Location = New System.Drawing.Point(172, 81)
-        Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
-        Me.PasswordLabel.TabIndex = 2
-        Me.PasswordLabel.Text = "&Contraseña"
-        Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Txt_NombreUsuario
         '
-        Me.Txt_NombreUsuario.Location = New System.Drawing.Point(174, 44)
+        Me.Txt_NombreUsuario.Location = New System.Drawing.Point(12, 125)
+        Me.Txt_NombreUsuario.Multiline = True
         Me.Txt_NombreUsuario.Name = "Txt_NombreUsuario"
-        Me.Txt_NombreUsuario.Size = New System.Drawing.Size(220, 20)
+        Me.Txt_NombreUsuario.Size = New System.Drawing.Size(187, 22)
         Me.Txt_NombreUsuario.TabIndex = 1
         '
         'Txt_Contraseña
         '
-        Me.Txt_Contraseña.Location = New System.Drawing.Point(174, 101)
+        Me.Txt_Contraseña.Location = New System.Drawing.Point(12, 172)
+        Me.Txt_Contraseña.Multiline = True
         Me.Txt_Contraseña.Name = "Txt_Contraseña"
         Me.Txt_Contraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Txt_Contraseña.Size = New System.Drawing.Size(220, 20)
+        Me.Txt_Contraseña.Size = New System.Drawing.Size(187, 22)
         Me.Txt_Contraseña.TabIndex = 3
         '
         'Btn_Aceptar
         '
-        Me.Btn_Aceptar.Location = New System.Drawing.Point(197, 161)
+        Me.Btn_Aceptar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.Btn_Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue
+        Me.Btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Aceptar.Location = New System.Drawing.Point(12, 232)
         Me.Btn_Aceptar.Name = "Btn_Aceptar"
-        Me.Btn_Aceptar.Size = New System.Drawing.Size(94, 23)
+        Me.Btn_Aceptar.Size = New System.Drawing.Size(76, 33)
         Me.Btn_Aceptar.TabIndex = 4
         Me.Btn_Aceptar.Text = "&Aceptar"
         '
-        'Btn_Cancelar
+        'btn_cancelar
         '
-        Me.Btn_Cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Btn_Cancelar.Location = New System.Drawing.Point(300, 161)
-        Me.Btn_Cancelar.Name = "Btn_Cancelar"
-        Me.Btn_Cancelar.Size = New System.Drawing.Size(94, 23)
-        Me.Btn_Cancelar.TabIndex = 5
-        Me.Btn_Cancelar.Text = "&Cancelar"
+        Me.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue
+        Me.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cancelar.Location = New System.Drawing.Point(123, 232)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(76, 33)
+        Me.btn_cancelar.TabIndex = 5
+        Me.btn_cancelar.Text = "&Cancelar"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(11, 108)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(59, 13)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "&USUARIO:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(11, 155)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(84, 13)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "&CONTRASEÑA:"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Presentacion.My.Resources.Resources.log
+        Me.PictureBox1.Location = New System.Drawing.Point(60, 6)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(90, 90)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
         '
         'Frm_Login
         '
         Me.AcceptButton = Me.Btn_Aceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.Btn_Cancelar
-        Me.ClientSize = New System.Drawing.Size(401, 192)
-        Me.Controls.Add(Me.Btn_Cancelar)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(211, 274)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.Btn_Aceptar)
         Me.Controls.Add(Me.Txt_Contraseña)
         Me.Controls.Add(Me.Txt_NombreUsuario)
-        Me.Controls.Add(Me.PasswordLabel)
-        Me.Controls.Add(Me.UsernameLabel)
-        Me.Controls.Add(Me.LogoPictureBox)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Frm_Login"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inicio de sesión"
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents btn_cancelar As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
