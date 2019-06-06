@@ -27,8 +27,11 @@ Public Class Frm_Login
         End If
     End Sub
 
-    Private Sub BtnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Cancelar.Click
-        Me.Close()
+    Private Sub BtnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
+    Private Sub Btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
+        Me.Close()
+    End Sub
 End Class

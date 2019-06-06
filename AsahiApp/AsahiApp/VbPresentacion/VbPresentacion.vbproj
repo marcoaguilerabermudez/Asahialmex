@@ -284,6 +284,9 @@
     <None Include="Resources\Logo.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\log.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Bulleted-List-icon.png" />
   </ItemGroup>
   <ItemGroup>

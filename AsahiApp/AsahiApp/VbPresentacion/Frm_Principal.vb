@@ -74,8 +74,33 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub InformaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformaciónToolStripMenuItem.Click
-        Dim Detalle As New Frm_Empleados_Detalle()
+        Dim Detalle As New Frm_Modificaciones()
         Detalle.ShowDialog()
+    End Sub
+
+    Private Sub FiniquitoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FiniquitoToolStripMenuItem.Click
+        Dim Finiquito As New Frm_Finiquito()
+        Finiquito.ShowDialog()
+        Finiquito.Hide()
+
+    End Sub
+
+    Private Sub BajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaToolStripMenuItem.Click
+        Dim Baja As New Frm_bajas()
+        Baja.ShowDialog()
+        Baja.Hide()
+    End Sub
+
+    Private Sub EvaluacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EvaluacionesToolStripMenuItem.Click
+        Dim Evaluaciones As New Frm_Evaluacion()
+        Evaluaciones.ShowDialog()
+        Evaluaciones.Hide()
+    End Sub
+
+    Private Sub MejoraContinuaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MejoraContinuaToolStripMenuItem.Click
+        Dim Mejora As New Frm_Mejora_Param()
+        Mejora.ShowDialog()
+        Mejora.Hide()
     End Sub
     Private Sub PreNominaGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaGlobalToolStripMenuItem.Click
         Dim globPren As New Frm_GlobalPrenomina()
