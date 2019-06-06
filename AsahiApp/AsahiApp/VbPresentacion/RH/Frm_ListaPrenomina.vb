@@ -98,7 +98,7 @@ Public Class Frm_ListaPrenomina
             ProcesoPrenomina(lstEmp, fecha)
         End If
     End Sub
-    Private Sub Bgw_HiloSeundoPlano_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Bgw_HiloSeundoPlano.DoWork
+    Private Sub Bgw_HiloSegundoPlano_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Bgw_HiloSeundoPlano.DoWork
 
     End Sub
     Private Sub Dgv_ListaPrenomina_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListaPrenomina.CellEndEdit
@@ -144,7 +144,27 @@ Public Class Frm_ListaPrenomina
         Dim NPren As New NPrenomina()
         lstEmp = RellenaObjetoEmpleado()
         If lstEmp(0).Err = False Then
+            Dim fechaI As Date
+            Dim fechaF As Date
+            Dim conex As New conexion
+            Dim cadConex = conex.conexion2008
+            fechaI = (Lbl_Dia1.Text + "/" + Lbl_año.Text)
+            fechaF = DateAdd(DateInterval.Day, 6, fechaI)
             NPren.InsertarModificacionesIncidencias(Me.cadenaConex, lstEmp, CmbSemanas.Text)
+            lstEmp = NPren.RecuperarInc(Me.cadenaConex, "A", CmbSemanas.Text, fechaI, fechaF)
+            If lstEmp.Item(0).Err = Nothing Then
+                lstEmp = CambiarTipoIncidenciaA(lstEmp)
+                NPren.InsertarModificacionesAusentismo(cadConex, lstEmp)
+            End If
+            lstEmp = NPren.RecuperarInc(Me.cadenaConex, "HE", CmbSemanas.Text, fechaI, fechaF)
+            If lstEmp.Item(0).Err = Nothing Then
+                lstEmp = CambiarTipoIncidenciaHE(lstEmp)
+                NPren.InsertarModificacionesHE(cadConex, lstEmp)
+            End If
+            lstEmp = NPren.RecuperarInc(Me.cadenaConex, "CH", CmbSemanas.Text, fechaI, fechaF)
+            If lstEmp.Item(0).Err = False Then
+                NPren.InsertarModificacionesChecadas(cadConex, lstEmp)
+            End If
         Else
             MsgBox("No hubo ningún cambio")
         End If
@@ -207,6 +227,8 @@ Public Class Frm_ListaPrenomina
             Dgv_ListaPrenomina.Rows(fila).Cells("horarioEmpleado").Style.BackColor = Color.White
             Dgv_ListaPrenomina.Rows(fila).Cells("departamentoEmpleado").Value = item.Departamento
             Dgv_ListaPrenomina.Rows(fila).Cells("departamentoEmpleado").Style.BackColor = Color.White
+            Dgv_ListaPrenomina.Rows(fila).Cells("E").Value = item.HoraEntrada
+            Dgv_ListaPrenomina.Rows(fila).Cells("S").Value = item.HoraSalida
             Dgv_ListaPrenomina.Rows(fila).Cells("comentarios").Style.BackColor = Color.White
             Dgv_ListaPrenomina.Rows(fila).Cells("bonoEmpleado").Style.BackColor = Color.White
             If item.IdTurno <> 3 Then
@@ -843,7 +865,7 @@ Public Class Frm_ListaPrenomina
                                     ElseIf Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "BAJA" Then
                                         Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "F/B"
                                     Else
-                                        Dgv_ListaPrenomina.Rows(fila).Cells(ce).Style.BackColor = Color.Orange
+                                        Dgv_ListaPrenomina.Rows(fila).Cells(ce).Style.ForeColor = Color.Orange
                                     End If
                                     If Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value = "" Then
                                         Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value = inc
@@ -852,11 +874,12 @@ Public Class Frm_ListaPrenomina
                                     ElseIf Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value = "BAJA" Then
                                         Dgv_ListaPrenomina.Rows(fila).Cells(cs).Value = "F/B"
                                     Else
-                                        Dgv_ListaPrenomina.Rows(fila).Cells(cs).Style.BackColor = Color.Orange
+                                        Dgv_ListaPrenomina.Rows(fila).Cells(cs).Style.ForeColor = Color.Orange
                                     End If
                                 End If
                             End If
                         Next
+                        fechaI = Format(DateAdd(DateInterval.Day, 1, fechaI), "dd/MM/yyyy")
                     Next
                 End If
             Next
@@ -1014,6 +1037,9 @@ Public Class Frm_ListaPrenomina
                                     objEmp.TipoIncidencia2 = "CH"
                             End Select
                             objEmp.Fecha1 = DateAdd(DateInterval.Day, colum - 1, fecha)
+                            objEmp.HoraEntrada = .Cells("E").Value
+                            objEmp.HoraSalida = .Cells("S").Value
+                            objEmp.IdTurno = .Cells("idTurno").Value
                             coun = coun + 1
                             lstEmp.Add(objEmp)
                         End If
@@ -1115,5 +1141,63 @@ Public Class Frm_ListaPrenomina
         Dgv_ListaPrenomina.Rows(fila).Cells(columna).Style.BackColor = cb
         Dgv_ListaPrenomina.Rows(fila).Cells(columna).Style.ForeColor = cf
     End Sub
+    Private Function CambiarTipoIncidenciaA(ByVal lstEmp As LEmpleado) As LEmpleado
+        For Each item In lstEmp
+            Select Case item.Incidencia1
+                Case "PM"
+                    item.Incidencia1 = "B"
+                Case "F"
+                    item.Incidencia1 = "F"
+                Case "PCS"
+                    item.Incidencia1 = "G"
+                Case "PSS"
+                    item.Incidencia1 = "P"
+                Case "FJ"
+                    item.Incidencia1 = "U"
+                Case "SUS"
+                    item.Incidencia1 = "N"
+            End Select
+            Select Case item.Incidencia2
+                Case "PM"
+                    item.Incidencia1 = "B"
+                Case "F"
+                    item.Incidencia1 = "F"
+                Case "PCS"
+                    item.Incidencia1 = "G"
+                Case "PSS"
+                    item.Incidencia1 = "P"
+                Case "FJ"
+                    item.Incidencia1 = "U"
+                Case "SUS"
+                    item.Incidencia1 = "N"
+            End Select
+        Next
+        Return lstEmp
+    End Function
+    Private Function CambiarTipoIncidenciaHE(ByVal lstEmp As LEmpleado) As LEmpleado
+        For Each item In lstEmp
+            Select Case item.Incidencia1
+                Case "PS"
+                    item.Incidencia1 = "P"
+                Case "RT"
+                    item.Incidencia1 = "R"
+                Case "RET"
+                    item.Incidencia1 = "R"
+                Case "FL"
+                    item.Incidencia1 = "F"
+            End Select
+            Select Case item.Incidencia2
+                Case "PS"
+                    item.Incidencia1 = "P"
+                Case "RT"
+                    item.Incidencia1 = "R"
+                Case "RET"
+                    item.Incidencia1 = "R"
+                Case "FL"
+                    item.Incidencia1 = "F"
+            End Select
+        Next
+        Return lstEmp
+    End Function
 #End Region
 End Class

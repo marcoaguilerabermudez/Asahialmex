@@ -44,6 +44,8 @@ Partial Class Frm_ListaPrenomina
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.horarioEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.departamentoEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.E = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.S = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.manual1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -76,7 +78,7 @@ Partial Class Frm_ListaPrenomina
         'Dgv_ListaPrenomina
         '
         Me.Dgv_ListaPrenomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.entrada1, Me.salida1, Me.manual1, Me.entrada2, Me.salida2, Me.manual2, Me.entrada3, Me.salida3, Me.manual3, Me.entrada4, Me.salida4, Me.manual4, Me.entrada5, Me.salida5, Me.manual5, Me.entrada6, Me.salida6, Me.manual6, Me.entrada7, Me.salida7, Me.manual7, Me.comentarios, Me.bonoEmpleado, Me.idTurno, Me.manual})
+        Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.E, Me.S, Me.entrada1, Me.salida1, Me.manual1, Me.entrada2, Me.salida2, Me.manual2, Me.entrada3, Me.salida3, Me.manual3, Me.entrada4, Me.salida4, Me.manual4, Me.entrada5, Me.salida5, Me.manual5, Me.entrada6, Me.salida6, Me.manual6, Me.entrada7, Me.salida7, Me.manual7, Me.comentarios, Me.bonoEmpleado, Me.idTurno, Me.manual})
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -97,7 +99,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia1
         '
         Me.Lbl_Dia1.AutoSize = True
-        Me.Lbl_Dia1.Location = New System.Drawing.Point(481, 63)
+        Me.Lbl_Dia1.Location = New System.Drawing.Point(474, 63)
         Me.Lbl_Dia1.Name = "Lbl_Dia1"
         Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia1.TabIndex = 4
@@ -105,7 +107,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia2
         '
         Me.Lbl_Dia2.AutoSize = True
-        Me.Lbl_Dia2.Location = New System.Drawing.Point(558, 63)
+        Me.Lbl_Dia2.Location = New System.Drawing.Point(551, 63)
         Me.Lbl_Dia2.Name = "Lbl_Dia2"
         Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia2.TabIndex = 5
@@ -113,7 +115,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia4
         '
         Me.Lbl_Dia4.AutoSize = True
-        Me.Lbl_Dia4.Location = New System.Drawing.Point(710, 63)
+        Me.Lbl_Dia4.Location = New System.Drawing.Point(703, 63)
         Me.Lbl_Dia4.Name = "Lbl_Dia4"
         Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia4.TabIndex = 7
@@ -121,7 +123,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia3
         '
         Me.Lbl_Dia3.AutoSize = True
-        Me.Lbl_Dia3.Location = New System.Drawing.Point(634, 63)
+        Me.Lbl_Dia3.Location = New System.Drawing.Point(627, 63)
         Me.Lbl_Dia3.Name = "Lbl_Dia3"
         Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia3.TabIndex = 6
@@ -129,7 +131,7 @@ Partial Class Frm_ListaPrenomina
         'lbl_Dia7
         '
         Me.lbl_Dia7.AutoSize = True
-        Me.lbl_Dia7.Location = New System.Drawing.Point(937, 63)
+        Me.lbl_Dia7.Location = New System.Drawing.Point(930, 63)
         Me.lbl_Dia7.Name = "lbl_Dia7"
         Me.lbl_Dia7.Size = New System.Drawing.Size(0, 13)
         Me.lbl_Dia7.TabIndex = 10
@@ -137,7 +139,7 @@ Partial Class Frm_ListaPrenomina
         'lbl_Dia6
         '
         Me.lbl_Dia6.AutoSize = True
-        Me.lbl_Dia6.Location = New System.Drawing.Point(861, 63)
+        Me.lbl_Dia6.Location = New System.Drawing.Point(854, 63)
         Me.lbl_Dia6.Name = "lbl_Dia6"
         Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
         Me.lbl_Dia6.TabIndex = 9
@@ -145,7 +147,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia5
         '
         Me.Lbl_Dia5.AutoSize = True
-        Me.Lbl_Dia5.Location = New System.Drawing.Point(786, 63)
+        Me.Lbl_Dia5.Location = New System.Drawing.Point(779, 63)
         Me.Lbl_Dia5.Name = "Lbl_Dia5"
         Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia5.TabIndex = 8
@@ -266,6 +268,20 @@ Partial Class Frm_ListaPrenomina
         Me.departamentoEmpleado.HeaderText = "Departamento"
         Me.departamentoEmpleado.Name = "departamentoEmpleado"
         Me.departamentoEmpleado.ReadOnly = True
+        '
+        'E
+        '
+        Me.E.HeaderText = "E"
+        Me.E.Name = "E"
+        Me.E.ReadOnly = True
+        Me.E.Visible = False
+        '
+        'S
+        '
+        Me.S.HeaderText = "S"
+        Me.S.Name = "S"
+        Me.S.ReadOnly = True
+        Me.S.Visible = False
         '
         'entrada1
         '
@@ -467,6 +483,8 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents nombreEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents horarioEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents departamentoEmpleado As DataGridViewTextBoxColumn
+    Friend WithEvents E As DataGridViewTextBoxColumn
+    Friend WithEvents S As DataGridViewTextBoxColumn
     Friend WithEvents entrada1 As DataGridViewTextBoxColumn
     Friend WithEvents salida1 As DataGridViewTextBoxColumn
     Friend WithEvents manual1 As DataGridViewTextBoxColumn
