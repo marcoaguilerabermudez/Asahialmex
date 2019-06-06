@@ -430,11 +430,14 @@ namespace CsPresentacion
 
         private void Btn_modificar_Click(object sender, EventArgs e)
         {
-            Frm_cambio_puesto Puesto = new Frm_cambio_puesto();
-            Puesto.cmb_puesto.Text = txt_puesto.Text;
-            Puesto.lbl_clave.Text = txt_clave.Text;
-            Puesto.ShowDialog();
-            nuevo();
+            if (MessageBox.Show("Se modificará el puesto del empleado.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+            {
+                Frm_cambio_puesto Puesto = new Frm_cambio_puesto();
+                Puesto.cmb_puesto.Text = txt_puesto.Text;
+                Puesto.lbl_clave.Text = txt_clave.Text;
+                Puesto.ShowDialog();
+                nuevo();
+            }
         }
 
         private void Btn_modificar_sueldo_Click(object sender, EventArgs e)
@@ -444,11 +447,14 @@ namespace CsPresentacion
 
         private void Btn_mmodifica_depto_Click(object sender, EventArgs e)
         {
-            Frm_Cambio_Depto Depto = new Frm_Cambio_Depto();
-            Depto.cmb_departamento.Text = txt_departamento.Text;
-            Depto.lbl_clave.Text = txt_clave.Text;
-            Depto.ShowDialog();
-            nuevo();
+            if (MessageBox.Show("Se modificará el departamento del empleado.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+            {
+                Frm_Cambio_Depto Depto = new Frm_Cambio_Depto();
+                Depto.cmb_departamento.Text = txt_departamento.Text;
+                Depto.lbl_clave.Text = txt_clave.Text;
+                Depto.ShowDialog();
+                nuevo();
+            }
         }
     }
 }

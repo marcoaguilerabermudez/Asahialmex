@@ -23,6 +23,8 @@ namespace CsPresentacion
             cargar_motivo(cmb_motivo);   
         }
 
+
+
         private void ejecutar_baja()
         {
             try

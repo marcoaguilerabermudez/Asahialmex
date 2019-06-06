@@ -44,7 +44,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(98, 130);
+            this.button1.Location = new System.Drawing.Point(97, 91);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 28);
             this.button1.TabIndex = 17;
@@ -57,7 +57,7 @@
             this.btn_aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_aceptar.Location = new System.Drawing.Point(10, 130);
+            this.btn_aceptar.Location = new System.Drawing.Point(9, 91);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(71, 28);
             this.btn_aceptar.TabIndex = 16;
@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 22);
+            this.label2.Location = new System.Drawing.Point(10, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 15;
@@ -79,10 +79,11 @@
             this.cmb_puesto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_puesto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_puesto.FormattingEnabled = true;
-            this.cmb_puesto.Location = new System.Drawing.Point(10, 38);
+            this.cmb_puesto.Location = new System.Drawing.Point(9, 22);
             this.cmb_puesto.Name = "cmb_puesto";
             this.cmb_puesto.Size = new System.Drawing.Size(170, 21);
             this.cmb_puesto.TabIndex = 14;
+            this.cmb_puesto.SelectedIndexChanged += new System.EventHandler(this.Cmb_puesto_SelectedIndexChanged);
             this.cmb_puesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_puesto_KeyPress);
             // 
             // timer1
@@ -92,7 +93,7 @@
             // l_fecha
             // 
             this.l_fecha.AutoSize = true;
-            this.l_fecha.Location = new System.Drawing.Point(6, 163);
+            this.l_fecha.Location = new System.Drawing.Point(10, 66);
             this.l_fecha.Name = "l_fecha";
             this.l_fecha.Size = new System.Drawing.Size(40, 13);
             this.l_fecha.TabIndex = 20;
@@ -101,7 +102,7 @@
             // l_hora
             // 
             this.l_hora.AutoSize = true;
-            this.l_hora.Location = new System.Drawing.Point(60, 163);
+            this.l_hora.Location = new System.Drawing.Point(64, 66);
             this.l_hora.Name = "l_hora";
             this.l_hora.Size = new System.Drawing.Size(33, 13);
             this.l_hora.TabIndex = 21;
@@ -110,7 +111,7 @@
             // lbl_clave
             // 
             this.lbl_clave.AutoSize = true;
-            this.lbl_clave.Location = new System.Drawing.Point(114, 162);
+            this.lbl_clave.Location = new System.Drawing.Point(118, 65);
             this.lbl_clave.Name = "lbl_clave";
             this.lbl_clave.Size = new System.Drawing.Size(37, 13);
             this.lbl_clave.TabIndex = 22;
@@ -121,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(191, 180);
+            this.ClientSize = new System.Drawing.Size(188, 123);
             this.Controls.Add(this.lbl_clave);
             this.Controls.Add(this.l_hora);
             this.Controls.Add(this.l_fecha);

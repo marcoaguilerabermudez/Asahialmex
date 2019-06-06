@@ -46,7 +46,7 @@ namespace CsPresentacion
        
                 da.Fill(dt);
                 con.Close();
-                MessageBox.Show("Se modificó correctamente.");
+                MessageBox.Show("Se modificó el departamento correctamente.");
             }
             catch (Exception ex)
             {
@@ -91,8 +91,9 @@ namespace CsPresentacion
         }
 
         private void Btn_aceptar_Click(object sender, EventArgs e)
-        {
-            Inserta_depto();            
+        { 
+            Inserta_depto();
+            this.Close();
         }
 
         private void Cmb_departamento_SelectedIndexChanged(object sender, EventArgs e)
