@@ -98,7 +98,7 @@ Partial Class Frm_Login
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Presentacion.My.Resources.Resources.log
-        Me.PictureBox1.Location = New System.Drawing.Point(60, 5)
+        Me.PictureBox1.Location = New System.Drawing.Point(60, 6)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(90, 90)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
