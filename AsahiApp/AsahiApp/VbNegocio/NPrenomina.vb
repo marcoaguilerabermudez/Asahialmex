@@ -141,5 +141,9 @@ Public Class NPrenomina
         objEmp.Xml = "<Incidencias>" & objEmp.Xml & "</Incidencias>"
         Return objEmp
     End Function
+    Public Function EmpleadoGlobalRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.EmpleadoGlobalRecuperar(cadConex, fecha)
+    End Function
 End Class
 'String.Format("{0:000}", valor)

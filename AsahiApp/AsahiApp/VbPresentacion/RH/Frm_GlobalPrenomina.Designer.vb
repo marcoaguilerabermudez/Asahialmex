@@ -29,7 +29,14 @@ Partial Class Frm_GlobalPrenomina
         Me.CmbSemanas = New System.Windows.Forms.ComboBox()
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
         Me.Btn_Mostrar = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Dgv_Prenomina_Global = New System.Windows.Forms.DataGridView()
+        Me.lbl_Dia7 = New System.Windows.Forms.Label()
+        Me.lbl_Dia6 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia5 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia4 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia3 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia2 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia1 = New System.Windows.Forms.Label()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lun = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,7 +69,7 @@ Partial Class Frm_GlobalPrenomina
         Me.turnoEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idTurnoEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Dgv_Prenomina_Global, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -142,14 +149,79 @@ Partial Class Frm_GlobalPrenomina
         Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Btn_Mostrar.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'Dgv_Prenomina_Global
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.lun, Me.te1, Me.cm1, Me.mar, Me.te2, Me.cm2, Me.mie, Me.te3, Me.cm3, Me.jue, Me.te4, Me.cm4, Me.vie, Me.te5, Me.cm5, Me.sab, Me.te6, Me.cm6, Me.dom, Me.te7, Me.cm7, Me.te, Me.com, Me.cm, Me.sp, Me.bono, Me.departamentoEmpleado, Me.turnoEmpleado, Me.idTurnoEmpleado})
-        Me.DataGridView1.Location = New System.Drawing.Point(4, 84)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1245, 483)
-        Me.DataGridView1.TabIndex = 16
+        Me.Dgv_Prenomina_Global.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv_Prenomina_Global.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.lun, Me.te1, Me.cm1, Me.mar, Me.te2, Me.cm2, Me.mie, Me.te3, Me.cm3, Me.jue, Me.te4, Me.cm4, Me.vie, Me.te5, Me.cm5, Me.sab, Me.te6, Me.cm6, Me.dom, Me.te7, Me.cm7, Me.te, Me.com, Me.cm, Me.sp, Me.bono, Me.departamentoEmpleado, Me.turnoEmpleado, Me.idTurnoEmpleado})
+        Me.Dgv_Prenomina_Global.Enabled = False
+        Me.Dgv_Prenomina_Global.GridColor = System.Drawing.Color.SteelBlue
+        Me.Dgv_Prenomina_Global.Location = New System.Drawing.Point(4, 84)
+        Me.Dgv_Prenomina_Global.Name = "Dgv_Prenomina_Global"
+        Me.Dgv_Prenomina_Global.Size = New System.Drawing.Size(1245, 483)
+        Me.Dgv_Prenomina_Global.TabIndex = 0
+        '
+        'lbl_Dia7
+        '
+        Me.lbl_Dia7.AutoSize = True
+        Me.lbl_Dia7.Location = New System.Drawing.Point(969, 68)
+        Me.lbl_Dia7.Name = "lbl_Dia7"
+        Me.lbl_Dia7.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_Dia7.TabIndex = 23
+        Me.lbl_Dia7.Visible = False
+        '
+        'lbl_Dia6
+        '
+        Me.lbl_Dia6.AutoSize = True
+        Me.lbl_Dia6.Location = New System.Drawing.Point(863, 68)
+        Me.lbl_Dia6.Name = "lbl_Dia6"
+        Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_Dia6.TabIndex = 22
+        Me.lbl_Dia6.Visible = False
+        '
+        'Lbl_Dia5
+        '
+        Me.Lbl_Dia5.AutoSize = True
+        Me.Lbl_Dia5.Location = New System.Drawing.Point(760, 68)
+        Me.Lbl_Dia5.Name = "Lbl_Dia5"
+        Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia5.TabIndex = 21
+        Me.Lbl_Dia5.Visible = False
+        '
+        'Lbl_Dia4
+        '
+        Me.Lbl_Dia4.AutoSize = True
+        Me.Lbl_Dia4.Location = New System.Drawing.Point(654, 68)
+        Me.Lbl_Dia4.Name = "Lbl_Dia4"
+        Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia4.TabIndex = 20
+        Me.Lbl_Dia4.Visible = False
+        '
+        'Lbl_Dia3
+        '
+        Me.Lbl_Dia3.AutoSize = True
+        Me.Lbl_Dia3.Location = New System.Drawing.Point(549, 68)
+        Me.Lbl_Dia3.Name = "Lbl_Dia3"
+        Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia3.TabIndex = 19
+        Me.Lbl_Dia3.Visible = False
+        '
+        'Lbl_Dia2
+        '
+        Me.Lbl_Dia2.AutoSize = True
+        Me.Lbl_Dia2.Location = New System.Drawing.Point(444, 68)
+        Me.Lbl_Dia2.Name = "Lbl_Dia2"
+        Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia2.TabIndex = 18
+        Me.Lbl_Dia2.Visible = False
+        '
+        'Lbl_Dia1
+        '
+        Me.Lbl_Dia1.AutoSize = True
+        Me.Lbl_Dia1.Location = New System.Drawing.Point(337, 68)
+        Me.Lbl_Dia1.Name = "Lbl_Dia1"
+        Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia1.TabIndex = 17
+        Me.Lbl_Dia1.Visible = False
         '
         'idEmpleado
         '
@@ -364,32 +436,48 @@ Partial Class Frm_GlobalPrenomina
         Me.idTurnoEmpleado.HeaderText = "IdTurno"
         Me.idTurnoEmpleado.Name = "idTurnoEmpleado"
         Me.idTurnoEmpleado.ReadOnly = True
-        Me.idTurnoEmpleado.Visible = False
+        Me.idTurnoEmpleado.Width = 40
         '
         'Frm_GlobalPrenomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1253, 572)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.lbl_Dia7)
+        Me.Controls.Add(Me.lbl_Dia6)
+        Me.Controls.Add(Me.Lbl_Dia5)
+        Me.Controls.Add(Me.Lbl_Dia4)
+        Me.Controls.Add(Me.Lbl_Dia3)
+        Me.Controls.Add(Me.Lbl_Dia2)
+        Me.Controls.Add(Me.Lbl_Dia1)
+        Me.Controls.Add(Me.Dgv_Prenomina_Global)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Frm_GlobalPrenomina"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Global Prenomina"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Dgv_Prenomina_Global, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Dgv_Prenomina_Global As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Lbl_año As Label
     Friend WithEvents Lbl_Semana As Label
     Friend WithEvents CmbSemanas As ComboBox
     Friend WithEvents Dtp_FechaInicioSemana As DateTimePicker
     Friend WithEvents Btn_Mostrar As Button
+    Friend WithEvents lbl_Dia7 As Label
+    Friend WithEvents lbl_Dia6 As Label
+    Friend WithEvents Lbl_Dia5 As Label
+    Friend WithEvents Lbl_Dia4 As Label
+    Friend WithEvents Lbl_Dia3 As Label
+    Friend WithEvents Lbl_Dia2 As Label
+    Friend WithEvents Lbl_Dia1 As Label
     Friend WithEvents idEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents nombreEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents lun As DataGridViewTextBoxColumn

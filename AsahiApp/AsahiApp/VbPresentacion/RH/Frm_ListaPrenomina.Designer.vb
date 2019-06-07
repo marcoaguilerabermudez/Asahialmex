@@ -24,22 +24,6 @@ Partial Class Frm_ListaPrenomina
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Dgv_ListaPrenomina = New System.Windows.Forms.DataGridView()
-        Me.Lbl_Dia1 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia2 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia4 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia3 = New System.Windows.Forms.Label()
-        Me.lbl_Dia7 = New System.Windows.Forms.Label()
-        Me.lbl_Dia6 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia5 = New System.Windows.Forms.Label()
-        Me.Lbl_año = New System.Windows.Forms.Label()
-        Me.CmbSemanas = New System.Windows.Forms.ComboBox()
-        Me.Lbl_Semana = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Btn_Guardar = New System.Windows.Forms.Button()
-        Me.Bgw_HiloSeundoPlano = New System.ComponentModel.BackgroundWorker()
-        Me.Btn_Mostrar = New System.Windows.Forms.Button()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.horarioEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -71,6 +55,22 @@ Partial Class Frm_ListaPrenomina
         Me.bonoEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idTurno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.manual = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Lbl_Dia1 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia2 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia4 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia3 = New System.Windows.Forms.Label()
+        Me.lbl_Dia7 = New System.Windows.Forms.Label()
+        Me.lbl_Dia6 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia5 = New System.Windows.Forms.Label()
+        Me.Lbl_año = New System.Windows.Forms.Label()
+        Me.CmbSemanas = New System.Windows.Forms.ComboBox()
+        Me.Lbl_Semana = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Btn_Guardar = New System.Windows.Forms.Button()
+        Me.Bgw_HiloSeundoPlano = New System.ComponentModel.BackgroundWorker()
+        Me.Btn_Mostrar = New System.Windows.Forms.Button()
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -95,153 +95,6 @@ Partial Class Frm_ListaPrenomina
         Me.Dgv_ListaPrenomina.RowTemplate.Height = 50
         Me.Dgv_ListaPrenomina.Size = New System.Drawing.Size(1190, 458)
         Me.Dgv_ListaPrenomina.TabIndex = 0
-        '
-        'Lbl_Dia1
-        '
-        Me.Lbl_Dia1.AutoSize = True
-        Me.Lbl_Dia1.Location = New System.Drawing.Point(474, 63)
-        Me.Lbl_Dia1.Name = "Lbl_Dia1"
-        Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia1.TabIndex = 4
-        '
-        'Lbl_Dia2
-        '
-        Me.Lbl_Dia2.AutoSize = True
-        Me.Lbl_Dia2.Location = New System.Drawing.Point(551, 63)
-        Me.Lbl_Dia2.Name = "Lbl_Dia2"
-        Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia2.TabIndex = 5
-        '
-        'Lbl_Dia4
-        '
-        Me.Lbl_Dia4.AutoSize = True
-        Me.Lbl_Dia4.Location = New System.Drawing.Point(703, 63)
-        Me.Lbl_Dia4.Name = "Lbl_Dia4"
-        Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia4.TabIndex = 7
-        '
-        'Lbl_Dia3
-        '
-        Me.Lbl_Dia3.AutoSize = True
-        Me.Lbl_Dia3.Location = New System.Drawing.Point(627, 63)
-        Me.Lbl_Dia3.Name = "Lbl_Dia3"
-        Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia3.TabIndex = 6
-        '
-        'lbl_Dia7
-        '
-        Me.lbl_Dia7.AutoSize = True
-        Me.lbl_Dia7.Location = New System.Drawing.Point(930, 63)
-        Me.lbl_Dia7.Name = "lbl_Dia7"
-        Me.lbl_Dia7.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_Dia7.TabIndex = 10
-        '
-        'lbl_Dia6
-        '
-        Me.lbl_Dia6.AutoSize = True
-        Me.lbl_Dia6.Location = New System.Drawing.Point(854, 63)
-        Me.lbl_Dia6.Name = "lbl_Dia6"
-        Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_Dia6.TabIndex = 9
-        '
-        'Lbl_Dia5
-        '
-        Me.Lbl_Dia5.AutoSize = True
-        Me.Lbl_Dia5.Location = New System.Drawing.Point(779, 63)
-        Me.Lbl_Dia5.Name = "Lbl_Dia5"
-        Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia5.TabIndex = 8
-        '
-        'Lbl_año
-        '
-        Me.Lbl_año.AutoSize = True
-        Me.Lbl_año.BackColor = System.Drawing.Color.SteelBlue
-        Me.Lbl_año.ForeColor = System.Drawing.Color.White
-        Me.Lbl_año.Location = New System.Drawing.Point(108, 22)
-        Me.Lbl_año.Name = "Lbl_año"
-        Me.Lbl_año.Size = New System.Drawing.Size(25, 13)
-        Me.Lbl_año.TabIndex = 3
-        Me.Lbl_año.Text = "año"
-        '
-        'CmbSemanas
-        '
-        Me.CmbSemanas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CmbSemanas.Enabled = False
-        Me.CmbSemanas.FormattingEnabled = True
-        Me.CmbSemanas.Location = New System.Drawing.Point(14, 21)
-        Me.CmbSemanas.Name = "CmbSemanas"
-        Me.CmbSemanas.Size = New System.Drawing.Size(87, 21)
-        Me.CmbSemanas.TabIndex = 1
-        '
-        'Lbl_Semana
-        '
-        Me.Lbl_Semana.AutoSize = True
-        Me.Lbl_Semana.BackColor = System.Drawing.Color.SteelBlue
-        Me.Lbl_Semana.ForeColor = System.Drawing.Color.White
-        Me.Lbl_Semana.Location = New System.Drawing.Point(15, 5)
-        Me.Lbl_Semana.Name = "Lbl_Semana"
-        Me.Lbl_Semana.Size = New System.Drawing.Size(46, 13)
-        Me.Lbl_Semana.TabIndex = 2
-        Me.Lbl_Semana.Text = "Semana"
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(150, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 26)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Fecha inicio semana" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'Dtp_FechaInicioSemana
-        '
-        Me.Dtp_FechaInicioSemana.Checked = False
-        Me.Dtp_FechaInicioSemana.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_FechaInicioSemana.Location = New System.Drawing.Point(258, 40)
-        Me.Dtp_FechaInicioSemana.Name = "Dtp_FechaInicioSemana"
-        Me.Dtp_FechaInicioSemana.Size = New System.Drawing.Size(109, 20)
-        Me.Dtp_FechaInicioSemana.TabIndex = 13
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.Btn_Guardar)
-        Me.Panel1.Controls.Add(Me.Dtp_FechaInicioSemana)
-        Me.Panel1.Location = New System.Drawing.Point(-36, -22)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1288, 79)
-        Me.Panel1.TabIndex = 14
-        '
-        'Btn_Guardar
-        '
-        Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
-        Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Guardar.Location = New System.Drawing.Point(1131, 28)
-        Me.Btn_Guardar.Name = "Btn_Guardar"
-        Me.Btn_Guardar.Size = New System.Drawing.Size(53, 43)
-        Me.Btn_Guardar.TabIndex = 14
-        Me.Btn_Guardar.Text = "Guardar"
-        Me.Btn_Guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Guardar.UseVisualStyleBackColor = True
-        Me.Btn_Guardar.Visible = False
-        '
-        'Bgw_HiloSeundoPlano
-        '
-        Me.Bgw_HiloSeundoPlano.WorkerReportsProgress = True
-        Me.Bgw_HiloSeundoPlano.WorkerSupportsCancellation = True
-        '
-        'Btn_Mostrar
-        '
-        Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
-        Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Mostrar.Location = New System.Drawing.Point(349, 8)
-        Me.Btn_Mostrar.Name = "Btn_Mostrar"
-        Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 39)
-        Me.Btn_Mostrar.TabIndex = 15
-        Me.Btn_Mostrar.Text = "Mostrar"
-        Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Mostrar.UseVisualStyleBackColor = True
         '
         'idEmpleado
         '
@@ -433,6 +286,153 @@ Partial Class Frm_ListaPrenomina
         Me.manual.Name = "manual"
         Me.manual.ReadOnly = True
         Me.manual.Visible = False
+        '
+        'Lbl_Dia1
+        '
+        Me.Lbl_Dia1.AutoSize = True
+        Me.Lbl_Dia1.Location = New System.Drawing.Point(474, 63)
+        Me.Lbl_Dia1.Name = "Lbl_Dia1"
+        Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia1.TabIndex = 4
+        '
+        'Lbl_Dia2
+        '
+        Me.Lbl_Dia2.AutoSize = True
+        Me.Lbl_Dia2.Location = New System.Drawing.Point(551, 63)
+        Me.Lbl_Dia2.Name = "Lbl_Dia2"
+        Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia2.TabIndex = 5
+        '
+        'Lbl_Dia4
+        '
+        Me.Lbl_Dia4.AutoSize = True
+        Me.Lbl_Dia4.Location = New System.Drawing.Point(703, 63)
+        Me.Lbl_Dia4.Name = "Lbl_Dia4"
+        Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia4.TabIndex = 7
+        '
+        'Lbl_Dia3
+        '
+        Me.Lbl_Dia3.AutoSize = True
+        Me.Lbl_Dia3.Location = New System.Drawing.Point(627, 63)
+        Me.Lbl_Dia3.Name = "Lbl_Dia3"
+        Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia3.TabIndex = 6
+        '
+        'lbl_Dia7
+        '
+        Me.lbl_Dia7.AutoSize = True
+        Me.lbl_Dia7.Location = New System.Drawing.Point(930, 63)
+        Me.lbl_Dia7.Name = "lbl_Dia7"
+        Me.lbl_Dia7.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_Dia7.TabIndex = 10
+        '
+        'lbl_Dia6
+        '
+        Me.lbl_Dia6.AutoSize = True
+        Me.lbl_Dia6.Location = New System.Drawing.Point(854, 63)
+        Me.lbl_Dia6.Name = "lbl_Dia6"
+        Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_Dia6.TabIndex = 9
+        '
+        'Lbl_Dia5
+        '
+        Me.Lbl_Dia5.AutoSize = True
+        Me.Lbl_Dia5.Location = New System.Drawing.Point(779, 63)
+        Me.Lbl_Dia5.Name = "Lbl_Dia5"
+        Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia5.TabIndex = 8
+        '
+        'Lbl_año
+        '
+        Me.Lbl_año.AutoSize = True
+        Me.Lbl_año.BackColor = System.Drawing.Color.SteelBlue
+        Me.Lbl_año.ForeColor = System.Drawing.Color.White
+        Me.Lbl_año.Location = New System.Drawing.Point(108, 22)
+        Me.Lbl_año.Name = "Lbl_año"
+        Me.Lbl_año.Size = New System.Drawing.Size(25, 13)
+        Me.Lbl_año.TabIndex = 3
+        Me.Lbl_año.Text = "año"
+        '
+        'CmbSemanas
+        '
+        Me.CmbSemanas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbSemanas.Enabled = False
+        Me.CmbSemanas.FormattingEnabled = True
+        Me.CmbSemanas.Location = New System.Drawing.Point(14, 21)
+        Me.CmbSemanas.Name = "CmbSemanas"
+        Me.CmbSemanas.Size = New System.Drawing.Size(87, 21)
+        Me.CmbSemanas.TabIndex = 1
+        '
+        'Lbl_Semana
+        '
+        Me.Lbl_Semana.AutoSize = True
+        Me.Lbl_Semana.BackColor = System.Drawing.Color.SteelBlue
+        Me.Lbl_Semana.ForeColor = System.Drawing.Color.White
+        Me.Lbl_Semana.Location = New System.Drawing.Point(15, 5)
+        Me.Lbl_Semana.Name = "Lbl_Semana"
+        Me.Lbl_Semana.Size = New System.Drawing.Size(46, 13)
+        Me.Lbl_Semana.TabIndex = 2
+        Me.Lbl_Semana.Text = "Semana"
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(150, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(66, 26)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Fecha inicio semana" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Dtp_FechaInicioSemana
+        '
+        Me.Dtp_FechaInicioSemana.Checked = False
+        Me.Dtp_FechaInicioSemana.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Dtp_FechaInicioSemana.Location = New System.Drawing.Point(258, 40)
+        Me.Dtp_FechaInicioSemana.Name = "Dtp_FechaInicioSemana"
+        Me.Dtp_FechaInicioSemana.Size = New System.Drawing.Size(109, 20)
+        Me.Dtp_FechaInicioSemana.TabIndex = 13
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Btn_Guardar)
+        Me.Panel1.Controls.Add(Me.Dtp_FechaInicioSemana)
+        Me.Panel1.Location = New System.Drawing.Point(-36, -22)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1288, 79)
+        Me.Panel1.TabIndex = 14
+        '
+        'Btn_Guardar
+        '
+        Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
+        Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Guardar.Location = New System.Drawing.Point(1131, 28)
+        Me.Btn_Guardar.Name = "Btn_Guardar"
+        Me.Btn_Guardar.Size = New System.Drawing.Size(53, 43)
+        Me.Btn_Guardar.TabIndex = 14
+        Me.Btn_Guardar.Text = "Guardar"
+        Me.Btn_Guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Guardar.UseVisualStyleBackColor = True
+        Me.Btn_Guardar.Visible = False
+        '
+        'Bgw_HiloSeundoPlano
+        '
+        Me.Bgw_HiloSeundoPlano.WorkerReportsProgress = True
+        Me.Bgw_HiloSeundoPlano.WorkerSupportsCancellation = True
+        '
+        'Btn_Mostrar
+        '
+        Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
+        Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Mostrar.Location = New System.Drawing.Point(349, 8)
+        Me.Btn_Mostrar.Name = "Btn_Mostrar"
+        Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 39)
+        Me.Btn_Mostrar.TabIndex = 15
+        Me.Btn_Mostrar.Text = "Mostrar"
+        Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Mostrar.UseVisualStyleBackColor = True
         '
         'Frm_ListaPrenomina
         '

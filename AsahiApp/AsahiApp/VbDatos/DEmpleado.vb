@@ -67,4 +67,39 @@ Public Class DEmpleado
         End Try
         Return lstEmp
     End Function
+    Public Function EmpleadoGlobalRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
+        Dim lstEmp As New LEmpleado
+        Dim oCon As New SqlConnection(cadConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("select ID,NOMBRE,APELLIDOP,APELLIDOM,isnull(TURNO,0) as TURNO,tur,DEPARTAMENTO,TP,isnull(BAJA,'') as BAJA from Vista_InfoEmpleadosBasica where TP in ('A','R') or (TP = 'B' and BAJA >= '" & Format(fecha, "dd/MM/yyyy") & "')", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.IdEmpleado = Convert.ToInt32(dr("ID").ToString)
+                emp.Nombres = dr("NOMBRE").ToString
+                emp.ApellidoPaterno = dr("APELLIDOP").ToString
+                emp.ApellidoMaterno = dr("APELLIDOM").ToString
+                emp.IdTurno = Convert.ToInt32(dr("TURNO").ToString)
+                emp.Turno = dr("tur").ToString
+                emp.Departamento = dr("DEPARTAMENTO").ToString
+                emp.TP = dr("TP").ToString
+                emp.FechaBaja = Convert.ToDateTime(dr("BAJA").ToString)
+                lstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Dim empleados As New Empleado
+            empleados.Err = True
+            lstEmp.Add(empleados)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstEmp
+    End Function
 End Class
