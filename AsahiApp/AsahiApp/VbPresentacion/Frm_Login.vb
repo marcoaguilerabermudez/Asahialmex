@@ -3,7 +3,8 @@ Imports System.Data.SqlClient
 Imports System.Windows.Forms
 
 Public Class Frm_Login
-    Public cadenaConex As SqlConnection
+    Public cadenaConex As String
+    Public cadConex As SqlConnection
     ' TODO: inserte el código para realizar autenticación personalizada usando el nombre de usuario y la contraseña proporcionada 
     ' (Consulte https://go.microsoft.com/fwlink/?LinkId=35339).  
     ' El objeto principal personalizado se puede adjuntar al objeto principal del subproceso actual como se indica a continuación: 
@@ -13,12 +14,11 @@ Public Class Frm_Login
     ' como el nombre de usuario, nombre para mostrar, etc.
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim conexion As New conexion()
-
-
-        Me.cadenaConex = conexion.conexion
+        Me.cadenaConex = conexion.cadenaConex
+        Me.cadConex = conexion.conexion
     End Sub
     Private Sub BtnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Aceptar.Click
-        Dim principal As New Frm_Principal(cadenaConex)
+        Dim principal As New Frm_Principal(cadConex, cadenaConex)
         If Txt_NombreUsuario.Text <> "" And Txt_Contraseña.Text <> "" Then
             principal.Show()
             Me.Close()

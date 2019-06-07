@@ -61,7 +61,7 @@ Partial Class Frm_Principal
         Me.Men_Principal.Location = New System.Drawing.Point(0, 0)
         Me.Men_Principal.Name = "Men_Principal"
         Me.Men_Principal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.Men_Principal.Size = New System.Drawing.Size(743, 24)
+        Me.Men_Principal.Size = New System.Drawing.Size(751, 24)
         Me.Men_Principal.TabIndex = 2
         Me.Men_Principal.Text = "MenuStrip1"
         '
@@ -216,13 +216,13 @@ Partial Class Frm_Principal
         'ACercaDeToolStripMenuItem
         '
         Me.ACercaDeToolStripMenuItem.Name = "ACercaDeToolStripMenuItem"
-        Me.ACercaDeToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.ACercaDeToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
         Me.ACercaDeToolStripMenuItem.Text = "Soporte Técnico"
         '
         'AcercaDeToolStripMenuItem1
         '
         Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
-        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(159, 22)
+        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
         Me.AcercaDeToolStripMenuItem1.Text = "Acerca de"
         '
         'MejoraContinuaToolStripMenuItem
@@ -237,12 +237,9 @@ Partial Class Frm_Principal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(743, 440)
-        Me.Controls.Add(Me.Men_Principal)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MainMenuStrip = Me.Men_Principal
         Me.ClientSize = New System.Drawing.Size(751, 450)
         Me.Controls.Add(Me.Men_Principal)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.Men_Principal
         Me.Name = "Frm_Principal"
         Me.Text = "SAMM"
