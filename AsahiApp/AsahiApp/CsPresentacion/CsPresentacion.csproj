@@ -164,6 +164,12 @@
     <Compile Include="Formularios\RH\Frm_Mejora_Param.Designer.cs">
       <DependentUpon>Frm_Mejora_Param.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\RH\Frm_Altas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Altas.Designer.cs">
+      <DependentUpon>Frm_Altas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\RH\Frm_Reporte_Bajas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Mejora_Param.resx">
       <DependentUpon>Frm_Mejora_Param.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Altas.resx">
+      <DependentUpon>Frm_Altas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Frm_Reporte_altas.resx">
       <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>

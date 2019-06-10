@@ -15,7 +15,7 @@ namespace CsPresentacion
             var tt = new ToolTip();
             tt.SetToolTip(btn_nuevo, "NUEVA BUSQUEDA");
             tt.SetToolTip(btn_agregar, "AGREGAR A EXCEL");
-            tt.SetToolTip(btn_guardar, "GUARDAR");
+            tt.SetToolTip(btn_guardar, "GUARDAR CAMBIOS");
             tt.SetToolTip(btn_exportar, "EXPORTAR");
             tt.SetToolTip(btn_modificar_puesto, "MODIFICAR");
             tt.SetToolTip(btn_modificar_sueldo, "MODIFICAR");
@@ -39,8 +39,11 @@ namespace CsPresentacion
             if (dt.Rows.Count > 0)
             {
                 txt_nombre.Text = dt.Rows[0]["NOMBRE_EMPLEADO"].ToString();
-                txt_direccion.Text = dt.Rows[0]["DIRECCION"].ToString();
-                txt_municipio.Text = dt.Rows[0]["MUNICIPIO"].ToString();
+                txt_calle.Text = dt.Rows[0]["CALLE"].ToString();
+                txt_numero.Text = dt.Rows[0]["NUMERO"].ToString();
+                txt_colonia.Text = dt.Rows[0]["COLONIA"].ToString();
+                txt_cp.Text = dt.Rows[0]["CP"].ToString();
+                txt_municipio.Text = dt.Rows[0]["MUNICIPIO"].ToString(); 
                 cmb_estado.Text = dt.Rows[0]["ESTADO"].ToString();
                 txt_telefono.Text = dt.Rows[0]["TELEFONO"].ToString();
                 txt_departamento.Text = dt.Rows[0]["DEPARTAMENTO"].ToString();
@@ -57,6 +60,7 @@ namespace CsPresentacion
                 txt_rfc.Text = dt.Rows[0]["RFC"].ToString();
                 txt_afiliacion.Text = dt.Rows[0]["AFILIACION"].ToString();
                 txt_curp.Text = dt.Rows[0]["CURP"].ToString();
+               dtm_nacimiento.Text = dt.Rows[0]["NACIMIENTO"].ToString();
                 txt_sueldo.Text = dt.Rows[0]["SUELDO"].ToString();
                 txt_motivo.Text = dt.Rows[0]["MOTIVO"].ToString();
                 txt_dias.Text = dt.Rows[0]["DIAS"].ToString();
@@ -92,7 +96,7 @@ namespace CsPresentacion
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [asahi16].[dbo].[Consulta_informacion_empleado](CLAVE, NOMBRE, DIRECCION, MUNICIPIO, ESTADO, TELEFONO, DEPARTAMENTO , PUESTO, RFC, AFILIACION, CURP, ALTA, BAJA, REINGRESO, BAJA_2, REINGRESO_2, BAJA_3, SUELDO, E_CIVIL , GENERO,  VIGENCIA, MOTIVO , DIAS, MESES, AÑOS, FECHA) VALUES (" + txt_clave.Text + ", '" + txt_nombre.Text + "', '" + txt_direccion.Text + "', '" + txt_municipio.Text + "', '" + cmb_estado.Text + "', '" + txt_telefono.Text + "', '" + txt_departamento.Text + "' , '" + txt_puesto.Text + "', '" + txt_rfc.Text + "',  '" + txt_afiliacion.Text + "', '" + txt_curp.Text + "'  , '" + txt_alta.Text + "',  '" + txt_baja.Text + "', '" + txt_reingreso.Text + "' , '" + txt_baja_2.Text + "', '" + txt_reingreso_2.Text + "', '" + txt_baja_3.Text + "', " + txt_sueldo.Text + " , '" + cmb_Civil.Text + "' , '" + cmb_genero.Text + "',   '" + txt_vigencia.Text + "', '" + txt_motivo.Text + "' , " + txt_dias.Text + ",  " + txt_meses.Text + ", " + txt_años.Text + " , '" + l_fecha.Text + "' )", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [asahi16].[dbo].[Consulta_informacion_empleado](CLAVE, NOMBRE, DIRECCION, MUNICIPIO, ESTADO, TELEFONO, DEPARTAMENTO , PUESTO, RFC, AFILIACION, CURP, ALTA, BAJA, REINGRESO, BAJA_2, REINGRESO_2, BAJA_3, SUELDO, E_CIVIL , GENERO,  VIGENCIA, MOTIVO , DIAS, MESES, AÑOS, FECHA) VALUES (" + txt_clave.Text + ", '" + txt_nombre.Text + "', '" + txt_calle.Text + "', '" + txt_municipio.Text + "', '" + cmb_estado.Text + "', '" + txt_telefono.Text + "', '" + txt_departamento.Text + "' , '" + txt_puesto.Text + "', '" + txt_rfc.Text + "',  '" + txt_afiliacion.Text + "', '" + txt_curp.Text + "'  , '" + txt_alta.Text + "',  '" + txt_baja.Text + "', '" + txt_reingreso.Text + "' , '" + txt_baja_2.Text + "', '" + txt_reingreso_2.Text + "', '" + txt_baja_3.Text + "', " + txt_sueldo.Text + " , '" + cmb_Civil.Text + "' , '" + cmb_genero.Text + "',   '" + txt_vigencia.Text + "', '" + txt_motivo.Text + "' , " + txt_dias.Text + ",  " + txt_meses.Text + ", " + txt_años.Text + " , '" + l_fecha.Text + "' )", con);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Se agregó correctamento");
@@ -174,10 +178,11 @@ namespace CsPresentacion
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[Emprh] set ESTADO='"+ cmb_estado.Text + "',  MUNICIPIO = '"+txt_municipio.Text+ "', TELEFONO_CELULAR = '"+txt_telefono.Text + "', ESTADO_CIVIL = '"+ cmb_Civil.Text+ "', SEXO = '"+ cmb_genero.Text+"'  WHERE CLAVE = " + txt_clave.Text+"", con);             
+                SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[Emprh] set ESTADO='"+ cmb_estado.Text + "', CALLE = '"+ txt_calle.Text+"',  NUMERO = "+ txt_numero.Text+", COLONIA = '"+txt_colonia.Text+"',  CP = " +txt_cp.Text +",  MUNICIPIO = '"+txt_municipio.Text+ "', FECHA_NACIMIENTO = '"+ dtm_nacimiento.Text +"',  TELEFONO_CELULAR = '" + txt_telefono.Text + "', ESTADO_CIVIL = '"+ cmb_Civil.Text+ "', SEXO = '"+ cmb_genero.Text+"'  WHERE CLAVE = " + txt_clave.Text+"", con);             
                 cmd.Parameters.AddWithValue("@Clave", txt_clave.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
+                MessageBox.Show("La información se actualizó correctamente.");
             }
             catch (Exception error)
             {
@@ -257,6 +262,10 @@ namespace CsPresentacion
             btn_modificar_puesto.Visible = false;
             btn_modificar_sueldo.Visible = false;
             btn_modifica_depto.Visible = false;
+            groupBox1.Visible = false;
+            lbl_baja.Visible = false;
+            lbl_reingreso.Visible = false;
+            dtm_nacimiento.Text = "";
         }
 
         private void Btn_buscar_Click(object sender, EventArgs e)
@@ -388,6 +397,9 @@ namespace CsPresentacion
                     lbl_meses.Visible = true;
                     txt_dias.Visible = true;
                     txt_vigencia.BackColor = Color.Red;
+                    groupBox1.Visible = true;
+                    lbl_baja.Visible = true;
+                    lbl_reingreso.Visible = true;
                 }
                 else
                 {
@@ -454,6 +466,46 @@ namespace CsPresentacion
                 Depto.lbl_clave.Text = txt_clave.Text;
                 Depto.ShowDialog();
                 nuevo();
+            }
+        }
+
+        private void Txt_numero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txt_cp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

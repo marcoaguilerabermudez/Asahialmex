@@ -100,6 +100,12 @@ Public Class Frm_Principal
         Mejora.ShowDialog()
         Mejora.Hide()
     End Sub
+
+    Private Sub AltaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem.Click
+        Dim Alta As New Frm_Altas()
+        Alta.ShowDialog()
+        Alta.Hide()
+    End Sub
 #End Region
 End Class
 

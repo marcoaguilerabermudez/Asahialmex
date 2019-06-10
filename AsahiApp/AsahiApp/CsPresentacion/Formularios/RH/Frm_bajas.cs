@@ -46,7 +46,10 @@ namespace CsPresentacion
             if (dt.Rows.Count > 0)
             {
                 txt_nombre.Text = dt.Rows[0]["NOMBRE_EMPLEADO"].ToString();
-                txt_direccion.Text = dt.Rows[0]["DIRECCION"].ToString();
+                txt_calle.Text = dt.Rows[0]["CALLE"].ToString();
+                txt_numero.Text = dt.Rows[0]["NUMERO"].ToString();
+                txt_colonia.Text = dt.Rows[0]["COLONIA"].ToString();
+                txt_cp.Text = dt.Rows[0]["CP"].ToString();
                 txt_municipio.Text = dt.Rows[0]["MUNICIPIO"].ToString();
                 cmb_estado.Text = dt.Rows[0]["ESTADO"].ToString();
                 txt_telefono.Text = dt.Rows[0]["TELEFONO"].ToString();
@@ -63,6 +66,8 @@ namespace CsPresentacion
                 txt_vigencia.Text = dt.Rows[0]["VIGENCIA"].ToString();
                 txt_rfc.Text = dt.Rows[0]["RFC"].ToString();
                 txt_afiliacion.Text = dt.Rows[0]["AFILIACION"].ToString();
+                dtm_nacimiento.Text = dt.Rows[0]["NACIMIENTO"].ToString();
+
                 txt_curp.Text = dt.Rows[0]["CURP"].ToString();
                 txt_sueldo.Text = dt.Rows[0]["SUELDO"].ToString();
                 txt_motivo.Text = dt.Rows[0]["MOTIVO"].ToString();
@@ -110,15 +115,26 @@ namespace CsPresentacion
             txt_meses.Visible = false;
             lbl_meses.Visible = false;
             txt_dias.Visible = false;
+            lbl_baja.Visible = false;
+            lbl_reingreso.Visible = false;
+            groupBox1.Visible = false;
+            txt_baja.Visible = false;
+            txt_reingreso.Visible = false;
+            txt_baja_2.Visible = false;
+            txt_reingreso_2.Visible = false;
+            txt_baja_3.Visible = false;
+
+            txt_clave.Text = "";
+            txt_clave.Focus();
+            txt_clave.Enabled = true;
+            dtm_nacimiento.Text = "";
+            dtm_nacimiento.Enabled = false;
         }
 
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
             nuevo();
-            txt_clave.Text = "";
-            txt_clave.Focus();
-            txt_clave.Enabled = true;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -184,8 +200,6 @@ namespace CsPresentacion
                     txt_meses.Visible = false;
                     lbl_meses.Visible = false;
                     txt_dias.Visible = false;
-                   
-
                 }
                 else if (txt_vigencia.Text == "BAJA")
                 {
@@ -200,7 +214,15 @@ namespace CsPresentacion
                         txt_meses.Visible = true;
                         lbl_meses.Visible = true;
                         txt_dias.Visible = true;
-                    }
+                    groupBox1.Visible = true;
+                    lbl_baja.Visible = true;
+                    lbl_reingreso.Visible = true;
+                    txt_baja.Visible = true;
+                    txt_reingreso.Visible = true;
+                    txt_baja_2.Visible = true;
+                    txt_reingreso_2.Visible = true;
+                    txt_baja_3.Visible = true;
+                }
                 else
                   {
                         txt_vigencia.Visible = true;
