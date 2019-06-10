@@ -102,4 +102,37 @@ Public Class DEmpleado
         End Try
         Return lstEmp
     End Function
+    Public Function EmpleadoLogin(ByVal cadConex As String, ByVal us As String, ByVal pass As String) As Integer
+        Dim oCon As New SqlConnection(cadConex)
+        Dim res As Integer
+        Dim emp As New Empleado
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT Usuario, Contraseña FROM AsahiSystem.dbo.Usuarios_saam where usuario = '" & us & "'", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                emp.Usuario = dr("Usuario").ToString
+                emp.Contraseña = dr("Contraseña").ToString
+            End While
+            If us = emp.Usuario Then
+                If pass = emp.Contraseña Then
+                    res = 2
+                Else
+                    res = 1
+                End If
+            Else
+                res = 0
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return res
+    End Function
 End Class
