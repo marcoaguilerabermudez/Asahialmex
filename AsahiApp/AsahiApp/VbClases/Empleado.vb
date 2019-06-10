@@ -8,6 +8,24 @@
             idEmpleado_ = value
         End Set
     End Property
+    Private usuario_ As String
+    Public Property Usuario() As String
+        Get
+            Return usuario_
+        End Get
+        Set(ByVal value As String)
+            usuario_ = value
+        End Set
+    End Property
+    Private contraseña_ As String
+    Public Property Contraseña() As String
+        Get
+            Return contraseña_
+        End Get
+        Set(ByVal value As String)
+            contraseña_ = value
+        End Set
+    End Property
     Private nombreCompleto_ As String
     Public Property NombreCompleto() As String
         Get
