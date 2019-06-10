@@ -7,8 +7,10 @@ Public Class conexion
 
 
     Public conexion As SqlConnection = New SqlConnection("Data Source=GIRO\SQLEX2014;Initial Catalog=SistemaAAM;Uid=sa; Pwd=Pa55word;")
+    Public cadenaConex As String = "Data Source=GIRO\SQLEX2014;Initial Catalog=SistemaAAM;Uid=sa; Pwd=Pa55word;"
     Public conexion2008 As String = "Data Source=GIRO\SQL2008;Initial Catalog=asahi16;Uid=sa; Pwd=Pa55word;"
     Public conexionContpaq As SqlConnection = New SqlConnection("Data Source=SERV-CONTA\SQLEX2014;Initial Catalog=ctAsahi_Aluminium;Uid=sa; Pwd=Me*1can;")
+    Public cadenaConexExpress As String = "Data Source=GIRO\SQLEXPRESS;Initial Catalog=AsahiSystem;Uid=sa; Pwd=Pa55word;"
 
     Private cmb As SqlCommandBuilder
     Public ds As DataSet = New DataSet()
@@ -53,23 +55,23 @@ Public Class conexion
         Return resultado
     End Function
 
-    Function Insertar(ByVal sql)
-        Try
-            conexion.Open()
-            comando = New SqlCommand(sql, conexion)
-            Dim i As Integer = comando.ExecuteNonQuery()
-            conexion.Close()
-            If (i > 0) Then
-                Return True
-            Else
-                Return False
-            End If
-        Catch ex As Exception
-            MsgBox("Error al agregar: " + ex.ToString)
-        End Try
+    'Function Insertar(ByVal sql)
+    '    Try
+    '        conexion.Open()
+    '        comando = New SqlCommand(sql, conexion)
+    '        Dim i As Integer = comando.ExecuteNonQuery()
+    '        conexion.Close()
+    '        If (i > 0) Then
+    '            Return True
+    '        Else
+    '            Return False
+    '        End If
+    '    Catch ex As Exception
+    '        MsgBox("Error al agregar: " + ex.ToString)
+    '    End Try
 
 
-    End Function
+    'End Function
     Public Sub Consulta_join(ByVal sql As String, ByVal tb1 As String, ByVal tb2 As String)
         ds.Tables.Clear()
         da = New SqlDataAdapter(sql, conexion)

@@ -53,4 +53,13 @@
             tipoPermiso_ = value
         End Set
     End Property
+    Private horas_ As DateTime
+    Public Property Horas() As DateTime
+        Get
+            Return horas_
+        End Get
+        Set(ByVal value As DateTime)
+            horas_ = value
+        End Set
+    End Property
 End Class

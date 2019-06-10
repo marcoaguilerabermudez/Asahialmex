@@ -8,6 +8,24 @@
             idEmpleado_ = value
         End Set
     End Property
+    Private usuario_ As String
+    Public Property Usuario() As String
+        Get
+            Return usuario_
+        End Get
+        Set(ByVal value As String)
+            usuario_ = value
+        End Set
+    End Property
+    Private contraseña_ As String
+    Public Property Contraseña() As String
+        Get
+            Return contraseña_
+        End Get
+        Set(ByVal value As String)
+            contraseña_ = value
+        End Set
+    End Property
     Private nombreCompleto_ As String
     Public Property NombreCompleto() As String
         Get
@@ -107,6 +125,7 @@
             tp_ = value
         End Set
     End Property
+#Region "Checadas"
     Private horaEntradaReal0_ As Date
     Public Property HoraEntradaReal0() As Date
         Get
@@ -350,6 +369,108 @@
             tipoRegistro8_ = value
         End Set
     End Property
+#End Region
+#Region "Fechas Semanas"
+    Private fecha1_ As Date
+    Public Property Fecha1() As Date
+        Get
+            Return fecha1_
+        End Get
+        Set(ByVal value As Date)
+            fecha1_ = value
+        End Set
+    End Property
+    Private fecha2_ As Date
+    Public Property Fecha2() As Date
+        Get
+            Return fecha2_
+        End Get
+        Set(ByVal value As Date)
+            fecha2_ = value
+        End Set
+    End Property
+    Private fecha3_ As Date
+    Public Property Fecha3() As Date
+        Get
+            Return fecha3_
+        End Get
+        Set(ByVal value As Date)
+            fecha3_ = value
+        End Set
+    End Property
+    Private fecha4_ As Date
+    Public Property Fecha4() As Date
+        Get
+            Return fecha4_
+        End Get
+        Set(ByVal value As Date)
+            fecha4_ = value
+        End Set
+    End Property
+    Private fecha5_ As Date
+    Public Property Fecha5() As Date
+        Get
+            Return fecha5_
+        End Get
+        Set(ByVal value As Date)
+            fecha5_ = value
+        End Set
+    End Property
+    Private fecha6_ As Date
+    Public Property Fecha6() As Date
+        Get
+            Return fecha6_
+        End Get
+        Set(ByVal value As Date)
+            fecha6_ = value
+        End Set
+    End Property
+    Private fecha7_ As Date
+    Public Property Fecha7() As Date
+        Get
+            Return fecha7_
+        End Get
+        Set(ByVal value As Date)
+            fecha7_ = value
+        End Set
+    End Property
+#End Region
+    Private incidencia1_ As Object
+    Public Property Incidencia1() As Object
+        Get
+            Return incidencia1_
+        End Get
+        Set(ByVal value As Object)
+            incidencia1_ = value
+        End Set
+    End Property
+    Private incidencia2_ As Object
+    Public Property Incidencia2() As Object
+        Get
+            Return incidencia2_
+        End Get
+        Set(ByVal value As Object)
+            incidencia2_ = value
+        End Set
+    End Property
+    Private tipoIncidencia1_ As Object
+    Public Property TipoIncidencia1() As Object
+        Get
+            Return tipoIncidencia1_
+        End Get
+        Set(ByVal value As Object)
+            tipoIncidencia1_ = value
+        End Set
+    End Property
+    Private tipoIncidencia2_ As Object
+    Public Property TipoIncidencia2() As Object
+        Get
+            Return tipoIncidencia2_
+        End Get
+        Set(ByVal value As Object)
+            tipoIncidencia2_ = value
+        End Set
+    End Property
     Private horaEntrada_ As String
     Public Property HoraEntrada() As String
         Get
@@ -375,6 +496,15 @@
         End Get
         Set(ByVal value As Boolean)
             err_ = value
+        End Set
+    End Property
+    Private xml_ As Object
+    Public Property Xml() As Object
+        Get
+            Return xml_
+        End Get
+        Set(ByVal value As Object)
+            xml_ = value
         End Set
     End Property
 End Class
