@@ -684,6 +684,7 @@
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(69, 20);
             this.txt_numero.TabIndex = 3;
+            this.txt_numero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_numero_KeyPress);
             // 
             // label5
             // 
@@ -726,6 +727,7 @@
             this.txt_cp.Name = "txt_cp";
             this.txt_cp.Size = new System.Drawing.Size(69, 20);
             this.txt_cp.TabIndex = 163;
+            this.txt_cp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_cp_KeyPress);
             // 
             // dtm_nacimiento
             // 
