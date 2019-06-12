@@ -85,7 +85,7 @@ Public Class Frm_ListaPrenomina
 
             'ModificarDiaInicio()
             fecha = Lbl_Dia1.Text & "/" & Lbl_año.Text
-            ProcesoPrenomina(lstEmp, fecha)
+            'ProcesoPrenomina(lstEmp, fecha)
         End If
     End Sub
     Private Sub Btn_Mostrar_Click(sender As Object, e As EventArgs) Handles Btn_Mostrar.Click
@@ -93,7 +93,7 @@ Public Class Frm_ListaPrenomina
             Dim fecha As Date
             Dim lstEmp As New LEmpleado
 
-            ModificarDiaInicio()
+            'ModificarDiaInicio()
             fecha = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             ProcesoPrenomina(lstEmp, fecha)
         End If
@@ -1061,9 +1061,6 @@ Public Class Frm_ListaPrenomina
         If lstEmp(0).Err = False Then
             RellenaChecadasDgvPrenomina(lstEmp)
             RecuperarIncidencias()
-            Btn_Mostrar.Visible = False
-        ElseIf lstEmp(0).Err = True Then
-            If Btn_Mostrar.Visible = False Then Btn_Mostrar.Visible = True
         End If
     End Sub
     Private Sub ModificarDiaInicio()

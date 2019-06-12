@@ -29,7 +29,9 @@ Public Class conexion
             conexion.Close()
         End Try
     End Sub
-
+    Public Function ConvertirMinutosAHoras(ByVal paramMinutos) As String
+        Return paramMinutos \ 60 & ":" & IIf(paramMinutos Mod 60 < 10, "0" & paramMinutos Mod 60, paramMinutos Mod 60) & ""
+    End Function
     Public Sub Consulta(ByVal sql As String, ByVal tabla As String)
         ds.Tables.Clear()
         da = New SqlDataAdapter(sql, conexion)
