@@ -49,9 +49,6 @@ Public Class DEmpleado
                 empleados.HoraEntradaReal7 = Convert.ToDateTime(dr("ERF7").ToString)
                 empleados.HoraSalidaReal7 = Convert.ToDateTime(dr("SRF7").ToString)
                 empleados.TipoRegistro7 = dr("TRF7").ToString
-                'empleados.HoraEntradaReal8 = Convert.ToDateTime(dr("ERF8").ToString)
-                'empleados.HoraSalidaReal8 = Convert.ToDateTime(dr("SRF8").ToString)
-                'empleados.TipoRegistro8 = dr("TRF8").ToString
                 lstEmp.Add(empleados)
             End While
         Catch ex As Exception
