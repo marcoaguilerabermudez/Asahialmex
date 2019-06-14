@@ -23,6 +23,10 @@ Partial Class Frm_GlobalPrenomina
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Lbl_SemaF = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Lbl_SemaI = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Lbl_año = New System.Windows.Forms.Label()
         Me.Lbl_Semana = New System.Windows.Forms.Label()
@@ -30,13 +34,6 @@ Partial Class Frm_GlobalPrenomina
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
         Me.Btn_Mostrar = New System.Windows.Forms.Button()
         Me.Dgv_Prenomina_Global = New System.Windows.Forms.DataGridView()
-        Me.lbl_Dia7 = New System.Windows.Forms.Label()
-        Me.lbl_Dia6 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia5 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia4 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia3 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia2 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia1 = New System.Windows.Forms.Label()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lun = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -68,6 +65,32 @@ Partial Class Frm_GlobalPrenomina
         Me.departamentoEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.turnoEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idTurnoEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.retardo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.permisoSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.falta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.faltaJustificada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.suspencion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.permisoSinSueldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.permisoConSueldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.permisoMaternidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.incapacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.vacaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ujap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dJap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.umex = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dMex = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.jpMx = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mxJp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.suma = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.diferencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.grupo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lbl_Dia7 = New System.Windows.Forms.Label()
+        Me.lbl_Dia6 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia5 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia4 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia3 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia2 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Dgv_Prenomina_Global, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -75,6 +98,10 @@ Partial Class Frm_GlobalPrenomina
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Lbl_SemaF)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Lbl_SemaI)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Lbl_año)
         Me.Panel1.Controls.Add(Me.Lbl_Semana)
@@ -85,6 +112,46 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1326, 86)
         Me.Panel1.TabIndex = 15
+        '
+        'Lbl_SemaF
+        '
+        Me.Lbl_SemaF.AutoSize = True
+        Me.Lbl_SemaF.ForeColor = System.Drawing.Color.White
+        Me.Lbl_SemaF.Location = New System.Drawing.Point(875, 50)
+        Me.Lbl_SemaF.Name = "Lbl_SemaF"
+        Me.Lbl_SemaF.Size = New System.Drawing.Size(65, 13)
+        Me.Lbl_SemaF.TabIndex = 25
+        Me.Lbl_SemaF.Text = "00/00/2000"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(862, 50)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(13, 13)
+        Me.Label4.TabIndex = 24
+        Me.Label4.Text = "a"
+        '
+        'Lbl_SemaI
+        '
+        Me.Lbl_SemaI.AutoSize = True
+        Me.Lbl_SemaI.ForeColor = System.Drawing.Color.White
+        Me.Lbl_SemaI.Location = New System.Drawing.Point(797, 50)
+        Me.Lbl_SemaI.Name = "Lbl_SemaI"
+        Me.Lbl_SemaI.Size = New System.Drawing.Size(65, 13)
+        Me.Lbl_SemaI.TabIndex = 23
+        Me.Lbl_SemaI.Text = "00/00/2000"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(736, 50)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(63, 13)
+        Me.Label2.TabIndex = 22
+        Me.Label2.Text = "Semana del"
         '
         'Label1
         '
@@ -152,70 +219,15 @@ Partial Class Frm_GlobalPrenomina
         'Dgv_Prenomina_Global
         '
         Me.Dgv_Prenomina_Global.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Prenomina_Global.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.lun, Me.te1, Me.cm1, Me.mar, Me.te2, Me.cm2, Me.mie, Me.te3, Me.cm3, Me.jue, Me.te4, Me.cm4, Me.vie, Me.te5, Me.cm5, Me.sab, Me.te6, Me.cm6, Me.dom, Me.te7, Me.cm7, Me.te, Me.com, Me.cm, Me.sp, Me.spBono, Me.departamentoEmpleado, Me.turnoEmpleado, Me.idTurnoEmpleado})
+        Me.Dgv_Prenomina_Global.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.lun, Me.te1, Me.cm1, Me.mar, Me.te2, Me.cm2, Me.mie, Me.te3, Me.cm3, Me.jue, Me.te4, Me.cm4, Me.vie, Me.te5, Me.cm5, Me.sab, Me.te6, Me.cm6, Me.dom, Me.te7, Me.cm7, Me.te, Me.com, Me.cm, Me.sp, Me.spBono, Me.departamentoEmpleado, Me.turnoEmpleado, Me.idTurnoEmpleado, Me.retardo, Me.permisoSalida, Me.falta, Me.faltaJustificada, Me.suspencion, Me.permisoSinSueldo, Me.permisoConSueldo, Me.permisoMaternidad, Me.incapacidad, Me.vacaciones, Me.ujap, Me.dJap, Me.umex, Me.dMex, Me.jpMx, Me.mxJp, Me.suma, Me.diferencia, Me.grupo})
         Me.Dgv_Prenomina_Global.Enabled = False
         Me.Dgv_Prenomina_Global.GridColor = System.Drawing.Color.SteelBlue
         Me.Dgv_Prenomina_Global.Location = New System.Drawing.Point(4, 84)
         Me.Dgv_Prenomina_Global.Name = "Dgv_Prenomina_Global"
         Me.Dgv_Prenomina_Global.RowHeadersVisible = False
+        Me.Dgv_Prenomina_Global.RowTemplate.Height = 20
         Me.Dgv_Prenomina_Global.Size = New System.Drawing.Size(1245, 483)
         Me.Dgv_Prenomina_Global.TabIndex = 0
-        '
-        'lbl_Dia7
-        '
-        Me.lbl_Dia7.AutoSize = True
-        Me.lbl_Dia7.Location = New System.Drawing.Point(912, 68)
-        Me.lbl_Dia7.Name = "lbl_Dia7"
-        Me.lbl_Dia7.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_Dia7.TabIndex = 23
-        '
-        'lbl_Dia6
-        '
-        Me.lbl_Dia6.AutoSize = True
-        Me.lbl_Dia6.Location = New System.Drawing.Point(806, 68)
-        Me.lbl_Dia6.Name = "lbl_Dia6"
-        Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_Dia6.TabIndex = 22
-        '
-        'Lbl_Dia5
-        '
-        Me.Lbl_Dia5.AutoSize = True
-        Me.Lbl_Dia5.Location = New System.Drawing.Point(703, 68)
-        Me.Lbl_Dia5.Name = "Lbl_Dia5"
-        Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia5.TabIndex = 21
-        '
-        'Lbl_Dia4
-        '
-        Me.Lbl_Dia4.AutoSize = True
-        Me.Lbl_Dia4.Location = New System.Drawing.Point(597, 68)
-        Me.Lbl_Dia4.Name = "Lbl_Dia4"
-        Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia4.TabIndex = 20
-        '
-        'Lbl_Dia3
-        '
-        Me.Lbl_Dia3.AutoSize = True
-        Me.Lbl_Dia3.Location = New System.Drawing.Point(492, 68)
-        Me.Lbl_Dia3.Name = "Lbl_Dia3"
-        Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia3.TabIndex = 19
-        '
-        'Lbl_Dia2
-        '
-        Me.Lbl_Dia2.AutoSize = True
-        Me.Lbl_Dia2.Location = New System.Drawing.Point(387, 68)
-        Me.Lbl_Dia2.Name = "Lbl_Dia2"
-        Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia2.TabIndex = 18
-        '
-        'Lbl_Dia1
-        '
-        Me.Lbl_Dia1.AutoSize = True
-        Me.Lbl_Dia1.Location = New System.Drawing.Point(280, 68)
-        Me.Lbl_Dia1.Name = "Lbl_Dia1"
-        Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia1.TabIndex = 17
         '
         'idEmpleado
         '
@@ -229,7 +241,7 @@ Partial Class Frm_GlobalPrenomina
         Me.nombreEmpleado.HeaderText = "Nombre"
         Me.nombreEmpleado.Name = "nombreEmpleado"
         Me.nombreEmpleado.ReadOnly = True
-        Me.nombreEmpleado.Width = 200
+        Me.nombreEmpleado.Width = 230
         '
         'lun
         '
@@ -432,6 +444,202 @@ Partial Class Frm_GlobalPrenomina
         Me.idTurnoEmpleado.ReadOnly = True
         Me.idTurnoEmpleado.Width = 40
         '
+        'retardo
+        '
+        Me.retardo.HeaderText = "R"
+        Me.retardo.Name = "retardo"
+        Me.retardo.ReadOnly = True
+        Me.retardo.Width = 40
+        '
+        'permisoSalida
+        '
+        Me.permisoSalida.HeaderText = "PS"
+        Me.permisoSalida.Name = "permisoSalida"
+        Me.permisoSalida.ReadOnly = True
+        Me.permisoSalida.Width = 40
+        '
+        'falta
+        '
+        Me.falta.HeaderText = "F"
+        Me.falta.Name = "falta"
+        Me.falta.ReadOnly = True
+        Me.falta.Width = 40
+        '
+        'faltaJustificada
+        '
+        Me.faltaJustificada.HeaderText = "FJ"
+        Me.faltaJustificada.Name = "faltaJustificada"
+        Me.faltaJustificada.ReadOnly = True
+        Me.faltaJustificada.Width = 40
+        '
+        'suspencion
+        '
+        Me.suspencion.HeaderText = "SUS"
+        Me.suspencion.Name = "suspencion"
+        Me.suspencion.ReadOnly = True
+        Me.suspencion.Width = 40
+        '
+        'permisoSinSueldo
+        '
+        Me.permisoSinSueldo.HeaderText = "PSS"
+        Me.permisoSinSueldo.Name = "permisoSinSueldo"
+        Me.permisoSinSueldo.ReadOnly = True
+        Me.permisoSinSueldo.Width = 40
+        '
+        'permisoConSueldo
+        '
+        Me.permisoConSueldo.HeaderText = "PCS"
+        Me.permisoConSueldo.Name = "permisoConSueldo"
+        Me.permisoConSueldo.ReadOnly = True
+        Me.permisoConSueldo.Width = 40
+        '
+        'permisoMaternidad
+        '
+        Me.permisoMaternidad.HeaderText = "PM"
+        Me.permisoMaternidad.Name = "permisoMaternidad"
+        Me.permisoMaternidad.ReadOnly = True
+        Me.permisoMaternidad.Width = 40
+        '
+        'incapacidad
+        '
+        Me.incapacidad.HeaderText = "INC"
+        Me.incapacidad.Name = "incapacidad"
+        Me.incapacidad.ReadOnly = True
+        Me.incapacidad.Width = 40
+        '
+        'vacaciones
+        '
+        Me.vacaciones.HeaderText = "VAC"
+        Me.vacaciones.Name = "vacaciones"
+        Me.vacaciones.ReadOnly = True
+        Me.vacaciones.Width = 40
+        '
+        'ujap
+        '
+        Me.ujap.HeaderText = "JP"
+        Me.ujap.Name = "ujap"
+        Me.ujap.ReadOnly = True
+        Me.ujap.Width = 40
+        '
+        'dJap
+        '
+        Me.dJap.HeaderText = "2J"
+        Me.dJap.Name = "dJap"
+        Me.dJap.ReadOnly = True
+        Me.dJap.Width = 40
+        '
+        'umex
+        '
+        Me.umex.HeaderText = "MX"
+        Me.umex.Name = "umex"
+        Me.umex.ReadOnly = True
+        Me.umex.Width = 40
+        '
+        'dMex
+        '
+        Me.dMex.HeaderText = "2M"
+        Me.dMex.Name = "dMex"
+        Me.dMex.ReadOnly = True
+        Me.dMex.Width = 40
+        '
+        'jpMx
+        '
+        Me.jpMx.HeaderText = "1J,1M"
+        Me.jpMx.Name = "jpMx"
+        Me.jpMx.ReadOnly = True
+        Me.jpMx.Width = 40
+        '
+        'mxJp
+        '
+        Me.mxJp.HeaderText = "1M, 1J"
+        Me.mxJp.Name = "mxJp"
+        Me.mxJp.ReadOnly = True
+        Me.mxJp.Width = 40
+        '
+        'suma
+        '
+        Me.suma.HeaderText = "SUM"
+        Me.suma.Name = "suma"
+        Me.suma.ReadOnly = True
+        Me.suma.Width = 40
+        '
+        'diferencia
+        '
+        Me.diferencia.HeaderText = "DIF"
+        Me.diferencia.Name = "diferencia"
+        Me.diferencia.ReadOnly = True
+        Me.diferencia.Width = 40
+        '
+        'grupo
+        '
+        Me.grupo.HeaderText = "g"
+        Me.grupo.Name = "grupo"
+        Me.grupo.ReadOnly = True
+        Me.grupo.Visible = False
+        '
+        'lbl_Dia7
+        '
+        Me.lbl_Dia7.AutoSize = True
+        Me.lbl_Dia7.Location = New System.Drawing.Point(912, 68)
+        Me.lbl_Dia7.Name = "lbl_Dia7"
+        Me.lbl_Dia7.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_Dia7.TabIndex = 23
+        Me.lbl_Dia7.Visible = False
+        '
+        'lbl_Dia6
+        '
+        Me.lbl_Dia6.AutoSize = True
+        Me.lbl_Dia6.Location = New System.Drawing.Point(806, 68)
+        Me.lbl_Dia6.Name = "lbl_Dia6"
+        Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_Dia6.TabIndex = 22
+        Me.lbl_Dia6.Visible = False
+        '
+        'Lbl_Dia5
+        '
+        Me.Lbl_Dia5.AutoSize = True
+        Me.Lbl_Dia5.Location = New System.Drawing.Point(703, 68)
+        Me.Lbl_Dia5.Name = "Lbl_Dia5"
+        Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia5.TabIndex = 21
+        Me.Lbl_Dia5.Visible = False
+        '
+        'Lbl_Dia4
+        '
+        Me.Lbl_Dia4.AutoSize = True
+        Me.Lbl_Dia4.Location = New System.Drawing.Point(597, 68)
+        Me.Lbl_Dia4.Name = "Lbl_Dia4"
+        Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia4.TabIndex = 20
+        Me.Lbl_Dia4.Visible = False
+        '
+        'Lbl_Dia3
+        '
+        Me.Lbl_Dia3.AutoSize = True
+        Me.Lbl_Dia3.Location = New System.Drawing.Point(492, 68)
+        Me.Lbl_Dia3.Name = "Lbl_Dia3"
+        Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia3.TabIndex = 19
+        Me.Lbl_Dia3.Visible = False
+        '
+        'Lbl_Dia2
+        '
+        Me.Lbl_Dia2.AutoSize = True
+        Me.Lbl_Dia2.Location = New System.Drawing.Point(387, 68)
+        Me.Lbl_Dia2.Name = "Lbl_Dia2"
+        Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia2.TabIndex = 18
+        Me.Lbl_Dia2.Visible = False
+        '
+        'Lbl_Dia1
+        '
+        Me.Lbl_Dia1.AutoSize = True
+        Me.Lbl_Dia1.Location = New System.Drawing.Point(280, 68)
+        Me.Lbl_Dia1.Name = "Lbl_Dia1"
+        Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia1.TabIndex = 17
+        Me.Lbl_Dia1.Visible = False
+        '
         'Frm_GlobalPrenomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -472,6 +680,10 @@ Partial Class Frm_GlobalPrenomina
     Friend WithEvents Lbl_Dia3 As Label
     Friend WithEvents Lbl_Dia2 As Label
     Friend WithEvents Lbl_Dia1 As Label
+    Friend WithEvents Lbl_SemaF As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Lbl_SemaI As Label
+    Friend WithEvents Label2 As Label
     Friend WithEvents idEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents nombreEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents lun As DataGridViewTextBoxColumn
@@ -503,4 +715,23 @@ Partial Class Frm_GlobalPrenomina
     Friend WithEvents departamentoEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents turnoEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents idTurnoEmpleado As DataGridViewTextBoxColumn
+    Friend WithEvents retardo As DataGridViewTextBoxColumn
+    Friend WithEvents permisoSalida As DataGridViewTextBoxColumn
+    Friend WithEvents falta As DataGridViewTextBoxColumn
+    Friend WithEvents faltaJustificada As DataGridViewTextBoxColumn
+    Friend WithEvents suspencion As DataGridViewTextBoxColumn
+    Friend WithEvents permisoSinSueldo As DataGridViewTextBoxColumn
+    Friend WithEvents permisoConSueldo As DataGridViewTextBoxColumn
+    Friend WithEvents permisoMaternidad As DataGridViewTextBoxColumn
+    Friend WithEvents incapacidad As DataGridViewTextBoxColumn
+    Friend WithEvents vacaciones As DataGridViewTextBoxColumn
+    Friend WithEvents ujap As DataGridViewTextBoxColumn
+    Friend WithEvents dJap As DataGridViewTextBoxColumn
+    Friend WithEvents umex As DataGridViewTextBoxColumn
+    Friend WithEvents dMex As DataGridViewTextBoxColumn
+    Friend WithEvents jpMx As DataGridViewTextBoxColumn
+    Friend WithEvents mxJp As DataGridViewTextBoxColumn
+    Friend WithEvents suma As DataGridViewTextBoxColumn
+    Friend WithEvents diferencia As DataGridViewTextBoxColumn
+    Friend WithEvents grupo As DataGridViewTextBoxColumn
 End Class
