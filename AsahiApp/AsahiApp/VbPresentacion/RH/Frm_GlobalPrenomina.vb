@@ -64,6 +64,8 @@ Public Class Frm_GlobalPrenomina
             Lbl_Dia5.Text = Format(DateAdd(DateInterval.Day, 4, hrs.FechaI), "dd/MM")
             lbl_Dia6.Text = Format(DateAdd(DateInterval.Day, 5, hrs.FechaI), "dd/MM")
             lbl_Dia7.Text = Format(hrs.FechaF, "dd/MM")
+            Lbl_SemaI.Text = Format(hrs.FechaI, "dd/MM/yyyy")
+            Lbl_SemaF.Text = Format(hrs.FechaF, "dd/MM/yyyy")
             If sem <> hrs.Semana Then CmbSemanas.SelectedItem = hrs.Semana
             open = True
 
@@ -163,8 +165,36 @@ Public Class Frm_GlobalPrenomina
                 Dgv_Prenomina_Global.Rows(fila).Cells("nombreEmpleado").Style.ForeColor = Color.White
             End If
 
+            With Dgv_Prenomina_Global.Rows(fila)
+                .Cells("te").Value = "0:00"
+                .Cells("com").Value = 0
+                .Cells("cm").Value = 0
+                .Cells("sp").Value = 0
+                .Cells("spBono").Value = 0
+
+                .Cells("retardo").Value = 0
+                .Cells("permisoSalida").Value = 0
+                .Cells("falta").Value = 0
+                .Cells("faltaJustificada").Value = 0
+                .Cells("suspencion").Value = 0
+                .Cells("permisoSinSueldo").Value = 0
+                .Cells("permisoConSueldo").Value = 0
+                .Cells("permisoMaternidad").Value = 0
+                .Cells("incapacidad").Value = 0
+                .Cells("vacaciones").Value = 0
+                .Cells("ujap").Value = 0
+                .Cells("dJap").Value = 0
+                .Cells("umex").Value = 0
+                .Cells("dMEx").Value = 0
+                .Cells("jpMx").Value = 0
+                .Cells("mxJp").Value = 0
+                .Cells("suma").Value = 0
+                .Cells("diferencia").Value = 0
+            End With
+
             fila += 1
         Next
+        Dgv_Prenomina_Global.Columns("nombreEmpleado").Frozen = True
         Dgv_Prenomina_Global.Enabled = True
     End Sub
     Private Sub RellenaIncidenciasDgvPrenomina(ByVal lstAus As LAusentismo, ByVal lstVac As LVacaciones, ByVal lstInc As LIncapacidad, ByVal lstHE As LHorasExtra,
@@ -176,9 +206,9 @@ Public Class Frm_GlobalPrenomina
         RellenaIncapacidad(lstInc, fecha, totalFilas)
         RellenaVacaciones(lstVac, fecha, totalFilas)
         RellenaComedor(lstCom, fecha, totalFilas)
-        RellenarHrsExtraDTFeriadoRet(lstHE, fecha, totalFilas)
-        'RellenaAusentismo(lstAus, fecha, totalFilas)
-        'RellenaDescanso(totalFilas)
+        RellenarHrsExtraDTRet(lstHE, fecha, totalFilas)
+        RellenaAusentismo(lstAus, fecha, totalFilas)
+        RellenaDescansoAsistencias(totalFilas, fecha)
     End Sub
     Private Sub RellenaBajas(ByVal lstBja As LBaja, ByVal fecha As Date, ByVal totalFilas As Integer)
         Dim fila As Integer
@@ -232,6 +262,7 @@ Public Class Frm_GlobalPrenomina
                             fechaC = Format(DateAdd(DateInterval.Day, (colum - 1), fecha), "dd/MM/yyyy")
                             If item.FechaI <= fechaF Then
                                 If fechaI = fechaC Then
+                                    Dim ccInc = Dgv_Prenomina_Global.Rows(fila).Cells("incapacidad").Value
                                     Dim d As String = RetornarDia(colum)
                                     Dim t As String = "TE" & colum
                                     Dim c As String = "CM" & colum
@@ -253,6 +284,9 @@ Public Class Frm_GlobalPrenomina
                                     Else
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.SteelBlue
                                     End If
+                                    Dgv_Prenomina_Global.Rows(fila).Cells("incapacidad").Value = ccInc + 1
+                                    If Dgv_Prenomina_Global.Rows(fila).Cells("incapacidad").Value <> 0 Then Dgv_Prenomina_Global.Rows(fila).Cells("incapacidad").Style.BackColor = Color.White
+                                    Exit For
                                 End If
                             End If
                         Next
@@ -283,6 +317,7 @@ Public Class Frm_GlobalPrenomina
                             fechaC = Format(DateAdd(DateInterval.Day, (colum - 1), fecha), "dd/MM/yyyy")
                             If item.FechaI <= fechaF Then
                                 If fechaI = fechaC Then
+                                    Dim ccVac = Dgv_Prenomina_Global.Rows(fila).Cells("vacaciones").Value
                                     Dim d As String = RetornarDia(colum)
                                     Dim t As String = "TE" & colum
                                     Dim c As String = "CM" & colum
@@ -310,6 +345,9 @@ Public Class Frm_GlobalPrenomina
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.DodgerBlue
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.ForeColor = Color.White
                                     End If
+                                    Dgv_Prenomina_Global.Rows(fila).Cells("vacaciones").Value = ccVac + 1
+                                    If Dgv_Prenomina_Global.Rows(fila).Cells("vacaciones").Value <> 0 Then Dgv_Prenomina_Global.Rows(fila).Cells("vacaciones").Style.BackColor = Color.White
+                                    Exit For
                                 End If
                             End If
                         Next
@@ -347,15 +385,21 @@ Public Class Frm_GlobalPrenomina
                                     If Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "" Then
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "1J"
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.White
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("ujap").Value = Dgv_Prenomina_Global.Rows(fila).Cells("ujap").Value + 1
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("ujap").Style.BackColor = Color.White
                                     ElseIf Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "1M" Then
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "1M, 1J"
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.White
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("mxJp").Value = Dgv_Prenomina_Global.Rows(fila).Cells("mxJp").Value + 1
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("mxJp").Style.BackColor = Color.White
                                     ElseIf Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "2M" Then
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "2M, 1J"
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.White
                                     ElseIf Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "1J" Then
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "2J"
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.White
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("dJap").Value = Dgv_Prenomina_Global.Rows(fila).Cells("dJap").Value + 1
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("dJap").Style.BackColor = Color.White
                                     Else
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = Dgv_Prenomina_Global.Rows(fila).Cells(c).Value + inc
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.Black
@@ -369,9 +413,13 @@ Public Class Frm_GlobalPrenomina
                                     If Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "" Then
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "1M"
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.White
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("umex").Value = Dgv_Prenomina_Global.Rows(fila).Cells("umex").Value + 1
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("umex").Style.BackColor = Color.White
                                     ElseIf Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "1M" Then
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "2M"
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.White
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("dMex").Value = Dgv_Prenomina_Global.Rows(fila).Cells("dMex").Value + 1
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("dMex").Style.BackColor = Color.White
                                     ElseIf Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "2M" Then
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "3M"
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.White
@@ -379,6 +427,8 @@ Public Class Frm_GlobalPrenomina
                                     ElseIf Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "1J" Then
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "1J, 1M"
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.White
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("jpMx").Value = Dgv_Prenomina_Global.Rows(fila).Cells("jpMx").Value + 1
+                                        Dgv_Prenomina_Global.Rows(fila).Cells("jpMx").Style.BackColor = Color.White
                                     Else
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = Dgv_Prenomina_Global.Rows(fila).Cells(c).Value + inc
                                         Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.Black
@@ -399,9 +449,15 @@ Public Class Frm_GlobalPrenomina
                     If Dgv_Prenomina_Global.Rows(fila).Cells("spBono").Value > 0 Then Dgv_Prenomina_Global.Rows(fila).Cells("spBono").Style.BackColor = Color.White
                 End If
             Next
+            With Dgv_Prenomina_Global.Rows(fila)
+                .Cells("suma").Value = .Cells("ujap").Value + .Cells("dJap").Value + .Cells("umex").Value + .Cells("dMex").Value + .Cells("jpMx").Value + .Cells("mxJp").Value
+                If .Cells("suma").Value <> 0 Then .Cells("suma").Style.BackColor = Color.White
+                .Cells("diferencia").Value = .Cells("suma").Value - .Cells("COM").Value
+                If .Cells("diferencia").Value <> 0 Then .Cells("diferencia").Style.BackColor = Color.White
+            End With
         Next
     End Sub
-    Private Sub RellenarHrsExtraDTFeriadoRet(ByVal lstHE As LHorasExtra, ByVal fecha As Date, ByVal totalFilas As Integer)
+    Private Sub RellenarHrsExtraDTRet(ByVal lstHE As LHorasExtra, ByVal fecha As Date, ByVal totalFilas As Integer)
         Dim con As New conexion()
         Dim fila As Integer
         Dim fechaI As Date
@@ -482,7 +538,6 @@ Public Class Frm_GlobalPrenomina
                                 End If
                                 Exit For
                             ElseIf tp = "F" Or tp = "F " Or tp = " F" Then
-                                Dim cc_r
                                 Dim d As String = RetornarDia(colum)
                                 Dim ti As String = "TE" & colum
                                 Dim c As String = "CM" & colum
@@ -514,13 +569,236 @@ Public Class Frm_GlobalPrenomina
                                 End If
                                 Exit For
                             ElseIf tp = "R" Or tp = "R " Or tp = " R" Then
+                                Dim cc_r = Dgv_Prenomina_Global.Rows(fila).Cells("retardo").Value
+                                Dim incc As String
+                                If item.TipoPermiso = 4 Then
+                                    incc = "RT"
+                                Else
+                                    incc = "R"
+                                End If
+                                Dim d As String = RetornarDia(colum)
+                                Dim ti As String = "TE" & colum
 
+                                If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = incc
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(128, 0, 0)
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.FromArgb(255, 255, 153)
+                                Else
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = Dgv_Prenomina_Global.Rows(fila).Cells(ti).Value + hr
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(128, 0, 0)
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.FromArgb(255, 255, 153)
+                                End If
+                                Dgv_Prenomina_Global.Rows(fila).Cells("retardo").Value = cc_r + 1
+                                If Dgv_Prenomina_Global.Rows(fila).Cells("retardo").Value <> 0 Then Dgv_Prenomina_Global.Rows(fila).Cells("retardo").Style.BackColor = Color.White
+                                Exit For
+                            ElseIf tp = "P" Or tp = "P " Or tp = " P" Then
+                                Dim cc_ps = Dgv_Prenomina_Global.Rows(fila).Cells("permisoSalida").Value
+                                Dim d As String = RetornarDia(colum)
+                                Dim ti As String = "TE" & colum
+                                If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "PS"
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(128, 0, 0)
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.FromArgb(255, 255, 153)
+                                Else
+                                    If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "INC" Or Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "VAC" Then
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = Dgv_Prenomina_Global.Rows(fila).Cells(d).Value & "PS"
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(255, 255, 153)
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(255, 102, 0)
+                                    ElseIf Dgv_Prenomina_Global.Rows(fila).Cells(ti).Value = "INC" Then
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "PS"
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(255, 255, 153)
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(255, 102, 0)
+                                    Else
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = Dgv_Prenomina_Global.Rows(fila).Cells(ti).Value + hr
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(128, 0, 0)
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.FromArgb(255, 255, 153)
+                                    End If
+                                End If
+                                Dgv_Prenomina_Global.Rows(fila).Cells("permisoSalida").Value = cc_ps + 1
+                                If Dgv_Prenomina_Global.Rows(fila).Cells("permisoSalida").Value <> 0 Then Dgv_Prenomina_Global.Rows(fila).Cells("permisoSalida").Style.BackColor = Color.White
                                 Exit For
                             End If
                         End If
                     Next
+                    Dgv_Prenomina_Global.Rows(fila).Cells("te").Value = con.ConvertirMinutosAHoras(te)
+                    If Dgv_Prenomina_Global.Rows(fila).Cells("te").Value <> "0:00" Then Dgv_Prenomina_Global.Rows(fila).Cells("te").Style.BackColor = Color.White
                 End If
             Next
+        Next
+    End Sub
+    Private Sub RellenaAusentismo(ByVal lstAus As LAusentismo, ByVal fecha As Date, ByVal totalFilas As Integer)
+        Dim fila As Integer, dur As Integer, idEmp As Integer, mx As Integer
+        Dim fechaI As Date, fecI As Date, fechaF As Date, fecF As Date, fechaC As Date, fifi As Date
+        Dim inc As String, tip As String, yy As String
+        Dim cb As Color, cf As Color
+        fecI = Lbl_Dia1.Text & "/" & Lbl_año.Text
+        fecF = lbl_Dia6.Text & "/" & Lbl_año.Text
+        For Each item In lstAus
+            fechaI = item.FechaI
+            fechaF = item.FechaF
+
+            If (fechaF >= fecF And fechaI <= fecF) Or (fechaF <= fecF And fechaI >= fecI) Then
+                tip = item.TipoAusentismo
+                Select Case tip
+                    Case "B", "B "
+                        yy = "permisoMaternidad"
+                        inc = "PM"
+                        cb = Color.FromArgb(0, 102, 204)
+                        cf = Color.Black
+                    Case "F", "F "
+                        yy = "falta"
+                        inc = "F"
+                        cb = Color.Red
+                        cf = Color.Black
+                    Case "G", "G "
+                        yy = "permisoConSueldo"
+                        inc = "PCS"
+                        cb = Color.Yellow
+                        cf = Color.Black
+                    Case "P", "P "
+                        yy = "permisoSinSueldo"
+                        inc = "PSS"
+                        cb = Color.Yellow
+                        cf = Color.Red
+                    Case "U", "U "
+                        yy = "faltaJustificada"
+                        inc = "FJ"
+                        cb = Color.Red
+                        cf = Color.Black
+                    Case "N", "N "
+                        yy = "suspencion"
+                        inc = "SUS"
+                        cb = Color.Red
+                        cf = Color.Black
+                    Case Else
+                        inc = "FF"
+                        cb = Color.Red
+                        cf = Color.Black
+                End Select
+
+                For fila = 0 To totalFilas - 1
+                    idEmp = Dgv_Prenomina_Global.Rows(fila).Cells("idEmpleado").Value
+                    If idEmp = item.IdEmpleado Then
+                        For dur = 1 To item.Duracion
+                            fifi = fecF
+                            For colum = 1 To 7
+                                fechaC = Format(DateAdd(DateInterval.Day, (colum - 1), fecha), "dd/MM/yyyy")
+                                If fechaI = fechaC Then
+                                    mx = Dgv_Prenomina_Global.Rows(fila).Cells(yy).Value
+                                    Dim d As String = RetornarDia(colum)
+                                    Dim t As String = "TE" & colum
+                                    Dim c As String = "CM" & colum
+                                    If Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "" Then
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = inc
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.BackColor = cb
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.ForeColor = cf
+                                    ElseIf Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "BAJA" Then
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "F/B"
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.BackColor = Color.FromArgb(51, 51, 0)
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.ForeColor = Color.Red
+                                    Else
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.BackColor = cb
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.ForeColor = cf
+                                    End If
+
+                                    If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = inc
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = cb
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = cf
+                                    ElseIf Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "BAJA" Then
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "F/B"
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(51, 51, 0)
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.Red
+                                    Else
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = cb
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = cf
+                                    End If
+
+                                    If Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "" Then
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = inc
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = cb
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.ForeColor = cf
+                                    ElseIf Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "BAJA" Then
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "F/B"
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.FromArgb(51, 51, 0)
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.ForeColor = Color.Red
+                                    Else
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = cb
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.ForeColor = cf
+                                    End If
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(yy).Value = mx + 1
+                                    If Dgv_Prenomina_Global.Rows(fila).Cells(yy).Value <> 0 Then Dgv_Prenomina_Global.Rows(fila).Cells(yy).Style.BackColor = Color.White
+                                    Exit For
+                                End If
+                            Next
+                            fechaI = (DateAdd(DateInterval.Day, 1, fechaI))
+                        Next
+                    End If
+                Next
+            End If
+        Next
+    End Sub
+    Private Sub RellenaDescansoAsistencias(ByVal totalFilas As Integer, ByVal fecha As Date)
+        Dim fila As Integer, colum As Integer
+        For fila = 0 To totalFilas - 1
+            With Dgv_Prenomina_Global.Rows(fila)
+                For colum = 1 To 7
+                    Dim tu = .Cells("idTurnoEmpleado").Value
+                    Dim g = .Cells("grupo").Value
+                    Dim fec = Format((DateAdd(DateInterval.Day, (colum - 1), fecha)), "dd/MM/yyyy")
+                    Dim d As String = RetornarDia(colum)
+                    Dim t As String = "TE" & colum
+                    Dim c As String = "CM" & colum
+
+                    If colum = 6 Then
+                        If tu = 4 Or tu = 5 Or tu = 6 Then
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "D"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Black
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
+                            End If
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "D"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.BackColor = Color.Black
+                                Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.ForeColor = Color.White
+                            End If
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "D"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.Black
+                                Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.ForeColor = Color.White
+                            End If
+                        Else
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "A"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Green
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
+                            End If
+                        End If
+                    ElseIf colum = 7 Then
+                        If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                            Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "D"
+                            Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Black
+                            Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
+                        End If
+                        If Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "" Then
+                            Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "D"
+                            Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.BackColor = Color.Black
+                            Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.ForeColor = Color.White
+                        End If
+                        If Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "" Then
+                            Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "D"
+                            Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.Black
+                            Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.ForeColor = Color.White
+                        End If
+                    Else
+                        If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                            Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "A"
+                            Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Green
+                            Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
+                        End If
+                    End If
+                Next
+            End With
         Next
     End Sub
 #End Region
