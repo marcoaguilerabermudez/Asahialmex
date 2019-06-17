@@ -9,7 +9,7 @@ Public Class DEmpleado
             Dim query As New SqlCommand("asahi16.dbo.LLInfoGralYChPrenomina", oCon)
             query.Parameters.AddWithValue("@fecha", fecha)
             query.CommandType = CommandType.StoredProcedure
-            query.CommandTimeout = 60
+            query.CommandTimeout = 120
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read)
@@ -28,27 +28,35 @@ Public Class DEmpleado
                 empleados.HoraEntradaReal0 = Convert.ToDateTime(dr("ERF0").ToString)
                 empleados.HoraSalidaReal0 = Convert.ToDateTime(dr("SRF0").ToString)
                 empleados.TipoRegistro0 = dr("TRF0").ToString
+                empleados.Nota0 = dr("NTF0").ToString
                 empleados.HoraEntradaReal1 = Convert.ToDateTime(dr("ERF1").ToString)
                 empleados.HoraSalidaReal1 = Convert.ToDateTime(dr("SRF1").ToString)
                 empleados.TipoRegistro1 = dr("TRF1").ToString
+                empleados.Nota1 = dr("NTF1").ToString
                 empleados.HoraEntradaReal2 = Convert.ToDateTime(dr("ERF2").ToString)
                 empleados.HoraSalidaReal2 = Convert.ToDateTime(dr("SRF2").ToString)
                 empleados.TipoRegistro2 = dr("TRF2").ToString
+                empleados.Nota2 = dr("NTF2").ToString
                 empleados.HoraEntradaReal3 = Convert.ToDateTime(dr("ERF3").ToString)
                 empleados.HoraSalidaReal3 = Convert.ToDateTime(dr("SRF3").ToString)
                 empleados.TipoRegistro3 = dr("TRF3").ToString
+                empleados.Nota3 = dr("NTF3").ToString
                 empleados.HoraEntradaReal4 = Convert.ToDateTime(dr("ERF4").ToString)
                 empleados.HoraSalidaReal4 = Convert.ToDateTime(dr("SRF4").ToString)
                 empleados.TipoRegistro4 = dr("TRF4").ToString
+                empleados.Nota4 = dr("NTF4").ToString
                 empleados.HoraEntradaReal5 = Convert.ToDateTime(dr("ERF5").ToString)
                 empleados.HoraSalidaReal5 = Convert.ToDateTime(dr("SRF5").ToString)
                 empleados.TipoRegistro5 = dr("TRF5").ToString
+                empleados.Nota5 = dr("NTF5").ToString
                 empleados.HoraEntradaReal6 = Convert.ToDateTime(dr("ERF6").ToString)
                 empleados.HoraSalidaReal6 = Convert.ToDateTime(dr("SRF6").ToString)
                 empleados.TipoRegistro6 = dr("TRF6").ToString
+                empleados.Nota6 = dr("NTF6").ToString
                 empleados.HoraEntradaReal7 = Convert.ToDateTime(dr("ERF7").ToString)
                 empleados.HoraSalidaReal7 = Convert.ToDateTime(dr("SRF7").ToString)
                 empleados.TipoRegistro7 = dr("TRF7").ToString
+                empleados.Nota7 = dr("NTF7").ToString
                 lstEmp.Add(empleados)
             End While
         Catch ex As Exception

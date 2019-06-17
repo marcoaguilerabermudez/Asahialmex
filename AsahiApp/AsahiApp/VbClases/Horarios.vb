@@ -278,4 +278,22 @@
             semana_ = value
         End Set
     End Property
+    Private idMotivoRetardo_ As String
+    Public Property IdMotivoRetardo() As String
+        Get
+            Return idMotivoRetardo_
+        End Get
+        Set(ByVal value As String)
+            idMotivoRetardo_ = value
+        End Set
+    End Property
+    Private motivoRetardo_ As String
+    Public Property MotivoRetardo() As String
+        Get
+            Return motivoRetardo_
+        End Get
+        Set(ByVal value As String)
+            motivoRetardo_ = value
+        End Set
+    End Property
 End Class
