@@ -153,6 +153,15 @@
             tipoRegistro0_ = value
         End Set
     End Property
+    Private nota0_ As String
+    Public Property Nota0() As String
+        Get
+            Return nota0_
+        End Get
+        Set(ByVal value As String)
+            nota0_ = value
+        End Set
+    End Property
     Private horaEntradaReal1_ As Date
     Public Property HoraEntradaReal1() As Date
         Get
@@ -178,6 +187,15 @@
         End Get
         Set(ByVal value As String)
             tipoRegistro1_ = value
+        End Set
+    End Property
+    Private nota1_ As String
+    Public Property Nota1() As String
+        Get
+            Return nota1_
+        End Get
+        Set(ByVal value As String)
+            nota1_ = value
         End Set
     End Property
     Private horaEntradaReal2_ As Date
@@ -207,6 +225,15 @@
             tipoRegistro2_ = value
         End Set
     End Property
+    Private nota2_ As String
+    Public Property Nota2() As String
+        Get
+            Return nota2_
+        End Get
+        Set(ByVal value As String)
+            nota2_ = value
+        End Set
+    End Property
     Private horaEntradaReal3_ As Date
     Public Property HoraEntradaReal3() As Date
         Get
@@ -232,6 +259,15 @@
         End Get
         Set(ByVal value As String)
             tipoRegistro3_ = value
+        End Set
+    End Property
+    Private nota3_ As String
+    Public Property Nota3() As String
+        Get
+            Return nota3_
+        End Get
+        Set(ByVal value As String)
+            nota3_ = value
         End Set
     End Property
     Private horaEntradaReal4_ As Date
@@ -261,6 +297,15 @@
             tipoRegistro4_ = value
         End Set
     End Property
+    Private nota4_ As String
+    Public Property Nota4() As String
+        Get
+            Return nota4_
+        End Get
+        Set(ByVal value As String)
+            nota4_ = value
+        End Set
+    End Property
     Private horaEntradaReal5_ As Date
     Public Property HoraEntradaReal5() As Date
         Get
@@ -286,6 +331,15 @@
         End Get
         Set(ByVal value As String)
             tipoRegistro5_ = value
+        End Set
+    End Property
+    Private nota5_ As String
+    Public Property Nota5() As String
+        Get
+            Return nota5_
+        End Get
+        Set(ByVal value As String)
+            nota5_ = value
         End Set
     End Property
     Private horaEntradaReal6_ As Date
@@ -315,6 +369,15 @@
             tipoRegistro6_ = value
         End Set
     End Property
+    Private nota6_ As String
+    Public Property Nota6() As String
+        Get
+            Return nota6_
+        End Get
+        Set(ByVal value As String)
+            nota6_ = value
+        End Set
+    End Property
     Private horaEntradaReal7_ As Date
     Public Property HoraEntradaReal7() As Date
         Get
@@ -342,6 +405,15 @@
             tipoRegistro7_ = value
         End Set
     End Property
+    Private nota7_ As String
+    Public Property Nota7() As String
+        Get
+            Return nota7_
+        End Get
+        Set(ByVal value As String)
+            nota7_ = value
+        End Set
+    End Property
     Private horaEntradaReal8_ As Date
     Public Property HoraEntradaReal8() As Date
         Get
@@ -367,6 +439,15 @@
         End Get
         Set(ByVal value As String)
             tipoRegistro8_ = value
+        End Set
+    End Property
+    Private nota8_ As String
+    Public Property Nota8() As String
+        Get
+            Return nota8_
+        End Get
+        Set(ByVal value As String)
+            nota8_ = value
         End Set
     End Property
 #End Region

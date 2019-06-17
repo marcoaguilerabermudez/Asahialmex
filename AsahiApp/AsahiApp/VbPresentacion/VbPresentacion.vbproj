@@ -193,6 +193,12 @@
     <Compile Include="Reportes\ReporteEjemplo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RH\Frm_AplicaBono.Designer.vb">
+      <DependentUpon>Frm_AplicaBono.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_AplicaBono.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_GlobalPrenomina.Designer.vb">
       <DependentUpon>Frm_GlobalPrenomina.vb</DependentUpon>
     </Compile>
@@ -230,6 +236,9 @@
       <DependentUpon>ReporteEjemplo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Reporte_Ejemplo.rdlc" />
+    <EmbeddedResource Include="RH\Frm_AplicaBono.resx">
+      <DependentUpon>Frm_AplicaBono.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RH\Frm_GlobalPrenomina.resx">
       <DependentUpon>Frm_GlobalPrenomina.vb</DependentUpon>
     </EmbeddedResource>
