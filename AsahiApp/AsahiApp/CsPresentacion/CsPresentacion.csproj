@@ -78,6 +78,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_Rep_Alta_empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Rep_Alta_empleado.Designer.cs">
+      <DependentUpon>Frm_Rep_Alta_empleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_Altas1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

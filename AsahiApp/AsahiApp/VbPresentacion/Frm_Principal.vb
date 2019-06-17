@@ -108,9 +108,9 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub AltaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem.Click
-        'Dim Alta As New Frm_Altas()
-        'Alta.ShowDialog()
-        'Alta.Hide()
+        Dim Alta As New Frm_Altas()
+        Alta.ShowDialog()
+        Alta.Hide()
     End Sub
 #End Region
 End Class

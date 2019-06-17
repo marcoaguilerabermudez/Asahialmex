@@ -23,6 +23,7 @@ namespace CsPresentacion
         double Sueldo;
         double Factor;
         double Resultado;
+        int Aviso_empleado;
 
         private void Frm_Altas_Load(object sender, EventArgs e)
         {
@@ -69,22 +70,47 @@ namespace CsPresentacion
             txt_curp.Text = "";
             txt_estado.Text = "";
             cmb_turno.Text = "";
+            txt_telefono.Text = "";
+            txt_calle.Text = "";
+            txt_numero.Text = "";
+            txt_colonia.Text = "";
+            txt_municipio.Text = "";
+            txt_cp.Text = "";
+            txt_sector.Text = "";
+            cmb_Civil.Text = "";
+            cmb_genero.Text = "";
+            dtm_nacimiento.Text = "";
+            txt_lugar_nac.Text = "";
+            cmb_escolaridad.Text = "";
+            txt_años.Text = "";
+            txt_email.Text = "";
+            txt_contacto.Text = "";
+            txt_tel_contacto.Text = "";
+            cmb_parentesco.Text = "";
+            cmb_ruta.Text = "";
+            txt_interior.Text = "";
+            cmb_estado.Text = "";
+            txt_año_graduacion.Text = "";
+            txt_contacto.Text = "";
+            cmb_estado_nacimiento.Text = "";
+
             lbl_factor.Visible = false;
             Panel_secundario.Visible = false;
             panel_final.Visible = false;
-          
+            groupBox2.Visible = false;
+            lbl_tipo_empleado.Visible = false;
+            txt_estado.Visible = false;
             txt_SDO1.Enabled = false;
             txt_SDO2.Enabled = false;
             txt_SDO3.Enabled = false;
             txt_SDO4.Enabled = false;
             txt_SDO5.Enabled = false;
-            
-            groupBox2.Visible = false;
             groupBox2.Enabled = false;
-
             btn_pp_siguiente.Enabled = false;
             btn_comprueba.Enabled = false;
-           txt_estado.Visible = false;
+            cmb_estado_nacimiento.Enabled = true;
+            Aviso_empleado = 0;
+            rdb_nacional.Checked = true;
         }
 
         private void selecciona_sueldo()
@@ -119,6 +145,64 @@ namespace CsPresentacion
             }
         }
 
+        private void Registra_empleado()
+        {
+            try
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                String strSql;
+                strSql = "[dbo].[Sp_cargaempleado]";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@Clave", SqlDbType.VarChar).Value = txt_Clave.Text;
+                da.SelectCommand.Parameters.Add("@catalogodepartamento", SqlDbType.VarChar).Value = cmb_departamento.Text;
+               da.SelectCommand.Parameters.Add("@zona", SqlDbType.VarChar).Value = txt_lugar_nac.Text ;
+                da.SelectCommand.Parameters.Add("@ruta", SqlDbType.VarChar).Value = cmb_ruta.Text;
+                da.SelectCommand.Parameters.Add("@NOMBREN", SqlDbType.VarChar).Value = txt_nombre.Text;
+                da.SelectCommand.Parameters.Add("@NOMBREP", SqlDbType.VarChar).Value = txt_paterno.Text;
+                da.SelectCommand.Parameters.Add("@NOMBREM", SqlDbType.VarChar).Value = txt_materno.Text;
+                da.SelectCommand.Parameters.Add("@PE", SqlDbType.VarChar).Value = lbl_tipo_empleado.Text;
+                da.SelectCommand.Parameters.Add("@RFC", SqlDbType.VarChar).Value = txt_rfc.Text;
+                da.SelectCommand.Parameters.Add("@turno", SqlDbType.VarChar).Value = cmb_turno.Text;
+                da.SelectCommand.Parameters.Add("@afiliacion", SqlDbType.VarChar).Value = txt_nss.Text;
+                da.SelectCommand.Parameters.Add("@curp", SqlDbType.VarChar).Value = txt_curp.Text;
+                da.SelectCommand.Parameters.Add("@puesto", SqlDbType.VarChar).Value = cmb_puesto.Text;
+                da.SelectCommand.Parameters.Add("@calle", SqlDbType.VarChar).Value = txt_calle.Text;
+                da.SelectCommand.Parameters.Add("@numero", SqlDbType.VarChar).Value = txt_numero.Text;
+                da.SelectCommand.Parameters.Add("@interior", SqlDbType.VarChar).Value = txt_interior.Text;
+                da.SelectCommand.Parameters.Add("@colonia", SqlDbType.VarChar).Value = txt_colonia.Text;
+                da.SelectCommand.Parameters.Add("@cp", SqlDbType.VarChar).Value = txt_cp.Text;
+                da.SelectCommand.Parameters.Add("@municipio", SqlDbType.VarChar).Value = txt_municipio.Text;
+                da.SelectCommand.Parameters.Add("@estado", SqlDbType.VarChar).Value = cmb_estado.Text;
+                da.SelectCommand.Parameters.Add("@telefono", SqlDbType.VarChar).Value = txt_telefono.Text;
+                da.SelectCommand.Parameters.Add("@fechanacimiento", SqlDbType.VarChar).Value = dtm_nacimiento.Text;
+                da.SelectCommand.Parameters.Add("@lugarnacimiento", SqlDbType.VarChar).Value = txt_lugar_nac.Text;
+                da.SelectCommand.Parameters.Add("@estadocivil", SqlDbType.VarChar).Value = cmb_Civil.Text;
+                da.SelectCommand.Parameters.Add("@escolaridad", SqlDbType.VarChar).Value = cmb_escolaridad.Text;
+                da.SelectCommand.Parameters.Add("@sexo", SqlDbType.VarChar).Value = cmb_genero.Text;
+                da.SelectCommand.Parameters.Add("@graduacion", SqlDbType.VarChar).Value = txt_año_graduacion.Text;
+                da.SelectCommand.Parameters.Add("@emergenciacontacto", SqlDbType.VarChar).Value = txt_contacto.Text;
+                da.SelectCommand.Parameters.Add("@emergenciaparentesco", SqlDbType.VarChar).Value = cmb_parentesco.Text;
+                da.SelectCommand.Parameters.Add("@emergenciatelefono", SqlDbType.VarChar).Value = txt_tel_contacto.Text;
+               da.SelectCommand.Parameters.Add("@estadonacimiento", SqlDbType.VarChar).Value = cmb_estado_nacimiento.Text;
+                da.SelectCommand.Parameters.Add("@nacionalidad", SqlDbType.VarChar).Value = txt_nacionalidad.Text;
+                da.SelectCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = txt_email.Text;
+                da.SelectCommand.Parameters.Add("@sdo1", SqlDbType.VarChar).Value = txt_SDO1.Text;
+                da.SelectCommand.Parameters.Add("@sdo2", SqlDbType.VarChar).Value = txt_SDO3.Text;
+                da.SelectCommand.Parameters.Add("@Aviso", SqlDbType.VarChar).Value = Aviso_empleado;
+
+
+                da.Fill(dt);
+                con.Close();
+                MessageBox.Show("Usuario registrado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );
+            }
+            catch(Exception Error)
+            {
+                MessageBox.Show(Error.ToString());
+            }
+        }
+
         private void Comprueba_Existencia()
         {
             try
@@ -126,13 +210,9 @@ namespace CsPresentacion
                 con.Open();
                 DataTable dt = new DataTable();
                 String strSql;
-                strSql = "SELECT CLAVE, VIGENCIA, RFC, AFILIACION  FROM [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] WHERE CURP = @CURP OR RFC = @RFC OR AFILIACION = @AFILIACION";
+                strSql = "SELECT CLAVE, VIGENCIA, RFC, AFILIACION  FROM [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] WHERE CURP = @CURP";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, con);
                 da.SelectCommand.Parameters.Add("@CURP", SqlDbType.VarChar).Value = txt_curp.Text;
-                da.SelectCommand.Parameters.Add("@RFC", SqlDbType.VarChar).Value = txt_rfc.Text;
-                da.SelectCommand.Parameters.Add("@AFILIACION", SqlDbType.VarChar).Value = txt_nss.Text;
-
-
                 da.Fill(dt);
                 con.Close();
                 if (dt.Rows.Count > 0)
@@ -153,7 +233,6 @@ namespace CsPresentacion
                             MessageBox.Show("EMPLEADO SE ENCUENTRA VIGENTE", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             btn_pp_siguiente.Enabled = false;
                         }
-
                     }
                     else
                     {
@@ -186,13 +265,20 @@ namespace CsPresentacion
 
             if (dt.Rows.Count > 0)
             {
+                txt_nombre.Text = dt.Rows[0]["NOMBRE"].ToString();
+                txt_paterno.Text = dt.Rows[0]["PATERNO"].ToString();
+                txt_materno.Text = dt.Rows[0]["MATERNO"].ToString();
+                txt_rfc.Text = dt.Rows[0]["RFC"].ToString();
+                txt_nacionalidad.Text = dt.Rows[0]["NACIONALIDAD"].ToString();
+                txt_telefono.Text = dt.Rows[0]["TELEFONO"].ToString();
+                cmb_departamento.Text = dt.Rows[0]["DEPARTAMENTO"].ToString();
+                txt_telefono.Text = dt.Rows[0]["TELEFONO"].ToString();
                 txt_calle.Text = dt.Rows[0]["CALLE"].ToString();
                 txt_numero.Text = dt.Rows[0]["NUMERO"].ToString();
                 txt_colonia.Text = dt.Rows[0]["COLONIA"].ToString();
                 txt_cp.Text = dt.Rows[0]["CP"].ToString();
                 txt_municipio.Text = dt.Rows[0]["MUNICIPIO"].ToString();
                 cmb_estado.Text = dt.Rows[0]["ESTADO"].ToString();
-                txt_telefono.Text = dt.Rows[0]["TELEFONO"].ToString();
                 txt_baja.Text = dt.Rows[0]["BAJA"].ToString();
                 txt_reingreso.Text = dt.Rows[0]["REINGRESO"].ToString();
                 txt_baja_2.Text = dt.Rows[0]["BAJA_2"].ToString();
@@ -206,6 +292,9 @@ namespace CsPresentacion
                 txt_dias.Text = dt.Rows[0]["DIAS"].ToString();
                 txt_meses.Text = dt.Rows[0]["MESES"].ToString();
                 txt_años.Text = dt.Rows[0]["AÑOS"].ToString();
+                txt_contacto.Text = dt.Rows[0]["CONTACTO"].ToString();
+                cmb_parentesco.Text = dt.Rows[0]["PARENTESCO"].ToString();
+                txt_telefono.Text = dt.Rows[0]["TEl_CONTACTO"].ToString();
             }
             con.Close();
         }
@@ -255,15 +344,68 @@ namespace CsPresentacion
         }
 
         private void Button1_Click(object sender, EventArgs e)//Primer botón siguinte
-        {  
-            Panel_secundario.Visible = true;
-            Panel_principal.Visible = false;
+        {
+            if (string.IsNullOrEmpty(txt_nombre.Text))
+            {
+                MessageBox.Show("Es necesario capturar el nombre de Empleado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_nombre.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_paterno.Text))
+            {
+                MessageBox.Show("Es necesario capturar el apellido Paterno", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_paterno.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_materno.Text))
+            {
+                MessageBox.Show("Es necesario capturar el apellido Materno", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_materno.Focus();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                MessageBox.Show("Es necesario capturar el Departamento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmb_departamento.Focus();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                MessageBox.Show("Es necesario capturar el Puesto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmb_puesto.Focus();
+            }
+
+            else
+            {
+                Panel_secundario.Visible = true;
+                Panel_principal.Visible = false;
+            }
         }
 
         private void Btn_ps_siguiente_Click(object sender, EventArgs e)
         {
-            panel_final.Visible = true;
-            Panel_secundario.Visible = false;
+            if (string.IsNullOrEmpty(txt_calle.Text))
+            {
+                MessageBox.Show("Es necesario capturar información de la calle", "Aviso");
+                txt_calle.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_numero.Text))
+            {
+                MessageBox.Show("Es necesario capturar información de la dirección completa", "Aviso");
+                txt_numero.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_cp.Text))
+            {
+                MessageBox.Show("Es necesario capturar información del Código Postal", "Aviso");
+                txt_cp.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_colonia.Text))
+            {
+                MessageBox.Show("Es necesario capturar información de la colonia", "Aviso");
+                txt_colonia.Focus();
+            }
+
+            else
+            {
+                panel_final.Visible = true;
+                Panel_secundario.Visible = false;
+            }
         }
 
         private void Btn_ps_anterior_Click(object sender, EventArgs e)
@@ -286,29 +428,23 @@ namespace CsPresentacion
             selecciona_sueldo();
         }
 
-
-
         private void Cmb_departamento_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
         private void Cmb_puesto_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
         private void Btn_nuevo2_Click(object sender, EventArgs e)
         {
             nuevo();
             selecciona_clave();
         }
-
         private void Txt_Clave_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
         private void Txt_paterno_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
@@ -319,7 +455,6 @@ namespace CsPresentacion
             {
                 e.Handled = false;
             }
-
             else if (Char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
@@ -329,7 +464,6 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Txt_materno_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
@@ -349,7 +483,6 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
@@ -369,7 +502,6 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Txt_nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
@@ -380,53 +512,67 @@ namespace CsPresentacion
             {
                 e.Handled = false;
             }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
             else
             {
                 e.Handled = true;
             }
         }
-
         private void Label9_Click(object sender, EventArgs e)
         {
 
         }
-
         private void Txt_nacionalidad_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void Btn_comprueba_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_nss.Text))
+            if (string.IsNullOrEmpty(txt_curp.Text))
             {
-                MessageBox.Show("Es necesario llenar ");
+                MessageBox.Show("Es necesario capturar el Curp", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_curp.Focus();
             }
-           else if (string.IsNullOrEmpty(txt_rfc.Text))
+            else if (string.IsNullOrEmpty(txt_nss.Text))
             {
-                MessageBox.Show("Es necesario llenar ");
-            }
-            else if (string.IsNullOrEmpty(txt_curp.Text))
-            {
-                MessageBox.Show("Es necesario llenar ");
+                MessageBox.Show("Es necesario capturar el Número de Seguro Social", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_nss.Focus();
             }
             else
             {
                 Comprueba_Existencia();
-            }
-
-            
+            }            
         }
-        private void Button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)//Alta de empleado
         {
-            MessageBox.Show("Registro guardado correctamente.");
-            Panel_principal.Visible = true;
-            nuevo();
-            selecciona_clave();
+            if (string.IsNullOrEmpty(cmb_turno.Text))
+            {
+                MessageBox.Show("Es necesario capturar el turno.", "Aviso");
+                cmb_turno.Focus();
+            }
+            else if (string.IsNullOrEmpty(cmb_ruta.Text))
+            {
+                MessageBox.Show("Es necesario capturar la ruta.", "Aviso");
+                cmb_ruta.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_contacto.Text))
+            {
+                MessageBox.Show("Es necesario capturar información de contacto.", "Aviso");
+                txt_contacto.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_tel_contacto.Text))
+            {
+                MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso");
+                txt_tel_contacto.Focus();
+            }
+            else
+            {
+                Registra_empleado();
+                Frm_Rep_Alta_empleado Rep = new Frm_Rep_Alta_empleado();
+                Rep.ShowDialog();
+                Panel_principal.Visible = true;
+                nuevo();
+                selecciona_clave();
+            }
         }
         private void Btn_fin_anterior_Click(object sender, EventArgs e)
         {
@@ -461,13 +607,19 @@ namespace CsPresentacion
             {
                 e.Handled = false;
             }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
             else
             {
                 e.Handled = true;
+            }
+
+            if (string.IsNullOrEmpty(txt_curp.Text))
+            {
+                btn_comprueba.Enabled = false;
+                btn_pp_siguiente.Enabled = false;
+            }
+            else
+            {
+                btn_comprueba.Enabled = true;
             }
         }
         private void Cmb_estado_KeyPress(object sender, KeyPressEventArgs e)
@@ -504,10 +656,6 @@ namespace CsPresentacion
             {
                 e.Handled = false;
             }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
             else
             {
                 e.Handled = true;
@@ -523,10 +671,6 @@ namespace CsPresentacion
             {
                 e.Handled = false;
             }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
             else
             {
                 e.Handled = true;
@@ -539,10 +683,6 @@ namespace CsPresentacion
                 e.Handled = false;
             }
             else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -580,16 +720,20 @@ namespace CsPresentacion
             {
                 e.Handled = false;
             }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
             else
             {
                 e.Handled = true;
             }
 
-        
+            if (string.IsNullOrEmpty(txt_nss.Text))
+            {
+                btn_comprueba.Enabled = false;
+                btn_pp_siguiente.Enabled = false;
+            }
+            else
+            {
+                btn_comprueba.Enabled = true;
+            }
         }
         private void Txt_rfc_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -604,18 +748,27 @@ namespace CsPresentacion
             {
                 e.Handled = false;
             }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
             else
             {
                 e.Handled = true;
+            }
+            if (string.IsNullOrEmpty(txt_rfc.Text))
+            {
+                btn_comprueba.Enabled = false;
+                btn_pp_siguiente.Enabled = false;
+            }
+            else
+            {
+                btn_comprueba.Enabled = true;
             }
         }
         private void Txt_calle_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsNumber(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -635,6 +788,10 @@ namespace CsPresentacion
         private void Txt_colonia_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsNumber(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -680,10 +837,6 @@ namespace CsPresentacion
             {
                 e.Handled = false;
             }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
             else
             {
                 e.Handled = true;
@@ -698,6 +851,136 @@ namespace CsPresentacion
 
         }
         private void Txt_lugar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void Txt_contacto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_lugar_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_sector_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txt_interior_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txt_email_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void Cmb_estado_nacimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void Cmb_turno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void RadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdb_expatriado.Checked == true)
+            {
+                cmb_estado_nacimiento.Enabled = false;
+                Aviso_empleado = 1;
+            }
+        }
+
+        private void Rdb_nacional_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdb_nacional.Checked == true)
+            {
+                cmb_estado_nacimiento.Enabled = true;
+                Aviso_empleado = 0;
+            }
+        }
+
+        private void Panel_final_Paint(object sender, PaintEventArgs e)
         {
 
         }
