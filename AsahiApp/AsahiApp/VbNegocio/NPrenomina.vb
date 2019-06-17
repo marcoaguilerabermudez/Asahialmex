@@ -145,5 +145,29 @@ Public Class NPrenomina
         Dim DEmp As New DEmpleado()
         Return DEmp.EmpleadoGlobalRecuperar(cadConex, fecha)
     End Function
+    Public Function RecuperarMotivosRetardo(ByVal cadenaConex As String) As LHorarios
+        Dim dPren As New DPrenomina()
+        Return dPren.RecuperarMotivosRetardo(cadenaConex)
+    End Function
+    Public Sub InsertarMotivoRetardoChecadas(ByVal cadenaConex As String, ByVal emp As Empleado)
+        Dim DPrenom As New DPrenomina()
+
+        emp = CrearXmlMotivoRetardo(emp)
+        DPrenom.InsertarMotivoRetardoChecadas(cadenaConex, emp)
+    End Sub
+    Private Function CrearXmlMotivoRetardo(ByVal emp As Empleado) As Empleado
+        Dim objEmp As New Empleado()
+        Dim i As Byte
+        Dim str As String
+
+
+        str = "<Info><clave>" & String.Format("{0:00000}", emp.IdEmpleado) &
+                "</clave><fecha>" & Format(Convert.ToDateTime(emp.Fecha1), "dd/MM/yyyy HH:mm:ss") &
+                "</fecha><nota>" & emp.Nota0 & "</nota><turno>" & emp.IdTurno & "</turno></Info>"
+        objEmp.Xml = objEmp.Xml & str
+
+        objEmp.Xml = "<Motivo>" & objEmp.Xml & "</Motivo>"
+        Return objEmp
+    End Function
 End Class
 'String.Format("{0:000}", valor)

@@ -317,4 +317,47 @@ Public Class DPrenomina
             oCon.Dispose()
         End Try
     End Sub
+    Public Function RecuperarMotivosRetardo(ByVal cadenaConex As String) As LHorarios
+        Dim lstHr As New LHorarios()
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("select idMotivo, motivo from Rh_MotivoRetardo", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim hr As New Horarios()
+                hr.IdMotivoRetardo = dr("idMotivo").ToString
+                hr.MotivoRetardo = dr("motivo").ToString
+                lstHr.Add(hr)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstHr
+    End Function
+    Public Sub InsertarMotivoRetardoChecadas(ByVal cadenaConex As String, ByVal objEmp As Empleado)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("rh_Motivo_Retardo_Checadas", oCon)
+            query.Parameters.AddWithValue("@XML", objEmp.Xml)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
 End Class
