@@ -77,7 +77,7 @@ Public Class DEmpleado
         Dim oCon As New SqlConnection(cadConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("select ID,NOMBRE,APELLIDOP,APELLIDOM,isnull(TURNO,0) as TURNO,tur,DEPARTAMENTO,TP,isnull(BAJA,'') as BAJA from Vista_InfoEmpleadosBasica where TP in ('A','R') or (TP = 'B' and BAJA >= '" & Format(fecha, "dd/MM/yyyy") & "')", oCon)
+            Dim query As New SqlCommand("SELECT ID,NOMBRE,APELLIDOP,APELLIDOM,isnull(VEB.TURNO,0) as TURNO,tur,DEPARTAMENTO,TP,EP.INGRESO as INGRESO,isnull(BAJA,'') as BAJA FROM Vista_InfoEmpleadosBasica VEB LEFT JOIN asahi16.Supervisor_giro.Empprin EP on VEB.ID = EP.CLAVE WHERE TP in ('A','R') or (TP = 'B' and BAJA >= '" & Format(fecha, "dd/MM/yyyy") & "')", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -91,6 +91,7 @@ Public Class DEmpleado
                 emp.Turno = dr("tur").ToString
                 emp.Departamento = dr("DEPARTAMENTO").ToString
                 emp.TP = dr("TP").ToString
+                emp.FechaIngreso = Convert.ToDateTime(dr("INGRESO").ToString)
                 emp.FechaBaja = Convert.ToDateTime(dr("BAJA").ToString)
                 lstEmp.Add(emp)
             End While

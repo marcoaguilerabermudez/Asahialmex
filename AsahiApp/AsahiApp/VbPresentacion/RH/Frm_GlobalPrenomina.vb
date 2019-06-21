@@ -1,11 +1,16 @@
 ﻿Imports System.Data.SqlClient
 Imports Negocio
 Imports Clases
+Imports System.IO
+Imports System.ComponentModel
 Public Class Frm_GlobalPrenomina
 #Region "Variables de clase"
     Dim cadConex As SqlConnection
     Dim cadenaConex As String
     Dim open As Boolean
+    Dim userName As String
+    Dim ruta As String
+    Dim archivo As String
 #End Region
 #Region "Constructores"
     Sub New()
@@ -29,7 +34,6 @@ Public Class Frm_GlobalPrenomina
 #Region "Acciones del formulario"
     Private Sub Frm_GlobalPrenomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Lbl_año.Text = Format(DateTime.Now, "yyyy")
-
         RellenaCmbSemanas()
         ModificarDiaInicio()
     End Sub
@@ -49,11 +53,11 @@ Public Class Frm_GlobalPrenomina
 
             hrs = NPrenomina.RecuperarDiasSemana(cadenaConexContpaq, fechaI)
 
-            type = CmbSemanas.Text.GetType.ToString
+            type = Cmb_Semanas.Text.GetType.ToString
             If type = "System.String" Then
                 sem = 0
             Else
-                sem = CmbSemanas.Text
+                sem = Cmb_Semanas.Text
             End If
 
             Lbl_año.Text = hrs.Año
@@ -66,17 +70,19 @@ Public Class Frm_GlobalPrenomina
             lbl_Dia7.Text = Format(hrs.FechaF, "dd/MM")
             Lbl_SemaI.Text = Format(hrs.FechaI, "dd/MM/yyyy")
             Lbl_SemaF.Text = Format(hrs.FechaF, "dd/MM/yyyy")
-            If sem <> hrs.Semana Then CmbSemanas.SelectedItem = hrs.Semana
+            If sem <> hrs.Semana Then Cmb_Semanas.SelectedItem = hrs.Semana
+            Btn_Txt.Visible = False
             open = True
 
         Else
             Dgv_Prenomina_Global.Enabled = False
             MsgBox("Tienes que ingresar una fecha menor a la actual")
+            ModificarDiaInicio()
             Dgv_Prenomina_Global.DataSource = Nothing
             Dgv_Prenomina_Global.Refresh()
         End If
     End Sub
-    Private Sub CmbSemanas_SelectedValueChanged(sender As Object, e As EventArgs) Handles CmbSemanas.SelectedValueChanged
+    Private Sub CmbSemanas_SelectedValueChanged(sender As Object, e As EventArgs) Handles Cmb_Semanas.SelectedValueChanged
         If open = True Then
             Dim fecha As Date
             Dim lstEmp As New LEmpleado
@@ -96,11 +102,18 @@ Public Class Frm_GlobalPrenomina
             ProcesoPrenominaGlobal(lstEmp, fecha)
         End If
     End Sub
+    Private Sub Btn_Txt_Click(sender As Object, e As EventArgs) Handles Btn_Txt.Click
+        'Dgv_Lista.Visible = True
+        RecuperarIncidencias(0)
+        CrearArchivo()
+        EscribirArchivo()
+        LeerArchivo()
+    End Sub
 #End Region
 #Region "Rellena cmb"
     Private Sub RellenaCmbSemanas()
         For i = 1 To 52
-            CmbSemanas.Items.Add(i)
+            Cmb_Semanas.Items.Add(i)
         Next
     End Sub
 #End Region
@@ -112,9 +125,9 @@ Public Class Frm_GlobalPrenomina
 
         Return NPre.EmpleadoGlobalRecuperar(cadConex, fecha)
     End Function
-    Private Sub RecuperarIncidencias()
+    Private Sub RecuperarIncidencias(ByVal dgv As Boolean)
         Dim lstAus As New LAusentismo(), lstVac As New LVacaciones(), lstInc As New LIncapacidad(), lstHE As New LHorasExtra(), lstBja As New LBaja(),
-            lstCom As New LComedor()
+            lstCom As New LComedor(), lstTxt As New LTxtNominas()
         Dim NPre As New NPrenomina()
         Dim fechaI As Date
         Dim fechaF As Date
@@ -130,7 +143,13 @@ Public Class Frm_GlobalPrenomina
         lstHE = NPre.RecuperarHorasExtra(cadConex, fechaI, fechaF)
         lstBja = NPre.RecuperarBajas(cadConex, fechaI, fechaF)
         lstCom = NPre.RecuperarComedor(cadConex, fechaI, fechaF)
-        RellenaIncidenciasDgvPrenomina(lstAus, lstVac, lstInc, lstHE, lstBja, lstCom)
+        lstTxt = NPre.RecuperarTxtNominas(cadConex, fechaI, fechaF)
+        If dgv Then
+            RellenaIncidenciasDgvPrenomina(lstAus, lstVac, lstInc, lstHE, lstBja, lstCom)
+        Else
+
+            RellenaIncidenciasDgvLista(lstTxt)
+        End If
     End Sub
 #End Region
 #Region "Rellena Formulario"
@@ -209,6 +228,11 @@ Public Class Frm_GlobalPrenomina
         RellenarHrsExtraDTRet(lstHE, fecha, totalFilas)
         RellenaAusentismo(lstAus, fecha, totalFilas)
         RellenaDescansoAsistencias(totalFilas, fecha)
+    End Sub
+    Private Sub RellenaIncidenciasDgvLista(ByVal lstTxt As LTxtNominas)
+
+        RellenarHrsExtraDTRetLista(lstTxt)
+        Dgv_Lista.Sort(Dgv_Lista.Columns("idEmp"), ListSortDirection.Ascending)
     End Sub
     Private Sub RellenaBajas(ByVal lstBja As LBaja, ByVal fecha As Date, ByVal totalFilas As Integer)
         Dim fila As Integer
@@ -584,7 +608,7 @@ Public Class Frm_GlobalPrenomina
                                     Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(128, 0, 0)
                                     Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.FromArgb(255, 255, 153)
                                 Else
-                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = Dgv_Prenomina_Global.Rows(fila).Cells(ti).Value + hr
+                                    Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = Dgv_Prenomina_Global.Rows(fila).Cells(ti).Value & hr
                                     Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(128, 0, 0)
                                     Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.FromArgb(255, 255, 153)
                                 End If
@@ -609,7 +633,7 @@ Public Class Frm_GlobalPrenomina
                                         Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(255, 255, 153)
                                         Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(255, 102, 0)
                                     Else
-                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = Dgv_Prenomina_Global.Rows(fila).Cells(ti).Value + hr
+                                        Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = Dgv_Prenomina_Global.Rows(fila).Cells(ti).Value & hr
                                         Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.FromArgb(128, 0, 0)
                                         Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.FromArgb(255, 255, 153)
                                     End If
@@ -671,6 +695,7 @@ Public Class Frm_GlobalPrenomina
                         cb = Color.Red
                         cf = Color.Black
                     Case Else
+                        yy = ""
                         inc = "FF"
                         cb = Color.Red
                         cf = Color.Black
@@ -801,13 +826,100 @@ Public Class Frm_GlobalPrenomina
             End With
         Next
     End Sub
+
+    Private Sub RellenarHrsExtraDTRetLista(ByVal lstTxt As LTxtNominas)
+        Dim con As New conexion()
+        Dim fila As Integer = 0, dur As Integer
+        Dim fechaI As Date, fechaF As Date, fecI As Date, fecF As Date
+        Dim idEmp As Integer
+        Dim tp As String, tip As String, inc As String
+        Dim hr
+        Dgv_Lista.DataSource = Nothing
+        Dgv_Lista.Rows.Clear()
+
+        Dim te = 0
+        For Each item In lstTxt
+            If item.Tabla = 1 Then
+                Dgv_Lista.Rows.Add()
+                idEmp = item.IdEmpleado
+                hr = item.Autorizado
+                fechaI = item.Fecha
+                tp = item.Tipo
+
+                With Dgv_Lista.Rows(fila)
+                    .Cells("idEmp").Value = idEmp
+                    .Cells("tiempo").Value = hr
+                    .Cells("fecha").Value = fechaI
+
+                    If tp = "H" Or tp = "H " Or tp = " H" Then
+                        te = hr + te
+                        .Cells("inc").Value = "HE"
+                        .Cells("hrsAprobadas").Value = hr
+                    ElseIf tp = "DT" Or tp = "DT " Or tp = " DT" Then
+                        .Cells("inc").Value = "DT"
+                    ElseIf tp = "F" Or tp = "F " Or tp = " F" Then
+                        .Cells("inc").Value = "DF"
+                    ElseIf tp = "R" Or tp = "R " Or tp = " R" Then
+                        .Cells("inc").Value = "R"
+                    ElseIf tp = "P" Or tp = "P " Or tp = " P" Then
+                        .Cells("inc").Value = "R"
+                    End If
+
+                End With
+                fila += 1
+
+            ElseIf item.Tabla = 2 Then
+
+                fecI = Lbl_Dia1.Text & "/" & Lbl_año.Text
+                fecF = lbl_Dia6.Text & "/" & Lbl_año.Text
+
+                idEmp = item.IdEmpleado
+                fechaI = item.Fecha
+                fechaF = item.FechaF
+                dur = item.Duracion
+
+                For f = 1 To dur
+                    Dgv_Lista.Rows.Add()
+                    With Dgv_Lista.Rows(fila)
+                        .Cells("idEmp").Value = idEmp
+                        .Cells("fecha").Value = fechaI
+                        If (fechaF >= fecF And fechaI <= fecF) Or (fechaF <= fecF And fechaF >= fecI) Then
+                            tip = item.Tipo
+                            Select Case tip
+                                Case "B", "B "
+                                    inc = "PM"
+                                Case "F", "F "
+                                    inc = "F"
+                                Case "G", "G "
+                                    inc = "PCS"
+                                Case "P", "P "
+                                    inc = "PSS"
+                                Case "U", "U "
+                                    inc = "FJ"
+                                Case "N", "N "
+                                    inc = "SUS"
+                                Case Else
+                                    inc = "xx"
+                            End Select
+                            .Cells("inc").Value = inc
+                        End If
+                    End With
+                    fechaI = (DateAdd(DateInterval.Day, 1, fechaI))
+                    fila += 1
+                Next
+            End If
+        Next
+
+
+    End Sub
 #End Region
 #Region "Procesos Varios"
     Private Sub ProcesoPrenominaGlobal(ByVal lstEmp As LEmpleado, ByVal fecha As Date)
         lstEmp = RecuperarEmpleados(fecha)
         If lstEmp(0).Err = False Then
             RellenaChecadasDgvGlobalPrenomina(lstEmp)
-            RecuperarIncidencias()
+            RecuperarIncidencias(1)
+            Btn_Txt.Visible = True
         End If
     End Sub
     Private Sub ModificarDiaInicio()
@@ -843,5 +955,285 @@ Public Class Frm_GlobalPrenomina
             Case Else : Return "Err"
         End Select
     End Function
+    Private Sub CrearArchivo()
+        Me.userName = Environment.UserName
+        Me.ruta = "C:\Users\" & Me.userName & "\Desktop\NominaSAAM\"
+        Me.archivo = "Incidencias_W" & Cmb_Semanas.Text & ".txt"
+        Dim fs As FileStream
+
+        'Validamos si la carpeta de ruta existe, si no existe la creamos
+        Try
+            If File.Exists(ruta) Then
+
+                'Si la carpeta existe creamos o sobreescribios el archivo txt
+                fs = File.Create(ruta & archivo)
+                fs.Close()
+                MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, "")
+            Else
+
+                'Si la carpeta no existe la creamos
+                Directory.CreateDirectory(ruta)
+
+                'Una vez creada la carpeta creamos o sobreescribios el archivo txt
+                fs = File.Create(ruta & archivo)
+                fs.Close()
+                MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, "")
+            End If
+        Catch ex As Exception
+            MsgBox("Se presento un problema al momento de crear el archivo: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+    End Sub
+    Private Sub EscribirArchivo()
+        Dim tx As New StreamWriter(Me.ruta & Me.archivo)
+        Dim fila As Integer, e As Integer, id As Integer, idX As Integer = 0, semana As Integer = Cmb_Semanas.Text
+        Dim inc As String, texto As String, val As String
+        Dim VV As Double, fgg As Double
+        Dim totalFilas As Integer = Dgv_Lista.Rows.Count
+        Try
+            For e = 1 To 7000
+                Dim V = 0, V2 = 0, H = 0, HE = 0, HE2 = 0, HE3 = 0
+
+                For fila = 0 To totalFilas - 2
+                    id = Dgv_Lista.Rows(fila).Cells("idEmp").Value
+                    If id = e Then
+                        With Dgv_Lista.Rows(fila)
+                            If idX <> id Then
+                                'Escribimos una linea en nuestro archivo TXT con el formato que este separado por coma (,)
+                                tx.Write("E       ")
+                                tx.Write(String.Format("{0:0000}", id))
+                                tx.Write("                                                                                           ")
+                                tx.WriteLine()
+                            End If
+
+                            inc = .Cells("inc").Value
+                            If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Then
+                                Select Case inc
+                                    Case "HE"
+                                        V = .Cells("hrsAprobadas").Value
+                                        H = V + H
+                                        If V <= 540 Then
+                                            If H <= 540 Then
+                                                HE2 = HE2 + V
+                                                VV = Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))
+
+                                                tx.Write("D")
+                                                tx.Write(" Semanal")
+                                                tx.Write("                 ")
+                                                tx.Write(semana)
+                                                tx.Write(" 2                   ")
+                                                tx.Write("Horas extras 2                               ")
+                                                tx.Write(Format(VV, "#0.00"))
+                                                tx.Write(" ")
+                                                tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                tx.Write(",00:0 ")
+                                                tx.Write(Lbl_año.Text)
+                                                tx.Write("                            ")
+
+                                            ElseIf H >= 540 Then
+                                                If HE2 >= 540 Then
+                                                    HE3 = HE3 + V
+                                                    tx.Write("D")
+                                                    tx.Write(" Semanal")
+                                                    tx.Write("                 ")
+                                                    tx.Write(semana)
+                                                    tx.Write(" 2                   ")
+                                                    tx.Write("Horas extras 3                              ")
+                                                    If (Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))) < 10 Then
+                                                        tx.Write(" ")
+                                                    End If
+                                                    tx.Write(Format((Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))), "#0.00"))
+                                                    tx.Write(" ")
+                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                    tx.Write(",00:0 ")
+                                                    tx.Write(Lbl_año.Text)
+                                                    tx.Write("                            ")
+                                                Else
+                                                    V2 = 540 - HE2
+                                                    HE3 = H - 540
+                                                    HE2 = 540
+
+                                                    tx.Write("D")
+                                                    tx.Write(" Semanal")
+                                                    tx.Write("                 ")
+                                                    tx.Write(semana)
+                                                    tx.Write(" 2                   ")
+                                                    tx.Write("Horas extras 2                               ")
+                                                    tx.Write(Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "#0.00"))
+                                                    tx.Write(" ")
+                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                    tx.Write(",00:0 ")
+                                                    tx.Write(Lbl_año.Text)
+                                                    tx.Write("                            ")
+                                                    '--------------------------------------
+                                                    tx.WriteLine()
+                                                    tx.Write("D")
+                                                    tx.Write(" Semanal")
+                                                    tx.Write("                 ")
+                                                    tx.Write(semana)
+                                                    tx.Write(" 2                   ")
+                                                    tx.Write("Horas extras 3                              ")
+                                                    If (Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))) < 10 Then
+                                                        tx.Write(" ")
+                                                    End If
+                                                    tx.Write(Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "#0.00"))
+                                                    tx.Write(" ")
+                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                    tx.Write(",00:0 ")
+                                                    tx.Write(Lbl_año.Text)
+                                                    tx.Write("                            ")
+                                                End If
+                                            End If
+                                        Else
+                                            V2 = 540 - HE2
+                                            HE3 = H - 540
+                                            HE2 = 540
+                                            If V2 > 0 Then
+                                                tx.Write("D")
+                                                tx.Write(" Semanal")
+                                                tx.Write("                 ")
+                                                tx.Write(semana)
+                                                tx.Write(" 2                   ")
+                                                tx.Write("Horas extras 2                               ")
+                                                tx.Write(Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "#0.00"))
+                                                tx.Write(" ")
+                                                tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                tx.Write(",00:0 ")
+                                                tx.Write(Lbl_año.Text)
+                                                tx.Write("                            ")
+                                            End If
+                                            tx.Write("D")
+                                            tx.Write(" Semanal")
+                                            tx.Write("                 ")
+                                            tx.Write(semana)
+                                            tx.Write(" 2                   ")
+                                            fgg = (Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666)))
+                                            If fgg >= 10 Then
+                                                tx.Write("Horas extras 3                              ")
+                                            Else
+                                                tx.Write("Horas extras 3                              ")
+                                            End If
+                                            tx.Write(Format(fgg, "#0.00"))
+                                            tx.Write(" ")
+                                            tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                            tx.Write(",00:0 ")
+                                            tx.Write(Lbl_año.Text)
+                                            tx.Write("                            ")
+                                        End If
+                                    Case "R"
+                                        tx.Write("D")
+                                        tx.Write(" Semanal")
+                                        tx.Write("                 ")
+                                        tx.Write(semana)
+                                        tx.Write(" 2                   ")
+                                        texto = "Retardos                                     "
+                                        val = .Cells("tiempo").Value
+                                        tx.Write(texto)
+                                        tx.Write(Format((Int(val / 60) + (((val / 60 - Int(val / 60)) / 1.666))), "#0.00"))
+                                        tx.Write(" ")
+                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                        tx.Write(",00:0 ")
+                                        tx.Write(Lbl_año.Text)
+                                        tx.Write("                            ")
+                                    Case "F", "FJ"
+                                        tx.Write("D")
+                                        tx.Write(" Semanal")
+                                        tx.Write("                 ")
+                                        tx.Write(semana)
+                                        tx.Write(" 2                   ")
+                                        texto = "Faltas injustificadas                        "
+                                        val = 1
+                                        tx.Write(texto)
+                                        tx.Write(val & ".00")
+                                        tx.Write(" ")
+                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                        tx.Write(",00:0 ")
+                                        tx.Write(Lbl_año.Text)
+                                        tx.Write("                            ")
+                                    Case "PCS"
+                                        tx.Write("D")
+                                        tx.Write(" Semanal")
+                                        tx.Write("                 ")
+                                        tx.Write(semana)
+                                        tx.Write(" 2                   ")
+                                        texto = "Permisos con goce de sueldo                  "
+                                        val = 1
+                                        tx.Write(texto)
+                                        tx.Write("1.00")
+                                        tx.Write(" ")
+                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                        tx.Write(",00:0 ")
+                                        tx.Write(Lbl_año.Text)
+                                        tx.Write("                            ")
+                                    Case "PSS"
+                                        tx.Write("D")
+                                        tx.Write(" Semanal")
+                                        tx.Write("                 ")
+                                        tx.Write(semana)
+                                        tx.Write(" 2                   ")
+                                        texto = "Permisos sin goce de sueldo                  "
+                                        val = 1
+                                        tx.Write(texto)
+                                        tx.Write("1.00")
+                                        tx.Write(" ")
+                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                        tx.Write(",00:0 ")
+                                        tx.Write(Lbl_año.Text)
+                                        tx.Write("                            ")
+                                    Case "SUS"
+                                        tx.Write("D")
+                                        tx.Write(" Semanal")
+                                        tx.Write("                 ")
+                                        tx.Write(semana)
+                                        tx.Write(" 2                   ")
+                                        texto = "Días de castigo                              "
+                                        val = 1
+                                        tx.Write(texto)
+                                        tx.Write("1.00")
+                                        tx.Write(" ")
+                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                        tx.Write(",00:0 ")
+                                        tx.Write(Lbl_año.Text)
+                                        tx.Write("                            ")
+                                End Select
+                                tx.WriteLine()
+                            End If
+                        End With
+                    End If
+                    idX = id
+                Next
+            Next
+            MsgBox("Registro guardado correctamente", MsgBoxStyle.Information, "")
+            tx.Close()
+        Catch ex As Exception
+            MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "")
+        End Try
+    End Sub
+    Sub LeerArchivo()
+        ':::Creamos nuestro objeto de tipo StreamReader que nos permite leer archivos
+        Dim leer As New StreamReader(ruta & archivo)
+
+        ':::Limpiamos nuestro ListBox
+        'ListBoxClientes.Items.Clear()
+
+        Try
+            ':::Indicamos mediante un While que mientras no sea el ultimo caracter repita el proceso
+            While leer.Peek <> -1
+                ':::Leemos cada linea del archivo TXT
+                Dim linea As String = leer.ReadLine()
+                ':::Validamos que la linea no este vacia
+                If String.IsNullOrEmpty(linea) Then
+                    Continue While
+                End If
+                ':::Agregramos los registros encontrados
+                'ListBoxClientes.Items.Add(linea)
+            End While
+
+            leer.Close()
+            ':::Total de registros cargados al ListBox
+            'LblTotal.Text = ListBoxClientes.Items.Count
+        Catch ex As Exception
+            MsgBox("Se presento un problema al leer el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
+        End Try
+    End Sub
 #End Region
 End Class

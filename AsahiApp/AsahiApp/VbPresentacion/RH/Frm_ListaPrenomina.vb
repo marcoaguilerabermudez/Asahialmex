@@ -86,6 +86,7 @@ Public Class Frm_ListaPrenomina
         Else
             Dgv_ListaPrenomina.Enabled = False
             MsgBox("Tienes que ingresar una fecha menor a la actual")
+            ModificarDiaInicio()
             Dgv_ListaPrenomina.DataSource = Nothing
             Dgv_ListaPrenomina.Refresh()
         End If
@@ -1359,13 +1360,15 @@ Public Class Frm_ListaPrenomina
                         End If
                     Else
                         If (valorE IsNot Nothing And valorS IsNot Nothing) And
-                            ((valorE = "D" Or valorE = "DT" Or valorE = "INC" Or valorE = "PM" Or valorE Like "M-DT" Or valorE Like "J-DT" Or valorE = "VAC") Or
-                            (valorS = "D" Or valorS = "DT" Or valorS = "INC" Or valorS = "PM" Or valorS Like "M-DT" Or valorS Like "J-DT" Or valorS = "VAC")) Then
+                            ((valorE = "D" Or valorE = "DT" Or valorE = "INC" Or valorE = "PM" Or valorE = "PCS" Or valorE Like "M-DT" Or valorE Like "J-DT" Or
+                            valorE = "VAC") Or
+                            (valorS = "D" Or valorS = "DT" Or valorS = "INC" Or valorS = "PM" Or valorS = "PCS" Or valorS Like "M-DT" Or valorS Like "J-DT" Or
+                            valorS = "VAC")) Then
                             bono += 1
                         ElseIf (valorE Is Nothing Or valorS Is Nothing) Or
-                            ((valorE = "F" Or valorE = "FJ" Or valorE = "PCS" Or valorE = "PSS" Or valorE Like "M-SUS" Or valorE Like "PS" Or valorE = "RET" Or
+                            ((valorE = "F" Or valorE = "FJ" Or valorE = "PSS" Or valorE Like "M-SUS" Or valorE Like "PS" Or valorE = "RET" Or
                             valorE = "RT") Or
-                            (valorS = "F" Or valorS = "FJ" Or valorS = "PCS" Or valorS = "PSS" Or valorS Like "M-SUS" Or valorS Like "PS" Or valorS = "RET" Or
+                            (valorS = "F" Or valorS = "FJ" Or valorS = "PSS" Or valorS Like "M-SUS" Or valorS Like "PS" Or valorS = "RET" Or
                             valorE = "RT")) Then
                             If mr = "1" Or mr = "2" Or mr = "3" Or mr = "4" Then
                                 bono += 1

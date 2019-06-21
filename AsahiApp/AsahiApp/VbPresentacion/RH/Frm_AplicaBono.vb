@@ -6,11 +6,7 @@ Imports Negocio
 Public Class Frm_AplicaBono
 #Region "Variables de Clase"
     Public idMotivo As String
-    Dim cadConex As SqlConnection
-    Dim cadenaConex As String
-    Dim open As Boolean
     Dim empleado As New Empleado()
-    Dim valor
 #End Region
 #Region "Constructores"
     Sub New()
@@ -27,8 +23,8 @@ Public Class Frm_AplicaBono
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        Me.cadConex = cadConex
-        Me.cadenaConex = cadenaConex
+        'Me.cadConex = cadConex
+        'Me.cadenaConex = cadenaConex
         Me.empleado = empleado
     End Sub
 #End Region

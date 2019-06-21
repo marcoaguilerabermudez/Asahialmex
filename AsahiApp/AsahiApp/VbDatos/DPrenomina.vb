@@ -203,6 +203,41 @@ Public Class DPrenomina
         End Try
         Return lstCom
     End Function
+    Public Function RecuperarTxtNominas(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LTxtNominas
+        Dim oCon As New SqlConnection(cadConex)
+        Dim lstTxtNom As New LTxtNominas()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Rh_RecuperarIncidenciasParaTxt", oCon)
+            query.Parameters.AddWithValue("@fechai", fechaI)
+            query.Parameters.AddWithValue("@fechaf", fechaF)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim txtNom As New TxtNominas
+                txtNom.IdEmpleado = Convert.ToInt32(dr("ID").ToString)
+                txtNom.Tipo = dr("TIPO").ToString
+                txtNom.Monto = Convert.ToInt32(dr("MONTO").ToString)
+                txtNom.Autorizado = Convert.ToInt32(dr("AUTORIZADO").ToString)
+                txtNom.Fecha = Convert.ToDateTime(dr("FECHA").ToString)
+                txtNom.Duracion = Convert.ToInt32(dr("DURACION").ToString)
+                'txtNom.FechaI = Convert.ToDateTime(dr("FECHAI").ToString)
+                txtNom.FechaF = Convert.ToDateTime(dr("FECHAF").ToString)
+                txtNom.Tabla = Convert.ToInt32(dr("T").ToString)
+                lstTxtNom.Add(txtNom)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstTxtNom
+    End Function
     Public Sub InsertarModificacionesIncidencias(ByVal cadenaConex As String, ByVal objEmp As Empleado)
         Dim oCon As New SqlConnection(cadenaConex)
         Try

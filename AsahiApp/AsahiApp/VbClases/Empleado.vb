@@ -107,6 +107,15 @@
             turno_ = value
         End Set
     End Property
+    Private fechaIngreso_ As Date
+    Public Property FechaIngreso() As Date
+        Get
+            Return fechaIngreso_
+        End Get
+        Set(ByVal value As Date)
+            fechaIngreso_ = value
+        End Set
+    End Property
     Private fechaBaja_ As Date
     Public Property FechaBaja() As Date
         Get
