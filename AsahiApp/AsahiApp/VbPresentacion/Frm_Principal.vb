@@ -103,8 +103,12 @@ Public Class Frm_Principal
         Mejora.Hide()
     End Sub
     Private Sub PreNominaGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaGlobalToolStripMenuItem.Click
-        Dim globPren As New Frm_GlobalPrenomina()
+        Dim globPren As New Frm_GlobalPrenomina(cadConex, cadenaConex)
         globPren.ShowDialog()
+    End Sub
+    Private Sub BonoMensualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BonoMensualToolStripMenuItem.Click
+        'Dim bono As New Frm_BonoMensual()
+        'bono.ShowDialog()
     End Sub
 #End Region
 End Class

@@ -171,6 +171,12 @@
     <Compile Include="RH\Frm_AplicaBono.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RH\Frm_BonoMensual.Designer.vb">
+      <DependentUpon>Frm_BonoMensual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_BonoMensual.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_GlobalPrenomina.Designer.vb">
       <DependentUpon>Frm_GlobalPrenomina.vb</DependentUpon>
     </Compile>
@@ -210,6 +216,9 @@
     <EmbeddedResource Include="Reportes\Reporte_Ejemplo.rdlc" />
     <EmbeddedResource Include="RH\Frm_AplicaBono.resx">
       <DependentUpon>Frm_AplicaBono.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_BonoMensual.resx">
+      <DependentUpon>Frm_BonoMensual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RH\Frm_GlobalPrenomina.resx">
       <DependentUpon>Frm_GlobalPrenomina.vb</DependentUpon>
@@ -304,6 +313,8 @@
     <None Include="Resources\iconfinder_115_List_183241 %281%29.png" />
     <None Include="Resources\iconfinder_115_List_183241 %282%29.png" />
     <None Include="Resources\save.png" />
+    <None Include="Resources\txt.png" />
+    <None Include="Resources\txt1.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

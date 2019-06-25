@@ -34,6 +34,10 @@ Public Class NPrenomina
         Dim DPrenomina As New DPrenomina()
         Return DPrenomina.RecuperarComedor(cadConex, fechaI, fechaF)
     End Function
+    Public Function RecuperarTxtNominas(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LTxtNominas
+        Dim DPrenomina As New DPrenomina()
+        Return DPrenomina.RecuperarTxtNominas(cadConex, fechaI, fechaF)
+    End Function
     Public Sub InsertarModificacionesIncidencias(ByVal cadenaConex As String, ByVal lstEmp As LEmpleado, ByVal sem As Integer)
         Dim objEmp As New Empleado()
         Dim DPrenom As New DPrenomina()
@@ -157,7 +161,6 @@ Public Class NPrenomina
     End Sub
     Private Function CrearXmlMotivoRetardo(ByVal emp As Empleado) As Empleado
         Dim objEmp As New Empleado()
-        Dim i As Byte
         Dim str As String
 
 
