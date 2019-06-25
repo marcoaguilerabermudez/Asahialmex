@@ -195,7 +195,7 @@ Public Class Frm_GlobalPrenomina
                 .Cells("permisoSalida").Value = 0
                 .Cells("falta").Value = 0
                 .Cells("faltaJustificada").Value = 0
-                .Cells("suspencion").Value = 0
+                .Cells("suspension").Value = 0
                 .Cells("permisoSinSueldo").Value = 0
                 .Cells("permisoConSueldo").Value = 0
                 .Cells("permisoMaternidad").Value = 0
@@ -690,7 +690,7 @@ Public Class Frm_GlobalPrenomina
                         cb = Color.Red
                         cf = Color.Black
                     Case "N", "N "
-                        yy = "suspencion"
+                        yy = "suspension"
                         inc = "SUS"
                         cb = Color.Red
                         cf = Color.Black

@@ -80,6 +80,15 @@
             departamento_ = value
         End Set
     End Property
+    Private puesto_ As String
+    Public Property Puesto() As String
+        Get
+            Return puesto_
+        End Get
+        Set(ByVal value As String)
+            puesto_ = value
+        End Set
+    End Property
     Private bono_ As Boolean
     Public Property Bono() As Boolean
         Get

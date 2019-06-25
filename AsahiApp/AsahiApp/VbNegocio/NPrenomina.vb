@@ -161,7 +161,6 @@ Public Class NPrenomina
     End Sub
     Private Function CrearXmlMotivoRetardo(ByVal emp As Empleado) As Empleado
         Dim objEmp As New Empleado()
-        Dim i As Byte
         Dim str As String
 
 
