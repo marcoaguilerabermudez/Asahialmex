@@ -24,12 +24,13 @@ namespace CsPresentacion
         double Factor;
         double Resultado;
         int Aviso_empleado;
+       
 
         private void Frm_Altas_Load(object sender, EventArgs e)
         {
             nuevo();
             cargar_puesto(cmb_puesto);
-            cargar_departemento(cmb_departamento);
+           // cargar_departemento(cmb_departamento);
             selecciona_clave();
         }
         public void cargar_departemento(ComboBox inte)//Cargar departamento en cmb
@@ -37,11 +38,11 @@ namespace CsPresentacion
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select distinct DESCRIPCION FROM  [asahi16].[Supervisor_giro].[DEPTO] ORDER BY DESCRIPCION", con);
+                SqlCommand cmd = new SqlCommand("select distinct RTRIM(DESCRIPCION)as 'DEPARTAMENTO' FROM  [asahi16].[Supervisor_giro].[DEPTO]", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    inte.Items.Add(dr["DESCRIPCION"].ToString());
+                    inte.Items.Add(dr["DEPARTAMENTO"].ToString());
                 }
                 dr.Close();
                 con.Close();
@@ -54,6 +55,9 @@ namespace CsPresentacion
 
         private void nuevo()
         {
+            lbl_var.Visible = false;
+            lbl_var.Text = "1";
+            lbl_tipo.Text = "NUEVO INGRESO";
             txt_paterno.Text = "";
             txt_materno.Text = "";
             txt_nombre.Text = "";
@@ -94,12 +98,13 @@ namespace CsPresentacion
             txt_contacto.Text = "";
             cmb_estado_nacimiento.Text = "";
 
+            txt_factor.Visible = false;
             lbl_factor.Visible = false;
             Panel_secundario.Visible = false;
             panel_final.Visible = false;
             groupBox2.Visible = false;
-            lbl_tipo_empleado.Visible = false;
-            txt_estado.Visible = false;
+           lbl_tipo_empleado.Visible = false;
+           txt_estado.Visible = false;
             txt_SDO1.Enabled = false;
             txt_SDO2.Enabled = false;
             txt_SDO3.Enabled = false;
@@ -138,6 +143,7 @@ namespace CsPresentacion
                 Resultado = Sueldo * Factor;
                 txt_SDO3.Text = Resultado.ToString();
                 txt_SDO5.Text = Resultado.ToString();
+
             }
             catch
             {
@@ -152,12 +158,13 @@ namespace CsPresentacion
                 con.Open();
                 DataTable dt = new DataTable();
                 String strSql;
-                strSql = "[dbo].[Sp_cargaempleado]";
+                strSql = "[dbo].[sp_Reg_Mod_FM]";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@Var", SqlDbType.VarChar).Value = lbl_var.Text;
                 da.SelectCommand.Parameters.Add("@Clave", SqlDbType.VarChar).Value = txt_Clave.Text;
                 da.SelectCommand.Parameters.Add("@catalogodepartamento", SqlDbType.VarChar).Value = cmb_departamento.Text;
-               da.SelectCommand.Parameters.Add("@zona", SqlDbType.VarChar).Value = txt_lugar_nac.Text ;
+                da.SelectCommand.Parameters.Add("@zona", SqlDbType.VarChar).Value = txt_lugar_nac.Text ;
                 da.SelectCommand.Parameters.Add("@ruta", SqlDbType.VarChar).Value = cmb_ruta.Text;
                 da.SelectCommand.Parameters.Add("@NOMBREN", SqlDbType.VarChar).Value = txt_nombre.Text;
                 da.SelectCommand.Parameters.Add("@NOMBREP", SqlDbType.VarChar).Value = txt_paterno.Text;
@@ -192,7 +199,6 @@ namespace CsPresentacion
                 da.SelectCommand.Parameters.Add("@sdo2", SqlDbType.VarChar).Value = txt_SDO3.Text;
                 da.SelectCommand.Parameters.Add("@Aviso", SqlDbType.VarChar).Value = Aviso_empleado;
 
-
                 da.Fill(dt);
                 con.Close();
                 MessageBox.Show("Usuario registrado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );
@@ -202,6 +208,66 @@ namespace CsPresentacion
                 MessageBox.Show(Error.ToString());
             }
         }
+
+        private void Crea_Contrato()
+        {
+            try
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                String strSql;
+                strSql = "[dbo].[SP_Contrato_empleados]";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@Clave", SqlDbType.VarChar).Value = txt_Clave.Text;
+                da.SelectCommand.Parameters.Add("@catalogodepartamento", SqlDbType.VarChar).Value = cmb_departamento.Text;
+                da.SelectCommand.Parameters.Add("@zona", SqlDbType.VarChar).Value = txt_lugar_nac.Text;
+                da.SelectCommand.Parameters.Add("@ruta", SqlDbType.VarChar).Value = cmb_ruta.Text;
+                da.SelectCommand.Parameters.Add("@NOMBREN", SqlDbType.VarChar).Value = txt_nombre.Text;
+                da.SelectCommand.Parameters.Add("@NOMBREP", SqlDbType.VarChar).Value = txt_paterno.Text;
+                da.SelectCommand.Parameters.Add("@NOMBREM", SqlDbType.VarChar).Value = txt_materno.Text;
+                da.SelectCommand.Parameters.Add("@PE", SqlDbType.VarChar).Value = lbl_tipo_empleado.Text;
+                da.SelectCommand.Parameters.Add("@RFC", SqlDbType.VarChar).Value = txt_rfc.Text;
+                da.SelectCommand.Parameters.Add("@turno", SqlDbType.VarChar).Value = cmb_turno.Text;
+                da.SelectCommand.Parameters.Add("@afiliacion", SqlDbType.VarChar).Value = txt_nss.Text;
+                da.SelectCommand.Parameters.Add("@curp", SqlDbType.VarChar).Value = txt_curp.Text;
+                da.SelectCommand.Parameters.Add("@puesto", SqlDbType.VarChar).Value = cmb_puesto.Text;
+                da.SelectCommand.Parameters.Add("@calle", SqlDbType.VarChar).Value = txt_calle.Text;
+                da.SelectCommand.Parameters.Add("@numero", SqlDbType.VarChar).Value = txt_numero.Text;
+                da.SelectCommand.Parameters.Add("@interior", SqlDbType.VarChar).Value = txt_interior.Text;
+                da.SelectCommand.Parameters.Add("@colonia", SqlDbType.VarChar).Value = txt_colonia.Text;
+                da.SelectCommand.Parameters.Add("@cp", SqlDbType.VarChar).Value = txt_cp.Text;
+                da.SelectCommand.Parameters.Add("@municipio", SqlDbType.VarChar).Value = txt_municipio.Text;
+                da.SelectCommand.Parameters.Add("@estado", SqlDbType.VarChar).Value = cmb_estado.Text;
+                da.SelectCommand.Parameters.Add("@telefono", SqlDbType.VarChar).Value = txt_telefono.Text;
+                da.SelectCommand.Parameters.Add("@fechanacimiento", SqlDbType.VarChar).Value = dtm_nacimiento.Text;
+                da.SelectCommand.Parameters.Add("@lugarnacimiento", SqlDbType.VarChar).Value = txt_lugar_nac.Text;
+                da.SelectCommand.Parameters.Add("@estadocivil", SqlDbType.VarChar).Value = cmb_Civil.Text;
+                da.SelectCommand.Parameters.Add("@escolaridad", SqlDbType.VarChar).Value = cmb_escolaridad.Text;
+                da.SelectCommand.Parameters.Add("@sexo", SqlDbType.VarChar).Value = cmb_genero.Text;
+                da.SelectCommand.Parameters.Add("@graduacion", SqlDbType.VarChar).Value = txt_año_graduacion.Text;
+                da.SelectCommand.Parameters.Add("@emergenciacontacto", SqlDbType.VarChar).Value = txt_contacto.Text;
+                da.SelectCommand.Parameters.Add("@emergenciaparentesco", SqlDbType.VarChar).Value = cmb_parentesco.Text;
+                da.SelectCommand.Parameters.Add("@emergenciatelefono", SqlDbType.VarChar).Value = txt_tel_contacto.Text;
+                da.SelectCommand.Parameters.Add("@estadonacimiento", SqlDbType.VarChar).Value = cmb_estado_nacimiento.Text;
+                da.SelectCommand.Parameters.Add("@nacionalidad", SqlDbType.VarChar).Value = txt_nacionalidad.Text;
+                da.SelectCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = txt_email.Text;
+                da.SelectCommand.Parameters.Add("@sdo1", SqlDbType.VarChar).Value = txt_SDO1.Text;
+                da.SelectCommand.Parameters.Add("@sdo2", SqlDbType.VarChar).Value = txt_SDO3.Text;
+                da.SelectCommand.Parameters.Add("@Aviso", SqlDbType.VarChar).Value = Aviso_empleado;
+                da.SelectCommand.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = lbl_tipo.Text;
+
+                da.Fill(dt);
+                con.Close();
+               // MessageBox.Show("Reporte creado Correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception Error)
+            {
+                MessageBox.Show(Error.ToString());
+            }
+        }
+
+
 
         private void Comprueba_Existencia()
         {
@@ -227,12 +293,17 @@ namespace CsPresentacion
                         if (txt_estado.Text == "BAJA")
                         {
                             groupBox2.Visible = true;
+                            lbl_tipo.Text = "REINGRESO";
+                            lbl_var.Text = "2";
                         }
                         else if (txt_estado.Text == "VIGENTE")
                         {
                             MessageBox.Show("EMPLEADO SE ENCUENTRA VIGENTE", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             btn_pp_siguiente.Enabled = false;
+                            lbl_tipo.Text = "VIGENTE";
+
                         }
+                        
                     }
                     else
                     {
@@ -272,10 +343,10 @@ namespace CsPresentacion
                 txt_nacionalidad.Text = dt.Rows[0]["NACIONALIDAD"].ToString();
                 txt_telefono.Text = dt.Rows[0]["TELEFONO"].ToString();
                 cmb_departamento.Text = dt.Rows[0]["DEPARTAMENTO"].ToString();
-                txt_telefono.Text = dt.Rows[0]["TELEFONO"].ToString();
                 txt_calle.Text = dt.Rows[0]["CALLE"].ToString();
                 txt_numero.Text = dt.Rows[0]["NUMERO"].ToString();
                 txt_colonia.Text = dt.Rows[0]["COLONIA"].ToString();
+                txt_interior.Text = dt.Rows[0]["INTERIOR"].ToString();
                 txt_cp.Text = dt.Rows[0]["CP"].ToString();
                 txt_municipio.Text = dt.Rows[0]["MUNICIPIO"].ToString();
                 cmb_estado.Text = dt.Rows[0]["ESTADO"].ToString();
@@ -287,14 +358,19 @@ namespace CsPresentacion
                 cmb_Civil.Text = dt.Rows[0]["E_CIVIL"].ToString();
                 cmb_genero.Text = dt.Rows[0]["GEN"].ToString();
                 dtm_nacimiento.Text = dt.Rows[0]["NACIMIENTO"].ToString();
-                txt_curp.Text = dt.Rows[0]["CURP"].ToString();
+                txt_nss.Text = dt.Rows[0]["AFILIACION"].ToString();
                 txt_motivo.Text = dt.Rows[0]["MOTIVO"].ToString();
                 txt_dias.Text = dt.Rows[0]["DIAS"].ToString();
                 txt_meses.Text = dt.Rows[0]["MESES"].ToString();
                 txt_años.Text = dt.Rows[0]["AÑOS"].ToString();
                 txt_contacto.Text = dt.Rows[0]["CONTACTO"].ToString();
                 cmb_parentesco.Text = dt.Rows[0]["PARENTESCO"].ToString();
-                txt_telefono.Text = dt.Rows[0]["TEl_CONTACTO"].ToString();
+                txt_tel_contacto.Text = dt.Rows[0]["TEl_CONTACTO"].ToString();
+                txt_lugar_nac.Text = dt.Rows[0]["LUGAR_NAC"].ToString();
+                cmb_escolaridad.Text = dt.Rows[0]["ESCOLARIDAD"].ToString();
+                txt_año_graduacion.Text = dt.Rows[0]["GRADUACION"].ToString();
+                txt_email.Text = dt.Rows[0]["EMAIL"].ToString();
+                cmb_estado_nacimiento.Text = dt.Rows[0]["ESTADO_NACIMIENTO"].ToString();   
             }
             con.Close();
         }
@@ -328,11 +404,11 @@ namespace CsPresentacion
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select distinct DESCRIPCION from [asahi16].[Supervisor_giro].[Puesto]  order by DESCRIPCION", con);
+                SqlCommand cmd = new SqlCommand("select distinct RTRIM(DESCRIPCION)AS 'PUESTO' from [asahi16].[Supervisor_giro].[Puesto]", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    inte.Items.Add(dr["DESCRIPCION"].ToString());
+                    inte.Items.Add(dr["PUESTO"].ToString());
                 }
                 dr.Close();
                 con.Close();
@@ -370,7 +446,16 @@ namespace CsPresentacion
                 MessageBox.Show("Es necesario capturar el Puesto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmb_puesto.Focus();
             }
-
+            else if (string.IsNullOrEmpty(txt_SDO1 .Text))
+            {
+                MessageBox.Show("Es necesario capturar el Sueldo diario", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_SDO1.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_SDO3.Text))
+            {
+                MessageBox.Show("Es necesario capturar el Var. IMMS", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_SDO1.Focus();
+            }
             else
             {
                 Panel_secundario.Visible = true;
@@ -400,7 +485,6 @@ namespace CsPresentacion
                 MessageBox.Show("Es necesario capturar información de la colonia", "Aviso");
                 txt_colonia.Focus();
             }
-
             else
             {
                 panel_final.Visible = true;
@@ -426,6 +510,18 @@ namespace CsPresentacion
         private void Cmb_puesto_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecciona_sueldo();
+
+            if (cmb_puesto.Text == "PRESIDENTE" || cmb_puesto.Text == "DIRECTOR" || cmb_puesto.Text == "GERENTE" || cmb_puesto.Text == "COORDINADOR")
+            {
+                txt_SDO1.Enabled = true;
+                txt_SDO1.Text = "";
+                txt_SDO3.Text = "";
+                txt_SDO5.Text = "";
+            }
+            else
+            {
+                txt_SDO1.Enabled = false;
+            }
         }
 
         private void Cmb_departamento_KeyPress(object sender, KeyPressEventArgs e)
@@ -567,7 +663,9 @@ namespace CsPresentacion
             else
             {
                 Registra_empleado();
+                Crea_Contrato();
                 Frm_Rep_Alta_empleado Rep = new Frm_Rep_Alta_empleado();
+                Rep.CLAVE = Convert.ToInt32(txt_Clave.Text);
                 Rep.ShowDialog();
                 Panel_principal.Visible = true;
                 nuevo();
@@ -982,7 +1080,54 @@ namespace CsPresentacion
 
         private void Panel_final_Paint(object sender, PaintEventArgs e)
         {
+        }
 
+        private void Txt_SDO1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        public static void Solo_numeros(object sender, KeyPressEventArgs e, char cSymbol)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != cSymbol)
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == cSymbol && (sender as TextBox).Text.IndexOf(cSymbol) > -1)
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_SDO1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Solo_numeros(sender, e, '.'); 
+        }
+
+        private void Txt_SDO1_Validated(object sender, EventArgs e)
+        {
+        }
+
+        private void Txt_SDO1_Leave(object sender, EventArgs e)
+        {
+            double n1, n2, r;
+
+            n1 = double.Parse(txt_factor.Text);
+            n2 = double.Parse(txt_SDO1.Text);
+            r = n1 * n2;
+            txt_SDO3.Text = r.ToString();
+            txt_SDO5.Text = r.ToString();
+        }
+
+        private void Txt_SDO3_TextChanged(object sender, EventArgs e)
+        {  
+        }
+        private void Txt_SDO3_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private void Txt_SDO1_LocationChanged(object sender, EventArgs e)
+        {
+           // lbl_sueldo.Text = Letras(txt_SDO1.Text);
         }
     }
 }

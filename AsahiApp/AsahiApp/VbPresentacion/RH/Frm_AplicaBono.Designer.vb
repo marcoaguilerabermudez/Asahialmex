@@ -131,6 +131,7 @@ Partial Class Frm_AplicaBono
         Me.Controls.Add(Me.Lbl_IdEmpleado)
         Me.Name = "Frm_AplicaBono"
         Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Motivo Aplicar Bono"
         Me.ResumeLayout(False)
         Me.PerformLayout()
