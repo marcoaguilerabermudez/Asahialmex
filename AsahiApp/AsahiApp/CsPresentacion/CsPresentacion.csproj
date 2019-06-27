@@ -86,11 +86,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Contrato_empleado.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Credencial_Empleados.cs">
+    <Compile Include="Formularios\RH\Frm_Credenciales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Credencial_Empleados.Designer.cs">
-      <DependentUpon>Frm_Credencial_Empleados.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Credenciales.Designer.cs">
+      <DependentUpon>Frm_Credenciales.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Frm_Rep_Alta_empleado.cs">
       <SubType>Form</SubType>
@@ -260,8 +260,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_Credencial_Empleados.resx">
-      <DependentUpon>Frm_Credencial_Empleados.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Frm_Credenciales.resx">
+      <DependentUpon>Frm_Credenciales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Modifica_Empleado.resx">
       <DependentUpon>Frm_Modifica_Empleado.cs</DependentUpon>
