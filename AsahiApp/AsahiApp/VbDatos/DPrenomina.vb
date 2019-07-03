@@ -203,6 +203,101 @@ Public Class DPrenomina
         End Try
         Return lstCom
     End Function
+    Public Function RecuperarChecadas(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LHorarios
+        Dim lstHrs As New LHorarios()
+        Dim oCon As New SqlConnection(cadConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT (CLAVE/1) ID, FECHA, ISNULL(ENTRADA_REAL_P,'') EntradaReal, ISNULL(SALIDA_REAL_P,'') SalidaReal, ISNULL(ENTRADA_P,'') Entrada, ISNULL(SALIDA_P,'') Salida, ISNULL(TIPO_REG,'') TipoRegistro, ISNULL(NOTA,'') Nota, TURNO FROM asahi16.Supervisor_giro.EmpReloj WHERE FECHA >= '" + fechaI + "' and FECHA <= '" + fechaF + "'", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim hrs As New Horarios()
+                hrs.IdEmpleado = Convert.ToInt32(dr("ID").ToString)
+                hrs.Fecha = Convert.ToDateTime(dr("FECHA").ToString)
+                hrs.HoraEntradaReal0 = Convert.ToDateTime(dr("EntradaReal").ToString)
+                hrs.HoraSalidaReal0 = Convert.ToDateTime(dr("SalidaReal").ToString)
+                hrs.HoraEntrada = Convert.ToDateTime(dr("Entrada").ToString)
+                hrs.HoraSalida = Convert.ToDateTime(dr("Salida").ToString)
+                hrs.TipoRegistro0 = dr("TipoRegistro").ToString
+                hrs.Nota0 = dr("Nota").ToString
+                hrs.IdTurno = Convert.ToInt32(dr("TURNO").ToString)
+                lstHrs.Add(hrs)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstHrs
+    End Function
+    Public Function RecuperarTxtNominas(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LTxtNominas
+        Dim oCon As New SqlConnection(cadConex)
+        Dim lstTxtNom As New LTxtNominas()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Rh_RecuperarIncidenciasParaTxt", oCon)
+            query.Parameters.AddWithValue("@fechai", fechaI)
+            query.Parameters.AddWithValue("@fechaf", fechaF)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim txtNom As New TxtNominas
+                txtNom.IdEmpleado = Convert.ToInt32(dr("ID").ToString)
+                txtNom.Tipo = dr("TIPO").ToString
+                txtNom.Monto = Convert.ToInt32(dr("MONTO").ToString)
+                txtNom.Autorizado = Convert.ToInt32(dr("AUTORIZADO").ToString)
+                txtNom.Fecha = Convert.ToDateTime(dr("FECHA").ToString)
+                txtNom.Duracion = Convert.ToInt32(dr("DURACION").ToString)
+                'txtNom.FechaI = Convert.ToDateTime(dr("FECHAI").ToString)
+                txtNom.FechaF = Convert.ToDateTime(dr("FECHAF").ToString)
+                txtNom.Tabla = Convert.ToInt32(dr("T").ToString)
+                lstTxtNom.Add(txtNom)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstTxtNom
+    End Function
+    Public Function VerificarDiaHabil(ByVal cadConex As String, ByVal año As Integer, ByVal mes As Integer, ByVal dia As Integer, ByVal idEmp As Integer) As Integer
+        Dim valor As Integer
+        Dim oCon As New SqlConnection(cadConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("VerificarDiaHabil", oCon)
+            query.Parameters.AddWithValue("@año", año)
+            query.Parameters.AddWithValue("@mes", mes)
+            query.Parameters.AddWithValue("@dia", dia)
+            query.Parameters.AddWithValue("@idEmp", idEmp)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 60
+
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                valor = Convert.ToInt32(dr("valor").ToString)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return valor
+    End Function
     Public Sub InsertarModificacionesIncidencias(ByVal cadenaConex As String, ByVal objEmp As Empleado)
         Dim oCon As New SqlConnection(cadenaConex)
         Try
@@ -360,4 +455,30 @@ Public Class DPrenomina
             oCon.Dispose()
         End Try
     End Sub
+    Public Function RecuperaAcumulado(ByVal cadenaConex As String, ByVal mes As String, ByVal año As Integer) As LBono
+        Dim lstBono As New LBono()
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT CLAVE, ISNULL(" & mes & ",0) as " & mes & ", año from Supervisor_giro.Empacum where año = " & año & " order by CLAVE", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim bono As New Bono()
+                bono.IdEmpleado = Convert.ToInt32(dr("CLAVE").ToString)
+                bono.AcumulaMes = Convert.ToDouble(dr(mes).ToString)
+                bono.Año = Convert.ToInt32(dr("año").ToString)
+                lstBono.Add(bono)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstBono
+    End Function
 End Class

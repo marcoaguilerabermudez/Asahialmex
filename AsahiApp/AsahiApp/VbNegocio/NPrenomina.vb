@@ -34,6 +34,18 @@ Public Class NPrenomina
         Dim DPrenomina As New DPrenomina()
         Return DPrenomina.RecuperarComedor(cadConex, fechaI, fechaF)
     End Function
+    Public Function RecuperarTxtNominas(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LTxtNominas
+        Dim DPrenomina As New DPrenomina()
+        Return DPrenomina.RecuperarTxtNominas(cadConex, fechaI, fechaF)
+    End Function
+    Public Function RecuperarChecadas(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LHorarios
+        Dim DPrenimina As New DPrenomina()
+        Return DPrenimina.RecuperarChecadas(cadConex, fechaI, fechaF)
+    End Function
+    Public Function VerificarDiaHabil(ByVal cadConex As String, ByVal año As Integer, ByVal mes As Integer, ByVal dia As Integer, ByVal idEmp As Integer) As Integer
+        Dim DPren As New DPrenomina()
+        Return DPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp)
+    End Function
     Public Sub InsertarModificacionesIncidencias(ByVal cadenaConex As String, ByVal lstEmp As LEmpleado, ByVal sem As Integer)
         Dim objEmp As New Empleado()
         Dim DPrenom As New DPrenomina()
@@ -83,7 +95,7 @@ Public Class NPrenomina
         Dim i As Byte
         Dim str As String
 
-        For i = 0 To lstEmp.Count - 1
+        For i = 1 To lstEmp.Count - 1
             str = "<Info><Clave>" & String.Format("{0:00000}", lstEmp.Item(i).IdEmpleado) & "</Clave><FechaI>" & Format(lstEmp(i).Fecha1, "dd/MM/yyyy") &
                 "</FechaI><FechaF>" & Format(lstEmp(i).Fecha1, "dd/MM/yyyy") & "</FechaF><tipo>" & lstEmp.Item(i).Incidencia1 & "</tipo><FechaCap>" & Format(lstEmp(i).Fecha2, "dd/MM/yyyy") &
                 "</FechaCap><FechaApl>" & Format(lstEmp(i).Fecha1, "dd/MM/yyyy") & "</FechaApl></Info>"
@@ -105,7 +117,7 @@ Public Class NPrenomina
         Dim i As Byte
         Dim str As String
 
-        For i = 0 To lstEmp.Count - 1
+        For i = 1 To lstEmp.Count - 1
             str = "<Info><clave>" & String.Format("{0:00000}", lstEmp.Item(i).IdEmpleado) & "</clave><fecha>" & Format(lstEmp(i).Fecha1, "dd/MM/yyyy") &
                 "</fecha><tipo>" & lstEmp(i).Incidencia1 & "</tipo><monto>0</monto><autorizado>0</autorizado><tipoPerm>" & Format(lstEmp(i).Fecha1, "dd/MM/yyyy") &
                 "</tipoPerm></Info>"
@@ -157,7 +169,6 @@ Public Class NPrenomina
     End Sub
     Private Function CrearXmlMotivoRetardo(ByVal emp As Empleado) As Empleado
         Dim objEmp As New Empleado()
-        Dim i As Byte
         Dim str As String
 
 
@@ -168,6 +179,10 @@ Public Class NPrenomina
 
         objEmp.Xml = "<Motivo>" & objEmp.Xml & "</Motivo>"
         Return objEmp
+    End Function
+    Public Function RecuperaAcumulado(ByVal cadenaConex As String, ByVal mes As String, ByVal año As Integer) As LBono
+        Dim DPren As New DPrenomina()
+        Return DPren.RecuperaAcumulado(cadenaConex, mes, año)
     End Function
 End Class
 'String.Format("{0:000}", valor)
