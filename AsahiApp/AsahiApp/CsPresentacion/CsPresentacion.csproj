@@ -86,11 +86,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Contrato_empleado.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_Credenciales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Credenciales.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\RH\Frm_Credenciales.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Credenciales.Designer.cs">
       <DependentUpon>Frm_Credenciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Rep_Credenciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Rep_Credenciales.Designer.cs">
+      <DependentUpon>Rep_Credenciales.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Frm_Rep_Alta_empleado.cs">
       <SubType>Form</SubType>
@@ -296,6 +307,9 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Altas.resx">
       <DependentUpon>Frm_Altas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Rep_Credenciales.resx">
+      <DependentUpon>Rep_Credenciales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Frm_Rep_Alta_empleado.resx">
       <DependentUpon>Frm_Rep_Alta_empleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +329,7 @@
     <EmbeddedResource Include="Reportes\RH\Rep_Finiquito.resx">
       <DependentUpon>Rep_Finiquito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Credenciales.rdlc" />
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
     <EmbeddedResource Include="Rep_Mejoras3.rdlc" />
   </ItemGroup>
@@ -352,6 +367,17 @@
     </None>
     <None Include="DS_Contrato_empleado.xss">
       <DependentUpon>DS_Contrato_empleado.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Credenciales.xsc">
+      <DependentUpon>DS_Credenciales.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Credenciales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Credenciales.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Credenciales.xss">
+      <DependentUpon>DS_Credenciales.xsd</DependentUpon>
     </None>
     <None Include="DS_Finiquito.xsc">
       <DependentUpon>DS_Finiquito.xsd</DependentUpon>
@@ -460,6 +486,8 @@
     <None Include="Resources\Pencil-icon.png" />
     <None Include="Resources\Pencil-icon2.png" />
     <Content Include="LogoFinal.ico" />
+    <None Include="Resources\iconfinder_arrow_circle_right_62150.png" />
+    <None Include="Resources\arrow-rotate-clockwise-icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

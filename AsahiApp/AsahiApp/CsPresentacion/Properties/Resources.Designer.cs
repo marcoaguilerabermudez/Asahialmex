@@ -93,6 +93,16 @@ namespace CsPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_rotate_clockwise_icon {
+            get {
+                object obj = ResourceManager.GetObject("arrow-rotate-clockwise-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Excel {
             get {
                 object obj = ResourceManager.GetObject("Excel", resourceCulture);
@@ -156,6 +166,16 @@ namespace CsPresentacion.Properties {
         internal static System.Drawing.Bitmap Gear_icon2 {
             get {
                 object obj = ResourceManager.GetObject("Gear-icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_arrow_circle_right_62150 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_arrow_circle_right_62150", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

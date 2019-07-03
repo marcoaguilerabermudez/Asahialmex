@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace CsPresentacion
 {
-    public partial class Frm_Credenciales : Form
+    public partial class Frm_Rep_Cred : Form
     {
-        public Frm_Credenciales()
+        public Frm_Rep_Cred()
         {
             InitializeComponent();
             timer1.Enabled = true;
@@ -22,6 +23,8 @@ namespace CsPresentacion
             tt.SetToolTip(btn_agregar, "AGREGA CREDENCIAL");
             tt.SetToolTip(btn_reporte, "GENERA CREDENCIALES");
             tt.SetToolTip(btn_eliminar, "ELIMINAR");
+            tt.SetToolTip(btn_rotar, "ROTAR IMAGEN");
+
         }
 
 
@@ -64,12 +67,15 @@ namespace CsPresentacion
             con.Close();
         }
 
+     
+
+
         private void insertar()
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Credencial_Empleados(CLAVE, NOMBRE, REFERENCIA, TEL_REFERENCIA, DEPARTAMENTO, PUESTO, AFILIACION, FECHA_NACIMIENTO, FECHA) VALUES (" + txt_clave.Text + ", '" + txt_nombre.Text + "', '" + txt_referencia.Text + "', '" + txt_telefono_referencia.Text + "',  '" + txt_departamento.Text + "', '" + txt_puesto.Text + "','" + txt_afiliacion.Text + "', '" + dtm_nacimiento.Text + "', '" + lbl_fecha.Text + "')", con); 
+                SqlCommand cmd = new SqlCommand("INSERT INTO Credencial_Empleados(CLAVE, NOMBRE, REFERENCIA, TEL_REFERENCIA, DEPARTAMENTO, PUESTO, AFILIACION, FECHA_NACIMIENTO, FECHA, Foto) VALUES (" + txt_clave.Text + ", '" + txt_nombre.Text + "', '" + txt_referencia.Text + "', '" + txt_telefono_referencia.Text + "',  '" + txt_departamento.Text + "', '" + txt_puesto.Text + "','" + txt_afiliacion.Text + "', '" + dtm_nacimiento.Text + "', '" + lbl_fecha.Text + "', '" + pictureBox1.Image + "')", con);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Se agregó correctamente.");
@@ -80,6 +86,9 @@ namespace CsPresentacion
                 MessageBox.Show("No se insertó. " + error.Message);
             }
         }
+
+       
+
         private void Eliminar()
         {
             try
@@ -98,13 +107,31 @@ namespace CsPresentacion
             }
         }
 
+        private void Eliminar_Todo()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM Credencial_Empleados where FECHA = @Fecha", con);
+                cmd.Parameters.AddWithValue("@Fecha", lbl_fecha.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+               // MessageBox.Show("Se eliminó correctamente.");
+                nuevo();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se eliminó" + error.Message);
+            }
+        }
+
 
         private void Mostrar_Grid()
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT [Id_Credencial]AS 'ID'  ,RTRIM(CLAVE)AS 'CLAVE' ,RTRIM(NOMBRE)AS 'NOMBRE' ,RTRIM(REFERENCIA)AS 'REFERENCIA' ,RTRIM(TEL_REFERENCIA)AS 'TELEFONO' ,RTRIM(DEPARTAMENTO)AS 'DEPARTAMENTO' ,RTRIM(PUESTO)AS 'PUESTO' ,RTRIM(AFILIACION) AS 'AFILIACION',[FECHA_NACIMIENTO] AS 'FECHA_NAC' ,[FECHA]  FROM [asahi16].[dbo].[Credencial_Empleados] WHERE FECHA = @Fecha", con);
+                SqlCommand cmd = new SqlCommand("SELECT [Id_Credencial]AS 'ID'  ,RTRIM(CLAVE)AS 'CLAVE' ,RTRIM(NOMBRE)AS 'NOMBRE' ,RTRIM(REFERENCIA)AS 'REFERENCIA' ,RTRIM(TEL_REFERENCIA)AS 'TELEFONO' ,RTRIM(DEPARTAMENTO)AS 'DEPARTAMENTO' ,RTRIM(PUESTO)AS 'PUESTO' ,RTRIM(AFILIACION) AS 'AFILIACION',[FECHA_NACIMIENTO] AS 'FECHA_NAC' ,[FECHA] FROM [asahi16].[dbo].[Credencial_Empleados] WHERE FECHA = @Fecha", con);
                // cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Fecha", lbl_fecha.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -216,7 +243,8 @@ namespace CsPresentacion
 
         private void Btn_baja_Click(object sender, EventArgs e)//Botón agregar a reporte
         {
-            insertar();
+             insertar();
+          
             Mostrar_Grid();
             Diseño_Grid(dgv_credenciales);
             btn_reporte.Enabled = true;
@@ -270,6 +298,22 @@ namespace CsPresentacion
                 btn_eliminar.Enabled = true;
                 btn_reporte.Enabled = true;
             }
+        }
+
+        private void Btn_reporte_Click(object sender, EventArgs e)
+        {
+            Rep_Credenciales Cre = new Rep_Credenciales();
+            Cre.Fecha = Convert.ToDateTime(lbl_fecha.Text);
+            Cre.ShowDialog();
+            Eliminar_Todo();
+            Mostrar_Grid();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Image img = pictureBox1.Image;
+            img.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            pictureBox1.Image = img;
         }
     }
 }

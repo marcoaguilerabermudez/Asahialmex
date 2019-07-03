@@ -114,7 +114,7 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub CredencialesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CredencialesToolStripMenuItem.Click
-        Dim C As New Frm_Credenciales()
+        Dim C As New Frm_Rep_Cred()
         C.ShowDialog()
         C.Hide()
 
