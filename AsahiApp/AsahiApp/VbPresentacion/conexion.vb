@@ -9,6 +9,7 @@ Public Class conexion
     Public conexion As SqlConnection = New SqlConnection("Data Source=GIRO\SQLEX2014;Initial Catalog=SistemaAAM;Uid=sa; Pwd=Pa55word;")
     Public cadenaConex As String = "Data Source=GIRO\SQLEX2014;Initial Catalog=SistemaAAM;Uid=sa; Pwd=Pa55word;"
     Public conexion2008 As String = "Data Source=GIRO\SQL2008;Initial Catalog=asahi16;Uid=sa; Pwd=Pa55word;"
+    Public conexionCont As String = "Data Source=SERV-CONTA\SQLEX2014;Initial Catalog=ctAsahi_Aluminium;Uid=sa; Pwd=Me*1can;"
     Public conexionContpaq As SqlConnection = New SqlConnection("Data Source=SERV-CONTA\SQLEX2014;Initial Catalog=ctAsahi_Aluminium;Uid=sa; Pwd=Me*1can;")
     Public cadenaConexExpress As String = "Data Source=GIRO\SQLEXPRESS;Initial Catalog=AsahiSystem;Uid=sa; Pwd=Pa55word;"
 

@@ -77,7 +77,7 @@ Public Class DEmpleado
         Dim oCon As New SqlConnection(cadConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT ID,NOMBRE,APELLIDOP,APELLIDOM,isnull(VEB.TURNO,0) as TURNO,tur,DEPARTAMENTO, (SELECT TOP 1 P.DESCRIPCION from asahi16.Supervisor_giro.Emppues EPP LEFT JOIN asahi16.Supervisor_giro.Puesto P on EPP.CATALOGO = P.CLAVE WHERE VEB.ID = EPP.CLAVE ORDER BY EPP.CLAVE desc) as PUESTO,TP,EP.INGRESO as INGRESO,isnull(BAJA,'') as BAJA FROM Vista_InfoEmpleadosBasica VEB LEFT JOIN asahi16.Supervisor_giro.Empprin EP on VEB.ID = EP.CLAVE WHERE TP in ('A','R') or (TP = 'B' and BAJA >= '" & Format(fecha, "dd/MM/yyyy") & "')", oCon)
+            Dim query As New SqlCommand("SELECT ID,NOMBRE,APELLIDOP,APELLIDOM,isnull(VEB.TURNO,0) as TURNO,tur,DEPARTAMENTO, (SELECT TOP 1 P.DESCRIPCION from asahi16.Supervisor_giro.Emppues EPP LEFT JOIN asahi16.Supervisor_giro.Puesto P on EPP.CATALOGO = P.CLAVE WHERE VEB.ID = EPP.CLAVE ORDER BY EPP.CLAVE desc) as PUESTO,TP,EP.INGRESO as INGRESO,isnull(BAJA,'') as BAJA FROM Vista_InfoEmpleadosBasica VEB LEFT JOIN asahi16.Supervisor_giro.Empprin EP on VEB.ID = EP.CLAVE WHERE TP in ('A','R') or (TP = 'B' and BAJA > '" & Format(fecha, "dd/MM/yyyy") & "')", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader

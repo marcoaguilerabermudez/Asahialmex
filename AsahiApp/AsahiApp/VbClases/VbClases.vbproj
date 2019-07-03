@@ -72,11 +72,13 @@
   <ItemGroup>
     <Compile Include="Ausentismo.vb" />
     <Compile Include="Baja.vb" />
+    <Compile Include="Bono.vb" />
     <Compile Include="Comedor.vb" />
     <Compile Include="Empleado.vb" />
     <Compile Include="Horarios.vb" />
     <Compile Include="HorasExtra.vb" />
     <Compile Include="Incapacidad.vb" />
+    <Compile Include="Listas Heredadas\LBono.vb" />
     <Compile Include="Listas Heredadas\LComedor.vb" />
     <Compile Include="Listas Heredadas\LAusentismo.vb" />
     <Compile Include="Listas Heredadas\LBaja.vb" />
