@@ -107,8 +107,8 @@ Public Class Frm_Principal
         globPren.ShowDialog()
     End Sub
     Private Sub BonoMensualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BonoMensualToolStripMenuItem.Click
-        'Dim bono As New Frm_BonoMensual()
-        'bono.ShowDialog()
+        Dim bono As New Frm_BonoMensual()
+        bono.ShowDialog()
     End Sub
 #End Region
 End Class

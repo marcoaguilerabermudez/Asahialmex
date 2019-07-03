@@ -23,6 +23,7 @@ Partial Class Frm_BonoMensual
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Btn_Acumulado = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Lbl_año = New System.Windows.Forms.Label()
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
@@ -36,66 +37,97 @@ Partial Class Frm_BonoMensual
         Me.totalBono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.entrada31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.salida31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.n31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.falta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.faltaJustificada = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -106,6 +138,10 @@ Partial Class Frm_BonoMensual
         Me.permisoSinSueldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.permisoConSueldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.retardo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.x = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rtt = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.premio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.turno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.Dgv_BonoMensual, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -113,6 +149,7 @@ Partial Class Frm_BonoMensual
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Btn_Acumulado)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Lbl_año)
         Me.Panel1.Controls.Add(Me.Dtp_FechaInicioSemana)
@@ -121,6 +158,20 @@ Partial Class Frm_BonoMensual
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1317, 115)
         Me.Panel1.TabIndex = 0
+        '
+        'Btn_Acumulado
+        '
+        Me.Btn_Acumulado.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Acumulado.Image = Global.Presentacion.My.Resources.Resources.Acumulado
+        Me.Btn_Acumulado.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Acumulado.Location = New System.Drawing.Point(405, 59)
+        Me.Btn_Acumulado.Name = "Btn_Acumulado"
+        Me.Btn_Acumulado.Size = New System.Drawing.Size(68, 39)
+        Me.Btn_Acumulado.TabIndex = 28
+        Me.Btn_Acumulado.Text = "Acumulado"
+        Me.Btn_Acumulado.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Acumulado.UseVisualStyleBackColor = True
+        Me.Btn_Acumulado.Visible = False
         '
         'Label1
         '
@@ -167,11 +218,11 @@ Partial Class Frm_BonoMensual
         'Dgv_BonoMensual
         '
         Me.Dgv_BonoMensual.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_BonoMensual.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.fechaIngreso, Me.departamento, Me.puesto, Me.totalBono, Me.entrada1, Me.salida1, Me.entrada2, Me.salida2, Me.entrada3, Me.salida3, Me.entrada4, Me.salida4, Me.entrada5, Me.salida5, Me.entrada6, Me.salida6, Me.entrada7, Me.salida7, Me.entrada8, Me.salida8, Me.entrada9, Me.salida9, Me.entrada10, Me.salida10, Me.entrada11, Me.salida11, Me.entrada12, Me.salida12, Me.entrada13, Me.salida13, Me.entrada14, Me.salida14, Me.entrada15, Me.salida15, Me.entrada16, Me.salida16, Me.entrada17, Me.salida17, Me.entrada18, Me.salida18, Me.entrada19, Me.salida19, Me.entrada20, Me.salida20, Me.entrada21, Me.salida21, Me.entrada22, Me.salida22, Me.entrada23, Me.salida23, Me.entrada24, Me.salida24, Me.entrada25, Me.salida25, Me.entrada26, Me.salida26, Me.entrada27, Me.salida27, Me.entrada28, Me.salida28, Me.entrada29, Me.salida29, Me.entrada30, Me.salida30, Me.entrada31, Me.salida31, Me.bono, Me.falta, Me.faltaJustificada, Me.suspension, Me.permisoMatrimonio, Me.incapacidad, Me.vacaciones, Me.permisoSinSueldo, Me.permisoConSueldo, Me.retardo})
+        Me.Dgv_BonoMensual.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.fechaIngreso, Me.departamento, Me.puesto, Me.totalBono, Me.entrada1, Me.salida1, Me.n1, Me.entrada2, Me.salida2, Me.n2, Me.entrada3, Me.salida3, Me.n3, Me.entrada4, Me.salida4, Me.n4, Me.entrada5, Me.salida5, Me.n5, Me.entrada6, Me.salida6, Me.n6, Me.entrada7, Me.salida7, Me.n7, Me.entrada8, Me.salida8, Me.n8, Me.entrada9, Me.salida9, Me.n9, Me.entrada10, Me.salida10, Me.n10, Me.entrada11, Me.salida11, Me.n11, Me.entrada12, Me.salida12, Me.n12, Me.entrada13, Me.salida13, Me.n13, Me.entrada14, Me.salida14, Me.n14, Me.entrada15, Me.salida15, Me.n15, Me.entrada16, Me.salida16, Me.n16, Me.entrada17, Me.salida17, Me.n17, Me.entrada18, Me.salida18, Me.n18, Me.entrada19, Me.salida19, Me.n19, Me.entrada20, Me.salida20, Me.n20, Me.entrada21, Me.salida21, Me.n21, Me.entrada22, Me.salida22, Me.n22, Me.entrada23, Me.salida23, Me.n23, Me.entrada24, Me.salida24, Me.n24, Me.entrada25, Me.salida25, Me.n25, Me.entrada26, Me.salida26, Me.n26, Me.entrada27, Me.salida27, Me.n27, Me.entrada28, Me.salida28, Me.n28, Me.entrada29, Me.salida29, Me.n29, Me.entrada30, Me.salida30, Me.n30, Me.entrada31, Me.salida31, Me.n31, Me.bono, Me.falta, Me.faltaJustificada, Me.suspension, Me.permisoMatrimonio, Me.incapacidad, Me.vacaciones, Me.permisoSinSueldo, Me.permisoConSueldo, Me.retardo, Me.x, Me.rtt, Me.premio, Me.turno})
         Me.Dgv_BonoMensual.Location = New System.Drawing.Point(4, 95)
         Me.Dgv_BonoMensual.Name = "Dgv_BonoMensual"
         Me.Dgv_BonoMensual.RowHeadersWidth = 20
-        Me.Dgv_BonoMensual.Size = New System.Drawing.Size(1209, 423)
+        Me.Dgv_BonoMensual.Size = New System.Drawing.Size(1209, 458)
         Me.Dgv_BonoMensual.TabIndex = 1
         '
         'idEmpleado
@@ -230,6 +281,13 @@ Partial Class Frm_BonoMensual
         Me.salida1.ReadOnly = True
         Me.salida1.Width = 40
         '
+        'n1
+        '
+        Me.n1.HeaderText = "N1"
+        Me.n1.Name = "n1"
+        Me.n1.ReadOnly = True
+        Me.n1.Visible = False
+        '
         'entrada2
         '
         Me.entrada2.HeaderText = "E2"
@@ -243,6 +301,13 @@ Partial Class Frm_BonoMensual
         Me.salida2.Name = "salida2"
         Me.salida2.ReadOnly = True
         Me.salida2.Width = 40
+        '
+        'n2
+        '
+        Me.n2.HeaderText = "N2"
+        Me.n2.Name = "n2"
+        Me.n2.ReadOnly = True
+        Me.n2.Visible = False
         '
         'entrada3
         '
@@ -258,6 +323,13 @@ Partial Class Frm_BonoMensual
         Me.salida3.ReadOnly = True
         Me.salida3.Width = 40
         '
+        'n3
+        '
+        Me.n3.HeaderText = "N3"
+        Me.n3.Name = "n3"
+        Me.n3.ReadOnly = True
+        Me.n3.Visible = False
+        '
         'entrada4
         '
         Me.entrada4.HeaderText = "E4"
@@ -271,6 +343,13 @@ Partial Class Frm_BonoMensual
         Me.salida4.Name = "salida4"
         Me.salida4.ReadOnly = True
         Me.salida4.Width = 40
+        '
+        'n4
+        '
+        Me.n4.HeaderText = "N4"
+        Me.n4.Name = "n4"
+        Me.n4.ReadOnly = True
+        Me.n4.Visible = False
         '
         'entrada5
         '
@@ -286,6 +365,13 @@ Partial Class Frm_BonoMensual
         Me.salida5.ReadOnly = True
         Me.salida5.Width = 40
         '
+        'n5
+        '
+        Me.n5.HeaderText = "N5"
+        Me.n5.Name = "n5"
+        Me.n5.ReadOnly = True
+        Me.n5.Visible = False
+        '
         'entrada6
         '
         Me.entrada6.HeaderText = "E6"
@@ -299,6 +385,13 @@ Partial Class Frm_BonoMensual
         Me.salida6.Name = "salida6"
         Me.salida6.ReadOnly = True
         Me.salida6.Width = 40
+        '
+        'n6
+        '
+        Me.n6.HeaderText = "N6"
+        Me.n6.Name = "n6"
+        Me.n6.ReadOnly = True
+        Me.n6.Visible = False
         '
         'entrada7
         '
@@ -314,6 +407,13 @@ Partial Class Frm_BonoMensual
         Me.salida7.ReadOnly = True
         Me.salida7.Width = 40
         '
+        'n7
+        '
+        Me.n7.HeaderText = "N7"
+        Me.n7.Name = "n7"
+        Me.n7.ReadOnly = True
+        Me.n7.Visible = False
+        '
         'entrada8
         '
         Me.entrada8.HeaderText = "E8"
@@ -327,6 +427,13 @@ Partial Class Frm_BonoMensual
         Me.salida8.Name = "salida8"
         Me.salida8.ReadOnly = True
         Me.salida8.Width = 40
+        '
+        'n8
+        '
+        Me.n8.HeaderText = "N8"
+        Me.n8.Name = "n8"
+        Me.n8.ReadOnly = True
+        Me.n8.Visible = False
         '
         'entrada9
         '
@@ -342,6 +449,13 @@ Partial Class Frm_BonoMensual
         Me.salida9.ReadOnly = True
         Me.salida9.Width = 40
         '
+        'n9
+        '
+        Me.n9.HeaderText = "N9"
+        Me.n9.Name = "n9"
+        Me.n9.ReadOnly = True
+        Me.n9.Visible = False
+        '
         'entrada10
         '
         Me.entrada10.HeaderText = "E10"
@@ -355,6 +469,13 @@ Partial Class Frm_BonoMensual
         Me.salida10.Name = "salida10"
         Me.salida10.ReadOnly = True
         Me.salida10.Width = 40
+        '
+        'n10
+        '
+        Me.n10.HeaderText = "N10"
+        Me.n10.Name = "n10"
+        Me.n10.ReadOnly = True
+        Me.n10.Visible = False
         '
         'entrada11
         '
@@ -370,6 +491,13 @@ Partial Class Frm_BonoMensual
         Me.salida11.ReadOnly = True
         Me.salida11.Width = 40
         '
+        'n11
+        '
+        Me.n11.HeaderText = "N11"
+        Me.n11.Name = "n11"
+        Me.n11.ReadOnly = True
+        Me.n11.Visible = False
+        '
         'entrada12
         '
         Me.entrada12.HeaderText = "E12"
@@ -383,6 +511,13 @@ Partial Class Frm_BonoMensual
         Me.salida12.Name = "salida12"
         Me.salida12.ReadOnly = True
         Me.salida12.Width = 40
+        '
+        'n12
+        '
+        Me.n12.HeaderText = "N12"
+        Me.n12.Name = "n12"
+        Me.n12.ReadOnly = True
+        Me.n12.Visible = False
         '
         'entrada13
         '
@@ -398,6 +533,13 @@ Partial Class Frm_BonoMensual
         Me.salida13.ReadOnly = True
         Me.salida13.Width = 40
         '
+        'n13
+        '
+        Me.n13.HeaderText = "N13"
+        Me.n13.Name = "n13"
+        Me.n13.ReadOnly = True
+        Me.n13.Visible = False
+        '
         'entrada14
         '
         Me.entrada14.HeaderText = "E14"
@@ -411,6 +553,13 @@ Partial Class Frm_BonoMensual
         Me.salida14.Name = "salida14"
         Me.salida14.ReadOnly = True
         Me.salida14.Width = 40
+        '
+        'n14
+        '
+        Me.n14.HeaderText = "N14"
+        Me.n14.Name = "n14"
+        Me.n14.ReadOnly = True
+        Me.n14.Visible = False
         '
         'entrada15
         '
@@ -426,6 +575,13 @@ Partial Class Frm_BonoMensual
         Me.salida15.ReadOnly = True
         Me.salida15.Width = 40
         '
+        'n15
+        '
+        Me.n15.HeaderText = "N15"
+        Me.n15.Name = "n15"
+        Me.n15.ReadOnly = True
+        Me.n15.Visible = False
+        '
         'entrada16
         '
         Me.entrada16.HeaderText = "E16"
@@ -439,6 +595,13 @@ Partial Class Frm_BonoMensual
         Me.salida16.Name = "salida16"
         Me.salida16.ReadOnly = True
         Me.salida16.Width = 40
+        '
+        'n16
+        '
+        Me.n16.HeaderText = "N16"
+        Me.n16.Name = "n16"
+        Me.n16.ReadOnly = True
+        Me.n16.Visible = False
         '
         'entrada17
         '
@@ -454,6 +617,13 @@ Partial Class Frm_BonoMensual
         Me.salida17.ReadOnly = True
         Me.salida17.Width = 40
         '
+        'n17
+        '
+        Me.n17.HeaderText = "N17"
+        Me.n17.Name = "n17"
+        Me.n17.ReadOnly = True
+        Me.n17.Visible = False
+        '
         'entrada18
         '
         Me.entrada18.HeaderText = "E18"
@@ -467,6 +637,13 @@ Partial Class Frm_BonoMensual
         Me.salida18.Name = "salida18"
         Me.salida18.ReadOnly = True
         Me.salida18.Width = 40
+        '
+        'n18
+        '
+        Me.n18.HeaderText = "N18"
+        Me.n18.Name = "n18"
+        Me.n18.ReadOnly = True
+        Me.n18.Visible = False
         '
         'entrada19
         '
@@ -482,6 +659,13 @@ Partial Class Frm_BonoMensual
         Me.salida19.ReadOnly = True
         Me.salida19.Width = 40
         '
+        'n19
+        '
+        Me.n19.HeaderText = "N19"
+        Me.n19.Name = "n19"
+        Me.n19.ReadOnly = True
+        Me.n19.Visible = False
+        '
         'entrada20
         '
         Me.entrada20.HeaderText = "E20"
@@ -495,6 +679,13 @@ Partial Class Frm_BonoMensual
         Me.salida20.Name = "salida20"
         Me.salida20.ReadOnly = True
         Me.salida20.Width = 40
+        '
+        'n20
+        '
+        Me.n20.HeaderText = "N20"
+        Me.n20.Name = "n20"
+        Me.n20.ReadOnly = True
+        Me.n20.Visible = False
         '
         'entrada21
         '
@@ -510,6 +701,13 @@ Partial Class Frm_BonoMensual
         Me.salida21.ReadOnly = True
         Me.salida21.Width = 40
         '
+        'n21
+        '
+        Me.n21.HeaderText = "N21"
+        Me.n21.Name = "n21"
+        Me.n21.ReadOnly = True
+        Me.n21.Visible = False
+        '
         'entrada22
         '
         Me.entrada22.HeaderText = "E22"
@@ -523,6 +721,13 @@ Partial Class Frm_BonoMensual
         Me.salida22.Name = "salida22"
         Me.salida22.ReadOnly = True
         Me.salida22.Width = 40
+        '
+        'n22
+        '
+        Me.n22.HeaderText = "N22"
+        Me.n22.Name = "n22"
+        Me.n22.ReadOnly = True
+        Me.n22.Visible = False
         '
         'entrada23
         '
@@ -538,6 +743,13 @@ Partial Class Frm_BonoMensual
         Me.salida23.ReadOnly = True
         Me.salida23.Width = 40
         '
+        'n23
+        '
+        Me.n23.HeaderText = "N23"
+        Me.n23.Name = "n23"
+        Me.n23.ReadOnly = True
+        Me.n23.Visible = False
+        '
         'entrada24
         '
         Me.entrada24.HeaderText = "E24"
@@ -551,6 +763,13 @@ Partial Class Frm_BonoMensual
         Me.salida24.Name = "salida24"
         Me.salida24.ReadOnly = True
         Me.salida24.Width = 40
+        '
+        'n24
+        '
+        Me.n24.HeaderText = "N24"
+        Me.n24.Name = "n24"
+        Me.n24.ReadOnly = True
+        Me.n24.Visible = False
         '
         'entrada25
         '
@@ -566,6 +785,13 @@ Partial Class Frm_BonoMensual
         Me.salida25.ReadOnly = True
         Me.salida25.Width = 40
         '
+        'n25
+        '
+        Me.n25.HeaderText = "N25"
+        Me.n25.Name = "n25"
+        Me.n25.ReadOnly = True
+        Me.n25.Visible = False
+        '
         'entrada26
         '
         Me.entrada26.HeaderText = "E26"
@@ -579,6 +805,13 @@ Partial Class Frm_BonoMensual
         Me.salida26.Name = "salida26"
         Me.salida26.ReadOnly = True
         Me.salida26.Width = 40
+        '
+        'n26
+        '
+        Me.n26.HeaderText = "N26"
+        Me.n26.Name = "n26"
+        Me.n26.ReadOnly = True
+        Me.n26.Visible = False
         '
         'entrada27
         '
@@ -594,6 +827,13 @@ Partial Class Frm_BonoMensual
         Me.salida27.ReadOnly = True
         Me.salida27.Width = 40
         '
+        'n27
+        '
+        Me.n27.HeaderText = "N27"
+        Me.n27.Name = "n27"
+        Me.n27.ReadOnly = True
+        Me.n27.Visible = False
+        '
         'entrada28
         '
         Me.entrada28.HeaderText = "E28"
@@ -607,6 +847,13 @@ Partial Class Frm_BonoMensual
         Me.salida28.Name = "salida28"
         Me.salida28.ReadOnly = True
         Me.salida28.Width = 40
+        '
+        'n28
+        '
+        Me.n28.HeaderText = "N28"
+        Me.n28.Name = "n28"
+        Me.n28.ReadOnly = True
+        Me.n28.Visible = False
         '
         'entrada29
         '
@@ -622,6 +869,13 @@ Partial Class Frm_BonoMensual
         Me.salida29.ReadOnly = True
         Me.salida29.Width = 40
         '
+        'n29
+        '
+        Me.n29.HeaderText = "N29"
+        Me.n29.Name = "n29"
+        Me.n29.ReadOnly = True
+        Me.n29.Visible = False
+        '
         'entrada30
         '
         Me.entrada30.HeaderText = "E30"
@@ -636,6 +890,13 @@ Partial Class Frm_BonoMensual
         Me.salida30.ReadOnly = True
         Me.salida30.Width = 40
         '
+        'n30
+        '
+        Me.n30.HeaderText = "N30"
+        Me.n30.Name = "n30"
+        Me.n30.ReadOnly = True
+        Me.n30.Visible = False
+        '
         'entrada31
         '
         Me.entrada31.HeaderText = "E31"
@@ -649,6 +910,13 @@ Partial Class Frm_BonoMensual
         Me.salida31.Name = "salida31"
         Me.salida31.ReadOnly = True
         Me.salida31.Width = 40
+        '
+        'n31
+        '
+        Me.n31.HeaderText = "N31"
+        Me.n31.Name = "n31"
+        Me.n31.ReadOnly = True
+        Me.n31.Visible = False
         '
         'bono
         '
@@ -719,11 +987,38 @@ Partial Class Frm_BonoMensual
         Me.retardo.ReadOnly = True
         Me.retardo.Width = 50
         '
+        'x
+        '
+        Me.x.HeaderText = "X"
+        Me.x.Name = "x"
+        Me.x.ReadOnly = True
+        Me.x.Width = 45
+        '
+        'rtt
+        '
+        Me.rtt.HeaderText = "RTT"
+        Me.rtt.Name = "rtt"
+        Me.rtt.ReadOnly = True
+        Me.rtt.Width = 45
+        '
+        'premio
+        '
+        Me.premio.HeaderText = "Premio"
+        Me.premio.Name = "premio"
+        Me.premio.Width = 45
+        '
+        'turno
+        '
+        Me.turno.HeaderText = "TUR"
+        Me.turno.Name = "turno"
+        Me.turno.ReadOnly = True
+        Me.turno.Width = 45
+        '
         'Frm_BonoMensual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1217, 522)
+        Me.ClientSize = New System.Drawing.Size(1217, 556)
         Me.Controls.Add(Me.Dgv_BonoMensual)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Frm_BonoMensual"
@@ -751,66 +1046,97 @@ Partial Class Frm_BonoMensual
     Friend WithEvents totalBono As DataGridViewTextBoxColumn
     Friend WithEvents entrada1 As DataGridViewTextBoxColumn
     Friend WithEvents salida1 As DataGridViewTextBoxColumn
+    Friend WithEvents n1 As DataGridViewTextBoxColumn
     Friend WithEvents entrada2 As DataGridViewTextBoxColumn
     Friend WithEvents salida2 As DataGridViewTextBoxColumn
+    Friend WithEvents n2 As DataGridViewTextBoxColumn
     Friend WithEvents entrada3 As DataGridViewTextBoxColumn
     Friend WithEvents salida3 As DataGridViewTextBoxColumn
+    Friend WithEvents n3 As DataGridViewTextBoxColumn
     Friend WithEvents entrada4 As DataGridViewTextBoxColumn
     Friend WithEvents salida4 As DataGridViewTextBoxColumn
+    Friend WithEvents n4 As DataGridViewTextBoxColumn
     Friend WithEvents entrada5 As DataGridViewTextBoxColumn
     Friend WithEvents salida5 As DataGridViewTextBoxColumn
+    Friend WithEvents n5 As DataGridViewTextBoxColumn
     Friend WithEvents entrada6 As DataGridViewTextBoxColumn
     Friend WithEvents salida6 As DataGridViewTextBoxColumn
+    Friend WithEvents n6 As DataGridViewTextBoxColumn
     Friend WithEvents entrada7 As DataGridViewTextBoxColumn
     Friend WithEvents salida7 As DataGridViewTextBoxColumn
+    Friend WithEvents n7 As DataGridViewTextBoxColumn
     Friend WithEvents entrada8 As DataGridViewTextBoxColumn
     Friend WithEvents salida8 As DataGridViewTextBoxColumn
+    Friend WithEvents n8 As DataGridViewTextBoxColumn
     Friend WithEvents entrada9 As DataGridViewTextBoxColumn
     Friend WithEvents salida9 As DataGridViewTextBoxColumn
+    Friend WithEvents n9 As DataGridViewTextBoxColumn
     Friend WithEvents entrada10 As DataGridViewTextBoxColumn
     Friend WithEvents salida10 As DataGridViewTextBoxColumn
+    Friend WithEvents n10 As DataGridViewTextBoxColumn
     Friend WithEvents entrada11 As DataGridViewTextBoxColumn
     Friend WithEvents salida11 As DataGridViewTextBoxColumn
+    Friend WithEvents n11 As DataGridViewTextBoxColumn
     Friend WithEvents entrada12 As DataGridViewTextBoxColumn
     Friend WithEvents salida12 As DataGridViewTextBoxColumn
+    Friend WithEvents n12 As DataGridViewTextBoxColumn
     Friend WithEvents entrada13 As DataGridViewTextBoxColumn
     Friend WithEvents salida13 As DataGridViewTextBoxColumn
+    Friend WithEvents n13 As DataGridViewTextBoxColumn
     Friend WithEvents entrada14 As DataGridViewTextBoxColumn
     Friend WithEvents salida14 As DataGridViewTextBoxColumn
+    Friend WithEvents n14 As DataGridViewTextBoxColumn
     Friend WithEvents entrada15 As DataGridViewTextBoxColumn
     Friend WithEvents salida15 As DataGridViewTextBoxColumn
+    Friend WithEvents n15 As DataGridViewTextBoxColumn
     Friend WithEvents entrada16 As DataGridViewTextBoxColumn
     Friend WithEvents salida16 As DataGridViewTextBoxColumn
+    Friend WithEvents n16 As DataGridViewTextBoxColumn
     Friend WithEvents entrada17 As DataGridViewTextBoxColumn
     Friend WithEvents salida17 As DataGridViewTextBoxColumn
+    Friend WithEvents n17 As DataGridViewTextBoxColumn
     Friend WithEvents entrada18 As DataGridViewTextBoxColumn
     Friend WithEvents salida18 As DataGridViewTextBoxColumn
+    Friend WithEvents n18 As DataGridViewTextBoxColumn
     Friend WithEvents entrada19 As DataGridViewTextBoxColumn
     Friend WithEvents salida19 As DataGridViewTextBoxColumn
+    Friend WithEvents n19 As DataGridViewTextBoxColumn
     Friend WithEvents entrada20 As DataGridViewTextBoxColumn
     Friend WithEvents salida20 As DataGridViewTextBoxColumn
+    Friend WithEvents n20 As DataGridViewTextBoxColumn
     Friend WithEvents entrada21 As DataGridViewTextBoxColumn
     Friend WithEvents salida21 As DataGridViewTextBoxColumn
+    Friend WithEvents n21 As DataGridViewTextBoxColumn
     Friend WithEvents entrada22 As DataGridViewTextBoxColumn
     Friend WithEvents salida22 As DataGridViewTextBoxColumn
+    Friend WithEvents n22 As DataGridViewTextBoxColumn
     Friend WithEvents entrada23 As DataGridViewTextBoxColumn
     Friend WithEvents salida23 As DataGridViewTextBoxColumn
+    Friend WithEvents n23 As DataGridViewTextBoxColumn
     Friend WithEvents entrada24 As DataGridViewTextBoxColumn
     Friend WithEvents salida24 As DataGridViewTextBoxColumn
+    Friend WithEvents n24 As DataGridViewTextBoxColumn
     Friend WithEvents entrada25 As DataGridViewTextBoxColumn
     Friend WithEvents salida25 As DataGridViewTextBoxColumn
+    Friend WithEvents n25 As DataGridViewTextBoxColumn
     Friend WithEvents entrada26 As DataGridViewTextBoxColumn
     Friend WithEvents salida26 As DataGridViewTextBoxColumn
+    Friend WithEvents n26 As DataGridViewTextBoxColumn
     Friend WithEvents entrada27 As DataGridViewTextBoxColumn
     Friend WithEvents salida27 As DataGridViewTextBoxColumn
+    Friend WithEvents n27 As DataGridViewTextBoxColumn
     Friend WithEvents entrada28 As DataGridViewTextBoxColumn
     Friend WithEvents salida28 As DataGridViewTextBoxColumn
+    Friend WithEvents n28 As DataGridViewTextBoxColumn
     Friend WithEvents entrada29 As DataGridViewTextBoxColumn
     Friend WithEvents salida29 As DataGridViewTextBoxColumn
+    Friend WithEvents n29 As DataGridViewTextBoxColumn
     Friend WithEvents entrada30 As DataGridViewTextBoxColumn
     Friend WithEvents salida30 As DataGridViewTextBoxColumn
+    Friend WithEvents n30 As DataGridViewTextBoxColumn
     Friend WithEvents entrada31 As DataGridViewTextBoxColumn
     Friend WithEvents salida31 As DataGridViewTextBoxColumn
+    Friend WithEvents n31 As DataGridViewTextBoxColumn
     Friend WithEvents bono As DataGridViewTextBoxColumn
     Friend WithEvents falta As DataGridViewTextBoxColumn
     Friend WithEvents faltaJustificada As DataGridViewTextBoxColumn
@@ -821,4 +1147,9 @@ Partial Class Frm_BonoMensual
     Friend WithEvents permisoSinSueldo As DataGridViewTextBoxColumn
     Friend WithEvents permisoConSueldo As DataGridViewTextBoxColumn
     Friend WithEvents retardo As DataGridViewTextBoxColumn
+    Friend WithEvents x As DataGridViewTextBoxColumn
+    Friend WithEvents rtt As DataGridViewTextBoxColumn
+    Friend WithEvents premio As DataGridViewTextBoxColumn
+    Friend WithEvents turno As DataGridViewTextBoxColumn
+    Friend WithEvents Btn_Acumulado As Button
 End Class
