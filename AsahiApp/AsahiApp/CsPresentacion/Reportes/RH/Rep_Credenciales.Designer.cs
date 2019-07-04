@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DS_Credenciales = new CsPresentacion.DS_Credenciales();
             this.SP_Credencial_EmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DS_Credenciales = new CsPresentacion.DS_Credenciales();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SP_Credencial_EmpleadosTableAdapter = new CsPresentacion.DS_CredencialesTableAdapters.SP_Credencial_EmpleadosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Credenciales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_Credencial_EmpleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_Credenciales)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SP_Credencial_EmpleadosBindingSource
+            // 
+            this.SP_Credencial_EmpleadosBindingSource.DataMember = "SP_Credencial_Empleados";
+            this.SP_Credencial_EmpleadosBindingSource.DataSource = this.DS_Credenciales;
+            // 
+            // DS_Credenciales
+            // 
+            this.DS_Credenciales.DataSetName = "DS_Credenciales";
+            this.DS_Credenciales.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -44,22 +54,13 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.SP_Credencial_EmpleadosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.EnableExternalImages = true;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Credenciales.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(894, 590);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // DS_Credenciales
-            // 
-            this.DS_Credenciales.DataSetName = "DS_Credenciales";
-            this.DS_Credenciales.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // SP_Credencial_EmpleadosBindingSource
-            // 
-            this.SP_Credencial_EmpleadosBindingSource.DataMember = "SP_Credencial_Empleados";
-            this.SP_Credencial_EmpleadosBindingSource.DataSource = this.DS_Credenciales;
             // 
             // SP_Credencial_EmpleadosTableAdapter
             // 
@@ -80,8 +81,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Credenciales";
             this.Load += new System.EventHandler(this.Frm_Rep_Cre_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Credenciales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_Credencial_EmpleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_Credenciales)).EndInit();
             this.ResumeLayout(false);
 
         }

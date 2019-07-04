@@ -23,8 +23,6 @@ namespace CsPresentacion
             tt.SetToolTip(btn_agregar, "AGREGA CREDENCIAL");
             tt.SetToolTip(btn_reporte, "GENERA CREDENCIALES");
             tt.SetToolTip(btn_eliminar, "ELIMINAR");
-            tt.SetToolTip(btn_rotar, "ROTAR IMAGEN");
-
         }
 
 
@@ -311,9 +309,9 @@ namespace CsPresentacion
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Image img = pictureBox1.Image;
-            img.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            pictureBox1.Image = img;
+            //Image img = pictureBox1.Image;
+            //img.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            //pictureBox1.Image = img;
         }
     }
 }

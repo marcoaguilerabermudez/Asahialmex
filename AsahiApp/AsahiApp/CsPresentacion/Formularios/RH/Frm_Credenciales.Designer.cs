@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtm_nacimiento = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.txt_telefono_referencia = new System.Windows.Forms.TextBox();
@@ -55,16 +55,15 @@
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_clave = new System.Windows.Forms.TextBox();
+            this.btn_nuevo = new System.Windows.Forms.Button();
             this.dgv_credenciales = new System.Windows.Forms.DataGridView();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_total = new System.Windows.Forms.Label();
-            this.btn_rotar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_reporte = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_nuevo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_credenciales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,7 +105,7 @@
             // 
             // txt_vigencia
             // 
-            this.txt_vigencia.Location = new System.Drawing.Point(431, 264);
+            this.txt_vigencia.Location = new System.Drawing.Point(431, 209);
             this.txt_vigencia.Name = "txt_vigencia";
             this.txt_vigencia.Size = new System.Drawing.Size(130, 20);
             this.txt_vigencia.TabIndex = 200;
@@ -123,7 +122,7 @@
             // lbl_estado
             // 
             this.lbl_estado.AutoSize = true;
-            this.lbl_estado.Location = new System.Drawing.Point(469, 248);
+            this.lbl_estado.Location = new System.Drawing.Point(469, 192);
             this.lbl_estado.Name = "lbl_estado";
             this.lbl_estado.Size = new System.Drawing.Size(54, 13);
             this.lbl_estado.TabIndex = 199;
@@ -283,6 +282,20 @@
             this.txt_clave.TabIndex = 0;
             this.txt_clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_clave_KeyPress);
             // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_nuevo.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
+            this.btn_nuevo.Location = new System.Drawing.Point(111, 27);
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Size = new System.Drawing.Size(18, 23);
+            this.btn_nuevo.TabIndex = 147;
+            this.btn_nuevo.UseVisualStyleBackColor = false;
+            this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
+            // 
             // dgv_credenciales
             // 
             this.dgv_credenciales.AllowUserToAddRows = false;
@@ -295,17 +308,17 @@
             this.dgv_credenciales.Location = new System.Drawing.Point(12, 389);
             this.dgv_credenciales.MultiSelect = false;
             this.dgv_credenciales.Name = "dgv_credenciales";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_credenciales.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_credenciales.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_credenciales.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dgv_credenciales.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgv_credenciales.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_credenciales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_credenciales.ShowCellErrors = false;
             this.dgv_credenciales.Size = new System.Drawing.Size(553, 154);
@@ -347,20 +360,6 @@
             this.lbl_total.TabIndex = 212;
             this.lbl_total.Text = "0";
             // 
-            // btn_rotar
-            // 
-            this.btn_rotar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_rotar.FlatAppearance.BorderSize = 0;
-            this.btn_rotar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btn_rotar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rotar.Image = global::CsPresentacion.Properties.Resources.arrow_rotate_clockwise_icon;
-            this.btn_rotar.Location = new System.Drawing.Point(476, 191);
-            this.btn_rotar.Name = "btn_rotar";
-            this.btn_rotar.Size = new System.Drawing.Size(35, 32);
-            this.btn_rotar.TabIndex = 213;
-            this.btn_rotar.UseVisualStyleBackColor = true;
-            this.btn_rotar.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // btn_eliminar
             // 
             this.btn_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -396,20 +395,6 @@
             this.pictureBox1.TabIndex = 194;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_nuevo
-            // 
-            this.btn_nuevo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_nuevo.FlatAppearance.BorderSize = 0;
-            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(111, 27);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(18, 23);
-            this.btn_nuevo.TabIndex = 147;
-            this.btn_nuevo.UseVisualStyleBackColor = false;
-            this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
-            // 
             // Frm_Rep_Cred
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,7 +402,6 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(576, 577);
-            this.Controls.Add(this.btn_rotar);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.btn_eliminar);
@@ -497,7 +481,6 @@
         public System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Label lbl_total;
-        private System.Windows.Forms.Button btn_rotar;
         public System.Windows.Forms.PictureBox pictureBox1;
     }
 }

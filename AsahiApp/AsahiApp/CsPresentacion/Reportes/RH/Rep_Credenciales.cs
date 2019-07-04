@@ -17,10 +17,15 @@ namespace CsPresentacion
             InitializeComponent();
         }
         public DateTime Fecha;
+        
         private void Frm_Rep_Cre_Load(object sender, EventArgs e)
         {
+            this.reportViewer1.LocalReport.EnableExternalImages = true;
+    
             // TODO: esta línea de código carga datos en la tabla 'DS_Credenciales.SP_Credencial_Empleados' Puede moverla o quitarla según sea necesario.
             this.SP_Credencial_EmpleadosTableAdapter.Fill(this.DS_Credenciales.SP_Credencial_Empleados, Fecha);
+
+            
 
             this.reportViewer1.RefreshReport();
         }
