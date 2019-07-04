@@ -100,6 +100,7 @@ namespace CsPresentacion
 
             txt_factor.Visible = false;
             lbl_factor.Visible = false;
+            Panel_principal.Visible = true;
             Panel_secundario.Visible = false;
             panel_final.Visible = false;
             groupBox2.Visible = false;

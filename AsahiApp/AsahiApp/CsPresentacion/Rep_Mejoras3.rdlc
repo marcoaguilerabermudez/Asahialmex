@@ -1446,7 +1446,6 @@
                           </Paragraphs>
                           <rd:DefaultName>Textbox14</rd:DefaultName>
                           <Top>7.7345cm</Top>
-                          <Left>0cm</Left>
                           <Height>0.86206cm</Height>
                           <Width>5.47056cm</Width>
                           <ZIndex>22</ZIndex>
@@ -2096,7 +2095,7 @@
                           <Top>8.59656cm</Top>
                           <Left>22.24694cm</Left>
                           <Height>4.63264cm</Height>
-                          <Width>4.6945cm</Width>
+                          <Width>4.69449cm</Width>
                           <ZIndex>31</ZIndex>
                           <Style>
                             <Border>
@@ -4467,10 +4466,143 @@
                           </Paragraphs>
                           <rd:DefaultName>Textbox14</rd:DefaultName>
                           <Top>15.51552cm</Top>
-                          <Left>14.14173cm</Left>
+                          <Left>17.21371cm</Left>
                           <Height>2.16705cm</Height>
-                          <Width>12.79971cm</Width>
+                          <Width>9.72773cm</Width>
                           <ZIndex>74</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Tablix Name="Tablix18">
+                          <TablixBody>
+                            <TablixColumns>
+                              <TablixColumn>
+                                <Width>3.07198cm</Width>
+                              </TablixColumn>
+                            </TablixColumns>
+                            <TablixRows>
+                              <TablixRow>
+                                <Height>1.23705cm</Height>
+                                <TablixCells>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Responsable16">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Fields!Tema.Value</Value>
+                                                <Style>
+                                                  <FontSize>7pt</FontSize>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Responsable</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Style>None</Style>
+                                          </Border>
+                                          <BottomBorder>
+                                            <Style>Solid</Style>
+                                          </BottomBorder>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                </TablixCells>
+                              </TablixRow>
+                            </TablixRows>
+                          </TablixBody>
+                          <TablixColumnHierarchy>
+                            <TablixMembers>
+                              <TablixMember />
+                            </TablixMembers>
+                          </TablixColumnHierarchy>
+                          <TablixRowHierarchy>
+                            <TablixMembers>
+                              <TablixMember>
+                                <Group Name="Detalles17" />
+                              </TablixMember>
+                            </TablixMembers>
+                          </TablixRowHierarchy>
+                          <DataSetName>DataSet1</DataSetName>
+                          <Top>16.44552cm</Top>
+                          <Left>14.14173cm</Left>
+                          <Height>1.23705cm</Height>
+                          <Width>3.07198cm</Width>
+                          <ZIndex>75</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Tablix>
+                        <Textbox Name="Textbox74">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>内容</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>yu Gothic</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Tema:</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>yu Gothic</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <Top>15.48024cm</Top>
+                          <Left>14.14173cm</Left>
+                          <Height>0.96528cm</Height>
+                          <Width>3.07198cm</Width>
+                          <ZIndex>76</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -4516,7 +4648,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.60168cm</Top>
+        <Top>0.48478cm</Top>
         <Left>0.63767cm</Left>
         <Height>19.64563cm</Height>
         <Width>26.9679cm</Width>
@@ -4527,7 +4659,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>8.00871in</Height>
+    <Height>8.16494in</Height>
     <Style>
       <Border>
         <Style>None</Style>
@@ -4536,8 +4668,8 @@
   </Body>
   <Width>10.91983in</Width>
   <Page>
-    <PageHeight>21.5cm</PageHeight>
-    <PageWidth>28cm</PageWidth>
+    <PageHeight>21.59cm</PageHeight>
+    <PageWidth>27.94cm</PageWidth>
     <LeftMargin>0cm</LeftMargin>
     <RightMargin>0cm</RightMargin>
     <TopMargin>0cm</TopMargin>
