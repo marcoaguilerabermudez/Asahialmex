@@ -26,4 +26,13 @@
             año_ = value
         End Set
     End Property
+    Private xml_ As String
+    Public Property XML() As String
+        Get
+            Return xml_
+        End Get
+        Set(ByVal value As String)
+            xml_ = value
+        End Set
+    End Property
 End Class
