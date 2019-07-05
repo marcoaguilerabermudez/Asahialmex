@@ -798,9 +798,11 @@ Public Class Frm_BonoMensual
             m = Month(Dtp_FechaInicioSemana.Value)
             RellenaChecadasDgvGlobalPrenomina(lstEmp)
             RecuperarIncidencias()
-            If Me.mes = m Then
+            If m <= Me.mes Then
                 Me.rec = True
                 ProcesoAcumulado()
+            Else
+                Me.rec = False
             End If
         End If
     End Sub
