@@ -11,6 +11,8 @@ Public Class Frm_BonoMensual
     Dim ud As Integer
     Dim da As String
     Dim valor As String
+    Dim mes As Integer
+    Dim rec As Boolean = False
 #End Region
 #Region "Acciones del formulario"
     Private Sub Frm_BonoMensual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -78,12 +80,16 @@ Public Class Frm_BonoMensual
     Private Sub Btn_Mostrar_Click(sender As Object, e As EventArgs) Handles Btn_Mostrar.Click
         If open = True Then
             Dim fecha As Date
-            Dim lstEmp As New LEmpleado
+            Dim lstEmp As New LEmpleado(), NPre As New NPrenomina(), conex As New conexion()
+            Dim cadConex = conex.conexion2008
 
+            Me.mes = NPre.VerificarUltimoMesCalculado(cadConex)
             fecha = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             ProcesoBonoMensual(lstEmp, fecha)
-            Btn_Acumulado.Visible = True
-            Btn_Acumulado.Enabled = True
+            If rec = False Then
+                Btn_Acumulado.Visible = True
+                Btn_Acumulado.Enabled = True
+            End If
         End If
     End Sub
     Private Sub Dgv_BonoMensual_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_BonoMensual.CellEnter
@@ -120,12 +126,7 @@ Public Class Frm_BonoMensual
         End If
     End Sub
     Private Sub Btn_Acumulado_Click(sender As Object, e As EventArgs) Handles Btn_Acumulado.Click
-        Dim lstBono As New LBono()
-        Dim totalFilas As Integer = Dgv_BonoMensual.Rows.Count()
-
-        lstBono = RecuperaAcumulado()
-        RellenaCalculaBono(lstBono, totalFilas)
-        Btn_Acumulado.Enabled = False
+        ProcesoAcumulado()
     End Sub
 #End Region
 #Region "Rellena Formulario"
@@ -687,7 +688,25 @@ Public Class Frm_BonoMensual
                         .Cells("totalBono").Value = 0
                     End If
                 End If
-                    .Cells("totalBono").Style.BackColor = Color.White
+                .Cells("totalBono").Style.BackColor = Color.White
+            End With
+        Next
+    End Sub
+    Private Sub RellenaBonoRecuperado(ByVal lstBono As LBono, ByVal totalFilas As Integer)
+        Dim fila As Integer, idEmp As Integer
+        Dim fechalim As Date
+        fechalim = Convert.ToDateTime(Dtp_FechaInicioSemana.Value)
+
+        For fila = 0 To totalFilas - 2
+            With Dgv_BonoMensual.Rows(fila)
+                idEmp = .Cells("idEmpleado").Value
+                For Each item In lstBono
+                    If idEmp = item.IdEmpleado Then
+                        .Cells("totalBono").Value = item.AcumulaMes
+                        Exit For
+                    End If
+                Next
+                .Cells("totalBono").Style.BackColor = Color.White
             End With
         Next
     End Sub
@@ -725,7 +744,11 @@ Public Class Frm_BonoMensual
         Dim año As Integer
         Dim cadConex = conex.conexion2008
 
-        mes = Format(DateAdd(DateInterval.Month, -1, Dtp_FechaInicioSemana.Value), "MM")
+        If Me.rec = False Then
+            mes = Format(DateAdd(DateInterval.Month, -1, Dtp_FechaInicioSemana.Value), "MM")
+        Else
+            mes = Format(Dtp_FechaInicioSemana.Value, "MM")
+        End If
 
         Select Case mes
             Case "01" : mes = "ENE"
@@ -747,13 +770,59 @@ Public Class Frm_BonoMensual
         Return NPre.RecuperaAcumulado(cadConex, mes, año)
     End Function
 #End Region
+#Region "Rellena Objetos"
+    Private Function RellenaObjetoBono() As LBono
+        Dim lstBono As New LBono()
+        Dim fila As Integer
+        Dim totalFilas As Integer = Dgv_BonoMensual.Rows.Count()
+
+        For fila = 0 To totalFilas - 2
+            With Dgv_BonoMensual.Rows(fila)
+                Dim objBono As New Bono()
+                objBono.IdEmpleado = .Cells("idEmpleado").Value
+                objBono.AcumulaMes = .Cells("totalBono").Value
+                objBono.Año = Lbl_año.Text
+                lstBono.Add(objBono)
+            End With
+        Next
+        Return lstBono
+    End Function
+#End Region
 #Region "Procesos Varios"
     Private Sub ProcesoBonoMensual(ByVal lstEmp As LEmpleado, ByVal fecha As Date)
+        Dim m As Integer
+
+
         lstEmp = RecuperarEmpleados(fecha)
         If lstEmp(0).Err = False Then
+            m = Month(Dtp_FechaInicioSemana.Value)
             RellenaChecadasDgvGlobalPrenomina(lstEmp)
             RecuperarIncidencias()
+            If m <= Me.mes Then
+                Me.rec = True
+                ProcesoAcumulado()
+            Else
+                Me.rec = False
+            End If
         End If
+    End Sub
+    Private Sub ProcesoAcumulado()
+        Dim lstBono As New LBono()
+        Dim totalFilas As Integer = Dgv_BonoMensual.Rows.Count()
+        Dim NPre As New NPrenomina()
+        Dim conex As New conexion()
+        Dim cadConex As String = conex.conexion2008
+        Dim mes As Integer = Month(Dtp_FechaInicioSemana.Value)
+
+        lstBono = RecuperaAcumulado()
+        If rec = False Then
+            RellenaCalculaBono(lstBono, totalFilas)
+            lstBono = RellenaObjetoBono()
+            NPre.InsertarAcumulado(cadConex, lstBono, mes)
+        Else
+            RellenaBonoRecuperado(lstBono, totalFilas)
+        End If
+        Btn_Acumulado.Enabled = False
     End Sub
     Private Sub ModificarDiaInicio()
         Dim fecha As Date

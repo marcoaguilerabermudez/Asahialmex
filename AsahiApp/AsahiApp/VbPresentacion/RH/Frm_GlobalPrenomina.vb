@@ -72,6 +72,8 @@ Public Class Frm_GlobalPrenomina
             Lbl_SemaF.Text = Format(hrs.FechaF, "dd/MM/yyyy")
             If sem <> hrs.Semana Then Cmb_Semanas.SelectedItem = hrs.Semana
             Btn_Txt.Visible = False
+            Btn_Excel.Visible = False
+            Txt_FiltroId.Enabled = False
             open = True
 
         Else
@@ -108,6 +110,36 @@ Public Class Frm_GlobalPrenomina
         CrearArchivo()
         EscribirArchivo()
         LeerArchivo()
+    End Sub
+    Private Sub Btn_Excel_Click(sender As Object, e As EventArgs) Handles Btn_Excel.Click
+        GridAExcel(Dgv_Prenomina_Global)
+    End Sub
+    Private Sub Txt_FiltroId_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroId.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_Prenomina_Global.Rows.Count, idEmp As Integer
+        If Txt_FiltroId.Text <> "" Then
+            For fila = 0 To totalFilas - 1
+                With Dgv_Prenomina_Global.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+            For fila = 0 To totalFilas - 1
+                With Dgv_Prenomina_Global.Rows(fila)
+                    idEmp = .Cells("idEmpleado").Value
+                    If Not (idEmp Like Txt_FiltroId.Text) And idEmp <> 0 Then
+                        .Visible = True
+                    End If
+                    If Not (idEmp Like Txt_FiltroId.Text) And idEmp <> 0 Then
+                        .Visible = False
+                    End If
+                End With
+            Next
+        Else
+            For fila = 0 To totalFilas - 1
+                With Dgv_Prenomina_Global.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+        End If
     End Sub
 #End Region
 #Region "Rellena cmb"
@@ -765,7 +797,7 @@ Public Class Frm_GlobalPrenomina
     End Sub
     Private Sub RellenaDescansoAsistencias(ByVal totalFilas As Integer, ByVal fecha As Date)
         Dim fila As Integer, colum As Integer
-        For fila = 0 To totalFilas - 1
+        For fila = 0 To totalFilas - 2
             With Dgv_Prenomina_Global.Rows(fila)
                 For colum = 1 To 7
                     Dim tu = .Cells("idTurnoEmpleado").Value
@@ -919,6 +951,8 @@ Public Class Frm_GlobalPrenomina
         If lstEmp(0).Err = False Then
             RellenaChecadasDgvGlobalPrenomina(lstEmp)
             RecuperarIncidencias(1)
+            Btn_Excel.Visible = True
+            Txt_FiltroId.Enabled = True
             Btn_Txt.Visible = True
         End If
     End Sub
@@ -1235,5 +1269,43 @@ Public Class Frm_GlobalPrenomina
             MsgBox("Se presento un problema al leer el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
         End Try
     End Sub
+    Function GridAExcel(ByVal ElGrid As DataGridView) As Boolean
+
+        Dim exApp As New Microsoft.Office.Interop.Excel.Application
+        Dim exLibro As Microsoft.Office.Interop.Excel.Workbook
+        Dim exHoja As Microsoft.Office.Interop.Excel.Worksheet
+        Try
+
+            exLibro = exApp.Workbooks.Add
+            exHoja = exLibro.Worksheets.Add()
+
+            Dim NCol As Integer = ElGrid.ColumnCount
+            Dim NRow As Integer = ElGrid.RowCount
+
+            For i As Integer = 1 To NCol
+                If ElGrid.Columns(i - 1).Visible = True Then
+                    exHoja.Cells.Item(1, i) = ElGrid.Columns(i - 1).HeaderText.ToString
+                End If
+            Next
+            For Fila As Integer = 0 To NRow - 1
+                For Col As Integer = 0 To NCol - 1
+                    exHoja.Cells.Item(Fila + 2, Col + 1) = ElGrid.Rows(Fila).Cells(Col).Value
+                Next
+            Next
+
+            exHoja.Rows.Item(1).Font.Bold = 1
+            exHoja.Rows.Item(1).HorizontalAlignment = 3
+            exHoja.Columns.AutoFit()
+
+            exApp.Application.Visible = True
+            exHoja = Nothing
+            exLibro = Nothing
+            exApp = Nothing
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel")
+            Return False
+        End Try
+        Return True
+    End Function
 #End Region
 End Class

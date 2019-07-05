@@ -481,4 +481,43 @@ Public Class DPrenomina
         End Try
         Return lstBono
     End Function
+    Public Sub InsertarAcumulado(ByVal cadenaConex As String, ByVal objBono As Bono, ByVal mes As Integer)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Rh_InsertarAcumulado", oCon)
+            query.Parameters.AddWithValue("@xml", objBono.XML)
+            query.Parameters.AddWithValue("@mes", mes)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
+    Public Function VerificarUltimoMesCalculado(ByVal cadenaConex As String) As Integer
+        Dim mes As Integer
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT top 1 Calculado from Supervisor_giro.Empacum order by Calculado desc", oCon)
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                mes = Convert.ToInt32(dr("Calculado").ToString)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return mes
+    End Function
 End Class
