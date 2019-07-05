@@ -9,6 +9,7 @@ Public Class Frm_ListaPrenomina
     Dim cadenaConex As String
     Dim open As Boolean
     Dim colum
+    'Dim bd As New BindingSource
     'Dim super As Thread
     Dim valor
 #End Region
@@ -81,6 +82,8 @@ Public Class Frm_ListaPrenomina
             End If
 
             If sem <> hrs.Semana Then CmbSemanas.SelectedItem = hrs.Semana
+            Btn_Excel.Visible = False
+            Txt_FiltroId.Enabled = False
             open = True
 
         Else
@@ -219,6 +222,36 @@ Public Class Frm_ListaPrenomina
             End If
         End If
     End Sub
+    Private Sub Btn_Excel_Click(sender As Object, e As EventArgs) Handles Btn_Excel.Click
+        GridAExcel(Dgv_ListaPrenomina)
+    End Sub
+    Private Sub Txt_FiltroId_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroId.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, idEmp As Integer
+        If Txt_FiltroId.Text <> "" Then
+            For fila = 0 To totalFilas - 1
+                With Dgv_ListaPrenomina.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+            For fila = 0 To totalFilas - 1
+                With Dgv_ListaPrenomina.Rows(fila)
+                    idEmp = .Cells("idEmpleado").Value
+                    If Not (idEmp Like Txt_FiltroId.Text) And idEmp <> 0 Then
+                        .Visible = True
+                    End If
+                    If Not (idEmp Like Txt_FiltroId.Text) And idEmp <> 0 Then
+                        .Visible = False
+                    End If
+                End With
+            Next
+        Else
+            For fila = 0 To totalFilas - 1
+                With Dgv_ListaPrenomina.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+        End If
+    End Sub
 #End Region
 #Region "Rellena cmb"
     Private Sub RellenaCmbSemanas()
@@ -287,7 +320,7 @@ Public Class Frm_ListaPrenomina
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.White
                     If Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").ReadOnly = True
                     If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.Red
-                    End If
+                End If
                 If item.HoraSalidaReal1 <> "1/1/1900 12:00:00 AM" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value = Format(item.HoraSalidaReal1, "HH:mm")
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.White
@@ -1197,6 +1230,8 @@ Public Class Frm_ListaPrenomina
             RellenaChecadasDgvPrenomina(lstEmp)
             RecuperarIncidencias()
             CalcularBono()
+            Btn_Excel.Visible = True
+            Txt_FiltroId.Enabled = True
         End If
     End Sub
     Private Sub ModificarDiaInicio()
@@ -1432,5 +1467,43 @@ Public Class Frm_ListaPrenomina
             End If
         End With
     End Sub
+    Function GridAExcel(ByVal ElGrid As DataGridView) As Boolean
+
+        Dim exApp As New Microsoft.Office.Interop.Excel.Application
+        Dim exLibro As Microsoft.Office.Interop.Excel.Workbook
+        Dim exHoja As Microsoft.Office.Interop.Excel.Worksheet
+        Try
+
+            exLibro = exApp.Workbooks.Add
+            exHoja = exLibro.Worksheets.Add()
+
+            Dim NCol As Integer = ElGrid.ColumnCount
+            Dim NRow As Integer = ElGrid.RowCount
+
+            For i As Integer = 1 To NCol
+                If ElGrid.Columns(i - 1).Visible = True Then
+                    exHoja.Cells.Item(1, i) = ElGrid.Columns(i - 1).HeaderText.ToString
+                End If
+            Next
+            For Fila As Integer = 0 To NRow - 1
+                For Col As Integer = 0 To NCol - 1
+                    exHoja.Cells.Item(Fila + 2, Col + 1) = ElGrid.Rows(Fila).Cells(Col).Value
+                Next
+            Next
+
+            exHoja.Rows.Item(1).Font.Bold = 1
+            exHoja.Rows.Item(1).HorizontalAlignment = 3
+            exHoja.Columns.AutoFit()
+
+            exApp.Application.Visible = True
+            exHoja = Nothing
+            exLibro = Nothing
+            exApp = Nothing
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel")
+            Return False
+        End Try
+        Return True
+    End Function
 #End Region
 End Class

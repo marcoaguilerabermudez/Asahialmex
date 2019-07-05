@@ -53,6 +53,60 @@ Public Class NPrenomina
         objEmp = CreaXml(lstEmp, sem)
         DPrenom.InsertarModificacionesIncidencias(cadenaConex, objEmp)
     End Sub
+    Public Function RecuperarInc(ByVal cadenaConex As String, ByVal tipoM As String, ByVal sem As Integer, ByVal fechaI As Date, ByVal fechaF As Date) As LEmpleado
+        Dim DPrenomina As New DPrenomina()
+        Return DPrenomina.RecuperarInc(cadenaConex, tipoM, sem, fechaI, fechaF)
+    End Function
+    Public Sub InsertarModificacionesAusentismo(ByVal cadenaConex As String, ByVal lstEmp As LEmpleado)
+        Dim DPrenom As New DPrenomina()
+        Dim objEmp As New Empleado
+
+        objEmp = CrearXmlAusentismo(lstEmp)
+        DPrenom.InsertarModificacionesAusentismo(cadenaConex, objEmp)
+    End Sub
+    Public Sub InsertarModificacionesHE(ByVal cadenaConex As String, ByVal lstEmp As LEmpleado)
+        Dim DPrenom As New DPrenomina()
+        Dim objEmp As New Empleado
+
+        objEmp = CrearXmlHe(lstEmp)
+        DPrenom.InsertarModificacionesHE(cadenaConex, objEmp)
+    End Sub
+    Public Sub InsertarModificacionesChecadas(ByVal cadenaConex As String, ByVal lstEmp As LEmpleado)
+        Dim DPrenom As New DPrenomina()
+        Dim objEmp As New Empleado
+
+        objEmp = CrearXmlChecadas(lstEmp)
+        DPrenom.InsertarModificacionesChecadas(cadenaConex, objEmp)
+    End Sub
+    Public Function EmpleadoGlobalRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.EmpleadoGlobalRecuperar(cadConex, fecha)
+    End Function
+    Public Function RecuperarMotivosRetardo(ByVal cadenaConex As String) As LHorarios
+        Dim dPren As New DPrenomina()
+        Return dPren.RecuperarMotivosRetardo(cadenaConex)
+    End Function
+    Public Sub InsertarMotivoRetardoChecadas(ByVal cadenaConex As String, ByVal emp As Empleado)
+        Dim DPrenom As New DPrenomina()
+
+        emp = CrearXmlMotivoRetardo(emp)
+        DPrenom.InsertarMotivoRetardoChecadas(cadenaConex, emp)
+    End Sub
+    Public Function RecuperaAcumulado(ByVal cadenaConex As String, ByVal mes As String, ByVal año As Integer) As LBono
+        Dim DPren As New DPrenomina()
+        Return DPren.RecuperaAcumulado(cadenaConex, mes, año)
+    End Function
+    Public Sub InsertarAcumulado(ByVal cadenaConex As String, ByVal lstBono As LBono, ByVal mes As Integer)
+        Dim objBono As New Bono()
+        Dim DPre As New DPrenomina()
+        objBono = CrearXmlAcumulado(lstBono)
+        DPre.InsertarAcumulado(cadenaConex, objBono, mes)
+    End Sub
+    Public Function VerificarUltimoMesCalculado(ByVal cadenaConex As String) As Integer
+        Dim DPre As New DPrenomina()
+        Return DPre.VerificarUltimoMesCalculado(cadenaConex)
+    End Function
+#Region "XML"
     Private Function CreaXml(ByVal lstEmp As LEmpleado, ByVal sem As Integer) As Empleado
         Dim objEmp As New Empleado()
         Dim i As Byte
@@ -79,17 +133,6 @@ Public Class NPrenomina
         objEmp.Xml = "<Incidencias>" & objEmp.Xml & "</Incidencias>"
         Return objEmp
     End Function
-    Public Function RecuperarInc(ByVal cadenaConex As String, ByVal tipoM As String, ByVal sem As Integer, ByVal fechaI As Date, ByVal fechaF As Date) As LEmpleado
-        Dim DPrenomina As New DPrenomina()
-        Return DPrenomina.RecuperarInc(cadenaConex, tipoM, sem, fechaI, fechaF)
-    End Function
-    Public Sub InsertarModificacionesAusentismo(ByVal cadenaConex As String, ByVal lstEmp As LEmpleado)
-        Dim DPrenom As New DPrenomina()
-        Dim objEmp As New Empleado
-
-        objEmp = CrearXmlAusentismo(lstEmp)
-        DPrenom.InsertarModificacionesAusentismo(cadenaConex, objEmp)
-    End Sub
     Private Function CrearXmlAusentismo(ByVal lstEmp As LEmpleado) As Empleado
         Dim objEmp As New Empleado()
         Dim i As Byte
@@ -105,13 +148,6 @@ Public Class NPrenomina
         objEmp.Xml = "<Incidencias>" & objEmp.Xml & "</Incidencias>"
         Return objEmp
     End Function
-    Public Sub InsertarModificacionesHE(ByVal cadenaConex As String, ByVal lstEmp As LEmpleado)
-        Dim DPrenom As New DPrenomina()
-        Dim objEmp As New Empleado
-
-        objEmp = CrearXmlHe(lstEmp)
-        DPrenom.InsertarModificacionesHE(cadenaConex, objEmp)
-    End Sub
     Private Function CrearXmlHe(ByVal lstEmp As LEmpleado) As Empleado
         Dim objEmp As New Empleado()
         Dim i As Byte
@@ -127,13 +163,6 @@ Public Class NPrenomina
         objEmp.Xml = "<Incidencias>" & objEmp.Xml & "</Incidencias>"
         Return objEmp
     End Function
-    Public Sub InsertarModificacionesChecadas(ByVal cadenaConex As String, ByVal lstEmp As LEmpleado)
-        Dim DPrenom As New DPrenomina()
-        Dim objEmp As New Empleado
-
-        objEmp = CrearXmlChecadas(lstEmp)
-        DPrenom.InsertarModificacionesChecadas(cadenaConex, objEmp)
-    End Sub
     Private Function CrearXmlChecadas(ByVal lstEmp As LEmpleado) As Empleado
         Dim objEmp As New Empleado()
         Dim i As Byte
@@ -153,20 +182,6 @@ Public Class NPrenomina
         objEmp.Xml = "<Incidencias>" & objEmp.Xml & "</Incidencias>"
         Return objEmp
     End Function
-    Public Function EmpleadoGlobalRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
-        Dim DEmp As New DEmpleado()
-        Return DEmp.EmpleadoGlobalRecuperar(cadConex, fecha)
-    End Function
-    Public Function RecuperarMotivosRetardo(ByVal cadenaConex As String) As LHorarios
-        Dim dPren As New DPrenomina()
-        Return dPren.RecuperarMotivosRetardo(cadenaConex)
-    End Function
-    Public Sub InsertarMotivoRetardoChecadas(ByVal cadenaConex As String, ByVal emp As Empleado)
-        Dim DPrenom As New DPrenomina()
-
-        emp = CrearXmlMotivoRetardo(emp)
-        DPrenom.InsertarMotivoRetardoChecadas(cadenaConex, emp)
-    End Sub
     Private Function CrearXmlMotivoRetardo(ByVal emp As Empleado) As Empleado
         Dim objEmp As New Empleado()
         Dim str As String
@@ -180,9 +195,19 @@ Public Class NPrenomina
         objEmp.Xml = "<Motivo>" & objEmp.Xml & "</Motivo>"
         Return objEmp
     End Function
-    Public Function RecuperaAcumulado(ByVal cadenaConex As String, ByVal mes As String, ByVal año As Integer) As LBono
-        Dim DPren As New DPrenomina()
-        Return DPren.RecuperaAcumulado(cadenaConex, mes, año)
+    Private Function CrearXmlAcumulado(ByVal lstBono As LBono) As Bono
+        Dim objBono As New Bono()
+        Dim str As String
+        Dim i As Integer
+
+        For i = 0 To lstBono.Count - 1
+            str = "<Info><clave>" & lstBono.Item(i).IdEmpleado & "</clave><acum>" & lstBono.Item(i).AcumulaMes & "</acum><año>" & lstBono.Item(i).Año & "</año></Info>"
+            objBono.XML = objBono.XML & str
+        Next
+
+        objBono.XML = "<Acumulado>" & objBono.XML & "</Acumulado>"
+        Return objBono
     End Function
+#End Region
 End Class
 'String.Format("{0:000}", valor)

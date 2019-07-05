@@ -22,7 +22,7 @@ Partial Class Frm_ListaPrenomina
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Dgv_ListaPrenomina = New System.Windows.Forms.DataGridView()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -75,32 +75,44 @@ Partial Class Frm_ListaPrenomina
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Btn_Guardar = New System.Windows.Forms.Button()
+        Me.Btn_Excel = New System.Windows.Forms.Button()
         Me.Bgw_HiloSeundoPlano = New System.ComponentModel.BackgroundWorker()
         Me.Btn_Mostrar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Lbl_FiltroId = New System.Windows.Forms.Label()
+        Me.Txt_FiltroId = New System.Windows.Forms.TextBox()
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Dgv_ListaPrenomina
         '
         Me.Dgv_ListaPrenomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.E, Me.S, Me.entrada1, Me.salida1, Me.manual1, Me.b1, Me.entrada2, Me.salida2, Me.manual2, Me.b2, Me.entrada3, Me.salida3, Me.manual3, Me.b3, Me.entrada4, Me.salida4, Me.manual4, Me.b4, Me.entrada5, Me.salida5, Me.manual5, Me.b5, Me.entrada6, Me.salida6, Me.manual6, Me.b6, Me.entrada7, Me.salida7, Me.manual7, Me.b7, Me.comentarios, Me.aplicaBono, Me.idTurno, Me.manual})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Dgv_ListaPrenomina.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_ListaPrenomina.Enabled = False
-        Me.Dgv_ListaPrenomina.Location = New System.Drawing.Point(4, 79)
+        Me.Dgv_ListaPrenomina.Location = New System.Drawing.Point(0, 0)
         Me.Dgv_ListaPrenomina.Name = "Dgv_ListaPrenomina"
         Me.Dgv_ListaPrenomina.RowHeadersVisible = False
         Me.Dgv_ListaPrenomina.RowHeadersWidth = 15
         Me.Dgv_ListaPrenomina.RowTemplate.Height = 50
-        Me.Dgv_ListaPrenomina.Size = New System.Drawing.Size(1190, 458)
+        Me.Dgv_ListaPrenomina.Size = New System.Drawing.Size(1197, 439)
         Me.Dgv_ListaPrenomina.TabIndex = 0
         '
         'idEmpleado
@@ -349,7 +361,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia1
         '
         Me.Lbl_Dia1.AutoSize = True
-        Me.Lbl_Dia1.Location = New System.Drawing.Point(474, 63)
+        Me.Lbl_Dia1.Location = New System.Drawing.Point(464, 20)
         Me.Lbl_Dia1.Name = "Lbl_Dia1"
         Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia1.TabIndex = 4
@@ -357,7 +369,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia2
         '
         Me.Lbl_Dia2.AutoSize = True
-        Me.Lbl_Dia2.Location = New System.Drawing.Point(551, 63)
+        Me.Lbl_Dia2.Location = New System.Drawing.Point(541, 20)
         Me.Lbl_Dia2.Name = "Lbl_Dia2"
         Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia2.TabIndex = 5
@@ -365,7 +377,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia4
         '
         Me.Lbl_Dia4.AutoSize = True
-        Me.Lbl_Dia4.Location = New System.Drawing.Point(703, 63)
+        Me.Lbl_Dia4.Location = New System.Drawing.Point(693, 20)
         Me.Lbl_Dia4.Name = "Lbl_Dia4"
         Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia4.TabIndex = 7
@@ -373,7 +385,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia3
         '
         Me.Lbl_Dia3.AutoSize = True
-        Me.Lbl_Dia3.Location = New System.Drawing.Point(627, 63)
+        Me.Lbl_Dia3.Location = New System.Drawing.Point(617, 20)
         Me.Lbl_Dia3.Name = "Lbl_Dia3"
         Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia3.TabIndex = 6
@@ -381,7 +393,7 @@ Partial Class Frm_ListaPrenomina
         'lbl_Dia7
         '
         Me.lbl_Dia7.AutoSize = True
-        Me.lbl_Dia7.Location = New System.Drawing.Point(930, 63)
+        Me.lbl_Dia7.Location = New System.Drawing.Point(920, 20)
         Me.lbl_Dia7.Name = "lbl_Dia7"
         Me.lbl_Dia7.Size = New System.Drawing.Size(0, 13)
         Me.lbl_Dia7.TabIndex = 10
@@ -389,7 +401,7 @@ Partial Class Frm_ListaPrenomina
         'lbl_Dia6
         '
         Me.lbl_Dia6.AutoSize = True
-        Me.lbl_Dia6.Location = New System.Drawing.Point(854, 63)
+        Me.lbl_Dia6.Location = New System.Drawing.Point(844, 20)
         Me.lbl_Dia6.Name = "lbl_Dia6"
         Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
         Me.lbl_Dia6.TabIndex = 9
@@ -397,7 +409,7 @@ Partial Class Frm_ListaPrenomina
         'Lbl_Dia5
         '
         Me.Lbl_Dia5.AutoSize = True
-        Me.Lbl_Dia5.Location = New System.Drawing.Point(779, 63)
+        Me.Lbl_Dia5.Location = New System.Drawing.Point(769, 20)
         Me.Lbl_Dia5.Name = "Lbl_Dia5"
         Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia5.TabIndex = 8
@@ -448,7 +460,7 @@ Partial Class Frm_ListaPrenomina
         '
         Me.Dtp_FechaInicioSemana.Checked = False
         Me.Dtp_FechaInicioSemana.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_FechaInicioSemana.Location = New System.Drawing.Point(258, 40)
+        Me.Dtp_FechaInicioSemana.Location = New System.Drawing.Point(234, 18)
         Me.Dtp_FechaInicioSemana.Name = "Dtp_FechaInicioSemana"
         Me.Dtp_FechaInicioSemana.Size = New System.Drawing.Size(109, 20)
         Me.Dtp_FechaInicioSemana.TabIndex = 13
@@ -456,18 +468,29 @@ Partial Class Frm_ListaPrenomina
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.Btn_Guardar)
+        Me.Panel1.Controls.Add(Me.Panel5)
+        Me.Panel1.Controls.Add(Me.Btn_Excel)
         Me.Panel1.Controls.Add(Me.Dtp_FechaInicioSemana)
-        Me.Panel1.Location = New System.Drawing.Point(-36, -22)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1288, 79)
+        Me.Panel1.Size = New System.Drawing.Size(1197, 60)
         Me.Panel1.TabIndex = 14
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Btn_Guardar)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel5.Location = New System.Drawing.Point(1038, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(159, 60)
+        Me.Panel5.TabIndex = 16
         '
         'Btn_Guardar
         '
         Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
         Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Guardar.Location = New System.Drawing.Point(1131, 28)
+        Me.Btn_Guardar.Location = New System.Drawing.Point(39, 8)
         Me.Btn_Guardar.Name = "Btn_Guardar"
         Me.Btn_Guardar.Size = New System.Drawing.Size(53, 43)
         Me.Btn_Guardar.TabIndex = 14
@@ -475,6 +498,19 @@ Partial Class Frm_ListaPrenomina
         Me.Btn_Guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Btn_Guardar.UseVisualStyleBackColor = True
         Me.Btn_Guardar.Visible = False
+        '
+        'Btn_Excel
+        '
+        Me.Btn_Excel.Image = Global.Presentacion.My.Resources.Resources.Excel1
+        Me.Btn_Excel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Excel.Location = New System.Drawing.Point(442, 6)
+        Me.Btn_Excel.Name = "Btn_Excel"
+        Me.Btn_Excel.Size = New System.Drawing.Size(52, 41)
+        Me.Btn_Excel.TabIndex = 15
+        Me.Btn_Excel.Text = "Excel"
+        Me.Btn_Excel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Excel.UseVisualStyleBackColor = True
+        Me.Btn_Excel.Visible = False
         '
         'Bgw_HiloSeundoPlano
         '
@@ -485,7 +521,7 @@ Partial Class Frm_ListaPrenomina
         '
         Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
         Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Mostrar.Location = New System.Drawing.Point(349, 8)
+        Me.Btn_Mostrar.Location = New System.Drawing.Point(355, 8)
         Me.Btn_Mostrar.Name = "Btn_Mostrar"
         Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 39)
         Me.Btn_Mostrar.TabIndex = 15
@@ -493,24 +529,70 @@ Partial Class Frm_ListaPrenomina
         Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Btn_Mostrar.UseVisualStyleBackColor = True
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Panel4)
+        Me.Panel2.Controls.Add(Me.Panel3)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 60)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1197, 482)
+        Me.Panel2.TabIndex = 16
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Dgv_ListaPrenomina)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(0, 43)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1197, 439)
+        Me.Panel4.TabIndex = 12
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Lbl_FiltroId)
+        Me.Panel3.Controls.Add(Me.Txt_FiltroId)
+        Me.Panel3.Controls.Add(Me.Lbl_Dia3)
+        Me.Panel3.Controls.Add(Me.Lbl_Dia4)
+        Me.Panel3.Controls.Add(Me.lbl_Dia7)
+        Me.Panel3.Controls.Add(Me.Lbl_Dia5)
+        Me.Panel3.Controls.Add(Me.Lbl_Dia1)
+        Me.Panel3.Controls.Add(Me.lbl_Dia6)
+        Me.Panel3.Controls.Add(Me.Lbl_Dia2)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1197, 43)
+        Me.Panel3.TabIndex = 11
+        '
+        'Lbl_FiltroId
+        '
+        Me.Lbl_FiltroId.AutoSize = True
+        Me.Lbl_FiltroId.Location = New System.Drawing.Point(12, 5)
+        Me.Lbl_FiltroId.Name = "Lbl_FiltroId"
+        Me.Lbl_FiltroId.Size = New System.Drawing.Size(16, 13)
+        Me.Lbl_FiltroId.TabIndex = 12
+        Me.Lbl_FiltroId.Text = "Id"
+        '
+        'Txt_FiltroId
+        '
+        Me.Txt_FiltroId.Enabled = False
+        Me.Txt_FiltroId.Location = New System.Drawing.Point(2, 20)
+        Me.Txt_FiltroId.Name = "Txt_FiltroId"
+        Me.Txt_FiltroId.Size = New System.Drawing.Size(40, 20)
+        Me.Txt_FiltroId.TabIndex = 11
+        '
         'Frm_ListaPrenomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1197, 542)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Btn_Mostrar)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.lbl_Dia7)
-        Me.Controls.Add(Me.lbl_Dia6)
-        Me.Controls.Add(Me.Lbl_Dia5)
-        Me.Controls.Add(Me.Lbl_Dia4)
-        Me.Controls.Add(Me.Lbl_Dia3)
-        Me.Controls.Add(Me.Lbl_Dia2)
-        Me.Controls.Add(Me.Lbl_Dia1)
         Me.Controls.Add(Me.Lbl_año)
         Me.Controls.Add(Me.Lbl_Semana)
         Me.Controls.Add(Me.CmbSemanas)
-        Me.Controls.Add(Me.Dgv_ListaPrenomina)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Frm_ListaPrenomina"
         Me.ShowIcon = False
@@ -518,6 +600,11 @@ Partial Class Frm_ListaPrenomina
         Me.Text = "Lista Prenomina"
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -577,4 +664,11 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents aplicaBono As DataGridViewCheckBoxColumn
     Friend WithEvents idTurno As DataGridViewTextBoxColumn
     Friend WithEvents manual As DataGridViewTextBoxColumn
+    Friend WithEvents Btn_Excel As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Lbl_FiltroId As Label
+    Friend WithEvents Txt_FiltroId As TextBox
 End Class
