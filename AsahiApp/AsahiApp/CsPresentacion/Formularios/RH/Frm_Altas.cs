@@ -199,6 +199,8 @@ namespace CsPresentacion
                 da.SelectCommand.Parameters.Add("@sdo1", SqlDbType.VarChar).Value = txt_SDO1.Text;
                 da.SelectCommand.Parameters.Add("@sdo2", SqlDbType.VarChar).Value = txt_SDO3.Text;
                 da.SelectCommand.Parameters.Add("@Aviso", SqlDbType.VarChar).Value = Aviso_empleado;
+                da.SelectCommand.Parameters.Add("@Hijos", SqlDbType.VarChar).Value = txt_hijos.Text;
+
 
                 da.Fill(dt);
                 con.Close();
@@ -371,7 +373,9 @@ namespace CsPresentacion
                 cmb_escolaridad.Text = dt.Rows[0]["ESCOLARIDAD"].ToString();
                 txt_año_graduacion.Text = dt.Rows[0]["GRADUACION"].ToString();
                 txt_email.Text = dt.Rows[0]["EMAIL"].ToString();
-                cmb_estado_nacimiento.Text = dt.Rows[0]["ESTADO_NACIMIENTO"].ToString();   
+                cmb_estado_nacimiento.Text = dt.Rows[0]["ESTADO_NACIMIENTO"].ToString(); 
+                txt_hijos.Text = dt.Rows[0]["HIJOS"].ToString();
+
             }
             con.Close();
         }
@@ -1129,6 +1133,22 @@ namespace CsPresentacion
         private void Txt_SDO1_LocationChanged(object sender, EventArgs e)
         {
            // lbl_sueldo.Text = Letras(txt_SDO1.Text);
+        }
+
+        private void Txt_hijos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
