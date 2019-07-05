@@ -65,7 +65,25 @@ namespace CsPresentacion
             con.Close();
         }
 
-     
+        private void comprueba_existencia()
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "SELECT [CLAVE] FROM [asahi16].[dbo].[Credencial_Empleados] where [CLAVE] = @Emp and FECHA = @Fecha";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+            da.SelectCommand.Parameters.Add("@Emp", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@Fecha", SqlDbType.VarChar, 100).Value = lbl_fecha.Text;
+
+            da.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("El usuario [ " + txt_clave.Text +  " ] ya se agregó.", "Aviso");
+                nuevo();
+            }
+            con.Close();
+        }
 
 
         private void insertar()
@@ -209,13 +227,10 @@ namespace CsPresentacion
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 cargar_informacion();
-
+                comprueba_existencia();
                 pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
-
                 txt_vigencia.Visible = true;
                 lbl_estado.Visible = true;
-              
-
                 if (txt_vigencia.Text == "VIGENTE")
                 {
                     btn_agregar.Enabled = true;
@@ -226,7 +241,6 @@ namespace CsPresentacion
                 }
                 else
                 {
-                  
                     pictureBox1.ImageLocation = "V:/Sistemas/Listado de bajas/LogoFinal" + ".png";
                 }
             }
