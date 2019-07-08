@@ -256,11 +256,11 @@
             this.lbl_fecha.AutoSize = true;
             this.lbl_fecha.BackColor = System.Drawing.Color.SteelBlue;
             this.lbl_fecha.ForeColor = System.Drawing.Color.White;
-            this.lbl_fecha.Location = new System.Drawing.Point(473, 23);
+            this.lbl_fecha.Location = new System.Drawing.Point(470, 23);
             this.lbl_fecha.Name = "lbl_fecha";
-            this.lbl_fecha.Size = new System.Drawing.Size(40, 13);
+            this.lbl_fecha.Size = new System.Drawing.Size(51, 13);
             this.lbl_fecha.TabIndex = 148;
-            this.lbl_fecha.Text = "Fecha:";
+            this.lbl_fecha.Text = "@Fecha:";
             // 
             // label3
             // 
@@ -280,6 +280,7 @@
             this.txt_clave.Name = "txt_clave";
             this.txt_clave.Size = new System.Drawing.Size(84, 20);
             this.txt_clave.TabIndex = 0;
+            this.txt_clave.TextChanged += new System.EventHandler(this.Txt_clave_TextChanged);
             this.txt_clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_clave_KeyPress);
             // 
             // btn_nuevo
@@ -347,18 +348,18 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Location = new System.Drawing.Point(20, 61);
             this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(21, 13);
+            this.lbl_id.Size = new System.Drawing.Size(32, 13);
             this.lbl_id.TabIndex = 211;
-            this.lbl_id.Text = "ID:";
+            this.lbl_id.Text = "@ID:";
             // 
             // lbl_total
             // 
             this.lbl_total.AutoSize = true;
-            this.lbl_total.Location = new System.Drawing.Point(15, 555);
+            this.lbl_total.Location = new System.Drawing.Point(15, 553);
             this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(13, 13);
+            this.lbl_total.Size = new System.Drawing.Size(42, 13);
             this.lbl_total.TabIndex = 212;
-            this.lbl_total.Text = "0";
+            this.lbl_total.Text = "@Total";
             // 
             // btn_eliminar
             // 

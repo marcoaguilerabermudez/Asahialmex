@@ -7,6 +7,9 @@ Public Class Frm_Principal
     Dim cadenaConex As String
     Dim cadConex As SqlConnection
 #End Region
+    'Variable para generar reportes de prenómina
+    Public Var As Int64
+
 #Region "Constructores"
     Sub New()
 
@@ -42,6 +45,7 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub BajaEmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem1.Click
+        'Modulo de listado de bajas
         Dim Bajas As New Frm_Listado_Bajas()
         Bajas.ShowDialog()
         Bajas.Hide()
@@ -49,6 +53,7 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub BajaEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem.Click
+        'Modulo de listado de altas de Empleados
         Dim Altas As New Frm_Listado_Altas()
         Altas.ShowDialog()
         Altas.Hide()
@@ -79,6 +84,7 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub FiniquitoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FiniquitoToolStripMenuItem.Click
+        'Módulo de reportes de finiquito
         Dim Finiquito As New Frm_Finiquito()
         Finiquito.ShowDialog()
         Finiquito.Hide()
@@ -86,6 +92,7 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub BajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaToolStripMenuItem.Click
+        'Módulo de bajas de empleados
         Dim Baja As New Frm_bajas()
         Baja.ShowDialog()
         Baja.Hide()
@@ -98,6 +105,7 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub MejoraContinuaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MejoraContinuaToolStripMenuItem.Click
+        'Módulo de reportes de Mejoras Continuas
         Dim Mejora As New Frm_Mejora_Param()
         Mejora.ShowDialog()
         Mejora.Hide()
@@ -108,12 +116,14 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub AltaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem.Click
+        'Módulo de alta de empleados
         Dim Alta As New Frm_Altas()
         Alta.ShowDialog()
         Alta.Hide()
     End Sub
 
     Private Sub CredencialesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CredencialesToolStripMenuItem.Click
+        'Módulo de creación de Credenciales
         Dim C As New Frm_Rep_Cred()
         C.ShowDialog()
         C.Hide()
@@ -123,6 +133,31 @@ Public Class Frm_Principal
         Dim bono As New Frm_BonoMensual()
         bono.ShowDialog()
     End Sub
+
+    Private Sub TodosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TodosToolStripMenuItem.Click
+        'Ejecuta todos los reportes de pre nomina
+        Dim Retardos As New Frm_Fecha_rep_prenomina()
+        Var = 0
+        Retardos.lbl_var.Text = Var
+        Retardos.ShowDialog()
+    End Sub
+
+    Private Sub DescansoLaboradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescansoLaboradoToolStripMenuItem.Click
+        'Ejecuta reporte de Descanso Laborado de RH
+        Dim Descanso As New Frm_Fecha_rep_prenomina()
+        Var = 1
+        Descanso.lbl_var.Text = Var
+        Descanso.ShowDialog()
+    End Sub
+
+    Private Sub RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RetardosToolStripMenuItem.Click
+        'Ejecuta reporte de Retardos de RH
+        Dim Retardos As New Frm_Fecha_rep_prenomina()
+        Var = 2
+        Retardos.lbl_var.Text = Var
+        Retardos.ShowDialog()
+    End Sub
+
 #End Region
 End Class
 

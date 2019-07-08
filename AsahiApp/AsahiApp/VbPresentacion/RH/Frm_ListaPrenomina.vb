@@ -84,6 +84,7 @@ Public Class Frm_ListaPrenomina
             If sem <> hrs.Semana Then CmbSemanas.SelectedItem = hrs.Semana
             Btn_Excel.Visible = False
             Txt_FiltroId.Enabled = False
+            Txt_FiltroId.Text = ""
             open = True
 
         Else

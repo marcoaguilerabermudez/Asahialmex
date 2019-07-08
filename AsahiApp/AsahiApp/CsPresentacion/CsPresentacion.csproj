@@ -97,6 +97,12 @@
     <Compile Include="Formularios\RH\Frm_Credenciales.Designer.cs">
       <DependentUpon>Frm_Credenciales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\RH\Frm_Fecha_rep_prenomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Fecha_rep_prenomina.Designer.cs">
+      <DependentUpon>Frm_Fecha_rep_prenomina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\RH\Rep_Credenciales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,11 +165,11 @@
     <Compile Include="Formularios\RH\Frm_Finiquito.Designer.cs">
       <DependentUpon>Frm_Finiquito.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_bajas.cs">
+    <Compile Include="Formularios\RH\Frm_Bajas_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_bajas.Designer.cs">
-      <DependentUpon>Frm_bajas.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Bajas_Empleados.Designer.cs">
+      <DependentUpon>Frm_Bajas_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Fecha_Baja.cs">
       <SubType>Form</SubType>
@@ -195,11 +201,11 @@
     <Compile Include="Formularios\RH\Frm_Mejora_Param.Designer.cs">
       <DependentUpon>Frm_Mejora_Param.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Altas.cs">
+    <Compile Include="Formularios\RH\Frm_Altas_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Altas.Designer.cs">
-      <DependentUpon>Frm_Altas.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Altas_Empleados.Designer.cs">
+      <DependentUpon>Frm_Altas_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Frm_Reporte_Bajas.cs">
       <SubType>Form</SubType>
@@ -286,8 +292,8 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Finiquito.resx">
       <DependentUpon>Frm_Finiquito.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_bajas.resx">
-      <DependentUpon>Frm_bajas.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Frm_Bajas_Empleados.resx">
+      <DependentUpon>Frm_Bajas_Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Fecha_Baja.resx">
       <DependentUpon>Frm_Fecha_Baja.cs</DependentUpon>
@@ -304,8 +310,11 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Mejora_Param.resx">
       <DependentUpon>Frm_Mejora_Param.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_Altas.resx">
-      <DependentUpon>Frm_Altas.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Frm_Altas_Empleados.resx">
+      <DependentUpon>Frm_Altas_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Fecha_rep_prenomina.resx">
+      <DependentUpon>Frm_Fecha_rep_prenomina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Rep_Credenciales.resx">
       <DependentUpon>Rep_Credenciales.cs</DependentUpon>

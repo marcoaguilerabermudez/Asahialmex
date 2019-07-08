@@ -22,7 +22,7 @@ Partial Class Frm_ListaPrenomina
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Dgv_ListaPrenomina = New System.Windows.Forms.DataGridView()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -97,14 +97,14 @@ Partial Class Frm_ListaPrenomina
         '
         Me.Dgv_ListaPrenomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.E, Me.S, Me.entrada1, Me.salida1, Me.manual1, Me.b1, Me.entrada2, Me.salida2, Me.manual2, Me.b2, Me.entrada3, Me.salida3, Me.manual3, Me.b3, Me.entrada4, Me.salida4, Me.manual4, Me.b4, Me.entrada5, Me.salida5, Me.manual5, Me.b5, Me.entrada6, Me.salida6, Me.manual6, Me.b6, Me.entrada7, Me.salida7, Me.manual7, Me.b7, Me.comentarios, Me.aplicaBono, Me.idTurno, Me.manual})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle1
         Me.Dgv_ListaPrenomina.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_ListaPrenomina.Enabled = False
         Me.Dgv_ListaPrenomina.Location = New System.Drawing.Point(0, 0)
@@ -568,18 +568,18 @@ Partial Class Frm_ListaPrenomina
         'Lbl_FiltroId
         '
         Me.Lbl_FiltroId.AutoSize = True
-        Me.Lbl_FiltroId.Location = New System.Drawing.Point(12, 5)
+        Me.Lbl_FiltroId.Location = New System.Drawing.Point(5, 5)
         Me.Lbl_FiltroId.Name = "Lbl_FiltroId"
-        Me.Lbl_FiltroId.Size = New System.Drawing.Size(16, 13)
+        Me.Lbl_FiltroId.Size = New System.Drawing.Size(44, 13)
         Me.Lbl_FiltroId.TabIndex = 12
-        Me.Lbl_FiltroId.Text = "Id"
+        Me.Lbl_FiltroId.Text = "CLAVE:"
         '
         'Txt_FiltroId
         '
         Me.Txt_FiltroId.Enabled = False
         Me.Txt_FiltroId.Location = New System.Drawing.Point(2, 20)
         Me.Txt_FiltroId.Name = "Txt_FiltroId"
-        Me.Txt_FiltroId.Size = New System.Drawing.Size(40, 20)
+        Me.Txt_FiltroId.Size = New System.Drawing.Size(47, 20)
         Me.Txt_FiltroId.TabIndex = 11
         '
         'Frm_ListaPrenomina

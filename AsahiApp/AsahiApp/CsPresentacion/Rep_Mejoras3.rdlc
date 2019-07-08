@@ -3553,7 +3553,7 @@
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>yu Gothic</FontFamily>
                                     <FontSize>8pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                   </Style>
                                 </TextRun>
@@ -3570,7 +3570,7 @@
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>8pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                   </Style>
                                 </TextRun>
@@ -4377,6 +4377,7 @@
                                                 <Value />
                                                 <Style>
                                                   <FontSize>7pt</FontSize>
+                                                  <TextDecoration>Underline</TextDecoration>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -4390,6 +4391,7 @@
                                                 <Value>=Fields!calificacion.Value</Value>
                                                 <Style>
                                                   <FontSize>7pt</FontSize>
+                                                  <TextDecoration>Underline</TextDecoration>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -4503,6 +4505,7 @@
                                                 <Value>=Fields!Tema.Value</Value>
                                                 <Style>
                                                   <FontSize>7pt</FontSize>
+                                                  <TextDecoration>Underline</TextDecoration>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -4568,7 +4571,7 @@
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>yu Gothic</FontFamily>
                                     <FontSize>8pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
                                   </Style>
@@ -4586,7 +4589,7 @@
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>yu Gothic</FontFamily>
                                     <FontSize>8pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
                                   </Style>

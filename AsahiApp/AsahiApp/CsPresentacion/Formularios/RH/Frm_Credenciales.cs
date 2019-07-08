@@ -79,7 +79,7 @@ namespace CsPresentacion
 
             if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("El usuario [ " + txt_clave.Text +  " ] ya se agregó.", "Aviso");
+                MessageBox.Show("El empleado [ " + txt_clave.Text +  " ] ya se agregó.", "Aviso");
                 nuevo();
             }
             con.Close();
@@ -94,7 +94,7 @@ namespace CsPresentacion
                 SqlCommand cmd = new SqlCommand("INSERT INTO Credencial_Empleados(CLAVE, NOMBRE, REFERENCIA, TEL_REFERENCIA, DEPARTAMENTO, PUESTO, AFILIACION, FECHA_NACIMIENTO, FECHA, Foto) VALUES (" + txt_clave.Text + ", '" + txt_nombre.Text + "', '" + txt_referencia.Text + "', '" + txt_telefono_referencia.Text + "',  '" + txt_departamento.Text + "', '" + txt_puesto.Text + "','" + txt_afiliacion.Text + "', '" + dtm_nacimiento.Text + "', '" + lbl_fecha.Text + "', '" + pictureBox1.Image + "')", con);
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Se agregó correctamente.");
+                MessageBox.Show("Agregado correctamente.");
                 nuevo();
             }
             catch (Exception error)
@@ -188,7 +188,7 @@ namespace CsPresentacion
             lbl_fecha.Visible = false;
             lbl_id.Text = "";
             lbl_id.Visible = false;
-            lbl_total.Enabled = false;
+            lbl_total.Visible = false;
         }
 
         private void Diseño_Grid(DataGridView dgv)
@@ -326,6 +326,11 @@ namespace CsPresentacion
             //Image img = pictureBox1.Image;
             //img.RotateFlip(RotateFlipType.Rotate90FlipNone);
             //pictureBox1.Image = img;
+        }
+
+        private void Txt_clave_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
