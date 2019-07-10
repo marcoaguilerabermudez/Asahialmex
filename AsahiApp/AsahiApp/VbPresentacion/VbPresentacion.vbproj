@@ -121,6 +121,12 @@
     <Compile Include="Frm_Acerca.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
+      <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_PlanHorasExtra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Soporte.Designer.vb">
       <DependentUpon>Frm_Soporte.vb</DependentUpon>
     </Compile>
@@ -193,6 +199,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Frm_Acerca.resx">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_PlanHorasExtra.resx">
+      <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Soporte.resx">
       <DependentUpon>Frm_Soporte.vb</DependentUpon>

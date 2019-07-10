@@ -71,6 +71,15 @@
             horario_ = value
         End Set
     End Property
+    Private idDepartamento_ As String
+    Public Property IdDepartamento() As String
+        Get
+            Return idDepartamento_
+        End Get
+        Set(ByVal value As String)
+            idDepartamento_ = value
+        End Set
+    End Property
     Private departamento_ As String
     Public Property Departamento() As String
         Get
@@ -141,6 +150,24 @@
         End Get
         Set(ByVal value As String)
             tp_ = value
+        End Set
+    End Property
+    Private sueldoNeto_ As Double
+    Public Property SueldoNeto() As Double
+        Get
+            Return sueldoNeto_
+        End Get
+        Set(ByVal value As Double)
+            sueldoNeto_ = value
+        End Set
+    End Property
+    Private sueldoBruto_ As Double
+    Public Property SueldoBruto() As Double
+        Get
+            Return sueldoBruto_
+        End Get
+        Set(ByVal value As Double)
+            sueldoBruto_ = value
         End Set
     End Property
 #Region "Checadas"
@@ -604,6 +631,105 @@
         End Get
         Set(ByVal value As Object)
             xml_ = value
+        End Set
+    End Property
+    Private lunes_ As Double
+    Public Property Lunes() As Double
+        Get
+            Return lunes_
+        End Get
+        Set(ByVal value As Double)
+            lunes_ = value
+        End Set
+    End Property
+    Private martes_ As Double
+    Public Property Martes() As Double
+        Get
+            Return martes_
+        End Get
+        Set(ByVal value As Double)
+            martes_ = value
+        End Set
+    End Property
+    Private miercoles_ As Double
+    Public Property Miercoles() As Double
+        Get
+            Return miercoles_
+        End Get
+        Set(ByVal value As Double)
+            miercoles_ = value
+        End Set
+    End Property
+    Private jueves_ As Double
+    Public Property Jueves() As Double
+        Get
+            Return jueves_
+        End Get
+        Set(ByVal value As Double)
+            jueves_ = value
+        End Set
+    End Property
+    Private viernes_ As Double
+    Public Property Viernes() As Double
+        Get
+            Return viernes_
+        End Get
+        Set(ByVal value As Double)
+            viernes_ = value
+        End Set
+    End Property
+    Private sabado_ As Double
+    Public Property Sabado() As Double
+        Get
+            Return sabado_
+        End Get
+        Set(ByVal value As Double)
+            sabado_ = value
+        End Set
+    End Property
+    Private domingo_ As Double
+    Public Property Domingo() As Double
+        Get
+            Return domingo_
+        End Get
+        Set(ByVal value As Double)
+            domingo_ = value
+        End Set
+    End Property
+    Private totalDobles_ As Double
+    Public Property TotalDobles() As Double
+        Get
+            Return totalDobles_
+        End Get
+        Set(ByVal value As Double)
+            totalDobles_ = value
+        End Set
+    End Property
+    Private totalTriples_ As Double
+    Public Property TotalTriples() As Double
+        Get
+            Return totalTriples_
+        End Get
+        Set(ByVal value As Double)
+            totalTriples_ = value
+        End Set
+    End Property
+    Private bruto_ As Double
+    Public Property Bruto() As Double
+        Get
+            Return bruto_
+        End Get
+        Set(ByVal value As Double)
+            bruto_ = value
+        End Set
+    End Property
+    Private neto_ As Double
+    Public Property Neto() As Double
+        Get
+            Return neto_
+        End Get
+        Set(ByVal value As Double)
+            neto_ = value
         End Set
     End Property
 End Class

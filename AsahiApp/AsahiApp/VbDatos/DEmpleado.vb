@@ -142,4 +142,76 @@ Public Class DEmpleado
         End Try
         Return res
     End Function
+    Public Function RecuperarDepartamentos(ByVal cadenaConex As String) As LEmpleado
+        Dim lstDep As New LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT CLAVE, DESCRIPCION FROM asahi16.Supervisor_giro.DEPTO order by DESCRIPCION", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim Emp As New Empleado
+                Emp.IdDepartamento = dr("CLAVE").ToString
+                Emp.Departamento = dr("DESCRIPCION").ToString
+                lstDep.Add(Emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstDep
+    End Function
+    Public Function RecuperarEmpleadosDepto(ByVal cadenaConex As String, ByVal idDepto As Integer, ByVal fecha As Date, ByVal semana As Integer, ByVal año As Integer) As LEmpleado
+        Dim lstEmp As New LEmpleado()
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("HE_RecuperarEmpleadosDepto", oCon)
+            query.Parameters.AddWithValue("@idDepto", idDepto)
+            query.Parameters.AddWithValue("@fecha", fecha)
+            query.Parameters.AddWithValue("@semana", semana)
+            query.Parameters.AddWithValue("@año", año)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.IdEmpleado = Convert.ToInt32(dr("ID").ToString)
+                emp.Nombres = dr("NOMBRE").ToString
+                emp.ApellidoPaterno = dr("APELLIDOP").ToString
+                emp.ApellidoMaterno = dr("APELLIDOM").ToString
+                emp.Departamento = dr("DEPARTAMENTO").ToString
+                emp.SueldoBruto = Convert.ToDouble(dr("sueldoBruto").ToString)
+                emp.SueldoNeto = Convert.ToDouble(dr("sueldoNeto").ToString)
+                emp.IdTurno = Convert.ToInt32(dr("idTurno").ToString)
+                emp.Lunes = Convert.ToDouble(dr("Lunes").ToString)
+                emp.Martes = Convert.ToDouble(dr("Martes").ToString)
+                emp.Miercoles = Convert.ToDouble(dr("Miercoles").ToString)
+                emp.Jueves = Convert.ToDouble(dr("Jueves").ToString)
+                emp.Viernes = Convert.ToDouble(dr("Viernes").ToString)
+                emp.Sabado = Convert.ToDouble(dr("Sabado").ToString)
+                emp.Domingo = Convert.ToDouble(dr("Domingo").ToString)
+                emp.TotalDobles = Convert.ToDouble(dr("TDobles").ToString)
+                emp.TotalTriples = Convert.ToDouble(dr("TTriples").ToString)
+                emp.Bruto = Convert.ToDouble(dr("Bruto").ToString)
+                emp.Neto = Convert.ToDouble(dr("Neto").ToString)
+                lstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstEmp
+    End Function
 End Class
