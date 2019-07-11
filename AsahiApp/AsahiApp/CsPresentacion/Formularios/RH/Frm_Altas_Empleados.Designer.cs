@@ -1353,7 +1353,7 @@
             this.btn_ps_siguiente.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_ps_siguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_ps_siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ps_siguiente.Location = new System.Drawing.Point(500, 515);
+            this.btn_ps_siguiente.Location = new System.Drawing.Point(489, 518);
             this.btn_ps_siguiente.Name = "btn_ps_siguiente";
             this.btn_ps_siguiente.Size = new System.Drawing.Size(81, 39);
             this.btn_ps_siguiente.TabIndex = 28;
