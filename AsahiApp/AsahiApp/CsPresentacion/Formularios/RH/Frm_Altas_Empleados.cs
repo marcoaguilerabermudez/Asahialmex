@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CsPresentacion
 {
@@ -24,7 +18,6 @@ namespace CsPresentacion
         double Factor;
         double Resultado;
         int Aviso_empleado;
-       
 
         private void Frm_Altas_Load(object sender, EventArgs e)
         {
@@ -97,7 +90,8 @@ namespace CsPresentacion
             txt_año_graduacion.Text = "";
             txt_contacto.Text = "";
             cmb_estado_nacimiento.Text = "";
-
+            lbl_infonavit.Text = "0";
+            lbl_infonavit.Enabled = false;
             txt_factor.Visible = false;
             lbl_factor.Visible = false;
             Panel_principal.Visible = true;
@@ -200,7 +194,7 @@ namespace CsPresentacion
                 da.SelectCommand.Parameters.Add("@sdo2", SqlDbType.VarChar).Value = txt_SDO3.Text;
                 da.SelectCommand.Parameters.Add("@Aviso", SqlDbType.VarChar).Value = Aviso_empleado;
                 da.SelectCommand.Parameters.Add("@Hijos", SqlDbType.VarChar).Value = txt_hijos.Text;
-
+                da.SelectCommand.Parameters.Add("@Infonavit", SqlDbType.VarChar).Value = lbl_infonavit.Text;
 
                 da.Fill(dt);
                 con.Close();
@@ -261,8 +255,6 @@ namespace CsPresentacion
                 da.SelectCommand.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = lbl_tipo_ingreso.Text;//Tipo de alta
                 da.SelectCommand.Parameters.Add("@Infonavit", SqlDbType.VarChar).Value = cmb_infonavit.Text;
                 da.SelectCommand.Parameters.Add("@Horario", SqlDbType.VarChar).Value = cmb_turno.Text;
-
-
                 da.Fill(dt);
                 con.Close();
                // MessageBox.Show("Reporte creado Correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -378,7 +370,6 @@ namespace CsPresentacion
                 txt_email.Text = dt.Rows[0]["EMAIL"].ToString();
                 cmb_estado_nacimiento.Text = dt.Rows[0]["ESTADO_NACIMIENTO"].ToString(); 
                 txt_hijos.Text = dt.Rows[0]["HIJOS"].ToString();
-
             }
             con.Close();
         }
@@ -648,37 +639,37 @@ namespace CsPresentacion
         }
         private void Button2_Click(object sender, EventArgs e)//Alta de empleado
         {
-            //if (string.IsNullOrEmpty(cmb_turno.Text))
-            //{
-            //    MessageBox.Show("Es necesario capturar el turno.", "Aviso");
-            //    cmb_turno.Focus();
-            //}
-            //else if (string.IsNullOrEmpty(cmb_ruta.Text))
-            //{
-            //    MessageBox.Show("Es necesario capturar la ruta.", "Aviso");
-            //    cmb_ruta.Focus();
-            //}
-            //else if (string.IsNullOrEmpty(txt_contacto.Text))
-            //{
-            //    MessageBox.Show("Es necesario capturar información de contacto.", "Aviso");
-            //    txt_contacto.Focus();
-            //}
-            //else if (string.IsNullOrEmpty(txt_tel_contacto.Text))
-            //{
-            //    MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso");
-            //    txt_tel_contacto.Focus();
-            //}
-            //else
-          //  {
-               // Registra_empleado();
+            if (string.IsNullOrEmpty(cmb_turno.Text))
+            {
+                MessageBox.Show("Es necesario capturar el turno.", "Aviso");
+                cmb_turno.Focus();
+            }
+            else if (string.IsNullOrEmpty(cmb_ruta.Text))
+            {
+                MessageBox.Show("Es necesario capturar la ruta.", "Aviso");
+                cmb_ruta.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_contacto.Text))
+            {
+                MessageBox.Show("Es necesario capturar información de contacto.", "Aviso");
+                txt_contacto.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_tel_contacto.Text))
+            {
+                MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso");
+                txt_tel_contacto.Focus();
+            }
+            else
+            {
+               Registra_empleado();
                 Crea_Contrato();
                 Frm_Rep_Alta_empleado Rep = new Frm_Rep_Alta_empleado();
                 Rep.CLAVE = Convert.ToInt32(txt_Clave.Text);
                 Rep.ShowDialog();
-               // Panel_principal.Visible = true;
-               // nuevo();
-                //selecciona_clave();
-            //}
+               Panel_principal.Visible = true;
+               nuevo();
+                selecciona_clave();
+            }
         }
         private void Btn_fin_anterior_Click(object sender, EventArgs e)
         {
@@ -1076,7 +1067,6 @@ namespace CsPresentacion
                 Aviso_empleado = 1;
             }
         }
-
         private void Rdb_nacional_CheckedChanged(object sender, EventArgs e)
         {
             if (rdb_nacional.Checked == true)
@@ -1085,15 +1075,12 @@ namespace CsPresentacion
                 Aviso_empleado = 0;
             }
         }
-
         private void Panel_final_Paint(object sender, PaintEventArgs e)
         {
         }
-
         private void Txt_SDO1_TextChanged(object sender, EventArgs e)
         {
         }
-
         public static void Solo_numeros(object sender, KeyPressEventArgs e, char cSymbol)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != cSymbol)
@@ -1110,11 +1097,9 @@ namespace CsPresentacion
         {
             Solo_numeros(sender, e, '.'); 
         }
-
         private void Txt_SDO1_Validated(object sender, EventArgs e)
         {
         }
-
         private void Txt_SDO1_Leave(object sender, EventArgs e)
         {
             double n1, n2, r;
@@ -1132,7 +1117,6 @@ namespace CsPresentacion
         private void Txt_SDO3_Leave(object sender, EventArgs e)
         {
         }
-
         private void Txt_SDO1_LocationChanged(object sender, EventArgs e)
         {
            // lbl_sueldo.Text = Letras(txt_SDO1.Text);
@@ -1152,6 +1136,22 @@ namespace CsPresentacion
             {
                 e.Handled = true;
             }
+        }
+        private void Cmb_infonavit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void Cmb_infonavit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_infonavit.Text == "SI")
+            {
+                lbl_infonavit.Text = "1000";
+            }
+            else
+            {
+                lbl_infonavit.Text = "0";
+            }    
         }
     }
 }

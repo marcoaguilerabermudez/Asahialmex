@@ -34,6 +34,7 @@
               <Mapping SourceColumn="ESTADO_CIVIL" DataSetColumn="ESTADO_CIVIL" />
               <Mapping SourceColumn="PRIMERA_EVALUACION" DataSetColumn="PRIMERA_EVALUACION" />
               <Mapping SourceColumn="SDO1" DataSetColumn="SDO1" />
+              <Mapping SourceColumn="SDO2" DataSetColumn="SDO2" />
               <Mapping SourceColumn="SUELDO" DataSetColumn="SUELDO" />
               <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
               <Mapping SourceColumn="INGRESO" DataSetColumn="INGRESO" />
@@ -123,6 +124,7 @@
               </xs:element>
               <xs:element name="PRIMERA_EVALUACION" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPRIMERA_EVALUACION" msprop:Generator_ColumnPropNameInRow="PRIMERA_EVALUACION" msprop:Generator_ColumnPropNameInTable="PRIMERA_EVALUACIONColumn" msprop:Generator_UserColumnName="PRIMERA_EVALUACION" type="xs:dateTime" minOccurs="0" />
               <xs:element name="SDO1" msprop:Generator_ColumnVarNameInTable="columnSDO1" msprop:Generator_ColumnPropNameInRow="SDO1" msprop:Generator_ColumnPropNameInTable="SDO1Column" msprop:Generator_UserColumnName="SDO1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SDO2" msprop:Generator_ColumnVarNameInTable="columnSDO2" msprop:Generator_ColumnPropNameInRow="SDO2" msprop:Generator_ColumnPropNameInTable="SDO2Column" msprop:Generator_UserColumnName="SDO2" type="xs:decimal" minOccurs="0" />
               <xs:element name="SUELDO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSUELDO" msprop:Generator_ColumnPropNameInRow="SUELDO" msprop:Generator_ColumnPropNameInTable="SUELDOColumn" msprop:Generator_UserColumnName="SUELDO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -196,10 +198,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DESCRIPCION_TURNO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDESCRIPCION_TURNO" msprop:Generator_ColumnPropNameInRow="DESCRIPCION_TURNO" msprop:Generator_ColumnPropNameInTable="DESCRIPCION_TURNOColumn" msprop:Generator_UserColumnName="DESCRIPCION_TURNO" minOccurs="0">
+              <xs:element name="DESCRIPCION_TURNO" msprop:Generator_ColumnVarNameInTable="columnDESCRIPCION_TURNO" msprop:Generator_ColumnPropNameInRow="DESCRIPCION_TURNO" msprop:Generator_ColumnPropNameInTable="DESCRIPCION_TURNOColumn" msprop:Generator_UserColumnName="DESCRIPCION_TURNO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="14" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

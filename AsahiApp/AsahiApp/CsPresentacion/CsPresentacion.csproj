@@ -284,7 +284,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Contrato_Empleado.rdlc" />
+    <EmbeddedResource Include="Contrato.rdlc" />
     <EmbeddedResource Include="Formularios\RH\Frm_Rep_Mejoras_Continuas.resx">
       <DependentUpon>Frm_Rep_Mejoras_Continuas.cs</DependentUpon>
     </EmbeddedResource>
