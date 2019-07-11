@@ -136,7 +136,7 @@ Public Class Frm_Principal
 
     Private Sub TodosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TodosToolStripMenuItem.Click
         'Ejecuta todos los reportes de pre nomina
-        Dim Retardos As New Frm_Fecha_rep_prenomina()
+        Dim Retardos As New Frm_Parametros_rep_prenomina()
         Var = 0
         Retardos.lbl_var.Text = Var
         Retardos.ShowDialog()
@@ -144,7 +144,7 @@ Public Class Frm_Principal
 
     Private Sub DescansoLaboradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescansoLaboradoToolStripMenuItem.Click
         'Ejecuta reporte de Descanso Laborado de RH
-        Dim Descanso As New Frm_Fecha_rep_prenomina()
+        Dim Descanso As New Frm_Parametros_rep_prenomina()
         Var = 1
         Descanso.lbl_var.Text = Var
         Descanso.ShowDialog()
@@ -152,7 +152,7 @@ Public Class Frm_Principal
 
     Private Sub RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RetardosToolStripMenuItem.Click
         'Ejecuta reporte de Retardos de RH
-        Dim Retardos As New Frm_Fecha_rep_prenomina()
+        Dim Retardos As New Frm_Parametros_rep_prenomina()
         Var = 2
         Retardos.lbl_var.Text = Var
         Retardos.ShowDialog()

@@ -309,7 +309,7 @@ namespace CsPresentacion {
             
             private global::System.Data.DataColumn columnINGRESO;
             
-            private global::System.Data.DataColumn columnTIPO;
+            private global::System.Data.DataColumn columnTIPO_INGRESO;
             
             private global::System.Data.DataColumn columnCP;
             
@@ -322,6 +322,16 @@ namespace CsPresentacion {
             private global::System.Data.DataColumn columnTELEFONO_EMERGENCIA;
             
             private global::System.Data.DataColumn columnAFILIACION;
+            
+            private global::System.Data.DataColumn columnESCOLARIDAD;
+            
+            private global::System.Data.DataColumn columnINFONAVIT;
+            
+            private global::System.Data.DataColumn columnTIPO_EMPLEADO;
+            
+            private global::System.Data.DataColumn columnDESCRIPCION_TURNO;
+            
+            private global::System.Data.DataColumn columnTURNO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -478,9 +488,9 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TIPOColumn {
+            public global::System.Data.DataColumn TIPO_INGRESOColumn {
                 get {
-                    return this.columnTIPO;
+                    return this.columnTIPO_INGRESO;
                 }
             }
             
@@ -529,6 +539,46 @@ namespace CsPresentacion {
             public global::System.Data.DataColumn AFILIACIONColumn {
                 get {
                     return this.columnAFILIACION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ESCOLARIDADColumn {
+                get {
+                    return this.columnESCOLARIDAD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn INFONAVITColumn {
+                get {
+                    return this.columnINFONAVIT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TIPO_EMPLEADOColumn {
+                get {
+                    return this.columnTIPO_EMPLEADO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DESCRIPCION_TURNOColumn {
+                get {
+                    return this.columnDESCRIPCION_TURNO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TURNOColumn {
+                get {
+                    return this.columnTURNO;
                 }
             }
             
@@ -585,13 +635,18 @@ namespace CsPresentacion {
                         string SUELDO, 
                         string NOMBRE, 
                         System.DateTime INGRESO, 
-                        string TIPO, 
+                        string TIPO_INGRESO, 
                         decimal CP, 
                         string TELEFONO, 
                         double EDAD, 
                         string CONTACTO_EMERGENCIA, 
                         string TELEFONO_EMERGENCIA, 
-                        string AFILIACION) {
+                        string AFILIACION, 
+                        string ESCOLARIDAD, 
+                        string INFONAVIT, 
+                        string TIPO_EMPLEADO, 
+                        string DESCRIPCION_TURNO, 
+                        string TURNO) {
                 Sp_Genera_ContratoRow rowSp_Genera_ContratoRow = ((Sp_Genera_ContratoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CLAVE,
@@ -609,13 +664,18 @@ namespace CsPresentacion {
                         SUELDO,
                         NOMBRE,
                         INGRESO,
-                        TIPO,
+                        TIPO_INGRESO,
                         CP,
                         TELEFONO,
                         EDAD,
                         CONTACTO_EMERGENCIA,
                         TELEFONO_EMERGENCIA,
-                        AFILIACION};
+                        AFILIACION,
+                        ESCOLARIDAD,
+                        INFONAVIT,
+                        TIPO_EMPLEADO,
+                        DESCRIPCION_TURNO,
+                        TURNO};
                 rowSp_Genera_ContratoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSp_Genera_ContratoRow);
                 return rowSp_Genera_ContratoRow;
@@ -653,13 +713,18 @@ namespace CsPresentacion {
                 this.columnSUELDO = base.Columns["SUELDO"];
                 this.columnNOMBRE = base.Columns["NOMBRE"];
                 this.columnINGRESO = base.Columns["INGRESO"];
-                this.columnTIPO = base.Columns["TIPO"];
+                this.columnTIPO_INGRESO = base.Columns["TIPO_INGRESO"];
                 this.columnCP = base.Columns["CP"];
                 this.columnTELEFONO = base.Columns["TELEFONO"];
                 this.columnEDAD = base.Columns["EDAD"];
                 this.columnCONTACTO_EMERGENCIA = base.Columns["CONTACTO_EMERGENCIA"];
                 this.columnTELEFONO_EMERGENCIA = base.Columns["TELEFONO_EMERGENCIA"];
                 this.columnAFILIACION = base.Columns["AFILIACION"];
+                this.columnESCOLARIDAD = base.Columns["ESCOLARIDAD"];
+                this.columnINFONAVIT = base.Columns["INFONAVIT"];
+                this.columnTIPO_EMPLEADO = base.Columns["TIPO_EMPLEADO"];
+                this.columnDESCRIPCION_TURNO = base.Columns["DESCRIPCION_TURNO"];
+                this.columnTURNO = base.Columns["TURNO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -695,8 +760,8 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnNOMBRE);
                 this.columnINGRESO = new global::System.Data.DataColumn("INGRESO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnINGRESO);
-                this.columnTIPO = new global::System.Data.DataColumn("TIPO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTIPO);
+                this.columnTIPO_INGRESO = new global::System.Data.DataColumn("TIPO_INGRESO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTIPO_INGRESO);
                 this.columnCP = new global::System.Data.DataColumn("CP", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCP);
                 this.columnTELEFONO = new global::System.Data.DataColumn("TELEFONO", typeof(string), null, global::System.Data.MappingType.Element);
@@ -709,6 +774,16 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnTELEFONO_EMERGENCIA);
                 this.columnAFILIACION = new global::System.Data.DataColumn("AFILIACION", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAFILIACION);
+                this.columnESCOLARIDAD = new global::System.Data.DataColumn("ESCOLARIDAD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnESCOLARIDAD);
+                this.columnINFONAVIT = new global::System.Data.DataColumn("INFONAVIT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINFONAVIT);
+                this.columnTIPO_EMPLEADO = new global::System.Data.DataColumn("TIPO_EMPLEADO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTIPO_EMPLEADO);
+                this.columnDESCRIPCION_TURNO = new global::System.Data.DataColumn("DESCRIPCION_TURNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDESCRIPCION_TURNO);
+                this.columnTURNO = new global::System.Data.DataColumn("TURNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTURNO);
                 this.columnNACIONALIDAD.MaxLength = 20;
                 this.columnGENERO.MaxLength = 1;
                 this.columnDIRECCION.ReadOnly = true;
@@ -727,12 +802,21 @@ namespace CsPresentacion {
                 this.columnNOMBRE.ReadOnly = true;
                 this.columnNOMBRE.MaxLength = 92;
                 this.columnINGRESO.ReadOnly = true;
-                this.columnTIPO.MaxLength = 30;
+                this.columnTIPO_INGRESO.MaxLength = 30;
                 this.columnTELEFONO.MaxLength = 10;
                 this.columnEDAD.ReadOnly = true;
                 this.columnCONTACTO_EMERGENCIA.MaxLength = 40;
                 this.columnTELEFONO_EMERGENCIA.MaxLength = 15;
                 this.columnAFILIACION.MaxLength = 11;
+                this.columnESCOLARIDAD.ReadOnly = true;
+                this.columnESCOLARIDAD.MaxLength = 12;
+                this.columnINFONAVIT.MaxLength = 2;
+                this.columnTIPO_EMPLEADO.ReadOnly = true;
+                this.columnTIPO_EMPLEADO.MaxLength = 9;
+                this.columnDESCRIPCION_TURNO.ReadOnly = true;
+                this.columnDESCRIPCION_TURNO.MaxLength = 14;
+                this.columnTURNO.ReadOnly = true;
+                this.columnTURNO.MaxLength = 13;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1120,17 +1204,18 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string TIPO {
+            public string TIPO_INGRESO {
                 get {
                     try {
-                        return ((string)(this[this.tableSp_Genera_Contrato.TIPOColumn]));
+                        return ((string)(this[this.tableSp_Genera_Contrato.TIPO_INGRESOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TIPO\' de la tabla \'Sp_Genera_Contrato\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TIPO_INGRESO\' de la tabla \'Sp_Genera_Contrato\' es DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableSp_Genera_Contrato.TIPOColumn] = value;
+                    this[this.tableSp_Genera_Contrato.TIPO_INGRESOColumn] = value;
                 }
             }
             
@@ -1229,6 +1314,88 @@ namespace CsPresentacion {
                 }
                 set {
                     this[this.tableSp_Genera_Contrato.AFILIACIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ESCOLARIDAD {
+                get {
+                    try {
+                        return ((string)(this[this.tableSp_Genera_Contrato.ESCOLARIDADColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ESCOLARIDAD\' de la tabla \'Sp_Genera_Contrato\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSp_Genera_Contrato.ESCOLARIDADColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string INFONAVIT {
+                get {
+                    try {
+                        return ((string)(this[this.tableSp_Genera_Contrato.INFONAVITColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'INFONAVIT\' de la tabla \'Sp_Genera_Contrato\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSp_Genera_Contrato.INFONAVITColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TIPO_EMPLEADO {
+                get {
+                    try {
+                        return ((string)(this[this.tableSp_Genera_Contrato.TIPO_EMPLEADOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TIPO_EMPLEADO\' de la tabla \'Sp_Genera_Contrato\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSp_Genera_Contrato.TIPO_EMPLEADOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DESCRIPCION_TURNO {
+                get {
+                    try {
+                        return ((string)(this[this.tableSp_Genera_Contrato.DESCRIPCION_TURNOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DESCRIPCION_TURNO\' de la tabla \'Sp_Genera_Contrato\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableSp_Genera_Contrato.DESCRIPCION_TURNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TURNO {
+                get {
+                    try {
+                        return ((string)(this[this.tableSp_Genera_Contrato.TURNOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TURNO\' de la tabla \'Sp_Genera_Contrato\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSp_Genera_Contrato.TURNOColumn] = value;
                 }
             }
             
@@ -1414,14 +1581,14 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTIPONull() {
-                return this.IsNull(this.tableSp_Genera_Contrato.TIPOColumn);
+            public bool IsTIPO_INGRESONull() {
+                return this.IsNull(this.tableSp_Genera_Contrato.TIPO_INGRESOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTIPONull() {
-                this[this.tableSp_Genera_Contrato.TIPOColumn] = global::System.Convert.DBNull;
+            public void SetTIPO_INGRESONull() {
+                this[this.tableSp_Genera_Contrato.TIPO_INGRESOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1494,6 +1661,66 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetAFILIACIONNull() {
                 this[this.tableSp_Genera_Contrato.AFILIACIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsESCOLARIDADNull() {
+                return this.IsNull(this.tableSp_Genera_Contrato.ESCOLARIDADColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetESCOLARIDADNull() {
+                this[this.tableSp_Genera_Contrato.ESCOLARIDADColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsINFONAVITNull() {
+                return this.IsNull(this.tableSp_Genera_Contrato.INFONAVITColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetINFONAVITNull() {
+                this[this.tableSp_Genera_Contrato.INFONAVITColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTIPO_EMPLEADONull() {
+                return this.IsNull(this.tableSp_Genera_Contrato.TIPO_EMPLEADOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTIPO_EMPLEADONull() {
+                this[this.tableSp_Genera_Contrato.TIPO_EMPLEADOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDESCRIPCION_TURNONull() {
+                return this.IsNull(this.tableSp_Genera_Contrato.DESCRIPCION_TURNOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDESCRIPCION_TURNONull() {
+                this[this.tableSp_Genera_Contrato.DESCRIPCION_TURNOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTURNONull() {
+                return this.IsNull(this.tableSp_Genera_Contrato.TURNOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTURNONull() {
+                this[this.tableSp_Genera_Contrato.TURNOColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1671,13 +1898,18 @@ namespace CsPresentacion.DS_Contrato_empleadoTableAdapters {
             tableMapping.ColumnMappings.Add("SUELDO", "SUELDO");
             tableMapping.ColumnMappings.Add("NOMBRE", "NOMBRE");
             tableMapping.ColumnMappings.Add("INGRESO", "INGRESO");
-            tableMapping.ColumnMappings.Add("TIPO", "TIPO");
+            tableMapping.ColumnMappings.Add("TIPO_INGRESO", "TIPO_INGRESO");
             tableMapping.ColumnMappings.Add("CP", "CP");
             tableMapping.ColumnMappings.Add("TELEFONO", "TELEFONO");
             tableMapping.ColumnMappings.Add("EDAD", "EDAD");
             tableMapping.ColumnMappings.Add("CONTACTO_EMERGENCIA", "CONTACTO_EMERGENCIA");
             tableMapping.ColumnMappings.Add("TELEFONO_EMERGENCIA", "TELEFONO_EMERGENCIA");
             tableMapping.ColumnMappings.Add("AFILIACION", "AFILIACION");
+            tableMapping.ColumnMappings.Add("ESCOLARIDAD", "ESCOLARIDAD");
+            tableMapping.ColumnMappings.Add("INFONAVIT", "INFONAVIT");
+            tableMapping.ColumnMappings.Add("TIPO_EMPLEADO", "TIPO_EMPLEADO");
+            tableMapping.ColumnMappings.Add("DESCRIPCION_TURNO", "DESCRIPCION_TURNO");
+            tableMapping.ColumnMappings.Add("TURNO", "TURNO");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

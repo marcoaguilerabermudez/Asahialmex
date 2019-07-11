@@ -57,7 +57,7 @@ namespace CsPresentacion
         {
             lbl_var.Visible = false;
             lbl_var.Text = "1";
-            lbl_tipo.Text = "NUEVO INGRESO";
+            lbl_tipo_ingreso.Text = "NUEVO INGRESO";
             txt_paterno.Text = "";
             txt_materno.Text = "";
             txt_nombre.Text = "";
@@ -219,7 +219,7 @@ namespace CsPresentacion
                 con.Open();
                 DataTable dt = new DataTable();
                 String strSql;
-                strSql = "[dbo].[SP_Contrato_empleados]";
+                strSql = "[dbo].[SP_Inserta_Contrato]";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.Add("@Clave", SqlDbType.VarChar).Value = txt_Clave.Text;
@@ -258,7 +258,10 @@ namespace CsPresentacion
                 da.SelectCommand.Parameters.Add("@sdo1", SqlDbType.VarChar).Value = txt_SDO1.Text;
                 da.SelectCommand.Parameters.Add("@sdo2", SqlDbType.VarChar).Value = txt_SDO3.Text;
                 da.SelectCommand.Parameters.Add("@Aviso", SqlDbType.VarChar).Value = Aviso_empleado;
-                da.SelectCommand.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = lbl_tipo.Text;
+                da.SelectCommand.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = lbl_tipo_ingreso.Text;//Tipo de alta
+                da.SelectCommand.Parameters.Add("@Infonavit", SqlDbType.VarChar).Value = cmb_infonavit.Text;
+                da.SelectCommand.Parameters.Add("@Horario", SqlDbType.VarChar).Value = cmb_turno.Text;
+
 
                 da.Fill(dt);
                 con.Close();
@@ -296,14 +299,14 @@ namespace CsPresentacion
                         if (txt_estado.Text == "BAJA")
                         {
                             groupBox2.Visible = true;
-                            lbl_tipo.Text = "REINGRESO";
+                            lbl_tipo_ingreso.Text = "REINGRESO";
                             lbl_var.Text = "2";
                         }
                         else if (txt_estado.Text == "VIGENTE")
                         {
                             MessageBox.Show("EMPLEADO SE ENCUENTRA VIGENTE", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             btn_pp_siguiente.Enabled = false;
-                            lbl_tipo.Text = "VIGENTE";
+                            lbl_tipo_ingreso.Text = "VIGENTE";
 
                         }
                         
@@ -645,37 +648,37 @@ namespace CsPresentacion
         }
         private void Button2_Click(object sender, EventArgs e)//Alta de empleado
         {
-            if (string.IsNullOrEmpty(cmb_turno.Text))
-            {
-                MessageBox.Show("Es necesario capturar el turno.", "Aviso");
-                cmb_turno.Focus();
-            }
-            else if (string.IsNullOrEmpty(cmb_ruta.Text))
-            {
-                MessageBox.Show("Es necesario capturar la ruta.", "Aviso");
-                cmb_ruta.Focus();
-            }
-            else if (string.IsNullOrEmpty(txt_contacto.Text))
-            {
-                MessageBox.Show("Es necesario capturar información de contacto.", "Aviso");
-                txt_contacto.Focus();
-            }
-            else if (string.IsNullOrEmpty(txt_tel_contacto.Text))
-            {
-                MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso");
-                txt_tel_contacto.Focus();
-            }
-            else
-            {
-                Registra_empleado();
+            //if (string.IsNullOrEmpty(cmb_turno.Text))
+            //{
+            //    MessageBox.Show("Es necesario capturar el turno.", "Aviso");
+            //    cmb_turno.Focus();
+            //}
+            //else if (string.IsNullOrEmpty(cmb_ruta.Text))
+            //{
+            //    MessageBox.Show("Es necesario capturar la ruta.", "Aviso");
+            //    cmb_ruta.Focus();
+            //}
+            //else if (string.IsNullOrEmpty(txt_contacto.Text))
+            //{
+            //    MessageBox.Show("Es necesario capturar información de contacto.", "Aviso");
+            //    txt_contacto.Focus();
+            //}
+            //else if (string.IsNullOrEmpty(txt_tel_contacto.Text))
+            //{
+            //    MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso");
+            //    txt_tel_contacto.Focus();
+            //}
+            //else
+          //  {
+               // Registra_empleado();
                 Crea_Contrato();
                 Frm_Rep_Alta_empleado Rep = new Frm_Rep_Alta_empleado();
                 Rep.CLAVE = Convert.ToInt32(txt_Clave.Text);
                 Rep.ShowDialog();
-                Panel_principal.Visible = true;
-                nuevo();
-                selecciona_clave();
-            }
+               // Panel_principal.Visible = true;
+               // nuevo();
+                //selecciona_clave();
+            //}
         }
         private void Btn_fin_anterior_Click(object sender, EventArgs e)
         {

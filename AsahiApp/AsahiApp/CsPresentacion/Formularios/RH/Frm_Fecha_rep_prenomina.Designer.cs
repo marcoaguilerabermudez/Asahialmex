@@ -1,6 +1,6 @@
 ﻿namespace CsPresentacion
 {
-    partial class Frm_Fecha_rep_prenomina
+    partial class Frm_Parametros_rep_prenomina
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_semana = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,11 +36,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtm_final = new System.Windows.Forms.DateTimePicker();
             this.btn_reporte = new System.Windows.Forms.Button();
-            this.btn_nuevo = new System.Windows.Forms.Button();
             this.lbl_var = new System.Windows.Forms.Label();
             this.lbl_tipo = new System.Windows.Forms.Label();
             this.txt_año = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_nuevo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -112,6 +114,46 @@
             this.btn_reporte.UseVisualStyleBackColor = false;
             this.btn_reporte.Click += new System.EventHandler(this.Btn_reporte_Click);
             // 
+            // lbl_var
+            // 
+            this.lbl_var.AutoSize = true;
+            this.lbl_var.Location = new System.Drawing.Point(18, 176);
+            this.lbl_var.Name = "lbl_var";
+            this.lbl_var.Size = new System.Drawing.Size(34, 13);
+            this.lbl_var.TabIndex = 149;
+            this.lbl_var.Text = "@Var";
+            // 
+            // lbl_tipo
+            // 
+            this.lbl_tipo.AutoSize = true;
+            this.lbl_tipo.Location = new System.Drawing.Point(17, 200);
+            this.lbl_tipo.Name = "lbl_tipo";
+            this.lbl_tipo.Size = new System.Drawing.Size(39, 13);
+            this.lbl_tipo.TabIndex = 150;
+            this.lbl_tipo.Text = "@Tipo";
+            // 
+            // txt_año
+            // 
+            this.txt_año.Location = new System.Drawing.Point(21, 31);
+            this.txt_año.MaxLength = 4;
+            this.txt_año.Name = "txt_año";
+            this.txt_año.Size = new System.Drawing.Size(57, 20);
+            this.txt_año.TabIndex = 152;
+            this.txt_año.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_año_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 151;
+            this.label4.Text = "AÑO:";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // btn_nuevo
             // 
             this.btn_nuevo.BackColor = System.Drawing.Color.White;
@@ -128,42 +170,7 @@
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
             // 
-            // lbl_var
-            // 
-            this.lbl_var.AutoSize = true;
-            this.lbl_var.Location = new System.Drawing.Point(18, 176);
-            this.lbl_var.Name = "lbl_var";
-            this.lbl_var.Size = new System.Drawing.Size(34, 13);
-            this.lbl_var.TabIndex = 149;
-            this.lbl_var.Text = "@Var";
-            // 
-            // lbl_tipo
-            // 
-            this.lbl_tipo.AutoSize = true;
-            this.lbl_tipo.Location = new System.Drawing.Point(18, 200);
-            this.lbl_tipo.Name = "lbl_tipo";
-            this.lbl_tipo.Size = new System.Drawing.Size(39, 13);
-            this.lbl_tipo.TabIndex = 150;
-            this.lbl_tipo.Text = "@Tipo";
-            // 
-            // txt_año
-            // 
-            this.txt_año.Location = new System.Drawing.Point(21, 31);
-            this.txt_año.MaxLength = 2;
-            this.txt_año.Name = "txt_año";
-            this.txt_año.Size = new System.Drawing.Size(57, 20);
-            this.txt_año.TabIndex = 152;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 151;
-            this.label4.Text = "AÑO:";
-            // 
-            // Frm_Fecha_rep_prenomina
+            // Frm_Parametros_rep_prenomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,7 +191,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Frm_Fecha_rep_prenomina";
+            this.Name = "Frm_Parametros_rep_prenomina";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Frm_Fecha_rep_prenomina_Load);
@@ -209,5 +216,6 @@
         public System.Windows.Forms.Label lbl_tipo;
         private System.Windows.Forms.TextBox txt_año;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
     }
 }

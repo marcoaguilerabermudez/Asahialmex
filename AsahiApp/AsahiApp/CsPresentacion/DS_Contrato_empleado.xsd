@@ -37,13 +37,18 @@
               <Mapping SourceColumn="SUELDO" DataSetColumn="SUELDO" />
               <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
               <Mapping SourceColumn="INGRESO" DataSetColumn="INGRESO" />
-              <Mapping SourceColumn="TIPO" DataSetColumn="TIPO" />
+              <Mapping SourceColumn="TIPO_INGRESO" DataSetColumn="TIPO_INGRESO" />
               <Mapping SourceColumn="CP" DataSetColumn="CP" />
               <Mapping SourceColumn="TELEFONO" DataSetColumn="TELEFONO" />
               <Mapping SourceColumn="EDAD" DataSetColumn="EDAD" />
               <Mapping SourceColumn="CONTACTO_EMERGENCIA" DataSetColumn="CONTACTO_EMERGENCIA" />
               <Mapping SourceColumn="TELEFONO_EMERGENCIA" DataSetColumn="TELEFONO_EMERGENCIA" />
               <Mapping SourceColumn="AFILIACION" DataSetColumn="AFILIACION" />
+              <Mapping SourceColumn="ESCOLARIDAD" DataSetColumn="ESCOLARIDAD" />
+              <Mapping SourceColumn="INFONAVIT" DataSetColumn="INFONAVIT" />
+              <Mapping SourceColumn="TIPO_EMPLEADO" DataSetColumn="TIPO_EMPLEADO" />
+              <Mapping SourceColumn="DESCRIPCION_TURNO" DataSetColumn="DESCRIPCION_TURNO" />
+              <Mapping SourceColumn="TURNO" DataSetColumn="TURNO" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -133,7 +138,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="INGRESO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINGRESO" msprop:Generator_ColumnPropNameInRow="INGRESO" msprop:Generator_ColumnPropNameInTable="INGRESOColumn" msprop:Generator_UserColumnName="INGRESO" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TIPO" msprop:Generator_ColumnVarNameInTable="columnTIPO" msprop:Generator_ColumnPropNameInRow="TIPO" msprop:Generator_ColumnPropNameInTable="TIPOColumn" msprop:Generator_UserColumnName="TIPO" minOccurs="0">
+              <xs:element name="TIPO_INGRESO" msprop:Generator_ColumnVarNameInTable="columnTIPO_INGRESO" msprop:Generator_ColumnPropNameInRow="TIPO_INGRESO" msprop:Generator_ColumnPropNameInTable="TIPO_INGRESOColumn" msprop:Generator_UserColumnName="TIPO_INGRESO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
@@ -167,6 +172,41 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ESCOLARIDAD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnESCOLARIDAD" msprop:Generator_ColumnPropNameInRow="ESCOLARIDAD" msprop:Generator_ColumnPropNameInTable="ESCOLARIDADColumn" msprop:Generator_UserColumnName="ESCOLARIDAD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="INFONAVIT" msprop:Generator_ColumnVarNameInTable="columnINFONAVIT" msprop:Generator_ColumnPropNameInRow="INFONAVIT" msprop:Generator_ColumnPropNameInTable="INFONAVITColumn" msprop:Generator_UserColumnName="INFONAVIT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TIPO_EMPLEADO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTIPO_EMPLEADO" msprop:Generator_ColumnPropNameInRow="TIPO_EMPLEADO" msprop:Generator_ColumnPropNameInTable="TIPO_EMPLEADOColumn" msprop:Generator_UserColumnName="TIPO_EMPLEADO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCRIPCION_TURNO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDESCRIPCION_TURNO" msprop:Generator_ColumnPropNameInRow="DESCRIPCION_TURNO" msprop:Generator_ColumnPropNameInTable="DESCRIPCION_TURNOColumn" msprop:Generator_UserColumnName="DESCRIPCION_TURNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TURNO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTURNO" msprop:Generator_ColumnPropNameInRow="TURNO" msprop:Generator_ColumnPropNameInTable="TURNOColumn" msprop:Generator_UserColumnName="TURNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

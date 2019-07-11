@@ -30,26 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.Sp_Genera_ContratoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DS_Contrato_empleado = new CsPresentacion.DS_Contrato_empleado();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.Sp_Genera_ContratoTableAdapter = new CsPresentacion.DS_Contrato_empleadoTableAdapters.Sp_Genera_ContratoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Sp_Genera_ContratoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_Contrato_empleado)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.Sp_Genera_ContratoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Contrato.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(834, 729);
-            this.reportViewer1.TabIndex = 0;
             // 
             // Sp_Genera_ContratoBindingSource
             // 
@@ -60,6 +47,19 @@
             // 
             this.DS_Contrato_empleado.DataSetName = "DS_Contrato_empleado";
             this.DS_Contrato_empleado.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.Sp_Genera_ContratoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Contrato_Empleado.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(834, 729);
+            this.reportViewer1.TabIndex = 0;
             // 
             // Sp_Genera_ContratoTableAdapter
             // 

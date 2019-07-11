@@ -32,7 +32,7 @@
             this.txt_factor = new System.Windows.Forms.TextBox();
             this.lbl_var = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.lbl_tipo = new System.Windows.Forms.Label();
+            this.lbl_tipo_ingreso = new System.Windows.Forms.Label();
             this.rdb_expatriado = new System.Windows.Forms.RadioButton();
             this.rdb_nacional = new System.Windows.Forms.RadioButton();
             this.lbl_tipo_empleado = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_factor = new System.Windows.Forms.Label();
             this.txt_nacionalidad = new System.Windows.Forms.TextBox();
+            this.btn_finalizar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.cmb_puesto = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txt_SDO5 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_finalizar = new System.Windows.Forms.Button();
             this.cmb_turno = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -131,6 +131,8 @@
             this.btn_ps_siguiente = new System.Windows.Forms.Button();
             this.grb_nacimiento = new System.Windows.Forms.GroupBox();
             this.panel_final = new System.Windows.Forms.Panel();
+            this.cmb_infonavit = new System.Windows.Forms.ComboBox();
+            this.lbl_infonavit = new System.Windows.Forms.Label();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.cmb_parentesco = new System.Windows.Forms.ComboBox();
@@ -159,7 +161,7 @@
             this.Panel_principal.Controls.Add(this.txt_factor);
             this.Panel_principal.Controls.Add(this.lbl_var);
             this.Panel_principal.Controls.Add(this.label32);
-            this.Panel_principal.Controls.Add(this.lbl_tipo);
+            this.Panel_principal.Controls.Add(this.lbl_tipo_ingreso);
             this.Panel_principal.Controls.Add(this.rdb_expatriado);
             this.Panel_principal.Controls.Add(this.rdb_nacional);
             this.Panel_principal.Controls.Add(this.lbl_tipo_empleado);
@@ -220,15 +222,15 @@
             this.label32.TabIndex = 42;
             this.label32.Text = "ESTADO:";
             // 
-            // lbl_tipo
+            // lbl_tipo_ingreso
             // 
-            this.lbl_tipo.AutoSize = true;
-            this.lbl_tipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tipo.Location = new System.Drawing.Point(74, 462);
-            this.lbl_tipo.Name = "lbl_tipo";
-            this.lbl_tipo.Size = new System.Drawing.Size(111, 13);
-            this.lbl_tipo.TabIndex = 41;
-            this.lbl_tipo.Text = "@NUEVO INGRESO:";
+            this.lbl_tipo_ingreso.AutoSize = true;
+            this.lbl_tipo_ingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tipo_ingreso.Location = new System.Drawing.Point(74, 462);
+            this.lbl_tipo_ingreso.Name = "lbl_tipo_ingreso";
+            this.lbl_tipo_ingreso.Size = new System.Drawing.Size(111, 13);
+            this.lbl_tipo_ingreso.TabIndex = 41;
+            this.lbl_tipo_ingreso.Text = "@NUEVO INGRESO:";
             // 
             // rdb_expatriado
             // 
@@ -364,6 +366,20 @@
             this.txt_nacionalidad.TabIndex = 8;
             this.txt_nacionalidad.TextChanged += new System.EventHandler(this.Txt_nacionalidad_TextChanged);
             this.txt_nacionalidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_nacionalidad_KeyPress);
+            // 
+            // btn_finalizar
+            // 
+            this.btn_finalizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_finalizar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btn_finalizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btn_finalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_finalizar.Location = new System.Drawing.Point(495, 511);
+            this.btn_finalizar.Name = "btn_finalizar";
+            this.btn_finalizar.Size = new System.Drawing.Size(81, 39);
+            this.btn_finalizar.TabIndex = 38;
+            this.btn_finalizar.Text = "&Finalizar";
+            this.btn_finalizar.UseVisualStyleBackColor = true;
+            this.btn_finalizar.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label9
             // 
@@ -634,20 +650,6 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             // 
-            // btn_finalizar
-            // 
-            this.btn_finalizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_finalizar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_finalizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
-            this.btn_finalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_finalizar.Location = new System.Drawing.Point(496, 515);
-            this.btn_finalizar.Name = "btn_finalizar";
-            this.btn_finalizar.Size = new System.Drawing.Size(81, 39);
-            this.btn_finalizar.TabIndex = 37;
-            this.btn_finalizar.Text = "&Finalizar";
-            this.btn_finalizar.UseVisualStyleBackColor = true;
-            this.btn_finalizar.Click += new System.EventHandler(this.Button2_Click);
-            // 
             // cmb_turno
             // 
             this.cmb_turno.FormattingEnabled = true;
@@ -656,16 +658,16 @@
             "MATUTINO",
             "VESPERTINO",
             "NOCTURNO"});
-            this.cmb_turno.Location = new System.Drawing.Point(20, 280);
+            this.cmb_turno.Location = new System.Drawing.Point(20, 289);
             this.cmb_turno.Name = "cmb_turno";
             this.cmb_turno.Size = new System.Drawing.Size(166, 21);
-            this.cmb_turno.TabIndex = 35;
+            this.cmb_turno.TabIndex = 36;
             this.cmb_turno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_turno_KeyPress);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(18, 264);
+            this.label16.Location = new System.Drawing.Point(18, 273);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(49, 13);
             this.label16.TabIndex = 34;
@@ -750,7 +752,7 @@
             this.Panel_secundario.Controls.Add(this.btn_ps_anterior);
             this.Panel_secundario.Controls.Add(this.btn_ps_siguiente);
             this.Panel_secundario.Controls.Add(this.grb_nacimiento);
-            this.Panel_secundario.Location = new System.Drawing.Point(0, 50);
+            this.Panel_secundario.Location = new System.Drawing.Point(614, 50);
             this.Panel_secundario.Name = "Panel_secundario";
             this.Panel_secundario.Size = new System.Drawing.Size(595, 566);
             this.Panel_secundario.TabIndex = 1;
@@ -1337,6 +1339,8 @@
             // 
             // panel_final
             // 
+            this.panel_final.Controls.Add(this.cmb_infonavit);
+            this.panel_final.Controls.Add(this.lbl_infonavit);
             this.panel_final.Controls.Add(this.cmb_ruta);
             this.panel_final.Controls.Add(this.label19);
             this.panel_final.Controls.Add(this.cmb_parentesco);
@@ -1352,14 +1356,34 @@
             this.panel_final.Controls.Add(this.txt_año_graduacion);
             this.panel_final.Controls.Add(this.label48);
             this.panel_final.Controls.Add(this.label49);
+            this.panel_final.Controls.Add(this.btn_finalizar);
             this.panel_final.Controls.Add(this.cmb_escolaridad);
             this.panel_final.Controls.Add(this.btn_fin_anterior);
-            this.panel_final.Controls.Add(this.btn_finalizar);
-            this.panel_final.Location = new System.Drawing.Point(0, 50);
+            this.panel_final.Location = new System.Drawing.Point(1238, 50);
             this.panel_final.Name = "panel_final";
             this.panel_final.Size = new System.Drawing.Size(595, 565);
             this.panel_final.TabIndex = 232;
             this.panel_final.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_final_Paint);
+            // 
+            // cmb_infonavit
+            // 
+            this.cmb_infonavit.FormattingEnabled = true;
+            this.cmb_infonavit.Items.AddRange(new object[] {
+            "NO",
+            "SI"});
+            this.cmb_infonavit.Location = new System.Drawing.Point(20, 247);
+            this.cmb_infonavit.Name = "cmb_infonavit";
+            this.cmb_infonavit.Size = new System.Drawing.Size(65, 21);
+            this.cmb_infonavit.TabIndex = 35;
+            // 
+            // lbl_infonavit
+            // 
+            this.lbl_infonavit.AutoSize = true;
+            this.lbl_infonavit.Location = new System.Drawing.Point(18, 230);
+            this.lbl_infonavit.Name = "lbl_infonavit";
+            this.lbl_infonavit.Size = new System.Drawing.Size(67, 13);
+            this.lbl_infonavit.TabIndex = 234;
+            this.lbl_infonavit.Text = "INFONAVIT:";
             // 
             // cmb_ruta
             // 
@@ -1379,16 +1403,16 @@
             "LEÓN-ADMINISTRATIVO",
             "GUANAJUATO-ADMINISTRATIVO",
             "IRAPUATO-ADMINISTRATIVO"});
-            this.cmb_ruta.Location = new System.Drawing.Point(20, 323);
+            this.cmb_ruta.Location = new System.Drawing.Point(20, 330);
             this.cmb_ruta.Name = "cmb_ruta";
             this.cmb_ruta.Size = new System.Drawing.Size(166, 21);
-            this.cmb_ruta.TabIndex = 36;
+            this.cmb_ruta.TabIndex = 37;
             this.cmb_ruta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_ruta_KeyPress);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(17, 306);
+            this.label19.Location = new System.Drawing.Point(18, 314);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(40, 13);
             this.label19.TabIndex = 232;
@@ -1535,7 +1559,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(596, 619);
+            this.ClientSize = new System.Drawing.Size(1924, 619);
             this.Controls.Add(this.Panel_secundario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);
@@ -1678,11 +1702,13 @@
         private System.Windows.Forms.RadioButton rdb_expatriado;
         private System.Windows.Forms.RadioButton rdb_nacional;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label lbl_tipo;
+        private System.Windows.Forms.Label lbl_tipo_ingreso;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label lbl_var;
         private System.Windows.Forms.TextBox txt_factor;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox txt_hijos;
+        private System.Windows.Forms.ComboBox cmb_infonavit;
+        private System.Windows.Forms.Label lbl_infonavit;
     }
 }
