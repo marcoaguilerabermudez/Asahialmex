@@ -115,6 +115,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
+    <Compile Include="DataSet\Dts_PlanHrsExt4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Acerca.Designer.vb">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
     </Compile>
@@ -195,6 +200,12 @@
     <Compile Include="RH\Frm_ListaPrenomina.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RH\Frm_PlanHrsExtra4.Designer.vb">
+      <DependentUpon>Frm_PlanHrsExtra4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_PlanHrsExtra4.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Frm_Acerca.resx">
@@ -235,9 +246,24 @@
     <EmbeddedResource Include="RH\Frm_ListaPrenomina.resx">
       <DependentUpon>Frm_ListaPrenomina.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_PlanHrsExtra4.resx">
+      <DependentUpon>Frm_PlanHrsExtra4.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DataSet\Dts_PlanHrsExt4.xsc">
+      <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Dts_PlanHrsExt4.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_PlanHrsExt4.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\Dts_PlanHrsExt4.xss">
+      <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -383,5 +409,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

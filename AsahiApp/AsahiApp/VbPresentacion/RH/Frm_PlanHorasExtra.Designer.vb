@@ -225,6 +225,7 @@ Partial Class Frm_PlanHorasExtra
         '
         'Dgv_HorasExtra
         '
+        Me.Dgv_HorasExtra.AllowUserToAddRows = False
         Me.Dgv_HorasExtra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_HorasExtra.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clave, Me.nombre, Me.departamento, Me.idTurno, Me.sueldoBruto, Me.sueldoNeto, Me.lunes, Me.martes, Me.miercoles, Me.jueves, Me.viernes, Me.sabado, Me.domingo, Me.dobles, Me.triples, Me.totalDobles, Me.totalTriples, Me.totalBruto, Me.TotalNeto})
         Me.Dgv_HorasExtra.Dock = System.Windows.Forms.DockStyle.Fill

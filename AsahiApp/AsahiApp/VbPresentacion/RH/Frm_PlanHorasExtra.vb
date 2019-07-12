@@ -6,6 +6,8 @@ Public Class Frm_PlanHorasExtra
 #Region "Variables de Clase"
     Dim conex As New conexion()
     Dim cadenaConex As String = conex.conexion2008
+    Dim columna As String
+    Dim fila As Integer, semana As Integer
 #End Region
 #Region "Acciones del Formulario"
     Private Sub Frm_PlanHorasExtra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -15,6 +17,7 @@ Public Class Frm_PlanHorasExtra
         RellenaCmbDepartamento()
         hrs = NPre.RecuperarDiasSemana(Me.conex.conexionContpaq, DateTime.Now)
         Cmb_Semanas.SelectedIndex = hrs.Semana - 1
+        Me.semana = hrs.Semana
         Cmb_Semanas_SelectionChangeCommitted(sender, e)
     End Sub
     Private Sub Cmb_Semanas_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_Semanas.SelectionChangeCommitted
@@ -46,7 +49,11 @@ Public Class Frm_PlanHorasExtra
         fecha = Format(DateTime.Now, "dd/MM/yyyy")
         semana = Cmb_Semanas.Text
         año = Lbl_año.Text
-        Btn_Guardar.Visible = False
+        If Me.semana <= Cmb_Semanas.Text Then
+            Dgv_HorasExtra.Enabled = True
+        Else
+            Dgv_HorasExtra.Enabled = False
+        End If
         RecuperarEmpleado(idDep, fecha, semana, año)
     End Sub
     Private Sub Dgv_HorasExtra_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_HorasExtra.CellEndEdit
@@ -118,8 +125,36 @@ Public Class Frm_PlanHorasExtra
             Btn_Guardar.Visible = True
         End If
     End Sub
+    Private Sub Dgv_HorasExtra_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles Dgv_HorasExtra.EditingControlShowing
+        ' referencia a la celda 
+        Dim validar As TextBox = CType(e.Control, TextBox)
+        ' agregar el controlador de eventos para el KeyPress 
+        AddHandler validar.KeyPress, AddressOf Dgv_HorasExtra_KeyPress
+    End Sub
     Private Sub Dgv_HorasExtra_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Dgv_HorasExtra.KeyPress
+        ' obtener indice de la columna 
+        Dim columna As Integer = Dgv_HorasExtra.CurrentCell.ColumnIndex
 
+        If columna = 6 Or columna = 7 Or columna = 8 Or columna = 9 Or columna = 10 Or columna = 11 Or columna = 12 Then
+            Dim caracter As Char = e.KeyChar
+            ' referencia a la celda 
+            Dim txt As TextBox = CType(sender, TextBox)
+            ' comprobar si es un nmero con isNumber, si es el backspace, si el caracter 
+            ' es el separador decimal, y que no contiene ya el separador 
+            If (Char.IsNumber(caracter)) Or
+            (caracter = ChrW(Keys.Back)) Or
+            (caracter = ".") And
+            (txt.Text.Contains(".") = False) Then
+
+                e.Handled = False
+            Else
+                e.Handled = True
+            End If
+        End If
+    End Sub
+    Private Sub Dgv_HorasExtra_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_HorasExtra.CellEnter
+        Me.fila = Dgv_HorasExtra.CurrentRow.Index
+        Me.columna = Dgv_HorasExtra.Columns(e.ColumnIndex).Name
     End Sub
     Private Sub Btn_Guardar_Click(sender As Object, e As EventArgs) Handles Btn_Guardar.Click
         Dim conex As New conexion(), lstHrxEx As New LHorasExtra(), NHrsEx As New NHorasExtra()
@@ -207,7 +242,11 @@ Public Class Frm_PlanHorasExtra
             End With
             fila += 1
         Next
-        Dgv_HorasExtra.Enabled = True
+        If Me.semana <= Cmb_Semanas.Text Then
+            Dgv_HorasExtra.Enabled = True
+        Else
+            Dgv_HorasExtra.Enabled = False
+        End If
         'Dgv_HorasExtra.Rows.Remove(Dgv_HorasExtra.Rows(fila))
     End Sub
 #End Region
@@ -215,7 +254,7 @@ Public Class Frm_PlanHorasExtra
     Private Function RellenaObjetoLHrsExtra() As LHorasExtra
         Dim lstHrsEx As New LHorasExtra()
         Dim fila As Integer, totalFilas As Integer = Dgv_HorasExtra.Rows.Count()
-        For fila = 0 To totalFilas - 2
+        For fila = 0 To totalFilas - 1
             With Dgv_HorasExtra.Rows(fila)
                 If .Cells("totalNeto").Value > 0 Then
                     Dim objHE As New HorasExtra()
