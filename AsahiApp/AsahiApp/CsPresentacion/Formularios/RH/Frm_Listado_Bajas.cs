@@ -591,5 +591,10 @@ namespace CsPresentacion
                 rep.ShowDialog();
             }
         }
+
+        private void Txt_semana_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

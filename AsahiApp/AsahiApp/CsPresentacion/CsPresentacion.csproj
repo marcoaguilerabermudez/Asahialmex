@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LogoFinal.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -78,6 +81,51 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS_Contrato_empleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Contrato_empleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_Credenciales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Credenciales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_Reportes_Prenomina.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Reportes_Prenomina.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Credenciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Credenciales.Designer.cs">
+      <DependentUpon>Frm_Credenciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Fecha_rep_prenomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Fecha_rep_prenomina.Designer.cs">
+      <DependentUpon>Frm_Fecha_rep_prenomina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Frm_Rep_Descanso_Laborado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Frm_Rep_Descanso_Laborado.Designer.cs">
+      <DependentUpon>Frm_Rep_Descanso_Laborado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Rep_Credenciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Rep_Credenciales.Designer.cs">
+      <DependentUpon>Rep_Credenciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Frm_Rep_Alta_empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Frm_Rep_Alta_empleado.Designer.cs">
+      <DependentUpon>Frm_Rep_Alta_empleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_Altas1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,17 +146,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Mejoras3.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Formularios\RH\Frm_Rep_Mejoras_Continuas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Rep_Mejoras_Continuas.Designer.cs">
+      <DependentUpon>Frm_Rep_Mejoras_Continuas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Modifica.cs">
+    <Compile Include="Formularios\RH\Frm_Modifica_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Modifica.Designer.cs">
-      <DependentUpon>Frm_Modifica.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Modifica_Empleado.Designer.cs">
+      <DependentUpon>Frm_Modifica_Empleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Listado_Altas.cs">
       <SubType>Form</SubType>
@@ -128,11 +176,11 @@
     <Compile Include="Formularios\RH\Frm_Finiquito.Designer.cs">
       <DependentUpon>Frm_Finiquito.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_bajas.cs">
+    <Compile Include="Formularios\RH\Frm_Bajas_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_bajas.Designer.cs">
-      <DependentUpon>Frm_bajas.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Bajas_Empleados.Designer.cs">
+      <DependentUpon>Frm_Bajas_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Fecha_Baja.cs">
       <SubType>Form</SubType>
@@ -140,11 +188,11 @@
     <Compile Include="Formularios\RH\Frm_Fecha_Baja.Designer.cs">
       <DependentUpon>Frm_Fecha_Baja.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_cambio_puesto.cs">
+    <Compile Include="Formularios\RH\Frm_Cambio_Puesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_cambio_puesto.Designer.cs">
-      <DependentUpon>Frm_cambio_puesto.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Cambio_Puesto.Designer.cs">
+      <DependentUpon>Frm_Cambio_Puesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Cambio_Depto.cs">
       <SubType>Form</SubType>
@@ -163,6 +211,12 @@
     </Compile>
     <Compile Include="Formularios\RH\Frm_Mejora_Param.Designer.cs">
       <DependentUpon>Frm_Mejora_Param.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Altas_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Altas_Empleados.Designer.cs">
+      <DependentUpon>Frm_Altas_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Frm_Reporte_Bajas.cs">
       <SubType>Form</SubType>
@@ -230,11 +284,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Contrato.rdlc" />
+    <EmbeddedResource Include="Formularios\RH\Frm_Rep_Mejoras_Continuas.resx">
+      <DependentUpon>Frm_Rep_Mejoras_Continuas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_Modifica.resx">
-      <DependentUpon>Frm_Modifica.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Frm_Credenciales.resx">
+      <DependentUpon>Frm_Credenciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Modifica_Empleado.resx">
+      <DependentUpon>Frm_Modifica_Empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Listado_Altas.resx">
       <DependentUpon>Frm_Listado_Altas.cs</DependentUpon>
@@ -245,14 +303,14 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Finiquito.resx">
       <DependentUpon>Frm_Finiquito.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_bajas.resx">
-      <DependentUpon>Frm_bajas.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Frm_Bajas_Empleados.resx">
+      <DependentUpon>Frm_Bajas_Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Fecha_Baja.resx">
       <DependentUpon>Frm_Fecha_Baja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_cambio_puesto.resx">
-      <DependentUpon>Frm_cambio_puesto.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Frm_Cambio_Puesto.resx">
+      <DependentUpon>Frm_Cambio_Puesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Cambio_Depto.resx">
       <DependentUpon>Frm_Cambio_Depto.cs</DependentUpon>
@@ -262,6 +320,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Mejora_Param.resx">
       <DependentUpon>Frm_Mejora_Param.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Altas_Empleados.resx">
+      <DependentUpon>Frm_Altas_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Fecha_rep_prenomina.resx">
+      <DependentUpon>Frm_Fecha_rep_prenomina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Frm_Rep_Descanso_Laborado.resx">
+      <DependentUpon>Frm_Rep_Descanso_Laborado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Rep_Credenciales.resx">
+      <DependentUpon>Rep_Credenciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Frm_Rep_Alta_empleado.resx">
+      <DependentUpon>Frm_Rep_Alta_empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Frm_Reporte_altas.resx">
       <DependentUpon>Frm_Reporte_altas.cs</DependentUpon>
@@ -279,6 +352,8 @@
     <EmbeddedResource Include="Reportes\RH\Rep_Finiquito.resx">
       <DependentUpon>Rep_Finiquito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Credenciales.rdlc" />
+    <EmbeddedResource Include="Rep_Descanso_Laborado.rdlc" />
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
     <EmbeddedResource Include="Rep_Mejoras3.rdlc" />
   </ItemGroup>
@@ -306,6 +381,28 @@
     <None Include="DS_Bajas.xss">
       <DependentUpon>DS_Bajas.xsd</DependentUpon>
     </None>
+    <None Include="DS_Contrato_empleado.xsc">
+      <DependentUpon>DS_Contrato_empleado.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Contrato_empleado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Contrato_empleado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Contrato_empleado.xss">
+      <DependentUpon>DS_Contrato_empleado.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Credenciales.xsc">
+      <DependentUpon>DS_Credenciales.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Credenciales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Credenciales.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Credenciales.xss">
+      <DependentUpon>DS_Credenciales.xsd</DependentUpon>
+    </None>
     <None Include="DS_Finiquito.xsc">
       <DependentUpon>DS_Finiquito.xsd</DependentUpon>
     </None>
@@ -327,6 +424,17 @@
     </None>
     <None Include="DS_Mejoras3.xss">
       <DependentUpon>DS_Mejoras3.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Reportes_Prenomina.xsc">
+      <DependentUpon>DS_Reportes_Prenomina.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Reportes_Prenomina.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Reportes_Prenomina.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Reportes_Prenomina.xss">
+      <DependentUpon>DS_Reportes_Prenomina.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -412,6 +520,9 @@
     <None Include="Resources\Gear-icon2.png" />
     <None Include="Resources\Pencil-icon.png" />
     <None Include="Resources\Pencil-icon2.png" />
+    <Content Include="LogoFinal.ico" />
+    <None Include="Resources\iconfinder_arrow_circle_right_62150.png" />
+    <None Include="Resources\arrow-rotate-clockwise-icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
