@@ -43,6 +43,7 @@ Partial Class Frm_Principal
         Me.ActivosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaEmpleadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlanHorasExtraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PreNominaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,6 +55,7 @@ Partial Class Frm_Principal
         Me.VacacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FiniquitoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MejoraContinuaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlanHorasExtraToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDePruducciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDeProducciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -97,7 +99,7 @@ Partial Class Frm_Principal
         '
         'RecursosHumanosToolStripMenuItem
         '
-        Me.RecursosHumanosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem, Me.EmpleadosToolStripMenuItem, Me.ListadosToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.RecursosHumanosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem, Me.EmpleadosToolStripMenuItem, Me.ListadosToolStripMenuItem, Me.PlanHorasExtraToolStripMenuItem, Me.ReportesToolStripMenuItem})
         Me.RecursosHumanosToolStripMenuItem.Name = "RecursosHumanosToolStripMenuItem"
         Me.RecursosHumanosToolStripMenuItem.Size = New System.Drawing.Size(121, 20)
         Me.RecursosHumanosToolStripMenuItem.Text = "Recursos Humanos"
@@ -112,13 +114,13 @@ Partial Class Frm_Principal
         'PreNominaListadoToolStripMenuItem
         '
         Me.PreNominaListadoToolStripMenuItem.Name = "PreNominaListadoToolStripMenuItem"
-        Me.PreNominaListadoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PreNominaListadoToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.PreNominaListadoToolStripMenuItem.Text = "Pre nomina Listado"
         '
         'PreNominaGlobalToolStripMenuItem
         '
         Me.PreNominaGlobalToolStripMenuItem.Name = "PreNominaGlobalToolStripMenuItem"
-        Me.PreNominaGlobalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PreNominaGlobalToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.PreNominaGlobalToolStripMenuItem.Text = "Pre nomina Global"
         '
         'BonoMensualToolStripMenuItem
@@ -130,13 +132,13 @@ Partial Class Frm_Principal
         'ChecadasToolStripMenuItem
         '
         Me.ChecadasToolStripMenuItem.Name = "ChecadasToolStripMenuItem"
-        Me.ChecadasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ChecadasToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.ChecadasToolStripMenuItem.Text = "Checadas"
         '
         'ComidasToolStripMenuItem
         '
         Me.ComidasToolStripMenuItem.Name = "ComidasToolStripMenuItem"
-        Me.ComidasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ComidasToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.ComidasToolStripMenuItem.Text = "Comedor"
         '
         'EmpleadosToolStripMenuItem
@@ -195,9 +197,15 @@ Partial Class Frm_Principal
         Me.BajaEmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.BajaEmpleadosToolStripMenuItem1.Text = "Baja Empleados"
         '
+        'PlanHorasExtraToolStripMenuItem
+        '
+        Me.PlanHorasExtraToolStripMenuItem.Name = "PlanHorasExtraToolStripMenuItem"
+        Me.PlanHorasExtraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PlanHorasExtraToolStripMenuItem.Text = "Plan Tiempo Extra"
+        '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem1, Me.FiniquitoToolStripMenuItem, Me.MejoraContinuaToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem1, Me.FiniquitoToolStripMenuItem, Me.MejoraContinuaToolStripMenuItem, Me.PlanHorasExtraToolStripMenuItem1})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
@@ -262,6 +270,12 @@ Partial Class Frm_Principal
         Me.MejoraContinuaToolStripMenuItem.Name = "MejoraContinuaToolStripMenuItem"
         Me.MejoraContinuaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MejoraContinuaToolStripMenuItem.Text = "Mejora Continua"
+        '
+        'PlanHorasExtraToolStripMenuItem1
+        '
+        Me.PlanHorasExtraToolStripMenuItem1.Name = "PlanHorasExtraToolStripMenuItem1"
+        Me.PlanHorasExtraToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.PlanHorasExtraToolStripMenuItem1.Text = "Plan Tiempo Extra"
         '
         'ControlDePruducciónToolStripMenuItem
         '
@@ -365,4 +379,6 @@ Partial Class Frm_Principal
     Friend WithEvents AusentismosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents IncapacidadesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VacacionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PlanHorasExtraToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PlanHorasExtraToolStripMenuItem1 As ToolStripMenuItem
 End Class

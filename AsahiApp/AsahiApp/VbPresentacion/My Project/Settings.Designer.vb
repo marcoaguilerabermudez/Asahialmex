@@ -63,6 +63,17 @@ Namespace My
                 Return CType(Me("asahi16ConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=GIRO\SQLEXPRESS;Initial Catalog=AsahiSystem;Persist Security Info=Tru"& _ 
+            "e;User ID=sa;Password=Pa55word")>  _
+        Public ReadOnly Property AsahiSystemConnectionString() As String
+            Get
+                Return CType(Me("AsahiSystemConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

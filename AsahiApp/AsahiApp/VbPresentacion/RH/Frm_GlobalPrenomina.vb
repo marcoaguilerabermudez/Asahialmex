@@ -1135,6 +1135,7 @@ Public Class Frm_GlobalPrenomina
                                                 tx.Write(",00:0 ")
                                                 tx.Write(Lbl_año.Text)
                                                 tx.Write("                            ")
+                                                tx.WriteLine()
                                             End If
                                             tx.Write("D")
                                             tx.Write(" Semanal")
@@ -1145,7 +1146,7 @@ Public Class Frm_GlobalPrenomina
                                             If fgg >= 10 Then
                                                 tx.Write("Horas extras 3                              ")
                                             Else
-                                                tx.Write("Horas extras 3                              ")
+                                                tx.Write("Horas extras 3                               ")
                                             End If
                                             tx.Write(Format(fgg, "#0.00"))
                                             tx.Write(" ")
