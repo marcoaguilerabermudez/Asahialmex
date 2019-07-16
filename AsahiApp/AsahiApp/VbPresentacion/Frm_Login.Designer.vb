@@ -56,6 +56,8 @@ Partial Class Frm_Login
         'Btn_Aceptar
         '
         Me.Btn_Aceptar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_Aceptar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Btn_Aceptar.FlatAppearance.BorderSize = 0
         Me.Btn_Aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.Btn_Aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue
         Me.Btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -68,6 +70,7 @@ Partial Class Frm_Login
         'btn_cancelar
         '
         Me.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
         Me.btn_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue
         Me.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat

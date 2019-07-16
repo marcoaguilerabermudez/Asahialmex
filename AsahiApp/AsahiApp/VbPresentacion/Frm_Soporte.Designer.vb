@@ -85,7 +85,7 @@ Partial Class Frm_Soporte
         Me.Name = "Frm_Soporte"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SAAM"
+        Me.Text = "AAMS"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -74,6 +74,7 @@ Public Class Frm_GlobalPrenomina
             Btn_Txt.Visible = False
             Btn_Excel.Visible = False
             Txt_FiltroId.Enabled = False
+            Txt_FiltroId.Text = ""
             open = True
 
         Else

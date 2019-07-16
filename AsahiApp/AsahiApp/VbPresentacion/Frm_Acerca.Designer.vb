@@ -93,7 +93,7 @@ Partial Class Frm_Acerca
         Me.Name = "Frm_Acerca"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Acerca de SAAM"
+        Me.Text = "Acerca de AAMS"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

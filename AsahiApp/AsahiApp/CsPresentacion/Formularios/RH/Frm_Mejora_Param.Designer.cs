@@ -45,7 +45,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(100, 150);
+            this.button1.Location = new System.Drawing.Point(100, 160);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 28);
             this.button1.TabIndex = 4;
@@ -58,7 +58,7 @@
             this.btn_aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_aceptar.Location = new System.Drawing.Point(12, 150);
+            this.btn_aceptar.Location = new System.Drawing.Point(12, 160);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(71, 28);
             this.btn_aceptar.TabIndex = 3;
@@ -80,7 +80,7 @@
             this.cmb_departamento.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_departamento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_departamento.FormattingEnabled = true;
-            this.cmb_departamento.Location = new System.Drawing.Point(13, 112);
+            this.cmb_departamento.Location = new System.Drawing.Point(12, 103);
             this.cmb_departamento.Name = "cmb_departamento";
             this.cmb_departamento.Size = new System.Drawing.Size(170, 21);
             this.cmb_departamento.TabIndex = 1;
@@ -103,7 +103,7 @@
             "OCTUBRE",
             "NOVIEMBRE",
             "DICIEMBRE"});
-            this.cmb_mes.Location = new System.Drawing.Point(12, 59);
+            this.cmb_mes.Location = new System.Drawing.Point(12, 60);
             this.cmb_mes.Name = "cmb_mes";
             this.cmb_mes.Size = new System.Drawing.Size(170, 21);
             this.cmb_mes.TabIndex = 2;
@@ -113,7 +113,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 96);
+            this.label1.Location = new System.Drawing.Point(10, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 32;
@@ -141,7 +141,7 @@
             // lbl_var
             // 
             this.lbl_var.AutoSize = true;
-            this.lbl_var.Location = new System.Drawing.Point(153, 21);
+            this.lbl_var.Location = new System.Drawing.Point(132, 25);
             this.lbl_var.Name = "lbl_var";
             this.lbl_var.Size = new System.Drawing.Size(13, 13);
             this.lbl_var.TabIndex = 35;
@@ -167,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(200, 191);
+            this.ClientSize = new System.Drawing.Size(195, 191);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.lbl_var);
             this.Controls.Add(this.txt_clave);
