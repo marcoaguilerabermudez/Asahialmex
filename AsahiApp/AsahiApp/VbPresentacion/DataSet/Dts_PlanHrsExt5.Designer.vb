@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("Dts_PlanHrsExt4"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("Dts_PlanHrsExt5"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class Dts_PlanHrsExt4
+Partial Public Class Dts_PlanHrsExt5
     Inherits Global.System.Data.DataSet
     
-    Private tableRh_RptPlanHrsExtraMensual4 As Rh_RptPlanHrsExtraMensual4DataTable
+    Private tableRh_RptPlanHrsExtraMensual5 As Rh_RptPlanHrsExtraMensual5DataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class Dts_PlanHrsExt4
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("Rh_RptPlanHrsExtraMensual4")) Is Nothing) Then
-                MyBase.Tables.Add(New Rh_RptPlanHrsExtraMensual4DataTable(ds.Tables("Rh_RptPlanHrsExtraMensual4")))
+            If (Not (ds.Tables("Rh_RptPlanHrsExtraMensual5")) Is Nothing) Then
+                MyBase.Tables.Add(New Rh_RptPlanHrsExtraMensual5DataTable(ds.Tables("Rh_RptPlanHrsExtraMensual5")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class Dts_PlanHrsExt4
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Rh_RptPlanHrsExtraMensual4() As Rh_RptPlanHrsExtraMensual4DataTable
+    Public ReadOnly Property Rh_RptPlanHrsExtraMensual5() As Rh_RptPlanHrsExtraMensual5DataTable
         Get
-            Return Me.tableRh_RptPlanHrsExtraMensual4
+            Return Me.tableRh_RptPlanHrsExtraMensual5
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class Dts_PlanHrsExt4
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As Dts_PlanHrsExt4 = CType(MyBase.Clone,Dts_PlanHrsExt4)
+        Dim cln As Dts_PlanHrsExt5 = CType(MyBase.Clone,Dts_PlanHrsExt5)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class Dts_PlanHrsExt4
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("Rh_RptPlanHrsExtraMensual4")) Is Nothing) Then
-                MyBase.Tables.Add(New Rh_RptPlanHrsExtraMensual4DataTable(ds.Tables("Rh_RptPlanHrsExtraMensual4")))
+            If (Not (ds.Tables("Rh_RptPlanHrsExtraMensual5")) Is Nothing) Then
+                MyBase.Tables.Add(New Rh_RptPlanHrsExtraMensual5DataTable(ds.Tables("Rh_RptPlanHrsExtraMensual5")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class Dts_PlanHrsExt4
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableRh_RptPlanHrsExtraMensual4 = CType(MyBase.Tables("Rh_RptPlanHrsExtraMensual4"),Rh_RptPlanHrsExtraMensual4DataTable)
+        Me.tableRh_RptPlanHrsExtraMensual5 = CType(MyBase.Tables("Rh_RptPlanHrsExtraMensual5"),Rh_RptPlanHrsExtraMensual5DataTable)
         If (initTable = true) Then
-            If (Not (Me.tableRh_RptPlanHrsExtraMensual4) Is Nothing) Then
-                Me.tableRh_RptPlanHrsExtraMensual4.InitVars
+            If (Not (Me.tableRh_RptPlanHrsExtraMensual5) Is Nothing) Then
+                Me.tableRh_RptPlanHrsExtraMensual5.InitVars
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class Dts_PlanHrsExt4
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "Dts_PlanHrsExt4"
+        Me.DataSetName = "Dts_PlanHrsExt5"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/Dts_PlanHrsExt4.xsd"
+        Me.Namespace = "http://tempuri.org/Dts_PlanHrsExt5.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableRh_RptPlanHrsExtraMensual4 = New Rh_RptPlanHrsExtraMensual4DataTable()
-        MyBase.Tables.Add(Me.tableRh_RptPlanHrsExtraMensual4)
+        Me.tableRh_RptPlanHrsExtraMensual5 = New Rh_RptPlanHrsExtraMensual5DataTable()
+        MyBase.Tables.Add(Me.tableRh_RptPlanHrsExtraMensual5)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializeRh_RptPlanHrsExtraMensual4() As Boolean
+    Private Function ShouldSerializeRh_RptPlanHrsExtraMensual5() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class Dts_PlanHrsExt4
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As Dts_PlanHrsExt4 = New Dts_PlanHrsExt4()
+        Dim ds As Dts_PlanHrsExt5 = New Dts_PlanHrsExt5()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,15 +273,15 @@ Partial Public Class Dts_PlanHrsExt4
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub Rh_RptPlanHrsExtraMensual4RowChangeEventHandler(ByVal sender As Object, ByVal e As Rh_RptPlanHrsExtraMensual4RowChangeEvent)
+    Public Delegate Sub Rh_RptPlanHrsExtraMensual5RowChangeEventHandler(ByVal sender As Object, ByVal e As Rh_RptPlanHrsExtraMensual5RowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class Rh_RptPlanHrsExtraMensual4DataTable
-        Inherits Global.System.Data.TypedTableBase(Of Rh_RptPlanHrsExtraMensual4Row)
+    Partial Public Class Rh_RptPlanHrsExtraMensual5DataTable
+        Inherits Global.System.Data.TypedTableBase(Of Rh_RptPlanHrsExtraMensual5Row)
         
         Private columnCLAVE As Global.System.Data.DataColumn
         
@@ -343,6 +343,20 @@ Partial Public Class Dts_PlanHrsExt4
         
         Private columnDom3 As Global.System.Data.DataColumn
         
+        Private columnLun4 As Global.System.Data.DataColumn
+        
+        Private columnMar4 As Global.System.Data.DataColumn
+        
+        Private columnMie4 As Global.System.Data.DataColumn
+        
+        Private columnJue4 As Global.System.Data.DataColumn
+        
+        Private columnVie4 As Global.System.Data.DataColumn
+        
+        Private columnSab4 As Global.System.Data.DataColumn
+        
+        Private columnDom4 As Global.System.Data.DataColumn
+        
         Private columnTDobles As Global.System.Data.DataColumn
         
         Private columnTTriples As Global.System.Data.DataColumn
@@ -357,7 +371,7 @@ Partial Public Class Dts_PlanHrsExt4
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Rh_RptPlanHrsExtraMensual4"
+            Me.TableName = "Rh_RptPlanHrsExtraMensual5"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -630,6 +644,62 @@ Partial Public Class Dts_PlanHrsExt4
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Lun4Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLun4
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Mar4Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMar4
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Mie4Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMie4
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Jue4Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnJue4
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Vie4Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnVie4
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Sab4Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSab4
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Dom4Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDom4
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property TDoblesColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnTDobles
@@ -679,33 +749,33 @@ Partial Public Class Dts_PlanHrsExt4
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As Rh_RptPlanHrsExtraMensual4Row
+        Public Default ReadOnly Property Item(ByVal index As Integer) As Rh_RptPlanHrsExtraMensual5Row
             Get
-                Return CType(Me.Rows(index),Rh_RptPlanHrsExtraMensual4Row)
+                Return CType(Me.Rows(index),Rh_RptPlanHrsExtraMensual5Row)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event Rh_RptPlanHrsExtraMensual4RowChanging As Rh_RptPlanHrsExtraMensual4RowChangeEventHandler
+        Public Event Rh_RptPlanHrsExtraMensual5RowChanging As Rh_RptPlanHrsExtraMensual5RowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event Rh_RptPlanHrsExtraMensual4RowChanged As Rh_RptPlanHrsExtraMensual4RowChangeEventHandler
+        Public Event Rh_RptPlanHrsExtraMensual5RowChanged As Rh_RptPlanHrsExtraMensual5RowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event Rh_RptPlanHrsExtraMensual4RowDeleting As Rh_RptPlanHrsExtraMensual4RowChangeEventHandler
+        Public Event Rh_RptPlanHrsExtraMensual5RowDeleting As Rh_RptPlanHrsExtraMensual5RowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event Rh_RptPlanHrsExtraMensual4RowDeleted As Rh_RptPlanHrsExtraMensual4RowChangeEventHandler
+        Public Event Rh_RptPlanHrsExtraMensual5RowDeleted As Rh_RptPlanHrsExtraMensual5RowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub AddRh_RptPlanHrsExtraMensual4Row(ByVal row As Rh_RptPlanHrsExtraMensual4Row)
+        Public Overloads Sub AddRh_RptPlanHrsExtraMensual5Row(ByVal row As Rh_RptPlanHrsExtraMensual5Row)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddRh_RptPlanHrsExtraMensual4Row( _
+        Public Overloads Function AddRh_RptPlanHrsExtraMensual5Row( _
                     ByVal CLAVE As Integer,  _
                     ByVal NOMBRE As String,  _
                     ByVal Lun As Double,  _
@@ -736,22 +806,29 @@ Partial Public Class Dts_PlanHrsExt4
                     ByVal Vie3 As Double,  _
                     ByVal Sab3 As Double,  _
                     ByVal Dom3 As Double,  _
+                    ByVal Lun4 As Double,  _
+                    ByVal Mar4 As Double,  _
+                    ByVal Mie4 As Double,  _
+                    ByVal Jue4 As Double,  _
+                    ByVal Vie4 As Double,  _
+                    ByVal Sab4 As Double,  _
+                    ByVal Dom4 As Double,  _
                     ByVal TDobles As Decimal,  _
                     ByVal TTriples As Decimal,  _
                     ByVal Bruto As Decimal,  _
                     ByVal Neto As Decimal,  _
-                    ByVal fecha As Date) As Rh_RptPlanHrsExtraMensual4Row
-            Dim rowRh_RptPlanHrsExtraMensual4Row As Rh_RptPlanHrsExtraMensual4Row = CType(Me.NewRow,Rh_RptPlanHrsExtraMensual4Row)
-            Dim columnValuesArray() As Object = New Object() {CLAVE, NOMBRE, Lun, Mar, Mie, Jue, Vie, Sab, Dom, Lun1, Mar1, Mie1, Jue1, Vie1, Sab1, Dom1, Lun2, Mar2, Mie2, Jue2, Vie2, Sab2, Dom2, Lun3, Mar3, Mie3, Jue3, Vie3, Sab3, Dom3, TDobles, TTriples, Bruto, Neto, fecha}
-            rowRh_RptPlanHrsExtraMensual4Row.ItemArray = columnValuesArray
-            Me.Rows.Add(rowRh_RptPlanHrsExtraMensual4Row)
-            Return rowRh_RptPlanHrsExtraMensual4Row
+                    ByVal fecha As Date) As Rh_RptPlanHrsExtraMensual5Row
+            Dim rowRh_RptPlanHrsExtraMensual5Row As Rh_RptPlanHrsExtraMensual5Row = CType(Me.NewRow,Rh_RptPlanHrsExtraMensual5Row)
+            Dim columnValuesArray() As Object = New Object() {CLAVE, NOMBRE, Lun, Mar, Mie, Jue, Vie, Sab, Dom, Lun1, Mar1, Mie1, Jue1, Vie1, Sab1, Dom1, Lun2, Mar2, Mie2, Jue2, Vie2, Sab2, Dom2, Lun3, Mar3, Mie3, Jue3, Vie3, Sab3, Dom3, Lun4, Mar4, Mie4, Jue4, Vie4, Sab4, Dom4, TDobles, TTriples, Bruto, Neto, fecha}
+            rowRh_RptPlanHrsExtraMensual5Row.ItemArray = columnValuesArray
+            Me.Rows.Add(rowRh_RptPlanHrsExtraMensual5Row)
+            Return rowRh_RptPlanHrsExtraMensual5Row
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As Rh_RptPlanHrsExtraMensual4DataTable = CType(MyBase.Clone,Rh_RptPlanHrsExtraMensual4DataTable)
+            Dim cln As Rh_RptPlanHrsExtraMensual5DataTable = CType(MyBase.Clone,Rh_RptPlanHrsExtraMensual5DataTable)
             cln.InitVars
             Return cln
         End Function
@@ -759,7 +836,7 @@ Partial Public Class Dts_PlanHrsExt4
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New Rh_RptPlanHrsExtraMensual4DataTable()
+            Return New Rh_RptPlanHrsExtraMensual5DataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -795,6 +872,13 @@ Partial Public Class Dts_PlanHrsExt4
             Me.columnVie3 = MyBase.Columns("Vie3")
             Me.columnSab3 = MyBase.Columns("Sab3")
             Me.columnDom3 = MyBase.Columns("Dom3")
+            Me.columnLun4 = MyBase.Columns("Lun4")
+            Me.columnMar4 = MyBase.Columns("Mar4")
+            Me.columnMie4 = MyBase.Columns("Mie4")
+            Me.columnJue4 = MyBase.Columns("Jue4")
+            Me.columnVie4 = MyBase.Columns("Vie4")
+            Me.columnSab4 = MyBase.Columns("Sab4")
+            Me.columnDom4 = MyBase.Columns("Dom4")
             Me.columnTDobles = MyBase.Columns("TDobles")
             Me.columnTTriples = MyBase.Columns("TTriples")
             Me.columnBruto = MyBase.Columns("Bruto")
@@ -865,6 +949,20 @@ Partial Public Class Dts_PlanHrsExt4
             MyBase.Columns.Add(Me.columnSab3)
             Me.columnDom3 = New Global.System.Data.DataColumn("Dom3", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDom3)
+            Me.columnLun4 = New Global.System.Data.DataColumn("Lun4", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLun4)
+            Me.columnMar4 = New Global.System.Data.DataColumn("Mar4", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMar4)
+            Me.columnMie4 = New Global.System.Data.DataColumn("Mie4", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMie4)
+            Me.columnJue4 = New Global.System.Data.DataColumn("Jue4", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnJue4)
+            Me.columnVie4 = New Global.System.Data.DataColumn("Vie4", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVie4)
+            Me.columnSab4 = New Global.System.Data.DataColumn("Sab4", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSab4)
+            Me.columnDom4 = New Global.System.Data.DataColumn("Dom4", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDom4)
             Me.columnTDobles = New Global.System.Data.DataColumn("TDobles", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTDobles)
             Me.columnTTriples = New Global.System.Data.DataColumn("TTriples", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
@@ -905,6 +1003,13 @@ Partial Public Class Dts_PlanHrsExt4
             Me.columnVie3.ReadOnly = true
             Me.columnSab3.ReadOnly = true
             Me.columnDom3.ReadOnly = true
+            Me.columnLun4.ReadOnly = true
+            Me.columnMar4.ReadOnly = true
+            Me.columnMie4.ReadOnly = true
+            Me.columnJue4.ReadOnly = true
+            Me.columnVie4.ReadOnly = true
+            Me.columnSab4.ReadOnly = true
+            Me.columnDom4.ReadOnly = true
             Me.columnTDobles.ReadOnly = true
             Me.columnTTriples.ReadOnly = true
             Me.columnBruto.ReadOnly = true
@@ -914,28 +1019,28 @@ Partial Public Class Dts_PlanHrsExt4
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function NewRh_RptPlanHrsExtraMensual4Row() As Rh_RptPlanHrsExtraMensual4Row
-            Return CType(Me.NewRow,Rh_RptPlanHrsExtraMensual4Row)
+        Public Function NewRh_RptPlanHrsExtraMensual5Row() As Rh_RptPlanHrsExtraMensual5Row
+            Return CType(Me.NewRow,Rh_RptPlanHrsExtraMensual5Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New Rh_RptPlanHrsExtraMensual4Row(builder)
+            Return New Rh_RptPlanHrsExtraMensual5Row(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(Rh_RptPlanHrsExtraMensual4Row)
+            Return GetType(Rh_RptPlanHrsExtraMensual5Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.Rh_RptPlanHrsExtraMensual4RowChangedEvent) Is Nothing) Then
-                RaiseEvent Rh_RptPlanHrsExtraMensual4RowChanged(Me, New Rh_RptPlanHrsExtraMensual4RowChangeEvent(CType(e.Row,Rh_RptPlanHrsExtraMensual4Row), e.Action))
+            If (Not (Me.Rh_RptPlanHrsExtraMensual5RowChangedEvent) Is Nothing) Then
+                RaiseEvent Rh_RptPlanHrsExtraMensual5RowChanged(Me, New Rh_RptPlanHrsExtraMensual5RowChangeEvent(CType(e.Row,Rh_RptPlanHrsExtraMensual5Row), e.Action))
             End If
         End Sub
         
@@ -943,8 +1048,8 @@ Partial Public Class Dts_PlanHrsExt4
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.Rh_RptPlanHrsExtraMensual4RowChangingEvent) Is Nothing) Then
-                RaiseEvent Rh_RptPlanHrsExtraMensual4RowChanging(Me, New Rh_RptPlanHrsExtraMensual4RowChangeEvent(CType(e.Row,Rh_RptPlanHrsExtraMensual4Row), e.Action))
+            If (Not (Me.Rh_RptPlanHrsExtraMensual5RowChangingEvent) Is Nothing) Then
+                RaiseEvent Rh_RptPlanHrsExtraMensual5RowChanging(Me, New Rh_RptPlanHrsExtraMensual5RowChangeEvent(CType(e.Row,Rh_RptPlanHrsExtraMensual5Row), e.Action))
             End If
         End Sub
         
@@ -952,8 +1057,8 @@ Partial Public Class Dts_PlanHrsExt4
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.Rh_RptPlanHrsExtraMensual4RowDeletedEvent) Is Nothing) Then
-                RaiseEvent Rh_RptPlanHrsExtraMensual4RowDeleted(Me, New Rh_RptPlanHrsExtraMensual4RowChangeEvent(CType(e.Row,Rh_RptPlanHrsExtraMensual4Row), e.Action))
+            If (Not (Me.Rh_RptPlanHrsExtraMensual5RowDeletedEvent) Is Nothing) Then
+                RaiseEvent Rh_RptPlanHrsExtraMensual5RowDeleted(Me, New Rh_RptPlanHrsExtraMensual5RowChangeEvent(CType(e.Row,Rh_RptPlanHrsExtraMensual5Row), e.Action))
             End If
         End Sub
         
@@ -961,14 +1066,14 @@ Partial Public Class Dts_PlanHrsExt4
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.Rh_RptPlanHrsExtraMensual4RowDeletingEvent) Is Nothing) Then
-                RaiseEvent Rh_RptPlanHrsExtraMensual4RowDeleting(Me, New Rh_RptPlanHrsExtraMensual4RowChangeEvent(CType(e.Row,Rh_RptPlanHrsExtraMensual4Row), e.Action))
+            If (Not (Me.Rh_RptPlanHrsExtraMensual5RowDeletingEvent) Is Nothing) Then
+                RaiseEvent Rh_RptPlanHrsExtraMensual5RowDeleting(Me, New Rh_RptPlanHrsExtraMensual5RowChangeEvent(CType(e.Row,Rh_RptPlanHrsExtraMensual5Row), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub RemoveRh_RptPlanHrsExtraMensual4Row(ByVal row As Rh_RptPlanHrsExtraMensual4Row)
+        Public Sub RemoveRh_RptPlanHrsExtraMensual5Row(ByVal row As Rh_RptPlanHrsExtraMensual5Row)
             Me.Rows.Remove(row)
         End Sub
         
@@ -977,7 +1082,7 @@ Partial Public Class Dts_PlanHrsExt4
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As Dts_PlanHrsExt4 = New Dts_PlanHrsExt4()
+            Dim ds As Dts_PlanHrsExt5 = New Dts_PlanHrsExt5()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -995,7 +1100,7 @@ Partial Public Class Dts_PlanHrsExt4
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "Rh_RptPlanHrsExtraMensual4DataTable"
+            attribute2.FixedValue = "Rh_RptPlanHrsExtraMensual5DataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1042,16 +1147,16 @@ Partial Public Class Dts_PlanHrsExt4
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class Rh_RptPlanHrsExtraMensual4Row
+    Partial Public Class Rh_RptPlanHrsExtraMensual5Row
         Inherits Global.System.Data.DataRow
         
-        Private tableRh_RptPlanHrsExtraMensual4 As Rh_RptPlanHrsExtraMensual4DataTable
+        Private tableRh_RptPlanHrsExtraMensual5 As Rh_RptPlanHrsExtraMensual5DataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableRh_RptPlanHrsExtraMensual4 = CType(Me.Table,Rh_RptPlanHrsExtraMensual4DataTable)
+            Me.tableRh_RptPlanHrsExtraMensual5 = CType(Me.Table,Rh_RptPlanHrsExtraMensual5DataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1059,14 +1164,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property CLAVE() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.CLAVEColumn),Integer)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.CLAVEColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CLAVE' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull"& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CLAVE' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull"& _ 
                             ".", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.CLAVEColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.CLAVEColumn) = value
             End Set
         End Property
         
@@ -1075,14 +1180,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property NOMBRE() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.NOMBREColumn),String)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.NOMBREColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NOMBRE' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNul"& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NOMBRE' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNul"& _ 
                             "l.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.NOMBREColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.NOMBREColumn) = value
             End Set
         End Property
         
@@ -1091,13 +1196,13 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Lun() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.LunColumn),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.LunColumn),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Lun' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Lun' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.LunColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.LunColumn) = value
             End Set
         End Property
         
@@ -1106,13 +1211,13 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Mar() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.MarColumn),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.MarColumn),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mar' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mar' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.MarColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.MarColumn) = value
             End Set
         End Property
         
@@ -1121,13 +1226,13 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Mie() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.MieColumn),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.MieColumn),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mie' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mie' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.MieColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.MieColumn) = value
             End Set
         End Property
         
@@ -1136,13 +1241,13 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Jue() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.JueColumn),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.JueColumn),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Jue' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Jue' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.JueColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.JueColumn) = value
             End Set
         End Property
         
@@ -1151,13 +1256,13 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Vie() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.VieColumn),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.VieColumn),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Vie' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Vie' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.VieColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.VieColumn) = value
             End Set
         End Property
         
@@ -1166,13 +1271,13 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Sab() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.SabColumn),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.SabColumn),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Sab' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Sab' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.SabColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.SabColumn) = value
             End Set
         End Property
         
@@ -1181,13 +1286,13 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Dom() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.DomColumn),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.DomColumn),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Dom' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Dom' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.DomColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.DomColumn) = value
             End Set
         End Property
         
@@ -1196,14 +1301,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Lun1() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Lun1Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun1Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Lun1' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Lun1' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Lun1Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun1Column) = value
             End Set
         End Property
         
@@ -1212,14 +1317,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Mar1() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Mar1Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar1Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mar1' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mar1' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Mar1Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar1Column) = value
             End Set
         End Property
         
@@ -1228,14 +1333,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Mie1() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Mie1Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie1Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mie1' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mie1' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Mie1Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie1Column) = value
             End Set
         End Property
         
@@ -1244,14 +1349,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Jue1() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Jue1Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue1Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Jue1' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Jue1' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Jue1Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue1Column) = value
             End Set
         End Property
         
@@ -1260,14 +1365,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Vie1() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Vie1Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie1Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Vie1' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Vie1' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Vie1Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie1Column) = value
             End Set
         End Property
         
@@ -1276,14 +1381,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Sab1() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Sab1Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab1Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Sab1' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Sab1' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Sab1Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab1Column) = value
             End Set
         End Property
         
@@ -1292,14 +1397,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Dom1() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Dom1Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom1Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Dom1' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Dom1' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Dom1Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom1Column) = value
             End Set
         End Property
         
@@ -1308,14 +1413,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Lun2() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Lun2Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun2Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Lun2' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Lun2' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Lun2Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun2Column) = value
             End Set
         End Property
         
@@ -1324,14 +1429,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Mar2() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Mar2Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar2Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mar2' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mar2' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Mar2Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar2Column) = value
             End Set
         End Property
         
@@ -1340,14 +1445,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Mie2() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Mie2Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie2Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mie2' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mie2' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Mie2Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie2Column) = value
             End Set
         End Property
         
@@ -1356,14 +1461,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Jue2() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Jue2Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue2Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Jue2' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Jue2' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Jue2Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue2Column) = value
             End Set
         End Property
         
@@ -1372,14 +1477,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Vie2() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Vie2Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie2Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Vie2' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Vie2' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Vie2Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie2Column) = value
             End Set
         End Property
         
@@ -1388,14 +1493,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Sab2() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Sab2Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab2Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Sab2' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Sab2' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Sab2Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab2Column) = value
             End Set
         End Property
         
@@ -1404,14 +1509,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Dom2() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Dom2Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom2Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Dom2' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Dom2' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Dom2Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom2Column) = value
             End Set
         End Property
         
@@ -1420,14 +1525,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Lun3() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Lun3Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun3Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Lun3' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Lun3' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Lun3Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun3Column) = value
             End Set
         End Property
         
@@ -1436,14 +1541,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Mar3() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Mar3Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar3Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mar3' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mar3' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Mar3Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar3Column) = value
             End Set
         End Property
         
@@ -1452,14 +1557,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Mie3() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Mie3Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie3Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mie3' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mie3' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Mie3Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie3Column) = value
             End Set
         End Property
         
@@ -1468,14 +1573,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Jue3() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Jue3Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue3Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Jue3' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Jue3' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Jue3Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue3Column) = value
             End Set
         End Property
         
@@ -1484,14 +1589,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Vie3() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Vie3Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie3Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Vie3' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Vie3' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Vie3Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie3Column) = value
             End Set
         End Property
         
@@ -1500,14 +1605,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Sab3() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Sab3Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab3Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Sab3' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Sab3' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Sab3Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab3Column) = value
             End Set
         End Property
         
@@ -1516,14 +1621,126 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Dom3() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.Dom3Column),Double)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom3Column),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Dom3' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Dom3' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.Dom3Column) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom3Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Lun4() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun4Column),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Lun4' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun4Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Mar4() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar4Column),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mar4' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar4Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Mie4() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie4Column),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mie4' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie4Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Jue4() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue4Column),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Jue4' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue4Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Vie4() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie4Column),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Vie4' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie4Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Sab4() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab4Column),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Sab4' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab4Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Dom4() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom4Column),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Dom4' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom4Column) = value
             End Set
         End Property
         
@@ -1532,14 +1749,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property TDobles() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.TDoblesColumn),Decimal)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.TDoblesColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TDobles' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNu"& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TDobles' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNu"& _ 
                             "ll.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.TDoblesColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.TDoblesColumn) = value
             End Set
         End Property
         
@@ -1548,14 +1765,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property TTriples() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.TTriplesColumn),Decimal)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.TTriplesColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TTriples' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBN"& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TTriples' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBN"& _ 
                             "ull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.TTriplesColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.TTriplesColumn) = value
             End Set
         End Property
         
@@ -1564,14 +1781,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Bruto() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.BrutoColumn),Decimal)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.BrutoColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Bruto' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull"& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Bruto' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull"& _ 
                             ".", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.BrutoColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.BrutoColumn) = value
             End Set
         End Property
         
@@ -1580,14 +1797,14 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property Neto() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.NetoColumn),Decimal)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.NetoColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Neto' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Neto' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.NetoColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.NetoColumn) = value
             End Set
         End Property
         
@@ -1596,435 +1813,519 @@ Partial Public Class Dts_PlanHrsExt4
         Public Property fecha() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.fechaColumn),Date)
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual5.fechaColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'fecha' de la tabla 'Rh_RptPlanHrsExtraMensual4' es DBNull"& _ 
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'fecha' de la tabla 'Rh_RptPlanHrsExtraMensual5' es DBNull"& _ 
                             ".", e)
                 End Try
             End Get
             Set
-                Me(Me.tableRh_RptPlanHrsExtraMensual4.fechaColumn) = value
+                Me(Me.tableRh_RptPlanHrsExtraMensual5.fechaColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsCLAVENull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.CLAVEColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.CLAVEColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetCLAVENull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.CLAVEColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.CLAVEColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsNOMBRENull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.NOMBREColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.NOMBREColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetNOMBRENull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.NOMBREColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.NOMBREColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsLunNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.LunColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.LunColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetLunNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.LunColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.LunColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsMarNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.MarColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.MarColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetMarNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.MarColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.MarColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsMieNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.MieColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.MieColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetMieNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.MieColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.MieColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsJueNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.JueColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.JueColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetJueNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.JueColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.JueColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsVieNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.VieColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.VieColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetVieNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.VieColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.VieColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsSabNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.SabColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.SabColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetSabNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.SabColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.SabColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsDomNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.DomColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.DomColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetDomNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.DomColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.DomColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsLun1Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Lun1Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Lun1Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetLun1Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Lun1Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun1Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsMar1Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Mar1Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Mar1Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetMar1Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Mar1Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar1Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsMie1Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Mie1Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Mie1Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetMie1Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Mie1Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie1Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsJue1Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Jue1Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Jue1Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetJue1Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Jue1Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue1Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsVie1Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Vie1Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Vie1Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetVie1Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Vie1Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie1Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsSab1Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Sab1Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Sab1Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetSab1Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Sab1Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab1Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsDom1Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Dom1Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Dom1Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetDom1Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Dom1Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom1Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsLun2Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Lun2Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Lun2Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetLun2Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Lun2Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun2Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsMar2Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Mar2Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Mar2Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetMar2Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Mar2Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar2Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsMie2Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Mie2Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Mie2Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetMie2Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Mie2Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie2Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsJue2Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Jue2Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Jue2Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetJue2Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Jue2Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue2Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsVie2Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Vie2Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Vie2Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetVie2Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Vie2Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie2Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsSab2Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Sab2Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Sab2Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetSab2Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Sab2Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab2Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsDom2Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Dom2Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Dom2Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetDom2Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Dom2Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom2Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsLun3Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Lun3Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Lun3Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetLun3Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Lun3Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun3Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsMar3Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Mar3Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Mar3Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetMar3Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Mar3Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar3Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsMie3Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Mie3Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Mie3Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetMie3Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Mie3Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie3Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsJue3Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Jue3Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Jue3Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetJue3Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Jue3Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue3Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsVie3Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Vie3Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Vie3Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetVie3Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Vie3Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie3Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsSab3Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Sab3Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Sab3Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetSab3Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Sab3Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab3Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsDom3Null() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.Dom3Column)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Dom3Column)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetDom3Null()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.Dom3Column) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom3Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsLun4Null() As Boolean
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Lun4Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetLun4Null()
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Lun4Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsMar4Null() As Boolean
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Mar4Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetMar4Null()
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Mar4Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsMie4Null() As Boolean
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Mie4Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetMie4Null()
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Mie4Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsJue4Null() As Boolean
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Jue4Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetJue4Null()
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Jue4Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsVie4Null() As Boolean
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Vie4Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetVie4Null()
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Vie4Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsSab4Null() As Boolean
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Sab4Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetSab4Null()
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Sab4Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsDom4Null() As Boolean
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.Dom4Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetDom4Null()
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.Dom4Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsTDoblesNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.TDoblesColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.TDoblesColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetTDoblesNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.TDoblesColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.TDoblesColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsTTriplesNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.TTriplesColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.TTriplesColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetTTriplesNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.TTriplesColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.TTriplesColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsBrutoNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.BrutoColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.BrutoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetBrutoNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.BrutoColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.BrutoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsNetoNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.NetoColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.NetoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetNetoNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.NetoColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.NetoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsfechaNull() As Boolean
-            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.fechaColumn)
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual5.fechaColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetfechaNull()
-            Me(Me.tableRh_RptPlanHrsExtraMensual4.fechaColumn) = Global.System.Convert.DBNull
+            Me(Me.tableRh_RptPlanHrsExtraMensual5.fechaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2032,16 +2333,16 @@ Partial Public Class Dts_PlanHrsExt4
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class Rh_RptPlanHrsExtraMensual4RowChangeEvent
+    Public Class Rh_RptPlanHrsExtraMensual5RowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As Rh_RptPlanHrsExtraMensual4Row
+        Private eventRow As Rh_RptPlanHrsExtraMensual5Row
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As Rh_RptPlanHrsExtraMensual4Row, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As Rh_RptPlanHrsExtraMensual5Row, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -2049,7 +2350,7 @@ Partial Public Class Dts_PlanHrsExt4
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As Rh_RptPlanHrsExtraMensual4Row
+        Public ReadOnly Property Row() As Rh_RptPlanHrsExtraMensual5Row
             Get
                 Return Me.eventRow
             End Get
@@ -2065,7 +2366,7 @@ Partial Public Class Dts_PlanHrsExt4
     End Class
 End Class
 
-Namespace Dts_PlanHrsExt4TableAdapters
+Namespace Dts_PlanHrsExt5TableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -2076,7 +2377,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class Rh_RptPlanHrsExtraMensual4TableAdapter
+    Partial Public Class Rh_RptPlanHrsExtraMensual5TableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -2193,7 +2494,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Rh_RptPlanHrsExtraMensual4"
+            tableMapping.DataSetTable = "Rh_RptPlanHrsExtraMensual5"
             tableMapping.ColumnMappings.Add("CLAVE", "CLAVE")
             tableMapping.ColumnMappings.Add("NOMBRE", "NOMBRE")
             tableMapping.ColumnMappings.Add("Lun", "Lun")
@@ -2224,6 +2525,13 @@ Namespace Dts_PlanHrsExt4TableAdapters
             tableMapping.ColumnMappings.Add("Vie3", "Vie3")
             tableMapping.ColumnMappings.Add("Sab3", "Sab3")
             tableMapping.ColumnMappings.Add("Dom3", "Dom3")
+            tableMapping.ColumnMappings.Add("Lun4", "Lun4")
+            tableMapping.ColumnMappings.Add("Mar4", "Mar4")
+            tableMapping.ColumnMappings.Add("Mie4", "Mie4")
+            tableMapping.ColumnMappings.Add("Jue4", "Jue4")
+            tableMapping.ColumnMappings.Add("Vie4", "Vie4")
+            tableMapping.ColumnMappings.Add("Sab4", "Sab4")
+            tableMapping.ColumnMappings.Add("Dom4", "Dom4")
             tableMapping.ColumnMappings.Add("TDobles", "TDobles")
             tableMapping.ColumnMappings.Add("TTriples", "TTriples")
             tableMapping.ColumnMappings.Add("Bruto", "Bruto")
@@ -2245,7 +2553,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.Rh_RptPlanHrsExtraMensual4"
+            Me._commandCollection(0).CommandText = "dbo.Rh_RptPlanHrsExtraMensual5"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mes", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -2257,7 +2565,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As Dts_PlanHrsExt4.Rh_RptPlanHrsExtraMensual4DataTable, ByVal mes As Global.System.Nullable(Of Integer), ByVal depto As Global.System.Nullable(Of Integer), ByVal año As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As Dts_PlanHrsExt5.Rh_RptPlanHrsExtraMensual5DataTable, ByVal mes As Global.System.Nullable(Of Integer), ByVal depto As Global.System.Nullable(Of Integer), ByVal año As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (mes.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(mes.Value,Integer)
@@ -2285,7 +2593,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal mes As Global.System.Nullable(Of Integer), ByVal depto As Global.System.Nullable(Of Integer), ByVal año As Global.System.Nullable(Of Integer)) As Dts_PlanHrsExt4.Rh_RptPlanHrsExtraMensual4DataTable
+        Public Overloads Overridable Function GetData(ByVal mes As Global.System.Nullable(Of Integer), ByVal depto As Global.System.Nullable(Of Integer), ByVal año As Global.System.Nullable(Of Integer)) As Dts_PlanHrsExt5.Rh_RptPlanHrsExtraMensual5DataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (mes.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(mes.Value,Integer)
@@ -2302,7 +2610,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
             Else
                 Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            Dim dataTable As Dts_PlanHrsExt4.Rh_RptPlanHrsExtraMensual4DataTable = New Dts_PlanHrsExt4.Rh_RptPlanHrsExtraMensual4DataTable()
+            Dim dataTable As Dts_PlanHrsExt5.Rh_RptPlanHrsExtraMensual5DataTable = New Dts_PlanHrsExt5.Rh_RptPlanHrsExtraMensual5DataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2377,7 +2685,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As Dts_PlanHrsExt4, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As Dts_PlanHrsExt5, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -2387,7 +2695,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As Dts_PlanHrsExt4, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As Dts_PlanHrsExt5, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -2397,7 +2705,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As Dts_PlanHrsExt4, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As Dts_PlanHrsExt5, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -2433,7 +2741,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As Dts_PlanHrsExt4) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As Dts_PlanHrsExt5) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If

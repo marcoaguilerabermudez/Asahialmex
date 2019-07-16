@@ -101,6 +101,7 @@ Partial Class Frm_PlanHorasExtra
         '
         'Btn_Guardar
         '
+        Me.Btn_Guardar.Enabled = False
         Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
         Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Btn_Guardar.Location = New System.Drawing.Point(332, 7)
@@ -110,7 +111,6 @@ Partial Class Frm_PlanHorasExtra
         Me.Btn_Guardar.Text = "Guardar"
         Me.Btn_Guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Btn_Guardar.UseVisualStyleBackColor = True
-        Me.Btn_Guardar.Visible = False
         '
         'Lbl_año
         '
@@ -370,8 +370,9 @@ Partial Class Frm_PlanHorasExtra
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Frm_PlanHorasExtra"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Frm_PlanHorasExtra"
+        Me.Text = "Plan Tiempo Extra"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

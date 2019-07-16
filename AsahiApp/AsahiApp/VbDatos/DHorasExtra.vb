@@ -69,4 +69,48 @@ Public Class DHorasExtra
             oCon.Dispose()
         End Try
     End Sub
+    Public Function RecuperarAños(ByVal cadenaConex As String) As LHorarios
+        Dim lstHrs As New LHorarios()
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("select ejercicio from periodos group by ejercicio", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim hrs As New Horarios()
+                hrs.Año = Convert.ToInt32(dr("ejercicio").ToString)
+                lstHrs.Add(hrs)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstHrs
+    End Function
+    Public Function RecuperarTotalSemanas(ByVal cadConex As String, ByVal mes As Integer, ByVal año As Integer) As Integer
+        Dim tSemanas As Integer
+        Dim oCon As New SqlConnection(cadConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("select count(mes) as mes from periodos where mes = " & mes & " and ejercicio = " & año & "", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                tSemanas = Convert.ToInt32(dr("mes").ToString)
+            End While
+        Catch ex As Exception
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Close()
+        End Try
+        Return tSemanas
+    End Function
 End Class

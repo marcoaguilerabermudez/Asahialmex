@@ -34,4 +34,12 @@ Public Class NHorasExtra
         objHrsEx.Xml = "<Extras>" & objHrsEx.Xml & "</Extras>"
         Return objHrsEx
     End Function
+    Public Function RecuperarAños(ByVal cadenaConex As String) As LHorarios
+        Dim DHrsEx As New DHorasExtra
+        Return DHrsEx.RecuperarAños(cadenaConex)
+    End Function
+    Public Function RecuperarTotalSemanas(ByVal cadConex As String, ByVal mes As Integer, ByVal año As Integer) As Integer
+        Dim DHrsEx As New DHorasExtra
+        Return DHrsEx.RecuperarTotalSemanas(cadConex, mes, año)
+    End Function
 End Class

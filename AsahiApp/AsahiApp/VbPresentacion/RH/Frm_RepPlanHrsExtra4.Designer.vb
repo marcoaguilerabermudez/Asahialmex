@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Frm_PlanHrsExtra4
+Partial Class Frm_RepPlanHrsExtra4
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -24,13 +24,23 @@ Partial Class Frm_PlanHrsExtra4
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.Dts_PlanHrsExt4 = New Presentacion.Dts_PlanHrsExt4()
         Me.Rh_RptPlanHrsExtraMensual4BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Dts_PlanHrsExt4 = New Presentacion.Dts_PlanHrsExt4()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Rh_RptPlanHrsExtraMensual4TableAdapter = New Presentacion.Dts_PlanHrsExt4TableAdapters.Rh_RptPlanHrsExtraMensual4TableAdapter()
-        CType(Me.Dts_PlanHrsExt4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rh_RptPlanHrsExtraMensual4BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Dts_PlanHrsExt4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Rh_RptPlanHrsExtraMensual4BindingSource
+        '
+        Me.Rh_RptPlanHrsExtraMensual4BindingSource.DataMember = "Rh_RptPlanHrsExtraMensual4"
+        Me.Rh_RptPlanHrsExtraMensual4BindingSource.DataSource = Me.Dts_PlanHrsExt4
+        '
+        'Dts_PlanHrsExt4
+        '
+        Me.Dts_PlanHrsExt4.DataSetName = "Dts_PlanHrsExt4"
+        Me.Dts_PlanHrsExt4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -42,33 +52,26 @@ Partial Class Frm_PlanHrsExtra4
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(1323, 561)
+        Me.ReportViewer1.Size = New System.Drawing.Size(1029, 561)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'Dts_PlanHrsExt4
-        '
-        Me.Dts_PlanHrsExt4.DataSetName = "Dts_PlanHrsExt4"
-        Me.Dts_PlanHrsExt4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Rh_RptPlanHrsExtraMensual4BindingSource
-        '
-        Me.Rh_RptPlanHrsExtraMensual4BindingSource.DataMember = "Rh_RptPlanHrsExtraMensual4"
-        Me.Rh_RptPlanHrsExtraMensual4BindingSource.DataSource = Me.Dts_PlanHrsExt4
         '
         'Rh_RptPlanHrsExtraMensual4TableAdapter
         '
         Me.Rh_RptPlanHrsExtraMensual4TableAdapter.ClearBeforeFill = True
         '
-        'Frm_PlanHrsExtra4
+        'Frm_RepPlanHrsExtra4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1323, 561)
+        Me.ClientSize = New System.Drawing.Size(1029, 561)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "Frm_PlanHrsExtra4"
-        Me.Text = "Frm_PlanHrsExtra4"
-        CType(Me.Dts_PlanHrsExt4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "Frm_RepPlanHrsExtra4"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Rep Plan Hrs Extra"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Rh_RptPlanHrsExtraMensual4BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Dts_PlanHrsExt4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

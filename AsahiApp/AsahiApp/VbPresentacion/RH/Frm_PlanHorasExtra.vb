@@ -37,7 +37,7 @@ Public Class Frm_PlanHorasExtra
         lbl_Dia7.Text = Format(objHrsEx.FechaF, "dd/MM")
         Dgv_HorasExtra.DataSource = Nothing
         Dgv_HorasExtra.Rows.Clear()
-        Btn_Guardar.Visible = False
+        Btn_Guardar.Enabled = False
         Cmb_Departamento.SelectedValue = 0
     End Sub
     Private Sub Cmb_Departamento_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_Departamento.SelectionChangeCommitted
@@ -55,10 +55,11 @@ Public Class Frm_PlanHorasExtra
             Dgv_HorasExtra.Enabled = False
         End If
         RecuperarEmpleado(idDep, fecha, semana, año)
+        Btn_Guardar.Enabled = False
     End Sub
     Private Sub Dgv_HorasExtra_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_HorasExtra.CellEndEdit
         Dim fila As Integer
-        Dim dobles As Double = 0, triples As Double = 0, total As Double, sueldoXHoraB As Double = 0, sueldoXHoraN As Double = 0
+        Dim dobles As Double = 0, triples As Double = 0, total As Double, sueldoXHoraB As Double = 0, sueldoXHoraN As Double = 0, sn As Double = 0, sb As Double = 0
         Dim columna As String
         fila = Dgv_HorasExtra.CurrentRow.Index
         columna = Dgv_HorasExtra.Columns(e.ColumnIndex).Name
@@ -91,7 +92,15 @@ Public Class Frm_PlanHorasExtra
                     .Cells("totalDobles").Value = Format(dobles * (sueldoXHoraB * 2), "$0.00")
                     .Cells("totalTriples").Value = Format(0, "$0.00")
                     .Cells("totalBruto").Value = Format(dobles * (sueldoXHoraB * 2), "$0.00")
-                    .Cells("totalNeto").Value = Format(dobles * (sueldoXHoraN * 2), "$0.00")
+                    If total <= 3 Then
+                        .Cells("totalNeto").Value = Format(dobles * (sueldoXHoraB * 2), "$0.00")
+                    ElseIf total > 3 Then
+                        sb = 3
+                        sn = total - sb
+                        sb = (sb * (sueldoXHoraB * 2))
+                        sn = (sn * (sueldoXHoraN * 2))
+                        .Cells("totalNeto").Value = Format((sb + sn), "$0.00")
+                    End If
                     .Cells("triples").Style.BackColor = Color.LightGray
                     .Cells("triples").Style.ForeColor = Color.White
                     .Cells("totalTriples").Style.BackColor = Color.LightGray
@@ -104,7 +113,12 @@ Public Class Frm_PlanHorasExtra
                     .Cells("totalDobles").Value = Format(dobles * (sueldoXHoraB * 2), "$0.00")
                     .Cells("totalTriples").Value = Format(triples * (sueldoXHoraB * 3), "$0.00")
                     .Cells("totalBruto").Value = Format((dobles * (sueldoXHoraB * 2) + triples * (sueldoXHoraB * 3)), "$0.00")
-                    .Cells("totalNeto").Value = Format((dobles * (sueldoXHoraN * 2) + triples * (sueldoXHoraN * 3)), "$0.00")
+                    sb = 3
+                    sn = dobles - sb
+                    sb = (sb * (sueldoXHoraB * 2))
+                    sn = (sn * (sueldoXHoraN * 2))
+                    dobles = sb + sn
+                    .Cells("totalNeto").Value = Format(((dobles) + (triples * (sueldoXHoraN * 3))), "$0.00")
                     .Cells("triples").Style.BackColor = Color.White
                     .Cells("triples").Style.ForeColor = Color.Black
                     .Cells("totalTriples").Style.BackColor = Color.White
@@ -122,7 +136,7 @@ Public Class Frm_PlanHorasExtra
                     .Cells("totalTriples").Style.ForeColor = Color.Black
                 End If
             End With
-            Btn_Guardar.Visible = True
+            Btn_Guardar.Enabled = True
         End If
     End Sub
     Private Sub Dgv_HorasExtra_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles Dgv_HorasExtra.EditingControlShowing
@@ -161,7 +175,7 @@ Public Class Frm_PlanHorasExtra
         Dim cadConex As String = conex.cadenaConexExpress
         lstHrxEx = RellenaObjetoLHrsExtra()
         NHrsEx.InsertarPlanHrsExtra(cadConex, lstHrxEx)
-        Btn_Guardar.Visible = False
+        Btn_Guardar.Enabled = False
     End Sub
 #End Region
 #Region "Recuperar"

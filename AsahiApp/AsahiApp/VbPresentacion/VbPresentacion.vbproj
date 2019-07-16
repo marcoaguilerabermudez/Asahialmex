@@ -120,6 +120,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\Dts_PlanHrsExt5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Acerca.Designer.vb">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
     </Compile>
@@ -200,10 +205,22 @@
     <Compile Include="RH\Frm_ListaPrenomina.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_PlanHrsExtra4.Designer.vb">
-      <DependentUpon>Frm_PlanHrsExtra4.vb</DependentUpon>
+    <Compile Include="RH\Frm_ReportesPlanHorasExtra.Designer.vb">
+      <DependentUpon>Frm_ReportesPlanHorasExtra.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_PlanHrsExtra4.vb">
+    <Compile Include="RH\Frm_ReportesPlanHorasExtra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RH\Frm_RepPlanHrsExtra4.Designer.vb">
+      <DependentUpon>Frm_RepPlanHrsExtra4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_RepPlanHrsExtra4.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RH\Frm_RepPlanHrsExtra5.Designer.vb">
+      <DependentUpon>Frm_RepPlanHrsExtra5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_RepPlanHrsExtra5.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -211,6 +228,7 @@
     <EmbeddedResource Include="Frm_Acerca.resx">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra5.rdlc" />
     <EmbeddedResource Include="RH\Frm_PlanHorasExtra.resx">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </EmbeddedResource>
@@ -246,10 +264,16 @@
     <EmbeddedResource Include="RH\Frm_ListaPrenomina.resx">
       <DependentUpon>Frm_ListaPrenomina.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_PlanHrsExtra4.resx">
-      <DependentUpon>Frm_PlanHrsExtra4.vb</DependentUpon>
+    <EmbeddedResource Include="RH\Frm_ReportesPlanHorasExtra.resx">
+      <DependentUpon>Frm_ReportesPlanHorasExtra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_RepPlanHrsExtra4.resx">
+      <DependentUpon>Frm_RepPlanHrsExtra4.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />
+    <EmbeddedResource Include="RH\Frm_RepPlanHrsExtra5.resx">
+      <DependentUpon>Frm_RepPlanHrsExtra5.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -263,6 +287,17 @@
     </None>
     <None Include="DataSet\Dts_PlanHrsExt4.xss">
       <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Dts_PlanHrsExt5.xsc">
+      <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Dts_PlanHrsExt5.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_PlanHrsExt5.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\Dts_PlanHrsExt5.xss">
+      <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

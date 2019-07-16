@@ -102,14 +102,14 @@ Partial Class Frm_GlobalPrenomina
         Me.Lbl_FiltroId = New System.Windows.Forms.Label()
         Me.Txt_FiltroId = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.Dgv_Prenomina_Global, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_Lista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -757,6 +757,16 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel2.Size = New System.Drawing.Size(1253, 518)
         Me.Panel2.TabIndex = 27
         '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Dgv_Prenomina_Global)
+        Me.Panel4.Controls.Add(Me.Dgv_Lista)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(0, 52)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1253, 466)
+        Me.Panel4.TabIndex = 1
+        '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.Txt_FiltroId)
@@ -774,16 +784,6 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel3.Size = New System.Drawing.Size(1253, 52)
         Me.Panel3.TabIndex = 0
         '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.Dgv_Prenomina_Global)
-        Me.Panel4.Controls.Add(Me.Dgv_Lista)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(0, 52)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1253, 466)
-        Me.Panel4.TabIndex = 1
-        '
         'Frm_GlobalPrenomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -799,9 +799,9 @@ Partial Class Frm_GlobalPrenomina
         CType(Me.Dgv_Prenomina_Global, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Dgv_Lista, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
