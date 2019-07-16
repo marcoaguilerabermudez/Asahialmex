@@ -110,6 +110,14 @@ Public Class Frm_Principal
         Dim bono As New Frm_BonoMensual()
         bono.ShowDialog()
     End Sub
+    Private Sub PlanHorasExtraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanHorasExtraToolStripMenuItem.Click
+        Dim hrsEx As New Frm_PlanHorasExtra()
+        hrsEx.Show()
+    End Sub
+    Private Sub PlanHorasExtraToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PlanHorasExtraToolStripMenuItem1.Click
+        Dim rph As New Frm_ReportesPlanHorasExtra()
+        rph.ShowDialog()
+    End Sub
 #End Region
 End Class
 

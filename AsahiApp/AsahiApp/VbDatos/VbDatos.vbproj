@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DEmpleado.vb" />
+    <Compile Include="DHorasExtra.vb" />
     <Compile Include="DPrenomina.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

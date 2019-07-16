@@ -62,4 +62,166 @@
             horas_ = value
         End Set
     End Property
+    Private semanas_ As Integer
+    Public Property Semanas() As Integer
+        Get
+            Return semanas_
+        End Get
+        Set(ByVal value As Integer)
+            semanas_ = value
+        End Set
+    End Property
+    Private fechaI_ As Date
+    Public Property FechaI() As Date
+        Get
+            Return fechaI_
+        End Get
+        Set(ByVal value As Date)
+            fechaI_ = value
+        End Set
+    End Property
+    Private fechaF_ As Date
+    Public Property FechaF() As Date
+        Get
+            Return fechaF_
+        End Get
+        Set(ByVal value As Date)
+            fechaF_ = value
+        End Set
+    End Property
+    Private mes_ As Integer
+    Public Property Mes() As Integer
+        Get
+            Return mes_
+        End Get
+        Set(ByVal value As Integer)
+            mes_ = value
+        End Set
+    End Property
+    Private lunes_ As Double
+    Public Property Lunes() As Double
+        Get
+            Return lunes_
+        End Get
+        Set(ByVal value As Double)
+            lunes_ = value
+        End Set
+    End Property
+    Private martes_ As Double
+    Public Property Martes() As Double
+        Get
+            Return martes_
+        End Get
+        Set(ByVal value As Double)
+            martes_ = value
+        End Set
+    End Property
+    Private miercoles_ As Double
+    Public Property Miercoles() As Double
+        Get
+            Return miercoles_
+        End Get
+        Set(ByVal value As Double)
+            miercoles_ = value
+        End Set
+    End Property
+    Private jueves_ As Double
+    Public Property Jueves() As Double
+        Get
+            Return jueves_
+        End Get
+        Set(ByVal value As Double)
+            jueves_ = value
+        End Set
+    End Property
+    Private viernes_ As Double
+    Public Property Viernes() As Double
+        Get
+            Return viernes_
+        End Get
+        Set(ByVal value As Double)
+            viernes_ = value
+        End Set
+    End Property
+    Private sabado_ As Double
+    Public Property Sabado() As Double
+        Get
+            Return sabado_
+        End Get
+        Set(ByVal value As Double)
+            sabado_ = value
+        End Set
+    End Property
+    Private domingo_ As Double
+    Public Property Domingo() As Double
+        Get
+            Return domingo_
+        End Get
+        Set(ByVal value As Double)
+            domingo_ = value
+        End Set
+    End Property
+    Private semana_ As Integer
+    Public Property Semana() As Integer
+        Get
+            Return semana_
+        End Get
+        Set(ByVal value As Integer)
+            semana_ = value
+        End Set
+    End Property
+    Private año_ As Integer
+    Public Property Año() As Integer
+        Get
+            Return año_
+        End Get
+        Set(ByVal value As Integer)
+            año_ = value
+        End Set
+    End Property
+    Private totalDobles_ As Double
+    Public Property TotalDobles() As Double
+        Get
+            Return totalDobles_
+        End Get
+        Set(ByVal value As Double)
+            totalDobles_ = value
+        End Set
+    End Property
+    Private totalTriples_ As Double
+    Public Property TotalTriples() As Double
+        Get
+            Return totalTriples_
+        End Get
+        Set(ByVal value As Double)
+            totalTriples_ = value
+        End Set
+    End Property
+    Private bruto_ As Double
+    Public Property Bruto() As Double
+        Get
+            Return bruto_
+        End Get
+        Set(ByVal value As Double)
+            bruto_ = value
+        End Set
+    End Property
+    Private neto_ As Double
+    Public Property Neto() As Double
+        Get
+            Return neto_
+        End Get
+        Set(ByVal value As Double)
+            neto_ = value
+        End Set
+    End Property
+    Private xml_ As String
+    Public Property Xml() As String
+        Get
+            Return xml_
+        End Get
+        Set(ByVal value As String)
+            xml_ = value
+        End Set
+    End Property
 End Class

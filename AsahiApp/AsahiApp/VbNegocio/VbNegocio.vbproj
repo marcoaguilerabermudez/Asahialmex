@@ -86,6 +86,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="NEmpleado.vb" />
+    <Compile Include="NHorasExtra.vb" />
     <Compile Include="NPrenomina.vb" />
   </ItemGroup>
   <ItemGroup>
