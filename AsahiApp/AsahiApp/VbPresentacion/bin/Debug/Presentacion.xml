@@ -27,6 +27,11 @@ Presentacion
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Presentacion.My.Resources.Resources.Acumulado">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Presentacion.My.Resources.Resources.Alta">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -43,6 +48,16 @@ Presentacion
 </summary>
 </member>
 <member name="P:Presentacion.My.Resources.Resources.Bulleted_List_icon">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.Excel">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.Excel1">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -75,6 +90,146 @@ Presentacion
 <member name="P:Presentacion.My.Resources.Resources.save">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.txt">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.txt1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt4">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt4.Rh_RptPlanHrsExtraMensual4DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt4.Rh_RptPlanHrsExtraMensual4Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt4.Rh_RptPlanHrsExtraMensual4RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt4TableAdapters.Rh_RptPlanHrsExtraMensual4TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt4TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Presentacion.Dts_PlanHrsExt4TableAdapters.TableAdapterManager.UpdateUpdatedRows(Presentacion.Dts_PlanHrsExt4,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Presentacion.Dts_PlanHrsExt4TableAdapters.TableAdapterManager.UpdateInsertedRows(Presentacion.Dts_PlanHrsExt4,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Presentacion.Dts_PlanHrsExt4TableAdapters.TableAdapterManager.UpdateDeletedRows(Presentacion.Dts_PlanHrsExt4,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Presentacion.Dts_PlanHrsExt4TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Presentacion.Dts_PlanHrsExt4TableAdapters.TableAdapterManager.UpdateAll(Presentacion.Dts_PlanHrsExt4)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt4TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt4TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt5">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt5.Rh_RptPlanHrsExtraMensual5DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt5.Rh_RptPlanHrsExtraMensual5Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt5.Rh_RptPlanHrsExtraMensual5RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt5TableAdapters.Rh_RptPlanHrsExtraMensual5TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt5TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Presentacion.Dts_PlanHrsExt5TableAdapters.TableAdapterManager.UpdateUpdatedRows(Presentacion.Dts_PlanHrsExt5,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Presentacion.Dts_PlanHrsExt5TableAdapters.TableAdapterManager.UpdateInsertedRows(Presentacion.Dts_PlanHrsExt5,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Presentacion.Dts_PlanHrsExt5TableAdapters.TableAdapterManager.UpdateDeletedRows(Presentacion.Dts_PlanHrsExt5,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Presentacion.Dts_PlanHrsExt5TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Presentacion.Dts_PlanHrsExt5TableAdapters.TableAdapterManager.UpdateAll(Presentacion.Dts_PlanHrsExt5)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt5TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PlanHrsExt5TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
 </summary>
 </member>
 <member name="T:Presentacion.dtsEjemplo">
