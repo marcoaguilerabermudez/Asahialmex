@@ -91,7 +91,7 @@ namespace CsPresentacion
             txt_contacto.Text = "";
             cmb_estado_nacimiento.Text = "";
             lbl_infonavit.Text = "0";
-            lbl_infonavit.Enabled = false;
+            lbl_infonavit.Visible = false;
             txt_factor.Visible = false;
             lbl_factor.Visible = false;
             Panel_principal.Visible = true;
@@ -639,37 +639,37 @@ namespace CsPresentacion
         }
         private void Button2_Click(object sender, EventArgs e)//Alta de empleado
         {
-            if (string.IsNullOrEmpty(cmb_turno.Text))
-            {
-                MessageBox.Show("Es necesario capturar el turno.", "Aviso");
-                cmb_turno.Focus();
-            }
-            else if (string.IsNullOrEmpty(cmb_ruta.Text))
-            {
-                MessageBox.Show("Es necesario capturar la ruta.", "Aviso");
-                cmb_ruta.Focus();
-            }
-            else if (string.IsNullOrEmpty(txt_contacto.Text))
-            {
-                MessageBox.Show("Es necesario capturar información de contacto.", "Aviso");
-                txt_contacto.Focus();
-            }
-            else if (string.IsNullOrEmpty(txt_tel_contacto.Text))
-            {
-                MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso");
-                txt_tel_contacto.Focus();
-            }
-            else
-            {
-               Registra_empleado();
-                Crea_Contrato();
+            //if (string.IsNullOrEmpty(cmb_turno.Text))
+            //{
+            //    MessageBox.Show("Es necesario capturar el turno.", "Aviso");
+            //    cmb_turno.Focus();
+            //}
+            //else if (string.IsNullOrEmpty(cmb_ruta.Text))
+            //{
+            //    MessageBox.Show("Es necesario capturar la ruta.", "Aviso");
+            //    cmb_ruta.Focus();
+            //}
+            //else if (string.IsNullOrEmpty(txt_contacto.Text))
+            //{
+            //    MessageBox.Show("Es necesario capturar información de contacto.", "Aviso");
+            //    txt_contacto.Focus();
+            //}
+            //else if (string.IsNullOrEmpty(txt_tel_contacto.Text))
+            //{
+            //    MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso");
+            //    txt_tel_contacto.Focus();
+            //}
+            //else
+            //{
+               // Registra_empleado();
+               // Crea_Contrato();
                 Frm_Rep_Alta_empleado Rep = new Frm_Rep_Alta_empleado();
-                Rep.CLAVE = Convert.ToInt32(txt_Clave.Text);
+                Rep.CLAVE = Convert.ToInt32(4519);
                 Rep.ShowDialog();
-               Panel_principal.Visible = true;
-               nuevo();
-                selecciona_clave();
-            }
+                Panel_principal.Visible = true;
+               // nuevo();
+                //selecciona_clave();
+            //}
         }
         private void Btn_fin_anterior_Click(object sender, EventArgs e)
         {

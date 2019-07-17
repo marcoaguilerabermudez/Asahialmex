@@ -30,10 +30,8 @@
         {
             this.Panel_principal = new System.Windows.Forms.Panel();
             this.lbl_infonavit = new System.Windows.Forms.Label();
-            this.cmb_infonavit = new System.Windows.Forms.ComboBox();
             this.txt_factor = new System.Windows.Forms.TextBox();
             this.lbl_var = new System.Windows.Forms.Label();
-            this.lbl_inf = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.lbl_tipo_ingreso = new System.Windows.Forms.Label();
             this.rdb_expatriado = new System.Windows.Forms.RadioButton();
@@ -73,6 +71,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txt_SDO5 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmb_infonavit = new System.Windows.Forms.ComboBox();
+            this.lbl_inf = new System.Windows.Forms.Label();
             this.btn_finalizar = new System.Windows.Forms.Button();
             this.cmb_turno = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -206,19 +206,6 @@
             this.lbl_infonavit.TabIndex = 235;
             this.lbl_infonavit.Text = "@Infonavit:";
             // 
-            // cmb_infonavit
-            // 
-            this.cmb_infonavit.FormattingEnabled = true;
-            this.cmb_infonavit.Items.AddRange(new object[] {
-            "NO",
-            "SI"});
-            this.cmb_infonavit.Location = new System.Drawing.Point(23, 248);
-            this.cmb_infonavit.Name = "cmb_infonavit";
-            this.cmb_infonavit.Size = new System.Drawing.Size(64, 21);
-            this.cmb_infonavit.TabIndex = 35;
-            this.cmb_infonavit.SelectedIndexChanged += new System.EventHandler(this.Cmb_infonavit_SelectedIndexChanged);
-            this.cmb_infonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_infonavit_KeyPress);
-            // 
             // txt_factor
             // 
             this.txt_factor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -236,15 +223,6 @@
             this.lbl_var.Size = new System.Drawing.Size(34, 13);
             this.lbl_var.TabIndex = 43;
             this.lbl_var.Text = "@Var";
-            // 
-            // lbl_inf
-            // 
-            this.lbl_inf.AutoSize = true;
-            this.lbl_inf.Location = new System.Drawing.Point(20, 231);
-            this.lbl_inf.Name = "lbl_inf";
-            this.lbl_inf.Size = new System.Drawing.Size(67, 13);
-            this.lbl_inf.TabIndex = 234;
-            this.lbl_inf.Text = "INFONAVIT:";
             // 
             // label32
             // 
@@ -669,13 +647,35 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             // 
+            // cmb_infonavit
+            // 
+            this.cmb_infonavit.FormattingEnabled = true;
+            this.cmb_infonavit.Items.AddRange(new object[] {
+            "NO",
+            "SI"});
+            this.cmb_infonavit.Location = new System.Drawing.Point(23, 248);
+            this.cmb_infonavit.Name = "cmb_infonavit";
+            this.cmb_infonavit.Size = new System.Drawing.Size(64, 21);
+            this.cmb_infonavit.TabIndex = 35;
+            this.cmb_infonavit.SelectedIndexChanged += new System.EventHandler(this.Cmb_infonavit_SelectedIndexChanged);
+            this.cmb_infonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_infonavit_KeyPress);
+            // 
+            // lbl_inf
+            // 
+            this.lbl_inf.AutoSize = true;
+            this.lbl_inf.Location = new System.Drawing.Point(20, 231);
+            this.lbl_inf.Name = "lbl_inf";
+            this.lbl_inf.Size = new System.Drawing.Size(67, 13);
+            this.lbl_inf.TabIndex = 234;
+            this.lbl_inf.Text = "INFONAVIT:";
+            // 
             // btn_finalizar
             // 
             this.btn_finalizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_finalizar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_finalizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_finalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_finalizar.Location = new System.Drawing.Point(500, 515);
+            this.btn_finalizar.Location = new System.Drawing.Point(497, 515);
             this.btn_finalizar.Name = "btn_finalizar";
             this.btn_finalizar.Size = new System.Drawing.Size(81, 39);
             this.btn_finalizar.TabIndex = 38;
@@ -1572,7 +1572,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(599, 619);
+            this.ClientSize = new System.Drawing.Size(597, 619);
             this.Controls.Add(this.Panel_secundario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);
