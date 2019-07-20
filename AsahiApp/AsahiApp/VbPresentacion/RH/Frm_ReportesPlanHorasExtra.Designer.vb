@@ -106,6 +106,7 @@ Partial Class Frm_ReportesPlanHorasExtra
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Cmb_Meses)
         Me.Controls.Add(Me.Cmb_Departamento)
+        Me.MaximizeBox = False
         Me.Name = "Frm_ReportesPlanHorasExtra"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

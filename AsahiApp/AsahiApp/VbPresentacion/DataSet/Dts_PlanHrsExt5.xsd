@@ -66,6 +66,7 @@
               <Mapping SourceColumn="Bruto" DataSetColumn="Bruto" />
               <Mapping SourceColumn="Neto" DataSetColumn="Neto" />
               <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -128,6 +129,13 @@
               <xs:element name="Bruto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBruto" msprop:Generator_ColumnPropNameInRow="Bruto" msprop:Generator_ColumnPropNameInTable="BrutoColumn" msprop:Generator_UserColumnName="Bruto" type="xs:decimal" minOccurs="0" />
               <xs:element name="Neto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNeto" msprop:Generator_ColumnPropNameInRow="Neto" msprop:Generator_ColumnPropNameInTable="NetoColumn" msprop:Generator_UserColumnName="Neto" type="xs:decimal" minOccurs="0" />
               <xs:element name="fecha" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" msprop:Generator_UserColumnName="Departamento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

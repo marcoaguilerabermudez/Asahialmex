@@ -23,5 +23,6 @@
         Me.Rh_RptPlanHrsExtraMensual5TableAdapter.Fill(Me.Dts_PlanHrsExt5.Rh_RptPlanHrsExtraMensual5, Me.mes, Me.depto, Me.año)
 
         Me.ReportViewer1.RefreshReport()
+        Me.ReportViewer1.RefreshReport()
     End Sub
 End Class

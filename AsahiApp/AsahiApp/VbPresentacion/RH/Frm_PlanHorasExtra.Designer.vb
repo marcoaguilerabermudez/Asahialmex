@@ -38,7 +38,23 @@ Partial Class Frm_PlanHorasExtra
         Me.lbl_Dia6 = New System.Windows.Forms.Label()
         Me.Lbl_Dia2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Dgv_HorasExtra = New System.Windows.Forms.DataGridView()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Lbl_SueldoNetoSuma = New System.Windows.Forms.Label()
+        Me.Lbl_SueldoBrutoSuma = New System.Windows.Forms.Label()
+        Me.Lbl_TotalTriplesSum = New System.Windows.Forms.Label()
+        Me.Lbl_TotalDoblesSum = New System.Windows.Forms.Label()
+        Me.Lbl_HrsTriplesSum = New System.Windows.Forms.Label()
+        Me.Lbl_HrsDoblesSum = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Lbl_SumMiercoles = New System.Windows.Forms.Label()
+        Me.Lbl_SumJueves = New System.Windows.Forms.Label()
+        Me.Lbl_SumDomingo = New System.Windows.Forms.Label()
+        Me.Lbl_SumViernes = New System.Windows.Forms.Label()
+        Me.Lbl_SumLunes = New System.Windows.Forms.Label()
+        Me.Lbl_SumSabado = New System.Windows.Forms.Label()
+        Me.Lbl_SumMartes = New System.Windows.Forms.Label()
         Me.clave = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.departamento = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,14 +70,18 @@ Partial Class Frm_PlanHorasExtra
         Me.domingo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dobles = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.triples = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descansoLaborado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalDobles = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalTriples = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalBruto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalNeto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Lbl_DescLaborado = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         CType(Me.Dgv_HorasExtra, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -76,7 +96,7 @@ Partial Class Frm_PlanHorasExtra
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1224, 59)
+        Me.Panel1.Size = New System.Drawing.Size(1341, 59)
         Me.Panel1.TabIndex = 0
         '
         'Lbl_Depto
@@ -155,7 +175,7 @@ Partial Class Frm_PlanHorasExtra
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 59)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1224, 35)
+        Me.Panel2.Size = New System.Drawing.Size(1341, 35)
         Me.Panel2.TabIndex = 1
         '
         'Lbl_Dia3
@@ -169,7 +189,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_Dia4
         '
         Me.Lbl_Dia4.AutoSize = True
-        Me.Lbl_Dia4.Location = New System.Drawing.Point(608, 11)
+        Me.Lbl_Dia4.Location = New System.Drawing.Point(610, 11)
         Me.Lbl_Dia4.Name = "Lbl_Dia4"
         Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia4.TabIndex = 14
@@ -185,7 +205,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_Dia5
         '
         Me.Lbl_Dia5.AutoSize = True
-        Me.Lbl_Dia5.Location = New System.Drawing.Point(664, 11)
+        Me.Lbl_Dia5.Location = New System.Drawing.Point(665, 11)
         Me.Lbl_Dia5.Name = "Lbl_Dia5"
         Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia5.TabIndex = 15
@@ -201,7 +221,7 @@ Partial Class Frm_PlanHorasExtra
         'lbl_Dia6
         '
         Me.lbl_Dia6.AutoSize = True
-        Me.lbl_Dia6.Location = New System.Drawing.Point(719, 11)
+        Me.lbl_Dia6.Location = New System.Drawing.Point(720, 11)
         Me.lbl_Dia6.Name = "lbl_Dia6"
         Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
         Me.lbl_Dia6.TabIndex = 16
@@ -209,33 +229,185 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_Dia2
         '
         Me.Lbl_Dia2.AutoSize = True
-        Me.Lbl_Dia2.Location = New System.Drawing.Point(499, 11)
+        Me.Lbl_Dia2.Location = New System.Drawing.Point(500, 11)
         Me.Lbl_Dia2.Name = "Lbl_Dia2"
         Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia2.TabIndex = 12
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.Dgv_HorasExtra)
+        Me.Panel3.Controls.Add(Me.Panel5)
+        Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 94)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1224, 482)
+        Me.Panel3.Size = New System.Drawing.Size(1341, 482)
         Me.Panel3.TabIndex = 2
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Dgv_HorasExtra)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1341, 447)
+        Me.Panel5.TabIndex = 3
         '
         'Dgv_HorasExtra
         '
         Me.Dgv_HorasExtra.AllowUserToAddRows = False
         Me.Dgv_HorasExtra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_HorasExtra.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clave, Me.nombre, Me.departamento, Me.idTurno, Me.sueldoBruto, Me.sueldoNeto, Me.lunes, Me.martes, Me.miercoles, Me.jueves, Me.viernes, Me.sabado, Me.domingo, Me.dobles, Me.triples, Me.totalDobles, Me.totalTriples, Me.totalBruto, Me.TotalNeto})
+        Me.Dgv_HorasExtra.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clave, Me.nombre, Me.departamento, Me.idTurno, Me.sueldoBruto, Me.sueldoNeto, Me.lunes, Me.martes, Me.miercoles, Me.jueves, Me.viernes, Me.sabado, Me.domingo, Me.dobles, Me.triples, Me.descansoLaborado, Me.totalDobles, Me.totalTriples, Me.totalBruto, Me.TotalNeto})
         Me.Dgv_HorasExtra.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_HorasExtra.Enabled = False
         Me.Dgv_HorasExtra.Location = New System.Drawing.Point(0, 0)
         Me.Dgv_HorasExtra.Name = "Dgv_HorasExtra"
         Me.Dgv_HorasExtra.RowHeadersVisible = False
         Me.Dgv_HorasExtra.RowHeadersWidth = 25
-        Me.Dgv_HorasExtra.Size = New System.Drawing.Size(1224, 482)
+        Me.Dgv_HorasExtra.Size = New System.Drawing.Size(1341, 447)
         Me.Dgv_HorasExtra.TabIndex = 0
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Lbl_DescLaborado)
+        Me.Panel4.Controls.Add(Me.Lbl_SueldoNetoSuma)
+        Me.Panel4.Controls.Add(Me.Lbl_SueldoBrutoSuma)
+        Me.Panel4.Controls.Add(Me.Lbl_TotalTriplesSum)
+        Me.Panel4.Controls.Add(Me.Lbl_TotalDoblesSum)
+        Me.Panel4.Controls.Add(Me.Lbl_HrsTriplesSum)
+        Me.Panel4.Controls.Add(Me.Lbl_HrsDoblesSum)
+        Me.Panel4.Controls.Add(Me.Label8)
+        Me.Panel4.Controls.Add(Me.Lbl_SumMiercoles)
+        Me.Panel4.Controls.Add(Me.Lbl_SumJueves)
+        Me.Panel4.Controls.Add(Me.Lbl_SumDomingo)
+        Me.Panel4.Controls.Add(Me.Lbl_SumViernes)
+        Me.Panel4.Controls.Add(Me.Lbl_SumLunes)
+        Me.Panel4.Controls.Add(Me.Lbl_SumSabado)
+        Me.Panel4.Controls.Add(Me.Lbl_SumMartes)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel4.Location = New System.Drawing.Point(0, 447)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1341, 35)
+        Me.Panel4.TabIndex = 2
+        '
+        'Lbl_SueldoNetoSuma
+        '
+        Me.Lbl_SueldoNetoSuma.AutoSize = True
+        Me.Lbl_SueldoNetoSuma.Location = New System.Drawing.Point(1205, 11)
+        Me.Lbl_SueldoNetoSuma.Name = "Lbl_SueldoNetoSuma"
+        Me.Lbl_SueldoNetoSuma.Size = New System.Drawing.Size(39, 13)
+        Me.Lbl_SueldoNetoSuma.TabIndex = 24
+        Me.Lbl_SueldoNetoSuma.Text = "Label6"
+        '
+        'Lbl_SueldoBrutoSuma
+        '
+        Me.Lbl_SueldoBrutoSuma.AutoSize = True
+        Me.Lbl_SueldoBrutoSuma.Location = New System.Drawing.Point(1140, 11)
+        Me.Lbl_SueldoBrutoSuma.Name = "Lbl_SueldoBrutoSuma"
+        Me.Lbl_SueldoBrutoSuma.Size = New System.Drawing.Size(39, 13)
+        Me.Lbl_SueldoBrutoSuma.TabIndex = 23
+        Me.Lbl_SueldoBrutoSuma.Text = "Label5"
+        '
+        'Lbl_TotalTriplesSum
+        '
+        Me.Lbl_TotalTriplesSum.AutoSize = True
+        Me.Lbl_TotalTriplesSum.Location = New System.Drawing.Point(1075, 11)
+        Me.Lbl_TotalTriplesSum.Name = "Lbl_TotalTriplesSum"
+        Me.Lbl_TotalTriplesSum.Size = New System.Drawing.Size(39, 13)
+        Me.Lbl_TotalTriplesSum.TabIndex = 22
+        Me.Lbl_TotalTriplesSum.Text = "Label4"
+        '
+        'Lbl_TotalDoblesSum
+        '
+        Me.Lbl_TotalDoblesSum.AutoSize = True
+        Me.Lbl_TotalDoblesSum.Location = New System.Drawing.Point(1010, 11)
+        Me.Lbl_TotalDoblesSum.Name = "Lbl_TotalDoblesSum"
+        Me.Lbl_TotalDoblesSum.Size = New System.Drawing.Size(39, 13)
+        Me.Lbl_TotalDoblesSum.TabIndex = 21
+        Me.Lbl_TotalDoblesSum.Text = "Label3"
+        '
+        'Lbl_HrsTriplesSum
+        '
+        Me.Lbl_HrsTriplesSum.AutoSize = True
+        Me.Lbl_HrsTriplesSum.Location = New System.Drawing.Point(893, 11)
+        Me.Lbl_HrsTriplesSum.Name = "Lbl_HrsTriplesSum"
+        Me.Lbl_HrsTriplesSum.Size = New System.Drawing.Size(39, 13)
+        Me.Lbl_HrsTriplesSum.TabIndex = 20
+        Me.Lbl_HrsTriplesSum.Text = "Label2"
+        '
+        'Lbl_HrsDoblesSum
+        '
+        Me.Lbl_HrsDoblesSum.AutoSize = True
+        Me.Lbl_HrsDoblesSum.Location = New System.Drawing.Point(831, 11)
+        Me.Lbl_HrsDoblesSum.Name = "Lbl_HrsDoblesSum"
+        Me.Lbl_HrsDoblesSum.Size = New System.Drawing.Size(39, 13)
+        Me.Lbl_HrsDoblesSum.TabIndex = 19
+        Me.Lbl_HrsDoblesSum.Text = "Label1"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(337, 11)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(59, 13)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "TOTALES:"
+        '
+        'Lbl_SumMiercoles
+        '
+        Me.Lbl_SumMiercoles.AutoSize = True
+        Me.Lbl_SumMiercoles.Location = New System.Drawing.Point(555, 11)
+        Me.Lbl_SumMiercoles.Name = "Lbl_SumMiercoles"
+        Me.Lbl_SumMiercoles.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_SumMiercoles.TabIndex = 13
+        '
+        'Lbl_SumJueves
+        '
+        Me.Lbl_SumJueves.AutoSize = True
+        Me.Lbl_SumJueves.Location = New System.Drawing.Point(608, 11)
+        Me.Lbl_SumJueves.Name = "Lbl_SumJueves"
+        Me.Lbl_SumJueves.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_SumJueves.TabIndex = 14
+        '
+        'Lbl_SumDomingo
+        '
+        Me.Lbl_SumDomingo.AutoSize = True
+        Me.Lbl_SumDomingo.Location = New System.Drawing.Point(775, 11)
+        Me.Lbl_SumDomingo.Name = "Lbl_SumDomingo"
+        Me.Lbl_SumDomingo.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_SumDomingo.TabIndex = 17
+        '
+        'Lbl_SumViernes
+        '
+        Me.Lbl_SumViernes.AutoSize = True
+        Me.Lbl_SumViernes.Location = New System.Drawing.Point(664, 11)
+        Me.Lbl_SumViernes.Name = "Lbl_SumViernes"
+        Me.Lbl_SumViernes.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_SumViernes.TabIndex = 15
+        '
+        'Lbl_SumLunes
+        '
+        Me.Lbl_SumLunes.AutoSize = True
+        Me.Lbl_SumLunes.Location = New System.Drawing.Point(445, 11)
+        Me.Lbl_SumLunes.Name = "Lbl_SumLunes"
+        Me.Lbl_SumLunes.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_SumLunes.TabIndex = 11
+        '
+        'Lbl_SumSabado
+        '
+        Me.Lbl_SumSabado.AutoSize = True
+        Me.Lbl_SumSabado.Location = New System.Drawing.Point(721, 11)
+        Me.Lbl_SumSabado.Name = "Lbl_SumSabado"
+        Me.Lbl_SumSabado.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_SumSabado.TabIndex = 16
+        '
+        'Lbl_SumMartes
+        '
+        Me.Lbl_SumMartes.AutoSize = True
+        Me.Lbl_SumMartes.Location = New System.Drawing.Point(499, 11)
+        Me.Lbl_SumMartes.Name = "Lbl_SumMartes"
+        Me.Lbl_SumMartes.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_SumMartes.TabIndex = 12
         '
         'clave
         '
@@ -326,14 +498,21 @@ Partial Class Frm_PlanHorasExtra
         Me.dobles.HeaderText = "Horas Dobles"
         Me.dobles.Name = "dobles"
         Me.dobles.ReadOnly = True
-        Me.dobles.Width = 65
+        Me.dobles.Width = 60
         '
         'triples
         '
         Me.triples.HeaderText = "Horas Triples"
         Me.triples.Name = "triples"
         Me.triples.ReadOnly = True
-        Me.triples.Width = 65
+        Me.triples.Width = 60
+        '
+        'descansoLaborado
+        '
+        Me.descansoLaborado.HeaderText = "Descanso Laborado"
+        Me.descansoLaborado.Name = "descansoLaborado"
+        Me.descansoLaborado.ReadOnly = True
+        Me.descansoLaborado.Width = 60
         '
         'totalDobles
         '
@@ -353,19 +532,30 @@ Partial Class Frm_PlanHorasExtra
         '
         Me.totalBruto.HeaderText = "Bruto"
         Me.totalBruto.Name = "totalBruto"
+        Me.totalBruto.ReadOnly = True
         Me.totalBruto.Width = 65
         '
         'TotalNeto
         '
         Me.TotalNeto.HeaderText = "Neto"
         Me.TotalNeto.Name = "TotalNeto"
+        Me.TotalNeto.ReadOnly = True
         Me.TotalNeto.Width = 65
+        '
+        'Lbl_DescLaborado
+        '
+        Me.Lbl_DescLaborado.AutoSize = True
+        Me.Lbl_DescLaborado.Location = New System.Drawing.Point(955, 11)
+        Me.Lbl_DescLaborado.Name = "Lbl_DescLaborado"
+        Me.Lbl_DescLaborado.Size = New System.Drawing.Size(39, 13)
+        Me.Lbl_DescLaborado.TabIndex = 25
+        Me.Lbl_DescLaborado.Text = "Label7"
         '
         'Frm_PlanHorasExtra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1224, 576)
+        Me.ClientSize = New System.Drawing.Size(1341, 576)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -379,7 +569,10 @@ Partial Class Frm_PlanHorasExtra
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
         CType(Me.Dgv_HorasExtra, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -401,6 +594,22 @@ Partial Class Frm_PlanHorasExtra
     Friend WithEvents Lbl_Dia1 As Label
     Friend WithEvents lbl_Dia6 As Label
     Friend WithEvents Lbl_Dia2 As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Lbl_SumMiercoles As Label
+    Friend WithEvents Lbl_SumJueves As Label
+    Friend WithEvents Lbl_SumDomingo As Label
+    Friend WithEvents Lbl_SumViernes As Label
+    Friend WithEvents Lbl_SumLunes As Label
+    Friend WithEvents Lbl_SumSabado As Label
+    Friend WithEvents Lbl_SumMartes As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Lbl_SueldoNetoSuma As Label
+    Friend WithEvents Lbl_SueldoBrutoSuma As Label
+    Friend WithEvents Lbl_TotalTriplesSum As Label
+    Friend WithEvents Lbl_TotalDoblesSum As Label
+    Friend WithEvents Lbl_HrsTriplesSum As Label
+    Friend WithEvents Lbl_HrsDoblesSum As Label
+    Friend WithEvents Panel5 As Panel
     Friend WithEvents clave As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents departamento As DataGridViewTextBoxColumn
@@ -416,8 +625,10 @@ Partial Class Frm_PlanHorasExtra
     Friend WithEvents domingo As DataGridViewTextBoxColumn
     Friend WithEvents dobles As DataGridViewTextBoxColumn
     Friend WithEvents triples As DataGridViewTextBoxColumn
+    Friend WithEvents descansoLaborado As DataGridViewTextBoxColumn
     Friend WithEvents totalDobles As DataGridViewTextBoxColumn
     Friend WithEvents totalTriples As DataGridViewTextBoxColumn
     Friend WithEvents totalBruto As DataGridViewTextBoxColumn
     Friend WithEvents TotalNeto As DataGridViewTextBoxColumn
+    Friend WithEvents Lbl_DescLaborado As Label
 End Class
