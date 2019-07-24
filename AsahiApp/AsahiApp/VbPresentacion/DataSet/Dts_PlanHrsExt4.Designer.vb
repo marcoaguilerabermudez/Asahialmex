@@ -347,6 +347,8 @@ Partial Public Class Dts_PlanHrsExt4
         
         Private columnTTriples As Global.System.Data.DataColumn
         
+        Private columnTDescLaborado As Global.System.Data.DataColumn
+        
         Private columnBruto As Global.System.Data.DataColumn
         
         Private columnNeto As Global.System.Data.DataColumn
@@ -648,6 +650,14 @@ Partial Public Class Dts_PlanHrsExt4
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property TDescLaboradoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTDescLaborado
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property BrutoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnBruto
@@ -748,12 +758,13 @@ Partial Public Class Dts_PlanHrsExt4
                     ByVal Dom3 As Double,  _
                     ByVal TDobles As Decimal,  _
                     ByVal TTriples As Decimal,  _
+                    ByVal TDescLaborado As Decimal,  _
                     ByVal Bruto As Decimal,  _
                     ByVal Neto As Decimal,  _
                     ByVal fecha As Date,  _
                     ByVal DEPARTAMENTO As String) As Rh_RptPlanHrsExtraMensual4Row
             Dim rowRh_RptPlanHrsExtraMensual4Row As Rh_RptPlanHrsExtraMensual4Row = CType(Me.NewRow,Rh_RptPlanHrsExtraMensual4Row)
-            Dim columnValuesArray() As Object = New Object() {CLAVE, NOMBRE, Lun, Mar, Mie, Jue, Vie, Sab, Dom, Lun1, Mar1, Mie1, Jue1, Vie1, Sab1, Dom1, Lun2, Mar2, Mie2, Jue2, Vie2, Sab2, Dom2, Lun3, Mar3, Mie3, Jue3, Vie3, Sab3, Dom3, TDobles, TTriples, Bruto, Neto, fecha, DEPARTAMENTO}
+            Dim columnValuesArray() As Object = New Object() {CLAVE, NOMBRE, Lun, Mar, Mie, Jue, Vie, Sab, Dom, Lun1, Mar1, Mie1, Jue1, Vie1, Sab1, Dom1, Lun2, Mar2, Mie2, Jue2, Vie2, Sab2, Dom2, Lun3, Mar3, Mie3, Jue3, Vie3, Sab3, Dom3, TDobles, TTriples, TDescLaborado, Bruto, Neto, fecha, DEPARTAMENTO}
             rowRh_RptPlanHrsExtraMensual4Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowRh_RptPlanHrsExtraMensual4Row)
             Return rowRh_RptPlanHrsExtraMensual4Row
@@ -808,6 +819,7 @@ Partial Public Class Dts_PlanHrsExt4
             Me.columnDom3 = MyBase.Columns("Dom3")
             Me.columnTDobles = MyBase.Columns("TDobles")
             Me.columnTTriples = MyBase.Columns("TTriples")
+            Me.columnTDescLaborado = MyBase.Columns("TDescLaborado")
             Me.columnBruto = MyBase.Columns("Bruto")
             Me.columnNeto = MyBase.Columns("Neto")
             Me.columnfecha = MyBase.Columns("fecha")
@@ -881,6 +893,8 @@ Partial Public Class Dts_PlanHrsExt4
             MyBase.Columns.Add(Me.columnTDobles)
             Me.columnTTriples = New Global.System.Data.DataColumn("TTriples", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTTriples)
+            Me.columnTDescLaborado = New Global.System.Data.DataColumn("TDescLaborado", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTDescLaborado)
             Me.columnBruto = New Global.System.Data.DataColumn("Bruto", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBruto)
             Me.columnNeto = New Global.System.Data.DataColumn("Neto", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
@@ -921,10 +935,12 @@ Partial Public Class Dts_PlanHrsExt4
             Me.columnDom3.ReadOnly = true
             Me.columnTDobles.ReadOnly = true
             Me.columnTTriples.ReadOnly = true
+            Me.columnTDescLaborado.ReadOnly = true
             Me.columnBruto.ReadOnly = true
             Me.columnNeto.ReadOnly = true
             Me.columnfecha.ReadOnly = true
-            Me.columnDEPARTAMENTO.MaxLength = 30
+            Me.columnDEPARTAMENTO.ReadOnly = true
+            Me.columnDEPARTAMENTO.MaxLength = 82
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1576,6 +1592,22 @@ Partial Public Class Dts_PlanHrsExt4
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property TDescLaborado() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableRh_RptPlanHrsExtraMensual4.TDescLaboradoColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'TDescLaborado' de la tabla 'Rh_RptPlanHrsExtraMensual4' e"& _ 
+                            "s DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRh_RptPlanHrsExtraMensual4.TDescLaboradoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property Bruto() As Decimal
             Get
                 Try 
@@ -2024,6 +2056,18 @@ Partial Public Class Dts_PlanHrsExt4
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsTDescLaboradoNull() As Boolean
+            Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.TDescLaboradoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetTDescLaboradoNull()
+            Me(Me.tableRh_RptPlanHrsExtraMensual4.TDescLaboradoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsBrutoNull() As Boolean
             Return Me.IsNull(Me.tableRh_RptPlanHrsExtraMensual4.BrutoColumn)
         End Function
@@ -2269,6 +2313,7 @@ Namespace Dts_PlanHrsExt4TableAdapters
             tableMapping.ColumnMappings.Add("Dom3", "Dom3")
             tableMapping.ColumnMappings.Add("TDobles", "TDobles")
             tableMapping.ColumnMappings.Add("TTriples", "TTriples")
+            tableMapping.ColumnMappings.Add("TDescLaborado", "TDescLaborado")
             tableMapping.ColumnMappings.Add("Bruto", "Bruto")
             tableMapping.ColumnMappings.Add("Neto", "Neto")
             tableMapping.ColumnMappings.Add("fecha", "fecha")

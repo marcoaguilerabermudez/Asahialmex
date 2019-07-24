@@ -714,6 +714,15 @@
             totalTriples_ = value
         End Set
     End Property
+    Private totalDescLab_ As Double
+    Public Property TotalDescLab() As Double
+        Get
+            Return totalDescLab_
+        End Get
+        Set(ByVal value As Double)
+            totalDescLab_ = value
+        End Set
+    End Property
     Private bruto_ As Double
     Public Property Bruto() As Double
         Get
