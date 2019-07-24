@@ -1,6 +1,5 @@
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.pdb
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csprojAssemblyReference.cache
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.pdb

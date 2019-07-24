@@ -147,7 +147,32 @@ Public Class DEmpleado
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT CLAVE, DESCRIPCION FROM asahi16.Supervisor_giro.DEPTO WHERE CENTRO_COSTO <> 16 order by DESCRIPCION", oCon)
+            Dim query As New SqlCommand("SELECT CLAVE, DESCRIPCION FROM asahi16.Supervisor_giro.DEPTO WHERE CENTRO_COSTO <> 16 and (Clave <> 02 and Clave <> 17 and Clave <> 44 and Clave <> 45) order by DESCRIPCION", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim Emp As New Empleado
+                Emp.IdDepartamento = dr("CLAVE").ToString
+                Emp.Departamento = dr("DESCRIPCION").ToString
+                lstDep.Add(Emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstDep
+    End Function
+    Public Function RecuperarDepartamentosJP(ByVal cadenaConex As String) As LEmpleado
+        Dim lstDep As New LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT CLAVE, DESCRIPCION FROM asahi16.dbo.DeptoJp WHERE CENTRO_COSTO <> 16 and (Clave <> 02 and Clave <> 17 and Clave <> 44 and Clave <> 45) order by DESCRIPCION", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -200,6 +225,7 @@ Public Class DEmpleado
                 emp.Domingo = Convert.ToDouble(dr("Domingo").ToString)
                 emp.TotalDobles = Convert.ToDouble(dr("TDobles").ToString)
                 emp.TotalTriples = Convert.ToDouble(dr("TTriples").ToString)
+                emp.TotalDescLab = Convert.ToDouble(dr("TDescLaborado").ToString)
                 emp.Bruto = Convert.ToDouble(dr("Bruto").ToString)
                 emp.Neto = Convert.ToDouble(dr("Neto").ToString)
                 lstEmp.Add(emp)
