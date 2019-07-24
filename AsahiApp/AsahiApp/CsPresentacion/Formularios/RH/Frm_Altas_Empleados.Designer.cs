@@ -675,7 +675,7 @@
             this.btn_finalizar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_finalizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_finalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_finalizar.Location = new System.Drawing.Point(497, 515);
+            this.btn_finalizar.Location = new System.Drawing.Point(488, 515);
             this.btn_finalizar.Name = "btn_finalizar";
             this.btn_finalizar.Size = new System.Drawing.Size(81, 39);
             this.btn_finalizar.TabIndex = 38;
@@ -1572,7 +1572,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(597, 619);
+            this.ClientSize = new System.Drawing.Size(599, 619);
             this.Controls.Add(this.Panel_secundario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);

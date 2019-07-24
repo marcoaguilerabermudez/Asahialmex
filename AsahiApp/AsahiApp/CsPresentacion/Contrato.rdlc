@@ -4102,7 +4102,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.49553cm</Width>
+              <Width>5.01354cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -4165,7 +4165,7 @@
         <Top>12.40865cm</Top>
         <Left>13.38629cm</Left>
         <Height>0.4cm</Height>
-        <Width>3.49553cm</Width>
+        <Width>5.01354cm</Width>
         <ZIndex>26</ZIndex>
         <Style>
           <Border>
@@ -10574,8 +10574,6 @@
                               <Value>Domingo a Viernes</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
-                                <FontFamily>Arial Narrow</FontFamily>
-                                <FontSize>12pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
@@ -10927,7 +10925,7 @@
         <Top>142.68663cm</Top>
         <Left>0.65441cm</Left>
         <Height>2.4cm</Height>
-        <Width>19.55534cm</Width>
+        <Width>19.55535cm</Width>
         <ZIndex>118</ZIndex>
         <Style>
           <Border>

@@ -47,22 +47,18 @@ Public Class Frm_Principal
     Private Sub BajaEmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem1.Click
         'Modulo de listado de bajas
         Dim Bajas As New Frm_Listado_Bajas()
-        Bajas.ShowDialog()
-        Bajas.Hide()
-
+        Bajas.Show()
     End Sub
 
     Private Sub BajaEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem.Click
         'Modulo de listado de altas de Empleados
         Dim Altas As New Frm_Listado_Altas()
-        Altas.ShowDialog()
-        Altas.Hide()
-
+        Altas.Show()
     End Sub
 
     Private Sub ACercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ACercaDeToolStripMenuItem.Click
         Dim Soporte As New Frm_Soporte()
-        Soporte.ShowDialog()
+        Soporte.Show()
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
@@ -75,7 +71,7 @@ Public Class Frm_Principal
 
     Private Sub AcercaDeToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem1.Click
         Dim Acerca As New Frm_Acerca()
-        Acerca.ShowDialog()
+        Acerca.Show()
     End Sub
 
     Private Sub InformaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformaciónToolStripMenuItem.Click
@@ -86,9 +82,7 @@ Public Class Frm_Principal
     Private Sub FiniquitoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FiniquitoToolStripMenuItem.Click
         'Módulo de reportes de finiquito
         Dim Finiquito As New Frm_Finiquito()
-        Finiquito.ShowDialog()
-        Finiquito.Hide()
-
+        Finiquito.Show()
     End Sub
 
     Private Sub BajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaToolStripMenuItem.Click
@@ -107,8 +101,7 @@ Public Class Frm_Principal
     Private Sub MejoraContinuaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MejoraContinuaToolStripMenuItem.Click
         'Módulo de reportes de Mejoras Continuas
         Dim Mejora As New Frm_Mejora_Param()
-        Mejora.ShowDialog()
-        Mejora.Hide()
+        Mejora.Show()
     End Sub
     Private Sub PreNominaGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaGlobalToolStripMenuItem.Click
         Dim globPren As New Frm_GlobalPrenomina(cadConex, cadenaConex)
@@ -134,7 +127,7 @@ Public Class Frm_Principal
         bono.ShowDialog()
     End Sub
 
-    Private Sub TodosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TodosToolStripMenuItem.Click
+    Private Sub TodosToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         'Ejecuta todos los reportes de pre nomina
         Dim Retardos As New Frm_Parametros_rep_prenomina()
         Var = 0
@@ -166,6 +159,35 @@ Public Class Frm_Principal
         Dim rph As New Frm_ReportesPlanHorasExtra()
         rph.ShowDialog()
     End Sub
+
+    Private Sub PermisosDeSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermisosDeSalidaToolStripMenuItem.Click
+        'Ejecuta reporte de Permisos de salida RH
+        Dim Retardos As New Frm_Parametros_rep_prenomina()
+        Var = 3
+        Retardos.lbl_var.Text = Var
+        Retardos.ShowDialog()
+    End Sub
+
+    Private Sub TodosToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub ReporteMejorasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteMejorasToolStripMenuItem.Click
+    End Sub
+
+    Private Sub EspañolToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EspañolToolStripMenuItem.Click
+
+        Dim Mej As New Frm_Reporte_Anual_Mejoras()
+        Mej.variable = 0
+        Mej.Show()
+    End Sub
+
+    Private Sub JaponésToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JaponésToolStripMenuItem.Click
+        Dim Mej As New Frm_Reporte_Anual_Mejoras()
+        Mej.variable = 1
+        Mej.Show()
+    End Sub
+
+
 #End Region
 End Class
 
