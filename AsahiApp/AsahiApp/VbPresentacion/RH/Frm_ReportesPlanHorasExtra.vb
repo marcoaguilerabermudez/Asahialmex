@@ -15,7 +15,7 @@ Public Class Frm_ReportesPlanHorasExtra
         Dim lstDep As New LEmpleado()
         Dim NEmp As New NEmpleado()
 
-        lstDep = NEmp.RecuperarDepartamentos(Me.cadConex)
+        lstDep = NEmp.RecuperarDepartamentos(Me.cadConex, 1)
         With Cmb_Departamento
             .DataSource = lstDep
             .ValueMember = "IdDepartamento"

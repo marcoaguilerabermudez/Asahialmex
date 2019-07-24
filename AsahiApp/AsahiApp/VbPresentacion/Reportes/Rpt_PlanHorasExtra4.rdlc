@@ -2,6 +2,20 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
+      <Image Name="logoAsahi">
+        <Source>Embedded</Source>
+        <Value>logoasahialuminium</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.70868cm</Top>
+        <Left>1.45528cm</Left>
+        <Height>1.76417cm</Height>
+        <Width>1.57938cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
       <Tablix Name="TablaHrsExt">
         <TablixBody>
           <TablixColumns>
@@ -12,46 +26,28 @@
               <Width>5.06646cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.9484cm</Width>
+              <Width>0.92194cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.97982cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.04479cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.12417cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.00952cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>0.93896cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>0.96542cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>0.99187cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>0.93896cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>0.96541cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>0.93896cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>0.93896cm</Width>
+              <Width>0.9269cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.9125cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.07125cm</Width>
+              <Width>0.88605cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.87723cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.93896cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.88605cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.91249cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.93896cm</Width>
@@ -60,40 +56,58 @@
               <Width>0.88604cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.96542cm</Width>
+              <Width>0.9125cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.93896cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.96542cm</Width>
+              <Width>0.88604cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.07125cm</Width>
+              <Width>0.9125cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.06243cm</Width>
+              <Width>0.85959cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04479cm</Width>
+              <Width>0.88604cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.04479cm</Width>
+              <Width>0.9125cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.07125cm</Width>
+              <Width>0.88604cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.07125cm</Width>
+              <Width>0.85959cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.07125cm</Width>
+              <Width>0.93896cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.07124cm</Width>
+              <Width>0.93014cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.08007cm</Width>
+              <Width>0.88604cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.9125cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.88604cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.93896cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.9125cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.93895cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.92133cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.75917cm</Width>
@@ -105,25 +119,37 @@
               <Width>1.67979cm</Width>
             </TablixColumn>
             <TablixColumn>
+              <Width>1.67979cm</Width>
+            </TablixColumn>
+            <TablixColumn>
               <Width>1.52105cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.67938cm</Height>
+              <Height>1.0498cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox9">
+                    <Textbox Name="Textbox14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CLAVE</Value>
+                              <Value>CLAVE/ </Value>
                               <Style>
+                                <FontFamily>Yu Mincho</FontFamily>
                                 <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>社員番号</Value>
+                              <Style>
+                                <FontFamily>Yu Mincho</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -146,16 +172,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox11">
+                    <Textbox Name="Textbox15">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>NOMBRE</Value>
+                              <Value>NOMBRE/</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontFamily>yu mincho</FontFamily>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>氏名</Value>
+                              <Style>
+                                <FontFamily>yu mincho</FontFamily>
+                                <FontWeight>Normal</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -178,7 +211,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox13">
+                    <Textbox Name="Textbox16">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -210,14 +243,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox15">
+                    <Textbox Name="Textbox17">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 1, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 1, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -242,14 +275,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox17">
+                    <Textbox Name="Textbox18">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 2, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 2, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -281,7 +314,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 3, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 3, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -313,7 +346,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 4, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 4, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -345,7 +378,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 5, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 5, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -377,7 +410,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 6, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 6, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -394,7 +427,7 @@
                         </Border>
                         <RightBorder>
                           <Color>Black</Color>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -413,7 +446,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 7, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 7, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -445,7 +478,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 8, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 8, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -477,7 +510,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 9, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 9, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -509,7 +542,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 10, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -541,7 +574,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 11, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 11, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -573,7 +606,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 12, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 12, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -605,7 +638,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 13, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 13, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -620,6 +653,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -637,7 +674,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 14, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 14, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -669,7 +706,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 15, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 15, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -701,7 +738,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 16, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 16, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -733,7 +770,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 17, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 17, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -765,7 +802,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 18, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 18, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -797,7 +834,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 19, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 19, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -829,7 +866,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 20, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 20, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -844,6 +881,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -861,7 +902,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 21, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 21, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -893,7 +934,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 22, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 22, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -925,7 +966,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 23, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 23, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -957,7 +998,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 24, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 24, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -989,7 +1030,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 25, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 25, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -1014,14 +1055,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox5">
+                    <Textbox Name="Textbox20">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 26, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 26, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -1046,14 +1087,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox6">
+                    <Textbox Name="Textbox24">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(DateAdd(DateInterval.day, 27, Fields!fecha.Value), "dd/MM")</Value>
+                              <Value>=FORMAT(DateAdd(Microsoft.VisualBasic.DateInterval.day, 27, Fields!fecha.Value), "dd/MM")</Value>
                               <Style>
                                 <FontSize>7pt</FontSize>
                               </Style>
@@ -1068,6 +1109,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1085,9 +1130,41 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Total Dobles</Value>
+                              <Value>Total Dobles/ </Value>
                               <Style>
+                                <FontFamily>Yu Mincho</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>2倍残業時間</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>Yu Mincho</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>金額</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>Yu Mincho</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1117,9 +1194,40 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Total Triples</Value>
+                              <Value>Total Triples/</Value>
                               <Style>
+                                <FontFamily>yu mincho</FontFamily>
                                 <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>3倍残業時間</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>yu mincho</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>金額</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>yu mincho</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1142,6 +1250,61 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox68">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total desc laborado/</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>yu mincho</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>休日出勤金額</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>yu mincho</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <LeftIndent>0cm</LeftIndent>
+                          <RightIndent>0cm</RightIndent>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox98">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -1149,9 +1312,20 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Bruto</Value>
+                              <Value>Bruto/</Value>
                               <Style>
+                                <FontFamily>yu mincho</FontFamily>
                                 <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>税抜</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>yu mincho</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1181,9 +1355,20 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Neto</Value>
+                              <Value>Neto/</Value>
                               <Style>
+                                <FontFamily>yu mincho</FontFamily>
                                 <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>税込</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>yu mincho</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1207,7 +1392,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.49417cm</Height>
+              <Height>0.4148cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1491,9 +1676,12 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BottomBorder>
+                          <Width>1pt</Width>
+                        </BottomBorder>
                         <RightBorder>
                           <Color>Black</Color>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1719,6 +1907,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1943,6 +2135,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2167,6 +2363,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2230,6 +2430,40 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>TTriples</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox69">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=FORMAT(Fields!TDescLaborado.Value, "$0.00")</Value>
+                              <Style>
+                                <FontSize>6pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox69</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2351,6 +2585,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -2359,37 +2594,1327 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="Detalles" />
+              <Group Name="Detalles2" />
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <KeepTogether>true</KeepTogether>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <FixedColumnHeaders>true</FixedColumnHeaders>
+        <FixedRowHeaders>true</FixedRowHeaders>
         <DataSetName>DataSet1</DataSetName>
-        <Top>3.38349cm</Top>
-        <Left>0.9525cm</Left>
-        <Height>1.17355cm</Height>
-        <Width>40.77671cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Tablix>
-      <Image Name="logoAsahi">
-        <Source>Embedded</Source>
-        <Value>logoasahialuminium</Value>
-        <Sizing>FitProportional</Sizing>
-        <Top>0.63182cm</Top>
-        <Left>2.06058cm</Left>
-        <Height>2.25778cm</Height>
-        <Width>2.02917cm</Width>
+        <Top>3.75959cm</Top>
+        <Left>0.3175cm</Left>
+        <Height>1.4646cm</Height>
+        <Width>39.81069cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
-      </Image>
+      </Tablix>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Format(Sum(Fields!TDobles.Value), "$0.00")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>31.95851cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>1.60924cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Format(Sum(Fields!TTriples.Value), "$0.00")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>33.67358cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>1.57397cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox27">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Format(Sum(Fields!Bruto.Value), "$0.00")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>37.06844cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>1.53868cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox28">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Format(Sum(Fields!Neto.Value), "$0.00")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>38.71296cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>1.41522cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>TOTALES/</Value>
+                <Style>
+                  <FontFamily>Yu Mincho</FontFamily>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>合計</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Yu Mincho</FontFamily>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>:</Value>
+                <Style>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox20</rd:DefaultName>
+        <Top>5.30924cm</Top>
+        <Left>1.1091cm</Left>
+        <Height>1.04923cm</Height>
+        <Width>5.1536cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line1">
+        <Top>8.35732cm</Top>
+        <Left>13.84162cm</Left>
+        <Height>0cm</Height>
+        <Width>4.62064cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line2">
+        <Top>8.35732cm</Top>
+        <Left>21.82072cm</Left>
+        <Height>0cm</Height>
+        <Width>4.62064cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Firma Gerente de área/</Value>
+                <Style>
+                  <FontFamily>Yu Mincho</FontFamily>
+                  <FontSize>9pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>部門長の署名</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Yu Mincho</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>8.54252cm</Top>
+        <Left>14.28309cm</Left>
+        <Height>0.97041cm</Height>
+        <Width>3.71646cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Firma Director de área/</Value>
+                <Style>
+                  <FontFamily>yu mincho</FontFamily>
+                  <FontSize>9pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>部長の署名</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>yu mincho</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>8.54252cm</Top>
+        <Left>22.20865cm</Left>
+        <Height>0.97041cm</Height>
+        <Width>3.79646cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Dom3.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>30.88725cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.92876cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Dom1.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>18.22691cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.9125cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Lun2.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>19.13941cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.85959cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox30">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Mar2.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>19.99899cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.88604cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox31">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Mie2.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>20.88503cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.9125cm</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Jue2.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>21.79753cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.88604cm</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox33">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Vie2.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>22.68358cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.85959cm</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox34">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Sab2.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>23.54316cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.93896cm</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox36">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Dom2.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>24.48212cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.93014cm</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox38">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Lun3.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>25.41226cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.88604cm</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox40">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Mar3.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>26.2983cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.9125cm</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox41">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Mie3.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>27.2108cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.88604cm</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox46">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Jue3.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>28.09684cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.93896cm</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox47">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Vie3.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>29.0358cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.9125cm</Width>
+        <ZIndex>24</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox48">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Sab3.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>29.9483cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.93895cm</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox49">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Dom.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>11.86587cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.88605cm</Width>
+        <ZIndex>26</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox50">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Lun1.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>12.75191cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.9125cm</Width>
+        <ZIndex>27</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox51">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Jue1.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>15.4894cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.9125cm</Width>
+        <ZIndex>28</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox52">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Vie1.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>16.4019cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.93896cm</Width>
+        <ZIndex>29</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox53">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Mar1.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>13.66441cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.93896cm</Width>
+        <ZIndex>30</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox54">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Mie1.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>14.60337cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.88604cm</Width>
+        <ZIndex>31</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox55">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Sab1.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>17.34086cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.88604cm</Width>
+        <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox56">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Sab.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>10.92691cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.93896cm</Width>
+        <ZIndex>33</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox57">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Vie.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>10.04968cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.87723cm</Width>
+        <ZIndex>34</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox58">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Jue.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>9.16363cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.88604cm</Width>
+        <ZIndex>35</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox59">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Mie.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>8.25113cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.9125cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox65">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Mar.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>7.32423cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.9269cm</Width>
+        <ZIndex>37</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox67">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Lun.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>5.65264cm</Top>
+        <Left>6.40229cm</Left>
+        <Height>0.44125cm</Height>
+        <Width>0.92194cm</Width>
+        <ZIndex>38</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
       <Rectangle Name="Rectangle1">
         <ReportItems>
           <Textbox Name="Textbox7">
@@ -2399,9 +3924,28 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>REPORTE PLAN DE TIEMPO EXTRA MENSUAL</Value>
+                    <Value>REPORTE PLAN DE TIEMPO EXTRA MENSUAL/</Value>
                     <Style>
+                      <FontFamily>Yu Mincho</FontFamily>
                       <FontSize>20pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>月残業時間計画</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Yu Mincho</FontFamily>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2411,7 +3955,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
-            <Height>0.9175cm</Height>
+            <Height>1.91382cm</Height>
             <Width>17.4216cm</Width>
             <Style>
               <Border>
@@ -2430,19 +3974,20 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Switch(FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "01", "ENERO",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "02", "FEBRERO",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "03", "MARZO",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "04", "ABRIL",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "05", "MAYO",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "06", "JUNIO",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "07", "JULIO",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "08", "AGOSTO",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "09", "SEPTIEMBRE",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "10", "OCTUBRE",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "11", "NOVIEMBRE",
-		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "12", "DICIEMBRE")</Value>
+                    <Value>=Switch(FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "01", "ENERO/1月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "02", "FEBRERO/2月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "03", "MARZO/3月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "04", "ABRIL/4月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "05", "MAYO/5月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "06", "JUNIO/6月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "07", "JULIO/7月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "08", "AGOSTO/8月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "09", "SEPTIEMBRE/9月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "10", "OCTUBRE/10月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "11", "NOVIEMBRE/11月",
+		FORMAT(DateAdd(DateInterval.day, 10, Fields!fecha.Value), "MM") = "12", "DICIEMBRE/12月")</Value>
                     <Style>
+                      <FontFamily>yu mincho</FontFamily>
                       <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
@@ -2451,8 +3996,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>1.45521cm</Top>
-            <Left>4.51021cm</Left>
+            <Top>2.09021cm</Top>
+            <Left>8.95521cm</Left>
             <Height>0.62646cm</Height>
             <Width>3.17437cm</Width>
             <ZIndex>1</ZIndex>
@@ -2483,8 +4028,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>1.45521cm</Top>
-            <Left>10.94685cm</Left>
+            <Top>2.09021cm</Top>
+            <Left>12.85185cm</Left>
             <Height>0.62646cm</Height>
             <Width>1.87791cm</Width>
             <ZIndex>2</ZIndex>
@@ -2498,27 +4043,60 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox22">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!DEPARTAMENTO.Value</Value>
+                    <Style>
+                      <FontFamily>yu mincho</FontFamily>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox8</rd:DefaultName>
+            <Top>2.09021cm</Top>
+            <Left>0.53785cm</Left>
+            <Height>0.62646cm</Height>
+            <Width>7.59104cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>0.63182cm</Top>
-        <Left>14.51021cm</Left>
-        <Height>2.50542cm</Height>
+        <Top>0.3175cm</Top>
+        <Left>11.21941cm</Left>
+        <Height>2.98167cm</Height>
         <Width>17.4216cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>39</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
         </Style>
       </Rectangle>
-      <Textbox Name="Textbox12">
+      <Textbox Name="Textbox70">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(fields!TDobles.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!TDescLaborado.Value), "$0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -2531,152 +4109,14 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>5.18266cm</Top>
-        <Left>35.26578cm</Left>
+        <Top>5.65264cm</Top>
+        <Left>35.38864cm</Left>
         <Height>0.44125cm</Height>
-        <Width>1.60924cm</Width>
-        <ZIndex>3</ZIndex>
+        <Width>1.5387cm</Width>
+        <ZIndex>40</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox14">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Format(Sum(fields!TTriples.Value), "$0.00")</Value>
-                <Style>
-                  <FontSize>7pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Right</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>5.18266cm</Top>
-        <Left>36.99229cm</Left>
-        <Height>0.44125cm</Height>
-        <Width>1.6798cm</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox16">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Format(Sum(fields!Bruto.Value), "$0.00")</Value>
-                <Style>
-                  <FontSize>7pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Right</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>5.18266cm</Top>
-        <Left>38.77792cm</Left>
-        <Height>0.44125cm</Height>
-        <Width>1.57396cm</Width>
-        <ZIndex>5</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox18">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Format(Sum(fields!Neto.Value), "$0.00")</Value>
-                <Style>
-                  <FontSize>7pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Right</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>5.18266cm</Top>
-        <Left>40.45771cm</Left>
-        <Height>0.44125cm</Height>
-        <Width>1.41522cm</Width>
-        <ZIndex>6</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox20">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>TOTALES:</Value>
-                <Style>
-                  <FontSize>18pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox20</rd:DefaultName>
-        <Top>4.83926cm</Top>
-        <Left>31.3994cm</Left>
-        <Height>0.86458cm</Height>
-        <Width>3.69cm</Width>
-        <ZIndex>7</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -2685,21 +4125,17 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.89583in</Height>
-    <Style>
-      <Border>
-        <Style>Solid</Style>
-      </Border>
-    </Style>
+    <Height>3.839in</Height>
+    <Style />
   </Body>
-  <Width>16.72545in</Width>
+  <Width>15.85058in</Width>
   <Page>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>43.18cm</PageWidth>
-    <LeftMargin>0cm</LeftMargin>
+    <LeftMargin>1cm</LeftMargin>
     <RightMargin>0cm</RightMargin>
-    <TopMargin>0cm</TopMargin>
-    <BottomMargin>0cm</BottomMargin>
+    <TopMargin>1.5cm</TopMargin>
+    <BottomMargin>1.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
@@ -2710,7 +4146,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>3a4b0f5d-4adb-4112-8df1-c9b0c5b1674a</rd:DataSourceID>
+      <rd:DataSourceID>4114f848-0397-46f2-88e8-4785f2fddd40</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -2848,6 +4284,10 @@
           <DataField>TTriples</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="TDescLaborado">
+          <DataField>TDescLaborado</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
         <Field Name="Bruto">
           <DataField>Bruto</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -2860,10 +4300,14 @@
           <DataField>fecha</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="DEPARTAMENTO">
+          <DataField>DEPARTAMENTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Dts_PlanHrsExt4</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\Dts_PlanHrsExt4.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\DataSet\Dts_PlanHrsExt4.xsd</rd:SchemaPath>
         <rd:TableName>Rh_RptPlanHrsExtraMensual4</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -2908,5 +4352,5 @@ DTcAvu7zAw8PIhTm5GphEtJStouwflPO6dUaTJkqEDbaInpjXK6z6IENyO+FZb3PD1mPBHoWoA2blg1D
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>7043bd64-fde4-45b7-9211-c2e8bc724835</rd:ReportID>
+  <rd:ReportID>1e3128a6-161f-4776-9681-d5f28374329b</rd:ReportID>
 </Report>

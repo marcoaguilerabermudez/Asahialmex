@@ -63,6 +63,13 @@ Partial Class Frm_Principal
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ACercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MensualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SemanalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlanTiempoExtraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MensualToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SemanalToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GeneralToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EspañolToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.JaponésToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
@@ -207,7 +214,7 @@ Partial Class Frm_Principal
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem1, Me.FiniquitoToolStripMenuItem, Me.MejoraContinuaToolStripMenuItem, Me.PlanHorasExtraToolStripMenuItem1, Me.ReporteMejorasToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem1, Me.FiniquitoToolStripMenuItem, Me.MejoraContinuaToolStripMenuItem, Me.PlanHorasExtraToolStripMenuItem1, Me.ReporteMejorasToolStripMenuItem, Me.PlanTiempoExtraToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
@@ -316,14 +323,57 @@ Partial Class Frm_Principal
         'ACercaDeToolStripMenuItem
         '
         Me.ACercaDeToolStripMenuItem.Name = "ACercaDeToolStripMenuItem"
-        Me.ACercaDeToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.ACercaDeToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
         Me.ACercaDeToolStripMenuItem.Text = "Soporte Técnico"
         '
         'AcercaDeToolStripMenuItem1
         '
         Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
-        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(159, 22)
+        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
         Me.AcercaDeToolStripMenuItem1.Text = "Acerca de"
+        '
+        'MensualToolStripMenuItem
+        '
+        Me.MensualToolStripMenuItem.Name = "MensualToolStripMenuItem"
+        Me.MensualToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MensualToolStripMenuItem.Text = "Mensual"
+        '
+        'SemanalToolStripMenuItem
+        '
+        Me.SemanalToolStripMenuItem.Name = "SemanalToolStripMenuItem"
+        Me.SemanalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SemanalToolStripMenuItem.Text = "Semanal"
+        '
+        'GeneralToolStripMenuItem
+        '
+        Me.GeneralToolStripMenuItem.Name = "GeneralToolStripMenuItem"
+        Me.GeneralToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GeneralToolStripMenuItem.Text = "General"
+        '
+        'PlanTiempoExtraToolStripMenuItem
+        '
+        Me.PlanTiempoExtraToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MensualToolStripMenuItem1, Me.SemanalToolStripMenuItem1, Me.GeneralToolStripMenuItem1})
+        Me.PlanTiempoExtraToolStripMenuItem.Name = "PlanTiempoExtraToolStripMenuItem"
+        Me.PlanTiempoExtraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PlanTiempoExtraToolStripMenuItem.Text = "Plan Tiempo Extra"
+        '
+        'MensualToolStripMenuItem1
+        '
+        Me.MensualToolStripMenuItem1.Name = "MensualToolStripMenuItem1"
+        Me.MensualToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.MensualToolStripMenuItem1.Text = "Mensual"
+        '
+        'SemanalToolStripMenuItem1
+        '
+        Me.SemanalToolStripMenuItem1.Name = "SemanalToolStripMenuItem1"
+        Me.SemanalToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.SemanalToolStripMenuItem1.Text = "Semanal"
+        '
+        'GeneralToolStripMenuItem1
+        '
+        Me.GeneralToolStripMenuItem1.Name = "GeneralToolStripMenuItem1"
+        Me.GeneralToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.GeneralToolStripMenuItem1.Text = "General"
         '
         'EspañolToolStripMenuItem
         '
@@ -394,6 +444,13 @@ Partial Class Frm_Principal
     Friend WithEvents IncapacidadesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VacacionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PlanHorasExtraToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MensualToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SemanalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GeneralToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PlanTiempoExtraToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MensualToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents SemanalToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents GeneralToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PlanHorasExtraToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ReporteMejorasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EspañolToolStripMenuItem As ToolStripMenuItem

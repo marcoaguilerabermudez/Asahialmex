@@ -63,9 +63,11 @@
               <Mapping SourceColumn="Dom4" DataSetColumn="Dom4" />
               <Mapping SourceColumn="TDobles" DataSetColumn="TDobles" />
               <Mapping SourceColumn="TTriples" DataSetColumn="TTriples" />
+              <Mapping SourceColumn="TDescLaborado" DataSetColumn="TDescLaborado" />
               <Mapping SourceColumn="Bruto" DataSetColumn="Bruto" />
               <Mapping SourceColumn="Neto" DataSetColumn="Neto" />
               <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="DEPARTAMENTO" DataSetColumn="DEPARTAMENTO" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -125,9 +127,17 @@
               <xs:element name="Dom4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDom4" msprop:Generator_ColumnPropNameInRow="Dom4" msprop:Generator_ColumnPropNameInTable="Dom4Column" msprop:Generator_UserColumnName="Dom4" type="xs:double" minOccurs="0" />
               <xs:element name="TDobles" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTDobles" msprop:Generator_ColumnPropNameInRow="TDobles" msprop:Generator_ColumnPropNameInTable="TDoblesColumn" msprop:Generator_UserColumnName="TDobles" type="xs:decimal" minOccurs="0" />
               <xs:element name="TTriples" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTTriples" msprop:Generator_ColumnPropNameInRow="TTriples" msprop:Generator_ColumnPropNameInTable="TTriplesColumn" msprop:Generator_UserColumnName="TTriples" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TDescLaborado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTDescLaborado" msprop:Generator_ColumnPropNameInRow="TDescLaborado" msprop:Generator_ColumnPropNameInTable="TDescLaboradoColumn" msprop:Generator_UserColumnName="TDescLaborado" type="xs:decimal" minOccurs="0" />
               <xs:element name="Bruto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBruto" msprop:Generator_ColumnPropNameInRow="Bruto" msprop:Generator_ColumnPropNameInTable="BrutoColumn" msprop:Generator_UserColumnName="Bruto" type="xs:decimal" minOccurs="0" />
               <xs:element name="Neto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNeto" msprop:Generator_ColumnPropNameInRow="Neto" msprop:Generator_ColumnPropNameInTable="NetoColumn" msprop:Generator_UserColumnName="Neto" type="xs:decimal" minOccurs="0" />
               <xs:element name="fecha" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DEPARTAMENTO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDEPARTAMENTO" msprop:Generator_ColumnPropNameInRow="DEPARTAMENTO" msprop:Generator_ColumnPropNameInTable="DEPARTAMENTOColumn" msprop:Generator_UserColumnName="DEPARTAMENTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="82" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

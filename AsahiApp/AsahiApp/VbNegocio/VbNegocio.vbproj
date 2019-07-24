@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="NEmpleado.vb" />
     <Compile Include="NHorasExtra.vb" />
+    <Compile Include="NImpuestos.vb" />
     <Compile Include="NPrenomina.vb" />
   </ItemGroup>
   <ItemGroup>
