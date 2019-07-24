@@ -139,7 +139,7 @@ namespace CsPresentacion
                 }
                 else if (lbl_tipo.Text == "3" && string.IsNullOrEmpty(txt_semana.Text))
                 {
-                    MessageBox.Show("Es necesario capturar Número de semana o Fecha", "Aviso");
+                    MessageBox.Show("Es necesario capturar número de semana o Fecha", "Aviso");
                     txt_semana.Focus();
                 }
                 else if (lbl_tipo.Text == "2")//Genera reporte de descanso Laborado por Fecha
@@ -190,7 +190,12 @@ namespace CsPresentacion
             {
                 if (lbl_tipo.Text == "0")
                 {
-                    MessageBox.Show("Es necesario seleccionar una Fecha o Número de Semana", "Aviso");
+                    MessageBox.Show("Es necesario seleccionar una opción", "Aviso");
+                    txt_clave.Focus();
+                }
+                else if (lbl_tipo.Text == "3" && string.IsNullOrEmpty(txt_semana.Text))
+                {
+                    MessageBox.Show("Es necesario capturar número de semana o Fecha", "Aviso");
                     txt_semana.Focus();
                 }
                 else if (lbl_tipo.Text == "2")//Genera reporte de retardos por Fecha
@@ -241,7 +246,12 @@ namespace CsPresentacion
             {
                 if (lbl_tipo.Text == "0")
                 {
-                    MessageBox.Show("Es necesario seleccionar una Fecha o Número de Semana", "Aviso");
+                    MessageBox.Show("Es necesario seleccionar una opción", "Aviso");
+                    txt_clave.Focus();
+                }
+                else if (lbl_tipo.Text == "3" && string.IsNullOrEmpty(txt_semana.Text))
+                {
+                    MessageBox.Show("Es necesario capturar número de semana o Fecha", "Aviso");
                     txt_semana.Focus();
                 }
                 else if (lbl_tipo.Text == "2")//Genera reporte de salida anticipada por Fecha
