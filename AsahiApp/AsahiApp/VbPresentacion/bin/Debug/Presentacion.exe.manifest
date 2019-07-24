@@ -1110,14 +1110,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="1167880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="1168904">
       <assemblyIdentity name="Presentacion" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4XfG5u25xWU0OU2DAKD+8V5j+9BS9nRL1P2nFe8x0pg=</dsig:DigestValue>
+        <dsig:DigestValue>Hsch5o69SAmfOsflsxPvY7N/es5W+kyEcbP3lZZsCLs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
