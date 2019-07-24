@@ -261,15 +261,21 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentaci
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\VbPresentacion.vbprojAssemblyReference.cache
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.exe.config
+C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\VbPresentacion.vbproj.ResolveComReference.cache
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_Acerca.resources
+C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_PlanHorasExtra.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_Soporte.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_Login.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_Principal.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Resources.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ReporteEjemplo.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_AplicaBono.resources
+C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_BonoMensual.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_GlobalPrenomina.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_ListaPrenomina.resources
+C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_ReportesPlanHorasExtra.resources
+C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_RepPlanHrsExtra4.resources
+C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_RepPlanHrsExtra5.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\VbPresentacion.vbproj.GenerateResource.cache
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\RdlCompile.cache
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\RdlCompile.compiled
@@ -280,5 +286,3 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentaci
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.exe
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.xml
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.pdb
-C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_BonoMensual.resources
-C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\VbPresentacion.vbproj.ResolveComReference.cache

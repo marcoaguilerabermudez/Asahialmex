@@ -13,7 +13,6 @@ namespace CsPresentacion
         }
 
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
-
         double Sueldo;
         double Factor;
         double Resultado;
@@ -91,7 +90,7 @@ namespace CsPresentacion
             txt_contacto.Text = "";
             cmb_estado_nacimiento.Text = "";
             lbl_infonavit.Text = "0";
-            lbl_infonavit.Enabled = false;
+            lbl_infonavit.Visible = false;
             txt_factor.Visible = false;
             lbl_factor.Visible = false;
             Panel_principal.Visible = true;
@@ -265,8 +264,6 @@ namespace CsPresentacion
             }
         }
 
-
-
         private void Comprueba_Existencia()
         {
             try
@@ -299,9 +296,7 @@ namespace CsPresentacion
                             MessageBox.Show("EMPLEADO SE ENCUENTRA VIGENTE", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             btn_pp_siguiente.Enabled = false;
                             lbl_tipo_ingreso.Text = "VIGENTE";
-
-                        }
-                        
+                        }   
                     }
                     else
                     {
@@ -327,7 +322,6 @@ namespace CsPresentacion
             strSql = "[dbo].[FM_INFORMACION_EMPLEADO]";
             SqlDataAdapter da = new SqlDataAdapter(strSql, con);
             con.Open();
-
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@Emp", SqlDbType.VarChar, 100).Value = txt_Clave.Text;
             da.Fill(dt);
@@ -373,7 +367,6 @@ namespace CsPresentacion
             }
             con.Close();
         }
-
 
         private void selecciona_clave()
         {
@@ -522,7 +515,6 @@ namespace CsPresentacion
                 txt_SDO1.Enabled = false;
             }
         }
-
         private void Cmb_departamento_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -614,11 +606,9 @@ namespace CsPresentacion
         }
         private void Label9_Click(object sender, EventArgs e)
         {
-
         }
         private void Txt_nacionalidad_TextChanged(object sender, EventArgs e)
         {
-
         }
         private void Btn_comprueba_Click(object sender, EventArgs e)
         {
@@ -661,16 +651,18 @@ namespace CsPresentacion
             }
             else
             {
-               Registra_empleado();
+                Registra_empleado();
                 Crea_Contrato();
                 Frm_Rep_Alta_empleado Rep = new Frm_Rep_Alta_empleado();
                 Rep.CLAVE = Convert.ToInt32(txt_Clave.Text);
                 Rep.ShowDialog();
-               Panel_principal.Visible = true;
-               nuevo();
-                selecciona_clave();
+                Panel_principal.Visible = true;
+            nuevo();
+            selecciona_clave();
             }
         }
+
+
         private void Btn_fin_anterior_Click(object sender, EventArgs e)
         {
             Panel_secundario.Visible = true;
@@ -941,15 +933,12 @@ namespace CsPresentacion
         }
         private void TextBox8_KeyPress(object sender, KeyPressEventArgs e)
         {
-
         }
         private void Txt_interior_KeyPress(object sender, KeyPressEventArgs e)
         {
-
         }
         private void Txt_lugar_KeyPress(object sender, KeyPressEventArgs e)
         {
-
         }
         private void Txt_contacto_KeyPress(object sender, KeyPressEventArgs e)
         {
