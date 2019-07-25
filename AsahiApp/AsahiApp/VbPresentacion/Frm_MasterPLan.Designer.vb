@@ -59,7 +59,7 @@ Partial Class Frm_MasterPlan
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1245, 32)
+        Me.Panel3.Size = New System.Drawing.Size(1245, 26)
         Me.Panel3.TabIndex = 0
         '
         'Panel4
@@ -67,17 +67,17 @@ Partial Class Frm_MasterPlan
         Me.Panel4.Controls.Add(Me.Panel6)
         Me.Panel4.Controls.Add(Me.Panel5)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(0, 32)
+        Me.Panel4.Location = New System.Drawing.Point(0, 26)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1245, 424)
+        Me.Panel4.Size = New System.Drawing.Size(1245, 430)
         Me.Panel4.TabIndex = 1
         '
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(0, 401)
+        Me.Panel5.Location = New System.Drawing.Point(0, 413)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1245, 23)
+        Me.Panel5.Size = New System.Drawing.Size(1245, 17)
         Me.Panel5.TabIndex = 0
         '
         'Panel6
@@ -86,7 +86,7 @@ Partial Class Frm_MasterPlan
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1245, 401)
+        Me.Panel6.Size = New System.Drawing.Size(1245, 413)
         Me.Panel6.TabIndex = 1
         '
         'DataGridView1
@@ -95,7 +95,7 @@ Partial Class Frm_MasterPlan
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1245, 401)
+        Me.DataGridView1.Size = New System.Drawing.Size(1245, 413)
         Me.DataGridView1.TabIndex = 0
         '
         'Frm_MasterPlan
