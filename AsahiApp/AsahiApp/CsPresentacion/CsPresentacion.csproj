@@ -287,11 +287,11 @@
     <Compile Include="Reportes\RH\Retardos_Semana.Designer.cs">
       <DependentUpon>Retardos_Semana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporte_Altas.cs">
+    <Compile Include="Reportes\RH\RH\Altas_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reporte_Altas.Designer.cs">
-      <DependentUpon>Reporte_Altas.cs</DependentUpon>
+    <Compile Include="Reportes\RH\RH\Altas_Empleados.Designer.cs">
+      <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
@@ -409,8 +409,8 @@
     <EmbeddedResource Include="Reportes\RH\Reporte_Bajas.resx">
       <DependentUpon>Reporte_Bajas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_Altas.resx">
-      <DependentUpon>Reporte_Altas.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\RH\RH\Altas_Empleados.resx">
+      <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_bajas.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Finiquito.resx">

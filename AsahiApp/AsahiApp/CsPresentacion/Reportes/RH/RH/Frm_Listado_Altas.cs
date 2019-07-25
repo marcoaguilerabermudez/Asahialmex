@@ -452,7 +452,7 @@ namespace CsPresentacion
                 DialogResult dialogo = MessageBox.Show("¿Desea generar reporte de todas las altas?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogo == DialogResult.Yes)
                 {
-                    Reporte_Altas rep = new Reporte_Altas();
+                    Altas_Empleados rep = new Altas_Empleados();
                     rep.Var = Convert.ToInt32(0);
                     rep.ShowDialog();
                 }
@@ -464,7 +464,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //  MessageBox.Show("Filtro por año 3");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(3);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.ShowDialog();
@@ -473,7 +473,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 ///  MessageBox.Show("Filtro por año y mes 1");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(1);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Mes = cmb_mes.Text;
@@ -482,7 +482,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 // MessageBox.Show("Filtro por año y semana 2");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(2);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Semana = Convert.ToInt32(txt_semana.Text);
@@ -491,7 +491,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 // MessageBox.Show("Filtro por año y departamento 4");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(4);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Departamento = cmb_departamento.Text;
@@ -500,7 +500,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
             {
                 // MessageBox.Show("Filtro por año y puesto 5");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(5);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Puesto = cmb_puesto.Text;
@@ -509,7 +509,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 // MessageBox.Show("Filtro por año mes y departamento 6");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(6);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Mes = cmb_mes.Text;
@@ -519,7 +519,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
             {
                 //MessageBox.Show("Filtro por año, mes y puesto 7");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(7);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Mes = cmb_mes.Text;
@@ -529,7 +529,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 ///MessageBox.Show("Filtro por año, semana y departamento 8");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(8);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Semana = Convert.ToInt32(txt_semana.Text); ;
@@ -539,7 +539,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
             {
                 // MessageBox.Show("Filtro  por año, semana y puesto 9");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(9);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Semana = Convert.ToInt32(txt_semana.Text); ;
@@ -549,7 +549,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text))
             {
                 // MessageBox.Show("Filtro  por año, departamento y puesto 10");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(10);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Departamento = cmb_departamento.Text;
@@ -559,7 +559,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(txt_semana.Text))
             {
                 //  MessageBox.Show("Filtro  por año, mes, departamento y puesto 11");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(11);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Mes = cmb_mes.Text;
@@ -570,7 +570,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(cmb_mes.Text))
             {
                 //MessageBox.Show("Filtro  por año, semana, departamento  y puesto  12");
-                Reporte_Altas rep = new Reporte_Altas();
+                Altas_Empleados rep = new Altas_Empleados();
                 rep.Var = Convert.ToInt32(12);
                 rep.Año = Convert.ToInt32(cmb_año.Text);
                 rep.Semana = Convert.ToInt32(txt_semana.Text);

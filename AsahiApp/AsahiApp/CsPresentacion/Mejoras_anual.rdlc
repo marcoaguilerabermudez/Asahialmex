@@ -395,6 +395,7 @@
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <Interval>100</Interval>
                     <ChartMajorGridLines>
                       <Style>
                         <Border>
@@ -429,7 +430,7 @@
                     </ChartMinorTickMarks>
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
-                    <Maximum>NaN</Maximum>
+                    <Maximum>700</Maximum>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
