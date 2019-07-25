@@ -598,6 +598,7 @@ Partial Class Frm_ListaPrenomina
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Lista Prenomina"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)

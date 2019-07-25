@@ -35,7 +35,7 @@ Public Class Frm_Principal
 #Region "Botónes"
     Private Sub PreNominaListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaListadoToolStripMenuItem.Click
         Dim lista As New Frm_ListaPrenomina(cadConex, cadenaConex)
-        lista.ShowDialog()
+        lista.Show()
     End Sub
     Private Sub ControlDeProducciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeProducciónToolStripMenuItem.Click
     End Sub
@@ -93,7 +93,7 @@ Public Class Frm_Principal
     End Sub
     Private Sub PreNominaGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaGlobalToolStripMenuItem.Click
         Dim globPren As New Frm_GlobalPrenomina(cadConex, cadenaConex)
-        globPren.ShowDialog()
+        globPren.Show()
     End Sub
     Private Sub AltaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem.Click
         'Módulo de alta de empleados
@@ -142,7 +142,6 @@ Public Class Frm_Principal
         Dim rph As New Frm_ReportesPlanHorasExtra()
         rph.Show()
     End Sub
-
     Private Sub PermisosDeSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermisosDeSalidaToolStripMenuItem.Click
         'Ejecuta reporte de Permisos de salida RH
         Dim Retardos As New Frm_Parametros_rep_prenomina()
@@ -150,27 +149,25 @@ Public Class Frm_Principal
         Retardos.lbl_var.Text = Var
         Retardos.ShowDialog()
     End Sub
-
     Private Sub TodosToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
     End Sub
-
     Private Sub ReporteMejorasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteMejorasToolStripMenuItem.Click
     End Sub
-
     Private Sub EspañolToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EspañolToolStripMenuItem.Click
-
         Dim Mej As New Frm_Reporte_Anual_Mejoras()
         Mej.variable = 0
         Mej.Show()
     End Sub
-
     Private Sub JaponésToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JaponésToolStripMenuItem.Click
         Dim Mej As New Frm_Reporte_Anual_Mejoras()
         Mej.variable = 1
         Mej.Show()
     End Sub
-
-
+    Private Sub PlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanToolStripMenuItem.Click
+        'MsgBox("Ahí la llevamos no apureis para septiembre queda bro")
+        Dim mp As New Frm_MasterPlan()
+        mp.Show()
+    End Sub
 #End Region
 End Class
 
