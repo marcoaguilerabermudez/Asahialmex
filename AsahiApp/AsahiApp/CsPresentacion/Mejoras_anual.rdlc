@@ -125,7 +125,7 @@
                     </ChartDataLabel>
                   </ChartEmptyPoints>
                   <ChartItemInLegend>
-                    <LegendText>Plan/ 計画</LegendText>
+                    <LegendText>Plan Mensual/  当月計画</LegendText>
                   </ChartItemInLegend>
                   <ValueAxisName>Primary</ValueAxisName>
                   <CategoryAxisName>Primary</CategoryAxisName>
@@ -163,7 +163,7 @@
                     </ChartDataLabel>
                   </ChartEmptyPoints>
                   <ChartItemInLegend>
-                    <LegendText>Acumulado / 累計</LegendText>
+                    <LegendText>Resultado Mensual / 当月実績</LegendText>
                   </ChartItemInLegend>
                   <ValueAxisName>Primary</ValueAxisName>
                   <CategoryAxisName>Primary</CategoryAxisName>
@@ -183,7 +183,11 @@
                         <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Border>
+                          <Width>3.5pt</Width>
+                        </Border>
+                      </Style>
                       <ChartMarker>
                         <Type>Auto</Type>
                         <Style />
@@ -202,7 +206,10 @@
                       <Style />
                     </ChartDataLabel>
                   </ChartEmptyPoints>
-                  <ValueAxisName>Primary</ValueAxisName>
+                  <ChartItemInLegend>
+                    <LegendText>Plan Acumulado / 計画累計</LegendText>
+                  </ChartItemInLegend>
+                  <ValueAxisName>Secondary</ValueAxisName>
                   <CategoryAxisName>Primary</CategoryAxisName>
                   <ChartSmartLabel>
                     <CalloutLineColor>Black</CalloutLineColor>
@@ -220,7 +227,12 @@
                         <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <ToolTip>Resultado Acumulado / 実績累計</ToolTip>
+                      <Style>
+                        <Border>
+                          <Width>3.5pt</Width>
+                        </Border>
+                      </Style>
                       <ChartMarker>
                         <Type>Auto</Type>
                         <Style />
@@ -239,7 +251,10 @@
                       <Style />
                     </ChartDataLabel>
                   </ChartEmptyPoints>
-                  <ValueAxisName>Primary</ValueAxisName>
+                  <ChartItemInLegend>
+                    <LegendText>Resultado Acumulado / 実績累計</LegendText>
+                  </ChartItemInLegend>
+                  <ValueAxisName>Secondary</ValueAxisName>
                   <CategoryAxisName>Primary</CategoryAxisName>
                   <ChartSmartLabel>
                     <CalloutLineColor>Black</CalloutLineColor>
@@ -388,6 +403,7 @@
                       </Style>
                     </ChartMajorGridLines>
                     <ChartMinorGridLines>
+                      <Enabled>True</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -414,9 +430,7 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
-                    <LogScale>true</LogScale>
                     <ChartAxisScaleBreak>
-                      <Enabled>true</Enabled>
                       <Style />
                     </ChartAxisScaleBreak>
                   </ChartAxis>
@@ -515,7 +529,7 @@
                 <Position>TopLeft</Position>
               </ChartTitle>
             </ChartTitles>
-            <Palette>Pacific</Palette>
+            <Palette>Pastel</Palette>
             <ChartBorderSkin>
               <Style>
                 <BackgroundColor>Gray</BackgroundColor>
