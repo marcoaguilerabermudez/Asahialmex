@@ -70,5 +70,6 @@ Public Class Frm_MasterPlan
     End Sub
 #End Region
 #Region "Otros procesos"
+
 #End Region
 End Class
