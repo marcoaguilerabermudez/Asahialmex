@@ -120,9 +120,19 @@ Public Class Frm_Principal
         Retardos.lbl_var.Text = Var
         Retardos.ShowDialog()
     End Sub
-    Private Sub DescansoLaboradoToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub DescansoLaboradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescansoLaboradoToolStripMenuItem.Click
+        'Ejecuta reporte de Descanso Laborado de RH
+        Dim Descanso As New Frm_Parametros_rep_prenomina()
+        Var = 1
+        Descanso.lbl_var.Text = Var
+        Descanso.ShowDialog()
     End Sub
-    Private Sub RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RetardosToolStripMenuItem.Click
+        'Ejecuta reporte de Retardos de RH
+        Dim Retardos As New Frm_Parametros_rep_prenomina()
+        Var = 2
+        Retardos.lbl_var.Text = Var
+        Retardos.ShowDialog()
     End Sub
     Private Sub PlanHorasExtraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanHorasExtraToolStripMenuItem.Click
         Dim hrsEx As New Frm_PlanHorasExtra()
