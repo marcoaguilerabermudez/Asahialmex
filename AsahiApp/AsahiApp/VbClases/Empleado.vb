@@ -741,4 +741,22 @@
             neto_ = value
         End Set
     End Property
+    Private respuesta_ As Integer
+    Public Property Respuesta() As Integer
+        Get
+            Return respuesta_
+        End Get
+        Set(ByVal value As Integer)
+            respuesta_ = value
+        End Set
+    End Property
+    Private tipoUsuario_ As Integer
+    Public Property TipoUsuario() As Integer
+        Get
+            Return tipoUsuario_
+        End Get
+        Set(ByVal value As Integer)
+            tipoUsuario_ = value
+        End Set
+    End Property
 End Class

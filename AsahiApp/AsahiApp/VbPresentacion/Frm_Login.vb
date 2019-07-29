@@ -1,6 +1,7 @@
 Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Windows.Forms
+Imports Clases
 Imports Negocio
 
 Public Class Frm_Login
@@ -22,21 +23,21 @@ Public Class Frm_Login
         Me.cadenaCExpress = conexion.cadenaConexExpress
     End Sub
     Private Sub BtnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Aceptar.Click
-        Dim principal As New Frm_Principal(cadConex, cadenaConex)
         Dim NEmple As New NEmpleado()
-        Dim res As Integer
+        Dim emp As New Empleado()
         If Txt_NombreUsuario.Text <> "" And Txt_Contraseña.Text <> "" Then
-            res = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
-            If res = 2 Then
+            emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
+            If emp.Respuesta = 2 Then
+                Dim principal As New Frm_Principal(cadConex, cadenaConex, emp)
                 principal.Show()
                 Me.Close()
-            ElseIf res = 0 Then
+            ElseIf emp.Respuesta = 0 Then
                 MsgBox("Usuario Erroneo")
                 Txt_NombreUsuario.Text = ""
                 Txt_Contraseña.Text = ""
                 Txt_NombreUsuario.Select()
                 Me.count += 1
-            ElseIf res = 1 Then
+            ElseIf emp.Respuesta = 1 Then
                 MsgBox("Contraseña Erronea")
                 Txt_Contraseña.Text = ""
                 Txt_Contraseña.Select()

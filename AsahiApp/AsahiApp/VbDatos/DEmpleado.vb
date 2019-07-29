@@ -109,28 +109,29 @@ Public Class DEmpleado
         End Try
         Return lstEmp
     End Function
-    Public Function EmpleadoLogin(ByVal cadConex As String, ByVal us As String, ByVal pass As String) As Integer
+    Public Function EmpleadoLogin(ByVal cadConex As String, ByVal us As String, ByVal pass As String) As Empleado
         Dim oCon As New SqlConnection(cadConex)
-        Dim res As Integer
-        Dim emp As New Empleado
+        Dim emp As New Empleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT Usuario, Contraseña FROM AsahiSystem.dbo.Usuarios_saam where usuario = '" & us & "'", oCon)
+            Dim query As New SqlCommand("SELECT Usuario, Contraseña, Clave, tipoUsuario FROM AsahiSystem.dbo.Usuarios_saam where usuario = '" & us & "'", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read)
                 emp.Usuario = dr("Usuario").ToString
                 emp.Contraseña = dr("Contraseña").ToString
+                emp.IdEmpleado = Convert.ToInt32(dr("Clave").ToString)
+                emp.TipoUsuario = Convert.ToInt32(dr("tipoUsuario").ToString)
             End While
             If us = emp.Usuario Then
                 If pass = emp.Contraseña Then
-                    res = 2
+                    emp.Respuesta = 2
                 Else
-                    res = 1
+                    emp.Respuesta = 1
                 End If
             Else
-                res = 0
+                emp.Respuesta = 0
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -140,7 +141,7 @@ Public Class DEmpleado
             End If
             oCon.Dispose()
         End Try
-        Return res
+        Return emp
     End Function
     Public Function RecuperarDepartamentos(ByVal cadenaConex As String) As LEmpleado
         Dim lstDep As New LEmpleado
@@ -239,5 +240,31 @@ Public Class DEmpleado
             oCon.Dispose()
         End Try
         Return lstEmp
+    End Function
+    Public Function RecuperarPermisosUsuario(ByVal cadenaConex As String, ByVal emp As Empleado) As LPermisos
+        Dim lstPermiso As New LPermisos()
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("select idEmpleado, ms.nombreModulo, rangoPermiso from Permisos_saam ps left join Modulos_saam ms on  ps.idModulo = ms.idModulo where ps.idEmpleado = " & emp.IdEmpleado & "", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim per As New Permisos
+                per.IdEmpleado = Convert.ToInt32(dr("idEmpleado").ToString)
+                per.NombreModulo = dr("nombreModulo").ToString
+                per.RangoPermiso = Convert.ToByte(dr("rangoPermiso").ToString)
+                lstPermiso.Add(per)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstPermiso
     End Function
 End Class
