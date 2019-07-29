@@ -63,7 +63,6 @@ Public Class Frm_Principal
         BajaEmpleadosToolStripMenuItem1.Enabled = False
         PlanHorasExtraToolStripMenuItem.Enabled = False
         ReportesToolStripMenuItem.Enabled = False
-        PreNominaToolStripMenuItem1.Enabled = False
         FiniquitoToolStripMenuItem.Enabled = False
         MejoraContinuaToolStripMenuItem.Enabled = False
         ReporteMejorasToolStripMenuItem.Enabled = False
@@ -192,14 +191,14 @@ Public Class Frm_Principal
         Retardos.lbl_var.Text = Var
         Retardos.ShowDialog()
     End Sub
-    Private Sub DescansoLaboradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescansoLaboradoToolStripMenuItem.Click
+    Private Sub DescansoLaboradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescansoLaboradoToolStripMenuItem1.Click
         'Ejecuta reporte de Descanso Laborado de RH
         Dim Descanso As New Frm_Parametros_rep_prenomina()
         Var = 1
         Descanso.lbl_var.Text = Var
         Descanso.ShowDialog()
     End Sub
-    Private Sub RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RetardosToolStripMenuItem.Click
+    Private Sub RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RetardosToolStripMenuItem1.Click
         'Ejecuta reporte de Retardos de RH
         Dim Retardos As New Frm_Parametros_rep_prenomina()
         Var = 2
