@@ -163,7 +163,6 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentaci
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.pdb
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Reporte_Anual_Mejoras.resources
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Reporte_Altas.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -295,3 +294,5 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debu
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Retardos_Semana.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\RdlCompile.cache
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\RdlCompile.compiled
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Contrato_Clave.resources
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Altas_Empleados.resources

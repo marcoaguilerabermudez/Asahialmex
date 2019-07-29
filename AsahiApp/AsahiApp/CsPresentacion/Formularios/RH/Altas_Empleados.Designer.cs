@@ -1,6 +1,6 @@
 ﻿namespace CsPresentacion
 {
-    partial class Reporte_Altas
+    partial class Altas_Empleados
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reporte_Altas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Altas_Empleados));
             this.FM_LISTADO_ALTASBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DS_Listado_Altas_Empleados = new CsPresentacion.DS_Listado_Altas_Empleados();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
