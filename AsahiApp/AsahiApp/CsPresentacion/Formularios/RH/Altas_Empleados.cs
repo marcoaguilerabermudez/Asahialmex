@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CsPresentacion
 {
-    public partial class Reporte_Altas : Form
+    public partial class Altas_Empleados : Form
     {
-        public Reporte_Altas()
+        public Altas_Empleados()
         {
             InitializeComponent();
         }

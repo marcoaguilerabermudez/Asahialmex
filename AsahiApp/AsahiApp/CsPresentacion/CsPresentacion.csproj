@@ -81,6 +81,23 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS_Prenomina_2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Prenomina_2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Incapacidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incapacidades.Designer.cs">
+      <DependentUpon>Incapacidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Contrato_Clave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Contrato_Clave.Designer.cs">
+      <DependentUpon>Contrato_Clave.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_Listado_Altas_Empleados.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -281,11 +298,11 @@
     <Compile Include="Reportes\RH\Retardos_Semana.Designer.cs">
       <DependentUpon>Retardos_Semana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporte_Altas.cs">
+    <Compile Include="Formularios\RH\Altas_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reporte_Altas.Designer.cs">
-      <DependentUpon>Reporte_Altas.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Altas_Empleados.Designer.cs">
+      <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
@@ -326,6 +343,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Contrato.rdlc" />
+    <EmbeddedResource Include="Incapacidades.resx">
+      <DependentUpon>Incapacidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Contrato_Clave.resx">
+      <DependentUpon>Contrato_Clave.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Descanso_laborado.rdlc" />
     <EmbeddedResource Include="Formularios\RH\Frm_Reporte_Anual_Mejoras.resx">
       <DependentUpon>Frm_Reporte_Anual_Mejoras.cs</DependentUpon>
@@ -400,8 +423,8 @@
     <EmbeddedResource Include="Reportes\RH\Reporte_Bajas.resx">
       <DependentUpon>Reporte_Bajas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_Altas.resx">
-      <DependentUpon>Reporte_Altas.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Altas_Empleados.resx">
+      <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_bajas.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Finiquito.resx">
@@ -412,6 +435,7 @@
       <DependentUpon>Descanso_Laborado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
+    <EmbeddedResource Include="Rep_Incapacidades.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Altas.rdlc" />
     <EmbeddedResource Include="Rep_Mejoras3.rdlc" />
     <EmbeddedResource Include="Retardos.rdlc" />
@@ -508,6 +532,17 @@
     </None>
     <None Include="DS_Prenomina.xss">
       <DependentUpon>DS_Prenomina.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Prenomina_2.xsc">
+      <DependentUpon>DS_Prenomina_2.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Prenomina_2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Prenomina_2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Prenomina_2.xss">
+      <DependentUpon>DS_Prenomina_2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
