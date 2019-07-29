@@ -185,9 +185,15 @@ Public Class Frm_Principal
 
     Private Sub AusentismosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AusentismosToolStripMenuItem1.Click
 
+
     End Sub
 
     Private Sub IncapacidadesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles IncapacidadesToolStripMenuItem1.Click
+        'Ejecuta reporte de Incapacidades de RH
+        Dim Retardos As New Frm_Parametros_rep_prenomina()
+        Var = 5
+        Retardos.lbl_var.Text = Var
+        Retardos.ShowDialog()
 
     End Sub
 
