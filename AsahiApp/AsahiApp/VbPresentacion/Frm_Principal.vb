@@ -52,11 +52,13 @@ Public Class Frm_Principal
         BonoMensualToolStripMenuItem.Enabled = False
         ChecadasToolStripMenuItem.Enabled = False
         ComidasToolStripMenuItem.Enabled = False
+        ReportesToolStripMenuItem1.Enabled = False
         EmpleadosToolStripMenuItem.Enabled = False
         AltaToolStripMenuItem.Enabled = False
         BajaToolStripMenuItem.Enabled = False
         InformaciónToolStripMenuItem.Enabled = False
         CredencialesToolStripMenuItem.Enabled = False
+        ContratoToolStripMenuItem.Enabled = False
         ListadosToolStripMenuItem.Enabled = False
         ActivosToolStripMenuItem.Enabled = False
         BajaEmpleadosToolStripMenuItem.Enabled = False
@@ -81,11 +83,13 @@ Public Class Frm_Principal
                 Case "BonoMensualToolStripMenuItem" : BonoMensualToolStripMenuItem.Enabled = True
                 Case "ChecadasToolStripMenuItem" : ChecadasToolStripMenuItem.Enabled = True
                 Case "ComidasToolStripMenuItem" : ComidasToolStripMenuItem.Enabled = True
+                Case "ReportesToolStripMenuItem1" : ReportesToolStripMenuItem1.Enabled = True
                 Case "EmpleadosToolStripMenuItem" : EmpleadosToolStripMenuItem.Enabled = True
                 Case "AltaToolStripMenuItem" : AltaToolStripMenuItem.Enabled = True
                 Case "BajaToolStripMenuItem" : BajaToolStripMenuItem.Enabled = True
                 Case "InformaciónToolStripMenuItem" : InformaciónToolStripMenuItem.Enabled = True
                 Case "CredencialesToolStripMenuItem" : CredencialesToolStripMenuItem.Enabled = True
+                Case "ContratoToolStripMenuItem" : ContratoToolStripMenuItem.Enabled = True
                 Case "ListadosToolStripMenuItem" : ListadosToolStripMenuItem.Enabled = True
                 Case "ActivosToolStripMenuItem" : ActivosToolStripMenuItem.Enabled = True
                 Case "BajaEmpleadosToolStripMenuItem" : BajaEmpleadosToolStripMenuItem.Enabled = True

@@ -77,12 +77,12 @@ Public Class Frm_PlanHorasExtra
         If columna = "lunes" Or columna = "martes" Or columna = "miercoles" Or columna = "jueves" Or columna = "viernes" Or
                 columna = "sabado" Or columna = "domingo" Then
 
-            If columna = "sabado" Or columna = "domingo" Then
+            If columna = "domingo" Then 'columna = "sabado" Or
                 If Dgv_HorasExtra.Rows(fila).Cells("idTurno").Value >= 4 Then
                     If Dgv_HorasExtra.Rows(fila).Cells(columna).Value >= 1 Then
                         Dgv_HorasExtra.Rows(fila).Cells(columna).Value = 1
                     End If
-                ElseIf Dgv_HorasExtra.Rows(fila).Cells("idTurno").Value < 4 And columna = "domingo" Then
+                ElseIf Dgv_HorasExtra.Rows(fila).Cells("idTurno").Value < 4 Then 'And columna = "domingo"
                     If Dgv_HorasExtra.Rows(fila).Cells(columna).Value >= 1 Then
                         Dgv_HorasExtra.Rows(fila).Cells(columna).Value = 1
                     End If
@@ -124,7 +124,7 @@ Public Class Frm_PlanHorasExtra
                     If Convert.ToDouble(.Cells("miercoles").Value) > 0.5 And Lbl_Dia3.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("miercoles").Value) + total)
                     If Convert.ToDouble(.Cells("jueves").Value) > 0.5 And Lbl_Dia4.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("jueves").Value) + total)
                     If Convert.ToDouble(.Cells("viernes").Value) > 0.5 And Lbl_Dia5.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("viernes").Value) + total)
-                    If Convert.ToDouble(.Cells("sabado").Value) > 0.5 And Lbl_Dia6.BackColor <> Color.DarkViolet Then descLaborado = (Convert.ToDouble(.Cells("sabado").Value) + descLaborado)
+                    If Convert.ToDouble(.Cells("sabado").Value) > 0.5 And Lbl_Dia6.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("sabado").Value) + total)
                     If Convert.ToDouble(.Cells("domingo").Value) > 0.5 And Lbl_Dia7.BackColor <> Color.DarkViolet Then descLaborado = (Convert.ToDouble(.Cells("domingo").Value) + descLaborado)
                 Else
                     If Convert.ToDouble(.Cells("lunes").Value) > 0.5 And Lbl_Dia1.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("lunes").Value) + total)
@@ -142,6 +142,7 @@ Public Class Frm_PlanHorasExtra
                     If Lbl_Dia3.BackColor = Color.DarkViolet Then descLaborado = (Convert.ToDouble(.Cells("miercoles").Value) + descLaborado)
                     If Lbl_Dia4.BackColor = Color.DarkViolet Then descLaborado = (Convert.ToDouble(.Cells("jueves").Value) + descLaborado)
                     If Lbl_Dia5.BackColor = Color.DarkViolet Then descLaborado = (Convert.ToDouble(.Cells("viernes").Value) + descLaborado)
+                    If Lbl_Dia6.BackColor = Color.DarkViolet Then descLaborado = (Convert.ToDouble(.Cells("sabado").Value) + descLaborado)
                 Else
                     If Lbl_Dia1.BackColor = Color.DarkViolet Then descLaborado = (Convert.ToDouble(.Cells("lunes").Value) + descLaborado)
                     If Lbl_Dia2.BackColor = Color.DarkViolet Then descLaborado = (Convert.ToDouble(.Cells("martes").Value) + descLaborado)
@@ -529,6 +530,7 @@ Public Class Frm_PlanHorasExtra
         lstHrsEx = NHrsEx.ObtenerSemanas(Me.cadenaConex, Lbl_año.Text)
         With Cmb_Semanas
             .DataSource = lstHrsEx
+            .ValueMember = "Mes"
             .DisplayMember = "Semanas"
             .SelectedItem = Nothing
         End With
@@ -556,7 +558,10 @@ Public Class Frm_PlanHorasExtra
         Dim emp As New Empleado(), imp As New Impuestos(), NImp As New NImpuestos()
         Dim sueldoXHora As Double, sueldoDia As Double, sueldoSem As Double, sueldoMes As Double, hrsDExentas As Double, hrsDGrabables As Double, hrsTriples As Double,
             dobles As Double, triples As Double, exedente As Double, cobroEx As Double, exedMensual As Double, exedSemanal As Double, sueSem As Double, h2 As Double,
-            dl As Double
+            dl As Double, p As Double, d As Double
+
+        p = ((sueldo * 6) * 0.1)
+        d = ((sueldo * 6) * 0.1)
 
         If turno = 2 Then
             sueldoXHora = (sueldo / 7.5)
@@ -581,7 +586,7 @@ Public Class Frm_PlanHorasExtra
             hrsTriples = ((triples + dl) * sueldoXHora) * 3
         End If
 
-        sueldoSem = (sueldo * 7) + (hrsDGrabables + hrsTriples)
+        sueldoSem = (sueldo * 7) + (hrsDGrabables + hrsTriples + p)
         sueldoDia = (sueldoSem / 7)
         sueldoMes = (sueldoDia * 30.4)
         'sb = (sueldoSem + (hrsDExentas + hrsDGrabables +))
@@ -598,7 +603,7 @@ Public Class Frm_PlanHorasExtra
         h2 = hrsDExentas + hrsDGrabables
         sueSem = sueldo * 7
 
-        emp.SueldoNeto = ((sueSem + h2 + hrsTriples) - exedSemanal)
+        emp.SueldoNeto = ((sueSem + h2 + hrsTriples + p) - (exedSemanal + d))
         Return emp
     End Function
     Private Sub FormatoLabelsSumas()
