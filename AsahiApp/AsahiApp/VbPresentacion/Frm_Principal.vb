@@ -1,11 +1,15 @@
 ﻿Imports System.Windows.Forms
 Imports System.Data.SqlClient
 Imports Clases
+Imports Negocio
 Imports CsPresentacion
 Public Class Frm_Principal
 #Region "Variables de clase"
     Dim cadenaConex As String
+    Dim cadenaConesExp As String
+    Dim conex As New conexion
     Dim cadConex As SqlConnection
+    Dim emp As New Empleado
 #End Region
     'Variable para generar reportes de prenómina
     Public Var As Int64
@@ -19,7 +23,7 @@ Public Class Frm_Principal
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
-    Sub New(ByVal cadConex As SqlConnection, ByVal cadenaConex As String)
+    Sub New(ByVal cadConex As SqlConnection, ByVal cadenaConex As String, ByVal emp As Empleado)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
@@ -27,15 +31,87 @@ Public Class Frm_Principal
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         Me.cadConex = cadConex
         Me.cadenaConex = cadenaConex
+        Me.cadenaConesExp = conex.cadenaConexExpress
+        Me.emp = emp
     End Sub
 #End Region
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        If Me.emp.TipoUsuario = 0 Then
+            Dim lstPer As New LPermisos(), NEmp As New NEmpleado()
+            BloquearPestañas()
+            lstPer = NEmp.RecuperarPermisosUsuario(Me.cadenaConesExp, Me.emp)
+            DesbloquearPestañas(lstPer)
+            'ElseIf Me.emp.TipoUsuario = 1 Then
+        End If
     End Sub
+#Region "Procesos"
+    Private Sub BloquearPestañas()
+        PreNominaToolStripMenuItem.Enabled = False
+        PreNominaListadoToolStripMenuItem.Enabled = False
+        PreNominaGlobalToolStripMenuItem.Enabled = False
+        BonoMensualToolStripMenuItem.Enabled = False
+        ChecadasToolStripMenuItem.Enabled = False
+        ComidasToolStripMenuItem.Enabled = False
+        ReportesToolStripMenuItem1.Enabled = False
+        EmpleadosToolStripMenuItem.Enabled = False
+        AltaToolStripMenuItem.Enabled = False
+        BajaToolStripMenuItem.Enabled = False
+        InformaciónToolStripMenuItem.Enabled = False
+        CredencialesToolStripMenuItem.Enabled = False
+        ContratoToolStripMenuItem.Enabled = False
+        ListadosToolStripMenuItem.Enabled = False
+        ActivosToolStripMenuItem.Enabled = False
+        BajaEmpleadosToolStripMenuItem.Enabled = False
+        BajaEmpleadosToolStripMenuItem1.Enabled = False
+        PlanHorasExtraToolStripMenuItem.Enabled = False
+        ReportesToolStripMenuItem.Enabled = False
+        FiniquitoToolStripMenuItem.Enabled = False
+        MejoraContinuaToolStripMenuItem.Enabled = False
+        ReporteMejorasToolStripMenuItem.Enabled = False
+        PlanTiempoExtraToolStripMenuItem.Enabled = False
+        ControlDeProducciónToolStripMenuItem.Enabled = False
+        EvaluacionesToolStripMenuItem.Enabled = False
+        MasterPlanToolStripMenuItem.Enabled = False
+        PlanToolStripMenuItem.Enabled = False
+    End Sub
+    Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
+        For Each item In lstPer
+            Select Case item.NombreModulo
+                Case "PreNominaToolStripMenuItem" : PreNominaToolStripMenuItem.Enabled = True
+                Case "PreNominaListadoToolStripMenuItem" : PreNominaListadoToolStripMenuItem.Enabled = True
+                Case "PreNominaGlobalToolStripMenuItem" : PreNominaGlobalToolStripMenuItem.Enabled = True
+                Case "BonoMensualToolStripMenuItem" : BonoMensualToolStripMenuItem.Enabled = True
+                Case "ChecadasToolStripMenuItem" : ChecadasToolStripMenuItem.Enabled = True
+                Case "ComidasToolStripMenuItem" : ComidasToolStripMenuItem.Enabled = True
+                Case "ReportesToolStripMenuItem1" : ReportesToolStripMenuItem1.Enabled = True
+                Case "EmpleadosToolStripMenuItem" : EmpleadosToolStripMenuItem.Enabled = True
+                Case "AltaToolStripMenuItem" : AltaToolStripMenuItem.Enabled = True
+                Case "BajaToolStripMenuItem" : BajaToolStripMenuItem.Enabled = True
+                Case "InformaciónToolStripMenuItem" : InformaciónToolStripMenuItem.Enabled = True
+                Case "CredencialesToolStripMenuItem" : CredencialesToolStripMenuItem.Enabled = True
+                Case "ContratoToolStripMenuItem" : ContratoToolStripMenuItem.Enabled = True
+                Case "ListadosToolStripMenuItem" : ListadosToolStripMenuItem.Enabled = True
+                Case "ActivosToolStripMenuItem" : ActivosToolStripMenuItem.Enabled = True
+                Case "BajaEmpleadosToolStripMenuItem" : BajaEmpleadosToolStripMenuItem.Enabled = True
+                Case "BajaEmpleadosToolStripMenuItem1" : BajaEmpleadosToolStripMenuItem1.Enabled = True
+                Case "PlanHorasExtraToolStripMenuItem" : PlanHorasExtraToolStripMenuItem.Enabled = True
+                Case "ReportesToolStripMenuItem" : ReportesToolStripMenuItem.Enabled = True
+                Case "FiniquitoToolStripMenuItem" : FiniquitoToolStripMenuItem.Enabled = True
+                Case "MejoraContinuaToolStripMenuItem" : MejoraContinuaToolStripMenuItem.Enabled = True
+                Case "ReporteMejorasToolStripMenuItem" : ReporteMejorasToolStripMenuItem.Enabled = True
+                Case "PlanTiempoExtraToolStripMenuItem" : PlanTiempoExtraToolStripMenuItem.Enabled = True
+                Case "ControlDeProducciónToolStripMenuItem" : ControlDeProducciónToolStripMenuItem.Enabled = True
+                Case "EvaluacionesToolStripMenuItem" : EvaluacionesToolStripMenuItem.Enabled = True
+                Case "MasterPlanToolStripMenuItem" : MasterPlanToolStripMenuItem.Enabled = True
+                Case "PlanToolStripMenuItem" : PlanToolStripMenuItem.Enabled = True
+            End Select
+        Next
+    End Sub
+#End Region
 #Region "Botónes"
     Private Sub PreNominaListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaListadoToolStripMenuItem.Click
         Dim lista As New Frm_ListaPrenomina(cadConex, cadenaConex)
-        lista.ShowDialog()
+        lista.Show()
     End Sub
     Private Sub ControlDeProducciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeProducciónToolStripMenuItem.Click
     End Sub
@@ -93,7 +169,7 @@ Public Class Frm_Principal
     End Sub
     Private Sub PreNominaGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaGlobalToolStripMenuItem.Click
         Dim globPren As New Frm_GlobalPrenomina(cadConex, cadenaConex)
-        globPren.ShowDialog()
+        globPren.Show()
     End Sub
     Private Sub AltaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem.Click
         'Módulo de alta de empleados
@@ -112,7 +188,6 @@ Public Class Frm_Principal
         Dim bono As New Frm_BonoMensual()
         bono.ShowDialog()
     End Sub
-
     Private Sub TodosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'Ejecuta todos los reportes de pre nomina
         Dim Retardos As New Frm_Parametros_rep_prenomina()
@@ -145,20 +220,15 @@ Public Class Frm_Principal
 
     Private Sub PermisosDeSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs)
     End Sub
-
     Private Sub TodosToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
     End Sub
-
     Private Sub ReporteMejorasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteMejorasToolStripMenuItem.Click
     End Sub
-
     Private Sub EspañolToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EspañolToolStripMenuItem.Click
-
         Dim Mej As New Frm_Reporte_Anual_Mejoras()
         Mej.variable = 0
         Mej.Show()
     End Sub
-
     Private Sub JaponésToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JaponésToolStripMenuItem.Click
         Dim Mej As New Frm_Reporte_Anual_Mejoras()
         Mej.variable = 1
@@ -217,6 +287,10 @@ Public Class Frm_Principal
         Activos.Show()
     End Sub
 
+    Private Sub PlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanToolStripMenuItem.Click
+        'MsgBox("Ahí la llevamos no apureis para septiembre queda bro")
+        Dim mp As New Frm_MasterPlan()
+        mp.Show()
+    End Sub
 #End Region
 End Class
-

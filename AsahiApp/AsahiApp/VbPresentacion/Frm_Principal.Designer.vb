@@ -66,6 +66,9 @@ Partial Class Frm_Principal
         Me.ControlDeProducciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EvaluacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FinanzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterPlanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ACercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -79,7 +82,7 @@ Partial Class Frm_Principal
         '
         Me.Men_Principal.BackColor = System.Drawing.Color.SteelBlue
         Me.Men_Principal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
-        Me.Men_Principal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.ControlDePruducciónToolStripMenuItem, Me.CalidadToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.Men_Principal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.ControlDePruducciónToolStripMenuItem, Me.CalidadToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.Men_Principal.Location = New System.Drawing.Point(0, 0)
         Me.Men_Principal.Name = "Men_Principal"
         Me.Men_Principal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -350,6 +353,26 @@ Partial Class Frm_Principal
         Me.EvaluacionesToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.EvaluacionesToolStripMenuItem.Text = "Evaluaciones"
         '
+        'FinanzasToolStripMenuItem
+        '
+        Me.FinanzasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterPlanToolStripMenuItem})
+        Me.FinanzasToolStripMenuItem.Name = "FinanzasToolStripMenuItem"
+        Me.FinanzasToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.FinanzasToolStripMenuItem.Text = "Finanzas"
+        '
+        'MasterPlanToolStripMenuItem
+        '
+        Me.MasterPlanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlanToolStripMenuItem})
+        Me.MasterPlanToolStripMenuItem.Name = "MasterPlanToolStripMenuItem"
+        Me.MasterPlanToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.MasterPlanToolStripMenuItem.Text = "Master Plan"
+        '
+        'PlanToolStripMenuItem
+        '
+        Me.PlanToolStripMenuItem.Name = "PlanToolStripMenuItem"
+        Me.PlanToolStripMenuItem.Size = New System.Drawing.Size(97, 22)
+        Me.PlanToolStripMenuItem.Text = "Plan"
+        '
         'AyudaToolStripMenuItem
         '
         Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ACercaDeToolStripMenuItem, Me.AcercaDeToolStripMenuItem1})
@@ -455,4 +478,7 @@ Partial Class Frm_Principal
     Friend WithEvents AusentismosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents IncapacidadesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents VacacionesToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents FinanzasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MasterPlanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PlanToolStripMenuItem As ToolStripMenuItem
 End Class
