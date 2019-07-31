@@ -143,8 +143,8 @@ Partial Class Frm_BonoMensual
         Me.premio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.turno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.Dgv_BonoMensual, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -1031,14 +1031,6 @@ Partial Class Frm_BonoMensual
         Me.Panel2.Size = New System.Drawing.Size(1217, 494)
         Me.Panel2.TabIndex = 2
         '
-        'Panel3
-        '
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1217, 27)
-        Me.Panel3.TabIndex = 0
-        '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.Dgv_BonoMensual)
@@ -1047,6 +1039,14 @@ Partial Class Frm_BonoMensual
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1217, 467)
         Me.Panel4.TabIndex = 1
+        '
+        'Panel3
+        '
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1217, 27)
+        Me.Panel3.TabIndex = 0
         '
         'Frm_BonoMensual
         '
@@ -1059,6 +1059,7 @@ Partial Class Frm_BonoMensual
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Bono Mensual"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.Dgv_BonoMensual, System.ComponentModel.ISupportInitialize).EndInit()

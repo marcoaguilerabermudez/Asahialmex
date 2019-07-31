@@ -794,6 +794,7 @@ Partial Class Frm_GlobalPrenomina
         Me.Name = "Frm_GlobalPrenomina"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Global Prenomina"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.Dgv_Prenomina_Global, System.ComponentModel.ISupportInitialize).EndInit()
