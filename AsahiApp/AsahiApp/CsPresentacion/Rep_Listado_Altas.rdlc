@@ -23,7 +23,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Reporte de Altas de Empleados Asahi Aluminium México</Value>
+                <Value>Listado de Altas Asahi Aluminium México</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -895,7 +895,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>TOTAL: </Value>
+                <Value>TOTAL:         </Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -940,7 +940,7 @@
     <Height>1.78124in</Height>
     <Style />
   </Body>
-  <Width>12.99157in</Width>
+  <Width>12.87699in</Width>
   <Page>
     <PageHeight>43.18cm</PageHeight>
     <PageWidth>27.94cm</PageWidth>

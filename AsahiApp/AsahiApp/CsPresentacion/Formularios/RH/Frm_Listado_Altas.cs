@@ -154,7 +154,7 @@ namespace CsPresentacion
                 //MessageBox.Show(ex.Message);
             }
         }
-        private void Exportara_Exel()// Método para exportar a excel.
+        private void Exportara_Exel2()// Método para exportar a excel.
         {
             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
@@ -163,15 +163,15 @@ namespace CsPresentacion
             {
                 worksheet = workbook.ActiveSheet;
                 worksheet.Name = "Libro1";
-                int cellRowIndex = 1;
-                int cellColumnIndex = 1;
+                int cellRowIndex = 2;//ok
+                int cellColumnIndex = 1;//ok
                 //Pasa por cada fila y lee el valor de cada columna.
-                for (int i = 0; i < dgv_altas.Rows.Count - 0; i++)
+                for (int i = -1; i < dgv_altas.Rows.Count - 0; i++)//Primera y ultima fila
                 {
-                    for (int j = 0; j < dgv_altas.Columns.Count - 0; j++)
+                    for (int j = 0; j < dgv_altas.Columns.Count - 0; j++)//Columnas lado izquierdo y derecho
                     {
                         // El índice de Excel comienza desde 1,1. Como first Row tendría los encabezados de Columna, agregando una verificación de condición.
-                        if (cellRowIndex == 0)
+                        if (cellRowIndex == 2)
                         {
                             worksheet.Cells[cellRowIndex, cellColumnIndex] = dgv_altas.Columns[j].HeaderText;
                         }
@@ -181,13 +181,13 @@ namespace CsPresentacion
                         }
                         cellColumnIndex++;
                     }
-                    cellColumnIndex = 1;
+                    cellColumnIndex = 1;//ok
                     cellRowIndex++;
                 }
                 //Obtener la ubicación y el nombre de archivo de excel para guardar del usuario.
                 SaveFileDialog saveDialog = new SaveFileDialog();
                 saveDialog.Filter = "Libro de Excel (*.xlsx)|*.xlsx";
-                saveDialog.FilterIndex = 2;
+                saveDialog.FilterIndex = 0;//ok
 
                 if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -215,7 +215,7 @@ namespace CsPresentacion
                 DialogResult dialogo = MessageBox.Show("¿Desea exportar todas las bajas?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogo == DialogResult.Yes)
                 {
-                    Exportara_Exel();
+                    Exportara_Exel2();
                 }
                 else
                 {
@@ -223,7 +223,7 @@ namespace CsPresentacion
             }
             else
             {
-                Exportara_Exel();
+                Exportara_Exel2();
             }
         }
 

@@ -81,15 +81,32 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS_Listado_Activos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Listado_Activos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_Prenomina_2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Prenomina_2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Incapacidades.cs">
+    <Compile Include="Reportes\RH\Listado_Activos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Incapacidades.Designer.cs">
+    <Compile Include="Reportes\RH\Listado_Activos.Designer.cs">
+      <DependentUpon>Listado_Activos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Listado_Activos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Listado_Activos.Designer.cs">
+      <DependentUpon>Frm_Listado_Activos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Incapacidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Incapacidades.Designer.cs">
       <DependentUpon>Incapacidades.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Contrato_Clave.cs">
@@ -343,7 +360,13 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Contrato.rdlc" />
-    <EmbeddedResource Include="Incapacidades.resx">
+    <EmbeddedResource Include="Reportes\RH\Listado_Activos.resx">
+      <DependentUpon>Listado_Activos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Listado_Activos.resx">
+      <DependentUpon>Frm_Listado_Activos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Incapacidades.resx">
       <DependentUpon>Incapacidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Contrato_Clave.resx">
@@ -436,6 +459,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
     <EmbeddedResource Include="Rep_Incapacidades.rdlc" />
+    <EmbeddedResource Include="Rep_Listado_Activos.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Altas.rdlc" />
     <EmbeddedResource Include="Rep_Mejoras3.rdlc" />
     <EmbeddedResource Include="Retardos.rdlc" />
@@ -488,6 +512,17 @@
     </None>
     <None Include="DS_Finiquito.xss">
       <DependentUpon>DS_Finiquito.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Listado_Activos.xsc">
+      <DependentUpon>DS_Listado_Activos.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Listado_Activos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Listado_Activos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Listado_Activos.xss">
+      <DependentUpon>DS_Listado_Activos.xsd</DependentUpon>
     </None>
     <None Include="DS_Listado_Altas_Empleados.xsc">
       <DependentUpon>DS_Listado_Altas_Empleados.xsd</DependentUpon>
