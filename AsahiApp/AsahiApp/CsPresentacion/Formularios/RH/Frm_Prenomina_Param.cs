@@ -61,8 +61,8 @@ namespace CsPresentacion
             txt_clave.Focus();
             lbl_tipo.Text = "0";
             timer1.Enabled = true;
-           // lbl_var.Visible = false;
-            //lbl_tipo.Visible = false;
+            lbl_var.Visible = false;
+           lbl_tipo.Visible = false;
         }
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
