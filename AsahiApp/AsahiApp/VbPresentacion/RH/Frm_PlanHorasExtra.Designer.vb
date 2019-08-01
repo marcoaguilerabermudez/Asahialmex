@@ -43,23 +43,6 @@ Partial Class Frm_PlanHorasExtra
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Dgv_HorasExtra = New System.Windows.Forms.DataGridView()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Lbl_TotalDescLabSuma = New System.Windows.Forms.Label()
-        Me.Lbl_DescLaborado = New System.Windows.Forms.Label()
-        Me.Lbl_SueldoNetoSuma = New System.Windows.Forms.Label()
-        Me.Lbl_SueldoBrutoSuma = New System.Windows.Forms.Label()
-        Me.Lbl_TotalTriplesSum = New System.Windows.Forms.Label()
-        Me.Lbl_TotalDoblesSum = New System.Windows.Forms.Label()
-        Me.Lbl_HrsTriplesSum = New System.Windows.Forms.Label()
-        Me.Lbl_HrsDoblesSum = New System.Windows.Forms.Label()
-        Me.Lbl_Totales = New System.Windows.Forms.Label()
-        Me.Lbl_SumMiercoles = New System.Windows.Forms.Label()
-        Me.Lbl_SumJueves = New System.Windows.Forms.Label()
-        Me.Lbl_SumDomingo = New System.Windows.Forms.Label()
-        Me.Lbl_SumViernes = New System.Windows.Forms.Label()
-        Me.Lbl_SumLunes = New System.Windows.Forms.Label()
-        Me.Lbl_SumSabado = New System.Windows.Forms.Label()
-        Me.Lbl_SumMartes = New System.Windows.Forms.Label()
         Me.clave = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.departamento = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -81,6 +64,24 @@ Partial Class Frm_PlanHorasExtra
         Me.totalDescLaborado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalBruto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalNeto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Lbl_TotalDescLabSuma = New System.Windows.Forms.Label()
+        Me.Lbl_DescLaborado = New System.Windows.Forms.Label()
+        Me.Lbl_SueldoNetoSuma = New System.Windows.Forms.Label()
+        Me.Lbl_SueldoBrutoSuma = New System.Windows.Forms.Label()
+        Me.Lbl_TotalTriplesSum = New System.Windows.Forms.Label()
+        Me.Lbl_TotalDoblesSum = New System.Windows.Forms.Label()
+        Me.Lbl_HrsTriplesSum = New System.Windows.Forms.Label()
+        Me.Lbl_HrsDoblesSum = New System.Windows.Forms.Label()
+        Me.Lbl_Totales = New System.Windows.Forms.Label()
+        Me.Lbl_SumMiercoles = New System.Windows.Forms.Label()
+        Me.Lbl_SumJueves = New System.Windows.Forms.Label()
+        Me.Lbl_SumDomingo = New System.Windows.Forms.Label()
+        Me.Lbl_SumViernes = New System.Windows.Forms.Label()
+        Me.Lbl_SumLunes = New System.Windows.Forms.Label()
+        Me.Lbl_SumSabado = New System.Windows.Forms.Label()
+        Me.Lbl_SumMartes = New System.Windows.Forms.Label()
+        Me.Lbl_Mes = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -93,6 +94,7 @@ Partial Class Frm_PlanHorasExtra
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Lbl_Mes)
         Me.Panel1.Controls.Add(Me.Panel6)
         Me.Panel1.Controls.Add(Me.Lbl_Depto)
         Me.Panel1.Controls.Add(Me.Cmb_Departamento)
@@ -145,7 +147,7 @@ Partial Class Frm_PlanHorasExtra
         Me.Lbl_Depto.AutoSize = True
         Me.Lbl_Depto.BackColor = System.Drawing.Color.SteelBlue
         Me.Lbl_Depto.ForeColor = System.Drawing.Color.White
-        Me.Lbl_Depto.Location = New System.Drawing.Point(133, 7)
+        Me.Lbl_Depto.Location = New System.Drawing.Point(190, 7)
         Me.Lbl_Depto.Name = "Lbl_Depto"
         Me.Lbl_Depto.Size = New System.Drawing.Size(74, 13)
         Me.Lbl_Depto.TabIndex = 21
@@ -155,7 +157,7 @@ Partial Class Frm_PlanHorasExtra
         '
         Me.Cmb_Departamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cmb_Departamento.FormattingEnabled = True
-        Me.Cmb_Departamento.Location = New System.Drawing.Point(136, 23)
+        Me.Cmb_Departamento.Location = New System.Drawing.Point(193, 23)
         Me.Cmb_Departamento.Name = "Cmb_Departamento"
         Me.Cmb_Departamento.Size = New System.Drawing.Size(190, 21)
         Me.Cmb_Departamento.TabIndex = 20
@@ -165,7 +167,7 @@ Partial Class Frm_PlanHorasExtra
         Me.Btn_Guardar.Enabled = False
         Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
         Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Guardar.Location = New System.Drawing.Point(332, 7)
+        Me.Btn_Guardar.Location = New System.Drawing.Point(389, 7)
         Me.Btn_Guardar.Name = "Btn_Guardar"
         Me.Btn_Guardar.Size = New System.Drawing.Size(56, 45)
         Me.Btn_Guardar.TabIndex = 19
@@ -178,7 +180,7 @@ Partial Class Frm_PlanHorasExtra
         Me.Lbl_año.AutoSize = True
         Me.Lbl_año.BackColor = System.Drawing.Color.SteelBlue
         Me.Lbl_año.ForeColor = System.Drawing.Color.White
-        Me.Lbl_año.Location = New System.Drawing.Point(101, 23)
+        Me.Lbl_año.Location = New System.Drawing.Point(158, 23)
         Me.Lbl_año.Name = "Lbl_año"
         Me.Lbl_año.Size = New System.Drawing.Size(25, 13)
         Me.Lbl_año.TabIndex = 18
@@ -307,6 +309,151 @@ Partial Class Frm_PlanHorasExtra
         Me.Dgv_HorasExtra.RowHeadersWidth = 25
         Me.Dgv_HorasExtra.Size = New System.Drawing.Size(1341, 446)
         Me.Dgv_HorasExtra.TabIndex = 0
+        '
+        'clave
+        '
+        Me.clave.HeaderText = "Clave"
+        Me.clave.Name = "clave"
+        Me.clave.ReadOnly = True
+        Me.clave.Width = 45
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
+        Me.nombre.Width = 200
+        '
+        'departamento
+        '
+        Me.departamento.HeaderText = "Departamento"
+        Me.departamento.Name = "departamento"
+        Me.departamento.ReadOnly = True
+        Me.departamento.Width = 185
+        '
+        'idTurno
+        '
+        Me.idTurno.HeaderText = "IdTurno"
+        Me.idTurno.Name = "idTurno"
+        Me.idTurno.ReadOnly = True
+        Me.idTurno.Visible = False
+        '
+        'sueldoBruto
+        '
+        Me.sueldoBruto.HeaderText = "Sueldo Bruto"
+        Me.sueldoBruto.Name = "sueldoBruto"
+        Me.sueldoBruto.ReadOnly = True
+        Me.sueldoBruto.Visible = False
+        '
+        'sueldoNeto
+        '
+        Me.sueldoNeto.HeaderText = "Sueldo Neto"
+        Me.sueldoNeto.Name = "sueldoNeto"
+        Me.sueldoNeto.ReadOnly = True
+        Me.sueldoNeto.Visible = False
+        '
+        'lunes
+        '
+        Me.lunes.HeaderText = "Lunes"
+        Me.lunes.Name = "lunes"
+        Me.lunes.Width = 55
+        '
+        'martes
+        '
+        Me.martes.HeaderText = "Martes"
+        Me.martes.Name = "martes"
+        Me.martes.Width = 55
+        '
+        'miercoles
+        '
+        Me.miercoles.HeaderText = "Miércoles"
+        Me.miercoles.Name = "miercoles"
+        Me.miercoles.Width = 55
+        '
+        'jueves
+        '
+        Me.jueves.HeaderText = "Jueves"
+        Me.jueves.Name = "jueves"
+        Me.jueves.Width = 55
+        '
+        'viernes
+        '
+        Me.viernes.HeaderText = "Viernes"
+        Me.viernes.Name = "viernes"
+        Me.viernes.Width = 55
+        '
+        'sabado
+        '
+        Me.sabado.HeaderText = "Sábado"
+        Me.sabado.Name = "sabado"
+        Me.sabado.Width = 55
+        '
+        'domingo
+        '
+        Me.domingo.HeaderText = "Domingo"
+        Me.domingo.Name = "domingo"
+        Me.domingo.Width = 55
+        '
+        'dobles
+        '
+        Me.dobles.HeaderText = "Horas Dobles"
+        Me.dobles.Name = "dobles"
+        Me.dobles.ReadOnly = True
+        Me.dobles.Width = 60
+        '
+        'triples
+        '
+        Me.triples.HeaderText = "Horas Triples"
+        Me.triples.Name = "triples"
+        Me.triples.ReadOnly = True
+        Me.triples.Width = 60
+        '
+        'descansoLaborado
+        '
+        Me.descansoLaborado.HeaderText = "Descanso Laborado"
+        Me.descansoLaborado.Name = "descansoLaborado"
+        Me.descansoLaborado.ReadOnly = True
+        Me.descansoLaborado.Width = 60
+        '
+        'totalDobles
+        '
+        Me.totalDobles.HeaderText = "Total Dobles"
+        Me.totalDobles.Name = "totalDobles"
+        Me.totalDobles.ReadOnly = True
+        Me.totalDobles.Visible = False
+        Me.totalDobles.Width = 65
+        '
+        'totalTriples
+        '
+        Me.totalTriples.HeaderText = "Total Triples"
+        Me.totalTriples.Name = "totalTriples"
+        Me.totalTriples.ReadOnly = True
+        Me.totalTriples.Visible = False
+        Me.totalTriples.Width = 65
+        '
+        'totalDescLaborado
+        '
+        Me.totalDescLaborado.HeaderText = "Total Desc Laborado"
+        Me.totalDescLaborado.Name = "totalDescLaborado"
+        Me.totalDescLaborado.ReadOnly = True
+        Me.totalDescLaborado.Visible = False
+        Me.totalDescLaborado.Width = 65
+        '
+        'totalBruto
+        '
+        Me.totalBruto.HeaderText = "Bruto"
+        Me.totalBruto.Name = "totalBruto"
+        Me.totalBruto.ReadOnly = True
+        Me.totalBruto.Visible = False
+        Me.totalBruto.Width = 65
+        '
+        'TotalNeto
+        '
+        Me.TotalNeto.HeaderText = "Neto"
+        Me.TotalNeto.Name = "TotalNeto"
+        Me.TotalNeto.ReadOnly = True
+        Me.TotalNeto.Visible = False
+        Me.TotalNeto.Width = 65
         '
         'Panel4
         '
@@ -474,150 +621,16 @@ Partial Class Frm_PlanHorasExtra
         Me.Lbl_SumMartes.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_SumMartes.TabIndex = 12
         '
-        'clave
+        'Lbl_Mes
         '
-        Me.clave.HeaderText = "Clave"
-        Me.clave.Name = "clave"
-        Me.clave.ReadOnly = True
-        Me.clave.Width = 45
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        Me.nombre.Width = 200
-        '
-        'departamento
-        '
-        Me.departamento.HeaderText = "Departamento"
-        Me.departamento.Name = "departamento"
-        Me.departamento.ReadOnly = True
-        Me.departamento.Width = 185
-        '
-        'idTurno
-        '
-        Me.idTurno.HeaderText = "IdTurno"
-        Me.idTurno.Name = "idTurno"
-        Me.idTurno.ReadOnly = True
-        Me.idTurno.Visible = False
-        '
-        'sueldoBruto
-        '
-        Me.sueldoBruto.HeaderText = "Sueldo Bruto"
-        Me.sueldoBruto.Name = "sueldoBruto"
-        Me.sueldoBruto.ReadOnly = True
-        Me.sueldoBruto.Visible = False
-        '
-        'sueldoNeto
-        '
-        Me.sueldoNeto.HeaderText = "Sueldo Neto"
-        Me.sueldoNeto.Name = "sueldoNeto"
-        Me.sueldoNeto.ReadOnly = True
-        Me.sueldoNeto.Visible = False
-        '
-        'lunes
-        '
-        Me.lunes.HeaderText = "Lunes"
-        Me.lunes.Name = "lunes"
-        Me.lunes.Width = 55
-        '
-        'martes
-        '
-        Me.martes.HeaderText = "Martes"
-        Me.martes.Name = "martes"
-        Me.martes.Width = 55
-        '
-        'miercoles
-        '
-        Me.miercoles.HeaderText = "Miércoles"
-        Me.miercoles.Name = "miercoles"
-        Me.miercoles.Width = 55
-        '
-        'jueves
-        '
-        Me.jueves.HeaderText = "Jueves"
-        Me.jueves.Name = "jueves"
-        Me.jueves.Width = 55
-        '
-        'viernes
-        '
-        Me.viernes.HeaderText = "Viernes"
-        Me.viernes.Name = "viernes"
-        Me.viernes.Width = 55
-        '
-        'sabado
-        '
-        Me.sabado.HeaderText = "Sábado"
-        Me.sabado.Name = "sabado"
-        Me.sabado.Width = 55
-        '
-        'domingo
-        '
-        Me.domingo.HeaderText = "Domingo"
-        Me.domingo.Name = "domingo"
-        Me.domingo.Width = 55
-        '
-        'dobles
-        '
-        Me.dobles.HeaderText = "Horas Dobles"
-        Me.dobles.Name = "dobles"
-        Me.dobles.ReadOnly = True
-        Me.dobles.Width = 60
-        '
-        'triples
-        '
-        Me.triples.HeaderText = "Horas Triples"
-        Me.triples.Name = "triples"
-        Me.triples.ReadOnly = True
-        Me.triples.Width = 60
-        '
-        'descansoLaborado
-        '
-        Me.descansoLaborado.HeaderText = "Descanso Laborado"
-        Me.descansoLaborado.Name = "descansoLaborado"
-        Me.descansoLaborado.ReadOnly = True
-        Me.descansoLaborado.Width = 60
-        '
-        'totalDobles
-        '
-        Me.totalDobles.HeaderText = "Total Dobles"
-        Me.totalDobles.Name = "totalDobles"
-        Me.totalDobles.ReadOnly = True
-        Me.totalDobles.Visible = False
-        Me.totalDobles.Width = 65
-        '
-        'totalTriples
-        '
-        Me.totalTriples.HeaderText = "Total Triples"
-        Me.totalTriples.Name = "totalTriples"
-        Me.totalTriples.ReadOnly = True
-        Me.totalTriples.Visible = False
-        Me.totalTriples.Width = 65
-        '
-        'totalDescLaborado
-        '
-        Me.totalDescLaborado.HeaderText = "Total Desc Laborado"
-        Me.totalDescLaborado.Name = "totalDescLaborado"
-        Me.totalDescLaborado.ReadOnly = True
-        Me.totalDescLaborado.Visible = False
-        Me.totalDescLaborado.Width = 65
-        '
-        'totalBruto
-        '
-        Me.totalBruto.HeaderText = "Bruto"
-        Me.totalBruto.Name = "totalBruto"
-        Me.totalBruto.ReadOnly = True
-        Me.totalBruto.Visible = False
-        Me.totalBruto.Width = 65
-        '
-        'TotalNeto
-        '
-        Me.TotalNeto.HeaderText = "Neto"
-        Me.TotalNeto.Name = "TotalNeto"
-        Me.TotalNeto.ReadOnly = True
-        Me.TotalNeto.Visible = False
-        Me.TotalNeto.Width = 65
+        Me.Lbl_Mes.AutoSize = True
+        Me.Lbl_Mes.BackColor = System.Drawing.Color.SteelBlue
+        Me.Lbl_Mes.ForeColor = System.Drawing.Color.White
+        Me.Lbl_Mes.Location = New System.Drawing.Point(100, 23)
+        Me.Lbl_Mes.Name = "Lbl_Mes"
+        Me.Lbl_Mes.Size = New System.Drawing.Size(27, 13)
+        Me.Lbl_Mes.TabIndex = 23
+        Me.Lbl_Mes.Text = "Mes"
         '
         'Frm_PlanHorasExtra
         '
@@ -706,4 +719,5 @@ Partial Class Frm_PlanHorasExtra
     Friend WithEvents totalDescLaborado As DataGridViewTextBoxColumn
     Friend WithEvents totalBruto As DataGridViewTextBoxColumn
     Friend WithEvents TotalNeto As DataGridViewTextBoxColumn
+    Friend WithEvents Lbl_Mes As Label
 End Class
