@@ -186,7 +186,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(Fields!TDobles.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!TDobles.Value), "$ #,###,##0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -221,7 +221,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(Fields!TTriples.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!TTriples.Value), "$ #,###,##0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -256,7 +256,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(Fields!Bruto.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!Bruto.Value), "$ #,###,##0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -291,7 +291,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(Fields!Neto.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!Neto.Value), "$ #,###,##0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -3219,7 +3219,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(Fields!TDobles.Value, "$0.00")</Value>
+                              <Value>=FORMAT(Fields!TDobles.Value, "$ #,###,##0.00")</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -3253,7 +3253,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(Fields!TTriples.Value, "$0.00")</Value>
+                              <Value>=FORMAT(Fields!TTriples.Value, "$ #,###,##0.00")</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -3287,7 +3287,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(Fields!TDescLaborado.Value, "$0.00")</Value>
+                              <Value>=FORMAT(Fields!TDescLaborado.Value, "$ #,###,##0.00")</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -3321,7 +3321,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(Fields!Bruto.Value, "$0.00")</Value>
+                              <Value>=FORMAT(Fields!Bruto.Value, "$ #,###,##0.00")</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -3355,7 +3355,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(Fields!Neto.Value, "$0.00")</Value>
+                              <Value>=FORMAT(Fields!Neto.Value, "$ #,###,##0.00")</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -4815,7 +4815,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(Fields!TDescLaborado.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!TDescLaborado.Value), "$ #,###,##0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>

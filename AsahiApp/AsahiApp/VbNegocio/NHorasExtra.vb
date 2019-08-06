@@ -24,8 +24,8 @@ Public Class NHorasExtra
             str = "<Info><clave>" & lstHrsEx.Item(i).IdEmpleado & "</clave><lunes>" & lstHrsEx.Item(i).Lunes & "</lunes><martes>" & lstHrsEx.Item(i).Martes &
                 "</martes><miercoles>" & lstHrsEx.Item(i).Miercoles & "</miercoles><jueves>" & lstHrsEx.Item(i).Jueves &
                 "</jueves><viernes>" & lstHrsEx.Item(i).Viernes & "</viernes><sabado>" & lstHrsEx.Item(i).Sabado &
-                "</sabado><domingo>" & lstHrsEx.Item(i).Domingo & "</domingo><semana>" & lstHrsEx.Item(i).Semana &
-                "</semana><año>" & lstHrsEx.Item(i).Año & "</año><totalDobles>" & lstHrsEx.Item(i).TotalDobles &
+                "</sabado><domingo>" & lstHrsEx.Item(i).Domingo & "</domingo><domingoHrsEx>" & lstHrsEx.Item(i).DomingoHrsEx &
+                "</domingoHrsEx><semana>" & lstHrsEx.Item(i).Semana & "</semana><año>" & lstHrsEx.Item(i).Año & "</año><totalDobles>" & lstHrsEx.Item(i).TotalDobles &
                 "</totalDobles><totalTriples>" & lstHrsEx.Item(i).TotalTriples & "</totalTriples><totalDescLaborado>" & lstHrsEx.Item(i).TotalDescLab &
                 "</totalDescLaborado><bruto>" & lstHrsEx.Item(i).Bruto & "</bruto><neto>" & lstHrsEx.Item(i).Neto & "</neto></Info>"
             objHrsEx.Xml = objHrsEx.Xml & str

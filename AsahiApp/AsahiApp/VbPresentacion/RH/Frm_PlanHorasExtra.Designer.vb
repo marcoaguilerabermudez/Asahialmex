@@ -23,12 +23,12 @@ Partial Class Frm_PlanHorasExtra
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Lbl_Mes = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Rdb_Jpn = New System.Windows.Forms.RadioButton()
         Me.Rdb_Esp = New System.Windows.Forms.RadioButton()
         Me.Lbl_Depto = New System.Windows.Forms.Label()
         Me.Cmb_Departamento = New System.Windows.Forms.ComboBox()
-        Me.Btn_Guardar = New System.Windows.Forms.Button()
         Me.Lbl_año = New System.Windows.Forms.Label()
         Me.Lbl_Semana = New System.Windows.Forms.Label()
         Me.Cmb_Semanas = New System.Windows.Forms.ComboBox()
@@ -81,7 +81,8 @@ Partial Class Frm_PlanHorasExtra
         Me.Lbl_SumLunes = New System.Windows.Forms.Label()
         Me.Lbl_SumSabado = New System.Windows.Forms.Label()
         Me.Lbl_SumMartes = New System.Windows.Forms.Label()
-        Me.Lbl_Mes = New System.Windows.Forms.Label()
+        Me.Btn_ObtenerReportes = New System.Windows.Forms.Button()
+        Me.Btn_Guardar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -94,6 +95,7 @@ Partial Class Frm_PlanHorasExtra
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Btn_ObtenerReportes)
         Me.Panel1.Controls.Add(Me.Lbl_Mes)
         Me.Panel1.Controls.Add(Me.Panel6)
         Me.Panel1.Controls.Add(Me.Lbl_Depto)
@@ -107,6 +109,17 @@ Partial Class Frm_PlanHorasExtra
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1341, 59)
         Me.Panel1.TabIndex = 0
+        '
+        'Lbl_Mes
+        '
+        Me.Lbl_Mes.AutoSize = True
+        Me.Lbl_Mes.BackColor = System.Drawing.Color.SteelBlue
+        Me.Lbl_Mes.ForeColor = System.Drawing.Color.White
+        Me.Lbl_Mes.Location = New System.Drawing.Point(100, 23)
+        Me.Lbl_Mes.Name = "Lbl_Mes"
+        Me.Lbl_Mes.Size = New System.Drawing.Size(27, 13)
+        Me.Lbl_Mes.TabIndex = 23
+        Me.Lbl_Mes.Text = "Mes"
         '
         'Panel6
         '
@@ -162,19 +175,6 @@ Partial Class Frm_PlanHorasExtra
         Me.Cmb_Departamento.Size = New System.Drawing.Size(190, 21)
         Me.Cmb_Departamento.TabIndex = 20
         '
-        'Btn_Guardar
-        '
-        Me.Btn_Guardar.Enabled = False
-        Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
-        Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Guardar.Location = New System.Drawing.Point(389, 7)
-        Me.Btn_Guardar.Name = "Btn_Guardar"
-        Me.Btn_Guardar.Size = New System.Drawing.Size(56, 45)
-        Me.Btn_Guardar.TabIndex = 19
-        Me.Btn_Guardar.Text = "Guardar"
-        Me.Btn_Guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Guardar.UseVisualStyleBackColor = True
-        '
         'Lbl_año
         '
         Me.Lbl_año.AutoSize = True
@@ -224,7 +224,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_Dia3
         '
         Me.Lbl_Dia3.AutoSize = True
-        Me.Lbl_Dia3.Location = New System.Drawing.Point(555, 11)
+        Me.Lbl_Dia3.Location = New System.Drawing.Point(512, 11)
         Me.Lbl_Dia3.Name = "Lbl_Dia3"
         Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia3.TabIndex = 13
@@ -232,7 +232,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_Dia4
         '
         Me.Lbl_Dia4.AutoSize = True
-        Me.Lbl_Dia4.Location = New System.Drawing.Point(610, 11)
+        Me.Lbl_Dia4.Location = New System.Drawing.Point(552, 11)
         Me.Lbl_Dia4.Name = "Lbl_Dia4"
         Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia4.TabIndex = 14
@@ -240,7 +240,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_Dia7
         '
         Me.Lbl_Dia7.AutoSize = True
-        Me.Lbl_Dia7.Location = New System.Drawing.Point(773, 11)
+        Me.Lbl_Dia7.Location = New System.Drawing.Point(672, 11)
         Me.Lbl_Dia7.Name = "Lbl_Dia7"
         Me.Lbl_Dia7.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia7.TabIndex = 17
@@ -248,7 +248,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_Dia5
         '
         Me.Lbl_Dia5.AutoSize = True
-        Me.Lbl_Dia5.Location = New System.Drawing.Point(665, 11)
+        Me.Lbl_Dia5.Location = New System.Drawing.Point(592, 11)
         Me.Lbl_Dia5.Name = "Lbl_Dia5"
         Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia5.TabIndex = 15
@@ -256,7 +256,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_Dia1
         '
         Me.Lbl_Dia1.AutoSize = True
-        Me.Lbl_Dia1.Location = New System.Drawing.Point(445, 11)
+        Me.Lbl_Dia1.Location = New System.Drawing.Point(432, 11)
         Me.Lbl_Dia1.Name = "Lbl_Dia1"
         Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia1.TabIndex = 11
@@ -264,7 +264,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_Dia6
         '
         Me.Lbl_Dia6.AutoSize = True
-        Me.Lbl_Dia6.Location = New System.Drawing.Point(720, 11)
+        Me.Lbl_Dia6.Location = New System.Drawing.Point(632, 11)
         Me.Lbl_Dia6.Name = "Lbl_Dia6"
         Me.Lbl_Dia6.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia6.TabIndex = 16
@@ -272,7 +272,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_Dia2
         '
         Me.Lbl_Dia2.AutoSize = True
-        Me.Lbl_Dia2.Location = New System.Drawing.Point(500, 11)
+        Me.Lbl_Dia2.Location = New System.Drawing.Point(472, 11)
         Me.Lbl_Dia2.Name = "Lbl_Dia2"
         Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Dia2.TabIndex = 12
@@ -293,7 +293,7 @@ Partial Class Frm_PlanHorasExtra
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1341, 446)
+        Me.Panel5.Size = New System.Drawing.Size(1341, 443)
         Me.Panel5.TabIndex = 3
         '
         'Dgv_HorasExtra
@@ -307,7 +307,7 @@ Partial Class Frm_PlanHorasExtra
         Me.Dgv_HorasExtra.Name = "Dgv_HorasExtra"
         Me.Dgv_HorasExtra.RowHeadersVisible = False
         Me.Dgv_HorasExtra.RowHeadersWidth = 25
-        Me.Dgv_HorasExtra.Size = New System.Drawing.Size(1341, 446)
+        Me.Dgv_HorasExtra.Size = New System.Drawing.Size(1341, 443)
         Me.Dgv_HorasExtra.TabIndex = 0
         '
         'clave
@@ -354,45 +354,45 @@ Partial Class Frm_PlanHorasExtra
         '
         'lunes
         '
-        Me.lunes.HeaderText = "Lunes"
+        Me.lunes.HeaderText = "Lun"
         Me.lunes.Name = "lunes"
-        Me.lunes.Width = 55
+        Me.lunes.Width = 40
         '
         'martes
         '
-        Me.martes.HeaderText = "Martes"
+        Me.martes.HeaderText = "Mar"
         Me.martes.Name = "martes"
-        Me.martes.Width = 55
+        Me.martes.Width = 40
         '
         'miercoles
         '
-        Me.miercoles.HeaderText = "Miércoles"
+        Me.miercoles.HeaderText = "Mié"
         Me.miercoles.Name = "miercoles"
-        Me.miercoles.Width = 55
+        Me.miercoles.Width = 40
         '
         'jueves
         '
-        Me.jueves.HeaderText = "Jueves"
+        Me.jueves.HeaderText = "Jue"
         Me.jueves.Name = "jueves"
-        Me.jueves.Width = 55
+        Me.jueves.Width = 40
         '
         'viernes
         '
-        Me.viernes.HeaderText = "Viernes"
+        Me.viernes.HeaderText = "Vie"
         Me.viernes.Name = "viernes"
-        Me.viernes.Width = 55
+        Me.viernes.Width = 40
         '
         'sabado
         '
-        Me.sabado.HeaderText = "Sábado"
+        Me.sabado.HeaderText = "Sáb"
         Me.sabado.Name = "sabado"
-        Me.sabado.Width = 55
+        Me.sabado.Width = 40
         '
         'domingo
         '
-        Me.domingo.HeaderText = "Domingo"
+        Me.domingo.HeaderText = "Dom"
         Me.domingo.Name = "domingo"
-        Me.domingo.Width = 55
+        Me.domingo.Width = 40
         '
         'dobles
         '
@@ -474,9 +474,9 @@ Partial Class Frm_PlanHorasExtra
         Me.Panel4.Controls.Add(Me.Lbl_SumSabado)
         Me.Panel4.Controls.Add(Me.Lbl_SumMartes)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(0, 446)
+        Me.Panel4.Location = New System.Drawing.Point(0, 443)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1341, 36)
+        Me.Panel4.Size = New System.Drawing.Size(1341, 39)
         Me.Panel4.TabIndex = 2
         '
         'Lbl_TotalDescLabSuma
@@ -492,7 +492,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_DescLaborado
         '
         Me.Lbl_DescLaborado.AutoSize = True
-        Me.Lbl_DescLaborado.Location = New System.Drawing.Point(955, 11)
+        Me.Lbl_DescLaborado.Location = New System.Drawing.Point(843, 11)
         Me.Lbl_DescLaborado.Name = "Lbl_DescLaborado"
         Me.Lbl_DescLaborado.Size = New System.Drawing.Size(39, 13)
         Me.Lbl_DescLaborado.TabIndex = 25
@@ -541,7 +541,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_HrsTriplesSum
         '
         Me.Lbl_HrsTriplesSum.AutoSize = True
-        Me.Lbl_HrsTriplesSum.Location = New System.Drawing.Point(893, 11)
+        Me.Lbl_HrsTriplesSum.Location = New System.Drawing.Point(781, 11)
         Me.Lbl_HrsTriplesSum.Name = "Lbl_HrsTriplesSum"
         Me.Lbl_HrsTriplesSum.Size = New System.Drawing.Size(39, 13)
         Me.Lbl_HrsTriplesSum.TabIndex = 20
@@ -550,7 +550,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_HrsDoblesSum
         '
         Me.Lbl_HrsDoblesSum.AutoSize = True
-        Me.Lbl_HrsDoblesSum.Location = New System.Drawing.Point(831, 11)
+        Me.Lbl_HrsDoblesSum.Location = New System.Drawing.Point(719, 11)
         Me.Lbl_HrsDoblesSum.Name = "Lbl_HrsDoblesSum"
         Me.Lbl_HrsDoblesSum.Size = New System.Drawing.Size(39, 13)
         Me.Lbl_HrsDoblesSum.TabIndex = 19
@@ -568,7 +568,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_SumMiercoles
         '
         Me.Lbl_SumMiercoles.AutoSize = True
-        Me.Lbl_SumMiercoles.Location = New System.Drawing.Point(555, 11)
+        Me.Lbl_SumMiercoles.Location = New System.Drawing.Point(515, 11)
         Me.Lbl_SumMiercoles.Name = "Lbl_SumMiercoles"
         Me.Lbl_SumMiercoles.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_SumMiercoles.TabIndex = 13
@@ -576,7 +576,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_SumJueves
         '
         Me.Lbl_SumJueves.AutoSize = True
-        Me.Lbl_SumJueves.Location = New System.Drawing.Point(608, 11)
+        Me.Lbl_SumJueves.Location = New System.Drawing.Point(555, 11)
         Me.Lbl_SumJueves.Name = "Lbl_SumJueves"
         Me.Lbl_SumJueves.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_SumJueves.TabIndex = 14
@@ -584,7 +584,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_SumDomingo
         '
         Me.Lbl_SumDomingo.AutoSize = True
-        Me.Lbl_SumDomingo.Location = New System.Drawing.Point(775, 11)
+        Me.Lbl_SumDomingo.Location = New System.Drawing.Point(675, 11)
         Me.Lbl_SumDomingo.Name = "Lbl_SumDomingo"
         Me.Lbl_SumDomingo.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_SumDomingo.TabIndex = 17
@@ -592,7 +592,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_SumViernes
         '
         Me.Lbl_SumViernes.AutoSize = True
-        Me.Lbl_SumViernes.Location = New System.Drawing.Point(664, 11)
+        Me.Lbl_SumViernes.Location = New System.Drawing.Point(595, 11)
         Me.Lbl_SumViernes.Name = "Lbl_SumViernes"
         Me.Lbl_SumViernes.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_SumViernes.TabIndex = 15
@@ -600,7 +600,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_SumLunes
         '
         Me.Lbl_SumLunes.AutoSize = True
-        Me.Lbl_SumLunes.Location = New System.Drawing.Point(445, 11)
+        Me.Lbl_SumLunes.Location = New System.Drawing.Point(435, 11)
         Me.Lbl_SumLunes.Name = "Lbl_SumLunes"
         Me.Lbl_SumLunes.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_SumLunes.TabIndex = 11
@@ -608,7 +608,7 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_SumSabado
         '
         Me.Lbl_SumSabado.AutoSize = True
-        Me.Lbl_SumSabado.Location = New System.Drawing.Point(721, 11)
+        Me.Lbl_SumSabado.Location = New System.Drawing.Point(635, 11)
         Me.Lbl_SumSabado.Name = "Lbl_SumSabado"
         Me.Lbl_SumSabado.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_SumSabado.TabIndex = 16
@@ -616,21 +616,35 @@ Partial Class Frm_PlanHorasExtra
         'Lbl_SumMartes
         '
         Me.Lbl_SumMartes.AutoSize = True
-        Me.Lbl_SumMartes.Location = New System.Drawing.Point(499, 11)
+        Me.Lbl_SumMartes.Location = New System.Drawing.Point(475, 11)
         Me.Lbl_SumMartes.Name = "Lbl_SumMartes"
         Me.Lbl_SumMartes.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_SumMartes.TabIndex = 12
         '
-        'Lbl_Mes
+        'Btn_ObtenerReportes
         '
-        Me.Lbl_Mes.AutoSize = True
-        Me.Lbl_Mes.BackColor = System.Drawing.Color.SteelBlue
-        Me.Lbl_Mes.ForeColor = System.Drawing.Color.White
-        Me.Lbl_Mes.Location = New System.Drawing.Point(100, 23)
-        Me.Lbl_Mes.Name = "Lbl_Mes"
-        Me.Lbl_Mes.Size = New System.Drawing.Size(27, 13)
-        Me.Lbl_Mes.TabIndex = 23
-        Me.Lbl_Mes.Text = "Mes"
+        Me.Btn_ObtenerReportes.Enabled = False
+        Me.Btn_ObtenerReportes.Image = Global.Presentacion.My.Resources.Resources.reportes
+        Me.Btn_ObtenerReportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_ObtenerReportes.Location = New System.Drawing.Point(461, 7)
+        Me.Btn_ObtenerReportes.Name = "Btn_ObtenerReportes"
+        Me.Btn_ObtenerReportes.Size = New System.Drawing.Size(46, 43)
+        Me.Btn_ObtenerReportes.TabIndex = 24
+        Me.Btn_ObtenerReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_ObtenerReportes.UseVisualStyleBackColor = True
+        '
+        'Btn_Guardar
+        '
+        Me.Btn_Guardar.Enabled = False
+        Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
+        Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Guardar.Location = New System.Drawing.Point(389, 7)
+        Me.Btn_Guardar.Name = "Btn_Guardar"
+        Me.Btn_Guardar.Size = New System.Drawing.Size(56, 45)
+        Me.Btn_Guardar.TabIndex = 19
+        Me.Btn_Guardar.Text = "Guardar"
+        Me.Btn_Guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Guardar.UseVisualStyleBackColor = True
         '
         'Frm_PlanHorasExtra
         '
@@ -698,6 +712,7 @@ Partial Class Frm_PlanHorasExtra
     Friend WithEvents Rdb_Jpn As RadioButton
     Friend WithEvents Rdb_Esp As RadioButton
     Friend WithEvents Lbl_TotalDescLabSuma As Label
+    Friend WithEvents Lbl_Mes As Label
     Friend WithEvents clave As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents departamento As DataGridViewTextBoxColumn
@@ -719,5 +734,5 @@ Partial Class Frm_PlanHorasExtra
     Friend WithEvents totalDescLaborado As DataGridViewTextBoxColumn
     Friend WithEvents totalBruto As DataGridViewTextBoxColumn
     Friend WithEvents TotalNeto As DataGridViewTextBoxColumn
-    Friend WithEvents Lbl_Mes As Label
+    Friend WithEvents Btn_ObtenerReportes As Button
 End Class

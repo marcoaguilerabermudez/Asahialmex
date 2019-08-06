@@ -2384,7 +2384,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(Fields!TDobles.Value, "$0.00")</Value>
+                              <Value>=FORMAT(Fields!TDobles.Value, "$ #,###,##0.00")</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -2418,7 +2418,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(Fields!TTriples.Value, "$0.00")</Value>
+                              <Value>=FORMAT(Fields!TTriples.Value, "$ #,###,##0.00")</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -2452,7 +2452,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(Fields!TDescLaborado.Value, "$0.00")</Value>
+                              <Value>=FORMAT(Fields!TDescLaborado.Value, "$ #,###,##0.00")</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -2486,7 +2486,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(Fields!Bruto.Value, "$0.00")</Value>
+                              <Value>=FORMAT(Fields!Bruto.Value, "$ #,###,##0.00")</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -2520,7 +2520,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FORMAT(Fields!Neto.Value, "$0.00")</Value>
+                              <Value>=FORMAT(Fields!Neto.Value, "$ #,###,##0.00")</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -2621,7 +2621,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(Fields!TDobles.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!TDobles.Value), "$ #,###,##0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -2656,7 +2656,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(Fields!TTriples.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!TTriples.Value), "$ #,###,##0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -2691,7 +2691,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(Fields!Bruto.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!Bruto.Value), "$ #,###,##0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -2705,9 +2705,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
         <Top>5.65264cm</Top>
-        <Left>37.06844cm</Left>
+        <Left>36.92735cm</Left>
         <Height>0.44125cm</Height>
-        <Width>1.53868cm</Width>
+        <Width>1.67979cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -2726,7 +2726,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(Fields!Neto.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!Neto.Value), "$ #,###,##0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -2740,9 +2740,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
         <Top>5.65264cm</Top>
-        <Left>38.71296cm</Left>
+        <Left>38.60712cm</Left>
         <Height>0.44125cm</Height>
-        <Width>1.41522cm</Width>
+        <Width>1.52106cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -4096,7 +4096,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Sum(Fields!TDescLaborado.Value), "$0.00")</Value>
+                <Value>=Format(Sum(Fields!TDescLaborado.Value), "$ #,###,##0.00")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
