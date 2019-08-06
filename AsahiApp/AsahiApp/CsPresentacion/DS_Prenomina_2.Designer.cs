@@ -295,6 +295,12 @@ namespace CsPresentacion {
             
             private global::System.Data.DataColumn columnNUMERO;
             
+            private global::System.Data.DataColumn columnINICIA;
+            
+            private global::System.Data.DataColumn columnTERMINA;
+            
+            private global::System.Data.DataColumn columnSEMANA;
+            
             private global::System.Data.DataColumn columnTIPO;
             
             private global::System.Data.DataColumn columnCASO;
@@ -400,6 +406,30 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn INICIAColumn {
+                get {
+                    return this.columnINICIA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TERMINAColumn {
+                get {
+                    return this.columnTERMINA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SEMANAColumn {
+                get {
+                    return this.columnSEMANA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn TIPOColumn {
                 get {
                     return this.columnTIPO;
@@ -459,7 +489,7 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Reportes_Prenomina2_FMRow AddSP_Reportes_Prenomina2_FMRow(int CLAVE, string NOMBRE, string DEPARTAMENTO, string PUESTO, System.DateTime FECHA, System.DateTime TERMINO, decimal DURACION, string NUMERO, string TIPO, string CASO, string SECUELA) {
+            public SP_Reportes_Prenomina2_FMRow AddSP_Reportes_Prenomina2_FMRow(int CLAVE, string NOMBRE, string DEPARTAMENTO, string PUESTO, System.DateTime FECHA, System.DateTime TERMINO, decimal DURACION, string NUMERO, System.DateTime INICIA, System.DateTime TERMINA, int SEMANA, string TIPO, string CASO, string SECUELA) {
                 SP_Reportes_Prenomina2_FMRow rowSP_Reportes_Prenomina2_FMRow = ((SP_Reportes_Prenomina2_FMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CLAVE,
@@ -470,6 +500,9 @@ namespace CsPresentacion {
                         TERMINO,
                         DURACION,
                         NUMERO,
+                        INICIA,
+                        TERMINA,
+                        SEMANA,
                         TIPO,
                         CASO,
                         SECUELA};
@@ -503,6 +536,9 @@ namespace CsPresentacion {
                 this.columnTERMINO = base.Columns["TERMINO"];
                 this.columnDURACION = base.Columns["DURACION"];
                 this.columnNUMERO = base.Columns["NUMERO"];
+                this.columnINICIA = base.Columns["INICIA"];
+                this.columnTERMINA = base.Columns["TERMINA"];
+                this.columnSEMANA = base.Columns["SEMANA"];
                 this.columnTIPO = base.Columns["TIPO"];
                 this.columnCASO = base.Columns["CASO"];
                 this.columnSECUELA = base.Columns["SECUELA"];
@@ -527,6 +563,12 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnDURACION);
                 this.columnNUMERO = new global::System.Data.DataColumn("NUMERO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNUMERO);
+                this.columnINICIA = new global::System.Data.DataColumn("INICIA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINICIA);
+                this.columnTERMINA = new global::System.Data.DataColumn("TERMINA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTERMINA);
+                this.columnSEMANA = new global::System.Data.DataColumn("SEMANA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSEMANA);
                 this.columnTIPO = new global::System.Data.DataColumn("TIPO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTIPO);
                 this.columnCASO = new global::System.Data.DataColumn("CASO", typeof(string), null, global::System.Data.MappingType.Element);
@@ -540,7 +582,11 @@ namespace CsPresentacion {
                 this.columnPUESTO.MaxLength = 30;
                 this.columnFECHA.AllowDBNull = false;
                 this.columnNUMERO.MaxLength = 8;
-                this.columnTIPO.MaxLength = 2;
+                this.columnINICIA.ReadOnly = true;
+                this.columnTERMINA.ReadOnly = true;
+                this.columnSEMANA.ReadOnly = true;
+                this.columnTIPO.ReadOnly = true;
+                this.columnTIPO.MaxLength = 22;
                 this.columnCASO.MaxLength = 1;
                 this.columnSECUELA.MaxLength = 1;
             }
@@ -815,6 +861,57 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime INICIA {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Reportes_Prenomina2_FM.INICIAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'INICIA\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Reportes_Prenomina2_FM.INICIAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime TERMINA {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Reportes_Prenomina2_FM.TERMINAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TERMINA\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Reportes_Prenomina2_FM.TERMINAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int SEMANA {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_Reportes_Prenomina2_FM.SEMANAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SEMANA\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Reportes_Prenomina2_FM.SEMANAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string TIPO {
                 get {
                     try {
@@ -944,6 +1041,42 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNUMERONull() {
                 this[this.tableSP_Reportes_Prenomina2_FM.NUMEROColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsINICIANull() {
+                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.INICIAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetINICIANull() {
+                this[this.tableSP_Reportes_Prenomina2_FM.INICIAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTERMINANull() {
+                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.TERMINAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTERMINANull() {
+                this[this.tableSP_Reportes_Prenomina2_FM.TERMINAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSEMANANull() {
+                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.SEMANAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSEMANANull() {
+                this[this.tableSP_Reportes_Prenomina2_FM.SEMANAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1150,6 +1283,9 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
             tableMapping.ColumnMappings.Add("TERMINO", "TERMINO");
             tableMapping.ColumnMappings.Add("DURACION", "DURACION");
             tableMapping.ColumnMappings.Add("NUMERO", "NUMERO");
+            tableMapping.ColumnMappings.Add("INICIA", "INICIA");
+            tableMapping.ColumnMappings.Add("TERMINA", "TERMINA");
+            tableMapping.ColumnMappings.Add("SEMANA", "SEMANA");
             tableMapping.ColumnMappings.Add("TIPO", "TIPO");
             tableMapping.ColumnMappings.Add("CASO", "CASO");
             tableMapping.ColumnMappings.Add("SECUELA", "SECUELA");
@@ -1176,8 +1312,8 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Semana", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Año", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inicia", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Termina", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inicia", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Termina", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Clave", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         

@@ -16,6 +16,7 @@ namespace CsPresentacion
         {
             InitializeComponent();
         }
+
         public int Var;
         public int Tipo;
         public int Semana;
@@ -23,8 +24,13 @@ namespace CsPresentacion
         public DateTime Inicia { get; set; }
         public DateTime Termina { get; set; }
         public int Clave;
+        
+        public DateTime Inicia2 { get; set; }
+
         private void Incapacidades_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'DS_Prenomina_2.SP_Reportes_Prenomina2_FM' Puede moverla o quitarla según sea necesario.
+            this.SP_Reportes_Prenomina2_FMTableAdapter.Fill(this.DS_Prenomina_2.SP_Reportes_Prenomina2_FM, Var, Tipo, Semana, Año, Inicia, Termina, Clave);
             // TODO: esta línea de código carga datos en la tabla 'DS_Prenomina_2.SP_Reportes_Prenomina2_FM' Puede moverla o quitarla según sea necesario.
             this.SP_Reportes_Prenomina2_FMTableAdapter.Fill(this.DS_Prenomina_2.SP_Reportes_Prenomina2_FM, Var, Tipo, Semana, Año, Inicia, Termina, Clave);
             this.reportViewer1.RefreshReport();

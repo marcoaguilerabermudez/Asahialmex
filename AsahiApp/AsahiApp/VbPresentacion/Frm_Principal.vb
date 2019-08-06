@@ -244,7 +244,7 @@ Public Class Frm_Principal
         Dim Descanso As New Frm_Parametros_rep_prenomina()
         Var = 1
         Descanso.lbl_var.Text = Var
-        Descanso.ShowDialog()
+        Descanso.Show()
     End Sub
 
     Private Sub PermisoDeSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermisoDeSalidaToolStripMenuItem.Click
@@ -252,7 +252,7 @@ Public Class Frm_Principal
         Dim Retardos As New Frm_Parametros_rep_prenomina()
         Var = 3
         Retardos.lbl_var.Text = Var
-        Retardos.ShowDialog()
+        Retardos.Show()
     End Sub
 
     Private Sub RetardosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RetardosToolStripMenuItem1.Click
@@ -260,7 +260,7 @@ Public Class Frm_Principal
         Dim Retardos As New Frm_Parametros_rep_prenomina()
         Var = 2
         Retardos.lbl_var.Text = Var
-        Retardos.ShowDialog()
+        Retardos.Show()
     End Sub
 
     Private Sub AusentismosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AusentismosToolStripMenuItem1.Click
@@ -273,7 +273,7 @@ Public Class Frm_Principal
         Dim Retardos As New Frm_Parametros_rep_prenomina()
         Var = 5
         Retardos.lbl_var.Text = Var
-        Retardos.ShowDialog()
+        Retardos.Show()
 
     End Sub
 

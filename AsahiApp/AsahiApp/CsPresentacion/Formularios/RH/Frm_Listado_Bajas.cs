@@ -420,24 +420,8 @@ namespace CsPresentacion
 
         private void Btn_exportar_Click(object sender, EventArgs e)
         {
-
-            if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_año.Text))
-            {
-                //Todo el reporte
-
-                DialogResult dialogo = MessageBox.Show("¿Desea generar reporte de todas las bajas?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogo == DialogResult.Yes)
-                {
-                    Exportara_Exel();
-                }
-                else
-                {
-                }
-            }
-            else
-            {
-                Exportara_Exel();
-            }
+            //Todo el reporte
+            Exportara_Exel();
         }
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
@@ -459,19 +443,14 @@ namespace CsPresentacion
 
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
+           
+
             if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_año.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //Todo el reporte
-                DialogResult dialogo = MessageBox.Show("¿Desea generar reporte de todas las bajas?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogo == DialogResult.Yes)
-                {
-                    Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
-                    rep.Var = Convert.ToInt32(0);
-                    rep.ShowDialog();
-                }
-                else
-                {
-                }
+                Frm_Reporte_Bajas rep = new Frm_Reporte_Bajas();
+                rep.Var = Convert.ToInt32(0);
+                rep.ShowDialog();
             }
             else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {

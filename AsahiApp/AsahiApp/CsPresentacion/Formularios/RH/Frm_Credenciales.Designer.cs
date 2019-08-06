@@ -97,7 +97,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 161);
+            this.label6.Location = new System.Drawing.Point(18, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 13);
             this.label6.TabIndex = 202;
@@ -139,10 +139,10 @@
             // 
             // txt_departamento
             // 
-            this.txt_departamento.Location = new System.Drawing.Point(21, 219);
+            this.txt_departamento.Location = new System.Drawing.Point(20, 219);
             this.txt_departamento.MaxLength = 30;
             this.txt_departamento.Name = "txt_departamento";
-            this.txt_departamento.Size = new System.Drawing.Size(166, 20);
+            this.txt_departamento.Size = new System.Drawing.Size(167, 20);
             this.txt_departamento.TabIndex = 174;
             // 
             // label15
@@ -224,10 +224,10 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(21, 96);
+            this.txt_nombre.Location = new System.Drawing.Point(20, 96);
             this.txt_nombre.MaxLength = 70;
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(325, 20);
+            this.txt_nombre.Size = new System.Drawing.Size(326, 20);
             this.txt_nombre.TabIndex = 168;
             // 
             // lbl_nombre
