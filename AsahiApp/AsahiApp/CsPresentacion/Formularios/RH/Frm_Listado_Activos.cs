@@ -18,11 +18,10 @@ namespace CsPresentacion
             InitializeComponent();
             var tt = new ToolTip();
             tt.SetToolTip(btn_nuevo, "NUEVA BUSQUEDA");
-            tt.SetToolTip(btn_buscar, "FILTRAR");
-            tt.SetToolTip(btn_reporte, "REPORTE");
-            tt.SetToolTip(btn_exportar, "EXPORTAR");
+            tt.SetToolTip(btn_buscar, "FILTRAR INFORMACION");
+            tt.SetToolTip(btn_reporte, "GENERA REPORTE");
+            tt.SetToolTip(btn_exportar, "EXPORTAR A EXCEL");
         }
-
 
         public DataTable dt = new DataTable();
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
@@ -36,10 +35,9 @@ namespace CsPresentacion
             Llenar_dgv();
             Diseño_dgv(dgv_activos);
             lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            dgv_activos.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            dgv_activos.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
         }
-
-
-
 
         private void Exportara_Exel()// Método para exportar a excel.
         {
@@ -52,6 +50,7 @@ namespace CsPresentacion
                 worksheet.Name = "Libro1";
                 int cellRowIndex = 2;//ok
                 int cellColumnIndex = 1;//ok
+
                 //Pasa por cada fila y lee el valor de cada columna.
                 for (int i = - 1; i < dgv_activos.Rows.Count - 0; i++)//Primera y ultima fila
                 {

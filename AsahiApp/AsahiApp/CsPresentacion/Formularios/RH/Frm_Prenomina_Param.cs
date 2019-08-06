@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CsPresentacion
 {
     public partial class Frm_Parametros_rep_prenomina : Form
@@ -310,11 +311,15 @@ namespace CsPresentacion
                 }
                 else if (lbl_tipo.Text == "2")//Genera reporte incapacidades Fecha
                 {
+                    
+
+
                     Incapacidades inc = new Incapacidades();
                     inc.Var = Convert.ToInt32(lbl_var.Text);
                     inc.Tipo = Convert.ToInt32(lbl_tipo.Text);
                     inc.Inicia = dtm_inicial.Value;
                     inc.Termina = dtm_final.Value;
+                    inc.Inicia2 = dtm_inicial.Value;
                     inc.Show();
                 }
                 else if (lbl_tipo.Text == "1")//Genera reporte de incapacidades por Semana
