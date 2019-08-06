@@ -19,9 +19,9 @@ namespace CsPresentacion
             InitializeComponent();
             var tt = new ToolTip();
             tt.SetToolTip(btn_nuevo, "NUEVA BUSQUEDA");
-            tt.SetToolTip(btn_buscar, "FILTRAR");
-            tt.SetToolTip(btn_reporte, "REPORTE");
-            tt.SetToolTip(btn_exportar, "EXPORTAR");
+            tt.SetToolTip(btn_buscar, "FILTRAR INFORMACION");
+            tt.SetToolTip(btn_reporte, "GENERA REPORTE");
+            tt.SetToolTip(btn_exportar, "EXPORTAR A EXCEL");
 
             timer1.Enabled = true;
         }
@@ -208,23 +208,8 @@ namespace CsPresentacion
         }
         private void Btn_exportar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_año.Text))
-            {
-                //Todo el reporte
-
-                DialogResult dialogo = MessageBox.Show("¿Desea exportar todas las bajas?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogo == DialogResult.Yes)
-                {
-                    Exportara_Exel2();
-                }
-                else
-                {
-                }
-            }
-            else
-            {
-                Exportara_Exel2();
-            }
+            //Todo el reporte
+            Exportara_Exel2();
         }
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
@@ -442,23 +427,14 @@ namespace CsPresentacion
                 lbl_total.Text = dgv_altas.Rows.Count.ToString();
             }
         }
-
-
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_año.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
                 //Todo el reporte
-                DialogResult dialogo = MessageBox.Show("¿Desea generar reporte de todas las altas?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogo == DialogResult.Yes)
-                {
-                    Altas_Empleados rep = new Altas_Empleados();
-                    rep.Var = Convert.ToInt32(0);
-                    rep.ShowDialog();
-                }
-                else
-                {
-                }
+                Altas_Empleados rep = new Altas_Empleados();
+                rep.Var = Convert.ToInt32(0);
+                rep.ShowDialog();
             }
 
             else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))

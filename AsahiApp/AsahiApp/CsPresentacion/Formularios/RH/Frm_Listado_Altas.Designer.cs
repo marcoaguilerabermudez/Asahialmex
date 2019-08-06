@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.txt_semana = new System.Windows.Forms.TextBox();
@@ -231,7 +231,7 @@
             // lbl_total
             // 
             this.lbl_total.AutoSize = true;
-            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_total.ForeColor = System.Drawing.Color.Black;
             this.lbl_total.Location = new System.Drawing.Point(69, 595);
             this.lbl_total.Name = "lbl_total";
@@ -262,17 +262,17 @@
             this.dgv_altas.Location = new System.Drawing.Point(13, 56);
             this.dgv_altas.MultiSelect = false;
             this.dgv_altas.Name = "dgv_altas";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_altas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_altas.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_altas.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgv_altas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.dgv_altas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_altas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_altas.ShowCellErrors = false;
             this.dgv_altas.Size = new System.Drawing.Size(1027, 523);
@@ -282,8 +282,12 @@
             // btn_exportar
             // 
             this.btn_exportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_exportar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_exportar.FlatAppearance.BorderSize = 0;
+            this.btn_exportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_exportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_exportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exportar.ForeColor = System.Drawing.Color.White;
             this.btn_exportar.Image = global::CsPresentacion.Properties.Resources.Excel;
             this.btn_exportar.Location = new System.Drawing.Point(986, 585);
             this.btn_exportar.Name = "btn_exportar";
@@ -295,8 +299,12 @@
             // btn_reporte
             // 
             this.btn_reporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_reporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_reporte.FlatAppearance.BorderSize = 0;
+            this.btn_reporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_reporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reporte.ForeColor = System.Drawing.Color.White;
             this.btn_reporte.Image = global::CsPresentacion.Properties.Resources.Adobe_PDF_Document_icon;
             this.btn_reporte.Location = new System.Drawing.Point(923, 584);
             this.btn_reporte.Name = "btn_reporte";
@@ -323,10 +331,11 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Listado_Altas";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Altas de Empleados";
+            this.Text = "Listado de Altas";
             this.Load += new System.EventHandler(this.Frm_Listado_Altas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

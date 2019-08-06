@@ -81,6 +81,7 @@ namespace CsPresentacion
             {
                 MessageBox.Show("El empleado [ " + txt_clave.Text +  " ] ya se agregó.", "Aviso");
                 nuevo();
+                pictureBox1.ImageLocation = "V:/Sistemas/SAAM/LogoFinal" + ".png";
             }
             con.Close();
         }
@@ -95,7 +96,6 @@ namespace CsPresentacion
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Agregado correctamente.");
-                nuevo();
             }
             catch (Exception error)
             {
@@ -184,11 +184,12 @@ namespace CsPresentacion
             txt_clave.Enabled = true;
             txt_clave.Focus();
             btn_agregar.Enabled = false;
-            pictureBox1.ImageLocation = "V:/Sistemas/Listado de bajas/LogoFinal" + ".png";
+            pictureBox1.ImageLocation = "V:/Sistemas/SAAM/LogoFinal" + ".png";
             lbl_fecha.Visible = false;
             lbl_id.Text = "";
             lbl_id.Visible = false;
             lbl_total.Visible = false;
+          
         }
 
         private void Diseño_Grid(DataGridView dgv)
@@ -241,7 +242,7 @@ namespace CsPresentacion
                 }
                 else
                 {
-                    pictureBox1.ImageLocation = "V:/Sistemas/Listado de bajas/LogoFinal" + ".png";
+                    pictureBox1.ImageLocation = "V:/Sistemas/SAAM/LogoFinal" + ".png";
                 }
             }
         }
@@ -261,6 +262,7 @@ namespace CsPresentacion
             Diseño_Grid(dgv_credenciales);
             btn_reporte.Enabled = true;
             btn_eliminar.Enabled = true;
+            nuevo();
             lbl_total.Text = dgv_credenciales.Rows.Count.ToString();
         }
         private void Timer1_Tick(object sender, EventArgs e)
