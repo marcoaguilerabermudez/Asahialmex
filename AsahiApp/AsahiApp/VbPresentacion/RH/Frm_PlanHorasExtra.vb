@@ -39,6 +39,20 @@ Public Class Frm_PlanHorasExtra
         Lbl_Dia5.Text = Format(DateAdd(DateInterval.Day, 4, objHrsEx.FechaI), "dd/MM")
         Lbl_Dia6.Text = Format(DateAdd(DateInterval.Day, 5, objHrsEx.FechaI), "dd/MM")
         Lbl_Dia7.Text = Format(objHrsEx.FechaF, "dd/MM")
+        Select Case objHrsEx.Mes
+            Case 1 : Lbl_Mes.Text = "Enero"
+            Case 2 : Lbl_Mes.Text = "Febrero"
+            Case 3 : Lbl_Mes.Text = "Marzo"
+            Case 4 : Lbl_Mes.Text = "Abril"
+            Case 5 : Lbl_Mes.Text = "Mayo"
+            Case 6 : Lbl_Mes.Text = "Junio"
+            Case 7 : Lbl_Mes.Text = "Julio"
+            Case 8 : Lbl_Mes.Text = "Agosto"
+            Case 9 : Lbl_Mes.Text = "Septiembre"
+            Case 10 : Lbl_Mes.Text = "Octubre"
+            Case 11 : Lbl_Mes.Text = "Noviembre"
+            Case 12 : Lbl_Mes.Text = "Diciembre"
+        End Select
         Dgv_HorasExtra.DataSource = Nothing
         Dgv_HorasExtra.Rows.Clear()
         Btn_Guardar.Enabled = False
@@ -367,12 +381,17 @@ Public Class Frm_PlanHorasExtra
                     .Cells("viernes").Style.BackColor = Color.DarkViolet
                     .Cells("viernes").Style.ForeColor = Color.White
                 End If
-                If item.Sabado > 0 Then
-                    .Cells("sabado").Value = 1
-                Else
-                    .Cells("sabado").Value = 0
-                End If
+                .Cells("sabado").Value = item.Sabado
                 Lbl_SumSabado.Text = Lbl_SumSabado.Text + .Cells("sabado").Value
+                If Lbl_Dia6.BackColor = Color.DarkViolet Then
+                    .Cells("sabado").Style.BackColor = Color.DarkViolet
+                    .Cells("sabado").Style.ForeColor = Color.White
+                End If
+                'If item.Sabado > 0 Then
+                '    .Cells("sabado").Value = 1
+                'Else
+                '    .Cells("sabado").Value = 0
+                'End If
                 If item.Domingo > 0 Then
                     .Cells("domingo").Value = 1
                 Else
@@ -399,12 +418,14 @@ Public Class Frm_PlanHorasExtra
                     If .Cells("miercoles").Style.BackColor <> Color.DarkViolet Then total = total + item.Miercoles
                     If .Cells("jueves").Style.BackColor <> Color.DarkViolet Then total = total + item.Jueves
                     If .Cells("viernes").Style.BackColor <> Color.DarkViolet Then total = total + item.Viernes
+                    If .Cells("sabado").Style.BackColor <> Color.DarkViolet Then total = total + item.Sabado
                     If .Cells("lunes").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Lunes
                     If .Cells("martes").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Martes
                     If .Cells("miercoles").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Miercoles
                     If .Cells("jueves").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Jueves
                     If .Cells("viernes").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Viernes
-                    descLaborado = descLaborado + (.Cells("sabado").Value + .Cells("domingo").Value)
+                    If .Cells("sabado").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Sabado
+                    descLaborado = descLaborado + (.Cells("domingo").Value)
                 Else
                     total = 0
                     descLaborado = 0
@@ -560,7 +581,7 @@ Public Class Frm_PlanHorasExtra
             dobles As Double, triples As Double, exedente As Double, cobroEx As Double, exedMensual As Double, exedSemanal As Double, sueSem As Double, h2 As Double,
             dl As Double, p As Double, d As Double
 
-        p = ((sueldo * 6) * 0.1)
+        p = ((sueldo * 6) * 0.27)
         d = ((sueldo * 6) * 0.1)
 
         If turno = 2 Then
