@@ -161,6 +161,15 @@
             domingo_ = value
         End Set
     End Property
+    Private domingoHrsEx_ As Double
+    Public Property DomingoHrsEx() As Double
+        Get
+            Return domingoHrsEx_
+        End Get
+        Set(ByVal value As Double)
+            domingoHrsEx_ = value
+        End Set
+    End Property
     Private semana_ As Integer
     Public Property Semana() As Integer
         Get

@@ -165,6 +165,12 @@
     <Compile Include="Finanzas\Frm_MasterPlan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_OpcionesReportes.Designer.vb">
+      <DependentUpon>Frm_OpcionesReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_OpcionesReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finanzas\Frm_MasterPlan.resx">
       <DependentUpon>Frm_MasterPlan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_OpcionesReportes.resx">
+      <DependentUpon>Frm_OpcionesReportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra5.rdlc" />
@@ -425,6 +434,7 @@
     <None Include="Resources\txt1.png" />
     <None Include="Resources\Excel.png" />
     <None Include="Resources\Excel1.png" />
+    <None Include="Resources\reportes.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
