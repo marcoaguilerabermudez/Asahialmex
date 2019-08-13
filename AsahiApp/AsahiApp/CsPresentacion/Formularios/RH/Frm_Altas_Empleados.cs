@@ -132,6 +132,7 @@ namespace CsPresentacion
                 txt_SDO2.Text = "0.00";
                 txt_SDO4.Text = "0.00";
                 lbl_factor.Text = "1.07808";
+
                 Sueldo = double.Parse(txt_SDO1.Text);
                 Factor = double.Parse(lbl_factor.Text);
                 Resultado = Sueldo * Factor;
@@ -918,18 +919,7 @@ namespace CsPresentacion
         }
         private void Txt_tel_contacto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+         
         }
         private void TextBox8_KeyPress(object sender, KeyPressEventArgs e)
         {

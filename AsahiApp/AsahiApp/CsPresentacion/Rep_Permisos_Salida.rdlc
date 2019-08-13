@@ -9,22 +9,25 @@
               <Width>1.32583cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.38938cm</Width>
+              <Width>5.47105cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.40854cm</Width>
+              <Width>3.77354cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.95cm</Width>
+              <Width>3.20917cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.38521cm</Width>
+              <Width>3.02563cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.70271cm</Width>
+              <Width>1.29891cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.07708cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.91833cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -193,7 +196,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -235,6 +238,43 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox27">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>MIN</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox27</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -302,7 +342,7 @@
                             <TextRun>
                               <Value>=Fields!CLAVE.Value</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -338,7 +378,7 @@
                             <TextRun>
                               <Value>=Fields!NOMBRE.Value</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -372,7 +412,7 @@
                             <TextRun>
                               <Value>=Fields!DEPARTAMENTO.Value</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -406,7 +446,7 @@
                             <TextRun>
                               <Value>=Fields!PUESTO.Value</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -442,12 +482,12 @@
                             <TextRun>
                               <Value>=Fields!TIPO.Value</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -478,7 +518,7 @@
                             <TextRun>
                               <Value>=Fields!FECHA.Value</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>dd/MM/yy</Format>
                               </Style>
                             </TextRun>
@@ -506,6 +546,43 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="HORA">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!HORA.Value</Value>
+                              <Style>
+                                <FontSize>7pt</FontSize>
+                                <Format>0;(0)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>HORA</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="SEMANA">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -515,7 +592,7 @@
                             <TextRun>
                               <Value>=Fields!SEMANA.Value</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>0;(0)</Format>
                               </Style>
                             </TextRun>
@@ -554,6 +631,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -567,10 +645,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.17639cm</Top>
-        <Left>0.67531cm</Left>
+        <Top>0.18455cm</Top>
+        <Left>0.61216cm</Left>
         <Height>1.1cm</Height>
-        <Width>20.23875cm</Width>
+        <Width>20.09954cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -578,8 +656,8 @@
         </Style>
       </Tablix>
       <Line Name="Line1">
-        <Top>3.54156cm</Top>
-        <Left>0.67531cm</Left>
+        <Top>3.5987cm</Top>
+        <Left>0.61216cm</Left>
         <Height>0cm</Height>
         <Width>4.96062cm</Width>
         <ZIndex>1</ZIndex>
@@ -590,8 +668,8 @@
         </Style>
       </Line>
       <Line Name="Line2">
-        <Top>3.54156cm</Top>
-        <Left>15.95344cm</Left>
+        <Top>3.5987cm</Top>
+        <Left>15.75107cm</Left>
         <Height>0cm</Height>
         <Width>4.96062cm</Width>
         <ZIndex>2</ZIndex>
@@ -618,8 +696,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>3.57684cm</Top>
-        <Left>0.67531cm</Left>
+        <Top>3.63398cm</Top>
+        <Left>0.61216cm</Left>
         <Height>0.6cm</Height>
         <Width>4.96062cm</Width>
         <ZIndex>3</ZIndex>
@@ -650,8 +728,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>3.57684cm</Top>
-        <Left>15.95344cm</Left>
+        <Top>3.63398cm</Top>
+        <Left>15.75107cm</Left>
         <Height>0.6cm</Height>
         <Width>4.96062cm</Width>
         <ZIndex>4</ZIndex>
@@ -694,8 +772,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.38222cm</Top>
-        <Left>18.76927cm</Left>
+        <Top>1.39038cm</Top>
+        <Left>18.5669cm</Left>
         <Height>0.54708cm</Height>
         <Width>2.14479cm</Width>
         <ZIndex>5</ZIndex>
@@ -717,10 +795,10 @@
     <Height>1.73958in</Height>
     <Style />
   </Body>
-  <Width>8.39013in</Width>
+  <Width>8.39522in</Width>
   <Page>
     <PageHeader>
-      <Height>1.57427cm</Height>
+      <Height>1.56104cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -728,8 +806,8 @@
           <Source>Embedded</Source>
           <Value>Logo</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.40542cm</Top>
-          <Left>0.67531cm</Left>
+          <Top>0.37469cm</Top>
+          <Left>0.61216cm</Left>
           <Height>1.07625cm</Height>
           <Width>1.07667cm</Width>
           <Style>
@@ -745,7 +823,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte Descanso Laborado AAM</Value>
+                  <Value>Permisos de Salida AAM</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -756,10 +834,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>0.88167cm</Top>
-          <Left>1.82254cm</Left>
+          <Top>0.85094cm</Top>
+          <Left>1.68883cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.78215cm</Width>
+          <Width>6.4875cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -806,15 +884,171 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox24</rd:DefaultName>
-          <Top>0.88167cm</Top>
-          <Left>16.74906cm</Left>
-          <Height>0.6cm</Height>
-          <Width>4.165cm</Width>
+          <Top>0.96545cm</Top>
+          <Left>17.41738cm</Left>
+          <Height>0.48549cm</Height>
+          <Width>3.29432cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox28">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Del</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>: </Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!INICIAp.Value, "DataSet1")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox24</rd:DefaultName>
+          <Top>0.96545cm</Top>
+          <Left>9.71414cm</Left>
+          <Height>0.48549cm</Height>
+          <Width>2.43355cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox29">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Al</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>: </Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!TERMINAp.Value, "DataSet1")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox24</rd:DefaultName>
+          <Top>0.96545cm</Top>
+          <Left>12.21824cm</Left>
+          <Height>0.48549cm</Height>
+          <Width>2.64522cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox30">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Semana</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>: </Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <Format>dd/MM/yyyy</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!SEMANAP.Value, "DataSet1")</Value>
+                  <Style>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <Format>0;(0)</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox24</rd:DefaultName>
+          <Top>0.96545cm</Top>
+          <Left>14.89874cm</Left>
+          <Height>0.48549cm</Height>
+          <Width>2.35418cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -830,6 +1064,10 @@
     </PageHeader>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
@@ -840,7 +1078,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>cfec144a-d10c-4deb-bc96-fe1f239392cd</rd:DataSourceID>
+      <rd:DataSourceID>07f0ca5c-4caf-4a29-a7de-292d6402ec39</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -870,9 +1108,25 @@
           <DataField>PUESTO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="HORA">
+          <DataField>HORA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="FECHA">
           <DataField>FECHA</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="INICIAp">
+          <DataField>INICIAp</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="TERMINAp">
+          <DataField>TERMINAp</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="SEMANAP">
+          <DataField>SEMANAP</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="SEMANA">
           <DataField>SEMANA</DataField>
@@ -901,5 +1155,5 @@ BAryxaoROhCUzvpAH9KHBvPPUJUuWeevX/DtRRRVgwFFFFAH/9k=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>5103d59e-54c1-4554-b579-dd29e8025c56</rd:ReportID>
+  <rd:ReportID>70aff5e6-7d06-4194-908e-7684262ea66a</rd:ReportID>
 </Report>

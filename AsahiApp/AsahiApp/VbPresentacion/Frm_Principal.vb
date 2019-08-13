@@ -264,7 +264,11 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub AusentismosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AusentismosToolStripMenuItem1.Click
-
+        'Ejecuta reporte de Ausentismos de RH
+        Dim Aus As New Frm_Parametros_rep_prenomina()
+        Var = 4
+        Aus.lbl_var.Text = Var
+        Aus.Show()
 
     End Sub
 
@@ -278,7 +282,11 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub VacacionesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VacacionesToolStripMenuItem1.Click
-
+        'Ejecuta reporte de Vacaciones de RH
+        Dim Vac As New Frm_Parametros_rep_prenomina()
+        Var = 6
+        Vac.lbl_var.Text = Var
+        Vac.Show()
     End Sub
 
     Private Sub ActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivosToolStripMenuItem.Click
