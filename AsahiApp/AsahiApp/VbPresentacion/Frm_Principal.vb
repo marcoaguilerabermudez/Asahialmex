@@ -186,7 +186,7 @@ Public Class Frm_Principal
     End Sub
     Private Sub BonoMensualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BonoMensualToolStripMenuItem.Click
         Dim bono As New Frm_BonoMensual()
-        bono.ShowDialog()
+        bono.Show()
     End Sub
     Private Sub TodosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'Ejecuta todos los reportes de pre nomina

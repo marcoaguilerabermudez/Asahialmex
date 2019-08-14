@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -143,6 +143,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
+    <Compile Include="DataSet\Dts_BonoMensual.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\Dts_BonoMensual.vb">
+      <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\Dts_PlanHrsExt4.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,6 +160,22 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\Dts_PrenominaGlobal.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_PrenominaGlobal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\Dts_PrenominaGlobal.vb">
+      <DependentUpon>Dts_PrenominaGlobal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\Dts_PrenominaLista.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_PrenominaLista.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\Dts_PrenominaLista.vb">
+      <DependentUpon>Dts_PrenominaLista.xsd</DependentUpon>
     </Compile>
     <Compile Include="Frm_Acerca.Designer.vb">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
@@ -245,6 +269,24 @@
     <Compile Include="RH\Frm_ListaPrenomina.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RH\Frm_ReporteBono.Designer.vb">
+      <DependentUpon>Frm_ReporteBono.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_ReporteBono.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RH\Frm_ReportePrenominaGlobal.Designer.vb">
+      <DependentUpon>Frm_ReportePrenominaGlobal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_ReportePrenominaGlobal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RH\Frm_ReportePrenominaLista.Designer.vb">
+      <DependentUpon>Frm_ReportePrenominaLista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_ReportePrenominaLista.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_ReportesPlanHorasExtra.Designer.vb">
       <DependentUpon>Frm_ReportesPlanHorasExtra.vb</DependentUpon>
     </Compile>
@@ -274,8 +316,11 @@
     <EmbeddedResource Include="Frm_OpcionesReportes.resx">
       <DependentUpon>Frm_OpcionesReportes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra5.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_PrenominaGlobal.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_PrenominaListado.rdlc" />
     <EmbeddedResource Include="RH\Frm_PlanHorasExtra.resx">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +356,15 @@
     <EmbeddedResource Include="RH\Frm_ListaPrenomina.resx">
       <DependentUpon>Frm_ListaPrenomina.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_ReporteBono.resx">
+      <DependentUpon>Frm_ReporteBono.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_ReportePrenominaGlobal.resx">
+      <DependentUpon>Frm_ReportePrenominaGlobal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_ReportePrenominaLista.resx">
+      <DependentUpon>Frm_ReportePrenominaLista.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RH\Frm_ReportesPlanHorasExtra.resx">
       <DependentUpon>Frm_ReportesPlanHorasExtra.vb</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +377,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DataSet\Dts_BonoMensual.xsc">
+      <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Dts_BonoMensual.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_BonoMensual.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\Dts_BonoMensual.xss">
+      <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
+    </None>
     <None Include="DataSet\Dts_PlanHrsExt4.xsc">
       <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
     </None>
@@ -344,6 +409,28 @@
     </None>
     <None Include="DataSet\Dts_PlanHrsExt5.xss">
       <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Dts_PrenominaGlobal.xsc">
+      <DependentUpon>Dts_PrenominaGlobal.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Dts_PrenominaGlobal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_PrenominaGlobal.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\Dts_PrenominaGlobal.xss">
+      <DependentUpon>Dts_PrenominaGlobal.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Dts_PrenominaLista.xsc">
+      <DependentUpon>Dts_PrenominaLista.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Dts_PrenominaLista.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_PrenominaLista.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\Dts_PrenominaLista.xss">
+      <DependentUpon>Dts_PrenominaLista.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

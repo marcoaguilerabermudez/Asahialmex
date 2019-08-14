@@ -23,12 +23,18 @@ Partial Class Frm_BonoMensual
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Btn_Reporte = New System.Windows.Forms.Button()
         Me.Btn_Acumulado = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Lbl_año = New System.Windows.Forms.Label()
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
         Me.Btn_Mostrar = New System.Windows.Forms.Button()
         Me.Dgv_BonoMensual = New System.Windows.Forms.DataGridView()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Cmb_DeptoFiltro = New System.Windows.Forms.ComboBox()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaIngreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -142,18 +148,18 @@ Partial Class Frm_BonoMensual
         Me.rtt = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.premio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.turno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.tp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.Dgv_BonoMensual, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Btn_Reporte)
         Me.Panel1.Controls.Add(Me.Btn_Acumulado)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Lbl_año)
@@ -164,6 +170,16 @@ Partial Class Frm_BonoMensual
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1217, 62)
         Me.Panel1.TabIndex = 0
+        '
+        'Btn_Reporte
+        '
+        Me.Btn_Reporte.Image = Global.Presentacion.My.Resources.Resources.reportes
+        Me.Btn_Reporte.Location = New System.Drawing.Point(421, 9)
+        Me.Btn_Reporte.Name = "Btn_Reporte"
+        Me.Btn_Reporte.Size = New System.Drawing.Size(49, 40)
+        Me.Btn_Reporte.TabIndex = 29
+        Me.Btn_Reporte.UseVisualStyleBackColor = True
+        Me.Btn_Reporte.Visible = False
         '
         'Btn_Acumulado
         '
@@ -224,13 +240,61 @@ Partial Class Frm_BonoMensual
         'Dgv_BonoMensual
         '
         Me.Dgv_BonoMensual.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_BonoMensual.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.fechaIngreso, Me.departamento, Me.puesto, Me.totalBono, Me.entrada1, Me.salida1, Me.n1, Me.entrada2, Me.salida2, Me.n2, Me.entrada3, Me.salida3, Me.n3, Me.entrada4, Me.salida4, Me.n4, Me.entrada5, Me.salida5, Me.n5, Me.entrada6, Me.salida6, Me.n6, Me.entrada7, Me.salida7, Me.n7, Me.entrada8, Me.salida8, Me.n8, Me.entrada9, Me.salida9, Me.n9, Me.entrada10, Me.salida10, Me.n10, Me.entrada11, Me.salida11, Me.n11, Me.entrada12, Me.salida12, Me.n12, Me.entrada13, Me.salida13, Me.n13, Me.entrada14, Me.salida14, Me.n14, Me.entrada15, Me.salida15, Me.n15, Me.entrada16, Me.salida16, Me.n16, Me.entrada17, Me.salida17, Me.n17, Me.entrada18, Me.salida18, Me.n18, Me.entrada19, Me.salida19, Me.n19, Me.entrada20, Me.salida20, Me.n20, Me.entrada21, Me.salida21, Me.n21, Me.entrada22, Me.salida22, Me.n22, Me.entrada23, Me.salida23, Me.n23, Me.entrada24, Me.salida24, Me.n24, Me.entrada25, Me.salida25, Me.n25, Me.entrada26, Me.salida26, Me.n26, Me.entrada27, Me.salida27, Me.n27, Me.entrada28, Me.salida28, Me.n28, Me.entrada29, Me.salida29, Me.n29, Me.entrada30, Me.salida30, Me.n30, Me.entrada31, Me.salida31, Me.n31, Me.bono, Me.falta, Me.faltaJustificada, Me.suspension, Me.permisoMatrimonio, Me.incapacidad, Me.vacaciones, Me.permisoSinSueldo, Me.permisoConSueldo, Me.retardo, Me.x, Me.rtt, Me.premio, Me.turno})
+        Me.Dgv_BonoMensual.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.fechaIngreso, Me.departamento, Me.puesto, Me.totalBono, Me.entrada1, Me.salida1, Me.n1, Me.entrada2, Me.salida2, Me.n2, Me.entrada3, Me.salida3, Me.n3, Me.entrada4, Me.salida4, Me.n4, Me.entrada5, Me.salida5, Me.n5, Me.entrada6, Me.salida6, Me.n6, Me.entrada7, Me.salida7, Me.n7, Me.entrada8, Me.salida8, Me.n8, Me.entrada9, Me.salida9, Me.n9, Me.entrada10, Me.salida10, Me.n10, Me.entrada11, Me.salida11, Me.n11, Me.entrada12, Me.salida12, Me.n12, Me.entrada13, Me.salida13, Me.n13, Me.entrada14, Me.salida14, Me.n14, Me.entrada15, Me.salida15, Me.n15, Me.entrada16, Me.salida16, Me.n16, Me.entrada17, Me.salida17, Me.n17, Me.entrada18, Me.salida18, Me.n18, Me.entrada19, Me.salida19, Me.n19, Me.entrada20, Me.salida20, Me.n20, Me.entrada21, Me.salida21, Me.n21, Me.entrada22, Me.salida22, Me.n22, Me.entrada23, Me.salida23, Me.n23, Me.entrada24, Me.salida24, Me.n24, Me.entrada25, Me.salida25, Me.n25, Me.entrada26, Me.salida26, Me.n26, Me.entrada27, Me.salida27, Me.n27, Me.entrada28, Me.salida28, Me.n28, Me.entrada29, Me.salida29, Me.n29, Me.entrada30, Me.salida30, Me.n30, Me.entrada31, Me.salida31, Me.n31, Me.bono, Me.falta, Me.faltaJustificada, Me.suspension, Me.permisoMatrimonio, Me.incapacidad, Me.vacaciones, Me.permisoSinSueldo, Me.permisoConSueldo, Me.retardo, Me.x, Me.rtt, Me.premio, Me.turno, Me.tp})
         Me.Dgv_BonoMensual.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_BonoMensual.Location = New System.Drawing.Point(0, 0)
         Me.Dgv_BonoMensual.Name = "Dgv_BonoMensual"
         Me.Dgv_BonoMensual.RowHeadersWidth = 20
         Me.Dgv_BonoMensual.Size = New System.Drawing.Size(1217, 467)
         Me.Dgv_BonoMensual.TabIndex = 1
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Panel4)
+        Me.Panel2.Controls.Add(Me.Panel3)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 62)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1217, 494)
+        Me.Panel2.TabIndex = 2
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Dgv_BonoMensual)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(0, 27)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1217, 467)
+        Me.Panel4.TabIndex = 1
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.Cmb_DeptoFiltro)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1217, 27)
+        Me.Panel3.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(219, 7)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(115, 13)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "Filtro por departamento"
+        '
+        'Cmb_DeptoFiltro
+        '
+        Me.Cmb_DeptoFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_DeptoFiltro.Enabled = False
+        Me.Cmb_DeptoFiltro.FormattingEnabled = True
+        Me.Cmb_DeptoFiltro.Location = New System.Drawing.Point(337, 3)
+        Me.Cmb_DeptoFiltro.Name = "Cmb_DeptoFiltro"
+        Me.Cmb_DeptoFiltro.Size = New System.Drawing.Size(143, 21)
+        Me.Cmb_DeptoFiltro.TabIndex = 30
         '
         'idEmpleado
         '
@@ -1021,32 +1085,12 @@ Partial Class Frm_BonoMensual
         Me.turno.ReadOnly = True
         Me.turno.Width = 45
         '
-        'Panel2
+        'tp
         '
-        Me.Panel2.Controls.Add(Me.Panel4)
-        Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 62)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1217, 494)
-        Me.Panel2.TabIndex = 2
-        '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.Dgv_BonoMensual)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(0, 27)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1217, 467)
-        Me.Panel4.TabIndex = 1
-        '
-        'Panel3
-        '
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1217, 27)
-        Me.Panel3.TabIndex = 0
+        Me.tp.HeaderText = "TP"
+        Me.tp.Name = "tp"
+        Me.tp.ReadOnly = True
+        Me.tp.Visible = False
         '
         'Frm_BonoMensual
         '
@@ -1065,6 +1109,8 @@ Partial Class Frm_BonoMensual
         CType(Me.Dgv_BonoMensual, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1075,6 +1121,13 @@ Partial Class Frm_BonoMensual
     Friend WithEvents Lbl_año As Label
     Friend WithEvents Dtp_FechaInicioSemana As DateTimePicker
     Friend WithEvents Btn_Mostrar As Button
+    Friend WithEvents Btn_Acumulado As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Btn_Reporte As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Cmb_DeptoFiltro As ComboBox
     Friend WithEvents idEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents nombreEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents fechaIngreso As DataGridViewTextBoxColumn
@@ -1188,8 +1241,5 @@ Partial Class Frm_BonoMensual
     Friend WithEvents rtt As DataGridViewTextBoxColumn
     Friend WithEvents premio As DataGridViewTextBoxColumn
     Friend WithEvents turno As DataGridViewTextBoxColumn
-    Friend WithEvents Btn_Acumulado As Button
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents tp As DataGridViewTextBoxColumn
 End Class

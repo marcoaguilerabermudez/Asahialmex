@@ -614,7 +614,7 @@ Public Class Frm_PlanHorasExtra
                     Dim dld = 0
                     Dim ted = 0
                     If .Cells("domingo").Value > 0 Then
-                        domingo = .Cells(columna).Value.Split(New Char() {","c})
+                        domingo = Convert.ToString(.Cells(columna).Value).Split(New Char() {","c})
                         dld = domingo(0)
                         If domingo.Count = 2 Then
                             If domingo(1) <> "" Then ted = domingo(1)

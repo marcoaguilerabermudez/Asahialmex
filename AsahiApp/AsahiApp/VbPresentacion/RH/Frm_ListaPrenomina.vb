@@ -1,6 +1,6 @@
 ﻿Imports System.Windows.Forms
 Imports System.Data.SqlClient
-Imports System.Diagnostics
+Imports Microsoft.Reporting.WinForms
 Imports Clases
 Imports Negocio
 Public Class Frm_ListaPrenomina
@@ -12,6 +12,7 @@ Public Class Frm_ListaPrenomina
     'Dim bd As New BindingSource
     'Dim super As Thread
     Dim valor
+    Dim fuente As New ReportDataSource
 #End Region
 #Region "Constructores"
     Sub New()
@@ -113,6 +114,7 @@ Public Class Frm_ListaPrenomina
             'ModificarDiaInicio()
             fecha = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             ProcesoPrenomina(lstEmp, fecha)
+            Btn_Reporte.Visible = True
         End If
     End Sub
     Private Sub Bgw_HiloSegundoPlano_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Bgw_HiloSeundoPlano.DoWork
@@ -252,6 +254,10 @@ Public Class Frm_ListaPrenomina
                 End With
             Next
         End If
+    End Sub
+    Private Sub Btn_Reporte_Click(sender As Object, e As EventArgs) Handles Btn_Reporte.Click
+        Almacenar()
+        llamarReporte()
     End Sub
 #End Region
 #Region "Rellena cmb"
@@ -405,42 +411,49 @@ Public Class Frm_ListaPrenomina
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl1").Value = item.TipoRegistro1
                 End If
                 If item.TipoRegistro2 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl2").Value = item.TipoRegistro2
                 End If
                 If item.TipoRegistro3 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl3").Value = item.TipoRegistro3
                 End If
                 If item.TipoRegistro4 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl4").Value = item.TipoRegistro4
                 End If
                 If item.TipoRegistro5 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl5").Value = item.TipoRegistro5
                 End If
                 If item.TipoRegistro6 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl6").Value = item.TipoRegistro6
                 End If
                 If item.TipoRegistro7 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl7").Value = item.TipoRegistro7
                 End If
                 Dgv_ListaPrenomina.Rows(fila).Cells("b1").Value = item.Nota1
                 Dgv_ListaPrenomina.Rows(fila).Cells("b2").Value = item.Nota2
@@ -539,42 +552,49 @@ Public Class Frm_ListaPrenomina
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl1").Value = item.TipoRegistro0
                 End If
                 If item.TipoRegistro1 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl2").Value = item.TipoRegistro1
                 End If
                 If item.TipoRegistro2 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl3").Value = item.TipoRegistro2
                 End If
                 If item.TipoRegistro3 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl4").Value = item.TipoRegistro3
                 End If
                 If item.TipoRegistro4 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl5").Value = item.TipoRegistro4
                 End If
                 If item.TipoRegistro5 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl6").Value = item.TipoRegistro5
                 End If
                 If item.TipoRegistro6 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.Green
+                    Dgv_ListaPrenomina.Rows(fila).Cells("mnl7").Value = item.TipoRegistro6
                 End If
                 Dgv_ListaPrenomina.Rows(fila).Cells("b1").Value = item.Nota0
                 Dgv_ListaPrenomina.Rows(fila).Cells("b2").Value = item.Nota1
@@ -1506,5 +1526,67 @@ Public Class Frm_ListaPrenomina
         End Try
         Return True
     End Function
+    Private Sub Almacenar()
+        Try
+            'Dim mes As String = mesLetra()
+            Dim ds As New Dts_PrenominaLista
+            Dim dtw As DataRow
+
+            For i As Integer = 0 To Dgv_ListaPrenomina.Rows.Count - 2
+                dtw = ds.Dtb_PrenominaListado.NewRow()
+                If Dgv_ListaPrenomina.Rows(i).Visible = True Then
+                    'dtw("Id") = Dgv_ListaPrenomina.Item(0, i).Value
+                    dtw("Id") = Dgv_ListaPrenomina.Rows(i).Cells("idEmpleado").Value
+                    dtw("Nombre") = Dgv_ListaPrenomina.Rows(i).Cells("nombreEmpleado").Value
+                    dtw("Horario") = Dgv_ListaPrenomina.Rows(i).Cells("horarioEmpleado").Value
+                    dtw("Departamento") = Dgv_ListaPrenomina.Rows(i).Cells("departamentoEmpleado").Value
+                    dtw("E1") = Dgv_ListaPrenomina.Rows(i).Cells("entrada1").Value
+                    dtw("S1") = Dgv_ListaPrenomina.Rows(i).Cells("salida1").Value
+                    dtw("M1") = Dgv_ListaPrenomina.Rows(i).Cells("mnl1").Value
+                    dtw("E2") = Dgv_ListaPrenomina.Rows(i).Cells("entrada2").Value
+                    dtw("S2") = Dgv_ListaPrenomina.Rows(i).Cells("salida2").Value
+                    dtw("M2") = Dgv_ListaPrenomina.Rows(i).Cells("mnl2").Value
+                    dtw("E3") = Dgv_ListaPrenomina.Rows(i).Cells("entrada3").Value
+                    dtw("S3") = Dgv_ListaPrenomina.Rows(i).Cells("salida3").Value
+                    dtw("M3") = Dgv_ListaPrenomina.Rows(i).Cells("mnl3").Value
+                    dtw("E4") = Dgv_ListaPrenomina.Rows(i).Cells("entrada4").Value
+                    dtw("S4") = Dgv_ListaPrenomina.Rows(i).Cells("salida4").Value
+                    dtw("M4") = Dgv_ListaPrenomina.Rows(i).Cells("mnl4").Value
+                    dtw("E5") = Dgv_ListaPrenomina.Rows(i).Cells("entrada5").Value
+                    dtw("S5") = Dgv_ListaPrenomina.Rows(i).Cells("salida5").Value
+                    dtw("M5") = Dgv_ListaPrenomina.Rows(i).Cells("mnl5").Value
+                    dtw("E6") = Dgv_ListaPrenomina.Rows(i).Cells("entrada6").Value
+                    dtw("S6") = Dgv_ListaPrenomina.Rows(i).Cells("salida6").Value
+                    dtw("M6") = Dgv_ListaPrenomina.Rows(i).Cells("mnl6").Value
+                    dtw("E7") = Dgv_ListaPrenomina.Rows(i).Cells("entrada7").Value
+                    dtw("S7") = Dgv_ListaPrenomina.Rows(i).Cells("salida7").Value
+                    dtw("M7") = Dgv_ListaPrenomina.Rows(i).Cells("mnl7").Value
+                    dtw("Comentarios") = Dgv_ListaPrenomina.Rows(i).Cells("comentarios").Value
+                    dtw("AplicaBono") = Dgv_ListaPrenomina.Rows(i).Cells("aplicaBono").Value
+                    dtw("Lun") = Lbl_Dia1.Text
+                    dtw("Mar") = Lbl_Dia2.Text
+                    dtw("Mier") = Lbl_Dia3.Text
+                    dtw("Jue") = Lbl_Dia4.Text
+                    dtw("Vie") = Lbl_Dia5.Text
+                    dtw("Sab") = lbl_Dia6.Text
+                    dtw("Dom") = lbl_Dia7.Text
+                    'dtw("TP") = Dgv_ListaPrenomina.Rows(i).Cells("tp").Value
+                    ds.Dtb_PrenominaListado.Rows.Add(dtw)
+                End If
+            Next
+            ''---------------------PREPARAR REPORTE--------------------
+            Me.fuente.Name = "DataSet1" ' Nombre identico al que le di al dataset del report en tiempo de diseño
+            Me.fuente.Value = ds.Tables(0)
+            ''---------------------PREPARAR REPORTE------------------
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Private Sub llamarReporte()
+        Frm_ReportePrenominaLista.ReportViewer1.LocalReport.DataSources.Clear()
+        Frm_ReportePrenominaLista.ReportViewer1.LocalReport.DataSources.Add(fuente)
+        Frm_ReportePrenominaLista.ReportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Rpt_PrenominaListado.rdlc" 'exactamente como se llaman el proyecto y reporte
+        Frm_ReportePrenominaLista.Show()
+    End Sub
 #End Region
 End Class

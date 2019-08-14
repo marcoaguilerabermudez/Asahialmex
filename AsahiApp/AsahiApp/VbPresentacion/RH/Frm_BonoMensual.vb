@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-
+Imports Microsoft.Reporting.WinForms
 Imports Negocio
 Imports Clases
 
@@ -13,12 +13,14 @@ Public Class Frm_BonoMensual
     Dim valor As String
     Dim mes As Integer
     Dim rec As Boolean = False
+    Dim fuente As New ReportDataSource
 #End Region
 #Region "Acciones del formulario"
     Private Sub Frm_BonoMensual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Lbl_año.Text = Format(DateTime.Now, "yyyy")
         Dgv_BonoMensual.Columns("nombreEmpleado").Frozen = True
         ModificarDiaInicio()
+        RellenarCmbDepto()
     End Sub
     Private Sub Dtp_FechaInicioSemana_TextChanged(sender As Object, e As EventArgs) Handles Dtp_FechaInicioSemana.TextChanged
         If Dtp_FechaInicioSemana.Value < DateTime.Now Or Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyy") = Format(DateTime.Now, "dd/MM/yyy") Then
@@ -89,7 +91,10 @@ Public Class Frm_BonoMensual
             If rec = False Then
                 Btn_Acumulado.Visible = True
                 Btn_Acumulado.Enabled = True
+            ElseIf rec = True Then
+                Btn_Reporte.Visible = True
             End If
+            Cmb_DeptoFiltro.Enabled = True
         End If
     End Sub
     Private Sub Dgv_BonoMensual_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_BonoMensual.CellEnter
@@ -128,6 +133,37 @@ Public Class Frm_BonoMensual
     Private Sub Btn_Acumulado_Click(sender As Object, e As EventArgs) Handles Btn_Acumulado.Click
         ProcesoAcumulado()
     End Sub
+    Private Sub Btn_Reporte_Click(sender As Object, e As EventArgs) Handles Btn_Reporte.Click
+        Almacenar()
+        llamarReporte()
+    End Sub
+    Private Sub CmbDeptoFiltro_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_DeptoFiltro.SelectionChangeCommitted
+        Dim fila As Integer, totalFilas As Integer = Dgv_BonoMensual.Rows.Count, depto As String
+        If Cmb_DeptoFiltro.Text <> "" Then
+            For fila = 0 To totalFilas - 1
+                With Dgv_BonoMensual.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+            For fila = 0 To totalFilas - 2
+                With Dgv_BonoMensual.Rows(fila)
+                    depto = .Cells("departamento").Value
+                    If Not (depto = Cmb_DeptoFiltro.Text) Then 'Or depto <> "ERROR"
+                        .Visible = True
+                    End If
+                    If Not (depto = Cmb_DeptoFiltro.Text) Then 'Or depto <> "ERROR"
+                        .Visible = False
+                    End If
+                End With
+            Next
+        Else
+            For fila = 0 To totalFilas - 1
+                With Dgv_BonoMensual.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+        End If
+    End Sub
 #End Region
 #Region "Rellena Formulario"
     Private Sub RellenaChecadasDgvGlobalPrenomina(ByVal lstEmp As LEmpleado)
@@ -154,6 +190,7 @@ Public Class Frm_BonoMensual
                 .Cells("puesto").Style.BackColor = Color.White
                 .Cells("turno").Value = item.IdTurno
                 .Cells("turno").Style.BackColor = Color.White
+                .Cells("tp").Value = item.TP
 
                 If item.TP = "B" Then
                     .Cells("idEmpleado").Style.BackColor = Color.FromArgb(64, 64, 0)
@@ -710,6 +747,28 @@ Public Class Frm_BonoMensual
             End With
         Next
     End Sub
+    Private Sub RellenarCmbDepto()
+        Dim lstDep As New LEmpleado()
+        Dim NEmp As New NEmpleado()
+        Dim conex As New conexion()
+        Dim dep As New Empleado()
+        'If Rdb_Esp.Checked = True Then
+        '    Me.idioma = 1
+        'ElseIf Rdb_Jpn.Checked = True Then
+        '    Me.idioma = 2
+        'End If
+        Me.cadenaConex = conex.conexion2008
+        lstDep = NEmp.RecuperarDepartamentos(Me.cadenaConex, 1)
+        dep.Departamento = ""
+        lstDep.Add(dep)
+
+        With Cmb_DeptoFiltro
+            .DataSource = lstDep
+            .ValueMember = "IdDepartamento"
+            .DisplayMember = "Departamento"
+            .SelectedItem = Nothing
+        End With
+    End Sub
 #End Region
 #Region "Recuperar"
     Private Function RecuperarEmpleados(ByVal fecha As Date) As LEmpleado
@@ -855,5 +914,134 @@ Public Class Frm_BonoMensual
             End With
         Next
     End Sub
+    Sub Almacenar()
+        Try
+            Dim mes As String = mesLetra()
+            Dim ds As New Dts_BonoMensual
+            Dim dtw As DataRow
+
+            For i As Integer = 0 To Dgv_BonoMensual.Rows.Count - 2
+                dtw = ds.Dtb_Bono.NewRow()
+                If Dgv_BonoMensual.Rows(i).Visible = True Then
+                    dtw("Codigo") = Dgv_BonoMensual.Item(0, i).Value
+                    dtw("Nombre") = Dgv_BonoMensual.Item(1, i).Value
+                    dtw("Ingreso") = Dgv_BonoMensual.Item(2, i).Value
+                    dtw("Depto") = Dgv_BonoMensual.Item(3, i).Value
+                    dtw("Puesto") = Dgv_BonoMensual.Item(4, i).Value
+                    dtw("TotalBono") = Dgv_BonoMensual.Item(5, i).Value
+                    dtw("E1") = Dgv_BonoMensual.Item(6, i).Value
+                    dtw("S1") = Dgv_BonoMensual.Item(7, i).Value
+                    dtw("E2") = Dgv_BonoMensual.Item(9, i).Value
+                    dtw("S2") = Dgv_BonoMensual.Item(10, i).Value
+                    dtw("E3") = Dgv_BonoMensual.Item(12, i).Value
+                    dtw("S3") = Dgv_BonoMensual.Item(13, i).Value
+                    dtw("E4") = Dgv_BonoMensual.Item(15, i).Value
+                    dtw("S4") = Dgv_BonoMensual.Item(16, i).Value
+                    dtw("E5") = Dgv_BonoMensual.Item(18, i).Value
+                    dtw("S5") = Dgv_BonoMensual.Item(19, i).Value
+                    dtw("E6") = Dgv_BonoMensual.Item(21, i).Value
+                    dtw("S6") = Dgv_BonoMensual.Item(22, i).Value
+                    dtw("E7") = Dgv_BonoMensual.Item(24, i).Value
+                    dtw("S7") = Dgv_BonoMensual.Item(25, i).Value
+                    dtw("E8") = Dgv_BonoMensual.Item(27, i).Value
+                    dtw("S8") = Dgv_BonoMensual.Item(28, i).Value
+                    dtw("E9") = Dgv_BonoMensual.Item(30, i).Value
+                    dtw("S9") = Dgv_BonoMensual.Item(31, i).Value
+                    dtw("E10") = Dgv_BonoMensual.Item(33, i).Value
+                    dtw("S10") = Dgv_BonoMensual.Item(34, i).Value
+                    dtw("E11") = Dgv_BonoMensual.Item(36, i).Value
+                    dtw("S11") = Dgv_BonoMensual.Item(37, i).Value
+                    dtw("E12") = Dgv_BonoMensual.Item(39, i).Value
+                    dtw("S12") = Dgv_BonoMensual.Item(40, i).Value
+                    dtw("E13") = Dgv_BonoMensual.Item(42, i).Value
+                    dtw("S13") = Dgv_BonoMensual.Item(43, i).Value
+                    dtw("E14") = Dgv_BonoMensual.Item(45, i).Value
+                    dtw("S14") = Dgv_BonoMensual.Item(46, i).Value
+                    dtw("E15") = Dgv_BonoMensual.Item(48, i).Value
+                    dtw("S15") = Dgv_BonoMensual.Item(49, i).Value
+                    dtw("E16") = Dgv_BonoMensual.Item(51, i).Value
+                    dtw("S16") = Dgv_BonoMensual.Item(52, i).Value
+                    dtw("E17") = Dgv_BonoMensual.Item(54, i).Value
+                    dtw("S17") = Dgv_BonoMensual.Item(55, i).Value
+                    dtw("E18") = Dgv_BonoMensual.Item(57, i).Value
+                    dtw("S18") = Dgv_BonoMensual.Item(58, i).Value
+                    dtw("E19") = Dgv_BonoMensual.Item(60, i).Value
+                    dtw("S19") = Dgv_BonoMensual.Item(61, i).Value
+                    dtw("E20") = Dgv_BonoMensual.Item(63, i).Value
+                    dtw("S20") = Dgv_BonoMensual.Item(64, i).Value
+                    dtw("E21") = Dgv_BonoMensual.Item(66, i).Value
+                    dtw("S21") = Dgv_BonoMensual.Item(67, i).Value
+                    dtw("E22") = Dgv_BonoMensual.Item(69, i).Value
+                    dtw("S22") = Dgv_BonoMensual.Item(70, i).Value
+                    dtw("E23") = Dgv_BonoMensual.Item(72, i).Value
+                    dtw("S23") = Dgv_BonoMensual.Item(73, i).Value
+                    dtw("E24") = Dgv_BonoMensual.Item(75, i).Value
+                    dtw("S24") = Dgv_BonoMensual.Item(76, i).Value
+                    dtw("E25") = Dgv_BonoMensual.Item(78, i).Value
+                    dtw("S25") = Dgv_BonoMensual.Item(79, i).Value
+                    dtw("E26") = Dgv_BonoMensual.Item(81, i).Value
+                    dtw("S26") = Dgv_BonoMensual.Item(82, i).Value
+                    dtw("E27") = Dgv_BonoMensual.Item(84, i).Value
+                    dtw("S27") = Dgv_BonoMensual.Item(85, i).Value
+                    dtw("E28") = Dgv_BonoMensual.Item(87, i).Value
+                    dtw("S28") = Dgv_BonoMensual.Item(88, i).Value
+                    dtw("E29") = Dgv_BonoMensual.Item(90, i).Value
+                    dtw("S29") = Dgv_BonoMensual.Item(91, i).Value
+                    dtw("E30") = Dgv_BonoMensual.Item(93, i).Value
+                    dtw("S30") = Dgv_BonoMensual.Item(94, i).Value
+                    dtw("E31") = Dgv_BonoMensual.Item(96, i).Value
+                    dtw("S31") = Dgv_BonoMensual.Item(97, i).Value
+                    dtw("Bono") = Dgv_BonoMensual.Item(99, i).Value
+                    dtw("F") = Dgv_BonoMensual.Item(100, i).Value
+                    dtw("FJ") = Dgv_BonoMensual.Item(101, i).Value
+                    dtw("SUS") = Dgv_BonoMensual.Item(102, i).Value
+                    dtw("PM") = Dgv_BonoMensual.Item(103, i).Value
+                    dtw("INC") = Dgv_BonoMensual.Item(104, i).Value
+                    dtw("VAC") = Dgv_BonoMensual.Item(105, i).Value
+                    dtw("PSS") = Dgv_BonoMensual.Item(106, i).Value
+                    dtw("PCS") = Dgv_BonoMensual.Item(107, i).Value
+                    dtw("RET") = Dgv_BonoMensual.Item(108, i).Value
+                    dtw("X") = Dgv_BonoMensual.Item(109, i).Value
+                    dtw("RTT") = Dgv_BonoMensual.Item(110, i).Value
+                    dtw("PREMIO") = Dgv_BonoMensual.Item(111, i).Value
+                    dtw("TUR") = Dgv_BonoMensual.Item(112, i).Value
+                    dtw("TP") = Dgv_BonoMensual.Item(113, i).Value
+                    dtw("MES") = mes
+                    ds.Dtb_Bono.Rows.Add(dtw)
+                End If
+            Next
+            ''---------------------PREPARAR REPORTE--------------------
+            Me.fuente.Name = "DataSet1" ' Nombre identico al que le di al dataset del report en tiempo de diseño
+            Me.fuente.Value = ds.Tables(0)
+            ''---------------------PREPARAR REPORTE------------------
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Sub llamarReporte()
+        Frm_ReporteBono.ReportViewer1.LocalReport.DataSources.Clear()
+        Frm_ReporteBono.ReportViewer1.LocalReport.DataSources.Add(fuente)
+        Frm_ReporteBono.ReportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Rpt_Bono.rdlc" 'exactamente como se llaman el proyecto y reporte
+        Frm_ReporteBono.Show()
+    End Sub
+    Private Function mesLetra() As String
+        Dim fec = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
+        Dim mes = Month(fec)
+        Select Case mes
+            Case 1 : Return "ENERO"
+            Case 2 : Return "FEBRERO"
+            Case 3 : Return "MARZO"
+            Case 4 : Return "ABRIL"
+            Case 5 : Return "MAYO"
+            Case 6 : Return "JUNIO"
+            Case 7 : Return "JULIO"
+            Case 8 : Return "AGOSTO"
+            Case 9 : Return "SEPTIEMBRE"
+            Case 10 : Return "OCTUBRE"
+            Case 11 : Return "NOVIEMBRE"
+            Case 12 : Return "DICIEMBRE"
+            Case Else : Return "ERROR"
+        End Select
+    End Function
 #End Region
 End Class

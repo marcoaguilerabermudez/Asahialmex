@@ -104,6 +104,7 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Btn_Reporte = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.Dgv_Prenomina_Global, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_Lista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,6 +116,7 @@ Partial Class Frm_GlobalPrenomina
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Btn_Reporte)
         Me.Panel1.Controls.Add(Me.Btn_Excel)
         Me.Panel1.Controls.Add(Me.Btn_Txt)
         Me.Panel1.Controls.Add(Me.Lbl_SemaF)
@@ -162,7 +164,7 @@ Partial Class Frm_GlobalPrenomina
         '
         Me.Lbl_SemaF.AutoSize = True
         Me.Lbl_SemaF.ForeColor = System.Drawing.Color.White
-        Me.Lbl_SemaF.Location = New System.Drawing.Point(700, 25)
+        Me.Lbl_SemaF.Location = New System.Drawing.Point(753, 25)
         Me.Lbl_SemaF.Name = "Lbl_SemaF"
         Me.Lbl_SemaF.Size = New System.Drawing.Size(65, 13)
         Me.Lbl_SemaF.TabIndex = 25
@@ -172,7 +174,7 @@ Partial Class Frm_GlobalPrenomina
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(687, 25)
+        Me.Label4.Location = New System.Drawing.Point(740, 25)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(13, 13)
         Me.Label4.TabIndex = 24
@@ -182,7 +184,7 @@ Partial Class Frm_GlobalPrenomina
         '
         Me.Lbl_SemaI.AutoSize = True
         Me.Lbl_SemaI.ForeColor = System.Drawing.Color.White
-        Me.Lbl_SemaI.Location = New System.Drawing.Point(622, 25)
+        Me.Lbl_SemaI.Location = New System.Drawing.Point(675, 25)
         Me.Lbl_SemaI.Name = "Lbl_SemaI"
         Me.Lbl_SemaI.Size = New System.Drawing.Size(65, 13)
         Me.Lbl_SemaI.TabIndex = 23
@@ -192,7 +194,7 @@ Partial Class Frm_GlobalPrenomina
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(561, 25)
+        Me.Label2.Location = New System.Drawing.Point(614, 25)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 22
@@ -784,6 +786,16 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel3.Size = New System.Drawing.Size(1253, 52)
         Me.Panel3.TabIndex = 0
         '
+        'Btn_Reporte
+        '
+        Me.Btn_Reporte.Image = Global.Presentacion.My.Resources.Resources.reportes
+        Me.Btn_Reporte.Location = New System.Drawing.Point(550, 8)
+        Me.Btn_Reporte.Name = "Btn_Reporte"
+        Me.Btn_Reporte.Size = New System.Drawing.Size(40, 39)
+        Me.Btn_Reporte.TabIndex = 31
+        Me.Btn_Reporte.UseVisualStyleBackColor = True
+        Me.Btn_Reporte.Visible = False
+        '
         'Frm_GlobalPrenomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -889,4 +901,5 @@ Partial Class Frm_GlobalPrenomina
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents Btn_Reporte As Button
 End Class
