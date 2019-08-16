@@ -3,6 +3,7 @@ Imports Negocio
 Imports Clases
 Imports System.IO
 Imports System.ComponentModel
+Imports Microsoft.Reporting.WinForms
 Public Class Frm_GlobalPrenomina
 #Region "Variables de clase"
     Dim cadConex As SqlConnection
@@ -11,6 +12,7 @@ Public Class Frm_GlobalPrenomina
     Dim userName As String
     Dim ruta As String
     Dim archivo As String
+    Dim fuente As New ReportDataSource
 #End Region
 #Region "Constructores"
     Sub New()
@@ -73,6 +75,7 @@ Public Class Frm_GlobalPrenomina
             If sem <> hrs.Semana Then Cmb_Semanas.SelectedItem = hrs.Semana
             Btn_Txt.Visible = False
             Btn_Excel.Visible = False
+            Btn_Reporte.Visible = False
             Txt_FiltroId.Enabled = False
             Txt_FiltroId.Text = ""
             open = True
@@ -141,6 +144,10 @@ Public Class Frm_GlobalPrenomina
                 End With
             Next
         End If
+    End Sub
+    Private Sub Btn_Reporte_Click(sender As Object, e As EventArgs) Handles Btn_Reporte.Click
+        Almacenar()
+        llamarReporte()
     End Sub
 #End Region
 #Region "Rellena cmb"
@@ -955,6 +962,7 @@ Public Class Frm_GlobalPrenomina
             Btn_Excel.Visible = True
             Txt_FiltroId.Enabled = True
             Btn_Txt.Visible = True
+            Btn_Reporte.Visible = True
         End If
     End Sub
     Private Sub ModificarDiaInicio()
@@ -1309,5 +1317,87 @@ Public Class Frm_GlobalPrenomina
         End Try
         Return True
     End Function
+    Private Sub Almacenar()
+        Try
+            Dim ds As New Dts_PrenominaGlobal
+            Dim dtw As DataRow
+
+            For i As Integer = 0 To Dgv_Prenomina_Global.Rows.Count - 2
+                dtw = ds.Dtb_PrenominaGlobal.NewRow()
+                If Dgv_Prenomina_Global.Rows(i).Visible = True Then
+                    dtw("Id") = Dgv_Prenomina_Global.Rows(i).Cells("idEmpleado").Value
+                    dtw("Nombre") = Dgv_Prenomina_Global.Rows(i).Cells("nombreEmpleado").Value
+                    dtw("Lun") = Dgv_Prenomina_Global.Rows(i).Cells("lun").Value
+                    dtw("TE1") = Dgv_Prenomina_Global.Rows(i).Cells("te1").Value
+                    dtw("CM1") = Dgv_Prenomina_Global.Rows(i).Cells("cm1").Value
+                    dtw("Mar") = Dgv_Prenomina_Global.Rows(i).Cells("mar").Value
+                    dtw("TE2") = Dgv_Prenomina_Global.Rows(i).Cells("te2").Value
+                    dtw("CM2") = Dgv_Prenomina_Global.Rows(i).Cells("cm2").Value
+                    dtw("Mie") = Dgv_Prenomina_Global.Rows(i).Cells("mie").Value
+                    dtw("TE3") = Dgv_Prenomina_Global.Rows(i).Cells("te3").Value
+                    dtw("CM3") = Dgv_Prenomina_Global.Rows(i).Cells("cm3").Value
+                    dtw("Jue") = Dgv_Prenomina_Global.Rows(i).Cells("jue").Value
+                    dtw("TE4") = Dgv_Prenomina_Global.Rows(i).Cells("te4").Value
+                    dtw("CM4") = Dgv_Prenomina_Global.Rows(i).Cells("cm4").Value
+                    dtw("Vie") = Dgv_Prenomina_Global.Rows(i).Cells("vie").Value
+                    dtw("TE5") = Dgv_Prenomina_Global.Rows(i).Cells("te5").Value
+                    dtw("CM5") = Dgv_Prenomina_Global.Rows(i).Cells("cm5").Value
+                    dtw("Sab") = Dgv_Prenomina_Global.Rows(i).Cells("sab").Value
+                    dtw("TE6") = Dgv_Prenomina_Global.Rows(i).Cells("te6").Value
+                    dtw("CM6") = Dgv_Prenomina_Global.Rows(i).Cells("cm6").Value
+                    dtw("Dom") = Dgv_Prenomina_Global.Rows(i).Cells("dom").Value
+                    dtw("TE7") = Dgv_Prenomina_Global.Rows(i).Cells("te7").Value
+                    dtw("CM7") = Dgv_Prenomina_Global.Rows(i).Cells("cm7").Value
+                    dtw("TE") = Dgv_Prenomina_Global.Rows(i).Cells("te").Value
+                    dtw("COM") = Dgv_Prenomina_Global.Rows(i).Cells("com").Value
+                    dtw("CM") = Dgv_Prenomina_Global.Rows(i).Cells("cm").Value
+                    dtw("SP") = Dgv_Prenomina_Global.Rows(i).Cells("sp").Value
+                    dtw("SPBono") = Dgv_Prenomina_Global.Rows(i).Cells("spBono").Value
+                    dtw("Depto") = Dgv_Prenomina_Global.Rows(i).Cells("departamentoEmpleado").Value
+                    dtw("Turno") = Dgv_Prenomina_Global.Rows(i).Cells("turnoEmpleado").Value
+                    dtw("IdTurno") = Dgv_Prenomina_Global.Rows(i).Cells("idTurnoEmpleado").Value
+                    dtw("R") = Dgv_Prenomina_Global.Rows(i).Cells("retardo").Value
+                    dtw("PS") = Dgv_Prenomina_Global.Rows(i).Cells("permisoSalida").Value
+                    dtw("F") = Dgv_Prenomina_Global.Rows(i).Cells("falta").Value
+                    dtw("FJ") = Dgv_Prenomina_Global.Rows(i).Cells("faltaJustificada").Value
+                    dtw("SUS") = Dgv_Prenomina_Global.Rows(i).Cells("suspension").Value
+                    dtw("PSS") = Dgv_Prenomina_Global.Rows(i).Cells("permisoSinSueldo").Value
+                    dtw("PCS") = Dgv_Prenomina_Global.Rows(i).Cells("permisoConSueldo").Value
+                    dtw("PM") = Dgv_Prenomina_Global.Rows(i).Cells("permisoMaternidad").Value
+                    dtw("INC") = Dgv_Prenomina_Global.Rows(i).Cells("incapacidad").Value
+                    dtw("VAC") = Dgv_Prenomina_Global.Rows(i).Cells("vacaciones").Value
+                    dtw("Jp") = Dgv_Prenomina_Global.Rows(i).Cells("ujap").Value
+                    dtw("DJ") = Dgv_Prenomina_Global.Rows(i).Cells("dJap").Value
+                    dtw("Mx") = Dgv_Prenomina_Global.Rows(i).Cells("umex").Value
+                    dtw("DM") = Dgv_Prenomina_Global.Rows(i).Cells("dMex").Value
+                    dtw("UJUM") = Dgv_Prenomina_Global.Rows(i).Cells("jpMx").Value
+                    dtw("UMUJ") = Dgv_Prenomina_Global.Rows(i).Cells("mxJp").Value
+                    dtw("Sum") = Dgv_Prenomina_Global.Rows(i).Cells("suma").Value
+                    dtw("Dif") = Dgv_Prenomina_Global.Rows(i).Cells("diferencia").Value
+                    dtw("G") = Dgv_Prenomina_Global.Rows(i).Cells("grupo").Value
+                    dtw("Lunes") = Lbl_Dia1.Text
+                    dtw("Martes") = Lbl_Dia2.Text
+                    dtw("Miercoles") = Lbl_Dia3.Text
+                    dtw("Jueves") = Lbl_Dia4.Text
+                    dtw("Viernes") = Lbl_Dia5.Text
+                    dtw("Sabado") = lbl_Dia6.Text
+                    dtw("Domingo") = lbl_Dia7.Text
+                    ds.Dtb_PrenominaGlobal.Rows.Add(dtw)
+                End If
+            Next
+            ''---------------------PREPARAR REPORTE--------------------
+            Me.fuente.Name = "DataSet1" ' Nombre identico al que le di al dataset del report en tiempo de diseño
+            Me.fuente.Value = ds.Tables(0)
+            ''---------------------PREPARAR REPORTE------------------
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Private Sub llamarReporte()
+        Frm_ReportePrenominaGlobal.ReportViewer1.LocalReport.DataSources.Clear()
+        Frm_ReportePrenominaGlobal.ReportViewer1.LocalReport.DataSources.Add(fuente)
+        Frm_ReportePrenominaGlobal.ReportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Rpt_PrenominaGlobal.rdlc" 'exactamente como se llaman el proyecto y reporte
+        Frm_ReportePrenominaGlobal.Show()
+    End Sub
 #End Region
 End Class
