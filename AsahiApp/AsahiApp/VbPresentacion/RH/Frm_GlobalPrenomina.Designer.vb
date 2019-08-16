@@ -23,8 +23,6 @@ Partial Class Frm_GlobalPrenomina
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Btn_Excel = New System.Windows.Forms.Button()
-        Me.Btn_Txt = New System.Windows.Forms.Button()
         Me.Lbl_SemaF = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Lbl_SemaI = New System.Windows.Forms.Label()
@@ -34,7 +32,6 @@ Partial Class Frm_GlobalPrenomina
         Me.Lbl_Semana = New System.Windows.Forms.Label()
         Me.Cmb_Semanas = New System.Windows.Forms.ComboBox()
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
-        Me.Btn_Mostrar = New System.Windows.Forms.Button()
         Me.Dgv_Prenomina_Global = New System.Windows.Forms.DataGridView()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -105,6 +102,9 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Btn_Reporte = New System.Windows.Forms.Button()
+        Me.Btn_Excel = New System.Windows.Forms.Button()
+        Me.Btn_Txt = New System.Windows.Forms.Button()
+        Me.Btn_Mostrar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.Dgv_Prenomina_Global, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_Lista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,31 +134,6 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1253, 54)
         Me.Panel1.TabIndex = 15
-        '
-        'Btn_Excel
-        '
-        Me.Btn_Excel.Image = Global.Presentacion.My.Resources.Resources.Excel1
-        Me.Btn_Excel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Excel.Location = New System.Drawing.Point(439, 9)
-        Me.Btn_Excel.Name = "Btn_Excel"
-        Me.Btn_Excel.Size = New System.Drawing.Size(41, 39)
-        Me.Btn_Excel.TabIndex = 27
-        Me.Btn_Excel.Text = "Excel"
-        Me.Btn_Excel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Excel.UseVisualStyleBackColor = True
-        Me.Btn_Excel.Visible = False
-        '
-        'Btn_Txt
-        '
-        Me.Btn_Txt.Image = Global.Presentacion.My.Resources.Resources.txt1
-        Me.Btn_Txt.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Txt.Location = New System.Drawing.Point(494, 9)
-        Me.Btn_Txt.Name = "Btn_Txt"
-        Me.Btn_Txt.Size = New System.Drawing.Size(41, 39)
-        Me.Btn_Txt.TabIndex = 26
-        Me.Btn_Txt.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Txt.UseVisualStyleBackColor = True
-        Me.Btn_Txt.Visible = False
         '
         'Lbl_SemaF
         '
@@ -250,18 +225,6 @@ Partial Class Frm_GlobalPrenomina
         Me.Dtp_FechaInicioSemana.Name = "Dtp_FechaInicioSemana"
         Me.Dtp_FechaInicioSemana.Size = New System.Drawing.Size(109, 20)
         Me.Dtp_FechaInicioSemana.TabIndex = 20
-        '
-        'Btn_Mostrar
-        '
-        Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
-        Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Mostrar.Location = New System.Drawing.Point(373, 9)
-        Me.Btn_Mostrar.Name = "Btn_Mostrar"
-        Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 39)
-        Me.Btn_Mostrar.TabIndex = 21
-        Me.Btn_Mostrar.Text = "Mostrar"
-        Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Mostrar.UseVisualStyleBackColor = True
         '
         'Dgv_Prenomina_Global
         '
@@ -795,6 +758,43 @@ Partial Class Frm_GlobalPrenomina
         Me.Btn_Reporte.TabIndex = 31
         Me.Btn_Reporte.UseVisualStyleBackColor = True
         Me.Btn_Reporte.Visible = False
+        '
+        'Btn_Excel
+        '
+        Me.Btn_Excel.Image = Global.Presentacion.My.Resources.Resources.Excel1
+        Me.Btn_Excel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Excel.Location = New System.Drawing.Point(439, 9)
+        Me.Btn_Excel.Name = "Btn_Excel"
+        Me.Btn_Excel.Size = New System.Drawing.Size(41, 39)
+        Me.Btn_Excel.TabIndex = 27
+        Me.Btn_Excel.Text = "Excel"
+        Me.Btn_Excel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Excel.UseVisualStyleBackColor = True
+        Me.Btn_Excel.Visible = False
+        '
+        'Btn_Txt
+        '
+        Me.Btn_Txt.Image = Global.Presentacion.My.Resources.Resources.txt1
+        Me.Btn_Txt.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Txt.Location = New System.Drawing.Point(494, 9)
+        Me.Btn_Txt.Name = "Btn_Txt"
+        Me.Btn_Txt.Size = New System.Drawing.Size(41, 39)
+        Me.Btn_Txt.TabIndex = 26
+        Me.Btn_Txt.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Txt.UseVisualStyleBackColor = True
+        Me.Btn_Txt.Visible = False
+        '
+        'Btn_Mostrar
+        '
+        Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
+        Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Mostrar.Location = New System.Drawing.Point(373, 9)
+        Me.Btn_Mostrar.Name = "Btn_Mostrar"
+        Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 39)
+        Me.Btn_Mostrar.TabIndex = 21
+        Me.Btn_Mostrar.Text = "Mostrar"
+        Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Mostrar.UseVisualStyleBackColor = True
         '
         'Frm_GlobalPrenomina
         '
