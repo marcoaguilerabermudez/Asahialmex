@@ -507,5 +507,8 @@ namespace CsPresentacion
                 rep.Show();
             }
         }
+        private void Dgv_activos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
     }
 }

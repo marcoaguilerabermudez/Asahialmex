@@ -293,6 +293,12 @@ namespace CsPresentacion {
             
             private global::System.Data.DataColumn columnFECHA;
             
+            private global::System.Data.DataColumn columnINICIAp;
+            
+            private global::System.Data.DataColumn columnTERMINAp;
+            
+            private global::System.Data.DataColumn columnSEMANAP;
+            
             private global::System.Data.DataColumn columnSEMANA;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -386,6 +392,30 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn INICIApColumn {
+                get {
+                    return this.columnINICIAp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TERMINApColumn {
+                get {
+                    return this.columnTERMINAp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SEMANAPColumn {
+                get {
+                    return this.columnSEMANAP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn SEMANAColumn {
                 get {
                     return this.columnSEMANA;
@@ -429,7 +459,7 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Reportes_Prenomina_FMRow AddSP_Reportes_Prenomina_FMRow(int CLAVE, string NOMBRE, string DEPARTAMENTO, string TIPO, string PUESTO, int HORA, System.DateTime FECHA, int SEMANA) {
+            public SP_Reportes_Prenomina_FMRow AddSP_Reportes_Prenomina_FMRow(int CLAVE, string NOMBRE, string DEPARTAMENTO, string TIPO, string PUESTO, int HORA, System.DateTime FECHA, System.DateTime INICIAp, System.DateTime TERMINAp, int SEMANAP, int SEMANA) {
                 SP_Reportes_Prenomina_FMRow rowSP_Reportes_Prenomina_FMRow = ((SP_Reportes_Prenomina_FMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CLAVE,
@@ -439,6 +469,9 @@ namespace CsPresentacion {
                         PUESTO,
                         HORA,
                         FECHA,
+                        INICIAp,
+                        TERMINAp,
+                        SEMANAP,
                         SEMANA};
                 rowSP_Reportes_Prenomina_FMRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Reportes_Prenomina_FMRow);
@@ -469,6 +502,9 @@ namespace CsPresentacion {
                 this.columnPUESTO = base.Columns["PUESTO"];
                 this.columnHORA = base.Columns["HORA"];
                 this.columnFECHA = base.Columns["FECHA"];
+                this.columnINICIAp = base.Columns["INICIAp"];
+                this.columnTERMINAp = base.Columns["TERMINAp"];
+                this.columnSEMANAP = base.Columns["SEMANAP"];
                 this.columnSEMANA = base.Columns["SEMANA"];
             }
             
@@ -489,6 +525,12 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnHORA);
                 this.columnFECHA = new global::System.Data.DataColumn("FECHA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFECHA);
+                this.columnINICIAp = new global::System.Data.DataColumn("INICIAp", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINICIAp);
+                this.columnTERMINAp = new global::System.Data.DataColumn("TERMINAp", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTERMINAp);
+                this.columnSEMANAP = new global::System.Data.DataColumn("SEMANAP", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSEMANAP);
                 this.columnSEMANA = new global::System.Data.DataColumn("SEMANA", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSEMANA);
                 this.columnCLAVE.ReadOnly = true;
@@ -499,6 +541,9 @@ namespace CsPresentacion {
                 this.columnTIPO.MaxLength = 50;
                 this.columnPUESTO.MaxLength = 30;
                 this.columnFECHA.AllowDBNull = false;
+                this.columnINICIAp.ReadOnly = true;
+                this.columnTERMINAp.ReadOnly = true;
+                this.columnSEMANAP.ReadOnly = true;
                 this.columnSEMANA.ReadOnly = true;
             }
             
@@ -747,6 +792,57 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime INICIAp {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Reportes_Prenomina_FM.INICIApColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'INICIAp\' de la tabla \'SP_Reportes_Prenomina_FM\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Reportes_Prenomina_FM.INICIApColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime TERMINAp {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Reportes_Prenomina_FM.TERMINApColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TERMINAp\' de la tabla \'SP_Reportes_Prenomina_FM\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Reportes_Prenomina_FM.TERMINApColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int SEMANAP {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_Reportes_Prenomina_FM.SEMANAPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SEMANAP\' de la tabla \'SP_Reportes_Prenomina_FM\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Reportes_Prenomina_FM.SEMANAPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int SEMANA {
                 get {
                     try {
@@ -820,6 +916,42 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetHORANull() {
                 this[this.tableSP_Reportes_Prenomina_FM.HORAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsINICIApNull() {
+                return this.IsNull(this.tableSP_Reportes_Prenomina_FM.INICIApColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetINICIApNull() {
+                this[this.tableSP_Reportes_Prenomina_FM.INICIApColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTERMINApNull() {
+                return this.IsNull(this.tableSP_Reportes_Prenomina_FM.TERMINApColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTERMINApNull() {
+                this[this.tableSP_Reportes_Prenomina_FM.TERMINApColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSEMANAPNull() {
+                return this.IsNull(this.tableSP_Reportes_Prenomina_FM.SEMANAPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSEMANAPNull() {
+                this[this.tableSP_Reportes_Prenomina_FM.SEMANAPColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1001,6 +1133,9 @@ namespace CsPresentacion.DS_PrenominaTableAdapters {
             tableMapping.ColumnMappings.Add("PUESTO", "PUESTO");
             tableMapping.ColumnMappings.Add("HORA", "HORA");
             tableMapping.ColumnMappings.Add("FECHA", "FECHA");
+            tableMapping.ColumnMappings.Add("INICIAp", "INICIAp");
+            tableMapping.ColumnMappings.Add("TERMINAp", "TERMINAp");
+            tableMapping.ColumnMappings.Add("SEMANAP", "SEMANAP");
             tableMapping.ColumnMappings.Add("SEMANA", "SEMANA");
             this._adapter.TableMappings.Add(tableMapping);
         }

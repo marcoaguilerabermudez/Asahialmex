@@ -35,6 +35,9 @@
               <Mapping SourceColumn="PUESTO" DataSetColumn="PUESTO" />
               <Mapping SourceColumn="HORA" DataSetColumn="HORA" />
               <Mapping SourceColumn="FECHA" DataSetColumn="FECHA" />
+              <Mapping SourceColumn="INICIAp" DataSetColumn="INICIAp" />
+              <Mapping SourceColumn="TERMINAp" DataSetColumn="TERMINAp" />
+              <Mapping SourceColumn="SEMANAP" DataSetColumn="SEMANAP" />
               <Mapping SourceColumn="SEMANA" DataSetColumn="SEMANA" />
             </Mappings>
             <Sources />
@@ -81,6 +84,9 @@
               </xs:element>
               <xs:element name="HORA" msprop:Generator_ColumnVarNameInTable="columnHORA" msprop:Generator_ColumnPropNameInRow="HORA" msprop:Generator_ColumnPropNameInTable="HORAColumn" msprop:Generator_UserColumnName="HORA" type="xs:int" minOccurs="0" />
               <xs:element name="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" msprop:Generator_UserColumnName="FECHA" type="xs:dateTime" />
+              <xs:element name="INICIAp" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINICIAp" msprop:Generator_ColumnPropNameInRow="INICIAp" msprop:Generator_ColumnPropNameInTable="INICIApColumn" msprop:Generator_UserColumnName="INICIAp" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TERMINAp" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTERMINAp" msprop:Generator_ColumnPropNameInRow="TERMINAp" msprop:Generator_ColumnPropNameInTable="TERMINApColumn" msprop:Generator_UserColumnName="TERMINAp" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SEMANAP" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSEMANAP" msprop:Generator_ColumnPropNameInRow="SEMANAP" msprop:Generator_ColumnPropNameInTable="SEMANAPColumn" msprop:Generator_UserColumnName="SEMANAP" type="xs:int" minOccurs="0" />
               <xs:element name="SEMANA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSEMANA" msprop:Generator_ColumnPropNameInRow="SEMANA" msprop:Generator_ColumnPropNameInTable="SEMANAColumn" msprop:Generator_UserColumnName="SEMANA" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

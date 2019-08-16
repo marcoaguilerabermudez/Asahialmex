@@ -18,7 +18,6 @@ namespace CsPresentacion
             InitializeComponent();
             timer1.Enabled = true;
             var tt = new ToolTip();
-            tt.SetToolTip(btn_nuevo, "NUEVO");
             tt.SetToolTip(btn_reporte, "GENERA REPORTE");
         }
         //Variable para seleccionar tipo de reporte
@@ -32,6 +31,13 @@ namespace CsPresentacion
             dtm_inicial.Enabled = true;
             txt_clave.Enabled = true;
             txt_clave.Focus();
+            cmb_tipo.Visible = false;
+            lbl_tipo_aus.Visible = false;
+            if (lbl_var.Text == "4")
+            {
+                cmb_tipo.Visible = true;
+                lbl_tipo_aus.Visible = true;
+            }
         }
 
         private void Frm_Fecha_rep_prenomina_KeyPress(object sender, KeyPressEventArgs e)
@@ -63,7 +69,10 @@ namespace CsPresentacion
             lbl_tipo.Text = "0";
             timer1.Enabled = true;
             lbl_var.Visible = false;
-           lbl_tipo.Visible = false;
+            lbl_tipo.Visible = false;
+            cmb_tipo.Text = "";
+            lbl_descripcion.Text = "";
+           lbl_descripcion.Visible = false;
         }
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
@@ -100,7 +109,6 @@ namespace CsPresentacion
         }
         private void Dtm_inicial_ValueChanged(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(txt_clave.Text))
             {
                 timer1.Enabled = false;
@@ -128,9 +136,9 @@ namespace CsPresentacion
         {
         }
         private void Btn_reporte_Click(object sender, EventArgs e)
-        {   
-        //Ejecuta reportes individuales
-             if (lbl_var.Text == "1")//Reporte de descanso laborado
+        {
+            //Ejecuta reportes individuales
+            if (lbl_var.Text == "1")//Reporte de descanso laborado
             {
                 if (lbl_tipo.Text == "0")
                 {
@@ -149,6 +157,12 @@ namespace CsPresentacion
                     dl.Tipo = Convert.ToInt32(lbl_tipo.Text);
                     dl.Inicia = dtm_inicial.Value;
                     dl.Termina = dtm_final.Value;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     dl.Show();
                 }
                 else if (lbl_tipo.Text == "1")// Genera reporte de descanso laborado por Semana
@@ -160,6 +174,12 @@ namespace CsPresentacion
                     dls.Semana = Convert.ToInt32(txt_semana.Text);
                     dls.Inicia = dtm_inicial.Value;
                     dls.Termina = dtm_final.Value;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     dls.Show();
                 }
                 else if (lbl_tipo.Text == "3")// Genera reporte de descanso laborado por Semana y CLAVE
@@ -172,6 +192,12 @@ namespace CsPresentacion
                     dls.Inicia = dtm_inicial.Value;
                     dls.Termina = dtm_final.Value;
                     dls.Clave = Convert.ToInt32(txt_clave.Text);
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     dls.Show();
                 }
                 else if (lbl_tipo.Text == "4")// Genera reporte de descanso laborado por Fecha y CLAVE
@@ -182,6 +208,12 @@ namespace CsPresentacion
                     dl.Inicia = dtm_inicial.Value;
                     dl.Termina = dtm_final.Value;
                     dl.Clave = Convert.ToInt32(txt_clave.Text);
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     dl.Show();
                 }
             }
@@ -205,6 +237,12 @@ namespace CsPresentacion
                     Re.Tipo = Convert.ToInt32(lbl_tipo.Text);
                     Re.Inicia = dtm_inicial.Value;
                     Re.Termina = dtm_final.Value;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     Re.Show();
                 }
                 else if (lbl_tipo.Text == "1")//Genera reporte de retardos por Semana
@@ -216,6 +254,12 @@ namespace CsPresentacion
                     RS.Año = Convert.ToInt32(txt_año.Text);
                     RS.Inicia = dtm_inicial.Value;
                     RS.Termina = dtm_final.Value;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     RS.Show();
                 }
                 else if (lbl_tipo.Text == "3")//Genera reporte de retardos por Semana y CLAVE
@@ -228,6 +272,12 @@ namespace CsPresentacion
                     RS.Inicia = dtm_inicial.Value;
                     RS.Termina = dtm_final.Value;
                     RS.Clave = Convert.ToInt32(txt_clave.Text);
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     RS.Show();
                 }
                 else if (lbl_tipo.Text == "4")//Genera reporte de retardos por Fecha Y CLAVE
@@ -238,9 +288,16 @@ namespace CsPresentacion
                     Re.Inicia = dtm_inicial.Value;
                     Re.Termina = dtm_final.Value;
                     Re.Clave = Convert.ToInt32(txt_clave.Text);
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     Re.Show();
                 }
             }
+
             else if (lbl_var.Text == "3")//Permisos de salida anticipada
             {
                 if (lbl_tipo.Text == "0")
@@ -260,6 +317,12 @@ namespace CsPresentacion
                     sa.Tipo = Convert.ToInt32(lbl_tipo.Text);
                     sa.Inicia = dtm_inicial.Value;
                     sa.Termina = dtm_final.Value;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     sa.Show();
                 }
                 else if (lbl_tipo.Text == "1")//Genera reporte de salida anticipada por Semana
@@ -271,6 +334,12 @@ namespace CsPresentacion
                     sa.Año = Convert.ToInt32(txt_año.Text);
                     sa.Inicia = dtm_inicial.Value;
                     sa.Termina = dtm_final.Value;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     sa.Show();
                 }
                 else if (lbl_tipo.Text == "3")//Genera reporte de salida anticipada por Semana y CLAVE
@@ -283,6 +352,12 @@ namespace CsPresentacion
                     sa.Inicia = dtm_inicial.Value;
                     sa.Termina = dtm_final.Value;
                     sa.Clave = Convert.ToInt32(txt_clave.Text);
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     sa.Show();
                 }
                 else if (lbl_tipo.Text == "4")//Genera reporte de salida anticipada por Fecha  CLAVE
@@ -293,7 +368,102 @@ namespace CsPresentacion
                     sa.Inicia = dtm_inicial.Value;
                     sa.Termina = dtm_final.Value;
                     sa.Clave = Convert.ToInt32(txt_clave.Text);
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     sa.Show();
+                }
+            }
+
+            else if (lbl_var.Text == "4")//Reporte de Ausentismos
+            {
+                if (lbl_tipo.Text == "0")
+                {
+                    MessageBox.Show("Es necesario seleccionar una opción", "Aviso");
+                    txt_clave.Focus();
+                }
+                else if (lbl_tipo.Text == "3" && string.IsNullOrEmpty(txt_semana.Text))
+                {
+                    MessageBox.Show("Es necesario capturar número de semana o Fecha", "Aviso");
+                    txt_semana.Focus();
+                }
+                else  if (cmb_tipo.Text == "")
+              {
+                    MessageBox.Show("Es necesario seleccionar un tipo de Ausentismo", "Aviso");
+                    cmb_tipo.Focus();
+              }
+                else if (lbl_tipo.Text == "2")//Genera reporte de ausentismos por Fecha
+                {
+                    Ausentismos aus = new Ausentismos();
+                    aus.Var = Convert.ToInt32(lbl_var.Text);
+                    aus.Tipo = Convert.ToInt32(lbl_tipo.Text);
+                    aus.Inicia = dtm_inicial.Value;
+                    aus.Termina = dtm_final.Value;
+                    aus.Descripcion = lbl_descripcion.Text;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
+                    aus.Show();
+                }
+                else if (lbl_tipo.Text == "1")//Genera reporte de ausentismos por Semana
+                {
+                    Ausentismos aus = new Ausentismos();
+                    aus.Var = Convert.ToInt32(lbl_var.Text);
+                    aus.Tipo = Convert.ToInt32(lbl_tipo.Text);
+                    aus.Semana = Convert.ToInt32(txt_semana.Text);
+                    aus.Año = Convert.ToInt32(txt_año.Text);
+                    aus.Inicia = dtm_inicial.Value;
+                    aus.Termina = dtm_final.Value;
+                    aus.Descripcion = lbl_descripcion.Text;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
+                    aus.Show();
+                }
+                else if (lbl_tipo.Text == "3")//Genera reporte de ausentismos por Semana y CLAVE
+                {
+                    Ausentismos aus = new Ausentismos();
+                    aus.Var = Convert.ToInt32(lbl_var.Text);
+                    aus.Tipo = Convert.ToInt32(lbl_tipo.Text);
+                    aus.Semana = Convert.ToInt32(txt_semana.Text);
+                    aus.Año = Convert.ToInt32(txt_año.Text);
+                    aus.Inicia = dtm_inicial.Value;
+                    aus.Termina = dtm_final.Value;
+                    aus.Clave = Convert.ToInt32(txt_clave.Text);
+                    aus.Descripcion = lbl_descripcion.Text;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
+                    aus.Show();
+                }
+                else if (lbl_tipo.Text == "4")//Genera reporte de ausentismos por Fecha  CLAVE
+                {
+                    Ausentismos aus = new Ausentismos();
+                    aus.Var = Convert.ToInt32(lbl_var.Text);
+                    aus.Tipo = Convert.ToInt32(lbl_tipo.Text);
+                    aus.Inicia = dtm_inicial.Value;
+                    aus.Termina = dtm_final.Value;
+                    aus.Clave = Convert.ToInt32(txt_clave.Text);
+                    aus.Descripcion = lbl_descripcion.Text;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
+                    aus.Show();
                 }
             }
 
@@ -311,15 +481,18 @@ namespace CsPresentacion
                 }
                 else if (lbl_tipo.Text == "2")//Genera reporte incapacidades Fecha
                 {
-                    
-
-
                     Incapacidades inc = new Incapacidades();
                     inc.Var = Convert.ToInt32(lbl_var.Text);
                     inc.Tipo = Convert.ToInt32(lbl_tipo.Text);
                     inc.Inicia = dtm_inicial.Value;
                     inc.Termina = dtm_final.Value;
                     inc.Inicia2 = dtm_inicial.Value;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     inc.Show();
                 }
                 else if (lbl_tipo.Text == "1")//Genera reporte de incapacidades por Semana
@@ -331,6 +504,12 @@ namespace CsPresentacion
                     inc.Año = Convert.ToInt32(txt_año.Text);
                     inc.Inicia = dtm_inicial.Value;
                     inc.Termina = dtm_final.Value;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     inc.Show();
                 }
                 else if (lbl_tipo.Text == "3")//Genera reporte de incapacidades por Semana y CLAVE
@@ -343,6 +522,12 @@ namespace CsPresentacion
                     inc.Inicia = dtm_inicial.Value;
                     inc.Termina = dtm_final.Value;
                     inc.Clave = Convert.ToInt32(txt_clave.Text);
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     inc.Show();
                 }
                 else if (lbl_tipo.Text == "4")//Genera reporte de incapacidades por Fecha  CLAVE
@@ -353,10 +538,99 @@ namespace CsPresentacion
                     inc.Inicia = dtm_inicial.Value;
                     inc.Termina = dtm_final.Value;
                     inc.Clave = Convert.ToInt32(txt_clave.Text);
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
                     inc.Show();
                 }
             }
+
+            else if (lbl_var.Text == "6")//Reporte de Vacaciones
+            {
+                if (lbl_tipo.Text == "0")
+                {
+                    MessageBox.Show("Es necesario seleccionar una opción", "Aviso");
+                    txt_clave.Focus();
+                }
+                else if (lbl_tipo.Text == "3" && string.IsNullOrEmpty(txt_semana.Text))
+                {
+                    MessageBox.Show("Es necesario capturar número de semana o Fecha", "Aviso");
+                    txt_semana.Focus();
+                }
+                else if (lbl_tipo.Text == "2")//Genera reporte Vacaciones Fecha
+                {
+                    Frm_Vacaciones vac = new Frm_Vacaciones();
+                    vac.Var = Convert.ToInt32(lbl_var.Text);
+                    vac.Tipo = Convert.ToInt32(lbl_tipo.Text);
+                    vac.Inicia = dtm_inicial.Value;
+                    vac.Termina = dtm_final.Value;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
+                    vac.Show();
+                }
+                else if (lbl_tipo.Text == "1")//Genera reporte de Vacaciones por Semana
+                {
+                    Frm_Vacaciones vac = new Frm_Vacaciones();
+                    vac.Var = Convert.ToInt32(lbl_var.Text);
+                    vac.Tipo = Convert.ToInt32(lbl_tipo.Text);
+                    vac.Semana = Convert.ToInt32(txt_semana.Text);
+                    vac.Año = Convert.ToInt32(txt_año.Text);
+                    vac.Inicia = dtm_inicial.Value;
+                    vac.Termina = dtm_final.Value;
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
+                    vac.Show();
+                }
+                else if (lbl_tipo.Text == "3")//Genera reporte de Vacaciones por Semana y CLAVE
+                {
+                    Frm_Vacaciones vac = new Frm_Vacaciones();
+                    vac.Var = Convert.ToInt32(lbl_var.Text);
+                    vac.Tipo = Convert.ToInt32(lbl_tipo.Text);
+                    vac.Semana = Convert.ToInt32(txt_semana.Text);
+                    vac.Año = Convert.ToInt32(txt_año.Text);
+                    vac.Inicia = dtm_inicial.Value;
+                    vac.Termina = dtm_final.Value;
+                    vac.Clave = Convert.ToInt32(txt_clave.Text);
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
+                    vac.Show();
+                }
+                else if (lbl_tipo.Text == "4")//Genera reporte de Vacaciones por Fecha  CLAVE
+                {
+                    Frm_Vacaciones vac = new Frm_Vacaciones();
+                    vac.Var = Convert.ToInt32(lbl_var.Text);
+                    vac.Tipo = Convert.ToInt32(lbl_tipo.Text);
+                    vac.Inicia = dtm_inicial.Value;
+                    vac.Termina = dtm_final.Value;
+                    vac.Clave = Convert.ToInt32(txt_clave.Text);
+                    nuevo();
+                    txt_año.Enabled = true;
+                    txt_semana.Enabled = true;
+                    dtm_inicial.Enabled = true;
+                    txt_clave.Enabled = true;
+                    txt_clave.Focus();
+                    vac.Show();
+                }
+            }
         }
+
+
+
 
         private void Txt_año_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -397,6 +671,7 @@ namespace CsPresentacion
             }
         }
 
+
         private void Txt_clave_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsNumber(e.KeyChar))
@@ -410,6 +685,40 @@ namespace CsPresentacion
             else
             {
                 e.Handled = true;
+            }
+        }
+
+        private void Cmb_tipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           if (cmb_tipo.Text == "ABANDONO DE TRABAJO")  {  lbl_descripcion.Text = "A";
+            }
+            else if (cmb_tipo.Text == "PRESTACION POR MATRIMONIO")  { lbl_descripcion.Text = "B";
+            }
+            else if (cmb_tipo.Text == "CITA IMSS"){ lbl_descripcion.Text = "C";
+            }
+            else if (cmb_tipo.Text == "ENFERMEDAD") { lbl_descripcion.Text = "E";
+            }
+            else if (cmb_tipo.Text == "FALTA INJUSTIFICADA") { lbl_descripcion.Text = "F";
+            }
+            else if (cmb_tipo.Text == "PERMISO CON GOCE") {lbl_descripcion.Text = "G";
+            }
+            else if (cmb_tipo.Text == "ENFERMEDAD LEVE") { lbl_descripcion.Text = "L";
+            }
+            else if (cmb_tipo.Text == "ENFERMENDAD MODERADA") {lbl_descripcion.Text = "M";
+            }
+            else if (cmb_tipo.Text == "SUSPENSION") {lbl_descripcion.Text = "N";
+            }
+            else if (cmb_tipo.Text == "PERMISO SIN GOCE"){lbl_descripcion.Text = "P";
+            }
+            else if (cmb_tipo.Text == "FAMILIAR") {lbl_descripcion.Text = "R";
+            }
+            else if (cmb_tipo.Text == "ASUNTOS PERSONALES"){lbl_descripcion.Text = "S";
+            }
+            else if (cmb_tipo.Text == "TRANSPORTE"){lbl_descripcion.Text = "T";
+            }
+            else if (cmb_tipo.Text == "FALTA JUSTIFICADA"){lbl_descripcion.Text = "U";
+            }
+            else if (cmb_tipo.Text == "VIAJE") {lbl_descripcion.Text = "V";
             }
         }
     }
