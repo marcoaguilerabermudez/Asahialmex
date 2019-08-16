@@ -224,6 +224,7 @@ Public Class DEmpleado
                 emp.Viernes = Convert.ToDouble(dr("Viernes").ToString)
                 emp.Sabado = Convert.ToDouble(dr("Sabado").ToString)
                 emp.Domingo = Convert.ToDouble(dr("Domingo").ToString)
+                emp.DomingoHrsEx = Convert.ToDouble(dr("DomingoHrsEx").ToString)
                 emp.TotalDobles = Convert.ToDouble(dr("TDobles").ToString)
                 emp.TotalTriples = Convert.ToDouble(dr("TTriples").ToString)
                 emp.TotalDescLab = Convert.ToDouble(dr("TDescLaborado").ToString)

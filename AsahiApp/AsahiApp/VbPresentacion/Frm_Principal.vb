@@ -99,7 +99,7 @@ Public Class Frm_Principal
                 Case "FiniquitoToolStripMenuItem" : FiniquitoToolStripMenuItem.Enabled = True
                 Case "MejoraContinuaToolStripMenuItem" : MejoraContinuaToolStripMenuItem.Enabled = True
                 Case "ReporteMejorasToolStripMenuItem" : ReporteMejorasToolStripMenuItem.Enabled = True
-                Case "PlanTiempoExtraToolStripMenuItem" : PlanTiempoExtraToolStripMenuItem.Enabled = True
+                'Case "PlanTiempoExtraToolStripMenuItem" : PlanTiempoExtraToolStripMenuItem.Enabled = True
                 Case "ControlDeProducciónToolStripMenuItem" : ControlDeProducciónToolStripMenuItem.Enabled = True
                 Case "EvaluacionesToolStripMenuItem" : EvaluacionesToolStripMenuItem.Enabled = True
                 Case "MasterPlanToolStripMenuItem" : MasterPlanToolStripMenuItem.Enabled = True
@@ -186,7 +186,7 @@ Public Class Frm_Principal
     End Sub
     Private Sub BonoMensualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BonoMensualToolStripMenuItem.Click
         Dim bono As New Frm_BonoMensual()
-        bono.ShowDialog()
+        bono.Show()
     End Sub
     Private Sub TodosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'Ejecuta todos los reportes de pre nomina

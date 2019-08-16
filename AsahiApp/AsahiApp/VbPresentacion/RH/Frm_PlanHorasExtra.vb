@@ -56,9 +56,26 @@ Public Class Frm_PlanHorasExtra
         Dgv_HorasExtra.DataSource = Nothing
         Dgv_HorasExtra.Rows.Clear()
         Btn_Guardar.Enabled = False
-        Cmb_Departamento.SelectedValue = 0
+        'Cmb_Departamento.SelectedValue = 0
         FormatoLabelsSumas()
         BuscarDiasFestivo()
+        If Not Cmb_Departamento.Text = "" Then
+            Dim idDep As Integer ', semana As Integer, año As Integer
+            Dim fecha As Date
+            Dgv_HorasExtra.DataSource = Nothing
+            Dgv_HorasExtra.Rows.Clear()
+            idDep = Cmb_Departamento.SelectedValue
+            fecha = Format(DateTime.Now, "dd/MM/yyyy")
+            semana = Cmb_Semanas.Text
+            año = Lbl_año.Text
+            If Me.semana <= Cmb_Semanas.Text Then
+                Dgv_HorasExtra.Enabled = True
+            Else
+                Dgv_HorasExtra.Enabled = False
+            End If
+            RecuperarEmpleado(idDep, fecha, semana, año)
+            Btn_Guardar.Enabled = False
+        End If
     End Sub
     Private Sub Cmb_Departamento_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_Departamento.SelectionChangeCommitted
         Dim idDep As Integer, semana As Integer, año As Integer
@@ -77,12 +94,13 @@ Public Class Frm_PlanHorasExtra
         End If
         RecuperarEmpleado(idDep, fecha, semana, año)
         Btn_Guardar.Enabled = False
+        Btn_ObtenerReportes.Enabled = True
     End Sub
     Private Sub Dgv_HorasExtra_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_HorasExtra.CellEndEdit
         Dim fila As Integer, turno As Integer, totalFilas As Integer = Dgv_HorasExtra.Rows.Count, f As Integer
         Dim dobles As Double = 0, triples As Double = 0, total As Double, sueldoXHoraB As Double = 0, sueldoXHoraN As Double = 0, sn As Double = 0, sb As Double = 0,
             totalDia As Double = 0, d As Double = 0, t As Double = 0, thd As Double = 0, tht As Double = 0, b As Double = 0, n As Double = 0, descLaborado As Double,
-            tdt As Double, dt As Double
+            tdt As Double, dt As Double, domingo As String(), dld As Double, ted As Double = 0, totalDiaDom As Double = 0
         Dim label As New Label()
         Dim columna As String
         Dim Emp As New Empleado()
@@ -92,15 +110,24 @@ Public Class Frm_PlanHorasExtra
                 columna = "sabado" Or columna = "domingo" Then
 
             If columna = "domingo" Then 'columna = "sabado" Or
+                If Dgv_HorasExtra.Rows(fila).Cells(columna).Value = "," Then
+                    Dgv_HorasExtra.Rows(fila).Cells(columna).Value = "0,0"
+                End If
+                domingo = Dgv_HorasExtra.Rows(fila).Cells(columna).Value.Split(New Char() {","c})
+                dld = domingo(0)
+                If domingo.Count = 2 Then
+                    If domingo(1) <> "" Then ted = domingo(1)
+                End If
                 If Dgv_HorasExtra.Rows(fila).Cells("idTurno").Value >= 4 Then
-                    If Dgv_HorasExtra.Rows(fila).Cells(columna).Value >= 1 Then
-                        Dgv_HorasExtra.Rows(fila).Cells(columna).Value = 1
+                    If dld >= 1 Then 'Dgv_HorasExtra.Rows(fila).Cells(columna).Value
+                        Dgv_HorasExtra.Rows(fila).Cells(columna).Value = 1 & "," & ted
                     End If
                 ElseIf Dgv_HorasExtra.Rows(fila).Cells("idTurno").Value < 4 Then 'And columna = "domingo"
-                    If Dgv_HorasExtra.Rows(fila).Cells(columna).Value >= 1 Then
-                        Dgv_HorasExtra.Rows(fila).Cells(columna).Value = 1
+                    If dld >= 1 Then
+                        Dgv_HorasExtra.Rows(fila).Cells(columna).Value = 1 & "," & ted
                     End If
                 End If
+                'If domingo.Count <> 2 Then Dgv_HorasExtra.Rows(fila).Cells(columna).Value = 1 & "," & ted
             End If
 
             With Dgv_HorasExtra.Rows(fila)
@@ -111,13 +138,28 @@ Public Class Frm_PlanHorasExtra
                     Case "jueves" : If Lbl_Dia4.BackColor = Color.DarkViolet And .Cells(columna).Value >= 1 Then .Cells(columna).Value = 1
                     Case "viernes" : If Lbl_Dia5.BackColor = Color.DarkViolet And .Cells(columna).Value >= 1 Then .Cells(columna).Value = 1
                     Case "sabado" : If Lbl_Dia6.BackColor = Color.DarkViolet And .Cells(columna).Value >= 1 Then .Cells(columna).Value = 1
-                    Case "domingo" : If Lbl_Dia7.BackColor = Color.DarkViolet And .Cells(columna).Value >= 1 Then .Cells(columna).Value = 1
+                    Case "domingo" : If Lbl_Dia7.BackColor = Color.DarkViolet And .Cells(columna).Value <> 0 Then .Cells(columna).Value = 1
                 End Select
             End With
 
             For f = 0 To totalFilas - 1
                 With Dgv_HorasExtra.Rows(f)
-                    If Convert.ToDouble(.Cells(columna).Value) > 0.5 Then totalDia = (Convert.ToDouble(.Cells(columna).Value) + totalDia)
+                    If Not columna = "domingo" Then
+                        If Convert.ToDouble(.Cells(columna).Value) > 0.5 Then totalDia = (Convert.ToDouble(.Cells(columna).Value) + totalDia)
+                    Else
+                        dld = 0
+                        ted = 0
+                        If .Cells(columna).Value > 0 Then
+                            domingo = .Cells(columna).Value.Split(New Char() {","c})
+                            dld = domingo(0)
+                            If domingo.Count = 2 Then
+                                If domingo(1) <> "" Then ted = domingo(1)
+                            End If
+                        End If
+
+                        totalDia = dld + totalDia
+                        totalDiaDom = ted + totalDiaDom
+                    End If
                 End With
             Next
 
@@ -128,10 +170,19 @@ Public Class Frm_PlanHorasExtra
                 Case "jueves" : Lbl_SumJueves.Text = Convert.ToDouble(totalDia)
                 Case "viernes" : Lbl_SumViernes.Text = Convert.ToDouble(totalDia)
                 Case "sabado" : Lbl_SumSabado.Text = Convert.ToDouble(totalDia)
-                Case "domingo" : Lbl_SumDomingo.Text = Convert.ToDouble(totalDia)
+                Case "domingo" : Lbl_SumDomingo.Text = totalDia & "," & totalDiaDom
             End Select
 
             With Dgv_HorasExtra.Rows(fila)
+                dld = 0
+                ted = 0
+                If .Cells("domingo").Value > 0 Then
+                    domingo = .Cells(columna).Value.Split(New Char() {","c})
+                    dld = domingo(0)
+                    If domingo.Count = 2 Then
+                        If domingo(1) <> "" Then ted = domingo(1)
+                    End If
+                End If
                 If .Cells("idTurno").Value >= 4 Then
                     If Convert.ToDouble(.Cells("lunes").Value) > 0.5 And Lbl_Dia1.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("lunes").Value) + total)
                     If Convert.ToDouble(.Cells("martes").Value) > 0.5 And Lbl_Dia2.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("martes").Value) + total)
@@ -139,7 +190,8 @@ Public Class Frm_PlanHorasExtra
                     If Convert.ToDouble(.Cells("jueves").Value) > 0.5 And Lbl_Dia4.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("jueves").Value) + total)
                     If Convert.ToDouble(.Cells("viernes").Value) > 0.5 And Lbl_Dia5.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("viernes").Value) + total)
                     If Convert.ToDouble(.Cells("sabado").Value) > 0.5 And Lbl_Dia6.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("sabado").Value) + total)
-                    If Convert.ToDouble(.Cells("domingo").Value) > 0.5 And Lbl_Dia7.BackColor <> Color.DarkViolet Then descLaborado = (Convert.ToDouble(.Cells("domingo").Value) + descLaborado)
+                    If Convert.ToDouble(ted) > 0.5 And Lbl_Dia7.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(ted) + total)
+                    If Convert.ToDouble(dld) > 0.5 And Lbl_Dia7.BackColor <> Color.DarkViolet Then descLaborado = (Convert.ToDouble(dld) + descLaborado)
                 Else
                     If Convert.ToDouble(.Cells("lunes").Value) > 0.5 And Lbl_Dia1.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("lunes").Value) + total)
                     If Convert.ToDouble(.Cells("martes").Value) > 0.5 And Lbl_Dia2.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("martes").Value) + total)
@@ -147,7 +199,8 @@ Public Class Frm_PlanHorasExtra
                     If Convert.ToDouble(.Cells("jueves").Value) > 0.5 And Lbl_Dia4.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("jueves").Value) + total)
                     If Convert.ToDouble(.Cells("viernes").Value) > 0.5 And Lbl_Dia5.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("viernes").Value) + total)
                     If Convert.ToDouble(.Cells("sabado").Value) > 0.5 And Lbl_Dia6.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(.Cells("sabado").Value) + total)
-                    If Convert.ToDouble(.Cells("domingo").Value) > 0.5 And Lbl_Dia7.BackColor <> Color.DarkViolet Then descLaborado = (Convert.ToDouble(.Cells("domingo").Value) + descLaborado)
+                    If Convert.ToDouble(ted) > 0.5 And Lbl_Dia7.BackColor <> Color.DarkViolet Then total = (Convert.ToDouble(ted) + total)
+                    If Convert.ToDouble(dld) > 0.5 And Lbl_Dia7.BackColor <> Color.DarkViolet Then descLaborado = (Convert.ToDouble(dld) + descLaborado)
                 End If
 
                 If .Cells("idTurno").Value >= 4 Then
@@ -288,7 +341,8 @@ Public Class Frm_PlanHorasExtra
             If (Char.IsNumber(caracter)) Or
             (caracter = ChrW(Keys.Back)) Or
             (caracter = ".") And
-            (txt.Text.Contains(".") = False) Then
+            (txt.Text.Contains(".") = False) Or
+            (columna = 12 And (caracter = ",") And (txt.Text.Contains(",") = False)) Then
 
                 e.Handled = False
             Else
@@ -306,6 +360,11 @@ Public Class Frm_PlanHorasExtra
         lstHrxEx = RellenaObjetoLHrsExtra()
         NHrsEx.InsertarPlanHrsExtra(cadConex, lstHrxEx)
         Btn_Guardar.Enabled = False
+    End Sub
+    Private Sub Btn_ObtenerReportes_Click(sender As Object, e As EventArgs) Handles Btn_ObtenerReportes.Click
+        Dim idDpto As Integer = Cmb_Departamento.SelectedValue, mes As Integer = obtenerMes(), año As Integer = Lbl_año.Text, semana As Integer = Cmb_Semanas.Text
+        Dim reps As New Frm_OpcionesReportes(idDpto, mes, año, semana, 1)
+        reps.Show()
     End Sub
     Private Sub Rdb_Esp_CheckedChanged(sender As Object, e As EventArgs) Handles Rdb_Esp.CheckedChanged
         RellenaCmbDepartamento()
@@ -333,7 +392,8 @@ Public Class Frm_PlanHorasExtra
 #Region "Rellenar Fomulario"
     Private Sub RellenaDgvEmpleados(ByVal lstEmp As LEmpleado)
         Dim fila As Integer = 0
-        Dim dobles As Double = 0, triples As Double = 0, total As Double, descLaborado As Double = 0
+        Dim dobles As Double = 0, triples As Double = 0, total As Double, descLaborado As Double = 0, tted As Double, tdld As Double
+        Dim domingo As String()
         Dgv_HorasExtra.DataSource = Nothing
         Dgv_HorasExtra.Rows.Clear()
         For Each item In lstEmp
@@ -393,11 +453,22 @@ Public Class Frm_PlanHorasExtra
                 '    .Cells("sabado").Value = 0
                 'End If
                 If item.Domingo > 0 Then
-                    .Cells("domingo").Value = 1
+                    .Cells("domingo").Value = 1 & "," & item.DomingoHrsEx
                 Else
-                    .Cells("domingo").Value = 0
+                    .Cells("domingo").Value = 0 & "," & item.DomingoHrsEx
                 End If
-                Lbl_SumDomingo.Text = Lbl_SumDomingo.Text + .Cells("domingo").Value
+                Dim dld = 0
+                Dim ted = 0
+                If .Cells("domingo").Value > 0 Then
+                    domingo = .Cells("domingo").Value.Split(New Char() {","c})
+                    dld = domingo(0)
+                    If domingo.Count = 2 Then
+                        If domingo(1) <> "" Then ted = domingo(1)
+                    End If
+                End If
+                tted = tted + ted
+                tdld = tdld + dld
+                Lbl_SumDomingo.Text = (tdld) & "," & (tted)
 
                 .Cells("totalDobles").Value = Format(item.TotalDobles, "$0.00")
                 Lbl_TotalDoblesSum.Text = Format((Lbl_TotalDoblesSum.Text + item.TotalDobles), "$0.00")
@@ -413,35 +484,55 @@ Public Class Frm_PlanHorasExtra
                 If item.IdTurno >= 4 Then
                     total = 0
                     descLaborado = 0
+                    dld = 0
+                    ted = 0
+                    If .Cells("domingo").Value > 0 Then
+                        domingo = .Cells("domingo").Value.Split(New Char() {","c})
+                        dld = domingo(0)
+                        If domingo.Count = 2 Then
+                            If domingo(1) <> "" Then ted = domingo(1)
+                        End If
+                    End If
                     If .Cells("lunes").Style.BackColor <> Color.DarkViolet Then total = total + item.Lunes
                     If .Cells("martes").Style.BackColor <> Color.DarkViolet Then total = total + item.Martes
                     If .Cells("miercoles").Style.BackColor <> Color.DarkViolet Then total = total + item.Miercoles
                     If .Cells("jueves").Style.BackColor <> Color.DarkViolet Then total = total + item.Jueves
                     If .Cells("viernes").Style.BackColor <> Color.DarkViolet Then total = total + item.Viernes
                     If .Cells("sabado").Style.BackColor <> Color.DarkViolet Then total = total + item.Sabado
+                    total = total + ted
                     If .Cells("lunes").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Lunes
                     If .Cells("martes").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Martes
                     If .Cells("miercoles").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Miercoles
                     If .Cells("jueves").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Jueves
                     If .Cells("viernes").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Viernes
                     If .Cells("sabado").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Sabado
-                    descLaborado = descLaborado + (.Cells("domingo").Value)
+                    descLaborado = descLaborado + dld
                 Else
                     total = 0
                     descLaborado = 0
+                    dld = 0
+                    ted = 0
+                    If .Cells("domingo").Value > 0 Then
+                        domingo = .Cells("domingo").Value.Split(New Char() {","c})
+                        dld = domingo(0)
+                        If domingo.Count = 2 Then
+                            If domingo(1) <> "" Then ted = domingo(1)
+                        End If
+                    End If
                     If .Cells("lunes").Style.BackColor <> Color.DarkViolet Then total = total + item.Lunes
                     If .Cells("martes").Style.BackColor <> Color.DarkViolet Then total = total + item.Martes
                     If .Cells("miercoles").Style.BackColor <> Color.DarkViolet Then total = total + item.Miercoles
                     If .Cells("jueves").Style.BackColor <> Color.DarkViolet Then total = total + item.Jueves
                     If .Cells("viernes").Style.BackColor <> Color.DarkViolet Then total = total + item.Viernes
                     If .Cells("sabado").Style.BackColor <> Color.DarkViolet Then total = total + item.Sabado
+                    total = total + ted
                     If .Cells("lunes").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Lunes
                     If .Cells("martes").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Martes
                     If .Cells("miercoles").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Miercoles
                     If .Cells("jueves").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Jueves
                     If .Cells("viernes").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Viernes
                     If .Cells("sabado").Style.BackColor = Color.DarkViolet Then descLaborado = descLaborado + item.Sabado
-                    descLaborado = descLaborado + .Cells("domingo").Value
+                    descLaborado = descLaborado + dld
                 End If
                 If total <= 9 Then
                     dobles = total
@@ -516,9 +607,19 @@ Public Class Frm_PlanHorasExtra
     Private Function RellenaObjetoLHrsExtra() As LHorasExtra
         Dim lstHrsEx As New LHorasExtra()
         Dim fila As Integer, totalFilas As Integer = Dgv_HorasExtra.Rows.Count()
+        Dim domingo As String()
         For fila = 0 To totalFilas - 1
             With Dgv_HorasExtra.Rows(fila)
                 If .Cells("totalNeto").Value > 0 Then
+                    Dim dld = 0
+                    Dim ted = 0
+                    If .Cells("domingo").Value > 0 Then
+                        domingo = Convert.ToString(.Cells(columna).Value).Split(New Char() {","c})
+                        dld = domingo(0)
+                        If domingo.Count = 2 Then
+                            If domingo(1) <> "" Then ted = domingo(1)
+                        End If
+                    End If
                     Dim objHE As New HorasExtra()
                     objHE.IdEmpleado = .Cells("Clave").Value
                     objHE.Lunes = .Cells("lunes").Value
@@ -527,7 +628,8 @@ Public Class Frm_PlanHorasExtra
                     objHE.Jueves = .Cells("jueves").Value
                     objHE.Viernes = .Cells("viernes").Value
                     objHE.Sabado = .Cells("sabado").Value
-                    objHE.Domingo = .Cells("domingo").Value
+                    objHE.Domingo = dld
+                    objHE.DomingoHrsEx = ted
                     objHE.Semana = Cmb_Semanas.Text
                     objHE.Año = Lbl_año.Text
                     objHE.TotalDobles = .Cells("totalDobles").Value
@@ -653,13 +755,13 @@ Public Class Frm_PlanHorasExtra
             Dgv_HorasExtra.Columns("clave").HeaderText = "Clave"
             Dgv_HorasExtra.Columns("nombre").HeaderText = "Nombre"
             Dgv_HorasExtra.Columns("departamento").HeaderText = "Departamento"
-            Dgv_HorasExtra.Columns("lunes").HeaderText = "Lunes"
-            Dgv_HorasExtra.Columns("martes").HeaderText = "Martes"
-            Dgv_HorasExtra.Columns("miercoles").HeaderText = "Miércoles"
-            Dgv_HorasExtra.Columns("jueves").HeaderText = "Jueves"
-            Dgv_HorasExtra.Columns("viernes").HeaderText = "Viernes"
-            Dgv_HorasExtra.Columns("sabado").HeaderText = "Sábado"
-            Dgv_HorasExtra.Columns("domingo").HeaderText = "Domingo"
+            Dgv_HorasExtra.Columns("lunes").HeaderText = "Lun"
+            Dgv_HorasExtra.Columns("martes").HeaderText = "Mar"
+            Dgv_HorasExtra.Columns("miercoles").HeaderText = "Mié"
+            Dgv_HorasExtra.Columns("jueves").HeaderText = "Jue"
+            Dgv_HorasExtra.Columns("viernes").HeaderText = "Vie"
+            Dgv_HorasExtra.Columns("sabado").HeaderText = "Sáb"
+            Dgv_HorasExtra.Columns("domingo").HeaderText = "Dom"
             Dgv_HorasExtra.Columns("dobles").HeaderText = "Horas Dobles"
             Dgv_HorasExtra.Columns("triples").HeaderText = "Horas Triples"
             Dgv_HorasExtra.Columns("descansoLaborado").HeaderText = "Descanso Laborado"
@@ -805,5 +907,23 @@ Public Class Frm_PlanHorasExtra
             End Select
         Next
     End Sub
+    Private Function obtenerMes() As Integer
+        Dim mes As Integer
+        Select Case Lbl_Mes.Text
+            Case "Enero" : mes = 1
+            Case "Febrero" : mes = 2
+            Case "Marzo" : mes = 3
+            Case "Abril" : mes = 4
+            Case "Mayo" : mes = 5
+            Case "Junio" : mes = 6
+            Case "Julio" : mes = 7
+            Case "Agosto" : mes = 8
+            Case "Septiembre" : mes = 9
+            Case "Octubre" : mes = 10
+            Case "Noviembre" : mes = 11
+            Case "Diciembre" : mes = 12
+        End Select
+        Return mes
+    End Function
 #End Region
 End Class

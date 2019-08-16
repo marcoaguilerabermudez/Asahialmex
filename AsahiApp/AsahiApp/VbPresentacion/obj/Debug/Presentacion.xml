@@ -87,6 +87,11 @@ Presentacion
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Presentacion.My.Resources.Resources.reportes">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Presentacion.My.Resources.Resources.save">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -100,6 +105,26 @@ Presentacion
 <member name="P:Presentacion.My.Resources.Resources.txt1">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_BonoMensual">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_BonoMensual.Dtb_BonoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_BonoMensual.Dtb_BonoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_BonoMensual.Dtb_BonoRowChangeEvent">
+<summary>
+Row event argument class
 </summary>
 </member>
 <member name="T:Presentacion.Dts_PlanHrsExt4">
@@ -230,6 +255,46 @@ Update Order Option
 <member name="T:Presentacion.Dts_PlanHrsExt5TableAdapters.TableAdapterManager.SelfReferenceComparer">
 <summary>
 Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PrenominaGlobal">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PrenominaGlobal.Dtb_PrenominaGlobalDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PrenominaGlobal.Dtb_PrenominaGlobalRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PrenominaGlobal.Dtb_PrenominaGlobalRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PrenominaLista">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PrenominaLista.Dtb_PrenominaListadoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PrenominaLista.Dtb_PrenominaListadoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Presentacion.Dts_PrenominaLista.Dtb_PrenominaListadoRowChangeEvent">
+<summary>
+Row event argument class
 </summary>
 </member>
 <member name="T:Presentacion.dtsEjemplo">
