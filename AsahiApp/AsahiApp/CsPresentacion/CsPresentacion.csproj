@@ -261,11 +261,11 @@
     <Compile Include="Formularios\RH\Frm_Finiquito.Designer.cs">
       <DependentUpon>Frm_Finiquito.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Bajas_Empleados.cs">
+    <Compile Include="Formularios\RH\Frm_Bajas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Bajas_Empleados.Designer.cs">
-      <DependentUpon>Frm_Bajas_Empleados.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Bajas.Designer.cs">
+      <DependentUpon>Frm_Bajas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Fecha_Baja.cs">
       <SubType>Form</SubType>
@@ -285,11 +285,11 @@
     <Compile Include="Formularios\RH\Frm_Mejora_Param.Designer.cs">
       <DependentUpon>Frm_Mejora_Param.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Altas_Empleados.cs">
+    <Compile Include="Formularios\RH\Frm_Altas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Altas_Empleados.Designer.cs">
-      <DependentUpon>Frm_Altas_Empleados.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Altas.Designer.cs">
+      <DependentUpon>Frm_Altas.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Reporte_Bajas.cs">
       <SubType>Form</SubType>
@@ -325,10 +325,10 @@
     <Compile Include="Reportes\RH\Retardos_Semana.Designer.cs">
       <DependentUpon>Retardos_Semana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Altas_Empleados.cs">
+    <Compile Include="Reportes\RH\Altas_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Altas_Empleados.Designer.cs">
+    <Compile Include="Reportes\RH\Altas_Empleados.Designer.cs">
       <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -422,8 +422,8 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Finiquito.resx">
       <DependentUpon>Frm_Finiquito.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_Bajas_Empleados.resx">
-      <DependentUpon>Frm_Bajas_Empleados.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Frm_Bajas.resx">
+      <DependentUpon>Frm_Bajas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Fecha_Baja.resx">
       <DependentUpon>Frm_Fecha_Baja.cs</DependentUpon>
@@ -434,8 +434,8 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Mejora_Param.resx">
       <DependentUpon>Frm_Mejora_Param.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_Altas_Empleados.resx">
-      <DependentUpon>Frm_Altas_Empleados.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Frm_Altas.resx">
+      <DependentUpon>Frm_Altas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Prenomina_Param.resx">
       <DependentUpon>Frm_Prenomina_Param.cs</DependentUpon>
@@ -454,7 +454,7 @@
     <EmbeddedResource Include="Reportes\RH\Reporte_Bajas.resx">
       <DependentUpon>Reporte_Bajas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Altas_Empleados.resx">
+    <EmbeddedResource Include="Reportes\RH\Altas_Empleados.resx">
       <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte_Incapacidades.rdlc" />
@@ -700,6 +700,8 @@
     <Content Include="LogoFinal.ico" />
     <None Include="Resources\iconfinder_arrow_circle_right_62150.png" />
     <None Include="Resources\arrow-rotate-clockwise-icon.png" />
+    <None Include="Resources\Validar.png" />
+    <None Include="Resources\eliminar.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

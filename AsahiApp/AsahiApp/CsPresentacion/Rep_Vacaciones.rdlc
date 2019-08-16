@@ -4,7 +4,7 @@
     <ReportItems>
       <Line Name="Line1">
         <Top>4.19333cm</Top>
-        <Left>0.47195cm</Left>
+        <Left>0.76299cm</Left>
         <Height>0cm</Height>
         <Width>4.96062cm</Width>
         <Style>
@@ -43,7 +43,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
         <Top>4.22861cm</Top>
-        <Left>0.47195cm</Left>
+        <Left>0.76299cm</Left>
         <Height>0.6cm</Height>
         <Width>4.96062cm</Width>
         <ZIndex>2</ZIndex>
@@ -93,28 +93,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.32583cm</Width>
+              <Width>1.28945cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.07944cm</Width>
+              <Width>5.56367cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.35985cm</Width>
+              <Width>3.97951cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.18792cm</Width>
+              <Width>3.15154cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.1825cm</Width>
+              <Width>1.88154cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.1825cm</Width>
+              <Width>1.89009cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.11512cm</Width>
+              <Width>1.07874cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.12417cm</Width>
+              <Width>1.43175cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -724,9 +724,9 @@
         </TablixRowHierarchy>
         <DataSetName>DS_Vacaciones</DataSetName>
         <Top>0.17639cm</Top>
-        <Left>0.47195cm</Left>
+        <Left>0.76299cm</Left>
         <Height>1.1cm</Height>
-        <Width>20.55734cm</Width>
+        <Width>20.26629cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -797,8 +797,8 @@
           <Source>Embedded</Source>
           <Value>Logo</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.30641cm</Top>
-          <Left>0.47195cm</Left>
+          <Top>0.26431cm</Top>
+          <Left>0.76299cm</Left>
           <Height>1.07625cm</Height>
           <Width>1.07667cm</Width>
           <Style>
@@ -825,8 +825,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>0.78266cm</Top>
-          <Left>1.54862cm</Left>
+          <Top>0.74056cm</Top>
+          <Left>1.83966cm</Left>
           <Height>0.6cm</Height>
           <Width>6.805cm</Width>
           <ZIndex>1</ZIndex>
