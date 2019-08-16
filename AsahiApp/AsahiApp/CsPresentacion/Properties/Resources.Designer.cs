@@ -103,6 +103,16 @@ namespace CsPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eliminar {
+            get {
+                object obj = ResourceManager.GetObject("eliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Excel {
             get {
                 object obj = ResourceManager.GetObject("Excel", resourceCulture);
@@ -226,6 +236,16 @@ namespace CsPresentacion.Properties {
         internal static System.Drawing.Bitmap Thumb_down_icon {
             get {
                 object obj = ResourceManager.GetObject("Thumb-down-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Validar {
+            get {
+                object obj = ResourceManager.GetObject("Validar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

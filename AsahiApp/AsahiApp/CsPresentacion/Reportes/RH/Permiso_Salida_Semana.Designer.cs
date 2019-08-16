@@ -55,7 +55,7 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.SP_Reportes_Prenomina_FMBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Permiso_Salida.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Permisos_Salida.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -74,8 +74,6 @@
             this.ClientSize = new System.Drawing.Size(836, 739);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Permiso_Salida_Semana";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Permiso de Salida por Semana";

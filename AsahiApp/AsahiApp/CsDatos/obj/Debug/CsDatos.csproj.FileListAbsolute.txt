@@ -6,6 +6,7 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDat
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\bin\Debug\CsClases.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\bin\Debug\CsClases.pdb
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.csproj.CopyComplete
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.csprojAssemblyReference.cache
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\bin\Debug\CsDatos.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\bin\Debug\CsDatos.pdb
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\bin\Debug\CsClases.dll
@@ -15,4 +16,3 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.csproj.CopyComplete
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.pdb
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.csprojAssemblyReference.cache

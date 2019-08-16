@@ -1,8 +1,14 @@
 ﻿using System;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace CsPresentacion
 {
@@ -14,16 +20,128 @@ namespace CsPresentacion
             timer1.Enabled = true;
             var tt = new ToolTip();
             tt.SetToolTip(btn_nuevo, "NUEVA BUSQUEDA");
-            tt.SetToolTip(btn_agregar, "AGREGAR A EXCEL");
-            tt.SetToolTip(btn_guardar, "GUARDAR CAMBIOS");
-            tt.SetToolTip(btn_exportar, "EXPORTAR");
-            tt.SetToolTip(btn_modificar_puesto, "MODIFICAR");
-            tt.SetToolTip(btn_modificar_sueldo, "MODIFICAR");
-
         }
 
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
-        
+        double Sueldo;
+        double Factor;
+        double Resultado;
+        double Val1;
+        double Val2;
+
+
+
+        private void Modifica_turno()// Método para modificar turno de empleado
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "2");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@RUTA", cmb_ruta.Text);  
+                cmd.Parameters.AddWithValue("@TURNO", cmb_turno.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                con.Close();
+                MessageBox.Show("Turno modificado correctamente", "Aviso");
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void Modifica_depto()// Método para modificar departamento de empleado
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "1");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@CATALOGO", lbl_id_dep.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_dep.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                con.Close(); 
+                MessageBox.Show("Se modificó correctamente", "Aviso");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe ser una fecha diferente", "Aviso");
+            }
+        }
+
+        private void mostrar_dgv_turno()// Método para llenar DatagridView de turno
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[SP_Cambio_turno_fm]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "1");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@RUTA", cmb_ruta.Text);
+                cmd.Parameters.AddWithValue("@TURNO", cmb_turno.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgv_turno.DataSource = dt;
+                con.Close();
+                Diseño_dgv_turno(dgv_turno);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void Diseño_dgv_turno(DataGridView dgv)
+        {
+            dgv.Columns[0].Width = 55;//No. Empleado
+            dgv.Columns[1].Width = 210;//Nombre empleado
+            dgv.Columns[2].Width = 120;//Departamento
+            dgv.Columns[3].Width = 100;//turno
+            dgv.Columns[4].Width = 120;//Ruta
+            dgv.Columns[5].Width = 100;//cambio turno
+
+        }
+
+        private void mostrar_dgv_departamento()// Método para llenar DatagridView de departamento
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "2");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@CATALOGO", lbl_id_dep.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_dep.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgv_depto.DataSource = dt;
+                con.Close();
+                Diseño_dgv_puesto(dgv_depto);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show( ex.ToString());
+            }      
+        }
+        private void Diseño_dgv_puesto(DataGridView dgv)
+        {
+            dgv.Columns[0].Width = 60;//No. Empleado
+            dgv.Columns[1].Width = 250;//Nombre empleado
+            dgv.Columns[2].Width = 150;//Departamento
+            dgv.Columns[3].Width = 90;//Fecha_Mod
+            dgv.Columns[4].Width = 140;//Fecha_cap
+        }
+
         private void cargar_informacion()
         {
             DataTable dt = new DataTable();
@@ -31,146 +149,122 @@ namespace CsPresentacion
             strSql = "[dbo].[FM_INFORMACION_EMPLEADO]";
             SqlDataAdapter da = new SqlDataAdapter(strSql, con);
             con.Open();
-
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@Emp", SqlDbType.VarChar, 100).Value = txt_clave.Text;
             da.Fill(dt);
 
             if (dt.Rows.Count > 0)
             {
-                txt_nombre.Text = dt.Rows[0]["NOMBRE_EMPLEADO"].ToString();
+                txt_nombre.Text = dt.Rows[0]["NOMBRE"].ToString();
+                txt_paterno.Text = dt.Rows[0]["PATERNO"].ToString();
+                txt_materno.Text = dt.Rows[0]["MATERNO"].ToString();
+                txt_rfc.Text = dt.Rows[0]["RFC"].ToString();
+                txt_curp.Text = dt.Rows[0]["CURP"].ToString();
+                txt_vigencia.Text = dt.Rows[0]["VIGENCIA"].ToString();
+                txt_nacionalidad.Text = dt.Rows[0]["NACIONALIDAD"].ToString();
+                txt_telefono.Text = dt.Rows[0]["TELEFONO"].ToString();
+                cmb_departamento.Text = dt.Rows[0]["DEPARTAMENTO"].ToString();
+                lbl_Comprueba_depto.Text = dt.Rows[0]["DEPARTAMENTO"].ToString();
+                cmb_puesto.Text = dt.Rows[0]["PUESTO"].ToString();
                 txt_calle.Text = dt.Rows[0]["CALLE"].ToString();
                 txt_numero.Text = dt.Rows[0]["NUMERO"].ToString();
                 txt_colonia.Text = dt.Rows[0]["COLONIA"].ToString();
+                txt_interior.Text = dt.Rows[0]["INTERIOR"].ToString();
                 txt_cp.Text = dt.Rows[0]["CP"].ToString();
-                txt_municipio.Text = dt.Rows[0]["MUNICIPIO"].ToString(); 
+                txt_municipio.Text = dt.Rows[0]["MUNICIPIO"].ToString();
                 cmb_estado.Text = dt.Rows[0]["ESTADO"].ToString();
-                txt_telefono.Text = dt.Rows[0]["TELEFONO"].ToString();
-                txt_departamento.Text = dt.Rows[0]["DEPARTAMENTO"].ToString();
-                txt_puesto.Text = dt.Rows[0]["PUESTO"].ToString();
-                txt_alta.Text = dt.Rows[0]["ALTA"].ToString();
-                txt_baja.Text = dt.Rows[0]["BAJA"].ToString();
-                txt_reingreso.Text = dt.Rows[0]["REINGRESO"].ToString();
-                txt_baja_2.Text = dt.Rows[0]["BAJA_2"].ToString();
-                txt_reingreso_2.Text = dt.Rows[0]["REINGRESO_2"].ToString();
-                txt_baja_3.Text = dt.Rows[0]["BAJA_3"].ToString();
+                txt_sector.Text = dt.Rows[0]["SECTOR"].ToString();
                 cmb_Civil.Text = dt.Rows[0]["E_CIVIL"].ToString();
                 cmb_genero.Text = dt.Rows[0]["GEN"].ToString();
-                txt_vigencia.Text = dt.Rows[0]["VIGENCIA"].ToString();
-                txt_rfc.Text = dt.Rows[0]["RFC"].ToString();
-                txt_afiliacion.Text = dt.Rows[0]["AFILIACION"].ToString();
-                txt_curp.Text = dt.Rows[0]["CURP"].ToString();
-               dtm_nacimiento.Text = dt.Rows[0]["NACIMIENTO"].ToString();
-                txt_sueldo.Text = dt.Rows[0]["SUELDO"].ToString();
-                txt_motivo.Text = dt.Rows[0]["MOTIVO"].ToString();
-                txt_dias.Text = dt.Rows[0]["DIAS"].ToString();
-                txt_meses.Text = dt.Rows[0]["MESES"].ToString();
-                txt_años.Text = dt.Rows[0]["AÑOS"].ToString();
-                btn_guardar.Enabled = true;
-                txt_clave.Enabled = false;
+                dtm_nacimiento.Text = dt.Rows[0]["NACIMIENTO"].ToString();
+                txt_nss.Text = dt.Rows[0]["AFILIACION"].ToString();
+                txt_contacto.Text = dt.Rows[0]["CONTACTO"].ToString();
+                cmb_parentesco.Text = dt.Rows[0]["PARENTESCO"].ToString();
+                txt_tel_contacto.Text = dt.Rows[0]["TEl_CONTACTO"].ToString();
+                txt_lugar_nac.Text = dt.Rows[0]["LUGAR_NAC"].ToString();
+                cmb_escolaridad.Text = dt.Rows[0]["ESCOLARIDAD"].ToString();
+                txt_año_graduacion.Text = dt.Rows[0]["GRADUACION"].ToString();
+                txt_email.Text = dt.Rows[0]["EMAIL"].ToString();
+                cmb_estado_nacimiento.Text = dt.Rows[0]["ESTADO_NACIMIENTO"].ToString();
+                txt_hijos.Text = dt.Rows[0]["HIJOS"].ToString();
+                txt_infonavit.Text = dt.Rows[0]["INFONAVIT"].ToString();
+                txt_SDO1.Text = dt.Rows[0]["SUELDO"].ToString();
+                txt_compara2.Text = dt.Rows[0]["SUELDO"].ToString();
+                txt_compara1.Text = dt.Rows[0]["SUELDO"].ToString();
+                txt_SDO2.Text = dt.Rows[0]["SD2"].ToString();
+                txt_SDO3.Text = dt.Rows[0]["SD3"].ToString();
+                txt_SDO4.Text = dt.Rows[0]["SD4"].ToString();
+                txt_SDO5.Text = dt.Rows[0]["SD5"].ToString();
+                cmb_ruta.Text = dt.Rows[0]["RUTA"].ToString();
+                cmb_turno.Text = dt.Rows[0]["TURNO"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("El empleado no existe, favor de verificar" , "Aviso".ToString());
+                txt_clave.Focus();
             }
             con.Close();
         }
-        private void mostrar_dgv()// Método para llenar DatagridView
+        public void cargar_puesto(ComboBox inte)//Cargar puesto CMB
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT *  FROM [asahi16].[dbo].[Consulta_informacion_empleado] where FECHA = @FECHA", con);
-                // cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@FECHA", l_fecha.Text);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                SqlCommand cmd = new SqlCommand("select distinct DESCRIPCION from [asahi16].[Supervisor_giro].[Puesto]  order by DESCRIPCION", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    inte.Items.Add(dr["DESCRIPCION"].ToString());
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception Error)
+            {
+                MessageBox.Show("No se llenó información de campo departamento" + Error.ToString());
+            }
+        }
+        public void cargar_departemento(ComboBox inte)//Cargar departamento en cmb
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT RTRIM(DESCRIPCION)as 'DEPARTAMENTO' FROM  [asahi16].[Supervisor_giro].[DEPTO] WHERE CENTRO_COSTO <>16", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    inte.Items.Add(dr["DEPARTAMENTO"].ToString());
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception Error)
+            {
+                MessageBox.Show("No se llenó información de campo departamento" + Error.ToString());
+            }
+        }
+        private void selecciona_sueldo()
+        {
+            try
+            {
+                con.Open();
                 DataTable dt = new DataTable();
-
+                String strSql;
+                strSql = "SELECT SUELDO FROM [asahi16].[Supervisor_giro].[Puesto]  WHERE DESCRIPCION = @Puesto";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+                //da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@Puesto", SqlDbType.VarChar).Value = cmb_puesto.Text;
+                da.Fill(dt);
                 con.Close();
-                adapter.Fill(dt);
-                dgv_empleado.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-        private void insertar()
-        {
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [asahi16].[dbo].[Consulta_informacion_empleado](CLAVE, NOMBRE, DIRECCION, MUNICIPIO, ESTADO, TELEFONO, DEPARTAMENTO , PUESTO, RFC, AFILIACION, CURP, ALTA, BAJA, REINGRESO, BAJA_2, REINGRESO_2, BAJA_3, SUELDO, E_CIVIL , GENERO,  VIGENCIA, MOTIVO , DIAS, MESES, AÑOS, FECHA) VALUES (" + txt_clave.Text + ", '" + txt_nombre.Text + "', '" + txt_calle.Text + "', '" + txt_municipio.Text + "', '" + cmb_estado.Text + "', '" + txt_telefono.Text + "', '" + txt_departamento.Text + "' , '" + txt_puesto.Text + "', '" + txt_rfc.Text + "',  '" + txt_afiliacion.Text + "', '" + txt_curp.Text + "'  , '" + txt_alta.Text + "',  '" + txt_baja.Text + "', '" + txt_reingreso.Text + "' , '" + txt_baja_2.Text + "', '" + txt_reingreso_2.Text + "', '" + txt_baja_3.Text + "', " + txt_sueldo.Text + " , '" + cmb_Civil.Text + "' , '" + cmb_genero.Text + "',   '" + txt_vigencia.Text + "', '" + txt_motivo.Text + "' , " + txt_dias.Text + ",  " + txt_meses.Text + ", " + txt_años.Text + " , '" + l_fecha.Text + "' )", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Se agregó correctamento");
-                nuevo();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("No se insertó. " + error.ToString());
-            }
-        }
-        private void Exportara_Exel()// Método para exportar a excel.
-        {
-            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
-            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-            try
-            {
-                worksheet = workbook.ActiveSheet;
-                worksheet.Name = "Libro1";
-                int cellRowIndex = 1;
-                int cellColumnIndex = 1;
-                //Pasa por cada fila y lee el valor de cada columna.
-                for (int i = 0; i < dgv_empleado.Rows.Count - 0; i++)
-                {
-                    for (int j = 0; j < dgv_empleado.Columns.Count - 0; j++)
-                    {
-                        // El índice de Excel comienza desde 1,1. Como first Row tendría los encabezados de Columna, agregando una verificación de condición.
-                        if (cellRowIndex == 0)
-                        {
-                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgv_empleado.Columns[j].HeaderText;
-                        }
-                        else
-                        {
-                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgv_empleado.Rows[i].Cells[j].Value.ToString();
-                        }
-                        cellColumnIndex++;
-                    }
-                    cellColumnIndex = 1;
-                    cellRowIndex++;
-                }
-                //Obtener la ubicación y el nombre de archivo de excel para guardar del usuario.
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Libro de Excel (*.xlsx)|*.xlsx";
-                saveDialog.FilterIndex = 2;
 
-                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+
+                if (dt.Rows.Count > 0)
                 {
-                    workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Su documento se exportó correctamente.");
+                    txt_compara1.Text = dt.Rows[0]["SUELDO"].ToString();            
                 }
             }
-            catch (Exception error)
-            {
-                //MessageBox.Show("No se exportó correctamente" + error.Message);
-            }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
-            }
-        }
-        private void eliminar()
-        {
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("TRUNCATE TABLE [asahi16].[dbo].[Consulta_informacion_empleado] ", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("No se eliminó " + error.ToString());
+            catch
+            { 
             }
         }
 
@@ -195,7 +289,7 @@ namespace CsPresentacion
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] set RFC='" + txt_rfc.Text + "',  AFILIACION = '" + txt_afiliacion.Text + "', CURP = '" + txt_curp.Text + "' WHERE CLAVE = " + txt_clave.Text + "", con);
+                SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] set RFC='" + txt_rfc.Text + "',  AFILIACION = '" + txt_nss.Text + "', CURP = '" + txt_curp.Text + "' WHERE CLAVE = " + txt_clave.Text + "", con);
                 cmd.Parameters.AddWithValue("@Clave", txt_clave.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -205,97 +299,87 @@ namespace CsPresentacion
                 MessageBox.Show("No se actualizó " + error.ToString());
             }
         }
-
-
-
-        private void nuevo()
+        public void nuevo()
         {
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is TextBox)
-                {
-                    ctrl.Text = "";
-                }
-            }
+            txt_clave.Focus();
+            txt_paterno.Text = "";
+            txt_materno.Text = "";
+            txt_nombre.Text = "";
+            cmb_departamento.Text = "";
+            cmb_puesto.Text = "";
+            txt_nacionalidad.Text = "";
+            txt_SDO1.Text = "";
+            txt_SDO2.Text = "";
+            txt_SDO3.Text = "";
+            txt_SDO4.Text = "";
+            txt_SDO5.Text = "";
+            txt_nss.Text = "";
+            txt_rfc.Text = "";
+            txt_curp.Text = "";
+            cmb_turno.Text = "";
+            txt_telefono.Text = "";
+            txt_calle.Text = "";
+            txt_numero.Text = "";
+            txt_colonia.Text = "";
+            txt_municipio.Text = "";
+            txt_cp.Text = "";
+            txt_sector.Text = "";
+            cmb_Civil.Text = "";
+            cmb_genero.Text = "";
+            dtm_nacimiento.Text = "";
+            txt_lugar_nac.Text = "";
+            cmb_escolaridad.Text = "";
+            txt_email.Text = "";
+            txt_contacto.Text = "";
+            txt_tel_contacto.Text = "";
+            cmb_parentesco.Text = "";
+            cmb_ruta.Text = "";
+            txt_interior.Text = "";
+            cmb_estado.Text = "";
+            txt_año_graduacion.Text = "";
+            txt_contacto.Text = "";
+            cmb_estado_nacimiento.Text = "";
+            txt_factor.Visible = false;
+            lbl_factor.Visible = false; 
+            cmb_estado_nacimiento.Enabled = true;
             txt_clave.Text = "";
-            txt_clave.Focus();
-            txt_baja.Text = "";
-            txt_reingreso.Text = "";
-            txt_baja_2.Text = "";
-            txt_reingreso_2.Text = "";
-            txt_baja_3.Text = "";
-            txt_clave.Focus();
-            pictureBox1.ImageLocation = "V:/Sistemas/Listado de bajas/LogoFinal" + ".png";
+            pictureBox1.ImageLocation = "V:/Sistemas/SAAM/LogoFinal" + ".png";
+            txt_vigencia.Text = "";
             txt_vigencia.Visible = false;
             lbl_estado.Visible = false;
-            dgv_empleado.Visible = false;
-            lbl_motivo.Visible = false;
-            lbl_dias.Visible = false;
-            lbl_años.Visible = false;
-            txt_motivo.Visible = false;
-            txt_años.Visible = false;
-            txt_meses.Visible = false;
-            txt_años.Visible = false;
-            lbl_meses.Visible = false;
-            txt_dias.Visible = false;
-            btn_agregar.Enabled = false;
-            btn_exportar.Enabled = false;
-            btn_guardar.Enabled = false;
-            txt_vigencia.Enabled = false;
-            txt_nombre.Enabled = false;
-            txt_puesto.Enabled = false;
-            txt_departamento.Enabled = false;
-            txt_alta.Enabled = false;
-            txt_baja.Enabled = false;
-            txt_reingreso.Enabled = false;
-            txt_baja_2.Enabled = false;
-            txt_reingreso_2.Enabled = false;
-            txt_baja_3.Enabled = false;
-            txt_dias.Enabled = false;
-            txt_años.Enabled = false;
-            txt_meses.Enabled = false;
-            txt_sueldo.Enabled = false;
-            txt_motivo.Enabled = false;
-            cmb_genero.Text = "";
-            cmb_Civil.Text = "";
-            txt_clave.Enabled = true;
-            cmb_estado.Text = "";
-            btn_modificar_puesto.Visible = false;
-            btn_modificar_sueldo.Visible = false;
-            btn_modifica_depto.Visible = false;
-            groupBox1.Visible = false;
-            lbl_baja.Visible = false;
-            lbl_reingreso.Visible = false;
-            dtm_nacimiento.Text = "";
+            txt_compara1.Text = "0.00";
+            txt_compara2.Text = "0.00";
+            txt_compara1.Visible = false;
+            txt_compara2.Visible = false;
+            groupBox2.Enabled = false;
+            cmb_puesto.Enabled = false;
+            btn_mod_departamento.Visible = false;
+            btn_eliminar_depto.Visible = false;
+            lbl_Comprueba_depto.Text = "";
+            lbl_Comprueba_depto.Visible = false;
+            dtm_fecha_dep.Text = "";
+            lbl_id_dep.Text = "";
+            lbl_id_dep.Visible = false;
+            btn_mod_turno.Visible = false;
         }
 
         private void Btn_buscar_Click(object sender, EventArgs e)
-        {
-            
+        {      
         }
         private void Frm_Empleados_Detalle_Load(object sender, EventArgs e)
         {
             nuevo();
             l_fecha.Visible = false;
             l_hora.Visible =  false;
+            cargar_departemento(cmb_departamento);
+            cargar_puesto(cmb_puesto);
         }
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
-            nuevo(); 
-        }
-        private void Btn_agregar_Click(object sender, EventArgs e)
-        {
-            insertar();
-            mostrar_dgv();
-            btn_exportar.Enabled = true;
-        }
-        private void Btn_exportar_Click(object sender, EventArgs e)
-        {
-            Exportara_Exel();
-            eliminar();
             nuevo();
+            mostrar_dgv_departamento();
+            mostrar_dgv_turno();
         }
-
         private void Timer1_Tick(object sender, EventArgs e)
         {
             l_fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -323,16 +407,14 @@ namespace CsPresentacion
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
-            Actualizar();
-            Actualizar2();
-            nuevo();
+            //Actualizar();
+            //Actualizar2();
+            //nuevo();
         }
 
         private void Cmb_Civil_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
-
         private void Txt_clave_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -355,120 +437,40 @@ namespace CsPresentacion
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 cargar_informacion();
-                pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
-                txt_vigencia.Visible = true;
-                lbl_estado.Visible = true;
-                btn_agregar.Enabled = true;
+                mostrar_dgv_departamento();
+                mostrar_dgv_turno();
 
+
+                pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
                 if (txt_vigencia.Text == "VIGENTE")
                 {
                     txt_vigencia.Visible = true;
                     lbl_estado.Visible = true;
-                    lbl_motivo.Visible = false;
-                    lbl_dias.Visible = false;
-                    lbl_años.Visible = false;
-                    txt_motivo.Visible = false;
-                    txt_años.Visible = false;
-                    txt_meses.Visible = false;
-                    txt_años.Visible = false;
-                    lbl_meses.Visible = false;
-                    txt_dias.Visible = false;
-                    btn_modificar_puesto.Visible = true;
-                    btn_modificar_sueldo.Visible = true;
-                    btn_modifica_depto.Visible = true;
-                    btn_modificar_puesto.Enabled = true;
-                    btn_modificar_sueldo.Enabled = true;
-                    btn_modifica_depto.Enabled = true;
-
                     txt_vigencia.BackColor = Color.Green;
+                    btn_mod_puesto.Enabled = true;
+                    cmb_puesto.Enabled = true;
+                    btn_mod_turno.Visible = true;
                 }
                 else if (txt_vigencia.Text == "BAJA")
                 {
                     txt_vigencia.Visible = true;
                     lbl_estado.Visible = true;
-                    dgv_empleado.Visible = false;
-                    lbl_motivo.Visible = true;
-                    lbl_dias.Visible = true;
-                    lbl_años.Visible = true;
-                    txt_motivo.Visible = true;
-                    txt_años.Visible = true;
-                    txt_meses.Visible = true;
-                    txt_años.Visible = true;
-                    lbl_meses.Visible = true;
-                    txt_dias.Visible = true;
                     txt_vigencia.BackColor = Color.Red;
-                    groupBox1.Visible = true;
-                    lbl_baja.Visible = true;
-                    lbl_reingreso.Visible = true;
+                    btn_mod_turno.Visible = false;
                 }
                 else
                 {
-                    txt_vigencia.Visible = true;
-                    lbl_estado.Visible = true;
-                    lbl_motivo.Visible = false;
-                    lbl_dias.Visible = false;
-                    lbl_años.Visible = false;
-                    txt_motivo.Visible = false;
-                    txt_años.Visible = false;
-                    txt_meses.Visible = false;
-                    txt_años.Visible = false;
-                    lbl_meses.Visible = false;
-                    txt_dias.Visible = false;
-                    txt_vigencia.Visible = false;
                     lbl_estado.Visible = false;
-                    btn_modificar_puesto.Visible = false;
-                    btn_modificar_sueldo.Visible = false;
-                    btn_modifica_depto.Visible = false;
-                    btn_modificar_puesto.Enabled = false;
-                    btn_modificar_sueldo.Enabled = false;
-                    btn_modifica_depto.Enabled = false;
-                    pictureBox1.ImageLocation = "V:/Sistemas/Listado de bajas/LogoFinal" + ".png";
-                }
-
-                if (string.IsNullOrEmpty(txt_dias.Text))
-                {
-                    txt_dias.Text = "0";
-                }
-                if (string.IsNullOrEmpty(txt_meses.Text))
-                {
-                    txt_meses.Text = "0";
-                }
-                if (string.IsNullOrEmpty(txt_años.Text))
-                {
-                    txt_años.Text = "0";
-                }
+                    pictureBox1.ImageLocation = "V:/Sistemas/SAAM/LogoFinal" + ".png";
+                } 
             }
         }
-
         private void Btn_modificar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Se modificará el puesto del empleado.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.OK)
-            {
-                Frm_cambio_puesto Puesto = new Frm_cambio_puesto();
-                Puesto.cmb_puesto.Text = txt_puesto.Text;
-                Puesto.lbl_clave.Text = txt_clave.Text;
-                Puesto.ShowDialog();
-                nuevo();
-            }
+        {         
         }
-
-        private void Btn_modificar_sueldo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_mmodifica_depto_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Se modificará el departamento del empleado.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.OK)
-            {
-                Frm_Cambio_Depto Depto = new Frm_Cambio_Depto();
-                Depto.cmb_departamento.Text = txt_departamento.Text;
-                Depto.lbl_clave.Text = txt_clave.Text;
-                Depto.ShowDialog();
-                nuevo();
-            }
+        {         
         }
-
         private void Txt_numero_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -488,10 +490,76 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
-        private void Txt_cp_KeyPress(object sender, KeyPressEventArgs e)
+        private void Panel_principal_Paint(object sender, PaintEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
+        }
+        private void Btn_pp_siguiente_Click(object sender, EventArgs e)
+        {
+            nuevo();
+        }
+        private void Btn_ps_anterior_Click(object sender, EventArgs e)
+        {
+        }
+        private void Btn_ps_siguiente_Click(object sender, EventArgs e)
+        {
+        }
+        private void Btn_fin_anterior_Click(object sender, EventArgs e)
+        {
+        }
+        private void Txt_curp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsLetter(e.KeyChar))
+            {
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_rfc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsLetter(e.KeyChar))
+            {
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_nss_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_paterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -506,6 +574,604 @@ namespace CsPresentacion
             else
             {
                 e.Handled = true;
+            }
+        }
+        private void Txt_materno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_calle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_numero_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_interior_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_colonia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_municipio_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private void Txt_cp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_municipio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Cmb_estado_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Txt_sector_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_hijos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_lugar_nac_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_año_graduacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_email_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+        private void Txt_contacto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_tel_contacto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_infonavit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Cmb_Civil_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Cmb_genero_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Cmb_estado_nacimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Cmb_escolaridad_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+        private void Cmb_parentesco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Cmb_ruta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Cmb_turno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Cmb_infonavit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Cmb_escolaridad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void Cmb_departamento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Cmb_puesto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Btn_descargar_Click(object sender, EventArgs e)
+        {
+        }
+        private void Cmb_puesto_SelectedIndexChanged(object sender, EventArgs e)
+        {        
+        }
+        private void Txt_SDO1_Leave(object sender, EventArgs e)
+        {
+            double n1, n2, r;
+
+            n1 = double.Parse(txt_factor.Text);
+            n2 = double.Parse(txt_SDO1.Text);
+            r = n1 * n2;
+            txt_SDO3.Text = r.ToString();
+            txt_SDO5.Text = r.ToString();
+        }
+        private void Cmb_departamento_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void Btn_finalizar_Click(object sender, EventArgs e)
+        {
+        }
+        private void Btn_mod_sueldo_Click(object sender, EventArgs e)
+        {
+            groupBox2.Enabled = true;
+        }
+        private void Cmb_puesto_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            selecciona_sueldo();
+
+            Val1 = double.Parse(txt_compara1.Text);
+            Val2 = double.Parse(txt_compara2.Text);
+
+            if (Val1 > Val2)
+            {
+                txt_SDO1.Text = txt_compara1.Text;
+                txt_SDO2.Text = "0.00";
+                txt_SDO4.Text = "0.00";
+                lbl_factor.Text = "1.07808";
+                Sueldo = double.Parse(txt_SDO1.Text);
+                Factor = double.Parse(lbl_factor.Text);
+                Resultado = Sueldo * Factor;
+                txt_SDO3.Text = Resultado.ToString();
+                txt_SDO5.Text = Resultado.ToString();
+            }
+            cmb_puesto.Enabled = false;
+        }
+
+        private void Btn_mod_turno_Click(object sender, EventArgs e)
+        {
+            Modifica_turno();
+            mostrar_dgv_turno();
+        }
+
+        private void Btn_mod_sueldo_Click_1(object sender, EventArgs e)
+        {
+            nuevo();
+        }
+
+        private void Btn_mod_puesto_Click(object sender, EventArgs e)
+        {
+            nuevo();
+        }
+
+        private void Btn_mod_departamento_Click(object sender, EventArgs e)
+        {
+            if (cmb_departamento.Text == lbl_Comprueba_depto.Text)
+            {
+                MessageBox.Show("Debe ser un departamento diferente", "Aviso");
+                cmb_departamento.Focus();
+            }
+            else
+            {
+                Modifica_depto();
+                cmb_departamento.Text = "";
+                dtm_fecha_dep.Text = "";
+                lbl_id_dep.Text = "";
+                lbl_Comprueba_depto.Text = "";
+                mostrar_dgv_departamento();
+            } 
+        }
+        private void Btn_mod_familiar_Click(object sender, EventArgs e)
+        {
+            nuevo();
+        }
+        private void Cmb_departamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            switch (cmb_departamento.Text)
+            {
+                case "ALMACÉN":
+                    lbl_id_dep.Text = "02";
+                    break;
+                case "ASEGURAMIENTO DE CALIDAD":
+                    lbl_id_dep.Text = "03";
+                    break;
+                case "ASUNTOS GENERALES":
+                    lbl_id_dep.Text = "04";
+                    break;
+                case "ATENCIÓN AL CLIENTE":
+                    lbl_id_dep.Text = "05";
+                    break;
+                case "COMPRAS":
+                    lbl_id_dep.Text = "06";
+                    break;
+                case "CONTABILIDAD":
+                    lbl_id_dep.Text = "07";
+                    break;
+                case "CONTROL DE MANUFACTURA":
+                    lbl_id_dep.Text = "08";
+                    break;
+                case "CONTROL DE PRODUCCION":
+                    lbl_id_dep.Text = "09";
+                    break;
+                case "MOLDES":
+                    lbl_id_dep.Text = "16";
+                    break;
+                case "PRESIDENCIA":
+                    lbl_id_dep.Text = "17";
+                    break;
+                case "SEGURIDAD":
+                    lbl_id_dep.Text = "18";
+                    break;
+                case "SISTEMAS IT":
+                    lbl_id_dep.Text = "19";
+                    break;
+                case "INGENIERÍA-MAQUINADO":
+                    lbl_id_dep.Text = "27";
+                    break;
+                case "INGENIERÍA-FUNDICIÓN":
+                    lbl_id_dep.Text = "28";
+                    break;
+                case "INSPECCION PRODUCCION":
+                    lbl_id_dep.Text = "31";
+                    break;
+                case "FUNDICION 1":
+                    lbl_id_dep.Text = "32";
+                    break;
+                case "FUNDICION 2":
+                    lbl_id_dep.Text = "33";
+                    break;
+                case "ACABADO 1":
+                    lbl_id_dep.Text = "34";
+                    break;
+                case "ACABADO 2":
+                    lbl_id_dep.Text = "35";
+                    break;
+                case "CONTROL DE CLIENTES":
+                    lbl_id_dep.Text = "36";
+                    break;
+                case "MANTENIMIENTO DE PLANTA":
+                    lbl_id_dep.Text = "37";
+                    break;
+                case "MANTENIMIENTO FUNDICION":
+                    lbl_id_dep.Text = "38";
+                    break;
+                case "MANTENIMIENTO MAQUINADO":
+                    lbl_id_dep.Text = "39";
+                    break;
+                case "MAQUINADO F2":
+                    lbl_id_dep.Text = "40";
+                    break;
+                case "INSPECCIÓN FUNDICION":
+                    lbl_id_dep.Text = "41";
+                    break;
+                case "INSPECCIÓN MAQUINADO":
+                    lbl_id_dep.Text = "42";
+                    break;
+                case "MAQUINADO F1":
+                    lbl_id_dep.Text = "43";
+                    break;
+                case "FUSION F1":
+                    lbl_id_dep.Text = "44";
+                    break;
+                case "FUSION F2":
+                    lbl_id_dep.Text = "45";
+                    break;
+            }
+
+            if (txt_clave.Text == "")
+            {
+            }
+
+            else
+            {
+                btn_mod_departamento.Visible = true;
+            }
+        }
+        private void Dgv_depto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_depto.Rows[e.RowIndex];
+                txt_clave.Text = row.Cells["CLAVE"].Value.ToString();
+                dtm_fecha_dep.Text = row.Cells["MODIFICACION"].Value.ToString();
+                cmb_departamento.Text = row.Cells["DEPARTAMENTO"].Value.ToString();
+                btn_eliminar_depto.Visible = true;
+            }
+        }
+
+        private void Btn_eliminar_depto_Click(object sender, EventArgs e)
+        {
+            cmb_departamento.Text = "";
+            dtm_fecha_dep.Text = "";
+            lbl_id_dep.Text = "";
+            lbl_Comprueba_depto.Text = "";
+            btn_eliminar_depto.Visible = false;
+            cmb_departamento.Focus();
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "3");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@CATALOGO", lbl_id_dep.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_dep.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgv_depto.DataSource = dt;
+                con.Close();
+                MessageBox.Show("Su registro se eliminó correctamente", "Aviso");
+                mostrar_dgv_departamento();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }

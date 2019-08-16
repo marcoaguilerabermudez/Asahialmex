@@ -22,7 +22,7 @@ namespace CsPresentacion
         {
             nuevo();
             cargar_puesto(cmb_puesto);
-           // cargar_departemento(cmb_departamento);
+           cargar_departemento(cmb_departamento);
             selecciona_clave();
         }
         public void cargar_departemento(ComboBox inte)//Cargar departamento en cmb
@@ -30,7 +30,7 @@ namespace CsPresentacion
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select distinct RTRIM(DESCRIPCION)as 'DEPARTAMENTO' FROM  [asahi16].[Supervisor_giro].[DEPTO]", con);
+                SqlCommand cmd = new SqlCommand("SELECT RTRIM(DESCRIPCION)as 'DEPARTAMENTO' FROM  [asahi16].[Supervisor_giro].[DEPTO] WHERE CENTRO_COSTO <>16", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -109,7 +109,7 @@ namespace CsPresentacion
             btn_comprueba.Enabled = false;
             cmb_estado_nacimiento.Enabled = true;
             Aviso_empleado = 0;
-            rdb_nacional.Checked = true;
+            rdb_nacional.Checked = true;         
         }
 
         private void selecciona_sueldo()
@@ -132,6 +132,7 @@ namespace CsPresentacion
                 txt_SDO2.Text = "0.00";
                 txt_SDO4.Text = "0.00";
                 lbl_factor.Text = "1.07808";
+
                 Sueldo = double.Parse(txt_SDO1.Text);
                 Factor = double.Parse(lbl_factor.Text);
                 Resultado = Sueldo * Factor;
@@ -617,11 +618,6 @@ namespace CsPresentacion
                 MessageBox.Show("Es necesario capturar el Curp", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_curp.Focus();
             }
-            else if (string.IsNullOrEmpty(txt_nss.Text))
-            {
-                MessageBox.Show("Es necesario capturar el Número de Seguro Social", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_nss.Focus();
-            }
             else
             {
                 Comprueba_Existencia();
@@ -708,6 +704,7 @@ namespace CsPresentacion
             }
             else
             {
+                btn_comprueba.Enabled = true;
                 btn_comprueba.Enabled = true;
             }
         }
@@ -813,16 +810,6 @@ namespace CsPresentacion
             {
                 e.Handled = true;
             }
-
-            if (string.IsNullOrEmpty(txt_nss.Text))
-            {
-                btn_comprueba.Enabled = false;
-                btn_pp_siguiente.Enabled = false;
-            }
-            else
-            {
-                btn_comprueba.Enabled = true;
-            }
         }
         private void Txt_rfc_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -840,15 +827,6 @@ namespace CsPresentacion
             else
             {
                 e.Handled = true;
-            }
-            if (string.IsNullOrEmpty(txt_rfc.Text))
-            {
-                btn_comprueba.Enabled = false;
-                btn_pp_siguiente.Enabled = false;
-            }
-            else
-            {
-                btn_comprueba.Enabled = true;
             }
         }
         private void Txt_calle_KeyPress(object sender, KeyPressEventArgs e)
@@ -918,18 +896,7 @@ namespace CsPresentacion
         }
         private void Txt_tel_contacto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+         
         }
         private void TextBox8_KeyPress(object sender, KeyPressEventArgs e)
         {

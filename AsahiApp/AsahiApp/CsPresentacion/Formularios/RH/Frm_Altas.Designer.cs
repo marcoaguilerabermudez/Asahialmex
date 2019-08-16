@@ -33,7 +33,6 @@
             this.txt_factor = new System.Windows.Forms.TextBox();
             this.lbl_var = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.lbl_tipo_ingreso = new System.Windows.Forms.Label();
             this.rdb_expatriado = new System.Windows.Forms.RadioButton();
             this.rdb_nacional = new System.Windows.Forms.RadioButton();
             this.lbl_tipo_empleado = new System.Windows.Forms.Label();
@@ -149,6 +148,7 @@
             this.label49 = new System.Windows.Forms.Label();
             this.cmb_escolaridad = new System.Windows.Forms.ComboBox();
             this.btn_fin_anterior = new System.Windows.Forms.Button();
+            this.lbl_tipo_ingreso = new System.Windows.Forms.Label();
             this.Panel_principal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -232,16 +232,6 @@
             this.label32.Size = new System.Drawing.Size(54, 13);
             this.label32.TabIndex = 42;
             this.label32.Text = "ESTADO:";
-            // 
-            // lbl_tipo_ingreso
-            // 
-            this.lbl_tipo_ingreso.AutoSize = true;
-            this.lbl_tipo_ingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tipo_ingreso.Location = new System.Drawing.Point(74, 462);
-            this.lbl_tipo_ingreso.Name = "lbl_tipo_ingreso";
-            this.lbl_tipo_ingreso.Size = new System.Drawing.Size(111, 13);
-            this.lbl_tipo_ingreso.TabIndex = 41;
-            this.lbl_tipo_ingreso.Text = "@NUEVO INGRESO:";
             // 
             // rdb_expatriado
             // 
@@ -410,43 +400,6 @@
             // cmb_departamento
             // 
             this.cmb_departamento.FormattingEnabled = true;
-            this.cmb_departamento.Items.AddRange(new object[] {
-            "ATENCIÓN AL CLIENTE",
-            "MOLDES",
-            "CONTROL DE MANUFACTURA",
-            "GERENCIA",
-            " FUNDICIÓN",
-            "ALMACÉN",
-            "COMPRAS",
-            "SISTEMAS IT",
-            "AAJ-CALIDAD",
-            "CONTABILIDAD",
-            "SEGURIDAD",
-            "AAJ-FUNDICIÓN",
-            "CONTROL DE PRODUCCION",
-            "ASEGURAMIENTO DE CALIDAD",
-            "MANTENIMIENTO",
-            "MAQUINADO",
-            "INGENIERÍA-MAQUINADO",
-            "ASUNTOS GENERALES",
-            "ADMINISTRACIÓN",
-            "PRESIDENCIA",
-            "INGENIERÍA-FUNDICIÓN",
-            "INSPECCION PRODUCCION",
-            "FUNDICION 1",
-            "FUNDICION 2",
-            "ACABADO 1",
-            "ACABADO 2",
-            "CONTROL DE CLIENTES",
-            "MANTENIMIENTO DE PLANTA",
-            "MANTENIMIENTO FUNDICION",
-            "MANTENIMIENTO MAQUINADO",
-            "MAQUINADO F2",
-            "INSPECCIÓN FUNDICION",
-            "INSPECCIÓN MAQUINADO",
-            "MAQUINADO F1",
-            "FUSION F1",
-            "FUSION F2"});
             this.cmb_departamento.Location = new System.Drawing.Point(21, 349);
             this.cmb_departamento.Name = "cmb_departamento";
             this.cmb_departamento.Size = new System.Drawing.Size(215, 21);
@@ -1567,12 +1520,22 @@
             this.btn_fin_anterior.UseVisualStyleBackColor = true;
             this.btn_fin_anterior.Click += new System.EventHandler(this.Btn_fin_anterior_Click);
             // 
+            // lbl_tipo_ingreso
+            // 
+            this.lbl_tipo_ingreso.AutoSize = true;
+            this.lbl_tipo_ingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tipo_ingreso.Location = new System.Drawing.Point(74, 462);
+            this.lbl_tipo_ingreso.Name = "lbl_tipo_ingreso";
+            this.lbl_tipo_ingreso.Size = new System.Drawing.Size(111, 13);
+            this.lbl_tipo_ingreso.TabIndex = 41;
+            this.lbl_tipo_ingreso.Text = "@NUEVO INGRESO:";
+            // 
             // Frm_Altas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(599, 619);
+            this.ClientSize = new System.Drawing.Size(595, 619);
             this.Controls.Add(this.Panel_secundario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);
@@ -1715,7 +1678,6 @@
         private System.Windows.Forms.RadioButton rdb_expatriado;
         private System.Windows.Forms.RadioButton rdb_nacional;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label lbl_tipo_ingreso;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label lbl_var;
         private System.Windows.Forms.TextBox txt_factor;
@@ -1724,5 +1686,6 @@
         private System.Windows.Forms.ComboBox cmb_infonavit;
         private System.Windows.Forms.Label lbl_inf;
         private System.Windows.Forms.Label lbl_infonavit;
+        private System.Windows.Forms.Label lbl_tipo_ingreso;
     }
 }

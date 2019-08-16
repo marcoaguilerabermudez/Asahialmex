@@ -43,7 +43,9 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_nuevo = new System.Windows.Forms.Button();
+            this.lbl_tipo_aus = new System.Windows.Forms.Label();
+            this.cmb_tipo = new System.Windows.Forms.ComboBox();
+            this.lbl_descripcion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -68,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 90);
+            this.label2.Location = new System.Drawing.Point(14, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 2;
@@ -77,7 +79,7 @@
             // dtm_inicial
             // 
             this.dtm_inicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_inicial.Location = new System.Drawing.Point(17, 107);
+            this.dtm_inicial.Location = new System.Drawing.Point(17, 100);
             this.dtm_inicial.Name = "dtm_inicial";
             this.dtm_inicial.Size = new System.Drawing.Size(168, 20);
             this.dtm_inicial.TabIndex = 3;
@@ -86,7 +88,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 135);
+            this.label3.Location = new System.Drawing.Point(15, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 4;
@@ -95,7 +97,7 @@
             // dtm_final
             // 
             this.dtm_final.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_final.Location = new System.Drawing.Point(17, 152);
+            this.dtm_final.Location = new System.Drawing.Point(17, 143);
             this.dtm_final.Name = "dtm_final";
             this.dtm_final.Size = new System.Drawing.Size(168, 20);
             this.dtm_final.TabIndex = 4;
@@ -108,7 +110,7 @@
             this.btn_reporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_reporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reporte.Location = new System.Drawing.Point(97, 183);
+            this.btn_reporte.Location = new System.Drawing.Point(97, 216);
             this.btn_reporte.Name = "btn_reporte";
             this.btn_reporte.Size = new System.Drawing.Size(88, 35);
             this.btn_reporte.TabIndex = 5;
@@ -119,7 +121,7 @@
             // lbl_var
             // 
             this.lbl_var.AutoSize = true;
-            this.lbl_var.Location = new System.Drawing.Point(18, 178);
+            this.lbl_var.Location = new System.Drawing.Point(7, 222);
             this.lbl_var.Name = "lbl_var";
             this.lbl_var.Size = new System.Drawing.Size(34, 13);
             this.lbl_var.TabIndex = 149;
@@ -128,7 +130,7 @@
             // lbl_tipo
             // 
             this.lbl_tipo.AutoSize = true;
-            this.lbl_tipo.Location = new System.Drawing.Point(17, 200);
+            this.lbl_tipo.Location = new System.Drawing.Point(6, 238);
             this.lbl_tipo.Name = "lbl_tipo";
             this.lbl_tipo.Size = new System.Drawing.Size(39, 13);
             this.lbl_tipo.TabIndex = 150;
@@ -175,21 +177,48 @@
             this.label5.TabIndex = 153;
             this.label5.Text = "CLAVE";
             // 
-            // btn_nuevo
+            // lbl_tipo_aus
             // 
-            this.btn_nuevo.BackColor = System.Drawing.Color.White;
-            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_nuevo.FlatAppearance.BorderSize = 0;
-            this.btn_nuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btn_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(80, 15);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(18, 23);
-            this.btn_nuevo.TabIndex = 148;
-            this.btn_nuevo.UseVisualStyleBackColor = false;
-            this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
+            this.lbl_tipo_aus.AutoSize = true;
+            this.lbl_tipo_aus.Location = new System.Drawing.Point(16, 169);
+            this.lbl_tipo_aus.Name = "lbl_tipo_aus";
+            this.lbl_tipo_aus.Size = new System.Drawing.Size(35, 13);
+            this.lbl_tipo_aus.TabIndex = 154;
+            this.lbl_tipo_aus.Text = "TIPO:";
+            // 
+            // cmb_tipo
+            // 
+            this.cmb_tipo.FormattingEnabled = true;
+            this.cmb_tipo.Items.AddRange(new object[] {
+            "ABANDONO DE TRABAJO",
+            "PRESTACION POR MATRIMONIO",
+            "CITA IMSS",
+            "ENFERMEDAD",
+            "FALTA INJUSTIFICADA",
+            "PERMISO CON GOCE",
+            "ENFERMEDAD LEVE",
+            "ENFERMENDAD MODERADA",
+            "SUSPENSION",
+            "PERMISO SIN GOCE",
+            "FAMILIAR",
+            "ASUNTOS PERSONALES",
+            "TRANSPORTE",
+            "FALTA JUSTIFICADA",
+            "VIAJE"});
+            this.cmb_tipo.Location = new System.Drawing.Point(17, 186);
+            this.cmb_tipo.Name = "cmb_tipo";
+            this.cmb_tipo.Size = new System.Drawing.Size(168, 21);
+            this.cmb_tipo.TabIndex = 155;
+            this.cmb_tipo.SelectedIndexChanged += new System.EventHandler(this.Cmb_tipo_SelectedIndexChanged);
+            // 
+            // lbl_descripcion
+            // 
+            this.lbl_descripcion.AutoSize = true;
+            this.lbl_descripcion.Location = new System.Drawing.Point(45, 224);
+            this.lbl_descripcion.Name = "lbl_descripcion";
+            this.lbl_descripcion.Size = new System.Drawing.Size(43, 13);
+            this.lbl_descripcion.TabIndex = 156;
+            this.lbl_descripcion.Text = "@Desc";
             // 
             // Frm_Parametros_rep_prenomina
             // 
@@ -197,14 +226,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(198, 221);
+            this.ClientSize = new System.Drawing.Size(198, 259);
+            this.Controls.Add(this.lbl_descripcion);
+            this.Controls.Add(this.cmb_tipo);
+            this.Controls.Add(this.lbl_tipo_aus);
             this.Controls.Add(this.txt_clave);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_año);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_tipo);
             this.Controls.Add(this.lbl_var);
-            this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.btn_reporte);
             this.Controls.Add(this.dtm_final);
             this.Controls.Add(this.label3);
@@ -235,7 +266,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtm_final;
         private System.Windows.Forms.Button btn_reporte;
-        private System.Windows.Forms.Button btn_nuevo;
         public System.Windows.Forms.Label lbl_var;
         public System.Windows.Forms.Label lbl_tipo;
         private System.Windows.Forms.TextBox txt_año;
@@ -243,5 +273,8 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txt_clave;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_tipo_aus;
+        private System.Windows.Forms.ComboBox cmb_tipo;
+        public System.Windows.Forms.Label lbl_descripcion;
     }
 }
