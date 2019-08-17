@@ -183,10 +183,10 @@
     <Compile Include="Frm_Acerca.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finanzas\Frm_MasterPlan.Designer.vb">
-      <DependentUpon>Frm_MasterPlan.vb</DependentUpon>
+    <Compile Include="Finanzas\Frm_Gastos.Designer.vb">
+      <DependentUpon>Frm_Gastos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Finanzas\Frm_MasterPlan.vb">
+    <Compile Include="Finanzas\Frm_Gastos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_OpcionesReportes.Designer.vb">
@@ -310,8 +310,8 @@
     <EmbeddedResource Include="Frm_Acerca.resx">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finanzas\Frm_MasterPlan.resx">
-      <DependentUpon>Frm_MasterPlan.vb</DependentUpon>
+    <EmbeddedResource Include="Finanzas\Frm_Gastos.resx">
+      <DependentUpon>Frm_Gastos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpcionesReportes.resx">
       <DependentUpon>Frm_OpcionesReportes.vb</DependentUpon>
@@ -522,6 +522,7 @@
     <None Include="Resources\Excel.png" />
     <None Include="Resources\Excel1.png" />
     <None Include="Resources\reportes.png" />
+    <None Include="Resources\New.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

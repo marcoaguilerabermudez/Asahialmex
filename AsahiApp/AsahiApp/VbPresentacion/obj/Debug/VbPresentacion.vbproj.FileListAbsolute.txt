@@ -160,7 +160,6 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debu
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_RepPlanHrsExtra5.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.exe.manifest
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.application
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_MasterPlan.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -303,3 +302,4 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debu
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_ReporteBono.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_ReportePrenominaGlobal.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_ReportePrenominaLista.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_Gastos.resources

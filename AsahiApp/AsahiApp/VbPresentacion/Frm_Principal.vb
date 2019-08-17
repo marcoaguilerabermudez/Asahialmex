@@ -297,7 +297,7 @@ Public Class Frm_Principal
 
     Private Sub PlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanToolStripMenuItem.Click
         'MsgBox("Ahí la llevamos no apureis para septiembre queda bro")
-        Dim mp As New Frm_MasterPlan()
+        Dim mp As New Frm_Gastos()
         mp.Show()
     End Sub
 #End Region
