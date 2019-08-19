@@ -189,6 +189,12 @@
     <Compile Include="Finanzas\Frm_MasterPlan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_cargaplanpersonal.Designer.vb">
+      <DependentUpon>Frm_cargaplanpersonal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_cargaplanpersonal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_OpcionesReportes.Designer.vb">
       <DependentUpon>Frm_OpcionesReportes.vb</DependentUpon>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finanzas\Frm_MasterPlan.resx">
       <DependentUpon>Frm_MasterPlan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_cargaplanpersonal.resx">
+      <DependentUpon>Frm_cargaplanpersonal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpcionesReportes.resx">
       <DependentUpon>Frm_OpcionesReportes.vb</DependentUpon>
