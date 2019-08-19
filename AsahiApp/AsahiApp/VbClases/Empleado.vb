@@ -751,6 +751,7 @@
         End Set
     End Property
     Private respuesta_ As Integer
+
     Public Property Respuesta() As Integer
         Get
             Return respuesta_
@@ -759,6 +760,7 @@
             respuesta_ = value
         End Set
     End Property
+
     Private tipoUsuario_ As Integer
     Public Property TipoUsuario() As Integer
         Get
@@ -768,4 +770,5 @@
             tipoUsuario_ = value
         End Set
     End Property
+
 End Class

@@ -300,5 +300,9 @@ Public Class Frm_Principal
         Dim mp As New Frm_MasterPlan()
         mp.Show()
     End Sub
+
+    Private Sub PlanDePersonalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDePersonalToolStripMenuItem.Click
+        Frm_cargaplanpersonal.Show()
+    End Sub
 #End Region
 End Class
