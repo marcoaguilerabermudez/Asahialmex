@@ -384,7 +384,7 @@ Partial Class Frm_cargaplanpersonal
         '
         Me.l3.AutoSize = True
         Me.l3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.l3.ForeColor = System.Drawing.Color.Black
+        Me.l3.ForeColor = System.Drawing.SystemColors.Control
         Me.l3.Location = New System.Drawing.Point(6, 226)
         Me.l3.Name = "l3"
         Me.l3.Size = New System.Drawing.Size(10, 13)
