@@ -117,46 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="noCta2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cta2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="masterP2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="plan2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="real2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="actual2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dif2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="noCta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="masterP.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="plan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="actual.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="real.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dif.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        AAA=
+</value>
+  </data>
 </root>
