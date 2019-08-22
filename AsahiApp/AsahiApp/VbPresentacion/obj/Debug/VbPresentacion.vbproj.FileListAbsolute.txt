@@ -303,3 +303,4 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debu
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_ReportePrenominaGlobal.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_ReportePrenominaLista.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_Gastos.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_cargaplanpersonal.resources
