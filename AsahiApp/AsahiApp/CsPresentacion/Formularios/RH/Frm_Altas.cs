@@ -109,7 +109,8 @@ namespace CsPresentacion
             btn_comprueba.Enabled = false;
             cmb_estado_nacimiento.Enabled = true;
             Aviso_empleado = 0;
-            rdb_nacional.Checked = true;         
+            rdb_nacional.Checked = true;
+            txt_infonavit.Text = "";
         }
 
         private void selecciona_sueldo()
@@ -194,7 +195,7 @@ namespace CsPresentacion
                 da.SelectCommand.Parameters.Add("@sdo2", SqlDbType.VarChar).Value = txt_SDO3.Text;
                 da.SelectCommand.Parameters.Add("@Aviso", SqlDbType.VarChar).Value = Aviso_empleado;
                 da.SelectCommand.Parameters.Add("@Hijos", SqlDbType.VarChar).Value = txt_hijos.Text;
-                da.SelectCommand.Parameters.Add("@Infonavit", SqlDbType.VarChar).Value = lbl_infonavit.Text;
+                da.SelectCommand.Parameters.Add("@Infonavit", SqlDbType.VarChar).Value = txt_infonavit.Text;
 
                 da.Fill(dt);
                 con.Close();
@@ -206,64 +207,7 @@ namespace CsPresentacion
             }
         }
 
-        private void Crea_Contrato()
-        {
-            try
-            {
-                con.Open();
-                DataTable dt = new DataTable();
-                String strSql;
-                strSql = "[dbo].[SP_Inserta_Contrato]";
-                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.Add("@Clave", SqlDbType.VarChar).Value = txt_Clave.Text;
-                da.SelectCommand.Parameters.Add("@catalogodepartamento", SqlDbType.VarChar).Value = cmb_departamento.Text;
-                da.SelectCommand.Parameters.Add("@zona", SqlDbType.VarChar).Value = txt_lugar_nac.Text;
-                da.SelectCommand.Parameters.Add("@ruta", SqlDbType.VarChar).Value = cmb_ruta.Text;
-                da.SelectCommand.Parameters.Add("@NOMBREN", SqlDbType.VarChar).Value = txt_nombre.Text;
-                da.SelectCommand.Parameters.Add("@NOMBREP", SqlDbType.VarChar).Value = txt_paterno.Text;
-                da.SelectCommand.Parameters.Add("@NOMBREM", SqlDbType.VarChar).Value = txt_materno.Text;
-                da.SelectCommand.Parameters.Add("@PE", SqlDbType.VarChar).Value = lbl_tipo_empleado.Text;
-                da.SelectCommand.Parameters.Add("@RFC", SqlDbType.VarChar).Value = txt_rfc.Text;
-                da.SelectCommand.Parameters.Add("@turno", SqlDbType.VarChar).Value = cmb_turno.Text;
-                da.SelectCommand.Parameters.Add("@afiliacion", SqlDbType.VarChar).Value = txt_nss.Text;
-                da.SelectCommand.Parameters.Add("@curp", SqlDbType.VarChar).Value = txt_curp.Text;
-                da.SelectCommand.Parameters.Add("@puesto", SqlDbType.VarChar).Value = cmb_puesto.Text;
-                da.SelectCommand.Parameters.Add("@calle", SqlDbType.VarChar).Value = txt_calle.Text;
-                da.SelectCommand.Parameters.Add("@numero", SqlDbType.VarChar).Value = txt_numero.Text;
-                da.SelectCommand.Parameters.Add("@interior", SqlDbType.VarChar).Value = txt_interior.Text;
-                da.SelectCommand.Parameters.Add("@colonia", SqlDbType.VarChar).Value = txt_colonia.Text;
-                da.SelectCommand.Parameters.Add("@cp", SqlDbType.VarChar).Value = txt_cp.Text;
-                da.SelectCommand.Parameters.Add("@municipio", SqlDbType.VarChar).Value = txt_municipio.Text;
-                da.SelectCommand.Parameters.Add("@estado", SqlDbType.VarChar).Value = cmb_estado.Text;
-                da.SelectCommand.Parameters.Add("@telefono", SqlDbType.VarChar).Value = txt_telefono.Text;
-                da.SelectCommand.Parameters.Add("@fechanacimiento", SqlDbType.VarChar).Value = dtm_nacimiento.Text;
-                da.SelectCommand.Parameters.Add("@lugarnacimiento", SqlDbType.VarChar).Value = txt_lugar_nac.Text;
-                da.SelectCommand.Parameters.Add("@estadocivil", SqlDbType.VarChar).Value = cmb_Civil.Text;
-                da.SelectCommand.Parameters.Add("@escolaridad", SqlDbType.VarChar).Value = cmb_escolaridad.Text;
-                da.SelectCommand.Parameters.Add("@sexo", SqlDbType.VarChar).Value = cmb_genero.Text;
-                da.SelectCommand.Parameters.Add("@graduacion", SqlDbType.VarChar).Value = txt_año_graduacion.Text;
-                da.SelectCommand.Parameters.Add("@emergenciacontacto", SqlDbType.VarChar).Value = txt_contacto.Text;
-                da.SelectCommand.Parameters.Add("@emergenciaparentesco", SqlDbType.VarChar).Value = cmb_parentesco.Text;
-                da.SelectCommand.Parameters.Add("@emergenciatelefono", SqlDbType.VarChar).Value = txt_tel_contacto.Text;
-                da.SelectCommand.Parameters.Add("@estadonacimiento", SqlDbType.VarChar).Value = cmb_estado_nacimiento.Text;
-                da.SelectCommand.Parameters.Add("@nacionalidad", SqlDbType.VarChar).Value = txt_nacionalidad.Text;
-                da.SelectCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = txt_email.Text;
-                da.SelectCommand.Parameters.Add("@sdo1", SqlDbType.VarChar).Value = txt_SDO1.Text;
-                da.SelectCommand.Parameters.Add("@sdo2", SqlDbType.VarChar).Value = txt_SDO3.Text;
-                da.SelectCommand.Parameters.Add("@Aviso", SqlDbType.VarChar).Value = Aviso_empleado;
-                da.SelectCommand.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = lbl_tipo_ingreso.Text;//Tipo de alta
-                da.SelectCommand.Parameters.Add("@Infonavit", SqlDbType.VarChar).Value = cmb_infonavit.Text;
-                da.SelectCommand.Parameters.Add("@Horario", SqlDbType.VarChar).Value = cmb_turno.Text;
-                da.Fill(dt);
-                con.Close();
-               // MessageBox.Show("Reporte creado Correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            catch (Exception Error)
-            {
-                MessageBox.Show(Error.ToString());
-            }
-        }
+    
 
         private void Comprueba_Existencia()
         {
@@ -365,6 +309,7 @@ namespace CsPresentacion
                 txt_email.Text = dt.Rows[0]["EMAIL"].ToString();
                 cmb_estado_nacimiento.Text = dt.Rows[0]["ESTADO_NACIMIENTO"].ToString(); 
                 txt_hijos.Text = dt.Rows[0]["HIJOS"].ToString();
+                txt_infonavit.Text = dt.Rows[0]["INFONAVIT"].ToString();
             }
             con.Close();
         }
@@ -648,12 +593,11 @@ namespace CsPresentacion
             else
             {
                 Registra_empleado();
-                Crea_Contrato();
                 Frm_Rep_Alta_empleado Rep = new Frm_Rep_Alta_empleado();
                 Rep.CLAVE = Convert.ToInt32(txt_Clave.Text);
                 Rep.ShowDialog();
                 Panel_principal.Visible = true;
-            nuevo();
+               nuevo();
             selecciona_clave();
             }
         }
@@ -1099,15 +1043,7 @@ namespace CsPresentacion
         }
 
         private void Cmb_infonavit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmb_infonavit.Text == "SI")
-            {
-                lbl_infonavit.Text = "1000";
-            }
-            else
-            {
-                lbl_infonavit.Text = "0";
-            }    
+        {    
         }
     }
 }

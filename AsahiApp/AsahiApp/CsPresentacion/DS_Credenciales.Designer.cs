@@ -301,6 +301,10 @@ namespace CsPresentacion {
             
             private global::System.Data.DataColumn columnfoto;
             
+            private global::System.Data.DataColumn columnEspañol;
+            
+            private global::System.Data.DataColumn columnJapones;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Credencial_EmpleadosDataTable() {
@@ -424,6 +428,22 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EspañolColumn {
+                get {
+                    return this.columnEspañol;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn JaponesColumn {
+                get {
+                    return this.columnJapones;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +479,7 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Credencial_EmpleadosRow AddSP_Credencial_EmpleadosRow(string CLAVE, string NOMBRE, string REFERENCIA, string TELEFONO, string DEPARTAMENTO, string PUESTO, string AFILIACION, System.DateTime FECHA_NAC, System.DateTime FECHA, byte[] foto) {
+            public SP_Credencial_EmpleadosRow AddSP_Credencial_EmpleadosRow(string CLAVE, string NOMBRE, string REFERENCIA, string TELEFONO, string DEPARTAMENTO, string PUESTO, string AFILIACION, System.DateTime FECHA_NAC, System.DateTime FECHA, byte[] foto, string Español, string Japones) {
                 SP_Credencial_EmpleadosRow rowSP_Credencial_EmpleadosRow = ((SP_Credencial_EmpleadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -472,7 +492,9 @@ namespace CsPresentacion {
                         AFILIACION,
                         FECHA_NAC,
                         FECHA,
-                        foto};
+                        foto,
+                        Español,
+                        Japones};
                 rowSP_Credencial_EmpleadosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Credencial_EmpleadosRow);
                 return rowSP_Credencial_EmpleadosRow;
@@ -506,6 +528,8 @@ namespace CsPresentacion {
                 this.columnFECHA_NAC = base.Columns["FECHA_NAC"];
                 this.columnFECHA = base.Columns["FECHA"];
                 this.columnfoto = base.Columns["foto"];
+                this.columnEspañol = base.Columns["Español"];
+                this.columnJapones = base.Columns["Japones"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -533,6 +557,10 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnFECHA);
                 this.columnfoto = new global::System.Data.DataColumn("foto", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfoto);
+                this.columnEspañol = new global::System.Data.DataColumn("Español", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEspañol);
+                this.columnJapones = new global::System.Data.DataColumn("Japones", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJapones);
                 this.columnID.AutoIncrement = true;
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
@@ -543,13 +571,17 @@ namespace CsPresentacion {
                 this.columnREFERENCIA.ReadOnly = true;
                 this.columnREFERENCIA.MaxLength = 70;
                 this.columnTELEFONO.ReadOnly = true;
-                this.columnTELEFONO.MaxLength = 12;
+                this.columnTELEFONO.MaxLength = 13;
                 this.columnDEPARTAMENTO.ReadOnly = true;
                 this.columnDEPARTAMENTO.MaxLength = 30;
                 this.columnPUESTO.ReadOnly = true;
                 this.columnPUESTO.MaxLength = 30;
                 this.columnAFILIACION.ReadOnly = true;
                 this.columnAFILIACION.MaxLength = 30;
+                this.columnEspañol.ReadOnly = true;
+                this.columnEspañol.MaxLength = 10;
+                this.columnJapones.ReadOnly = true;
+                this.columnJapones.MaxLength = 3;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -868,6 +900,40 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Español {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Credencial_Empleados.EspañolColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Español\' de la tabla \'SP_Credencial_Empleados\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Credencial_Empleados.EspañolColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Japones {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Credencial_Empleados.JaponesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Japones\' de la tabla \'SP_Credencial_Empleados\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Credencial_Empleados.JaponesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCLAVENull() {
                 return this.IsNull(this.tableSP_Credencial_Empleados.CLAVEColumn);
             }
@@ -984,6 +1050,30 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetfotoNull() {
                 this[this.tableSP_Credencial_Empleados.fotoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEspañolNull() {
+                return this.IsNull(this.tableSP_Credencial_Empleados.EspañolColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEspañolNull() {
+                this[this.tableSP_Credencial_Empleados.EspañolColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsJaponesNull() {
+                return this.IsNull(this.tableSP_Credencial_Empleados.JaponesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetJaponesNull() {
+                this[this.tableSP_Credencial_Empleados.JaponesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1157,6 +1247,8 @@ namespace CsPresentacion.DS_CredencialesTableAdapters {
             tableMapping.ColumnMappings.Add("FECHA_NAC", "FECHA_NAC");
             tableMapping.ColumnMappings.Add("FECHA", "FECHA");
             tableMapping.ColumnMappings.Add("foto", "foto");
+            tableMapping.ColumnMappings.Add("Español", "Español");
+            tableMapping.ColumnMappings.Add("Japones", "Japones");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1177,19 +1269,33 @@ namespace CsPresentacion.DS_CredencialesTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cant", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Var", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Credenciales.SP_Credencial_EmpleadosDataTable dataTable, global::System.Nullable<global::System.DateTime> Fecha) {
+        public virtual int Fill(DS_Credenciales.SP_Credencial_EmpleadosDataTable dataTable, global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<int> Cant, global::System.Nullable<int> Var) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Fecha.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Fecha.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Cant.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Cant.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Var.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(Var.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1202,13 +1308,25 @@ namespace CsPresentacion.DS_CredencialesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Credenciales.SP_Credencial_EmpleadosDataTable GetData(global::System.Nullable<global::System.DateTime> Fecha) {
+        public virtual DS_Credenciales.SP_Credencial_EmpleadosDataTable GetData(global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<int> Cant, global::System.Nullable<int> Var) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Fecha.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Fecha.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Cant.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Cant.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Var.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(Var.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             DS_Credenciales.SP_Credencial_EmpleadosDataTable dataTable = new DS_Credenciales.SP_Credencial_EmpleadosDataTable();
             this.Adapter.Fill(dataTable);

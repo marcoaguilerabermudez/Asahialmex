@@ -178,11 +178,6 @@ Public Class Frm_Principal
         Alta.Hide()
     End Sub
     Private Sub CredencialesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CredencialesToolStripMenuItem.Click
-        'Módulo de creación de Credenciales
-        Dim C As New Frm_Rep_Cred()
-        C.ShowDialog()
-        C.Hide()
-
     End Sub
     Private Sub BonoMensualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BonoMensualToolStripMenuItem.Click
         Dim bono As New Frm_BonoMensual()
@@ -299,6 +294,20 @@ Public Class Frm_Principal
         'MsgBox("Ahí la llevamos no apureis para septiembre queda bro")
         Dim mp As New Frm_MasterPlan()
         mp.Show()
+    End Sub
+
+    Private Sub EmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadosToolStripMenuItem1.Click
+        'Módulo de creación de Credenciales
+        Dim C As New Frm_Rep_Cred()
+        C.ShowDialog()
+        C.Hide()
+    End Sub
+
+    Private Sub VisitantesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisitantesToolStripMenuItem.Click
+        'Módulo creacion de credenciales visitantes
+        Dim C As New Credencial_visitantes_param()
+        C.ShowDialog()
+        C.Hide()
     End Sub
 #End Region
 End Class

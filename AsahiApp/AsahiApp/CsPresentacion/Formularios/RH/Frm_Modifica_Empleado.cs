@@ -29,19 +29,27 @@ namespace CsPresentacion
         double Val1;
         double Val2;
 
-
-
+        private void Frm_Empleados_Detalle_Load(object sender, EventArgs e)
+        {
+            nuevo();
+            l_fecha.Visible = false;
+            l_hora.Visible = false;
+            cargar_departemento(cmb_departamento);
+            cargar_puesto(cmb_puesto);
+        }
         private void Modifica_turno()// Método para modificar turno de empleado
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
+                SqlCommand cmd = new SqlCommand("[dbo].[SP_Cambio_turno_fm]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@VAR", "2");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
-                cmd.Parameters.AddWithValue("@RUTA", cmb_ruta.Text);  
                 cmd.Parameters.AddWithValue("@TURNO", cmb_turno.Text);
+                cmd.Parameters.AddWithValue("@FECHA", "22-08-2019");
+                cmd.Parameters.AddWithValue("@CAMBIO", lbl_cambio.Text);
+                cmd.Parameters.AddWithValue("@CATALOGO", lbl_Catalogo.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -50,32 +58,33 @@ namespace CsPresentacion
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
             }
         }
-
-        private void Modifica_depto()// Método para modificar departamento de empleado
+        private void Eliminar_turno()// Método para modificar turno de empleado
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
+                SqlCommand cmd = new SqlCommand("[dbo].[SP_Cambio_turno_fm]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@VAR", "1");
+                cmd.Parameters.AddWithValue("@VAR", "3");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
-                cmd.Parameters.AddWithValue("@CATALOGO", lbl_id_dep.Text);
-                cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_dep.Text);
+                cmd.Parameters.AddWithValue("@TURNO", cmb_turno.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_turno.Text);
+                cmd.Parameters.AddWithValue("@CAMBIO", lbl_cambio.Text);
+                cmd.Parameters.AddWithValue("@CATALOGO", lbl_Catalogo.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-                con.Close(); 
-                MessageBox.Show("Se modificó correctamente", "Aviso");
+                con.Close();
+                MessageBox.Show("Información eliminada correctamente", "Aviso");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Debe ser una fecha diferente", "Aviso");
+                MessageBox.Show(ex.ToString());
             }
         }
-
         private void mostrar_dgv_turno()// Método para llenar DatagridView de turno
         {
             try
@@ -85,8 +94,10 @@ namespace CsPresentacion
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@VAR", "1");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
-                cmd.Parameters.AddWithValue("@RUTA", cmb_ruta.Text);
                 cmd.Parameters.AddWithValue("@TURNO", cmb_turno.Text);
+                cmd.Parameters.AddWithValue("@FECHA", "16-08-2019");
+                cmd.Parameters.AddWithValue("@CAMBIO", lbl_cambio.Text);
+                cmd.Parameters.AddWithValue("@CATALOGO", lbl_Catalogo.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -105,9 +116,101 @@ namespace CsPresentacion
             dgv.Columns[1].Width = 210;//Nombre empleado
             dgv.Columns[2].Width = 120;//Departamento
             dgv.Columns[3].Width = 100;//turno
-            dgv.Columns[4].Width = 120;//Ruta
-            dgv.Columns[5].Width = 100;//cambio turno
-
+            dgv.Columns[4].Width = 100;//cambio turno
+        }
+        private void Modifica_ruta()// Método para modificar ruta de empleado
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[SP_Cambio_Ruta_fm]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "2");
+                cmd.Parameters.AddWithValue("@RUTA", cmb_ruta.Text);
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                con.Close();
+                MessageBox.Show("Se modificó correctamente", "Aviso");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void mostrar_dgv_ruta()// Método para llenar DatagridView de Ruta
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[SP_Cambio_Ruta_fm]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "1");
+                cmd.Parameters.AddWithValue("@RUTA", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgv_ruta.DataSource = dt;
+                con.Close();
+                Diseño_dgv_ruta(dgv_ruta);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void Diseño_dgv_ruta(DataGridView dgv)
+        {
+            dgv.Columns[0].Width = 55;//No. Empleado
+            dgv.Columns[1].Width = 220;//Nombre empleado
+            dgv.Columns[2].Width = 140;//Departamento
+            dgv.Columns[3].Width = 140;//Ruta
+        }
+        private void Modifica_depto()// Método para modificar departamento de empleado
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "1");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@CATALOGO", cmb_departamento.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_dep.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                con.Close(); 
+                MessageBox.Show("Se modificó correctamente", "Aviso");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe ser una fecha diferente", "Aviso");
+            }
+        }
+        private void Elimina_depto()// Método para modificar departamento de empleado
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "3");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@CATALOGO", cmb_departamento.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_dep.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                con.Close();
+                MessageBox.Show("Se Eliminó correctamente", "Aviso");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void mostrar_dgv_departamento()// Método para llenar DatagridView de departamento
@@ -119,7 +222,7 @@ namespace CsPresentacion
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@VAR", "2");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
-                cmd.Parameters.AddWithValue("@CATALOGO", lbl_id_dep.Text);
+                cmd.Parameters.AddWithValue("@CATALOGO", cmb_departamento.Text);
                 cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_dep.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -141,7 +244,6 @@ namespace CsPresentacion
             dgv.Columns[3].Width = 90;//Fecha_Mod
             dgv.Columns[4].Width = 140;//Fecha_cap
         }
-
         private void cargar_informacion()
         {
             DataTable dt = new DataTable();
@@ -187,7 +289,7 @@ namespace CsPresentacion
                 txt_email.Text = dt.Rows[0]["EMAIL"].ToString();
                 cmb_estado_nacimiento.Text = dt.Rows[0]["ESTADO_NACIMIENTO"].ToString();
                 txt_hijos.Text = dt.Rows[0]["HIJOS"].ToString();
-                txt_infonavit.Text = dt.Rows[0]["INFONAVIT"].ToString();
+                txt_num_infonavit.Text = dt.Rows[0]["INFONAVIT"].ToString();
                 txt_SDO1.Text = dt.Rows[0]["SUELDO"].ToString();
                 txt_compara2.Text = dt.Rows[0]["SUELDO"].ToString();
                 txt_compara1.Text = dt.Rows[0]["SUELDO"].ToString();
@@ -197,6 +299,9 @@ namespace CsPresentacion
                 txt_SDO5.Text = dt.Rows[0]["SD5"].ToString();
                 cmb_ruta.Text = dt.Rows[0]["RUTA"].ToString();
                 cmb_turno.Text = dt.Rows[0]["TURNO"].ToString();
+                lbl_escolaridad.Text = dt.Rows[0]["ESCOLARIDAD_NUM"].ToString();
+                lbl_civil.Text = dt.Rows[0]["ESTADO_CIVIL"].ToString();
+               lbl_id_turno.Text = dt.Rows[0]["CATALOGO"].ToString();
             }
             else
             {
@@ -252,12 +357,9 @@ namespace CsPresentacion
                 String strSql;
                 strSql = "SELECT SUELDO FROM [asahi16].[Supervisor_giro].[Puesto]  WHERE DESCRIPCION = @Puesto";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-                //da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.Add("@Puesto", SqlDbType.VarChar).Value = cmb_puesto.Text;
                 da.Fill(dt);
                 con.Close();
-
-
                 if (dt.Rows.Count > 0)
                 {
                     txt_compara1.Text = dt.Rows[0]["SUELDO"].ToString();            
@@ -273,30 +375,20 @@ namespace CsPresentacion
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[Emprh] set ESTADO='"+ cmb_estado.Text + "', CALLE = '"+ txt_calle.Text+"',  NUMERO = "+ txt_numero.Text+", COLONIA = '"+txt_colonia.Text+"',  CP = " +txt_cp.Text +",  MUNICIPIO = '"+txt_municipio.Text+ "', FECHA_NACIMIENTO = '"+ dtm_nacimiento.Text +"',  TELEFONO_CELULAR = '" + txt_telefono.Text + "', ESTADO_CIVIL = '"+ cmb_Civil.Text+ "', SEXO = '"+ cmb_genero.Text+"'  WHERE CLAVE = " + txt_clave.Text+"", con);             
+                SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[Emprh] set  CALLE = '"+ txt_calle.Text+"',  NUMERO = "+ txt_numero.Text+ ",  COLONIA = '" + txt_colonia.Text+ "', SECTOR = '" + txt_sector.Text + "', CP = " + txt_cp.Text + ",  MUNICIPIO = '" + txt_municipio.Text+ "',  ESCOLARIDAD = '" + lbl_escolaridad.Text + "',   NACIONALIDAD = '" + txt_nacionalidad.Text + "',  EMAIL = '" + txt_email.Text + "',  EMERGENCIA_CONTACTO = '" + txt_contacto.Text + "', EMERGENCIA_TELEFONO = '" + txt_tel_contacto.Text + "', EMERGENCIA_PARENTESCO = '" + cmb_parentesco.Text + "', GRADUACION = " + txt_año_graduacion.Text + ", ESTADO_CIVIL = '" + lbl_civil.Text + "', TELEFONO_CELULAR = '" + txt_telefono.Text + "', SEXO = '" + cmb_genero.Text + "', FECHA_NACIMIENTO = '" + dtm_nacimiento.Text + "', ESTADO_NACIMIENTO = '" + cmb_estado.Text + "', LUGAR_NACIMIENTO = '" + txt_lugar_nac.Text + "' , ESTADO = '" + cmb_estado.Text + "' WHERE CLAVE = " + txt_clave.Text +"", con);
+                SqlCommand cmd2 = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[Empprin] set  NOMBREN = '" + txt_nombre.Text + "', NOMBREP = '" + txt_paterno.Text + "', NOMBREM = '" + txt_materno.Text + "', CURP = '" + txt_curp.Text + "', RFC = '" + txt_rfc.Text + "', AFILIACION = '" + txt_nss.Text + "', CREDITO_INFONAVIT = '" + txt_num_infonavit.Text + "'  WHERE CLAVE = " + txt_clave.Text + "", con);
+                SqlCommand cmd3 = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[EMPEXT] set  HIJOS = " + txt_hijos.Text + "   WHERE CLAVE = " + txt_clave.Text + "", con);
                 cmd.Parameters.AddWithValue("@Clave", txt_clave.Text);
+                cmd2.Parameters.AddWithValue("@Clave", txt_clave.Text);
+                cmd3.Parameters.AddWithValue("@Clave", txt_clave.Text);
                 cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("La información se actualizó correctamente.");
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("No se actualizó " + error.ToString());
-            }
-        }
-        private void Actualizar2()
-        {
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] set RFC='" + txt_rfc.Text + "',  AFILIACION = '" + txt_nss.Text + "', CURP = '" + txt_curp.Text + "' WHERE CLAVE = " + txt_clave.Text + "", con);
-                cmd.Parameters.AddWithValue("@Clave", txt_clave.Text);
-                cmd.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
+                cmd3.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception error)
             {
-                MessageBox.Show("No se actualizó " + error.ToString());
+                MessageBox.Show("No se actualizó" + error.ToString());
             }
         }
         public void nuevo()
@@ -358,27 +450,34 @@ namespace CsPresentacion
             lbl_Comprueba_depto.Text = "";
             lbl_Comprueba_depto.Visible = false;
             dtm_fecha_dep.Text = "";
-            lbl_id_dep.Text = "";
-            lbl_id_dep.Visible = false;
             btn_mod_turno.Visible = false;
-        }
+            btn_eliminar_turno.Visible = false;
+            lbl_escolaridad.Text = "";
+            lbl_escolaridad.Visible = false;
+            lbl_civil.Text = "";
+            lbl_civil.Visible = false;
+            txt_hijos.Text = "";
+            txt_num_infonavit.Text = "";
+            dtm_fecha_turno.Text = "";
+            dtm_fecha_turno.Visible = false;
+            lbl_id_turno.Text = "";
+           lbl_Catalogo.Text = "";
+            lbl_cambio.Text =  "";
+            lbl_id_turno.Visible = false;
+            lbl_Catalogo.Visible = false;
+            lbl_cambio.Visible = false;
 
+        }
         private void Btn_buscar_Click(object sender, EventArgs e)
         {      
         }
-        private void Frm_Empleados_Detalle_Load(object sender, EventArgs e)
-        {
-            nuevo();
-            l_fecha.Visible = false;
-            l_hora.Visible =  false;
-            cargar_departemento(cmb_departamento);
-            cargar_puesto(cmb_puesto);
-        }
+    
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
             nuevo();
             mostrar_dgv_departamento();
             mostrar_dgv_turno();
+            mostrar_dgv_ruta();
         }
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -390,12 +489,10 @@ namespace CsPresentacion
         {
             e.Handled = true;
         }
-
         private void Cmb_Civil_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
         private void Frm_Empleados_Detalle_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -404,14 +501,12 @@ namespace CsPresentacion
         {
             e.Handled = true;
         }
-
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
             //Actualizar();
             //Actualizar2();
             //nuevo();
         }
-
         private void Cmb_Civil_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
@@ -439,7 +534,7 @@ namespace CsPresentacion
                 cargar_informacion();
                 mostrar_dgv_departamento();
                 mostrar_dgv_turno();
-
+                mostrar_dgv_ruta();
 
                 pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
                 if (txt_vigencia.Text == "VIGENTE")
@@ -495,7 +590,19 @@ namespace CsPresentacion
         }
         private void Btn_pp_siguiente_Click(object sender, EventArgs e)
         {
-            nuevo();
+            if (txt_clave.Text == "")
+            {
+                MessageBox.Show("Es necesario seleccionar un número de empleado.","Aviso");
+                txt_clave.Focus();
+            }
+            else
+            {
+                Actualizar();
+                nuevo();
+                mostrar_dgv_departamento();
+                mostrar_dgv_turno();
+                mostrar_dgv_ruta();
+            }
         }
         private void Btn_ps_anterior_Click(object sender, EventArgs e)
         {
@@ -794,6 +901,10 @@ namespace CsPresentacion
             {
                 e.Handled = false;
             }
+            else if (Char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = false;
+            }
             else if (Char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
@@ -909,11 +1020,7 @@ namespace CsPresentacion
         private void Cmb_turno_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
-        }
-        private void Cmb_infonavit_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
+        }  
         private void Cmb_escolaridad_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -961,7 +1068,6 @@ namespace CsPresentacion
         {
             e.Handled = true;
         }
-
         private void Btn_finalizar_Click(object sender, EventArgs e)
         {
         }
@@ -990,9 +1096,31 @@ namespace CsPresentacion
             }
             cmb_puesto.Enabled = false;
         }
-
         private void Btn_mod_turno_Click(object sender, EventArgs e)
         {
+
+            if (lbl_id_turno.Text == "01" & cmb_turno.Text == "ADMINISTRATIVO")
+            {
+                lbl_Catalogo.Text = "002";
+                lbl_cambio.Text = "SI";
+            }
+            else if (lbl_id_turno.Text == "02" & cmb_turno.Text == "MATUTINO")
+            {
+                lbl_Catalogo.Text = "001";
+                lbl_cambio.Text = "SI";
+            }
+            else if (lbl_id_turno.Text == "02" & cmb_turno.Text == "VESPERTINO")
+            {
+                lbl_Catalogo.Text = "001";
+                lbl_cambio.Text = "SI";
+            }
+            else if (lbl_id_turno.Text == "02" & cmb_turno.Text == "NOCTURNO")
+            {
+                lbl_Catalogo.Text = "001";
+                lbl_cambio.Text = "SI";
+            }
+
+
             Modifica_turno();
             mostrar_dgv_turno();
         }
@@ -1019,7 +1147,7 @@ namespace CsPresentacion
                 Modifica_depto();
                 cmb_departamento.Text = "";
                 dtm_fecha_dep.Text = "";
-                lbl_id_dep.Text = "";
+                cmb_departamento.Text = "";
                 lbl_Comprueba_depto.Text = "";
                 mostrar_dgv_departamento();
             } 
@@ -1030,102 +1158,9 @@ namespace CsPresentacion
         }
         private void Cmb_departamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            switch (cmb_departamento.Text)
-            {
-                case "ALMACÉN":
-                    lbl_id_dep.Text = "02";
-                    break;
-                case "ASEGURAMIENTO DE CALIDAD":
-                    lbl_id_dep.Text = "03";
-                    break;
-                case "ASUNTOS GENERALES":
-                    lbl_id_dep.Text = "04";
-                    break;
-                case "ATENCIÓN AL CLIENTE":
-                    lbl_id_dep.Text = "05";
-                    break;
-                case "COMPRAS":
-                    lbl_id_dep.Text = "06";
-                    break;
-                case "CONTABILIDAD":
-                    lbl_id_dep.Text = "07";
-                    break;
-                case "CONTROL DE MANUFACTURA":
-                    lbl_id_dep.Text = "08";
-                    break;
-                case "CONTROL DE PRODUCCION":
-                    lbl_id_dep.Text = "09";
-                    break;
-                case "MOLDES":
-                    lbl_id_dep.Text = "16";
-                    break;
-                case "PRESIDENCIA":
-                    lbl_id_dep.Text = "17";
-                    break;
-                case "SEGURIDAD":
-                    lbl_id_dep.Text = "18";
-                    break;
-                case "SISTEMAS IT":
-                    lbl_id_dep.Text = "19";
-                    break;
-                case "INGENIERÍA-MAQUINADO":
-                    lbl_id_dep.Text = "27";
-                    break;
-                case "INGENIERÍA-FUNDICIÓN":
-                    lbl_id_dep.Text = "28";
-                    break;
-                case "INSPECCION PRODUCCION":
-                    lbl_id_dep.Text = "31";
-                    break;
-                case "FUNDICION 1":
-                    lbl_id_dep.Text = "32";
-                    break;
-                case "FUNDICION 2":
-                    lbl_id_dep.Text = "33";
-                    break;
-                case "ACABADO 1":
-                    lbl_id_dep.Text = "34";
-                    break;
-                case "ACABADO 2":
-                    lbl_id_dep.Text = "35";
-                    break;
-                case "CONTROL DE CLIENTES":
-                    lbl_id_dep.Text = "36";
-                    break;
-                case "MANTENIMIENTO DE PLANTA":
-                    lbl_id_dep.Text = "37";
-                    break;
-                case "MANTENIMIENTO FUNDICION":
-                    lbl_id_dep.Text = "38";
-                    break;
-                case "MANTENIMIENTO MAQUINADO":
-                    lbl_id_dep.Text = "39";
-                    break;
-                case "MAQUINADO F2":
-                    lbl_id_dep.Text = "40";
-                    break;
-                case "INSPECCIÓN FUNDICION":
-                    lbl_id_dep.Text = "41";
-                    break;
-                case "INSPECCIÓN MAQUINADO":
-                    lbl_id_dep.Text = "42";
-                    break;
-                case "MAQUINADO F1":
-                    lbl_id_dep.Text = "43";
-                    break;
-                case "FUSION F1":
-                    lbl_id_dep.Text = "44";
-                    break;
-                case "FUSION F2":
-                    lbl_id_dep.Text = "45";
-                    break;
-            }
-
             if (txt_clave.Text == "")
             {
             }
-
             else
             {
                 btn_mod_departamento.Visible = true;
@@ -1142,37 +1177,99 @@ namespace CsPresentacion
                 btn_eliminar_depto.Visible = true;
             }
         }
+        private void Dgv_turno_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_turno.Rows[e.RowIndex];
+                txt_clave.Text = row.Cells["CLAVE"].Value.ToString();
+                cmb_turno.Text = row.Cells["TURNO"].Value.ToString();
+                dtm_fecha_turno.Text = row.Cells["CAMBIO_TURNO"].Value.ToString();
+                btn_eliminar_turno.Visible = true;
+            }
+        }
+        private void Btn_eliminar_turno_Click(object sender, EventArgs e)
+        {
+            Eliminar_turno();
+            mostrar_dgv_turno();
+        }
+        private void Cmb_escolaridad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_escolaridad.Text == "PRIMARIA")
+            {
+                lbl_escolaridad.Text = "001";
+            }
+            else if (cmb_escolaridad.Text == "SECUNDARIA")
+            {
+                lbl_escolaridad.Text = "002";
+            }
+            else if (cmb_escolaridad.Text == "PREPARATORIA")
+            {
+                lbl_escolaridad.Text = "003";
+            }
+            else if (cmb_escolaridad.Text == "LICENCIATURA")
+            {
+                lbl_escolaridad.Text = "004";
+            }
+            else if (cmb_escolaridad.Text == "POSGRADO")
+            {
+                lbl_escolaridad.Text = "005";
+            }
+        }
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (txt_clave.Text == "")
+            {
+                MessageBox.Show("Es necesario seleccionar un número de empleado", "Aviso");
+                txt_clave.Focus();
+            }
+            else
+            {
+                Actualizar();
+                nuevo();
+                mostrar_dgv_departamento();
+                mostrar_dgv_turno();
+                mostrar_dgv_ruta();
+            }
+        }
+        private void Cmb_Civil_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cmb_Civil.Text == "SOLTERO")
+            {
+                lbl_civil.Text = "SOL";
+            }
+            else if (cmb_Civil.Text == "CASADO")
+            {
+                lbl_civil.Text = "CAS";
+            }
+            else if (cmb_Civil.Text == "DIVORCIADO")
+            {
+                lbl_civil.Text = "DIV";
+            }
+            else if (cmb_Civil.Text == "VIUDO")
+            {
+                lbl_civil.Text = "VIU";
+            }
+            else if (cmb_Civil.Text == "UNION LIBRE")
+            {
+                lbl_civil.Text = "ULI";
+            }
+        }
+
+        private void Btn_mod_ruta_Click(object sender, EventArgs e)
+        {
+            Modifica_ruta();
+            mostrar_dgv_ruta();
+        }
 
         private void Btn_eliminar_depto_Click(object sender, EventArgs e)
         {
-            cmb_departamento.Text = "";
-            dtm_fecha_dep.Text = "";
-            lbl_id_dep.Text = "";
-            lbl_Comprueba_depto.Text = "";
-            btn_eliminar_depto.Visible = false;
-            cmb_departamento.Focus();
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_depto_fm]", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@VAR", "3");
-                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
-                cmd.Parameters.AddWithValue("@CATALOGO", lbl_id_dep.Text);
-                cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_dep.Text);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgv_depto.DataSource = dt;
-                con.Close();
-                MessageBox.Show("Su registro se eliminó correctamente", "Aviso");
-                mostrar_dgv_departamento();
+            Elimina_depto();
+            mostrar_dgv_departamento();
+        }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+        private void Cmb_turno_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

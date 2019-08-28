@@ -67,8 +67,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.grb_nacimiento = new System.Windows.Forms.GroupBox();
-            this.txt_infonavit = new System.Windows.Forms.TextBox();
-            this.cmb_infonavit = new System.Windows.Forms.ComboBox();
+            this.txt_num_infonavit = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txt_año_graduacion = new System.Windows.Forms.TextBox();
@@ -77,6 +76,7 @@
             this.cmb_escolaridad = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lbl_escolaridad = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_mod_general = new System.Windows.Forms.Button();
             this.txt_paterno = new System.Windows.Forms.TextBox();
@@ -97,9 +97,9 @@
             this.txt_nacionalidad = new System.Windows.Forms.TextBox();
             this.txt_vigencia = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbl_civil = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_mod_familiar = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
             this.cmb_parentesco = new System.Windows.Forms.ComboBox();
             this.lbl_inf = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
@@ -108,10 +108,10 @@
             this.txt_contacto = new System.Windows.Forms.TextBox();
             this.lbl_contacto = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_eliminar_depto = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.dtm_fecha_dep = new System.Windows.Forms.DateTimePicker();
             this.lbl_Comprueba_depto = new System.Windows.Forms.Label();
-            this.btn_eliminar_depto = new System.Windows.Forms.Button();
             this.dgv_depto = new System.Windows.Forms.DataGridView();
             this.btn_mod_departamento = new System.Windows.Forms.Button();
             this.cmb_departamento = new System.Windows.Forms.ComboBox();
@@ -153,14 +153,20 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btn_eliminar_turno = new System.Windows.Forms.Button();
             this.btn_mod_turno = new System.Windows.Forms.Button();
             this.dgv_turno = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
             this.cmb_turno = new System.Windows.Forms.ComboBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.dgv_ruta = new System.Windows.Forms.DataGridView();
+            this.btn_mod_ruta = new System.Windows.Forms.Button();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.lbl_id_dep = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dtm_fecha_turno = new System.Windows.Forms.DateTimePicker();
+            this.lbl_id_turno = new System.Windows.Forms.Label();
+            this.lbl_Catalogo = new System.Windows.Forms.Label();
+            this.lbl_cambio = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grb_nacimiento.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -177,6 +183,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_turno)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ruta)).BeginInit();
             this.SuspendLayout();
             // 
             // l_hora
@@ -513,6 +521,7 @@
             this.cmb_Civil.Name = "cmb_Civil";
             this.cmb_Civil.Size = new System.Drawing.Size(147, 21);
             this.cmb_Civil.TabIndex = 21;
+            this.cmb_Civil.SelectedIndexChanged += new System.EventHandler(this.Cmb_Civil_SelectedIndexChanged_1);
             this.cmb_Civil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_Civil_KeyPress_1);
             // 
             // cmb_genero
@@ -627,26 +636,14 @@
             this.grb_nacimiento.TabStop = false;
             this.grb_nacimiento.Text = "Nacimiento";
             // 
-            // txt_infonavit
+            // txt_num_infonavit
             // 
-            this.txt_infonavit.Location = new System.Drawing.Point(101, 281);
-            this.txt_infonavit.MaxLength = 10;
-            this.txt_infonavit.Name = "txt_infonavit";
-            this.txt_infonavit.Size = new System.Drawing.Size(163, 20);
-            this.txt_infonavit.TabIndex = 235;
-            this.txt_infonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_infonavit_KeyPress);
-            // 
-            // cmb_infonavit
-            // 
-            this.cmb_infonavit.FormattingEnabled = true;
-            this.cmb_infonavit.Items.AddRange(new object[] {
-            "NO",
-            "SI"});
-            this.cmb_infonavit.Location = new System.Drawing.Point(21, 280);
-            this.cmb_infonavit.Name = "cmb_infonavit";
-            this.cmb_infonavit.Size = new System.Drawing.Size(64, 21);
-            this.cmb_infonavit.TabIndex = 35;
-            this.cmb_infonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_infonavit_KeyPress);
+            this.txt_num_infonavit.Location = new System.Drawing.Point(19, 281);
+            this.txt_num_infonavit.MaxLength = 10;
+            this.txt_num_infonavit.Name = "txt_num_infonavit";
+            this.txt_num_infonavit.Size = new System.Drawing.Size(147, 20);
+            this.txt_num_infonavit.TabIndex = 235;
+            this.txt_num_infonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_infonavit_KeyPress);
             // 
             // txt_email
             // 
@@ -707,6 +704,7 @@
             this.cmb_escolaridad.Name = "cmb_escolaridad";
             this.cmb_escolaridad.Size = new System.Drawing.Size(129, 21);
             this.cmb_escolaridad.TabIndex = 29;
+            this.cmb_escolaridad.SelectedIndexChanged += new System.EventHandler(this.Cmb_escolaridad_SelectedIndexChanged);
             this.cmb_escolaridad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmb_escolaridad_KeyDown);
             this.cmb_escolaridad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_escolaridad_KeyPress);
             // 
@@ -718,6 +716,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Location = new System.Drawing.Point(-1, 49);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -726,6 +725,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lbl_escolaridad);
             this.tabPage1.Controls.Add(this.txt_interior);
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.pictureBox1);
@@ -773,6 +773,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Información General";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lbl_escolaridad
+            // 
+            this.lbl_escolaridad.AutoSize = true;
+            this.lbl_escolaridad.Location = new System.Drawing.Point(18, 508);
+            this.lbl_escolaridad.Name = "lbl_escolaridad";
+            this.lbl_escolaridad.Size = new System.Drawing.Size(73, 13);
+            this.lbl_escolaridad.TabIndex = 224;
+            this.lbl_escolaridad.Text = "@Escolaridad";
             // 
             // pictureBox1
             // 
@@ -959,13 +968,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lbl_civil);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.btn_mod_familiar);
-            this.tabPage2.Controls.Add(this.label32);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.txt_infonavit);
+            this.tabPage2.Controls.Add(this.txt_num_infonavit);
             this.tabPage2.Controls.Add(this.cmb_parentesco);
-            this.tabPage2.Controls.Add(this.cmb_infonavit);
             this.tabPage2.Controls.Add(this.txt_hijos);
             this.tabPage2.Controls.Add(this.lbl_inf);
             this.tabPage2.Controls.Add(this.label41);
@@ -988,6 +996,15 @@
             this.tabPage2.Text = "Familiar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // lbl_civil
+            // 
+            this.lbl_civil.AutoSize = true;
+            this.lbl_civil.Location = new System.Drawing.Point(21, 482);
+            this.lbl_civil.Name = "lbl_civil";
+            this.lbl_civil.Size = new System.Drawing.Size(57, 13);
+            this.lbl_civil.TabIndex = 239;
+            this.lbl_civil.Text = "@E_CIVIL";
+            // 
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1000,6 +1017,7 @@
             this.button1.TabIndex = 238;
             this.button1.Text = "&Modificar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btn_mod_familiar
             // 
@@ -1014,15 +1032,6 @@
             this.btn_mod_familiar.Text = "&Modificar";
             this.btn_mod_familiar.UseVisualStyleBackColor = true;
             this.btn_mod_familiar.Click += new System.EventHandler(this.Btn_mod_familiar_Click);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(102, 263);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(58, 13);
-            this.label32.TabIndex = 236;
-            this.label32.Text = "NUMERO:";
             // 
             // cmb_parentesco
             // 
@@ -1043,9 +1052,9 @@
             this.lbl_inf.AutoSize = true;
             this.lbl_inf.Location = new System.Drawing.Point(18, 263);
             this.lbl_inf.Name = "lbl_inf";
-            this.lbl_inf.Size = new System.Drawing.Size(67, 13);
+            this.lbl_inf.Size = new System.Drawing.Size(118, 13);
             this.lbl_inf.TabIndex = 234;
-            this.lbl_inf.Text = "INFONAVIT:";
+            this.lbl_inf.Text = "CREDITO INFONAVIT:";
             // 
             // label41
             // 
@@ -1093,11 +1102,10 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.lbl_id_dep);
+            this.tabPage3.Controls.Add(this.btn_eliminar_depto);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.dtm_fecha_dep);
             this.tabPage3.Controls.Add(this.lbl_Comprueba_depto);
-            this.tabPage3.Controls.Add(this.btn_eliminar_depto);
             this.tabPage3.Controls.Add(this.dgv_depto);
             this.tabPage3.Controls.Add(this.btn_mod_departamento);
             this.tabPage3.Controls.Add(this.cmb_departamento);
@@ -1109,6 +1117,22 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Departamento";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btn_eliminar_depto
+            // 
+            this.btn_eliminar_depto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_eliminar_depto.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btn_eliminar_depto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_eliminar_depto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eliminar_depto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar_depto.ForeColor = System.Drawing.Color.Black;
+            this.btn_eliminar_depto.Location = new System.Drawing.Point(506, 351);
+            this.btn_eliminar_depto.Name = "btn_eliminar_depto";
+            this.btn_eliminar_depto.Size = new System.Drawing.Size(73, 30);
+            this.btn_eliminar_depto.TabIndex = 247;
+            this.btn_eliminar_depto.Text = "&ELIMINAR";
+            this.btn_eliminar_depto.UseVisualStyleBackColor = true;
+            this.btn_eliminar_depto.Click += new System.EventHandler(this.Btn_eliminar_depto_Click);
             // 
             // label13
             // 
@@ -1137,22 +1161,6 @@
             this.lbl_Comprueba_depto.TabIndex = 244;
             this.lbl_Comprueba_depto.Text = "@id_clave";
             // 
-            // btn_eliminar_depto
-            // 
-            this.btn_eliminar_depto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_eliminar_depto.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_eliminar_depto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btn_eliminar_depto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminar_depto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminar_depto.ForeColor = System.Drawing.Color.Black;
-            this.btn_eliminar_depto.Location = new System.Drawing.Point(496, 347);
-            this.btn_eliminar_depto.Name = "btn_eliminar_depto";
-            this.btn_eliminar_depto.Size = new System.Drawing.Size(81, 39);
-            this.btn_eliminar_depto.TabIndex = 243;
-            this.btn_eliminar_depto.Text = "&ELIMINAR";
-            this.btn_eliminar_depto.UseVisualStyleBackColor = true;
-            this.btn_eliminar_depto.Click += new System.EventHandler(this.Btn_eliminar_depto_Click);
-            // 
             // dgv_depto
             // 
             this.dgv_depto.AllowUserToAddRows = false;
@@ -1178,9 +1186,9 @@
             this.btn_mod_departamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mod_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mod_departamento.ForeColor = System.Drawing.Color.Black;
-            this.btn_mod_departamento.Location = new System.Drawing.Point(235, 63);
+            this.btn_mod_departamento.Location = new System.Drawing.Point(235, 66);
             this.btn_mod_departamento.Name = "btn_mod_departamento";
-            this.btn_mod_departamento.Size = new System.Drawing.Size(81, 39);
+            this.btn_mod_departamento.Size = new System.Drawing.Size(77, 37);
             this.btn_mod_departamento.TabIndex = 241;
             this.btn_mod_departamento.Text = "&MODIFICAR";
             this.btn_mod_departamento.UseVisualStyleBackColor = true;
@@ -1561,13 +1569,15 @@
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.button2);
+            this.tabPage6.Controls.Add(this.lbl_cambio);
+            this.tabPage6.Controls.Add(this.lbl_Catalogo);
+            this.tabPage6.Controls.Add(this.lbl_id_turno);
+            this.tabPage6.Controls.Add(this.dtm_fecha_turno);
+            this.tabPage6.Controls.Add(this.btn_eliminar_turno);
             this.tabPage6.Controls.Add(this.btn_mod_turno);
             this.tabPage6.Controls.Add(this.dgv_turno);
             this.tabPage6.Controls.Add(this.label16);
             this.tabPage6.Controls.Add(this.cmb_turno);
-            this.tabPage6.Controls.Add(this.cmb_ruta);
-            this.tabPage6.Controls.Add(this.label19);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -1576,15 +1586,31 @@
             this.tabPage6.Text = "Turno";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // btn_eliminar_turno
+            // 
+            this.btn_eliminar_turno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_eliminar_turno.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btn_eliminar_turno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_eliminar_turno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eliminar_turno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar_turno.ForeColor = System.Drawing.Color.Black;
+            this.btn_eliminar_turno.Location = new System.Drawing.Point(504, 374);
+            this.btn_eliminar_turno.Name = "btn_eliminar_turno";
+            this.btn_eliminar_turno.Size = new System.Drawing.Size(76, 29);
+            this.btn_eliminar_turno.TabIndex = 244;
+            this.btn_eliminar_turno.Text = "&ELIMINAR";
+            this.btn_eliminar_turno.UseVisualStyleBackColor = true;
+            this.btn_eliminar_turno.Click += new System.EventHandler(this.Btn_eliminar_turno_Click);
+            // 
             // btn_mod_turno
             // 
             this.btn_mod_turno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_mod_turno.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_mod_turno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_mod_turno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mod_turno.Location = new System.Drawing.Point(211, 65);
+            this.btn_mod_turno.Location = new System.Drawing.Point(202, 37);
             this.btn_mod_turno.Name = "btn_mod_turno";
-            this.btn_mod_turno.Size = new System.Drawing.Size(81, 39);
+            this.btn_mod_turno.Size = new System.Drawing.Size(63, 29);
             this.btn_mod_turno.TabIndex = 240;
             this.btn_mod_turno.Text = "&Modificar";
             this.btn_mod_turno.UseVisualStyleBackColor = true;
@@ -1598,12 +1624,13 @@
             this.dgv_turno.AllowUserToResizeRows = false;
             this.dgv_turno.BackgroundColor = System.Drawing.Color.White;
             this.dgv_turno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_turno.Location = new System.Drawing.Point(18, 127);
+            this.dgv_turno.Location = new System.Drawing.Point(18, 84);
             this.dgv_turno.Name = "dgv_turno";
             this.dgv_turno.RowHeadersVisible = false;
             this.dgv_turno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_turno.Size = new System.Drawing.Size(562, 276);
+            this.dgv_turno.Size = new System.Drawing.Size(562, 284);
             this.dgv_turno.TabIndex = 239;
+            this.dgv_turno.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_turno_CellContentClick);
             // 
             // label16
             // 
@@ -1626,6 +1653,50 @@
             this.cmb_turno.Name = "cmb_turno";
             this.cmb_turno.Size = new System.Drawing.Size(163, 21);
             this.cmb_turno.TabIndex = 236;
+            this.cmb_turno.SelectedIndexChanged += new System.EventHandler(this.Cmb_turno_SelectedIndexChanged);
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.dgv_ruta);
+            this.tabPage7.Controls.Add(this.btn_mod_ruta);
+            this.tabPage7.Controls.Add(this.cmb_ruta);
+            this.tabPage7.Controls.Add(this.label19);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(596, 548);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Ruta";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // dgv_ruta
+            // 
+            this.dgv_ruta.AllowUserToAddRows = false;
+            this.dgv_ruta.AllowUserToDeleteRows = false;
+            this.dgv_ruta.AllowUserToResizeColumns = false;
+            this.dgv_ruta.AllowUserToResizeRows = false;
+            this.dgv_ruta.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_ruta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ruta.Location = new System.Drawing.Point(24, 86);
+            this.dgv_ruta.Name = "dgv_ruta";
+            this.dgv_ruta.RowHeadersVisible = false;
+            this.dgv_ruta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ruta.Size = new System.Drawing.Size(555, 126);
+            this.dgv_ruta.TabIndex = 245;
+            // 
+            // btn_mod_ruta
+            // 
+            this.btn_mod_ruta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_mod_ruta.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btn_mod_ruta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.btn_mod_ruta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mod_ruta.Location = new System.Drawing.Point(206, 35);
+            this.btn_mod_ruta.Name = "btn_mod_ruta";
+            this.btn_mod_ruta.Size = new System.Drawing.Size(61, 31);
+            this.btn_mod_ruta.TabIndex = 241;
+            this.btn_mod_ruta.Text = "&Modificar";
+            this.btn_mod_ruta.UseVisualStyleBackColor = true;
+            this.btn_mod_ruta.Click += new System.EventHandler(this.Btn_mod_ruta_Click);
             // 
             // cmb_ruta
             // 
@@ -1645,43 +1716,54 @@
             "LEÓN-ADMINISTRATIVO",
             "GUANAJUATO-ADMINISTRATIVO",
             "IRAPUATO-ADMINISTRATIVO"});
-            this.cmb_ruta.Location = new System.Drawing.Point(22, 83);
+            this.cmb_ruta.Location = new System.Drawing.Point(24, 41);
             this.cmb_ruta.Name = "cmb_ruta";
             this.cmb_ruta.Size = new System.Drawing.Size(163, 21);
-            this.cmb_ruta.TabIndex = 237;
+            this.cmb_ruta.TabIndex = 239;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(20, 66);
+            this.label19.Location = new System.Drawing.Point(22, 24);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(40, 13);
-            this.label19.TabIndex = 238;
+            this.label19.TabIndex = 240;
             this.label19.Text = "RUTA:";
             // 
-            // lbl_id_dep
+            // dtm_fecha_turno
             // 
-            this.lbl_id_dep.AutoSize = true;
-            this.lbl_id_dep.Location = new System.Drawing.Point(21, 401);
-            this.lbl_id_dep.Name = "lbl_id_dep";
-            this.lbl_id_dep.Size = new System.Drawing.Size(50, 13);
-            this.lbl_id_dep.TabIndex = 247;
-            this.lbl_id_dep.Text = "@id_dep";
+            this.dtm_fecha_turno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_fecha_turno.Location = new System.Drawing.Point(22, 390);
+            this.dtm_fecha_turno.Name = "dtm_fecha_turno";
+            this.dtm_fecha_turno.Size = new System.Drawing.Size(177, 20);
+            this.dtm_fecha_turno.TabIndex = 249;
             // 
-            // button2
+            // lbl_id_turno
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(492, 412);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 39);
-            this.button2.TabIndex = 244;
-            this.button2.Text = "&ELIMINAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lbl_id_turno.AutoSize = true;
+            this.lbl_id_turno.Location = new System.Drawing.Point(120, 461);
+            this.lbl_id_turno.Name = "lbl_id_turno";
+            this.lbl_id_turno.Size = new System.Drawing.Size(56, 13);
+            this.lbl_id_turno.TabIndex = 250;
+            this.lbl_id_turno.Text = "@id_turno";
+            // 
+            // lbl_Catalogo
+            // 
+            this.lbl_Catalogo.AutoSize = true;
+            this.lbl_Catalogo.Location = new System.Drawing.Point(19, 461);
+            this.lbl_Catalogo.Name = "lbl_Catalogo";
+            this.lbl_Catalogo.Size = new System.Drawing.Size(60, 13);
+            this.lbl_Catalogo.TabIndex = 251;
+            this.lbl_Catalogo.Text = "@Catalogo";
+            // 
+            // lbl_cambio
+            // 
+            this.lbl_cambio.AutoSize = true;
+            this.lbl_cambio.Location = new System.Drawing.Point(19, 496);
+            this.lbl_cambio.Name = "lbl_cambio";
+            this.lbl_cambio.Size = new System.Drawing.Size(53, 13);
+            this.lbl_cambio.TabIndex = 252;
+            this.lbl_cambio.Text = "@Cambio";
             // 
             // Frm_Modificaciones
             // 
@@ -1726,6 +1808,9 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_turno)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ruta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1769,14 +1854,13 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox grb_nacimiento;
-        private System.Windows.Forms.ComboBox cmb_infonavit;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txt_año_graduacion;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.ComboBox cmb_escolaridad;
-        private System.Windows.Forms.TextBox txt_infonavit;
+        private System.Windows.Forms.TextBox txt_num_infonavit;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -1802,7 +1886,6 @@
         private System.Windows.Forms.Label lbl_factor;
         private System.Windows.Forms.TextBox txt_nacionalidad;
         private System.Windows.Forms.TextBox txt_vigencia;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ComboBox cmb_parentesco;
         private System.Windows.Forms.Label lbl_inf;
         private System.Windows.Forms.Label label41;
@@ -1821,8 +1904,6 @@
         private System.Windows.Forms.DataGridView dgv_turno;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cmb_turno;
-        private System.Windows.Forms.ComboBox cmb_ruta;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btn_mod_departamento;
         private System.Windows.Forms.Button btn_mod_familiar;
         private System.Windows.Forms.TextBox txt_compara1;
@@ -1856,12 +1937,22 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.DataGridView dgv_depto;
-        private System.Windows.Forms.Button btn_eliminar_depto;
         private System.Windows.Forms.Label lbl_Comprueba_depto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtm_fecha_dep;
-        private System.Windows.Forms.Label lbl_id_dep;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_eliminar_turno;
+        private System.Windows.Forms.Label lbl_escolaridad;
+        private System.Windows.Forms.Label lbl_civil;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.DataGridView dgv_ruta;
+        private System.Windows.Forms.Button btn_mod_ruta;
+        private System.Windows.Forms.ComboBox cmb_ruta;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btn_eliminar_depto;
+        private System.Windows.Forms.DateTimePicker dtm_fecha_turno;
+        private System.Windows.Forms.Label lbl_id_turno;
+        private System.Windows.Forms.Label lbl_Catalogo;
+        private System.Windows.Forms.Label lbl_cambio;
     }
 }

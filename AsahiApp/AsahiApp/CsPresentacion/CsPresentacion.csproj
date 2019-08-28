@@ -81,6 +81,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reportes\RH\Credencial_Visitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Credencial_Visitantes.Designer.cs">
+      <DependentUpon>Credencial_Visitantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Credencial_visitantes_param.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Credencial_visitantes_param.Designer.cs">
+      <DependentUpon>Credencial_visitantes_param.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_Vacaciones.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -369,6 +381,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\RH\Credencial_Visitantes.resx">
+      <DependentUpon>Credencial_Visitantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Credencial_visitantes_param.resx">
+      <DependentUpon>Credencial_visitantes_param.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Frm_Vacaciones.resx">
       <DependentUpon>Frm_Vacaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -467,6 +485,7 @@
     <EmbeddedResource Include="Reportes\RH\Descanso_Laborado.resx">
       <DependentUpon>Descanso_Laborado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Credenciales_Visitantes.rdlc" />
     <EmbeddedResource Include="Rep_Descanso_Laborado.rdlc" />
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Activos.rdlc" />
