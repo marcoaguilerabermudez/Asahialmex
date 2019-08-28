@@ -268,4 +268,57 @@ Public Class DEmpleado
         End Try
         Return lstPermiso
     End Function
+    Public Function RecuperarEmpleadosExportar(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LEmpleado
+        Dim lstEmp As New LEmpleado()
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("ExportarEmpleados", oCon)
+            query.Parameters.AddWithValue("@fechai", fi)
+            query.Parameters.AddWithValue("@fechaf", ff)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.IdEmpleado = Convert.ToInt32(dr("ID").ToString)
+                emp.Fecha1 = Convert.ToDateTime(dr("FECHAALTA").ToString)
+                emp.ApellidoPaterno = dr("APELLIDOP").ToString
+                emp.ApellidoMaterno = dr("APELLIDOM").ToString
+                emp.Nombres = dr("NOMBRE").ToString
+                emp.SueldoDiario = Convert.ToDouble(dr("SD").ToString)
+                emp.SueldoBase = Convert.ToDouble(dr("SBC").ToString)
+                emp.Departamento = dr("DEPARTAMENTO").ToString
+                emp.EdoSindical = dr("SINDICALIZADO").ToString
+                emp.Nss = dr("NSS").ToString
+                emp.Rfc = dr("RFC").ToString
+                emp.Curp = dr("Curp").ToString
+                emp.Sexo = dr("SEXO").ToString
+                emp.Ciudad = dr("CIUDAD").ToString
+                emp.FechaNac = Convert.ToDateTime(dr("FECHANAC").ToString)
+                emp.Padre = dr("PADRE").ToString
+                emp.Madre = dr("MADRE").ToString
+                emp.Domicilio = dr("DOMICILIO").ToString
+                emp.Puesto = dr("PUESTO").ToString
+                emp.Municipio = dr("MUNICIPIO").ToString
+                emp.EntidadFed = dr("ENTFED").ToString
+                emp.CodigoPostal = Convert.ToInt32(dr("CP").ToString)
+                emp.EdoCivil = dr("EC").ToString
+                emp.Telefono = dr("TEL").ToString
+                emp.Extras = dr("CampExtNum5").ToString
+                emp.EMail = dr("EMAIL").ToString
+                emp.EntidadFedNac = dr("EntFedNac").ToString
+                lstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstEmp
+    End Function
 End Class

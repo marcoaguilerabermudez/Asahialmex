@@ -21,4 +21,8 @@ Public Class NEmpleado
         Dim DEmp As New DEmpleado()
         Return DEmp.RecuperarPermisosUsuario(cadenaConex, emp)
     End Function
+    Public Function RecuperarEmpleadosExportar(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RecuperarEmpleadosExportar(cadenaConex, fi, ff)
+    End Function
 End Class

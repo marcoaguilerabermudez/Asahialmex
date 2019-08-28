@@ -27,6 +27,11 @@ Presentacion
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Presentacion.My.Resources.Resources._New">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Presentacion.My.Resources.Resources.Acumulado">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
