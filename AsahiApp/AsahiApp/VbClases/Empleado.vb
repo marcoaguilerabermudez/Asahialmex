@@ -170,6 +170,24 @@
             sueldoBruto_ = value
         End Set
     End Property
+    Private sueldoDiario_ As Double
+    Public Property SueldoDiario() As Double
+        Get
+            Return sueldoDiario_
+        End Get
+        Set(ByVal value As Double)
+            sueldoDiario_ = value
+        End Set
+    End Property
+    Private sueldoBase_ As Double
+    Public Property SueldoBase() As Double
+        Get
+            Return sueldoBase_
+        End Get
+        Set(ByVal value As Double)
+            sueldoBase_ = value
+        End Set
+    End Property
 #Region "Checadas"
     Private horaEntradaReal0_ As Date
     Public Property HoraEntradaReal0() As Date
@@ -751,7 +769,6 @@
         End Set
     End Property
     Private respuesta_ As Integer
-
     Public Property Respuesta() As Integer
         Get
             Return respuesta_
@@ -760,7 +777,6 @@
             respuesta_ = value
         End Set
     End Property
-
     Private tipoUsuario_ As Integer
     Public Property TipoUsuario() As Integer
         Get
@@ -770,5 +786,166 @@
             tipoUsuario_ = value
         End Set
     End Property
-
+    Private edoSindical_ As String
+    Public Property EdoSindical() As String
+        Get
+            Return edoSindical_
+        End Get
+        Set(ByVal value As String)
+            edoSindical_ = value
+        End Set
+    End Property
+    Private nss_ As String
+    Public Property Nss() As String
+        Get
+            Return nss_
+        End Get
+        Set(ByVal value As String)
+            nss_ = value
+        End Set
+    End Property
+    Private rfc_ As String
+    Public Property Rfc() As String
+        Get
+            Return rfc_
+        End Get
+        Set(ByVal value As String)
+            rfc_ = value
+        End Set
+    End Property
+    Private curp_ As String
+    Public Property Curp() As String
+        Get
+            Return curp_
+        End Get
+        Set(ByVal value As String)
+            curp_ = value
+        End Set
+    End Property
+    Private sexo_ As String
+    Public Property Sexo() As String
+        Get
+            Return sexo_
+        End Get
+        Set(ByVal value As String)
+            sexo_ = value
+        End Set
+    End Property
+    Private ciudad_ As String
+    Public Property Ciudad() As String
+        Get
+            Return ciudad_
+        End Get
+        Set(ByVal value As String)
+            ciudad_ = value
+        End Set
+    End Property
+    Private fechaNac_ As Date
+    Public Property FechaNac() As Date
+        Get
+            Return fechaNac_
+        End Get
+        Set(ByVal value As Date)
+            fechaNac_ = value
+        End Set
+    End Property
+    Private padre_ As String
+    Public Property Padre() As String
+        Get
+            Return padre_
+        End Get
+        Set(ByVal value As String)
+            padre_ = value
+        End Set
+    End Property
+    Private madre_ As String
+    Public Property Madre() As String
+        Get
+            Return madre_
+        End Get
+        Set(ByVal value As String)
+            madre_ = value
+        End Set
+    End Property
+    Private domicilio_ As String
+    Public Property Domicilio() As String
+        Get
+            Return domicilio_
+        End Get
+        Set(ByVal value As String)
+            domicilio_ = value
+        End Set
+    End Property
+    Private municipio_ As String
+    Public Property Municipio() As String
+        Get
+            Return municipio_
+        End Get
+        Set(ByVal value As String)
+            municipio_ = value
+        End Set
+    End Property
+    Private entidadFed_ As String
+    Public Property EntidadFed() As String
+        Get
+            Return entidadFed_
+        End Get
+        Set(ByVal value As String)
+            entidadFed_ = value
+        End Set
+    End Property
+    Private extras_ As Object
+    Public Property Extras() As Object
+        Get
+            Return extras_
+        End Get
+        Set(ByVal value As Object)
+            extras_ = value
+        End Set
+    End Property
+    Private edoCivil_ As String
+    Public Property EdoCivil() As String
+        Get
+            Return edoCivil_
+        End Get
+        Set(ByVal value As String)
+            edoCivil_ = value
+        End Set
+    End Property
+    Private entidadFedNac_ As String
+    Public Property EntidadFedNac() As String
+        Get
+            Return entidadFedNac_
+        End Get
+        Set(ByVal value As String)
+            entidadFedNac_ = value
+        End Set
+    End Property
+    Private codigoPostal_ As Integer
+    Public Property CodigoPostal() As Integer
+        Get
+            Return codigoPostal_
+        End Get
+        Set(ByVal value As Integer)
+            codigoPostal_ = value
+        End Set
+    End Property
+    Private telefono_ As String
+    Public Property Telefono() As String
+        Get
+            Return telefono_
+        End Get
+        Set(ByVal value As String)
+            telefono_ = value
+        End Set
+    End Property
+    Private eMail_ As String
+    Public Property EMail() As String
+        Get
+            Return eMail_
+        End Get
+        Set(ByVal value As String)
+            eMail_ = value
+        End Set
+    End Property
 End Class

@@ -99,7 +99,7 @@ Public Class Frm_Principal
                 Case "FiniquitoToolStripMenuItem" : FiniquitoToolStripMenuItem.Enabled = True
                 Case "MejoraContinuaToolStripMenuItem" : MejoraContinuaToolStripMenuItem.Enabled = True
                 Case "ReporteMejorasToolStripMenuItem" : ReporteMejorasToolStripMenuItem.Enabled = True
-                'Case "PlanTiempoExtraToolStripMenuItem" : PlanTiempoExtraToolStripMenuItem.Enabled = True
+                Case "PlanTiempoExtraToolStripMenuItem" : PlanTiempoExtraToolStripMenuItem.Enabled = True
                 Case "ControlDeProducciónToolStripMenuItem" : ControlDeProducciónToolStripMenuItem.Enabled = True
                 Case "EvaluacionesToolStripMenuItem" : EvaluacionesToolStripMenuItem.Enabled = True
                 Case "MasterPlanToolStripMenuItem" : MasterPlanToolStripMenuItem.Enabled = True
@@ -297,7 +297,7 @@ Public Class Frm_Principal
 
     Private Sub PlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanToolStripMenuItem.Click
         'MsgBox("Ahí la llevamos no apureis para septiembre queda bro")
-        Dim mp As New Frm_MasterPlan()
+        Dim mp As New Frm_Gastos()
         mp.Show()
     End Sub
 
