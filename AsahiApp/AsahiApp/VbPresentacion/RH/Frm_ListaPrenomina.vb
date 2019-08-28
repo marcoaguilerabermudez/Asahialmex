@@ -3,6 +3,7 @@ Imports System.Data.SqlClient
 Imports Microsoft.Reporting.WinForms
 Imports Clases
 Imports Negocio
+Imports Excel = Microsoft.Office.Interop.Excel
 Public Class Frm_ListaPrenomina
 #Region "Variables de Clase"
     Dim cadConex As SqlConnection
@@ -83,7 +84,7 @@ Public Class Frm_ListaPrenomina
             End If
 
             If sem <> hrs.Semana Then CmbSemanas.SelectedItem = hrs.Semana
-            Btn_Excel.Visible = False
+            'Btn_Excel.Visible = False
             Txt_FiltroId.Enabled = False
             Txt_FiltroId.Text = ""
             open = True
@@ -226,7 +227,8 @@ Public Class Frm_ListaPrenomina
         End If
     End Sub
     Private Sub Btn_Excel_Click(sender As Object, e As EventArgs) Handles Btn_Excel.Click
-        GridAExcel(Dgv_ListaPrenomina)
+        'GridAExcel(Dgv_ListaPrenomina)
+        CrearExcel()
     End Sub
     Private Sub Txt_FiltroId_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroId.TextChanged
         Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, idEmp As Integer
@@ -1251,7 +1253,7 @@ Public Class Frm_ListaPrenomina
             RellenaChecadasDgvPrenomina(lstEmp)
             RecuperarIncidencias()
             CalcularBono()
-            Btn_Excel.Visible = True
+            'Btn_Excel.Visible = True
             Txt_FiltroId.Enabled = True
         End If
     End Sub
@@ -1526,6 +1528,199 @@ Public Class Frm_ListaPrenomina
         End Try
         Return True
     End Function
+    Private Sub CrearExcel()
+        Me.Cursor = Cursors.WaitCursor
+        Try
+            ' Creamos todo lo necesario para un excel
+            Dim appXL As Excel.Application
+            Dim wbXl As Excel.Workbook
+            Dim shXL As Excel.Worksheet
+            Dim f As Integer = 2
+            Dim lstEmp As New LEmpleado()
+            Dim NEmp As New NEmpleado()
+            Dim conex As New conexion()
+            Dim cadenaConex As String = conex.conexion2008
+            appXL = CreateObject("Excel.Application")
+            appXL.Visible = False 'Para que no se muestre mientras se crea
+            wbXl = appXL.Workbooks.Add
+            shXL = wbXl.ActiveSheet
+            ' Añadimos las cabeceras de las columnas con formato en negrita
+            'Dim formatRange As Excel.Range
+            'formatRange = shXL.Range("a1       formatRange.EntireRow.Font.Bold = True")
+            shXL.Cells(1, 1).Value = "Código"
+            shXL.Cells(1, 2).Value = "Fecha de alta"
+            shXL.Cells(1, 3).Value = "Fecha de baja"
+            shXL.Cells(1, 4).Value = "Fecha de reingreso"
+            shXL.Cells(1, 5).Value = "Tipo de contrato"
+            shXL.Cells(1, 6).Value = "Apellido paterno"
+            shXL.Cells(1, 7).Value = "Apellido materno"
+            shXL.Cells(1, 8).Value = "Nombre"
+            shXL.Cells(1, 9).Value = "Tipo de periodo"
+            shXL.Cells(1, 10).Value = "Salario diario"
+            shXL.Cells(1, 11).Value = "SBC parte fija"
+            shXL.Cells(1, 12).Value = "Base de cotización"
+            shXL.Cells(1, 13).Value = "Estatus empleado"
+            shXL.Cells(1, 14).Value = "Departamento"
+            shXL.Cells(1, 15).Value = "Sindicalizado"
+            shXL.Cells(1, 16).Value = "Base de pago"
+            shXL.Cells(1, 17).Value = "Método de pago"
+            shXL.Cells(1, 18).Value = "Turno de trabajo"
+            shXL.Cells(1, 19).Value = "Zona de salario"
+            shXL.Cells(1, 20).Value = "Campo extra 1"
+            shXL.Cells(1, 21).Value = "Campo extra 2"
+            shXL.Cells(1, 22).Value = "Campo extra 3"
+            shXL.Cells(1, 23).Value = "Afore"
+            shXL.Cells(1, 24).Value = "Expediente"
+            shXL.Cells(1, 25).Value = "Num seguridad social"
+            shXL.Cells(1, 26).Value = "RFC"
+            shXL.Cells(1, 27).Value = "CURP"
+            shXL.Cells(1, 28).Value = "Sexo"
+            shXL.Cells(1, 29).Value = "Ciudad de nacimiento"
+            shXL.Cells(1, 30).Value = "Fecha de nacimiento"
+            shXL.Cells(1, 31).Value = "UMF"
+            shXL.Cells(1, 32).Value = "Nombre del padre"
+            shXL.Cells(1, 33).Value = "Nombre de la madre"
+            shXL.Cells(1, 34).Value = "Dirección"
+            shXL.Cells(1, 35).Value = "Puesto"
+            shXL.Cells(1, 36).Value = "Población"
+            shXL.Cells(1, 37).Value = "Entidad federativa de domicilio"
+            shXL.Cells(1, 38).Value = "CP"
+            shXL.Cells(1, 39).Value = "Estado Civil"
+            shXL.Cells(1, 40).Value = "Teléfono"
+            shXL.Cells(1, 41).Value = "Aviso pendiente modificación SBC"
+            shXL.Cells(1, 42).Value = "Aviso pendiente reingreso IMSS"
+            shXL.Cells(1, 43).Value = "Aviso pendiente baja IMSS"
+            shXL.Cells(1, 44).Value = "Aviso pendiente cambio base cotización"
+            shXL.Cells(1, 45).Value = "Fecha del salario diario"
+            shXL.Cells(1, 46).Value = "Fecha SBC parte fija"
+            shXL.Cells(1, 47).Value = "Salario variable"
+            shXL.Cells(1, 48).Value = "Fecha salario variable"
+            shXL.Cells(1, 49).Value = "Salario promedio"
+            shXL.Cells(1, 50).Value = "Fecha salario promedio"
+            shXL.Cells(1, 51).Value = "Salario base liquidación"
+            shXL.Cells(1, 52).Value = "Saldo del ajuste al neto"
+            shXL.Cells(1, 53).Value = "Cálculo PTU"
+            shXL.Cells(1, 54).Value = "Cálculo aguinaldo"
+            shXL.Cells(1, 55).Value = "Banco para pago electrónico"
+            shXL.Cells(1, 56).Value = "Numero de cuenta para pago electrónico"
+            shXL.Cells(1, 57).Value = "Sucursal para pago electrónico"
+            shXL.Cells(1, 58).Value = "Causa de la última baja"
+            shXL.Cells(1, 59).Value = "Campo extra numérico 1"
+            shXL.Cells(1, 60).Value = "Campo extra numérico 2"
+            shXL.Cells(1, 61).Value = "Campo extra numérico 3"
+            shXL.Cells(1, 62).Value = "Campo extra numérico 4"
+            shXL.Cells(1, 63).Value = "Campo extra numérico 5"
+            shXL.Cells(1, 64).Value = "Fecha salario mixto"
+            shXL.Cells(1, 65).Value = "Salario mixto"
+            shXL.Cells(1, 66).Value = "Registro patronal del IMSS"
+            shXL.Cells(1, 67).Value = "Número FONACOT"
+            shXL.Cells(1, 68).Value = "Correo electrónico"
+            shXL.Cells(1, 69).Value = "Tipo de régimen"
+            shXL.Cells(1, 70).Value = "CLABE interbancaria"
+            shXL.Cells(1, 71).Value = "Entidad federativa de nacimiento"
+            shXL.Cells(1, 72).Value = "Tipo de prestación"
+            shXL.Cells(1, 73).Value = "Extranjero sin CURP"
+            lstEmp = NEmp.RecuperarEmpleadosExportar(cadenaConex, (Lbl_Dia1.Text & "/" & Lbl_año.Text), (lbl_Dia7.Text & "/" & Lbl_año.Text))
+
+            If lstEmp.Count > 0 Then
+                For Each item In lstEmp
+                    shXL.Cells(f, 1).Value = "'" & item.IdEmpleado
+                    shXL.Cells(f, 2).Value = Format(item.Fecha1, "dd/MM/yyyy")
+                    shXL.Cells(f, 3).Value = "30/12/1899"
+                    shXL.Cells(f, 4).Value = "30/12/1899"
+                    shXL.Cells(f, 5).Value = "'03"
+                    shXL.Cells(f, 6).Value = item.ApellidoPaterno
+                    shXL.Cells(f, 7).Value = item.ApellidoMaterno
+                    shXL.Cells(f, 8).Value = item.Nombres
+                    shXL.Cells(f, 9).Value = "Semanal"
+                    shXL.Cells(f, 10).Value = item.SueldoDiario
+                    shXL.Cells(f, 11).Value = item.SueldoBase
+                    shXL.Cells(f, 12).Value = "M"
+                    shXL.Cells(f, 13).Value = "A"
+                    shXL.Cells(f, 14).Value = item.Departamento '"Departamento"
+                    shXL.Cells(f, 15).Value = item.EdoSindical '"Sindicalizado"
+                    shXL.Cells(f, 16).Value = "S"
+                    shXL.Cells(f, 17).Value = "'03"
+                    shXL.Cells(f, 18).Value = "Matutino"
+                    shXL.Cells(f, 19).Value = "B"
+                    shXL.Cells(f, 20).Value = ""
+                    shXL.Cells(f, 21).Value = ""
+                    shXL.Cells(f, 22).Value = ""
+                    shXL.Cells(f, 23).Value = ""
+                    shXL.Cells(f, 24).Value = ""
+                    shXL.Cells(f, 25).Value = "'" & item.Nss '"Num seguridad social"
+                    shXL.Cells(f, 26).Value = item.Rfc '"RFC"
+                    shXL.Cells(f, 27).Value = item.Curp '"CURP"
+                    shXL.Cells(f, 28).Value = item.Sexo '"Sexo"
+                    shXL.Cells(f, 29).Value = item.Ciudad '"Ciudad de nacimiento"
+                    shXL.Cells(f, 30).Value = "'" & Format(item.FechaNac, "dd/MM/yyyy") '"Fecha de nacimiento"
+                    shXL.Cells(f, 31).Value = "'0"
+                    shXL.Cells(f, 32).Value = item.Padre '"Nombre del padre"
+                    shXL.Cells(f, 33).Value = item.Madre '"Nombre de la madre"
+                    shXL.Cells(f, 34).Value = item.Domicilio '"Dirección"
+                    shXL.Cells(f, 35).Value = item.Puesto '"Puesto"
+                    shXL.Cells(f, 36).Value = item.Municipio '"Población"
+                    shXL.Cells(f, 37).Value = item.EntidadFed '"Entidad federativa de domicilio"
+                    shXL.Cells(f, 38).Value = item.CodigoPostal '"CP"
+                    shXL.Cells(f, 39).Value = item.EdoCivil '"Estado Civil"
+                    shXL.Cells(f, 40).Value = item.Telefono '"Teléfono"
+                    shXL.Cells(f, 41).Value = "'0"
+                    shXL.Cells(f, 42).Value = "1"
+                    shXL.Cells(f, 43).Value = "'0"
+                    shXL.Cells(f, 44).Value = "'0"
+                    shXL.Cells(f, 45).Value = Format(item.Fecha1, "dd/MM/yyyy") '"Fecha del salario diario"
+                    shXL.Cells(f, 46).Value = Format(item.Fecha1, "dd/MM/yyyy") '"Fecha SBC parte fija"
+                    shXL.Cells(f, 47).Value = "'0"
+                    shXL.Cells(f, 48).Value = Format(item.Fecha1, "dd/MM/yyyy") '"Fecha salario variable"
+                    shXL.Cells(f, 49).Value = "'0"
+                    shXL.Cells(f, 50).Value = Format(item.Fecha1, "dd/MM/yyyy") '"Fecha salario promedio"
+                    shXL.Cells(f, 51).Value = "'0"
+                    shXL.Cells(f, 52).Value = "'0"
+                    shXL.Cells(f, 53).Value = "1"
+                    shXL.Cells(f, 54).Value = "1"
+                    shXL.Cells(f, 55).Value = "'072"
+                    shXL.Cells(f, 56).Value = ""
+                    shXL.Cells(f, 57).Value = "7004"
+                    shXL.Cells(f, 58).Value = ""
+                    shXL.Cells(f, 59).Value = "'0"
+                    shXL.Cells(f, 60).Value = "'0"
+                    shXL.Cells(f, 61).Value = "'0"
+                    shXL.Cells(f, 62).Value = "'0"
+                    shXL.Cells(f, 63).Value = "'" & item.Extras '"Campo extra numérico 5"
+                    shXL.Cells(f, 64).Value = Format(item.Fecha1, "dd/MM/yyyy") '"Fecha salario mixto"
+                    shXL.Cells(f, 65).Value = "'0"
+                    shXL.Cells(f, 66).Value = "B5715267106"
+                    shXL.Cells(f, 67).Value = "'0"
+                    shXL.Cells(f, 68).Value = item.EMail '"Correo electrónico"
+                    shXL.Cells(f, 69).Value = "'02"
+                    shXL.Cells(f, 70).Value = "'000000000000000000"
+                    shXL.Cells(f, 71).Value = item.EntidadFedNac '"Entidad federativa de nacimiento"
+                    shXL.Cells(f, 72).Value = "Confianza"
+                    shXL.Cells(f, 73).Value = "'0"
+                    f += 1
+                Next
+                ' Mostramos un dialog para que el usuario indique donde quiere guardar el excel
+                Dim saveFileDialog1 As New SaveFileDialog()
+                saveFileDialog1.Title = "Guardar documento Excel"
+                saveFileDialog1.Filter = "Excel File|*.xlsx"
+                saveFileDialog1.FileName = "Empleados"
+                saveFileDialog1.ShowDialog()
+                ' Guardamos el excel en la ruta que ha especificado el usuario
+                wbXl.SaveAs(saveFileDialog1.FileName)
+                ' Cerramos el workbook
+                appXL.Workbooks.Close()
+            Else
+                MsgBox("No hay registros nuevos")
+            End If
+            ' Eliminamos el objeto excel
+            appXL.Quit()
+
+        Catch ex As Exception
+            MessageBox.Show("Errorxportar los datos a excel.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            Me.Cursor = Cursors.Arrow
+        End Try
+    End Sub
     Private Sub Almacenar()
         Try
             'Dim mes As String = mesLetra()
