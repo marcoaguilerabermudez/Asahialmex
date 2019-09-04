@@ -133,10 +133,12 @@ Public Class Frm_Principal
         Soporte.Show()
     End Sub
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
-
+        Dispose()
+        Dim Login As New Frm_Login()
+        Login.ShowDialog()
     End Sub
     Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
-
+        Close()
     End Sub
     Private Sub AcercaDeToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem1.Click
         Dim Acerca As New Frm_Acerca()

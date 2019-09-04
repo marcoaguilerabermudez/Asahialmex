@@ -139,7 +139,6 @@ namespace CsPresentacion
                 Resultado = Sueldo * Factor;
                 txt_SDO3.Text = Resultado.ToString();
                 txt_SDO5.Text = Resultado.ToString();
-
             }
             catch
             {
