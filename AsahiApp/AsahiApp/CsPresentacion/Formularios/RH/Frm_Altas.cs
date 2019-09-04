@@ -30,7 +30,7 @@ namespace CsPresentacion
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT RTRIM(DESCRIPCION)as 'DEPARTAMENTO' FROM  [asahi16].[Supervisor_giro].[DEPTO] WHERE CENTRO_COSTO <>16", con);
+                SqlCommand cmd = new SqlCommand("SELECT RTRIM(DESCRIPCION)as 'DEPARTAMENTO' FROM  [asahi16].[Supervisor_giro].[DEPTO] WHERE CENTRO_COSTO <>16 and RTRIM(DESCRIPCION) <> 'PRESIDENCIA'", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -101,7 +101,7 @@ namespace CsPresentacion
            txt_estado.Visible = false;
             txt_SDO1.Enabled = false;
             txt_SDO2.Enabled = false;
-            txt_SDO3.Enabled = false;
+           txt_SDO3.Enabled = false;
             txt_SDO4.Enabled = false;
             txt_SDO5.Enabled = false;
             groupBox2.Enabled = false;
@@ -449,7 +449,7 @@ namespace CsPresentacion
         {
             selecciona_sueldo();
 
-            if (cmb_puesto.Text == "PRESIDENTE" || cmb_puesto.Text == "DIRECTOR" || cmb_puesto.Text == "GERENTE" || cmb_puesto.Text == "COORDINADOR")
+            if (cmb_puesto.Text == "DIRECTOR" || cmb_puesto.Text == "GERENTE" || cmb_puesto.Text == "COORDINADOR")
             {
                 txt_SDO1.Enabled = true;
                 txt_SDO1.Text = "";
@@ -590,6 +590,11 @@ namespace CsPresentacion
                 MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso");
                 txt_tel_contacto.Focus();
             }
+            else if (string.IsNullOrEmpty(txt_infonavit.Text))
+            {
+                txt_infonavit.Text = "0";
+            }
+
             else
             {
                 Registra_empleado();
@@ -1044,6 +1049,22 @@ namespace CsPresentacion
 
         private void Cmb_infonavit_SelectedIndexChanged(object sender, EventArgs e)
         {    
+        }
+
+        private void Txt_infonavit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

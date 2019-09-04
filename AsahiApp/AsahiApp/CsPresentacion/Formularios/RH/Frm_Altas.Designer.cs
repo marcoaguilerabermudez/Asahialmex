@@ -133,6 +133,7 @@
             this.btn_ps_siguiente = new System.Windows.Forms.Button();
             this.grb_nacimiento = new System.Windows.Forms.GroupBox();
             this.panel_final = new System.Windows.Forms.Panel();
+            this.txt_infonavit = new System.Windows.Forms.TextBox();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.cmb_parentesco = new System.Windows.Forms.ComboBox();
@@ -148,7 +149,6 @@
             this.label49 = new System.Windows.Forms.Label();
             this.cmb_escolaridad = new System.Windows.Forms.ComboBox();
             this.btn_fin_anterior = new System.Windows.Forms.Button();
-            this.txt_infonavit = new System.Windows.Forms.TextBox();
             this.Panel_principal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1348,6 +1348,15 @@
             this.panel_final.TabIndex = 232;
             this.panel_final.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_final_Paint);
             // 
+            // txt_infonavit
+            // 
+            this.txt_infonavit.Location = new System.Drawing.Point(20, 248);
+            this.txt_infonavit.MaxLength = 10;
+            this.txt_infonavit.Name = "txt_infonavit";
+            this.txt_infonavit.Size = new System.Drawing.Size(166, 20);
+            this.txt_infonavit.TabIndex = 35;
+            this.txt_infonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_infonavit_KeyPress);
+            // 
             // cmb_ruta
             // 
             this.cmb_ruta.FormattingEnabled = true;
@@ -1516,14 +1525,6 @@
             this.btn_fin_anterior.Text = "<&Anterior";
             this.btn_fin_anterior.UseVisualStyleBackColor = true;
             this.btn_fin_anterior.Click += new System.EventHandler(this.Btn_fin_anterior_Click);
-            // 
-            // txt_infonavit
-            // 
-            this.txt_infonavit.Location = new System.Drawing.Point(20, 248);
-            this.txt_infonavit.MaxLength = 10;
-            this.txt_infonavit.Name = "txt_infonavit";
-            this.txt_infonavit.Size = new System.Drawing.Size(166, 20);
-            this.txt_infonavit.TabIndex = 35;
             // 
             // Frm_Altas
             // 

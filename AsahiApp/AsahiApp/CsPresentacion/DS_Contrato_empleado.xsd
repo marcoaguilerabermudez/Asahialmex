@@ -33,8 +33,8 @@
               <Mapping SourceColumn="PUESTO" DataSetColumn="PUESTO" />
               <Mapping SourceColumn="ESTADO_CIVIL" DataSetColumn="ESTADO_CIVIL" />
               <Mapping SourceColumn="PRIMERA_EVALUACION" DataSetColumn="PRIMERA_EVALUACION" />
-              <Mapping SourceColumn="SD01" DataSetColumn="SD01" />
-              <Mapping SourceColumn="SD02" DataSetColumn="SD02" />
+              <Mapping SourceColumn="SDO1" DataSetColumn="SDO1" />
+              <Mapping SourceColumn="SDO2" DataSetColumn="SDO2" />
               <Mapping SourceColumn="SUELDO" DataSetColumn="SUELDO" />
               <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
               <Mapping SourceColumn="INGRESO" DataSetColumn="INGRESO" />
@@ -129,8 +129,8 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="PRIMERA_EVALUACION" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPRIMERA_EVALUACION" msprop:Generator_ColumnPropNameInRow="PRIMERA_EVALUACION" msprop:Generator_ColumnPropNameInTable="PRIMERA_EVALUACIONColumn" msprop:Generator_UserColumnName="PRIMERA_EVALUACION" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="SD01" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSD01" msprop:Generator_ColumnPropNameInRow="SD01" msprop:Generator_ColumnPropNameInTable="SD01Column" msprop:Generator_UserColumnName="SD01" type="xs:decimal" minOccurs="0" />
-              <xs:element name="SD02" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSD02" msprop:Generator_ColumnPropNameInRow="SD02" msprop:Generator_ColumnPropNameInTable="SD02Column" msprop:Generator_UserColumnName="SD02" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SDO1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSDO1" msprop:Generator_ColumnPropNameInRow="SDO1" msprop:Generator_ColumnPropNameInTable="SDO1Column" msprop:Generator_UserColumnName="SDO1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SDO2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSDO2" msprop:Generator_ColumnPropNameInRow="SDO2" msprop:Generator_ColumnPropNameInTable="SDO2Column" msprop:Generator_UserColumnName="SDO2" type="xs:decimal" minOccurs="0" />
               <xs:element name="SUELDO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSUELDO" msprop:Generator_ColumnPropNameInRow="SUELDO" msprop:Generator_ColumnPropNameInTable="SUELDOColumn" msprop:Generator_UserColumnName="SUELDO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
