@@ -136,6 +136,8 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debu
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Finiquito.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_bajas.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Fecha_Baja.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_cambio_puesto.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Cambio_Depto.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Evaluacion.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Mejora_Param.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Altas.resources
@@ -144,6 +146,7 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debu
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Rep_Alta_empleado.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Properties.Resources.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Reporte_Bajas.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Reporte_Altas.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Rep_Finiquito.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Rep_Descanso_Laborado.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Retardos_Semana.resources
@@ -296,10 +299,5 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentaci
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.pdb
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Vacaciones.resources
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Vacaciones.resources
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Ausentismos.resources
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Incapacidades.resources
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Listado_Activos.resources
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Listado_Activos.resources
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Contrato_Clave.resources
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Altas_Empleados.resources
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Credencial_visitantes_param.resources
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Credencial_Visitantes.resources

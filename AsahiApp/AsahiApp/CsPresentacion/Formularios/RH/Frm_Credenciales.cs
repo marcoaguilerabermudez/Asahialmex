@@ -318,6 +318,8 @@ namespace CsPresentacion
         {
             Rep_Credenciales Cre = new Rep_Credenciales();
             Cre.Fecha = Convert.ToDateTime(lbl_fecha.Text);
+            Cre.Var = Convert.ToInt32("1");
+            Cre.Cant = Convert.ToInt32("1");
             Cre.ShowDialog();
             Eliminar_Todo();
             Mostrar_Grid();

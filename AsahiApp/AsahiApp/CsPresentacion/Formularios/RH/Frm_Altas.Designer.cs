@@ -33,6 +33,7 @@
             this.txt_factor = new System.Windows.Forms.TextBox();
             this.lbl_var = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.lbl_tipo_ingreso = new System.Windows.Forms.Label();
             this.rdb_expatriado = new System.Windows.Forms.RadioButton();
             this.rdb_nacional = new System.Windows.Forms.RadioButton();
             this.lbl_tipo_empleado = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txt_SDO5 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cmb_infonavit = new System.Windows.Forms.ComboBox();
             this.lbl_inf = new System.Windows.Forms.Label();
             this.btn_finalizar = new System.Windows.Forms.Button();
             this.cmb_turno = new System.Windows.Forms.ComboBox();
@@ -133,6 +133,7 @@
             this.btn_ps_siguiente = new System.Windows.Forms.Button();
             this.grb_nacimiento = new System.Windows.Forms.GroupBox();
             this.panel_final = new System.Windows.Forms.Panel();
+            this.txt_infonavit = new System.Windows.Forms.TextBox();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.cmb_parentesco = new System.Windows.Forms.ComboBox();
@@ -148,7 +149,6 @@
             this.label49 = new System.Windows.Forms.Label();
             this.cmb_escolaridad = new System.Windows.Forms.ComboBox();
             this.btn_fin_anterior = new System.Windows.Forms.Button();
-            this.lbl_tipo_ingreso = new System.Windows.Forms.Label();
             this.Panel_principal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -233,6 +233,16 @@
             this.label32.TabIndex = 42;
             this.label32.Text = "ESTADO:";
             // 
+            // lbl_tipo_ingreso
+            // 
+            this.lbl_tipo_ingreso.AutoSize = true;
+            this.lbl_tipo_ingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tipo_ingreso.Location = new System.Drawing.Point(74, 462);
+            this.lbl_tipo_ingreso.Name = "lbl_tipo_ingreso";
+            this.lbl_tipo_ingreso.Size = new System.Drawing.Size(111, 13);
+            this.lbl_tipo_ingreso.TabIndex = 41;
+            this.lbl_tipo_ingreso.Text = "@NUEVO INGRESO:";
+            // 
             // rdb_expatriado
             // 
             this.rdb_expatriado.AutoSize = true;
@@ -294,7 +304,7 @@
             // 
             this.txt_curp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_curp.Location = new System.Drawing.Point(21, 32);
-            this.txt_curp.MaxLength = 20;
+            this.txt_curp.MaxLength = 18;
             this.txt_curp.Name = "txt_curp";
             this.txt_curp.Size = new System.Drawing.Size(215, 20);
             this.txt_curp.TabIndex = 0;
@@ -600,19 +610,6 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             // 
-            // cmb_infonavit
-            // 
-            this.cmb_infonavit.FormattingEnabled = true;
-            this.cmb_infonavit.Items.AddRange(new object[] {
-            "NO",
-            "SI"});
-            this.cmb_infonavit.Location = new System.Drawing.Point(23, 248);
-            this.cmb_infonavit.Name = "cmb_infonavit";
-            this.cmb_infonavit.Size = new System.Drawing.Size(64, 21);
-            this.cmb_infonavit.TabIndex = 35;
-            this.cmb_infonavit.SelectedIndexChanged += new System.EventHandler(this.Cmb_infonavit_SelectedIndexChanged);
-            this.cmb_infonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_infonavit_KeyPress);
-            // 
             // lbl_inf
             // 
             this.lbl_inf.AutoSize = true;
@@ -644,9 +641,9 @@
             "MATUTINO",
             "VESPERTINO",
             "NOCTURNO"});
-            this.cmb_turno.Location = new System.Drawing.Point(23, 289);
+            this.cmb_turno.Location = new System.Drawing.Point(20, 289);
             this.cmb_turno.Name = "cmb_turno";
-            this.cmb_turno.Size = new System.Drawing.Size(163, 21);
+            this.cmb_turno.Size = new System.Drawing.Size(166, 21);
             this.cmb_turno.TabIndex = 36;
             this.cmb_turno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_turno_KeyPress);
             // 
@@ -1325,8 +1322,8 @@
             // 
             // panel_final
             // 
+            this.panel_final.Controls.Add(this.txt_infonavit);
             this.panel_final.Controls.Add(this.cmb_ruta);
-            this.panel_final.Controls.Add(this.cmb_infonavit);
             this.panel_final.Controls.Add(this.label19);
             this.panel_final.Controls.Add(this.cmb_parentesco);
             this.panel_final.Controls.Add(this.label41);
@@ -1351,6 +1348,15 @@
             this.panel_final.TabIndex = 232;
             this.panel_final.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_final_Paint);
             // 
+            // txt_infonavit
+            // 
+            this.txt_infonavit.Location = new System.Drawing.Point(20, 248);
+            this.txt_infonavit.MaxLength = 10;
+            this.txt_infonavit.Name = "txt_infonavit";
+            this.txt_infonavit.Size = new System.Drawing.Size(166, 20);
+            this.txt_infonavit.TabIndex = 35;
+            this.txt_infonavit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_infonavit_KeyPress);
+            // 
             // cmb_ruta
             // 
             this.cmb_ruta.FormattingEnabled = true;
@@ -1369,9 +1375,9 @@
             "LEÓN-ADMINISTRATIVO",
             "GUANAJUATO-ADMINISTRATIVO",
             "IRAPUATO-ADMINISTRATIVO"});
-            this.cmb_ruta.Location = new System.Drawing.Point(23, 330);
+            this.cmb_ruta.Location = new System.Drawing.Point(20, 330);
             this.cmb_ruta.Name = "cmb_ruta";
-            this.cmb_ruta.Size = new System.Drawing.Size(163, 21);
+            this.cmb_ruta.Size = new System.Drawing.Size(166, 21);
             this.cmb_ruta.TabIndex = 37;
             this.cmb_ruta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_ruta_KeyPress);
             // 
@@ -1393,9 +1399,9 @@
             "HERMANO",
             "HIJO",
             "OTRO"});
-            this.cmb_parentesco.Location = new System.Drawing.Point(23, 204);
+            this.cmb_parentesco.Location = new System.Drawing.Point(20, 204);
             this.cmb_parentesco.Name = "cmb_parentesco";
-            this.cmb_parentesco.Size = new System.Drawing.Size(163, 21);
+            this.cmb_parentesco.Size = new System.Drawing.Size(166, 21);
             this.cmb_parentesco.TabIndex = 34;
             this.cmb_parentesco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_relacion_KeyPress);
             // 
@@ -1519,16 +1525,6 @@
             this.btn_fin_anterior.Text = "<&Anterior";
             this.btn_fin_anterior.UseVisualStyleBackColor = true;
             this.btn_fin_anterior.Click += new System.EventHandler(this.Btn_fin_anterior_Click);
-            // 
-            // lbl_tipo_ingreso
-            // 
-            this.lbl_tipo_ingreso.AutoSize = true;
-            this.lbl_tipo_ingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tipo_ingreso.Location = new System.Drawing.Point(74, 462);
-            this.lbl_tipo_ingreso.Name = "lbl_tipo_ingreso";
-            this.lbl_tipo_ingreso.Size = new System.Drawing.Size(111, 13);
-            this.lbl_tipo_ingreso.TabIndex = 41;
-            this.lbl_tipo_ingreso.Text = "@NUEVO INGRESO:";
             // 
             // Frm_Altas
             // 
@@ -1683,9 +1679,9 @@
         private System.Windows.Forms.TextBox txt_factor;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox txt_hijos;
-        private System.Windows.Forms.ComboBox cmb_infonavit;
         private System.Windows.Forms.Label lbl_inf;
         private System.Windows.Forms.Label lbl_infonavit;
         private System.Windows.Forms.Label lbl_tipo_ingreso;
+        private System.Windows.Forms.TextBox txt_infonavit;
     }
 }
