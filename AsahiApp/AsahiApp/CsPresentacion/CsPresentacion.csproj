@@ -81,6 +81,23 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS_Historico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Historico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Historico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Historico.Designer.cs">
+      <DependentUpon>Frm_Historico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Rep_Historial_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Rep_Historial_.Designer.cs">
+      <DependentUpon>Frm_Rep_Historial_.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\RH\Credencial_Visitantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +398,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\RH\Frm_Historico.resx">
+      <DependentUpon>Frm_Historico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Rep_Historial_.resx">
+      <DependentUpon>Frm_Rep_Historial_.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Credencial_Visitantes.resx">
       <DependentUpon>Credencial_Visitantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -488,6 +511,7 @@
     <EmbeddedResource Include="Rep_Credenciales_Visitantes.rdlc" />
     <EmbeddedResource Include="Rep_Descanso_Laborado.rdlc" />
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
+    <EmbeddedResource Include="Rep_Historico.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Activos.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Altas.rdlc" />
     <EmbeddedResource Include="Rep_Mejoras3.rdlc" />
@@ -554,6 +578,17 @@
     </None>
     <None Include="DS_Finiquito.xss">
       <DependentUpon>DS_Finiquito.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Historico.xsc">
+      <DependentUpon>DS_Historico.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Historico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Historico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Historico.xss">
+      <DependentUpon>DS_Historico.xsd</DependentUpon>
     </None>
     <None Include="DS_Listado_Activos.xsc">
       <DependentUpon>DS_Listado_Activos.xsd</DependentUpon>

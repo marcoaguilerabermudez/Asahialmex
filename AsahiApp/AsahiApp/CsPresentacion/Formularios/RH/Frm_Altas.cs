@@ -24,6 +24,8 @@ namespace CsPresentacion
             cargar_puesto(cmb_puesto);
            cargar_departemento(cmb_departamento);
             selecciona_clave();
+            txt_curp.Mask = ">LLLL000000LLLLLL00";
+            txt_rfc.Mask = ">LLLL000000CCC";
         }
         public void cargar_departemento(ComboBox inte)//Cargar departamento en cmb
         {
@@ -198,7 +200,7 @@ namespace CsPresentacion
 
                 da.Fill(dt);
                 con.Close();
-                MessageBox.Show("Usuario registrado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );
+                MessageBox.Show("El empleado de registró correctamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );
             }
             catch(Exception Error)
             {
@@ -629,32 +631,6 @@ namespace CsPresentacion
         }
         private void Txt_curp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsLetter(e.KeyChar))
-            {
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-
-            if (string.IsNullOrEmpty(txt_curp.Text))
-            {
-                btn_comprueba.Enabled = false;
-                btn_pp_siguiente.Enabled = false;
-            }
-            else
-            {
-                btn_comprueba.Enabled = true;
-                btn_comprueba.Enabled = true;
-            }
         }
         private void Cmb_estado_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1063,6 +1039,20 @@ namespace CsPresentacion
             else
             {
                 e.Handled = true;
+            }
+        }
+
+        private void Txt_curp_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_curp.Text))
+            {
+                btn_comprueba.Enabled = false;
+                btn_pp_siguiente.Enabled = false;
+            }
+            else
+            {
+                btn_comprueba.Enabled = true;
+                btn_comprueba.Enabled = true;
             }
         }
     }

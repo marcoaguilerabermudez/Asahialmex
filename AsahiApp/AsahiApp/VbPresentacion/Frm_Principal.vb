@@ -301,19 +301,23 @@ Public Class Frm_Principal
     Private Sub EmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadosToolStripMenuItem1.Click
         'Módulo de creación de Credenciales
         Dim C As New Frm_Rep_Cred()
-        C.ShowDialog()
-        C.Hide()
+        C.Show()
     End Sub
 
     Private Sub VisitantesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisitantesToolStripMenuItem.Click
         'Módulo creacion de credenciales visitantes
         Dim C As New Credencial_visitantes_param()
-        C.ShowDialog()
-        C.Hide()
+        C.Show()
     End Sub
 
     Private Sub PlanDePersonalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDePersonalToolStripMenuItem.Click
         Frm_cargaplanpersonal.Show()
+    End Sub
+
+    Private Sub HisToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HisToolStripMenuItem.Click
+        'Histórico de empleados
+        Dim H As New Frm_Historico()
+        H.Show()
     End Sub
 #End Region
 End Class
