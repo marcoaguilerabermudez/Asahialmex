@@ -635,6 +635,7 @@ Partial Class Frm_PlanHorasExtra
         Me.totalBruto.HeaderText = "Bruto"
         Me.totalBruto.Name = "totalBruto"
         Me.totalBruto.ReadOnly = True
+        Me.totalBruto.Visible = False
         Me.totalBruto.Width = 65
         '
         'TotalNeto
@@ -642,6 +643,7 @@ Partial Class Frm_PlanHorasExtra
         Me.TotalNeto.HeaderText = "Neto"
         Me.TotalNeto.Name = "TotalNeto"
         Me.TotalNeto.ReadOnly = True
+        Me.TotalNeto.Visible = False
         Me.TotalNeto.Width = 65
         '
         'Frm_PlanHorasExtra
