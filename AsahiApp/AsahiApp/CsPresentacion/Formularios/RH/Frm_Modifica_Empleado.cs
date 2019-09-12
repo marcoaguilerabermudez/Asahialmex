@@ -17,7 +17,6 @@ namespace CsPresentacion
         public Frm_Modificaciones()
         {
             InitializeComponent();
-            timer1.Enabled = true;
             var tt = new ToolTip();
             tt.SetToolTip(btn_nuevo, "NUEVA BUSQUEDA");
         }
@@ -34,10 +33,10 @@ namespace CsPresentacion
         private void Frm_Empleados_Detalle_Load(object sender, EventArgs e)
         {
             nuevo();
-            l_fecha.Visible = false;
-            l_hora.Visible = false;
             cargar_departemento(cmb_departamento);
             cargar_puesto(cmb_puesto);
+            txt_curp.Mask = ">LLLL000000LLLLLL00";
+            txt_rfc.Mask = ">LLLL000000CCC";
         }
         private void Modifica_turno()// Método para modificar turno de empleado
         {
@@ -691,11 +690,6 @@ namespace CsPresentacion
             mostrar_dgv_ruta();
             mostrar_dgv_puesto();
             mostrar_dgv_sueldo();  
-        }
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            l_fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            l_hora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
         private void Cmb_genero_KeyPress(object sender, KeyPressEventArgs e)
@@ -1752,8 +1746,7 @@ namespace CsPresentacion
         }
 
         private void Txt_SDO1_Leave_1(object sender, EventArgs e)
-        {
-            
+        {      
         }
 
         private void Cmb_motivo_sueldo_Leave(object sender, EventArgs e)
@@ -1769,6 +1762,44 @@ namespace CsPresentacion
             Re = f * sd;
             txt_SDO3_2.Text = Re.ToString();
             txt_SDO5_2.Text = Re.ToString();
+        }
+
+        private void Cmb_parentesco_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+        private void Cmb_parentesco_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void MaskedTextBox1_TextChanged(object sender, EventArgs e)
+        {       
+        }
+        private void Txt_curp_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else{}
+        }
+        private void Txt_contacto_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

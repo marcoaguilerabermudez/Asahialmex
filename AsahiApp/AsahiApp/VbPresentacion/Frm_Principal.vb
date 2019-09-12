@@ -99,7 +99,7 @@ Public Class Frm_Principal
                 Case "FiniquitoToolStripMenuItem" : FiniquitoToolStripMenuItem.Enabled = True
                 Case "MejoraContinuaToolStripMenuItem" : MejoraContinuaToolStripMenuItem.Enabled = True
                 Case "ReporteMejorasToolStripMenuItem" : ReporteMejorasToolStripMenuItem.Enabled = True
-                Case "PlanTiempoExtraToolStripMenuItem" : PlanTiempoExtraToolStripMenuItem.Enabled = True
+               ' Case "PlanTiempoExtraToolStripMenuItem" : PlanTiempoExtraToolStripMenuItem.Enabled = True
                 Case "ControlDeProducciónToolStripMenuItem" : ControlDeProducciónToolStripMenuItem.Enabled = True
                 Case "EvaluacionesToolStripMenuItem" : EvaluacionesToolStripMenuItem.Enabled = True
                 Case "MasterPlanToolStripMenuItem" : MasterPlanToolStripMenuItem.Enabled = True
@@ -133,10 +133,12 @@ Public Class Frm_Principal
         Soporte.Show()
     End Sub
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
-
+        Dispose()
+        Dim Login As New Frm_Login()
+        Login.ShowDialog()
     End Sub
     Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
-
+        Close()
     End Sub
     Private Sub AcercaDeToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem1.Click
         Dim Acerca As New Frm_Acerca()
@@ -299,19 +301,23 @@ Public Class Frm_Principal
     Private Sub EmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadosToolStripMenuItem1.Click
         'Módulo de creación de Credenciales
         Dim C As New Frm_Rep_Cred()
-        C.ShowDialog()
-        C.Hide()
+        C.Show()
     End Sub
 
     Private Sub VisitantesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisitantesToolStripMenuItem.Click
         'Módulo creacion de credenciales visitantes
         Dim C As New Credencial_visitantes_param()
-        C.ShowDialog()
-        C.Hide()
+        C.Show()
     End Sub
 
     Private Sub PlanDePersonalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDePersonalToolStripMenuItem.Click
         Frm_cargaplanpersonal.Show()
+    End Sub
+
+    Private Sub HisToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HisToolStripMenuItem.Click
+        'Histórico de empleados
+        Dim H As New Frm_Historico()
+        H.Show()
     End Sub
 #End Region
 End Class
