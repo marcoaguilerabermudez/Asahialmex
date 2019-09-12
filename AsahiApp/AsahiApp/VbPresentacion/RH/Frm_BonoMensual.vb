@@ -437,7 +437,7 @@ Public Class Frm_BonoMensual
                                 tmc = .Cells("retardo").Value
                                 .Cells("retardo").Value = tmc + tm
                                 .Cells("retardo").Style.BackColor = Color.White
-                            ElseIf inc = "PS" Then
+                            ElseIf inc = "P" Then
                                 inc = "PS"
                                 For colum = 1 To Me.da
                                     fechaC = Format(DateAdd(DateInterval.Day, (colum - 1), fecha), "dd/MM/yyyy")

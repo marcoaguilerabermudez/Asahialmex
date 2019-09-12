@@ -23,12 +23,14 @@ Partial Class Frm_PlanHorasExtra
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Btn_ObtenerReportes = New System.Windows.Forms.Button()
         Me.Lbl_Mes = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Rdb_Jpn = New System.Windows.Forms.RadioButton()
         Me.Rdb_Esp = New System.Windows.Forms.RadioButton()
         Me.Lbl_Depto = New System.Windows.Forms.Label()
         Me.Cmb_Departamento = New System.Windows.Forms.ComboBox()
+        Me.Btn_Guardar = New System.Windows.Forms.Button()
         Me.Lbl_año = New System.Windows.Forms.Label()
         Me.Lbl_Semana = New System.Windows.Forms.Label()
         Me.Cmb_Semanas = New System.Windows.Forms.ComboBox()
@@ -43,6 +45,23 @@ Partial Class Frm_PlanHorasExtra
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Dgv_HorasExtra = New System.Windows.Forms.DataGridView()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Lbl_TotalDescLabSuma = New System.Windows.Forms.Label()
+        Me.Lbl_DescLaborado = New System.Windows.Forms.Label()
+        Me.Lbl_SueldoNetoSuma = New System.Windows.Forms.Label()
+        Me.Lbl_SueldoBrutoSuma = New System.Windows.Forms.Label()
+        Me.Lbl_TotalTriplesSum = New System.Windows.Forms.Label()
+        Me.Lbl_TotalDoblesSum = New System.Windows.Forms.Label()
+        Me.Lbl_HrsTriplesSum = New System.Windows.Forms.Label()
+        Me.Lbl_HrsDoblesSum = New System.Windows.Forms.Label()
+        Me.Lbl_Totales = New System.Windows.Forms.Label()
+        Me.Lbl_SumMiercoles = New System.Windows.Forms.Label()
+        Me.Lbl_SumJueves = New System.Windows.Forms.Label()
+        Me.Lbl_SumDomingo = New System.Windows.Forms.Label()
+        Me.Lbl_SumViernes = New System.Windows.Forms.Label()
+        Me.Lbl_SumLunes = New System.Windows.Forms.Label()
+        Me.Lbl_SumSabado = New System.Windows.Forms.Label()
+        Me.Lbl_SumMartes = New System.Windows.Forms.Label()
         Me.clave = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.departamento = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,25 +83,6 @@ Partial Class Frm_PlanHorasExtra
         Me.totalDescLaborado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalBruto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalNeto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Lbl_TotalDescLabSuma = New System.Windows.Forms.Label()
-        Me.Lbl_DescLaborado = New System.Windows.Forms.Label()
-        Me.Lbl_SueldoNetoSuma = New System.Windows.Forms.Label()
-        Me.Lbl_SueldoBrutoSuma = New System.Windows.Forms.Label()
-        Me.Lbl_TotalTriplesSum = New System.Windows.Forms.Label()
-        Me.Lbl_TotalDoblesSum = New System.Windows.Forms.Label()
-        Me.Lbl_HrsTriplesSum = New System.Windows.Forms.Label()
-        Me.Lbl_HrsDoblesSum = New System.Windows.Forms.Label()
-        Me.Lbl_Totales = New System.Windows.Forms.Label()
-        Me.Lbl_SumMiercoles = New System.Windows.Forms.Label()
-        Me.Lbl_SumJueves = New System.Windows.Forms.Label()
-        Me.Lbl_SumDomingo = New System.Windows.Forms.Label()
-        Me.Lbl_SumViernes = New System.Windows.Forms.Label()
-        Me.Lbl_SumLunes = New System.Windows.Forms.Label()
-        Me.Lbl_SumSabado = New System.Windows.Forms.Label()
-        Me.Lbl_SumMartes = New System.Windows.Forms.Label()
-        Me.Btn_ObtenerReportes = New System.Windows.Forms.Button()
-        Me.Btn_Guardar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -109,6 +109,18 @@ Partial Class Frm_PlanHorasExtra
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1341, 59)
         Me.Panel1.TabIndex = 0
+        '
+        'Btn_ObtenerReportes
+        '
+        Me.Btn_ObtenerReportes.Enabled = False
+        Me.Btn_ObtenerReportes.Image = Global.Presentacion.My.Resources.Resources.reportes
+        Me.Btn_ObtenerReportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_ObtenerReportes.Location = New System.Drawing.Point(461, 7)
+        Me.Btn_ObtenerReportes.Name = "Btn_ObtenerReportes"
+        Me.Btn_ObtenerReportes.Size = New System.Drawing.Size(46, 43)
+        Me.Btn_ObtenerReportes.TabIndex = 24
+        Me.Btn_ObtenerReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_ObtenerReportes.UseVisualStyleBackColor = True
         '
         'Lbl_Mes
         '
@@ -174,6 +186,19 @@ Partial Class Frm_PlanHorasExtra
         Me.Cmb_Departamento.Name = "Cmb_Departamento"
         Me.Cmb_Departamento.Size = New System.Drawing.Size(190, 21)
         Me.Cmb_Departamento.TabIndex = 20
+        '
+        'Btn_Guardar
+        '
+        Me.Btn_Guardar.Enabled = False
+        Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
+        Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Guardar.Location = New System.Drawing.Point(389, 7)
+        Me.Btn_Guardar.Name = "Btn_Guardar"
+        Me.Btn_Guardar.Size = New System.Drawing.Size(56, 45)
+        Me.Btn_Guardar.TabIndex = 19
+        Me.Btn_Guardar.Text = "Guardar"
+        Me.Btn_Guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Guardar.UseVisualStyleBackColor = True
         '
         'Lbl_año
         '
@@ -309,151 +334,6 @@ Partial Class Frm_PlanHorasExtra
         Me.Dgv_HorasExtra.RowHeadersWidth = 25
         Me.Dgv_HorasExtra.Size = New System.Drawing.Size(1341, 443)
         Me.Dgv_HorasExtra.TabIndex = 0
-        '
-        'clave
-        '
-        Me.clave.HeaderText = "Clave"
-        Me.clave.Name = "clave"
-        Me.clave.ReadOnly = True
-        Me.clave.Width = 45
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        Me.nombre.Width = 200
-        '
-        'departamento
-        '
-        Me.departamento.HeaderText = "Departamento"
-        Me.departamento.Name = "departamento"
-        Me.departamento.ReadOnly = True
-        Me.departamento.Width = 185
-        '
-        'idTurno
-        '
-        Me.idTurno.HeaderText = "IdTurno"
-        Me.idTurno.Name = "idTurno"
-        Me.idTurno.ReadOnly = True
-        Me.idTurno.Visible = False
-        '
-        'sueldoBruto
-        '
-        Me.sueldoBruto.HeaderText = "Sueldo Bruto"
-        Me.sueldoBruto.Name = "sueldoBruto"
-        Me.sueldoBruto.ReadOnly = True
-        Me.sueldoBruto.Visible = False
-        '
-        'sueldoNeto
-        '
-        Me.sueldoNeto.HeaderText = "Sueldo Neto"
-        Me.sueldoNeto.Name = "sueldoNeto"
-        Me.sueldoNeto.ReadOnly = True
-        Me.sueldoNeto.Visible = False
-        '
-        'lunes
-        '
-        Me.lunes.HeaderText = "Lun"
-        Me.lunes.Name = "lunes"
-        Me.lunes.Width = 40
-        '
-        'martes
-        '
-        Me.martes.HeaderText = "Mar"
-        Me.martes.Name = "martes"
-        Me.martes.Width = 40
-        '
-        'miercoles
-        '
-        Me.miercoles.HeaderText = "Mié"
-        Me.miercoles.Name = "miercoles"
-        Me.miercoles.Width = 40
-        '
-        'jueves
-        '
-        Me.jueves.HeaderText = "Jue"
-        Me.jueves.Name = "jueves"
-        Me.jueves.Width = 40
-        '
-        'viernes
-        '
-        Me.viernes.HeaderText = "Vie"
-        Me.viernes.Name = "viernes"
-        Me.viernes.Width = 40
-        '
-        'sabado
-        '
-        Me.sabado.HeaderText = "Sáb"
-        Me.sabado.Name = "sabado"
-        Me.sabado.Width = 40
-        '
-        'domingo
-        '
-        Me.domingo.HeaderText = "Dom"
-        Me.domingo.Name = "domingo"
-        Me.domingo.Width = 40
-        '
-        'dobles
-        '
-        Me.dobles.HeaderText = "Horas Dobles"
-        Me.dobles.Name = "dobles"
-        Me.dobles.ReadOnly = True
-        Me.dobles.Width = 60
-        '
-        'triples
-        '
-        Me.triples.HeaderText = "Horas Triples"
-        Me.triples.Name = "triples"
-        Me.triples.ReadOnly = True
-        Me.triples.Width = 60
-        '
-        'descansoLaborado
-        '
-        Me.descansoLaborado.HeaderText = "Descanso Laborado"
-        Me.descansoLaborado.Name = "descansoLaborado"
-        Me.descansoLaborado.ReadOnly = True
-        Me.descansoLaborado.Width = 60
-        '
-        'totalDobles
-        '
-        Me.totalDobles.HeaderText = "Total Dobles"
-        Me.totalDobles.Name = "totalDobles"
-        Me.totalDobles.ReadOnly = True
-        Me.totalDobles.Visible = False
-        Me.totalDobles.Width = 65
-        '
-        'totalTriples
-        '
-        Me.totalTriples.HeaderText = "Total Triples"
-        Me.totalTriples.Name = "totalTriples"
-        Me.totalTriples.ReadOnly = True
-        Me.totalTriples.Visible = False
-        Me.totalTriples.Width = 65
-        '
-        'totalDescLaborado
-        '
-        Me.totalDescLaborado.HeaderText = "Total Desc Laborado"
-        Me.totalDescLaborado.Name = "totalDescLaborado"
-        Me.totalDescLaborado.ReadOnly = True
-        Me.totalDescLaborado.Visible = False
-        Me.totalDescLaborado.Width = 65
-        '
-        'totalBruto
-        '
-        Me.totalBruto.HeaderText = "Bruto"
-        Me.totalBruto.Name = "totalBruto"
-        Me.totalBruto.ReadOnly = True
-        Me.totalBruto.Visible = False
-        Me.totalBruto.Width = 65
-        '
-        'TotalNeto
-        '
-        Me.TotalNeto.HeaderText = "Neto"
-        Me.TotalNeto.Name = "TotalNeto"
-        Me.TotalNeto.ReadOnly = True
-        Me.TotalNeto.Visible = False
-        Me.TotalNeto.Width = 65
         '
         'Panel4
         '
@@ -621,30 +501,148 @@ Partial Class Frm_PlanHorasExtra
         Me.Lbl_SumMartes.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_SumMartes.TabIndex = 12
         '
-        'Btn_ObtenerReportes
+        'clave
         '
-        Me.Btn_ObtenerReportes.Enabled = False
-        Me.Btn_ObtenerReportes.Image = Global.Presentacion.My.Resources.Resources.reportes
-        Me.Btn_ObtenerReportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_ObtenerReportes.Location = New System.Drawing.Point(461, 7)
-        Me.Btn_ObtenerReportes.Name = "Btn_ObtenerReportes"
-        Me.Btn_ObtenerReportes.Size = New System.Drawing.Size(46, 43)
-        Me.Btn_ObtenerReportes.TabIndex = 24
-        Me.Btn_ObtenerReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_ObtenerReportes.UseVisualStyleBackColor = True
+        Me.clave.HeaderText = "Clave"
+        Me.clave.Name = "clave"
+        Me.clave.ReadOnly = True
+        Me.clave.Width = 45
         '
-        'Btn_Guardar
+        'nombre
         '
-        Me.Btn_Guardar.Enabled = False
-        Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
-        Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Guardar.Location = New System.Drawing.Point(389, 7)
-        Me.Btn_Guardar.Name = "Btn_Guardar"
-        Me.Btn_Guardar.Size = New System.Drawing.Size(56, 45)
-        Me.Btn_Guardar.TabIndex = 19
-        Me.Btn_Guardar.Text = "Guardar"
-        Me.Btn_Guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Guardar.UseVisualStyleBackColor = True
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
+        Me.nombre.Width = 200
+        '
+        'departamento
+        '
+        Me.departamento.HeaderText = "Departamento"
+        Me.departamento.Name = "departamento"
+        Me.departamento.ReadOnly = True
+        Me.departamento.Width = 185
+        '
+        'idTurno
+        '
+        Me.idTurno.HeaderText = "IdTurno"
+        Me.idTurno.Name = "idTurno"
+        Me.idTurno.ReadOnly = True
+        Me.idTurno.Visible = False
+        '
+        'sueldoBruto
+        '
+        Me.sueldoBruto.HeaderText = "Sueldo Bruto"
+        Me.sueldoBruto.Name = "sueldoBruto"
+        Me.sueldoBruto.ReadOnly = True
+        Me.sueldoBruto.Visible = False
+        '
+        'sueldoNeto
+        '
+        Me.sueldoNeto.HeaderText = "Sueldo Neto"
+        Me.sueldoNeto.Name = "sueldoNeto"
+        Me.sueldoNeto.ReadOnly = True
+        Me.sueldoNeto.Visible = False
+        '
+        'lunes
+        '
+        Me.lunes.HeaderText = "Lun"
+        Me.lunes.Name = "lunes"
+        Me.lunes.Width = 40
+        '
+        'martes
+        '
+        Me.martes.HeaderText = "Mar"
+        Me.martes.Name = "martes"
+        Me.martes.Width = 40
+        '
+        'miercoles
+        '
+        Me.miercoles.HeaderText = "Mié"
+        Me.miercoles.Name = "miercoles"
+        Me.miercoles.Width = 40
+        '
+        'jueves
+        '
+        Me.jueves.HeaderText = "Jue"
+        Me.jueves.Name = "jueves"
+        Me.jueves.Width = 40
+        '
+        'viernes
+        '
+        Me.viernes.HeaderText = "Vie"
+        Me.viernes.Name = "viernes"
+        Me.viernes.Width = 40
+        '
+        'sabado
+        '
+        Me.sabado.HeaderText = "Sáb"
+        Me.sabado.Name = "sabado"
+        Me.sabado.Width = 40
+        '
+        'domingo
+        '
+        Me.domingo.HeaderText = "Dom"
+        Me.domingo.Name = "domingo"
+        Me.domingo.Width = 40
+        '
+        'dobles
+        '
+        Me.dobles.HeaderText = "Horas Dobles"
+        Me.dobles.Name = "dobles"
+        Me.dobles.ReadOnly = True
+        Me.dobles.Width = 60
+        '
+        'triples
+        '
+        Me.triples.HeaderText = "Horas Triples"
+        Me.triples.Name = "triples"
+        Me.triples.ReadOnly = True
+        Me.triples.Width = 60
+        '
+        'descansoLaborado
+        '
+        Me.descansoLaborado.HeaderText = "Descanso Laborado"
+        Me.descansoLaborado.Name = "descansoLaborado"
+        Me.descansoLaborado.ReadOnly = True
+        Me.descansoLaborado.Width = 60
+        '
+        'totalDobles
+        '
+        Me.totalDobles.HeaderText = "Total Dobles"
+        Me.totalDobles.Name = "totalDobles"
+        Me.totalDobles.ReadOnly = True
+        Me.totalDobles.Visible = False
+        Me.totalDobles.Width = 65
+        '
+        'totalTriples
+        '
+        Me.totalTriples.HeaderText = "Total Triples"
+        Me.totalTriples.Name = "totalTriples"
+        Me.totalTriples.ReadOnly = True
+        Me.totalTriples.Visible = False
+        Me.totalTriples.Width = 65
+        '
+        'totalDescLaborado
+        '
+        Me.totalDescLaborado.HeaderText = "Total Desc Laborado"
+        Me.totalDescLaborado.Name = "totalDescLaborado"
+        Me.totalDescLaborado.ReadOnly = True
+        Me.totalDescLaborado.Visible = False
+        Me.totalDescLaborado.Width = 65
+        '
+        'totalBruto
+        '
+        Me.totalBruto.HeaderText = "Bruto"
+        Me.totalBruto.Name = "totalBruto"
+        Me.totalBruto.ReadOnly = True
+        Me.totalBruto.Width = 65
+        '
+        'TotalNeto
+        '
+        Me.TotalNeto.HeaderText = "Neto"
+        Me.TotalNeto.Name = "TotalNeto"
+        Me.TotalNeto.ReadOnly = True
+        Me.TotalNeto.Width = 65
         '
         'Frm_PlanHorasExtra
         '
@@ -713,6 +711,7 @@ Partial Class Frm_PlanHorasExtra
     Friend WithEvents Rdb_Esp As RadioButton
     Friend WithEvents Lbl_TotalDescLabSuma As Label
     Friend WithEvents Lbl_Mes As Label
+    Friend WithEvents Btn_ObtenerReportes As Button
     Friend WithEvents clave As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents departamento As DataGridViewTextBoxColumn
@@ -734,5 +733,4 @@ Partial Class Frm_PlanHorasExtra
     Friend WithEvents totalDescLaborado As DataGridViewTextBoxColumn
     Friend WithEvents totalBruto As DataGridViewTextBoxColumn
     Friend WithEvents TotalNeto As DataGridViewTextBoxColumn
-    Friend WithEvents Btn_ObtenerReportes As Button
 End Class

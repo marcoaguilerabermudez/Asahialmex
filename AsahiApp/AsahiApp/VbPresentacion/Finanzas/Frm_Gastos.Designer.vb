@@ -62,7 +62,7 @@ Partial Class Frm_Gastos
         Me.Lbl_CantPlan = New System.Windows.Forms.Label()
         Me.Lbl_CantMaster = New System.Windows.Forms.Label()
         Me.Lbl_CantFF2 = New System.Windows.Forms.Label()
-        Me.Lbl_MF2 = New System.Windows.Forms.Label()
+        Me.Lbl_CantMF2 = New System.Windows.Forms.Label()
         Me.Lbl_CantFF1 = New System.Windows.Forms.Label()
         Me.Lbl_CantMF1 = New System.Windows.Forms.Label()
         Me.Lbl_MontoDif = New System.Windows.Forms.Label()
@@ -350,7 +350,7 @@ Partial Class Frm_Gastos
         Me.noCta.HeaderText = "No Cuenta"
         Me.noCta.Name = "noCta"
         Me.noCta.ReadOnly = True
-        Me.noCta.Width = 80
+        Me.noCta.Width = 70
         '
         'cta
         '
@@ -364,6 +364,7 @@ Partial Class Frm_Gastos
         Me.masterP.HeaderText = "Master"
         Me.masterP.Name = "masterP"
         Me.masterP.ReadOnly = True
+        Me.masterP.Width = 90
         '
         'plan
         '
@@ -405,7 +406,7 @@ Partial Class Frm_Gastos
         Me.Panel3.Controls.Add(Me.Lbl_CantPlan)
         Me.Panel3.Controls.Add(Me.Lbl_CantMaster)
         Me.Panel3.Controls.Add(Me.Lbl_CantFF2)
-        Me.Panel3.Controls.Add(Me.Lbl_MF2)
+        Me.Panel3.Controls.Add(Me.Lbl_CantMF2)
         Me.Panel3.Controls.Add(Me.Lbl_CantFF1)
         Me.Panel3.Controls.Add(Me.Lbl_CantMF1)
         Me.Panel3.Controls.Add(Me.Lbl_MontoDif)
@@ -479,14 +480,14 @@ Partial Class Frm_Gastos
         Me.Lbl_CantFF2.TabIndex = 23
         Me.Lbl_CantFF2.Text = "Label22"
         '
-        'Lbl_MF2
+        'Lbl_CantMF2
         '
-        Me.Lbl_MF2.AutoSize = True
-        Me.Lbl_MF2.Location = New System.Drawing.Point(325, 50)
-        Me.Lbl_MF2.Name = "Lbl_MF2"
-        Me.Lbl_MF2.Size = New System.Drawing.Size(45, 13)
-        Me.Lbl_MF2.TabIndex = 22
-        Me.Lbl_MF2.Text = "Label23"
+        Me.Lbl_CantMF2.AutoSize = True
+        Me.Lbl_CantMF2.Location = New System.Drawing.Point(325, 50)
+        Me.Lbl_CantMF2.Name = "Lbl_CantMF2"
+        Me.Lbl_CantMF2.Size = New System.Drawing.Size(45, 13)
+        Me.Lbl_CantMF2.TabIndex = 22
+        Me.Lbl_CantMF2.Text = "Label23"
         '
         'Lbl_CantFF1
         '
@@ -757,13 +758,6 @@ Partial Class Frm_Gastos
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Rdb_Japones As RadioButton
     Friend WithEvents Rdb_Español As RadioButton
-    Friend WithEvents noCta As DataGridViewTextBoxColumn
-    Friend WithEvents cta As DataGridViewTextBoxColumn
-    Friend WithEvents masterP As DataGridViewTextBoxColumn
-    Friend WithEvents plan As DataGridViewTextBoxColumn
-    Friend WithEvents actual As DataGridViewTextBoxColumn
-    Friend WithEvents real As DataGridViewTextBoxColumn
-    Friend WithEvents dif As DataGridViewTextBoxColumn
     Friend WithEvents noCta2 As DataGridViewTextBoxColumn
     Friend WithEvents cta2 As DataGridViewTextBoxColumn
     Friend WithEvents masterP2 As DataGridViewTextBoxColumn
@@ -791,7 +785,7 @@ Partial Class Frm_Gastos
     Friend WithEvents Lbl_CantPlan As Label
     Friend WithEvents Lbl_CantMaster As Label
     Friend WithEvents Lbl_CantFF2 As Label
-    Friend WithEvents Lbl_MF2 As Label
+    Friend WithEvents Lbl_CantMF2 As Label
     Friend WithEvents Lbl_CantFF1 As Label
     Friend WithEvents Lbl_CantMF1 As Label
     Friend WithEvents Lbl_MontoDif As Label
@@ -800,4 +794,11 @@ Partial Class Frm_Gastos
     Friend WithEvents Lbl_MontoMaster As Label
     Friend WithEvents Lbl_MontoFF2 As Label
     Friend WithEvents Lbl_MontoMF2 As Label
+    Friend WithEvents noCta As DataGridViewTextBoxColumn
+    Friend WithEvents cta As DataGridViewTextBoxColumn
+    Friend WithEvents masterP As DataGridViewTextBoxColumn
+    Friend WithEvents plan As DataGridViewTextBoxColumn
+    Friend WithEvents actual As DataGridViewTextBoxColumn
+    Friend WithEvents real As DataGridViewTextBoxColumn
+    Friend WithEvents dif As DataGridViewTextBoxColumn
 End Class
