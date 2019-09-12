@@ -28,22 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.l_hora = new System.Windows.Forms.Label();
-            this.l_fecha = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.lbl_fecha = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txt_hijos = new System.Windows.Forms.TextBox();
             this.cmb_estado_nacimiento = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_lugar_nac = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_telefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_interior = new System.Windows.Forms.TextBox();
             this.dtm_nacimiento = new System.Windows.Forms.DateTimePicker();
@@ -83,11 +78,9 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.txt_materno = new System.Windows.Forms.TextBox();
-            this.txt_curp = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
-            this.txt_rfc = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.txt_nss = new System.Windows.Forms.TextBox();
@@ -103,7 +96,6 @@
             this.cmb_parentesco = new System.Windows.Forms.ComboBox();
             this.lbl_inf = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.txt_tel_contacto = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.txt_contacto = new System.Windows.Forms.TextBox();
             this.lbl_contacto = new System.Windows.Forms.Label();
@@ -177,6 +169,10 @@
             this.btn_mod_ruta = new System.Windows.Forms.Button();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.txt_tel_contacto = new System.Windows.Forms.MaskedTextBox();
+            this.txt_telefono = new System.Windows.Forms.MaskedTextBox();
+            this.txt_curp = new System.Windows.Forms.MaskedTextBox();
+            this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.grb_nacimiento.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -196,28 +192,6 @@
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ruta)).BeginInit();
             this.SuspendLayout();
-            // 
-            // l_hora
-            // 
-            this.l_hora.AutoSize = true;
-            this.l_hora.BackColor = System.Drawing.Color.SteelBlue;
-            this.l_hora.ForeColor = System.Drawing.Color.White;
-            this.l_hora.Location = new System.Drawing.Point(518, 40);
-            this.l_hora.Name = "l_hora";
-            this.l_hora.Size = new System.Drawing.Size(40, 13);
-            this.l_hora.TabIndex = 57;
-            this.l_hora.Text = "Fecha:";
-            // 
-            // l_fecha
-            // 
-            this.l_fecha.AutoSize = true;
-            this.l_fecha.BackColor = System.Drawing.Color.SteelBlue;
-            this.l_fecha.ForeColor = System.Drawing.Color.White;
-            this.l_fecha.Location = new System.Drawing.Point(454, 40);
-            this.l_fecha.Name = "l_fecha";
-            this.l_fecha.Size = new System.Drawing.Size(40, 13);
-            this.l_fecha.TabIndex = 56;
-            this.l_fecha.Text = "Fecha:";
             // 
             // label3
             // 
@@ -242,8 +216,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.l_hora);
-            this.panel1.Controls.Add(this.l_fecha);
             this.panel1.Controls.Add(this.btn_nuevo);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_clave);
@@ -279,10 +251,6 @@
             this.lbl_fecha.TabIndex = 28;
             this.lbl_fecha.Text = "Fecha:";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -304,7 +272,6 @@
             // 
             // cmb_estado_nacimiento
             // 
-            this.cmb_estado_nacimiento.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_estado_nacimiento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_estado_nacimiento.FormattingEnabled = true;
             this.cmb_estado_nacimiento.Items.AddRange(new object[] {
@@ -373,15 +340,6 @@
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 224;
             this.label4.Text = "LUGAR:";
-            // 
-            // txt_telefono
-            // 
-            this.txt_telefono.Location = new System.Drawing.Point(19, 237);
-            this.txt_telefono.MaxLength = 10;
-            this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(147, 20);
-            this.txt_telefono.TabIndex = 23;
-            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_telefono_KeyPress);
             // 
             // label5
             // 
@@ -476,7 +434,6 @@
             // 
             // cmb_estado
             // 
-            this.cmb_estado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_estado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_estado.FormattingEnabled = true;
             this.cmb_estado.Items.AddRange(new object[] {
@@ -527,9 +484,9 @@
             "CASADO",
             "UNION LIBRE",
             "DIVORCIADO"});
-            this.cmb_Civil.Location = new System.Drawing.Point(19, 194);
+            this.cmb_Civil.Location = new System.Drawing.Point(18, 194);
             this.cmb_Civil.Name = "cmb_Civil";
-            this.cmb_Civil.Size = new System.Drawing.Size(147, 21);
+            this.cmb_Civil.Size = new System.Drawing.Size(148, 21);
             this.cmb_Civil.TabIndex = 21;
             this.cmb_Civil.SelectedIndexChanged += new System.EventHandler(this.Cmb_Civil_SelectedIndexChanged_1);
             this.cmb_Civil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_Civil_KeyPress_1);
@@ -703,6 +660,7 @@
             // 
             // cmb_escolaridad
             // 
+            this.cmb_escolaridad.BackColor = System.Drawing.Color.White;
             this.cmb_escolaridad.FormattingEnabled = true;
             this.cmb_escolaridad.Items.AddRange(new object[] {
             "PRIMARIA",
@@ -735,6 +693,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.txt_rfc);
+            this.tabPage1.Controls.Add(this.txt_curp);
             this.tabPage1.Controls.Add(this.lbl_escolaridad);
             this.tabPage1.Controls.Add(this.txt_interior);
             this.tabPage1.Controls.Add(this.label20);
@@ -763,11 +723,9 @@
             this.tabPage1.Controls.Add(this.txt_municipio);
             this.tabPage1.Controls.Add(this.cmb_escolaridad);
             this.tabPage1.Controls.Add(this.txt_materno);
-            this.tabPage1.Controls.Add(this.txt_curp);
             this.tabPage1.Controls.Add(this.label28);
             this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Controls.Add(this.lbl_estado);
-            this.tabPage1.Controls.Add(this.txt_rfc);
             this.tabPage1.Controls.Add(this.txt_nombre);
             this.tabPage1.Controls.Add(this.label23);
             this.tabPage1.Controls.Add(this.txt_nss);
@@ -854,16 +812,6 @@
             this.txt_materno.TabIndex = 6;
             this.txt_materno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_materno_KeyPress);
             // 
-            // txt_curp
-            // 
-            this.txt_curp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_curp.Location = new System.Drawing.Point(18, 207);
-            this.txt_curp.MaxLength = 20;
-            this.txt_curp.Name = "txt_curp";
-            this.txt_curp.Size = new System.Drawing.Size(215, 20);
-            this.txt_curp.TabIndex = 0;
-            this.txt_curp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_curp_KeyPress);
-            // 
             // label28
             // 
             this.label28.AutoSize = true;
@@ -890,16 +838,6 @@
             this.lbl_estado.Size = new System.Drawing.Size(54, 13);
             this.lbl_estado.TabIndex = 102;
             this.lbl_estado.Text = "ESTADO:";
-            // 
-            // txt_rfc
-            // 
-            this.txt_rfc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_rfc.Location = new System.Drawing.Point(18, 247);
-            this.txt_rfc.MaxLength = 13;
-            this.txt_rfc.Name = "txt_rfc";
-            this.txt_rfc.Size = new System.Drawing.Size(215, 20);
-            this.txt_rfc.TabIndex = 1;
-            this.txt_rfc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_rfc_KeyPress);
             // 
             // txt_nombre
             // 
@@ -978,6 +916,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txt_telefono);
+            this.tabPage2.Controls.Add(this.txt_tel_contacto);
             this.tabPage2.Controls.Add(this.lbl_civil);
             this.tabPage2.Controls.Add(this.btn_mod_fam);
             this.tabPage2.Controls.Add(this.btn_mod_familiar);
@@ -987,11 +927,9 @@
             this.tabPage2.Controls.Add(this.txt_hijos);
             this.tabPage2.Controls.Add(this.lbl_inf);
             this.tabPage2.Controls.Add(this.label41);
-            this.tabPage2.Controls.Add(this.txt_tel_contacto);
             this.tabPage2.Controls.Add(this.label42);
             this.tabPage2.Controls.Add(this.txt_contacto);
             this.tabPage2.Controls.Add(this.lbl_contacto);
-            this.tabPage2.Controls.Add(this.txt_telefono);
             this.tabPage2.Controls.Add(this.grb_nacimiento);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label12);
@@ -1054,8 +992,10 @@
             "OTRO"});
             this.cmb_parentesco.Location = new System.Drawing.Point(19, 125);
             this.cmb_parentesco.Name = "cmb_parentesco";
-            this.cmb_parentesco.Size = new System.Drawing.Size(165, 21);
+            this.cmb_parentesco.Size = new System.Drawing.Size(147, 21);
             this.cmb_parentesco.TabIndex = 233;
+            this.cmb_parentesco.SelectedIndexChanged += new System.EventHandler(this.Cmb_parentesco_SelectedIndexChanged);
+            this.cmb_parentesco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_parentesco_KeyPress_1);
             // 
             // lbl_inf
             // 
@@ -1075,14 +1015,6 @@
             this.label41.TabIndex = 236;
             this.label41.Text = "RELACION:";
             // 
-            // txt_tel_contacto
-            // 
-            this.txt_tel_contacto.Location = new System.Drawing.Point(19, 83);
-            this.txt_tel_contacto.MaxLength = 10;
-            this.txt_tel_contacto.Name = "txt_tel_contacto";
-            this.txt_tel_contacto.Size = new System.Drawing.Size(245, 20);
-            this.txt_tel_contacto.TabIndex = 232;
-            // 
             // label42
             // 
             this.label42.AutoSize = true;
@@ -1100,6 +1032,7 @@
             this.txt_contacto.Name = "txt_contacto";
             this.txt_contacto.Size = new System.Drawing.Size(245, 20);
             this.txt_contacto.TabIndex = 231;
+            this.txt_contacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_contacto_KeyPress_1);
             // 
             // lbl_contacto
             // 
@@ -1206,7 +1139,6 @@
             // 
             // cmb_departamento
             // 
-            this.cmb_departamento.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_departamento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_departamento.FormattingEnabled = true;
             this.cmb_departamento.Location = new System.Drawing.Point(20, 37);
@@ -1457,7 +1389,6 @@
             // 
             // cmb_puesto
             // 
-            this.cmb_puesto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_puesto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_puesto.FormattingEnabled = true;
             this.cmb_puesto.Location = new System.Drawing.Point(21, 38);
@@ -1913,6 +1844,38 @@
             this.label19.TabIndex = 240;
             this.label19.Text = "RUTA:";
             // 
+            // txt_tel_contacto
+            // 
+            this.txt_tel_contacto.Location = new System.Drawing.Point(18, 83);
+            this.txt_tel_contacto.Mask = "(999)000-0000";
+            this.txt_tel_contacto.Name = "txt_tel_contacto";
+            this.txt_tel_contacto.Size = new System.Drawing.Size(148, 20);
+            this.txt_tel_contacto.TabIndex = 240;
+            // 
+            // txt_telefono
+            // 
+            this.txt_telefono.Location = new System.Drawing.Point(18, 237);
+            this.txt_telefono.Mask = "(999)000-0000";
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(148, 20);
+            this.txt_telefono.TabIndex = 241;
+            // 
+            // txt_curp
+            // 
+            this.txt_curp.Location = new System.Drawing.Point(18, 207);
+            this.txt_curp.Name = "txt_curp";
+            this.txt_curp.Size = new System.Drawing.Size(215, 20);
+            this.txt_curp.TabIndex = 225;
+            this.txt_curp.TextChanged += new System.EventHandler(this.MaskedTextBox1_TextChanged);
+            this.txt_curp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_curp_KeyPress_1);
+            // 
+            // txt_rfc
+            // 
+            this.txt_rfc.Location = new System.Drawing.Point(18, 246);
+            this.txt_rfc.Name = "txt_rfc";
+            this.txt_rfc.Size = new System.Drawing.Size(215, 20);
+            this.txt_rfc.TabIndex = 226;
+            // 
             // Frm_Modificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1964,21 +1927,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label l_hora;
-        private System.Windows.Forms.Label l_fecha;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txt_clave;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_fecha;
         private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_hijos;
         public System.Windows.Forms.ComboBox cmb_estado_nacimiento;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_lugar_nac;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_interior;
         private System.Windows.Forms.DateTimePicker dtm_nacimiento;
@@ -2021,11 +1980,9 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txt_materno;
-        private System.Windows.Forms.TextBox txt_curp;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lbl_estado;
-        private System.Windows.Forms.TextBox txt_rfc;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txt_nss;
@@ -2037,7 +1994,6 @@
         private System.Windows.Forms.ComboBox cmb_parentesco;
         private System.Windows.Forms.Label lbl_inf;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox txt_tel_contacto;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox txt_contacto;
         private System.Windows.Forms.Label lbl_contacto;
@@ -2112,5 +2068,9 @@
         private System.Windows.Forms.Label lbl_comprueba_sueldo;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label lbl_motivo;
+        private System.Windows.Forms.MaskedTextBox txt_tel_contacto;
+        private System.Windows.Forms.MaskedTextBox txt_telefono;
+        private System.Windows.Forms.MaskedTextBox txt_curp;
+        private System.Windows.Forms.MaskedTextBox txt_rfc;
     }
 }

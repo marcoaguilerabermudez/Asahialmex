@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.Panel_principal = new System.Windows.Forms.Panel();
+            this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
+            this.txt_curp = new System.Windows.Forms.MaskedTextBox();
             this.lbl_infonavit = new System.Windows.Forms.Label();
             this.txt_factor = new System.Windows.Forms.TextBox();
             this.lbl_var = new System.Windows.Forms.Label();
@@ -39,9 +41,7 @@
             this.lbl_tipo_empleado = new System.Windows.Forms.Label();
             this.txt_estado = new System.Windows.Forms.TextBox();
             this.btn_comprueba = new System.Windows.Forms.Button();
-            this.txt_curp = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txt_rfc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_nss = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,13 +80,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Clave = new System.Windows.Forms.TextBox();
             this.Panel_secundario = new System.Windows.Forms.Panel();
+            this.txt_telefono = new System.Windows.Forms.MaskedTextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.txt_hijos = new System.Windows.Forms.TextBox();
             this.cmb_estado_nacimiento = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txt_lugar_nac = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.txt_telefono = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.txt_interior = new System.Windows.Forms.TextBox();
@@ -133,12 +133,12 @@
             this.btn_ps_siguiente = new System.Windows.Forms.Button();
             this.grb_nacimiento = new System.Windows.Forms.GroupBox();
             this.panel_final = new System.Windows.Forms.Panel();
+            this.txt_tel_contacto = new System.Windows.Forms.MaskedTextBox();
             this.txt_infonavit = new System.Windows.Forms.TextBox();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.cmb_parentesco = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.txt_tel_contacto = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.txt_contacto = new System.Windows.Forms.TextBox();
             this.lbl_contacto = new System.Windows.Forms.Label();
@@ -159,6 +159,8 @@
             // 
             // Panel_principal
             // 
+            this.Panel_principal.Controls.Add(this.txt_rfc);
+            this.Panel_principal.Controls.Add(this.txt_curp);
             this.Panel_principal.Controls.Add(this.lbl_infonavit);
             this.Panel_principal.Controls.Add(this.txt_factor);
             this.Panel_principal.Controls.Add(this.lbl_var);
@@ -169,9 +171,7 @@
             this.Panel_principal.Controls.Add(this.lbl_tipo_empleado);
             this.Panel_principal.Controls.Add(this.txt_estado);
             this.Panel_principal.Controls.Add(this.btn_comprueba);
-            this.Panel_principal.Controls.Add(this.txt_curp);
             this.Panel_principal.Controls.Add(this.label15);
-            this.Panel_principal.Controls.Add(this.txt_rfc);
             this.Panel_principal.Controls.Add(this.label2);
             this.Panel_principal.Controls.Add(this.txt_nss);
             this.Panel_principal.Controls.Add(this.label1);
@@ -196,6 +196,21 @@
             this.Panel_principal.Size = new System.Drawing.Size(595, 565);
             this.Panel_principal.TabIndex = 0;
             this.Panel_principal.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_principal_Paint);
+            // 
+            // txt_rfc
+            // 
+            this.txt_rfc.Location = new System.Drawing.Point(21, 73);
+            this.txt_rfc.Name = "txt_rfc";
+            this.txt_rfc.Size = new System.Drawing.Size(215, 20);
+            this.txt_rfc.TabIndex = 237;
+            // 
+            // txt_curp
+            // 
+            this.txt_curp.Location = new System.Drawing.Point(20, 31);
+            this.txt_curp.Name = "txt_curp";
+            this.txt_curp.Size = new System.Drawing.Size(216, 20);
+            this.txt_curp.TabIndex = 236;
+            this.txt_curp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_curp_KeyPress_1);
             // 
             // lbl_infonavit
             // 
@@ -300,16 +315,6 @@
             this.btn_comprueba.UseVisualStyleBackColor = true;
             this.btn_comprueba.Click += new System.EventHandler(this.Btn_comprueba_Click);
             // 
-            // txt_curp
-            // 
-            this.txt_curp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_curp.Location = new System.Drawing.Point(21, 32);
-            this.txt_curp.MaxLength = 18;
-            this.txt_curp.Name = "txt_curp";
-            this.txt_curp.Size = new System.Drawing.Size(215, 20);
-            this.txt_curp.TabIndex = 0;
-            this.txt_curp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_curp_KeyPress);
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -318,16 +323,6 @@
             this.label15.Size = new System.Drawing.Size(40, 13);
             this.label15.TabIndex = 32;
             this.label15.Text = "CURP:";
-            // 
-            // txt_rfc
-            // 
-            this.txt_rfc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_rfc.Location = new System.Drawing.Point(21, 73);
-            this.txt_rfc.MaxLength = 13;
-            this.txt_rfc.Name = "txt_rfc";
-            this.txt_rfc.Size = new System.Drawing.Size(215, 20);
-            this.txt_rfc.TabIndex = 1;
-            this.txt_rfc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_rfc_KeyPress);
             // 
             // label2
             // 
@@ -478,7 +473,7 @@
             this.txt_paterno.Location = new System.Drawing.Point(21, 221);
             this.txt_paterno.MaxLength = 30;
             this.txt_paterno.Name = "txt_paterno";
-            this.txt_paterno.Size = new System.Drawing.Size(219, 20);
+            this.txt_paterno.Size = new System.Drawing.Size(215, 20);
             this.txt_paterno.TabIndex = 5;
             this.txt_paterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_paterno_KeyPress);
             // 
@@ -701,13 +696,13 @@
             // 
             // Panel_secundario
             // 
+            this.Panel_secundario.Controls.Add(this.txt_telefono);
             this.Panel_secundario.Controls.Add(this.label33);
             this.Panel_secundario.Controls.Add(this.txt_hijos);
             this.Panel_secundario.Controls.Add(this.cmb_estado_nacimiento);
             this.Panel_secundario.Controls.Add(this.label27);
             this.Panel_secundario.Controls.Add(this.txt_lugar_nac);
             this.Panel_secundario.Controls.Add(this.label22);
-            this.Panel_secundario.Controls.Add(this.txt_telefono);
             this.Panel_secundario.Controls.Add(this.label31);
             this.Panel_secundario.Controls.Add(this.label28);
             this.Panel_secundario.Controls.Add(this.txt_interior);
@@ -740,6 +735,14 @@
             this.Panel_secundario.Size = new System.Drawing.Size(595, 566);
             this.Panel_secundario.TabIndex = 1;
             this.Panel_secundario.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_secundario_Paint);
+            // 
+            // txt_telefono
+            // 
+            this.txt_telefono.Location = new System.Drawing.Point(21, 334);
+            this.txt_telefono.Mask = "(999)000-0000";
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(147, 20);
+            this.txt_telefono.TabIndex = 242;
             // 
             // label33
             // 
@@ -831,15 +834,6 @@
             this.label22.Size = new System.Drawing.Size(47, 13);
             this.label22.TabIndex = 224;
             this.label22.Text = "LUGAR:";
-            // 
-            // txt_telefono
-            // 
-            this.txt_telefono.Location = new System.Drawing.Point(19, 333);
-            this.txt_telefono.MaxLength = 10;
-            this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(149, 20);
-            this.txt_telefono.TabIndex = 23;
-            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_telefono_KeyPress);
             // 
             // label31
             // 
@@ -1322,6 +1316,7 @@
             // 
             // panel_final
             // 
+            this.panel_final.Controls.Add(this.txt_tel_contacto);
             this.panel_final.Controls.Add(this.txt_infonavit);
             this.panel_final.Controls.Add(this.cmb_ruta);
             this.panel_final.Controls.Add(this.label19);
@@ -1329,7 +1324,6 @@
             this.panel_final.Controls.Add(this.label41);
             this.panel_final.Controls.Add(this.cmb_turno);
             this.panel_final.Controls.Add(this.lbl_inf);
-            this.panel_final.Controls.Add(this.txt_tel_contacto);
             this.panel_final.Controls.Add(this.label16);
             this.panel_final.Controls.Add(this.label42);
             this.panel_final.Controls.Add(this.txt_contacto);
@@ -1347,6 +1341,14 @@
             this.panel_final.Size = new System.Drawing.Size(595, 565);
             this.panel_final.TabIndex = 232;
             this.panel_final.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_final_Paint);
+            // 
+            // txt_tel_contacto
+            // 
+            this.txt_tel_contacto.Location = new System.Drawing.Point(20, 162);
+            this.txt_tel_contacto.Mask = "(999)000-0000";
+            this.txt_tel_contacto.Name = "txt_tel_contacto";
+            this.txt_tel_contacto.Size = new System.Drawing.Size(166, 20);
+            this.txt_tel_contacto.TabIndex = 241;
             // 
             // txt_infonavit
             // 
@@ -1413,15 +1415,6 @@
             this.label41.Size = new System.Drawing.Size(64, 13);
             this.label41.TabIndex = 230;
             this.label41.Text = "RELACION:";
-            // 
-            // txt_tel_contacto
-            // 
-            this.txt_tel_contacto.Location = new System.Drawing.Point(20, 161);
-            this.txt_tel_contacto.MaxLength = 10;
-            this.txt_tel_contacto.Name = "txt_tel_contacto";
-            this.txt_tel_contacto.Size = new System.Drawing.Size(246, 20);
-            this.txt_tel_contacto.TabIndex = 33;
-            this.txt_tel_contacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_tel_contacto_KeyPress);
             // 
             // label42
             // 
@@ -1531,7 +1524,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(595, 619);
+            this.ClientSize = new System.Drawing.Size(594, 619);
             this.Controls.Add(this.Panel_secundario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);
@@ -1598,13 +1591,10 @@
         private System.Windows.Forms.Button btn_comprueba;
         private System.Windows.Forms.ComboBox cmb_turno;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txt_curp;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txt_rfc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_nss;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txt_interior;
@@ -1650,7 +1640,6 @@
         private System.Windows.Forms.Panel panel_final;
         private System.Windows.Forms.ComboBox cmb_parentesco;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox txt_tel_contacto;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox txt_contacto;
         private System.Windows.Forms.Label lbl_contacto;
@@ -1683,5 +1672,9 @@
         private System.Windows.Forms.Label lbl_infonavit;
         private System.Windows.Forms.Label lbl_tipo_ingreso;
         private System.Windows.Forms.TextBox txt_infonavit;
+        private System.Windows.Forms.MaskedTextBox txt_curp;
+        private System.Windows.Forms.MaskedTextBox txt_rfc;
+        private System.Windows.Forms.MaskedTextBox txt_telefono;
+        private System.Windows.Forms.MaskedTextBox txt_tel_contacto;
     }
 }
