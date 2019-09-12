@@ -40,9 +40,9 @@
             this.btn_reporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_reporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reporte.Location = new System.Drawing.Point(81, 78);
+            this.btn_reporte.Location = new System.Drawing.Point(86, 42);
             this.btn_reporte.Name = "btn_reporte";
-            this.btn_reporte.Size = new System.Drawing.Size(88, 35);
+            this.btn_reporte.Size = new System.Drawing.Size(62, 28);
             this.btn_reporte.TabIndex = 1;
             this.btn_reporte.Text = "&Generar";
             this.btn_reporte.UseVisualStyleBackColor = false;
@@ -68,10 +68,11 @@
             // 
             // Contrato_Clave
             // 
+            this.AcceptButton = this.btn_reporte;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(174, 118);
+            this.ClientSize = new System.Drawing.Size(162, 82);
             this.Controls.Add(this.txt_clave);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_reporte);

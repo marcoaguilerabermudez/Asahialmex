@@ -630,7 +630,7 @@ namespace CsPresentacion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Sp_Genera_ContratoRow AddSp_Genera_ContratoRow(
-                        int CLAVE, 
+                        string CLAVE, 
                         string NACIONALIDAD, 
                         string GENERO, 
                         System.DateTime FECHA_NACIMIENTO, 
@@ -743,7 +743,7 @@ namespace CsPresentacion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnCLAVE = new global::System.Data.DataColumn("CLAVE", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnCLAVE = new global::System.Data.DataColumn("CLAVE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCLAVE);
                 this.columnNACIONALIDAD = new global::System.Data.DataColumn("NACIONALIDAD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNACIONALIDAD);
@@ -799,36 +799,43 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnDESCRIPCION_TURNO);
                 this.columnTURNO = new global::System.Data.DataColumn("TURNO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTURNO);
+                this.columnCLAVE.AllowDBNull = false;
+                this.columnCLAVE.MaxLength = 10;
+                this.columnNACIONALIDAD.ReadOnly = true;
                 this.columnNACIONALIDAD.MaxLength = 20;
                 this.columnGENERO.MaxLength = 1;
                 this.columnDIRECCION.ReadOnly = true;
                 this.columnDIRECCION.MaxLength = 69;
+                this.columnRFC.ReadOnly = true;
                 this.columnRFC.MaxLength = 13;
+                this.columnCURP.ReadOnly = true;
                 this.columnCURP.MaxLength = 20;
                 this.columnDEPARTAMENTO.ReadOnly = true;
-                this.columnDEPARTAMENTO.MaxLength = 24;
+                this.columnDEPARTAMENTO.MaxLength = 30;
                 this.columnPUESTO.ReadOnly = true;
-                this.columnPUESTO.MaxLength = 20;
-                this.columnESTADO_CIVIL.ReadOnly = true;
-                this.columnESTADO_CIVIL.MaxLength = 25;
+                this.columnPUESTO.MaxLength = 30;
+                this.columnESTADO_CIVIL.MaxLength = 5;
                 this.columnPRIMERA_EVALUACION.ReadOnly = true;
+                this.columnSDO1.ReadOnly = true;
+                this.columnSDO2.ReadOnly = true;
                 this.columnSUELDO.ReadOnly = true;
                 this.columnSUELDO.MaxLength = 180;
                 this.columnNOMBRE.ReadOnly = true;
                 this.columnNOMBRE.MaxLength = 92;
-                this.columnINGRESO.ReadOnly = true;
-                this.columnTIPO_INGRESO.MaxLength = 30;
-                this.columnTELEFONO.MaxLength = 10;
+                this.columnTIPO_INGRESO.ReadOnly = true;
+                this.columnTIPO_INGRESO.MaxLength = 13;
+                this.columnTELEFONO.MaxLength = 15;
                 this.columnEDAD.ReadOnly = true;
                 this.columnCONTACTO_EMERGENCIA.MaxLength = 40;
                 this.columnTELEFONO_EMERGENCIA.MaxLength = 15;
                 this.columnAFILIACION.MaxLength = 11;
                 this.columnESCOLARIDAD.ReadOnly = true;
                 this.columnESCOLARIDAD.MaxLength = 12;
-                this.columnINFONAVIT.MaxLength = 2;
+                this.columnINFONAVIT.MaxLength = 10;
                 this.columnTIPO_EMPLEADO.ReadOnly = true;
                 this.columnTIPO_EMPLEADO.MaxLength = 9;
-                this.columnDESCRIPCION_TURNO.MaxLength = 50;
+                this.columnDESCRIPCION_TURNO.ReadOnly = true;
+                this.columnDESCRIPCION_TURNO.MaxLength = 14;
                 this.columnTURNO.ReadOnly = true;
                 this.columnTURNO.MaxLength = 13;
             }
@@ -973,14 +980,9 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CLAVE {
+            public string CLAVE {
                 get {
-                    try {
-                        return ((int)(this[this.tableSp_Genera_Contrato.CLAVEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CLAVE\' de la tabla \'Sp_Genera_Contrato\' es DBNull.", e);
-                    }
+                    return ((string)(this[this.tableSp_Genera_Contrato.CLAVEColumn]));
                 }
                 set {
                     this[this.tableSp_Genera_Contrato.CLAVEColumn] = value;
@@ -1427,18 +1429,6 @@ namespace CsPresentacion {
                 set {
                     this[this.tableSp_Genera_Contrato.TURNOColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCLAVENull() {
-                return this.IsNull(this.tableSp_Genera_Contrato.CLAVEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCLAVENull() {
-                this[this.tableSp_Genera_Contrato.CLAVEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
