@@ -24,7 +24,7 @@ namespace CsPresentacion
             cargar_puesto(cmb_puesto);
            cargar_departemento(cmb_departamento);
             selecciona_clave();
-            txt_curp.Mask = ">LLLL000000LLLLLL00";
+            txt_curp.Mask = ">LLLL000000LLLLLLCC";
             txt_rfc.Mask = ">LLLL000000CCC";
         }
         public void cargar_departemento(ComboBox inte)//Cargar departamento en cmb
