@@ -71,6 +71,8 @@
             this.cmb_escolaridad = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
+            this.txt_curp = new System.Windows.Forms.MaskedTextBox();
             this.lbl_escolaridad = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_mod_general = new System.Windows.Forms.Button();
@@ -90,6 +92,8 @@
             this.txt_nacionalidad = new System.Windows.Forms.TextBox();
             this.txt_vigencia = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txt_telefono = new System.Windows.Forms.MaskedTextBox();
+            this.txt_tel_contacto = new System.Windows.Forms.MaskedTextBox();
             this.lbl_civil = new System.Windows.Forms.Label();
             this.btn_mod_fam = new System.Windows.Forms.Button();
             this.btn_mod_familiar = new System.Windows.Forms.Button();
@@ -169,10 +173,6 @@
             this.btn_mod_ruta = new System.Windows.Forms.Button();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txt_tel_contacto = new System.Windows.Forms.MaskedTextBox();
-            this.txt_telefono = new System.Windows.Forms.MaskedTextBox();
-            this.txt_curp = new System.Windows.Forms.MaskedTextBox();
-            this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.grb_nacimiento.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -479,11 +479,8 @@
             // 
             this.cmb_Civil.FormattingEnabled = true;
             this.cmb_Civil.Items.AddRange(new object[] {
-            "VIUDO",
             "SOLTERO",
-            "CASADO",
-            "UNION LIBRE",
-            "DIVORCIADO"});
+            "CASADO"});
             this.cmb_Civil.Location = new System.Drawing.Point(18, 194);
             this.cmb_Civil.Name = "cmb_Civil";
             this.cmb_Civil.Size = new System.Drawing.Size(148, 21);
@@ -742,6 +739,22 @@
             this.tabPage1.Text = "Información General";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // txt_rfc
+            // 
+            this.txt_rfc.Location = new System.Drawing.Point(18, 246);
+            this.txt_rfc.Name = "txt_rfc";
+            this.txt_rfc.Size = new System.Drawing.Size(215, 20);
+            this.txt_rfc.TabIndex = 226;
+            // 
+            // txt_curp
+            // 
+            this.txt_curp.Location = new System.Drawing.Point(18, 207);
+            this.txt_curp.Name = "txt_curp";
+            this.txt_curp.Size = new System.Drawing.Size(215, 20);
+            this.txt_curp.TabIndex = 225;
+            this.txt_curp.TextChanged += new System.EventHandler(this.MaskedTextBox1_TextChanged);
+            this.txt_curp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_curp_KeyPress_1);
+            // 
             // lbl_escolaridad
             // 
             this.lbl_escolaridad.AutoSize = true;
@@ -943,6 +956,22 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Familiar";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txt_telefono
+            // 
+            this.txt_telefono.Location = new System.Drawing.Point(18, 237);
+            this.txt_telefono.Mask = "9990000000";
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(148, 20);
+            this.txt_telefono.TabIndex = 241;
+            // 
+            // txt_tel_contacto
+            // 
+            this.txt_tel_contacto.Location = new System.Drawing.Point(18, 83);
+            this.txt_tel_contacto.Mask = "9990000000";
+            this.txt_tel_contacto.Name = "txt_tel_contacto";
+            this.txt_tel_contacto.Size = new System.Drawing.Size(148, 20);
+            this.txt_tel_contacto.TabIndex = 240;
             // 
             // lbl_civil
             // 
@@ -1843,38 +1872,6 @@
             this.label19.Size = new System.Drawing.Size(40, 13);
             this.label19.TabIndex = 240;
             this.label19.Text = "RUTA:";
-            // 
-            // txt_tel_contacto
-            // 
-            this.txt_tel_contacto.Location = new System.Drawing.Point(18, 83);
-            this.txt_tel_contacto.Mask = "(999)000-0000";
-            this.txt_tel_contacto.Name = "txt_tel_contacto";
-            this.txt_tel_contacto.Size = new System.Drawing.Size(148, 20);
-            this.txt_tel_contacto.TabIndex = 240;
-            // 
-            // txt_telefono
-            // 
-            this.txt_telefono.Location = new System.Drawing.Point(18, 237);
-            this.txt_telefono.Mask = "(999)000-0000";
-            this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(148, 20);
-            this.txt_telefono.TabIndex = 241;
-            // 
-            // txt_curp
-            // 
-            this.txt_curp.Location = new System.Drawing.Point(18, 207);
-            this.txt_curp.Name = "txt_curp";
-            this.txt_curp.Size = new System.Drawing.Size(215, 20);
-            this.txt_curp.TabIndex = 225;
-            this.txt_curp.TextChanged += new System.EventHandler(this.MaskedTextBox1_TextChanged);
-            this.txt_curp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_curp_KeyPress_1);
-            // 
-            // txt_rfc
-            // 
-            this.txt_rfc.Location = new System.Drawing.Point(18, 246);
-            this.txt_rfc.Name = "txt_rfc";
-            this.txt_rfc.Size = new System.Drawing.Size(215, 20);
-            this.txt_rfc.TabIndex = 226;
             // 
             // Frm_Modificaciones
             // 

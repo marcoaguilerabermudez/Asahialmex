@@ -12,6 +12,8 @@ using System.IO;
 
 namespace CsPresentacion
 {
+
+
     public partial class Frm_Listado_Altas : Form
     {
         public Frm_Listado_Altas()
