@@ -833,7 +833,7 @@ namespace CsPresentacion {
                 this.columnESCOLARIDAD.MaxLength = 12;
                 this.columnINFONAVIT.MaxLength = 10;
                 this.columnTIPO_EMPLEADO.ReadOnly = true;
-                this.columnTIPO_EMPLEADO.MaxLength = 9;
+                this.columnTIPO_EMPLEADO.MaxLength = 10;
                 this.columnDESCRIPCION_TURNO.ReadOnly = true;
                 this.columnDESCRIPCION_TURNO.MaxLength = 14;
                 this.columnTURNO.ReadOnly = true;

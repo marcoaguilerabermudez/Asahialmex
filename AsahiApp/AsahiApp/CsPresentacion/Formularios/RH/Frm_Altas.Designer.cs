@@ -1532,7 +1532,7 @@
             this.Name = "Frm_Altas";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = "Alta de Empleado";
             this.Load += new System.EventHandler(this.Frm_Altas_Load);
             this.Panel_principal.ResumeLayout(false);
             this.Panel_principal.PerformLayout();
