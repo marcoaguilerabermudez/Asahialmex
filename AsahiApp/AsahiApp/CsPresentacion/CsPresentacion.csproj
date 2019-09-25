@@ -92,16 +92,16 @@
     <Compile Include="Formularios\RH\Frm_Historico.Designer.cs">
       <DependentUpon>Frm_Historico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Rep_Historial_.cs">
+    <Compile Include="Formularios\RH\Frm_Rep_Historial_.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Rep_Historial_.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_Rep_Historial_.Designer.cs">
       <DependentUpon>Frm_Rep_Historial_.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Rotacion.cs">
+    <Compile Include="Formularios\RH\Frm_Rotacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Rotacion.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_Rotacion.Designer.cs">
       <DependentUpon>Frm_Rotacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Credencial_Visitantes.cs">
@@ -407,10 +407,10 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Historico.resx">
       <DependentUpon>Frm_Historico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Rep_Historial_.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_Rep_Historial_.resx">
       <DependentUpon>Frm_Rep_Historial_.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Rotacion.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_Rotacion.resx">
       <DependentUpon>Frm_Rotacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Credencial_Visitantes.resx">

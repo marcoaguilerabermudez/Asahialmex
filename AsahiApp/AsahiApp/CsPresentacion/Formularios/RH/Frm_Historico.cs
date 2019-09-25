@@ -38,7 +38,7 @@ namespace CsPresentacion
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT RTRIM(DESCRIPCION)as 'DEPARTAMENTO' FROM  [asahi16].[Supervisor_giro].[DEPTO] WHERE CENTRO_COSTO <>16 and RTRIM(DESCRIPCION) <> 'PRESIDENCIA'", con);
+                SqlCommand cmd = new SqlCommand("SELECT RTRIM(DESCRIPCION)as 'DEPARTAMENTO' FROM  [asahi16].[Supervisor_giro].[DEPTO] WHERE CENTRO_COSTO <>16 and RTRIM(DESCRIPCION) <> 'PRESIDENCIA' ORDER BY DEPARTAMENTO ASC ", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
