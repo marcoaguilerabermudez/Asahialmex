@@ -71,4 +71,40 @@
             planMonto_ = value
         End Set
     End Property
+    Private cotizacion_ As Double
+    Public Property Cotizacion() As Double
+        Get
+            Return cotizacion_
+        End Get
+        Set(ByVal value As Double)
+            cotizacion_ = value
+        End Set
+    End Property
+    Private oc_ As Double
+    Public Property OC() As Double
+        Get
+            Return oc_
+        End Get
+        Set(ByVal value As Double)
+            oc_ = value
+        End Set
+    End Property
+    Private compras_ As Double
+    Public Property Compras() As Double
+        Get
+            Return compras_
+        End Get
+        Set(ByVal value As Double)
+            compras_ = value
+        End Set
+    End Property
+    Private poliza_ As Double
+    Public Property Poliza() As Double
+        Get
+            Return poliza_
+        End Get
+        Set(ByVal value As Double)
+            poliza_ = value
+        End Set
+    End Property
 End Class

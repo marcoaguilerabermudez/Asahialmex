@@ -39,13 +39,6 @@ Partial Class Frm_Gastos
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Dgv_GastosDepto = New System.Windows.Forms.DataGridView()
-        Me.noCta2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cta2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.masterP2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.plan2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.real2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.actual2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dif2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Dgv_GastosGlobal = New System.Windows.Forms.DataGridView()
         Me.noCta = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,16 +48,14 @@ Partial Class Frm_Gastos
         Me.actual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.real = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dif = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cotizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.po = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.comp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.poliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Lbl_CantDif = New System.Windows.Forms.Label()
         Me.Lbl_CantActualReal = New System.Windows.Forms.Label()
-        Me.Lbl_CantPlan = New System.Windows.Forms.Label()
-        Me.Lbl_CantMaster = New System.Windows.Forms.Label()
-        Me.Lbl_CantFF2 = New System.Windows.Forms.Label()
-        Me.Lbl_CantMF2 = New System.Windows.Forms.Label()
-        Me.Lbl_CantFF1 = New System.Windows.Forms.Label()
-        Me.Lbl_CantMF1 = New System.Windows.Forms.Label()
+        Me.Lbl_CantDif = New System.Windows.Forms.Label()
         Me.Lbl_MontoDif = New System.Windows.Forms.Label()
         Me.Lbl_MontoActualReal = New System.Windows.Forms.Label()
         Me.Lbl_MontoPlan = New System.Windows.Forms.Label()
@@ -73,6 +64,12 @@ Partial Class Frm_Gastos
         Me.Lbl_MontoMF2 = New System.Windows.Forms.Label()
         Me.Lbl_MontoFF1 = New System.Windows.Forms.Label()
         Me.Lbl_MontoMF1 = New System.Windows.Forms.Label()
+        Me.Lbl_CantPlan = New System.Windows.Forms.Label()
+        Me.Lbl_CantMaster = New System.Windows.Forms.Label()
+        Me.Lbl_CantFF2 = New System.Windows.Forms.Label()
+        Me.Lbl_CantMF2 = New System.Windows.Forms.Label()
+        Me.Lbl_CantFF1 = New System.Windows.Forms.Label()
+        Me.Lbl_CantMF1 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -85,6 +82,17 @@ Partial Class Frm_Gastos
         Me.Lbl_Ventas = New System.Windows.Forms.Label()
         Me.Lbl_Actual = New System.Windows.Forms.Label()
         Me.Lbl_Real = New System.Windows.Forms.Label()
+        Me.noCta2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cta2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.masterP2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.plan2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.real2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.actual2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dif2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cotizacion2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.po2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.comp2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.poliza2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.Pct_Limpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
@@ -270,58 +278,13 @@ Partial Class Frm_Gastos
         Me.Dgv_GastosDepto.AllowUserToAddRows = False
         Me.Dgv_GastosDepto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_GastosDepto.ColumnHeadersVisible = False
-        Me.Dgv_GastosDepto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.noCta2, Me.cta2, Me.masterP2, Me.plan2, Me.real2, Me.actual2, Me.dif2})
+        Me.Dgv_GastosDepto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.noCta2, Me.cta2, Me.masterP2, Me.plan2, Me.real2, Me.actual2, Me.dif2, Me.cotizacion2, Me.po2, Me.comp2, Me.poliza2})
         Me.Dgv_GastosDepto.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_GastosDepto.Location = New System.Drawing.Point(0, 0)
         Me.Dgv_GastosDepto.Name = "Dgv_GastosDepto"
         Me.Dgv_GastosDepto.RowHeadersVisible = False
         Me.Dgv_GastosDepto.Size = New System.Drawing.Size(625, 376)
         Me.Dgv_GastosDepto.TabIndex = 1
-        '
-        'noCta2
-        '
-        Me.noCta2.HeaderText = "No. Cuenta"
-        Me.noCta2.Name = "noCta2"
-        Me.noCta2.ReadOnly = True
-        Me.noCta2.Width = 80
-        '
-        'cta2
-        '
-        Me.cta2.HeaderText = "Cuenta"
-        Me.cta2.Name = "cta2"
-        Me.cta2.ReadOnly = True
-        Me.cta2.Width = 140
-        '
-        'masterP2
-        '
-        Me.masterP2.HeaderText = "Master"
-        Me.masterP2.Name = "masterP2"
-        Me.masterP2.ReadOnly = True
-        '
-        'plan2
-        '
-        Me.plan2.HeaderText = "Plan"
-        Me.plan2.Name = "plan2"
-        Me.plan2.ReadOnly = True
-        '
-        'real2
-        '
-        Me.real2.HeaderText = "Real"
-        Me.real2.Name = "real2"
-        Me.real2.ReadOnly = True
-        Me.real2.Visible = False
-        '
-        'actual2
-        '
-        Me.actual2.HeaderText = "Actual"
-        Me.actual2.Name = "actual2"
-        Me.actual2.ReadOnly = True
-        '
-        'dif2
-        '
-        Me.dif2.HeaderText = "Diferencia"
-        Me.dif2.Name = "dif2"
-        Me.dif2.ReadOnly = True
         '
         'Panel7
         '
@@ -336,7 +299,7 @@ Partial Class Frm_Gastos
         '
         Me.Dgv_GastosGlobal.AllowUserToAddRows = False
         Me.Dgv_GastosGlobal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_GastosGlobal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.noCta, Me.cta, Me.masterP, Me.plan, Me.actual, Me.real, Me.dif})
+        Me.Dgv_GastosGlobal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.noCta, Me.cta, Me.masterP, Me.plan, Me.actual, Me.real, Me.dif, Me.cotizacion, Me.po, Me.comp, Me.poliza})
         Me.Dgv_GastosGlobal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_GastosGlobal.Location = New System.Drawing.Point(0, 0)
         Me.Dgv_GastosGlobal.Name = "Dgv_GastosGlobal"
@@ -391,6 +354,30 @@ Partial Class Frm_Gastos
         Me.dif.Name = "dif"
         Me.dif.ReadOnly = True
         '
+        'cotizacion
+        '
+        Me.cotizacion.HeaderText = "Cotización"
+        Me.cotizacion.Name = "cotizacion"
+        Me.cotizacion.ReadOnly = True
+        '
+        'po
+        '
+        Me.po.HeaderText = "OC"
+        Me.po.Name = "po"
+        Me.po.ReadOnly = True
+        '
+        'comp
+        '
+        Me.comp.HeaderText = "Compra"
+        Me.comp.Name = "comp"
+        Me.comp.ReadOnly = True
+        '
+        'poliza
+        '
+        Me.poliza.HeaderText = "Poliza"
+        Me.poliza.Name = "poliza"
+        Me.poliza.ReadOnly = True
+        '
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -401,14 +388,8 @@ Partial Class Frm_Gastos
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.Lbl_CantDif)
         Me.Panel3.Controls.Add(Me.Lbl_CantActualReal)
-        Me.Panel3.Controls.Add(Me.Lbl_CantPlan)
-        Me.Panel3.Controls.Add(Me.Lbl_CantMaster)
-        Me.Panel3.Controls.Add(Me.Lbl_CantFF2)
-        Me.Panel3.Controls.Add(Me.Lbl_CantMF2)
-        Me.Panel3.Controls.Add(Me.Lbl_CantFF1)
-        Me.Panel3.Controls.Add(Me.Lbl_CantMF1)
+        Me.Panel3.Controls.Add(Me.Lbl_CantDif)
         Me.Panel3.Controls.Add(Me.Lbl_MontoDif)
         Me.Panel3.Controls.Add(Me.Lbl_MontoActualReal)
         Me.Panel3.Controls.Add(Me.Lbl_MontoPlan)
@@ -417,6 +398,12 @@ Partial Class Frm_Gastos
         Me.Panel3.Controls.Add(Me.Lbl_MontoMF2)
         Me.Panel3.Controls.Add(Me.Lbl_MontoFF1)
         Me.Panel3.Controls.Add(Me.Lbl_MontoMF1)
+        Me.Panel3.Controls.Add(Me.Lbl_CantPlan)
+        Me.Panel3.Controls.Add(Me.Lbl_CantMaster)
+        Me.Panel3.Controls.Add(Me.Lbl_CantFF2)
+        Me.Panel3.Controls.Add(Me.Lbl_CantMF2)
+        Me.Panel3.Controls.Add(Me.Lbl_CantFF1)
+        Me.Panel3.Controls.Add(Me.Lbl_CantMF1)
         Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Controls.Add(Me.Label7)
@@ -435,15 +422,6 @@ Partial Class Frm_Gastos
         Me.Panel3.Size = New System.Drawing.Size(1256, 75)
         Me.Panel3.TabIndex = 0
         '
-        'Lbl_CantDif
-        '
-        Me.Lbl_CantDif.AutoSize = True
-        Me.Lbl_CantDif.Location = New System.Drawing.Point(825, 50)
-        Me.Lbl_CantDif.Name = "Lbl_CantDif"
-        Me.Lbl_CantDif.Size = New System.Drawing.Size(45, 13)
-        Me.Lbl_CantDif.TabIndex = 27
-        Me.Lbl_CantDif.Text = "Label18"
-        '
         'Lbl_CantActualReal
         '
         Me.Lbl_CantActualReal.AutoSize = True
@@ -453,59 +431,14 @@ Partial Class Frm_Gastos
         Me.Lbl_CantActualReal.TabIndex = 26
         Me.Lbl_CantActualReal.Text = "Label19"
         '
-        'Lbl_CantPlan
+        'Lbl_CantDif
         '
-        Me.Lbl_CantPlan.AutoSize = True
-        Me.Lbl_CantPlan.Location = New System.Drawing.Point(625, 50)
-        Me.Lbl_CantPlan.Name = "Lbl_CantPlan"
-        Me.Lbl_CantPlan.Size = New System.Drawing.Size(45, 13)
-        Me.Lbl_CantPlan.TabIndex = 25
-        Me.Lbl_CantPlan.Text = "Label20"
-        '
-        'Lbl_CantMaster
-        '
-        Me.Lbl_CantMaster.AutoSize = True
-        Me.Lbl_CantMaster.Location = New System.Drawing.Point(525, 50)
-        Me.Lbl_CantMaster.Name = "Lbl_CantMaster"
-        Me.Lbl_CantMaster.Size = New System.Drawing.Size(45, 13)
-        Me.Lbl_CantMaster.TabIndex = 24
-        Me.Lbl_CantMaster.Text = "Label21"
-        '
-        'Lbl_CantFF2
-        '
-        Me.Lbl_CantFF2.AutoSize = True
-        Me.Lbl_CantFF2.Location = New System.Drawing.Point(425, 50)
-        Me.Lbl_CantFF2.Name = "Lbl_CantFF2"
-        Me.Lbl_CantFF2.Size = New System.Drawing.Size(45, 13)
-        Me.Lbl_CantFF2.TabIndex = 23
-        Me.Lbl_CantFF2.Text = "Label22"
-        '
-        'Lbl_CantMF2
-        '
-        Me.Lbl_CantMF2.AutoSize = True
-        Me.Lbl_CantMF2.Location = New System.Drawing.Point(325, 50)
-        Me.Lbl_CantMF2.Name = "Lbl_CantMF2"
-        Me.Lbl_CantMF2.Size = New System.Drawing.Size(45, 13)
-        Me.Lbl_CantMF2.TabIndex = 22
-        Me.Lbl_CantMF2.Text = "Label23"
-        '
-        'Lbl_CantFF1
-        '
-        Me.Lbl_CantFF1.AutoSize = True
-        Me.Lbl_CantFF1.Location = New System.Drawing.Point(225, 50)
-        Me.Lbl_CantFF1.Name = "Lbl_CantFF1"
-        Me.Lbl_CantFF1.Size = New System.Drawing.Size(45, 13)
-        Me.Lbl_CantFF1.TabIndex = 21
-        Me.Lbl_CantFF1.Text = "Label24"
-        '
-        'Lbl_CantMF1
-        '
-        Me.Lbl_CantMF1.AutoSize = True
-        Me.Lbl_CantMF1.Location = New System.Drawing.Point(125, 50)
-        Me.Lbl_CantMF1.Name = "Lbl_CantMF1"
-        Me.Lbl_CantMF1.Size = New System.Drawing.Size(45, 13)
-        Me.Lbl_CantMF1.TabIndex = 20
-        Me.Lbl_CantMF1.Text = "Label25"
+        Me.Lbl_CantDif.AutoSize = True
+        Me.Lbl_CantDif.Location = New System.Drawing.Point(825, 50)
+        Me.Lbl_CantDif.Name = "Lbl_CantDif"
+        Me.Lbl_CantDif.Size = New System.Drawing.Size(45, 13)
+        Me.Lbl_CantDif.TabIndex = 27
+        Me.Lbl_CantDif.Text = "Label18"
         '
         'Lbl_MontoDif
         '
@@ -578,6 +511,60 @@ Partial Class Frm_Gastos
         Me.Lbl_MontoMF1.Size = New System.Drawing.Size(39, 13)
         Me.Lbl_MontoMF1.TabIndex = 12
         Me.Lbl_MontoMF1.Text = "Label9"
+        '
+        'Lbl_CantPlan
+        '
+        Me.Lbl_CantPlan.AutoSize = True
+        Me.Lbl_CantPlan.Location = New System.Drawing.Point(625, 50)
+        Me.Lbl_CantPlan.Name = "Lbl_CantPlan"
+        Me.Lbl_CantPlan.Size = New System.Drawing.Size(45, 13)
+        Me.Lbl_CantPlan.TabIndex = 25
+        Me.Lbl_CantPlan.Text = "Label20"
+        '
+        'Lbl_CantMaster
+        '
+        Me.Lbl_CantMaster.AutoSize = True
+        Me.Lbl_CantMaster.Location = New System.Drawing.Point(525, 50)
+        Me.Lbl_CantMaster.Name = "Lbl_CantMaster"
+        Me.Lbl_CantMaster.Size = New System.Drawing.Size(45, 13)
+        Me.Lbl_CantMaster.TabIndex = 24
+        Me.Lbl_CantMaster.Text = "Label21"
+        '
+        'Lbl_CantFF2
+        '
+        Me.Lbl_CantFF2.AutoSize = True
+        Me.Lbl_CantFF2.Location = New System.Drawing.Point(425, 50)
+        Me.Lbl_CantFF2.Name = "Lbl_CantFF2"
+        Me.Lbl_CantFF2.Size = New System.Drawing.Size(45, 13)
+        Me.Lbl_CantFF2.TabIndex = 23
+        Me.Lbl_CantFF2.Text = "Label22"
+        '
+        'Lbl_CantMF2
+        '
+        Me.Lbl_CantMF2.AutoSize = True
+        Me.Lbl_CantMF2.Location = New System.Drawing.Point(325, 50)
+        Me.Lbl_CantMF2.Name = "Lbl_CantMF2"
+        Me.Lbl_CantMF2.Size = New System.Drawing.Size(45, 13)
+        Me.Lbl_CantMF2.TabIndex = 22
+        Me.Lbl_CantMF2.Text = "Label23"
+        '
+        'Lbl_CantFF1
+        '
+        Me.Lbl_CantFF1.AutoSize = True
+        Me.Lbl_CantFF1.Location = New System.Drawing.Point(225, 50)
+        Me.Lbl_CantFF1.Name = "Lbl_CantFF1"
+        Me.Lbl_CantFF1.Size = New System.Drawing.Size(45, 13)
+        Me.Lbl_CantFF1.TabIndex = 21
+        Me.Lbl_CantFF1.Text = "Label24"
+        '
+        'Lbl_CantMF1
+        '
+        Me.Lbl_CantMF1.AutoSize = True
+        Me.Lbl_CantMF1.Location = New System.Drawing.Point(125, 50)
+        Me.Lbl_CantMF1.Name = "Lbl_CantMF1"
+        Me.Lbl_CantMF1.Size = New System.Drawing.Size(45, 13)
+        Me.Lbl_CantMF1.TabIndex = 20
+        Me.Lbl_CantMF1.Text = "Label25"
         '
         'Label10
         '
@@ -709,6 +696,75 @@ Partial Class Frm_Gastos
         Me.Lbl_Real.TabIndex = 11
         Me.Lbl_Real.Text = "Real"
         '
+        'noCta2
+        '
+        Me.noCta2.HeaderText = "No. Cuenta"
+        Me.noCta2.Name = "noCta2"
+        Me.noCta2.ReadOnly = True
+        Me.noCta2.Width = 80
+        '
+        'cta2
+        '
+        Me.cta2.HeaderText = "Cuenta"
+        Me.cta2.Name = "cta2"
+        Me.cta2.ReadOnly = True
+        Me.cta2.Width = 140
+        '
+        'masterP2
+        '
+        Me.masterP2.HeaderText = "Master"
+        Me.masterP2.Name = "masterP2"
+        Me.masterP2.ReadOnly = True
+        '
+        'plan2
+        '
+        Me.plan2.HeaderText = "Plan"
+        Me.plan2.Name = "plan2"
+        Me.plan2.ReadOnly = True
+        '
+        'real2
+        '
+        Me.real2.HeaderText = "Real"
+        Me.real2.Name = "real2"
+        Me.real2.ReadOnly = True
+        Me.real2.Visible = False
+        '
+        'actual2
+        '
+        Me.actual2.HeaderText = "Actual"
+        Me.actual2.Name = "actual2"
+        Me.actual2.ReadOnly = True
+        '
+        'dif2
+        '
+        Me.dif2.HeaderText = "Diferencia"
+        Me.dif2.Name = "dif2"
+        Me.dif2.ReadOnly = True
+        '
+        'cotizacion2
+        '
+        Me.cotizacion2.HeaderText = "Cotización"
+        Me.cotizacion2.Name = "cotizacion2"
+        Me.cotizacion2.ReadOnly = True
+        '
+        'po2
+        '
+        Me.po2.HeaderText = "OC"
+        Me.po2.Name = "po2"
+        Me.po2.ReadOnly = True
+        '
+        'comp2
+        '
+        Me.comp2.HeaderText = "Compra"
+        Me.comp2.Name = "comp2"
+        Me.comp2.ReadOnly = True
+        '
+        'poliza2
+        '
+        Me.poliza2.HeaderText = "Poliza"
+        Me.poliza2.Name = "poliza2"
+        Me.poliza2.ReadOnly = True
+        '
         'Frm_Gastos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -743,7 +799,6 @@ Partial Class Frm_Gastos
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents Panel3 As Panel
     Friend WithEvents Lbl_Depto As Label
     Friend WithEvents Lbl_Mes As Label
     Friend WithEvents Cmb_Depto As ComboBox
@@ -758,42 +813,36 @@ Partial Class Frm_Gastos
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Rdb_Japones As RadioButton
     Friend WithEvents Rdb_Español As RadioButton
-    Friend WithEvents noCta2 As DataGridViewTextBoxColumn
-    Friend WithEvents cta2 As DataGridViewTextBoxColumn
-    Friend WithEvents masterP2 As DataGridViewTextBoxColumn
-    Friend WithEvents plan2 As DataGridViewTextBoxColumn
-    Friend WithEvents real2 As DataGridViewTextBoxColumn
-    Friend WithEvents actual2 As DataGridViewTextBoxColumn
-    Friend WithEvents dif2 As DataGridViewTextBoxColumn
-    Friend WithEvents Lbl_Ventas As Label
     Friend WithEvents Pct_Limpiar As PictureBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Lbl_Actual As Label
-    Friend WithEvents Lbl_Real As Label
-    Friend WithEvents Lbl_MontoMF1 As Label
-    Friend WithEvents Lbl_MontoFF1 As Label
-    Friend WithEvents Lbl_CantDif As Label
+    Friend WithEvents Panel3 As Panel
     Friend WithEvents Lbl_CantActualReal As Label
-    Friend WithEvents Lbl_CantPlan As Label
-    Friend WithEvents Lbl_CantMaster As Label
-    Friend WithEvents Lbl_CantFF2 As Label
-    Friend WithEvents Lbl_CantMF2 As Label
-    Friend WithEvents Lbl_CantFF1 As Label
-    Friend WithEvents Lbl_CantMF1 As Label
+    Friend WithEvents Lbl_CantDif As Label
     Friend WithEvents Lbl_MontoDif As Label
     Friend WithEvents Lbl_MontoActualReal As Label
     Friend WithEvents Lbl_MontoPlan As Label
     Friend WithEvents Lbl_MontoMaster As Label
     Friend WithEvents Lbl_MontoFF2 As Label
     Friend WithEvents Lbl_MontoMF2 As Label
+    Friend WithEvents Lbl_MontoFF1 As Label
+    Friend WithEvents Lbl_MontoMF1 As Label
+    Friend WithEvents Lbl_CantPlan As Label
+    Friend WithEvents Lbl_CantMaster As Label
+    Friend WithEvents Lbl_CantFF2 As Label
+    Friend WithEvents Lbl_CantMF2 As Label
+    Friend WithEvents Lbl_CantFF1 As Label
+    Friend WithEvents Lbl_CantMF1 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Lbl_Ventas As Label
+    Friend WithEvents Lbl_Actual As Label
+    Friend WithEvents Lbl_Real As Label
     Friend WithEvents noCta As DataGridViewTextBoxColumn
     Friend WithEvents cta As DataGridViewTextBoxColumn
     Friend WithEvents masterP As DataGridViewTextBoxColumn
@@ -801,4 +850,19 @@ Partial Class Frm_Gastos
     Friend WithEvents actual As DataGridViewTextBoxColumn
     Friend WithEvents real As DataGridViewTextBoxColumn
     Friend WithEvents dif As DataGridViewTextBoxColumn
+    Friend WithEvents cotizacion As DataGridViewTextBoxColumn
+    Friend WithEvents po As DataGridViewTextBoxColumn
+    Friend WithEvents comp As DataGridViewTextBoxColumn
+    Friend WithEvents poliza As DataGridViewTextBoxColumn
+    Friend WithEvents noCta2 As DataGridViewTextBoxColumn
+    Friend WithEvents cta2 As DataGridViewTextBoxColumn
+    Friend WithEvents masterP2 As DataGridViewTextBoxColumn
+    Friend WithEvents plan2 As DataGridViewTextBoxColumn
+    Friend WithEvents real2 As DataGridViewTextBoxColumn
+    Friend WithEvents actual2 As DataGridViewTextBoxColumn
+    Friend WithEvents dif2 As DataGridViewTextBoxColumn
+    Friend WithEvents cotizacion2 As DataGridViewTextBoxColumn
+    Friend WithEvents po2 As DataGridViewTextBoxColumn
+    Friend WithEvents comp2 As DataGridViewTextBoxColumn
+    Friend WithEvents poliza2 As DataGridViewTextBoxColumn
 End Class

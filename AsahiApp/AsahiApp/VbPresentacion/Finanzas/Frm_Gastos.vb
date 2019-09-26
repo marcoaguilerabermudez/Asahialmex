@@ -4,8 +4,7 @@ Imports Negocio
 
 Public Class Frm_Gastos
 #Region "Variables de clase"
-    Dim cadenaConex As String
-    Dim cadConex As String
+    Dim cadenaConex As String, cadConex As String
     Dim c As Integer = 0
 #End Region
 #Region "Acciones del formulario"
@@ -35,6 +34,7 @@ Public Class Frm_Gastos
         If Me.c = 1 Then
             RecuperarPlanesGlobal()
             RecuperarPlanesTVentas()
+            Cmb_Depto.SelectedItem = ""
         End If
     End Sub
     Private Sub Cmb_Años_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_Años.SelectionChangeCommitted
@@ -47,8 +47,11 @@ Public Class Frm_Gastos
     Private Sub Cmb_Depto_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_Depto.SelectionChangeCommitted
         If Cmb_Depto.SelectedValue <> "" Then
             Dgv_GastosDepto.ColumnHeadersVisible = True
+            RecuperarPlanesSegNeg()
         Else
             Dgv_GastosDepto.ColumnHeadersVisible = False
+            Dgv_GastosDepto.DataSource = Nothing
+            Dgv_GastosDepto.Rows.Clear()
         End If
     End Sub
     Private Sub Pct_Limpiar_Click(sender As Object, e As EventArgs) Handles Pct_Limpiar.Click
@@ -123,6 +126,46 @@ Public Class Frm_Gastos
                 If .Cells("masterp").Value = 0 Then .Cells("masterp").Style.ForeColor = Color.Red
                 .Cells("actual").Value = Format(item.Actual, "$ #,###,##0.00")
                 If .Cells("actual").Value = 0 Then .Cells("actual").Style.ForeColor = Color.Red
+                .Cells("cotizacion").Value = Format(item.Cotizacion, "$ #,###,##0.00")
+                If .Cells("cotizacion").Value = 0 Then .Cells("cotizacion").Style.ForeColor = Color.Red
+                .Cells("po").Value = Format(item.OC, "$ #,###,##0.00")
+                If .Cells("po").Value = 0 Then .Cells("po").Style.ForeColor = Color.Red
+                .Cells("comp").Value = Format(item.Compras, "$ #,###,##0.00")
+                If .Cells("comp").Value = 0 Then .Cells("comp").Style.ForeColor = Color.Red
+                .Cells("poliza").Value = Format(item.Poliza, "$ #,###,##0.00")
+                If .Cells("poliza").Value = 0 Then .Cells("poliza").Style.ForeColor = Color.Red
+                .Cells("dif").Value = Format(item.MasterP - item.Actual, "$ #,###,##0.00")
+                If .Cells("dif").Value < 0 Then .Cells("dif").Style.ForeColor = Color.Red
+            End With
+            fila += 1
+        Next
+    End Sub
+    Private Sub RellenarDgvGastosDepto(ByVal lstGast As LGastos)
+        Dim fila As Integer = 0
+        Dgv_GastosDepto.DataSource = Nothing
+        Dgv_GastosDepto.Rows.Clear()
+
+        For Each item In lstGast
+            Dgv_GastosDepto.Rows.Add()
+            Dgv_GastosDepto.Columns("masterp2").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            Dgv_GastosDepto.Columns("actual2").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            With Dgv_GastosDepto.Rows(fila)
+                .Cells("noCta2").Value = item.Cuenta
+                .Cells("cta2").Value = item.NombreCuenta
+                .Cells("masterp2").Value = Format(item.MasterP, "$ #,###,##0.00")
+                If .Cells("masterp2").Value = 0 Then .Cells("masterp2").Style.ForeColor = Color.Red
+                .Cells("actual2").Value = Format(item.Actual, "$ #,###,##0.00")
+                If .Cells("actual2").Value = 0 Then .Cells("actual2").Style.ForeColor = Color.Red
+                .Cells("cotizacion2").Value = Format(item.Cotizacion, "$ #,###,##0.00")
+                If .Cells("cotizacion2").Value = 0 Then .Cells("cotizacion2").Style.ForeColor = Color.Red
+                .Cells("po2").Value = Format(item.OC, "$ #,###,##0.00")
+                If .Cells("po2").Value = 0 Then .Cells("po2").Style.ForeColor = Color.Red
+                .Cells("comp2").Value = Format(item.Compras, "$ #,###,##0.00")
+                If .Cells("comp2").Value = 0 Then .Cells("comp2").Style.ForeColor = Color.Red
+                .Cells("poliza2").Value = Format(item.Poliza, "$ #,###,##0.00")
+                If .Cells("poliza2").Value = 0 Then .Cells("poliza2").Style.ForeColor = Color.Red
+                .Cells("dif2").Value = Format(item.MasterP - item.Actual, "$ #,###,##0.00")
+                If .Cells("dif2").Value < 0 Then .Cells("dif2").Style.ForeColor = Color.Red
             End With
             fila += 1
         Next
@@ -156,9 +199,28 @@ Public Class Frm_Gastos
     Private Sub RecuperarPlanesGlobal()
         Dim NGast As New NGastos(), lstGast As New LGastos()
         Dim mes As Integer = MesLetraNumero(Cmb_Meses.Text), año As Integer = Cmb_Años.Text
+        Dim fi As Date, ff As Date, d As Date
 
-        lstGast = NGast.RecuperarPlanGastos(Me.cadenaConex, mes, año)
+        d = "15" & "/" & mes & "/" & año
+        fi = Format(DateSerial(Year(d), Month(d), 1), "dd/MM/yyyy")
+        ff = Format(DateSerial(Year(d), Month(d) + 1, 0), "dd/MM/yyyy")
+
+        lstGast = NGast.RecuperarPlanGastos(Me.cadenaConex, mes, año, fi, ff)
         RellenarDgvGastosGral(lstGast)
+        Me.c = 1
+    End Sub
+    Private Sub RecuperarPlanesSegNeg()
+        Dim NGast As New NGastos(), lstGast As New LGastos()
+        Dim mes As Integer = MesLetraNumero(Cmb_Meses.Text), año As Integer = Cmb_Años.Text, sn As Integer
+        Dim fi As Date, ff As Date, d As Date
+
+        d = "15" & "/" & mes & "/" & año
+        fi = Format(DateSerial(Year(d), Month(d), 1), "dd/MM/yyyy")
+        ff = Format(DateSerial(Year(d), Month(d) + 1, 0), "dd/MM/yyyy")
+        sn = AcoplarSegmentoNegocioADepto()
+
+        lstGast = NGast.RecuperarPlanGastosDpto(Me.cadenaConex, mes, año, fi, ff, sn)
+        RellenarDgvGastosDepto(lstGast)
         Me.c = 1
     End Sub
     Private Sub RecuperarPlanesTVentas()
@@ -184,6 +246,36 @@ Public Class Frm_Gastos
             Case "OCTUBRE" : Return 10
             Case "NOVIEMBRE" : Return 11
             Case "DICIEMBRE" : Return 12
+            Case Else : Return 0
+        End Select
+    End Function
+    Private Function AcoplarSegmentoNegocioADepto() As Integer
+        Select Case Cmb_Depto.Text
+            Case "ACABADO 1" : Return 4
+            Case "ACABADO 2" : Return 11
+            Case "ASEGURAMIENTO DE CALIDAD" : Return 2
+            Case "ASUNTOS GENERALES" : Return 7
+            Case "ATENCIÓN AL CLIENTE" : Return 3
+            Case "COMPRAS" : Return 8
+            Case "CONTABILIDAD" : Return 1
+            Case "CONTROL DE CLIENTES" : Return 3
+            Case "CONTROL DE MANUFACTURA" : Return 3
+            Case "CONTROL DE PRODUCCION" : Return 3
+            Case "FUNDICION 1" : Return 4
+            Case "FUNDICION 2" : Return 11
+            Case "INGENIERÍA-FUNDICIÓN" : Return 9
+            Case "INGENIERÍA-MAQUINADO" : Return 9
+            Case "INSPECCIÓN FUNDICION" : Return 13
+            Case "INSPECCIÓN MAQUINADO" : Return 13
+            Case "INSPECCION PRODUCCION" : Return 10
+            Case "MANTENIMIENTO DE PLANTA" : Return 10
+            Case "MANTENIMIENTO FUNDICION" : Return 4
+            Case "MANTENIMIENTO MAQUINADO" : Return 6
+            Case "MAQUINADO F1" : Return 6
+            Case "MAQUINADO F2" : Return 12
+            Case "MOLDES" : Return 5
+            Case "SEGURIDAD" : Return 7
+            Case "SISTEMAS IT" : Return 1
             Case Else : Return 0
         End Select
     End Function
