@@ -739,7 +739,7 @@
             // txt_telefono
             // 
             this.txt_telefono.Location = new System.Drawing.Point(21, 334);
-            this.txt_telefono.Mask = "(999)000-0000";
+            this.txt_telefono.Mask = "9990000000";
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(147, 20);
             this.txt_telefono.TabIndex = 242;
@@ -983,11 +983,8 @@
             // 
             this.cmb_Civil.FormattingEnabled = true;
             this.cmb_Civil.Items.AddRange(new object[] {
-            "VIUDO",
             "SOLTERO",
-            "CASADO",
-            "UNION LIBRE",
-            "DIVORCIADO"});
+            "CASADO"});
             this.cmb_Civil.Location = new System.Drawing.Point(20, 290);
             this.cmb_Civil.Name = "cmb_Civil";
             this.cmb_Civil.Size = new System.Drawing.Size(148, 21);
@@ -1345,7 +1342,7 @@
             // txt_tel_contacto
             // 
             this.txt_tel_contacto.Location = new System.Drawing.Point(20, 162);
-            this.txt_tel_contacto.Mask = "(999)000-0000";
+            this.txt_tel_contacto.Mask = "9990000000";
             this.txt_tel_contacto.Name = "txt_tel_contacto";
             this.txt_tel_contacto.Size = new System.Drawing.Size(166, 20);
             this.txt_tel_contacto.TabIndex = 241;
@@ -1524,7 +1521,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(594, 619);
+            this.ClientSize = new System.Drawing.Size(595, 619);
             this.Controls.Add(this.Panel_secundario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);
@@ -1535,7 +1532,7 @@
             this.Name = "Frm_Altas";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = "Alta de Empleado";
             this.Load += new System.EventHandler(this.Frm_Altas_Load);
             this.Panel_principal.ResumeLayout(false);
             this.Panel_principal.PerformLayout();

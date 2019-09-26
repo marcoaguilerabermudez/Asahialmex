@@ -200,7 +200,7 @@
               <xs:element name="TIPO_EMPLEADO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTIPO_EMPLEADO" msprop:Generator_ColumnPropNameInRow="TIPO_EMPLEADO" msprop:Generator_ColumnPropNameInTable="TIPO_EMPLEADOColumn" msprop:Generator_UserColumnName="TIPO_EMPLEADO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="9" />
+                    <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
