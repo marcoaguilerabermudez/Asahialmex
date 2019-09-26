@@ -58,6 +58,42 @@ namespace CsPresentacion
             txt_ac.Text = Convert.ToString(Bajas * 100 / Total);
             txt_ab.Text = Convert.ToString(Bajas * 100 / Altas);
         }
+        private void Calcula_Total2()
+        {
+            double Altas = 0;
+            double Bajas = 0;
+            double Total = 0;
+
+            foreach (DataGridViewRow row in dgv_total.Rows)
+            {
+                Altas += Convert.ToDouble(row.Cells["ALTAS"].Value);
+                Bajas += Convert.ToDouble(row.Cells["BAJAS"].Value);
+                Total += Convert.ToDouble(row.Cells["TOTAL"].Value);
+            }
+            lbl_altas2.Text = Convert.ToString(Altas);
+            lbl_bajas2.Text = Convert.ToString(Bajas);
+            lbl_total2.Text = Convert.ToString(Total);
+            txt_ac2.Text = Convert.ToString(Bajas * 100 / Total);
+            txt_ab2.Text = Convert.ToString(Bajas * 100 / Altas);
+        }
+        private void Calcula_Total3()
+        {
+            double Altas = 0;
+            double Bajas = 0;
+            double Total = 0;
+
+            foreach (DataGridViewRow row in dgv_total.Rows)
+            {
+                Altas += Convert.ToDouble(row.Cells["ALTAS"].Value);
+                Bajas += Convert.ToDouble(row.Cells["BAJAS"].Value);
+                Total += Convert.ToDouble(row.Cells["TOTAL"].Value);
+            }
+            lbl_altas3.Text = Convert.ToString(Altas);
+            lbl_bajas3.Text = Convert.ToString(Bajas);
+            lbl_total3.Text = Convert.ToString(Total);
+            txt_ac3.Text = Convert.ToString(Bajas * 100 / Total);
+            txt_ab3.Text = Convert.ToString(Bajas * 100 / Altas);
+        }
 
         public void Llenar_dgv(DataGridView dgv)// Método para llenar DatagridView Total
         {
@@ -341,6 +377,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "15";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "DOS SEMANAS A UN MES")
             {
@@ -349,6 +386,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "30";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "UN MES A TRES MESES")
             {
@@ -357,6 +395,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "90";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "TRES MESES A SEIS MESES")
             {
@@ -365,6 +404,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "180";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "MENOS DE TRES MESES")
             {
@@ -373,6 +413,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "90";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "MAS DE TRES MESES")
             {
@@ -381,6 +422,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "1000000000";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "SEIS MESES A UN AÑO")
             {
@@ -389,6 +431,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "365";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "UN AÑO A DOS AÑOS")
             {
@@ -397,6 +440,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "732";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "MAS DE DOS AÑOS")
             {
@@ -405,6 +449,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "1000000000";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
         }
         private void Lbl_desde_Click(object sender, EventArgs e)
