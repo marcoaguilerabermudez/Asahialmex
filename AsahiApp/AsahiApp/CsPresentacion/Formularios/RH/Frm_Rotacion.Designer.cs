@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_total = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtm_fecha = new System.Windows.Forms.DateTimePicker();
             this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_ant2 = new System.Windows.Forms.DataGridView();
@@ -55,8 +54,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_exportar_total = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_exportar_ant = new System.Windows.Forms.Button();
+            this.btn_exportar_ant2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -100,17 +99,17 @@
             this.dgv_total.Location = new System.Drawing.Point(8, 79);
             this.dgv_total.MultiSelect = false;
             this.dgv_total.Name = "dgv_total";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_total.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_total.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.dgv_total.RowHeadersVisible = false;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            this.dgv_total.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.White;
+            this.dgv_total.RowsDefaultCellStyle = dataGridViewCellStyle32;
             this.dgv_total.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_total.ShowCellErrors = false;
             this.dgv_total.Size = new System.Drawing.Size(397, 497);
@@ -121,7 +120,6 @@
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.dtm_fecha);
             this.panel1.Controls.Add(this.btn_nuevo);
-            this.panel1.Controls.Add(this.btn_buscar);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Location = new System.Drawing.Point(-1, -22);
             this.panel1.Name = "panel1";
@@ -136,6 +134,7 @@
             this.dtm_fecha.Name = "dtm_fecha";
             this.dtm_fecha.Size = new System.Drawing.Size(156, 20);
             this.dtm_fecha.TabIndex = 27;
+            this.dtm_fecha.ValueChanged += new System.EventHandler(this.Dtm_fecha_ValueChanged);
             // 
             // btn_nuevo
             // 
@@ -144,27 +143,12 @@
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(214, 38);
+            this.btn_nuevo.Location = new System.Drawing.Point(173, 38);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(27, 27);
             this.btn_nuevo.TabIndex = 26;
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_buscar.FlatAppearance.BorderSize = 0;
-            this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.Image = global::CsPresentacion.Properties.Resources.Filtro;
-            this.btn_buscar.Location = new System.Drawing.Point(175, 34);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(29, 34);
-            this.btn_buscar.TabIndex = 25;
-            this.btn_buscar.UseVisualStyleBackColor = false;
-            this.btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
             // 
             // label8
             // 
@@ -198,17 +182,17 @@
             this.dgv_ant2.Location = new System.Drawing.Point(813, 79);
             this.dgv_ant2.MultiSelect = false;
             this.dgv_ant2.Name = "dgv_ant2";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ant2.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ant2.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.dgv_ant2.RowHeadersVisible = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dgv_ant2.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.White;
+            this.dgv_ant2.RowsDefaultCellStyle = dataGridViewCellStyle34;
             this.dgv_ant2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ant2.ShowCellErrors = false;
             this.dgv_ant2.Size = new System.Drawing.Size(397, 497);
@@ -245,17 +229,17 @@
             this.dgv_ant.Location = new System.Drawing.Point(410, 79);
             this.dgv_ant.MultiSelect = false;
             this.dgv_ant.Name = "dgv_ant";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ant.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ant.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.dgv_ant.RowHeadersVisible = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            this.dgv_ant.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
+            this.dgv_ant.RowsDefaultCellStyle = dataGridViewCellStyle36;
             this.dgv_ant.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ant.ShowCellErrors = false;
             this.dgv_ant.Size = new System.Drawing.Size(397, 497);
@@ -368,36 +352,38 @@
             this.btn_exportar_total.FlatAppearance.BorderSize = 0;
             this.btn_exportar_total.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exportar_total.Image = global::CsPresentacion.Properties.Resources.Excel;
-            this.btn_exportar_total.Location = new System.Drawing.Point(284, 580);
+            this.btn_exportar_total.Location = new System.Drawing.Point(361, 580);
             this.btn_exportar_total.Name = "btn_exportar_total";
             this.btn_exportar_total.Size = new System.Drawing.Size(40, 34);
             this.btn_exportar_total.TabIndex = 162;
             this.btn_exportar_total.UseVisualStyleBackColor = true;
             this.btn_exportar_total.Click += new System.EventHandler(this.Btn_exportar_total_Click);
             // 
-            // button1
+            // btn_exportar_ant
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::CsPresentacion.Properties.Resources.Excel;
-            this.button1.Location = new System.Drawing.Point(673, 580);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 34);
-            this.button1.TabIndex = 163;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_exportar_ant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_exportar_ant.FlatAppearance.BorderSize = 0;
+            this.btn_exportar_ant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exportar_ant.Image = global::CsPresentacion.Properties.Resources.Excel;
+            this.btn_exportar_ant.Location = new System.Drawing.Point(761, 580);
+            this.btn_exportar_ant.Name = "btn_exportar_ant";
+            this.btn_exportar_ant.Size = new System.Drawing.Size(40, 34);
+            this.btn_exportar_ant.TabIndex = 163;
+            this.btn_exportar_ant.UseVisualStyleBackColor = true;
+            this.btn_exportar_ant.Click += new System.EventHandler(this.Btn_exportar_ant_Click);
             // 
-            // button2
+            // btn_exportar_ant2
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::CsPresentacion.Properties.Resources.Excel;
-            this.button2.Location = new System.Drawing.Point(1089, 583);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 34);
-            this.button2.TabIndex = 164;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_exportar_ant2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_exportar_ant2.FlatAppearance.BorderSize = 0;
+            this.btn_exportar_ant2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exportar_ant2.Image = global::CsPresentacion.Properties.Resources.Excel;
+            this.btn_exportar_ant2.Location = new System.Drawing.Point(1168, 582);
+            this.btn_exportar_ant2.Name = "btn_exportar_ant2";
+            this.btn_exportar_ant2.Size = new System.Drawing.Size(40, 34);
+            this.btn_exportar_ant2.TabIndex = 164;
+            this.btn_exportar_ant2.UseVisualStyleBackColor = true;
+            this.btn_exportar_ant2.Click += new System.EventHandler(this.Btn_exportar_ant2_Click);
             // 
             // label7
             // 
@@ -688,8 +674,8 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_exportar_ant2);
+            this.Controls.Add(this.btn_exportar_ant);
             this.Controls.Add(this.btn_exportar_total);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -727,7 +713,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.DateTimePicker dtm_fecha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_ant2;
@@ -744,8 +729,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_exportar_total;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_exportar_ant;
+        private System.Windows.Forms.Button btn_exportar_ant2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
