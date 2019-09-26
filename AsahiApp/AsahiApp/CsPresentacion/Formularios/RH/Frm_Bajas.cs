@@ -26,6 +26,7 @@ namespace CsPresentacion
             nuevo();
             l_fecha.Visible = false;
             l_hora.Visible = false;
+       
         }
 
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");

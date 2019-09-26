@@ -92,11 +92,17 @@
     <Compile Include="Formularios\RH\Frm_Historico.Designer.cs">
       <DependentUpon>Frm_Historico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Rep_Historial_.cs">
+    <Compile Include="Formularios\RH\Frm_Rep_Historial_.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Rep_Historial_.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_Rep_Historial_.Designer.cs">
       <DependentUpon>Frm_Rep_Historial_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Rotacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Rotacion.Designer.cs">
+      <DependentUpon>Frm_Rotacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Credencial_Visitantes.cs">
       <SubType>Form</SubType>
@@ -401,8 +407,11 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Historico.resx">
       <DependentUpon>Frm_Historico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Rep_Historial_.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_Rep_Historial_.resx">
       <DependentUpon>Frm_Rep_Historial_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Rotacion.resx">
+      <DependentUpon>Frm_Rotacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Credencial_Visitantes.resx">
       <DependentUpon>Credencial_Visitantes.cs</DependentUpon>
@@ -756,6 +765,7 @@
     <None Include="Resources\arrow-rotate-clockwise-icon.png" />
     <None Include="Resources\Validar.png" />
     <None Include="Resources\eliminar.png" />
+    <None Include="Resources\Logo.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -99,7 +99,7 @@ Public Class Frm_Principal
                 Case "FiniquitoToolStripMenuItem" : FiniquitoToolStripMenuItem.Enabled = True
                 Case "MejoraContinuaToolStripMenuItem" : MejoraContinuaToolStripMenuItem.Enabled = True
                 Case "ReporteMejorasToolStripMenuItem" : ReporteMejorasToolStripMenuItem.Enabled = True
-               ' Case "PlanTiempoExtraToolStripMenuItem" : PlanTiempoExtraToolStripMenuItem.Enabled = True
+                Case "PlanTiempoExtraToolStripMenuItem" : PlanTiempoExtraToolStripMenuItem.Enabled = True
                 Case "ControlDeProducciónToolStripMenuItem" : ControlDeProducciónToolStripMenuItem.Enabled = True
                 Case "EvaluacionesToolStripMenuItem" : EvaluacionesToolStripMenuItem.Enabled = True
                 Case "MasterPlanToolStripMenuItem" : MasterPlanToolStripMenuItem.Enabled = True
@@ -317,6 +317,12 @@ Public Class Frm_Principal
     Private Sub HisToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HisToolStripMenuItem.Click
         'Histórico de empleados
         Dim H As New Frm_Historico()
+        H.Show()
+    End Sub
+
+    Private Sub RotaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RotaciónToolStripMenuItem.Click
+        'Módulo  de rotación
+        Dim H As New Frm_Rotacion()
         H.Show()
     End Sub
 #End Region
