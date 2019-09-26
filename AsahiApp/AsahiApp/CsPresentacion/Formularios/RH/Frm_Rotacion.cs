@@ -25,10 +25,19 @@ namespace CsPresentacion
         private void Frm_Rotacion_Load(object sender, EventArgs e)
         {
             Var = 0;
-            Llenar_dgv_total();
+            Llenar_dgv(dgv_total);
+            Diseño_dgv(dgv_total);
             dgv_total.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
             dgv_total.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            dgv_ant.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            dgv_ant.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            dgv_ant2.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            dgv_ant2.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             Calcula_Total();
+            lbl_desde.Visible = false;
+            lbl_hasta.Visible = false;
+            lbl_desde2.Visible = false;
+            lbl_hasta2.Visible = false;
         }
 
         private void Calcula_Total()
@@ -36,7 +45,7 @@ namespace CsPresentacion
             double Altas = 0;
             double Bajas = 0;
             double Total = 0;
-
+          
             foreach (DataGridViewRow row in dgv_total.Rows)
             {
                 Altas += Convert.ToDouble(row.Cells["ALTAS"].Value);
@@ -50,7 +59,7 @@ namespace CsPresentacion
             txt_ab.Text = Convert.ToString(Bajas * 100 / Altas);
         }
 
-        private void Llenar_dgv_total()// Método para llenar DatagridView Total
+        public void Llenar_dgv(DataGridView dgv)// Método para llenar DatagridView Total
         {
             try
             {
@@ -59,19 +68,22 @@ namespace CsPresentacion
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Var", Var);
                 cmd.Parameters.AddWithValue("@Fecha", dtm_fecha.Text);
-              
+                cmd.Parameters.AddWithValue("@Desde", lbl_desde.Text);
+                cmd.Parameters.AddWithValue("@Hasta", lbl_hasta.Text);
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 con.Close();
                 adapter.Fill(dt);
                 dgv_total.DataSource = dt;
-                Diseño_dgv(dgv_total);
+               
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void Diseño_dgv(DataGridView dgv)
         {
@@ -82,6 +94,9 @@ namespace CsPresentacion
             dgv.Columns[4].Width = 43;//=a/c
             dgv.Columns[5].Width = 43;//=a/b
         }
+
+       
+
         private void Exportara_Exel()// Método para exportar a excel.
         {
             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -140,6 +155,10 @@ namespace CsPresentacion
            dtm_fecha.Text = "";
            cmb_ant.Text = "";
            cmb_ant2.Text = "";
+            lbl_desde.Text = "0";
+            lbl_hasta.Text = "0";
+            lbl_desde2.Text = "0";
+            lbl_hasta2.Text = "0";
         }
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
@@ -150,7 +169,7 @@ namespace CsPresentacion
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
             Var = 1;
-            Llenar_dgv_total();
+            Llenar_dgv(dgv_total);
             Calcula_Total();
         }
 
@@ -161,6 +180,109 @@ namespace CsPresentacion
         private void Btn_exportar_total_Click(object sender, EventArgs e)
         {
             Exportara_Exel();
+        }
+
+        private void Cmb_ant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_ant.Text == "MENOS DE DOS SEMANAS")
+            {
+                Var = 3;
+                lbl_desde.Text = "0";
+                lbl_hasta.Text = "15";
+                Llenar_dgv(dgv_total);
+                Diseño_dgv(dgv_total);
+            }
+            else if (cmb_ant.Text == "DOS SEMANAS A UN MES")
+            {
+                lbl_desde.Text = "16";
+                lbl_hasta.Text = "30";
+            }
+            else if (cmb_ant.Text == "UN MES A TRES MESES")
+            {
+                lbl_desde.Text = "31";
+                lbl_hasta.Text = "90";
+            }
+            else if (cmb_ant.Text == "TRES MESES A SEIS MESES")
+            {
+                lbl_desde.Text = "91";
+                lbl_hasta.Text = "180";
+            }
+            else if (cmb_ant.Text == "MENOS DE TRES MESES")
+            {
+                lbl_desde.Text = "0";
+                lbl_hasta.Text = "90";
+            }
+            else if (cmb_ant.Text == "MAS DE TRES MESES")
+            {
+                lbl_desde.Text = "90";
+                lbl_hasta.Text = "1000000000";
+            }
+            else if (cmb_ant.Text == "SEIS MESES A UN AÑO")
+            {
+                lbl_desde.Text = "181";
+                lbl_hasta.Text = "365";
+            }
+            else if (cmb_ant.Text == "UN AÑO A DOS AÑOS")
+            {
+                lbl_desde.Text = "366";
+                lbl_hasta.Text = "732";
+            }
+            else if (cmb_ant.Text == "MAS DE DOS AÑOS")
+            {
+                lbl_desde.Text = "733";
+                lbl_hasta.Text = "1000000000";
+            }
+        }
+        private void Lbl_desde_Click(object sender, EventArgs e)
+        {
+        }
+        private void Cmb_ant2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_ant2.Text == "MENOS DE DOS SEMANAS")
+            {
+                lbl_desde2.Text = "0";
+                lbl_hasta2.Text = "15";
+            }
+            else if (cmb_ant2.Text == "DOS SEMANAS A UN MES")
+            {
+                lbl_desde2.Text = "16";
+                lbl_hasta2.Text = "30";
+            }
+            else if (cmb_ant2.Text == "UN MES A TRES MESES")
+            {
+                lbl_desde2.Text = "31";
+                lbl_hasta2.Text = "90";
+            }
+            else if (cmb_ant2.Text == "TRES MESES A SEIS MESES")
+            {
+                lbl_desde2.Text = "91";
+                lbl_hasta2.Text = "180";
+            }
+            else if (cmb_ant2.Text == "MENOS DE TRES MESES")
+            {
+                lbl_desde2.Text = "0";
+                lbl_hasta2.Text = "90";
+            }
+            else if (cmb_ant2.Text == "MAS DE TRES MESES")
+            {
+                lbl_desde2.Text = "90";
+                lbl_hasta2.Text = "1000000000";
+            }
+            else if (cmb_ant2.Text == "SEIS MESES A UN AÑO")
+            {
+                lbl_desde2.Text = "181";
+                lbl_hasta2.Text = "365";
+            }
+            else if (cmb_ant2.Text == "UN AÑO A DOS AÑOS")
+            {
+                lbl_desde2.Text = "366";
+                lbl_hasta2.Text = "732";
+            }
+            else if (cmb_ant2.Text == "MAS DE DOS AÑOS")
+            {
+                lbl_desde2.Text = "733";
+                lbl_hasta2.Text = "1000000000";
+            }
         }
     }
 }
