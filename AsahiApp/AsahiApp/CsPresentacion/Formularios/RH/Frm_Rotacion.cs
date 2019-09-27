@@ -64,7 +64,7 @@ namespace CsPresentacion
             double Bajas = 0;
             double Total = 0;
 
-            foreach (DataGridViewRow row in dgv_total.Rows)
+            foreach (DataGridViewRow row in dgv_ant.Rows)
             {
                 Altas += Convert.ToDouble(row.Cells["ALTAS"].Value);
                 Bajas += Convert.ToDouble(row.Cells["BAJAS"].Value);
@@ -82,7 +82,7 @@ namespace CsPresentacion
             double Bajas = 0;
             double Total = 0;
 
-            foreach (DataGridViewRow row in dgv_total.Rows)
+            foreach (DataGridViewRow row in dgv_ant2.Rows)
             {
                 Altas += Convert.ToDouble(row.Cells["ALTAS"].Value);
                 Bajas += Convert.ToDouble(row.Cells["BAJAS"].Value);
@@ -348,6 +348,16 @@ namespace CsPresentacion
             lbl_hasta.Text = "0";
             lbl_desde2.Text = "0";
             lbl_hasta2.Text = "0";
+            lbl_altas2.Text = "";
+            lbl_bajas2.Text = "";
+            lbl_total2.Text = "";
+            txt_ac2.Text = "";
+            txt_ab2.Text = "";
+            lbl_altas3.Text = "";
+            lbl_bajas3.Text = "";
+            lbl_total3.Text = "";
+            txt_ac3.Text = "";
+            txt_ab3.Text = "";
         }
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
@@ -464,6 +474,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "15";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "DOS SEMANAS A UN MES")
             {
@@ -472,6 +483,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "30";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "UN MES A TRES MESES")
             {
@@ -480,6 +492,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "90";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "TRES MESES A SEIS MESES")
             {
@@ -488,6 +501,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "180";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "MENOS DE TRES MESES")
             {
@@ -496,6 +510,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "90";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "MAS DE TRES MESES")
             {
@@ -504,6 +519,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "1000000000";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "SEIS MESES A UN AÑO")
             {
@@ -512,6 +528,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "365";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "UN AÑO A DOS AÑOS")
             {
@@ -520,6 +537,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "732";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "MAS DE DOS AÑOS")
             {
@@ -528,6 +546,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "1000000000";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
         }
 
