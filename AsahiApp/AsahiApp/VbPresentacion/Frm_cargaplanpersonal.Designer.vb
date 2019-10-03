@@ -24,6 +24,7 @@ Partial Class Frm_cargaplanpersonal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cargaplanpersonal))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.l3 = New System.Windows.Forms.Label()
         Me.txt_tra = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txt_cor = New System.Windows.Forms.TextBox()
@@ -51,7 +52,6 @@ Partial Class Frm_cargaplanpersonal
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cbx_depto = New System.Windows.Forms.ComboBox()
-        Me.l3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -85,6 +85,17 @@ Partial Class Frm_cargaplanpersonal
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(507, 246)
         Me.Panel1.TabIndex = 457
+        '
+        'l3
+        '
+        Me.l3.AutoSize = True
+        Me.l3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.l3.ForeColor = System.Drawing.SystemColors.Control
+        Me.l3.Location = New System.Drawing.Point(6, 226)
+        Me.l3.Name = "l3"
+        Me.l3.Size = New System.Drawing.Size(10, 13)
+        Me.l3.TabIndex = 417
+        Me.l3.Text = "."
         '
         'txt_tra
         '
@@ -379,17 +390,6 @@ Partial Class Frm_cargaplanpersonal
         Me.cbx_depto.Name = "cbx_depto"
         Me.cbx_depto.Size = New System.Drawing.Size(210, 21)
         Me.cbx_depto.TabIndex = 406
-        '
-        'l3
-        '
-        Me.l3.AutoSize = True
-        Me.l3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.l3.ForeColor = System.Drawing.SystemColors.Control
-        Me.l3.Location = New System.Drawing.Point(6, 226)
-        Me.l3.Name = "l3"
-        Me.l3.Size = New System.Drawing.Size(10, 13)
-        Me.l3.TabIndex = 417
-        Me.l3.Text = "."
         '
         'Frm_cargaplanpersonal
         '
