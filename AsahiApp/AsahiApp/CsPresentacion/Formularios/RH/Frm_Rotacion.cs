@@ -359,7 +359,6 @@ namespace CsPresentacion
             txt_ac3.Text = "";
             txt_ab3.Text = "";
         }
-
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
             nuevo();
@@ -368,7 +367,6 @@ namespace CsPresentacion
             Var = 3;
             Llenar_dgv_ant2(dgv_ant2);
         }
-
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -494,7 +492,7 @@ namespace CsPresentacion
                 Diseño_dgv(dgv_ant2);
                 Calcula_Total3();
             }
-            else if (cmb_ant2.Text == "TRES MESES A SEIS MESES")
+            else if (cmb_ant2.Text == " ")
             {
                 Var = 2;
                 lbl_desde2.Text = "91";
@@ -565,6 +563,11 @@ namespace CsPresentacion
             Var = 1;
             Llenar_dgv(dgv_total);
             Calcula_Total();
+        }
+
+        private void Btn_reporte_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 }

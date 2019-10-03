@@ -81,10 +81,20 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="asahi16DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>asahi16DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_Historico.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Historico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_Rotacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Rotacion.xsd</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Historico.cs">
       <SubType>Form</SubType>
@@ -366,6 +376,12 @@
     <Compile Include="Reportes\RH\Altas_Empleados.Designer.cs">
       <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rotacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotacion.Designer.cs">
+      <DependentUpon>Rotacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -529,10 +545,25 @@
     <EmbeddedResource Include="Reportes\RH\Retardos_Semana.resx">
       <DependentUpon>Retardos_Semana.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rep_total_rotacion.rdlc" />
     <EmbeddedResource Include="Rep_Vacaciones.rdlc" />
+    <EmbeddedResource Include="Rotacion.resx">
+      <DependentUpon>Rotacion.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="asahi16DataSet.xsc">
+      <DependentUpon>asahi16DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="asahi16DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>asahi16DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="asahi16DataSet.xss">
+      <DependentUpon>asahi16DataSet.xsd</DependentUpon>
+    </None>
     <None Include="DS_Ausentismos.xsc">
       <DependentUpon>DS_Ausentismos.xsd</DependentUpon>
     </None>
@@ -664,6 +695,17 @@
     </None>
     <None Include="DS_Prenomina_2.xss">
       <DependentUpon>DS_Prenomina_2.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Rotacion.xsc">
+      <DependentUpon>DS_Rotacion.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Rotacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Rotacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Rotacion.xss">
+      <DependentUpon>DS_Rotacion.xsd</DependentUpon>
     </None>
     <None Include="DS_Vacaciones.xsc">
       <DependentUpon>DS_Vacaciones.xsd</DependentUpon>

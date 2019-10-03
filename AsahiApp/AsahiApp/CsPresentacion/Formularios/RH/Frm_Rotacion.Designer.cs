@@ -81,6 +81,7 @@
             this.lbl_hasta2 = new System.Windows.Forms.Label();
             this.lbl_desde2 = new System.Windows.Forms.Label();
             this.cmb_ant2 = new System.Windows.Forms.ComboBox();
+            this.btn_reporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_total)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ant2)).BeginInit();
@@ -378,7 +379,7 @@
             this.btn_exportar_ant2.FlatAppearance.BorderSize = 0;
             this.btn_exportar_ant2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exportar_ant2.Image = global::CsPresentacion.Properties.Resources.Excel;
-            this.btn_exportar_ant2.Location = new System.Drawing.Point(1168, 582);
+            this.btn_exportar_ant2.Location = new System.Drawing.Point(1161, 582);
             this.btn_exportar_ant2.Name = "btn_exportar_ant2";
             this.btn_exportar_ant2.Size = new System.Drawing.Size(40, 34);
             this.btn_exportar_ant2.TabIndex = 164;
@@ -643,12 +644,26 @@
             this.cmb_ant2.TabIndex = 189;
             this.cmb_ant2.SelectedIndexChanged += new System.EventHandler(this.Cmb_ant2_SelectedIndexChanged);
             // 
+            // btn_reporte
+            // 
+            this.btn_reporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_reporte.FlatAppearance.BorderSize = 0;
+            this.btn_reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reporte.Image = global::CsPresentacion.Properties.Resources.Adobe_PDF_Document_icon;
+            this.btn_reporte.Location = new System.Drawing.Point(1154, 620);
+            this.btn_reporte.Name = "btn_reporte";
+            this.btn_reporte.Size = new System.Drawing.Size(57, 34);
+            this.btn_reporte.TabIndex = 190;
+            this.btn_reporte.UseVisualStyleBackColor = true;
+            this.btn_reporte.Click += new System.EventHandler(this.Btn_reporte_Click);
+            // 
             // Frm_Rotacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1217, 649);
+            this.ClientSize = new System.Drawing.Size(1217, 659);
+            this.Controls.Add(this.btn_reporte);
             this.Controls.Add(this.cmb_ant2);
             this.Controls.Add(this.lbl_hasta2);
             this.Controls.Add(this.lbl_desde2);
@@ -756,5 +771,6 @@
         private System.Windows.Forms.Label lbl_hasta2;
         private System.Windows.Forms.Label lbl_desde2;
         public System.Windows.Forms.ComboBox cmb_ant2;
+        private System.Windows.Forms.Button btn_reporte;
     }
 }
