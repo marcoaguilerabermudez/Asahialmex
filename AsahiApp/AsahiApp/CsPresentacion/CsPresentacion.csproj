@@ -376,11 +376,23 @@
     <Compile Include="Reportes\RH\Altas_Empleados.Designer.cs">
       <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rotacion.cs">
+    <Compile Include="Reportes\RH\Rotacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rotacion.Designer.cs">
+    <Compile Include="Reportes\RH\Rotacion.Designer.cs">
       <DependentUpon>Rotacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Rotacion_Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Rotacion_Filtro.Designer.cs">
+      <DependentUpon>Rotacion_Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Rotacion_Filtro2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Rotacion_Filtro2.Designer.cs">
+      <DependentUpon>Rotacion_Filtro2.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
@@ -535,6 +547,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Credenciales_Visitantes.rdlc" />
     <EmbeddedResource Include="Rep_Descanso_Laborado.rdlc" />
+    <EmbeddedResource Include="Rep_Filtro1.rdlc" />
+    <EmbeddedResource Include="Rep_Filtro2.rdlc" />
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
     <EmbeddedResource Include="Rep_Historico.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Activos.rdlc" />
@@ -547,8 +561,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_total_rotacion.rdlc" />
     <EmbeddedResource Include="Rep_Vacaciones.rdlc" />
-    <EmbeddedResource Include="Rotacion.resx">
+    <EmbeddedResource Include="Reportes\RH\Rotacion.resx">
       <DependentUpon>Rotacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Rotacion_Filtro.resx">
+      <DependentUpon>Rotacion_Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Rotacion_Filtro2.resx">
+      <DependentUpon>Rotacion_Filtro2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

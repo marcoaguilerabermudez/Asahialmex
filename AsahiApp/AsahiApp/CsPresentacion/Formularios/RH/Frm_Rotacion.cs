@@ -567,7 +567,29 @@ namespace CsPresentacion
 
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
-         
+            Rotacion rot = new Rotacion();
+            rot.Var = Convert.ToInt32("3");
+            rot.Fecha = dtm_fecha.Value;
+            rot.Desde = Convert.ToInt32(lbl_desde.Text);
+            rot.Hasta = Convert.ToInt32(lbl_hasta.Text);
+            rot.Filtro = cmb_ant.Text;
+            rot.Show();
+
+            Rotacion_Filtro f1 = new Rotacion_Filtro();
+            f1.Var = Convert.ToInt32("4");
+            f1.Fecha = dtm_fecha.Value;
+            f1.Desde = Convert.ToInt32(lbl_desde.Text);
+            f1.Hasta = Convert.ToInt32(lbl_hasta.Text);
+            f1.Filtro = cmb_ant.Text;
+            f1.Show();
+
+            Rotacion_Filtro2 f2 = new Rotacion_Filtro2();
+            f2.Var = Convert.ToInt32("4");
+            f2.Fecha = dtm_fecha.Value;
+            f2.Desde = Convert.ToInt32(lbl_desde2.Text);
+            f2.Hasta = Convert.ToInt32(lbl_hasta2.Text);
+            f2.Filtro = cmb_ant2.Text;
+            f2.Show();
         }
     }
 }
