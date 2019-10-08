@@ -96,6 +96,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Rotacion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_Rotacion_grafica.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Rotacion_grafica.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\RH\Frm_Historico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -394,6 +399,12 @@
     <Compile Include="Reportes\RH\Rotacion_Filtro2.Designer.cs">
       <DependentUpon>Rotacion_Filtro2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rotacion_Grafico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rotacion_Grafico.Designer.cs">
+      <DependentUpon>Rotacion_Grafico.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -550,6 +561,7 @@
     <EmbeddedResource Include="Rep_Filtro1.rdlc" />
     <EmbeddedResource Include="Rep_Filtro2.rdlc" />
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
+    <EmbeddedResource Include="Rep_grafica_rotacion.rdlc" />
     <EmbeddedResource Include="Rep_Historico.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Activos.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Altas.rdlc" />
@@ -569,6 +581,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Rotacion_Filtro2.resx">
       <DependentUpon>Rotacion_Filtro2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rotacion_Grafico.resx">
+      <DependentUpon>Rotacion_Grafico.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -726,6 +741,17 @@
     </None>
     <None Include="DS_Rotacion.xss">
       <DependentUpon>DS_Rotacion.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Rotacion_grafica.xsc">
+      <DependentUpon>DS_Rotacion_grafica.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Rotacion_grafica.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Rotacion_grafica.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Rotacion_grafica.xss">
+      <DependentUpon>DS_Rotacion_grafica.xsd</DependentUpon>
     </None>
     <None Include="DS_Vacaciones.xsc">
       <DependentUpon>DS_Vacaciones.xsd</DependentUpon>
