@@ -118,15 +118,11 @@ Public Class Frm_Principal
     Private Sub Men_Principal_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles Men_Principal.ItemClicked
 
     End Sub
-    Private Sub BajaEmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem1.Click
-        'Modulo de listado de bajas
-        Dim Bajas As New Frm_Listado_Bajas()
-        Bajas.Show()
+    Private Sub BajaEmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
     End Sub
-    Private Sub BajaEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem.Click
-        'Modulo de listado de altas de Empleados
-        Dim Altas As New Frm_Listado_Altas()
-        Altas.Show()
+    Private Sub BajaEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
     Private Sub ACercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ACercaDeToolStripMenuItem.Click
         Dim Soporte As New Frm_Soporte()
@@ -148,10 +144,8 @@ Public Class Frm_Principal
         Dim Detalle As New Frm_Modificaciones()
         Detalle.ShowDialog()
     End Sub
-    Private Sub FiniquitoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FiniquitoToolStripMenuItem.Click
-        'Módulo de reportes de finiquito
-        Dim Finiquito As New Frm_Finiquito()
-        Finiquito.Show()
+    Private Sub FiniquitoToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
     Private Sub BajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaToolStripMenuItem.Click
         'Módulo de bajas de empleados
@@ -286,10 +280,8 @@ Public Class Frm_Principal
         Vac.Show()
     End Sub
 
-    Private Sub ActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivosToolStripMenuItem.Click
-        ''Listado de activos AAM
-        Dim Activos As New Frm_Listado_Activos()
-        Activos.Show()
+    Private Sub ActivosToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub PlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanToolStripMenuItem.Click
@@ -314,13 +306,49 @@ Public Class Frm_Principal
         Frm_cargaplanpersonal.Show()
     End Sub
 
-    Private Sub HisToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HisToolStripMenuItem.Click
+    Private Sub HisToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub RotaciónToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub FiniquitoToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub FiniquitoToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles FiniquitoToolStripMenuItem.Click
+        'Módulo de reportes de finiquito
+        Dim Finiquito As New Frm_Finiquito()
+        Finiquito.Show()
+    End Sub
+
+    Private Sub AltasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivosToolStripMenuItem.Click
+        ''Listado de activos AAM
+        Dim Activos As New Frm_Listado_Activos()
+        Activos.Show()
+    End Sub
+
+    Private Sub AltasDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem.Click
+        'Modulo de listado de altas de Empleados
+        Dim Altas As New Frm_Listado_Altas()
+        Altas.Show()
+    End Sub
+
+    Private Sub BajasDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem1.Click
+        'Modulo de listado de bajas
+        Dim Bajas As New Frm_Listado_Bajas()
+        Bajas.Show()
+    End Sub
+
+    Private Sub HistóricoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HistóricoToolStripMenuItem.Click
         'Histórico de empleados
         Dim H As New Frm_Historico()
         H.Show()
     End Sub
 
-    Private Sub RotaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RotaciónToolStripMenuItem.Click
+    Private Sub RotaciónToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RotaciónToolStripMenuItem.Click
         'Módulo  de rotación
         Dim H As New Frm_Rotacion()
         H.Show()

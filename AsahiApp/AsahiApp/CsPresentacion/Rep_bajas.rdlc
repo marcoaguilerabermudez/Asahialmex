@@ -1439,6 +1439,10 @@
   <Page>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>43.18cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
