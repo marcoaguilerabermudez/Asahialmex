@@ -73,6 +73,7 @@ Public Class Frm_Principal
         EvaluacionesToolStripMenuItem.Enabled = False
         MasterPlanToolStripMenuItem.Enabled = False
         PlanToolStripMenuItem.Enabled = False
+        PermisosYAutorizacionesToolStripMenuItem.Enabled = False
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
         For Each item In lstPer
@@ -104,6 +105,8 @@ Public Class Frm_Principal
                 Case "EvaluacionesToolStripMenuItem" : EvaluacionesToolStripMenuItem.Enabled = True
                 Case "MasterPlanToolStripMenuItem" : MasterPlanToolStripMenuItem.Enabled = True
                 Case "PlanToolStripMenuItem" : PlanToolStripMenuItem.Enabled = True
+                Case "PermisosYAutorizacionesToolStripMenuItem" : PermisosYAutorizacionesToolStripMenuItem.Enabled = True
+
             End Select
         Next
     End Sub
@@ -131,7 +134,7 @@ Public Class Frm_Principal
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Dispose()
         Dim Login As New Frm_Login()
-        Login.ShowDialog()
+        Login.Show()
     End Sub
     Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
         Close()
@@ -142,7 +145,7 @@ Public Class Frm_Principal
     End Sub
     Private Sub InformaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformaciónToolStripMenuItem.Click
         Dim Detalle As New Frm_Modificaciones()
-        Detalle.ShowDialog()
+        Detalle.Show()
     End Sub
     Private Sub FiniquitoToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
@@ -150,13 +153,11 @@ Public Class Frm_Principal
     Private Sub BajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaToolStripMenuItem.Click
         'Módulo de bajas de empleados
         Dim Baja As New Frm_bajas()
-        Baja.ShowDialog()
-        Baja.Hide()
+        Baja.Show()
     End Sub
     Private Sub EvaluacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EvaluacionesToolStripMenuItem.Click
         Dim Evaluaciones As New Frm_Evaluacion()
-        Evaluaciones.ShowDialog()
-        Evaluaciones.Hide()
+        Evaluaciones.Show()
     End Sub
     Private Sub MejoraContinuaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MejoraContinuaToolStripMenuItem.Click
         'Módulo de reportes de Mejoras Continuas
@@ -170,8 +171,7 @@ Public Class Frm_Principal
     Private Sub AltaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem.Click
         'Módulo de alta de empleados
         Dim Alta As New Frm_Altas()
-        Alta.ShowDialog()
-        Alta.Hide()
+        Alta.Show()
     End Sub
     Private Sub CredencialesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CredencialesToolStripMenuItem.Click
     End Sub
@@ -184,7 +184,7 @@ Public Class Frm_Principal
         Dim Retardos As New Frm_Parametros_rep_prenomina()
         Var = 0
         Retardos.lbl_var.Text = Var
-        Retardos.ShowDialog()
+        Retardos.Show()
     End Sub
     'Private Sub DescansoLaboradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescansoLaboradoToolStripMenuItem.Click
     '    'Ejecuta reporte de Descanso Laborado de RH
@@ -352,6 +352,12 @@ Public Class Frm_Principal
         'Módulo  de rotación
         Dim H As New Frm_Rotacion()
         H.Show()
+    End Sub
+
+    Private Sub PermisosYAutorizacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermisosYAutorizacionesToolStripMenuItem.Click
+        'Permisos y autorizaciones'
+        Dim pa As New Permisos_Autorizaciones()
+        pa.Show()
     End Sub
 #End Region
 End Class
