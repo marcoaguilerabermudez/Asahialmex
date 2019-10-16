@@ -126,10 +126,10 @@
     <Compile Include="Formularios\RH\Frm_Rotacion.Designer.cs">
       <DependentUpon>Frm_Rotacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Permisos_Autorizaciones.cs">
+    <Compile Include="Formularios\RH\Permisos_Autorizaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Permisos_Autorizaciones.Designer.cs">
+    <Compile Include="Formularios\RH\Permisos_Autorizaciones.Designer.cs">
       <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Credencial_Visitantes.cs">
@@ -412,31 +412,13 @@
     <Compile Include="Reportes\RH\Rotacion_Filtro2.Designer.cs">
       <DependentUpon>Rotacion_Filtro2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rotacion_Grafico.cs">
+    <Compile Include="Reportes\RH\Rotacion_Grafico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rotacion_Grafico.Designer.cs">
+    <Compile Include="Reportes\RH\Rotacion_Grafico.Designer.cs">
       <DependentUpon>Rotacion_Grafico.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="text_report.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>text_report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="text_reporte.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>text_reporte.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Tipo_permiso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tipo_permiso.Designer.cs">
-      <DependentUpon>Tipo_permiso.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -484,7 +466,7 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Rotacion.resx">
       <DependentUpon>Frm_Rotacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Permisos_Autorizaciones.resx">
+    <EmbeddedResource Include="Formularios\RH\Permisos_Autorizaciones.resx">
       <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Credencial_Visitantes.resx">
@@ -617,19 +599,8 @@
     <EmbeddedResource Include="Reportes\RH\Rotacion_Filtro2.resx">
       <DependentUpon>Rotacion_Filtro2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rotacion_Grafico.resx">
+    <EmbeddedResource Include="Reportes\RH\Rotacion_Grafico.resx">
       <DependentUpon>Rotacion_Grafico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="text_report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>text_report.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="text_reporte.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>text_reporte.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tipo_permiso.resx">
-      <DependentUpon>Tipo_permiso.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -22,10 +22,10 @@ namespace CsPresentacion
             tt.SetToolTip(btn_anterior, "Anterior [Re. Pág.]");
             tt.SetToolTip(btn_siguiente, "Siguiente [Av. Pág.]");
             tt.SetToolTip(btn_ultimo, "Último [Fin]");
-            tt.SetToolTip(btn_insertar, "Insertar [F3]");
-            tt.SetToolTip(btn_eliminar, "Eliminar [F4]");
-            tt.SetToolTip(btn_guardar, "Guardar [F2]");
-            tt.SetToolTip(btn_cancelar, "Cancelar [Esc]");
+            tt.SetToolTip(btn_insertar, "Insertar");
+            tt.SetToolTip(btn_eliminar, "Eliminar");
+            tt.SetToolTip(btn_guardar, "Guardar");
+            tt.SetToolTip(btn_cancelar, "Cancelar");
         }
         //Variables
         int indice = 0;
@@ -283,11 +283,7 @@ namespace CsPresentacion
             btn_eliminar.Enabled = false;
             dtm_fecha.Focus();
         }
-        private void Btn_tipo_permiso_Click_1(object sender, EventArgs e)
-        {
-            Tipo_permiso tp = new Tipo_permiso();
-            tp.ShowDialog();
-        }
+
         private void Btn_insertar_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 1;
@@ -609,6 +605,5 @@ namespace CsPresentacion
                 txt_autorizado.Text = "0";
             }
         }
-
     }
 }

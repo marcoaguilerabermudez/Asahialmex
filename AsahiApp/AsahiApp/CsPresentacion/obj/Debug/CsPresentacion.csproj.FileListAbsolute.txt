@@ -473,7 +473,6 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentaci
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Rotacion_Filtro.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Rotacion_Filtro2.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Rotacion_Grafico.resources
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Tipo_permiso.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csproj.GenerateResource.cache
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\RdlCompile.cache
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\RdlCompile.compiled
