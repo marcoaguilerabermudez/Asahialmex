@@ -29,17 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.dgv_empleados = new System.Windows.Forms.DataGridView();
-            this.cmb_dias = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_puesto = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,10 +56,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btn_reporte = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
-            this.btn_agregar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_total = new System.Windows.Forms.Label();
+            this.txt_dias = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,7 +68,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.btn_buscar);
             this.panel1.Controls.Add(this.btn_nuevo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_clave);
@@ -79,21 +76,6 @@
             this.panel1.Size = new System.Drawing.Size(649, 70);
             this.panel1.TabIndex = 0;
             // 
-            // btn_buscar
-            // 
-            this.btn_buscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_buscar.FlatAppearance.BorderSize = 0;
-            this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.Image = global::CsPresentacion.Properties.Resources.Filtro;
-            this.btn_buscar.Location = new System.Drawing.Point(119, 38);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(27, 27);
-            this.btn_buscar.TabIndex = 72;
-            this.btn_buscar.UseVisualStyleBackColor = false;
-            this.btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
-            // 
             // btn_nuevo
             // 
             this.btn_nuevo.BackColor = System.Drawing.Color.SteelBlue;
@@ -101,7 +83,7 @@
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(162, 39);
+            this.btn_nuevo.Location = new System.Drawing.Point(114, 39);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(27, 27);
             this.btn_nuevo.TabIndex = 70;
@@ -124,7 +106,7 @@
             this.txt_clave.MaxLength = 6;
             this.txt_clave.Name = "txt_clave";
             this.txt_clave.Size = new System.Drawing.Size(72, 20);
-            this.txt_clave.TabIndex = 57;
+            this.txt_clave.TabIndex = 0;
             this.txt_clave.TextChanged += new System.EventHandler(this.Txt_clave_TextChanged);
             this.txt_clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_clave_KeyPress);
             // 
@@ -158,40 +140,22 @@
             this.dgv_empleados.Location = new System.Drawing.Point(27, 386);
             this.dgv_empleados.MultiSelect = false;
             this.dgv_empleados.Name = "dgv_empleados";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_empleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_empleados.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dgv_empleados.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgv_empleados.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_empleados.ShowCellErrors = false;
             this.dgv_empleados.Size = new System.Drawing.Size(592, 111);
             this.dgv_empleados.TabIndex = 77;
             this.dgv_empleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_empleados_CellContentClick);
-            // 
-            // cmb_dias
-            // 
-            this.cmb_dias.FormattingEnabled = true;
-            this.cmb_dias.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"});
-            this.cmb_dias.Location = new System.Drawing.Point(27, 359);
-            this.cmb_dias.Name = "cmb_dias";
-            this.cmb_dias.Size = new System.Drawing.Size(51, 21);
-            this.cmb_dias.TabIndex = 76;
-            this.cmb_dias.SelectedIndexChanged += new System.EventHandler(this.Cmb_dias_SelectedIndexChanged_1);
             // 
             // label9
             // 
@@ -352,19 +316,6 @@
             this.btn_eliminar.UseVisualStyleBackColor = false;
             this.btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
-            // btn_agregar
-            // 
-            this.btn_agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_agregar.FlatAppearance.BorderSize = 0;
-            this.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_agregar.Image = global::CsPresentacion.Properties.Resources.add_icon2;
-            this.btn_agregar.Location = new System.Drawing.Point(84, 354);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(28, 28);
-            this.btn_agregar.TabIndex = 79;
-            this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.Btn_agregar_Click);
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
@@ -387,23 +338,30 @@
             this.lbl_total.TabIndex = 84;
             this.lbl_total.Text = "0";
             // 
+            // txt_dias
+            // 
+            this.txt_dias.Location = new System.Drawing.Point(27, 360);
+            this.txt_dias.MaxLength = 1;
+            this.txt_dias.Name = "txt_dias";
+            this.txt_dias.Size = new System.Drawing.Size(51, 20);
+            this.txt_dias.TabIndex = 1;
+            this.txt_dias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_dias_KeyPress);
+            // 
             // Frm_Finiquito
             // 
-            this.AcceptButton = this.btn_buscar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(629, 539);
+            this.Controls.Add(this.txt_dias);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_estado);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.btn_reporte);
             this.Controls.Add(this.btn_eliminar);
-            this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgv_empleados);
-            this.Controls.Add(this.cmb_dias);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_puesto);
             this.Controls.Add(this.label8);
@@ -440,7 +398,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_clave;
@@ -448,9 +405,7 @@
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Button btn_reporte;
         private System.Windows.Forms.Button btn_eliminar;
-        private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.DataGridView dgv_empleados;
-        private System.Windows.Forms.ComboBox cmb_dias;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_puesto;
         private System.Windows.Forms.Label label8;
@@ -470,5 +425,6 @@
         private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.TextBox txt_dias;
     }
 }
