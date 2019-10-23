@@ -190,21 +190,11 @@
             // 
             this.cmb_tipo.FormattingEnabled = true;
             this.cmb_tipo.Items.AddRange(new object[] {
-            "ABANDONO DE TRABAJO",
-            "PRESTACION POR MATRIMONIO",
-            "CITA IMSS",
-            "ENFERMEDAD",
             "FALTA INJUSTIFICADA",
-            "PERMISO CON GOCE",
-            "ENFERMEDAD LEVE",
-            "ENFERMENDAD MODERADA",
-            "SUSPENSION",
-            "PERMISO SIN GOCE",
-            "FAMILIAR",
-            "ASUNTOS PERSONALES",
-            "TRANSPORTE",
             "FALTA JUSTIFICADA",
-            "VIAJE"});
+            "PERMISO CON GOCE",
+            "PERMISO SIN GOCE",
+            "SUSPENSION"});
             this.cmb_tipo.Location = new System.Drawing.Point(17, 186);
             this.cmb_tipo.Name = "cmb_tipo";
             this.cmb_tipo.Size = new System.Drawing.Size(168, 21);

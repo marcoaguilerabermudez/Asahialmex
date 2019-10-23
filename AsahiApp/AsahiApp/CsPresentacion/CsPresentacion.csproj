@@ -93,6 +93,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Ausentismo Global.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ausentismo Global.Designer.cs">
+      <DependentUpon>Ausentismo Global.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_Historico.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -457,6 +463,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Ausentismo Global.resx">
+      <DependentUpon>Ausentismo Global.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Historico.resx">
       <DependentUpon>Frm_Historico.cs</DependentUpon>
     </EmbeddedResource>

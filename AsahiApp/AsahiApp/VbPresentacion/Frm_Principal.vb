@@ -359,5 +359,11 @@ Public Class Frm_Principal
         Dim pa As New Permisos_Autorizaciones()
         pa.Show()
     End Sub
+
+    Private Sub AusentismosGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusentismosGlobalToolStripMenuItem.Click
+        'Ausentismo global
+        Dim ag As New Ausentismo_Global()
+        ag.Show()
+    End Sub
 #End Region
 End Class

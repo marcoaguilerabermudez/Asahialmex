@@ -158,7 +158,6 @@ namespace CsPresentacion
         {
             e.Handled = true;
         }
-
         private void Txt_clave_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -254,7 +253,6 @@ namespace CsPresentacion
 
             if (MessageBox.Show("¿Está seguro dar de baja al empleado " + txt_clave.Text + "?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-
                 Frm_Fecha_Baja emp = new Frm_Fecha_Baja();
                 emp.lbl_clave_empleado.Text = txt_clave.Text;
                 emp.ShowDialog();
