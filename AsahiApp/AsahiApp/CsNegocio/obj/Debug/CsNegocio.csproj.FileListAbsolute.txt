@@ -1,6 +1,5 @@
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.pdb
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.pdb
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csprojAssemblyReference.cache

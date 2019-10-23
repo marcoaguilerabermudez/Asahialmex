@@ -107,4 +107,40 @@
             poliza_ = value
         End Set
     End Property
+    Private idCompra_ As Integer
+    Public Property IdCompra() As Integer
+        Get
+            Return idCompra_
+        End Get
+        Set(ByVal value As Integer)
+            idCompra_ = value
+        End Set
+    End Property
+    Private idPoliza_ As Integer
+    Public Property IdPoliza() As Integer
+        Get
+            Return idPoliza_
+        End Get
+        Set(ByVal value As Integer)
+            idPoliza_ = value
+        End Set
+    End Property
+    Private cantCompra_ As Double
+    Public Property CantCompra() As Double
+        Get
+            Return cantCompra_
+        End Get
+        Set(ByVal value As Double)
+            cantCompra_ = value
+        End Set
+    End Property
+    Private cantPoliza_ As Double
+    Public Property CantPoliza() As Double
+        Get
+            Return cantPoliza_
+        End Get
+        Set(ByVal value As Double)
+            cantPoliza_ = value
+        End Set
+    End Property
 End Class
