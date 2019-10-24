@@ -141,7 +141,6 @@ namespace CsPresentacion
             }
         }
 
-
         private void Mostrar_Grid()
         {
             try

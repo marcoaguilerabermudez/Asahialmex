@@ -277,6 +277,7 @@
             this.dgv_altas.ShowCellErrors = false;
             this.dgv_altas.Size = new System.Drawing.Size(1027, 523);
             this.dgv_altas.TabIndex = 15;
+            this.dgv_altas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_altas_CellContentClick);
             this.dgv_altas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Dgv_altas_CellFormatting);
             // 
             // btn_exportar

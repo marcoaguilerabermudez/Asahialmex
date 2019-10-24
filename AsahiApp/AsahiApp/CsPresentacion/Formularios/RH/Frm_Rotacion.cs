@@ -550,12 +550,29 @@ namespace CsPresentacion
 
         private void Btn_exportar_ant_Click(object sender, EventArgs e)
         {
-            Exportara_Exel_ant();
+            if (cmb_ant.Text == "")
+            {
+                MessageBox.Show("Es necesario filtrar la información.", "Aviso");
+                cmb_ant.Focus();
+            }
+            else
+            {
+                Exportara_Exel_ant();
+            }  
         }
 
         private void Btn_exportar_ant2_Click(object sender, EventArgs e)
         {
-            Exportara_Exel_ant2();
+
+            if (cmb_ant2.Text == "")
+            {
+                MessageBox.Show("Es necesario filtrar la información.", "Aviso");
+                cmb_ant2.Focus();
+            }
+            else
+            {
+                Exportara_Exel_ant2();
+            }     
         }
 
         private void Dtm_fecha_ValueChanged(object sender, EventArgs e)
@@ -567,7 +584,45 @@ namespace CsPresentacion
 
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
-         
+            Rotacion rot = new Rotacion();
+            rot.Var = Convert.ToInt32("3");
+            rot.Fecha = dtm_fecha.Value;
+            rot.Desde = Convert.ToInt32(lbl_desde.Text);
+            rot.Hasta = Convert.ToInt32(lbl_hasta.Text);
+            rot.Filtro = cmb_ant.Text;
+            rot.Show();
+
+            if (cmb_ant.Text == "")
+            {
+            }
+            else
+            {
+                Rotacion_Filtro f1 = new Rotacion_Filtro();
+                f1.Var = Convert.ToInt32("4");
+                f1.Fecha = dtm_fecha.Value;
+                f1.Desde = Convert.ToInt32(lbl_desde.Text);
+                f1.Hasta = Convert.ToInt32(lbl_hasta.Text);
+                f1.Filtro = cmb_ant.Text;
+                f1.Show();
+            }
+            if (cmb_ant2.Text == "")
+            {
+            }
+            else
+            {
+                Rotacion_Filtro2 f2 = new Rotacion_Filtro2();
+                f2.Var = Convert.ToInt32("4");
+                f2.Fecha = dtm_fecha.Value;
+                f2.Desde = Convert.ToInt32(lbl_desde2.Text);
+                f2.Hasta = Convert.ToInt32(lbl_hasta2.Text);
+                f2.Filtro = cmb_ant2.Text;
+                f2.Show();
+            }   
+
+            Rotacion_Grafico gr = new Rotacion_Grafico();
+            gr.Var = Convert.ToInt32("1");
+            gr.Fecha = dtm_fecha.Value;
+            gr.Show();
         }
     }
 }

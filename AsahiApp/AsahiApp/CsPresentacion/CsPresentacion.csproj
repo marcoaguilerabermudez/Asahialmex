@@ -33,12 +33,17 @@
     <ApplicationIcon>LogoFinal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -68,6 +73,8 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -86,6 +93,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Ausentismo Global.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ausentismo Global.Designer.cs">
+      <DependentUpon>Ausentismo Global.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_Historico.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +108,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Rotacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_Rotacion_grafica.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Rotacion_grafica.xsd</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Historico.cs">
       <SubType>Form</SubType>
@@ -113,6 +131,12 @@
     </Compile>
     <Compile Include="Formularios\RH\Frm_Rotacion.Designer.cs">
       <DependentUpon>Frm_Rotacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Permisos_Autorizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Permisos_Autorizaciones.Designer.cs">
+      <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Credencial_Visitantes.cs">
       <SubType>Form</SubType>
@@ -376,11 +400,29 @@
     <Compile Include="Reportes\RH\Altas_Empleados.Designer.cs">
       <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rotacion.cs">
+    <Compile Include="Reportes\RH\Rotacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rotacion.Designer.cs">
+    <Compile Include="Reportes\RH\Rotacion.Designer.cs">
       <DependentUpon>Rotacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Rotacion_Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Rotacion_Filtro.Designer.cs">
+      <DependentUpon>Rotacion_Filtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Rotacion_Filtro2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Rotacion_Filtro2.Designer.cs">
+      <DependentUpon>Rotacion_Filtro2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Rotacion_Grafico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Rotacion_Grafico.Designer.cs">
+      <DependentUpon>Rotacion_Grafico.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
@@ -392,6 +434,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CsClases\CsClases.csproj">
@@ -420,6 +463,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Ausentismo Global.resx">
+      <DependentUpon>Ausentismo Global.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Historico.resx">
       <DependentUpon>Frm_Historico.cs</DependentUpon>
     </EmbeddedResource>
@@ -428,6 +474,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Rotacion.resx">
       <DependentUpon>Frm_Rotacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Permisos_Autorizaciones.resx">
+      <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Credencial_Visitantes.resx">
       <DependentUpon>Credencial_Visitantes.cs</DependentUpon>
@@ -535,7 +584,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Credenciales_Visitantes.rdlc" />
     <EmbeddedResource Include="Rep_Descanso_Laborado.rdlc" />
+    <EmbeddedResource Include="Rep_Filtro1.rdlc" />
+    <EmbeddedResource Include="Rep_Filtro2.rdlc" />
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
+    <EmbeddedResource Include="Rep_grafica_rotacion.rdlc" />
     <EmbeddedResource Include="Rep_Historico.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Activos.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Altas.rdlc" />
@@ -547,8 +599,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_total_rotacion.rdlc" />
     <EmbeddedResource Include="Rep_Vacaciones.rdlc" />
-    <EmbeddedResource Include="Rotacion.resx">
+    <EmbeddedResource Include="Reportes\RH\Rotacion.resx">
       <DependentUpon>Rotacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Rotacion_Filtro.resx">
+      <DependentUpon>Rotacion_Filtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Rotacion_Filtro2.resx">
+      <DependentUpon>Rotacion_Filtro2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Rotacion_Grafico.resx">
+      <DependentUpon>Rotacion_Grafico.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -707,6 +768,17 @@
     <None Include="DS_Rotacion.xss">
       <DependentUpon>DS_Rotacion.xsd</DependentUpon>
     </None>
+    <None Include="DS_Rotacion_grafica.xsc">
+      <DependentUpon>DS_Rotacion_grafica.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Rotacion_grafica.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Rotacion_grafica.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Rotacion_grafica.xss">
+      <DependentUpon>DS_Rotacion_grafica.xsd</DependentUpon>
+    </None>
     <None Include="DS_Vacaciones.xsc">
       <DependentUpon>DS_Vacaciones.xsd</DependentUpon>
     </None>
@@ -808,6 +880,16 @@
     <None Include="Resources\Validar.png" />
     <None Include="Resources\eliminar.png" />
     <None Include="Resources\Logo.jpg" />
+    <None Include="Resources\Hide-left-icon.png" />
+    <None Include="Resources\Navigate-left-icon.png" />
+    <None Include="Resources\Next.png" />
+    <None Include="Resources\Hide-right-icon.png" />
+    <None Include="Resources\Actions-dialog-ok-apply-icon.png" />
+    <None Include="Resources\math-add-icon.png" />
+    <None Include="Resources\math-minus-icon.png" />
+    <None Include="Resources\math-add-icon1.png" />
+    <None Include="Resources\delete-icon.png" />
+    <None Include="Resources\math-add-icon2.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
