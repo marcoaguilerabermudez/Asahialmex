@@ -557,5 +557,9 @@ namespace CsPresentacion
                 rep.ShowDialog();
             }
         }
+
+        private void Dgv_altas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
     }
 }

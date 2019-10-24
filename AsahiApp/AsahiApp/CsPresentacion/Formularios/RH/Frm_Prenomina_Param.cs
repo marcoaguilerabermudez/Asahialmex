@@ -629,9 +629,6 @@ namespace CsPresentacion
             }
         }
 
-
-
-
         private void Txt_año_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsNumber(e.KeyChar))
@@ -690,6 +687,7 @@ namespace CsPresentacion
 
         private void Cmb_tipo_SelectedIndexChanged(object sender, EventArgs e)
         {
+
            if (cmb_tipo.Text == "ABANDONO DE TRABAJO")  {  lbl_descripcion.Text = "A";
             }
             else if (cmb_tipo.Text == "PRESTACION POR MATRIMONIO")  { lbl_descripcion.Text = "B";

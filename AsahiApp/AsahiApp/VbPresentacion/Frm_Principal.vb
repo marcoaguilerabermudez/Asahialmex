@@ -73,6 +73,7 @@ Public Class Frm_Principal
         EvaluacionesToolStripMenuItem.Enabled = False
         MasterPlanToolStripMenuItem.Enabled = False
         PlanToolStripMenuItem.Enabled = False
+        PermisosYAutorizacionesToolStripMenuItem.Enabled = False
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
         For Each item In lstPer
@@ -104,6 +105,8 @@ Public Class Frm_Principal
                 Case "EvaluacionesToolStripMenuItem" : EvaluacionesToolStripMenuItem.Enabled = True
                 Case "MasterPlanToolStripMenuItem" : MasterPlanToolStripMenuItem.Enabled = True
                 Case "PlanToolStripMenuItem" : PlanToolStripMenuItem.Enabled = True
+                Case "PermisosYAutorizacionesToolStripMenuItem" : PermisosYAutorizacionesToolStripMenuItem.Enabled = True
+
             End Select
         Next
     End Sub
@@ -118,15 +121,11 @@ Public Class Frm_Principal
     Private Sub Men_Principal_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles Men_Principal.ItemClicked
 
     End Sub
-    Private Sub BajaEmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem1.Click
-        'Modulo de listado de bajas
-        Dim Bajas As New Frm_Listado_Bajas()
-        Bajas.Show()
+    Private Sub BajaEmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
     End Sub
-    Private Sub BajaEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem.Click
-        'Modulo de listado de altas de Empleados
-        Dim Altas As New Frm_Listado_Altas()
-        Altas.Show()
+    Private Sub BajaEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
     Private Sub ACercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ACercaDeToolStripMenuItem.Click
         Dim Soporte As New Frm_Soporte()
@@ -135,7 +134,7 @@ Public Class Frm_Principal
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Dispose()
         Dim Login As New Frm_Login()
-        Login.ShowDialog()
+        Login.Show()
     End Sub
     Private Sub SalirToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem1.Click
         Close()
@@ -146,23 +145,19 @@ Public Class Frm_Principal
     End Sub
     Private Sub InformaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformaciónToolStripMenuItem.Click
         Dim Detalle As New Frm_Modificaciones()
-        Detalle.ShowDialog()
+        Detalle.Show()
     End Sub
-    Private Sub FiniquitoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FiniquitoToolStripMenuItem.Click
-        'Módulo de reportes de finiquito
-        Dim Finiquito As New Frm_Finiquito()
-        Finiquito.Show()
+    Private Sub FiniquitoToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
     Private Sub BajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaToolStripMenuItem.Click
         'Módulo de bajas de empleados
         Dim Baja As New Frm_bajas()
-        Baja.ShowDialog()
-        Baja.Hide()
+        Baja.Show()
     End Sub
     Private Sub EvaluacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EvaluacionesToolStripMenuItem.Click
         Dim Evaluaciones As New Frm_Evaluacion()
-        Evaluaciones.ShowDialog()
-        Evaluaciones.Hide()
+        Evaluaciones.Show()
     End Sub
     Private Sub MejoraContinuaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MejoraContinuaToolStripMenuItem.Click
         'Módulo de reportes de Mejoras Continuas
@@ -176,8 +171,7 @@ Public Class Frm_Principal
     Private Sub AltaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem.Click
         'Módulo de alta de empleados
         Dim Alta As New Frm_Altas()
-        Alta.ShowDialog()
-        Alta.Hide()
+        Alta.Show()
     End Sub
     Private Sub CredencialesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CredencialesToolStripMenuItem.Click
     End Sub
@@ -190,7 +184,7 @@ Public Class Frm_Principal
         Dim Retardos As New Frm_Parametros_rep_prenomina()
         Var = 0
         Retardos.lbl_var.Text = Var
-        Retardos.ShowDialog()
+        Retardos.Show()
     End Sub
     'Private Sub DescansoLaboradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescansoLaboradoToolStripMenuItem.Click
     '    'Ejecuta reporte de Descanso Laborado de RH
@@ -286,10 +280,8 @@ Public Class Frm_Principal
         Vac.Show()
     End Sub
 
-    Private Sub ActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivosToolStripMenuItem.Click
-        ''Listado de activos AAM
-        Dim Activos As New Frm_Listado_Activos()
-        Activos.Show()
+    Private Sub ActivosToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub PlanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanToolStripMenuItem.Click
@@ -314,16 +306,64 @@ Public Class Frm_Principal
         Frm_cargaplanpersonal.Show()
     End Sub
 
-    Private Sub HisToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HisToolStripMenuItem.Click
+    Private Sub HisToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub RotaciónToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub FiniquitoToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub FiniquitoToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles FiniquitoToolStripMenuItem.Click
+        'Módulo de reportes de finiquito
+        Dim Finiquito As New Frm_Finiquito()
+        Finiquito.Show()
+    End Sub
+
+    Private Sub AltasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivosToolStripMenuItem.Click
+        ''Listado de activos AAM
+        Dim Activos As New Frm_Listado_Activos()
+        Activos.Show()
+    End Sub
+
+    Private Sub AltasDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem.Click
+        'Modulo de listado de altas de Empleados
+        Dim Altas As New Frm_Listado_Altas()
+        Altas.Show()
+    End Sub
+
+    Private Sub BajasDeEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaEmpleadosToolStripMenuItem1.Click
+        'Modulo de listado de bajas
+        Dim Bajas As New Frm_Listado_Bajas()
+        Bajas.Show()
+    End Sub
+
+    Private Sub HistóricoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HistóricoToolStripMenuItem.Click
         'Histórico de empleados
         Dim H As New Frm_Historico()
         H.Show()
     End Sub
 
-    Private Sub RotaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RotaciónToolStripMenuItem.Click
+    Private Sub RotaciónToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RotaciónToolStripMenuItem.Click
         'Módulo  de rotación
         Dim H As New Frm_Rotacion()
         H.Show()
+    End Sub
+
+    Private Sub PermisosYAutorizacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermisosYAutorizacionesToolStripMenuItem.Click
+        'Permisos y autorizaciones'
+        Dim pa As New Permisos_Autorizaciones()
+        pa.Show()
+    End Sub
+
+    Private Sub AusentismosGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusentismosGlobalToolStripMenuItem.Click
+        'Ausentismo global
+        Dim ag As New Ausentismo_Global()
+        ag.Show()
     End Sub
 #End Region
 End Class

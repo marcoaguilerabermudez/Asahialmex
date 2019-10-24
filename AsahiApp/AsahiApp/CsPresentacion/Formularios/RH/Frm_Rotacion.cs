@@ -58,6 +58,42 @@ namespace CsPresentacion
             txt_ac.Text = Convert.ToString(Bajas * 100 / Total);
             txt_ab.Text = Convert.ToString(Bajas * 100 / Altas);
         }
+        private void Calcula_Total2()
+        {
+            double Altas = 0;
+            double Bajas = 0;
+            double Total = 0;
+
+            foreach (DataGridViewRow row in dgv_ant.Rows)
+            {
+                Altas += Convert.ToDouble(row.Cells["ALTAS"].Value);
+                Bajas += Convert.ToDouble(row.Cells["BAJAS"].Value);
+                Total += Convert.ToDouble(row.Cells["TOTAL"].Value);
+            }
+            lbl_altas2.Text = Convert.ToString(Altas);
+            lbl_bajas2.Text = Convert.ToString(Bajas);
+            lbl_total2.Text = Convert.ToString(Total);
+            txt_ac2.Text = Convert.ToString(Bajas * 100 / Total);
+            txt_ab2.Text = Convert.ToString(Bajas * 100 / Altas);
+        }
+        private void Calcula_Total3()
+        {
+            double Altas = 0;
+            double Bajas = 0;
+            double Total = 0;
+
+            foreach (DataGridViewRow row in dgv_ant2.Rows)
+            {
+                Altas += Convert.ToDouble(row.Cells["ALTAS"].Value);
+                Bajas += Convert.ToDouble(row.Cells["BAJAS"].Value);
+                Total += Convert.ToDouble(row.Cells["TOTAL"].Value);
+            }
+            lbl_altas3.Text = Convert.ToString(Altas);
+            lbl_bajas3.Text = Convert.ToString(Bajas);
+            lbl_total3.Text = Convert.ToString(Total);
+            txt_ac3.Text = Convert.ToString(Bajas * 100 / Total);
+            txt_ab3.Text = Convert.ToString(Bajas * 100 / Altas);
+        }
 
         public void Llenar_dgv(DataGridView dgv)// Método para llenar DatagridView Total
         {
@@ -312,8 +348,17 @@ namespace CsPresentacion
             lbl_hasta.Text = "0";
             lbl_desde2.Text = "0";
             lbl_hasta2.Text = "0";
+            lbl_altas2.Text = "";
+            lbl_bajas2.Text = "";
+            lbl_total2.Text = "";
+            txt_ac2.Text = "";
+            txt_ab2.Text = "";
+            lbl_altas3.Text = "";
+            lbl_bajas3.Text = "";
+            lbl_total3.Text = "";
+            txt_ac3.Text = "";
+            txt_ab3.Text = "";
         }
-
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
             nuevo();
@@ -322,7 +367,6 @@ namespace CsPresentacion
             Var = 3;
             Llenar_dgv_ant2(dgv_ant2);
         }
-
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -341,6 +385,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "15";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "DOS SEMANAS A UN MES")
             {
@@ -349,6 +394,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "30";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "UN MES A TRES MESES")
             {
@@ -357,6 +403,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "90";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "TRES MESES A SEIS MESES")
             {
@@ -365,6 +412,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "180";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "MENOS DE TRES MESES")
             {
@@ -373,6 +421,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "90";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "MAS DE TRES MESES")
             {
@@ -381,6 +430,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "1000000000";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "SEIS MESES A UN AÑO")
             {
@@ -389,6 +439,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "365";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "UN AÑO A DOS AÑOS")
             {
@@ -397,6 +448,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "732";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
             else if (cmb_ant.Text == "MAS DE DOS AÑOS")
             {
@@ -405,6 +457,7 @@ namespace CsPresentacion
                 lbl_hasta.Text = "1000000000";
                 Llenar_dgv_ant(dgv_ant);
                 Diseño_dgv(dgv_ant);
+                Calcula_Total2();
             }
         }
         private void Lbl_desde_Click(object sender, EventArgs e)
@@ -419,6 +472,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "15";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "DOS SEMANAS A UN MES")
             {
@@ -427,6 +481,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "30";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "UN MES A TRES MESES")
             {
@@ -435,14 +490,16 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "90";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
-            else if (cmb_ant2.Text == "TRES MESES A SEIS MESES")
+            else if (cmb_ant2.Text == " ")
             {
                 Var = 2;
                 lbl_desde2.Text = "91";
                 lbl_hasta2.Text = "180";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "MENOS DE TRES MESES")
             {
@@ -451,6 +508,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "90";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "MAS DE TRES MESES")
             {
@@ -459,6 +517,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "1000000000";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "SEIS MESES A UN AÑO")
             {
@@ -467,6 +526,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "365";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "UN AÑO A DOS AÑOS")
             {
@@ -475,6 +535,7 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "732";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
             else if (cmb_ant2.Text == "MAS DE DOS AÑOS")
             {
@@ -483,17 +544,35 @@ namespace CsPresentacion
                 lbl_hasta2.Text = "1000000000";
                 Llenar_dgv_ant2(dgv_ant2);
                 Diseño_dgv(dgv_ant2);
+                Calcula_Total3();
             }
         }
 
         private void Btn_exportar_ant_Click(object sender, EventArgs e)
         {
-            Exportara_Exel_ant();
+            if (cmb_ant.Text == "")
+            {
+                MessageBox.Show("Es necesario filtrar la información.", "Aviso");
+                cmb_ant.Focus();
+            }
+            else
+            {
+                Exportara_Exel_ant();
+            }  
         }
 
         private void Btn_exportar_ant2_Click(object sender, EventArgs e)
         {
-            Exportara_Exel_ant2();
+
+            if (cmb_ant2.Text == "")
+            {
+                MessageBox.Show("Es necesario filtrar la información.", "Aviso");
+                cmb_ant2.Focus();
+            }
+            else
+            {
+                Exportara_Exel_ant2();
+            }     
         }
 
         private void Dtm_fecha_ValueChanged(object sender, EventArgs e)
@@ -501,6 +580,49 @@ namespace CsPresentacion
             Var = 1;
             Llenar_dgv(dgv_total);
             Calcula_Total();
+        }
+
+        private void Btn_reporte_Click(object sender, EventArgs e)
+        {
+            Rotacion rot = new Rotacion();
+            rot.Var = Convert.ToInt32("3");
+            rot.Fecha = dtm_fecha.Value;
+            rot.Desde = Convert.ToInt32(lbl_desde.Text);
+            rot.Hasta = Convert.ToInt32(lbl_hasta.Text);
+            rot.Filtro = cmb_ant.Text;
+            rot.Show();
+
+            if (cmb_ant.Text == "")
+            {
+            }
+            else
+            {
+                Rotacion_Filtro f1 = new Rotacion_Filtro();
+                f1.Var = Convert.ToInt32("4");
+                f1.Fecha = dtm_fecha.Value;
+                f1.Desde = Convert.ToInt32(lbl_desde.Text);
+                f1.Hasta = Convert.ToInt32(lbl_hasta.Text);
+                f1.Filtro = cmb_ant.Text;
+                f1.Show();
+            }
+            if (cmb_ant2.Text == "")
+            {
+            }
+            else
+            {
+                Rotacion_Filtro2 f2 = new Rotacion_Filtro2();
+                f2.Var = Convert.ToInt32("4");
+                f2.Fecha = dtm_fecha.Value;
+                f2.Desde = Convert.ToInt32(lbl_desde2.Text);
+                f2.Hasta = Convert.ToInt32(lbl_hasta2.Text);
+                f2.Filtro = cmb_ant2.Text;
+                f2.Show();
+            }   
+
+            Rotacion_Grafico gr = new Rotacion_Grafico();
+            gr.Var = Convert.ToInt32("1");
+            gr.Fecha = dtm_fecha.Value;
+            gr.Show();
         }
     }
 }
