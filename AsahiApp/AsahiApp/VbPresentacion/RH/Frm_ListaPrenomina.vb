@@ -1625,7 +1625,7 @@ Public Class Frm_ListaPrenomina
             If lstEmp.Count > 0 Then
                 For Each item In lstEmp
                     shXL.Cells(f, 1).Value = "'" & item.IdEmpleado
-                    shXL.Cells(f, 2).Value = Format(item.Fecha1, "dd/MM/yyyy")
+                    shXL.Cells(f, 2).Value = "'" & Format(item.Fecha1, "dd/MM/yyyy")
                     shXL.Cells(f, 3).Value = "30/12/1899"
                     shXL.Cells(f, 4).Value = "30/12/1899"
                     shXL.Cells(f, 5).Value = "'03"
@@ -1668,12 +1668,12 @@ Public Class Frm_ListaPrenomina
                     shXL.Cells(f, 42).Value = "1"
                     shXL.Cells(f, 43).Value = "'0"
                     shXL.Cells(f, 44).Value = "'0"
-                    shXL.Cells(f, 45).Value = Format(item.Fecha1, "dd/MM/yyyy") '"Fecha del salario diario"
-                    shXL.Cells(f, 46).Value = Format(item.Fecha1, "dd/MM/yyyy") '"Fecha SBC parte fija"
+                    shXL.Cells(f, 45).Value = "'" & Format(item.Fecha1, "dd/MM/yyyy") '"Fecha del salario diario"
+                    shXL.Cells(f, 46).Value = "'" & Format(item.Fecha1, "dd/MM/yyyy") '"Fecha SBC parte fija"
                     shXL.Cells(f, 47).Value = "'0"
-                    shXL.Cells(f, 48).Value = Format(item.Fecha1, "dd/MM/yyyy") '"Fecha salario variable"
+                    shXL.Cells(f, 48).Value = "'" & Format(item.Fecha1, "dd/MM/yyyy") '"Fecha salario variable"
                     shXL.Cells(f, 49).Value = "'0"
-                    shXL.Cells(f, 50).Value = Format(item.Fecha1, "dd/MM/yyyy") '"Fecha salario promedio"
+                    shXL.Cells(f, 50).Value = "'" & Format(item.Fecha1, "dd/MM/yyyy") '"Fecha salario promedio"
                     shXL.Cells(f, 51).Value = "'0"
                     shXL.Cells(f, 52).Value = "'0"
                     shXL.Cells(f, 53).Value = "1"
@@ -1687,7 +1687,7 @@ Public Class Frm_ListaPrenomina
                     shXL.Cells(f, 61).Value = "'0"
                     shXL.Cells(f, 62).Value = "'0"
                     shXL.Cells(f, 63).Value = "'" & item.Extras '"Campo extra numérico 5"
-                    shXL.Cells(f, 64).Value = Format(item.Fecha1, "dd/MM/yyyy") '"Fecha salario mixto"
+                    shXL.Cells(f, 64).Value = "'" & Format(item.Fecha1, "dd/MM/yyyy") '"Fecha salario mixto"
                     shXL.Cells(f, 65).Value = "'0"
                     shXL.Cells(f, 66).Value = "B5715267106"
                     shXL.Cells(f, 67).Value = "'0"
