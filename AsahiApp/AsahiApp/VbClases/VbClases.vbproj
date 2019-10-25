@@ -75,6 +75,7 @@
     <Compile Include="Bono.vb" />
     <Compile Include="Comedor.vb" />
     <Compile Include="Empleado.vb" />
+    <Compile Include="Gastos.vb" />
     <Compile Include="Horarios.vb" />
     <Compile Include="HorasExtra.vb" />
     <Compile Include="Incapacidad.vb" />
@@ -84,6 +85,7 @@
     <Compile Include="Listas Heredadas\LAusentismo.vb" />
     <Compile Include="Listas Heredadas\LBaja.vb" />
     <Compile Include="Listas Heredadas\LEmpleado.vb" />
+    <Compile Include="Listas Heredadas\LGastos.vb" />
     <Compile Include="Listas Heredadas\LHorarios.vb" />
     <Compile Include="Listas Heredadas\LHorasExtra.vb" />
     <Compile Include="Listas Heredadas\LIncapacidad.vb" />
