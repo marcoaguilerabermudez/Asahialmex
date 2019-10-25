@@ -142,6 +142,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapturaOEE.Designer.vb">
+      <DependentUpon>CapturaOEE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CapturaOEE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="conexion.vb" />
     <Compile Include="DataSet\Dts_BonoMensual.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -311,8 +317,17 @@
     <Compile Include="RH\Frm_RepPlanHrsExtra5.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SubventanaOee.Designer.vb">
+      <DependentUpon>SubventanaOee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubventanaOee.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CapturaOEE.resx">
+      <DependentUpon>CapturaOEE.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Acerca.resx">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
     </EmbeddedResource>
@@ -382,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RH\Frm_RepPlanHrsExtra5.resx">
       <DependentUpon>Frm_RepPlanHrsExtra5.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubventanaOee.resx">
+      <DependentUpon>SubventanaOee.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
