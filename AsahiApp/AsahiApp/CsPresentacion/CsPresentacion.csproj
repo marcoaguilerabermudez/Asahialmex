@@ -120,12 +120,6 @@
     <Compile Include="Formularios\RH\Frm_Historico.Designer.cs">
       <DependentUpon>Frm_Historico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Rep_Historial_.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\RH\Frm_Rep_Historial_.Designer.cs">
-      <DependentUpon>Frm_Rep_Historial_.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\RH\Frm_Rotacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +131,12 @@
     </Compile>
     <Compile Include="Formularios\RH\Permisos_Autorizaciones.Designer.cs">
       <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Rep_Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Rep_Historial.Designer.cs">
+      <DependentUpon>Frm_Rep_Historial.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Credencial_Visitantes.cs">
       <SubType>Form</SubType>
@@ -216,10 +216,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Mejoras_Anual2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Reporte_Anual_Mejoras.cs">
+    <Compile Include="Reportes\RH\Frm_Reporte_Anual_Mejoras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Reporte_Anual_Mejoras.Designer.cs">
+    <Compile Include="Reportes\RH\Frm_Reporte_Anual_Mejoras.Designer.cs">
       <DependentUpon>Frm_Reporte_Anual_Mejoras.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Permiso_Salida_Semana.cs">
@@ -469,14 +469,14 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Historico.resx">
       <DependentUpon>Frm_Historico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_Rep_Historial_.resx">
-      <DependentUpon>Frm_Rep_Historial_.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Rotacion.resx">
       <DependentUpon>Frm_Rotacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Permisos_Autorizaciones.resx">
       <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Rep_Historial.resx">
+      <DependentUpon>Frm_Rep_Historial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Credencial_Visitantes.resx">
       <DependentUpon>Credencial_Visitantes.cs</DependentUpon>
@@ -503,7 +503,7 @@
     <EmbeddedResource Include="Reportes\RH\Contrato_Clave.resx">
       <DependentUpon>Contrato_Clave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_Reporte_Anual_Mejoras.resx">
+    <EmbeddedResource Include="Reportes\RH\Frm_Reporte_Anual_Mejoras.resx">
       <DependentUpon>Frm_Reporte_Anual_Mejoras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mejoras_anual.rdlc" />

@@ -198,7 +198,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.SteelBlue;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(24, 37);
+            this.label3.Location = new System.Drawing.Point(24, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 27;
@@ -206,7 +206,7 @@
             // 
             // txt_clave
             // 
-            this.txt_clave.Location = new System.Drawing.Point(24, 53);
+            this.txt_clave.Location = new System.Drawing.Point(24, 47);
             this.txt_clave.MaxLength = 5;
             this.txt_clave.Name = "txt_clave";
             this.txt_clave.Size = new System.Drawing.Size(84, 20);
@@ -220,9 +220,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_clave);
             this.panel1.Controls.Add(this.lbl_fecha);
-            this.panel1.Location = new System.Drawing.Point(-3, -26);
+            this.panel1.Location = new System.Drawing.Point(-3, -27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(606, 76);
+            this.panel1.Size = new System.Drawing.Size(606, 69);
             this.panel1.TabIndex = 58;
             // 
             // btn_nuevo
@@ -233,7 +233,7 @@
             this.btn_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(114, 52);
+            this.btn_nuevo.Location = new System.Drawing.Point(114, 46);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(18, 23);
             this.btn_nuevo.TabIndex = 105;

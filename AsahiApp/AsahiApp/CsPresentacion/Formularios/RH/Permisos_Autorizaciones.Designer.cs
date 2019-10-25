@@ -28,25 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_nuevo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_insertar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
-            this.btn_guardar = new System.Windows.Forms.Button();
-            this.btn_primero = new System.Windows.Forms.Button();
-            this.btn_anterior = new System.Windows.Forms.Button();
-            this.btn_siguiente = new System.Windows.Forms.Button();
-            this.btn_ultimo = new System.Windows.Forms.Button();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tp_edicion = new System.Windows.Forms.TabPage();
+            this.lbl_mod = new System.Windows.Forms.Label();
             this.lbl_tipo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdb_f = new System.Windows.Forms.RadioButton();
@@ -70,9 +62,17 @@
             this.tp_permisos = new System.Windows.Forms.TabPage();
             this.dgv_permisos = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btn_exportar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbl_mod = new System.Windows.Forms.Label();
+            this.btn_exportar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_insertar = new System.Windows.Forms.Button();
+            this.btn_ultimo = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
+            this.btn_anterior = new System.Windows.Forms.Button();
+            this.btn_primero = new System.Windows.Forms.Button();
+            this.btn_nuevo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tp_edicion.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -87,7 +87,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.SteelBlue;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 11);
+            this.label1.Location = new System.Drawing.Point(14, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 0;
@@ -95,7 +95,7 @@
             // 
             // txt_clave
             // 
-            this.txt_clave.Location = new System.Drawing.Point(15, 27);
+            this.txt_clave.Location = new System.Drawing.Point(15, 24);
             this.txt_clave.MaxLength = 8;
             this.txt_clave.Name = "txt_clave";
             this.txt_clave.Size = new System.Drawing.Size(100, 20);
@@ -106,24 +106,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btn_nuevo);
-            this.panel1.Location = new System.Drawing.Point(-2, -17);
+            this.panel1.Location = new System.Drawing.Point(-2, -19);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(832, 69);
             this.panel1.TabIndex = 143;
-            // 
-            // btn_nuevo
-            // 
-            this.btn_nuevo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_nuevo.FlatAppearance.BorderSize = 0;
-            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(121, 41);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(27, 27);
-            this.btn_nuevo.TabIndex = 27;
-            this.btn_nuevo.UseVisualStyleBackColor = false;
-            this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
             // 
             // label2
             // 
@@ -140,110 +126,6 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(457, 20);
             this.txt_nombre.TabIndex = 59;
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancelar.FlatAppearance.BorderSize = 0;
-            this.btn_cancelar.Image = global::CsPresentacion.Properties.Resources.delete_icon;
-            this.btn_cancelar.Location = new System.Drawing.Point(304, 154);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(40, 30);
-            this.btn_cancelar.TabIndex = 7;
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
-            // 
-            // btn_insertar
-            // 
-            this.btn_insertar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_insertar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_insertar.FlatAppearance.BorderSize = 0;
-            this.btn_insertar.Image = global::CsPresentacion.Properties.Resources.math_add_icon2;
-            this.btn_insertar.Location = new System.Drawing.Point(182, 154);
-            this.btn_insertar.Name = "btn_insertar";
-            this.btn_insertar.Size = new System.Drawing.Size(40, 30);
-            this.btn_insertar.TabIndex = 10;
-            this.btn_insertar.UseVisualStyleBackColor = false;
-            this.btn_insertar.Click += new System.EventHandler(this.Btn_insertar_Click);
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_eliminar.FlatAppearance.BorderSize = 0;
-            this.btn_eliminar.Image = global::CsPresentacion.Properties.Resources.math_minus_icon;
-            this.btn_eliminar.Location = new System.Drawing.Point(222, 154);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(40, 30);
-            this.btn_eliminar.TabIndex = 9;
-            this.btn_eliminar.UseVisualStyleBackColor = false;
-            this.btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
-            // 
-            // btn_guardar
-            // 
-            this.btn_guardar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_guardar.FlatAppearance.BorderSize = 0;
-            this.btn_guardar.Image = global::CsPresentacion.Properties.Resources.Actions_dialog_ok_apply_icon;
-            this.btn_guardar.Location = new System.Drawing.Point(263, 154);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(40, 30);
-            this.btn_guardar.TabIndex = 6;
-            this.btn_guardar.UseVisualStyleBackColor = false;
-            this.btn_guardar.Click += new System.EventHandler(this.Btn_gurdar_Click);
-            // 
-            // btn_primero
-            // 
-            this.btn_primero.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_primero.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_primero.FlatAppearance.BorderSize = 0;
-            this.btn_primero.Image = global::CsPresentacion.Properties.Resources.Hide_left_icon;
-            this.btn_primero.Location = new System.Drawing.Point(17, 154);
-            this.btn_primero.Name = "btn_primero";
-            this.btn_primero.Size = new System.Drawing.Size(40, 30);
-            this.btn_primero.TabIndex = 14;
-            this.btn_primero.UseVisualStyleBackColor = false;
-            this.btn_primero.Click += new System.EventHandler(this.Btn_primero_Click);
-            // 
-            // btn_anterior
-            // 
-            this.btn_anterior.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_anterior.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_anterior.FlatAppearance.BorderSize = 0;
-            this.btn_anterior.Image = global::CsPresentacion.Properties.Resources.Navigate_left_icon;
-            this.btn_anterior.Location = new System.Drawing.Point(59, 154);
-            this.btn_anterior.Name = "btn_anterior";
-            this.btn_anterior.Size = new System.Drawing.Size(40, 30);
-            this.btn_anterior.TabIndex = 13;
-            this.btn_anterior.UseVisualStyleBackColor = false;
-            this.btn_anterior.Click += new System.EventHandler(this.Btn_anterior_Click);
-            // 
-            // btn_siguiente
-            // 
-            this.btn_siguiente.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_siguiente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_siguiente.FlatAppearance.BorderSize = 0;
-            this.btn_siguiente.Image = global::CsPresentacion.Properties.Resources.Next;
-            this.btn_siguiente.Location = new System.Drawing.Point(100, 154);
-            this.btn_siguiente.Name = "btn_siguiente";
-            this.btn_siguiente.Size = new System.Drawing.Size(40, 30);
-            this.btn_siguiente.TabIndex = 12;
-            this.btn_siguiente.UseVisualStyleBackColor = false;
-            this.btn_siguiente.Click += new System.EventHandler(this.Btn_siguiente_Click);
-            // 
-            // btn_ultimo
-            // 
-            this.btn_ultimo.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_ultimo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_ultimo.FlatAppearance.BorderSize = 0;
-            this.btn_ultimo.Image = global::CsPresentacion.Properties.Resources.Hide_right_icon;
-            this.btn_ultimo.Location = new System.Drawing.Point(141, 154);
-            this.btn_ultimo.Name = "btn_ultimo";
-            this.btn_ultimo.Size = new System.Drawing.Size(40, 30);
-            this.btn_ultimo.TabIndex = 11;
-            this.btn_ultimo.UseVisualStyleBackColor = false;
-            this.btn_ultimo.Click += new System.EventHandler(this.Btn_ultimo_Click);
             // 
             // lbl_estado
             // 
@@ -287,6 +169,15 @@
             this.tp_edicion.TabIndex = 1;
             this.tp_edicion.Text = "2. Edición";
             this.tp_edicion.UseVisualStyleBackColor = true;
+            // 
+            // lbl_mod
+            // 
+            this.lbl_mod.AutoSize = true;
+            this.lbl_mod.Location = new System.Drawing.Point(116, 314);
+            this.lbl_mod.Name = "lbl_mod";
+            this.lbl_mod.Size = new System.Drawing.Size(39, 13);
+            this.lbl_mod.TabIndex = 149;
+            this.lbl_mod.Text = "@Mod";
             // 
             // lbl_tipo
             // 
@@ -520,17 +411,17 @@
             this.dgv_permisos.Location = new System.Drawing.Point(6, 20);
             this.dgv_permisos.MultiSelect = false;
             this.dgv_permisos.Name = "dgv_permisos";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_permisos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_permisos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_permisos.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dgv_permisos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgv_permisos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_permisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_permisos.ShowCellErrors = false;
             this.dgv_permisos.Size = new System.Drawing.Size(780, 334);
@@ -550,6 +441,15 @@
             this.tabControl1.Size = new System.Drawing.Size(804, 391);
             this.tabControl1.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(645, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(113, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 147;
+            this.pictureBox1.TabStop = false;
+            // 
             // btn_exportar
             // 
             this.btn_exportar.BackColor = System.Drawing.Color.Gainsboro;
@@ -563,23 +463,123 @@
             this.btn_exportar.UseVisualStyleBackColor = false;
             this.btn_exportar.Click += new System.EventHandler(this.Btn_exportar_Click);
             // 
-            // pictureBox1
+            // btn_cancelar
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(645, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 111);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 147;
-            this.pictureBox1.TabStop = false;
+            this.btn_cancelar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.Image = global::CsPresentacion.Properties.Resources.delete_icon;
+            this.btn_cancelar.Location = new System.Drawing.Point(304, 154);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(40, 30);
+            this.btn_cancelar.TabIndex = 7;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
-            // lbl_mod
+            // btn_guardar
             // 
-            this.lbl_mod.AutoSize = true;
-            this.lbl_mod.Location = new System.Drawing.Point(116, 314);
-            this.lbl_mod.Name = "lbl_mod";
-            this.lbl_mod.Size = new System.Drawing.Size(39, 13);
-            this.lbl_mod.TabIndex = 149;
-            this.lbl_mod.Text = "@Mod";
+            this.btn_guardar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_guardar.Image = global::CsPresentacion.Properties.Resources.Actions_dialog_ok_apply_icon;
+            this.btn_guardar.Location = new System.Drawing.Point(263, 154);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(40, 30);
+            this.btn_guardar.TabIndex = 6;
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.Btn_gurdar_Click);
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_eliminar.Image = global::CsPresentacion.Properties.Resources.math_minus_icon;
+            this.btn_eliminar.Location = new System.Drawing.Point(222, 154);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(40, 30);
+            this.btn_eliminar.TabIndex = 9;
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
+            // 
+            // btn_insertar
+            // 
+            this.btn_insertar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_insertar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_insertar.FlatAppearance.BorderSize = 0;
+            this.btn_insertar.Image = global::CsPresentacion.Properties.Resources.math_add_icon2;
+            this.btn_insertar.Location = new System.Drawing.Point(182, 154);
+            this.btn_insertar.Name = "btn_insertar";
+            this.btn_insertar.Size = new System.Drawing.Size(40, 30);
+            this.btn_insertar.TabIndex = 10;
+            this.btn_insertar.UseVisualStyleBackColor = false;
+            this.btn_insertar.Click += new System.EventHandler(this.Btn_insertar_Click);
+            // 
+            // btn_ultimo
+            // 
+            this.btn_ultimo.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_ultimo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ultimo.FlatAppearance.BorderSize = 0;
+            this.btn_ultimo.Image = global::CsPresentacion.Properties.Resources.Hide_right_icon;
+            this.btn_ultimo.Location = new System.Drawing.Point(141, 154);
+            this.btn_ultimo.Name = "btn_ultimo";
+            this.btn_ultimo.Size = new System.Drawing.Size(40, 30);
+            this.btn_ultimo.TabIndex = 11;
+            this.btn_ultimo.UseVisualStyleBackColor = false;
+            this.btn_ultimo.Click += new System.EventHandler(this.Btn_ultimo_Click);
+            // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_siguiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_siguiente.FlatAppearance.BorderSize = 0;
+            this.btn_siguiente.Image = global::CsPresentacion.Properties.Resources.Next;
+            this.btn_siguiente.Location = new System.Drawing.Point(100, 154);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(40, 30);
+            this.btn_siguiente.TabIndex = 12;
+            this.btn_siguiente.UseVisualStyleBackColor = false;
+            this.btn_siguiente.Click += new System.EventHandler(this.Btn_siguiente_Click);
+            // 
+            // btn_anterior
+            // 
+            this.btn_anterior.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_anterior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_anterior.FlatAppearance.BorderSize = 0;
+            this.btn_anterior.Image = global::CsPresentacion.Properties.Resources.Navigate_left_icon;
+            this.btn_anterior.Location = new System.Drawing.Point(59, 154);
+            this.btn_anterior.Name = "btn_anterior";
+            this.btn_anterior.Size = new System.Drawing.Size(40, 30);
+            this.btn_anterior.TabIndex = 13;
+            this.btn_anterior.UseVisualStyleBackColor = false;
+            this.btn_anterior.Click += new System.EventHandler(this.Btn_anterior_Click);
+            // 
+            // btn_primero
+            // 
+            this.btn_primero.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_primero.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_primero.FlatAppearance.BorderSize = 0;
+            this.btn_primero.Image = global::CsPresentacion.Properties.Resources.Hide_left_icon;
+            this.btn_primero.Location = new System.Drawing.Point(17, 154);
+            this.btn_primero.Name = "btn_primero";
+            this.btn_primero.Size = new System.Drawing.Size(40, 30);
+            this.btn_primero.TabIndex = 14;
+            this.btn_primero.UseVisualStyleBackColor = false;
+            this.btn_primero.Click += new System.EventHandler(this.Btn_primero_Click);
+            // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_nuevo.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
+            this.btn_nuevo.Location = new System.Drawing.Point(121, 40);
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Size = new System.Drawing.Size(27, 27);
+            this.btn_nuevo.TabIndex = 27;
+            this.btn_nuevo.UseVisualStyleBackColor = false;
+            this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
             // 
             // Permisos_Autorizaciones
             // 
@@ -608,7 +608,7 @@
             this.Name = "Permisos_Autorizaciones";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Permisos y Autorizaciones";
+            this.Text = "n";
             this.Load += new System.EventHandler(this.Permisos_Autorizaciones_Load);
             this.panel1.ResumeLayout(false);
             this.tp_edicion.ResumeLayout(false);
