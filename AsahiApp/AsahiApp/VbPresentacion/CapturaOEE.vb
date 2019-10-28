@@ -1,4 +1,8 @@
-﻿Public Class CapturaOEE
+﻿Imports System.Data.SqlClient
+
+Public Class CapturaOEE
+
+    Dim Cn As New SqlConnection("Data Source=GIRO\SQLEX2014;Initial Catalog=SistemaAAM;Uid=sa; Pwd=Pa55word")
 
     Private Sub CapturaOEE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -18,6 +22,7 @@
         Modulo_detalle.parametro2 = lbl_h1.Text
         Modulo_detalle.parametro3 = cbx_turno.Text
         Modulo_detalle.parametro4 = txt_1.Text
+        Modulo_detalle.parametro5 = cbx_proceso.Text
         SubventanaOee.Show()
     End Sub
 
@@ -27,6 +32,7 @@
         Modulo_detalle.parametro2 = lbl_h2.Text
         Modulo_detalle.parametro3 = cbx_turno.Text
         Modulo_detalle.parametro4 = txt_2.Text
+        Modulo_detalle.parametro5 = cbx_proceso.Text
         SubventanaOee.Show()
     End Sub
 
@@ -35,6 +41,7 @@
         Modulo_detalle.parametro2 = lbl_h3.Text
         Modulo_detalle.parametro3 = cbx_turno.Text
         Modulo_detalle.parametro4 = txt_3.Text
+        Modulo_detalle.parametro5 = cbx_proceso.Text
         SubventanaOee.Show()
     End Sub
 
@@ -43,6 +50,7 @@
         Modulo_detalle.parametro2 = lbl_h4.Text
         Modulo_detalle.parametro3 = cbx_turno.Text
         Modulo_detalle.parametro4 = txt_4.Text
+        Modulo_detalle.parametro5 = cbx_proceso.Text
         SubventanaOee.Show()
     End Sub
 
@@ -51,6 +59,7 @@
         Modulo_detalle.parametro2 = lbl_h5.Text
         Modulo_detalle.parametro3 = cbx_turno.Text
         Modulo_detalle.parametro4 = txt_5.Text
+        Modulo_detalle.parametro5 = cbx_proceso.Text
         SubventanaOee.Show()
     End Sub
 
@@ -59,6 +68,7 @@
         Modulo_detalle.parametro2 = lbl_h6.Text
         Modulo_detalle.parametro3 = cbx_turno.Text
         Modulo_detalle.parametro4 = txt_6.Text
+        Modulo_detalle.parametro5 = cbx_proceso.Text
         SubventanaOee.Show()
     End Sub
 
@@ -67,6 +77,7 @@
         Modulo_detalle.parametro2 = lbl_h7.Text
         Modulo_detalle.parametro3 = cbx_turno.Text
         Modulo_detalle.parametro4 = txt_7.Text
+        Modulo_detalle.parametro5 = cbx_proceso.Text
         SubventanaOee.Show()
     End Sub
 
@@ -75,6 +86,7 @@
         Modulo_detalle.parametro2 = lbl_h8.Text
         Modulo_detalle.parametro3 = cbx_turno.Text
         Modulo_detalle.parametro4 = txt_8.Text
+        Modulo_detalle.parametro5 = cbx_proceso.Text
         SubventanaOee.Show()
     End Sub
 
@@ -83,6 +95,7 @@
         Modulo_detalle.parametro2 = lbl_h9.Text
         Modulo_detalle.parametro3 = cbx_turno.Text
         Modulo_detalle.parametro4 = txt_9.Text
+        Modulo_detalle.parametro5 = cbx_proceso.Text
         SubventanaOee.Show()
     End Sub
 
@@ -111,6 +124,123 @@
         Catch
         End Try
     End Sub
+
+    Private Sub cbx_turno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_turno.SelectedIndexChanged
+        If cbx_turno.Text = "1" Then
+            lbl_h1.Text = "06:55 ~ 07:55"
+            lbl_h2.Text = "07:55 ~ 08:55"
+            lbl_h3.Text = "08:55 ~ 09:55"
+            lbl_h4.Text = "09:55 ~ 10:55"
+            lbl_h5.Text = "10:55 ~ 11:55"
+            lbl_h6.Text = "11:55 ~ 12:55"
+            lbl_h7.Text = "12:55 ~ 13:55"
+            lbl_h8.Text = "13:55 ~ 14:55"
+            lbl_h9.Text = "14:55 ~ 15:25"
+            txt_9.Enabled = True
+            btn_9.Enabled = True
+        ElseIf cbx_turno.Text = "2" Then
+
+            lbl_h1.Text = "15:25 ~ 16:25"
+            lbl_h2.Text = "16:25 ~ 17:25"
+            lbl_h3.Text = "17:25 ~ 18:25"
+            lbl_h4.Text = "18:25 ~ 19:25"
+            lbl_h5.Text = "19:25 ~ 20:25"
+            lbl_h6.Text = "20:25 ~ 21:25"
+            lbl_h7.Text = "21:25 ~ 22:25"
+            lbl_h8.Text = "22:25 ~ 23:25"
+            lbl_h9.Text = "~"
+            txt_9.Enabled = False
+            btn_9.Enabled = False
+        ElseIf cbx_turno.Text = "3" Then
+
+            lbl_h1.Text = "23:25 ~ 00:25"
+            lbl_h2.Text = "00:25 ~ 01:25"
+            lbl_h3.Text = "01:25 ~ 02:25"
+            lbl_h4.Text = "02:25 ~ 03:25"
+            lbl_h5.Text = "03:25 ~ 04:25"
+            lbl_h6.Text = "04:25 ~ 05:25"
+            lbl_h7.Text = "05:25 ~ 06:25"
+            lbl_h8.Text = "06:25 ~ 06:55"
+            lbl_h9.Text = "~"
+            txt_9.Enabled = False
+            btn_9.Enabled = False
+
+
+        End If
+
+        btn_guardar.Enabled = True
+    End Sub
+
+    Sub llenacombomaquina()
+        Dim Dt As DataTable
+
+        Dim Da As New SqlDataAdapter
+        Dim Cmd As New SqlCommand
+        With Cmd
+            .CommandType = CommandType.Text
+            .CommandText = "
+declare @var as varchar(25)
+set @var = '" & cbx_proceso.Text & "'
+
+if @var = 'FUNDICIÓN'
+BEGIN
+select nombre from [SistemaAAM].[dbo].[Pro_Cat_Maquinaria]
+  where id_maquina in (2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17)
+END
+ELSE if @var = 'MAQUINADO'
+BEGIN
+select nombre from [SistemaAAM].[dbo].[Pro_Cat_Maquinaria]
+  where id_maquina NOT in (2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17)
+END"
+            .Connection = Cn
+        End With
+        Da.SelectCommand = Cmd
+        Dt = New DataTable
+        Da.Fill(Dt)
+        With cbx_maquina
+            .DataSource = Dt
+            .DisplayMember = "nombre"
+            '.ValueMember = "id"
+        End With
+        'totales()
+    End Sub
+
+    Sub llenacombomolde()
+        Dim Dt As DataTable
+
+        Dim Da As New SqlDataAdapter
+        Dim Cmd As New SqlCommand
+        With Cmd
+            .CommandType = CommandType.Text
+            .CommandText = "
+declare @var as integer
+set @var = (select [id_producto] from [SistemaAAM].[dbo].[Pro_Cat_Productos] where np_Cast = '" & cbx_pieza.Text & "')
+
+select codigo FROM [SistemaAAM].[dbo].[Pro_Cat_Moldes] where id_producto = @var
+
+"
+            .Connection = Cn
+        End With
+        Da.SelectCommand = Cmd
+        Dt = New DataTable
+        Da.Fill(Dt)
+        With cbx_molde
+            .DataSource = Dt
+            .DisplayMember = "codigo"
+            '.ValueMember = "id"
+        End With
+        'totales()
+    End Sub
+
+    Private Sub cbx_proceso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_proceso.SelectedIndexChanged
+        llenacombomaquina()
+    End Sub
+
+    Private Sub cbx_pieza_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_pieza.SelectedIndexChanged
+        llenacombomolde()
+    End Sub
+
+
 End Class
 
 Module Modulo_detalle
@@ -118,4 +248,5 @@ Module Modulo_detalle
     Public parametro2 As String
     Public parametro3 As String
     Public parametro4 As Integer
+    Public parametro5 As String
 End Module
