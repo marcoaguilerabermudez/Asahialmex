@@ -998,8 +998,6 @@ and mes = @mes and año = @año and Id_puesto = 9 and id_tipo = 0
                 cmd.Parameters.AddWithValue("@cantidad7", txt_operador.Text)
                 cmd.Parameters.AddWithValue("@cantidad8", txt_cor.Text)
                 cmd.Parameters.AddWithValue("@cantidad9", txt_tra.Text)
-
-
                 cmd.Parameters.AddWithValue("@año", cbx_año.Text)
                 cmd.Parameters.AddWithValue("@mes", l3.Text)
                 cmd.Parameters.AddWithValue("@catalogodepartamento", cbx_depto.Text)
@@ -1035,4 +1033,6 @@ and mes = @mes and año = @año and Id_puesto = 9 and id_tipo = 0
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         cargar2()
     End Sub
+
+
 End Class
