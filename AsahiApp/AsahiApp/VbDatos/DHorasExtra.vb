@@ -113,4 +113,7 @@ Public Class DHorasExtra
         End Try
         Return tSemanas
     End Function
+
+
+
 End Class

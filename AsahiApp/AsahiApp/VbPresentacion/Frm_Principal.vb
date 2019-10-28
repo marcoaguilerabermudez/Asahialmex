@@ -365,5 +365,9 @@ Public Class Frm_Principal
         Dim ag As New Ausentismo_Global()
         ag.Show()
     End Sub
+
+    Private Sub CapturaOEEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CapturaOEEToolStripMenuItem.Click
+        CapturaOEE.Show()
+    End Sub
 #End Region
 End Class

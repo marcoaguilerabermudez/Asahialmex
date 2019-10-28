@@ -4,7 +4,6 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Datos
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbprojAssemblyReference.cache
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.Resources.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbproj.GenerateResource.cache
-C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.dll
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.xml
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.pdb
