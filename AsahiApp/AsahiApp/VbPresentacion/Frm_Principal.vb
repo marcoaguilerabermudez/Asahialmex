@@ -41,7 +41,7 @@ Public Class Frm_Principal
             BloquearPestañas()
             lstPer = NEmp.RecuperarPermisosUsuario(Me.cadenaConesExp, Me.emp)
             DesbloquearPestañas(lstPer)
-            'ElseIf Me.emp.TipoUsuario = 1 Then
+            ''ElseIf Me.emp.TipoUsuario = 1 Then
         End If
     End Sub
 #Region "Procesos"
