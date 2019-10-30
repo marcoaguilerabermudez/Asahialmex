@@ -7,9 +7,9 @@ Public Class NGastos
         Return dGast.RecuperarPlanGastos(cadenaConex, mes, año, fi, ff, idCtg, idioma)
     End Function
     Public Function RecuperarPlanGastosDpto(ByVal cadenaConex As String, ByVal mes As Integer, ByVal año As Integer, ByVal fi As Date, ByVal ff As Date,
-                                        ByVal clave As Integer, ByVal idioma As Integer) As LGastos
+                                        ByVal clave As Integer, ByVal idCtg As Integer, ByVal idioma As Integer) As LGastos
         Dim dGast As New DGastos()
-        Return dGast.RecuperarPlanGastosDpto(cadenaConex, mes, año, fi, ff, clave, idioma)
+        Return dGast.RecuperarPlanGastosDpto(cadenaConex, mes, año, fi, ff, clave, idCtg, idioma)
     End Function
     Public Function RecuperarPlanVentas(ByVal cadenaConex As String, ByVal mes As Integer, ByVal año As Integer, ByVal fi As Date, ByVal ff As Date) As LGastos
         Dim dGast As New DGastos()

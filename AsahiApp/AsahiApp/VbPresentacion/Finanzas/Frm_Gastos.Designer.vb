@@ -22,6 +22,7 @@ Partial Class Frm_Gastos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Gastos))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pct_Limpiar = New System.Windows.Forms.PictureBox()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -73,6 +74,11 @@ Partial Class Frm_Gastos
         Me.segNeg = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Lbl_TAPorcentaje = New System.Windows.Forms.Label()
+        Me.Lbl_TADif = New System.Windows.Forms.Label()
+        Me.Lbl_TAReal = New System.Windows.Forms.Label()
+        Me.Lbl_TAPLan = New System.Windows.Forms.Label()
+        Me.Lbl_TPorcentaje = New System.Windows.Forms.Label()
         Me.Lbl_TDif = New System.Windows.Forms.Label()
         Me.Lbl_TReal = New System.Windows.Forms.Label()
         Me.Lbl_TPlan = New System.Windows.Forms.Label()
@@ -111,11 +117,6 @@ Partial Class Frm_Gastos
         Me.Lbl_Ventas = New System.Windows.Forms.Label()
         Me.Lbl_Actual = New System.Windows.Forms.Label()
         Me.Lbl_Real = New System.Windows.Forms.Label()
-        Me.Lbl_TPorcentaje = New System.Windows.Forms.Label()
-        Me.Lbl_TAPorcentaje = New System.Windows.Forms.Label()
-        Me.Lbl_TADif = New System.Windows.Forms.Label()
-        Me.Lbl_TAReal = New System.Windows.Forms.Label()
-        Me.Lbl_TAPLan = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Pct_Limpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
@@ -295,7 +296,7 @@ Partial Class Frm_Gastos
         '
         'Btn_Regresar
         '
-        Me.Btn_Regresar.BackColor = System.Drawing.Color.Transparent
+        Me.Btn_Regresar.BackColor = System.Drawing.SystemColors.Control
         Me.Btn_Regresar.BackgroundImage = Global.Presentacion.My.Resources.Resources.go_back256_24856
         Me.Btn_Regresar.Enabled = False
         Me.Btn_Regresar.Location = New System.Drawing.Point(28, 169)
@@ -318,10 +319,12 @@ Partial Class Frm_Gastos
         '
         Me.Dgv_DesplegadoAcum.AllowUserToAddRows = False
         Me.Dgv_DesplegadoAcum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv_DesplegadoAcum.ColumnHeadersVisible = False
         Me.Dgv_DesplegadoAcum.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.noCta3, Me.cta3, Me.plan, Me.actual, Me.dif, Me.porcentaje2})
         Me.Dgv_DesplegadoAcum.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_DesplegadoAcum.Location = New System.Drawing.Point(0, 0)
         Me.Dgv_DesplegadoAcum.Name = "Dgv_DesplegadoAcum"
+        Me.Dgv_DesplegadoAcum.RowHeadersVisible = False
         Me.Dgv_DesplegadoAcum.Size = New System.Drawing.Size(625, 358)
         Me.Dgv_DesplegadoAcum.TabIndex = 2
         Me.Dgv_DesplegadoAcum.Visible = False
@@ -581,12 +584,66 @@ Partial Class Frm_Gastos
         Me.Panel12.Size = New System.Drawing.Size(625, 28)
         Me.Panel12.TabIndex = 2
         '
+        'Lbl_TAPorcentaje
+        '
+        Me.Lbl_TAPorcentaje.AutoSize = True
+        Me.Lbl_TAPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Lbl_TAPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TAPorcentaje.Location = New System.Drawing.Point(544, 8)
+        Me.Lbl_TAPorcentaje.Name = "Lbl_TAPorcentaje"
+        Me.Lbl_TAPorcentaje.Size = New System.Drawing.Size(2, 14)
+        Me.Lbl_TAPorcentaje.TabIndex = 14
+        Me.Lbl_TAPorcentaje.Visible = False
+        '
+        'Lbl_TADif
+        '
+        Me.Lbl_TADif.AutoSize = True
+        Me.Lbl_TADif.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Lbl_TADif.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TADif.Location = New System.Drawing.Point(446, 7)
+        Me.Lbl_TADif.Name = "Lbl_TADif"
+        Me.Lbl_TADif.Size = New System.Drawing.Size(2, 14)
+        Me.Lbl_TADif.TabIndex = 13
+        Me.Lbl_TADif.Visible = False
+        '
+        'Lbl_TAReal
+        '
+        Me.Lbl_TAReal.AutoSize = True
+        Me.Lbl_TAReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Lbl_TAReal.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TAReal.Location = New System.Drawing.Point(342, 7)
+        Me.Lbl_TAReal.Name = "Lbl_TAReal"
+        Me.Lbl_TAReal.Size = New System.Drawing.Size(2, 14)
+        Me.Lbl_TAReal.TabIndex = 12
+        Me.Lbl_TAReal.Visible = False
+        '
+        'Lbl_TAPLan
+        '
+        Me.Lbl_TAPLan.AutoSize = True
+        Me.Lbl_TAPLan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Lbl_TAPLan.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TAPLan.Location = New System.Drawing.Point(242, 8)
+        Me.Lbl_TAPLan.Name = "Lbl_TAPLan"
+        Me.Lbl_TAPLan.Size = New System.Drawing.Size(2, 14)
+        Me.Lbl_TAPLan.TabIndex = 11
+        Me.Lbl_TAPLan.Visible = False
+        '
+        'Lbl_TPorcentaje
+        '
+        Me.Lbl_TPorcentaje.AutoSize = True
+        Me.Lbl_TPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Lbl_TPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TPorcentaje.Location = New System.Drawing.Point(544, 8)
+        Me.Lbl_TPorcentaje.Name = "Lbl_TPorcentaje"
+        Me.Lbl_TPorcentaje.Size = New System.Drawing.Size(2, 14)
+        Me.Lbl_TPorcentaje.TabIndex = 10
+        '
         'Lbl_TDif
         '
         Me.Lbl_TDif.AutoSize = True
         Me.Lbl_TDif.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Lbl_TDif.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TDif.Location = New System.Drawing.Point(461, 7)
+        Me.Lbl_TDif.Location = New System.Drawing.Point(446, 7)
         Me.Lbl_TDif.Name = "Lbl_TDif"
         Me.Lbl_TDif.Size = New System.Drawing.Size(2, 14)
         Me.Lbl_TDif.TabIndex = 9
@@ -596,7 +653,7 @@ Partial Class Frm_Gastos
         Me.Lbl_TReal.AutoSize = True
         Me.Lbl_TReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Lbl_TReal.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TReal.Location = New System.Drawing.Point(357, 7)
+        Me.Lbl_TReal.Location = New System.Drawing.Point(342, 7)
         Me.Lbl_TReal.Name = "Lbl_TReal"
         Me.Lbl_TReal.Size = New System.Drawing.Size(2, 14)
         Me.Lbl_TReal.TabIndex = 8
@@ -606,7 +663,7 @@ Partial Class Frm_Gastos
         Me.Lbl_TPlan.AutoSize = True
         Me.Lbl_TPlan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Lbl_TPlan.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TPlan.Location = New System.Drawing.Point(257, 8)
+        Me.Lbl_TPlan.Location = New System.Drawing.Point(242, 8)
         Me.Lbl_TPlan.Name = "Lbl_TPlan"
         Me.Lbl_TPlan.Size = New System.Drawing.Size(2, 14)
         Me.Lbl_TPlan.TabIndex = 7
@@ -998,60 +1055,6 @@ Partial Class Frm_Gastos
         Me.Lbl_Real.TabIndex = 11
         Me.Lbl_Real.Text = "Real"
         '
-        'Lbl_TPorcentaje
-        '
-        Me.Lbl_TPorcentaje.AutoSize = True
-        Me.Lbl_TPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_TPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TPorcentaje.Location = New System.Drawing.Point(559, 8)
-        Me.Lbl_TPorcentaje.Name = "Lbl_TPorcentaje"
-        Me.Lbl_TPorcentaje.Size = New System.Drawing.Size(2, 14)
-        Me.Lbl_TPorcentaje.TabIndex = 10
-        '
-        'Lbl_TAPorcentaje
-        '
-        Me.Lbl_TAPorcentaje.AutoSize = True
-        Me.Lbl_TAPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_TAPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TAPorcentaje.Location = New System.Drawing.Point(559, 8)
-        Me.Lbl_TAPorcentaje.Name = "Lbl_TAPorcentaje"
-        Me.Lbl_TAPorcentaje.Size = New System.Drawing.Size(2, 14)
-        Me.Lbl_TAPorcentaje.TabIndex = 14
-        Me.Lbl_TAPorcentaje.Visible = False
-        '
-        'Lbl_TADif
-        '
-        Me.Lbl_TADif.AutoSize = True
-        Me.Lbl_TADif.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_TADif.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TADif.Location = New System.Drawing.Point(461, 7)
-        Me.Lbl_TADif.Name = "Lbl_TADif"
-        Me.Lbl_TADif.Size = New System.Drawing.Size(2, 14)
-        Me.Lbl_TADif.TabIndex = 13
-        Me.Lbl_TADif.Visible = False
-        '
-        'Lbl_TAReal
-        '
-        Me.Lbl_TAReal.AutoSize = True
-        Me.Lbl_TAReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_TAReal.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TAReal.Location = New System.Drawing.Point(357, 7)
-        Me.Lbl_TAReal.Name = "Lbl_TAReal"
-        Me.Lbl_TAReal.Size = New System.Drawing.Size(2, 14)
-        Me.Lbl_TAReal.TabIndex = 12
-        Me.Lbl_TAReal.Visible = False
-        '
-        'Lbl_TAPLan
-        '
-        Me.Lbl_TAPLan.AutoSize = True
-        Me.Lbl_TAPLan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_TAPLan.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.73!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TAPLan.Location = New System.Drawing.Point(257, 8)
-        Me.Lbl_TAPLan.Name = "Lbl_TAPLan"
-        Me.Lbl_TAPLan.Size = New System.Drawing.Size(2, 14)
-        Me.Lbl_TAPLan.TabIndex = 11
-        Me.Lbl_TAPLan.Visible = False
-        '
         'Frm_Gastos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1059,6 +1062,7 @@ Partial Class Frm_Gastos
         Me.ClientSize = New System.Drawing.Size(1269, 509)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_Gastos"
         Me.ShowIcon = False
         Me.Text = "Gastos"

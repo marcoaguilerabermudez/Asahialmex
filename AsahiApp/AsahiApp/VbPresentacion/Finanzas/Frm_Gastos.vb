@@ -481,7 +481,7 @@ Public Class Frm_Gastos
             End If
 
             If sn < 100 Then
-                lstGast = NGast.RecuperarPlanGastosDpto(Me.cadenaConex, mes, año, fi, ff, sn, Me.idioma)
+                lstGast = NGast.RecuperarPlanGastosDpto(Me.cadenaConex, mes, año, fi, ff, sn, cuenta, Me.idioma)
             ElseIf sn = 100 Then
                 lstGast = NGast.RecuperarPlanGastos(Me.cadenaConex, mes, año, fi, ff, cuenta, Me.idioma)
             End If

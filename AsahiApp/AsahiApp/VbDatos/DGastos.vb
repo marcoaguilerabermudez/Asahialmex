@@ -37,7 +37,7 @@ Public Class DGastos
         Return lstGastos
     End Function
     Public Function RecuperarPlanGastosDpto(ByVal cadenaConex As String, ByVal mes As Integer, ByVal año As Integer, ByVal fi As Date, ByVal ff As Date,
-                                            ByVal clave As Integer, ByVal idioma As Integer) As LGastos
+                                            ByVal clave As Integer, ByVal idCtg As Integer, ByVal idioma As Integer) As LGastos
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstGastos As New LGastos()
         Try
@@ -48,6 +48,7 @@ Public Class DGastos
             query.Parameters.AddWithValue("@fi", fi)
             query.Parameters.AddWithValue("@ff", ff)
             query.Parameters.AddWithValue("@segneg", clave)
+            query.Parameters.AddWithValue("@idcg", idCtg)
             query.Parameters.AddWithValue("@idioma", idioma)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 60
