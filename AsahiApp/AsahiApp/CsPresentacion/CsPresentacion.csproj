@@ -99,6 +99,12 @@
     <Compile Include="Ausentismo Global.Designer.cs">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>
     </Compile>
+    <Compile Include="Detalle_incidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detalle_incidencias.Designer.cs">
+      <DependentUpon>Detalle_incidencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_Historico.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -465,6 +471,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Ausentismo Global.resx">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detalle_incidencias.resx">
+      <DependentUpon>Detalle_incidencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Historico.resx">
       <DependentUpon>Frm_Historico.cs</DependentUpon>

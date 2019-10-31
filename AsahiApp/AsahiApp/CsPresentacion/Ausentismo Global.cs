@@ -16,40 +16,50 @@ namespace CsPresentacion
         {
             InitializeComponent();
         }
-
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
         int Var;
     
-
         private void Ausentismo_Global_Load(object sender, EventArgs e)
         {
-            Var = 2;
-            Llenar_dgv();
-            dgv_acumulado.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
-            dgv_acumulado.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
-            Calcula_Total();
-            txt_depto.Visible = false;
-            DateTime ayer = DateTime.Now.AddDays(-1);
-            dtm_fecha.Text = ayer.ToString();
-            lbl_reporte.Text = "REPORTE DIA DE AYER";
+            nuevo();
         }
+//Botones
+        private void Btn_nuevo_Click(object sender, EventArgs e)
+        {  
+            nuevo();
+        }
+        private void Btn_exportar_ant2_Click(object sender, EventArgs e)
+        {
+            Exportara_Exel();
+        }
+ //Métodos
         private void Calcula_Total()
         {
             double Plan = 0;
             double Activos = 0;
-            double Incidencias = 0;
-
+            double Total = 0;
+            double adtvo = 0;
+            double turno1 = 0;
+            double turno2 = 0;
+            double turno3 = 0;
             foreach (DataGridViewRow row in dgv_acumulado.Rows)
             {
                 Plan += Convert.ToDouble(row.Cells["PLAN"].Value);
                 Activos += Convert.ToDouble(row.Cells["ACTIVOS"].Value);
-                Incidencias += Convert.ToDouble(row.Cells["INCIDENCIAS"].Value);
+                Total += Convert.ToDouble(row.Cells["TOTAL"].Value);
+                adtvo += Convert.ToDouble(row.Cells["ADTVO."].Value);
+                turno1 += Convert.ToDouble(row.Cells["TURNO 1"].Value);
+                turno2 += Convert.ToDouble(row.Cells["TURNO 2"].Value);
+                turno3 += Convert.ToDouble(row.Cells["TURNO 3"].Value);
             }
             lbl_plan.Text = Convert.ToString(Plan);
             lbl_activos.Text = Convert.ToString(Activos);
-            lbl_incidencias.Text = Convert.ToString(Incidencias);
+            lbl_incidencias.Text = Convert.ToString(Total);
+            lbl_adtvo.Text = Convert.ToString(adtvo);
+            lbl_turno1.Text = Convert.ToString(turno1);
+            lbl_turno2.Text = Convert.ToString(turno2);
+            lbl_turno3.Text = Convert.ToString(turno3);
         }
-
         public void Llenar_dgv()// Método para llenar DatagridView Total
         {
             try
@@ -72,22 +82,63 @@ namespace CsPresentacion
                 MessageBox.Show(ex.Message);
             }
         }
-        public void Llenar_dgv_secundario()// Método para llenar DatagridView secundario
+        public void Llenar_informacion()// Método para llenar  Total por departamento
         {
             try
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("[dbo].[Ausentismo_Global]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Var", Var);
+                cmd.Parameters.AddWithValue("@Var", 0);
                 cmd.Parameters.AddWithValue("@Fecha", dtm_fecha.Text);
                 cmd.Parameters.AddWithValue("@Depto", txt_depto.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 con.Close();
                 adapter.Fill(dt);
-                dgv_total.DataSource = dt;
-                Diseño_dgv_secundario(dgv_total);
+
+                if (dt.Rows.Count > 0)
+                {
+                    lbl_falta_injus.Text = dt.Rows[0]["FALTA INJUS."].ToString();
+                    lbl_falta_just.Text = dt.Rows[0]["FALTA JUST."].ToString();
+                    lbl_pcon_goce.Text = dt.Rows[0]["P. CON GOCE"].ToString();
+                    lbl_psin_goce.Text = dt.Rows[0]["P. SIN GOCE"].ToString();
+                    lbl_suspension.Text = dt.Rows[0]["SUSP"].ToString();
+                    lbl_incapacidades.Text = dt.Rows[0]["INCAP"].ToString();
+                    lbl_vacaciones.Text = dt.Rows[0]["VAC"].ToString();
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void Llenar_informacion_totales()// Método para llenar  Total incidencias
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[Ausentismo_Global]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Var", 3);
+                cmd.Parameters.AddWithValue("@Fecha", dtm_fecha.Text);
+                cmd.Parameters.AddWithValue("@Depto", txt_depto.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                con.Close();
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    lbl_total_f_injustificadas.Text = dt.Rows[0]["FALTA INJUS."].ToString();
+                    lbl_total_f_justificada.Text = dt.Rows[0]["FALTA JUST."].ToString();
+                    lbl_total_p_congoce.Text = dt.Rows[0]["P. CON GOCE"].ToString();
+                    lbl_total_p_singoce.Text = dt.Rows[0]["P. SIN GOCE"].ToString();
+                    lbl_total_suspension.Text = dt.Rows[0]["SUSP"].ToString();
+                    lbl_total_incapacidades.Text = dt.Rows[0]["INCAP"].ToString();
+                    lbl_total_vacaciones.Text = dt.Rows[0]["VAC"].ToString();
+                }
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -146,23 +197,30 @@ namespace CsPresentacion
                 excel = null;
             }
         }
-        private void Diseño_dgv_secundario(DataGridView dgv)
-        {
-            dgv.Columns[0].Width = 100;
-            dgv.Columns[1].Width = 100;
-            dgv.Columns[2].Width = 100;
-            dgv.Columns[3].Width = 100;
-            dgv.Columns[4].Width = 60;
-            dgv.Columns[5].Width = 60;
-            dgv.Columns[6].Width = 60;
-        }
         private void Diseño_dgv(DataGridView dgv)
         {
             dgv.Columns[0].Width = 170;//departamento
-            dgv.Columns[1].Width = 50;//
-            dgv.Columns[2].Width = 60;//
-            dgv.Columns[3].Width = 80;//
+            dgv.Columns[1].Width = 50;//plan
+            dgv.Columns[2].Width = 60;//activos
+            dgv.Columns[3].Width = 60;//adtvo
+            dgv.Columns[4].Width = 80;//Matutino
+            dgv.Columns[5].Width = 80;//Vespertino
+            dgv.Columns[6].Width = 80;//Nocturno
+            dgv.Columns[7].Width = 60;//Total
         }
+        private void nuevo()
+        { //Reporte día de ayer
+            var ayer = DateTime.Today.AddDays(-1);
+            dtm_fecha.Text = ayer.ToString();
+            lbl_reporte.Text = "REPORTE DIA DE AYER";
+            Var = 2;
+            Llenar_dgv();
+            txt_depto.Visible = false;
+            Calcula_Total();
+            dgv_acumulado.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            dgv_acumulado.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+        }
+//Eventos
         private void Dgv_acumulado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -171,34 +229,45 @@ namespace CsPresentacion
                 txt_depto.Text = row.Cells["DEPARTAMENTO"].Value.ToString();
             }
         }
-        private void Dtm_fecha_ValueChanged(object sender, EventArgs e)
-        {
-            Var = 1;
-            Llenar_dgv();
-            Calcula_Total();
-            lbl_reporte.Text = "";
-        }
-        private void Btn_nuevo_Click(object sender, EventArgs e)
-        {
-            var ayer = DateTime.Today.AddDays(-1);
-            dtm_fecha.Text = ayer.ToString();
-            lbl_reporte.Text = "REPORTE DIA DE AYER";
-            Var = 2;
-            Llenar_dgv();    
-        }
         private void Dgv_acumulado_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgv_acumulado.Rows[e.RowIndex];
                 txt_depto.Text = row.Cells["DEPARTAMENTO"].Value.ToString();
-                Var = 0;
-                Llenar_dgv_secundario();
+               Llenar_informacion();
+                Llenar_informacion_totales();
+
+                groupBox1.Text = txt_depto.Text.ToString();
             }
         }
-        private void Btn_exportar_ant2_Click(object sender, EventArgs e)
+        private void Dtm_fecha_ValueChanged(object sender, EventArgs e)
+        {        
+        }
+        private void Dtm_fecha_ValueChanged_1(object sender, EventArgs e)
         {
-            Exportara_Exel();
+            Var = 1;
+            Llenar_dgv();
+            Calcula_Total();
+            lbl_reporte.Text = "";
+        }
+        private void Dgv_acumulado_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgv_acumulado.Columns[e.ColumnIndex].Name == "TOTAL")
+            {
+                if (e.Value.GetType() != typeof(System.DBNull))
+                {
+                    e.CellStyle.BackColor = Color.IndianRed;
+                }
+            }
+        }
+
+        private void Dgv_acumulado_DoubleClick(object sender, EventArgs e)
+        {
+            Detalle_incidencias inc = new Detalle_incidencias();
+            inc.dtm_fecha.Text = dtm_fecha.Text;
+            inc.txt_depto.Text = txt_depto.Text;
+            inc.ShowDialog();
         }
     }
 }
