@@ -16,13 +16,16 @@ namespace CsPresentacion
         {
             InitializeComponent();
         }
+
         public int Var;
-        public DateTime Fecha { get; set; }
+        public DateTime Fecha {get; set;}
         public String Depto;
+
         private void Frm_Rep_Historial_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'DS_Historico.SP_historico_personal' Puede moverla o quitarla según sea necesario.
             this.SP_historico_personalTableAdapter.Fill(this.DS_Historico.SP_historico_personal, Var, Fecha, Depto);
+
             this.reportViewer1.RefreshReport();
         }
     }

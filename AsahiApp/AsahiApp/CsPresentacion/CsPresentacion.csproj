@@ -93,11 +93,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Ausentismo Global.cs">
+    <Compile Include="DS_Ausentismo_Global.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Ausentismo_Global.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Ausentismo Global.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ausentismo Global.Designer.cs">
+    <Compile Include="Formularios\RH\Ausentismo Global.Designer.cs">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle_incidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detalle_incidencias.Designer.cs">
+      <DependentUpon>Detalle_incidencias.cs</DependentUpon>
     </Compile>
     <Compile Include="DS_Historico.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -120,12 +131,6 @@
     <Compile Include="Formularios\RH\Frm_Historico.Designer.cs">
       <DependentUpon>Frm_Historico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Rep_Historial_.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\RH\Frm_Rep_Historial_.Designer.cs">
-      <DependentUpon>Frm_Rep_Historial_.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\RH\Frm_Rotacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +142,12 @@
     </Compile>
     <Compile Include="Formularios\RH\Permisos_Autorizaciones.Designer.cs">
       <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RH\Frm_Rep_Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Frm_Rep_Historial.Designer.cs">
+      <DependentUpon>Frm_Rep_Historial.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Credencial_Visitantes.cs">
       <SubType>Form</SubType>
@@ -216,10 +227,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Mejoras_Anual2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Reporte_Anual_Mejoras.cs">
+    <Compile Include="Reportes\RH\Frm_Reporte_Anual_Mejoras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Reporte_Anual_Mejoras.Designer.cs">
+    <Compile Include="Reportes\RH\Frm_Reporte_Anual_Mejoras.Designer.cs">
       <DependentUpon>Frm_Reporte_Anual_Mejoras.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Permiso_Salida_Semana.cs">
@@ -424,6 +435,12 @@
     <Compile Include="Reportes\RH\Rotacion_Grafico.Designer.cs">
       <DependentUpon>Rotacion_Grafico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\RH\Rep_Ausentismo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Rep_Ausentismo.Designer.cs">
+      <DependentUpon>Rep_Ausentismo.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -463,20 +480,24 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Ausentismo Global.resx">
+    <EmbeddedResource Include="Ausentismo_Global.rdlc" />
+    <EmbeddedResource Include="Formularios\RH\Ausentismo Global.resx">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detalle_incidencias.resx">
+      <DependentUpon>Detalle_incidencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Historico.resx">
       <DependentUpon>Frm_Historico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_Rep_Historial_.resx">
-      <DependentUpon>Frm_Rep_Historial_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Rotacion.resx">
       <DependentUpon>Frm_Rotacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Permisos_Autorizaciones.resx">
       <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RH\Frm_Rep_Historial.resx">
+      <DependentUpon>Frm_Rep_Historial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Credencial_Visitantes.resx">
       <DependentUpon>Credencial_Visitantes.cs</DependentUpon>
@@ -503,7 +524,7 @@
     <EmbeddedResource Include="Reportes\RH\Contrato_Clave.resx">
       <DependentUpon>Contrato_Clave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Frm_Reporte_Anual_Mejoras.resx">
+    <EmbeddedResource Include="Reportes\RH\Frm_Reporte_Anual_Mejoras.resx">
       <DependentUpon>Frm_Reporte_Anual_Mejoras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mejoras_anual.rdlc" />
@@ -573,6 +594,9 @@
       <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte_Incapacidades.rdlc" />
+    <EmbeddedResource Include="Reportes\RH\Rep_Ausentismo.resx">
+      <DependentUpon>Rep_Ausentismo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rep_Ausentismos.rdlc" />
     <EmbeddedResource Include="Rep_bajas.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Finiquito.resx">
@@ -635,6 +659,17 @@
     </None>
     <None Include="DS_Ausentismos.xss">
       <DependentUpon>DS_Ausentismos.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Ausentismo_Global.xsc">
+      <DependentUpon>DS_Ausentismo_Global.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Ausentismo_Global.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Ausentismo_Global.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Ausentismo_Global.xss">
+      <DependentUpon>DS_Ausentismo_Global.xsd</DependentUpon>
     </None>
     <None Include="DS_Bajas.xsc">
       <DependentUpon>DS_Bajas.xsd</DependentUpon>

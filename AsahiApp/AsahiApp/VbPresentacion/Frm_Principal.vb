@@ -41,7 +41,7 @@ Public Class Frm_Principal
             BloquearPestañas()
             lstPer = NEmp.RecuperarPermisosUsuario(Me.cadenaConesExp, Me.emp)
             DesbloquearPestañas(lstPer)
-            'ElseIf Me.emp.TipoUsuario = 1 Then
+            ''ElseIf Me.emp.TipoUsuario = 1 Then
         End If
     End Sub
 #Region "Procesos"
@@ -74,6 +74,8 @@ Public Class Frm_Principal
         MasterPlanToolStripMenuItem.Enabled = False
         PlanToolStripMenuItem.Enabled = False
         PermisosYAutorizacionesToolStripMenuItem.Enabled = False
+        AusentismosGlobalToolStripMenuItem.Enabled = False
+
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
         For Each item In lstPer
@@ -106,7 +108,7 @@ Public Class Frm_Principal
                 Case "MasterPlanToolStripMenuItem" : MasterPlanToolStripMenuItem.Enabled = True
                 Case "PlanToolStripMenuItem" : PlanToolStripMenuItem.Enabled = True
                 Case "PermisosYAutorizacionesToolStripMenuItem" : PermisosYAutorizacionesToolStripMenuItem.Enabled = True
-
+                Case "AusentismosGlobalToolStripMenuItem" : AusentismosGlobalToolStripMenuItem.Enabled = True
             End Select
         Next
     End Sub
@@ -311,11 +313,9 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub RotaciónToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub FiniquitoToolStripMenuItem1_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub FiniquitoToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles FiniquitoToolStripMenuItem.Click
