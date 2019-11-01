@@ -24,6 +24,7 @@ Partial Class Frm_Gastos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Gastos))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Btn_Reporte = New System.Windows.Forms.Button()
         Me.Pct_Limpiar = New System.Windows.Forms.PictureBox()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Rdb_Japones = New System.Windows.Forms.RadioButton()
@@ -138,6 +139,7 @@ Partial Class Frm_Gastos
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Btn_Reporte)
         Me.Panel1.Controls.Add(Me.Pct_Limpiar)
         Me.Panel1.Controls.Add(Me.Panel10)
         Me.Panel1.Controls.Add(Me.Lbl_Año)
@@ -151,6 +153,21 @@ Partial Class Frm_Gastos
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1269, 48)
         Me.Panel1.TabIndex = 0
+        '
+        'Btn_Reporte
+        '
+        Me.Btn_Reporte.BackColor = System.Drawing.Color.SteelBlue
+        Me.Btn_Reporte.BackgroundImage = Global.Presentacion.My.Resources.Resources.report
+        Me.Btn_Reporte.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Btn_Reporte.FlatAppearance.BorderSize = 0
+        Me.Btn_Reporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy
+        Me.Btn_Reporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue
+        Me.Btn_Reporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Btn_Reporte.Location = New System.Drawing.Point(534, 8)
+        Me.Btn_Reporte.Name = "Btn_Reporte"
+        Me.Btn_Reporte.Size = New System.Drawing.Size(33, 33)
+        Me.Btn_Reporte.TabIndex = 9
+        Me.Btn_Reporte.UseVisualStyleBackColor = False
         '
         'Pct_Limpiar
         '
@@ -299,9 +316,10 @@ Partial Class Frm_Gastos
         Me.Btn_Regresar.BackColor = System.Drawing.SystemColors.Control
         Me.Btn_Regresar.BackgroundImage = Global.Presentacion.My.Resources.Resources.go_back256_24856
         Me.Btn_Regresar.Enabled = False
+        Me.Btn_Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Btn_Regresar.Location = New System.Drawing.Point(28, 169)
         Me.Btn_Regresar.Name = "Btn_Regresar"
-        Me.Btn_Regresar.Size = New System.Drawing.Size(50, 55)
+        Me.Btn_Regresar.Size = New System.Drawing.Size(50, 49)
         Me.Btn_Regresar.TabIndex = 9
         Me.Btn_Regresar.UseVisualStyleBackColor = False
         '
@@ -1186,4 +1204,5 @@ Partial Class Frm_Gastos
     Friend WithEvents Lbl_TADif As Label
     Friend WithEvents Lbl_TAReal As Label
     Friend WithEvents Lbl_TAPLan As Label
+    Friend WithEvents Btn_Reporte As Button
 End Class

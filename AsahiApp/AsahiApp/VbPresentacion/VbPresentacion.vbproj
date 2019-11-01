@@ -533,6 +533,8 @@
     <None Include="Resources\reportes.png" />
     <None Include="Resources\New.png" />
     <None Include="Resources\go-back256_24856.png" />
+    <None Include="Resources\020_293_report_diagram_analytics_analysis_hands-512.png" />
+    <None Include="Resources\report.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

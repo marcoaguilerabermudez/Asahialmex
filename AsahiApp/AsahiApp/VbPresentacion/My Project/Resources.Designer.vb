@@ -63,6 +63,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property _020_293_report_diagram_analytics_analysis_hands_512() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("020_293_report_diagram_analytics_analysis_hands-512", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property _1486504328_bullet_list_menu_lines_points_items_options_81334() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("1486504328-bullet-list-menu-lines-points-items-options_81334", resourceCulture)
@@ -206,6 +216,16 @@ Namespace My.Resources
         Friend ReadOnly Property prenomina() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("prenomina", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property report() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("report", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
