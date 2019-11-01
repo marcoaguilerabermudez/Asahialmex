@@ -37,23 +37,23 @@ C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Deb
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.dll
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.xml
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.pdb
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Datos.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Datos.pdb
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Datos.xml
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Clases.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsClases.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsDatos.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsNegocio.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsClases.pdb
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsDatos.pdb
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsNegocio.pdb
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Clases.pdb
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Clases.xml
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbprojAssemblyReference.cache
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.Resources.resources
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbproj.GenerateResource.cache
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbproj.CoreCompileInputs.cache
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbproj.CopyComplete
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.xml
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.pdb
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Datos.dll
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Datos.pdb
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Datos.xml
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Clases.dll
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsClases.dll
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsDatos.dll
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsNegocio.dll
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsClases.pdb
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsDatos.pdb
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\CsNegocio.pdb
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Clases.pdb
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\bin\Debug\Clases.xml
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbprojAssemblyReference.cache
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.Resources.resources
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbproj.GenerateResource.cache
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbproj.CoreCompileInputs.cache
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbproj.CopyComplete
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.dll
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.xml
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.pdb
