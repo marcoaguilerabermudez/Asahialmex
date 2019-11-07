@@ -207,6 +207,12 @@
     <Compile Include="Frm_OpcionesReportes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Finanzas\Frm_PlanGastos.Designer.vb">
+      <DependentUpon>Frm_PlanGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Frm_PlanGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </Compile>
@@ -327,6 +333,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CapturaOEE.resx">
       <DependentUpon>CapturaOEE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\Frm_PlanGastos.resx">
+      <DependentUpon>Frm_PlanGastos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Acerca.resx">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
@@ -553,6 +562,7 @@
     <None Include="Resources\go-back256_24856.png" />
     <None Include="Resources\020_293_report_diagram_analytics_analysis_hands-512.png" />
     <None Include="Resources\report.png" />
+    <None Include="Resources\1492533500-arrow-41_83313.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

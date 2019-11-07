@@ -37,4 +37,12 @@ Public Class NGastos
             Return dGast.RecuperarDetallesGastos(cadenaConex, mes, año, fi, ff, cuenta, idioma, sn)
         End If
     End Function
+    Public Function RecuperarCuentasGeneral(ByVal cadenaConex As String, ByVal idioma As Integer) As LGastos
+        Dim DGast As New DGastos()
+        Return DGast.RecuperarCuentasGeneral(cadenaConex, idioma)
+    End Function
+    Public Function RecuperarListaCtas(ByVal cadenaConex As String, ByVal cta As Integer) As LGastos
+        Dim DGast As New DGastos()
+        Return DGast.RecuperarListaCtas(cadenaConex, cta)
+    End Function
 End Class
