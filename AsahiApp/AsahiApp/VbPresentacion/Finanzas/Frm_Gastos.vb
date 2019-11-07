@@ -417,21 +417,21 @@ Public Class Frm_Gastos
             Select Case item.SegmNegocio
                 Case 4
                     Lbl_MontoFF1.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
-                    Lbl_CantFF1.Text = Format(item.Plan, "#,###,##")
+                    Lbl_CantFF1.Text = Format(item.Plan, "#,###,##0.00")
                 Case 6
                     Lbl_MontoMF1.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
-                    Lbl_CantMF1.Text = Format(item.Plan, "#,###,##")
+                    Lbl_CantMF1.Text = Format(item.Plan, "#,###,##0.00")
                 Case 11
                     Lbl_MontoFF2.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
-                    Lbl_CantFF2.Text = Format(item.Plan, "#,###,##")
+                    Lbl_CantFF2.Text = Format(item.Plan, "#,###,##0.00")
                 Case 12
                     Lbl_MontoMF2.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
-                    Lbl_CantMF2.Text = Format(item.Plan, "#,###,##")
+                    Lbl_CantMF2.Text = Format(item.Plan, "#,###,##0.00")
             End Select
             smaM += item.PlanMonto
             smaC += item.Plan
             Lbl_MontoActualReal.Text = Format(item.ActualMonto, "$ #,###,##0.00")
-            Lbl_CantActualReal.Text = Format(item.Actual, "#,###,##")
+            Lbl_CantActualReal.Text = Format(item.Actual, "#,###,##0.00")
         Next
         Lbl_MontoPlan.Text = Format(smaM * 20, "$ #,###,##0.00")
         Lbl_CantPlan.Text = Format(smaC, "#,###,##")
@@ -481,7 +481,7 @@ Public Class Frm_Gastos
             End If
 
             If sn < 100 Then
-                lstGast = NGast.RecuperarPlanGastosDpto(Me.cadenaConex, mes, año, fi, ff, sn, Me.idioma)
+                lstGast = NGast.RecuperarPlanGastosDpto(Me.cadenaConex, mes, año, fi, ff, sn, cuenta, Me.idioma)
             ElseIf sn = 100 Then
                 lstGast = NGast.RecuperarPlanGastos(Me.cadenaConex, mes, año, fi, ff, cuenta, Me.idioma)
             End If
