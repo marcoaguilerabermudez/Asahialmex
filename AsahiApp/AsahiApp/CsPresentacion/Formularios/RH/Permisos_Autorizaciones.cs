@@ -29,12 +29,15 @@ namespace CsPresentacion
         }
         //Variables
         int indice = 0;
+        SqlCommand cmd;
+        SqlDataReader dr;
 
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
         //Principal
         private void Permisos_Autorizaciones_Load(object sender, EventArgs e)
         {
             nuevo();
+            autocompletar_responsable(txt_nombre);
         }
         //Métodos
         private void Diseño_Grid(DataGridView dgv)
@@ -47,6 +50,30 @@ namespace CsPresentacion
             dgv.Columns[5].Width = 160;
             dgv.Columns[6].Width = 140;
         }
+        private void cargar_clave()
+        {
+            try
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                String strSql;
+                strSql = "SELECT RTRIM(CLAVE)AS 'CLAVE', 'VIGENCIA' FROM [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] WHERE RTRIM(RTRIM(NOMBREN)+ ' '+ RTRIM(NOMBREP)+ ' ' + RTRIM(NOMBREM)) = @Nombre";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+                da.SelectCommand.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txt_nombre.Text;
+                da.Fill(dt);
+                con.Close();
+                if (dt.Rows.Count > 0)
+                {
+                    txt_clave.Text = dt.Rows[0]["CLAVE"].ToString();
+                    lbl_estado.Text = dt.Rows[0]["VIGENCIA"].ToString();
+
+                }
+            }
+            catch
+            {
+            }
+        }
+
         private void Mostrar_Grid()
         {
             try
@@ -75,6 +102,27 @@ namespace CsPresentacion
                 MessageBox.Show(ex.Message);
             }
         }
+        public void autocompletar_responsable(TextBox cajaTexto)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT RTRIM(RTRIM(NOMBREN)+ ' '+ RTRIM(NOMBREP)+ ' ' + RTRIM(NOMBREM)) as 'NOMBRE' FROM [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] WHERE VIGENCIA = 'VIGENTE'  AND NOMBREN  LIKE '%' + "+ txt_nombre.Text +" + '%'  order by NOMBRE ASC", con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    cajaTexto.AutoCompleteCustomSource.Add(dr["NOMBRE"].ToString());
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudo autcompletar nombre " + error.ToString());
+            }
+        }
+
+
         private void Eliminar()
         {
             try
@@ -604,6 +652,26 @@ namespace CsPresentacion
             {
                 txt_autorizado.Text = "0";
             }
+        }
+
+        private void Txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                cargar_clave();
+                //Mostrar_Grid();
+                //btn_exportar.Enabled = true;
+                //btn_siguiente.Enabled = true;
+                //btn_ultimo.Enabled = true;
+                //pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
+                //lbl_mod.Text = "1";
+                //dtm_fecha.Focus();
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            cargar_clave();
         }
     }
 }
