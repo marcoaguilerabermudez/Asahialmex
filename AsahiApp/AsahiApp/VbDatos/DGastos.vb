@@ -37,7 +37,7 @@ Public Class DGastos
         Return lstGastos
     End Function
     Public Function RecuperarPlanGastosDpto(ByVal cadenaConex As String, ByVal mes As Integer, ByVal año As Integer, ByVal fi As Date, ByVal ff As Date,
-                                            ByVal clave As Integer, ByVal idioma As Integer) As LGastos
+                                            ByVal clave As Integer, ByVal idCtg As Integer, ByVal idioma As Integer) As LGastos
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstGastos As New LGastos()
         Try
@@ -48,6 +48,7 @@ Public Class DGastos
             query.Parameters.AddWithValue("@fi", fi)
             query.Parameters.AddWithValue("@ff", ff)
             query.Parameters.AddWithValue("@segneg", clave)
+            query.Parameters.AddWithValue("@idcg", idCtg)
             query.Parameters.AddWithValue("@idioma", idioma)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 60
@@ -203,5 +204,59 @@ Public Class DGastos
             oCon.Dispose()
         End Try
         Return lstGastos
+    End Function
+    Public Function RecuperarCuentasGeneral(ByVal cadenaConex As String, ByVal idioma As Integer) As LGastos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstGst As New LGastos()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("CtaGral_Recuperar", oCon)
+            query.Parameters.AddWithValue("@idioma", idioma)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim gst As New Gastos()
+                gst.Cuenta = dr("Codigo").ToString
+                gst.NombreCuenta = dr("Descripcion").ToString
+                lstGst.Add(gst)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstGst
+    End Function
+    Public Function RecuperarListaCtas(ByVal cadenaConex As String, ByVal cta As Integer) As LGastos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstGst As New LGastos()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Cta_RecuperarListaCtas", oCon)
+            query.Parameters.AddWithValue("@CtaGrl", cta)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim gst As New Gastos()
+                gst.Cuenta = dr("Codigo").ToString
+                gst.NombreCuenta = dr("Nombre").ToString
+                lstGst.Add(gst)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstGst
     End Function
 End Class

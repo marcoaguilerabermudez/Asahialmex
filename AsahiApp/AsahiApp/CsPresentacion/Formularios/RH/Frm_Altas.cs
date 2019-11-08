@@ -365,16 +365,7 @@ namespace CsPresentacion
                 MessageBox.Show("Es necesario capturar el nombre de Empleado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_nombre.Focus();
             }
-            else if (string.IsNullOrEmpty(txt_paterno.Text))
-            {
-                MessageBox.Show("Es necesario capturar el apellido Paterno", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_paterno.Focus();
-            }
-            else if (string.IsNullOrEmpty(txt_materno.Text))
-            {
-                MessageBox.Show("Es necesario capturar el apellido Materno", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_materno.Focus();
-            }
+         
             else if (string.IsNullOrEmpty(cmb_departamento.Text))
             {
                 MessageBox.Show("Es necesario capturar el Departamento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
