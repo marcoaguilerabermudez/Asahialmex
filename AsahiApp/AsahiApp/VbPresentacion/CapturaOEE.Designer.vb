@@ -48,6 +48,9 @@ Partial Class CapturaOEE
         Me.lbl_v2 = New System.Windows.Forms.Label()
         Me.lbl_v1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lbl_t9 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
         Me.lbl_t5 = New System.Windows.Forms.Label()
         Me.lbl_t4 = New System.Windows.Forms.Label()
         Me.lbl_t3 = New System.Windows.Forms.Label()
@@ -140,15 +143,6 @@ Partial Class CapturaOEE
         Me.lbl_cp3 = New System.Windows.Forms.Label()
         Me.lbl_cp2 = New System.Windows.Forms.Label()
         Me.lbl_cp1 = New System.Windows.Forms.Label()
-        Me.lbl_tp9 = New System.Windows.Forms.Label()
-        Me.lbl_tp8 = New System.Windows.Forms.Label()
-        Me.lbl_tp7 = New System.Windows.Forms.Label()
-        Me.lbl_tp6 = New System.Windows.Forms.Label()
-        Me.lbl_tp5 = New System.Windows.Forms.Label()
-        Me.lbl_tp4 = New System.Windows.Forms.Label()
-        Me.lbl_tp3 = New System.Windows.Forms.Label()
-        Me.lbl_tp2 = New System.Windows.Forms.Label()
-        Me.lbl_tp1 = New System.Windows.Forms.Label()
         Me.btn_1 = New System.Windows.Forms.Button()
         Me.btn_2 = New System.Windows.Forms.Button()
         Me.btn_3 = New System.Windows.Forms.Button()
@@ -158,14 +152,51 @@ Partial Class CapturaOEE
         Me.btn_7 = New System.Windows.Forms.Button()
         Me.btn_8 = New System.Windows.Forms.Button()
         Me.btn_9 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btn_guardar = New System.Windows.Forms.Button()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.cbx_cavidad = New System.Windows.Forms.ComboBox()
         Me.Label38 = New System.Windows.Forms.Label()
+        Me.ok9 = New System.Windows.Forms.Label()
+        Me.ok8 = New System.Windows.Forms.Label()
+        Me.ok7 = New System.Windows.Forms.Label()
+        Me.ok6 = New System.Windows.Forms.Label()
+        Me.ok5 = New System.Windows.Forms.Label()
+        Me.ok4 = New System.Windows.Forms.Label()
+        Me.ok3 = New System.Windows.Forms.Label()
+        Me.ok2 = New System.Windows.Forms.Label()
+        Me.ok1 = New System.Windows.Forms.Label()
+        Me.ng9 = New System.Windows.Forms.Label()
+        Me.ng8 = New System.Windows.Forms.Label()
+        Me.ng7 = New System.Windows.Forms.Label()
+        Me.ng6 = New System.Windows.Forms.Label()
+        Me.ng5 = New System.Windows.Forms.Label()
+        Me.ng4 = New System.Windows.Forms.Label()
+        Me.ng3 = New System.Windows.Forms.Label()
+        Me.ng2 = New System.Windows.Forms.Label()
+        Me.ng1 = New System.Windows.Forms.Label()
+        Me.lbl_tp9 = New System.Windows.Forms.Label()
+        Me.lbl_tp8 = New System.Windows.Forms.Label()
+        Me.lbl_tp7 = New System.Windows.Forms.Label()
+        Me.lbl_tp6 = New System.Windows.Forms.Label()
+        Me.lbl_tp5 = New System.Windows.Forms.Label()
+        Me.lbl_tp4 = New System.Windows.Forms.Label()
+        Me.lbl_tp3 = New System.Windows.Forms.Label()
+        Me.lbl_tp2 = New System.Windows.Forms.Label()
+        Me.lbl_tp1 = New System.Windows.Forms.Label()
+        Me.dtgvp = New System.Windows.Forms.DataGridView()
+        Me.Defecto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Valor2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Hora = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_hora = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_error = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label59 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_pieza
@@ -210,16 +241,16 @@ Partial Class CapturaOEE
         '
         Me.cbx_proceso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_proceso.FormattingEnabled = True
-        Me.cbx_proceso.Items.AddRange(New Object() {"FUNDICIÓN", "MAQUINADO"})
-        Me.cbx_proceso.Location = New System.Drawing.Point(166, 26)
+        Me.cbx_proceso.Items.AddRange(New Object() {"FUNDICION", "MAQUINADO", "LEAKTEST", "ENSAMBLE"})
+        Me.cbx_proceso.Location = New System.Drawing.Point(132, 26)
         Me.cbx_proceso.Name = "cbx_proceso"
-        Me.cbx_proceso.Size = New System.Drawing.Size(95, 21)
+        Me.cbx_proceso.Size = New System.Drawing.Size(118, 21)
         Me.cbx_proceso.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(163, 10)
+        Me.Label2.Location = New System.Drawing.Point(129, 10)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 13)
         Me.Label2.TabIndex = 4
@@ -257,7 +288,6 @@ Partial Class CapturaOEE
         '
         Me.cbx_molde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_molde.FormattingEnabled = True
-        Me.cbx_molde.Items.AddRange(New Object() {"1", "2", "3"})
         Me.cbx_molde.Location = New System.Drawing.Point(618, 28)
         Me.cbx_molde.Name = "cbx_molde"
         Me.cbx_molde.Size = New System.Drawing.Size(96, 21)
@@ -422,6 +452,9 @@ Partial Class CapturaOEE
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lbl_t9)
+        Me.GroupBox1.Controls.Add(Me.Label40)
+        Me.GroupBox1.Controls.Add(Me.Label41)
         Me.GroupBox1.Controls.Add(Me.lbl_t5)
         Me.GroupBox1.Controls.Add(Me.lbl_t4)
         Me.GroupBox1.Controls.Add(Me.lbl_t3)
@@ -439,15 +472,45 @@ Partial Class CapturaOEE
         Me.GroupBox1.Controls.Add(Me.Label21)
         Me.GroupBox1.Location = New System.Drawing.Point(482, 53)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(499, 118)
+        Me.GroupBox1.Size = New System.Drawing.Size(600, 118)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
+        '
+        'lbl_t9
+        '
+        Me.lbl_t9.AutoSize = True
+        Me.lbl_t9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_t9.Location = New System.Drawing.Point(129, 89)
+        Me.lbl_t9.Name = "lbl_t9"
+        Me.lbl_t9.Size = New System.Drawing.Size(15, 16)
+        Me.lbl_t9.TabIndex = 33
+        Me.lbl_t9.Text = "0"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(124, 61)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(31, 15)
+        Me.Label40.TabIndex = 32
+        Me.Label40.Text = "捨打"
+        '
+        'Label41
+        '
+        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.Location = New System.Drawing.Point(87, 11)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(107, 45)
+        Me.Label41.TabIndex = 31
+        Me.Label41.Text = "Inyección de prueba"
+        Me.Label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lbl_t5
         '
         Me.lbl_t5.AutoSize = True
         Me.lbl_t5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_t5.Location = New System.Drawing.Point(434, 89)
+        Me.lbl_t5.Location = New System.Drawing.Point(534, 89)
         Me.lbl_t5.Name = "lbl_t5"
         Me.lbl_t5.Size = New System.Drawing.Size(15, 16)
         Me.lbl_t5.TabIndex = 30
@@ -457,7 +520,7 @@ Partial Class CapturaOEE
         '
         Me.lbl_t4.AutoSize = True
         Me.lbl_t4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_t4.Location = New System.Drawing.Point(323, 89)
+        Me.lbl_t4.Location = New System.Drawing.Point(423, 89)
         Me.lbl_t4.Name = "lbl_t4"
         Me.lbl_t4.Size = New System.Drawing.Size(15, 16)
         Me.lbl_t4.TabIndex = 29
@@ -467,7 +530,7 @@ Partial Class CapturaOEE
         '
         Me.lbl_t3.AutoSize = True
         Me.lbl_t3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_t3.Location = New System.Drawing.Point(211, 89)
+        Me.lbl_t3.Location = New System.Drawing.Point(311, 89)
         Me.lbl_t3.Name = "lbl_t3"
         Me.lbl_t3.Size = New System.Drawing.Size(15, 16)
         Me.lbl_t3.TabIndex = 28
@@ -477,7 +540,7 @@ Partial Class CapturaOEE
         '
         Me.lbl_t2.AutoSize = True
         Me.lbl_t2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_t2.Location = New System.Drawing.Point(122, 89)
+        Me.lbl_t2.Location = New System.Drawing.Point(222, 89)
         Me.lbl_t2.Name = "lbl_t2"
         Me.lbl_t2.Size = New System.Drawing.Size(15, 16)
         Me.lbl_t2.TabIndex = 27
@@ -497,7 +560,7 @@ Partial Class CapturaOEE
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(426, 61)
+        Me.Label22.Location = New System.Drawing.Point(526, 61)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(43, 15)
         Me.Label22.TabIndex = 25
@@ -506,7 +569,7 @@ Partial Class CapturaOEE
         'Label23
         '
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(405, 11)
+        Me.Label23.Location = New System.Drawing.Point(505, 11)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(88, 47)
         Me.Label23.TabIndex = 24
@@ -517,7 +580,7 @@ Partial Class CapturaOEE
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(302, 59)
+        Me.Label14.Location = New System.Drawing.Point(402, 59)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(67, 15)
         Me.Label14.TabIndex = 23
@@ -537,7 +600,7 @@ Partial Class CapturaOEE
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(198, 59)
+        Me.Label16.Location = New System.Drawing.Point(298, 59)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(55, 15)
         Me.Label16.TabIndex = 22
@@ -557,7 +620,7 @@ Partial Class CapturaOEE
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(104, 61)
+        Me.Label18.Location = New System.Drawing.Point(204, 61)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(55, 15)
         Me.Label18.TabIndex = 21
@@ -566,7 +629,7 @@ Partial Class CapturaOEE
         'Label19
         '
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(80, 11)
+        Me.Label19.Location = New System.Drawing.Point(180, 11)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(107, 45)
         Me.Label19.TabIndex = 18
@@ -576,7 +639,7 @@ Partial Class CapturaOEE
         'Label20
         '
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(284, 12)
+        Me.Label20.Location = New System.Drawing.Point(384, 12)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(115, 44)
         Me.Label20.TabIndex = 20
@@ -586,7 +649,7 @@ Partial Class CapturaOEE
         'Label21
         '
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(165, 11)
+        Me.Label21.Location = New System.Drawing.Point(265, 11)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(120, 47)
         Me.Label21.TabIndex = 19
@@ -618,7 +681,7 @@ Partial Class CapturaOEE
         Me.GroupBox3.Controls.Add(Me.Label33)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 177)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(969, 117)
+        Me.GroupBox3.Size = New System.Drawing.Size(1070, 117)
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
         '
@@ -626,7 +689,7 @@ Partial Class CapturaOEE
         '
         Me.lbl_d7.AutoSize = True
         Me.lbl_d7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_d7.Location = New System.Drawing.Point(907, 89)
+        Me.lbl_d7.Location = New System.Drawing.Point(982, 89)
         Me.lbl_d7.Name = "lbl_d7"
         Me.lbl_d7.Size = New System.Drawing.Size(15, 16)
         Me.lbl_d7.TabIndex = 36
@@ -636,7 +699,7 @@ Partial Class CapturaOEE
         '
         Me.lbl_d6.AutoSize = True
         Me.lbl_d6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_d6.Location = New System.Drawing.Point(757, 89)
+        Me.lbl_d6.Location = New System.Drawing.Point(832, 89)
         Me.lbl_d6.Name = "lbl_d6"
         Me.lbl_d6.Size = New System.Drawing.Size(15, 16)
         Me.lbl_d6.TabIndex = 35
@@ -646,7 +709,7 @@ Partial Class CapturaOEE
         '
         Me.lbl_d5.AutoSize = True
         Me.lbl_d5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_d5.Location = New System.Drawing.Point(601, 91)
+        Me.lbl_d5.Location = New System.Drawing.Point(676, 91)
         Me.lbl_d5.Name = "lbl_d5"
         Me.lbl_d5.Size = New System.Drawing.Size(15, 16)
         Me.lbl_d5.TabIndex = 34
@@ -656,7 +719,7 @@ Partial Class CapturaOEE
         '
         Me.lbl_d4.AutoSize = True
         Me.lbl_d4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_d4.Location = New System.Drawing.Point(434, 91)
+        Me.lbl_d4.Location = New System.Drawing.Point(509, 91)
         Me.lbl_d4.Name = "lbl_d4"
         Me.lbl_d4.Size = New System.Drawing.Size(15, 16)
         Me.lbl_d4.TabIndex = 33
@@ -666,7 +729,7 @@ Partial Class CapturaOEE
         '
         Me.lbl_d3.AutoSize = True
         Me.lbl_d3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_d3.Location = New System.Drawing.Point(292, 91)
+        Me.lbl_d3.Location = New System.Drawing.Point(367, 91)
         Me.lbl_d3.Name = "lbl_d3"
         Me.lbl_d3.Size = New System.Drawing.Size(15, 16)
         Me.lbl_d3.TabIndex = 32
@@ -676,7 +739,7 @@ Partial Class CapturaOEE
         '
         Me.lbl_d2.AutoSize = True
         Me.lbl_d2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_d2.Location = New System.Drawing.Point(156, 91)
+        Me.lbl_d2.Location = New System.Drawing.Point(231, 91)
         Me.lbl_d2.Name = "lbl_d2"
         Me.lbl_d2.Size = New System.Drawing.Size(15, 16)
         Me.lbl_d2.TabIndex = 31
@@ -686,7 +749,7 @@ Partial Class CapturaOEE
         '
         Me.lbl_d1.AutoSize = True
         Me.lbl_d1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_d1.Location = New System.Drawing.Point(43, 91)
+        Me.lbl_d1.Location = New System.Drawing.Point(118, 91)
         Me.lbl_d1.Name = "lbl_d1"
         Me.lbl_d1.Size = New System.Drawing.Size(15, 16)
         Me.lbl_d1.TabIndex = 30
@@ -696,7 +759,7 @@ Partial Class CapturaOEE
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(890, 55)
+        Me.Label34.Location = New System.Drawing.Point(965, 55)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(55, 15)
         Me.Label34.TabIndex = 29
@@ -705,7 +768,7 @@ Partial Class CapturaOEE
         'Label35
         '
         Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(876, 10)
+        Me.Label35.Location = New System.Drawing.Point(951, 10)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(83, 42)
         Me.Label35.TabIndex = 28
@@ -716,7 +779,7 @@ Partial Class CapturaOEE
         '
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(739, 55)
+        Me.Label36.Location = New System.Drawing.Point(814, 55)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(55, 15)
         Me.Label36.TabIndex = 27
@@ -725,7 +788,7 @@ Partial Class CapturaOEE
         'Label37
         '
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.Location = New System.Drawing.Point(720, 11)
+        Me.Label37.Location = New System.Drawing.Point(795, 11)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(97, 41)
         Me.Label37.TabIndex = 26
@@ -736,7 +799,7 @@ Partial Class CapturaOEE
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(585, 55)
+        Me.Label24.Location = New System.Drawing.Point(660, 55)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(49, 15)
         Me.Label24.TabIndex = 25
@@ -745,7 +808,7 @@ Partial Class CapturaOEE
         'Label25
         '
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(556, 13)
+        Me.Label25.Location = New System.Drawing.Point(631, 13)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(101, 36)
         Me.Label25.TabIndex = 24
@@ -756,7 +819,7 @@ Partial Class CapturaOEE
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(415, 55)
+        Me.Label26.Location = New System.Drawing.Point(490, 55)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(73, 15)
         Me.Label26.TabIndex = 23
@@ -765,7 +828,7 @@ Partial Class CapturaOEE
         'Label27
         '
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(5, 8)
+        Me.Label27.Location = New System.Drawing.Point(80, 8)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(99, 36)
         Me.Label27.TabIndex = 12
@@ -776,7 +839,7 @@ Partial Class CapturaOEE
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(273, 55)
+        Me.Label28.Location = New System.Drawing.Point(348, 55)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(73, 15)
         Me.Label28.TabIndex = 22
@@ -786,7 +849,7 @@ Partial Class CapturaOEE
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(26, 55)
+        Me.Label29.Location = New System.Drawing.Point(101, 55)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(55, 15)
         Me.Label29.TabIndex = 13
@@ -796,7 +859,7 @@ Partial Class CapturaOEE
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(150, 55)
+        Me.Label30.Location = New System.Drawing.Point(225, 55)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(31, 15)
         Me.Label30.TabIndex = 21
@@ -805,17 +868,17 @@ Partial Class CapturaOEE
         'Label31
         '
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(113, 13)
+        Me.Label31.Location = New System.Drawing.Point(188, 13)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(110, 36)
         Me.Label31.TabIndex = 18
-        Me.Label31.Text = "Cambio de Jig" & Global.Microsoft.VisualBasic.ChrW(9)
+        Me.Label31.Text = "Cambio de Jig / Molde" & Global.Microsoft.VisualBasic.ChrW(9)
         Me.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label32
         '
         Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(395, 12)
+        Me.Label32.Location = New System.Drawing.Point(470, 12)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(106, 36)
         Me.Label32.TabIndex = 20
@@ -825,7 +888,7 @@ Partial Class CapturaOEE
         'Label33
         '
         Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(250, 13)
+        Me.Label33.Location = New System.Drawing.Point(325, 13)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(120, 36)
         Me.Label33.TabIndex = 19
@@ -834,8 +897,8 @@ Partial Class CapturaOEE
         '
         'Label53
         '
-        Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label53.Location = New System.Drawing.Point(14, 318)
+        Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label53.Location = New System.Drawing.Point(5, 318)
         Me.Label53.Name = "Label53"
         Me.Label53.Size = New System.Drawing.Size(57, 30)
         Me.Label53.TabIndex = 16
@@ -845,10 +908,10 @@ Partial Class CapturaOEE
         'Label54
         '
         Me.Label54.AutoSize = True
-        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label54.Location = New System.Drawing.Point(30, 344)
+        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label54.Location = New System.Drawing.Point(21, 344)
         Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(23, 12)
+        Me.Label54.Size = New System.Drawing.Size(31, 15)
         Me.Label54.TabIndex = 17
         Me.Label54.Text = "時間"
         '
@@ -936,19 +999,19 @@ Partial Class CapturaOEE
         'Label64
         '
         Me.Label64.AutoSize = True
-        Me.Label64.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label64.Location = New System.Drawing.Point(94, 350)
+        Me.Label64.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label64.Location = New System.Drawing.Point(80, 350)
         Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(41, 12)
+        Me.Label64.Size = New System.Drawing.Size(55, 15)
         Me.Label64.TabIndex = 28
         Me.Label64.Text = "計画停止"
         '
         'Label65
         '
-        Me.Label65.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label65.Location = New System.Drawing.Point(79, 320)
+        Me.Label65.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label65.Location = New System.Drawing.Point(65, 297)
         Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(73, 29)
+        Me.Label65.Size = New System.Drawing.Size(84, 52)
         Me.Label65.TabIndex = 27
         Me.Label65.Text = "Tiempo de paro planeado"
         Me.Label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -956,19 +1019,19 @@ Partial Class CapturaOEE
         'Label75
         '
         Me.Label75.AutoSize = True
-        Me.Label75.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label75.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label75.Location = New System.Drawing.Point(169, 350)
         Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(45, 12)
+        Me.Label75.Size = New System.Drawing.Size(60, 15)
         Me.Label75.TabIndex = 39
         Me.Label75.Text = "時間当たり"
         '
         'Label76
         '
-        Me.Label76.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label76.Location = New System.Drawing.Point(154, 320)
+        Me.Label76.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label76.Location = New System.Drawing.Point(154, 297)
         Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(73, 29)
+        Me.Label76.Size = New System.Drawing.Size(82, 52)
         Me.Label76.TabIndex = 38
         Me.Label76.Text = "Cantidad planeada de OK por hora"
         Me.Label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -976,19 +1039,19 @@ Partial Class CapturaOEE
         'Label86
         '
         Me.Label86.AutoSize = True
-        Me.Label86.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label86.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label86.Location = New System.Drawing.Point(260, 350)
         Me.Label86.Name = "Label86"
-        Me.Label86.Size = New System.Drawing.Size(32, 12)
+        Me.Label86.Size = New System.Drawing.Size(43, 15)
         Me.Label86.TabIndex = 50
         Me.Label86.Text = "払出数"
         '
         'Label87
         '
-        Me.Label87.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label87.Location = New System.Drawing.Point(242, 320)
+        Me.Label87.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label87.Location = New System.Drawing.Point(242, 297)
         Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(73, 29)
+        Me.Label87.Size = New System.Drawing.Size(73, 52)
         Me.Label87.TabIndex = 49
         Me.Label87.Text = "Cantidad de cajas/ Pallets"
         Me.Label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -996,17 +1059,17 @@ Partial Class CapturaOEE
         'Label106
         '
         Me.Label106.AutoSize = True
-        Me.Label106.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label106.Location = New System.Drawing.Point(330, 350)
+        Me.Label106.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label106.Location = New System.Drawing.Point(351, 350)
         Me.Label106.Name = "Label106"
-        Me.Label106.Size = New System.Drawing.Size(23, 12)
+        Me.Label106.Size = New System.Drawing.Size(31, 15)
         Me.Label106.TabIndex = 61
         Me.Label106.Text = "実績"
         '
         'Label107
         '
-        Me.Label107.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label107.Location = New System.Drawing.Point(309, 320)
+        Me.Label107.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label107.Location = New System.Drawing.Point(330, 320)
         Me.Label107.Name = "Label107"
         Me.Label107.Size = New System.Drawing.Size(73, 29)
         Me.Label107.TabIndex = 60
@@ -1015,7 +1078,7 @@ Partial Class CapturaOEE
         '
         'txt_1
         '
-        Me.txt_1.Location = New System.Drawing.Point(326, 370)
+        Me.txt_1.Location = New System.Drawing.Point(347, 370)
         Me.txt_1.Name = "txt_1"
         Me.txt_1.Size = New System.Drawing.Size(36, 20)
         Me.txt_1.TabIndex = 62
@@ -1024,7 +1087,7 @@ Partial Class CapturaOEE
         '
         'txt_2
         '
-        Me.txt_2.Location = New System.Drawing.Point(326, 398)
+        Me.txt_2.Location = New System.Drawing.Point(347, 398)
         Me.txt_2.Name = "txt_2"
         Me.txt_2.Size = New System.Drawing.Size(36, 20)
         Me.txt_2.TabIndex = 63
@@ -1033,7 +1096,7 @@ Partial Class CapturaOEE
         '
         'txt_4
         '
-        Me.txt_4.Location = New System.Drawing.Point(326, 450)
+        Me.txt_4.Location = New System.Drawing.Point(347, 450)
         Me.txt_4.Name = "txt_4"
         Me.txt_4.Size = New System.Drawing.Size(36, 20)
         Me.txt_4.TabIndex = 65
@@ -1042,7 +1105,7 @@ Partial Class CapturaOEE
         '
         'txt_3
         '
-        Me.txt_3.Location = New System.Drawing.Point(326, 424)
+        Me.txt_3.Location = New System.Drawing.Point(347, 424)
         Me.txt_3.Name = "txt_3"
         Me.txt_3.Size = New System.Drawing.Size(36, 20)
         Me.txt_3.TabIndex = 64
@@ -1051,7 +1114,7 @@ Partial Class CapturaOEE
         '
         'txt_8
         '
-        Me.txt_8.Location = New System.Drawing.Point(326, 565)
+        Me.txt_8.Location = New System.Drawing.Point(347, 565)
         Me.txt_8.Name = "txt_8"
         Me.txt_8.Size = New System.Drawing.Size(36, 20)
         Me.txt_8.TabIndex = 69
@@ -1060,7 +1123,7 @@ Partial Class CapturaOEE
         '
         'txt_7
         '
-        Me.txt_7.Location = New System.Drawing.Point(326, 536)
+        Me.txt_7.Location = New System.Drawing.Point(347, 536)
         Me.txt_7.Name = "txt_7"
         Me.txt_7.Size = New System.Drawing.Size(36, 20)
         Me.txt_7.TabIndex = 68
@@ -1069,7 +1132,7 @@ Partial Class CapturaOEE
         '
         'txt_6
         '
-        Me.txt_6.Location = New System.Drawing.Point(327, 508)
+        Me.txt_6.Location = New System.Drawing.Point(348, 508)
         Me.txt_6.Name = "txt_6"
         Me.txt_6.Size = New System.Drawing.Size(36, 20)
         Me.txt_6.TabIndex = 67
@@ -1078,7 +1141,7 @@ Partial Class CapturaOEE
         '
         'txt_5
         '
-        Me.txt_5.Location = New System.Drawing.Point(327, 479)
+        Me.txt_5.Location = New System.Drawing.Point(348, 479)
         Me.txt_5.Name = "txt_5"
         Me.txt_5.Size = New System.Drawing.Size(36, 20)
         Me.txt_5.TabIndex = 66
@@ -1087,7 +1150,7 @@ Partial Class CapturaOEE
         '
         'txt_9
         '
-        Me.txt_9.Location = New System.Drawing.Point(326, 591)
+        Me.txt_9.Location = New System.Drawing.Point(347, 591)
         Me.txt_9.Name = "txt_9"
         Me.txt_9.Size = New System.Drawing.Size(36, 20)
         Me.txt_9.TabIndex = 70
@@ -1097,7 +1160,7 @@ Partial Class CapturaOEE
         'lbl_acumulado9
         '
         Me.lbl_acumulado9.AutoSize = True
-        Me.lbl_acumulado9.Location = New System.Drawing.Point(374, 595)
+        Me.lbl_acumulado9.Location = New System.Drawing.Point(395, 595)
         Me.lbl_acumulado9.Name = "lbl_acumulado9"
         Me.lbl_acumulado9.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado9.TabIndex = 79
@@ -1106,7 +1169,7 @@ Partial Class CapturaOEE
         'lbl_acumulado8
         '
         Me.lbl_acumulado8.AutoSize = True
-        Me.lbl_acumulado8.Location = New System.Drawing.Point(374, 568)
+        Me.lbl_acumulado8.Location = New System.Drawing.Point(395, 568)
         Me.lbl_acumulado8.Name = "lbl_acumulado8"
         Me.lbl_acumulado8.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado8.TabIndex = 78
@@ -1115,7 +1178,7 @@ Partial Class CapturaOEE
         'lbl_acumulado7
         '
         Me.lbl_acumulado7.AutoSize = True
-        Me.lbl_acumulado7.Location = New System.Drawing.Point(374, 539)
+        Me.lbl_acumulado7.Location = New System.Drawing.Point(395, 539)
         Me.lbl_acumulado7.Name = "lbl_acumulado7"
         Me.lbl_acumulado7.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado7.TabIndex = 77
@@ -1124,7 +1187,7 @@ Partial Class CapturaOEE
         'lbl_acumulado6
         '
         Me.lbl_acumulado6.AutoSize = True
-        Me.lbl_acumulado6.Location = New System.Drawing.Point(374, 512)
+        Me.lbl_acumulado6.Location = New System.Drawing.Point(395, 512)
         Me.lbl_acumulado6.Name = "lbl_acumulado6"
         Me.lbl_acumulado6.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado6.TabIndex = 76
@@ -1133,7 +1196,7 @@ Partial Class CapturaOEE
         'lbl_acumulado5
         '
         Me.lbl_acumulado5.AutoSize = True
-        Me.lbl_acumulado5.Location = New System.Drawing.Point(374, 482)
+        Me.lbl_acumulado5.Location = New System.Drawing.Point(395, 482)
         Me.lbl_acumulado5.Name = "lbl_acumulado5"
         Me.lbl_acumulado5.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado5.TabIndex = 75
@@ -1142,7 +1205,7 @@ Partial Class CapturaOEE
         'lbl_acumulado4
         '
         Me.lbl_acumulado4.AutoSize = True
-        Me.lbl_acumulado4.Location = New System.Drawing.Point(374, 454)
+        Me.lbl_acumulado4.Location = New System.Drawing.Point(395, 454)
         Me.lbl_acumulado4.Name = "lbl_acumulado4"
         Me.lbl_acumulado4.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado4.TabIndex = 74
@@ -1151,7 +1214,7 @@ Partial Class CapturaOEE
         'lbl_acumulado3
         '
         Me.lbl_acumulado3.AutoSize = True
-        Me.lbl_acumulado3.Location = New System.Drawing.Point(374, 428)
+        Me.lbl_acumulado3.Location = New System.Drawing.Point(395, 428)
         Me.lbl_acumulado3.Name = "lbl_acumulado3"
         Me.lbl_acumulado3.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado3.TabIndex = 73
@@ -1160,7 +1223,7 @@ Partial Class CapturaOEE
         'lbl_acumulado2
         '
         Me.lbl_acumulado2.AutoSize = True
-        Me.lbl_acumulado2.Location = New System.Drawing.Point(374, 401)
+        Me.lbl_acumulado2.Location = New System.Drawing.Point(395, 401)
         Me.lbl_acumulado2.Name = "lbl_acumulado2"
         Me.lbl_acumulado2.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado2.TabIndex = 72
@@ -1169,7 +1232,7 @@ Partial Class CapturaOEE
         'lbl_acumulado1
         '
         Me.lbl_acumulado1.AutoSize = True
-        Me.lbl_acumulado1.Location = New System.Drawing.Point(374, 373)
+        Me.lbl_acumulado1.Location = New System.Drawing.Point(395, 373)
         Me.lbl_acumulado1.Name = "lbl_acumulado1"
         Me.lbl_acumulado1.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado1.TabIndex = 71
@@ -1337,91 +1400,10 @@ Partial Class CapturaOEE
         Me.lbl_cp1.TabIndex = 89
         Me.lbl_cp1.Text = "0"
         '
-        'lbl_tp9
-        '
-        Me.lbl_tp9.AutoSize = True
-        Me.lbl_tp9.Location = New System.Drawing.Point(103, 595)
-        Me.lbl_tp9.Name = "lbl_tp9"
-        Me.lbl_tp9.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_tp9.TabIndex = 106
-        Me.lbl_tp9.Text = "0"
-        '
-        'lbl_tp8
-        '
-        Me.lbl_tp8.AutoSize = True
-        Me.lbl_tp8.Location = New System.Drawing.Point(103, 568)
-        Me.lbl_tp8.Name = "lbl_tp8"
-        Me.lbl_tp8.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_tp8.TabIndex = 105
-        Me.lbl_tp8.Text = "0"
-        '
-        'lbl_tp7
-        '
-        Me.lbl_tp7.AutoSize = True
-        Me.lbl_tp7.Location = New System.Drawing.Point(103, 539)
-        Me.lbl_tp7.Name = "lbl_tp7"
-        Me.lbl_tp7.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_tp7.TabIndex = 104
-        Me.lbl_tp7.Text = "0"
-        '
-        'lbl_tp6
-        '
-        Me.lbl_tp6.AutoSize = True
-        Me.lbl_tp6.Location = New System.Drawing.Point(103, 512)
-        Me.lbl_tp6.Name = "lbl_tp6"
-        Me.lbl_tp6.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_tp6.TabIndex = 103
-        Me.lbl_tp6.Text = "0"
-        '
-        'lbl_tp5
-        '
-        Me.lbl_tp5.AutoSize = True
-        Me.lbl_tp5.Location = New System.Drawing.Point(103, 482)
-        Me.lbl_tp5.Name = "lbl_tp5"
-        Me.lbl_tp5.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_tp5.TabIndex = 102
-        Me.lbl_tp5.Text = "0"
-        '
-        'lbl_tp4
-        '
-        Me.lbl_tp4.AutoSize = True
-        Me.lbl_tp4.Location = New System.Drawing.Point(103, 454)
-        Me.lbl_tp4.Name = "lbl_tp4"
-        Me.lbl_tp4.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_tp4.TabIndex = 101
-        Me.lbl_tp4.Text = "0"
-        '
-        'lbl_tp3
-        '
-        Me.lbl_tp3.AutoSize = True
-        Me.lbl_tp3.Location = New System.Drawing.Point(103, 428)
-        Me.lbl_tp3.Name = "lbl_tp3"
-        Me.lbl_tp3.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_tp3.TabIndex = 100
-        Me.lbl_tp3.Text = "0"
-        '
-        'lbl_tp2
-        '
-        Me.lbl_tp2.AutoSize = True
-        Me.lbl_tp2.Location = New System.Drawing.Point(103, 401)
-        Me.lbl_tp2.Name = "lbl_tp2"
-        Me.lbl_tp2.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_tp2.TabIndex = 99
-        Me.lbl_tp2.Text = "0"
-        '
-        'lbl_tp1
-        '
-        Me.lbl_tp1.AutoSize = True
-        Me.lbl_tp1.Location = New System.Drawing.Point(103, 373)
-        Me.lbl_tp1.Name = "lbl_tp1"
-        Me.lbl_tp1.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_tp1.TabIndex = 98
-        Me.lbl_tp1.Text = "0"
-        '
         'btn_1
         '
         Me.btn_1.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_1.Location = New System.Drawing.Point(404, 368)
+        Me.btn_1.Location = New System.Drawing.Point(572, 366)
         Me.btn_1.Name = "btn_1"
         Me.btn_1.Size = New System.Drawing.Size(36, 20)
         Me.btn_1.TabIndex = 107
@@ -1430,7 +1412,7 @@ Partial Class CapturaOEE
         'btn_2
         '
         Me.btn_2.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_2.Location = New System.Drawing.Point(404, 397)
+        Me.btn_2.Location = New System.Drawing.Point(572, 395)
         Me.btn_2.Name = "btn_2"
         Me.btn_2.Size = New System.Drawing.Size(36, 20)
         Me.btn_2.TabIndex = 108
@@ -1439,7 +1421,7 @@ Partial Class CapturaOEE
         'btn_3
         '
         Me.btn_3.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_3.Location = New System.Drawing.Point(404, 424)
+        Me.btn_3.Location = New System.Drawing.Point(572, 422)
         Me.btn_3.Name = "btn_3"
         Me.btn_3.Size = New System.Drawing.Size(36, 20)
         Me.btn_3.TabIndex = 109
@@ -1448,7 +1430,7 @@ Partial Class CapturaOEE
         'btn4
         '
         Me.btn4.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn4.Location = New System.Drawing.Point(404, 450)
+        Me.btn4.Location = New System.Drawing.Point(572, 448)
         Me.btn4.Name = "btn4"
         Me.btn4.Size = New System.Drawing.Size(36, 20)
         Me.btn4.TabIndex = 110
@@ -1457,7 +1439,7 @@ Partial Class CapturaOEE
         'btn_5
         '
         Me.btn_5.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_5.Location = New System.Drawing.Point(404, 478)
+        Me.btn_5.Location = New System.Drawing.Point(572, 476)
         Me.btn_5.Name = "btn_5"
         Me.btn_5.Size = New System.Drawing.Size(36, 20)
         Me.btn_5.TabIndex = 111
@@ -1466,7 +1448,7 @@ Partial Class CapturaOEE
         'btn_6
         '
         Me.btn_6.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_6.Location = New System.Drawing.Point(404, 507)
+        Me.btn_6.Location = New System.Drawing.Point(572, 505)
         Me.btn_6.Name = "btn_6"
         Me.btn_6.Size = New System.Drawing.Size(36, 20)
         Me.btn_6.TabIndex = 112
@@ -1475,7 +1457,7 @@ Partial Class CapturaOEE
         'btn_7
         '
         Me.btn_7.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_7.Location = New System.Drawing.Point(404, 535)
+        Me.btn_7.Location = New System.Drawing.Point(572, 533)
         Me.btn_7.Name = "btn_7"
         Me.btn_7.Size = New System.Drawing.Size(36, 20)
         Me.btn_7.TabIndex = 113
@@ -1484,7 +1466,7 @@ Partial Class CapturaOEE
         'btn_8
         '
         Me.btn_8.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_8.Location = New System.Drawing.Point(404, 564)
+        Me.btn_8.Location = New System.Drawing.Point(572, 562)
         Me.btn_8.Name = "btn_8"
         Me.btn_8.Size = New System.Drawing.Size(36, 20)
         Me.btn_8.TabIndex = 114
@@ -1493,20 +1475,11 @@ Partial Class CapturaOEE
         'btn_9
         '
         Me.btn_9.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_9.Location = New System.Drawing.Point(404, 590)
+        Me.btn_9.Location = New System.Drawing.Point(572, 588)
         Me.btn_9.Name = "btn_9"
         Me.btn_9.Size = New System.Drawing.Size(36, 20)
         Me.btn_9.TabIndex = 115
         Me.btn_9.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(456, 368)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(525, 243)
-        Me.DataGridView1.TabIndex = 116
         '
         'btn_guardar
         '
@@ -1520,15 +1493,15 @@ Partial Class CapturaOEE
         Me.btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_guardar.UseVisualStyleBackColor = True
         '
-        'ComboBox3
+        'cbx_cavidad
         '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.ComboBox3.Location = New System.Drawing.Point(741, 28)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(96, 21)
-        Me.ComboBox3.TabIndex = 119
+        Me.cbx_cavidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_cavidad.FormattingEnabled = True
+        Me.cbx_cavidad.Items.AddRange(New Object() {"1", "2", "4", "12"})
+        Me.cbx_cavidad.Location = New System.Drawing.Point(741, 28)
+        Me.cbx_cavidad.Name = "cbx_cavidad"
+        Me.cbx_cavidad.Size = New System.Drawing.Size(96, 21)
+        Me.cbx_cavidad.TabIndex = 119
         '
         'Label38
         '
@@ -1539,24 +1512,344 @@ Partial Class CapturaOEE
         Me.Label38.TabIndex = 118
         Me.Label38.Text = "Cavidad"
         '
+        'ok9
+        '
+        Me.ok9.AutoSize = True
+        Me.ok9.Location = New System.Drawing.Point(458, 595)
+        Me.ok9.Name = "ok9"
+        Me.ok9.Size = New System.Drawing.Size(13, 13)
+        Me.ok9.TabIndex = 128
+        Me.ok9.Text = "0"
+        '
+        'ok8
+        '
+        Me.ok8.AutoSize = True
+        Me.ok8.Location = New System.Drawing.Point(458, 568)
+        Me.ok8.Name = "ok8"
+        Me.ok8.Size = New System.Drawing.Size(13, 13)
+        Me.ok8.TabIndex = 127
+        Me.ok8.Text = "0"
+        '
+        'ok7
+        '
+        Me.ok7.AutoSize = True
+        Me.ok7.Location = New System.Drawing.Point(458, 539)
+        Me.ok7.Name = "ok7"
+        Me.ok7.Size = New System.Drawing.Size(13, 13)
+        Me.ok7.TabIndex = 126
+        Me.ok7.Text = "0"
+        '
+        'ok6
+        '
+        Me.ok6.AutoSize = True
+        Me.ok6.Location = New System.Drawing.Point(458, 512)
+        Me.ok6.Name = "ok6"
+        Me.ok6.Size = New System.Drawing.Size(13, 13)
+        Me.ok6.TabIndex = 125
+        Me.ok6.Text = "0"
+        '
+        'ok5
+        '
+        Me.ok5.AutoSize = True
+        Me.ok5.Location = New System.Drawing.Point(458, 482)
+        Me.ok5.Name = "ok5"
+        Me.ok5.Size = New System.Drawing.Size(13, 13)
+        Me.ok5.TabIndex = 124
+        Me.ok5.Text = "0"
+        '
+        'ok4
+        '
+        Me.ok4.AutoSize = True
+        Me.ok4.Location = New System.Drawing.Point(458, 454)
+        Me.ok4.Name = "ok4"
+        Me.ok4.Size = New System.Drawing.Size(13, 13)
+        Me.ok4.TabIndex = 123
+        Me.ok4.Text = "0"
+        '
+        'ok3
+        '
+        Me.ok3.AutoSize = True
+        Me.ok3.Location = New System.Drawing.Point(458, 428)
+        Me.ok3.Name = "ok3"
+        Me.ok3.Size = New System.Drawing.Size(13, 13)
+        Me.ok3.TabIndex = 122
+        Me.ok3.Text = "0"
+        '
+        'ok2
+        '
+        Me.ok2.AutoSize = True
+        Me.ok2.Location = New System.Drawing.Point(458, 401)
+        Me.ok2.Name = "ok2"
+        Me.ok2.Size = New System.Drawing.Size(13, 13)
+        Me.ok2.TabIndex = 121
+        Me.ok2.Text = "0"
+        '
+        'ok1
+        '
+        Me.ok1.AutoSize = True
+        Me.ok1.Location = New System.Drawing.Point(458, 373)
+        Me.ok1.Name = "ok1"
+        Me.ok1.Size = New System.Drawing.Size(13, 13)
+        Me.ok1.TabIndex = 120
+        Me.ok1.Text = "0"
+        '
+        'ng9
+        '
+        Me.ng9.AutoSize = True
+        Me.ng9.Location = New System.Drawing.Point(522, 595)
+        Me.ng9.Name = "ng9"
+        Me.ng9.Size = New System.Drawing.Size(13, 13)
+        Me.ng9.TabIndex = 137
+        Me.ng9.Text = "0"
+        '
+        'ng8
+        '
+        Me.ng8.AutoSize = True
+        Me.ng8.Location = New System.Drawing.Point(522, 568)
+        Me.ng8.Name = "ng8"
+        Me.ng8.Size = New System.Drawing.Size(13, 13)
+        Me.ng8.TabIndex = 136
+        Me.ng8.Text = "0"
+        '
+        'ng7
+        '
+        Me.ng7.AutoSize = True
+        Me.ng7.Location = New System.Drawing.Point(522, 539)
+        Me.ng7.Name = "ng7"
+        Me.ng7.Size = New System.Drawing.Size(13, 13)
+        Me.ng7.TabIndex = 135
+        Me.ng7.Text = "0"
+        '
+        'ng6
+        '
+        Me.ng6.AutoSize = True
+        Me.ng6.Location = New System.Drawing.Point(522, 512)
+        Me.ng6.Name = "ng6"
+        Me.ng6.Size = New System.Drawing.Size(13, 13)
+        Me.ng6.TabIndex = 134
+        Me.ng6.Text = "0"
+        '
+        'ng5
+        '
+        Me.ng5.AutoSize = True
+        Me.ng5.Location = New System.Drawing.Point(522, 482)
+        Me.ng5.Name = "ng5"
+        Me.ng5.Size = New System.Drawing.Size(13, 13)
+        Me.ng5.TabIndex = 133
+        Me.ng5.Text = "0"
+        '
+        'ng4
+        '
+        Me.ng4.AutoSize = True
+        Me.ng4.Location = New System.Drawing.Point(522, 454)
+        Me.ng4.Name = "ng4"
+        Me.ng4.Size = New System.Drawing.Size(13, 13)
+        Me.ng4.TabIndex = 132
+        Me.ng4.Text = "0"
+        '
+        'ng3
+        '
+        Me.ng3.AutoSize = True
+        Me.ng3.Location = New System.Drawing.Point(522, 428)
+        Me.ng3.Name = "ng3"
+        Me.ng3.Size = New System.Drawing.Size(13, 13)
+        Me.ng3.TabIndex = 131
+        Me.ng3.Text = "0"
+        '
+        'ng2
+        '
+        Me.ng2.AutoSize = True
+        Me.ng2.Location = New System.Drawing.Point(522, 401)
+        Me.ng2.Name = "ng2"
+        Me.ng2.Size = New System.Drawing.Size(13, 13)
+        Me.ng2.TabIndex = 130
+        Me.ng2.Text = "0"
+        '
+        'ng1
+        '
+        Me.ng1.AutoSize = True
+        Me.ng1.Location = New System.Drawing.Point(522, 373)
+        Me.ng1.Name = "ng1"
+        Me.ng1.Size = New System.Drawing.Size(13, 13)
+        Me.ng1.TabIndex = 129
+        Me.ng1.Text = "0"
+        '
+        'lbl_tp9
+        '
+        Me.lbl_tp9.AutoSize = True
+        Me.lbl_tp9.Location = New System.Drawing.Point(92, 595)
+        Me.lbl_tp9.Name = "lbl_tp9"
+        Me.lbl_tp9.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tp9.TabIndex = 146
+        Me.lbl_tp9.Text = "0"
+        '
+        'lbl_tp8
+        '
+        Me.lbl_tp8.AutoSize = True
+        Me.lbl_tp8.Location = New System.Drawing.Point(92, 568)
+        Me.lbl_tp8.Name = "lbl_tp8"
+        Me.lbl_tp8.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tp8.TabIndex = 145
+        Me.lbl_tp8.Text = "0"
+        '
+        'lbl_tp7
+        '
+        Me.lbl_tp7.AutoSize = True
+        Me.lbl_tp7.Location = New System.Drawing.Point(92, 539)
+        Me.lbl_tp7.Name = "lbl_tp7"
+        Me.lbl_tp7.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tp7.TabIndex = 144
+        Me.lbl_tp7.Text = "0"
+        '
+        'lbl_tp6
+        '
+        Me.lbl_tp6.AutoSize = True
+        Me.lbl_tp6.Location = New System.Drawing.Point(92, 512)
+        Me.lbl_tp6.Name = "lbl_tp6"
+        Me.lbl_tp6.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tp6.TabIndex = 143
+        Me.lbl_tp6.Text = "0"
+        '
+        'lbl_tp5
+        '
+        Me.lbl_tp5.AutoSize = True
+        Me.lbl_tp5.Location = New System.Drawing.Point(92, 482)
+        Me.lbl_tp5.Name = "lbl_tp5"
+        Me.lbl_tp5.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tp5.TabIndex = 142
+        Me.lbl_tp5.Text = "0"
+        '
+        'lbl_tp4
+        '
+        Me.lbl_tp4.AutoSize = True
+        Me.lbl_tp4.Location = New System.Drawing.Point(92, 454)
+        Me.lbl_tp4.Name = "lbl_tp4"
+        Me.lbl_tp4.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tp4.TabIndex = 141
+        Me.lbl_tp4.Text = "0"
+        '
+        'lbl_tp3
+        '
+        Me.lbl_tp3.AutoSize = True
+        Me.lbl_tp3.Location = New System.Drawing.Point(92, 428)
+        Me.lbl_tp3.Name = "lbl_tp3"
+        Me.lbl_tp3.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tp3.TabIndex = 140
+        Me.lbl_tp3.Text = "0"
+        '
+        'lbl_tp2
+        '
+        Me.lbl_tp2.AutoSize = True
+        Me.lbl_tp2.Location = New System.Drawing.Point(92, 401)
+        Me.lbl_tp2.Name = "lbl_tp2"
+        Me.lbl_tp2.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tp2.TabIndex = 139
+        Me.lbl_tp2.Text = "0"
+        '
+        'lbl_tp1
+        '
+        Me.lbl_tp1.AutoSize = True
+        Me.lbl_tp1.Location = New System.Drawing.Point(92, 373)
+        Me.lbl_tp1.Name = "lbl_tp1"
+        Me.lbl_tp1.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tp1.TabIndex = 138
+        Me.lbl_tp1.Text = "0"
+        '
+        'dtgvp
+        '
+        Me.dtgvp.AllowUserToAddRows = False
+        Me.dtgvp.AllowUserToDeleteRows = False
+        Me.dtgvp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dtgvp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgvp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Defecto, Me.Valor, Me.Valor2, Me.Cantidad, Me.Hora, Me.id_hora, Me.id_error, Me.tp})
+        Me.dtgvp.Location = New System.Drawing.Point(619, 344)
+        Me.dtgvp.Name = "dtgvp"
+        Me.dtgvp.RowHeadersVisible = False
+        Me.dtgvp.Size = New System.Drawing.Size(463, 304)
+        Me.dtgvp.TabIndex = 147
+        '
+        'Defecto
+        '
+        Me.Defecto.HeaderText = "Defecto"
+        Me.Defecto.Name = "Defecto"
+        Me.Defecto.Width = 70
+        '
+        'Valor
+        '
+        Me.Valor.HeaderText = "Valor"
+        Me.Valor.Name = "Valor"
+        Me.Valor.Visible = False
+        Me.Valor.Width = 56
+        '
+        'Valor2
+        '
+        Me.Valor2.HeaderText = "Tipo"
+        Me.Valor2.Name = "Valor2"
+        Me.Valor2.Width = 53
+        '
+        'Cantidad
+        '
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.Width = 74
+        '
+        'Hora
+        '
+        Me.Hora.HeaderText = "Hora"
+        Me.Hora.Name = "Hora"
+        Me.Hora.Width = 55
+        '
+        'id_hora
+        '
+        Me.id_hora.HeaderText = "id_hora"
+        Me.id_hora.Name = "id_hora"
+        Me.id_hora.Visible = False
+        Me.id_hora.Width = 67
+        '
+        'id_error
+        '
+        Me.id_error.HeaderText = "id_error"
+        Me.id_error.Name = "id_error"
+        Me.id_error.Visible = False
+        Me.id_error.Width = 67
+        '
+        'tp
+        '
+        Me.tp.HeaderText = "tp"
+        Me.tp.Name = "tp"
+        Me.tp.Width = 41
+        '
+        'Label47
+        '
+        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.Location = New System.Drawing.Point(439, 336)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(53, 29)
+        Me.Label47.TabIndex = 148
+        Me.Label47.Text = "OK"
+        Me.Label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label59
+        '
+        Me.Label59.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label59.Location = New System.Drawing.Point(504, 335)
+        Me.Label59.Name = "Label59"
+        Me.Label59.Size = New System.Drawing.Size(53, 29)
+        Me.Label59.TabIndex = 149
+        Me.Label59.Text = "NG"
+        Me.Label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'CapturaOEE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(993, 660)
-        Me.Controls.Add(Me.ComboBox3)
-        Me.Controls.Add(Me.Label38)
-        Me.Controls.Add(Me.btn_guardar)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.btn_9)
-        Me.Controls.Add(Me.btn_8)
-        Me.Controls.Add(Me.btn_7)
-        Me.Controls.Add(Me.btn_6)
-        Me.Controls.Add(Me.btn_5)
-        Me.Controls.Add(Me.btn4)
-        Me.Controls.Add(Me.btn_3)
-        Me.Controls.Add(Me.btn_2)
-        Me.Controls.Add(Me.btn_1)
+        Me.ClientSize = New System.Drawing.Size(1094, 660)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.Label59)
+        Me.Controls.Add(Me.Label47)
+        Me.Controls.Add(Me.dtgvp)
         Me.Controls.Add(Me.lbl_tp9)
         Me.Controls.Add(Me.lbl_tp8)
         Me.Controls.Add(Me.lbl_tp7)
@@ -1566,6 +1859,36 @@ Partial Class CapturaOEE
         Me.Controls.Add(Me.lbl_tp3)
         Me.Controls.Add(Me.lbl_tp2)
         Me.Controls.Add(Me.lbl_tp1)
+        Me.Controls.Add(Me.ng9)
+        Me.Controls.Add(Me.ng8)
+        Me.Controls.Add(Me.ng7)
+        Me.Controls.Add(Me.ng6)
+        Me.Controls.Add(Me.ng5)
+        Me.Controls.Add(Me.ng4)
+        Me.Controls.Add(Me.ng3)
+        Me.Controls.Add(Me.ng2)
+        Me.Controls.Add(Me.ng1)
+        Me.Controls.Add(Me.ok9)
+        Me.Controls.Add(Me.ok8)
+        Me.Controls.Add(Me.ok7)
+        Me.Controls.Add(Me.ok6)
+        Me.Controls.Add(Me.ok5)
+        Me.Controls.Add(Me.ok4)
+        Me.Controls.Add(Me.ok3)
+        Me.Controls.Add(Me.ok2)
+        Me.Controls.Add(Me.ok1)
+        Me.Controls.Add(Me.cbx_cavidad)
+        Me.Controls.Add(Me.Label38)
+        Me.Controls.Add(Me.btn_guardar)
+        Me.Controls.Add(Me.btn_9)
+        Me.Controls.Add(Me.btn_8)
+        Me.Controls.Add(Me.btn_7)
+        Me.Controls.Add(Me.btn_6)
+        Me.Controls.Add(Me.btn_5)
+        Me.Controls.Add(Me.btn4)
+        Me.Controls.Add(Me.btn_3)
+        Me.Controls.Add(Me.btn_2)
+        Me.Controls.Add(Me.btn_1)
         Me.Controls.Add(Me.lbl_cp9)
         Me.Controls.Add(Me.lbl_cp8)
         Me.Controls.Add(Me.lbl_cp7)
@@ -1621,7 +1944,6 @@ Partial Class CapturaOEE
         Me.Controls.Add(Me.lbl_h1)
         Me.Controls.Add(Me.Label53)
         Me.Controls.Add(Me.Label54)
-        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label5)
@@ -1638,14 +1960,14 @@ Partial Class CapturaOEE
         Me.Controls.Add(Me.lbl_pieza)
         Me.Name = "CapturaOEE"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CapturaOEE"
+        Me.Text = "Cp"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1769,15 +2091,6 @@ Partial Class CapturaOEE
     Friend WithEvents lbl_cp3 As Label
     Friend WithEvents lbl_cp2 As Label
     Friend WithEvents lbl_cp1 As Label
-    Friend WithEvents lbl_tp9 As Label
-    Friend WithEvents lbl_tp8 As Label
-    Friend WithEvents lbl_tp7 As Label
-    Friend WithEvents lbl_tp6 As Label
-    Friend WithEvents lbl_tp5 As Label
-    Friend WithEvents lbl_tp4 As Label
-    Friend WithEvents lbl_tp3 As Label
-    Friend WithEvents lbl_tp2 As Label
-    Friend WithEvents lbl_tp1 As Label
     Friend WithEvents btn_1 As Button
     Friend WithEvents btn_2 As Button
     Friend WithEvents btn_3 As Button
@@ -1787,8 +2100,48 @@ Partial Class CapturaOEE
     Friend WithEvents btn_7 As Button
     Friend WithEvents btn_8 As Button
     Friend WithEvents btn_9 As Button
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btn_guardar As Button
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents cbx_cavidad As ComboBox
     Friend WithEvents Label38 As Label
+    Friend WithEvents ok9 As Label
+    Friend WithEvents ok8 As Label
+    Friend WithEvents ok7 As Label
+    Friend WithEvents ok6 As Label
+    Friend WithEvents ok5 As Label
+    Friend WithEvents ok4 As Label
+    Friend WithEvents ok3 As Label
+    Friend WithEvents ok2 As Label
+    Friend WithEvents ok1 As Label
+    Friend WithEvents ng9 As Label
+    Friend WithEvents ng8 As Label
+    Friend WithEvents ng7 As Label
+    Friend WithEvents ng6 As Label
+    Friend WithEvents ng5 As Label
+    Friend WithEvents ng4 As Label
+    Friend WithEvents ng3 As Label
+    Friend WithEvents ng2 As Label
+    Friend WithEvents ng1 As Label
+    Friend WithEvents lbl_tp9 As Label
+    Friend WithEvents lbl_tp8 As Label
+    Friend WithEvents lbl_tp7 As Label
+    Friend WithEvents lbl_tp6 As Label
+    Friend WithEvents lbl_tp5 As Label
+    Friend WithEvents lbl_tp4 As Label
+    Friend WithEvents lbl_tp3 As Label
+    Friend WithEvents lbl_tp2 As Label
+    Friend WithEvents lbl_tp1 As Label
+    Friend WithEvents dtgvp As DataGridView
+    Friend WithEvents Label47 As Label
+    Friend WithEvents Label59 As Label
+    Friend WithEvents lbl_t9 As Label
+    Friend WithEvents Label40 As Label
+    Friend WithEvents Label41 As Label
+    Friend WithEvents Defecto As DataGridViewTextBoxColumn
+    Friend WithEvents Valor As DataGridViewTextBoxColumn
+    Friend WithEvents Valor2 As DataGridViewTextBoxColumn
+    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
+    Friend WithEvents Hora As DataGridViewTextBoxColumn
+    Friend WithEvents id_hora As DataGridViewTextBoxColumn
+    Friend WithEvents id_error As DataGridViewTextBoxColumn
+    Friend WithEvents tp As DataGridViewTextBoxColumn
 End Class

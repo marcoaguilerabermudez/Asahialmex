@@ -83,6 +83,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property _1492533500_arrow_41_83313() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("1492533500-arrow-41_83313", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property _New() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("New", resourceCulture)

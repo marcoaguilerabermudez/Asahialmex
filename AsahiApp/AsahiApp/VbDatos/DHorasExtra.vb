@@ -74,7 +74,7 @@ Public Class DHorasExtra
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("select ejercicio from periodos group by ejercicio", oCon)
+            Dim query As New SqlCommand("select ejercicio from periodos where ejercicio >= '2018' group by ejercicio", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader

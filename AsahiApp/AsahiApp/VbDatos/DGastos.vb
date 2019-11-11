@@ -205,4 +205,58 @@ Public Class DGastos
         End Try
         Return lstGastos
     End Function
+    Public Function RecuperarCuentasGeneral(ByVal cadenaConex As String, ByVal idioma As Integer) As LGastos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstGst As New LGastos()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("CtaGral_Recuperar", oCon)
+            query.Parameters.AddWithValue("@idioma", idioma)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim gst As New Gastos()
+                gst.Cuenta = dr("Codigo").ToString
+                gst.NombreCuenta = dr("Descripcion").ToString
+                lstGst.Add(gst)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstGst
+    End Function
+    Public Function RecuperarListaCtas(ByVal cadenaConex As String, ByVal cta As Integer) As LGastos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstGst As New LGastos()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Cta_RecuperarListaCtas", oCon)
+            query.Parameters.AddWithValue("@CtaGrl", cta)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim gst As New Gastos()
+                gst.Cuenta = dr("Codigo").ToString
+                gst.NombreCuenta = dr("Nombre").ToString
+                lstGst.Add(gst)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstGst
+    End Function
 End Class
