@@ -251,7 +251,13 @@ END"
             CapturaOEE.ngxhora()
             CapturaOEE.etiquetaspieza()
 
-        ElseIf valor = 2 Then
+        ElseIf valor = 2 And cbx_errorg.Text <> "Tiempo de paro planeado 計画停止" Then
+            valor2 = "Tiempo"
+            CapturaOEE.dtgvp.Rows.Add(New String() {cbx_error.Text, valor, valor2, txt_cantidad.Text, lbl_hora.Text, CapturaOEE.idh, id_error, lbl_piezas.Text})
+            ''CapturaOEE.calculotppxhora()
+            CapturaOEE.etiquetastiempo()
+
+        ElseIf valor = 2 And cbx_errorg.Text = "Tiempo de paro planeado 計画停止" Then
             valor2 = "Tiempo"
             CapturaOEE.dtgvp.Rows.Add(New String() {cbx_error.Text, valor, valor2, txt_cantidad.Text, lbl_hora.Text, CapturaOEE.idh, id_error, lbl_piezas.Text})
             CapturaOEE.calculotppxhora()
