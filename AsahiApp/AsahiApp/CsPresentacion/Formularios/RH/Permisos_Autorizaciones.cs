@@ -57,7 +57,7 @@ namespace CsPresentacion
                 con.Open();
                 DataTable dt = new DataTable();
                 String strSql;
-                strSql = "SELECT RTRIM(CLAVE)AS 'CLAVE', 'VIGENCIA' FROM [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] WHERE RTRIM(RTRIM(NOMBREN)+ ' '+ RTRIM(NOMBREP)+ ' ' + RTRIM(NOMBREM)) = @Nombre";
+                strSql = "SELECT Convert(Int,RTRIM(CLAVE)) AS 'CLAVE', VIGENCIA FROM [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] WHERE RTRIM(RTRIM(NOMBREN)+ ' '+ RTRIM(NOMBREP)+ ' ' + RTRIM(NOMBREM)) = @Nombre";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, con);
                 da.SelectCommand.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txt_nombre.Text;
                 da.Fill(dt);
@@ -66,7 +66,6 @@ namespace CsPresentacion
                 {
                     txt_clave.Text = dt.Rows[0]["CLAVE"].ToString();
                     lbl_estado.Text = dt.Rows[0]["VIGENCIA"].ToString();
-
                 }
             }
             catch
@@ -301,6 +300,7 @@ namespace CsPresentacion
             btn_cancelar.Enabled = false;
             btn_guardar.Enabled = false;
             lbl_mod.Visible = false;
+            txt_nombre.Enabled = true;
         }
 
         //Botones
@@ -636,6 +636,7 @@ namespace CsPresentacion
                 btn_ultimo.Enabled = true;
                 pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
                 lbl_mod.Text = "1";
+                txt_nombre.Enabled = false;
                 dtm_fecha.Focus();
             }
         }
@@ -656,22 +657,33 @@ namespace CsPresentacion
 
         private void Txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                cargar_clave();
-                //Mostrar_Grid();
-                //btn_exportar.Enabled = true;
-                //btn_siguiente.Enabled = true;
-                //btn_ultimo.Enabled = true;
-                //pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
-                //lbl_mod.Text = "1";
-                //dtm_fecha.Focus();
-            }
+            if (Char.IsLetter(e.KeyChar)) { e.Handled = false; }
+            else if (Char.IsControl(e.KeyChar))
+            {  e.Handled = false;}
+            else if (Char.IsSeparator(e.KeyChar))
+            {     e.Handled = false;}
+            else {  e.Handled = true;}
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Txt_nombre_Leave(object sender, EventArgs e)
         {
             cargar_clave();
+            Mostrar_Grid();
+            btn_exportar.Enabled = true;
+            btn_siguiente.Enabled = true;
+            btn_ultimo.Enabled = true;
+            pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
+            lbl_mod.Text = "1";
+            dtm_fecha.Focus();
+            txt_nombre.Enabled = false;
+        }
+
+        private void Txt_clave_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Txt_clave_Leave(object sender, EventArgs e)
+        {
         }
     }
 }
