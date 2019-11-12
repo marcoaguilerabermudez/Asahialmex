@@ -182,6 +182,159 @@ Public Class CapturaOEE
         End Try
     End Sub
 
+    Private Sub b1_Click(sender As Object, e As EventArgs) Handles b1.Click
+        Try
+            Detalle2oee.Dispose()
+            Detalle2oee.Close()
+            Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
+            Modulo_detalle.parametro2 = lbl_h1.Text
+            Modulo_detalle.parametro3 = cbx_turno.Text
+            Modulo_detalle.parametro4 = txt_1.Text
+            Modulo_detalle.parametro5 = cbx_proceso.Text
+            idh = 1
+            Detalle2oee.Show()
+        Catch ex As Exception
+            MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
+            txt_1.Text = "0"
+        End Try
+    End Sub
+
+    Private Sub b2_Click(sender As Object, e As EventArgs) Handles b2.Click
+        Try
+            Detalle2oee.Dispose()
+            Detalle2oee.Close()
+            Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
+            Modulo_detalle.parametro2 = lbl_h2.Text
+            Modulo_detalle.parametro3 = cbx_turno.Text
+            Modulo_detalle.parametro4 = txt_2.Text
+            Modulo_detalle.parametro5 = cbx_proceso.Text
+            idh = 2
+            Detalle2oee.Show()
+        Catch ex As Exception
+            MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
+            txt_2.Text = "0"
+        End Try
+    End Sub
+
+    Private Sub b3_Click(sender As Object, e As EventArgs) Handles b3.Click
+        Try
+            Detalle2oee.Dispose()
+            Detalle2oee.Close()
+            Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
+            Modulo_detalle.parametro2 = lbl_h3.Text
+            Modulo_detalle.parametro3 = cbx_turno.Text
+            Modulo_detalle.parametro4 = txt_3.Text
+            Modulo_detalle.parametro5 = cbx_proceso.Text
+            idh = 3
+            Detalle2oee.Show()
+        Catch ex As Exception
+            MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
+            txt_3.Text = "0"
+        End Try
+    End Sub
+
+    Private Sub b4_Click(sender As Object, e As EventArgs) Handles b4.Click
+        Try
+            Detalle2oee.Dispose()
+            Detalle2oee.Close()
+            Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
+            Modulo_detalle.parametro2 = lbl_h4.Text
+            Modulo_detalle.parametro3 = cbx_turno.Text
+            Modulo_detalle.parametro4 = txt_4.Text
+            Modulo_detalle.parametro5 = cbx_proceso.Text
+            idh = 4
+            Detalle2oee.Show()
+        Catch ex As Exception
+            MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
+            txt_4.Text = "0"
+        End Try
+    End Sub
+
+    Private Sub b5_Click(sender As Object, e As EventArgs) Handles b5.Click
+        Try
+            Detalle2oee.Dispose()
+            Detalle2oee.Close()
+            Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
+            Modulo_detalle.parametro2 = lbl_h5.Text
+            Modulo_detalle.parametro3 = cbx_turno.Text
+            Modulo_detalle.parametro4 = txt_5.Text
+            Modulo_detalle.parametro5 = cbx_proceso.Text
+            idh = 5
+            Detalle2oee.Show()
+        Catch ex As Exception
+            MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
+            txt_5.Text = "0"
+        End Try
+    End Sub
+
+    Private Sub b6_Click(sender As Object, e As EventArgs) Handles b6.Click
+        Try
+            Detalle2oee.Dispose()
+            Detalle2oee.Close()
+            Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
+            Modulo_detalle.parametro2 = lbl_h6.Text
+            Modulo_detalle.parametro3 = cbx_turno.Text
+            Modulo_detalle.parametro4 = txt_6.Text
+            Modulo_detalle.parametro5 = cbx_proceso.Text
+            idh = 6
+            Detalle2oee.Show()
+        Catch ex As Exception
+            MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
+            txt_6.Text = "0"
+        End Try
+    End Sub
+
+    Private Sub b7_Click(sender As Object, e As EventArgs) Handles b7.Click
+        Try
+            Detalle2oee.Dispose()
+            Detalle2oee.Close()
+            Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
+            Modulo_detalle.parametro2 = lbl_h7.Text
+            Modulo_detalle.parametro3 = cbx_turno.Text
+            Modulo_detalle.parametro4 = txt_7.Text
+            Modulo_detalle.parametro5 = cbx_proceso.Text
+            idh = 7
+            Detalle2oee.Show()
+        Catch ex As Exception
+            MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
+            txt_7.Text = "0"
+        End Try
+    End Sub
+
+    Private Sub b8_Click(sender As Object, e As EventArgs) Handles b8.Click
+        Try
+            Detalle2oee.Dispose()
+            Detalle2oee.Close()
+            Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
+            Modulo_detalle.parametro2 = lbl_h8.Text
+            Modulo_detalle.parametro3 = cbx_turno.Text
+            Modulo_detalle.parametro4 = txt_8.Text
+            Modulo_detalle.parametro5 = cbx_proceso.Text
+            idh = 8
+            Detalle2oee.Show()
+        Catch ex As Exception
+            MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
+            txt_8.Text = "0"
+        End Try
+    End Sub
+
+    Private Sub b9_Click(sender As Object, e As EventArgs) Handles b9.Click
+        Try
+            Detalle2oee.Dispose()
+            Detalle2oee.Close()
+            Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
+            Modulo_detalle.parametro2 = lbl_h9.Text
+            Modulo_detalle.parametro3 = cbx_turno.Text
+            Modulo_detalle.parametro4 = txt_9.Text
+            Modulo_detalle.parametro5 = cbx_proceso.Text
+            idh = 9
+            Detalle2oee.Show()
+        Catch ex As Exception
+            MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
+            txt_9.Text = "0"
+        End Try
+    End Sub
+
     Private Sub txt_1_TextChanged(sender As Object, e As EventArgs) Handles txt_1.TextChanged, txt_2.TextChanged, txt_3.TextChanged, txt_4.TextChanged, txt_5.TextChanged, txt_6.TextChanged, txt_7.TextChanged, txt_8.TextChanged, txt_9.TextChanged
 
         Try
@@ -206,56 +359,49 @@ Public Class CapturaOEE
             lbl_acumulado8.Text = (a + b + c + d + ee + f + g + h)
             lbl_acumulado9.Text = (a + b + c + d + ee + f + g + h + i)
 
-            'If txt_1.Text = "0" OrElse txt_1.Text = "" Then
-            '    btn_1.Enabled = False
-            'Else
-            '    btn_1.Enabled = True
-            'End If
-            'If txt_2.Text = "0" OrElse txt_2.Text = "" Then
-            '    btn_2.Enabled = False
-            'Else
-            '    btn_2.Enabled = True
-            'End If
-            'If txt_3.Text = "0" OrElse txt_3.Text = "" Then
-            '    btn_3.Enabled = False
-            'Else
-            '    btn_3.Enabled = True
-            'End If
-            'If txt_4.Text = "0" OrElse txt_4.Text = "" Then
-            '    btn4.Enabled = False
-            'Else
-            '    btn4.Enabled = True
-            'End If
-            'If txt_5.Text = "0" OrElse txt_5.Text = "" Then
-            '    btn_5.Enabled = False
-            'Else
-            '    btn_5.Enabled = True
-            'End If
-            'If txt_6.Text = "0" OrElse txt_6.Text = "" Then
-            '    btn_6.Enabled = False
-            'Else
-            '    btn_6.Enabled = True
-            'End If
-            'If txt_7.Text = "0" OrElse txt_7.Text = "" Then
-            '    btn_7.Enabled = False
-            'Else
-            '    btn_7.Enabled = True
-            'End If
-            'If txt_8.Text = "0" OrElse txt_8.Text = "" Then
-            '    btn_8.Enabled = False
-            'Else
-            '    btn_8.Enabled = True
-            'End If
-            'If txt_9.Text = "0" OrElse txt_9.Text = "" Then
-            '    btn_9.Enabled = False
-            'Else
-            '    btn_9.Enabled = True
-            'End If
+
 
 
 
         Catch
         End Try
+
+        If txt_1.Text = "" Then
+            txt_1.Text = "0"
+        End If
+
+        If txt_2.Text = "" Then
+            txt_2.Text = "0"
+        End If
+
+        If txt_3.Text = "" Then
+            txt_3.Text = "0"
+        End If
+
+        If txt_4.Text = "" Then
+            txt_4.Text = "0"
+        End If
+
+        If txt_5.Text = "" Then
+            txt_5.Text = "0"
+        End If
+
+        If txt_6.Text = "" Then
+            txt_6.Text = "0"
+        End If
+
+        If txt_7.Text = "" Then
+            txt_7.Text = "0"
+        End If
+
+        If txt_8.Text = "" Then
+            txt_8.Text = "0"
+        End If
+
+        If txt_9.Text = "" Then
+            txt_9.Text = "0"
+        End If
+
         ngok()
 
     End Sub
@@ -311,7 +457,7 @@ Public Class CapturaOEE
 
         btn_guardar.Enabled = True
 
-        CT()
+        '' CT()
         cantidadxhora()
         Try
             lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
@@ -326,6 +472,8 @@ Public Class CapturaOEE
         btn_6.Enabled = True
         btn_7.Enabled = True
         btn_8.Enabled = True
+
+
 
 
 
@@ -541,8 +689,6 @@ END
 
 "
 
-
-
             Com = New SqlCommand(SQL, Cn)
 
                 Rs = Com.ExecuteReader()
@@ -586,33 +732,35 @@ END
 
     Sub cantidadxhora()
 
+        Try
 
-        lbl_cp1.Text = CInt((60 - lbl_tp1.Text) / lbl_v4.Text)
-        lbl_cp2.Text = CInt((60 - lbl_tp2.Text) / lbl_v4.Text)
-        lbl_cp3.Text = CInt((60 - lbl_tp3.Text) / lbl_v4.Text)
-        lbl_cp4.Text = CInt((60 - lbl_tp4.Text) / lbl_v4.Text)
-        lbl_cp5.Text = CInt((60 - lbl_tp5.Text) / lbl_v4.Text)
-        lbl_cp6.Text = CInt((60 - lbl_tp6.Text) / lbl_v4.Text)
-        lbl_cp7.Text = CInt((60 - lbl_tp7.Text) / lbl_v4.Text)
+            lbl_cp1.Text = CInt((60 - lbl_tp1.Text) / lbl_v4.Text)
+            lbl_cp2.Text = CInt((60 - lbl_tp2.Text) / lbl_v4.Text)
+            lbl_cp3.Text = CInt((60 - lbl_tp3.Text) / lbl_v4.Text)
+            lbl_cp4.Text = CInt((60 - lbl_tp4.Text) / lbl_v4.Text)
+            lbl_cp5.Text = CInt((60 - lbl_tp5.Text) / lbl_v4.Text)
+            lbl_cp6.Text = CInt((60 - lbl_tp6.Text) / lbl_v4.Text)
+            lbl_cp7.Text = CInt((60 - lbl_tp7.Text) / lbl_v4.Text)
 
-        If cbx_turno.Text = 1 Then
-            lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / lbl_v4.Text)
-        ElseIf cbx_turno.Text = 2 Then
-            lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / lbl_v4.Text)
-        ElseIf cbx_turno.Text = 3 Then
-            lbl_cp8.Text = CInt((30 - lbl_tp8.Text) / lbl_v4.Text)
-        End If
+            If cbx_turno.Text = 1 Then
+                lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / lbl_v4.Text)
+            ElseIf cbx_turno.Text = 2 Then
+                lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / lbl_v4.Text)
+            ElseIf cbx_turno.Text = 3 Then
+                lbl_cp8.Text = CInt((30 - lbl_tp8.Text) / lbl_v4.Text)
+            End If
 
 
 
             If cbx_turno.Text = 1 Then
-            lbl_cp9.Text = CInt((30 - lbl_tp9.Text) / lbl_v4.Text)
-        ElseIf cbx_turno.Text = 2 Then
+                lbl_cp9.Text = CInt((30 - lbl_tp9.Text) / lbl_v4.Text)
+            ElseIf cbx_turno.Text = 2 Then
                 lbl_cp9.Text = "0"
             ElseIf cbx_turno.Text = 3 Then
                 lbl_cp9.Text = "0"
             End If
-
+        Catch
+        End Try
 
         cantidadpok()
 
@@ -694,8 +842,8 @@ END
 
             Try
                 llenacombocavidad()
-                CT()
-                cantidadxhora()
+                ''CT()
+                ''cantidadxhora()
 
                 lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
             Catch
@@ -709,8 +857,8 @@ END
         If cbx_proceso.Text = "FUNDICION" Then
 
             Try
-                CT()
-                cantidadxhora()
+                ''CT()
+                ''cantidadxhora()
 
                 lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
             Catch
@@ -732,11 +880,7 @@ END
         Dim Cmd As New SqlCommand
         With Cmd
             .CommandType = CommandType.Text
-            .CommandText = "
-
-
-select cavidad FROM [SistemaAAM].[dbo].[Pro_Cat_cavidades] where molde = '" & cbx_molde.Text & "'
-
+            .CommandText = "select cavidad FROM [SistemaAAM].[dbo].[Pro_Cat_cavidades] where molde = '" & cbx_molde.Text & "'
 "
             .Connection = Cn
         End With
@@ -766,27 +910,38 @@ select cavidad FROM [SistemaAAM].[dbo].[Pro_Cat_cavidades] where molde = '" & cb
 
 
         For Each fila As DataGridViewRow In dtgvp.Rows
-            If fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 1 And fila.Cells("Valor").Value = 2 Then
-                h1 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 2 And fila.Cells("Valor").Value = 2 Then
-                h2 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 3 And fila.Cells("Valor").Value = 2 Then
-                h3 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 4 And fila.Cells("Valor").Value = 2 Then
-                h4 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 5 And fila.Cells("Valor").Value = 2 Then
-                h5 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 6 And fila.Cells("Valor").Value = 2 Then
-                h6 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 7 And fila.Cells("Valor").Value = 2 Then
-                h7 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 8 And fila.Cells("Valor").Value = 2 Then
-                h8 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 9 And fila.Cells("Valor").Value = 2 Then
-                h9 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            End If
-        Next
+            If fila.Cells("id_error").Value = 66 OrElse fila.Cells("id_error").Value = 67 OrElse fila.Cells("id_error").Value = 68 OrElse fila.Cells("id_error").Value = 69 OrElse fila.Cells("id_error").Value = 70 OrElse fila.Cells("id_error").Value = 71 OrElse fila.Cells("id_error").Value = 72 OrElse fila.Cells("id_error").Value = 73 Then
 
+
+                If fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 1 And fila.Cells("Valor").Value = 2 Then
+                    h1 += Convert.ToDouble(fila.Cells("Cantidad").Value)
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 2 And fila.Cells("Valor").Value = 2 Then
+                    h2 += Convert.ToDouble(fila.Cells("Cantidad").Value)
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 3 And fila.Cells("Valor").Value = 2 Then
+                    h3 += Convert.ToDouble(fila.Cells("Cantidad").Value)
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 4 And fila.Cells("Valor").Value = 2 Then
+                    h4 += Convert.ToDouble(fila.Cells("Cantidad").Value)
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 5 And fila.Cells("Valor").Value = 2 Then
+                    h5 += Convert.ToDouble(fila.Cells("Cantidad").Value)
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 6 And fila.Cells("Valor").Value = 2 Then
+                    h6 += Convert.ToDouble(fila.Cells("Cantidad").Value)
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 7 And fila.Cells("Valor").Value = 2 Then
+                    h7 += Convert.ToDouble(fila.Cells("Cantidad").Value)
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 8 And fila.Cells("Valor").Value = 2 Then
+                    h8 += Convert.ToDouble(fila.Cells("Cantidad").Value)
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 9 And fila.Cells("Valor").Value = 2 Then
+                    h9 += Convert.ToDouble(fila.Cells("Cantidad").Value)
+
+                End If
+            Else
+
+
+            End If
+
+
+
+        Next
+        ''And fila.Cells("Valor").Value = 2
         ''fila.Cells("id_error").Value = 66 OrElse fila.Cells("id_error").Value = 67 OrElse fila.Cells("id_error").Value = 68 OrElse fila.Cells("id_error").Value = 69 OrElse fila.Cells("id_error").Value = 70 OrElse fila.Cells("id_error").Value = 71 OrElse fila.Cells("id_error").Value = 72 OrElse fila.Cells("id_error").Value = 73
 
         lbl_tp1.Text = h1
@@ -1140,13 +1295,49 @@ select cavidad FROM [SistemaAAM].[dbo].[Pro_Cat_cavidades] where molde = '" & cb
     End Sub
 
 
-    Private Sub lbl_v4_Click(sender As Object, e As EventArgs) Handles lbl_v4.TextChanged
+    Private Sub lbl_v4_Click(sender As Object, e As EventArgs)
         If lbl_v4.Text = "0" Or cbx_turno.Text = "" Then
             btn_guardar.Enabled = False
         ElseIf lbl_v4.Text <> "0" And cbx_turno.Text <> "" Then
             btn_guardar.Enabled = True
         End If
     End Sub
+
+    Private Sub cbx_proceso_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbx_proceso.SelectedIndexChanged
+        If cbx_proceso.Text = "FUNDICION" Then
+            cbx_molde.Enabled = True
+            cbx_cavidad.Enabled = True
+
+        Else
+            cbx_molde.Enabled = False
+            cbx_cavidad.Enabled = False
+
+
+        End If
+    End Sub
+
+    Private Sub lbl_v4_TextChanged(sender As Object, e As EventArgs) Handles lbl_v4.TextChanged
+        Try
+            cantidadxhora()
+        Catch
+        End Try
+
+        If lbl_v4.Text = "0" OrElse lbl_v4.Text = "" Then
+            lbl_v1.Text = "0"
+            lbl_cp1.Text = "0"
+            lbl_cp2.Text = "0"
+            lbl_cp3.Text = "0"
+            lbl_cp4.Text = "0"
+            lbl_cp5.Text = "0"
+            lbl_cp6.Text = "0"
+            lbl_cp7.Text = "0"
+            lbl_cp8.Text = "0"
+            lbl_cp9.Text = "0"
+        End If
+
+    End Sub
+
+
 End Class
 
 Module Modulo_detalle
