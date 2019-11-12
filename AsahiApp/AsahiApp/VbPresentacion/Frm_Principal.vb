@@ -69,7 +69,7 @@ Public Class Frm_Principal
         MejoraContinuaToolStripMenuItem.Enabled = False
         ReporteMejorasToolStripMenuItem.Enabled = False
         PlanTiempoExtraToolStripMenuItem.Enabled = False
-        ControlDeProducciónToolStripMenuItem.Enabled = False
+        'ControlDeProducciónToolStripMenuItem.Enabled = False
         EvaluacionesToolStripMenuItem.Enabled = False
         MasterPlanToolStripMenuItem.Enabled = False
         PlanToolStripMenuItem.Enabled = False
