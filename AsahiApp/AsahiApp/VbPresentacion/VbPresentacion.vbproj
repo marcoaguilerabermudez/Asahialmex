@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>75</ApplicationRevision>
+    <ApplicationRevision>76</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -219,6 +219,12 @@
     <Compile Include="Finanzas\Frm_PlanGastos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MuestradatosOEE.Designer.vb">
+      <DependentUpon>MuestradatosOEE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MuestradatosOEE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpcionesReportes.resx">
       <DependentUpon>Frm_OpcionesReportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuestradatosOEE.resx">
+      <DependentUpon>MuestradatosOEE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />
