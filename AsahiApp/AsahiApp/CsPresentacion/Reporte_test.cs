@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CrystalDecisions.CrystalReports.Engine;
+//using CrystalDecisions.CrystalReports.Engine;
 
 namespace CsPresentacion
 {
@@ -15,7 +15,7 @@ namespace CsPresentacion
     {
         public Reporte_test()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
         public int Var;
         public DateTime Fecha { get; set; }
