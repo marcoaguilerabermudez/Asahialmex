@@ -205,13 +205,15 @@ Public Class DGastos
         End Try
         Return lstGastos
     End Function
-    Public Function RecuperarCuentasGeneral(ByVal cadenaConex As String, ByVal idioma As Integer) As LGastos
+    Public Function RecuperarCuentasGeneral(ByVal cadenaConex As String, ByVal idioma As Integer, ByVal mes As Integer, ByVal año As Integer) As LGastos
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstGst As New LGastos()
         Try
             oCon.Open()
             Dim query As New SqlCommand("CtaGral_Recuperar", oCon)
             query.Parameters.AddWithValue("@idioma", idioma)
+            query.Parameters.AddWithValue("@mes", mes)
+            query.Parameters.AddWithValue("@año", año)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
@@ -220,6 +222,7 @@ Public Class DGastos
                 Dim gst As New Gastos()
                 gst.Cuenta = dr("Codigo").ToString
                 gst.NombreCuenta = dr("Descripcion").ToString
+                gst.MontoPesos = Convert.ToDouble(dr("Monto").ToString)
                 lstGst.Add(gst)
             End While
         Catch ex As Exception
@@ -232,13 +235,18 @@ Public Class DGastos
         End Try
         Return lstGst
     End Function
-    Public Function RecuperarListaCtas(ByVal cadenaConex As String, ByVal cta As Integer) As LGastos
+    Public Function RecuperarListaCtas(ByVal cadenaConex As String, ByVal cta As Integer, ByVal mes As Integer, ByVal año As Integer, ByVal segNeg As Integer,
+                                       ByVal idioma As Integer) As LGastos
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstGst As New LGastos()
         Try
             oCon.Open()
             Dim query As New SqlCommand("Cta_RecuperarListaCtas", oCon)
             query.Parameters.AddWithValue("@CtaGrl", cta)
+            query.Parameters.AddWithValue("@Mes", mes)
+            query.Parameters.AddWithValue("@Año", año)
+            query.Parameters.AddWithValue("@SegNeg", segNeg)
+            query.Parameters.AddWithValue("@idioma", idioma)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
@@ -247,6 +255,8 @@ Public Class DGastos
                 Dim gst As New Gastos()
                 gst.Cuenta = dr("Codigo").ToString
                 gst.NombreCuenta = dr("Nombre").ToString
+                gst.PlanMonto = Convert.ToDouble(dr("PlanM").ToString)
+                'gst.Modif = dr("Modif").ToString
                 lstGst.Add(gst)
             End While
         Catch ex As Exception
@@ -259,4 +269,23 @@ Public Class DGastos
         End Try
         Return lstGst
     End Function
+    Public Sub InsertarPlan(ByVal cadenaConex As String, ByVal objGst As Gastos)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Ctrl_InsertarPlanGastos", oCon)
+            query.Parameters.AddWithValue("@XML", objGst.Xml)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar() 'En un Insert de XML, NO olvidar esta línea si no, no inserta mi madres
+
+            MsgBox("Registros insertados")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
 End Class

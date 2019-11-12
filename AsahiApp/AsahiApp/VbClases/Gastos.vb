@@ -1,4 +1,22 @@
 ﻿Public Class Gastos
+    Private idSistema_ As Integer
+    Public Property IdSistema() As Integer
+        Get
+            Return idSistema_
+        End Get
+        Set(ByVal value As Integer)
+            idSistema_ = value
+        End Set
+    End Property
+    Private tipoMovimiento_ As Integer
+    Public Property TipoMovimiento() As Integer
+        Get
+            Return tipoMovimiento_
+        End Get
+        Set(ByVal value As Integer)
+            tipoMovimiento_ = value
+        End Set
+    End Property
     Private cuenta_ As String
     Public Property Cuenta() As String
         Get
@@ -141,6 +159,78 @@
         End Get
         Set(ByVal value As Double)
             cantPoliza_ = value
+        End Set
+    End Property
+    Private modif_ As String
+    Public Property Modif() As String
+        Get
+            Return modif_
+        End Get
+        Set(ByVal value As String)
+            modif_ = value
+        End Set
+    End Property
+    Private moneda_ As String
+    Public Property Moneda() As String
+        Get
+            Return moneda_
+        End Get
+        Set(ByVal value As String)
+            moneda_ = value
+        End Set
+    End Property
+    Private fechaInsert_ As Date
+    Public Property FechaInsert() As Date
+        Get
+            Return fechaInsert_
+        End Get
+        Set(ByVal value As Date)
+            fechaInsert_ = value
+        End Set
+    End Property
+    Private mes_ As Integer
+    Public Property Mes() As Integer
+        Get
+            Return mes_
+        End Get
+        Set(ByVal value As Integer)
+            mes_ = value
+        End Set
+    End Property
+    Private año_ As Integer
+    Public Property Año() As Integer
+        Get
+            Return año_
+        End Get
+        Set(ByVal value As Integer)
+            año_ = value
+        End Set
+    End Property
+    Private montoDls_ As Double
+    Public Property MontoDls() As Double
+        Get
+            Return montoDls_
+        End Get
+        Set(ByVal value As Double)
+            montoDls_ = value
+        End Set
+    End Property
+    Private montoPesos_ As Double
+    Public Property MontoPesos() As Double
+        Get
+            Return montoPesos_
+        End Get
+        Set(ByVal value As Double)
+            montoPesos_ = value
+        End Set
+    End Property
+    Private xml_ As String
+    Public Property Xml() As String
+        Get
+            Return xml_
+        End Get
+        Set(ByVal value As String)
+            xml_ = value
         End Set
     End Property
 End Class
