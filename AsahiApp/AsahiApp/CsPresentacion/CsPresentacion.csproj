@@ -93,6 +93,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DS_Ausentismo_Global.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -441,6 +447,12 @@
     <Compile Include="Reportes\RH\Rep_Ausentismo.Designer.cs">
       <DependentUpon>Rep_Ausentismo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reporte_test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte_test.Designer.cs">
+      <DependentUpon>Reporte_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -480,7 +492,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Ausentismo_Global.rdlc" />
+    <EmbeddedResource Include="Ausentismo_dia.rdlc" />
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Ausentismo Global.resx">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>
     </EmbeddedResource>
@@ -596,6 +612,9 @@
     <EmbeddedResource Include="Reporte_Incapacidades.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Rep_Ausentismo.resx">
       <DependentUpon>Rep_Ausentismo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte_test.resx">
+      <DependentUpon>Reporte_test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Ausentismos.rdlc" />
     <EmbeddedResource Include="Rep_bajas.rdlc" />
@@ -848,6 +867,60 @@
     <None Include="Resources\funnel-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="CRAXDDRT">
+      <Guid>{846B7590-93DE-11D4-8C9F-00A0C9B7E1C1}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CRDESIGNERLib">
+      <Guid>{C0AA5023-C763-4A4B-AFED-ADCF78D6C08B}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CREXPORTLib">
+      <Guid>{BD10A9B3-07CC-11D2-BEFF-00A0C95A6A5C}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CRPEAuto">
+      <Guid>{66589670-8F68-11D0-AA69-00A0C9274B91}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CRVIEWERLib">
+      <Guid>{C4847593-972C-11D0-9567-00A0C9273C2A}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Crystal">
+      <Guid>{00025600-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
@@ -870,6 +943,15 @@
       <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
