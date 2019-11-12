@@ -21,7 +21,7 @@ Public Class Detalle2oee
             Dim SSel As String
 
             SSel = (" select id_defecto , DefectoD, valor FROM [SistemaAAM].[dbo].[Pro_Cat_DefectosE]
-  where Id_defecto =  " & txt_error.Text & " ")
+  where Id_defectohoja =  " & txt_error.Text & " ")
             Dim da As SqlDataAdapter
             Dim ds As New DataSet
             ds.Clear()
@@ -33,9 +33,12 @@ Public Class Detalle2oee
             lbl_defecto.Text = ds.Tables(0).Rows(0).Item(1)
             valor = ds.Tables(0).Rows(0).Item(2)
 
+            CapturaOEE.Cn.Close()
 
+        Catch ex As Exception
+            CapturaOEE.Cn.Close()
+            MessageBox.Show(ex.ToString)
 
-        Catch
             MessageBox.Show("No hay ningún defecto registrado con ese ID, revise en intente de nuevo", "¡Aviso!")
             txt_error.Text = ""
             lbl_defecto.Text = "Debe teclear un defecto"

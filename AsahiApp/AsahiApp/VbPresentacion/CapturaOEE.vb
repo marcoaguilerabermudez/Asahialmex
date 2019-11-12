@@ -689,8 +689,6 @@ END
 
 "
 
-
-
             Com = New SqlCommand(SQL, Cn)
 
                 Rs = Com.ExecuteReader()
