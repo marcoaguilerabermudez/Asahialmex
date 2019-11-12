@@ -43,16 +43,13 @@ Partial Class SubventanaOee
         Me.rbt_cantidad = New System.Windows.Forms.RadioButton()
         Me.rbt_tiempo = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.rbt_g1 = New System.Windows.Forms.RadioButton()
-        Me.rbtn_g2 = New System.Windows.Forms.RadioButton()
-        Me.rbtn_g3 = New System.Windows.Forms.RadioButton()
-        Me.rbtn_g4 = New System.Windows.Forms.RadioButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rbtn_0 = New System.Windows.Forms.RadioButton()
         Me.rbtn_fundi = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.cbx_errorg = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -98,6 +95,7 @@ Partial Class SubventanaOee
         Me.txt_cantidad.Name = "txt_cantidad"
         Me.txt_cantidad.Size = New System.Drawing.Size(85, 20)
         Me.txt_cantidad.TabIndex = 63
+        Me.txt_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label5
         '
@@ -113,7 +111,7 @@ Partial Class SubventanaOee
         '
         Me.cbx_error.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_error.FormattingEnabled = True
-        Me.cbx_error.Location = New System.Drawing.Point(12, 206)
+        Me.cbx_error.Location = New System.Drawing.Point(12, 240)
         Me.cbx_error.Name = "cbx_error"
         Me.cbx_error.Size = New System.Drawing.Size(322, 21)
         Me.cbx_error.TabIndex = 66
@@ -121,11 +119,11 @@ Partial Class SubventanaOee
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(9, 190)
+        Me.Label6.Location = New System.Drawing.Point(9, 224)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 13)
+        Me.Label6.Size = New System.Drawing.Size(81, 13)
         Me.Label6.TabIndex = 65
-        Me.Label6.Text = "Tipo de Error"
+        Me.Label6.Text = "Defecto Detalle"
         '
         'Label7
         '
@@ -222,22 +220,22 @@ Partial Class SubventanaOee
         'rbt_cantidad
         '
         Me.rbt_cantidad.AutoSize = True
+        Me.rbt_cantidad.Checked = True
         Me.rbt_cantidad.Location = New System.Drawing.Point(6, 19)
         Me.rbt_cantidad.Name = "rbt_cantidad"
         Me.rbt_cantidad.Size = New System.Drawing.Size(101, 17)
         Me.rbt_cantidad.TabIndex = 116
+        Me.rbt_cantidad.TabStop = True
         Me.rbt_cantidad.Text = "Cantidad (pieza)"
         Me.rbt_cantidad.UseVisualStyleBackColor = True
         '
         'rbt_tiempo
         '
         Me.rbt_tiempo.AutoSize = True
-        Me.rbt_tiempo.Checked = True
         Me.rbt_tiempo.Location = New System.Drawing.Point(6, 45)
         Me.rbt_tiempo.Name = "rbt_tiempo"
         Me.rbt_tiempo.Size = New System.Drawing.Size(100, 17)
         Me.rbt_tiempo.TabIndex = 117
-        Me.rbt_tiempo.TabStop = True
         Me.rbt_tiempo.Text = "Tiempo (minuto)"
         Me.rbt_tiempo.UseVisualStyleBackColor = True
         '
@@ -251,70 +249,27 @@ Partial Class SubventanaOee
         Me.GroupBox1.TabIndex = 118
         Me.GroupBox1.TabStop = False
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.rbtn_g4)
-        Me.GroupBox2.Controls.Add(Me.rbtn_g3)
-        Me.GroupBox2.Controls.Add(Me.rbt_g1)
-        Me.GroupBox2.Controls.Add(Me.rbtn_g2)
-        Me.GroupBox2.Location = New System.Drawing.Point(348, 50)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(183, 117)
-        Me.GroupBox2.TabIndex = 119
-        Me.GroupBox2.TabStop = False
-        '
-        'rbt_g1
-        '
-        Me.rbt_g1.AutoSize = True
-        Me.rbt_g1.Checked = True
-        Me.rbt_g1.Location = New System.Drawing.Point(6, 12)
-        Me.rbt_g1.Name = "rbt_g1"
-        Me.rbt_g1.Size = New System.Drawing.Size(106, 17)
-        Me.rbt_g1.TabIndex = 116
-        Me.rbt_g1.TabStop = True
-        Me.rbt_g1.Text = "Cambio de molde"
-        Me.rbt_g1.UseVisualStyleBackColor = True
-        '
-        'rbtn_g2
-        '
-        Me.rbtn_g2.AutoSize = True
-        Me.rbtn_g2.Location = New System.Drawing.Point(6, 35)
-        Me.rbtn_g2.Name = "rbtn_g2"
-        Me.rbtn_g2.Size = New System.Drawing.Size(156, 17)
-        Me.rbtn_g2.TabIndex = 117
-        Me.rbtn_g2.Text = "Tiempo muerto por máquina"
-        Me.rbtn_g2.UseVisualStyleBackColor = True
-        '
-        'rbtn_g3
-        '
-        Me.rbtn_g3.AutoSize = True
-        Me.rbtn_g3.Location = New System.Drawing.Point(6, 59)
-        Me.rbtn_g3.Name = "rbtn_g3"
-        Me.rbtn_g3.Size = New System.Drawing.Size(138, 17)
-        Me.rbtn_g3.TabIndex = 118
-        Me.rbtn_g3.Text = "Loss por falta de control"
-        Me.rbtn_g3.UseVisualStyleBackColor = True
-        '
-        'rbtn_g4
-        '
-        Me.rbtn_g4.AutoSize = True
-        Me.rbtn_g4.Location = New System.Drawing.Point(7, 83)
-        Me.rbtn_g4.Name = "rbtn_g4"
-        Me.rbtn_g4.Size = New System.Drawing.Size(146, 17)
-        Me.rbtn_g4.TabIndex = 119
-        Me.rbtn_g4.Text = "Tiempo de paro planeado"
-        Me.rbtn_g4.UseVisualStyleBackColor = True
-        '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.rbtn_0)
         Me.GroupBox3.Controls.Add(Me.rbtn_fundi)
         Me.GroupBox3.Controls.Add(Me.RadioButton2)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Location = New System.Drawing.Point(159, 49)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(137, 92)
+        Me.GroupBox3.Size = New System.Drawing.Size(137, 110)
         Me.GroupBox3.TabIndex = 120
         Me.GroupBox3.TabStop = False
+        '
+        'rbtn_0
+        '
+        Me.rbtn_0.AutoSize = True
+        Me.rbtn_0.Location = New System.Drawing.Point(8, 83)
+        Me.rbtn_0.Name = "rbtn_0"
+        Me.rbtn_0.Size = New System.Drawing.Size(62, 17)
+        Me.rbtn_0.TabIndex = 120
+        Me.rbtn_0.Text = "General"
+        Me.rbtn_0.UseVisualStyleBackColor = True
         '
         'rbtn_fundi
         '
@@ -322,10 +277,10 @@ Partial Class SubventanaOee
         Me.rbtn_fundi.Checked = True
         Me.rbtn_fundi.Location = New System.Drawing.Point(8, 37)
         Me.rbtn_fundi.Name = "rbtn_fundi"
-        Me.rbtn_fundi.Size = New System.Drawing.Size(73, 17)
+        Me.rbtn_fundi.Size = New System.Drawing.Size(71, 17)
         Me.rbtn_fundi.TabIndex = 118
         Me.rbtn_fundi.TabStop = True
-        Me.rbtn_fundi.Text = "Funidición"
+        Me.rbtn_fundi.Text = "Fundición"
         Me.rbtn_fundi.UseVisualStyleBackColor = True
         '
         'RadioButton2
@@ -338,13 +293,32 @@ Partial Class SubventanaOee
         Me.RadioButton2.Text = "Maquinado"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
+        'cbx_errorg
+        '
+        Me.cbx_errorg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_errorg.FormattingEnabled = True
+        Me.cbx_errorg.Location = New System.Drawing.Point(12, 177)
+        Me.cbx_errorg.Name = "cbx_errorg"
+        Me.cbx_errorg.Size = New System.Drawing.Size(322, 21)
+        Me.cbx_errorg.TabIndex = 122
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(9, 161)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(85, 13)
+        Me.Label4.TabIndex = 121
+        Me.Label4.Text = "Defecto General"
+        '
         'SubventanaOee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(543, 399)
+        Me.Controls.Add(Me.cbx_errorg)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.lbl_proceso)
@@ -368,8 +342,6 @@ Partial Class SubventanaOee
         Me.Text = "Detalle Error"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
@@ -398,12 +370,10 @@ Partial Class SubventanaOee
     Friend WithEvents rbt_cantidad As RadioButton
     Friend WithEvents rbt_tiempo As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents rbtn_g4 As RadioButton
-    Friend WithEvents rbtn_g3 As RadioButton
-    Friend WithEvents rbt_g1 As RadioButton
-    Friend WithEvents rbtn_g2 As RadioButton
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents rbtn_fundi As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents rbtn_0 As RadioButton
+    Friend WithEvents cbx_errorg As ComboBox
+    Friend WithEvents Label4 As Label
 End Class

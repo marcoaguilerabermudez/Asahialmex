@@ -1,6 +1,6 @@
 ﻿namespace CsPresentacion
 {
-    partial class Ausentismo_Global
+    partial class m
     {
         /// <summary>
         /// Required designer variable.
@@ -33,9 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtm_fecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_nuevo = new System.Windows.Forms.Button();
             this.dgv_acumulado = new System.Windows.Forms.DataGridView();
-            this.btn_exportar_ant2 = new System.Windows.Forms.Button();
             this.txt_depto = new System.Windows.Forms.TextBox();
             this.lbl_plan = new System.Windows.Forms.Label();
             this.lbl_activos = new System.Windows.Forms.Label();
@@ -76,6 +74,8 @@
             this.lbl_turno3 = new System.Windows.Forms.Label();
             this.lbl_turno2 = new System.Windows.Forms.Label();
             this.btn_reporte = new System.Windows.Forms.Button();
+            this.btn_exportar_ant2 = new System.Windows.Forms.Button();
+            this.btn_nuevo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_acumulado)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -113,20 +113,6 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "FECHA:";
             // 
-            // btn_nuevo
-            // 
-            this.btn_nuevo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_nuevo.FlatAppearance.BorderSize = 0;
-            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(148, 42);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(27, 27);
-            this.btn_nuevo.TabIndex = 26;
-            this.btn_nuevo.UseVisualStyleBackColor = false;
-            this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
-            // 
             // dgv_acumulado
             // 
             this.dgv_acumulado.AllowUserToAddRows = false;
@@ -158,19 +144,6 @@
             this.dgv_acumulado.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Dgv_acumulado_CellFormatting);
             this.dgv_acumulado.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_acumulado_RowEnter);
             this.dgv_acumulado.DoubleClick += new System.EventHandler(this.Dgv_acumulado_DoubleClick);
-            // 
-            // btn_exportar_ant2
-            // 
-            this.btn_exportar_ant2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_exportar_ant2.FlatAppearance.BorderSize = 0;
-            this.btn_exportar_ant2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exportar_ant2.Image = global::CsPresentacion.Properties.Resources.Excel;
-            this.btn_exportar_ant2.Location = new System.Drawing.Point(670, 600);
-            this.btn_exportar_ant2.Name = "btn_exportar_ant2";
-            this.btn_exportar_ant2.Size = new System.Drawing.Size(40, 34);
-            this.btn_exportar_ant2.TabIndex = 191;
-            this.btn_exportar_ant2.UseVisualStyleBackColor = true;
-            this.btn_exportar_ant2.Click += new System.EventHandler(this.Btn_exportar_ant2_Click);
             // 
             // txt_depto
             // 
@@ -595,7 +568,34 @@
             this.btn_reporte.UseVisualStyleBackColor = true;
             this.btn_reporte.Click += new System.EventHandler(this.Btn_reporte_Click);
             // 
-            // Ausentismo_Global
+            // btn_exportar_ant2
+            // 
+            this.btn_exportar_ant2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_exportar_ant2.FlatAppearance.BorderSize = 0;
+            this.btn_exportar_ant2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exportar_ant2.Image = global::CsPresentacion.Properties.Resources.Excel;
+            this.btn_exportar_ant2.Location = new System.Drawing.Point(670, 600);
+            this.btn_exportar_ant2.Name = "btn_exportar_ant2";
+            this.btn_exportar_ant2.Size = new System.Drawing.Size(40, 34);
+            this.btn_exportar_ant2.TabIndex = 191;
+            this.btn_exportar_ant2.UseVisualStyleBackColor = true;
+            this.btn_exportar_ant2.Click += new System.EventHandler(this.Btn_exportar_ant2_Click);
+            // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_nuevo.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
+            this.btn_nuevo.Location = new System.Drawing.Point(148, 42);
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Size = new System.Drawing.Size(27, 27);
+            this.btn_nuevo.TabIndex = 26;
+            this.btn_nuevo.UseVisualStyleBackColor = false;
+            this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
+            // 
+            // m
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -631,7 +631,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Ausentismo_Global";
+            this.Name = "m";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ausentismo Global";

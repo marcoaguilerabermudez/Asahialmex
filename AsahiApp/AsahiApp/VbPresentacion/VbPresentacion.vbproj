@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>73</ApplicationRevision>
+    <ApplicationRevision>76</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -177,6 +177,12 @@
     <Compile Include="DataSet\Dts_PrenominaLista.vb">
       <DependentUpon>Dts_PrenominaLista.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Detalle2oee.Designer.vb">
+      <DependentUpon>Detalle2oee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle2oee.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Acerca.Designer.vb">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
     </Compile>
@@ -205,6 +211,12 @@
       <DependentUpon>Frm_PlanGastos.vb</DependentUpon>
     </Compile>
     <Compile Include="Finanzas\Frm_PlanGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuestradatosOEE.Designer.vb">
+      <DependentUpon>MuestradatosOEE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MuestradatosOEE.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
@@ -328,6 +340,9 @@
     <EmbeddedResource Include="CapturaOEE.resx">
       <DependentUpon>CapturaOEE.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Detalle2oee.resx">
+      <DependentUpon>Detalle2oee.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Finanzas\Frm_PlanGastos.resx">
       <DependentUpon>Frm_PlanGastos.vb</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpcionesReportes.resx">
       <DependentUpon>Frm_OpcionesReportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuestradatosOEE.resx">
+      <DependentUpon>MuestradatosOEE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />

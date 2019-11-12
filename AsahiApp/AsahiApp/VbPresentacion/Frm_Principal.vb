@@ -362,7 +362,7 @@ Public Class Frm_Principal
 
     Private Sub AusentismosGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusentismosGlobalToolStripMenuItem.Click
         'Ausentismo global
-        Dim ag As New Ausentismo_Global()
+        Dim ag As New m()
         ag.Show()
     End Sub
 
