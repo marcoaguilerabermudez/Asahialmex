@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Presentacion.exe.manifest" size="83907">
+    <dependentAssembly dependencyType="install" codebase="Presentacion.exe.manifest" size="70749">
       <assemblyIdentity name="Presentacion.exe" version="1.0.0.80" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VjQUcsukKju/nKR9adYIE56SRnfzxTcwM+v9bJUEXmo=</dsig:DigestValue>
+        <dsig:DigestValue>n4ZEmNf7wTphJga3O0hrWXrn5Jd0vEPJqIATZMpeI+s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

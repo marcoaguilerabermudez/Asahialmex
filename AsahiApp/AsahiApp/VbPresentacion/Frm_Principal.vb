@@ -75,6 +75,7 @@ Public Class Frm_Principal
         PlanToolStripMenuItem.Enabled = False
         PermisosYAutorizacionesToolStripMenuItem.Enabled = False
         AusentismosGlobalToolStripMenuItem.Enabled = False
+        AusentismoGeneralToolStripMenuItem.Enabled = False
 
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
@@ -109,6 +110,7 @@ Public Class Frm_Principal
                 Case "PlanToolStripMenuItem" : PlanToolStripMenuItem.Enabled = True
                 Case "PermisosYAutorizacionesToolStripMenuItem" : PermisosYAutorizacionesToolStripMenuItem.Enabled = True
                 Case "AusentismosGlobalToolStripMenuItem" : AusentismosGlobalToolStripMenuItem.Enabled = True
+                Case "AusentismoGeneralToolStripMenuItem" : AusentismoGeneralToolStripMenuItem.Enabled = True
             End Select
         Next
     End Sub
@@ -373,6 +375,12 @@ Public Class Frm_Principal
     Private Sub PlanDeGastosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDeGastosToolStripMenuItem.Click
         Dim capGastos As New Frm_PlanGastos()
         capGastos.Show()
+    End Sub
+
+    Private Sub AusentismoGeneralToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusentismoGeneralToolStripMenuItem.Click
+        Dim Aus As New Frm_Ausentismo_Fecha()
+        Aus.Show()
+
     End Sub
 #End Region
 End Class
