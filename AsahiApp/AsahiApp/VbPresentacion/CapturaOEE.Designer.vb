@@ -143,16 +143,6 @@ Partial Class CapturaOEE
         Me.lbl_cp3 = New System.Windows.Forms.Label()
         Me.lbl_cp2 = New System.Windows.Forms.Label()
         Me.lbl_cp1 = New System.Windows.Forms.Label()
-        Me.btn_1 = New System.Windows.Forms.Button()
-        Me.btn_2 = New System.Windows.Forms.Button()
-        Me.btn_3 = New System.Windows.Forms.Button()
-        Me.btn4 = New System.Windows.Forms.Button()
-        Me.btn_5 = New System.Windows.Forms.Button()
-        Me.btn_6 = New System.Windows.Forms.Button()
-        Me.btn_7 = New System.Windows.Forms.Button()
-        Me.btn_8 = New System.Windows.Forms.Button()
-        Me.btn_9 = New System.Windows.Forms.Button()
-        Me.btn_guardar = New System.Windows.Forms.Button()
         Me.cbx_cavidad = New System.Windows.Forms.ComboBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.ok9 = New System.Windows.Forms.Label()
@@ -202,6 +192,16 @@ Partial Class CapturaOEE
         Me.b3 = New System.Windows.Forms.Button()
         Me.b2 = New System.Windows.Forms.Button()
         Me.b1 = New System.Windows.Forms.Button()
+        Me.btn_guardar = New System.Windows.Forms.Button()
+        Me.btn_9 = New System.Windows.Forms.Button()
+        Me.btn_8 = New System.Windows.Forms.Button()
+        Me.btn_7 = New System.Windows.Forms.Button()
+        Me.btn_6 = New System.Windows.Forms.Button()
+        Me.btn_5 = New System.Windows.Forms.Button()
+        Me.btn4 = New System.Windows.Forms.Button()
+        Me.btn_3 = New System.Windows.Forms.Button()
+        Me.btn_2 = New System.Windows.Forms.Button()
+        Me.btn_1 = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -225,7 +225,7 @@ Partial Class CapturaOEE
         Me.cbx_pieza.Location = New System.Drawing.Point(456, 27)
         Me.cbx_pieza.Name = "cbx_pieza"
         Me.cbx_pieza.Size = New System.Drawing.Size(148, 21)
-        Me.cbx_pieza.TabIndex = 1
+        Me.cbx_pieza.TabIndex = 4
         '
         'cbx_maquina
         '
@@ -254,7 +254,7 @@ Partial Class CapturaOEE
         Me.cbx_proceso.Location = New System.Drawing.Point(132, 26)
         Me.cbx_proceso.Name = "cbx_proceso"
         Me.cbx_proceso.Size = New System.Drawing.Size(118, 21)
-        Me.cbx_proceso.TabIndex = 5
+        Me.cbx_proceso.TabIndex = 2
         '
         'Label2
         '
@@ -300,7 +300,7 @@ Partial Class CapturaOEE
         Me.cbx_molde.Location = New System.Drawing.Point(618, 28)
         Me.cbx_molde.Name = "cbx_molde"
         Me.cbx_molde.Size = New System.Drawing.Size(96, 21)
-        Me.cbx_molde.TabIndex = 9
+        Me.cbx_molde.TabIndex = 5
         '
         'DateTimePicker1
         '
@@ -308,7 +308,7 @@ Partial Class CapturaOEE
         Me.DateTimePicker1.Location = New System.Drawing.Point(12, 27)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(96, 20)
-        Me.DateTimePicker1.TabIndex = 10
+        Me.DateTimePicker1.TabIndex = 1
         '
         'Label5
         '
@@ -424,7 +424,7 @@ Partial Class CapturaOEE
         Me.lbl_v4.Location = New System.Drawing.Point(383, 85)
         Me.lbl_v4.Name = "lbl_v4"
         Me.lbl_v4.Size = New System.Drawing.Size(52, 20)
-        Me.lbl_v4.TabIndex = 63
+        Me.lbl_v4.TabIndex = 7
         Me.lbl_v4.Text = "0"
         Me.lbl_v4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1089,7 +1089,7 @@ Partial Class CapturaOEE
         Me.txt_1.Location = New System.Drawing.Point(347, 392)
         Me.txt_1.Name = "txt_1"
         Me.txt_1.Size = New System.Drawing.Size(36, 20)
-        Me.txt_1.TabIndex = 62
+        Me.txt_1.TabIndex = 8
         Me.txt_1.Text = "0"
         Me.txt_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1098,7 +1098,7 @@ Partial Class CapturaOEE
         Me.txt_2.Location = New System.Drawing.Point(347, 420)
         Me.txt_2.Name = "txt_2"
         Me.txt_2.Size = New System.Drawing.Size(36, 20)
-        Me.txt_2.TabIndex = 63
+        Me.txt_2.TabIndex = 9
         Me.txt_2.Text = "0"
         Me.txt_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1107,7 +1107,7 @@ Partial Class CapturaOEE
         Me.txt_4.Location = New System.Drawing.Point(347, 472)
         Me.txt_4.Name = "txt_4"
         Me.txt_4.Size = New System.Drawing.Size(36, 20)
-        Me.txt_4.TabIndex = 65
+        Me.txt_4.TabIndex = 11
         Me.txt_4.Text = "0"
         Me.txt_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1116,7 +1116,7 @@ Partial Class CapturaOEE
         Me.txt_3.Location = New System.Drawing.Point(347, 446)
         Me.txt_3.Name = "txt_3"
         Me.txt_3.Size = New System.Drawing.Size(36, 20)
-        Me.txt_3.TabIndex = 64
+        Me.txt_3.TabIndex = 10
         Me.txt_3.Text = "0"
         Me.txt_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1125,7 +1125,7 @@ Partial Class CapturaOEE
         Me.txt_8.Location = New System.Drawing.Point(347, 587)
         Me.txt_8.Name = "txt_8"
         Me.txt_8.Size = New System.Drawing.Size(36, 20)
-        Me.txt_8.TabIndex = 69
+        Me.txt_8.TabIndex = 15
         Me.txt_8.Text = "0"
         Me.txt_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1134,7 +1134,7 @@ Partial Class CapturaOEE
         Me.txt_7.Location = New System.Drawing.Point(347, 558)
         Me.txt_7.Name = "txt_7"
         Me.txt_7.Size = New System.Drawing.Size(36, 20)
-        Me.txt_7.TabIndex = 68
+        Me.txt_7.TabIndex = 14
         Me.txt_7.Text = "0"
         Me.txt_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1143,7 +1143,7 @@ Partial Class CapturaOEE
         Me.txt_6.Location = New System.Drawing.Point(348, 530)
         Me.txt_6.Name = "txt_6"
         Me.txt_6.Size = New System.Drawing.Size(36, 20)
-        Me.txt_6.TabIndex = 67
+        Me.txt_6.TabIndex = 13
         Me.txt_6.Text = "0"
         Me.txt_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1152,7 +1152,7 @@ Partial Class CapturaOEE
         Me.txt_5.Location = New System.Drawing.Point(348, 501)
         Me.txt_5.Name = "txt_5"
         Me.txt_5.Size = New System.Drawing.Size(36, 20)
-        Me.txt_5.TabIndex = 66
+        Me.txt_5.TabIndex = 12
         Me.txt_5.Text = "0"
         Me.txt_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1161,7 +1161,7 @@ Partial Class CapturaOEE
         Me.txt_9.Location = New System.Drawing.Point(347, 613)
         Me.txt_9.Name = "txt_9"
         Me.txt_9.Size = New System.Drawing.Size(36, 20)
-        Me.txt_9.TabIndex = 70
+        Me.txt_9.TabIndex = 16
         Me.txt_9.Text = "0"
         Me.txt_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1408,99 +1408,6 @@ Partial Class CapturaOEE
         Me.lbl_cp1.TabIndex = 89
         Me.lbl_cp1.Text = "0"
         '
-        'btn_1
-        '
-        Me.btn_1.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_1.Location = New System.Drawing.Point(603, 388)
-        Me.btn_1.Name = "btn_1"
-        Me.btn_1.Size = New System.Drawing.Size(23, 20)
-        Me.btn_1.TabIndex = 107
-        Me.btn_1.UseVisualStyleBackColor = True
-        '
-        'btn_2
-        '
-        Me.btn_2.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_2.Location = New System.Drawing.Point(603, 417)
-        Me.btn_2.Name = "btn_2"
-        Me.btn_2.Size = New System.Drawing.Size(23, 20)
-        Me.btn_2.TabIndex = 108
-        Me.btn_2.UseVisualStyleBackColor = True
-        '
-        'btn_3
-        '
-        Me.btn_3.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_3.Location = New System.Drawing.Point(603, 444)
-        Me.btn_3.Name = "btn_3"
-        Me.btn_3.Size = New System.Drawing.Size(23, 20)
-        Me.btn_3.TabIndex = 109
-        Me.btn_3.UseVisualStyleBackColor = True
-        '
-        'btn4
-        '
-        Me.btn4.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn4.Location = New System.Drawing.Point(603, 470)
-        Me.btn4.Name = "btn4"
-        Me.btn4.Size = New System.Drawing.Size(23, 20)
-        Me.btn4.TabIndex = 110
-        Me.btn4.UseVisualStyleBackColor = True
-        '
-        'btn_5
-        '
-        Me.btn_5.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_5.Location = New System.Drawing.Point(603, 498)
-        Me.btn_5.Name = "btn_5"
-        Me.btn_5.Size = New System.Drawing.Size(23, 20)
-        Me.btn_5.TabIndex = 111
-        Me.btn_5.UseVisualStyleBackColor = True
-        '
-        'btn_6
-        '
-        Me.btn_6.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_6.Location = New System.Drawing.Point(603, 527)
-        Me.btn_6.Name = "btn_6"
-        Me.btn_6.Size = New System.Drawing.Size(23, 20)
-        Me.btn_6.TabIndex = 112
-        Me.btn_6.UseVisualStyleBackColor = True
-        '
-        'btn_7
-        '
-        Me.btn_7.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_7.Location = New System.Drawing.Point(603, 555)
-        Me.btn_7.Name = "btn_7"
-        Me.btn_7.Size = New System.Drawing.Size(23, 20)
-        Me.btn_7.TabIndex = 113
-        Me.btn_7.UseVisualStyleBackColor = True
-        '
-        'btn_8
-        '
-        Me.btn_8.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_8.Location = New System.Drawing.Point(603, 584)
-        Me.btn_8.Name = "btn_8"
-        Me.btn_8.Size = New System.Drawing.Size(23, 20)
-        Me.btn_8.TabIndex = 114
-        Me.btn_8.UseVisualStyleBackColor = True
-        '
-        'btn_9
-        '
-        Me.btn_9.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_9.Location = New System.Drawing.Point(603, 610)
-        Me.btn_9.Name = "btn_9"
-        Me.btn_9.Size = New System.Drawing.Size(23, 20)
-        Me.btn_9.TabIndex = 115
-        Me.btn_9.UseVisualStyleBackColor = True
-        '
-        'btn_guardar
-        '
-        Me.btn_guardar.Enabled = False
-        Me.btn_guardar.Image = Global.Presentacion.My.Resources.Resources.prenomina
-        Me.btn_guardar.Location = New System.Drawing.Point(8, 642)
-        Me.btn_guardar.Name = "btn_guardar"
-        Me.btn_guardar.Size = New System.Drawing.Size(63, 44)
-        Me.btn_guardar.TabIndex = 117
-        Me.btn_guardar.Text = "Guardar"
-        Me.btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_guardar.UseVisualStyleBackColor = True
-        '
         'cbx_cavidad
         '
         Me.cbx_cavidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -1509,7 +1416,7 @@ Partial Class CapturaOEE
         Me.cbx_cavidad.Location = New System.Drawing.Point(741, 28)
         Me.cbx_cavidad.Name = "cbx_cavidad"
         Me.cbx_cavidad.Size = New System.Drawing.Size(96, 21)
-        Me.cbx_cavidad.TabIndex = 119
+        Me.cbx_cavidad.TabIndex = 6
         '
         'Label38
         '
@@ -1857,7 +1764,7 @@ Partial Class CapturaOEE
         Me.b9.Location = New System.Drawing.Point(547, 610)
         Me.b9.Name = "b9"
         Me.b9.Size = New System.Drawing.Size(23, 20)
-        Me.b9.TabIndex = 158
+        Me.b9.TabIndex = 25
         Me.b9.UseVisualStyleBackColor = False
         '
         'b8
@@ -1867,7 +1774,7 @@ Partial Class CapturaOEE
         Me.b8.Location = New System.Drawing.Point(547, 584)
         Me.b8.Name = "b8"
         Me.b8.Size = New System.Drawing.Size(23, 20)
-        Me.b8.TabIndex = 157
+        Me.b8.TabIndex = 24
         Me.b8.UseVisualStyleBackColor = False
         '
         'b7
@@ -1877,7 +1784,7 @@ Partial Class CapturaOEE
         Me.b7.Location = New System.Drawing.Point(547, 555)
         Me.b7.Name = "b7"
         Me.b7.Size = New System.Drawing.Size(23, 20)
-        Me.b7.TabIndex = 156
+        Me.b7.TabIndex = 23
         Me.b7.UseVisualStyleBackColor = False
         '
         'b6
@@ -1887,7 +1794,7 @@ Partial Class CapturaOEE
         Me.b6.Location = New System.Drawing.Point(547, 527)
         Me.b6.Name = "b6"
         Me.b6.Size = New System.Drawing.Size(23, 20)
-        Me.b6.TabIndex = 155
+        Me.b6.TabIndex = 22
         Me.b6.UseVisualStyleBackColor = False
         '
         'b5
@@ -1897,7 +1804,7 @@ Partial Class CapturaOEE
         Me.b5.Location = New System.Drawing.Point(547, 498)
         Me.b5.Name = "b5"
         Me.b5.Size = New System.Drawing.Size(23, 20)
-        Me.b5.TabIndex = 154
+        Me.b5.TabIndex = 21
         Me.b5.UseVisualStyleBackColor = False
         '
         'b4
@@ -1907,7 +1814,7 @@ Partial Class CapturaOEE
         Me.b4.Location = New System.Drawing.Point(547, 470)
         Me.b4.Name = "b4"
         Me.b4.Size = New System.Drawing.Size(23, 20)
-        Me.b4.TabIndex = 153
+        Me.b4.TabIndex = 20
         Me.b4.UseVisualStyleBackColor = False
         '
         'b3
@@ -1917,7 +1824,7 @@ Partial Class CapturaOEE
         Me.b3.Location = New System.Drawing.Point(547, 444)
         Me.b3.Name = "b3"
         Me.b3.Size = New System.Drawing.Size(23, 20)
-        Me.b3.TabIndex = 152
+        Me.b3.TabIndex = 19
         Me.b3.UseVisualStyleBackColor = False
         '
         'b2
@@ -1927,7 +1834,7 @@ Partial Class CapturaOEE
         Me.b2.Location = New System.Drawing.Point(547, 417)
         Me.b2.Name = "b2"
         Me.b2.Size = New System.Drawing.Size(23, 20)
-        Me.b2.TabIndex = 151
+        Me.b2.TabIndex = 18
         Me.b2.UseVisualStyleBackColor = False
         '
         'b1
@@ -1937,8 +1844,101 @@ Partial Class CapturaOEE
         Me.b1.Location = New System.Drawing.Point(547, 388)
         Me.b1.Name = "b1"
         Me.b1.Size = New System.Drawing.Size(23, 20)
-        Me.b1.TabIndex = 150
+        Me.b1.TabIndex = 17
         Me.b1.UseVisualStyleBackColor = False
+        '
+        'btn_guardar
+        '
+        Me.btn_guardar.Enabled = False
+        Me.btn_guardar.Image = Global.Presentacion.My.Resources.Resources.prenomina
+        Me.btn_guardar.Location = New System.Drawing.Point(8, 642)
+        Me.btn_guardar.Name = "btn_guardar"
+        Me.btn_guardar.Size = New System.Drawing.Size(63, 44)
+        Me.btn_guardar.TabIndex = 117
+        Me.btn_guardar.Text = "Guardar"
+        Me.btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_guardar.UseVisualStyleBackColor = True
+        '
+        'btn_9
+        '
+        Me.btn_9.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_9.Location = New System.Drawing.Point(603, 610)
+        Me.btn_9.Name = "btn_9"
+        Me.btn_9.Size = New System.Drawing.Size(23, 20)
+        Me.btn_9.TabIndex = 115
+        Me.btn_9.UseVisualStyleBackColor = True
+        '
+        'btn_8
+        '
+        Me.btn_8.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_8.Location = New System.Drawing.Point(603, 584)
+        Me.btn_8.Name = "btn_8"
+        Me.btn_8.Size = New System.Drawing.Size(23, 20)
+        Me.btn_8.TabIndex = 114
+        Me.btn_8.UseVisualStyleBackColor = True
+        '
+        'btn_7
+        '
+        Me.btn_7.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_7.Location = New System.Drawing.Point(603, 555)
+        Me.btn_7.Name = "btn_7"
+        Me.btn_7.Size = New System.Drawing.Size(23, 20)
+        Me.btn_7.TabIndex = 113
+        Me.btn_7.UseVisualStyleBackColor = True
+        '
+        'btn_6
+        '
+        Me.btn_6.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_6.Location = New System.Drawing.Point(603, 527)
+        Me.btn_6.Name = "btn_6"
+        Me.btn_6.Size = New System.Drawing.Size(23, 20)
+        Me.btn_6.TabIndex = 112
+        Me.btn_6.UseVisualStyleBackColor = True
+        '
+        'btn_5
+        '
+        Me.btn_5.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_5.Location = New System.Drawing.Point(603, 498)
+        Me.btn_5.Name = "btn_5"
+        Me.btn_5.Size = New System.Drawing.Size(23, 20)
+        Me.btn_5.TabIndex = 111
+        Me.btn_5.UseVisualStyleBackColor = True
+        '
+        'btn4
+        '
+        Me.btn4.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn4.Location = New System.Drawing.Point(603, 470)
+        Me.btn4.Name = "btn4"
+        Me.btn4.Size = New System.Drawing.Size(23, 20)
+        Me.btn4.TabIndex = 110
+        Me.btn4.UseVisualStyleBackColor = True
+        '
+        'btn_3
+        '
+        Me.btn_3.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_3.Location = New System.Drawing.Point(603, 444)
+        Me.btn_3.Name = "btn_3"
+        Me.btn_3.Size = New System.Drawing.Size(23, 20)
+        Me.btn_3.TabIndex = 109
+        Me.btn_3.UseVisualStyleBackColor = True
+        '
+        'btn_2
+        '
+        Me.btn_2.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_2.Location = New System.Drawing.Point(603, 417)
+        Me.btn_2.Name = "btn_2"
+        Me.btn_2.Size = New System.Drawing.Size(23, 20)
+        Me.btn_2.TabIndex = 108
+        Me.btn_2.UseVisualStyleBackColor = True
+        '
+        'btn_1
+        '
+        Me.btn_1.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_1.Location = New System.Drawing.Point(603, 388)
+        Me.btn_1.Name = "btn_1"
+        Me.btn_1.Size = New System.Drawing.Size(23, 20)
+        Me.btn_1.TabIndex = 107
+        Me.btn_1.UseVisualStyleBackColor = True
         '
         'CapturaOEE
         '
