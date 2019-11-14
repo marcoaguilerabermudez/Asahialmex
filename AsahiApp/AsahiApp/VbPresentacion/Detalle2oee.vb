@@ -5,6 +5,7 @@ Public Class Detalle2oee
     Dim id_defecto As Integer
     Dim valor As Integer
     Dim valor2 As String
+    Public idh As String
 
     Private Sub Detalle2oee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbl_fecha.Text = Modulo_detalle.parametro
@@ -12,6 +13,7 @@ Public Class Detalle2oee
         lbl_turno.Text = Modulo_detalle.parametro3
         lbl_piezas.Text = Modulo_detalle.parametro4
         lbl_proceso.Text = Modulo_detalle.parametro5
+        idh = Modulo_detalle.parametro6
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs)
@@ -65,7 +67,7 @@ Public Class Detalle2oee
                 MessageBox.Show("No se pueden agregar más piezas con defectos que piezas producidad, revise sus cantidades", "¡Aviso!")
             Else
                 valor2 = "Pza"
-                CapturaOEE.dtgvp.Rows.Add(New String() {lbl_defecto.Text, valor, valor2, txt_cantidad.Text, lbl_hora.Text, CapturaOEE.idh, id_defecto, lbl_piezas.Text})
+                CapturaOEE.dtgvp.Rows.Add(New String() {lbl_defecto.Text, valor, valor2, txt_cantidad.Text, lbl_hora.Text, idh, id_defecto, lbl_piezas.Text})
                 CapturaOEE.ngxhora()
                 CapturaOEE.etiquetaspieza()
                 txt_error.Clear()
@@ -77,7 +79,7 @@ Public Class Detalle2oee
                 MessageBox.Show("No se pueden agregar más de 60 minutos de paro por hora, revise sus cantidades", "¡Aviso!")
             Else
                 valor2 = "Tiempo"
-                CapturaOEE.dtgvp.Rows.Add(New String() {lbl_defecto.Text, valor, valor2, txt_cantidad.Text, lbl_hora.Text, CapturaOEE.idh, id_defecto, lbl_piezas.Text})
+                CapturaOEE.dtgvp.Rows.Add(New String() {lbl_defecto.Text, valor, valor2, txt_cantidad.Text, lbl_hora.Text, idh, id_defecto, lbl_piezas.Text})
                 CapturaOEE.calculotppxhora()
                 CapturaOEE.etiquetastiempo()
                 txt_error.Clear()
@@ -131,6 +133,109 @@ Public Class Detalle2oee
             End Try
         End If
 
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_retrocede.Click
+        If idh = 1 Then
+            idh = 9
+            lbl_piezas.Text = CapturaOEE.txt_9.Text
+            lbl_hora.Text = CapturaOEE.lbl_h9.Text
+
+        ElseIf idh = 2 Then
+            idh = 1
+            lbl_piezas.Text = CapturaOEE.txt_1.Text
+            lbl_hora.Text = CapturaOEE.lbl_h1.Text
+
+        ElseIf idh = 3 Then
+            idh = 2
+            lbl_piezas.Text = CapturaOEE.txt_2.Text
+            lbl_hora.Text = CapturaOEE.lbl_h2.Text
+
+        ElseIf idh = 4 Then
+            idh = 3
+            lbl_piezas.Text = CapturaOEE.txt_3.Text
+            lbl_hora.Text = CapturaOEE.lbl_h3.Text
+
+        ElseIf idh = 5 Then
+            idh = 4
+            lbl_piezas.Text = CapturaOEE.txt_4.Text
+            lbl_hora.Text = CapturaOEE.lbl_h4.Text
+
+        ElseIf idh = 6 Then
+            idh = 5
+            lbl_piezas.Text = CapturaOEE.txt_5.Text
+            lbl_hora.Text = CapturaOEE.lbl_h5.Text
+
+        ElseIf idh = 7 Then
+            idh = 6
+            lbl_piezas.Text = CapturaOEE.txt_6.Text
+            lbl_hora.Text = CapturaOEE.lbl_h6.Text
+
+
+        ElseIf idh = 8 Then
+            idh = 7
+            lbl_piezas.Text = CapturaOEE.txt_7.Text
+            lbl_hora.Text = CapturaOEE.lbl_h7.Text
+
+
+        ElseIf idh = 9 Then
+            idh = 8
+            lbl_piezas.Text = CapturaOEE.txt_8.Text
+            lbl_hora.Text = CapturaOEE.lbl_h8.Text
+
+        End If
+
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_avanza.Click
+        If idh = 1 Then
+            idh = 2
+            lbl_piezas.Text = CapturaOEE.txt_2.Text
+            lbl_hora.Text = CapturaOEE.lbl_h2.Text
+
+        ElseIf idh = 2 Then
+            idh = 3
+            lbl_piezas.Text = CapturaOEE.txt_3.Text
+            lbl_hora.Text = CapturaOEE.lbl_h3.Text
+
+        ElseIf idh = 3 Then
+            idh = 4
+            lbl_piezas.Text = CapturaOEE.txt_4.Text
+            lbl_hora.Text = CapturaOEE.lbl_h4.Text
+
+        ElseIf idh = 4 Then
+            idh = 5
+            lbl_piezas.Text = CapturaOEE.txt_5.Text
+            lbl_hora.Text = CapturaOEE.lbl_h5.Text
+
+        ElseIf idh = 5 Then
+            idh = 6
+            lbl_piezas.Text = CapturaOEE.txt_6.Text
+            lbl_hora.Text = CapturaOEE.lbl_h6.Text
+
+        ElseIf idh = 6 Then
+            idh = 7
+            lbl_piezas.Text = CapturaOEE.txt_7.Text
+            lbl_hora.Text = CapturaOEE.lbl_h7.Text
+
+        ElseIf idh = 7 Then
+            idh = 8
+            lbl_piezas.Text = CapturaOEE.txt_8.Text
+            lbl_hora.Text = CapturaOEE.lbl_h8.Text
+
+        ElseIf idh = 8 Then
+            idh = 9
+            lbl_piezas.Text = CapturaOEE.txt_9.Text
+            lbl_hora.Text = CapturaOEE.lbl_h9.Text
+
+
+        ElseIf idh = 9 Then
+            idh = 1
+            lbl_piezas.Text = CapturaOEE.txt_1.Text
+            lbl_hora.Text = CapturaOEE.lbl_h1.Text
+
+        End If
     End Sub
 
     'Private Sub btn_1_Click(sender As Object, e As EventArgs) Handles btn_1.Click

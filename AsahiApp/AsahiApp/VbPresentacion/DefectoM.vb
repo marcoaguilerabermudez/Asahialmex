@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class DefectoM
+    Dim idh As Integer
+
 
     Dim valor As Integer
     Private Sub DefectoM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -9,6 +11,7 @@ Public Class DefectoM
         lbl_turno.Text = Modulo_detalle.parametro3
         lbl_piezas.Text = Modulo_detalle.parametro4
         lbl_proceso.Text = Modulo_detalle.parametro5
+        idh = Modulo_detalle.parametro6
 
 
         llenacombo()
@@ -98,7 +101,7 @@ Public Class DefectoM
                 MessageBox.Show("No se pueden agregar más piezas con defectos que piezas producidad, revise sus cantidades", "¡Aviso!")
             Else
                 lbl_valor.Text = "PZA"
-                CapturaOEE.dtgvp.Rows.Add(New String() {cbx_defecto.Text, valor, lbl_valor.Text, txt_cantidad.Text, lbl_hora.Text, CapturaOEE.idh, lbl_id.Text, lbl_piezas.Text})
+                CapturaOEE.dtgvp.Rows.Add(New String() {cbx_defecto.Text, valor, lbl_valor.Text, txt_cantidad.Text, lbl_hora.Text, idh, lbl_id.Text, lbl_piezas.Text})
                 CapturaOEE.ngxhora()
                 CapturaOEE.etiquetaspieza()
 
@@ -109,7 +112,7 @@ Public Class DefectoM
                 MessageBox.Show("No se pueden agregar más de 60 minutos de paro por hora, revise sus cantidades", "¡Aviso!")
             Else
                 lbl_valor.Text = "TIEMPO"
-                CapturaOEE.dtgvp.Rows.Add(New String() {cbx_defecto.Text, valor, lbl_valor.Text, txt_cantidad.Text, lbl_hora.Text, CapturaOEE.idh, lbl_id.Text, lbl_piezas.Text})
+                CapturaOEE.dtgvp.Rows.Add(New String() {cbx_defecto.Text, valor, lbl_valor.Text, txt_cantidad.Text, lbl_hora.Text, idh, lbl_id.Text, lbl_piezas.Text})
                 CapturaOEE.calculotppxhora()
                 CapturaOEE.etiquetastiempo()
 

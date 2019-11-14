@@ -47,7 +47,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_1.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 1
+            Modulo_detalle.parametro6 = 1
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -66,7 +66,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_2.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 2
+            Modulo_detalle.parametro6 = 2
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -83,7 +83,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_3.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 3
+            Modulo_detalle.parametro6 = 3
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -100,7 +100,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_4.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 4
+            Modulo_detalle.parametro6 = 4
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -117,7 +117,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_5.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 5
+            Modulo_detalle.parametro6 = 5
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -134,7 +134,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_6.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 6
+            Modulo_detalle.parametro6 = 6
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -151,7 +151,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_7.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 7
+            Modulo_detalle.parametro6 = 7
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -169,7 +169,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_8.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 8
+            Modulo_detalle.parametro6 = 8
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -186,7 +186,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_9.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 9
+            Modulo_detalle.parametro6 = 9
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -203,7 +203,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_1.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 1
+            Modulo_detalle.parametro6 = 1
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -221,7 +221,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_2.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 2
+            Modulo_detalle.parametro6 = 2
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -238,7 +238,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_3.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 3
+            Modulo_detalle.parametro6 = 3
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -255,7 +255,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_4.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 4
+            Modulo_detalle.parametro6 = 4
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -272,7 +272,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_5.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 5
+            Modulo_detalle.parametro6 = 5
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -289,7 +289,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_6.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 6
+            Modulo_detalle.parametro6 = 6
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -306,7 +306,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_7.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 7
+            Modulo_detalle.parametro6 = 7
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -323,7 +323,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_8.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 8
+            Modulo_detalle.parametro6 = 8
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -340,7 +340,7 @@ Public Class CapturaOEE
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_9.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 9
+            Modulo_detalle.parametro6 = 9
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -1417,4 +1417,5 @@ Module Modulo_detalle
     Public parametro3 As String
     Public parametro4 As Integer
     Public parametro5 As String
+    Public parametro6 As Integer
 End Module
