@@ -267,6 +267,7 @@ namespace CsPresentacion
         private void Dgv_acumulado_DoubleClick(object sender, EventArgs e)
         {
             Detalle_incidencias inc = new Detalle_incidencias();
+            inc.lbl_var.Text = "4";
             inc.dtm_fecha.Text = dtm_fecha.Text;
             inc.txt_depto.Text = txt_depto.Text;
             inc.ShowDialog();
@@ -283,11 +284,6 @@ namespace CsPresentacion
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Reporte_test rep = new Reporte_test();
-            rep.Var = Convert.ToInt32("5");
-            rep.Fecha = dtm_fecha.Value;
-            rep.Depto = txt_depto.Text.ToString();
-            rep.ShowDialog();
         }
     }
 }

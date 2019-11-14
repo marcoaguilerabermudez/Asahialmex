@@ -17,26 +17,38 @@ namespace CsPresentacion
             InitializeComponent();
         }
 
+        int Var;
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
 
         private void Detalle_incidencias_Load(object sender, EventArgs e)
         {
-            Llenar_dgv();
+            if (lbl_var.Text == "4")
+            {
+                Llenar_dgv();
+            }
+            else if (lbl_var.Text == "3")
+            {
+                Llenar_dgv_fecha();
+            }
+           
             dtm_fecha.Visible = false;
             txt_depto.Visible = false;
-            txt_clave.Visible = false;
+            txt_clave.Enabled = false;
+            dtm_inicia.Visible = false;
+            dtm_termina.Visible = false;
+            lbl_var.Visible = false;
             dgv_detalle.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
             dgv_detalle.AlternatingRowsDefaultCellStyle.BackColor = Color.White;  
         }
 //Metodos
-        public void Llenar_dgv()// Método para llenar DatagridView Total
+        public void Llenar_dgv()// Método para llenar DatagridView 
         {
             try
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("[dbo].[Ausentismo_Global]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Var", 4);
+                cmd.Parameters.AddWithValue("@Var", lbl_var.Text);
                 cmd.Parameters.AddWithValue("@Fecha", dtm_fecha.Text);
                 cmd.Parameters.AddWithValue("@Depto", txt_depto.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -51,6 +63,31 @@ namespace CsPresentacion
                 MessageBox.Show(ex.Message);
             }
         }
+        public void Llenar_dgv_fecha()// Método para llenar DatagridView 
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[Ausentismo_Fecha]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Var", lbl_var.Text);
+                cmd.Parameters.AddWithValue("@Inicia", dtm_inicia.Text);
+                cmd.Parameters.AddWithValue("@Termina", dtm_termina.Text);
+                cmd.Parameters.AddWithValue("@Depto", txt_depto.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                con.Close();
+                adapter.Fill(dt);
+                dgv_detalle.DataSource = dt;
+                Diseño_dgv(dgv_detalle);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
         private void Diseño_dgv(DataGridView dgv)
         {
             dgv.Columns[0].Width = 50;//CLAVE
