@@ -94,7 +94,7 @@ Public Class DefectoM
 
     Private Sub btn_1_Click(sender As Object, e As EventArgs) Handles btn_1.Click
         If valor = 1 Then
-            If txt_cantidad.Text > lbl_piezas.Text Then
+            If CInt(txt_cantidad.Text) > CInt(lbl_piezas.Text) Then
                 MessageBox.Show("No se pueden agregar más piezas con defectos que piezas producidad, revise sus cantidades", "¡Aviso!")
             Else
                 lbl_valor.Text = "PZA"
@@ -105,7 +105,7 @@ Public Class DefectoM
                 txt_cantidad.Text = "0"
             End If
         ElseIf valor = 2 Then
-            If txt_cantidad.Text > 60 Then
+            If CInt(txt_cantidad.Text) > 60 Then
                 MessageBox.Show("No se pueden agregar más de 60 minutos de paro por hora, revise sus cantidades", "¡Aviso!")
             Else
                 lbl_valor.Text = "TIEMPO"
