@@ -225,6 +225,12 @@
     <Compile Include="MuestradatosOEE.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MuestraOeeCompleto.Designer.vb">
+      <DependentUpon>MuestraOeeCompleto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MuestraOeeCompleto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </Compile>
@@ -366,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MuestradatosOEE.resx">
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuestraOeeCompleto.resx">
+      <DependentUpon>MuestraOeeCompleto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />

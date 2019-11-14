@@ -374,5 +374,13 @@ Public Class Frm_Principal
         Dim capGastos As New Frm_PlanGastos()
         capGastos.Show()
     End Sub
+
+    Private Sub MostrarOEEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MostrarOEEToolStripMenuItem.Click
+        MuestradatosOEE.Show()
+    End Sub
+
+    Private Sub OEECompletoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OEECompletoToolStripMenuItem.Click
+        MuestraOeeCompleto.Show()
+    End Sub
 #End Region
 End Class

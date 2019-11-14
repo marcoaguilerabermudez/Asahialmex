@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\AsahiApp",
-    "\\AsahiApp\\AsahiApp"
+    "\\AsahiApp\\AsahiApp",
+    "\\AsahiApp\\AsahiApp\\VbPresentacion"
   ],
-  "SelectedNode": "\\AsahiApp\\AsahiApp\\AsahiApp.sln",
+  "SelectedNode": "\\AsahiApp\\AsahiApp\\VbPresentacion\\CapturaOEE.vb",
   "PreviewInSolutionExplorer": true
 }

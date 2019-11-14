@@ -14,7 +14,7 @@ Public Class Detalle2oee
         lbl_proceso.Text = Modulo_detalle.parametro5
     End Sub
 
-    Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+    Private Sub btn_buscar_Click(sender As Object, e As EventArgs)
         Try
 
             CapturaOEE.Cn.Open()
@@ -68,7 +68,9 @@ Public Class Detalle2oee
                 CapturaOEE.dtgvp.Rows.Add(New String() {lbl_defecto.Text, valor, valor2, txt_cantidad.Text, lbl_hora.Text, CapturaOEE.idh, id_defecto, lbl_piezas.Text})
                 CapturaOEE.ngxhora()
                 CapturaOEE.etiquetaspieza()
-
+                txt_error.Clear()
+                txt_error.Focus()
+                txt_cantidad.Text = "0"
             End If
         ElseIf valor = 2 Then
             If txt_cantidad.Text > 60 Then
@@ -78,6 +80,9 @@ Public Class Detalle2oee
                 CapturaOEE.dtgvp.Rows.Add(New String() {lbl_defecto.Text, valor, valor2, txt_cantidad.Text, lbl_hora.Text, CapturaOEE.idh, id_defecto, lbl_piezas.Text})
                 CapturaOEE.calculotppxhora()
                 CapturaOEE.etiquetastiempo()
+                txt_error.Clear()
+                txt_error.Focus()
+                txt_cantidad.Text = "0"
 
             End If
 
@@ -90,6 +95,42 @@ Public Class Detalle2oee
         Else
             btn_1.Enabled = True
         End If
+    End Sub
+
+    Private Sub txt_error_TextChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_error.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            Try
+
+                CapturaOEE.Cn.Open()
+                Dim SSel As String
+
+                SSel = (" select id_defecto , DefectoD, valor FROM [SistemaAAM].[dbo].[Pro_Cat_DefectosE]
+  where Id_defectohoja =  " & txt_error.Text & " ")
+                Dim da As SqlDataAdapter
+                Dim ds As New DataSet
+                ds.Clear()
+                da = New SqlDataAdapter(SSel, CapturaOEE.Cn)
+                da.Fill(ds)
+
+
+                id_defecto = ds.Tables(0).Rows(0).Item(0)
+                lbl_defecto.Text = ds.Tables(0).Rows(0).Item(1)
+                valor = ds.Tables(0).Rows(0).Item(2)
+
+                CapturaOEE.Cn.Close()
+                txt_cantidad.Focus()
+
+            Catch ex As Exception
+                CapturaOEE.Cn.Close()
+                MessageBox.Show(ex.ToString)
+
+                MessageBox.Show("No hay ningún defecto registrado con ese ID, revise en intente de nuevo", "¡Aviso!")
+                txt_error.Text = ""
+                lbl_defecto.Text = "Debe teclear un defecto"
+
+            End Try
+        End If
+
     End Sub
 
     'Private Sub btn_1_Click(sender As Object, e As EventArgs) Handles btn_1.Click
