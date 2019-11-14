@@ -849,7 +849,16 @@ END
     End Sub
 
     Private Sub lbl_acumulado9_Click(sender As Object, e As EventArgs) Handles lbl_acumulado9.TextChanged
-        lbl_t1.Text = lbl_acumulado9.Text
+
+        If cbx_proceso.Text = "FUNDICION" Then
+
+            lbl_t1.Text = CInt(lbl_acumulado9.Text) * 4
+        Else
+            lbl_t1.Text = lbl_acumulado9.Text
+
+        End If
+
+
     End Sub
 
     Private Sub lbl_t1_Click(sender As Object, e As EventArgs) Handles lbl_t1.TextChanged, lbl_t2.TextChanged, lbl_t3.TextChanged, lbl_t4.TextChanged, lbl_t9.TextChanged
@@ -963,26 +972,26 @@ END
 
 
         For Each fila As DataGridViewRow In dtgvp.Rows
-            If fila.Cells("id_error").Value = 66 OrElse fila.Cells("id_error").Value = 67 OrElse fila.Cells("id_error").Value = 68 OrElse fila.Cells("id_error").Value = 69 OrElse fila.Cells("id_error").Value = 70 OrElse fila.Cells("id_error").Value = 71 OrElse fila.Cells("id_error").Value = 72 OrElse fila.Cells("id_error").Value = 73 Then
+            If fila.Cells("id_error").Value = 66 OrElse fila.Cells("id_error").Value = 67 OrElse fila.Cells("id_error").Value = 68 OrElse fila.Cells("id_error").Value = 69 OrElse fila.Cells("id_error").Value = 70 OrElse fila.Cells("id_error").Value = 71 OrElse fila.Cells("id_error").Value = 72 OrElse fila.Cells("id_error").Value = 73 OrElse fila.Cells("id_error").Value = 126 OrElse fila.Cells("id_error").Value = 127 Then
 
 
-                If fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 1 And fila.Cells("Valor").Value = 2 Then
+                If fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 1 And fila.Cells("Valor").Value = 2 Then
                     h1 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 2 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 2 And fila.Cells("Valor").Value = 2 Then
                     h2 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 3 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 3 And fila.Cells("Valor").Value = 2 Then
                     h3 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 4 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 4 And fila.Cells("Valor").Value = 2 Then
                     h4 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 5 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 5 And fila.Cells("Valor").Value = 2 Then
                     h5 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 6 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 6 And fila.Cells("Valor").Value = 2 Then
                     h6 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 7 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 7 And fila.Cells("Valor").Value = 2 Then
                     h7 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 8 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 8 And fila.Cells("Valor").Value = 2 Then
                     h8 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 9 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 9 And fila.Cells("Valor").Value = 2 Then
                     h9 += Convert.ToDouble(fila.Cells("Cantidad").Value)
 
                 End If
@@ -1105,7 +1114,7 @@ END
                 t3 += Convert.ToDouble(fila.Cells("Cantidad").Value)
             ElseIf fila.Cells("id_error").Value = 74 OrElse fila.Cells("id_error").Value = 75 OrElse fila.Cells("id_error").Value = 76 OrElse fila.Cells("id_error").Value = 77 OrElse fila.Cells("id_error").Value = 78 OrElse fila.Cells("id_error").Value = 79 OrElse fila.Cells("id_error").Value = 80 OrElse fila.Cells("id_error").Value = 81 OrElse fila.Cells("id_error").Value = 82 OrElse fila.Cells("id_error").Value = 83 OrElse fila.Cells("id_error").Value = 84 OrElse fila.Cells("id_error").Value = 85 OrElse fila.Cells("id_error").Value = 86 OrElse fila.Cells("id_error").Value = 87 OrElse fila.Cells("id_error").Value = 88 OrElse fila.Cells("id_error").Value = 89 OrElse fila.Cells("id_error").Value = 90 OrElse fila.Cells("id_error").Value = 91 OrElse fila.Cells("id_error").Value = 92 OrElse fila.Cells("id_error").Value = 93 OrElse fila.Cells("id_error").Value = 94 OrElse fila.Cells("id_error").Value = 95 OrElse fila.Cells("id_error").Value = 96 OrElse fila.Cells("id_error").Value = 97 OrElse fila.Cells("id_error").Value = 98 OrElse fila.Cells("id_error").Value = 99 OrElse fila.Cells("id_error").Value = 100 OrElse fila.Cells("id_error").Value = 101 OrElse fila.Cells("id_error").Value = 102 OrElse fila.Cells("id_error").Value = 103 OrElse fila.Cells("id_error").Value = 104 OrElse fila.Cells("id_error").Value = 105 OrElse fila.Cells("id_error").Value = 106 OrElse fila.Cells("id_error").Value = 107 OrElse fila.Cells("id_error").Value = 108 Then
                 t4 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            ElseIf fila.Cells("id_error").Value = 66 OrElse fila.Cells("id_error").Value = 67 OrElse fila.Cells("id_error").Value = 68 OrElse fila.Cells("id_error").Value = 69 OrElse fila.Cells("id_error").Value = 70 OrElse fila.Cells("id_error").Value = 71 OrElse fila.Cells("id_error").Value = 72 OrElse fila.Cells("id_error").Value = 73 Then
+            ElseIf fila.Cells("id_error").Value = 66 OrElse fila.Cells("id_error").Value = 67 OrElse fila.Cells("id_error").Value = 68 OrElse fila.Cells("id_error").Value = 69 OrElse fila.Cells("id_error").Value = 70 OrElse fila.Cells("id_error").Value = 71 OrElse fila.Cells("id_error").Value = 72 OrElse fila.Cells("id_error").Value = 73 OrElse fila.Cells("id_error").Value = 126 OrElse fila.Cells("id_error").Value = 127 Then
                 t5 += Convert.ToDouble(fila.Cells("Cantidad").Value)
             End If
         Next
