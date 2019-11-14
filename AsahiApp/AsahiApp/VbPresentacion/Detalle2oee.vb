@@ -138,49 +138,49 @@ Public Class Detalle2oee
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_retrocede.Click
         If idh = 1 Then
             idh = 9
-            lbl_piezas.Text = CapturaOEE.txt_9.Text
+            lbl_piezas.Text = CapturaOEE.t9.Text
             lbl_hora.Text = CapturaOEE.lbl_h9.Text
 
         ElseIf idh = 2 Then
             idh = 1
-            lbl_piezas.Text = CapturaOEE.txt_1.Text
+            lbl_piezas.Text = CapturaOEE.t1.Text
             lbl_hora.Text = CapturaOEE.lbl_h1.Text
 
         ElseIf idh = 3 Then
             idh = 2
-            lbl_piezas.Text = CapturaOEE.txt_2.Text
+            lbl_piezas.Text = CapturaOEE.t2.Text
             lbl_hora.Text = CapturaOEE.lbl_h2.Text
 
         ElseIf idh = 4 Then
             idh = 3
-            lbl_piezas.Text = CapturaOEE.txt_3.Text
+            lbl_piezas.Text = CapturaOEE.t3.Text
             lbl_hora.Text = CapturaOEE.lbl_h3.Text
 
         ElseIf idh = 5 Then
             idh = 4
-            lbl_piezas.Text = CapturaOEE.txt_4.Text
+            lbl_piezas.Text = CapturaOEE.t4.Text
             lbl_hora.Text = CapturaOEE.lbl_h4.Text
 
         ElseIf idh = 6 Then
             idh = 5
-            lbl_piezas.Text = CapturaOEE.txt_5.Text
+            lbl_piezas.Text = CapturaOEE.t5.Text
             lbl_hora.Text = CapturaOEE.lbl_h5.Text
 
         ElseIf idh = 7 Then
             idh = 6
-            lbl_piezas.Text = CapturaOEE.txt_6.Text
+            lbl_piezas.Text = CapturaOEE.t6.Text
             lbl_hora.Text = CapturaOEE.lbl_h6.Text
 
 
         ElseIf idh = 8 Then
             idh = 7
-            lbl_piezas.Text = CapturaOEE.txt_7.Text
+            lbl_piezas.Text = CapturaOEE.t7.Text
             lbl_hora.Text = CapturaOEE.lbl_h7.Text
 
 
         ElseIf idh = 9 Then
             idh = 8
-            lbl_piezas.Text = CapturaOEE.txt_8.Text
+            lbl_piezas.Text = CapturaOEE.t8.Text
             lbl_hora.Text = CapturaOEE.lbl_h8.Text
 
         End If
@@ -191,48 +191,48 @@ Public Class Detalle2oee
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_avanza.Click
         If idh = 1 Then
             idh = 2
-            lbl_piezas.Text = CapturaOEE.txt_2.Text
+            lbl_piezas.Text = CapturaOEE.t2.Text
             lbl_hora.Text = CapturaOEE.lbl_h2.Text
 
         ElseIf idh = 2 Then
             idh = 3
-            lbl_piezas.Text = CapturaOEE.txt_3.Text
+            lbl_piezas.Text = CapturaOEE.t3.Text
             lbl_hora.Text = CapturaOEE.lbl_h3.Text
 
         ElseIf idh = 3 Then
             idh = 4
-            lbl_piezas.Text = CapturaOEE.txt_4.Text
+            lbl_piezas.Text = CapturaOEE.t4.Text
             lbl_hora.Text = CapturaOEE.lbl_h4.Text
 
         ElseIf idh = 4 Then
             idh = 5
-            lbl_piezas.Text = CapturaOEE.txt_5.Text
+            lbl_piezas.Text = CapturaOEE.t5.Text
             lbl_hora.Text = CapturaOEE.lbl_h5.Text
 
         ElseIf idh = 5 Then
             idh = 6
-            lbl_piezas.Text = CapturaOEE.txt_6.Text
+            lbl_piezas.Text = CapturaOEE.t6.Text
             lbl_hora.Text = CapturaOEE.lbl_h6.Text
 
         ElseIf idh = 6 Then
             idh = 7
-            lbl_piezas.Text = CapturaOEE.txt_7.Text
+            lbl_piezas.Text = CapturaOEE.t7.Text
             lbl_hora.Text = CapturaOEE.lbl_h7.Text
 
         ElseIf idh = 7 Then
             idh = 8
-            lbl_piezas.Text = CapturaOEE.txt_8.Text
+            lbl_piezas.Text = CapturaOEE.t8.Text
             lbl_hora.Text = CapturaOEE.lbl_h8.Text
 
         ElseIf idh = 8 Then
             idh = 9
-            lbl_piezas.Text = CapturaOEE.txt_9.Text
+            lbl_piezas.Text = CapturaOEE.t9.Text
             lbl_hora.Text = CapturaOEE.lbl_h9.Text
 
 
         ElseIf idh = 9 Then
             idh = 1
-            lbl_piezas.Text = CapturaOEE.txt_1.Text
+            lbl_piezas.Text = CapturaOEE.t1.Text
             lbl_hora.Text = CapturaOEE.lbl_h1.Text
 
         End If
