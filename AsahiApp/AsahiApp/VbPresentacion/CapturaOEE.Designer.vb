@@ -173,6 +173,14 @@ Partial Class CapturaOEE
         Me.lbl_tp2 = New System.Windows.Forms.Label()
         Me.lbl_tp1 = New System.Windows.Forms.Label()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
+        Me.Defecto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Valor2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Hora = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_hora = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_error = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label59 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
@@ -199,14 +207,6 @@ Partial Class CapturaOEE
         Me.PanelF = New System.Windows.Forms.Panel()
         Me.PanelM = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Defecto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Valor2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Hora = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_hora = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_error = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -431,7 +431,8 @@ Partial Class CapturaOEE
         Me.lbl_v4.Location = New System.Drawing.Point(383, 85)
         Me.lbl_v4.Name = "lbl_v4"
         Me.lbl_v4.Size = New System.Drawing.Size(52, 20)
-        Me.lbl_v4.TabIndex = 100
+        Me.lbl_v4.TabIndex = 0
+        Me.lbl_v4.TabStop = False
         Me.lbl_v4.Text = "0"
         Me.lbl_v4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1693,6 +1694,58 @@ Partial Class CapturaOEE
         Me.dtgvp.Size = New System.Drawing.Size(413, 267)
         Me.dtgvp.TabIndex = 147
         '
+        'Defecto
+        '
+        Me.Defecto.HeaderText = "Defecto"
+        Me.Defecto.Name = "Defecto"
+        Me.Defecto.Width = 70
+        '
+        'Valor
+        '
+        Me.Valor.HeaderText = "Valor"
+        Me.Valor.Name = "Valor"
+        Me.Valor.Visible = False
+        Me.Valor.Width = 56
+        '
+        'Valor2
+        '
+        Me.Valor2.HeaderText = "Tipo"
+        Me.Valor2.Name = "Valor2"
+        Me.Valor2.Width = 53
+        '
+        'Cantidad
+        '
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.Width = 74
+        '
+        'Hora
+        '
+        Me.Hora.HeaderText = "Hora"
+        Me.Hora.Name = "Hora"
+        Me.Hora.Width = 55
+        '
+        'id_hora
+        '
+        Me.id_hora.HeaderText = "id_hora"
+        Me.id_hora.Name = "id_hora"
+        Me.id_hora.Visible = False
+        Me.id_hora.Width = 67
+        '
+        'id_error
+        '
+        Me.id_error.HeaderText = "id_error"
+        Me.id_error.Name = "id_error"
+        Me.id_error.Visible = False
+        Me.id_error.Width = 67
+        '
+        'tp
+        '
+        Me.tp.HeaderText = "tp"
+        Me.tp.Name = "tp"
+        Me.tp.Visible = False
+        Me.tp.Width = 41
+        '
         'Label47
         '
         Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1961,58 +2014,6 @@ Partial Class CapturaOEE
         Me.Button1.Size = New System.Drawing.Size(34, 43)
         Me.Button1.TabIndex = 154
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Defecto
-        '
-        Me.Defecto.HeaderText = "Defecto"
-        Me.Defecto.Name = "Defecto"
-        Me.Defecto.Width = 70
-        '
-        'Valor
-        '
-        Me.Valor.HeaderText = "Valor"
-        Me.Valor.Name = "Valor"
-        Me.Valor.Visible = False
-        Me.Valor.Width = 56
-        '
-        'Valor2
-        '
-        Me.Valor2.HeaderText = "Tipo"
-        Me.Valor2.Name = "Valor2"
-        Me.Valor2.Width = 53
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.Name = "Cantidad"
-        Me.Cantidad.Width = 74
-        '
-        'Hora
-        '
-        Me.Hora.HeaderText = "Hora"
-        Me.Hora.Name = "Hora"
-        Me.Hora.Width = 55
-        '
-        'id_hora
-        '
-        Me.id_hora.HeaderText = "id_hora"
-        Me.id_hora.Name = "id_hora"
-        Me.id_hora.Visible = False
-        Me.id_hora.Width = 67
-        '
-        'id_error
-        '
-        Me.id_error.HeaderText = "id_error"
-        Me.id_error.Name = "id_error"
-        Me.id_error.Visible = False
-        Me.id_error.Width = 67
-        '
-        'tp
-        '
-        Me.tp.HeaderText = "tp"
-        Me.tp.Name = "tp"
-        Me.tp.Visible = False
-        Me.tp.Width = 41
         '
         'CapturaOEE
         '
