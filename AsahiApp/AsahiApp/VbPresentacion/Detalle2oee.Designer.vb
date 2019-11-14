@@ -32,13 +32,12 @@ Partial Class Detalle2oee
         Me.lbl_turno = New System.Windows.Forms.Label()
         Me.lbl_hora = New System.Windows.Forms.Label()
         Me.lbl_fecha = New System.Windows.Forms.Label()
-        Me.btn_1 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_error = New System.Windows.Forms.TextBox()
-        Me.btn_buscar = New System.Windows.Forms.Button()
         Me.lbl_defecto = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_cantidad = New System.Windows.Forms.TextBox()
+        Me.btn_1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label10
@@ -131,18 +130,6 @@ Partial Class Detalle2oee
         Me.lbl_fecha.TabIndex = 116
         Me.lbl_fecha.Text = "Fecha"
         '
-        'btn_1
-        '
-        Me.btn_1.Enabled = False
-        Me.btn_1.Image = Global.Presentacion.My.Resources.Resources.prenomina
-        Me.btn_1.Location = New System.Drawing.Point(131, 213)
-        Me.btn_1.Name = "btn_1"
-        Me.btn_1.Size = New System.Drawing.Size(63, 56)
-        Me.btn_1.TabIndex = 126
-        Me.btn_1.Text = "Guardar"
-        Me.btn_1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_1.UseVisualStyleBackColor = True
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -160,15 +147,6 @@ Partial Class Detalle2oee
         Me.txt_error.Size = New System.Drawing.Size(85, 20)
         Me.txt_error.TabIndex = 127
         Me.txt_error.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btn_buscar
-        '
-        Me.btn_buscar.Location = New System.Drawing.Point(117, 89)
-        Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(63, 29)
-        Me.btn_buscar.TabIndex = 129
-        Me.btn_buscar.Text = "Buscar"
-        Me.btn_buscar.UseVisualStyleBackColor = True
         '
         'lbl_defecto
         '
@@ -200,6 +178,18 @@ Partial Class Detalle2oee
         Me.txt_cantidad.Text = "0"
         Me.txt_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
+        'btn_1
+        '
+        Me.btn_1.Enabled = False
+        Me.btn_1.Image = Global.Presentacion.My.Resources.Resources.prenomina
+        Me.btn_1.Location = New System.Drawing.Point(131, 213)
+        Me.btn_1.Name = "btn_1"
+        Me.btn_1.Size = New System.Drawing.Size(63, 56)
+        Me.btn_1.TabIndex = 126
+        Me.btn_1.Text = "Guardar"
+        Me.btn_1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_1.UseVisualStyleBackColor = True
+        '
         'Detalle2oee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -208,7 +198,6 @@ Partial Class Detalle2oee
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txt_cantidad)
         Me.Controls.Add(Me.lbl_defecto)
-        Me.Controls.Add(Me.btn_buscar)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txt_error)
         Me.Controls.Add(Me.btn_1)
@@ -223,6 +212,7 @@ Partial Class Detalle2oee
         Me.Controls.Add(Me.lbl_hora)
         Me.Controls.Add(Me.lbl_fecha)
         Me.Name = "Detalle2oee"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Detalle2oee"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -242,7 +232,6 @@ Partial Class Detalle2oee
     Friend WithEvents btn_1 As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents txt_error As TextBox
-    Friend WithEvents btn_buscar As Button
     Friend WithEvents lbl_defecto As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents txt_cantidad As TextBox

@@ -75,6 +75,7 @@ Partial Class Frm_Principal
         Me.ControlDePruducciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDeProducciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CapturaOEEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MostrarOEEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EvaluacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FinanzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -87,6 +88,7 @@ Partial Class Frm_Principal
         Me.MensualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SemanalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OEECompletoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -409,7 +411,7 @@ Partial Class Frm_Principal
         '
         'ControlDeProducciónToolStripMenuItem
         '
-        Me.ControlDeProducciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CapturaOEEToolStripMenuItem})
+        Me.ControlDeProducciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CapturaOEEToolStripMenuItem, Me.MostrarOEEToolStripMenuItem, Me.OEECompletoToolStripMenuItem})
         Me.ControlDeProducciónToolStripMenuItem.Name = "ControlDeProducciónToolStripMenuItem"
         Me.ControlDeProducciónToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
         Me.ControlDeProducciónToolStripMenuItem.Text = "Control de Producción"
@@ -417,8 +419,14 @@ Partial Class Frm_Principal
         'CapturaOEEToolStripMenuItem
         '
         Me.CapturaOEEToolStripMenuItem.Name = "CapturaOEEToolStripMenuItem"
-        Me.CapturaOEEToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.CapturaOEEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CapturaOEEToolStripMenuItem.Text = "Captura OEE"
+        '
+        'MostrarOEEToolStripMenuItem
+        '
+        Me.MostrarOEEToolStripMenuItem.Name = "MostrarOEEToolStripMenuItem"
+        Me.MostrarOEEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MostrarOEEToolStripMenuItem.Text = "OEE x pieza"
         '
         'CalidadToolStripMenuItem
         '
@@ -469,13 +477,13 @@ Partial Class Frm_Principal
         'ACercaDeToolStripMenuItem
         '
         Me.ACercaDeToolStripMenuItem.Name = "ACercaDeToolStripMenuItem"
-        Me.ACercaDeToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.ACercaDeToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.ACercaDeToolStripMenuItem.Text = "Soporte Técnico"
         '
         'AcercaDeToolStripMenuItem1
         '
         Me.AcercaDeToolStripMenuItem1.Name = "AcercaDeToolStripMenuItem1"
-        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
+        Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(159, 22)
         Me.AcercaDeToolStripMenuItem1.Text = "Acerca de"
         '
         'MensualToolStripMenuItem
@@ -495,6 +503,12 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem.Name = "GeneralToolStripMenuItem"
         Me.GeneralToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GeneralToolStripMenuItem.Text = "General"
+        '
+        'OEECompletoToolStripMenuItem
+        '
+        Me.OEECompletoToolStripMenuItem.Name = "OEECompletoToolStripMenuItem"
+        Me.OEECompletoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OEECompletoToolStripMenuItem.Text = "OEE Completo"
         '
         'Frm_Principal
         '
@@ -579,5 +593,7 @@ Partial Class Frm_Principal
     Friend WithEvents AusentismosGlobalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CapturaOEEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PlanDeGastosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MostrarOEEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OEECompletoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AusentismoGeneralToolStripMenuItem As ToolStripMenuItem
 End Class

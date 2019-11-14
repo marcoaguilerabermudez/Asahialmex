@@ -37,12 +37,40 @@ Public Class NGastos
             Return dGast.RecuperarDetallesGastos(cadenaConex, mes, año, fi, ff, cuenta, idioma, sn)
         End If
     End Function
-    Public Function RecuperarCuentasGeneral(ByVal cadenaConex As String, ByVal idioma As Integer) As LGastos
+    Public Function RecuperarCuentasGeneral(ByVal cadenaConex As String, ByVal idioma As Integer, ByVal mes As Integer, ByVal año As Integer) As LGastos
         Dim DGast As New DGastos()
-        Return DGast.RecuperarCuentasGeneral(cadenaConex, idioma)
+        Return DGast.RecuperarCuentasGeneral(cadenaConex, idioma, mes, año)
     End Function
-    Public Function RecuperarListaCtas(ByVal cadenaConex As String, ByVal cta As Integer) As LGastos
+    Public Function RecuperarListaCtas(ByVal cadenaConex As String, ByVal cta As Integer, ByVal mes As Integer, ByVal año As Integer, ByVal segNeg As Integer,
+                                       ByVal idioma As Integer) As LGastos
         Dim DGast As New DGastos()
-        Return DGast.RecuperarListaCtas(cadenaConex, cta)
+        Return DGast.RecuperarListaCtas(cadenaConex, cta, mes, año, segNeg, idioma)
+    End Function
+    Public Sub InsertarPlan(ByVal cadenaConex As String, ByVal lstGst As LGastos)
+        Dim objGst As New Gastos()
+        Dim DGst As New DGastos()
+
+        objGst = CreaXml(lstGst)
+        DGst.InsertarPlan(cadenaConex, objGst)
+    End Sub
+    Private Function CreaXml(ByVal lstGst As LGastos) As Gastos
+        Dim objGst As New Gastos()
+        Dim i As Byte
+        Dim str As String
+        'Dim fi
+
+        For i = 0 To lstGst.Count - 1
+            'fi = lstGst.Item(i).FechaInsert
+            str = "<Info><IdSis>" & lstGst.Item(i).IdSistema & "</IdSis><TipoMov>" & lstGst.Item(i).TipoMovimiento &
+                "</TipoMov><CtaProd>" & lstGst.Item(i).Cuenta & "</CtaProd><SegNeg>" & lstGst.Item(i).SegmNegocio &
+                "</SegNeg><Cant>" & lstGst.Item(i).CantCompra & "</Cant><CtoDls>" & lstGst.Item(i).MontoDls &
+                "</CtoDls><CtoPesos>" & lstGst.Item(i).MontoPesos & "</CtoPesos><MonedaReal>" & lstGst.Item(i).Moneda &
+                "</MonedaReal><Fecha>" & Format(lstGst.Item(i).FechaInsert, "dd/MM/yyyy") & "</Fecha><Mes>" & lstGst.Item(i).Mes &
+                "</Mes><Año>" & lstGst.Item(i).Año & "</Año><Bloqueo>" & 0 & "</Bloqueo><Estado>" & 0 & "</Estado></Info>"
+            objGst.Xml = objGst.Xml & str
+        Next
+
+        objGst.Xml = "<PlanG>" & objGst.Xml & "</PlanG>"
+        Return objGst
     End Function
 End Class

@@ -373,8 +373,16 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub PlanDeGastosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDeGastosToolStripMenuItem.Click
-        Dim capGastos As New Frm_PlanGastos()
+        Dim capGastos As New Frm_PlanGastos(Me.emp)
         capGastos.Show()
+    End Sub
+
+    Private Sub MostrarOEEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MostrarOEEToolStripMenuItem.Click
+        MuestradatosOEE.Show()
+    End Sub
+
+    Private Sub OEECompletoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OEECompletoToolStripMenuItem.Click
+        MuestraOeeCompleto.Show()
     End Sub
 
     Private Sub AusentismoGeneralToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusentismoGeneralToolStripMenuItem.Click
