@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using CrystalDecisions.CrystalReports.Engine;
+//using CrystalDecisions.CrystalReports.Engine;
 
 namespace CsPresentacion
 {
@@ -284,6 +284,11 @@ namespace CsPresentacion
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            //Reporte_test rep = new Reporte_test();
+            //rep.Var = Convert.ToInt32("5");
+            //rep.Fecha = dtm_fecha.Value;
+            //rep.Depto = txt_depto.Text.ToString();
+            //rep.ShowDialog();
         }
     }
 }

@@ -19,6 +19,18 @@ Public Class CapturaOEE
         btn_7.Enabled = False
         btn_8.Enabled = False
         btn_9.Enabled = False
+
+
+        b1.Enabled = False
+        b2.Enabled = False
+        b3.Enabled = False
+        b4.Enabled = False
+        b5.Enabled = False
+        b6.Enabled = False
+        b7.Enabled = False
+        b8.Enabled = False
+        b9.Enabled = False
+
     End Sub
 
 
@@ -28,15 +40,15 @@ Public Class CapturaOEE
 
     Private Sub btn_1_Click(sender As Object, e As EventArgs) Handles btn_1.Click
         Try
-            SubventanaOee.Dispose()
-            SubventanaOee.Close()
+            DefectoM.Dispose()
+            DefectoM.Close()
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h1.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_1.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
             idh = 1
-            SubventanaOee.Show()
+            DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
             txt_1.Text = "0"
@@ -47,15 +59,15 @@ Public Class CapturaOEE
 
     Private Sub btn_2_Click(sender As Object, e As EventArgs) Handles btn_2.Click
         Try
-            SubventanaOee.Dispose()
-            SubventanaOee.Close()
+            DefectoM.Dispose()
+            DefectoM.Close()
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h2.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_2.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
             idh = 2
-            SubventanaOee.Show()
+            DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
             txt_2.Text = "0"
@@ -64,15 +76,15 @@ Public Class CapturaOEE
 
     Private Sub btn_3_Click(sender As Object, e As EventArgs) Handles btn_3.Click
         Try
-            SubventanaOee.Dispose()
-            SubventanaOee.Close()
+            DefectoM.Dispose()
+            DefectoM.Close()
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h3.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_3.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
             idh = 3
-            SubventanaOee.Show()
+            DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
             txt_3.Text = "0"
@@ -81,15 +93,15 @@ Public Class CapturaOEE
 
     Private Sub btn4_Click(sender As Object, e As EventArgs) Handles btn4.Click
         Try
-            SubventanaOee.Dispose()
-            SubventanaOee.Close()
+            DefectoM.Dispose()
+            DefectoM.Close()
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h4.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_4.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
             idh = 4
-            SubventanaOee.Show()
+            DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
             txt_4.Text = "0"
@@ -98,15 +110,15 @@ Public Class CapturaOEE
 
     Private Sub btn_5_Click(sender As Object, e As EventArgs) Handles btn_5.Click
         Try
-            SubventanaOee.Dispose()
-            SubventanaOee.Close()
+            DefectoM.Dispose()
+            DefectoM.Close()
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h5.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_5.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
             idh = 5
-            SubventanaOee.Show()
+            DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
             txt_5.Text = "0"
@@ -115,15 +127,15 @@ Public Class CapturaOEE
 
     Private Sub btn_6_Click(sender As Object, e As EventArgs) Handles btn_6.Click
         Try
-            SubventanaOee.Dispose()
-            SubventanaOee.Close()
+            DefectoM.Dispose()
+            DefectoM.Close()
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h6.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_6.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
             idh = 6
-            SubventanaOee.Show()
+            DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
             txt_6.Text = "0"
@@ -132,15 +144,15 @@ Public Class CapturaOEE
 
     Private Sub btn_7_Click(sender As Object, e As EventArgs) Handles btn_7.Click
         Try
-            SubventanaOee.Dispose()
-            SubventanaOee.Close()
+            DefectoM.Dispose()
+            DefectoM.Close()
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h7.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_7.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
             idh = 7
-            SubventanaOee.Show()
+            DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
             txt_7.Text = "0"
@@ -150,15 +162,15 @@ Public Class CapturaOEE
 
     Private Sub btn_8_Click(sender As Object, e As EventArgs) Handles btn_8.Click
         Try
-            SubventanaOee.Dispose()
-            SubventanaOee.Close()
+            DefectoM.Dispose()
+            DefectoM.Close()
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h8.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_8.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
             idh = 8
-            SubventanaOee.Show()
+            DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
             txt_8.Text = "0"
@@ -167,15 +179,15 @@ Public Class CapturaOEE
 
     Private Sub btn_9_Click(sender As Object, e As EventArgs) Handles btn_9.Click
         Try
-            SubventanaOee.Dispose()
-            SubventanaOee.Close()
+            DefectoM.Dispose()
+            DefectoM.Close()
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h9.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
             Modulo_detalle.parametro4 = txt_9.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
             idh = 9
-            SubventanaOee.Show()
+            DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
             txt_9.Text = "0"
@@ -197,6 +209,7 @@ Public Class CapturaOEE
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
             txt_1.Text = "0"
         End Try
+
     End Sub
 
     Private Sub b2_Click(sender As Object, e As EventArgs) Handles b2.Click
@@ -359,10 +372,6 @@ Public Class CapturaOEE
             lbl_acumulado8.Text = (a + b + c + d + ee + f + g + h)
             lbl_acumulado9.Text = (a + b + c + d + ee + f + g + h + i)
 
-
-
-
-
         Catch
         End Try
 
@@ -436,6 +445,7 @@ Public Class CapturaOEE
             lbl_h9.Text = "~"
             txt_9.Enabled = False
             btn_9.Enabled = False
+            b9.Enabled = False
             lbl_tp9.Enabled = False
             lbl_d1.Text = "480"
 
@@ -451,6 +461,7 @@ Public Class CapturaOEE
             lbl_h9.Text = "~"
             txt_9.Enabled = False
             btn_9.Enabled = False
+            b9.Enabled = False
             lbl_tp9.Enabled = False
             lbl_d1.Text = "450"
         End If
@@ -473,11 +484,14 @@ Public Class CapturaOEE
         btn_7.Enabled = True
         btn_8.Enabled = True
 
-
-
-
-
-
+        b1.Enabled = True
+        b2.Enabled = True
+        b3.Enabled = True
+        b4.Enabled = True
+        b5.Enabled = True
+        b6.Enabled = True
+        b7.Enabled = True
+        b8.Enabled = True
     End Sub
 
     Sub llenacombomaquina()
@@ -734,31 +748,70 @@ END
 
         Try
 
-            lbl_cp1.Text = CInt((60 - lbl_tp1.Text) / lbl_v4.Text)
-            lbl_cp2.Text = CInt((60 - lbl_tp2.Text) / lbl_v4.Text)
-            lbl_cp3.Text = CInt((60 - lbl_tp3.Text) / lbl_v4.Text)
-            lbl_cp4.Text = CInt((60 - lbl_tp4.Text) / lbl_v4.Text)
-            lbl_cp5.Text = CInt((60 - lbl_tp5.Text) / lbl_v4.Text)
-            lbl_cp6.Text = CInt((60 - lbl_tp6.Text) / lbl_v4.Text)
-            lbl_cp7.Text = CInt((60 - lbl_tp7.Text) / lbl_v4.Text)
+            If cbx_proceso.Text = "FUNDICION" Then
 
-            If cbx_turno.Text = 1 Then
-                lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / lbl_v4.Text)
-            ElseIf cbx_turno.Text = 2 Then
-                lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / lbl_v4.Text)
-            ElseIf cbx_turno.Text = 3 Then
-                lbl_cp8.Text = CInt((30 - lbl_tp8.Text) / lbl_v4.Text)
+
+
+
+
+                lbl_cp1.Text = CInt((60 - lbl_tp1.Text) / (lbl_v4.Text / 60))
+                lbl_cp2.Text = CInt((60 - lbl_tp2.Text) / (lbl_v4.Text / 60))
+                lbl_cp3.Text = CInt((60 - lbl_tp3.Text) / (lbl_v4.Text / 60))
+                lbl_cp4.Text = CInt((60 - lbl_tp4.Text) / (lbl_v4.Text / 60))
+                lbl_cp5.Text = CInt((60 - lbl_tp5.Text) / (lbl_v4.Text / 60))
+                lbl_cp6.Text = CInt((60 - lbl_tp6.Text) / (lbl_v4.Text / 60))
+                lbl_cp7.Text = CInt((60 - lbl_tp7.Text) / (lbl_v4.Text / 60))
+
+                If cbx_turno.Text = 1 Then
+                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / (lbl_v4.Text / 60))
+                ElseIf cbx_turno.Text = 2 Then
+                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / (lbl_v4.Text / 60))
+                ElseIf cbx_turno.Text = 3 Then
+                    lbl_cp8.Text = CInt((30 - lbl_tp8.Text) / (lbl_v4.Text / 60))
+                End If
+
+
+
+                If cbx_turno.Text = 1 Then
+                    lbl_cp9.Text = CInt((30 - lbl_tp9.Text) / (lbl_v4.Text / 60))
+                ElseIf cbx_turno.Text = 2 Then
+                    lbl_cp9.Text = "0"
+                ElseIf cbx_turno.Text = 3 Then
+                    lbl_cp9.Text = "0"
+                End If
+
+            Else
+
+                lbl_cp1.Text = CInt((60 - lbl_tp1.Text) / lbl_v4.Text)
+                lbl_cp2.Text = CInt((60 - lbl_tp2.Text) / lbl_v4.Text)
+                lbl_cp3.Text = CInt((60 - lbl_tp3.Text) / lbl_v4.Text)
+                lbl_cp4.Text = CInt((60 - lbl_tp4.Text) / lbl_v4.Text)
+                lbl_cp5.Text = CInt((60 - lbl_tp5.Text) / lbl_v4.Text)
+                lbl_cp6.Text = CInt((60 - lbl_tp6.Text) / lbl_v4.Text)
+                lbl_cp7.Text = CInt((60 - lbl_tp7.Text) / lbl_v4.Text)
+
+                If cbx_turno.Text = 1 Then
+                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / lbl_v4.Text)
+                ElseIf cbx_turno.Text = 2 Then
+                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / lbl_v4.Text)
+                ElseIf cbx_turno.Text = 3 Then
+                    lbl_cp8.Text = CInt((30 - lbl_tp8.Text) / lbl_v4.Text)
+                End If
+
+
+
+                If cbx_turno.Text = 1 Then
+                    lbl_cp9.Text = CInt((30 - lbl_tp9.Text) / lbl_v4.Text)
+                ElseIf cbx_turno.Text = 2 Then
+                    lbl_cp9.Text = "0"
+                ElseIf cbx_turno.Text = 3 Then
+                    lbl_cp9.Text = "0"
+                End If
+
+
+
             End If
 
-
-
-            If cbx_turno.Text = 1 Then
-                lbl_cp9.Text = CInt((30 - lbl_tp9.Text) / lbl_v4.Text)
-            ElseIf cbx_turno.Text = 2 Then
-                lbl_cp9.Text = "0"
-            ElseIf cbx_turno.Text = 3 Then
-                lbl_cp9.Text = "0"
-            End If
         Catch
         End Try
 
@@ -1307,10 +1360,16 @@ END
         If cbx_proceso.Text = "FUNDICION" Then
             cbx_molde.Enabled = True
             cbx_cavidad.Enabled = True
+            PanelF.Visible = True
+            PanelM.Visible = False
+
 
         Else
             cbx_molde.Enabled = False
             cbx_cavidad.Enabled = False
+            PanelF.Visible = False
+            PanelM.Visible = True
+
 
 
         End If
@@ -1336,6 +1395,18 @@ END
         End If
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        If dtgvp.SelectedRows.Count > 0 Then
+
+            dtgvp.Rows.Remove(dtgvp.SelectedRows(0))
+        Else
+            MessageBox.Show("Seleccione una casilla antes de eliminar")
+        End If
+
+    End Sub
+
 
 
 End Class
