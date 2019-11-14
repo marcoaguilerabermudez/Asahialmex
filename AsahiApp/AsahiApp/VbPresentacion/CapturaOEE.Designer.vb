@@ -207,6 +207,15 @@ Partial Class CapturaOEE
         Me.PanelF = New System.Windows.Forms.Panel()
         Me.PanelM = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.t9 = New System.Windows.Forms.Label()
+        Me.t8 = New System.Windows.Forms.Label()
+        Me.t7 = New System.Windows.Forms.Label()
+        Me.t6 = New System.Windows.Forms.Label()
+        Me.t5 = New System.Windows.Forms.Label()
+        Me.t4 = New System.Windows.Forms.Label()
+        Me.t3 = New System.Windows.Forms.Label()
+        Me.t2 = New System.Windows.Forms.Label()
+        Me.t1 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -1076,7 +1085,7 @@ Partial Class CapturaOEE
         '
         Me.Label106.AutoSize = True
         Me.Label106.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label106.Location = New System.Drawing.Point(351, 372)
+        Me.Label106.Location = New System.Drawing.Point(340, 372)
         Me.Label106.Name = "Label106"
         Me.Label106.Size = New System.Drawing.Size(31, 15)
         Me.Label106.TabIndex = 61
@@ -1085,7 +1094,7 @@ Partial Class CapturaOEE
         'Label107
         '
         Me.Label107.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label107.Location = New System.Drawing.Point(330, 342)
+        Me.Label107.Location = New System.Drawing.Point(319, 342)
         Me.Label107.Name = "Label107"
         Me.Label107.Size = New System.Drawing.Size(73, 29)
         Me.Label107.TabIndex = 60
@@ -1094,7 +1103,7 @@ Partial Class CapturaOEE
         '
         'txt_1
         '
-        Me.txt_1.Location = New System.Drawing.Point(347, 392)
+        Me.txt_1.Location = New System.Drawing.Point(336, 392)
         Me.txt_1.Name = "txt_1"
         Me.txt_1.Size = New System.Drawing.Size(36, 20)
         Me.txt_1.TabIndex = 8
@@ -1103,7 +1112,7 @@ Partial Class CapturaOEE
         '
         'txt_2
         '
-        Me.txt_2.Location = New System.Drawing.Point(347, 420)
+        Me.txt_2.Location = New System.Drawing.Point(336, 420)
         Me.txt_2.Name = "txt_2"
         Me.txt_2.Size = New System.Drawing.Size(36, 20)
         Me.txt_2.TabIndex = 9
@@ -1112,7 +1121,7 @@ Partial Class CapturaOEE
         '
         'txt_4
         '
-        Me.txt_4.Location = New System.Drawing.Point(347, 472)
+        Me.txt_4.Location = New System.Drawing.Point(336, 472)
         Me.txt_4.Name = "txt_4"
         Me.txt_4.Size = New System.Drawing.Size(36, 20)
         Me.txt_4.TabIndex = 11
@@ -1121,7 +1130,7 @@ Partial Class CapturaOEE
         '
         'txt_3
         '
-        Me.txt_3.Location = New System.Drawing.Point(347, 446)
+        Me.txt_3.Location = New System.Drawing.Point(336, 446)
         Me.txt_3.Name = "txt_3"
         Me.txt_3.Size = New System.Drawing.Size(36, 20)
         Me.txt_3.TabIndex = 10
@@ -1130,7 +1139,7 @@ Partial Class CapturaOEE
         '
         'txt_8
         '
-        Me.txt_8.Location = New System.Drawing.Point(347, 587)
+        Me.txt_8.Location = New System.Drawing.Point(336, 587)
         Me.txt_8.Name = "txt_8"
         Me.txt_8.Size = New System.Drawing.Size(36, 20)
         Me.txt_8.TabIndex = 15
@@ -1139,7 +1148,7 @@ Partial Class CapturaOEE
         '
         'txt_7
         '
-        Me.txt_7.Location = New System.Drawing.Point(347, 558)
+        Me.txt_7.Location = New System.Drawing.Point(336, 558)
         Me.txt_7.Name = "txt_7"
         Me.txt_7.Size = New System.Drawing.Size(36, 20)
         Me.txt_7.TabIndex = 14
@@ -1148,7 +1157,7 @@ Partial Class CapturaOEE
         '
         'txt_6
         '
-        Me.txt_6.Location = New System.Drawing.Point(348, 530)
+        Me.txt_6.Location = New System.Drawing.Point(337, 530)
         Me.txt_6.Name = "txt_6"
         Me.txt_6.Size = New System.Drawing.Size(36, 20)
         Me.txt_6.TabIndex = 13
@@ -1157,7 +1166,7 @@ Partial Class CapturaOEE
         '
         'txt_5
         '
-        Me.txt_5.Location = New System.Drawing.Point(348, 501)
+        Me.txt_5.Location = New System.Drawing.Point(337, 501)
         Me.txt_5.Name = "txt_5"
         Me.txt_5.Size = New System.Drawing.Size(36, 20)
         Me.txt_5.TabIndex = 12
@@ -1166,7 +1175,7 @@ Partial Class CapturaOEE
         '
         'txt_9
         '
-        Me.txt_9.Location = New System.Drawing.Point(347, 613)
+        Me.txt_9.Location = New System.Drawing.Point(336, 613)
         Me.txt_9.Name = "txt_9"
         Me.txt_9.Size = New System.Drawing.Size(36, 20)
         Me.txt_9.TabIndex = 16
@@ -1176,7 +1185,7 @@ Partial Class CapturaOEE
         'lbl_acumulado9
         '
         Me.lbl_acumulado9.AutoSize = True
-        Me.lbl_acumulado9.Location = New System.Drawing.Point(395, 617)
+        Me.lbl_acumulado9.Location = New System.Drawing.Point(442, 617)
         Me.lbl_acumulado9.Name = "lbl_acumulado9"
         Me.lbl_acumulado9.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado9.TabIndex = 79
@@ -1185,7 +1194,7 @@ Partial Class CapturaOEE
         'lbl_acumulado8
         '
         Me.lbl_acumulado8.AutoSize = True
-        Me.lbl_acumulado8.Location = New System.Drawing.Point(395, 590)
+        Me.lbl_acumulado8.Location = New System.Drawing.Point(442, 590)
         Me.lbl_acumulado8.Name = "lbl_acumulado8"
         Me.lbl_acumulado8.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado8.TabIndex = 78
@@ -1194,7 +1203,7 @@ Partial Class CapturaOEE
         'lbl_acumulado7
         '
         Me.lbl_acumulado7.AutoSize = True
-        Me.lbl_acumulado7.Location = New System.Drawing.Point(395, 561)
+        Me.lbl_acumulado7.Location = New System.Drawing.Point(442, 561)
         Me.lbl_acumulado7.Name = "lbl_acumulado7"
         Me.lbl_acumulado7.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado7.TabIndex = 77
@@ -1203,7 +1212,7 @@ Partial Class CapturaOEE
         'lbl_acumulado6
         '
         Me.lbl_acumulado6.AutoSize = True
-        Me.lbl_acumulado6.Location = New System.Drawing.Point(395, 534)
+        Me.lbl_acumulado6.Location = New System.Drawing.Point(442, 534)
         Me.lbl_acumulado6.Name = "lbl_acumulado6"
         Me.lbl_acumulado6.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado6.TabIndex = 76
@@ -1212,7 +1221,7 @@ Partial Class CapturaOEE
         'lbl_acumulado5
         '
         Me.lbl_acumulado5.AutoSize = True
-        Me.lbl_acumulado5.Location = New System.Drawing.Point(395, 504)
+        Me.lbl_acumulado5.Location = New System.Drawing.Point(442, 504)
         Me.lbl_acumulado5.Name = "lbl_acumulado5"
         Me.lbl_acumulado5.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado5.TabIndex = 75
@@ -1221,7 +1230,7 @@ Partial Class CapturaOEE
         'lbl_acumulado4
         '
         Me.lbl_acumulado4.AutoSize = True
-        Me.lbl_acumulado4.Location = New System.Drawing.Point(395, 476)
+        Me.lbl_acumulado4.Location = New System.Drawing.Point(442, 476)
         Me.lbl_acumulado4.Name = "lbl_acumulado4"
         Me.lbl_acumulado4.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado4.TabIndex = 74
@@ -1230,7 +1239,7 @@ Partial Class CapturaOEE
         'lbl_acumulado3
         '
         Me.lbl_acumulado3.AutoSize = True
-        Me.lbl_acumulado3.Location = New System.Drawing.Point(395, 450)
+        Me.lbl_acumulado3.Location = New System.Drawing.Point(442, 450)
         Me.lbl_acumulado3.Name = "lbl_acumulado3"
         Me.lbl_acumulado3.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado3.TabIndex = 73
@@ -1239,7 +1248,7 @@ Partial Class CapturaOEE
         'lbl_acumulado2
         '
         Me.lbl_acumulado2.AutoSize = True
-        Me.lbl_acumulado2.Location = New System.Drawing.Point(395, 423)
+        Me.lbl_acumulado2.Location = New System.Drawing.Point(442, 423)
         Me.lbl_acumulado2.Name = "lbl_acumulado2"
         Me.lbl_acumulado2.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado2.TabIndex = 72
@@ -1248,7 +1257,7 @@ Partial Class CapturaOEE
         'lbl_acumulado1
         '
         Me.lbl_acumulado1.AutoSize = True
-        Me.lbl_acumulado1.Location = New System.Drawing.Point(395, 395)
+        Me.lbl_acumulado1.Location = New System.Drawing.Point(442, 395)
         Me.lbl_acumulado1.Name = "lbl_acumulado1"
         Me.lbl_acumulado1.Size = New System.Drawing.Size(13, 13)
         Me.lbl_acumulado1.TabIndex = 71
@@ -1438,7 +1447,7 @@ Partial Class CapturaOEE
         'ok9
         '
         Me.ok9.AutoSize = True
-        Me.ok9.Location = New System.Drawing.Point(439, 617)
+        Me.ok9.Location = New System.Drawing.Point(489, 617)
         Me.ok9.Name = "ok9"
         Me.ok9.Size = New System.Drawing.Size(13, 13)
         Me.ok9.TabIndex = 128
@@ -1447,7 +1456,7 @@ Partial Class CapturaOEE
         'ok8
         '
         Me.ok8.AutoSize = True
-        Me.ok8.Location = New System.Drawing.Point(439, 590)
+        Me.ok8.Location = New System.Drawing.Point(489, 590)
         Me.ok8.Name = "ok8"
         Me.ok8.Size = New System.Drawing.Size(13, 13)
         Me.ok8.TabIndex = 127
@@ -1456,7 +1465,7 @@ Partial Class CapturaOEE
         'ok7
         '
         Me.ok7.AutoSize = True
-        Me.ok7.Location = New System.Drawing.Point(439, 561)
+        Me.ok7.Location = New System.Drawing.Point(489, 561)
         Me.ok7.Name = "ok7"
         Me.ok7.Size = New System.Drawing.Size(13, 13)
         Me.ok7.TabIndex = 126
@@ -1465,7 +1474,7 @@ Partial Class CapturaOEE
         'ok6
         '
         Me.ok6.AutoSize = True
-        Me.ok6.Location = New System.Drawing.Point(439, 534)
+        Me.ok6.Location = New System.Drawing.Point(489, 534)
         Me.ok6.Name = "ok6"
         Me.ok6.Size = New System.Drawing.Size(13, 13)
         Me.ok6.TabIndex = 125
@@ -1474,7 +1483,7 @@ Partial Class CapturaOEE
         'ok5
         '
         Me.ok5.AutoSize = True
-        Me.ok5.Location = New System.Drawing.Point(439, 504)
+        Me.ok5.Location = New System.Drawing.Point(489, 504)
         Me.ok5.Name = "ok5"
         Me.ok5.Size = New System.Drawing.Size(13, 13)
         Me.ok5.TabIndex = 124
@@ -1483,7 +1492,7 @@ Partial Class CapturaOEE
         'ok4
         '
         Me.ok4.AutoSize = True
-        Me.ok4.Location = New System.Drawing.Point(439, 476)
+        Me.ok4.Location = New System.Drawing.Point(489, 476)
         Me.ok4.Name = "ok4"
         Me.ok4.Size = New System.Drawing.Size(13, 13)
         Me.ok4.TabIndex = 123
@@ -1492,7 +1501,7 @@ Partial Class CapturaOEE
         'ok3
         '
         Me.ok3.AutoSize = True
-        Me.ok3.Location = New System.Drawing.Point(439, 450)
+        Me.ok3.Location = New System.Drawing.Point(489, 450)
         Me.ok3.Name = "ok3"
         Me.ok3.Size = New System.Drawing.Size(13, 13)
         Me.ok3.TabIndex = 122
@@ -1501,7 +1510,7 @@ Partial Class CapturaOEE
         'ok2
         '
         Me.ok2.AutoSize = True
-        Me.ok2.Location = New System.Drawing.Point(439, 423)
+        Me.ok2.Location = New System.Drawing.Point(489, 423)
         Me.ok2.Name = "ok2"
         Me.ok2.Size = New System.Drawing.Size(13, 13)
         Me.ok2.TabIndex = 121
@@ -1510,7 +1519,7 @@ Partial Class CapturaOEE
         'ok1
         '
         Me.ok1.AutoSize = True
-        Me.ok1.Location = New System.Drawing.Point(439, 395)
+        Me.ok1.Location = New System.Drawing.Point(489, 395)
         Me.ok1.Name = "ok1"
         Me.ok1.Size = New System.Drawing.Size(13, 13)
         Me.ok1.TabIndex = 120
@@ -1519,7 +1528,7 @@ Partial Class CapturaOEE
         'ng9
         '
         Me.ng9.AutoSize = True
-        Me.ng9.Location = New System.Drawing.Point(503, 617)
+        Me.ng9.Location = New System.Drawing.Point(553, 617)
         Me.ng9.Name = "ng9"
         Me.ng9.Size = New System.Drawing.Size(13, 13)
         Me.ng9.TabIndex = 137
@@ -1528,7 +1537,7 @@ Partial Class CapturaOEE
         'ng8
         '
         Me.ng8.AutoSize = True
-        Me.ng8.Location = New System.Drawing.Point(503, 590)
+        Me.ng8.Location = New System.Drawing.Point(553, 590)
         Me.ng8.Name = "ng8"
         Me.ng8.Size = New System.Drawing.Size(13, 13)
         Me.ng8.TabIndex = 136
@@ -1537,7 +1546,7 @@ Partial Class CapturaOEE
         'ng7
         '
         Me.ng7.AutoSize = True
-        Me.ng7.Location = New System.Drawing.Point(503, 561)
+        Me.ng7.Location = New System.Drawing.Point(553, 561)
         Me.ng7.Name = "ng7"
         Me.ng7.Size = New System.Drawing.Size(13, 13)
         Me.ng7.TabIndex = 135
@@ -1546,7 +1555,7 @@ Partial Class CapturaOEE
         'ng6
         '
         Me.ng6.AutoSize = True
-        Me.ng6.Location = New System.Drawing.Point(503, 534)
+        Me.ng6.Location = New System.Drawing.Point(553, 534)
         Me.ng6.Name = "ng6"
         Me.ng6.Size = New System.Drawing.Size(13, 13)
         Me.ng6.TabIndex = 134
@@ -1555,7 +1564,7 @@ Partial Class CapturaOEE
         'ng5
         '
         Me.ng5.AutoSize = True
-        Me.ng5.Location = New System.Drawing.Point(503, 504)
+        Me.ng5.Location = New System.Drawing.Point(553, 504)
         Me.ng5.Name = "ng5"
         Me.ng5.Size = New System.Drawing.Size(13, 13)
         Me.ng5.TabIndex = 133
@@ -1564,7 +1573,7 @@ Partial Class CapturaOEE
         'ng4
         '
         Me.ng4.AutoSize = True
-        Me.ng4.Location = New System.Drawing.Point(503, 476)
+        Me.ng4.Location = New System.Drawing.Point(553, 476)
         Me.ng4.Name = "ng4"
         Me.ng4.Size = New System.Drawing.Size(13, 13)
         Me.ng4.TabIndex = 132
@@ -1573,7 +1582,7 @@ Partial Class CapturaOEE
         'ng3
         '
         Me.ng3.AutoSize = True
-        Me.ng3.Location = New System.Drawing.Point(503, 450)
+        Me.ng3.Location = New System.Drawing.Point(553, 450)
         Me.ng3.Name = "ng3"
         Me.ng3.Size = New System.Drawing.Size(13, 13)
         Me.ng3.TabIndex = 131
@@ -1582,7 +1591,7 @@ Partial Class CapturaOEE
         'ng2
         '
         Me.ng2.AutoSize = True
-        Me.ng2.Location = New System.Drawing.Point(503, 423)
+        Me.ng2.Location = New System.Drawing.Point(553, 423)
         Me.ng2.Name = "ng2"
         Me.ng2.Size = New System.Drawing.Size(13, 13)
         Me.ng2.TabIndex = 130
@@ -1591,7 +1600,7 @@ Partial Class CapturaOEE
         'ng1
         '
         Me.ng1.AutoSize = True
-        Me.ng1.Location = New System.Drawing.Point(503, 395)
+        Me.ng1.Location = New System.Drawing.Point(553, 395)
         Me.ng1.Name = "ng1"
         Me.ng1.Size = New System.Drawing.Size(13, 13)
         Me.ng1.TabIndex = 129
@@ -1687,7 +1696,7 @@ Partial Class CapturaOEE
         Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtgvp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgvp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Defecto, Me.Valor, Me.Valor2, Me.Cantidad, Me.Hora, Me.id_hora, Me.id_error, Me.tp})
-        Me.dtgvp.Location = New System.Drawing.Point(638, 366)
+        Me.dtgvp.Location = New System.Drawing.Point(687, 366)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
         Me.dtgvp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1749,7 +1758,7 @@ Partial Class CapturaOEE
         'Label47
         '
         Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.Location = New System.Drawing.Point(420, 358)
+        Me.Label47.Location = New System.Drawing.Point(470, 358)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(53, 29)
         Me.Label47.TabIndex = 148
@@ -1759,7 +1768,7 @@ Partial Class CapturaOEE
         'Label59
         '
         Me.Label59.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label59.Location = New System.Drawing.Point(485, 357)
+        Me.Label59.Location = New System.Drawing.Point(535, 357)
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(53, 29)
         Me.Label59.TabIndex = 149
@@ -1981,7 +1990,7 @@ Partial Class CapturaOEE
         Me.PanelF.Controls.Add(Me.b7)
         Me.PanelF.Controls.Add(Me.b5)
         Me.PanelF.Controls.Add(Me.b6)
-        Me.PanelF.Location = New System.Drawing.Point(548, 319)
+        Me.PanelF.Location = New System.Drawing.Point(597, 319)
         Me.PanelF.Name = "PanelF"
         Me.PanelF.Size = New System.Drawing.Size(37, 326)
         Me.PanelF.TabIndex = 152
@@ -1999,7 +2008,7 @@ Partial Class CapturaOEE
         Me.PanelM.Controls.Add(Me.btn_7)
         Me.PanelM.Controls.Add(Me.btn_8)
         Me.PanelM.Controls.Add(Me.btn_9)
-        Me.PanelM.Location = New System.Drawing.Point(595, 349)
+        Me.PanelM.Location = New System.Drawing.Point(644, 349)
         Me.PanelM.Name = "PanelM"
         Me.PanelM.Size = New System.Drawing.Size(37, 290)
         Me.PanelM.TabIndex = 153
@@ -2009,17 +2018,107 @@ Partial Class CapturaOEE
         '
         Me.Button1.BackColor = System.Drawing.Color.Red
         Me.Button1.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.Button1.Location = New System.Drawing.Point(1057, 474)
+        Me.Button1.Location = New System.Drawing.Point(1106, 474)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(34, 43)
         Me.Button1.TabIndex = 154
         Me.Button1.UseVisualStyleBackColor = False
         '
+        't9
+        '
+        Me.t9.AutoSize = True
+        Me.t9.Location = New System.Drawing.Point(392, 618)
+        Me.t9.Name = "t9"
+        Me.t9.Size = New System.Drawing.Size(13, 13)
+        Me.t9.TabIndex = 163
+        Me.t9.Text = "0"
+        '
+        't8
+        '
+        Me.t8.AutoSize = True
+        Me.t8.Location = New System.Drawing.Point(392, 591)
+        Me.t8.Name = "t8"
+        Me.t8.Size = New System.Drawing.Size(13, 13)
+        Me.t8.TabIndex = 162
+        Me.t8.Text = "0"
+        '
+        't7
+        '
+        Me.t7.AutoSize = True
+        Me.t7.Location = New System.Drawing.Point(392, 562)
+        Me.t7.Name = "t7"
+        Me.t7.Size = New System.Drawing.Size(13, 13)
+        Me.t7.TabIndex = 161
+        Me.t7.Text = "0"
+        '
+        't6
+        '
+        Me.t6.AutoSize = True
+        Me.t6.Location = New System.Drawing.Point(392, 535)
+        Me.t6.Name = "t6"
+        Me.t6.Size = New System.Drawing.Size(13, 13)
+        Me.t6.TabIndex = 160
+        Me.t6.Text = "0"
+        '
+        't5
+        '
+        Me.t5.AutoSize = True
+        Me.t5.Location = New System.Drawing.Point(392, 505)
+        Me.t5.Name = "t5"
+        Me.t5.Size = New System.Drawing.Size(13, 13)
+        Me.t5.TabIndex = 159
+        Me.t5.Text = "0"
+        '
+        't4
+        '
+        Me.t4.AutoSize = True
+        Me.t4.Location = New System.Drawing.Point(392, 477)
+        Me.t4.Name = "t4"
+        Me.t4.Size = New System.Drawing.Size(13, 13)
+        Me.t4.TabIndex = 158
+        Me.t4.Text = "0"
+        '
+        't3
+        '
+        Me.t3.AutoSize = True
+        Me.t3.Location = New System.Drawing.Point(392, 451)
+        Me.t3.Name = "t3"
+        Me.t3.Size = New System.Drawing.Size(13, 13)
+        Me.t3.TabIndex = 157
+        Me.t3.Text = "0"
+        '
+        't2
+        '
+        Me.t2.AutoSize = True
+        Me.t2.Location = New System.Drawing.Point(392, 424)
+        Me.t2.Name = "t2"
+        Me.t2.Size = New System.Drawing.Size(13, 13)
+        Me.t2.TabIndex = 156
+        Me.t2.Text = "0"
+        '
+        't1
+        '
+        Me.t1.AutoSize = True
+        Me.t1.Location = New System.Drawing.Point(392, 396)
+        Me.t1.Name = "t1"
+        Me.t1.Size = New System.Drawing.Size(13, 13)
+        Me.t1.TabIndex = 155
+        Me.t1.Text = "0"
+        '
         'CapturaOEE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1094, 691)
+        Me.ClientSize = New System.Drawing.Size(1144, 691)
+        Me.Controls.Add(Me.t9)
+        Me.Controls.Add(Me.t8)
+        Me.Controls.Add(Me.t7)
+        Me.Controls.Add(Me.t6)
+        Me.Controls.Add(Me.t5)
+        Me.Controls.Add(Me.t4)
+        Me.Controls.Add(Me.t3)
+        Me.Controls.Add(Me.t2)
+        Me.Controls.Add(Me.t1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PanelM)
         Me.Controls.Add(Me.PanelF)
@@ -2328,4 +2427,13 @@ Partial Class CapturaOEE
     Friend WithEvents id_hora As DataGridViewTextBoxColumn
     Friend WithEvents id_error As DataGridViewTextBoxColumn
     Friend WithEvents tp As DataGridViewTextBoxColumn
+    Friend WithEvents t9 As Label
+    Friend WithEvents t8 As Label
+    Friend WithEvents t7 As Label
+    Friend WithEvents t6 As Label
+    Friend WithEvents t5 As Label
+    Friend WithEvents t4 As Label
+    Friend WithEvents t3 As Label
+    Friend WithEvents t2 As Label
+    Friend WithEvents t1 As Label
 End Class
