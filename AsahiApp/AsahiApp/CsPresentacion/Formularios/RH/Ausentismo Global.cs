@@ -267,6 +267,7 @@ namespace CsPresentacion
         private void Dgv_acumulado_DoubleClick(object sender, EventArgs e)
         {
             Detalle_incidencias inc = new Detalle_incidencias();
+            inc.lbl_var.Text = "4";
             inc.dtm_fecha.Text = dtm_fecha.Text;
             inc.txt_depto.Text = txt_depto.Text;
             inc.ShowDialog();
