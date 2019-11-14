@@ -69,7 +69,7 @@ Public Class Frm_Principal
         MejoraContinuaToolStripMenuItem.Enabled = False
         ReporteMejorasToolStripMenuItem.Enabled = False
         PlanTiempoExtraToolStripMenuItem.Enabled = False
-        ControlDeProducciónToolStripMenuItem.Enabled = False
+        'ControlDeProducciónToolStripMenuItem.Enabled = False
         EvaluacionesToolStripMenuItem.Enabled = False
         MasterPlanToolStripMenuItem.Enabled = False
         PlanToolStripMenuItem.Enabled = False
@@ -362,7 +362,7 @@ Public Class Frm_Principal
 
     Private Sub AusentismosGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusentismosGlobalToolStripMenuItem.Click
         'Ausentismo global
-        Dim ag As New Ausentismo_Global()
+        Dim ag As New m()
         ag.Show()
     End Sub
 
@@ -371,7 +371,7 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub PlanDeGastosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDeGastosToolStripMenuItem.Click
-        Dim capGastos As New Frm_PlanGastos()
+        Dim capGastos As New Frm_PlanGastos(Me.emp)
         capGastos.Show()
     End Sub
 

@@ -285,21 +285,9 @@ namespace CsPresentacion {
             
             private global::System.Data.DataColumn columnACTIVOS;
             
-            private global::System.Data.DataColumn columnADTVO;
+            private global::System.Data.DataColumn columnF_INJUS;
             
-            private global::System.Data.DataColumn columnTURNO1;
-            
-            private global::System.Data.DataColumn columnTURNO2;
-            
-            private global::System.Data.DataColumn columnTURNO3;
-            
-            private global::System.Data.DataColumn columnTOTAL;
-            
-            private global::System.Data.DataColumn columnFECHA;
-            
-            private global::System.Data.DataColumn columnFALTAINJUS;
-            
-            private global::System.Data.DataColumn columnFALTAJUST;
+            private global::System.Data.DataColumn columnF_JUST;
             
             private global::System.Data.DataColumn columnPCONGOCE;
             
@@ -310,6 +298,18 @@ namespace CsPresentacion {
             private global::System.Data.DataColumn columnINCAP;
             
             private global::System.Data.DataColumn columnVAC;
+            
+            private global::System.Data.DataColumn columnADMIN;
+            
+            private global::System.Data.DataColumn columnT1;
+            
+            private global::System.Data.DataColumn columnT2;
+            
+            private global::System.Data.DataColumn columnT3;
+            
+            private global::System.Data.DataColumn columnTOTAL;
+            
+            private global::System.Data.DataColumn columnFECHA;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -370,65 +370,17 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ADTVOColumn {
+            public global::System.Data.DataColumn F_INJUSColumn {
                 get {
-                    return this.columnADTVO;
+                    return this.columnF_INJUS;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TURNO1Column {
+            public global::System.Data.DataColumn F_JUSTColumn {
                 get {
-                    return this.columnTURNO1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TURNO2Column {
-                get {
-                    return this.columnTURNO2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TURNO3Column {
-                get {
-                    return this.columnTURNO3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TOTALColumn {
-                get {
-                    return this.columnTOTAL;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FECHAColumn {
-                get {
-                    return this.columnFECHA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FALTAINJUSColumn {
-                get {
-                    return this.columnFALTAINJUS;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FALTAJUSTColumn {
-                get {
-                    return this.columnFALTAJUST;
+                    return this.columnF_JUST;
                 }
             }
             
@@ -474,6 +426,54 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ADMINColumn {
+                get {
+                    return this.columnADMIN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn T1Column {
+                get {
+                    return this.columnT1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn T2Column {
+                get {
+                    return this.columnT2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn T3Column {
+                get {
+                    return this.columnT3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TOTALColumn {
+                get {
+                    return this.columnTOTAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FECHAColumn {
+                get {
+                    return this.columnFECHA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -513,37 +513,37 @@ namespace CsPresentacion {
                         string DEPARTAMENTO, 
                         int PLAN, 
                         int ACTIVOS, 
-                        int ADTVO, 
-                        int TURNO1, 
-                        int TURNO2, 
-                        int TURNO3, 
-                        int TOTAL, 
-                        System.DateTime FECHA, 
-                        int FALTAINJUS, 
-                        int FALTAJUST, 
+                        int F_INJUS, 
+                        int F_JUST, 
                         int PCONGOCE, 
                         int PSINGOCE, 
                         int SUSP, 
                         int INCAP, 
-                        int VAC) {
+                        int VAC, 
+                        int ADMIN, 
+                        int T1, 
+                        int T2, 
+                        int T3, 
+                        int TOTAL, 
+                        System.DateTime FECHA) {
                 Ausentismo_GlobalRow rowAusentismo_GlobalRow = ((Ausentismo_GlobalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DEPARTAMENTO,
                         PLAN,
                         ACTIVOS,
-                        ADTVO,
-                        TURNO1,
-                        TURNO2,
-                        TURNO3,
-                        TOTAL,
-                        FECHA,
-                        FALTAINJUS,
-                        FALTAJUST,
+                        F_INJUS,
+                        F_JUST,
                         PCONGOCE,
                         PSINGOCE,
                         SUSP,
                         INCAP,
-                        VAC};
+                        VAC,
+                        ADMIN,
+                        T1,
+                        T2,
+                        T3,
+                        TOTAL,
+                        FECHA};
                 rowAusentismo_GlobalRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAusentismo_GlobalRow);
                 return rowAusentismo_GlobalRow;
@@ -569,19 +569,19 @@ namespace CsPresentacion {
                 this.columnDEPARTAMENTO = base.Columns["DEPARTAMENTO"];
                 this.columnPLAN = base.Columns["PLAN"];
                 this.columnACTIVOS = base.Columns["ACTIVOS"];
-                this.columnADTVO = base.Columns["ADTVO"];
-                this.columnTURNO1 = base.Columns["TURNO1"];
-                this.columnTURNO2 = base.Columns["TURNO2"];
-                this.columnTURNO3 = base.Columns["TURNO3"];
-                this.columnTOTAL = base.Columns["TOTAL"];
-                this.columnFECHA = base.Columns["FECHA"];
-                this.columnFALTAINJUS = base.Columns["FALTAINJUS"];
-                this.columnFALTAJUST = base.Columns["FALTAJUST"];
+                this.columnF_INJUS = base.Columns["F_INJUS"];
+                this.columnF_JUST = base.Columns["F_JUST"];
                 this.columnPCONGOCE = base.Columns["PCONGOCE"];
                 this.columnPSINGOCE = base.Columns["PSINGOCE"];
                 this.columnSUSP = base.Columns["SUSP"];
                 this.columnINCAP = base.Columns["INCAP"];
                 this.columnVAC = base.Columns["VAC"];
+                this.columnADMIN = base.Columns["ADMIN"];
+                this.columnT1 = base.Columns["T1"];
+                this.columnT2 = base.Columns["T2"];
+                this.columnT3 = base.Columns["T3"];
+                this.columnTOTAL = base.Columns["TOTAL"];
+                this.columnFECHA = base.Columns["FECHA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -593,22 +593,10 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnPLAN);
                 this.columnACTIVOS = new global::System.Data.DataColumn("ACTIVOS", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnACTIVOS);
-                this.columnADTVO = new global::System.Data.DataColumn("ADTVO", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnADTVO);
-                this.columnTURNO1 = new global::System.Data.DataColumn("TURNO1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTURNO1);
-                this.columnTURNO2 = new global::System.Data.DataColumn("TURNO2", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTURNO2);
-                this.columnTURNO3 = new global::System.Data.DataColumn("TURNO3", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTURNO3);
-                this.columnTOTAL = new global::System.Data.DataColumn("TOTAL", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTOTAL);
-                this.columnFECHA = new global::System.Data.DataColumn("FECHA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFECHA);
-                this.columnFALTAINJUS = new global::System.Data.DataColumn("FALTAINJUS", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFALTAINJUS);
-                this.columnFALTAJUST = new global::System.Data.DataColumn("FALTAJUST", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFALTAJUST);
+                this.columnF_INJUS = new global::System.Data.DataColumn("F_INJUS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnF_INJUS);
+                this.columnF_JUST = new global::System.Data.DataColumn("F_JUST", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnF_JUST);
                 this.columnPCONGOCE = new global::System.Data.DataColumn("PCONGOCE", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPCONGOCE);
                 this.columnPSINGOCE = new global::System.Data.DataColumn("PSINGOCE", typeof(int), null, global::System.Data.MappingType.Element);
@@ -619,22 +607,34 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnINCAP);
                 this.columnVAC = new global::System.Data.DataColumn("VAC", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVAC);
+                this.columnADMIN = new global::System.Data.DataColumn("ADMIN", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnADMIN);
+                this.columnT1 = new global::System.Data.DataColumn("T1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT1);
+                this.columnT2 = new global::System.Data.DataColumn("T2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT2);
+                this.columnT3 = new global::System.Data.DataColumn("T3", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnT3);
+                this.columnTOTAL = new global::System.Data.DataColumn("TOTAL", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTOTAL);
+                this.columnFECHA = new global::System.Data.DataColumn("FECHA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFECHA);
                 this.columnDEPARTAMENTO.MaxLength = 30;
                 this.columnPLAN.ReadOnly = true;
                 this.columnACTIVOS.ReadOnly = true;
-                this.columnADTVO.ReadOnly = true;
-                this.columnTURNO1.ReadOnly = true;
-                this.columnTURNO2.ReadOnly = true;
-                this.columnTURNO3.ReadOnly = true;
-                this.columnTOTAL.ReadOnly = true;
-                this.columnFECHA.ReadOnly = true;
-                this.columnFALTAINJUS.ReadOnly = true;
-                this.columnFALTAJUST.ReadOnly = true;
+                this.columnF_INJUS.ReadOnly = true;
+                this.columnF_JUST.ReadOnly = true;
                 this.columnPCONGOCE.ReadOnly = true;
                 this.columnPSINGOCE.ReadOnly = true;
                 this.columnSUSP.ReadOnly = true;
                 this.columnINCAP.ReadOnly = true;
                 this.columnVAC.ReadOnly = true;
+                this.columnADMIN.ReadOnly = true;
+                this.columnT1.ReadOnly = true;
+                this.columnT2.ReadOnly = true;
+                this.columnT3.ReadOnly = true;
+                this.columnTOTAL.ReadOnly = true;
+                this.columnFECHA.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -825,129 +825,33 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ADTVO {
+            public int F_INJUS {
                 get {
                     try {
-                        return ((int)(this[this.tableAusentismo_Global.ADTVOColumn]));
+                        return ((int)(this[this.tableAusentismo_Global.F_INJUSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ADTVO\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'F_INJUS\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAusentismo_Global.ADTVOColumn] = value;
+                    this[this.tableAusentismo_Global.F_INJUSColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int TURNO1 {
+            public int F_JUST {
                 get {
                     try {
-                        return ((int)(this[this.tableAusentismo_Global.TURNO1Column]));
+                        return ((int)(this[this.tableAusentismo_Global.F_JUSTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TURNO1\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'F_JUST\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAusentismo_Global.TURNO1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int TURNO2 {
-                get {
-                    try {
-                        return ((int)(this[this.tableAusentismo_Global.TURNO2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TURNO2\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAusentismo_Global.TURNO2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int TURNO3 {
-                get {
-                    try {
-                        return ((int)(this[this.tableAusentismo_Global.TURNO3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TURNO3\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAusentismo_Global.TURNO3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int TOTAL {
-                get {
-                    try {
-                        return ((int)(this[this.tableAusentismo_Global.TOTALColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TOTAL\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAusentismo_Global.TOTALColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime FECHA {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableAusentismo_Global.FECHAColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FECHA\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAusentismo_Global.FECHAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int FALTAINJUS {
-                get {
-                    try {
-                        return ((int)(this[this.tableAusentismo_Global.FALTAINJUSColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FALTAINJUS\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAusentismo_Global.FALTAINJUSColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int FALTAJUST {
-                get {
-                    try {
-                        return ((int)(this[this.tableAusentismo_Global.FALTAJUSTColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FALTAJUST\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAusentismo_Global.FALTAJUSTColumn] = value;
+                    this[this.tableAusentismo_Global.F_JUSTColumn] = value;
                 }
             }
             
@@ -1033,6 +937,102 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ADMIN {
+                get {
+                    try {
+                        return ((int)(this[this.tableAusentismo_Global.ADMINColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ADMIN\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAusentismo_Global.ADMINColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int T1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableAusentismo_Global.T1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'T1\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAusentismo_Global.T1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int T2 {
+                get {
+                    try {
+                        return ((int)(this[this.tableAusentismo_Global.T2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'T2\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAusentismo_Global.T2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int T3 {
+                get {
+                    try {
+                        return ((int)(this[this.tableAusentismo_Global.T3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'T3\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAusentismo_Global.T3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int TOTAL {
+                get {
+                    try {
+                        return ((int)(this[this.tableAusentismo_Global.TOTALColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TOTAL\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAusentismo_Global.TOTALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime FECHA {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableAusentismo_Global.FECHAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FECHA\' de la tabla \'Ausentismo_Global\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAusentismo_Global.FECHAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDEPARTAMENTONull() {
                 return this.IsNull(this.tableAusentismo_Global.DEPARTAMENTOColumn);
             }
@@ -1069,98 +1069,26 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsADTVONull() {
-                return this.IsNull(this.tableAusentismo_Global.ADTVOColumn);
+            public bool IsF_INJUSNull() {
+                return this.IsNull(this.tableAusentismo_Global.F_INJUSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetADTVONull() {
-                this[this.tableAusentismo_Global.ADTVOColumn] = global::System.Convert.DBNull;
+            public void SetF_INJUSNull() {
+                this[this.tableAusentismo_Global.F_INJUSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTURNO1Null() {
-                return this.IsNull(this.tableAusentismo_Global.TURNO1Column);
+            public bool IsF_JUSTNull() {
+                return this.IsNull(this.tableAusentismo_Global.F_JUSTColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTURNO1Null() {
-                this[this.tableAusentismo_Global.TURNO1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTURNO2Null() {
-                return this.IsNull(this.tableAusentismo_Global.TURNO2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTURNO2Null() {
-                this[this.tableAusentismo_Global.TURNO2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTURNO3Null() {
-                return this.IsNull(this.tableAusentismo_Global.TURNO3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTURNO3Null() {
-                this[this.tableAusentismo_Global.TURNO3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTOTALNull() {
-                return this.IsNull(this.tableAusentismo_Global.TOTALColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTOTALNull() {
-                this[this.tableAusentismo_Global.TOTALColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFECHANull() {
-                return this.IsNull(this.tableAusentismo_Global.FECHAColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFECHANull() {
-                this[this.tableAusentismo_Global.FECHAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFALTAINJUSNull() {
-                return this.IsNull(this.tableAusentismo_Global.FALTAINJUSColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFALTAINJUSNull() {
-                this[this.tableAusentismo_Global.FALTAINJUSColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFALTAJUSTNull() {
-                return this.IsNull(this.tableAusentismo_Global.FALTAJUSTColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFALTAJUSTNull() {
-                this[this.tableAusentismo_Global.FALTAJUSTColumn] = global::System.Convert.DBNull;
+            public void SetF_JUSTNull() {
+                this[this.tableAusentismo_Global.F_JUSTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1221,6 +1149,78 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetVACNull() {
                 this[this.tableAusentismo_Global.VACColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsADMINNull() {
+                return this.IsNull(this.tableAusentismo_Global.ADMINColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetADMINNull() {
+                this[this.tableAusentismo_Global.ADMINColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsT1Null() {
+                return this.IsNull(this.tableAusentismo_Global.T1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetT1Null() {
+                this[this.tableAusentismo_Global.T1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsT2Null() {
+                return this.IsNull(this.tableAusentismo_Global.T2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetT2Null() {
+                this[this.tableAusentismo_Global.T2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsT3Null() {
+                return this.IsNull(this.tableAusentismo_Global.T3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetT3Null() {
+                this[this.tableAusentismo_Global.T3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTOTALNull() {
+                return this.IsNull(this.tableAusentismo_Global.TOTALColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTOTALNull() {
+                this[this.tableAusentismo_Global.TOTALColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFECHANull() {
+                return this.IsNull(this.tableAusentismo_Global.FECHAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFECHANull() {
+                this[this.tableAusentismo_Global.FECHAColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1386,19 +1386,19 @@ namespace CsPresentacion.DS_Ausentismo_GlobalTableAdapters {
             tableMapping.ColumnMappings.Add("DEPARTAMENTO", "DEPARTAMENTO");
             tableMapping.ColumnMappings.Add("PLAN", "PLAN");
             tableMapping.ColumnMappings.Add("ACTIVOS", "ACTIVOS");
-            tableMapping.ColumnMappings.Add("ADTVO", "ADTVO");
-            tableMapping.ColumnMappings.Add("TURNO1", "TURNO1");
-            tableMapping.ColumnMappings.Add("TURNO2", "TURNO2");
-            tableMapping.ColumnMappings.Add("TURNO3", "TURNO3");
-            tableMapping.ColumnMappings.Add("TOTAL", "TOTAL");
-            tableMapping.ColumnMappings.Add("FECHA", "FECHA");
-            tableMapping.ColumnMappings.Add("FALTAINJUS", "FALTAINJUS");
-            tableMapping.ColumnMappings.Add("FALTAJUST", "FALTAJUST");
+            tableMapping.ColumnMappings.Add("F_INJUS", "F_INJUS");
+            tableMapping.ColumnMappings.Add("F_JUST", "F_JUST");
             tableMapping.ColumnMappings.Add("PCONGOCE", "PCONGOCE");
             tableMapping.ColumnMappings.Add("PSINGOCE", "PSINGOCE");
             tableMapping.ColumnMappings.Add("SUSP", "SUSP");
             tableMapping.ColumnMappings.Add("INCAP", "INCAP");
             tableMapping.ColumnMappings.Add("VAC", "VAC");
+            tableMapping.ColumnMappings.Add("ADMIN", "ADMIN");
+            tableMapping.ColumnMappings.Add("T1", "T1");
+            tableMapping.ColumnMappings.Add("T2", "T2");
+            tableMapping.ColumnMappings.Add("T3", "T3");
+            tableMapping.ColumnMappings.Add("TOTAL", "TOTAL");
+            tableMapping.ColumnMappings.Add("FECHA", "FECHA");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
