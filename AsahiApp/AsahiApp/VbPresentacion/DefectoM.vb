@@ -122,4 +122,105 @@ Public Class DefectoM
 
         End If
     End Sub
+
+    Private Sub btn_avanza_Click(sender As Object, e As EventArgs) Handles btn_avanza.Click
+        If idh = 1 Then
+            idh = 2
+            lbl_piezas.Text = CapturaOEE.t2.Text
+            lbl_hora.Text = CapturaOEE.lbl_h2.Text
+
+        ElseIf idh = 2 Then
+            idh = 3
+            lbl_piezas.Text = CapturaOEE.t3.Text
+            lbl_hora.Text = CapturaOEE.lbl_h3.Text
+
+        ElseIf idh = 3 Then
+            idh = 4
+            lbl_piezas.Text = CapturaOEE.t4.Text
+            lbl_hora.Text = CapturaOEE.lbl_h4.Text
+
+        ElseIf idh = 4 Then
+            idh = 5
+            lbl_piezas.Text = CapturaOEE.t5.Text
+            lbl_hora.Text = CapturaOEE.lbl_h5.Text
+
+        ElseIf idh = 5 Then
+            idh = 6
+            lbl_piezas.Text = CapturaOEE.t6.Text
+            lbl_hora.Text = CapturaOEE.lbl_h6.Text
+
+        ElseIf idh = 6 Then
+            idh = 7
+            lbl_piezas.Text = CapturaOEE.t7.Text
+            lbl_hora.Text = CapturaOEE.lbl_h7.Text
+
+        ElseIf idh = 7 Then
+            idh = 8
+            lbl_piezas.Text = CapturaOEE.t8.Text
+            lbl_hora.Text = CapturaOEE.lbl_h8.Text
+
+        ElseIf idh = 8 Then
+            idh = 9
+            lbl_piezas.Text = CapturaOEE.t9.Text
+            lbl_hora.Text = CapturaOEE.lbl_h9.Text
+
+
+        ElseIf idh = 9 Then
+            idh = 1
+            lbl_piezas.Text = CapturaOEE.t1.Text
+            lbl_hora.Text = CapturaOEE.lbl_h1.Text
+
+        End If
+    End Sub
+
+    Private Sub btn_retrocede_Click(sender As Object, e As EventArgs) Handles btn_retrocede.Click
+        If idh = 1 Then
+            idh = 9
+            lbl_piezas.Text = CapturaOEE.t9.Text
+            lbl_hora.Text = CapturaOEE.lbl_h9.Text
+
+        ElseIf idh = 2 Then
+            idh = 1
+            lbl_piezas.Text = CapturaOEE.t1.Text
+            lbl_hora.Text = CapturaOEE.lbl_h1.Text
+
+        ElseIf idh = 3 Then
+            idh = 2
+            lbl_piezas.Text = CapturaOEE.t2.Text
+            lbl_hora.Text = CapturaOEE.lbl_h2.Text
+
+        ElseIf idh = 4 Then
+            idh = 3
+            lbl_piezas.Text = CapturaOEE.t3.Text
+            lbl_hora.Text = CapturaOEE.lbl_h3.Text
+
+        ElseIf idh = 5 Then
+            idh = 4
+            lbl_piezas.Text = CapturaOEE.t4.Text
+            lbl_hora.Text = CapturaOEE.lbl_h4.Text
+
+        ElseIf idh = 6 Then
+            idh = 5
+            lbl_piezas.Text = CapturaOEE.t5.Text
+            lbl_hora.Text = CapturaOEE.lbl_h5.Text
+
+        ElseIf idh = 7 Then
+            idh = 6
+            lbl_piezas.Text = CapturaOEE.t6.Text
+            lbl_hora.Text = CapturaOEE.lbl_h6.Text
+
+
+        ElseIf idh = 8 Then
+            idh = 7
+            lbl_piezas.Text = CapturaOEE.t7.Text
+            lbl_hora.Text = CapturaOEE.lbl_h7.Text
+
+
+        ElseIf idh = 9 Then
+            idh = 8
+            lbl_piezas.Text = CapturaOEE.t8.Text
+            lbl_hora.Text = CapturaOEE.lbl_h8.Text
+
+        End If
+    End Sub
 End Class

@@ -40,6 +40,8 @@ Partial Class DefectoM
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_cantidad = New System.Windows.Forms.TextBox()
         Me.btn_1 = New System.Windows.Forms.Button()
+        Me.btn_retrocede = New System.Windows.Forms.Button()
+        Me.btn_avanza = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label10
@@ -211,11 +213,31 @@ Partial Class DefectoM
         Me.btn_1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_1.UseVisualStyleBackColor = True
         '
+        'btn_retrocede
+        '
+        Me.btn_retrocede.Location = New System.Drawing.Point(369, 269)
+        Me.btn_retrocede.Name = "btn_retrocede"
+        Me.btn_retrocede.Size = New System.Drawing.Size(63, 56)
+        Me.btn_retrocede.TabIndex = 146
+        Me.btn_retrocede.Text = "Anterior"
+        Me.btn_retrocede.UseVisualStyleBackColor = True
+        '
+        'btn_avanza
+        '
+        Me.btn_avanza.Location = New System.Drawing.Point(465, 269)
+        Me.btn_avanza.Name = "btn_avanza"
+        Me.btn_avanza.Size = New System.Drawing.Size(63, 56)
+        Me.btn_avanza.TabIndex = 145
+        Me.btn_avanza.Text = "Siguiente"
+        Me.btn_avanza.UseVisualStyleBackColor = True
+        '
         'DefectoM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(604, 366)
+        Me.Controls.Add(Me.btn_retrocede)
+        Me.Controls.Add(Me.btn_avanza)
         Me.Controls.Add(Me.btn_1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txt_cantidad)
@@ -259,4 +281,6 @@ Partial Class DefectoM
     Friend WithEvents Label3 As Label
     Friend WithEvents txt_cantidad As TextBox
     Friend WithEvents btn_1 As Button
+    Friend WithEvents btn_retrocede As Button
+    Friend WithEvents btn_avanza As Button
 End Class

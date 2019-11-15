@@ -362,18 +362,22 @@ Public Class CapturaOEE
             Dim i As Integer = CInt(txt_9.Text.ToString)
 
 
-            lbl_acumulado1.Text = a * CInt(cbx_cavidad.Text)
-            lbl_acumulado2.Text = (a + b) * CInt(cbx_cavidad.Text)
-            lbl_acumulado3.Text = (a + b + c) * CInt(cbx_cavidad.Text)
-            lbl_acumulado4.Text = (a + b + c + d) * CInt(cbx_cavidad.Text)
-            lbl_acumulado5.Text = (a + b + c + d + ee) * CInt(cbx_cavidad.Text)
-            lbl_acumulado6.Text = (a + b + c + d + ee + f) * CInt(cbx_cavidad.Text)
-            lbl_acumulado7.Text = (a + b + c + d + ee + f + g) * CInt(cbx_cavidad.Text)
-            lbl_acumulado8.Text = (a + b + c + d + ee + f + g + h) * CInt(cbx_cavidad.Text)
-            lbl_acumulado9.Text = (a + b + c + d + ee + f + g + h + i) * CInt(cbx_cavidad.Text)
+
 
 
             If cbx_proceso.Text = "FUNDICION" Then
+
+
+                lbl_acumulado1.Text = a * CInt(cbx_cavidad.Text)
+                lbl_acumulado2.Text = (a + b) * CInt(cbx_cavidad.Text)
+                lbl_acumulado3.Text = (a + b + c) * CInt(cbx_cavidad.Text)
+                lbl_acumulado4.Text = (a + b + c + d) * CInt(cbx_cavidad.Text)
+                lbl_acumulado5.Text = (a + b + c + d + ee) * CInt(cbx_cavidad.Text)
+                lbl_acumulado6.Text = (a + b + c + d + ee + f) * CInt(cbx_cavidad.Text)
+                lbl_acumulado7.Text = (a + b + c + d + ee + f + g) * CInt(cbx_cavidad.Text)
+                lbl_acumulado8.Text = (a + b + c + d + ee + f + g + h) * CInt(cbx_cavidad.Text)
+                lbl_acumulado9.Text = (a + b + c + d + ee + f + g + h + i) * CInt(cbx_cavidad.Text)
+
                 t1.Text = a * CInt(cbx_cavidad.Text)
                 t2.Text = b * CInt(cbx_cavidad.Text)
                 t3.Text = c * CInt(cbx_cavidad.Text)
@@ -385,6 +389,18 @@ Public Class CapturaOEE
                 t9.Text = i * CInt(cbx_cavidad.Text)
 
             Else
+
+                lbl_acumulado1.Text = a
+                lbl_acumulado2.Text = (a + b)
+                lbl_acumulado3.Text = (a + b + c)
+                lbl_acumulado4.Text = (a + b + c + d)
+                lbl_acumulado5.Text = (a + b + c + d + ee)
+                lbl_acumulado6.Text = (a + b + c + d + ee + f)
+                lbl_acumulado7.Text = (a + b + c + d + ee + f + g)
+                lbl_acumulado8.Text = (a + b + c + d + ee + f + g + h)
+                lbl_acumulado9.Text = (a + b + c + d + ee + f + g + h + i)
+
+
                 t1.Text = a
                 t2.Text = b
                 t3.Text = c
