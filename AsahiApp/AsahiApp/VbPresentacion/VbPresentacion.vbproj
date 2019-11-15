@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>83</ApplicationRevision>
+    <ApplicationRevision>90</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -176,6 +176,12 @@
     </Compile>
     <Compile Include="DataSet\Dts_PrenominaLista.vb">
       <DependentUpon>Dts_PrenominaLista.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DefectoM.Designer.vb">
+      <DependentUpon>DefectoM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DefectoM.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Detalle2oee.Designer.vb">
       <DependentUpon>Detalle2oee.vb</DependentUpon>
@@ -345,6 +351,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CapturaOEE.resx">
       <DependentUpon>CapturaOEE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefectoM.resx">
+      <DependentUpon>DefectoM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Detalle2oee.resx">
       <DependentUpon>Detalle2oee.vb</DependentUpon>
