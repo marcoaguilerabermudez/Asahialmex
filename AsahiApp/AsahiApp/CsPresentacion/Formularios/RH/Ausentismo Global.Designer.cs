@@ -1,6 +1,6 @@
 ﻿namespace CsPresentacion
 {
-    partial class m
+    partial class frm_ausentismo_global
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -73,6 +74,7 @@
             this.lbl_adtvo = new System.Windows.Forms.Label();
             this.lbl_turno3 = new System.Windows.Forms.Label();
             this.lbl_turno2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btn_reporte = new System.Windows.Forms.Button();
             this.btn_exportar_ant2 = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
@@ -555,6 +557,10 @@
             this.lbl_turno2.TabIndex = 222;
             this.lbl_turno2.Text = "00";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // btn_reporte
             // 
             this.btn_reporte.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -595,7 +601,7 @@
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
             // 
-            // m
+            // frm_ausentismo_global
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -631,7 +637,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "m";
+            this.Name = "frm_ausentismo_global";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ausentismo Global";
@@ -695,5 +701,6 @@
         private System.Windows.Forms.Label lbl_turno3;
         private System.Windows.Forms.Label lbl_turno2;
         private System.Windows.Forms.Button btn_reporte;
+        private System.Windows.Forms.Timer timer1;
     }
 }
