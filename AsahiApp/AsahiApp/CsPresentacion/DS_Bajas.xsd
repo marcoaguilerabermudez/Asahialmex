@@ -44,6 +44,8 @@
               <Mapping SourceColumn="MUNICIPIO" DataSetColumn="MUNICIPIO" />
               <Mapping SourceColumn="E_CIVIL" DataSetColumn="E_CIVIL" />
               <Mapping SourceColumn="GEN" DataSetColumn="GEN" />
+              <Mapping SourceColumn="TELEFONO" DataSetColumn="TELEFONO" />
+              <Mapping SourceColumn="CONTACTO" DataSetColumn="CONTACTO" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -55,7 +57,7 @@
   <xs:element name="DS_Bajas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_Bajas" msprop:Generator_UserDSName="DS_Bajas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FM_LISTADO_BAJAS" msprop:Generator_TableClassName="FM_LISTADO_BAJASDataTable" msprop:Generator_TableVarName="tableFM_LISTADO_BAJAS" msprop:Generator_RowChangedName="FM_LISTADO_BAJASRowChanged" msprop:Generator_TablePropName="FM_LISTADO_BAJAS" msprop:Generator_RowDeletingName="FM_LISTADO_BAJASRowDeleting" msprop:Generator_RowChangingName="FM_LISTADO_BAJASRowChanging" msprop:Generator_RowEvHandlerName="FM_LISTADO_BAJASRowChangeEventHandler" msprop:Generator_RowDeletedName="FM_LISTADO_BAJASRowDeleted" msprop:Generator_RowClassName="FM_LISTADO_BAJASRow" msprop:Generator_UserTableName="FM_LISTADO_BAJAS" msprop:Generator_RowEvArgName="FM_LISTADO_BAJASRowChangeEvent">
+        <xs:element name="FM_LISTADO_BAJAS" msprop:Generator_TableClassName="FM_LISTADO_BAJASDataTable" msprop:Generator_TableVarName="tableFM_LISTADO_BAJAS" msprop:Generator_TablePropName="FM_LISTADO_BAJAS" msprop:Generator_RowDeletingName="FM_LISTADO_BAJASRowDeleting" msprop:Generator_RowChangingName="FM_LISTADO_BAJASRowChanging" msprop:Generator_RowEvHandlerName="FM_LISTADO_BAJASRowChangeEventHandler" msprop:Generator_RowDeletedName="FM_LISTADO_BAJASRowDeleted" msprop:Generator_UserTableName="FM_LISTADO_BAJAS" msprop:Generator_RowChangedName="FM_LISTADO_BAJASRowChanged" msprop:Generator_RowEvArgName="FM_LISTADO_BAJASRowChangeEvent" msprop:Generator_RowClassName="FM_LISTADO_BAJASRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CLAVE" msprop:Generator_ColumnVarNameInTable="columnCLAVE" msprop:Generator_ColumnPropNameInRow="CLAVE" msprop:Generator_ColumnPropNameInTable="CLAVEColumn" msprop:Generator_UserColumnName="CLAVE">
@@ -132,6 +134,20 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TELEFONO" msprop:Generator_ColumnVarNameInTable="columnTELEFONO" msprop:Generator_ColumnPropNameInRow="TELEFONO" msprop:Generator_ColumnPropNameInTable="TELEFONOColumn" msprop:Generator_UserColumnName="TELEFONO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONTACTO" msprop:Generator_ColumnVarNameInTable="columnCONTACTO" msprop:Generator_ColumnPropNameInRow="CONTACTO" msprop:Generator_ColumnPropNameInTable="CONTACTOColumn" msprop:Generator_UserColumnName="CONTACTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

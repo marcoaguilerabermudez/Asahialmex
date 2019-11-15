@@ -313,6 +313,10 @@ namespace CsPresentacion {
             
             private global::System.Data.DataColumn columnGEN;
             
+            private global::System.Data.DataColumn columnTELEFONO;
+            
+            private global::System.Data.DataColumn columnCONTACTO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public FM_LISTADO_BAJASDataTable() {
@@ -484,6 +488,22 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TELEFONOColumn {
+                get {
+                    return this.columnTELEFONO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CONTACTOColumn {
+                get {
+                    return this.columnCONTACTO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -536,7 +556,9 @@ namespace CsPresentacion {
                         string MOTIVO, 
                         string MUNICIPIO, 
                         string E_CIVIL, 
-                        string GEN) {
+                        string GEN, 
+                        string TELEFONO, 
+                        string CONTACTO) {
                 FM_LISTADO_BAJASRow rowFM_LISTADO_BAJASRow = ((FM_LISTADO_BAJASRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CLAVE,
@@ -555,7 +577,9 @@ namespace CsPresentacion {
                         MOTIVO,
                         MUNICIPIO,
                         E_CIVIL,
-                        GEN};
+                        GEN,
+                        TELEFONO,
+                        CONTACTO};
                 rowFM_LISTADO_BAJASRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFM_LISTADO_BAJASRow);
                 return rowFM_LISTADO_BAJASRow;
@@ -595,6 +619,8 @@ namespace CsPresentacion {
                 this.columnMUNICIPIO = base.Columns["MUNICIPIO"];
                 this.columnE_CIVIL = base.Columns["E_CIVIL"];
                 this.columnGEN = base.Columns["GEN"];
+                this.columnTELEFONO = base.Columns["TELEFONO"];
+                this.columnCONTACTO = base.Columns["CONTACTO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -634,6 +660,10 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnE_CIVIL);
                 this.columnGEN = new global::System.Data.DataColumn("GEN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGEN);
+                this.columnTELEFONO = new global::System.Data.DataColumn("TELEFONO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTELEFONO);
+                this.columnCONTACTO = new global::System.Data.DataColumn("CONTACTO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONTACTO);
                 this.columnCLAVE.AllowDBNull = false;
                 this.columnCLAVE.MaxLength = 10;
                 this.columnNOMBRE_EMPLEADO.ReadOnly = true;
@@ -656,6 +686,8 @@ namespace CsPresentacion {
                 this.columnMUNICIPIO.MaxLength = 25;
                 this.columnE_CIVIL.MaxLength = 5;
                 this.columnGEN.MaxLength = 1;
+                this.columnTELEFONO.MaxLength = 15;
+                this.columnCONTACTO.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1066,6 +1098,38 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TELEFONO {
+                get {
+                    try {
+                        return ((string)(this[this.tableFM_LISTADO_BAJAS.TELEFONOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TELEFONO\' de la tabla \'FM_LISTADO_BAJAS\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFM_LISTADO_BAJAS.TELEFONOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CONTACTO {
+                get {
+                    try {
+                        return ((string)(this[this.tableFM_LISTADO_BAJAS.CONTACTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CONTACTO\' de la tabla \'FM_LISTADO_BAJAS\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFM_LISTADO_BAJAS.CONTACTOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNOMBRE_EMPLEADONull() {
                 return this.IsNull(this.tableFM_LISTADO_BAJAS.NOMBRE_EMPLEADOColumn);
             }
@@ -1255,6 +1319,30 @@ namespace CsPresentacion {
             public void SetGENNull() {
                 this[this.tableFM_LISTADO_BAJAS.GENColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTELEFONONull() {
+                return this.IsNull(this.tableFM_LISTADO_BAJAS.TELEFONOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTELEFONONull() {
+                this[this.tableFM_LISTADO_BAJAS.TELEFONOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCONTACTONull() {
+                return this.IsNull(this.tableFM_LISTADO_BAJAS.CONTACTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCONTACTONull() {
+                this[this.tableFM_LISTADO_BAJAS.CONTACTOColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1433,6 +1521,8 @@ namespace CsPresentacion.DS_BajasTableAdapters {
             tableMapping.ColumnMappings.Add("MUNICIPIO", "MUNICIPIO");
             tableMapping.ColumnMappings.Add("E_CIVIL", "E_CIVIL");
             tableMapping.ColumnMappings.Add("GEN", "GEN");
+            tableMapping.ColumnMappings.Add("TELEFONO", "TELEFONO");
+            tableMapping.ColumnMappings.Add("CONTACTO", "CONTACTO");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

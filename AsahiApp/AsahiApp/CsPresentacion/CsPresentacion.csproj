@@ -109,10 +109,10 @@
     <Compile Include="Formularios\RH\Ausentismo Global.Designer.cs">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>
     </Compile>
-    <Compile Include="Detalle_incidencias.cs">
+    <Compile Include="Formularios\RH\Detalle_incidencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Detalle_incidencias.Designer.cs">
+    <Compile Include="Formularios\RH\Detalle_incidencias.Designer.cs">
       <DependentUpon>Detalle_incidencias.cs</DependentUpon>
     </Compile>
     <Compile Include="DS_Historico.Designer.cs">
@@ -148,10 +148,10 @@
     <Compile Include="Formularios\RH\Permisos_Autorizaciones.Designer.cs">
       <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Ausentismo_Fecha.cs">
+    <Compile Include="Formularios\RH\Frm_Ausentismo_Fecha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Ausentismo_Fecha.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_Ausentismo_Fecha.Designer.cs">
       <DependentUpon>Frm_Ausentismo_Fecha.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Frm_Rep_Historial.cs">
@@ -452,10 +452,10 @@
     <Compile Include="Reportes\RH\Rep_Ausentismo.Designer.cs">
       <DependentUpon>Rep_Ausentismo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rep_Ausentismo_Fecha.cs">
+    <Compile Include="Reportes\RH\Rep_Ausentismo_Fecha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rep_Ausentismo_Fecha.Designer.cs">
+    <Compile Include="Reportes\RH\Rep_Ausentismo_Fecha.Designer.cs">
       <DependentUpon>Rep_Ausentismo_Fecha.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -501,7 +501,7 @@
     <EmbeddedResource Include="Formularios\RH\Ausentismo Global.resx">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Detalle_incidencias.resx">
+    <EmbeddedResource Include="Formularios\RH\Detalle_incidencias.resx">
       <DependentUpon>Detalle_incidencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Historico.resx">
@@ -513,7 +513,7 @@
     <EmbeddedResource Include="Formularios\RH\Permisos_Autorizaciones.resx">
       <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Ausentismo_Fecha.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_Ausentismo_Fecha.resx">
       <DependentUpon>Frm_Ausentismo_Fecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Frm_Rep_Historial.resx">
@@ -619,7 +619,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Ausentismos.rdlc" />
     <EmbeddedResource Include="Rep_Ausentismo_Fecha.rdlc" />
-    <EmbeddedResource Include="Rep_Ausentismo_Fecha.resx">
+    <EmbeddedResource Include="Reportes\RH\Rep_Ausentismo_Fecha.resx">
       <DependentUpon>Rep_Ausentismo_Fecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_bajas.rdlc" />
@@ -639,6 +639,7 @@
     <EmbeddedResource Include="Rep_Historico.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Activos.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Altas.rdlc" />
+    <EmbeddedResource Include="Rep_Listado_bajas.rdlc" />
     <EmbeddedResource Include="Rep_Mejoras3.rdlc" />
     <EmbeddedResource Include="Rep_Permisos_Salida.rdlc" />
     <EmbeddedResource Include="Rep_Retardos.rdlc" />
@@ -1023,6 +1024,9 @@
     <None Include="Resources\math-add-icon1.png" />
     <None Include="Resources\delete-icon.png" />
     <None Include="Resources\math-add-icon2.png" />
+    <None Include="Resources\Logo1.jpg" />
+    <None Include="Resources\LogoFinal.png" />
+    <None Include="Resources\LogoFinal1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
