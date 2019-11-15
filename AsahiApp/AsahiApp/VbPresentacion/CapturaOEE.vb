@@ -45,9 +45,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h1.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_1.Text
+            Modulo_detalle.parametro4 = t1.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 1
+            Modulo_detalle.parametro6 = 1
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -64,9 +64,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h2.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_2.Text
+            Modulo_detalle.parametro4 = t2.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 2
+            Modulo_detalle.parametro6 = 2
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -81,9 +81,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h3.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_3.Text
+            Modulo_detalle.parametro4 = t3.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 3
+            Modulo_detalle.parametro6 = 3
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -98,9 +98,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h4.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_4.Text
+            Modulo_detalle.parametro4 = t4.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 4
+            Modulo_detalle.parametro6 = 4
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -115,9 +115,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h5.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_5.Text
+            Modulo_detalle.parametro4 = t5.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 5
+            Modulo_detalle.parametro6 = 5
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -132,9 +132,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h6.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_6.Text
+            Modulo_detalle.parametro4 = t6.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 6
+            Modulo_detalle.parametro6 = 6
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -149,9 +149,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h7.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_7.Text
+            Modulo_detalle.parametro4 = t7.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 7
+            Modulo_detalle.parametro6 = 7
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -167,9 +167,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h8.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_8.Text
+            Modulo_detalle.parametro4 = t8.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 8
+            Modulo_detalle.parametro6 = 8
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -184,9 +184,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h9.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_9.Text
+            Modulo_detalle.parametro4 = t9.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 9
+            Modulo_detalle.parametro6 = 9
             DefectoM.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -201,9 +201,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h1.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_1.Text
+            Modulo_detalle.parametro4 = t1.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 1
+            Modulo_detalle.parametro6 = 1
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -219,9 +219,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h2.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_2.Text
+            Modulo_detalle.parametro4 = t2.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 2
+            Modulo_detalle.parametro6 = 2
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -236,9 +236,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h3.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_3.Text
+            Modulo_detalle.parametro4 = t3.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 3
+            Modulo_detalle.parametro6 = 3
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -253,9 +253,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h4.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_4.Text
+            Modulo_detalle.parametro4 = t4.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 4
+            Modulo_detalle.parametro6 = 4
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -270,9 +270,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h5.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_5.Text
+            Modulo_detalle.parametro4 = t5.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 5
+            Modulo_detalle.parametro6 = 5
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -287,9 +287,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h6.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_6.Text
+            Modulo_detalle.parametro4 = t6.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 6
+            Modulo_detalle.parametro6 = 6
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -304,9 +304,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h7.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_7.Text
+            Modulo_detalle.parametro4 = t7.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 7
+            Modulo_detalle.parametro6 = 7
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -321,9 +321,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h8.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_8.Text
+            Modulo_detalle.parametro4 = t8.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 8
+            Modulo_detalle.parametro6 = 8
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -338,9 +338,9 @@ Public Class CapturaOEE
             Modulo_detalle.parametro = DateTimePicker1.Value.ToShortDateString
             Modulo_detalle.parametro2 = lbl_h9.Text
             Modulo_detalle.parametro3 = cbx_turno.Text
-            Modulo_detalle.parametro4 = txt_9.Text
+            Modulo_detalle.parametro4 = t9.Text
             Modulo_detalle.parametro5 = cbx_proceso.Text
-            idh = 9
+            Modulo_detalle.parametro6 = 9
             Detalle2oee.Show()
         Catch ex As Exception
             MessageBox.Show("¡Necesita poner el número de piezas antes de capturar los defectos!", "¡Aviso!")
@@ -362,54 +362,95 @@ Public Class CapturaOEE
             Dim i As Integer = CInt(txt_9.Text.ToString)
 
 
-            lbl_acumulado1.Text = a
-            lbl_acumulado2.Text = (a + b)
-            lbl_acumulado3.Text = (a + b + c)
-            lbl_acumulado4.Text = (a + b + c + d)
-            lbl_acumulado5.Text = (a + b + c + d + ee)
-            lbl_acumulado6.Text = (a + b + c + d + ee + f)
-            lbl_acumulado7.Text = (a + b + c + d + ee + f + g)
-            lbl_acumulado8.Text = (a + b + c + d + ee + f + g + h)
-            lbl_acumulado9.Text = (a + b + c + d + ee + f + g + h + i)
+
+
+
+            If cbx_proceso.Text = "FUNDICION" Then
+
+
+                lbl_acumulado1.Text = a * CInt(cbx_cavidad.Text)
+                lbl_acumulado2.Text = (a + b) * CInt(cbx_cavidad.Text)
+                lbl_acumulado3.Text = (a + b + c) * CInt(cbx_cavidad.Text)
+                lbl_acumulado4.Text = (a + b + c + d) * CInt(cbx_cavidad.Text)
+                lbl_acumulado5.Text = (a + b + c + d + ee) * CInt(cbx_cavidad.Text)
+                lbl_acumulado6.Text = (a + b + c + d + ee + f) * CInt(cbx_cavidad.Text)
+                lbl_acumulado7.Text = (a + b + c + d + ee + f + g) * CInt(cbx_cavidad.Text)
+                lbl_acumulado8.Text = (a + b + c + d + ee + f + g + h) * CInt(cbx_cavidad.Text)
+                lbl_acumulado9.Text = (a + b + c + d + ee + f + g + h + i) * CInt(cbx_cavidad.Text)
+
+                t1.Text = a * CInt(cbx_cavidad.Text)
+                t2.Text = b * CInt(cbx_cavidad.Text)
+                t3.Text = c * CInt(cbx_cavidad.Text)
+                t4.Text = d * CInt(cbx_cavidad.Text)
+                t5.Text = ee * CInt(cbx_cavidad.Text)
+                t6.Text = f * CInt(cbx_cavidad.Text)
+                t7.Text = g * CInt(cbx_cavidad.Text)
+                t8.Text = h * CInt(cbx_cavidad.Text)
+                t9.Text = i * CInt(cbx_cavidad.Text)
+
+            Else
+
+                lbl_acumulado1.Text = a
+                lbl_acumulado2.Text = (a + b)
+                lbl_acumulado3.Text = (a + b + c)
+                lbl_acumulado4.Text = (a + b + c + d)
+                lbl_acumulado5.Text = (a + b + c + d + ee)
+                lbl_acumulado6.Text = (a + b + c + d + ee + f)
+                lbl_acumulado7.Text = (a + b + c + d + ee + f + g)
+                lbl_acumulado8.Text = (a + b + c + d + ee + f + g + h)
+                lbl_acumulado9.Text = (a + b + c + d + ee + f + g + h + i)
+
+
+                t1.Text = a
+                t2.Text = b
+                t3.Text = c
+                t4.Text = d
+                t5.Text = ee
+                t6.Text = f
+                t7.Text = g
+                t8.Text = h
+                t9.Text = i
+            End If
+
 
         Catch
         End Try
 
-        If txt_1.Text = "" Then
-            txt_1.Text = "0"
-        End If
+        'If txt_1.Text = "" Then
+        '    txt_1.Text = "0"
+        'End If
 
-        If txt_2.Text = "" Then
-            txt_2.Text = "0"
-        End If
+        'If txt_2.Text = "" Then
+        '    txt_2.Text = "0"
+        'End If
 
-        If txt_3.Text = "" Then
-            txt_3.Text = "0"
-        End If
+        'If txt_3.Text = "" Then
+        '    txt_3.Text = "0"
+        'End If
 
-        If txt_4.Text = "" Then
-            txt_4.Text = "0"
-        End If
+        'If txt_4.Text = "" Then
+        '    txt_4.Text = "0"
+        'End If
 
-        If txt_5.Text = "" Then
-            txt_5.Text = "0"
-        End If
+        'If txt_5.Text = "" Then
+        '    txt_5.Text = "0"
+        'End If
 
-        If txt_6.Text = "" Then
-            txt_6.Text = "0"
-        End If
+        'If txt_6.Text = "" Then
+        '    txt_6.Text = "0"
+        'End If
 
-        If txt_7.Text = "" Then
-            txt_7.Text = "0"
-        End If
+        'If txt_7.Text = "" Then
+        '    txt_7.Text = "0"
+        'End If
 
-        If txt_8.Text = "" Then
-            txt_8.Text = "0"
-        End If
+        'If txt_8.Text = "" Then
+        '    txt_8.Text = "0"
+        'End If
 
-        If txt_9.Text = "" Then
-            txt_9.Text = "0"
-        End If
+        'If txt_9.Text = "" Then
+        '    txt_9.Text = "0"
+        'End If
 
         ngok()
 
@@ -849,7 +890,16 @@ END
     End Sub
 
     Private Sub lbl_acumulado9_Click(sender As Object, e As EventArgs) Handles lbl_acumulado9.TextChanged
-        lbl_t1.Text = lbl_acumulado9.Text
+
+        If cbx_proceso.Text = "FUNDICION" Then
+
+            lbl_t1.Text = CInt(lbl_acumulado9.Text)
+        Else
+            lbl_t1.Text = lbl_acumulado9.Text
+
+        End If
+
+
     End Sub
 
     Private Sub lbl_t1_Click(sender As Object, e As EventArgs) Handles lbl_t1.TextChanged, lbl_t2.TextChanged, lbl_t3.TextChanged, lbl_t4.TextChanged, lbl_t9.TextChanged
@@ -963,26 +1013,26 @@ END
 
 
         For Each fila As DataGridViewRow In dtgvp.Rows
-            If fila.Cells("id_error").Value = 66 OrElse fila.Cells("id_error").Value = 67 OrElse fila.Cells("id_error").Value = 68 OrElse fila.Cells("id_error").Value = 69 OrElse fila.Cells("id_error").Value = 70 OrElse fila.Cells("id_error").Value = 71 OrElse fila.Cells("id_error").Value = 72 OrElse fila.Cells("id_error").Value = 73 Then
+            If fila.Cells("id_error").Value = 66 OrElse fila.Cells("id_error").Value = 67 OrElse fila.Cells("id_error").Value = 68 OrElse fila.Cells("id_error").Value = 69 OrElse fila.Cells("id_error").Value = 70 OrElse fila.Cells("id_error").Value = 71 OrElse fila.Cells("id_error").Value = 72 OrElse fila.Cells("id_error").Value = 73 OrElse fila.Cells("id_error").Value = 126 OrElse fila.Cells("id_error").Value = 127 Then
 
 
-                If fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 1 And fila.Cells("Valor").Value = 2 Then
+                If fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 1 And fila.Cells("Valor").Value = 2 Then
                     h1 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 2 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 2 And fila.Cells("Valor").Value = 2 Then
                     h2 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 3 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 3 And fila.Cells("Valor").Value = 2 Then
                     h3 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 4 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 4 And fila.Cells("Valor").Value = 2 Then
                     h4 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 5 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 5 And fila.Cells("Valor").Value = 2 Then
                     h5 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 6 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 6 And fila.Cells("Valor").Value = 2 Then
                     h6 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 7 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 7 And fila.Cells("Valor").Value = 2 Then
                     h7 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 8 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 8 And fila.Cells("Valor").Value = 2 Then
                     h8 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73) And fila.Cells("id_hora").Value = 9 And fila.Cells("Valor").Value = 2 Then
+                ElseIf fila.Cells("id_error").Value = (66 OrElse 67 OrElse 68 OrElse 69 OrElse 70 OrElse 71 OrElse 72 OrElse 73 OrElse 126 OrElse 127) And fila.Cells("id_hora").Value = 9 And fila.Cells("Valor").Value = 2 Then
                     h9 += Convert.ToDouble(fila.Cells("Cantidad").Value)
 
                 End If
@@ -1105,7 +1155,7 @@ END
                 t3 += Convert.ToDouble(fila.Cells("Cantidad").Value)
             ElseIf fila.Cells("id_error").Value = 74 OrElse fila.Cells("id_error").Value = 75 OrElse fila.Cells("id_error").Value = 76 OrElse fila.Cells("id_error").Value = 77 OrElse fila.Cells("id_error").Value = 78 OrElse fila.Cells("id_error").Value = 79 OrElse fila.Cells("id_error").Value = 80 OrElse fila.Cells("id_error").Value = 81 OrElse fila.Cells("id_error").Value = 82 OrElse fila.Cells("id_error").Value = 83 OrElse fila.Cells("id_error").Value = 84 OrElse fila.Cells("id_error").Value = 85 OrElse fila.Cells("id_error").Value = 86 OrElse fila.Cells("id_error").Value = 87 OrElse fila.Cells("id_error").Value = 88 OrElse fila.Cells("id_error").Value = 89 OrElse fila.Cells("id_error").Value = 90 OrElse fila.Cells("id_error").Value = 91 OrElse fila.Cells("id_error").Value = 92 OrElse fila.Cells("id_error").Value = 93 OrElse fila.Cells("id_error").Value = 94 OrElse fila.Cells("id_error").Value = 95 OrElse fila.Cells("id_error").Value = 96 OrElse fila.Cells("id_error").Value = 97 OrElse fila.Cells("id_error").Value = 98 OrElse fila.Cells("id_error").Value = 99 OrElse fila.Cells("id_error").Value = 100 OrElse fila.Cells("id_error").Value = 101 OrElse fila.Cells("id_error").Value = 102 OrElse fila.Cells("id_error").Value = 103 OrElse fila.Cells("id_error").Value = 104 OrElse fila.Cells("id_error").Value = 105 OrElse fila.Cells("id_error").Value = 106 OrElse fila.Cells("id_error").Value = 107 OrElse fila.Cells("id_error").Value = 108 Then
                 t4 += Convert.ToDouble(fila.Cells("Cantidad").Value)
-            ElseIf fila.Cells("id_error").Value = 66 OrElse fila.Cells("id_error").Value = 67 OrElse fila.Cells("id_error").Value = 68 OrElse fila.Cells("id_error").Value = 69 OrElse fila.Cells("id_error").Value = 70 OrElse fila.Cells("id_error").Value = 71 OrElse fila.Cells("id_error").Value = 72 OrElse fila.Cells("id_error").Value = 73 Then
+            ElseIf fila.Cells("id_error").Value = 66 OrElse fila.Cells("id_error").Value = 67 OrElse fila.Cells("id_error").Value = 68 OrElse fila.Cells("id_error").Value = 69 OrElse fila.Cells("id_error").Value = 70 OrElse fila.Cells("id_error").Value = 71 OrElse fila.Cells("id_error").Value = 72 OrElse fila.Cells("id_error").Value = 73 OrElse fila.Cells("id_error").Value = 126 OrElse fila.Cells("id_error").Value = 127 Then
                 t5 += Convert.ToDouble(fila.Cells("Cantidad").Value)
             End If
         Next
@@ -1143,15 +1193,15 @@ END
 
     Sub ngok()
         Try
-            ok1.Text = CInt(txt_1.Text) - CInt(ng1.Text)
-            ok2.Text = CInt(txt_2.Text) - CInt(ng2.Text)
-            ok3.Text = CInt(txt_3.Text) - CInt(ng3.Text)
-            ok4.Text = CInt(txt_4.Text) - CInt(ng4.Text)
-            ok5.Text = CInt(txt_5.Text) - CInt(ng5.Text)
-            ok6.Text = CInt(txt_6.Text) - CInt(ng6.Text)
-            ok7.Text = CInt(txt_7.Text) - CInt(ng7.Text)
-            ok8.Text = CInt(txt_8.Text) - CInt(ng8.Text)
-            ok9.Text = CInt(txt_9.Text) - CInt(ng9.Text)
+            ok1.Text = CInt(t1.Text) - CInt(ng1.Text)
+            ok2.Text = CInt(t2.Text) - CInt(ng2.Text)
+            ok3.Text = CInt(t3.Text) - CInt(ng3.Text)
+            ok4.Text = CInt(t4.Text) - CInt(ng4.Text)
+            ok5.Text = CInt(t5.Text) - CInt(ng5.Text)
+            ok6.Text = CInt(t6.Text) - CInt(ng6.Text)
+            ok7.Text = CInt(t7.Text) - CInt(ng7.Text)
+            ok8.Text = CInt(t8.Text) - CInt(ng8.Text)
+            ok9.Text = CInt(t9.Text) - CInt(ng9.Text)
 
         Catch
         End Try
@@ -1226,61 +1276,61 @@ END
 
             command.Parameters.AddWithValue("@Tpp", lbl_tp1.Text)
             command.Parameters.AddWithValue("@Cpok", lbl_cp1.Text)
-            command.Parameters.AddWithValue("@Resultado", txt_1.Text)
+            command.Parameters.AddWithValue("@Resultado", t1.Text)
             command.Parameters.AddWithValue("@Ok", ok1.Text)
             command.Parameters.AddWithValue("@Ng", ng1.Text)
 
             command.Parameters.AddWithValue("@Tpp2", lbl_tp2.Text)
             command.Parameters.AddWithValue("@Cpok2", lbl_cp2.Text)
-            command.Parameters.AddWithValue("@Resultado2", txt_2.Text)
+            command.Parameters.AddWithValue("@Resultado2", t2.Text)
             command.Parameters.AddWithValue("@Ok2", ok2.Text)
             command.Parameters.AddWithValue("@Ng2", ng2.Text)
 
             command.Parameters.AddWithValue("@Tpp3", lbl_tp3.Text)
             command.Parameters.AddWithValue("@Cpok3", lbl_cp3.Text)
-            command.Parameters.AddWithValue("@Resultado3", txt_3.Text)
+            command.Parameters.AddWithValue("@Resultado3", t3.Text)
             command.Parameters.AddWithValue("@Ok3", ok3.Text)
             command.Parameters.AddWithValue("@Ng3", ng3.Text)
 
 
             command.Parameters.AddWithValue("@Tpp4", lbl_tp4.Text)
             command.Parameters.AddWithValue("@Cpok4", lbl_cp4.Text)
-            command.Parameters.AddWithValue("@Resultado4", txt_4.Text)
+            command.Parameters.AddWithValue("@Resultado4", t4.Text)
             command.Parameters.AddWithValue("@Ok4", ok4.Text)
             command.Parameters.AddWithValue("@Ng4", ng4.Text)
 
 
             command.Parameters.AddWithValue("@Tpp5", lbl_tp5.Text)
             command.Parameters.AddWithValue("@Cpok5", lbl_cp5.Text)
-            command.Parameters.AddWithValue("@Resultado5", txt_5.Text)
+            command.Parameters.AddWithValue("@Resultado5", t5.Text)
             command.Parameters.AddWithValue("@Ok5", ok5.Text)
             command.Parameters.AddWithValue("@Ng5", ng5.Text)
 
 
             command.Parameters.AddWithValue("@Tpp6", lbl_tp6.Text)
             command.Parameters.AddWithValue("@Cpok6", lbl_cp6.Text)
-            command.Parameters.AddWithValue("@Resultado6", txt_6.Text)
+            command.Parameters.AddWithValue("@Resultado6", t6.Text)
             command.Parameters.AddWithValue("@Ok6", ok6.Text)
             command.Parameters.AddWithValue("@Ng6", ng6.Text)
 
 
             command.Parameters.AddWithValue("@Tpp7", lbl_tp7.Text)
             command.Parameters.AddWithValue("@Cpok7", lbl_cp7.Text)
-            command.Parameters.AddWithValue("@Resultado7", txt_7.Text)
+            command.Parameters.AddWithValue("@Resultado7", t7.Text)
             command.Parameters.AddWithValue("@Ok7", ok7.Text)
             command.Parameters.AddWithValue("@Ng7", ng7.Text)
 
 
             command.Parameters.AddWithValue("@Tpp8", lbl_tp8.Text)
             command.Parameters.AddWithValue("@Cpok8", lbl_cp8.Text)
-            command.Parameters.AddWithValue("@Resultado8", txt_8.Text)
+            command.Parameters.AddWithValue("@Resultado8", t8.Text)
             command.Parameters.AddWithValue("@Ok8", ok8.Text)
             command.Parameters.AddWithValue("@Ng8", ng8.Text)
 
 
             command.Parameters.AddWithValue("@Tpp9", lbl_tp9.Text)
             command.Parameters.AddWithValue("@Cpok9", lbl_cp9.Text)
-            command.Parameters.AddWithValue("@Resultado9", txt_9.Text)
+            command.Parameters.AddWithValue("@Resultado9", t9.Text)
             command.Parameters.AddWithValue("@Ok9", ok9.Text)
             command.Parameters.AddWithValue("@Ng9", ng9.Text)
 
@@ -1417,4 +1467,5 @@ Module Modulo_detalle
     Public parametro3 As String
     Public parametro4 As Integer
     Public parametro5 As String
+    Public parametro6 As Integer
 End Module
