@@ -420,7 +420,6 @@ namespace CsPresentacion
 
         private void Btn_exportar_Click(object sender, EventArgs e)
         {
-            //Todo el reporte
             Exportara_Exel();
         }
 
