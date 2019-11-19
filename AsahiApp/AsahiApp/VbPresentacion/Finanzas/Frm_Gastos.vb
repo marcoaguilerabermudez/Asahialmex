@@ -31,6 +31,8 @@ Public Class Frm_Gastos
         'RecuperarPlanesTVentas()
     End Sub
     Private Sub Cmb_Meses_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_Meses.SelectionChangeCommitted
+        Cursor = Cursors.WaitCursor
+        Timer1.Start()
         Cmb_Años.Enabled = True
         If Cmb_Depto.Text <> "" Then
             Dgv_GastosDepto.ColumnHeadersVisible = True
@@ -213,6 +215,10 @@ Public Class Frm_Gastos
         Lbl_CantidadTot.Text = 0
         Lbl_CostoUnitTotal.Text = 0
         Lbl_CotoTotal.Text = 0
+    End Sub
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer1.Start()
+        Cursor = Cursors.Default()
     End Sub
 #End Region
 #Region "Rellena Cmb"

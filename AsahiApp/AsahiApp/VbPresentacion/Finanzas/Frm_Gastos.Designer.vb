@@ -22,6 +22,7 @@ Partial Class Frm_Gastos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Gastos))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Btn_Reporte = New System.Windows.Forms.Button()
@@ -63,6 +64,16 @@ Partial Class Frm_Gastos
         Me.porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Dgv_GastosGlobal = New System.Windows.Forms.DataGridView()
+        Me.noCta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.costoUnit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cosCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cosPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.segNeg = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Lbl_TAPorcentaje = New System.Windows.Forms.Label()
@@ -108,16 +119,7 @@ Partial Class Frm_Gastos
         Me.Lbl_Ventas = New System.Windows.Forms.Label()
         Me.Lbl_Actual = New System.Windows.Forms.Label()
         Me.Lbl_Real = New System.Windows.Forms.Label()
-        Me.noCta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.costoUnit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cosCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cosPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.segNeg = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.Pct_Limpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
@@ -502,6 +504,78 @@ Partial Class Frm_Gastos
         Me.Dgv_GastosGlobal.RowHeadersWidth = 37
         Me.Dgv_GastosGlobal.Size = New System.Drawing.Size(638, 357)
         Me.Dgv_GastosGlobal.TabIndex = 0
+        '
+        'noCta
+        '
+        Me.noCta.HeaderText = "No Cuenta"
+        Me.noCta.Name = "noCta"
+        Me.noCta.ReadOnly = True
+        Me.noCta.Width = 60
+        '
+        'cta
+        '
+        Me.cta.HeaderText = "Cuenta"
+        Me.cta.Name = "cta"
+        Me.cta.ReadOnly = True
+        Me.cta.Width = 170
+        '
+        'idCompra
+        '
+        Me.idCompra.HeaderText = "Compra"
+        Me.idCompra.Name = "idCompra"
+        Me.idCompra.ReadOnly = True
+        Me.idCompra.Width = 45
+        '
+        'cantCompra
+        '
+        Me.cantCompra.HeaderText = "Cantidad Compra"
+        Me.cantCompra.Name = "cantCompra"
+        Me.cantCompra.ReadOnly = True
+        Me.cantCompra.Width = 75
+        '
+        'costoUnit
+        '
+        Me.costoUnit.HeaderText = "Costo Unitario"
+        Me.costoUnit.Name = "costoUnit"
+        Me.costoUnit.ReadOnly = True
+        Me.costoUnit.Width = 75
+        '
+        'cosCompra
+        '
+        Me.cosCompra.HeaderText = "Costo Compra"
+        Me.cosCompra.Name = "cosCompra"
+        Me.cosCompra.ReadOnly = True
+        Me.cosCompra.Width = 75
+        '
+        'idPoliza
+        '
+        Me.idPoliza.HeaderText = "Poliza"
+        Me.idPoliza.Name = "idPoliza"
+        Me.idPoliza.ReadOnly = True
+        Me.idPoliza.Visible = False
+        Me.idPoliza.Width = 125
+        '
+        'cosPoliza
+        '
+        Me.cosPoliza.HeaderText = "Costo Poliza"
+        Me.cosPoliza.Name = "cosPoliza"
+        Me.cosPoliza.ReadOnly = True
+        Me.cosPoliza.Visible = False
+        Me.cosPoliza.Width = 125
+        '
+        'cantPoliza
+        '
+        Me.cantPoliza.HeaderText = "Cantidad Poliza"
+        Me.cantPoliza.Name = "cantPoliza"
+        Me.cantPoliza.ReadOnly = True
+        Me.cantPoliza.Visible = False
+        '
+        'segNeg
+        '
+        Me.segNeg.HeaderText = "Segmento Negocio"
+        Me.segNeg.Name = "segNeg"
+        Me.segNeg.ReadOnly = True
+        Me.segNeg.Width = 110
         '
         'Panel5
         '
@@ -1001,77 +1075,8 @@ Partial Class Frm_Gastos
         Me.Lbl_Real.TabIndex = 11
         Me.Lbl_Real.Text = "Real"
         '
-        'noCta
+        'Timer1
         '
-        Me.noCta.HeaderText = "No Cuenta"
-        Me.noCta.Name = "noCta"
-        Me.noCta.ReadOnly = True
-        Me.noCta.Width = 60
-        '
-        'cta
-        '
-        Me.cta.HeaderText = "Cuenta"
-        Me.cta.Name = "cta"
-        Me.cta.ReadOnly = True
-        Me.cta.Width = 170
-        '
-        'idCompra
-        '
-        Me.idCompra.HeaderText = "Compra"
-        Me.idCompra.Name = "idCompra"
-        Me.idCompra.ReadOnly = True
-        Me.idCompra.Width = 45
-        '
-        'cantCompra
-        '
-        Me.cantCompra.HeaderText = "Cantidad Compra"
-        Me.cantCompra.Name = "cantCompra"
-        Me.cantCompra.ReadOnly = True
-        Me.cantCompra.Width = 75
-        '
-        'costoUnit
-        '
-        Me.costoUnit.HeaderText = "Costo Unitario"
-        Me.costoUnit.Name = "costoUnit"
-        Me.costoUnit.ReadOnly = True
-        Me.costoUnit.Width = 75
-        '
-        'cosCompra
-        '
-        Me.cosCompra.HeaderText = "Costo Compra"
-        Me.cosCompra.Name = "cosCompra"
-        Me.cosCompra.ReadOnly = True
-        Me.cosCompra.Width = 75
-        '
-        'idPoliza
-        '
-        Me.idPoliza.HeaderText = "Poliza"
-        Me.idPoliza.Name = "idPoliza"
-        Me.idPoliza.ReadOnly = True
-        Me.idPoliza.Visible = False
-        Me.idPoliza.Width = 125
-        '
-        'cosPoliza
-        '
-        Me.cosPoliza.HeaderText = "Costo Poliza"
-        Me.cosPoliza.Name = "cosPoliza"
-        Me.cosPoliza.ReadOnly = True
-        Me.cosPoliza.Visible = False
-        Me.cosPoliza.Width = 125
-        '
-        'cantPoliza
-        '
-        Me.cantPoliza.HeaderText = "Cantidad Poliza"
-        Me.cantPoliza.Name = "cantPoliza"
-        Me.cantPoliza.ReadOnly = True
-        Me.cantPoliza.Visible = False
-        '
-        'segNeg
-        '
-        Me.segNeg.HeaderText = "Segmento Negocio"
-        Me.segNeg.Name = "segNeg"
-        Me.segNeg.ReadOnly = True
-        Me.segNeg.Width = 110
         '
         'Frm_Gastos
         '
@@ -1205,4 +1210,5 @@ Partial Class Frm_Gastos
     Friend WithEvents cosPoliza As DataGridViewTextBoxColumn
     Friend WithEvents cantPoliza As DataGridViewTextBoxColumn
     Friend WithEvents segNeg As DataGridViewTextBoxColumn
+    Friend WithEvents Timer1 As Timer
 End Class

@@ -205,7 +205,8 @@ Public Class DGastos
         End Try
         Return lstGastos
     End Function
-    Public Function RecuperarCuentasGeneral(ByVal cadenaConex As String, ByVal idioma As Integer, ByVal mes As Integer, ByVal año As Integer) As LGastos
+    Public Function RecuperarCuentasGeneral(ByVal cadenaConex As String, ByVal idioma As Integer, ByVal mes As Integer, ByVal año As Integer,
+                                            ByVal segNeg As Integer) As LGastos
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstGst As New LGastos()
         Try
@@ -214,6 +215,7 @@ Public Class DGastos
             query.Parameters.AddWithValue("@idioma", idioma)
             query.Parameters.AddWithValue("@mes", mes)
             query.Parameters.AddWithValue("@año", año)
+            query.Parameters.AddWithValue("@segNeg", segNeg)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
