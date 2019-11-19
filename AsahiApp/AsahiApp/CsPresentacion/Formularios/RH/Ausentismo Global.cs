@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-//using CrystalDecisions.CrystalReports.Engine;
+using System.Data.SqlClient;    
 
 namespace CsPresentacion
 {
-    public partial class m : Form
+    public partial class frm_ausentismo_global : Form
     {
-        public m()
+        public frm_ausentismo_global()
         {
             InitializeComponent();
         }
@@ -24,6 +23,7 @@ namespace CsPresentacion
         private void Ausentismo_Global_Load(object sender, EventArgs e)
         {
             nuevo();
+
         }
 //Botones
         private void Btn_nuevo_Click(object sender, EventArgs e)
@@ -32,6 +32,8 @@ namespace CsPresentacion
         }
         private void Btn_exportar_ant2_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
+            timer1.Start();
             Exportara_Exel();
         }
  //Métodos
@@ -248,6 +250,8 @@ namespace CsPresentacion
         }
         private void Dtm_fecha_ValueChanged_1(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
+            timer1.Start();
             Var = 1;
             Llenar_dgv();
             Calcula_Total();
@@ -275,6 +279,8 @@ namespace CsPresentacion
 
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
+            timer1.Start();
             Rep_Ausentismo rep = new Rep_Ausentismo();
             rep.Var = Convert.ToInt32("5");
             rep.Fecha = dtm_fecha.Value;
@@ -284,11 +290,12 @@ namespace CsPresentacion
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //Reporte_test rep = new Reporte_test();
-            //rep.Var = Convert.ToInt32("5");
-            //rep.Fecha = dtm_fecha.Value;
-            //rep.Depto = txt_depto.Text.ToString();
-            //rep.ShowDialog();
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Start();
+            Cursor = Cursors.Default;
         }
     }
 }
