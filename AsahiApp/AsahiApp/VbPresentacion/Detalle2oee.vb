@@ -73,6 +73,7 @@ Public Class Detalle2oee
                 txt_error.Clear()
                 txt_error.Focus()
                 txt_cantidad.Text = "0"
+                lbl_defecto.Text = "Debe teclear un defecto"
             End If
         ElseIf valor = 2 Then
             If CInt(txt_cantidad.Text) > 60 Then
@@ -85,6 +86,7 @@ Public Class Detalle2oee
                 txt_error.Clear()
                 txt_error.Focus()
                 txt_cantidad.Text = "0"
+                lbl_defecto.Text = "Debe teclear un defecto"
 
             End If
 

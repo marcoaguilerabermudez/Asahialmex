@@ -349,7 +349,7 @@ Public Class CapturaOEE
         End Try
     End Sub
 
-    Private Sub txt_1_TextChanged(sender As Object, e As EventArgs) Handles txt_1.TextChanged, txt_2.TextChanged, txt_3.TextChanged, txt_4.TextChanged, txt_5.TextChanged, txt_6.TextChanged, txt_7.TextChanged, txt_8.TextChanged, txt_9.TextChanged
+    Private Sub txt_1_TextChanged(sender As Object, e As EventArgs) Handles txt_1.TextChanged, txt_2.TextChanged, txt_3.TextChanged, txt_4.TextChanged, txt_5.TextChanged, txt_6.TextChanged, txt_7.TextChanged, txt_8.TextChanged, txt_9.TextChanged, cbx_cavidad.TextChanged
 
         Try
             Dim a As Integer = CInt(txt_1.Text.ToString)
@@ -588,7 +588,7 @@ Public Class CapturaOEE
 
         btn_guardar.Enabled = True
 
-        '' CT()
+        'CT()
         cantidadxhora()
         Try
             lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
@@ -787,20 +787,19 @@ BEGIN
   declare @id_pieza as int
   set @id_pieza = (select Id_pieza from [SistemaAAM].[dbo].Pro_Cat_Pieza where Nombre = '" & cbx_pieza.Text & "')
 
-select ct
+select top 1 ct
 FROM [SistemaAAM].[dbo].[Standar_fundicion] es
 where 
  es.Id_pieza = @id_pieza
  and  es.id_molde = (select id_molde from [SistemaAAM].[dbo].Pro_Cat_Moldes where codigo = '" & cbx_molde.Text & "' AND Id_producto = @id_pieza)
  and es.id_maquina = (select id_maquina from [SistemaAAM].[dbo].Pro_Cat_Maquinas where Nombre = '" & cbx_maquina.Text & "' )
- and es.cavidad = " & cbx_cavidad.Text & " 
 
 
 END 
 ELSE
 BEGIN
 
-            Select  CT
+            Select top 1 CT
             From [SistemaAAM].[dbo].[Standar_maquinado] es
             Join [SistemaAAM].[dbo].Pro_Cat_Pieza pie
             On es.[id_pieza] = pie.Id_pieza
@@ -828,7 +827,7 @@ END
                 Rs = Com.ExecuteReader()
 
             Rs.Read()
-            lbl_v4.Text = Format(CDbl(Rs(0) / 60), "0.00")
+            lbl_v4.Text = Format(CDbl(Rs(0)), "0.00")
 
             Rs.Close()
             Cn.Close()
@@ -874,26 +873,26 @@ END
 
 
 
-                lbl_cp1.Text = CInt((60 - lbl_tp1.Text) / (lbl_v4.Text / 60))
-                lbl_cp2.Text = CInt((60 - lbl_tp2.Text) / (lbl_v4.Text / 60))
-                lbl_cp3.Text = CInt((60 - lbl_tp3.Text) / (lbl_v4.Text / 60))
-                lbl_cp4.Text = CInt((60 - lbl_tp4.Text) / (lbl_v4.Text / 60))
-                lbl_cp5.Text = CInt((60 - lbl_tp5.Text) / (lbl_v4.Text / 60))
-                lbl_cp6.Text = CInt((60 - lbl_tp6.Text) / (lbl_v4.Text / 60))
-                lbl_cp7.Text = CInt((60 - lbl_tp7.Text) / (lbl_v4.Text / 60))
+                lbl_cp1.Text = CInt((60 - lbl_tp1.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp2.Text = CInt((60 - lbl_tp2.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp3.Text = CInt((60 - lbl_tp3.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp4.Text = CInt((60 - lbl_tp4.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp5.Text = CInt((60 - lbl_tp5.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp6.Text = CInt((60 - lbl_tp6.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp7.Text = CInt((60 - lbl_tp7.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
 
                 If cbx_turno.Text = 1 Then
-                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / (lbl_v4.Text / 60))
+                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
                 ElseIf cbx_turno.Text = 2 Then
-                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / (lbl_v4.Text / 60))
+                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
                 ElseIf cbx_turno.Text = 3 Then
-                    lbl_cp8.Text = CInt((30 - lbl_tp8.Text) / (lbl_v4.Text / 60))
+                    lbl_cp8.Text = CInt((30 - lbl_tp8.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
                 End If
 
 
 
                 If cbx_turno.Text = 1 Then
-                    lbl_cp9.Text = CInt((30 - lbl_tp9.Text) / (lbl_v4.Text / 60))
+                    lbl_cp9.Text = CInt((30 - lbl_tp9.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
                 ElseIf cbx_turno.Text = 2 Then
                     lbl_cp9.Text = "0"
                 ElseIf cbx_turno.Text = 3 Then
@@ -1018,13 +1017,14 @@ END
     Private Sub cbx_molde_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_molde.SelectedIndexChanged
         If cbx_proceso.Text = "FUNDICION" Then
 
-            llenacombocavidad()
+            ''llenacombocavidad()
 
         Else
 
             Try
-                llenacombocavidad()
-                ''CT()
+                ' llenacombocavidad()
+                cbx_cavidad.Text = "1"
+                'CT()
                 ''cantidadxhora()
 
                 lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
@@ -1039,8 +1039,8 @@ END
         If cbx_proceso.Text = "FUNDICION" Then
 
             Try
-                ''CT()
-                ''cantidadxhora()
+                'CT()
+                cantidadxhora()
 
                 lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
             Catch
@@ -1412,6 +1412,8 @@ END
             command.Parameters.AddWithValue("@Resultado9", t9.Text)
             command.Parameters.AddWithValue("@Ok9", ok9.Text)
             command.Parameters.AddWithValue("@Ng9", ng9.Text)
+
+
 
 
 
