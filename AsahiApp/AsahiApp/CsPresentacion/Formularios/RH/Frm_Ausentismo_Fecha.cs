@@ -63,26 +63,11 @@ namespace CsPresentacion
                     cellColumnIndex = 1;//ok
                     cellRowIndex++;
                 }
-                //Obtener la ubicación y el nombre de archivo de excel para guardar del usuario.
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Libro de Excel (*.xlsx)|*.xlsx";
-                saveDialog.FilterIndex = 0;//ok
-
-                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Su documento se exportó correctamente.");
-                }
+                excel.Visible = true;
             }
             catch (Exception error)
             {
                 //MessageBox.Show("No se exportó correctamente" + error.Message);
-            }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
             }
         }
         public void Llenar_dgv()// Método para llenar DatagridView Total
@@ -225,8 +210,8 @@ namespace CsPresentacion
         {
             Cursor = Cursors.WaitCursor;
             timer1.Start();
-            Rep_Ausentismo_Fecha rep = new Rep_Ausentismo_Fecha();
-            rep.Var = Convert.ToInt32("0");
+            Ausentismos_Fecha rep = new Ausentismos_Fecha();
+            rep.Var = Convert.ToInt32(0);
             rep.Inicia = dtm_inicia.Value;
             rep.Termina = dtm_termina.Value;
             rep.Depto = txt_depto.Text.ToString();

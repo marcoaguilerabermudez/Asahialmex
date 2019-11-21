@@ -38,10 +38,10 @@
               <Mapping SourceColumn="NUMERO" DataSetColumn="NUMERO" />
               <Mapping SourceColumn="INICIA" DataSetColumn="INICIA" />
               <Mapping SourceColumn="TERMINA" DataSetColumn="TERMINA" />
-              <Mapping SourceColumn="SEMANA" DataSetColumn="SEMANA" />
               <Mapping SourceColumn="TIPO" DataSetColumn="TIPO" />
               <Mapping SourceColumn="CASO" DataSetColumn="CASO" />
               <Mapping SourceColumn="SECUELA" DataSetColumn="SECUELA" />
+              <Mapping SourceColumn="PERSONAS" DataSetColumn="PERSONAS" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -90,7 +90,6 @@
               </xs:element>
               <xs:element name="INICIA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINICIA" msprop:Generator_ColumnPropNameInRow="INICIA" msprop:Generator_ColumnPropNameInTable="INICIAColumn" msprop:Generator_UserColumnName="INICIA" type="xs:dateTime" minOccurs="0" />
               <xs:element name="TERMINA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTERMINA" msprop:Generator_ColumnPropNameInRow="TERMINA" msprop:Generator_ColumnPropNameInTable="TERMINAColumn" msprop:Generator_UserColumnName="TERMINA" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="SEMANA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSEMANA" msprop:Generator_ColumnPropNameInRow="SEMANA" msprop:Generator_ColumnPropNameInTable="SEMANAColumn" msprop:Generator_UserColumnName="SEMANA" type="xs:int" minOccurs="0" />
               <xs:element name="TIPO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTIPO" msprop:Generator_ColumnPropNameInRow="TIPO" msprop:Generator_ColumnPropNameInTable="TIPOColumn" msprop:Generator_UserColumnName="TIPO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -112,6 +111,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="PERSONAS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPERSONAS" msprop:Generator_ColumnPropNameInRow="PERSONAS" msprop:Generator_ColumnPropNameInTable="PERSONASColumn" msprop:Generator_UserColumnName="PERSONAS" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_activos = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmb_genero = new System.Windows.Forms.ComboBox();
@@ -37,7 +37,6 @@
             this.cmb_ant = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.cmb_puesto = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmb_departamento = new System.Windows.Forms.ComboBox();
@@ -65,17 +64,17 @@
             this.dgv_activos.Location = new System.Drawing.Point(12, 64);
             this.dgv_activos.MultiSelect = false;
             this.dgv_activos.Name = "dgv_activos";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_activos.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_activos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_activos.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dgv_activos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dgv_activos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_activos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_activos.ShowCellErrors = false;
             this.dgv_activos.Size = new System.Drawing.Size(1056, 523);
@@ -90,7 +89,6 @@
             this.panel1.Controls.Add(this.cmb_ant);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_nuevo);
-            this.panel1.Controls.Add(this.btn_buscar);
             this.panel1.Controls.Add(this.cmb_puesto);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.cmb_departamento);
@@ -110,6 +108,7 @@
             this.cmb_genero.Name = "cmb_genero";
             this.cmb_genero.Size = new System.Drawing.Size(51, 21);
             this.cmb_genero.TabIndex = 27;
+            this.cmb_genero.SelectedIndexChanged += new System.EventHandler(this.Cmb_genero_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -157,27 +156,12 @@
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(656, 42);
+            this.btn_nuevo.Location = new System.Drawing.Point(608, 42);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(27, 27);
             this.btn_nuevo.TabIndex = 24;
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_buscar.FlatAppearance.BorderSize = 0;
-            this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.Image = global::CsPresentacion.Properties.Resources.Filtro;
-            this.btn_buscar.Location = new System.Drawing.Point(614, 38);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(29, 34);
-            this.btn_buscar.TabIndex = 18;
-            this.btn_buscar.UseVisualStyleBackColor = false;
-            this.btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
             // 
             // cmb_puesto
             // 
@@ -186,6 +170,7 @@
             this.cmb_puesto.Name = "cmb_puesto";
             this.cmb_puesto.Size = new System.Drawing.Size(153, 21);
             this.cmb_puesto.TabIndex = 14;
+            this.cmb_puesto.SelectedIndexChanged += new System.EventHandler(this.Cmb_puesto_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -329,7 +314,6 @@
         private System.Windows.Forms.DataGridView dgv_activos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Button btn_buscar;
         public System.Windows.Forms.ComboBox cmb_puesto;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.ComboBox cmb_departamento;

@@ -18,7 +18,6 @@ namespace CsPresentacion
             InitializeComponent();
             var tt = new ToolTip();
             tt.SetToolTip(btn_nuevo, "NUEVA BUSQUEDA");
-            tt.SetToolTip(btn_buscar, "FILTRAR INFORMACION");
             tt.SetToolTip(btn_reporte, "GENERA REPORTE");
             tt.SetToolTip(btn_exportar, "EXPORTAR A EXCEL");
         }
@@ -50,9 +49,8 @@ namespace CsPresentacion
                 worksheet.Name = "Libro1";
                 int cellRowIndex = 2;//ok
                 int cellColumnIndex = 1;//ok
-
                 //Pasa por cada fila y lee el valor de cada columna.
-                for (int i = - 1; i < dgv_activos.Rows.Count - 0; i++)//Primera y ultima fila
+                for (int i = -1; i < dgv_activos.Rows.Count - 0; i++)//Primera y ultima fila
                 {
                     for (int j = 0; j < dgv_activos.Columns.Count - 0; j++)//Columnas lado izquierdo y derecho
                     {
@@ -70,26 +68,11 @@ namespace CsPresentacion
                     cellColumnIndex = 1;//ok
                     cellRowIndex++;
                 }
-                //Obtener la ubicación y el nombre de archivo de excel para guardar del usuario.
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Libro de Excel (*.xlsx)|*.xlsx";
-                saveDialog.FilterIndex = 0;//ok
-
-                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Su documento se exportó correctamente.");
-                }
+                excel.Visible = true;
             }
             catch (Exception error)
             {
                 //MessageBox.Show("No se exportó correctamente" + error.Message);
-            }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
             }
         }
 
@@ -240,24 +223,9 @@ namespace CsPresentacion
                 lbl_Ant1.Text = "733";
                 lbl_Ant2.Text = "1000000000";
             }
-        }
 
-        private void Btn_exportar_Click(object sender, EventArgs e)
-        {
-            Exportara_Exel();
-        }
 
-        private void Cmb_departamento_SelectedIndexChanged(object sender, EventArgs e)
-        {      
-        }
-
-        private void Btn_buscar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(cmb_departamento.Text) &&  string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
-            {
-                MessageBox.Show("Es necesario seleccionar una opción.", "Aviso");
-            }
-           else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text) )
+            if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
             {
                 Var = 1;
                 lbl_Var.Text = "1";
@@ -356,13 +324,135 @@ namespace CsPresentacion
                 Llenar_dgv();
                 lbl_total.Text = dgv_activos.Rows.Count.ToString();
             }
-            else 
+            else
             {
                 Var = 15;
                 lbl_Var.Text = "15";
                 Llenar_dgv();
                 lbl_total.Text = dgv_activos.Rows.Count.ToString();
             }
+
+        }
+
+        private void Btn_exportar_Click(object sender, EventArgs e)
+        {
+            Exportara_Exel();
+        }
+
+        private void Cmb_departamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 1;
+                lbl_Var.Text = "1";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 2;
+                lbl_Var.Text = "2";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 3;
+                lbl_Var.Text = "3";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 4;
+                lbl_Var.Text = "4";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 5;
+                lbl_Var.Text = "5";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 6;
+                lbl_Var.Text = "6";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 7;
+                lbl_Var.Text = "7";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 8;
+                lbl_Var.Text = "8";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 9;
+                lbl_Var.Text = "9";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Var = 10;
+                lbl_Var.Text = "10";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 11;
+                lbl_Var.Text = "11";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 12;
+                lbl_Var.Text = "12";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Var = 13;
+                lbl_Var.Text = "13";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                Var = 14;
+                lbl_Var.Text = "14";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else
+            {
+                Var = 15;
+                lbl_Var.Text = "15";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+        }
+
+        private void Btn_buscar_Click(object sender, EventArgs e)
+        {
+           
+           
         }
 
         private void Btn_reporte_Click(object sender, EventArgs e)
@@ -509,6 +599,226 @@ namespace CsPresentacion
         }
         private void Dgv_activos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+
+        private void Cmb_puesto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 1;
+                lbl_Var.Text = "1";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 2;
+                lbl_Var.Text = "2";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 3;
+                lbl_Var.Text = "3";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 4;
+                lbl_Var.Text = "4";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 5;
+                lbl_Var.Text = "5";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 6;
+                lbl_Var.Text = "6";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 7;
+                lbl_Var.Text = "7";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 8;
+                lbl_Var.Text = "8";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 9;
+                lbl_Var.Text = "9";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Var = 10;
+                lbl_Var.Text = "10";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 11;
+                lbl_Var.Text = "11";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 12;
+                lbl_Var.Text = "12";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Var = 13;
+                lbl_Var.Text = "13";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                Var = 14;
+                lbl_Var.Text = "14";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else
+            {
+                Var = 15;
+                lbl_Var.Text = "15";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+        }
+
+        private void Cmb_genero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 1;
+                lbl_Var.Text = "1";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 2;
+                lbl_Var.Text = "2";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 3;
+                lbl_Var.Text = "3";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 4;
+                lbl_Var.Text = "4";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 5;
+                lbl_Var.Text = "5";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 6;
+                lbl_Var.Text = "6";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+
+            else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 7;
+                lbl_Var.Text = "7";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 8;
+                lbl_Var.Text = "8";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 9;
+                lbl_Var.Text = "9";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Var = 10;
+                lbl_Var.Text = "10";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                Var = 11;
+                lbl_Var.Text = "11";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_ant.Text))
+            {
+                Var = 12;
+                lbl_Var.Text = "12";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Var = 13;
+                lbl_Var.Text = "13";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                Var = 14;
+                lbl_Var.Text = "14";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
+            else
+            {
+                Var = 15;
+                lbl_Var.Text = "15";
+                Llenar_dgv();
+                lbl_total.Text = dgv_activos.Rows.Count.ToString();
+            }
         }
     }
 }
