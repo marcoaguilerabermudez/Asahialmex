@@ -10,6 +10,7 @@ Public Class CapturaOEE
 
 
     Private Sub CapturaOEE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         btn_1.Enabled = False
         btn_2.Enabled = False
         btn_3.Enabled = False
@@ -348,7 +349,7 @@ Public Class CapturaOEE
         End Try
     End Sub
 
-    Private Sub txt_1_TextChanged(sender As Object, e As EventArgs) Handles txt_1.TextChanged, txt_2.TextChanged, txt_3.TextChanged, txt_4.TextChanged, txt_5.TextChanged, txt_6.TextChanged, txt_7.TextChanged, txt_8.TextChanged, txt_9.TextChanged
+    Private Sub txt_1_TextChanged(sender As Object, e As EventArgs) Handles txt_1.TextChanged, txt_2.TextChanged, txt_3.TextChanged, txt_4.TextChanged, txt_5.TextChanged, txt_6.TextChanged, txt_7.TextChanged, txt_8.TextChanged, txt_9.TextChanged, cbx_cavidad.TextChanged
 
         Try
             Dim a As Integer = CInt(txt_1.Text.ToString)
@@ -454,6 +455,84 @@ Public Class CapturaOEE
 
         ngok()
 
+
+
+    End Sub
+
+
+    Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles txt_1.KeyDown, txt_2.KeyDown, txt_3.KeyDown, txt_4.KeyDown, txt_5.KeyDown, txt_6.KeyDown, txt_7.KeyDown, txt_8.KeyDown
+        If e.KeyCode = Keys.Enter AndAlso ActiveControl IsNot Nothing Then
+            SelectNextControl(ActiveControl, True, True, True, True)
+            e.Handled = True
+        End If
+
+        Try
+            Dim a As Integer = CInt(txt_1.Text.ToString)
+            Dim b As Integer = CInt(txt_2.Text.ToString)
+            Dim c As Integer = CInt(txt_3.Text.ToString)
+            Dim d As Integer = CInt(txt_4.Text.ToString)
+            Dim ee As Integer = CInt(txt_5.Text.ToString)
+            Dim f As Integer = CInt(txt_6.Text.ToString)
+            Dim g As Integer = CInt(txt_7.Text.ToString)
+            Dim h As Integer = CInt(txt_8.Text.ToString)
+            Dim i As Integer = CInt(txt_9.Text.ToString)
+
+
+
+
+
+            If cbx_proceso.Text = "FUNDICION" Then
+
+
+                lbl_acumulado1.Text = a * CInt(cbx_cavidad.Text)
+                lbl_acumulado2.Text = (a + b) * CInt(cbx_cavidad.Text)
+                lbl_acumulado3.Text = (a + b + c) * CInt(cbx_cavidad.Text)
+                lbl_acumulado4.Text = (a + b + c + d) * CInt(cbx_cavidad.Text)
+                lbl_acumulado5.Text = (a + b + c + d + ee) * CInt(cbx_cavidad.Text)
+                lbl_acumulado6.Text = (a + b + c + d + ee + f) * CInt(cbx_cavidad.Text)
+                lbl_acumulado7.Text = (a + b + c + d + ee + f + g) * CInt(cbx_cavidad.Text)
+                lbl_acumulado8.Text = (a + b + c + d + ee + f + g + h) * CInt(cbx_cavidad.Text)
+                lbl_acumulado9.Text = (a + b + c + d + ee + f + g + h + i) * CInt(cbx_cavidad.Text)
+
+                t1.Text = a * CInt(cbx_cavidad.Text)
+                t2.Text = b * CInt(cbx_cavidad.Text)
+                t3.Text = c * CInt(cbx_cavidad.Text)
+                t4.Text = d * CInt(cbx_cavidad.Text)
+                t5.Text = ee * CInt(cbx_cavidad.Text)
+                t6.Text = f * CInt(cbx_cavidad.Text)
+                t7.Text = g * CInt(cbx_cavidad.Text)
+                t8.Text = h * CInt(cbx_cavidad.Text)
+                t9.Text = i * CInt(cbx_cavidad.Text)
+
+            Else
+
+                lbl_acumulado1.Text = a
+                lbl_acumulado2.Text = (a + b)
+                lbl_acumulado3.Text = (a + b + c)
+                lbl_acumulado4.Text = (a + b + c + d)
+                lbl_acumulado5.Text = (a + b + c + d + ee)
+                lbl_acumulado6.Text = (a + b + c + d + ee + f)
+                lbl_acumulado7.Text = (a + b + c + d + ee + f + g)
+                lbl_acumulado8.Text = (a + b + c + d + ee + f + g + h)
+                lbl_acumulado9.Text = (a + b + c + d + ee + f + g + h + i)
+
+
+                t1.Text = a
+                t2.Text = b
+                t3.Text = c
+                t4.Text = d
+                t5.Text = ee
+                t6.Text = f
+                t7.Text = g
+                t8.Text = h
+                t9.Text = i
+            End If
+
+
+        Catch
+        End Try
+
+        ngok()
     End Sub
 
     Private Sub cbx_turno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_turno.SelectedIndexChanged
@@ -509,7 +588,7 @@ Public Class CapturaOEE
 
         btn_guardar.Enabled = True
 
-        '' CT()
+        'CT()
         cantidadxhora()
         Try
             lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
@@ -708,20 +787,19 @@ BEGIN
   declare @id_pieza as int
   set @id_pieza = (select Id_pieza from [SistemaAAM].[dbo].Pro_Cat_Pieza where Nombre = '" & cbx_pieza.Text & "')
 
-select ct
+select top 1 ct
 FROM [SistemaAAM].[dbo].[Standar_fundicion] es
 where 
  es.Id_pieza = @id_pieza
  and  es.id_molde = (select id_molde from [SistemaAAM].[dbo].Pro_Cat_Moldes where codigo = '" & cbx_molde.Text & "' AND Id_producto = @id_pieza)
  and es.id_maquina = (select id_maquina from [SistemaAAM].[dbo].Pro_Cat_Maquinas where Nombre = '" & cbx_maquina.Text & "' )
- and es.cavidad = " & cbx_cavidad.Text & " 
 
 
 END 
 ELSE
 BEGIN
 
-            Select  CT
+            Select top 1 CT
             From [SistemaAAM].[dbo].[Standar_maquinado] es
             Join [SistemaAAM].[dbo].Pro_Cat_Pieza pie
             On es.[id_pieza] = pie.Id_pieza
@@ -749,7 +827,7 @@ END
                 Rs = Com.ExecuteReader()
 
             Rs.Read()
-            lbl_v4.Text = Format(CDbl(Rs(0) / 60), "0.00")
+            lbl_v4.Text = Format(CDbl(Rs(0)), "0.00")
 
             Rs.Close()
             Cn.Close()
@@ -795,26 +873,26 @@ END
 
 
 
-                lbl_cp1.Text = CInt((60 - lbl_tp1.Text) / (lbl_v4.Text / 60))
-                lbl_cp2.Text = CInt((60 - lbl_tp2.Text) / (lbl_v4.Text / 60))
-                lbl_cp3.Text = CInt((60 - lbl_tp3.Text) / (lbl_v4.Text / 60))
-                lbl_cp4.Text = CInt((60 - lbl_tp4.Text) / (lbl_v4.Text / 60))
-                lbl_cp5.Text = CInt((60 - lbl_tp5.Text) / (lbl_v4.Text / 60))
-                lbl_cp6.Text = CInt((60 - lbl_tp6.Text) / (lbl_v4.Text / 60))
-                lbl_cp7.Text = CInt((60 - lbl_tp7.Text) / (lbl_v4.Text / 60))
+                lbl_cp1.Text = CInt((60 - lbl_tp1.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp2.Text = CInt((60 - lbl_tp2.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp3.Text = CInt((60 - lbl_tp3.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp4.Text = CInt((60 - lbl_tp4.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp5.Text = CInt((60 - lbl_tp5.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp6.Text = CInt((60 - lbl_tp6.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
+                lbl_cp7.Text = CInt((60 - lbl_tp7.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
 
                 If cbx_turno.Text = 1 Then
-                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / (lbl_v4.Text / 60))
+                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
                 ElseIf cbx_turno.Text = 2 Then
-                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / (lbl_v4.Text / 60))
+                    lbl_cp8.Text = CInt((60 - lbl_tp8.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
                 ElseIf cbx_turno.Text = 3 Then
-                    lbl_cp8.Text = CInt((30 - lbl_tp8.Text) / (lbl_v4.Text / 60))
+                    lbl_cp8.Text = CInt((30 - lbl_tp8.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
                 End If
 
 
 
                 If cbx_turno.Text = 1 Then
-                    lbl_cp9.Text = CInt((30 - lbl_tp9.Text) / (lbl_v4.Text / 60))
+                    lbl_cp9.Text = CInt((30 - lbl_tp9.Text) / (lbl_v4.Text / 60)) * CInt(cbx_cavidad.Text)
                 ElseIf cbx_turno.Text = 2 Then
                     lbl_cp9.Text = "0"
                 ElseIf cbx_turno.Text = 3 Then
@@ -939,13 +1017,14 @@ END
     Private Sub cbx_molde_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_molde.SelectedIndexChanged
         If cbx_proceso.Text = "FUNDICION" Then
 
-            llenacombocavidad()
+            ''llenacombocavidad()
 
         Else
 
             Try
-                llenacombocavidad()
-                ''CT()
+                ' llenacombocavidad()
+                cbx_cavidad.Text = "1"
+                'CT()
                 ''cantidadxhora()
 
                 lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
@@ -960,8 +1039,8 @@ END
         If cbx_proceso.Text = "FUNDICION" Then
 
             Try
-                ''CT()
-                ''cantidadxhora()
+                'CT()
+                cantidadxhora()
 
                 lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
             Catch
@@ -1336,6 +1415,8 @@ END
 
 
 
+
+
             command.ExecuteNonQuery()
 
 
@@ -1395,6 +1476,7 @@ END
         insertaoeeprincipal()
         insertaoeedetalle()
         insertaoeexhora()
+
     End Sub
 
 
@@ -1457,8 +1539,122 @@ END
 
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        lbl_contador.Text = CInt(lbl_contador.Text) + 1
+        lbl_v1.Text = "0"
+        lbl_v2.Text = "0"
+        lbl_v3.Text = "0"
+        lbl_v4.Text = "0"
 
 
+        lbl_t1.Text = "0"
+        lbl_t2.Text = "0"
+        lbl_t3.Text = "0"
+        lbl_t4.Text = "0"
+        lbl_t5.Text = "0"
+        lbl_t9.Text = "0"
+
+
+        lbl_d1.Text = "0"
+        lbl_d2.Text = "0"
+        lbl_d3.Text = "0"
+        lbl_d4.Text = "0"
+        lbl_d5.Text = "0"
+        lbl_d6.Text = "0"
+        lbl_d7.Text = "0"
+
+
+        lbl_h1.Text = "~"
+        lbl_h2.Text = "~"
+        lbl_h3.Text = "~"
+        lbl_h4.Text = "~"
+        lbl_h5.Text = "~"
+        lbl_h6.Text = "~"
+        lbl_h7.Text = "~"
+        lbl_h8.Text = "~"
+        lbl_h9.Text = "~"
+
+
+        lbl_tp1.Text = "0"
+        lbl_tp2.Text = "0"
+        lbl_tp3.Text = "0"
+        lbl_tp4.Text = "0"
+        lbl_tp5.Text = "0"
+        lbl_tp6.Text = "0"
+        lbl_tp7.Text = "0"
+        lbl_tp8.Text = "0"
+        lbl_tp9.Text = "0"
+
+        lbl_acumulado1.Text = "0"
+        lbl_acumulado2.Text = "0"
+        lbl_acumulado3.Text = "0"
+        lbl_acumulado4.Text = "0"
+        lbl_acumulado5.Text = "0"
+        lbl_acumulado6.Text = "0"
+        lbl_acumulado7.Text = "0"
+        lbl_acumulado8.Text = "0"
+        lbl_acumulado9.Text = "0"
+
+        txt_1.Text = "0"
+        txt_2.Text = "0"
+        txt_3.Text = "0"
+        txt_4.Text = "0"
+        txt_5.Text = "0"
+        txt_6.Text = "0"
+        txt_7.Text = "0"
+        txt_8.Text = "0"
+        txt_9.Text = "0"
+
+
+        ok1.Text = "0"
+        ok2.Text = "0"
+        ok3.Text = "0"
+        ok4.Text = "0"
+        ok5.Text = "0"
+        ok6.Text = "0"
+        ok7.Text = "0"
+        ok8.Text = "0"
+        ok9.Text = "0"
+
+
+        ng1.Text = "0"
+        ng2.Text = "0"
+        ng3.Text = "0"
+        ng4.Text = "0"
+        ng5.Text = "0"
+        ng6.Text = "0"
+        ng7.Text = "0"
+        ng8.Text = "0"
+        ng9.Text = "0"
+
+
+        t1.Text = "0"
+        t2.Text = "0"
+        t3.Text = "0"
+        t4.Text = "0"
+        t5.Text = "0"
+        t6.Text = "0"
+        t7.Text = "0"
+        t8.Text = "0"
+        t9.Text = "0"
+
+
+
+
+        lbl_cp1.Text = "0"
+        lbl_cp2.Text = "0"
+        lbl_cp3.Text = "0"
+        lbl_cp4.Text = "0"
+        lbl_cp5.Text = "0"
+        lbl_cp6.Text = "0"
+        lbl_cp7.Text = "0"
+        lbl_cp8.Text = "0"
+        lbl_cp9.Text = "0"
+
+        dtgvp.Rows.Clear()
+        btn_guardar.Enabled = False
+
+    End Sub
 End Class
 
 Module Modulo_detalle

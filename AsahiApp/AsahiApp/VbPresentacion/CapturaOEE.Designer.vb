@@ -216,6 +216,9 @@ Partial Class CapturaOEE
         Me.t3 = New System.Windows.Forms.Label()
         Me.t2 = New System.Windows.Forms.Label()
         Me.t1 = New System.Windows.Forms.Label()
+        Me.lbl_contador = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -2105,11 +2108,45 @@ Partial Class CapturaOEE
         Me.t1.TabIndex = 155
         Me.t1.Text = "0"
         '
+        'lbl_contador
+        '
+        Me.lbl_contador.AutoSize = True
+        Me.lbl_contador.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_contador.Location = New System.Drawing.Point(1099, 31)
+        Me.lbl_contador.Name = "lbl_contador"
+        Me.lbl_contador.Size = New System.Drawing.Size(15, 16)
+        Me.lbl_contador.TabIndex = 164
+        Me.lbl_contador.Text = "0"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(1076, 6)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(63, 16)
+        Me.Label44.TabIndex = 165
+        Me.Label44.Text = "Contador"
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.Presentacion.My.Resources.Resources._1486504328_bullet_list_menu_lines_points_items_options_81334
+        Me.Button2.Location = New System.Drawing.Point(1077, 642)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(63, 44)
+        Me.Button2.TabIndex = 166
+        Me.Button2.Text = "Nuevo"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'CapturaOEE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1144, 691)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Label44)
+        Me.Controls.Add(Me.lbl_contador)
         Me.Controls.Add(Me.t9)
         Me.Controls.Add(Me.t8)
         Me.Controls.Add(Me.t7)
@@ -2436,4 +2473,7 @@ Partial Class CapturaOEE
     Friend WithEvents t3 As Label
     Friend WithEvents t2 As Label
     Friend WithEvents t1 As Label
+    Friend WithEvents lbl_contador As Label
+    Friend WithEvents Label44 As Label
+    Friend WithEvents Button2 As Button
 End Class
