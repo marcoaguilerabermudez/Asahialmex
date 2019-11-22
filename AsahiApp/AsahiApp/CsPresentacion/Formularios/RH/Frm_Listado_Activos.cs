@@ -31,6 +31,7 @@ namespace CsPresentacion
             cargar_departemento(cmb_departamento);
             cargar_puesto(cmb_puesto);
             nuevo();
+            Var = 0;
             Llenar_dgv();
             Diseño_dgv(dgv_activos);
             lbl_total.Text = dgv_activos.Rows.Count.ToString();
@@ -224,7 +225,6 @@ namespace CsPresentacion
                 lbl_Ant2.Text = "1000000000";
             }
 
-
             if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
             {
                 Var = 1;
@@ -331,11 +331,12 @@ namespace CsPresentacion
                 Llenar_dgv();
                 lbl_total.Text = dgv_activos.Rows.Count.ToString();
             }
-
         }
 
         private void Btn_exportar_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
+            timer1.Start();
             Exportara_Exel();
         }
 
@@ -447,24 +448,27 @@ namespace CsPresentacion
                 Llenar_dgv();
                 lbl_total.Text = dgv_activos.Rows.Count.ToString();
             }
+
         }
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
-           
-           
         }
 
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(0);
                 rep.Show();
             }
             else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(1);
                 rep.Departamento = cmb_departamento.Text;
@@ -472,6 +476,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(2);
                 rep.Departamento = cmb_departamento.Text;
@@ -479,6 +485,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_genero.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(3);
                 rep.Ant1 = Convert.ToInt32(lbl_Ant1.Text);
@@ -488,6 +496,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(4);
                 rep.Genero = cmb_genero.Text;
@@ -495,6 +505,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_ant.Text) && string.IsNullOrEmpty(cmb_genero.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(5);
                 rep.Departamento = cmb_departamento.Text;
@@ -503,6 +515,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_genero.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(6);
                 rep.Departamento = cmb_departamento.Text;
@@ -513,6 +527,8 @@ namespace CsPresentacion
 
             else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_ant.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(7);
                 rep.Departamento = cmb_departamento.Text;
@@ -521,6 +537,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_genero.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(8);
                 rep.Puesto = cmb_puesto.Text;
@@ -530,6 +548,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_ant.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(9);
                 rep.Puesto = cmb_puesto.Text;
@@ -538,6 +558,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(10);
                 rep.Ant1 = Convert.ToInt32(lbl_Ant1.Text);
@@ -547,6 +569,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_genero.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(11);
                 rep.Departamento = cmb_departamento.Text;
@@ -557,6 +581,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_ant.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(12);
                 rep.Departamento = cmb_departamento.Text;
@@ -566,6 +592,8 @@ namespace CsPresentacion
             }
             else if (string.IsNullOrEmpty(cmb_puesto.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(13);
                 rep.Departamento = cmb_departamento.Text;
@@ -577,6 +605,8 @@ namespace CsPresentacion
 
             else if (string.IsNullOrEmpty(cmb_departamento.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(14);
                 rep.Puesto = cmb_puesto.Text;
@@ -587,6 +617,8 @@ namespace CsPresentacion
             }
             else
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(15);
                 rep.Departamento = cmb_departamento.Text;
@@ -819,6 +851,12 @@ namespace CsPresentacion
                 Llenar_dgv();
                 lbl_total.Text = dgv_activos.Rows.Count.ToString();
             }
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Start();
+            Cursor = Cursors.Default;
         }
     }
 }
