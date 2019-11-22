@@ -303,27 +303,29 @@ Public Class Frm_Gastos
         Dgv_GastosGlobal.Rows.Clear()
 
         For Each item In lstGast
-            Dgv_GastosGlobal.Rows.Add()
-            Dgv_GastosGlobal.Columns("cosCompra").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            Dgv_GastosGlobal.Columns("cantCompra").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            Dgv_GastosGlobal.Columns("segNeg").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            Dgv_GastosGlobal.Columns("costoUnit").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            With Dgv_GastosGlobal.Rows(fila)
-                .Cells("noCta").Value = item.Cuenta
-                .Cells("cta").Value = item.NombreCuenta
-                .Cells("idCompra").Value = item.IdCompra
-                .Cells("cantCompra").Value = Format(item.CantCompra, "#,###,##0.00")
-                tCant = tCant + .Cells("cantCompra").Value
-                .Cells("costoUnit").Value = Format((item.Compras / item.CantCompra), "$ #,###,##0.00")
-                If .Cells("costoUnit").Value = "NaN" Then .Cells("costoUnit").Value = Format(0, "$ #,###,##0.00")
-                tCosUnit = tCosUnit + .Cells("costoUnit").Value
-                .Cells("cosCompra").Value = Format(item.Compras, "$ #,###,##0.00")
-                tCos = tCos + .Cells("cosCompra").Value
-                '.Cells("po").Value = Format(item.OC, "$ #,###,##0.00")
-                '.Cells("comp").Value = Format(item.Compras, "$ #,###,##0.00")
-                .Cells("segNeg").Value = item.SegmNegocio
-            End With
-            fila += 1
+            If item.CantCompra <> 0 Then
+                Dgv_GastosGlobal.Rows.Add()
+                Dgv_GastosGlobal.Columns("cosCompra").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                Dgv_GastosGlobal.Columns("cantCompra").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                Dgv_GastosGlobal.Columns("segNeg").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                Dgv_GastosGlobal.Columns("costoUnit").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                With Dgv_GastosGlobal.Rows(fila)
+                    .Cells("noCta").Value = item.Cuenta
+                    .Cells("cta").Value = item.NombreCuenta
+                    .Cells("idCompra").Value = item.IdCompra
+                    .Cells("cantCompra").Value = Format(item.CantCompra, "#,###,##0.00")
+                    tCant = tCant + .Cells("cantCompra").Value
+                    .Cells("costoUnit").Value = Format((item.Compras / item.CantCompra), "$ #,###,##0.00")
+                    If .Cells("costoUnit").Value = "NaN" Then .Cells("costoUnit").Value = Format(0, "$ #,###,##0.00")
+                    tCosUnit = tCosUnit + .Cells("costoUnit").Value
+                    .Cells("cosCompra").Value = Format(item.Compras, "$ #,###,##0.00")
+                    tCos = tCos + .Cells("cosCompra").Value
+                    '.Cells("po").Value = Format(item.OC, "$ #,###,##0.00")
+                    '.Cells("comp").Value = Format(item.Compras, "$ #,###,##0.00")
+                    .Cells("segNeg").Value = item.SegmNegocio
+                End With
+                fila += 1
+            End If
         Next
         Lbl_CantidadTot.Text = Format(tCant, "#,###,##0.00")
         Lbl_CostoUnitTotal.Text = Format(tCosUnit, "$ #,###,##0.00")
