@@ -344,13 +344,13 @@ Public Class Frm_Gastos
             With Dgv_GastosDepto.Rows(fila)
                 .Cells("noCta2").Value = item.Cuenta
                 .Cells("cta2").Value = item.NombreCuenta
-                .Cells("plan2").Value = Format(item.PlanMonto, "$ #,###,##0.00")
-                If .Cells("plan2").Value = 0 Then .Cells("plan2").Style.ForeColor = Color.Red
+                .Cells("plan2").Value = Format(Math.Round(item.PlanMonto), "$ #,###,##0.00")
+                If .Cells("plan2").Value = 0 Then .Cells("plan2").Style.ForeColor = Color.Gray
                 tPLan = tPLan + .Cells("plan2").Value
-                .Cells("real2").Value = Format(item.Actual, "$ #,###,##0.00")
-                If .Cells("real2").Value = 0 Then .Cells("real2").Style.ForeColor = Color.Red
+                .Cells("real2").Value = Format(Math.Round(item.Actual), "$ #,###,##0.00")
+                If .Cells("real2").Value = 0 Then .Cells("real2").Style.ForeColor = Color.Gray
                 tReal = tReal + .Cells("real2").Value
-                .Cells("dif2").Value = Format(item.Actual - item.PlanMonto, "$ #,###,##0.00")
+                .Cells("dif2").Value = Format(Math.Round(item.Actual - item.PlanMonto), "$ #,###,##0.00")
                 If .Cells("dif2").Value > 0 Then .Cells("dif2").Style.ForeColor = Color.Red
                 'tDif = tDif + .Cells("dif2").Value
                 .Cells("porcentaje").Value = Format((item.Actual * 100) / item.PlanMonto, "#,###,##0.00")
@@ -384,13 +384,13 @@ Public Class Frm_Gastos
             With Dgv_DesplegadoAcum.Rows(fila)
                 .Cells("noCta3").Value = item.Cuenta
                 .Cells("cta3").Value = item.NombreCuenta
-                .Cells("plan").Value = Format(item.PlanMonto, "$ #,###,##0.00")
-                If .Cells("plan").Value = 0 Then .Cells("plan").Style.ForeColor = Color.Red
+                .Cells("plan").Value = Format(Math.Round(item.PlanMonto), "$ #,###,##0.00")
+                If .Cells("plan").Value = 0 Then .Cells("plan").Style.ForeColor = Color.Gray
                 tPLan = tPLan + .Cells("plan").Value
-                .Cells("actual").Value = Format(item.Actual, "$ #,###,##0.00")
-                If .Cells("actual").Value = 0 Then .Cells("actual").Style.ForeColor = Color.Red
+                .Cells("actual").Value = Format(Math.Round(item.Actual), "$ #,###,##0.00")
+                If .Cells("actual").Value = 0 Then .Cells("actual").Style.ForeColor = Color.Gray
                 tReal = tReal + .Cells("actual").Value
-                .Cells("dif").Value = Format(item.Actual - item.PlanMonto, "$ #,###,##0.00")
+                .Cells("dif").Value = Format(Math.Round(item.Actual - item.PlanMonto), "$ #,###,##0.00")
                 If .Cells("dif").Value > 0 Then .Cells("dif").Style.ForeColor = Color.Red
                 .Cells("porcentaje2").Value = Format((item.Actual * 100) / item.PlanMonto, "#,###,##0.00")
                 If .Cells("porcentaje2").Value > 100 Then .Cells("porcentaje2").Style.ForeColor = Color.Red
