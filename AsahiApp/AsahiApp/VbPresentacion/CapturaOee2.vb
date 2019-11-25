@@ -62,6 +62,7 @@ on es.[id_maquina] = Maq.id_maquina
 where es.id_proceso = 2
 
 END
+
 ELSE if @var = 'LEAKTEST'
 BEGIN
 SELECT distinct maq.Nombre
@@ -383,11 +384,11 @@ END
         utilizacion()
         rendimiento()
         calidad()
-        If CInt(lbl_topr.Text) < 0 Then
-            lbl_topr.ForeColor = Color.DarkRed
-        Else
-            lbl_topr.ForeColor = Color.Black
-        End If
+        'If CInt(lbl_topr.Text) < 0 Then
+        '    lbl_topr.ForeColor = Color.DarkRed
+        'Else
+        '    lbl_topr.ForeColor = Color.Black
+        'End If
 
     End Sub
 
@@ -622,5 +623,19 @@ END
     Private Sub btn_1_Click(sender As Object, e As EventArgs) Handles btn_1.Click
         insertaoeeprincipal()
         insertaoeedetalle()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        dtgvp.Rows.Clear()
+        lbl_tpo.Text = ""
+        lbl_pp.Text = "0"
+        lbl_topp.Text = "0"
+        lbl_pnp.Text = "0"
+        lbl_topr.Text = ""
+        lbl_ct2.Text = "0"
+        lbl_ct.Text = "0"
+        lbl_pc.Text = ""
+        lbl_png.Text = "0"
+        txt_tpza.Text = ""
     End Sub
 End Class

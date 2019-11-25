@@ -22,6 +22,7 @@ Partial Class CapturaOee2
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CapturaOee2))
         Me.cbx_cavidad = New System.Windows.Forms.ComboBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -74,6 +75,7 @@ Partial Class CapturaOee2
         Me.txt_tpza = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lbl_ct2 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -82,7 +84,7 @@ Partial Class CapturaOee2
         '
         Me.cbx_cavidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_cavidad.FormattingEnabled = True
-        Me.cbx_cavidad.Location = New System.Drawing.Point(696, 29)
+        Me.cbx_cavidad.Location = New System.Drawing.Point(774, 27)
         Me.cbx_cavidad.Name = "cbx_cavidad"
         Me.cbx_cavidad.Size = New System.Drawing.Size(54, 21)
         Me.cbx_cavidad.TabIndex = 127
@@ -90,7 +92,7 @@ Partial Class CapturaOee2
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(696, 11)
+        Me.Label38.Location = New System.Drawing.Point(774, 9)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(46, 13)
         Me.Label38.TabIndex = 132
@@ -117,7 +119,7 @@ Partial Class CapturaOee2
         '
         Me.cbx_molde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_molde.FormattingEnabled = True
-        Me.cbx_molde.Location = New System.Drawing.Point(615, 29)
+        Me.cbx_molde.Location = New System.Drawing.Point(693, 27)
         Me.cbx_molde.Name = "cbx_molde"
         Me.cbx_molde.Size = New System.Drawing.Size(60, 21)
         Me.cbx_molde.TabIndex = 126
@@ -125,7 +127,7 @@ Partial Class CapturaOee2
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(617, 11)
+        Me.Label4.Location = New System.Drawing.Point(695, 9)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 13)
         Me.Label4.TabIndex = 130
@@ -136,7 +138,7 @@ Partial Class CapturaOee2
         Me.cbx_turno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_turno.FormattingEnabled = True
         Me.cbx_turno.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.cbx_turno.Location = New System.Drawing.Point(775, 29)
+        Me.cbx_turno.Location = New System.Drawing.Point(124, 28)
         Me.cbx_turno.Name = "cbx_turno"
         Me.cbx_turno.Size = New System.Drawing.Size(58, 21)
         Me.cbx_turno.TabIndex = 129
@@ -144,7 +146,7 @@ Partial Class CapturaOee2
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(772, 10)
+        Me.Label3.Location = New System.Drawing.Point(121, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(35, 13)
         Me.Label3.TabIndex = 128
@@ -155,7 +157,7 @@ Partial Class CapturaOee2
         Me.cbx_proceso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_proceso.FormattingEnabled = True
         Me.cbx_proceso.Items.AddRange(New Object() {"FUNDICION", "MAQUINADO", "LEAKTEST", "ENSAMBLE"})
-        Me.cbx_proceso.Location = New System.Drawing.Point(129, 27)
+        Me.cbx_proceso.Location = New System.Drawing.Point(210, 27)
         Me.cbx_proceso.Name = "cbx_proceso"
         Me.cbx_proceso.Size = New System.Drawing.Size(118, 21)
         Me.cbx_proceso.TabIndex = 121
@@ -163,7 +165,7 @@ Partial Class CapturaOee2
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(126, 11)
+        Me.Label2.Location = New System.Drawing.Point(207, 11)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 13)
         Me.Label2.TabIndex = 124
@@ -174,7 +176,7 @@ Partial Class CapturaOee2
         Me.cbx_maquina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_maquina.FormattingEnabled = True
         Me.cbx_maquina.Items.AddRange(New Object() {"XY", "CV", "NTC 2"})
-        Me.cbx_maquina.Location = New System.Drawing.Point(277, 27)
+        Me.cbx_maquina.Location = New System.Drawing.Point(352, 26)
         Me.cbx_maquina.Name = "cbx_maquina"
         Me.cbx_maquina.Size = New System.Drawing.Size(158, 21)
         Me.cbx_maquina.TabIndex = 123
@@ -182,7 +184,7 @@ Partial Class CapturaOee2
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(279, 11)
+        Me.Label1.Location = New System.Drawing.Point(354, 10)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 13)
         Me.Label1.TabIndex = 122
@@ -193,7 +195,7 @@ Partial Class CapturaOee2
         Me.cbx_pieza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_pieza.FormattingEnabled = True
         Me.cbx_pieza.Items.AddRange(New Object() {"11410-5R7A-0200", "31848-X421A", "31848-X420B", "31848-28X0A", "6H86030100", "6H86030400", "342511-31060", "342515-31020", "342511-32021-04", "342515-32021", "BJS7-39-011", "F2R5-25-740", "PEAR-15-17Z", "PEDD-10-121", "PEDD-10-131", "PEDD-10-141", "PEDD-10-161", "PEDD-14-311", "PEDD-15-17Z", "P54J-10-121", "P54G-10-141", "P54G-14-311", "BJS9-3908Y", "35652-TBG030", "35652-TBG040", "35621-TBG030", "35621-TBG040", "1094-375-032C", "49015-8010", "49015-8011", "11022-0044A", "11022-0045A", "11022-0046A", "11022-0047A", "11022-0048A", "31395-X421A", "6A7A", "6L59", "6L60", "6L61", "6L64", "6L66", "49015-8014", "6H4103000", "6H41030400", "31848-AB50A", "PEP9-10-190", "31395-X425A", "G2R5-25-740-C", "P5PW-10-190", "PEDD-10-190", "P54J-10-190", "P5", "PE", "197954-2220  (G2)"})
-        Me.cbx_pieza.Location = New System.Drawing.Point(453, 28)
+        Me.cbx_pieza.Location = New System.Drawing.Point(531, 26)
         Me.cbx_pieza.Name = "cbx_pieza"
         Me.cbx_pieza.Size = New System.Drawing.Size(148, 21)
         Me.cbx_pieza.TabIndex = 125
@@ -201,7 +203,7 @@ Partial Class CapturaOee2
         'lbl_pieza
         '
         Me.lbl_pieza.AutoSize = True
-        Me.lbl_pieza.Location = New System.Drawing.Point(453, 11)
+        Me.lbl_pieza.Location = New System.Drawing.Point(531, 9)
         Me.lbl_pieza.Name = "lbl_pieza"
         Me.lbl_pieza.Size = New System.Drawing.Size(33, 13)
         Me.lbl_pieza.TabIndex = 119
@@ -548,6 +550,7 @@ Partial Class CapturaOee2
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.btn_agregar)
         Me.Panel1.Controls.Add(Me.btn_eliminar)
         Me.Panel1.Controls.Add(Me.btn_1)
@@ -566,6 +569,17 @@ Partial Class CapturaOee2
         Me.lbl_ct2.Size = New System.Drawing.Size(16, 16)
         Me.lbl_ct2.TabIndex = 165
         Me.lbl_ct2.Text = "0"
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.Presentacion.My.Resources.Resources._1486504328_bullet_list_menu_lines_points_items_options_81334
+        Me.Button2.Location = New System.Drawing.Point(720, 218)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(63, 44)
+        Me.Button2.TabIndex = 167
+        Me.Button2.Text = "Nuevo"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'CapturaOee2
         '
@@ -614,9 +628,10 @@ Partial Class CapturaOee2
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cbx_pieza)
         Me.Controls.Add(Me.lbl_pieza)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CapturaOee2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CapturaOee2"
+        Me.Text = "Captura Oee"
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -676,4 +691,5 @@ Partial Class CapturaOee2
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents id_error As DataGridViewTextBoxColumn
     Friend WithEvents lbl_ct2 As Label
+    Friend WithEvents Button2 As Button
 End Class

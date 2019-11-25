@@ -28,6 +28,7 @@ Partial Class MuestraOeeCompleto
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MuestraOeeCompleto))
         Me.dtgv = New System.Windows.Forms.DataGridView()
         Me.dtgv2 = New System.Windows.Forms.DataGridView()
         CType(Me.dtgv, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,9 +124,10 @@ Partial Class MuestraOeeCompleto
         Me.ClientSize = New System.Drawing.Size(853, 630)
         Me.Controls.Add(Me.dtgv2)
         Me.Controls.Add(Me.dtgv)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MuestraOeeCompleto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "MuestraOeeCompleto"
+        Me.Text = "Muestra Oee Mensual"
         CType(Me.dtgv, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgv2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
