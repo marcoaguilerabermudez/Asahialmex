@@ -108,6 +108,9 @@ Public Class Frm_ListaPrenomina
         End If
     End Sub
     Private Sub Btn_Mostrar_Click(sender As Object, e As EventArgs) Handles Btn_Mostrar.Click
+        Cursor = Cursors.WaitCursor
+        Timer1.Start()
+
         If open = True Then
             Dim fecha As Date
             Dim lstEmp As New LEmpleado
@@ -260,6 +263,10 @@ Public Class Frm_ListaPrenomina
     Private Sub Btn_Reporte_Click(sender As Object, e As EventArgs) Handles Btn_Reporte.Click
         Almacenar()
         llamarReporte()
+    End Sub
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer1.Start()
+        Cursor = Cursors.Default
     End Sub
 #End Region
 #Region "Rellena cmb"

@@ -31,6 +31,8 @@ Public Class Frm_Gastos
         'RecuperarPlanesTVentas()
     End Sub
     Private Sub Cmb_Meses_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_Meses.SelectionChangeCommitted
+        Cursor = Cursors.WaitCursor
+        Timer1.Start()
         Cmb_Años.Enabled = True
         If Cmb_Depto.Text <> "" Then
             Dgv_GastosDepto.ColumnHeadersVisible = True
@@ -214,6 +216,10 @@ Public Class Frm_Gastos
         Lbl_CostoUnitTotal.Text = 0
         Lbl_CotoTotal.Text = 0
     End Sub
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer1.Start()
+        Cursor = Cursors.Default()
+    End Sub
 #End Region
 #Region "Rellena Cmb"
     Private Sub RellenaCmbDepartamento()
@@ -297,27 +303,29 @@ Public Class Frm_Gastos
         Dgv_GastosGlobal.Rows.Clear()
 
         For Each item In lstGast
-            Dgv_GastosGlobal.Rows.Add()
-            Dgv_GastosGlobal.Columns("cosCompra").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            Dgv_GastosGlobal.Columns("cantCompra").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            Dgv_GastosGlobal.Columns("segNeg").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            Dgv_GastosGlobal.Columns("costoUnit").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            With Dgv_GastosGlobal.Rows(fila)
-                .Cells("noCta").Value = item.Cuenta
-                .Cells("cta").Value = item.NombreCuenta
-                .Cells("idCompra").Value = item.IdCompra
-                .Cells("cantCompra").Value = Format(item.CantCompra, "#,###,##0.00")
-                tCant = tCant + .Cells("cantCompra").Value
-                .Cells("costoUnit").Value = Format((item.Compras / item.CantCompra), "$ #,###,##0.00")
-                If .Cells("costoUnit").Value = "NaN" Then .Cells("costoUnit").Value = Format(0, "$ #,###,##0.00")
-                tCosUnit = tCosUnit + .Cells("costoUnit").Value
-                .Cells("cosCompra").Value = Format(item.Compras, "$ #,###,##0.00")
-                tCos = tCos + .Cells("cosCompra").Value
-                '.Cells("po").Value = Format(item.OC, "$ #,###,##0.00")
-                '.Cells("comp").Value = Format(item.Compras, "$ #,###,##0.00")
-                .Cells("segNeg").Value = item.SegmNegocio
-            End With
-            fila += 1
+            If item.CantCompra <> 0 Then
+                Dgv_GastosGlobal.Rows.Add()
+                Dgv_GastosGlobal.Columns("cosCompra").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                Dgv_GastosGlobal.Columns("cantCompra").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                Dgv_GastosGlobal.Columns("segNeg").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                Dgv_GastosGlobal.Columns("costoUnit").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                With Dgv_GastosGlobal.Rows(fila)
+                    .Cells("noCta").Value = item.Cuenta
+                    .Cells("cta").Value = item.NombreCuenta
+                    .Cells("idCompra").Value = item.IdCompra
+                    .Cells("cantCompra").Value = Format(item.CantCompra, "#,###,##0.00")
+                    tCant = tCant + .Cells("cantCompra").Value
+                    .Cells("costoUnit").Value = Format((item.Compras / item.CantCompra), "$ #,###,##0.00")
+                    If .Cells("costoUnit").Value = "NaN" Then .Cells("costoUnit").Value = Format(0, "$ #,###,##0.00")
+                    tCosUnit = tCosUnit + .Cells("costoUnit").Value
+                    .Cells("cosCompra").Value = Format(item.Compras, "$ #,###,##0.00")
+                    tCos = tCos + .Cells("cosCompra").Value
+                    '.Cells("po").Value = Format(item.OC, "$ #,###,##0.00")
+                    '.Cells("comp").Value = Format(item.Compras, "$ #,###,##0.00")
+                    .Cells("segNeg").Value = item.SegmNegocio
+                End With
+                fila += 1
+            End If
         Next
         Lbl_CantidadTot.Text = Format(tCant, "#,###,##0.00")
         Lbl_CostoUnitTotal.Text = Format(tCosUnit, "$ #,###,##0.00")
@@ -338,13 +346,13 @@ Public Class Frm_Gastos
             With Dgv_GastosDepto.Rows(fila)
                 .Cells("noCta2").Value = item.Cuenta
                 .Cells("cta2").Value = item.NombreCuenta
-                .Cells("plan2").Value = Format(item.PlanMonto, "$ #,###,##0.00")
-                If .Cells("plan2").Value = 0 Then .Cells("plan2").Style.ForeColor = Color.Red
+                .Cells("plan2").Value = Format(Math.Round(item.PlanMonto), "$ #,###,##0.00")
+                If .Cells("plan2").Value = 0 Then .Cells("plan2").Style.ForeColor = Color.Gray
                 tPLan = tPLan + .Cells("plan2").Value
-                .Cells("real2").Value = Format(item.Actual, "$ #,###,##0.00")
-                If .Cells("real2").Value = 0 Then .Cells("real2").Style.ForeColor = Color.Red
+                .Cells("real2").Value = Format(Math.Round(item.Actual), "$ #,###,##0.00")
+                If .Cells("real2").Value = 0 Then .Cells("real2").Style.ForeColor = Color.Gray
                 tReal = tReal + .Cells("real2").Value
-                .Cells("dif2").Value = Format(item.Actual - item.PlanMonto, "$ #,###,##0.00")
+                .Cells("dif2").Value = Format(Math.Round(item.Actual - item.PlanMonto), "$ #,###,##0.00")
                 If .Cells("dif2").Value > 0 Then .Cells("dif2").Style.ForeColor = Color.Red
                 'tDif = tDif + .Cells("dif2").Value
                 .Cells("porcentaje").Value = Format((item.Actual * 100) / item.PlanMonto, "#,###,##0.00")
@@ -378,13 +386,13 @@ Public Class Frm_Gastos
             With Dgv_DesplegadoAcum.Rows(fila)
                 .Cells("noCta3").Value = item.Cuenta
                 .Cells("cta3").Value = item.NombreCuenta
-                .Cells("plan").Value = Format(item.PlanMonto, "$ #,###,##0.00")
-                If .Cells("plan").Value = 0 Then .Cells("plan").Style.ForeColor = Color.Red
+                .Cells("plan").Value = Format(Math.Round(item.PlanMonto), "$ #,###,##0.00")
+                If .Cells("plan").Value = 0 Then .Cells("plan").Style.ForeColor = Color.Gray
                 tPLan = tPLan + .Cells("plan").Value
-                .Cells("actual").Value = Format(item.Actual, "$ #,###,##0.00")
-                If .Cells("actual").Value = 0 Then .Cells("actual").Style.ForeColor = Color.Red
+                .Cells("actual").Value = Format(Math.Round(item.Actual), "$ #,###,##0.00")
+                If .Cells("actual").Value = 0 Then .Cells("actual").Style.ForeColor = Color.Gray
                 tReal = tReal + .Cells("actual").Value
-                .Cells("dif").Value = Format(item.Actual - item.PlanMonto, "$ #,###,##0.00")
+                .Cells("dif").Value = Format(Math.Round(item.Actual - item.PlanMonto), "$ #,###,##0.00")
                 If .Cells("dif").Value > 0 Then .Cells("dif").Style.ForeColor = Color.Red
                 .Cells("porcentaje2").Value = Format((item.Actual * 100) / item.PlanMonto, "#,###,##0.00")
                 If .Cells("porcentaje2").Value > 100 Then .Cells("porcentaje2").Style.ForeColor = Color.Red

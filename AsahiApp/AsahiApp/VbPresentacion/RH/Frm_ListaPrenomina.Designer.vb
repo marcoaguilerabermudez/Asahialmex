@@ -22,6 +22,7 @@ Partial Class Frm_ListaPrenomina
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Dgv_ListaPrenomina = New System.Windows.Forms.DataGridView()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -93,6 +94,7 @@ Partial Class Frm_ListaPrenomina
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Lbl_FiltroId = New System.Windows.Forms.Label()
         Me.Txt_FiltroId = New System.Windows.Forms.TextBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -650,6 +652,9 @@ Partial Class Frm_ListaPrenomina
         Me.Txt_FiltroId.Size = New System.Drawing.Size(47, 20)
         Me.Txt_FiltroId.TabIndex = 11
         '
+        'Timer1
+        '
+        '
         'Frm_ListaPrenomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -748,4 +753,5 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents aplicaBono As DataGridViewCheckBoxColumn
     Friend WithEvents idTurno As DataGridViewTextBoxColumn
     Friend WithEvents manual As DataGridViewTextBoxColumn
+    Friend WithEvents Timer1 As Timer
 End Class

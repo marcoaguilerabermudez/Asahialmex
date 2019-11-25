@@ -9,6 +9,7 @@ Public Class Frm_PlanGastos
     Dim idioma As Integer = 1
     Dim mes As Integer
     Dim año As Integer
+    Dim segNeg As Integer
 #End Region
 #Region "Constructores"
     Sub New()
@@ -31,8 +32,10 @@ Public Class Frm_PlanGastos
 #Region "Acciones del formulario"
     Private Sub Frm_PlanGastos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim conex As New conexion
+        Dim NEmp As New NEmpleado()
         Me.cadenaConex = conex.cadenaConexExpress
         Me.cadConex = conex.conexion2008
+        Me.empleado = NEmp.EmpleadosRecuperar(Me.cadConex, Me.empleado)
         RellenaCmbDepartamento()
         RellenaCmbMeses()
         RellenaCmbAño()
@@ -42,6 +45,8 @@ Public Class Frm_PlanGastos
         Me.mes = DateTime.Now.ToString("MM")
         Me.año = DateTime.Now.ToString("yyyy")
         Dim mesLetra As String = UCase(MonthName(Me.mes))
+        If Me.empleado.IdDepartamento = 1 Or Me.empleado.TipoUsuario <> 1 Then Cmb_Depto.Enabled = False
+        Cmb_Depto.SelectedValue = Me.empleado.IdDepartamento
         Cmb_Meses.SelectedItem = mesLetra
         Cmb_Años.Text = Me.año
         If Me.c = 0 Then RellenarDgvPrincipal()
@@ -50,12 +55,13 @@ Public Class Frm_PlanGastos
     Private Sub Rdb_Español_CheckedChanged(sender As Object, e As EventArgs) Handles Rdb_Español.CheckedChanged
         'Dgv_GastosGlobal.DataSource = Nothing
         'Dgv_GastosGlobal.Rows.Clear()
-        'Dgv_GastosGlobal.ColumnHeadersVisible = False
-        'Dgv_DesplegadoAcum.DataSource = Nothing
-        'Dgv_DesplegadoAcum.Rows.Clear()
-        'Dgv_DesplegadoAcum.ColumnHeadersVisible = False
+        Dgv_Datos.DataSource = Nothing
+        Dgv_Datos.Rows.Clear()
         RellenaCmbDepartamento()
         RellenaCmbMeses()
+        Dim letraMes As String = MesNumeroLetra(Me.mes)
+        Cmb_Meses.Text = letraMes
+        Cmb_Depto.SelectedValue = Me.empleado.IdDepartamento
         If Me.c = 1 Then RellenarDgvPrincipal()
         'RellenaCtaGral()
         'Traducir()
@@ -63,26 +69,28 @@ Public Class Frm_PlanGastos
     Private Sub Rdb_Japones_CheckedChanged(sender As Object, e As EventArgs) Handles Rdb_Japones.CheckedChanged
         'Dgv_GastosGlobal.DataSource = Nothing
         'Dgv_GastosGlobal.Rows.Clear()
-        'Dgv_GastosGlobal.ColumnHeadersVisible = False
-        'Dgv_DesplegadoAcum.DataSource = Nothing
-        'Dgv_DesplegadoAcum.Rows.Clear()
-        'Dgv_DesplegadoAcum.ColumnHeadersVisible = False
+        Dgv_Datos.DataSource = Nothing
+        Dgv_Datos.Rows.Clear()
         RellenaCmbDepartamento()
         RellenaCmbMeses()
+        Dim letraMes As String = MesNumeroLetra(Me.mes)
+        Cmb_Meses.Text = letraMes
+        Cmb_Depto.SelectedValue = Me.empleado.IdDepartamento
         If Me.c = 1 Then RellenarDgvPrincipal()
         'RellenaCtaGral()
         'Traducir()
     End Sub
     Private Sub Dgv_Principal_DoubleClick(sender As Object, e As EventArgs) Handles Dgv_Principal.DoubleClick
         If Not Cmb_Depto.Text = "" Then
-            Dim ctaGrl As Integer, mes As Integer = MesLetraNumero(Cmb_Meses.Text), año As Integer = Cmb_Años.Text, segNeg As Integer = Cmb_Depto.SelectedValue
+            Dim ctaGrl As Integer, mes As Integer = MesLetraNumero(Cmb_Meses.Text), año As Integer = Cmb_Años.Text
+            Me.segNeg = Cmb_Depto.SelectedValue
             Dim fila As Integer
             Dim NGst As New NGastos()
             Dim lstGst As New LGastos()
             fila = Dgv_Principal.CurrentRow.Index
             ctaGrl = Dgv_Principal.Rows(fila).Cells("codigo").Value
             Me.cta = ctaGrl
-            lstGst = NGst.RecuperarListaCtas(Me.cadenaConex, ctaGrl, mes, año, segNeg, Me.idioma)
+            lstGst = NGst.RecuperarListaCtas(Me.cadenaConex, ctaGrl, mes, año, Me.segNeg, Me.idioma)
             RellenarDgvDetalles(lstGst)
         Else
 
@@ -112,7 +120,39 @@ Public Class Frm_PlanGastos
         End If
     End Sub
     Private Sub Cmb_Meses_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_Meses.SelectionChangeCommitted
-        Me.mes = MesLetraNumero(Cmb_Meses.Text)
+        Dim mes = MesLetraNumero(Cmb_Meses.Text)
+        If mes < Me.mes And Cmb_Años.Text <= Me.año Then
+            Dgv_Datos.Columns("nuevoPlan").ReadOnly = True
+        ElseIf mes >= Me.mes And Cmb_Años.Text >= Me.año Then
+            Dgv_Datos.Columns("nuevoPlan").ReadOnly = False
+        Else
+            Dgv_Datos.Columns("nuevoPlan").ReadOnly = False
+        End If
+        Me.mes = mes
+        Dgv_Datos.DataSource = Nothing
+        Dgv_Datos.Rows.Clear()
+        RellenarDgvPrincipal()
+    End Sub
+    Private Sub Cmb_Años_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_Años.SelectionChangeCommitted
+        Dim mes = MesLetraNumero(Cmb_Meses.Text)
+        Dim año = Cmb_Años.Text
+        If año < Me.año Then
+            Dgv_Datos.Columns("nuevoPlan").ReadOnly = True
+        ElseIf año = DateTime.Now.ToString("yyyy") And mes < Me.mes Then
+            Dgv_Datos.Columns("nuevoPlan").ReadOnly = True
+        ElseIf mes >= Me.mes And año >= Me.año Then
+            Dgv_Datos.Columns("nuevoPlan").ReadOnly = False
+        Else
+            Dgv_Datos.Columns("nuevoPlan").ReadOnly = False
+        End If
+        Me.año = año
+        Dgv_Datos.DataSource = Nothing
+        Dgv_Datos.Rows.Clear()
+        RellenarDgvPrincipal()
+    End Sub
+    Private Sub Cmb_Depto_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmb_Depto.SelectionChangeCommitted
+        Me.segNeg = Cmb_Depto.SelectedValue
+        RellenarDgvPrincipal()
     End Sub
 #End Region
 #Region "Rellena Cmb"
@@ -173,7 +213,11 @@ Public Class Frm_PlanGastos
         Dim lstaño As New LHorarios()
         Dim NHor As New NHorasExtra()
 
+
         lstaño = NHor.RecuperarAños(Me.cadConex)
+        Dim hora As New Horarios()
+        hora.Año = 2020
+        lstaño.Add(hora)
         With Cmb_Años
             .DataSource = lstaño
             .ValueMember = "Año"
@@ -187,8 +231,8 @@ Public Class Frm_PlanGastos
         Dim fila As Integer = 0
         Dim lstGts As New LGastos()
         Dim NGts As New NGastos()
-        Dim mes As Integer = MesLetraNumero(Cmb_Meses.Text), año As Integer = Cmb_Años.Text
-        lstGts = NGts.RecuperarCuentasGeneral(Me.cadenaConex, Me.idioma, mes, año)
+        Dim mes As Integer = MesLetraNumero(Cmb_Meses.Text), año As Integer = Cmb_Años.Text, segNeg As Integer = Cmb_Depto.SelectedValue
+        lstGts = NGts.RecuperarCuentasGeneral(Me.cadenaConex, Me.idioma, mes, año, segNeg)
 
         Dgv_Principal.DataSource = Nothing
         Dgv_Principal.Rows.Clear()
