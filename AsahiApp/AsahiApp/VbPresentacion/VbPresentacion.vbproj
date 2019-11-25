@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>76</ApplicationRevision>
+    <ApplicationRevision>94</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -142,6 +142,12 @@
     <Compile Include="CapturaOEE.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CapturaOee2.Designer.vb">
+      <DependentUpon>CapturaOee2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CapturaOee2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="conexion.vb" />
     <Compile Include="DataSet\Dts_BonoMensual.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -176,6 +182,12 @@
     </Compile>
     <Compile Include="DataSet\Dts_PrenominaLista.vb">
       <DependentUpon>Dts_PrenominaLista.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DefectoM.Designer.vb">
+      <DependentUpon>DefectoM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DefectoM.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Detalle2oee.Designer.vb">
       <DependentUpon>Detalle2oee.vb</DependentUpon>
@@ -217,6 +229,12 @@
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>
     </Compile>
     <Compile Include="MuestradatosOEE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuestraOeeCompleto.Designer.vb">
+      <DependentUpon>MuestraOeeCompleto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MuestraOeeCompleto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
@@ -340,6 +358,12 @@
     <EmbeddedResource Include="CapturaOEE.resx">
       <DependentUpon>CapturaOEE.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CapturaOee2.resx">
+      <DependentUpon>CapturaOee2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefectoM.resx">
+      <DependentUpon>DefectoM.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Detalle2oee.resx">
       <DependentUpon>Detalle2oee.vb</DependentUpon>
     </EmbeddedResource>
@@ -360,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MuestradatosOEE.resx">
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuestraOeeCompleto.resx">
+      <DependentUpon>MuestraOeeCompleto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />

@@ -76,6 +76,7 @@ Public Class Frm_Principal
         PlanDeGastosToolStripMenuItem.Enabled = False
         PermisosYAutorizacionesToolStripMenuItem.Enabled = False
         AusentismosGlobalToolStripMenuItem.Enabled = False
+        AusentismoGeneralToolStripMenuItem.Enabled = False
 
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
@@ -111,6 +112,7 @@ Public Class Frm_Principal
                 Case "PlanDeGastosToolStripMenuItem" : PlanDeGastosToolStripMenuItem.Enabled = True
                 Case "PermisosYAutorizacionesToolStripMenuItem" : PermisosYAutorizacionesToolStripMenuItem.Enabled = True
                 Case "AusentismosGlobalToolStripMenuItem" : AusentismosGlobalToolStripMenuItem.Enabled = True
+                Case "AusentismoGeneralToolStripMenuItem" : AusentismoGeneralToolStripMenuItem.Enabled = True
             End Select
         Next
     End Sub
@@ -363,18 +365,34 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub AusentismosGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusentismosGlobalToolStripMenuItem.Click
-        'Ausentismo global
-        Dim ag As New m()
-        ag.Show()
+
+        Dim Aus As New frm_ausentismo_global()
+        Aus.Show()
+        'Dim p As New Frm_progres()
+        'p.var = 2
+        'p.Show()
     End Sub
 
     Private Sub CapturaOEEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CapturaOEEToolStripMenuItem.Click
-        CapturaOEE.Show()
+        CapturaOee2.Show()
     End Sub
 
     Private Sub PlanDeGastosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDeGastosToolStripMenuItem.Click
         Dim capGastos As New Frm_PlanGastos(Me.emp)
         capGastos.Show()
+    End Sub
+
+    Private Sub MostrarOEEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MostrarOEEToolStripMenuItem.Click
+        MuestradatosOEE.Show()
+    End Sub
+
+    Private Sub OEECompletoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OEECompletoToolStripMenuItem.Click
+        MuestraOeeCompleto.Show()
+    End Sub
+
+    Private Sub AusentismoGeneralToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusentismoGeneralToolStripMenuItem.Click
+        Dim Ag As New Frm_Ausentismo_Fecha
+        Ag.Show()
     End Sub
 #End Region
 End Class
