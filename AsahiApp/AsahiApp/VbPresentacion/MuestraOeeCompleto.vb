@@ -212,7 +212,7 @@ Public Class MuestraOeeCompleto
 
         dtgv.Columns("Proceso").Width = 80
         dtgv.Columns("Máquina").Width = 75
-        dtgv.Columns("Pieza").Width = 105
+        dtgv.Columns("Pieza").Width = 155
         dtgv.Columns("Molde").Width = 60
         dtgv.Columns("Turno").Width = 45
         dtgv.Columns("Utilización").Width = 85
@@ -241,7 +241,7 @@ Public Class MuestraOeeCompleto
 
         dtgv2.Columns("Proceso").Width = 80
         dtgv2.Columns("Máquina").Width = 75
-        dtgv2.Columns("Pieza").Width = 105
+        dtgv2.Columns("Pieza").Width = 155
         dtgv2.Columns("Molde").Width = 60
         dtgv2.Columns("Turno").Width = 45
         dtgv2.Columns("Utilización").Width = 85
