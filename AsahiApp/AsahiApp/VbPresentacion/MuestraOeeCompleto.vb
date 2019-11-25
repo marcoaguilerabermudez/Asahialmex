@@ -210,15 +210,15 @@ Public Class MuestraOeeCompleto
 
 
 
-        dtgv.Columns("Proceso").Width = 75
-        dtgv.Columns("Máquina").Width = 70
-        dtgv.Columns("Pieza").Width = 100
-        dtgv.Columns("Molde").Width = 55
-        dtgv.Columns("Turno").Width = 40
-        dtgv.Columns("Utilización").Width = 74
-        dtgv.Columns("Rendimiento").Width = 76
-        dtgv.Columns("Calidad").Width = 74
-        dtgv.Columns("OEE").Width = 74
+        dtgv.Columns("Proceso").Width = 80
+        dtgv.Columns("Máquina").Width = 75
+        dtgv.Columns("Pieza").Width = 105
+        dtgv.Columns("Molde").Width = 60
+        dtgv.Columns("Turno").Width = 45
+        dtgv.Columns("Utilización").Width = 85
+        dtgv.Columns("Rendimiento").Width = 89
+        dtgv.Columns("Calidad").Width = 87
+        dtgv.Columns("OEE").Width = 87
 
 
 
@@ -239,15 +239,15 @@ Public Class MuestraOeeCompleto
 
 
 
-        dtgv2.Columns("Proceso").Width = 75
-        dtgv2.Columns("Máquina").Width = 70
-        dtgv2.Columns("Pieza").Width = 100
-        dtgv2.Columns("Molde").Width = 55
-        dtgv2.Columns("Turno").Width = 40
-        dtgv2.Columns("Utilización").Width = 74
-        dtgv2.Columns("Rendimiento").Width = 76
-        dtgv2.Columns("Calidad").Width = 74
-        dtgv2.Columns("OEE").Width = 74
+        dtgv2.Columns("Proceso").Width = 80
+        dtgv2.Columns("Máquina").Width = 75
+        dtgv2.Columns("Pieza").Width = 105
+        dtgv2.Columns("Molde").Width = 60
+        dtgv2.Columns("Turno").Width = 45
+        dtgv2.Columns("Utilización").Width = 85
+        dtgv2.Columns("Rendimiento").Width = 89
+        dtgv2.Columns("Calidad").Width = 87
+        dtgv2.Columns("OEE").Width = 87
 
 
         dtgv2.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
@@ -260,6 +260,11 @@ Public Class MuestraOeeCompleto
 
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        muestragrid()
 
-
+        medidasgrid()
+        muestragrid2()
+        medidasgrid2()
+    End Sub
 End Class
