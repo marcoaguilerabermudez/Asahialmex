@@ -185,28 +185,8 @@ Partial Class CapturaOEE
         Me.Label59 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
-        Me.b9 = New System.Windows.Forms.Button()
-        Me.b8 = New System.Windows.Forms.Button()
-        Me.b7 = New System.Windows.Forms.Button()
-        Me.b6 = New System.Windows.Forms.Button()
-        Me.b5 = New System.Windows.Forms.Button()
-        Me.b4 = New System.Windows.Forms.Button()
-        Me.b3 = New System.Windows.Forms.Button()
-        Me.b2 = New System.Windows.Forms.Button()
-        Me.b1 = New System.Windows.Forms.Button()
-        Me.btn_guardar = New System.Windows.Forms.Button()
-        Me.btn_9 = New System.Windows.Forms.Button()
-        Me.btn_8 = New System.Windows.Forms.Button()
-        Me.btn_7 = New System.Windows.Forms.Button()
-        Me.btn_6 = New System.Windows.Forms.Button()
-        Me.btn_5 = New System.Windows.Forms.Button()
-        Me.btn4 = New System.Windows.Forms.Button()
-        Me.btn_3 = New System.Windows.Forms.Button()
-        Me.btn_2 = New System.Windows.Forms.Button()
-        Me.btn_1 = New System.Windows.Forms.Button()
         Me.PanelF = New System.Windows.Forms.Panel()
         Me.PanelM = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.t9 = New System.Windows.Forms.Label()
         Me.t8 = New System.Windows.Forms.Label()
         Me.t7 = New System.Windows.Forms.Label()
@@ -219,6 +199,26 @@ Partial Class CapturaOEE
         Me.lbl_contador = New System.Windows.Forms.Label()
         Me.Label44 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_1 = New System.Windows.Forms.Button()
+        Me.btn_2 = New System.Windows.Forms.Button()
+        Me.btn_3 = New System.Windows.Forms.Button()
+        Me.btn4 = New System.Windows.Forms.Button()
+        Me.btn_5 = New System.Windows.Forms.Button()
+        Me.btn_6 = New System.Windows.Forms.Button()
+        Me.btn_7 = New System.Windows.Forms.Button()
+        Me.btn_8 = New System.Windows.Forms.Button()
+        Me.btn_9 = New System.Windows.Forms.Button()
+        Me.b1 = New System.Windows.Forms.Button()
+        Me.b2 = New System.Windows.Forms.Button()
+        Me.b9 = New System.Windows.Forms.Button()
+        Me.b3 = New System.Windows.Forms.Button()
+        Me.b8 = New System.Windows.Forms.Button()
+        Me.b4 = New System.Windows.Forms.Button()
+        Me.b7 = New System.Windows.Forms.Button()
+        Me.b5 = New System.Windows.Forms.Button()
+        Me.b6 = New System.Windows.Forms.Button()
+        Me.btn_guardar = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -1432,7 +1432,6 @@ Partial Class CapturaOEE
         '
         Me.cbx_cavidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_cavidad.FormattingEnabled = True
-        Me.cbx_cavidad.Items.AddRange(New Object() {"1", "2", "4", "12"})
         Me.cbx_cavidad.Location = New System.Drawing.Point(741, 28)
         Me.cbx_cavidad.Name = "cbx_cavidad"
         Me.cbx_cavidad.Size = New System.Drawing.Size(96, 21)
@@ -1798,189 +1797,6 @@ Partial Class CapturaOEE
         Me.Label42.Text = "EM"
         Me.Label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'b9
-        '
-        Me.b9.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.b9.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.b9.Location = New System.Drawing.Point(5, 295)
-        Me.b9.Name = "b9"
-        Me.b9.Size = New System.Drawing.Size(23, 20)
-        Me.b9.TabIndex = 25
-        Me.b9.UseVisualStyleBackColor = False
-        '
-        'b8
-        '
-        Me.b8.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.b8.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.b8.Location = New System.Drawing.Point(5, 269)
-        Me.b8.Name = "b8"
-        Me.b8.Size = New System.Drawing.Size(23, 20)
-        Me.b8.TabIndex = 24
-        Me.b8.UseVisualStyleBackColor = False
-        '
-        'b7
-        '
-        Me.b7.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.b7.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.b7.Location = New System.Drawing.Point(5, 240)
-        Me.b7.Name = "b7"
-        Me.b7.Size = New System.Drawing.Size(23, 20)
-        Me.b7.TabIndex = 23
-        Me.b7.UseVisualStyleBackColor = False
-        '
-        'b6
-        '
-        Me.b6.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.b6.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.b6.Location = New System.Drawing.Point(5, 212)
-        Me.b6.Name = "b6"
-        Me.b6.Size = New System.Drawing.Size(23, 20)
-        Me.b6.TabIndex = 22
-        Me.b6.UseVisualStyleBackColor = False
-        '
-        'b5
-        '
-        Me.b5.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.b5.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.b5.Location = New System.Drawing.Point(5, 183)
-        Me.b5.Name = "b5"
-        Me.b5.Size = New System.Drawing.Size(23, 20)
-        Me.b5.TabIndex = 21
-        Me.b5.UseVisualStyleBackColor = False
-        '
-        'b4
-        '
-        Me.b4.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.b4.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.b4.Location = New System.Drawing.Point(5, 155)
-        Me.b4.Name = "b4"
-        Me.b4.Size = New System.Drawing.Size(23, 20)
-        Me.b4.TabIndex = 20
-        Me.b4.UseVisualStyleBackColor = False
-        '
-        'b3
-        '
-        Me.b3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.b3.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.b3.Location = New System.Drawing.Point(5, 129)
-        Me.b3.Name = "b3"
-        Me.b3.Size = New System.Drawing.Size(23, 20)
-        Me.b3.TabIndex = 19
-        Me.b3.UseVisualStyleBackColor = False
-        '
-        'b2
-        '
-        Me.b2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.b2.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.b2.Location = New System.Drawing.Point(5, 102)
-        Me.b2.Name = "b2"
-        Me.b2.Size = New System.Drawing.Size(23, 20)
-        Me.b2.TabIndex = 18
-        Me.b2.UseVisualStyleBackColor = False
-        '
-        'b1
-        '
-        Me.b1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.b1.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.b1.Location = New System.Drawing.Point(5, 73)
-        Me.b1.Name = "b1"
-        Me.b1.Size = New System.Drawing.Size(23, 20)
-        Me.b1.TabIndex = 17
-        Me.b1.UseVisualStyleBackColor = False
-        '
-        'btn_guardar
-        '
-        Me.btn_guardar.Enabled = False
-        Me.btn_guardar.Image = Global.Presentacion.My.Resources.Resources.prenomina
-        Me.btn_guardar.Location = New System.Drawing.Point(8, 642)
-        Me.btn_guardar.Name = "btn_guardar"
-        Me.btn_guardar.Size = New System.Drawing.Size(63, 44)
-        Me.btn_guardar.TabIndex = 117
-        Me.btn_guardar.Text = "Guardar"
-        Me.btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_guardar.UseVisualStyleBackColor = True
-        '
-        'btn_9
-        '
-        Me.btn_9.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_9.Location = New System.Drawing.Point(6, 264)
-        Me.btn_9.Name = "btn_9"
-        Me.btn_9.Size = New System.Drawing.Size(23, 20)
-        Me.btn_9.TabIndex = 115
-        Me.btn_9.UseVisualStyleBackColor = True
-        '
-        'btn_8
-        '
-        Me.btn_8.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_8.Location = New System.Drawing.Point(6, 238)
-        Me.btn_8.Name = "btn_8"
-        Me.btn_8.Size = New System.Drawing.Size(23, 20)
-        Me.btn_8.TabIndex = 114
-        Me.btn_8.UseVisualStyleBackColor = True
-        '
-        'btn_7
-        '
-        Me.btn_7.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_7.Location = New System.Drawing.Point(6, 209)
-        Me.btn_7.Name = "btn_7"
-        Me.btn_7.Size = New System.Drawing.Size(23, 20)
-        Me.btn_7.TabIndex = 113
-        Me.btn_7.UseVisualStyleBackColor = True
-        '
-        'btn_6
-        '
-        Me.btn_6.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_6.Location = New System.Drawing.Point(6, 181)
-        Me.btn_6.Name = "btn_6"
-        Me.btn_6.Size = New System.Drawing.Size(23, 20)
-        Me.btn_6.TabIndex = 112
-        Me.btn_6.UseVisualStyleBackColor = True
-        '
-        'btn_5
-        '
-        Me.btn_5.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_5.Location = New System.Drawing.Point(6, 152)
-        Me.btn_5.Name = "btn_5"
-        Me.btn_5.Size = New System.Drawing.Size(23, 20)
-        Me.btn_5.TabIndex = 111
-        Me.btn_5.UseVisualStyleBackColor = True
-        '
-        'btn4
-        '
-        Me.btn4.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn4.Location = New System.Drawing.Point(6, 124)
-        Me.btn4.Name = "btn4"
-        Me.btn4.Size = New System.Drawing.Size(23, 20)
-        Me.btn4.TabIndex = 110
-        Me.btn4.UseVisualStyleBackColor = True
-        '
-        'btn_3
-        '
-        Me.btn_3.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_3.Location = New System.Drawing.Point(6, 98)
-        Me.btn_3.Name = "btn_3"
-        Me.btn_3.Size = New System.Drawing.Size(23, 20)
-        Me.btn_3.TabIndex = 109
-        Me.btn_3.UseVisualStyleBackColor = True
-        '
-        'btn_2
-        '
-        Me.btn_2.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_2.Location = New System.Drawing.Point(6, 71)
-        Me.btn_2.Name = "btn_2"
-        Me.btn_2.Size = New System.Drawing.Size(23, 20)
-        Me.btn_2.TabIndex = 108
-        Me.btn_2.UseVisualStyleBackColor = True
-        '
-        'btn_1
-        '
-        Me.btn_1.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.btn_1.Location = New System.Drawing.Point(6, 42)
-        Me.btn_1.Name = "btn_1"
-        Me.btn_1.Size = New System.Drawing.Size(23, 20)
-        Me.btn_1.TabIndex = 107
-        Me.btn_1.UseVisualStyleBackColor = True
-        '
         'PanelF
         '
         Me.PanelF.Controls.Add(Me.Label39)
@@ -2016,16 +1832,6 @@ Partial Class CapturaOEE
         Me.PanelM.Size = New System.Drawing.Size(37, 290)
         Me.PanelM.TabIndex = 153
         Me.PanelM.Visible = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Red
-        Me.Button1.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
-        Me.Button1.Location = New System.Drawing.Point(1106, 474)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(34, 43)
-        Me.Button1.TabIndex = 154
-        Me.Button1.UseVisualStyleBackColor = False
         '
         't9
         '
@@ -2138,6 +1944,199 @@ Partial Class CapturaOEE
         Me.Button2.Text = "Nuevo"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Red
+        Me.Button1.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.Button1.Location = New System.Drawing.Point(1106, 474)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(34, 43)
+        Me.Button1.TabIndex = 154
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'btn_1
+        '
+        Me.btn_1.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_1.Location = New System.Drawing.Point(6, 42)
+        Me.btn_1.Name = "btn_1"
+        Me.btn_1.Size = New System.Drawing.Size(23, 20)
+        Me.btn_1.TabIndex = 107
+        Me.btn_1.UseVisualStyleBackColor = True
+        '
+        'btn_2
+        '
+        Me.btn_2.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_2.Location = New System.Drawing.Point(6, 71)
+        Me.btn_2.Name = "btn_2"
+        Me.btn_2.Size = New System.Drawing.Size(23, 20)
+        Me.btn_2.TabIndex = 108
+        Me.btn_2.UseVisualStyleBackColor = True
+        '
+        'btn_3
+        '
+        Me.btn_3.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_3.Location = New System.Drawing.Point(6, 98)
+        Me.btn_3.Name = "btn_3"
+        Me.btn_3.Size = New System.Drawing.Size(23, 20)
+        Me.btn_3.TabIndex = 109
+        Me.btn_3.UseVisualStyleBackColor = True
+        '
+        'btn4
+        '
+        Me.btn4.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn4.Location = New System.Drawing.Point(6, 124)
+        Me.btn4.Name = "btn4"
+        Me.btn4.Size = New System.Drawing.Size(23, 20)
+        Me.btn4.TabIndex = 110
+        Me.btn4.UseVisualStyleBackColor = True
+        '
+        'btn_5
+        '
+        Me.btn_5.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_5.Location = New System.Drawing.Point(6, 152)
+        Me.btn_5.Name = "btn_5"
+        Me.btn_5.Size = New System.Drawing.Size(23, 20)
+        Me.btn_5.TabIndex = 111
+        Me.btn_5.UseVisualStyleBackColor = True
+        '
+        'btn_6
+        '
+        Me.btn_6.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_6.Location = New System.Drawing.Point(6, 181)
+        Me.btn_6.Name = "btn_6"
+        Me.btn_6.Size = New System.Drawing.Size(23, 20)
+        Me.btn_6.TabIndex = 112
+        Me.btn_6.UseVisualStyleBackColor = True
+        '
+        'btn_7
+        '
+        Me.btn_7.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_7.Location = New System.Drawing.Point(6, 209)
+        Me.btn_7.Name = "btn_7"
+        Me.btn_7.Size = New System.Drawing.Size(23, 20)
+        Me.btn_7.TabIndex = 113
+        Me.btn_7.UseVisualStyleBackColor = True
+        '
+        'btn_8
+        '
+        Me.btn_8.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_8.Location = New System.Drawing.Point(6, 238)
+        Me.btn_8.Name = "btn_8"
+        Me.btn_8.Size = New System.Drawing.Size(23, 20)
+        Me.btn_8.TabIndex = 114
+        Me.btn_8.UseVisualStyleBackColor = True
+        '
+        'btn_9
+        '
+        Me.btn_9.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.btn_9.Location = New System.Drawing.Point(6, 264)
+        Me.btn_9.Name = "btn_9"
+        Me.btn_9.Size = New System.Drawing.Size(23, 20)
+        Me.btn_9.TabIndex = 115
+        Me.btn_9.UseVisualStyleBackColor = True
+        '
+        'b1
+        '
+        Me.b1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.b1.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.b1.Location = New System.Drawing.Point(5, 73)
+        Me.b1.Name = "b1"
+        Me.b1.Size = New System.Drawing.Size(23, 20)
+        Me.b1.TabIndex = 17
+        Me.b1.UseVisualStyleBackColor = False
+        '
+        'b2
+        '
+        Me.b2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.b2.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.b2.Location = New System.Drawing.Point(5, 102)
+        Me.b2.Name = "b2"
+        Me.b2.Size = New System.Drawing.Size(23, 20)
+        Me.b2.TabIndex = 18
+        Me.b2.UseVisualStyleBackColor = False
+        '
+        'b9
+        '
+        Me.b9.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.b9.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.b9.Location = New System.Drawing.Point(5, 295)
+        Me.b9.Name = "b9"
+        Me.b9.Size = New System.Drawing.Size(23, 20)
+        Me.b9.TabIndex = 25
+        Me.b9.UseVisualStyleBackColor = False
+        '
+        'b3
+        '
+        Me.b3.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.b3.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.b3.Location = New System.Drawing.Point(5, 129)
+        Me.b3.Name = "b3"
+        Me.b3.Size = New System.Drawing.Size(23, 20)
+        Me.b3.TabIndex = 19
+        Me.b3.UseVisualStyleBackColor = False
+        '
+        'b8
+        '
+        Me.b8.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.b8.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.b8.Location = New System.Drawing.Point(5, 269)
+        Me.b8.Name = "b8"
+        Me.b8.Size = New System.Drawing.Size(23, 20)
+        Me.b8.TabIndex = 24
+        Me.b8.UseVisualStyleBackColor = False
+        '
+        'b4
+        '
+        Me.b4.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.b4.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.b4.Location = New System.Drawing.Point(5, 155)
+        Me.b4.Name = "b4"
+        Me.b4.Size = New System.Drawing.Size(23, 20)
+        Me.b4.TabIndex = 20
+        Me.b4.UseVisualStyleBackColor = False
+        '
+        'b7
+        '
+        Me.b7.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.b7.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.b7.Location = New System.Drawing.Point(5, 240)
+        Me.b7.Name = "b7"
+        Me.b7.Size = New System.Drawing.Size(23, 20)
+        Me.b7.TabIndex = 23
+        Me.b7.UseVisualStyleBackColor = False
+        '
+        'b5
+        '
+        Me.b5.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.b5.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.b5.Location = New System.Drawing.Point(5, 183)
+        Me.b5.Name = "b5"
+        Me.b5.Size = New System.Drawing.Size(23, 20)
+        Me.b5.TabIndex = 21
+        Me.b5.UseVisualStyleBackColor = False
+        '
+        'b6
+        '
+        Me.b6.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.b6.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__1_
+        Me.b6.Location = New System.Drawing.Point(5, 212)
+        Me.b6.Name = "b6"
+        Me.b6.Size = New System.Drawing.Size(23, 20)
+        Me.b6.TabIndex = 22
+        Me.b6.UseVisualStyleBackColor = False
+        '
+        'btn_guardar
+        '
+        Me.btn_guardar.Enabled = False
+        Me.btn_guardar.Image = Global.Presentacion.My.Resources.Resources.prenomina
+        Me.btn_guardar.Location = New System.Drawing.Point(8, 642)
+        Me.btn_guardar.Name = "btn_guardar"
+        Me.btn_guardar.Size = New System.Drawing.Size(63, 44)
+        Me.btn_guardar.TabIndex = 117
+        Me.btn_guardar.Text = "Guardar"
+        Me.btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_guardar.UseVisualStyleBackColor = True
         '
         'CapturaOEE
         '

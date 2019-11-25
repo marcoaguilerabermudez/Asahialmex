@@ -588,7 +588,7 @@ Public Class CapturaOEE
 
         btn_guardar.Enabled = True
 
-        'CT()
+        CT()
         cantidadxhora()
         Try
             lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
@@ -787,7 +787,7 @@ BEGIN
   declare @id_pieza as int
   set @id_pieza = (select Id_pieza from [SistemaAAM].[dbo].Pro_Cat_Pieza where Nombre = '" & cbx_pieza.Text & "')
 
-select top 1 ct
+select top 1 ct, cavidad
 FROM [SistemaAAM].[dbo].[Standar_fundicion] es
 where 
  es.Id_pieza = @id_pieza
@@ -799,7 +799,7 @@ END
 ELSE
 BEGIN
 
-            Select top 1 CT
+            Select top 1 CT, 1
             From [SistemaAAM].[dbo].[Standar_maquinado] es
             Join [SistemaAAM].[dbo].Pro_Cat_Pieza pie
             On es.[id_pieza] = pie.Id_pieza
@@ -834,6 +834,20 @@ END
         Catch ex As Exception
             'MessageBox.Show("Seleccione otra cavidad", "¡Aviso!")
             lbl_v4.Text = "0"
+            'cbx_cavidad.Items.Add(1)
+            'cbx_cavidad.Items.Add(2)
+            'cbx_cavidad.Items.Add(3)
+            'cbx_cavidad.Items.Add(4)
+            'cbx_cavidad.Items.Add(5)
+            'cbx_cavidad.Items.Add(6)
+            'cbx_cavidad.Items.Add(7)
+            'cbx_cavidad.Items.Add(8)
+            'cbx_cavidad.Items.Add(9)
+            'cbx_cavidad.Items.Add(10)
+            'cbx_cavidad.Items.Add(11)
+            'cbx_cavidad.Items.Add(12)
+
+
             Cn.Close()
 
         End Try
@@ -1018,13 +1032,13 @@ END
         If cbx_proceso.Text = "FUNDICION" Then
 
             ''llenacombocavidad()
-
+            CT()
         Else
 
             Try
                 ' llenacombocavidad()
                 cbx_cavidad.Text = "1"
-                'CT()
+
                 ''cantidadxhora()
 
                 lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
@@ -1039,7 +1053,7 @@ END
         If cbx_proceso.Text = "FUNDICION" Then
 
             Try
-                'CT()
+                CT()
                 cantidadxhora()
 
                 lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
@@ -1048,9 +1062,6 @@ END
             End Try
 
         Else
-
-
-
         End If
     End Sub
 
@@ -1655,6 +1666,16 @@ END
         btn_guardar.Enabled = False
 
     End Sub
+
+    Private Sub cbx_maquina_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbx_maquina.SelectedIndexChanged
+        CT()
+    End Sub
+
+    Private Sub cbx_pieza_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbx_pieza.SelectedIndexChanged
+        CT()
+    End Sub
+
+
 End Class
 
 Module Modulo_detalle
