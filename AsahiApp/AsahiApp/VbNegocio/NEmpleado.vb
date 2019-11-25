@@ -25,4 +25,8 @@ Public Class NEmpleado
         Dim DEmp As New DEmpleado()
         Return DEmp.RecuperarEmpleadosExportar(cadenaConex, fi, ff)
     End Function
+    Public Function EmpleadosRecuperar(ByVal cadConex As String, ByVal objEmp As Empleado) As Empleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.EmpleadosRecuperarSG(cadConex, objEmp)
+    End Function
 End Class

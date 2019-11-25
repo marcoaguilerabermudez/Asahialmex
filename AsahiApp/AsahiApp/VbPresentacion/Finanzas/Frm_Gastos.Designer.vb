@@ -22,6 +22,7 @@ Partial Class Frm_Gastos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Gastos))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Btn_Reporte = New System.Windows.Forms.Button()
@@ -63,6 +64,16 @@ Partial Class Frm_Gastos
         Me.porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Dgv_GastosGlobal = New System.Windows.Forms.DataGridView()
+        Me.noCta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.costoUnit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cosCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cosPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.segNeg = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Lbl_TAPorcentaje = New System.Windows.Forms.Label()
@@ -108,16 +119,7 @@ Partial Class Frm_Gastos
         Me.Lbl_Ventas = New System.Windows.Forms.Label()
         Me.Lbl_Actual = New System.Windows.Forms.Label()
         Me.Lbl_Real = New System.Windows.Forms.Label()
-        Me.noCta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.costoUnit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cosCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cosPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.segNeg = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.Pct_Limpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
@@ -503,6 +505,78 @@ Partial Class Frm_Gastos
         Me.Dgv_GastosGlobal.Size = New System.Drawing.Size(638, 357)
         Me.Dgv_GastosGlobal.TabIndex = 0
         '
+        'noCta
+        '
+        Me.noCta.HeaderText = "No Cuenta"
+        Me.noCta.Name = "noCta"
+        Me.noCta.ReadOnly = True
+        Me.noCta.Width = 60
+        '
+        'cta
+        '
+        Me.cta.HeaderText = "Cuenta"
+        Me.cta.Name = "cta"
+        Me.cta.ReadOnly = True
+        Me.cta.Width = 170
+        '
+        'idCompra
+        '
+        Me.idCompra.HeaderText = "Compra"
+        Me.idCompra.Name = "idCompra"
+        Me.idCompra.ReadOnly = True
+        Me.idCompra.Width = 45
+        '
+        'cantCompra
+        '
+        Me.cantCompra.HeaderText = "Cantidad Compra"
+        Me.cantCompra.Name = "cantCompra"
+        Me.cantCompra.ReadOnly = True
+        Me.cantCompra.Width = 65
+        '
+        'costoUnit
+        '
+        Me.costoUnit.HeaderText = "Costo Unitario"
+        Me.costoUnit.Name = "costoUnit"
+        Me.costoUnit.ReadOnly = True
+        Me.costoUnit.Width = 80
+        '
+        'cosCompra
+        '
+        Me.cosCompra.HeaderText = "Costo Compra"
+        Me.cosCompra.Name = "cosCompra"
+        Me.cosCompra.ReadOnly = True
+        Me.cosCompra.Width = 80
+        '
+        'idPoliza
+        '
+        Me.idPoliza.HeaderText = "Poliza"
+        Me.idPoliza.Name = "idPoliza"
+        Me.idPoliza.ReadOnly = True
+        Me.idPoliza.Visible = False
+        Me.idPoliza.Width = 125
+        '
+        'cosPoliza
+        '
+        Me.cosPoliza.HeaderText = "Costo Poliza"
+        Me.cosPoliza.Name = "cosPoliza"
+        Me.cosPoliza.ReadOnly = True
+        Me.cosPoliza.Visible = False
+        Me.cosPoliza.Width = 125
+        '
+        'cantPoliza
+        '
+        Me.cantPoliza.HeaderText = "Cantidad Poliza"
+        Me.cantPoliza.Name = "cantPoliza"
+        Me.cantPoliza.ReadOnly = True
+        Me.cantPoliza.Visible = False
+        '
+        'segNeg
+        '
+        Me.segNeg.HeaderText = "Segmento Negocio"
+        Me.segNeg.Name = "segNeg"
+        Me.segNeg.ReadOnly = True
+        Me.segNeg.Width = 110
+        '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.Panel12)
@@ -534,10 +608,10 @@ Partial Class Frm_Gastos
         '
         Me.Lbl_TAPorcentaje.AutoSize = True
         Me.Lbl_TAPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_TAPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TAPorcentaje.Location = New System.Drawing.Point(544, 8)
+        Me.Lbl_TAPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TAPorcentaje.Location = New System.Drawing.Point(513, 6)
         Me.Lbl_TAPorcentaje.Name = "Lbl_TAPorcentaje"
-        Me.Lbl_TAPorcentaje.Size = New System.Drawing.Size(2, 15)
+        Me.Lbl_TAPorcentaje.Size = New System.Drawing.Size(2, 17)
         Me.Lbl_TAPorcentaje.TabIndex = 14
         Me.Lbl_TAPorcentaje.Visible = False
         '
@@ -545,10 +619,10 @@ Partial Class Frm_Gastos
         '
         Me.Lbl_TADif.AutoSize = True
         Me.Lbl_TADif.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_TADif.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TADif.Location = New System.Drawing.Point(446, 7)
+        Me.Lbl_TADif.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TADif.Location = New System.Drawing.Point(414, 6)
         Me.Lbl_TADif.Name = "Lbl_TADif"
-        Me.Lbl_TADif.Size = New System.Drawing.Size(2, 15)
+        Me.Lbl_TADif.Size = New System.Drawing.Size(2, 17)
         Me.Lbl_TADif.TabIndex = 13
         Me.Lbl_TADif.Visible = False
         '
@@ -556,10 +630,10 @@ Partial Class Frm_Gastos
         '
         Me.Lbl_TAReal.AutoSize = True
         Me.Lbl_TAReal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_TAReal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TAReal.Location = New System.Drawing.Point(342, 7)
+        Me.Lbl_TAReal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TAReal.Location = New System.Drawing.Point(314, 6)
         Me.Lbl_TAReal.Name = "Lbl_TAReal"
-        Me.Lbl_TAReal.Size = New System.Drawing.Size(2, 15)
+        Me.Lbl_TAReal.Size = New System.Drawing.Size(2, 17)
         Me.Lbl_TAReal.TabIndex = 12
         Me.Lbl_TAReal.Visible = False
         '
@@ -567,10 +641,10 @@ Partial Class Frm_Gastos
         '
         Me.Lbl_TAPLan.AutoSize = True
         Me.Lbl_TAPLan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_TAPLan.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TAPLan.Location = New System.Drawing.Point(242, 8)
+        Me.Lbl_TAPLan.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TAPLan.Location = New System.Drawing.Point(216, 6)
         Me.Lbl_TAPLan.Name = "Lbl_TAPLan"
-        Me.Lbl_TAPLan.Size = New System.Drawing.Size(2, 15)
+        Me.Lbl_TAPLan.Size = New System.Drawing.Size(2, 17)
         Me.Lbl_TAPLan.TabIndex = 11
         Me.Lbl_TAPLan.Visible = False
         '
@@ -579,7 +653,7 @@ Partial Class Frm_Gastos
         Me.Lbl_TPorcentaje.AutoSize = True
         Me.Lbl_TPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Lbl_TPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TPorcentaje.Location = New System.Drawing.Point(544, 8)
+        Me.Lbl_TPorcentaje.Location = New System.Drawing.Point(544, 7)
         Me.Lbl_TPorcentaje.Name = "Lbl_TPorcentaje"
         Me.Lbl_TPorcentaje.Size = New System.Drawing.Size(2, 15)
         Me.Lbl_TPorcentaje.TabIndex = 10
@@ -609,7 +683,7 @@ Partial Class Frm_Gastos
         Me.Lbl_TPlan.AutoSize = True
         Me.Lbl_TPlan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Lbl_TPlan.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TPlan.Location = New System.Drawing.Point(242, 8)
+        Me.Lbl_TPlan.Location = New System.Drawing.Point(242, 7)
         Me.Lbl_TPlan.Name = "Lbl_TPlan"
         Me.Lbl_TPlan.Size = New System.Drawing.Size(2, 15)
         Me.Lbl_TPlan.TabIndex = 7
@@ -629,39 +703,40 @@ Partial Class Frm_Gastos
         Me.Panel11.Controls.Add(Me.Lbl_CostoUnitTotal)
         Me.Panel11.Controls.Add(Me.Lbl_CantidadTot)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel11.Location = New System.Drawing.Point(911, 0)
+        Me.Panel11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel11.Location = New System.Drawing.Point(903, 0)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(358, 29)
+        Me.Panel11.Size = New System.Drawing.Size(366, 29)
         Me.Panel11.TabIndex = 1
         '
         'Lbl_CotoTotal
         '
         Me.Lbl_CotoTotal.AutoSize = True
         Me.Lbl_CotoTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_CotoTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_CotoTotal.Location = New System.Drawing.Point(149, 8)
+        Me.Lbl_CotoTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_CotoTotal.Location = New System.Drawing.Point(153, 8)
         Me.Lbl_CotoTotal.Name = "Lbl_CotoTotal"
-        Me.Lbl_CotoTotal.Size = New System.Drawing.Size(2, 15)
+        Me.Lbl_CotoTotal.Size = New System.Drawing.Size(2, 17)
         Me.Lbl_CotoTotal.TabIndex = 6
         '
         'Lbl_CostoUnitTotal
         '
         Me.Lbl_CostoUnitTotal.AutoSize = True
         Me.Lbl_CostoUnitTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_CostoUnitTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_CostoUnitTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_CostoUnitTotal.Location = New System.Drawing.Point(74, 8)
         Me.Lbl_CostoUnitTotal.Name = "Lbl_CostoUnitTotal"
-        Me.Lbl_CostoUnitTotal.Size = New System.Drawing.Size(2, 15)
+        Me.Lbl_CostoUnitTotal.Size = New System.Drawing.Size(2, 17)
         Me.Lbl_CostoUnitTotal.TabIndex = 5
         '
         'Lbl_CantidadTot
         '
         Me.Lbl_CantidadTot.AutoSize = True
         Me.Lbl_CantidadTot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Lbl_CantidadTot.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_CantidadTot.Location = New System.Drawing.Point(13, 8)
+        Me.Lbl_CantidadTot.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_CantidadTot.Location = New System.Drawing.Point(10, 8)
         Me.Lbl_CantidadTot.Name = "Lbl_CantidadTot"
-        Me.Lbl_CantidadTot.Size = New System.Drawing.Size(2, 15)
+        Me.Lbl_CantidadTot.Size = New System.Drawing.Size(2, 17)
         Me.Lbl_CantidadTot.TabIndex = 4
         '
         'Panel3
@@ -1001,77 +1076,8 @@ Partial Class Frm_Gastos
         Me.Lbl_Real.TabIndex = 11
         Me.Lbl_Real.Text = "Real"
         '
-        'noCta
+        'Timer1
         '
-        Me.noCta.HeaderText = "No Cuenta"
-        Me.noCta.Name = "noCta"
-        Me.noCta.ReadOnly = True
-        Me.noCta.Width = 60
-        '
-        'cta
-        '
-        Me.cta.HeaderText = "Cuenta"
-        Me.cta.Name = "cta"
-        Me.cta.ReadOnly = True
-        Me.cta.Width = 170
-        '
-        'idCompra
-        '
-        Me.idCompra.HeaderText = "Compra"
-        Me.idCompra.Name = "idCompra"
-        Me.idCompra.ReadOnly = True
-        Me.idCompra.Width = 45
-        '
-        'cantCompra
-        '
-        Me.cantCompra.HeaderText = "Cantidad Compra"
-        Me.cantCompra.Name = "cantCompra"
-        Me.cantCompra.ReadOnly = True
-        Me.cantCompra.Width = 75
-        '
-        'costoUnit
-        '
-        Me.costoUnit.HeaderText = "Costo Unitario"
-        Me.costoUnit.Name = "costoUnit"
-        Me.costoUnit.ReadOnly = True
-        Me.costoUnit.Width = 75
-        '
-        'cosCompra
-        '
-        Me.cosCompra.HeaderText = "Costo Compra"
-        Me.cosCompra.Name = "cosCompra"
-        Me.cosCompra.ReadOnly = True
-        Me.cosCompra.Width = 75
-        '
-        'idPoliza
-        '
-        Me.idPoliza.HeaderText = "Poliza"
-        Me.idPoliza.Name = "idPoliza"
-        Me.idPoliza.ReadOnly = True
-        Me.idPoliza.Visible = False
-        Me.idPoliza.Width = 125
-        '
-        'cosPoliza
-        '
-        Me.cosPoliza.HeaderText = "Costo Poliza"
-        Me.cosPoliza.Name = "cosPoliza"
-        Me.cosPoliza.ReadOnly = True
-        Me.cosPoliza.Visible = False
-        Me.cosPoliza.Width = 125
-        '
-        'cantPoliza
-        '
-        Me.cantPoliza.HeaderText = "Cantidad Poliza"
-        Me.cantPoliza.Name = "cantPoliza"
-        Me.cantPoliza.ReadOnly = True
-        Me.cantPoliza.Visible = False
-        '
-        'segNeg
-        '
-        Me.segNeg.HeaderText = "Segmento Negocio"
-        Me.segNeg.Name = "segNeg"
-        Me.segNeg.ReadOnly = True
-        Me.segNeg.Width = 110
         '
         'Frm_Gastos
         '
@@ -1195,6 +1201,7 @@ Partial Class Frm_Gastos
     Friend WithEvents Lbl_TAReal As Label
     Friend WithEvents Lbl_TAPLan As Label
     Friend WithEvents Btn_Reporte As Button
+    Friend WithEvents Timer1 As Timer
     Friend WithEvents noCta As DataGridViewTextBoxColumn
     Friend WithEvents cta As DataGridViewTextBoxColumn
     Friend WithEvents idCompra As DataGridViewTextBoxColumn
