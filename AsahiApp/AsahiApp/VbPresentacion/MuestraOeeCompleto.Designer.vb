@@ -39,7 +39,8 @@ Partial Class MuestraOeeCompleto
         '
         Me.dtgv.AllowUserToAddRows = False
         Me.dtgv.AllowUserToDeleteRows = False
-        Me.dtgv.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.dtgv.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dtgv.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.dtgv.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -80,7 +81,8 @@ Partial Class MuestraOeeCompleto
         '
         Me.dtgv2.AllowUserToAddRows = False
         Me.dtgv2.AllowUserToDeleteRows = False
-        Me.dtgv2.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.dtgv2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dtgv2.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.dtgv2.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -101,7 +103,7 @@ Partial Class MuestraOeeCompleto
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dtgv2.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dtgv2.Location = New System.Drawing.Point(690, 53)
+        Me.dtgv2.Location = New System.Drawing.Point(854, 53)
         Me.dtgv2.Name = "dtgv2"
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
