@@ -16,13 +16,9 @@ Public Class MuestraOeeCompleto
     Sub muestragrid()
         Try
             CapturaOEE.Cn.Open()
-
-
             Dim da As New SqlDataAdapter("Sp_reportegeneraloee", CapturaOEE.Cn)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
-
             da.SelectCommand.Parameters.AddWithValue("@var", 1)
-
             Dim dt As New DataTable
             da.Fill(dt)
 
@@ -207,9 +203,6 @@ Public Class MuestraOeeCompleto
 
     Sub medidasgrid()
 
-
-
-
         dtgv.Columns("Proceso").Width = 80
         dtgv.Columns("Máquina").Width = 90
         dtgv.Columns("Pieza").Width = 160
@@ -230,14 +223,9 @@ Public Class MuestraOeeCompleto
         dtgv.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
         dtgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue
 
-
-
     End Sub
 
     Sub medidasgrid2()
-
-
-
 
         dtgv2.Columns("Proceso").Width = 80
         dtgv2.Columns("Máquina").Width = 90
