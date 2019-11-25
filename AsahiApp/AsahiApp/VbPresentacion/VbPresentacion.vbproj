@@ -142,6 +142,12 @@
     <Compile Include="CapturaOEE.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CapturaOee2.Designer.vb">
+      <DependentUpon>CapturaOee2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CapturaOee2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="conexion.vb" />
     <Compile Include="DataSet\Dts_BonoMensual.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -351,6 +357,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CapturaOEE.resx">
       <DependentUpon>CapturaOEE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapturaOee2.resx">
+      <DependentUpon>CapturaOee2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DefectoM.resx">
       <DependentUpon>DefectoM.vb</DependentUpon>

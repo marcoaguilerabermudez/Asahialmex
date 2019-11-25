@@ -37,9 +37,9 @@ Partial Class Detalle2oee
         Me.lbl_defecto = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_cantidad = New System.Windows.Forms.TextBox()
-        Me.btn_1 = New System.Windows.Forms.Button()
         Me.btn_avanza = New System.Windows.Forms.Button()
         Me.btn_retrocede = New System.Windows.Forms.Button()
+        Me.btn_1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label10
@@ -50,6 +50,7 @@ Partial Class Detalle2oee
         Me.Label10.Size = New System.Drawing.Size(46, 13)
         Me.Label10.TabIndex = 125
         Me.Label10.Text = "Proceso"
+        Me.Label10.Visible = False
         '
         'lbl_proceso
         '
@@ -59,6 +60,7 @@ Partial Class Detalle2oee
         Me.lbl_proceso.Size = New System.Drawing.Size(35, 13)
         Me.lbl_proceso.TabIndex = 124
         Me.lbl_proceso.Text = "Turno"
+        Me.lbl_proceso.Visible = False
         '
         'Label9
         '
@@ -68,6 +70,7 @@ Partial Class Detalle2oee
         Me.Label9.Size = New System.Drawing.Size(97, 13)
         Me.Label9.TabIndex = 123
         Me.Label9.Text = "Cantidad de piezas"
+        Me.Label9.Visible = False
         '
         'lbl_piezas
         '
@@ -77,6 +80,7 @@ Partial Class Detalle2oee
         Me.lbl_piezas.Size = New System.Drawing.Size(35, 13)
         Me.lbl_piezas.TabIndex = 122
         Me.lbl_piezas.Text = "Turno"
+        Me.lbl_piezas.Visible = False
         '
         'Label8
         '
@@ -86,6 +90,7 @@ Partial Class Detalle2oee
         Me.Label8.Size = New System.Drawing.Size(35, 13)
         Me.Label8.TabIndex = 121
         Me.Label8.Text = "Turno"
+        Me.Label8.Visible = False
         '
         'Label2
         '
@@ -95,6 +100,7 @@ Partial Class Detalle2oee
         Me.Label2.Size = New System.Drawing.Size(30, 13)
         Me.Label2.TabIndex = 120
         Me.Label2.Text = "Hora"
+        Me.Label2.Visible = False
         '
         'Label1
         '
@@ -104,6 +110,7 @@ Partial Class Detalle2oee
         Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 119
         Me.Label1.Text = "Fecha"
+        Me.Label1.Visible = False
         '
         'lbl_turno
         '
@@ -113,6 +120,7 @@ Partial Class Detalle2oee
         Me.lbl_turno.Size = New System.Drawing.Size(35, 13)
         Me.lbl_turno.TabIndex = 118
         Me.lbl_turno.Text = "Turno"
+        Me.lbl_turno.Visible = False
         '
         'lbl_hora
         '
@@ -122,6 +130,7 @@ Partial Class Detalle2oee
         Me.lbl_hora.Size = New System.Drawing.Size(30, 13)
         Me.lbl_hora.TabIndex = 117
         Me.lbl_hora.Text = "Hora"
+        Me.lbl_hora.Visible = False
         '
         'lbl_fecha
         '
@@ -131,6 +140,7 @@ Partial Class Detalle2oee
         Me.lbl_fecha.Size = New System.Drawing.Size(37, 13)
         Me.lbl_fecha.TabIndex = 116
         Me.lbl_fecha.Text = "Fecha"
+        Me.lbl_fecha.Visible = False
         '
         'Label5
         '
@@ -180,6 +190,26 @@ Partial Class Detalle2oee
         Me.txt_cantidad.Text = "0"
         Me.txt_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
+        'btn_avanza
+        '
+        Me.btn_avanza.Location = New System.Drawing.Point(459, 198)
+        Me.btn_avanza.Name = "btn_avanza"
+        Me.btn_avanza.Size = New System.Drawing.Size(63, 56)
+        Me.btn_avanza.TabIndex = 133
+        Me.btn_avanza.Text = "Siguiente"
+        Me.btn_avanza.UseVisualStyleBackColor = True
+        Me.btn_avanza.Visible = False
+        '
+        'btn_retrocede
+        '
+        Me.btn_retrocede.Location = New System.Drawing.Point(363, 198)
+        Me.btn_retrocede.Name = "btn_retrocede"
+        Me.btn_retrocede.Size = New System.Drawing.Size(63, 56)
+        Me.btn_retrocede.TabIndex = 134
+        Me.btn_retrocede.Text = "Anterior"
+        Me.btn_retrocede.UseVisualStyleBackColor = True
+        Me.btn_retrocede.Visible = False
+        '
         'btn_1
         '
         Me.btn_1.Enabled = False
@@ -191,24 +221,6 @@ Partial Class Detalle2oee
         Me.btn_1.Text = "Guardar"
         Me.btn_1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_1.UseVisualStyleBackColor = True
-        '
-        'btn_avanza
-        '
-        Me.btn_avanza.Location = New System.Drawing.Point(459, 198)
-        Me.btn_avanza.Name = "btn_avanza"
-        Me.btn_avanza.Size = New System.Drawing.Size(63, 56)
-        Me.btn_avanza.TabIndex = 133
-        Me.btn_avanza.Text = "Siguiente"
-        Me.btn_avanza.UseVisualStyleBackColor = True
-        '
-        'btn_retrocede
-        '
-        Me.btn_retrocede.Location = New System.Drawing.Point(363, 198)
-        Me.btn_retrocede.Name = "btn_retrocede"
-        Me.btn_retrocede.Size = New System.Drawing.Size(63, 56)
-        Me.btn_retrocede.TabIndex = 134
-        Me.btn_retrocede.Text = "Anterior"
-        Me.btn_retrocede.UseVisualStyleBackColor = True
         '
         'Detalle2oee
         '
