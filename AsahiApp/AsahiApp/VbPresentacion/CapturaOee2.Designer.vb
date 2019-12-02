@@ -61,7 +61,6 @@ Partial Class CapturaOee2
         Me.lbl_topr = New System.Windows.Forms.Label()
         Me.lbl_png = New System.Windows.Forms.Label()
         Me.lbl_pc = New System.Windows.Forms.Label()
-        Me.lbl_ct = New System.Windows.Forms.Label()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.Defecto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DefectoG = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -74,15 +73,16 @@ Partial Class CapturaOee2
         Me.btn_agregar = New System.Windows.Forms.Button()
         Me.txt_tpza = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lbl_ct2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.lbl_ct2 = New System.Windows.Forms.Label()
+        Me.lbl_ct = New System.Windows.Forms.TextBox()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cbx_cavidad
         '
-        Me.cbx_cavidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_cavidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
         Me.cbx_cavidad.FormattingEnabled = True
         Me.cbx_cavidad.Location = New System.Drawing.Point(774, 27)
         Me.cbx_cavidad.Name = "cbx_cavidad"
@@ -446,15 +446,6 @@ Partial Class CapturaOee2
         Me.lbl_pc.Size = New System.Drawing.Size(0, 16)
         Me.lbl_pc.TabIndex = 157
         '
-        'lbl_ct
-        '
-        Me.lbl_ct.AutoSize = True
-        Me.lbl_ct.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ct.Location = New System.Drawing.Point(719, 145)
-        Me.lbl_ct.Name = "lbl_ct"
-        Me.lbl_ct.Size = New System.Drawing.Size(0, 16)
-        Me.lbl_ct.TabIndex = 155
-        '
         'dtgvp
         '
         Me.dtgvp.AllowUserToAddRows = False
@@ -560,16 +551,6 @@ Partial Class CapturaOee2
         Me.Panel1.Size = New System.Drawing.Size(824, 282)
         Me.Panel1.TabIndex = 164
         '
-        'lbl_ct2
-        '
-        Me.lbl_ct2.AutoSize = True
-        Me.lbl_ct2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ct2.Location = New System.Drawing.Point(791, 145)
-        Me.lbl_ct2.Name = "lbl_ct2"
-        Me.lbl_ct2.Size = New System.Drawing.Size(16, 16)
-        Me.lbl_ct2.TabIndex = 165
-        Me.lbl_ct2.Text = "0"
-        '
         'Button2
         '
         Me.Button2.Image = Global.Presentacion.My.Resources.Resources._1486504328_bullet_list_menu_lines_points_items_options_81334
@@ -581,17 +562,35 @@ Partial Class CapturaOee2
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'lbl_ct2
+        '
+        Me.lbl_ct2.AutoSize = True
+        Me.lbl_ct2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_ct2.Location = New System.Drawing.Point(791, 145)
+        Me.lbl_ct2.Name = "lbl_ct2"
+        Me.lbl_ct2.Size = New System.Drawing.Size(16, 16)
+        Me.lbl_ct2.TabIndex = 165
+        Me.lbl_ct2.Text = "0"
+        '
+        'lbl_ct
+        '
+        Me.lbl_ct.Location = New System.Drawing.Point(720, 141)
+        Me.lbl_ct.Name = "lbl_ct"
+        Me.lbl_ct.Size = New System.Drawing.Size(36, 20)
+        Me.lbl_ct.TabIndex = 166
+        Me.lbl_ct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'CapturaOee2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(840, 571)
+        Me.Controls.Add(Me.lbl_ct)
         Me.Controls.Add(Me.lbl_ct2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txt_tpza)
         Me.Controls.Add(Me.lbl_png)
         Me.Controls.Add(Me.lbl_pc)
-        Me.Controls.Add(Me.lbl_ct)
         Me.Controls.Add(Me.lbl_topr)
         Me.Controls.Add(Me.lbl_pnp)
         Me.Controls.Add(Me.lbl_topp)
@@ -677,7 +676,6 @@ Partial Class CapturaOee2
     Friend WithEvents lbl_topr As Label
     Friend WithEvents lbl_png As Label
     Friend WithEvents lbl_pc As Label
-    Friend WithEvents lbl_ct As Label
     Friend WithEvents dtgvp As DataGridView
     Friend WithEvents btn_1 As Button
     Friend WithEvents btn_eliminar As Button
@@ -692,4 +690,5 @@ Partial Class CapturaOee2
     Friend WithEvents id_error As DataGridViewTextBoxColumn
     Friend WithEvents lbl_ct2 As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents lbl_ct As TextBox
 End Class

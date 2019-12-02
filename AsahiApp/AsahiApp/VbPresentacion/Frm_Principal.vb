@@ -375,6 +375,7 @@ Public Class Frm_Principal
 
     Private Sub CapturaOEEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CapturaOEEToolStripMenuItem.Click
         CapturaOee2.Show()
+        '' CapturaOEE.Show()
     End Sub
 
     Private Sub PlanDeGastosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDeGastosToolStripMenuItem.Click
