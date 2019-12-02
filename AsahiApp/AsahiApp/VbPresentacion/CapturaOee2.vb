@@ -17,7 +17,7 @@ Public Class CapturaOee2
     Private Sub cbx_proceso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_proceso.SelectedIndexChanged
 
         If cbx_proceso.Text = "FUNDICION" Then
-            cbx_molde.Visible = True
+            cbx_molde.Enabled = True
             cbx_cavidad.Visible = True
         Else
             'cbx_molde.Enabled = False
