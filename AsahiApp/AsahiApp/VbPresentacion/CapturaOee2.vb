@@ -297,9 +297,7 @@ END
     Private Sub cbx_pieza_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_pieza.TextChanged
         llenacombomolde()
         If cbx_proceso.Text = "FUNDICION" Then
-
             llenacombocavidad()
-
         Else
             cbx_cavidad.Text = 1
         End If

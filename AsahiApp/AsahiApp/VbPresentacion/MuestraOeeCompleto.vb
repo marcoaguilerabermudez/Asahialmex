@@ -444,6 +444,7 @@ Public Class MuestraOeeCompleto
             muestragrid2()
             medidasgrid2()
             btn_actualiza.Text = "Actualizar"
+            lbl_actu.Text = "Última actualización"
             fechaesp()
             lbl_momento.Text = DateTime.Now
         Else
@@ -452,6 +453,7 @@ Public Class MuestraOeeCompleto
             muestragrid4()
             medidasgrid4()
             btn_actualiza.Text = "アップデート"
+            lbl_actu.Text = "最終更新日時"
             fechajp()
             lbl_momento.Text = DateTime.Now
         End If
@@ -464,6 +466,7 @@ Public Class MuestraOeeCompleto
         muestragrid2()
         medidasgrid2()
         btn_actualiza.Text = "Actualizar"
+        lbl_actu.Text = "Última actualización"
         fechaesp()
         lbl_momento.Text = DateTime.Now
     End Sub
@@ -474,6 +477,7 @@ Public Class MuestraOeeCompleto
         muestragrid4()
         medidasgrid4()
         btn_actualiza.Text = "アップデート"
+        lbl_actu.Text = "最終更新日時"
         fechajp()
         lbl_momento.Text = DateTime.Now
     End Sub
