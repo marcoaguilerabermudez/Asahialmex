@@ -17,12 +17,16 @@ Public Class CapturaOee2
     Private Sub cbx_proceso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_proceso.SelectedIndexChanged
 
         If cbx_proceso.Text = "FUNDICION" Then
-            cbx_molde.Enabled = True
-            cbx_cavidad.Enabled = True
+            cbx_molde.Visible = True
+            cbx_cavidad.Visible = True
         Else
-            cbx_molde.Enabled = False
+            'cbx_molde.Enabled = False
+            'cbx_cavidad.Text = "1"
+            'cbx_cavidad.Enabled = False
+
+            cbx_cavidad.Enabled = True
             cbx_cavidad.Text = "1"
-            cbx_cavidad.Enabled = False
+            cbx_molde.Enabled = False
         End If
 
         llenacombomaquina()
@@ -62,6 +66,7 @@ on es.[id_maquina] = Maq.id_maquina
 where es.id_proceso = 2
 
 END
+
 ELSE if @var = 'LEAKTEST'
 BEGIN
 SELECT distinct maq.Nombre
@@ -267,67 +272,73 @@ END
     End Sub
 
     Private Sub cbx_maquina_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbx_maquina.SelectedIndexChanged
+
         CT()
+
     End Sub
 
     Private Sub cbx_pieza_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbx_pieza.SelectedIndexChanged
+
+
+
+
         CT()
-        llenacombocavidad()
+        If cbx_proceso.Text = "FUNDICION" Then
+
+            llenacombocavidad()
+
+        Else
+            cbx_cavidad.Text = 1
+        End If
+
     End Sub
 
 
     Private Sub cbx_pieza_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_pieza.TextChanged
         llenacombomolde()
-        llenacombocavidad()
+        If cbx_proceso.Text = "FUNDICION" Then
+
+            llenacombocavidad()
+
+        Else
+            cbx_cavidad.Text = 1
+        End If
 
 
     End Sub
 
     Private Sub cbx_maquina_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_maquina.TextChanged
         llenacombopieza()
-        llenacombocavidad()
+        If cbx_proceso.Text = "FUNDICION" Then
+
+            llenacombocavidad()
+
+        Else
+            cbx_cavidad.Text = 1
+        End If
     End Sub
 
     Private Sub cbx_molde_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_molde.SelectedIndexChanged
-        If cbx_proceso.Text = "FUNDICION" Then
-
-            ''llenacombocavidad()
-            CT()
-
-        Else
-
-            Try
-                ' llenacombocavidad()
 
 
-                ''cantidadxhora()
+        ''llenacombocavidad()
+        CT()
 
-                ''''lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
-            Catch
-            End Try
 
-        End If
     End Sub
 
 
 
 
     Private Sub cbx_cavidad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_cavidad.SelectedIndexChanged
-        If cbx_proceso.Text = "FUNDICION" Then
 
-            Try
-                CT()
+        CT()
                 '' lbl_ct.Text = lbl_ct.Text / cbx_cavidad.Text
 
-                'lbl_ct.Text = CDbl(lbl_ct.Text) / cbx_cavidad.Text
+        'lbl_ct.Text = CDbl(lbl_ct.Text) / cbx_cavidad.Text
 
-                '' lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
-            Catch
-                ''MessageBox.Show("Seleccione otra cavidad", "¡Aviso!")
-            End Try
+        '' lbl_v2.Text = CInt(lbl_d1.Text) - CInt(lbl_v3.Text)
 
-        Else
-        End If
     End Sub
 
     Private Sub cbx_turno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_turno.SelectedIndexChanged
@@ -383,11 +394,11 @@ END
         utilizacion()
         rendimiento()
         calidad()
-        If CInt(lbl_topr.Text) < 0 Then
-            lbl_topr.ForeColor = Color.DarkRed
-        Else
-            lbl_topr.ForeColor = Color.Black
-        End If
+        'If CInt(lbl_topr.Text) < 0 Then
+        '    lbl_topr.ForeColor = Color.DarkRed
+        'Else
+        '    lbl_topr.ForeColor = Color.Black
+        'End If
 
     End Sub
 
@@ -407,16 +418,33 @@ END
     End Sub
 
     Sub rendimiento()
-        Try
-            lbl_rendimiento.Text = Format(CDbl(lbl_ct.Text / ((CInt(lbl_topr.Text) * 60) / (CInt(txt_tpza.Text) / CInt(cbx_cavidad.Text)))) * 100, "0.00")
-            If CDbl(lbl_rendimiento.Text) > 101 Then
-                lbl_rendimiento.ForeColor = Color.DarkRed
-            Else
-                lbl_rendimiento.ForeColor = Color.Black
-            End If
-        Catch
-            lbl_rendimiento.Text = 0
-        End Try
+        If cbx_proceso.Text = "FUNDICION" Then
+
+            Try
+                lbl_rendimiento.Text = Format(CDbl(lbl_ct.Text / ((CInt(lbl_topr.Text) * 60) / (CInt(txt_tpza.Text) / CInt(cbx_cavidad.Text)))) * 100, "0.00")
+                If CDbl(lbl_rendimiento.Text) > 101 Then
+                    lbl_rendimiento.ForeColor = Color.DarkRed
+                Else
+                    lbl_rendimiento.ForeColor = Color.Black
+                End If
+            Catch
+                lbl_rendimiento.Text = 0
+            End Try
+
+        Else
+
+            Try
+                lbl_rendimiento.Text = Format(CDbl(lbl_ct.Text / ((CInt(lbl_topr.Text) * 60) / (CInt(txt_tpza.Text) * 1))) * 100, "0.00")
+                If CDbl(lbl_rendimiento.Text) > 101 Then
+                    lbl_rendimiento.ForeColor = Color.DarkRed
+                Else
+                    lbl_rendimiento.ForeColor = Color.Black
+                End If
+            Catch
+                lbl_rendimiento.Text = 0
+            End Try
+
+        End If
 
     End Sub
 
@@ -449,7 +477,17 @@ END
     End Sub
 
     Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
-        Detalle2oee.Show()
+        Try
+            If cbx_proceso.Text = "FUNDICION" Then
+                DefectoM.Close()
+                Detalle2oee.Show()
+            Else
+                Detalle2oee.Close()
+                DefectoM.Show()
+            End If
+        Catch
+        End Try
+
     End Sub
 
     Private Sub txt_tpza_TextChanged(sender As Object, e As EventArgs) Handles txt_tpza.TextChanged, lbl_png.TextChanged
@@ -623,4 +661,20 @@ END
         insertaoeeprincipal()
         insertaoeedetalle()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        dtgvp.Rows.Clear()
+        lbl_tpo.Text = ""
+        lbl_pp.Text = "0"
+        lbl_topp.Text = "0"
+        lbl_pnp.Text = "0"
+        lbl_topr.Text = ""
+        lbl_ct2.Text = "0"
+        lbl_ct.Text = "0"
+        lbl_pc.Text = ""
+        lbl_png.Text = "0"
+        txt_tpza.Text = ""
+    End Sub
+
+
 End Class
