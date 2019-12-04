@@ -13,6 +13,8 @@ Public Class Frm_Principal
 #End Region
     'Variable para generar reportes de prenómina
     Public Var As Int64
+    Dim empleado As New Empleado
+
 
 #Region "Constructores"
     Sub New()
@@ -117,6 +119,9 @@ Public Class Frm_Principal
         Next
     End Sub
 #End Region
+
+
+
 #Region "Botónes"
     Private Sub PreNominaListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaListadoToolStripMenuItem.Click
         Dim lista As New Frm_ListaPrenomina(cadConex, cadenaConex)
@@ -388,7 +393,14 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub OEECompletoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OEECompletoToolStripMenuItem.Click
-        MuestraOeeCompleto.Show()
+
+        If Me.emp.IdEmpleado = "260" Then
+
+            MuestraOeeCompleto.Show()
+        Else
+            NuevoMuestraOEE.Show()
+        End If
+
     End Sub
 
     Private Sub AusentismoGeneralToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusentismoGeneralToolStripMenuItem.Click

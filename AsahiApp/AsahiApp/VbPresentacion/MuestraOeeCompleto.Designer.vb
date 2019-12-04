@@ -226,6 +226,7 @@ Partial Class MuestraOeeCompleto
         Me.Controls.Add(Me.dtgv2)
         Me.Controls.Add(Me.dtgv)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimizeBox = False
         Me.Name = "MuestraOeeCompleto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Muestra Oee Mensual"

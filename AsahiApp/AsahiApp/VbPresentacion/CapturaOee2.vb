@@ -286,7 +286,6 @@ END
         If cbx_proceso.Text = "FUNDICION" Then
 
             llenacombocavidad()
-
         Else
             cbx_cavidad.Text = 1
         End If

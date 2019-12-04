@@ -1,10 +1,10 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class MuestraOeeCompleto
+Public Class NuevoMuestraOEE
     Dim a As Integer
 
-    Private Sub MuestraOeeCompleto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
+    Private Sub MuestraOeeCompleto_Load2(sender As Object, e As EventArgs) Handles MyBase.Load
+        ''  Me.WindowState = FormWindowState.Maximized
         muestragrid()
         medidasgrid()
         muestragrid2()
@@ -147,7 +147,6 @@ Public Class MuestraOeeCompleto
 
 
     Sub muestragrid3()
-
         Try
             CapturaOEE.Cn.Open()
             Dim da As New SqlDataAdapter("Sp_reportegeneraloee", CapturaOEE.Cn)
@@ -218,85 +217,7 @@ Public Class MuestraOeeCompleto
 
     End Sub
 
-    'Private Function IsTheSameCellValue(ByVal column As Integer, ByVal row As Integer) As Boolean
-    '    Dim cell1 As DataGridViewCell = dtgv(column, row)
-    '    Dim cell2 As DataGridViewCell = dtgv(column, row - 1)
-    '    If (IsDBNull(cell1.Value) Or IsDBNull(cell2.Value)) Then
-    '        Return False
-    '    End If
-    '    If (cell1.Value = cell2.Value) Then
-    '        Return True
-    '    Else
-    '        Return False
-    '    End If
-    'End Function
 
-    'Private Sub dtgvp_CellContentClick_13(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dtgv.CellFormatting
-    '    If (e.RowIndex = 0) Then
-    '        Return
-    '    End If
-    '    If (IsTheSameCellValue(e.ColumnIndex, e.RowIndex)) And e.ColumnIndex < 3 Then
-    '        e.Value = ""
-    '        e.FormattingApplied = True
-
-    '    End If
-
-
-    'End Sub
-
-    'Private Sub dtgvp2_CellContentClick_14(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dtgv.CellFormatting
-
-    '    For j As Integer = 0 To 4
-
-    '        If e.ColumnIndex = j Then
-    '            e.CellStyle.BackColor = Color.LightGreen
-    '        End If
-
-    '    Next
-
-
-    'End Sub
-
-
-
-    'Private Function IsTheSameCellValue2(ByVal column As Integer, ByVal row As Integer) As Boolean
-    '    Dim cell1 As DataGridViewCell = dtgv2(column, row)
-    '    Dim cell2 As DataGridViewCell = dtgv2(column, row - 1)
-    '    If (IsDBNull(cell1.Value) Or IsDBNull(cell2.Value)) Then
-    '        Return False
-    '    End If
-    '    If (cell1.Value = cell2.Value) Then
-    '        Return True
-    '    Else
-    '        Return False
-    '    End If
-    'End Function
-
-    'Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dtgv2.CellFormatting
-    '    If (e.RowIndex = 0) Then
-    '        Return
-    '    End If
-    '    If (IsTheSameCellValue2(e.ColumnIndex, e.RowIndex)) And e.ColumnIndex < 3 Then
-    '        e.Value = ""
-    '        e.FormattingApplied = True
-
-    '    End If
-
-
-    'End Sub
-
-    'Private Sub dtgvp2_CellContentClick_1(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dtgv2.CellFormatting
-
-    '    For j As Integer = 0 To 4
-
-    '        If e.ColumnIndex = j Then
-    '            e.CellStyle.BackColor = Color.LightGreen
-    '        End If
-
-    '    Next
-
-
-    'End Sub
 
 
     Private Sub DataGridView1_CellPainting(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellPaintingEventArgs) Handles dtgv.CellPainting
@@ -337,15 +258,15 @@ Public Class MuestraOeeCompleto
 
     Sub medidasgrid()
 
-        dtgv.Columns("Proceso").Width = 80
-        dtgv.Columns("Máquina").Width = 90
-        dtgv.Columns("Pieza").Width = 160
-        dtgv.Columns("Molde").Width = 60
-        dtgv.Columns("Turno").Width = 45
-        dtgv.Columns("Utilización").Width = 90
-        dtgv.Columns("Rendimiento").Width = 94
-        dtgv.Columns("Calidad").Width = 92
-        dtgv.Columns("OEE").Width = 92
+        dtgv.Columns("Proceso").Width = 60
+        dtgv.Columns("Máquina").Width = 63
+        dtgv.Columns("Pieza").Width = 98
+        dtgv.Columns("Molde").Width = 40
+        dtgv.Columns("Turno").Width = 33
+        dtgv.Columns("Utilización").Width = 60
+        dtgv.Columns("Rendimiento").Width = 62
+        dtgv.Columns("Calidad").Width = 56
+        dtgv.Columns("OEE").Width = 56
 
 
 
@@ -361,15 +282,15 @@ Public Class MuestraOeeCompleto
 
     Sub medidasgrid2()
 
-        dtgv2.Columns("Proceso").Width = 95
-        dtgv2.Columns("Máquina").Width = 90
-        dtgv2.Columns("Pieza").Width = 160
-        dtgv2.Columns("Molde").Width = 60
-        dtgv2.Columns("Turno").Width = 45
-        dtgv2.Columns("Utilización").Width = 90
-        dtgv2.Columns("Rendimiento").Width = 94
-        dtgv2.Columns("Calidad").Width = 92
-        dtgv2.Columns("OEE").Width = 92
+        dtgv2.Columns("Proceso").Width = 60
+        dtgv2.Columns("Máquina").Width = 63
+        dtgv2.Columns("Pieza").Width = 98
+        dtgv2.Columns("Molde").Width = 40
+        dtgv2.Columns("Turno").Width = 33
+        dtgv2.Columns("Utilización").Width = 60
+        dtgv2.Columns("Rendimiento").Width = 62
+        dtgv2.Columns("Calidad").Width = 56
+        dtgv2.Columns("OEE").Width = 56
 
 
         dtgv2.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
@@ -385,15 +306,15 @@ Public Class MuestraOeeCompleto
 
     Sub medidasgrid3()
 
-        dtgv.Columns("工程").Width = 80
-        dtgv.Columns("機械").Width = 90
-        dtgv.Columns("製品").Width = 160
-        dtgv.Columns("金型").Width = 65
-        dtgv.Columns("直").Width = 45
-        dtgv.Columns("使用%").Width = 90
-        dtgv.Columns("稼働率%").Width = 94
-        dtgv.Columns("品質%").Width = 92
-        dtgv.Columns("OEE").Width = 92
+        dtgv.Columns("工程").Width = 60
+        dtgv.Columns("機械").Width = 63
+        dtgv.Columns("製品").Width = 98
+        dtgv.Columns("金型").Width = 42
+        dtgv.Columns("直").Width = 33
+        dtgv.Columns("使用%").Width = 60
+        dtgv.Columns("稼働率%").Width = 62
+        dtgv.Columns("品質%").Width = 56
+        dtgv.Columns("OEE").Width = 56
 
 
 
@@ -409,15 +330,15 @@ Public Class MuestraOeeCompleto
 
     Sub medidasgrid4()
 
-        dtgv2.Columns("工程").Width = 95
-        dtgv2.Columns("機械").Width = 90
-        dtgv2.Columns("製品").Width = 160
-        dtgv2.Columns("金型").Width = 65
-        dtgv2.Columns("直").Width = 45
-        dtgv2.Columns("使用%").Width = 90
-        dtgv2.Columns("稼働率%").Width = 94
-        dtgv2.Columns("品質%").Width = 92
-        dtgv2.Columns("OEE").Width = 92
+        dtgv2.Columns("工程").Width = 60
+        dtgv2.Columns("機械").Width = 63
+        dtgv2.Columns("製品").Width = 98
+        dtgv2.Columns("金型").Width = 42
+        dtgv2.Columns("直").Width = 33
+        dtgv2.Columns("使用%").Width = 60
+        dtgv2.Columns("稼働率%").Width = 62
+        dtgv2.Columns("品質%").Width = 56
+        dtgv2.Columns("OEE").Width = 56
 
 
         dtgv2.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
@@ -484,4 +405,5 @@ Public Class MuestraOeeCompleto
         fechajp()
         lbl_momento.Text = DateTime.Now
     End Sub
+
 End Class
