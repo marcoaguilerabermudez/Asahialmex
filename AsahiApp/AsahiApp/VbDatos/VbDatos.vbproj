@@ -70,6 +70,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DCompras.vb" />
     <Compile Include="DEmpleado.vb" />
     <Compile Include="DHorasExtra.vb" />
     <Compile Include="DPrenomina.vb" />
