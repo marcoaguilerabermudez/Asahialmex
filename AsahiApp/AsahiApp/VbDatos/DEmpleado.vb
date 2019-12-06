@@ -321,4 +321,28 @@ Public Class DEmpleado
         End Try
         Return lstEmp
     End Function
+    Public Function EmpleadosRecuperarSG(ByVal cadConex As String, ByVal objEmp As Empleado) As Empleado
+        Dim oCon As New SqlConnection(cadConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("RecuperarSegNegEmpleado", oCon)
+            query.Parameters.AddWithValue("@idEmp", objEmp.IdEmpleado)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                objEmp.IdDepartamento = Convert.ToInt32(dr("SegNeg").ToString)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return objEmp
+    End Function
 End Class

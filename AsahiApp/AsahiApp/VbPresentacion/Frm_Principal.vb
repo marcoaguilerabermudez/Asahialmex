@@ -73,6 +73,7 @@ Public Class Frm_Principal
         EvaluacionesToolStripMenuItem.Enabled = False
         MasterPlanToolStripMenuItem.Enabled = False
         PlanToolStripMenuItem.Enabled = False
+        PlanDeGastosToolStripMenuItem.Enabled = False
         PermisosYAutorizacionesToolStripMenuItem.Enabled = False
         AusentismosGlobalToolStripMenuItem.Enabled = False
         AusentismoGeneralToolStripMenuItem.Enabled = False
@@ -108,6 +109,7 @@ Public Class Frm_Principal
                 Case "EvaluacionesToolStripMenuItem" : EvaluacionesToolStripMenuItem.Enabled = True
                 Case "MasterPlanToolStripMenuItem" : MasterPlanToolStripMenuItem.Enabled = True
                 Case "PlanToolStripMenuItem" : PlanToolStripMenuItem.Enabled = True
+                Case "PlanDeGastosToolStripMenuItem" : PlanDeGastosToolStripMenuItem.Enabled = True
                 Case "PermisosYAutorizacionesToolStripMenuItem" : PermisosYAutorizacionesToolStripMenuItem.Enabled = True
                 Case "AusentismosGlobalToolStripMenuItem" : AusentismosGlobalToolStripMenuItem.Enabled = True
                 Case "AusentismoGeneralToolStripMenuItem" : AusentismoGeneralToolStripMenuItem.Enabled = True
@@ -372,7 +374,8 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub CapturaOEEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CapturaOEEToolStripMenuItem.Click
-        CapturaOEE.Show()
+        CapturaOee2.Show()
+        '' CapturaOEE.Show()
     End Sub
 
     Private Sub PlanDeGastosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDeGastosToolStripMenuItem.Click

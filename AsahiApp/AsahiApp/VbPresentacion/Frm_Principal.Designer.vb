@@ -458,7 +458,7 @@ Partial Class Frm_Principal
         'PlanDeGastosToolStripMenuItem
         '
         Me.PlanDeGastosToolStripMenuItem.Name = "PlanDeGastosToolStripMenuItem"
-        Me.PlanDeGastosToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.PlanDeGastosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PlanDeGastosToolStripMenuItem.Text = "Plan de Gastos"
         '
         'PlanToolStripMenuItem
