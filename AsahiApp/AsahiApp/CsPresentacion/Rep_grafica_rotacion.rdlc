@@ -124,7 +124,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>A/C</Value>
+                                  <Value>B/C</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -417,7 +417,7 @@
             <Top>2.08195cm</Top>
             <Left>0.57675cm</Left>
             <Height>2.21865cm</Height>
-            <Width>10.60094cm</Width>
+            <Width>10.60093cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>

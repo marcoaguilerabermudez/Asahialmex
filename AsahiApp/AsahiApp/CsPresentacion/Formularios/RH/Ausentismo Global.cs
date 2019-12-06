@@ -179,26 +179,11 @@ namespace CsPresentacion
                     cellColumnIndex = 1;//ok
                     cellRowIndex++;
                 }
-                //Obtener la ubicación y el nombre de archivo de excel para guardar del usuario.
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Libro de Excel (*.xlsx)|*.xlsx";
-                saveDialog.FilterIndex = 0;//ok
-
-                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Su documento se exportó correctamente.");
-                }
+                excel.Visible = true;
             }
             catch (Exception error)
             {
                 //MessageBox.Show("No se exportó correctamente" + error.Message);
-            }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
             }
         }
         private void Diseño_dgv(DataGridView dgv)

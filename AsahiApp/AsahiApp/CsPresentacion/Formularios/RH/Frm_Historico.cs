@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-
 namespace CsPresentacion
 {
     public partial class Frm_Historico : Form
@@ -93,6 +92,8 @@ namespace CsPresentacion
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
+            timer1.Start();
             nuevo();
         }
 
@@ -143,49 +144,22 @@ namespace CsPresentacion
                     cellColumnIndex = 1;//ok
                     cellRowIndex++;
                 }
-                //Obtener la ubicación y el nombre de archivo de excel para guardar del usuario.
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Libro de Excel (*.xlsx)|*.xlsx";
-                saveDialog.FilterIndex = 0;//ok
-
-                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Su documento se exportó correctamente.");
-                }
+                excel.Visible = true;
             }
             catch (Exception error)
             {
                 //MessageBox.Show("No se exportó correctamente" + error.Message);
             }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
-            }
         }
 
-
         private void Btn_buscar_Click(object sender, EventArgs e)
-        {
-
-            if (string.IsNullOrEmpty(cmb_depto.Text))
-            {
-                Var = 2;
-                Llenar_dgv();
-                lbl_total.Text = dgv_historico.Rows.Count.ToString();
-            }
-            else
-            {
-                Var = 3;
-                Llenar_dgv();
-                lbl_total.Text = dgv_historico.Rows.Count.ToString();
-            }
+        {  
         }
 
         private void Btn_exportar_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
+            timer1.Start();
             Exportara_Exel();
         }
 
@@ -193,6 +167,8 @@ namespace CsPresentacion
         {
             if (string.IsNullOrEmpty(cmb_depto.Text))
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Frm_Rep_Historial h = new Frm_Rep_Historial();
                 h.Var = Convert.ToInt32(2);
                 h.Fecha = dtm_fecha.Value;
@@ -201,12 +177,60 @@ namespace CsPresentacion
             }
             else
             {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
                 Frm_Rep_Historial h = new Frm_Rep_Historial();
                 h.Var = Convert.ToInt32(3);
                h.Fecha = dtm_fecha.Value;
                 h.Depto = cmb_depto.Text;
                 h.Show();
             }
+        }
+
+        private void Cmb_depto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmb_depto.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                Var = 2;
+                Llenar_dgv();
+                lbl_total.Text = dgv_historico.Rows.Count.ToString();
+            }
+            else
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                Var = 3;
+                Llenar_dgv();
+                lbl_total.Text = dgv_historico.Rows.Count.ToString();
+            }
+        }
+
+        private void Dtm_fecha_ValueChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmb_depto.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                Var = 2;
+                Llenar_dgv();
+                lbl_total.Text = dgv_historico.Rows.Count.ToString();
+            }
+            else
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                Var = 3;
+                Llenar_dgv();
+                lbl_total.Text = dgv_historico.Rows.Count.ToString();
+            }
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Start();
+            Cursor = Cursors.Default;
         }
     }
 }

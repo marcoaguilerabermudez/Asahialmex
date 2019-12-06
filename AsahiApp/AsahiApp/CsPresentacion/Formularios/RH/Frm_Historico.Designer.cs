@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmb_depto = new System.Windows.Forms.ComboBox();
             this.dtm_fecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_nuevo = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dgv_historico = new System.Windows.Forms.DataGridView();
             this.lbl_total = new System.Windows.Forms.Label();
             this.lbl_filtro = new System.Windows.Forms.Label();
             this.btn_exportar = new System.Windows.Forms.Button();
             this.btn_reporte = new System.Windows.Forms.Button();
-            this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_buscar = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_historico)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,6 @@
             this.panel1.Controls.Add(this.dtm_fecha);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_nuevo);
-            this.panel1.Controls.Add(this.btn_buscar);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(-2, -12);
             this.panel1.Name = "panel1";
@@ -67,6 +67,7 @@
             this.cmb_depto.Name = "cmb_depto";
             this.cmb_depto.Size = new System.Drawing.Size(170, 21);
             this.cmb_depto.TabIndex = 29;
+            this.cmb_depto.SelectedIndexChanged += new System.EventHandler(this.Cmb_depto_SelectedIndexChanged);
             // 
             // dtm_fecha
             // 
@@ -75,6 +76,7 @@
             this.dtm_fecha.Name = "dtm_fecha";
             this.dtm_fecha.Size = new System.Drawing.Size(156, 20);
             this.dtm_fecha.TabIndex = 27;
+            this.dtm_fecha.ValueChanged += new System.EventHandler(this.Dtm_fecha_ValueChanged);
             // 
             // label1
             // 
@@ -86,6 +88,20 @@
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 26;
             this.label1.Text = "DEPARTAMENTO:";
+            // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_nuevo.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
+            this.btn_nuevo.Location = new System.Drawing.Point(358, 32);
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Size = new System.Drawing.Size(27, 27);
+            this.btn_nuevo.TabIndex = 24;
+            this.btn_nuevo.UseVisualStyleBackColor = false;
+            this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
             // 
             // label4
             // 
@@ -110,17 +126,17 @@
             this.dgv_historico.Location = new System.Drawing.Point(12, 70);
             this.dgv_historico.MultiSelect = false;
             this.dgv_historico.Name = "dgv_historico";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_historico.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_historico.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_historico.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dgv_historico.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            this.dgv_historico.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_historico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_historico.ShowCellErrors = false;
             this.dgv_historico.Size = new System.Drawing.Size(943, 544);
@@ -175,34 +191,9 @@
             this.btn_reporte.UseVisualStyleBackColor = true;
             this.btn_reporte.Click += new System.EventHandler(this.Btn_reporte_Click);
             // 
-            // btn_nuevo
+            // timer1
             // 
-            this.btn_nuevo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_nuevo.FlatAppearance.BorderSize = 0;
-            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(404, 32);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(27, 27);
-            this.btn_nuevo.TabIndex = 24;
-            this.btn_nuevo.UseVisualStyleBackColor = false;
-            this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_buscar.FlatAppearance.BorderSize = 0;
-            this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.Image = global::CsPresentacion.Properties.Resources.Filtro;
-            this.btn_buscar.Location = new System.Drawing.Point(363, 28);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(29, 34);
-            this.btn_buscar.TabIndex = 18;
-            this.btn_buscar.UseVisualStyleBackColor = false;
-            this.btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // Frm_Historico
             // 
@@ -235,7 +226,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmb_depto;
         private System.Windows.Forms.DateTimePicker dtm_fecha;
@@ -244,5 +234,6 @@
         private System.Windows.Forms.DataGridView dgv_historico;
         private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.Label lbl_filtro;
+        private System.Windows.Forms.Timer timer1;
     }
 }
