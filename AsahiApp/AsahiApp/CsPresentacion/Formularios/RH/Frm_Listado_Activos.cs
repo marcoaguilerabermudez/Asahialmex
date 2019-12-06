@@ -155,7 +155,9 @@ namespace CsPresentacion
             dgv.Columns[6].Width = 50;//dias
             dgv.Columns[7].Width = 50;//meses
             dgv.Columns[8].Width = 50;//Años
-            dgv.Columns[9].Width = 50;//Genero
+            dgv.Columns[9].Width = 40;//Genero
+            dgv.Columns[10].Width = 110;//turno
+            dgv.Columns[11].Width = 60;//sueldo
         }
 
         private void nuevo()

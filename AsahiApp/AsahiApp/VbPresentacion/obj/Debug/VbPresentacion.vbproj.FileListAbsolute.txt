@@ -467,3 +467,5 @@ C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentaci
 C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.MuestraOeeCompleto.resources
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.DefectoM.resources
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.CapturaOee2.resources
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.CapturaOee2.resources
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.DefectoM.resources
