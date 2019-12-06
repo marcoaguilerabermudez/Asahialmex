@@ -55,8 +55,8 @@ namespace CsPresentacion
             lbl_altas.Text = Convert.ToString(Altas);
             lbl_bajas.Text = Convert.ToString(Bajas);
             lbl_total.Text = Convert.ToString(Total);
-            txt_ac.Text = Convert.ToString(Bajas * 100 / Total);
-            txt_ab.Text = Convert.ToString(Bajas * 100 / Altas);
+            txt_bc.Text = Convert.ToString(Bajas * 100 / Total);
+            txt_ba.Text = Convert.ToString(Bajas * 100 / Altas);
         }
         private void Calcula_Total2()
         {
@@ -73,9 +73,11 @@ namespace CsPresentacion
             lbl_altas2.Text = Convert.ToString(Altas);
             lbl_bajas2.Text = Convert.ToString(Bajas);
             lbl_total2.Text = Convert.ToString(Total);
-            txt_ac2.Text = Convert.ToString(Bajas * 100 / Total);
-            txt_ab2.Text = Convert.ToString(Bajas * 100 / Altas);
+            txt_bc2.Text = Convert.ToString(Bajas * 100 / Total);
+            txt_ba2.Text = Convert.ToString(Bajas * 100 / Altas);
         }
+
+
         private void Calcula_Total3()
         {
             double Altas = 0;
@@ -91,8 +93,8 @@ namespace CsPresentacion
             lbl_altas3.Text = Convert.ToString(Altas);
             lbl_bajas3.Text = Convert.ToString(Bajas);
             lbl_total3.Text = Convert.ToString(Total);
-            txt_ac3.Text = Convert.ToString(Bajas * 100 / Total);
-            txt_ab3.Text = Convert.ToString(Bajas * 100 / Altas);
+            txt_bc3.Text = Convert.ToString(Bajas * 100 / Total);
+            txt_ba3.Text = Convert.ToString(Bajas * 100 / Altas);
         }
 
         public void Llenar_dgv(DataGridView dgv)// Método para llenar DatagridView Total
@@ -306,13 +308,13 @@ namespace CsPresentacion
             lbl_altas2.Text = "";
             lbl_bajas2.Text = "";
             lbl_total2.Text = "";
-            txt_ac2.Text = "";
-            txt_ab2.Text = "";
+            txt_bc2.Text = "";
+            txt_ba2.Text = "";
             lbl_altas3.Text = "";
             lbl_bajas3.Text = "";
             lbl_total3.Text = "";
-            txt_ac3.Text = "";
-            txt_ab3.Text = "";
+            txt_bc3.Text = "";
+            txt_ba3.Text = "";
         }
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
@@ -518,7 +520,6 @@ namespace CsPresentacion
 
         private void Btn_exportar_ant2_Click(object sender, EventArgs e)
         {
-
             if (cmb_ant2.Text == "")
             {
                 MessageBox.Show("Es necesario filtrar la información.", "Aviso");

@@ -224,7 +224,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>A/C</Value>
+                              <Value>B/C</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -261,7 +261,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>A/B</Value>
+                              <Value>B/A</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>

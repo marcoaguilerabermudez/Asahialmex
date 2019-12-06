@@ -480,7 +480,7 @@ namespace CsPresentacion
                 timer1.Start();
                 Listado_Activos rep = new Listado_Activos();
                 rep.Var = Convert.ToInt32(2);
-                rep.Departamento = cmb_departamento.Text;
+                rep.Puesto = cmb_puesto.Text;
                 rep.Show();
             }
             else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_genero.Text))

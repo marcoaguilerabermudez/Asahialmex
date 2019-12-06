@@ -47,8 +47,8 @@
             this.lbl_bajas = new System.Windows.Forms.Label();
             this.lbl_total = new System.Windows.Forms.Label();
             this.lbl_altas = new System.Windows.Forms.Label();
-            this.txt_ab = new System.Windows.Forms.TextBox();
-            this.txt_ac = new System.Windows.Forms.TextBox();
+            this.txt_ba = new System.Windows.Forms.TextBox();
+            this.txt_bc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,8 +60,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_ac2 = new System.Windows.Forms.TextBox();
-            this.txt_ab2 = new System.Windows.Forms.TextBox();
+            this.txt_bc2 = new System.Windows.Forms.TextBox();
+            this.txt_ba2 = new System.Windows.Forms.TextBox();
             this.lbl_altas2 = new System.Windows.Forms.Label();
             this.lbl_total2 = new System.Windows.Forms.Label();
             this.lbl_bajas2 = new System.Windows.Forms.Label();
@@ -70,8 +70,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.txt_ac3 = new System.Windows.Forms.TextBox();
-            this.txt_ab3 = new System.Windows.Forms.TextBox();
+            this.txt_bc3 = new System.Windows.Forms.TextBox();
+            this.txt_ba3 = new System.Windows.Forms.TextBox();
             this.lbl_altas3 = new System.Windows.Forms.Label();
             this.lbl_total3 = new System.Windows.Forms.Label();
             this.lbl_bajas3 = new System.Windows.Forms.Label();
@@ -285,31 +285,31 @@
             this.lbl_altas.TabIndex = 154;
             this.lbl_altas.Text = "0";
             // 
-            // txt_ab
+            // txt_ba
             // 
-            this.txt_ab.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
-            this.txt_ab.BackColor = System.Drawing.Color.White;
-            this.txt_ab.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ab.Location = new System.Drawing.Point(204, 604);
-            this.txt_ab.MaxLength = 3;
-            this.txt_ab.Name = "txt_ab";
-            this.txt_ab.Size = new System.Drawing.Size(26, 13);
-            this.txt_ab.TabIndex = 156;
-            this.txt_ab.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_ba.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
+            this.txt_ba.BackColor = System.Drawing.Color.White;
+            this.txt_ba.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_ba.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ba.Location = new System.Drawing.Point(204, 604);
+            this.txt_ba.MaxLength = 3;
+            this.txt_ba.Name = "txt_ba";
+            this.txt_ba.Size = new System.Drawing.Size(26, 13);
+            this.txt_ba.TabIndex = 156;
+            this.txt_ba.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txt_ac
+            // txt_bc
             // 
-            this.txt_ac.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
-            this.txt_ac.BackColor = System.Drawing.Color.White;
-            this.txt_ac.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ac.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ac.Location = new System.Drawing.Point(204, 581);
-            this.txt_ac.MaxLength = 3;
-            this.txt_ac.Name = "txt_ac";
-            this.txt_ac.Size = new System.Drawing.Size(26, 13);
-            this.txt_ac.TabIndex = 157;
-            this.txt_ac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_bc.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
+            this.txt_bc.BackColor = System.Drawing.Color.White;
+            this.txt_bc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_bc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_bc.Location = new System.Drawing.Point(204, 581);
+            this.txt_bc.MaxLength = 3;
+            this.txt_bc.Name = "txt_bc";
+            this.txt_bc.Size = new System.Drawing.Size(26, 13);
+            this.txt_bc.TabIndex = 157;
+            this.txt_bc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -336,7 +336,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 160;
-            this.label5.Text = "A/C =";
+            this.label5.Text = "B/C =";
             // 
             // label6
             // 
@@ -345,7 +345,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 161;
-            this.label6.Text = "A/B =";
+            this.label6.Text = "B/A =";
             // 
             // btn_exportar_total
             // 
@@ -393,7 +393,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 174;
-            this.label7.Text = "A/B =";
+            this.label7.Text = "B/A =";
             // 
             // label9
             // 
@@ -402,7 +402,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 173;
-            this.label9.Text = "A/C =";
+            this.label9.Text = "B/C =";
             // 
             // label10
             // 
@@ -422,31 +422,31 @@
             this.label11.TabIndex = 171;
             this.label11.Text = "BAJAS:";
             // 
-            // txt_ac2
+            // txt_bc2
             // 
-            this.txt_ac2.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
-            this.txt_ac2.BackColor = System.Drawing.Color.White;
-            this.txt_ac2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ac2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ac2.Location = new System.Drawing.Point(610, 582);
-            this.txt_ac2.MaxLength = 3;
-            this.txt_ac2.Name = "txt_ac2";
-            this.txt_ac2.Size = new System.Drawing.Size(26, 13);
-            this.txt_ac2.TabIndex = 170;
-            this.txt_ac2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_bc2.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
+            this.txt_bc2.BackColor = System.Drawing.Color.White;
+            this.txt_bc2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_bc2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_bc2.Location = new System.Drawing.Point(610, 582);
+            this.txt_bc2.MaxLength = 3;
+            this.txt_bc2.Name = "txt_bc2";
+            this.txt_bc2.Size = new System.Drawing.Size(26, 13);
+            this.txt_bc2.TabIndex = 170;
+            this.txt_bc2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txt_ab2
+            // txt_ba2
             // 
-            this.txt_ab2.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
-            this.txt_ab2.BackColor = System.Drawing.Color.White;
-            this.txt_ab2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ab2.Location = new System.Drawing.Point(610, 605);
-            this.txt_ab2.MaxLength = 3;
-            this.txt_ab2.Name = "txt_ab2";
-            this.txt_ab2.Size = new System.Drawing.Size(26, 13);
-            this.txt_ab2.TabIndex = 169;
-            this.txt_ab2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_ba2.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
+            this.txt_ba2.BackColor = System.Drawing.Color.White;
+            this.txt_ba2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_ba2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ba2.Location = new System.Drawing.Point(610, 605);
+            this.txt_ba2.MaxLength = 3;
+            this.txt_ba2.Name = "txt_ba2";
+            this.txt_ba2.Size = new System.Drawing.Size(26, 13);
+            this.txt_ba2.TabIndex = 169;
+            this.txt_ba2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_altas2
             // 
@@ -494,7 +494,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(35, 13);
             this.label16.TabIndex = 184;
-            this.label16.Text = "A/B =";
+            this.label16.Text = "B/A =";
             // 
             // label17
             // 
@@ -503,7 +503,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(35, 13);
             this.label17.TabIndex = 183;
-            this.label17.Text = "A/C =";
+            this.label17.Text = "B/C =";
             // 
             // label18
             // 
@@ -523,31 +523,31 @@
             this.label19.TabIndex = 181;
             this.label19.Text = "BAJAS:";
             // 
-            // txt_ac3
+            // txt_bc3
             // 
-            this.txt_ac3.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
-            this.txt_ac3.BackColor = System.Drawing.Color.White;
-            this.txt_ac3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ac3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ac3.Location = new System.Drawing.Point(1013, 582);
-            this.txt_ac3.MaxLength = 3;
-            this.txt_ac3.Name = "txt_ac3";
-            this.txt_ac3.Size = new System.Drawing.Size(26, 13);
-            this.txt_ac3.TabIndex = 180;
-            this.txt_ac3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_bc3.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
+            this.txt_bc3.BackColor = System.Drawing.Color.White;
+            this.txt_bc3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_bc3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_bc3.Location = new System.Drawing.Point(1013, 582);
+            this.txt_bc3.MaxLength = 3;
+            this.txt_bc3.Name = "txt_bc3";
+            this.txt_bc3.Size = new System.Drawing.Size(26, 13);
+            this.txt_bc3.TabIndex = 180;
+            this.txt_bc3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txt_ab3
+            // txt_ba3
             // 
-            this.txt_ab3.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
-            this.txt_ab3.BackColor = System.Drawing.Color.White;
-            this.txt_ab3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ab3.Location = new System.Drawing.Point(1013, 605);
-            this.txt_ab3.MaxLength = 3;
-            this.txt_ab3.Name = "txt_ab3";
-            this.txt_ab3.Size = new System.Drawing.Size(26, 13);
-            this.txt_ab3.TabIndex = 179;
-            this.txt_ab3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_ba3.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
+            this.txt_ba3.BackColor = System.Drawing.Color.White;
+            this.txt_ba3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_ba3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ba3.Location = new System.Drawing.Point(1013, 605);
+            this.txt_ba3.MaxLength = 3;
+            this.txt_ba3.Name = "txt_ba3";
+            this.txt_ba3.Size = new System.Drawing.Size(26, 13);
+            this.txt_ba3.TabIndex = 179;
+            this.txt_ba3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_altas3
             // 
@@ -673,8 +673,8 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.txt_ac3);
-            this.Controls.Add(this.txt_ab3);
+            this.Controls.Add(this.txt_bc3);
+            this.Controls.Add(this.txt_ba3);
             this.Controls.Add(this.lbl_altas3);
             this.Controls.Add(this.lbl_total3);
             this.Controls.Add(this.lbl_bajas3);
@@ -683,8 +683,8 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txt_ac2);
-            this.Controls.Add(this.txt_ab2);
+            this.Controls.Add(this.txt_bc2);
+            this.Controls.Add(this.txt_ba2);
             this.Controls.Add(this.lbl_altas2);
             this.Controls.Add(this.lbl_total2);
             this.Controls.Add(this.lbl_bajas2);
@@ -696,8 +696,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_ac);
-            this.Controls.Add(this.txt_ab);
+            this.Controls.Add(this.txt_bc);
+            this.Controls.Add(this.txt_ba);
             this.Controls.Add(this.lbl_altas);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_bajas);
@@ -737,8 +737,8 @@
         private System.Windows.Forms.Label lbl_bajas;
         private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.Label lbl_altas;
-        private System.Windows.Forms.TextBox txt_ab;
-        private System.Windows.Forms.TextBox txt_ac;
+        private System.Windows.Forms.TextBox txt_ba;
+        private System.Windows.Forms.TextBox txt_bc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -750,8 +750,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_ac2;
-        private System.Windows.Forms.TextBox txt_ab2;
+        private System.Windows.Forms.TextBox txt_bc2;
+        private System.Windows.Forms.TextBox txt_ba2;
         private System.Windows.Forms.Label lbl_altas2;
         private System.Windows.Forms.Label lbl_total2;
         private System.Windows.Forms.Label lbl_bajas2;
@@ -760,8 +760,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txt_ac3;
-        private System.Windows.Forms.TextBox txt_ab3;
+        private System.Windows.Forms.TextBox txt_bc3;
+        private System.Windows.Forms.TextBox txt_ba3;
         private System.Windows.Forms.Label lbl_altas3;
         private System.Windows.Forms.Label lbl_total3;
         private System.Windows.Forms.Label lbl_bajas3;
