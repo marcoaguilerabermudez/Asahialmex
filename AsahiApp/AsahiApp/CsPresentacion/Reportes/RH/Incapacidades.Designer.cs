@@ -31,26 +31,13 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incapacidades));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SP_Reportes_Prenomina2_FMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DS_Prenomina_2 = new CsPresentacion.DS_Prenomina_2();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SP_Reportes_Prenomina2_FMTableAdapter = new CsPresentacion.DS_Prenomina_2TableAdapters.SP_Reportes_Prenomina2_FMTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina2_FMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_Prenomina_2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DS_Incapacidades";
-            reportDataSource1.Value = this.SP_Reportes_Prenomina2_FMBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Reporte_Incapacidades.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1048, 548);
-            this.reportViewer1.TabIndex = 0;
             // 
             // SP_Reportes_Prenomina2_FMBindingSource
             // 
@@ -61,6 +48,19 @@
             // 
             this.DS_Prenomina_2.DataSetName = "DS_Prenomina_2";
             this.DS_Prenomina_2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DS_Incapacidades";
+            reportDataSource1.Value = this.SP_Reportes_Prenomina2_FMBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Incapacidades.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1048, 548);
+            this.reportViewer1.TabIndex = 0;
             // 
             // SP_Reportes_Prenomina2_FMTableAdapter
             // 

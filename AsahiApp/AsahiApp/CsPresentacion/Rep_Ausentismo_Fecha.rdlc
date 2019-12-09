@@ -1260,8 +1260,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.69716cm</Top>
-        <Left>0.635cm</Left>
+        <Top>0.7132cm</Top>
+        <Left>0.59832cm</Left>
         <Height>1.43812cm</Height>
         <Width>26.71856cm</Width>
         <Style>
@@ -1292,8 +1292,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>0.17639cm</Top>
-        <Left>10.62389cm</Left>
+        <Top>0.19243cm</Top>
+        <Left>10.58721cm</Left>
         <Height>0.48549cm</Height>
         <Width>11.02945cm</Width>
         <ZIndex>1</ZIndex>
@@ -1331,8 +1331,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>0.17639cm</Top>
-        <Left>21.65334cm</Left>
+        <Top>0.19243cm</Top>
+        <Left>21.61666cm</Left>
         <Height>0.48549cm</Height>
         <Width>4.54958cm</Width>
         <ZIndex>2</ZIndex>
@@ -1371,8 +1371,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>26.22991cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>26.16625cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.15063cm</Width>
         <ZIndex>3</ZIndex>
@@ -1411,8 +1411,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>25.18512cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>25.14844cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.04479cm</Width>
         <ZIndex>4</ZIndex>
@@ -1451,8 +1451,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>24.00804cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>23.97136cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.17708cm</Width>
         <ZIndex>5</ZIndex>
@@ -1491,8 +1491,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>22.91033cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>22.87365cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.09771cm</Width>
         <ZIndex>6</ZIndex>
@@ -1531,8 +1531,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>21.68033cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>21.64365cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.23cm</Width>
         <ZIndex>7</ZIndex>
@@ -1571,8 +1571,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>20.34449cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>20.30781cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.33583cm</Width>
         <ZIndex>8</ZIndex>
@@ -1611,8 +1611,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>19.14095cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>19.10427cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.20354cm</Width>
         <ZIndex>9</ZIndex>
@@ -1651,8 +1651,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>17.83158cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>17.7949cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.30938cm</Width>
         <ZIndex>10</ZIndex>
@@ -1691,8 +1691,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>15.91366cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>15.87698cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.91792cm</Width>
         <ZIndex>11</ZIndex>
@@ -1731,8 +1731,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>14.04574cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>14.00906cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.9032cm</Width>
         <ZIndex>12</ZIndex>
@@ -1771,8 +1771,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>12.47178cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>12.4351cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.57396cm</Width>
         <ZIndex>13</ZIndex>
@@ -1811,10 +1811,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>10.68616cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>10.58721cm</Left>
         <Height>0.52973cm</Height>
-        <Width>1.78563cm</Width>
+        <Width>1.8479cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
@@ -1851,8 +1851,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>6.6693cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>6.63262cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.12417cm</Width>
         <ZIndex>15</ZIndex>
@@ -1891,8 +1891,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>7.79347cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>7.75679cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.30937cm</Width>
         <ZIndex>16</ZIndex>
@@ -1931,8 +1931,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.24111cm</Top>
-        <Left>9.10285cm</Left>
+        <Top>2.25715cm</Top>
+        <Left>9.06617cm</Left>
         <Height>0.52973cm</Height>
         <Width>1.52104cm</Width>
         <ZIndex>17</ZIndex>
@@ -1950,13 +1950,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.72917in</Height>
+    <Height>1.28646in</Height>
     <Style />
   </Body>
-  <Width>10.9462in</Width>
+  <Width>10.82812in</Width>
   <Page>
     <PageHeader>
-      <Height>1.64042cm</Height>
+      <Height>1.56114cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1964,8 +1964,8 @@
           <Source>Embedded</Source>
           <Value>Logo</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.31743cm</Top>
-          <Left>0.70115cm</Left>
+          <Top>0.23795cm</Top>
+          <Left>0.59832cm</Left>
           <Height>1.07625cm</Height>
           <Width>1.07667cm</Width>
           <Style>
@@ -1992,61 +1992,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>0.83764cm</Top>
-          <Left>1.84838cm</Left>
-          <Height>0.6cm</Height>
+          <Top>0.68781cm</Top>
+          <Left>1.74555cm</Left>
+          <Height>0.62639cm</Height>
           <Width>5.06985cm</Width>
           <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox27">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Fecha </Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Format>dd/MM/yy</Format>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>: </Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <Format>dd/MM/yy</Format>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>=Now()</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <Format>dd/MM/yy</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox24</rd:DefaultName>
-          <Top>0.96958cm</Top>
-          <Left>22.88335cm</Left>
-          <Height>0.52973cm</Height>
-          <Width>4.47021cm</Width>
-          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2093,11 +2043,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox24</rd:DefaultName>
-          <Top>0.97854cm</Top>
-          <Left>7.4cm</Left>
+          <Top>0.82871cm</Top>
+          <Left>9.06617cm</Left>
           <Height>0.48549cm</Height>
-          <Width>6.64573cm</Width>
-          <ZIndex>3</ZIndex>
+          <Width>5.97476cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2145,16 +2095,66 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox24</rd:DefaultName>
-          <Top>0.97854cm</Top>
-          <Left>14.04574cm</Left>
+          <Top>0.82871cm</Top>
+          <Left>15.04093cm</Left>
           <Height>0.48549cm</Height>
-          <Width>6.64573cm</Width>
-          <ZIndex>4</ZIndex>
+          <Width>6.57573cm</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
             <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox27">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Fecha </Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>dd/MM/yy</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>: </Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>dd/MM/yy</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Now()</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>dd/MM/yy</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox24</rd:DefaultName>
+          <Top>0.81975cm</Top>
+          <Left>22.78052cm</Left>
+          <Height>0.49445cm</Height>
+          <Width>4.47021cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -2179,18 +2179,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DS_Ausentismo_fecha">
+    <DataSource Name="DS_Ausentismos_Fecha">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>7b617e49-25f9-4740-8143-3cbcd57a2f98</rd:DataSourceID>
+      <rd:DataSourceID>4c781d54-187f-413e-b886-193944c02b84</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>DS_Ausentismo_fecha</DataSourceName>
+        <DataSourceName>DS_Ausentismos_Fecha</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -2268,8 +2268,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DS_Ausentismo_fecha</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\DS_Ausentismo_fecha.xsd</rd:SchemaPath>
+        <rd:DataSetName>DS_Ausentismos_Fecha</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\DS_Ausentismos_Fecha.xsd</rd:SchemaPath>
         <rd:TableName>Ausentismo_Fecha</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -2289,5 +2289,5 @@ BAryxaoROhCUzvpAH9KHBvPPUJUuWeevX/DtRRRVgwFFFFAH/9k=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>74803d1b-112b-496f-bd75-599c988d5f45</rd:ReportID>
+  <rd:ReportID>e97dbbef-7dfd-4b4c-b3bf-2fe7d152ffb7</rd:ReportID>
 </Report>

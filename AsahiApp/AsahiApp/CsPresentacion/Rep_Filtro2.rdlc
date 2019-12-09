@@ -224,7 +224,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>A/C</Value>
+                              <Value>B/C</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -261,7 +261,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>A/B</Value>
+                              <Value>B/A</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -894,7 +894,7 @@
     <Height>1.34115in</Height>
     <Style />
   </Body>
-  <Width>8.89942in</Width>
+  <Width>8.5765in</Width>
   <Page>
     <PageHeader>
       <Height>1.53458cm</Height>

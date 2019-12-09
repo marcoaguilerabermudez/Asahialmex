@@ -55,8 +55,8 @@ namespace CsPresentacion
             lbl_altas.Text = Convert.ToString(Altas);
             lbl_bajas.Text = Convert.ToString(Bajas);
             lbl_total.Text = Convert.ToString(Total);
-            txt_ac.Text = Convert.ToString(Bajas * 100 / Total);
-            txt_ab.Text = Convert.ToString(Bajas * 100 / Altas);
+            txt_bc.Text = Convert.ToString(Bajas * 100 / Total);
+            txt_ba.Text = Convert.ToString(Bajas * 100 / Altas);
         }
         private void Calcula_Total2()
         {
@@ -73,9 +73,11 @@ namespace CsPresentacion
             lbl_altas2.Text = Convert.ToString(Altas);
             lbl_bajas2.Text = Convert.ToString(Bajas);
             lbl_total2.Text = Convert.ToString(Total);
-            txt_ac2.Text = Convert.ToString(Bajas * 100 / Total);
-            txt_ab2.Text = Convert.ToString(Bajas * 100 / Altas);
+            txt_bc2.Text = Convert.ToString(Bajas * 100 / Total);
+            txt_ba2.Text = Convert.ToString(Bajas * 100 / Altas);
         }
+
+
         private void Calcula_Total3()
         {
             double Altas = 0;
@@ -91,8 +93,8 @@ namespace CsPresentacion
             lbl_altas3.Text = Convert.ToString(Altas);
             lbl_bajas3.Text = Convert.ToString(Bajas);
             lbl_total3.Text = Convert.ToString(Total);
-            txt_ac3.Text = Convert.ToString(Bajas * 100 / Total);
-            txt_ab3.Text = Convert.ToString(Bajas * 100 / Altas);
+            txt_bc3.Text = Convert.ToString(Bajas * 100 / Total);
+            txt_ba3.Text = Convert.ToString(Bajas * 100 / Altas);
         }
 
         public void Llenar_dgv(DataGridView dgv)// Método para llenar DatagridView Total
@@ -194,7 +196,7 @@ namespace CsPresentacion
                 //Pasa por cada fila y lee el valor de cada columna.
                 for (int i = -1; i < dgv_total.Rows.Count - 0; i++)//Primera y ultima fila
                 {
-                    for (int j = 0; j < dgv_total.Columns.Count - 0; j++)//Columnas lado izquierdo y derecho
+                    for (int j = 0; j <dgv_total.Columns.Count - 0; j++)//Columnas lado izquierdo y derecho
                     {
                         // El índice de Excel comienza desde 1,1. Como first Row tendría los encabezados de Columna, agregando una verificación de condición.
                         if (cellRowIndex == 2)
@@ -210,26 +212,11 @@ namespace CsPresentacion
                     cellColumnIndex = 1;//ok
                     cellRowIndex++;
                 }
-                //Obtener la ubicación y el nombre de archivo de excel para guardar del usuario.
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Libro de Excel (*.xlsx)|*.xlsx";
-                saveDialog.FilterIndex = 0;//ok
-
-                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Su documento se exportó correctamente.");
-                }
+                excel.Visible = true;
             }
             catch (Exception error)
             {
                 //MessageBox.Show("No se exportó correctamente" + error.Message);
-            }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
             }
         }
 
@@ -263,26 +250,11 @@ namespace CsPresentacion
                     cellColumnIndex = 1;//ok
                     cellRowIndex++;
                 }
-                //Obtener la ubicación y el nombre de archivo de excel para guardar del usuario.
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Libro de Excel (*.xlsx)|*.xlsx";
-                saveDialog.FilterIndex = 0;//ok
-
-                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Su documento se exportó correctamente.");
-                }
+                excel.Visible = true;
             }
             catch (Exception error)
             {
                 //MessageBox.Show("No se exportó correctamente" + error.Message);
-            }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
             }
         }
 
@@ -316,26 +288,11 @@ namespace CsPresentacion
                     cellColumnIndex = 1;//ok
                     cellRowIndex++;
                 }
-                //Obtener la ubicación y el nombre de archivo de excel para guardar del usuario.
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Libro de Excel (*.xlsx)|*.xlsx";
-                saveDialog.FilterIndex = 0;//ok
-
-                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Su documento se exportó correctamente.");
-                }
+                excel.Visible = true;
             }
             catch (Exception error)
             {
                 //MessageBox.Show("No se exportó correctamente" + error.Message);
-            }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
             }
         }
 
@@ -351,13 +308,13 @@ namespace CsPresentacion
             lbl_altas2.Text = "";
             lbl_bajas2.Text = "";
             lbl_total2.Text = "";
-            txt_ac2.Text = "";
-            txt_ab2.Text = "";
+            txt_bc2.Text = "";
+            txt_ba2.Text = "";
             lbl_altas3.Text = "";
             lbl_bajas3.Text = "";
             lbl_total3.Text = "";
-            txt_ac3.Text = "";
-            txt_ab3.Text = "";
+            txt_bc3.Text = "";
+            txt_ba3.Text = "";
         }
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
@@ -563,7 +520,6 @@ namespace CsPresentacion
 
         private void Btn_exportar_ant2_Click(object sender, EventArgs e)
         {
-
             if (cmb_ant2.Text == "")
             {
                 MessageBox.Show("Es necesario filtrar la información.", "Aviso");
