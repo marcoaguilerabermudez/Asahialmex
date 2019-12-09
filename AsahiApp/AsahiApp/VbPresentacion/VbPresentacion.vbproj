@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>105</ApplicationRevision>
+    <ApplicationRevision>110</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -237,6 +237,12 @@
     <Compile Include="MuestraOeeCompleto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NuevoMuestraOEE.Designer.vb">
+      <DependentUpon>NuevoMuestraOEE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoMuestraOEE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </Compile>
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MuestraOeeCompleto.resx">
       <DependentUpon>MuestraOeeCompleto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoMuestraOEE.resx">
+      <DependentUpon>NuevoMuestraOEE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />

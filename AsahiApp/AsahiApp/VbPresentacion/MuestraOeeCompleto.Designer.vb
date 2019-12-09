@@ -38,7 +38,7 @@ Partial Class MuestraOeeCompleto
         Me.btn_esp = New System.Windows.Forms.RadioButton()
         Me.lbl_fecha = New System.Windows.Forms.Label()
         Me.lbl_momento = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lbl_actu = New System.Windows.Forms.Label()
         CType(Me.dtgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgv2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -202,15 +202,15 @@ Partial Class MuestraOeeCompleto
         Me.lbl_momento.TabIndex = 507
         Me.lbl_momento.Text = "OEE MENSUAL"
         '
-        'Label2
+        'lbl_actu
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(381, 7)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(170, 20)
-        Me.Label2.TabIndex = 506
-        Me.Label2.Text = "Última actualización"
+        Me.lbl_actu.AutoSize = True
+        Me.lbl_actu.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_actu.Location = New System.Drawing.Point(381, 7)
+        Me.lbl_actu.Name = "lbl_actu"
+        Me.lbl_actu.Size = New System.Drawing.Size(170, 20)
+        Me.lbl_actu.TabIndex = 506
+        Me.lbl_actu.Text = "Última actualización"
         '
         'MuestraOeeCompleto
         '
@@ -218,7 +218,7 @@ Partial Class MuestraOeeCompleto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(980, 630)
         Me.Controls.Add(Me.lbl_momento)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lbl_actu)
         Me.Controls.Add(Me.lbl_fecha)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.lbl_oee)
@@ -226,6 +226,7 @@ Partial Class MuestraOeeCompleto
         Me.Controls.Add(Me.dtgv2)
         Me.Controls.Add(Me.dtgv)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimizeBox = False
         Me.Name = "MuestraOeeCompleto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Muestra Oee Mensual"
@@ -247,5 +248,5 @@ Partial Class MuestraOeeCompleto
     Friend WithEvents btn_esp As RadioButton
     Friend WithEvents lbl_fecha As Label
     Friend WithEvents lbl_momento As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lbl_actu As Label
 End Class
