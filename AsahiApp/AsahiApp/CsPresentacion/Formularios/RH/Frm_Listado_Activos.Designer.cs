@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_activos = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmb_genero = new System.Windows.Forms.ComboBox();
@@ -66,17 +66,17 @@
             this.dgv_activos.Location = new System.Drawing.Point(12, 64);
             this.dgv_activos.MultiSelect = false;
             this.dgv_activos.Name = "dgv_activos";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_activos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_activos.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_activos.RowHeadersVisible = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            this.dgv_activos.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.dgv_activos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_activos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_activos.ShowCellErrors = false;
             this.dgv_activos.Size = new System.Drawing.Size(1056, 523);
@@ -158,7 +158,7 @@
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(613, 42);
+            this.btn_nuevo.Location = new System.Drawing.Point(603, 42);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(27, 27);
             this.btn_nuevo.TabIndex = 24;

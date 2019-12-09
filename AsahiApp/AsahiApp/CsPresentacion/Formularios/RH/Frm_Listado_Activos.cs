@@ -158,6 +158,7 @@ namespace CsPresentacion
             dgv.Columns[9].Width = 40;//Genero
             dgv.Columns[10].Width = 110;//turno
             dgv.Columns[11].Width = 60;//sueldo
+            dgv.Columns[12].Width = 140;//curp
         }
 
         private void nuevo()
