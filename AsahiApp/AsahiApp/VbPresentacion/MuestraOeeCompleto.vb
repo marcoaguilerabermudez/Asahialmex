@@ -318,7 +318,7 @@ Public Class MuestraOeeCompleto
                     ' Draw right border line of current cell  
                     e.Graphics.DrawLine(gridLinePen, e.CellBounds.Right - 1, e.CellBounds.Top, e.CellBounds.Right - 1, e.CellBounds.Bottom)
 
-                    ' draw/fill content in current cell, and fill only one cell of multiple same cells  
+                    'draw/fill content in current cell, and fill only one cell of multiple same cells  
                     If Not e.Value Is Nothing Then
                         If e.RowIndex > 0 AndAlso dtgv.Rows(e.RowIndex - 1).Cells(e.ColumnIndex).Value.ToString() = e.Value.ToString() Then
                         Else
