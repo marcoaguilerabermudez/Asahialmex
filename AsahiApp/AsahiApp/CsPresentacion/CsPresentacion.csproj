@@ -99,6 +99,12 @@
     <Compile Include="Ausentismos_Fecha.Designer.cs">
       <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ausentismo_retardos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ausentismo_retardos.Designer.cs">
+      <DependentUpon>Ausentismo_retardos.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_Ausentismos_Fecha.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -501,6 +507,9 @@
       <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ausentismo_dia.rdlc" />
+    <EmbeddedResource Include="Ausentismo_retardos.resx">
+      <DependentUpon>Ausentismo_retardos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Ausentismo Global.resx">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>
     </EmbeddedResource>
@@ -962,6 +971,15 @@
       <VersionMinor>8</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSXML2">
+      <Guid>{F5078F18-C551-11D3-89B9-0000F81FE221}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>

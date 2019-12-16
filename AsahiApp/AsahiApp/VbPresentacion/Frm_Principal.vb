@@ -395,5 +395,11 @@ Public Class Frm_Principal
         Dim Ag As New Frm_Ausentismo_Fecha
         Ag.Show()
     End Sub
+
+    Private Sub AusentismosYRetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AusentismosYRetardosToolStripMenuItem.Click
+        Dim Ag As New Frm_Incapacidades_retardos
+        Ag.Show()
+
+    End Sub
 #End Region
 End Class

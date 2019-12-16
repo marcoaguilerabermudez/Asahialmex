@@ -31,13 +31,13 @@ namespace CsPresentacion
         int indice = 0;
         SqlCommand cmd;
         SqlDataReader dr;
-
-        SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
+       SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
         //Principal
         private void Permisos_Autorizaciones_Load(object sender, EventArgs e)
         {
             nuevo();
             autocompletar_responsable(txt_nombre);
+
         }
         //Métodos
         private void Diseño_Grid(DataGridView dgv)

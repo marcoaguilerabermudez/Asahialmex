@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Office = Microsoft.Office.Core;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace CsPresentacion
 {
@@ -44,12 +46,14 @@ namespace CsPresentacion
             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
             try
             {
                 worksheet = workbook.ActiveSheet;
                 worksheet.Name = "Libro1";
                 int cellRowIndex = 2;//ok
                 int cellColumnIndex = 1;//ok
+       
                 //Pasa por cada fila y lee el valor de cada columna.
                 for (int i = -1; i < dgv_activos.Rows.Count - 0; i++)//Primera y ultima fila
                 {
@@ -62,7 +66,7 @@ namespace CsPresentacion
                         }
                         else
                         {
-                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgv_activos.Rows[i].Cells[j].Value.ToString();
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgv_activos.Rows[i].Cells[j].Value.ToString();      
                         }
                         cellColumnIndex++;
                     }
@@ -340,7 +344,8 @@ namespace CsPresentacion
         {
             Cursor = Cursors.WaitCursor;
             timer1.Start();
-            Exportara_Exel();
+             Exportara_Exel();
+
         }
 
         private void Cmb_departamento_SelectedIndexChanged(object sender, EventArgs e)
