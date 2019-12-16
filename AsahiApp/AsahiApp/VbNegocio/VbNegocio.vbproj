@@ -90,6 +90,7 @@
     <Compile Include="NGastos.vb" />
     <Compile Include="NHorasExtra.vb" />
     <Compile Include="NImpuestos.vb" />
+    <Compile Include="NPolizas.vb" />
     <Compile Include="NPrenomina.vb" />
   </ItemGroup>
   <ItemGroup>

@@ -233,4 +233,13 @@
             xml_ = value
         End Set
     End Property
+    Private ordenCompra_ As String
+    Public Property OrdenCompra() As String
+        Get
+            Return ordenCompra_
+        End Get
+        Set(ByVal value As String)
+            ordenCompra_ = value
+        End Set
+    End Property
 End Class

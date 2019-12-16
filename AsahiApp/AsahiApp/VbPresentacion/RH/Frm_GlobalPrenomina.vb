@@ -866,7 +866,6 @@ Public Class Frm_GlobalPrenomina
             End With
         Next
     End Sub
-
     Private Sub RellenarHrsExtraDTRetLista(ByVal lstTxt As LTxtNominas)
         Dim con As New conexion()
         Dim fila As Integer = 0, dur As Integer
