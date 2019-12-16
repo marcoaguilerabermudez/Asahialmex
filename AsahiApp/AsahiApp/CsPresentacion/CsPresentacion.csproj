@@ -93,10 +93,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_Ausentismo_fecha.Designer.cs">
+    <Compile Include="Ausentismos_Fecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ausentismos_Fecha.Designer.cs">
+      <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DS_Ausentismos_Fecha.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DS_Ausentismo_fecha.xsd</DependentUpon>
+      <DependentUpon>DS_Ausentismos_Fecha.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_Ausentismo_Global.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -452,12 +458,6 @@
     <Compile Include="Reportes\RH\Rep_Ausentismo.Designer.cs">
       <DependentUpon>Rep_Ausentismo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\RH\Rep_Ausentismo_Fecha.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\RH\Rep_Ausentismo_Fecha.Designer.cs">
-      <DependentUpon>Rep_Ausentismo_Fecha.cs</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -497,6 +497,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Ausentismos_Fecha.resx">
+      <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ausentismo_dia.rdlc" />
     <EmbeddedResource Include="Formularios\RH\Ausentismo Global.resx">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>
@@ -613,15 +616,11 @@
     <EmbeddedResource Include="Reportes\RH\Altas_Empleados.resx">
       <DependentUpon>Altas_Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_Incapacidades.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Rep_Ausentismo.resx">
       <DependentUpon>Rep_Ausentismo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Ausentismos.rdlc" />
     <EmbeddedResource Include="Rep_Ausentismo_Fecha.rdlc" />
-    <EmbeddedResource Include="Reportes\RH\Rep_Ausentismo_Fecha.resx">
-      <DependentUpon>Rep_Ausentismo_Fecha.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Rep_bajas.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Finiquito.resx">
       <DependentUpon>Finiquito.cs</DependentUpon>
@@ -637,6 +636,7 @@
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
     <EmbeddedResource Include="Rep_grafica_rotacion.rdlc" />
     <EmbeddedResource Include="Rep_Historico.rdlc" />
+    <EmbeddedResource Include="Rep_Incapacidades.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Activos.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Altas.rdlc" />
     <EmbeddedResource Include="Rep_Listado_bajas.rdlc" />
@@ -685,16 +685,16 @@
     <None Include="DS_Ausentismos.xss">
       <DependentUpon>DS_Ausentismos.xsd</DependentUpon>
     </None>
-    <None Include="DS_Ausentismo_fecha.xsc">
-      <DependentUpon>DS_Ausentismo_fecha.xsd</DependentUpon>
+    <None Include="DS_Ausentismos_Fecha.xsc">
+      <DependentUpon>DS_Ausentismos_Fecha.xsd</DependentUpon>
     </None>
-    <None Include="DS_Ausentismo_fecha.xsd">
+    <None Include="DS_Ausentismos_Fecha.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_Ausentismo_fecha.Designer.cs</LastGenOutput>
+      <LastGenOutput>DS_Ausentismos_Fecha.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DS_Ausentismo_fecha.xss">
-      <DependentUpon>DS_Ausentismo_fecha.xsd</DependentUpon>
+    <None Include="DS_Ausentismos_Fecha.xss">
+      <DependentUpon>DS_Ausentismos_Fecha.xsd</DependentUpon>
     </None>
     <None Include="DS_Ausentismo_Global.xsc">
       <DependentUpon>DS_Ausentismo_Global.xsd</DependentUpon>

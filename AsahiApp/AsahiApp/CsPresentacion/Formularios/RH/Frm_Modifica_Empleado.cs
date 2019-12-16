@@ -548,16 +548,16 @@ namespace CsPresentacion
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[Emprh] set  CALLE = '"+ txt_calle.Text+"',  NUMERO = "+ txt_numero.Text+ ",  COLONIA = '" + txt_colonia.Text+ "', SECTOR = '" + txt_sector.Text + "', CP = " + txt_cp.Text + ",  MUNICIPIO = '" + txt_municipio.Text+ "',  ESCOLARIDAD = '" + lbl_escolaridad.Text + "',   NACIONALIDAD = '" + txt_nacionalidad.Text + "',  EMAIL = '" + txt_email.Text + "',  EMERGENCIA_CONTACTO = '" + txt_contacto.Text + "', EMERGENCIA_TELEFONO = '" + txt_tel_contacto.Text + "', EMERGENCIA_PARENTESCO = '" + cmb_parentesco.Text + "', GRADUACION = " + txt_año_graduacion.Text + ", ESTADO_CIVIL = '" + lbl_civil.Text + "', TELEFONO_CELULAR = '" + txt_telefono.Text + "', SEXO = '" + cmb_genero.Text + "', FECHA_NACIMIENTO = '" + dtm_nacimiento.Text + "', ESTADO_NACIMIENTO = '" + cmb_estado.Text + "', LUGAR_NACIMIENTO = '" + txt_lugar_nac.Text + "' , ESTADO = '" + cmb_estado.Text + "' WHERE CLAVE = " + txt_clave.Text +"", con);
-              SqlCommand cmd2 = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[Empprin] set  NOMBREN = '" + txt_nombre.Text + "', NOMBREP = '" + txt_paterno.Text + "', NOMBREM = '" + txt_materno.Text + "', CURP = '" + txt_curp.Text + "', RFC = '" + txt_rfc.Text + "', AFILIACION = '" + txt_nss.Text + "', CREDITO_INFONAVIT = '" + txt_num_infonavit.Text + "'  WHERE CLAVE = " + txt_clave.Text + "", con);
-               SqlCommand cmd3 = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[EMPEXT] set  HIJOS = " + txt_hijos.Text + "   WHERE CLAVE = " + txt_clave.Text + "", con);
-               cmd.Parameters.AddWithValue("@Clave", txt_clave.Text);
-              cmd2.Parameters.AddWithValue("@Clave", txt_clave.Text);
-               cmd3.Parameters.AddWithValue("@Clave", txt_clave.Text);
+              con.Open();
+              SqlCommand cmd = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[Emprh] set  CALLE = '"+ txt_calle.Text+"',  NUMERO = '"+ txt_numero.Text+ "',  COLONIA = '" + txt_colonia.Text+ "', SECTOR = '" + txt_sector.Text + "', CP = '" + txt_cp.Text + "',  MUNICIPIO = '" + txt_municipio.Text+ "',  ESCOLARIDAD = '" + lbl_escolaridad.Text + "',   NACIONALIDAD = '" + txt_nacionalidad.Text + "',  EMAIL = '" + txt_email.Text + "',  EMERGENCIA_CONTACTO = '" + txt_contacto.Text + "', EMERGENCIA_TELEFONO = '" + txt_tel_contacto.Text + "', EMERGENCIA_PARENTESCO = '" + cmb_parentesco.Text + "', GRADUACION = '" + txt_año_graduacion.Text + "', ESTADO_CIVIL = '" + lbl_civil.Text + "', TELEFONO_CELULAR = '" + txt_telefono.Text + "', SEXO = '" + cmb_genero.Text + "', FECHA_NACIMIENTO = '" + dtm_nacimiento.Text + "', ESTADO_NACIMIENTO = '" + cmb_estado.Text + "', LUGAR_NACIMIENTO = '" + txt_lugar_nac.Text + "' , ESTADO = '" + cmb_estado.Text + "' WHERE CLAVE = " + txt_clave.Text +"", con);
+             SqlCommand cmd2 = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[Empprin] set  NOMBREN = '" + txt_nombre.Text + "', NOMBREP = '" + txt_paterno.Text + "', NOMBREM = '" + txt_materno.Text + "', CURP = '" + txt_curp.Text + "', RFC = '" + txt_rfc.Text + "', AFILIACION = '" + txt_nss.Text + "', CREDITO_INFONAVIT = '" + txt_num_infonavit.Text + "'  WHERE CLAVE = " + txt_clave.Text + "", con);
+             SqlCommand cmd3 = new SqlCommand("UPDATE  [asahi16].[Supervisor_giro].[EMPEXT] set  HIJOS = " + txt_hijos.Text + "   WHERE CLAVE = " + txt_clave.Text + "", con);
+           cmd.Parameters.AddWithValue("@Clave", txt_clave.Text);
+             cmd2.Parameters.AddWithValue("@Clave", txt_clave.Text);
+              cmd3.Parameters.AddWithValue("@Clave", txt_clave.Text);
                cmd.ExecuteNonQuery();
-              cmd2.ExecuteNonQuery();
-               cmd3.ExecuteNonQuery();
+             cmd2.ExecuteNonQuery();
+             cmd3.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception error)
@@ -830,7 +830,7 @@ namespace CsPresentacion
                 MessageBox.Show("Es necesario capturar el número de dirección.");
                 txt_numero.Focus();
             }
-            else if (txt_numero.Text == "")
+            else if (txt_año_graduacion.Text == "")
             {
                 MessageBox.Show("Es necesario capturar el año de escolarida");
                 txt_año_graduacion.Focus();
@@ -850,6 +850,15 @@ namespace CsPresentacion
                 MessageBox.Show("Es necesario capturar el CURP");
                 txt_curp.Focus();
             }
+            else if (txt_hijos.Text == "")
+            {
+                txt_hijos.Text = "0";
+            }
+            else if (txt_telefono.Text == "")
+            {
+                txt_telefono.Text = "0";
+            }
+
             else
             {
                 Actualizar();
@@ -1551,28 +1560,58 @@ namespace CsPresentacion
         }
         private void Button1_Click(object sender, EventArgs e)
         {
+            if (txt_clave.Text == "")
+            {
+                MessageBox.Show("Es necesario seleccionar un número de empleado.", "Aviso");
+                txt_clave.Focus();
+            }
 
-            if (txt_hijos.Text == "")
+            else if (txt_cp.Text == "")
+            {
+                MessageBox.Show("Es necesario capturar el código postal");
+                txt_cp.Focus();
+            }
+            else if (txt_numero.Text == "")
+            {
+                MessageBox.Show("Es necesario capturar el número de dirección.");
+                txt_numero.Focus();
+            }
+            else if (txt_año_graduacion.Text == "")
+            {
+                MessageBox.Show("Es necesario capturar el año de escolarida");
+                txt_año_graduacion.Focus();
+            }
+            else if (txt_nss.Text == "")
+            {
+                MessageBox.Show("Es necesario capturar el NSS");
+                txt_nss.Focus();
+            }
+            else if (txt_rfc.Text == "")
+            {
+                MessageBox.Show("Es necesario capturar el RFC");
+                txt_rfc.Focus();
+            }
+            else if (txt_curp.Text == "")
+            {
+                MessageBox.Show("Es necesario capturar el CURP");
+                txt_curp.Focus();
+            }
+            else if (txt_hijos.Text == "")
             {
                 txt_hijos.Text = "0";
             }
-            if (txt_telefono.Text == "")
+            else if (txt_telefono.Text == "")
             {
                 txt_telefono.Text = "0";
             }
 
-            if (txt_clave.Text == "")
-            {
-                MessageBox.Show("Es necesario seleccionar un número de empleado", "Aviso");
-                txt_clave.Focus();
-            }
             else
             {
                 Actualizar();
                 nuevo();
-                mostrar_dgv_departamento();
-                mostrar_dgv_turno();
-                mostrar_dgv_ruta();
+               mostrar_dgv_departamento();
+               mostrar_dgv_turno();
+               mostrar_dgv_ruta();
             }
         }
         private void Cmb_Civil_SelectedIndexChanged_1(object sender, EventArgs e)

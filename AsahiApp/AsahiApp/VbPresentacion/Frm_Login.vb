@@ -9,6 +9,8 @@ Public Class Frm_Login
     Public cadenaCExpress As String
     Public cadConex As SqlConnection
     Dim count As Integer = 0
+    Public uss As String
+
     ' TODO: inserte el código para realizar autenticación personalizada usando el nombre de usuario y la contraseña proporcionada 
     ' (Consulte https://go.microsoft.com/fwlink/?LinkId=35339).  
     ' El objeto principal personalizado se puede adjuntar al objeto principal del subproceso actual como se indica a continuación: 
@@ -25,11 +27,14 @@ Public Class Frm_Login
     Private Sub BtnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Aceptar.Click
         Dim NEmple As New NEmpleado()
         Dim emp As New Empleado()
+
+
         If Txt_NombreUsuario.Text <> "" And Txt_Contraseña.Text <> "" Then
             emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
             If emp.Respuesta = 2 Then
                 Dim principal As New Frm_Principal(cadConex, cadenaConex, emp)
                 principal.Show()
+
                 Me.Close()
             ElseIf emp.Respuesta = 0 Then
                 MsgBox("Usuario Erroneo")
@@ -47,6 +52,7 @@ Public Class Frm_Login
             MsgBox("Tienes que ingresar usuario y contraseña")
         End If
         If Me.count = 3 Then
+
             Me.Close()
         End If
     End Sub
