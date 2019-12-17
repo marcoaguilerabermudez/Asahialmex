@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@
             this.btn_inc_primero = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tp_permisos = new System.Windows.Forms.TabPage();
+            this.lbl_inc_caso = new System.Windows.Forms.Label();
             this.lbl_inc_tipo = new System.Windows.Forms.Label();
             this.txt_inc_numero = new System.Windows.Forms.MaskedTextBox();
             this.cmb_inc_caso = new System.Windows.Forms.ComboBox();
@@ -67,7 +68,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_incapacidades = new System.Windows.Forms.DataGridView();
             this.tp_edicion = new System.Windows.Forms.TabPage();
-            this.lbl_inc_caso = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -124,9 +124,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(633, 56);
+            this.pictureBox1.Location = new System.Drawing.Point(633, 52);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 111);
+            this.pictureBox1.Size = new System.Drawing.Size(115, 118);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 148;
             this.pictureBox1.TabStop = false;
@@ -235,6 +235,7 @@
             this.btn_inc_insertar.Size = new System.Drawing.Size(40, 30);
             this.btn_inc_insertar.TabIndex = 154;
             this.btn_inc_insertar.UseVisualStyleBackColor = false;
+            this.btn_inc_insertar.Click += new System.EventHandler(this.Btn_inc_insertar_Click);
             // 
             // btn_inc_ultimo
             // 
@@ -247,6 +248,7 @@
             this.btn_inc_ultimo.Size = new System.Drawing.Size(40, 30);
             this.btn_inc_ultimo.TabIndex = 155;
             this.btn_inc_ultimo.UseVisualStyleBackColor = false;
+            this.btn_inc_ultimo.Click += new System.EventHandler(this.Btn_inc_ultimo_Click);
             // 
             // btn_inc_siguiente
             // 
@@ -259,6 +261,7 @@
             this.btn_inc_siguiente.Size = new System.Drawing.Size(40, 30);
             this.btn_inc_siguiente.TabIndex = 156;
             this.btn_inc_siguiente.UseVisualStyleBackColor = false;
+            this.btn_inc_siguiente.Click += new System.EventHandler(this.Btn_inc_siguiente_Click);
             // 
             // btn_inc_anterior
             // 
@@ -271,6 +274,7 @@
             this.btn_inc_anterior.Size = new System.Drawing.Size(40, 30);
             this.btn_inc_anterior.TabIndex = 157;
             this.btn_inc_anterior.UseVisualStyleBackColor = false;
+            this.btn_inc_anterior.Click += new System.EventHandler(this.Btn_inc_anterior_Click);
             // 
             // btn_inc_primero
             // 
@@ -283,6 +287,7 @@
             this.btn_inc_primero.Size = new System.Drawing.Size(40, 30);
             this.btn_inc_primero.TabIndex = 158;
             this.btn_inc_primero.UseVisualStyleBackColor = false;
+            this.btn_inc_primero.Click += new System.EventHandler(this.Btn_inc_primero_Click);
             // 
             // tabControl1
             // 
@@ -329,6 +334,15 @@
             this.tp_permisos.TabIndex = 0;
             this.tp_permisos.Text = "1. Incapacidades";
             this.tp_permisos.UseVisualStyleBackColor = true;
+            // 
+            // lbl_inc_caso
+            // 
+            this.lbl_inc_caso.AutoSize = true;
+            this.lbl_inc_caso.Location = new System.Drawing.Point(613, 142);
+            this.lbl_inc_caso.Name = "lbl_inc_caso";
+            this.lbl_inc_caso.Size = new System.Drawing.Size(42, 13);
+            this.lbl_inc_caso.TabIndex = 173;
+            this.lbl_inc_caso.Text = "@Caso";
             // 
             // lbl_inc_tipo
             // 
@@ -485,21 +499,25 @@
             this.dgv_incapacidades.Location = new System.Drawing.Point(7, 159);
             this.dgv_incapacidades.MultiSelect = false;
             this.dgv_incapacidades.Name = "dgv_incapacidades";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_incapacidades.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_incapacidades.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_incapacidades.RowHeadersVisible = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            this.dgv_incapacidades.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.dgv_incapacidades.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_incapacidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_incapacidades.ShowCellErrors = false;
             this.dgv_incapacidades.Size = new System.Drawing.Size(780, 245);
             this.dgv_incapacidades.TabIndex = 23;
+            this.dgv_incapacidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_incapacidades_CellContentClick);
+            this.dgv_incapacidades.CurrentCellChanged += new System.EventHandler(this.Dgv_incapacidades_CurrentCellChanged);
+            this.dgv_incapacidades.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_incapacidades_RowEnter);
+            this.dgv_incapacidades.DoubleClick += new System.EventHandler(this.Dgv_incapacidades_DoubleClick);
             // 
             // tp_edicion
             // 
@@ -510,15 +528,6 @@
             this.tp_edicion.TabIndex = 1;
             this.tp_edicion.Text = "2. Retardos";
             this.tp_edicion.UseVisualStyleBackColor = true;
-            // 
-            // lbl_inc_caso
-            // 
-            this.lbl_inc_caso.AutoSize = true;
-            this.lbl_inc_caso.Location = new System.Drawing.Point(613, 142);
-            this.lbl_inc_caso.Name = "lbl_inc_caso";
-            this.lbl_inc_caso.Size = new System.Drawing.Size(42, 13);
-            this.lbl_inc_caso.TabIndex = 173;
-            this.lbl_inc_caso.Text = "@Caso";
             // 
             // Frm_Incapacidades_retardos
             // 

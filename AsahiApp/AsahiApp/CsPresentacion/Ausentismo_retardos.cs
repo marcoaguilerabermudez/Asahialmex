@@ -29,6 +29,7 @@ namespace CsPresentacion
             tt.SetToolTip(btn_inc_exportar, "Exportar");
         }
 
+        int indice = 0;
         SqlCommand cmd;
         SqlDataReader dr;
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
@@ -196,27 +197,6 @@ namespace CsPresentacion
                 MessageBox.Show("No se pudo autcompletar nombre " + error.ToString());
             }
         }
-
-        //Botones
-        private void Btn_nuevo_Click(object sender, EventArgs e)
-        {
-            nuevo();
-            Mostrar_Grid();
-        }
-        private void Btn_inc_cancelar_Click(object sender, EventArgs e)//Boton cancelar modulo de incapacidades
-        {
-            dtm_inc_inicia.Text = "";
-            dtm_inc_termina.Text = "";
-            txt_inc_duracion.Text = "";
-            dtm_inc_fecha.Text = "";
-            txt_inc_numero.Text = "";
-            cmb_inc_tipo.Text = "";
-            cmb_inc_caso.Text = "";
-            lbl_inc_caso.Text = "";
-            lbl_inc_tipo.Text = "";
-            btn_inc_cancelar.Enabled = false;
-            dtm_inc_inicia.Focus();
-        }
         private void cargar_clave()
         {
             try
@@ -239,13 +219,107 @@ namespace CsPresentacion
             {
             }
         }
+        
+        //Botones
+        private void Btn_nuevo_Click(object sender, EventArgs e)
+        {
+            nuevo();
+            Mostrar_Grid();
+        }
+        private void Btn_inc_cancelar_Click(object sender, EventArgs e)//Boton cancelar modulo de incapacidades
+        {
+            dtm_inc_inicia.Text = "";
+            dtm_inc_termina.Text = "";
+            txt_inc_duracion.Text = "";
+            dtm_inc_fecha.Text = "";
+            txt_inc_numero.Text = "";
+            cmb_inc_tipo.Text = "";
+            cmb_inc_caso.Text = "";
+            lbl_inc_caso.Text = "";
+            lbl_inc_tipo.Text = "";
+            btn_inc_cancelar.Enabled = false;
+            dtm_inc_inicia.Focus();
+        }
         private void Btn_inc_exportar_Click(object sender, EventArgs e)//Botón exportar excel, módulo de incapacidades
         {
             Exportara_Exel();
         }
+        private void Btn_inc_anterior_Click(object sender, EventArgs e)
+        {
+            int Anterior = indice - 1;
+
+            try
+            {
+                dgv_incapacidades.CurrentCell = dgv_incapacidades.Rows[Anterior].Cells[dgv_incapacidades.CurrentCell.ColumnIndex];
+                btn_inc_siguiente.Enabled = true;
+                btn_inc_ultimo.Enabled = true;
+                dtm_inc_inicia.Focus();
+            }
+            catch
+            {
+                btn_inc_anterior.Enabled = false;
+                btn_inc_primero.Enabled = false;
+                dtm_inc_inicia.Focus();
+            }
+        }
+        private void Btn_inc_primero_Click(object sender, EventArgs e)
+        {
+            dgv_incapacidades.CurrentCell = dgv_incapacidades.Rows[0].Cells[dgv_incapacidades.CurrentCell.ColumnIndex];
+            btn_inc_anterior.Enabled = false;
+            btn_inc_primero.Enabled = false;
+            btn_inc_siguiente.Enabled = true;
+            btn_inc_ultimo.Enabled = true;
+            dtm_inc_inicia.Focus();
+        }
+        private void Btn_inc_siguiente_Click(object sender, EventArgs e)
+        {
+            int Siguiente = indice + 1;
+            try
+            {
+                dgv_incapacidades.CurrentCell = dgv_incapacidades.Rows[Siguiente].Cells[dgv_incapacidades.CurrentCell.ColumnIndex];
+                btn_inc_anterior.Enabled = true;
+                btn_inc_primero.Enabled = true;
+                dtm_inc_inicia.Focus();
+            }
+            catch
+            {
+                btn_inc_siguiente.Enabled = false;
+                btn_inc_ultimo.Enabled = false;
+                MessageBox.Show("Llegó al final!", "Aviso");
+                dtm_inc_inicia.Focus();
+            }
+        }
+        private void Btn_inc_ultimo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgv_incapacidades.CurrentCell = dgv_incapacidades.Rows[49].Cells[dgv_incapacidades.CurrentCell.ColumnIndex];
+                btn_inc_siguiente.Enabled = false;
+                btn_inc_ultimo.Enabled = false;
+                btn_inc_anterior.Enabled = true;
+                btn_inc_primero.Enabled = true;
+                dtm_inc_inicia.Focus();
+            }
+            catch
+            {
+            }
+        }
+        private void Btn_inc_insertar_Click(object sender, EventArgs e)
+        {
+            dtm_inc_inicia.Text = "";
+            dtm_inc_termina.Text = "";
+            dtm_inc_fecha.Text = "";
+            txt_inc_duracion.Text = "";
+            cmb_inc_caso.Text = "";
+            cmb_inc_tipo.Text = "";
+            txt_inc_numero.Text = "";
+            dtm_inc_inicia.Focus();
+        }
+
         //Eventos
         private void Dtm_inc_termina_ValueChanged(object sender, EventArgs e)
         {
+            btn_inc_cancelar.Enabled = true;
             DateTime Inicia = dtm_inc_inicia.Value.Date;
             DateTime Termina = dtm_inc_termina.Value.Date;
             TimeSpan Res = Termina - Inicia;
@@ -328,6 +402,7 @@ namespace CsPresentacion
             {
                 cargar_informacion();
                 Mostrar_Grid();
+                txt_nombre.Enabled = false;
                 btn_inc_exportar.Enabled = true;
                 btn_inc_siguiente.Enabled = true;
                 btn_inc_ultimo.Enabled = true;
@@ -362,24 +437,70 @@ namespace CsPresentacion
         private void Txt_nombre_Leave(object sender, EventArgs e)
         {
             cargar_clave();
+            Mostrar_Grid();
             btn_inc_exportar.Enabled = true;
             btn_inc_siguiente.Enabled = true;
             btn_inc_ultimo.Enabled = true;
             pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
             txt_nombre.Enabled = false;
-            Mostrar_Grid();
             dtm_inc_inicia.Focus();     
         }
         private void Lbl_estado_TextChanged(object sender, EventArgs e)
         {
-            if (lbl_estado.Text == "BAJA")
+            if (lbl_estado.Text == "VIGENTE")
             {
-                lbl_estado.ForeColor = Color.Red; 
+                lbl_estado.ForeColor = Color.Black;
+                btn_inc_insertar.Enabled = true; 
             }
             else
             {
-                lbl_estado.ForeColor = Color.Black;
+                lbl_estado.ForeColor = Color.Red;
+                btn_inc_insertar.Enabled = false;
             }
         }
-    }
+        private void Dgv_incapacidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_incapacidades.Rows[e.RowIndex];
+                dtm_inc_inicia.Text = row.Cells["INICIO"].Value.ToString();
+                dtm_inc_termina.Text = row.Cells["TERMINO"].Value.ToString();
+                txt_inc_duracion.Text = row.Cells["DURACION"].Value.ToString();
+                txt_inc_numero.Text = row.Cells["NUMERO"].Value.ToString();
+                cmb_inc_caso.Text = row.Cells["CASO"].Value.ToString();
+                cmb_inc_tipo.Text = row.Cells["TIPO"].Value.ToString();
+                dtm_inc_inicia.Focus();
+            }
+        }
+        private void Dgv_incapacidades_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_incapacidades.Rows[e.RowIndex];
+                dtm_inc_inicia.Text = row.Cells["INICIO"].Value.ToString();
+                dtm_inc_termina.Text = row.Cells["TERMINO"].Value.ToString();
+                txt_inc_duracion.Text = row.Cells["DURACION"].Value.ToString();
+                txt_inc_numero.Text = row.Cells["NUMERO"].Value.ToString();
+                cmb_inc_caso.Text = row.Cells["CASO"].Value.ToString();
+                cmb_inc_tipo.Text = row.Cells["TIPO"].Value.ToString();
+            }
+        }
+        private void Dgv_incapacidades_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (dgv_incapacidades.CurrentCell != null)
+            {
+                indice = dgv_incapacidades.CurrentRow.Index;
+            }
+        }
+        private void Dgv_incapacidades_DoubleClick(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+            dtm_inc_inicia.Focus();
+
+            if (lbl_estado.Text == "VIGENTE")
+            {
+                btn_inc_eliminar.Enabled = true;
+            }
+        }
+    }  
 }
