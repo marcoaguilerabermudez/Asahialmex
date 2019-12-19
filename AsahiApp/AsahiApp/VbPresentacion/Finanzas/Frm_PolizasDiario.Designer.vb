@@ -83,15 +83,28 @@ Partial Class Frm_PolizasDiario
         Me.Dtp_Inicio = New System.Windows.Forms.DateTimePicker()
         Me.Dtp_Fin = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Dtp_FiltroFechaFactura = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Lbl_Filtros = New System.Windows.Forms.Label()
+        Me.Txt_FiltroFactura = New System.Windows.Forms.TextBox()
+        Me.Txt_FiltroOC = New System.Windows.Forms.TextBox()
+        Me.Txt_FiltroCompras = New System.Windows.Forms.TextBox()
         Me.Btn_Txt = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Txt_FiltroProveedor = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.Dgv_Prepolizas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.Dgv_Compras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel12.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
@@ -99,7 +112,7 @@ Partial Class Frm_PolizasDiario
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 51)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(971, 21)
+        Me.Panel2.Size = New System.Drawing.Size(1260, 16)
         Me.Panel2.TabIndex = 1
         '
         'Panel3
@@ -109,9 +122,9 @@ Partial Class Frm_PolizasDiario
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(0, 72)
+        Me.Panel3.Location = New System.Drawing.Point(0, 67)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(971, 542)
+        Me.Panel3.Size = New System.Drawing.Size(1260, 573)
         Me.Panel3.TabIndex = 2
         '
         'Panel7
@@ -120,9 +133,9 @@ Partial Class Frm_PolizasDiario
         Me.Panel7.Controls.Add(Me.Panel9)
         Me.Panel7.Controls.Add(Me.Panel8)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(0, 322)
+        Me.Panel7.Location = New System.Drawing.Point(0, 306)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(971, 210)
+        Me.Panel7.Size = New System.Drawing.Size(1260, 257)
         Me.Panel7.TabIndex = 3
         '
         'Dgv_Prepolizas
@@ -134,7 +147,7 @@ Partial Class Frm_PolizasDiario
         Me.Dgv_Prepolizas.Location = New System.Drawing.Point(10, 0)
         Me.Dgv_Prepolizas.Name = "Dgv_Prepolizas"
         Me.Dgv_Prepolizas.RowHeadersVisible = False
-        Me.Dgv_Prepolizas.Size = New System.Drawing.Size(951, 210)
+        Me.Dgv_Prepolizas.Size = New System.Drawing.Size(1240, 257)
         Me.Dgv_Prepolizas.TabIndex = 6
         '
         'pivot
@@ -321,9 +334,9 @@ Partial Class Frm_PolizasDiario
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel9.Location = New System.Drawing.Point(961, 0)
+        Me.Panel9.Location = New System.Drawing.Point(1250, 0)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(10, 210)
+        Me.Panel9.Size = New System.Drawing.Size(10, 257)
         Me.Panel9.TabIndex = 3
         '
         'Panel8
@@ -331,23 +344,23 @@ Partial Class Frm_PolizasDiario
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel8.Location = New System.Drawing.Point(0, 0)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(10, 210)
+        Me.Panel8.Size = New System.Drawing.Size(10, 257)
         Me.Panel8.TabIndex = 2
         '
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(0, 532)
+        Me.Panel6.Location = New System.Drawing.Point(0, 563)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(971, 10)
+        Me.Panel6.Size = New System.Drawing.Size(1260, 10)
         Me.Panel6.TabIndex = 2
         '
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(0, 296)
+        Me.Panel5.Location = New System.Drawing.Point(0, 280)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(971, 26)
+        Me.Panel5.Size = New System.Drawing.Size(1260, 26)
         Me.Panel5.TabIndex = 1
         '
         'Panel4
@@ -358,7 +371,7 @@ Partial Class Frm_PolizasDiario
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(971, 296)
+        Me.Panel4.Size = New System.Drawing.Size(1260, 280)
         Me.Panel4.TabIndex = 0
         '
         'Dgv_Compras
@@ -370,7 +383,7 @@ Partial Class Frm_PolizasDiario
         Me.Dgv_Compras.Location = New System.Drawing.Point(10, 0)
         Me.Dgv_Compras.Name = "Dgv_Compras"
         Me.Dgv_Compras.RowHeadersVisible = False
-        Me.Dgv_Compras.Size = New System.Drawing.Size(951, 296)
+        Me.Dgv_Compras.Size = New System.Drawing.Size(1240, 280)
         Me.Dgv_Compras.TabIndex = 5
         '
         'provision
@@ -511,15 +524,15 @@ Partial Class Frm_PolizasDiario
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(10, 296)
+        Me.Panel11.Size = New System.Drawing.Size(10, 280)
         Me.Panel11.TabIndex = 4
         '
         'Panel10
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel10.Location = New System.Drawing.Point(961, 0)
+        Me.Panel10.Location = New System.Drawing.Point(1250, 0)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(10, 296)
+        Me.Panel10.Size = New System.Drawing.Size(10, 280)
         Me.Panel10.TabIndex = 3
         '
         'Dtp_Inicio
@@ -541,6 +554,7 @@ Partial Class Frm_PolizasDiario
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Panel12)
         Me.Panel1.Controls.Add(Me.Btn_Txt)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -549,8 +563,122 @@ Partial Class Frm_PolizasDiario
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(971, 51)
+        Me.Panel1.Size = New System.Drawing.Size(1260, 51)
         Me.Panel1.TabIndex = 0
+        '
+        'Panel12
+        '
+        Me.Panel12.Controls.Add(Me.Label7)
+        Me.Panel12.Controls.Add(Me.Dtp_FiltroFechaFactura)
+        Me.Panel12.Controls.Add(Me.Label6)
+        Me.Panel12.Controls.Add(Me.Label5)
+        Me.Panel12.Controls.Add(Me.Label4)
+        Me.Panel12.Controls.Add(Me.Label3)
+        Me.Panel12.Controls.Add(Me.Lbl_Filtros)
+        Me.Panel12.Controls.Add(Me.Txt_FiltroFactura)
+        Me.Panel12.Controls.Add(Me.Txt_FiltroOC)
+        Me.Panel12.Controls.Add(Me.Txt_FiltroProveedor)
+        Me.Panel12.Controls.Add(Me.Txt_FiltroCompras)
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel12.Location = New System.Drawing.Point(584, 0)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(676, 51)
+        Me.Panel12.TabIndex = 5
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(415, 4)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(89, 13)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Fecha Factura"
+        '
+        'Dtp_FiltroFechaFactura
+        '
+        Me.Dtp_FiltroFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Dtp_FiltroFechaFactura.Location = New System.Drawing.Point(420, 21)
+        Me.Dtp_FiltroFechaFactura.Name = "Dtp_FiltroFechaFactura"
+        Me.Dtp_FiltroFechaFactura.Size = New System.Drawing.Size(84, 20)
+        Me.Dtp_FiltroFechaFactura.TabIndex = 15
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(241, 5)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(65, 13)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "Proveedor"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(186, 5)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(50, 13)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Factura"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(138, 6)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(24, 13)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "OC"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(80, 6)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(49, 13)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "Compra"
+        '
+        'Lbl_Filtros
+        '
+        Me.Lbl_Filtros.AutoSize = True
+        Me.Lbl_Filtros.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Filtros.ForeColor = System.Drawing.Color.White
+        Me.Lbl_Filtros.Location = New System.Drawing.Point(4, 4)
+        Me.Lbl_Filtros.Name = "Lbl_Filtros"
+        Me.Lbl_Filtros.Size = New System.Drawing.Size(74, 15)
+        Me.Lbl_Filtros.TabIndex = 10
+        Me.Lbl_Filtros.Text = "Filtrar por:"
+        '
+        'Txt_FiltroFactura
+        '
+        Me.Txt_FiltroFactura.Location = New System.Drawing.Point(189, 22)
+        Me.Txt_FiltroFactura.Name = "Txt_FiltroFactura"
+        Me.Txt_FiltroFactura.Size = New System.Drawing.Size(47, 20)
+        Me.Txt_FiltroFactura.TabIndex = 9
+        '
+        'Txt_FiltroOC
+        '
+        Me.Txt_FiltroOC.Location = New System.Drawing.Point(136, 22)
+        Me.Txt_FiltroOC.Name = "Txt_FiltroOC"
+        Me.Txt_FiltroOC.Size = New System.Drawing.Size(47, 20)
+        Me.Txt_FiltroOC.TabIndex = 8
+        '
+        'Txt_FiltroCompras
+        '
+        Me.Txt_FiltroCompras.Location = New System.Drawing.Point(83, 22)
+        Me.Txt_FiltroCompras.Name = "Txt_FiltroCompras"
+        Me.Txt_FiltroCompras.Size = New System.Drawing.Size(47, 20)
+        Me.Txt_FiltroCompras.TabIndex = 6
         '
         'Btn_Txt
         '
@@ -560,7 +688,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Txt.Image = Global.Presentacion.My.Resources.Resources.txt
         Me.Btn_Txt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Txt.Location = New System.Drawing.Point(389, 5)
+        Me.Btn_Txt.Location = New System.Drawing.Point(384, 3)
         Me.Btn_Txt.Name = "Btn_Txt"
         Me.Btn_Txt.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Txt.TabIndex = 4
@@ -588,11 +716,18 @@ Partial Class Frm_PolizasDiario
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Fecha Inicial"
         '
+        'Txt_FiltroProveedor
+        '
+        Me.Txt_FiltroProveedor.Location = New System.Drawing.Point(242, 22)
+        Me.Txt_FiltroProveedor.Name = "Txt_FiltroProveedor"
+        Me.Txt_FiltroProveedor.Size = New System.Drawing.Size(172, 20)
+        Me.Txt_FiltroProveedor.TabIndex = 7
+        '
         'Frm_PolizasDiario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(971, 614)
+        Me.ClientSize = New System.Drawing.Size(1260, 640)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -607,6 +742,8 @@ Partial Class Frm_PolizasDiario
         CType(Me.Dgv_Compras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -674,4 +811,16 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents cuentaP As DataGridViewTextBoxColumn
     Friend WithEvents impuesto As DataGridViewTextBoxColumn
     Friend WithEvents concepto As DataGridViewTextBoxColumn
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Dtp_FiltroFechaFactura As DateTimePicker
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Lbl_Filtros As Label
+    Friend WithEvents Txt_FiltroFactura As TextBox
+    Friend WithEvents Txt_FiltroOC As TextBox
+    Friend WithEvents Txt_FiltroCompras As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Txt_FiltroProveedor As TextBox
 End Class

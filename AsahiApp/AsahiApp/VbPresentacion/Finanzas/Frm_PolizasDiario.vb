@@ -13,6 +13,7 @@ Public Class Frm_PolizasDiario
     Dim archivo As String
     Dim fechaPago As Date
     Dim tCamb As Double
+    Dim pasoPol As String
 #End Region
 #Region "Acciones del formulario"
     Private Sub Frm_PolizasDiario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -22,14 +23,15 @@ Public Class Frm_PolizasDiario
         Dtp_Inicio.Value = DateAdd(DateInterval.Day, -7, Date.Now())
         Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
         Dgv_Prepolizas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
+        'Dgv_Compras.colu
+        'Dgv_Prepolizas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
         RecuperarCompras()
     End Sub
     Private Sub Dgv_Compras_DoubleClick(sender As Object, e As EventArgs) Handles Dgv_Compras.DoubleClick
         Dim uuid As String, moneda As String, tc As Double, oc As Integer
         Dim fila As Integer
-        If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1 Then
-            fila = Dgv_Compras.CurrentRow.Index
-            Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+        fila = Dgv_Compras.CurrentRow.Index
+        If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 0 Then
             uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
             moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
             tc = Dgv_Compras.Rows(fila).Cells("tazaCambio").Value
@@ -37,6 +39,9 @@ Public Class Frm_PolizasDiario
             oc = Dgv_Compras.Rows(fila).Cells("oc").Value
             Me.fechaPago = Dgv_Compras.Rows(fila).Cells("fechaPagoFactura").Value
             RecuperarPolizas(moneda, uuid, tc, oc)
+            If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+        Else
+            MsgBox("ESTA PROVICION YA SE ESTA PREPARADA PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
         End If
     End Sub
     Private Sub Dtp_Inicio_ValueChanged(sender As Object, e As EventArgs) Handles Dtp_Inicio.ValueChanged
@@ -52,6 +57,136 @@ Public Class Frm_PolizasDiario
     Private Sub Btn_Txt_Click(sender As Object, e As EventArgs) Handles Btn_Txt.Click
         CrearTxt()
         EscribirArchivo()
+    End Sub
+    Private Sub Txt_FiltroCompras_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroCompras.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_Compras.Rows.Count, folio As Integer
+        If IsNumeric(Txt_FiltroCompras.Text) Then
+            If Txt_FiltroCompras.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_Compras.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_Compras.Rows(fila)
+                        folio = .Cells("compra").Value
+                        If Not (folio Like Txt_FiltroCompras.Text) And folio <> 0 Then
+                            .Visible = True
+                        End If
+                        If Not (folio Like Txt_FiltroCompras.Text) And folio <> 0 Then
+                            .Visible = False
+                        End If
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_Compras.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        Else
+            Txt_FiltroCompras.Text = ""
+
+            For fila = 0 To totalFilas - 1
+                With Dgv_Compras.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+        End If
+    End Sub
+    Private Sub Txt_FiltroOC_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroOC.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_Compras.Rows.Count, folio As Integer
+        If IsNumeric(Txt_FiltroOC.Text) Then
+            If Txt_FiltroOC.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_Compras.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_Compras.Rows(fila)
+                        folio = .Cells("oc").Value
+                        If Not (folio Like Txt_FiltroOC.Text) And folio <> 0 Then
+                            .Visible = True
+                        End If
+                        If Not (folio Like Txt_FiltroOC.Text) And folio <> 0 Then
+                            .Visible = False
+                        End If
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_Compras.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        Else
+            Txt_FiltroOC.Text = ""
+
+            For fila = 0 To totalFilas - 1
+                With Dgv_Compras.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+        End If
+    End Sub
+    Private Sub Txt_FiltroFactura_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroFactura.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_Compras.Rows.Count, folio As String
+        If Txt_FiltroFactura.Text <> "" Then
+            For fila = 0 To totalFilas - 1
+                With Dgv_Compras.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+            For fila = 0 To totalFilas - 1
+                With Dgv_Compras.Rows(fila)
+                    folio = .Cells("factura").Value
+                    If Not (folio Like Txt_FiltroFactura.Text) And folio <> "" Then
+                        .Visible = True
+                    End If
+                    If Not (folio Like Txt_FiltroFactura.Text) And folio <> "" Then
+                        .Visible = False
+                    End If
+                End With
+            Next
+        Else
+            For fila = 0 To totalFilas - 1
+                With Dgv_Compras.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+        End If
+    End Sub
+    'Private Sub Txt_FiltroProveedor_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroProveedor.TextChanged
+    '    Dim fila As Integer, totalFilas As Integer = Dgv_Compras.Rows.Count, proveedor As String
+    '    If Txt_FiltroProveedor.Text <> "" Then
+    '        For fila = 0 To totalFilas - 1
+    '            With Dgv_Compras.Rows(fila)
+    '                .Visible = True
+    '            End With
+    '        Next
+    '        For fila = 0 To totalFilas - 1
+    '            With Dgv_Compras.Rows(fila)
+    '                proveedor = .Cells("proveedor").Value
+    '                If Not (proveedor Like Txt_FiltroProveedor.Text) And proveedor <> "" Then
+    '                    .Visible = True
+    '                End If
+    '                If Not (proveedor Like Txt_FiltroProveedor.Text) And proveedor <> "" Then
+    '                    .Visible = False
+    '                End If
+    '            End With
+    '        Next
+    '    Else
+    '        For fila = 0 To totalFilas - 1
+    '            With Dgv_Compras.Rows(fila)
+    '                .Visible = True
+    '            End With
+    '        Next
+    '    End If
+    'End Sub
+    Private Sub Dtp_FiltroFechaFactura_ValueChanged(sender As Object, e As EventArgs) Handles Dtp_FiltroFechaFactura.ValueChanged
     End Sub
 #End Region
 #Region "Recuperar"
@@ -102,13 +237,19 @@ Public Class Frm_PolizasDiario
         Next
     End Sub
     Private Sub RellenarDgvVistaPolizas(ByVal lstComp As LCompras, ByVal oc As Integer)
-        Dim fila As Integer = Dgv_Prepolizas.Rows.Count()
+        Dim fila As Integer = Dgv_Prepolizas.Rows.Count(), pfila As Integer = fila
+        Dim sum As Double, sumCargo As Double, t As Double
         Dim frm As New Frm_ConceptoPoliza("PO " & oc & " PROVISION ")
 
         If frm.ShowDialog() = DialogResult.OK Then
             For Each item In lstComp
                 Dgv_Prepolizas.Rows.Add()
                 'Dgv_Prepolizas.Columns("acum").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+                If item.Pivote = 1 Or item.Pivote = 2 Then
+                    sum = sum + item.Total
+                ElseIf item.Pivote = 3 Or item.Pivote = 4 Then
+                    sumCargo = sumCargo + item.Total
+                End If
                 With Dgv_Prepolizas.Rows(fila)
                     .Cells("pivot").Value = item.Pivote
                     .Cells("ordenCompra").Value = item.IdOrdenCompra
@@ -140,6 +281,9 @@ Public Class Frm_PolizasDiario
                 End With
                 fila += 1
             Next
+            Me.pasoPol = "Ok"
+            t = sum - sumCargo
+            Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format(Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t, "$ #,###,##0.00")
         End If
     End Sub
 #End Region
@@ -306,7 +450,7 @@ Public Class Frm_PolizasDiario
             Case "VENTAS/CONTROL DE PRODUCCIÓN" : Return "3"
             Case "VENTAS/CPRODUCCIION" : Return "3"
             Case "VENTAS/CPRODUCCION" : Return "3"
-            Case "Ventas/CProducción" : Return "3"
+            Case "VENTAS/CPRODUCCIÓN" : Return "3"
             Case Else : Return "1"
         End Select
     End Function
