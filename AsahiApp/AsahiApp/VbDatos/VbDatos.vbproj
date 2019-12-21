@@ -70,8 +70,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DCompras.vb" />
     <Compile Include="DEmpleado.vb" />
     <Compile Include="DHorasExtra.vb" />
+    <Compile Include="DPolizas.vb" />
     <Compile Include="DPrenomina.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

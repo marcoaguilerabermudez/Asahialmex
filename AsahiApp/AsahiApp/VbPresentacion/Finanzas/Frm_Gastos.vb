@@ -312,7 +312,7 @@ Public Class Frm_Gastos
                 With Dgv_GastosGlobal.Rows(fila)
                     .Cells("noCta").Value = item.Cuenta
                     .Cells("cta").Value = item.NombreCuenta
-                    .Cells("idCompra").Value = item.IdCompra
+                    .Cells("idCompra").Value = item.OrdenCompra
                     .Cells("cantCompra").Value = Format(item.CantCompra, "#,###,##0.00")
                     tCant = tCant + .Cells("cantCompra").Value
                     .Cells("costoUnit").Value = Format((item.Compras / item.CantCompra), "$ #,###,##0.00")

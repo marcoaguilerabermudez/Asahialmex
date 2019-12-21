@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>111</ApplicationRevision>
+    <ApplicationRevision>110</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -195,6 +195,18 @@
     <Compile Include="Detalle2oee.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Finanzas\Frm_ConceptoPoliza.Designer.vb">
+      <DependentUpon>Frm_ConceptoPoliza.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Frm_ConceptoPoliza.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\Frm_PolizasDiario.Designer.vb">
+      <DependentUpon>Frm_PolizasDiario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Frm_PolizasDiario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Acerca.Designer.vb">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
     </Compile>
@@ -235,6 +247,12 @@
       <DependentUpon>MuestraOeeCompleto.vb</DependentUpon>
     </Compile>
     <Compile Include="MuestraOeeCompleto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoMuestraOEE.Designer.vb">
+      <DependentUpon>NuevoMuestraOEE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoMuestraOEE.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
@@ -367,8 +385,14 @@
     <EmbeddedResource Include="Detalle2oee.resx">
       <DependentUpon>Detalle2oee.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\Frm_ConceptoPoliza.resx">
+      <DependentUpon>Frm_ConceptoPoliza.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Finanzas\Frm_PlanGastos.resx">
       <DependentUpon>Frm_PlanGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\Frm_PolizasDiario.resx">
+      <DependentUpon>Frm_PolizasDiario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Acerca.resx">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
@@ -387,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MuestraOeeCompleto.resx">
       <DependentUpon>MuestraOeeCompleto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoMuestraOEE.resx">
+      <DependentUpon>NuevoMuestraOEE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />

@@ -5,20 +5,12 @@ Public Class MuestraOeeCompleto
 
     Private Sub MuestraOeeCompleto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
-
-
         muestragrid()
-
         medidasgrid()
         muestragrid2()
         medidasgrid2()
-
-
         fechaesp()
         lbl_momento.Text = DateTime.Now
-
-
-
     End Sub
 
     Sub fechaesp()
@@ -155,6 +147,7 @@ Public Class MuestraOeeCompleto
 
 
     Sub muestragrid3()
+
         Try
             CapturaOEE.Cn.Open()
             Dim da As New SqlDataAdapter("Sp_reportegeneraloee", CapturaOEE.Cn)
@@ -325,7 +318,7 @@ Public Class MuestraOeeCompleto
                     ' Draw right border line of current cell  
                     e.Graphics.DrawLine(gridLinePen, e.CellBounds.Right - 1, e.CellBounds.Top, e.CellBounds.Right - 1, e.CellBounds.Bottom)
 
-                    ' draw/fill content in current cell, and fill only one cell of multiple same cells  
+                    'draw/fill content in current cell, and fill only one cell of multiple same cells  
                     If Not e.Value Is Nothing Then
                         If e.RowIndex > 0 AndAlso dtgv.Rows(e.RowIndex - 1).Cells(e.ColumnIndex).Value.ToString() = e.Value.ToString() Then
                         Else
@@ -368,7 +361,7 @@ Public Class MuestraOeeCompleto
 
     Sub medidasgrid2()
 
-        dtgv2.Columns("Proceso").Width = 80
+        dtgv2.Columns("Proceso").Width = 95
         dtgv2.Columns("Máquina").Width = 90
         dtgv2.Columns("Pieza").Width = 160
         dtgv2.Columns("Molde").Width = 60
@@ -416,7 +409,7 @@ Public Class MuestraOeeCompleto
 
     Sub medidasgrid4()
 
-        dtgv2.Columns("工程").Width = 80
+        dtgv2.Columns("工程").Width = 95
         dtgv2.Columns("機械").Width = 90
         dtgv2.Columns("製品").Width = 160
         dtgv2.Columns("金型").Width = 65
@@ -444,16 +437,28 @@ Public Class MuestraOeeCompleto
             muestragrid2()
             medidasgrid2()
             btn_actualiza.Text = "Actualizar"
+            lbl_actu.Text = "Última actualización"
             fechaesp()
             lbl_momento.Text = DateTime.Now
-        Else
+        ElseIf btn_jap.Checked = True Then
             muestragrid3()
             medidasgrid3()
             muestragrid4()
             medidasgrid4()
             btn_actualiza.Text = "アップデート"
+            lbl_actu.Text = "更新日付"
             fechajp()
             lbl_momento.Text = DateTime.Now
+        Else
+            muestragrid()
+            medidasgrid()
+            muestragrid2()
+            medidasgrid2()
+            btn_actualiza.Text = "Actualizar"
+            lbl_actu.Text = "Última actualización"
+            fechaesp()
+            lbl_momento.Text = DateTime.Now
+
         End If
 
     End Sub
@@ -464,6 +469,7 @@ Public Class MuestraOeeCompleto
         muestragrid2()
         medidasgrid2()
         btn_actualiza.Text = "Actualizar"
+        lbl_actu.Text = "Última actualización"
         fechaesp()
         lbl_momento.Text = DateTime.Now
     End Sub
@@ -474,6 +480,7 @@ Public Class MuestraOeeCompleto
         muestragrid4()
         medidasgrid4()
         btn_actualiza.Text = "アップデート"
+        lbl_actu.Text = "更新日付"
         fechajp()
         lbl_momento.Text = DateTime.Now
     End Sub
