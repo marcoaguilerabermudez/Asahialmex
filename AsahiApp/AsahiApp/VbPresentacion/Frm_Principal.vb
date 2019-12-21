@@ -386,11 +386,9 @@ Public Class Frm_Principal
         Dim polD As New Frm_PolizasDiario
         polD.Show()
     End Sub
-
-    Private Sub AusentismosYRetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Incapacidades_RetardosToolStripMenuItem.Click
+    Private Sub Incapacidades_RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Incapacidades_RetardosToolStripMenuItem.Click
         Dim Ag As New Frm_Incapacidades_retardos(Me.emp)
         Ag.Show()
-
     End Sub
 #End Region
 End Class
