@@ -97,4 +97,76 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
+    Public Function RecuperarListaProveedores(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstComp As New LCompras()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1	AND Serie = 'A' and Empresa = 'AAM' group by Proveedor", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim comp As New Compras
+                comp.Proveedor = dr("Proveedor").ToString
+                lstComp.Add(comp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstComp
+    End Function
+    Public Function RecuperarListaFamilia(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstComp As New LCompras()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Select Familia FROM conta.[Asahi].[dbo].[VistaPolizaMx] where UUID = '" & uuid & "' group by Familia", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim comp As New Compras
+                comp.Familia = dr("Familia").ToString
+                lstComp.Add(comp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstComp
+    End Function
+    Public Function RecuperarListaSegNeg(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstComp As New LCompras()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Select Área FROM conta.[Asahi].[dbo].[VistaPolizaMx] where UUID = '" & uuid & "' group by Área", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim comp As New Compras
+                comp.Area = dr("Área").ToString
+                lstComp.Add(comp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstComp
+    End Function
 End Class

@@ -10,4 +10,16 @@ Public Class NCompras
         Dim DComp As New DCompras()
         Return DComp.VistaPoliza(cadenaConex, moneda, idFac, tc)
     End Function
+    Public Function RecuperarListaProveedores(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
+        Dim DComp As New DCompras()
+        Return DComp.RecuperarListaProveedores(cadenaConex, fi, ff)
+    End Function
+    Public Function RecuperarListaFamilia(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
+        Dim DComp As New DCompras()
+        Return DComp.RecuperarListaFamilia(cadenaConex, uuid)
+    End Function
+    Public Function RecuperarListaSegNeg(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
+        Dim DComp As New DCompras()
+        Return DComp.RecuperarListaSegNeg(cadenaConex, uuid)
+    End Function
 End Class
