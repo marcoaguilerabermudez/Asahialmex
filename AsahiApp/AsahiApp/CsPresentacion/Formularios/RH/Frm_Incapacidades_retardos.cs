@@ -460,7 +460,7 @@ namespace CsPresentacion
         {
             try
             {
-                dgv_incapacidades.CurrentCell = dgv_incapacidades.Rows[49].Cells[dgv_incapacidades.CurrentCell.ColumnIndex];
+                dgv_incapacidades.CurrentCell = dgv_incapacidades.Rows[50].Cells[dgv_incapacidades.CurrentCell.ColumnIndex];
                 btn_inc_siguiente.Enabled = false;
                 btn_inc_ultimo.Enabled = false;
                 btn_inc_anterior.Enabled = true;

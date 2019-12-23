@@ -390,5 +390,10 @@ Public Class Frm_Principal
         Dim Ag As New Frm_Incapacidades(Me.emp)
         Ag.Show()
     End Sub
+
+    Private Sub ComidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComidasToolStripMenuItem.Click
+        Dim Co As New Frm_Comedor 'Captura de registros de comedor'
+        Co.Show()
+    End Sub
 #End Region
 End Class
