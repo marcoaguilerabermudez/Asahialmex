@@ -74,7 +74,8 @@ namespace CsPresentacion
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@VAR", "1");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
-          
+                cmd.Parameters.AddWithValue("@FECHA", dtm_com_fecha.Text);
+                cmd.Parameters.AddWithValue("@HORA", txt_hora.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 con.Close();
@@ -99,7 +100,7 @@ namespace CsPresentacion
                 cmd.Parameters.AddWithValue("@VAR", "2");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@FECHA", dtm_com_fecha.Text);
-      
+                cmd.Parameters.AddWithValue("@HORA", txt_hora.Text);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -313,6 +314,7 @@ namespace CsPresentacion
             {
             }
         }
+
         //Eventos
         private void Txt_clave_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -389,6 +391,17 @@ namespace CsPresentacion
         private void Dgv_comedor_CurrentCellChanged(object sender, EventArgs e)
         {
             if (dgv_comedor.CurrentCell != null) { indice = dgv_comedor.CurrentRow.Index; }
+        }
+
+        private void Btn_com_eliminar_Click(object sender, EventArgs e)
+        {
+            Elimina_comedor();
+            Mostrar_Grid();
+            dtm_com_fecha.Text = "";
+            txt_hora.Text = "";
+            txt_costo.Text = "";
+            cmb_tipo.Text = "";
+            dtm_com_fecha.Focus();
         }
     }
 }
