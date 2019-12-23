@@ -79,6 +79,8 @@ Public Class Frm_Principal
         PermisosYAutorizacionesToolStripMenuItem.Enabled = False
         AusentismosGlobalToolStripMenuItem.Enabled = False
         AusentismoGeneralToolStripMenuItem.Enabled = False
+        Incapacidades_RetardosToolStripMenuItem.Enabled = False
+
 
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
@@ -115,6 +117,7 @@ Public Class Frm_Principal
                 Case "PermisosYAutorizacionesToolStripMenuItem" : PermisosYAutorizacionesToolStripMenuItem.Enabled = True
                 Case "AusentismosGlobalToolStripMenuItem" : AusentismosGlobalToolStripMenuItem.Enabled = True
                 Case "AusentismoGeneralToolStripMenuItem" : AusentismoGeneralToolStripMenuItem.Enabled = True
+                Case "Incapacidades_RetardosToolStripMenuItem" : Incapacidades_RetardosToolStripMenuItem.Enabled = True
             End Select
         Next
     End Sub
@@ -382,6 +385,15 @@ Public Class Frm_Principal
     Private Sub PolizasDeDiarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PolizasDeDiarioToolStripMenuItem.Click
         Dim polD As New Frm_PolizasDiario
         polD.Show()
+    End Sub
+    Private Sub Incapacidades_RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Incapacidades_RetardosToolStripMenuItem.Click
+        Dim Ag As New Frm_Incapacidades(Me.emp)
+        Ag.Show()
+    End Sub
+
+    Private Sub ComidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComidasToolStripMenuItem.Click
+        Dim Co As New Frm_Comedor 'Captura de registros de comedor'
+        Co.Show()
     End Sub
 #End Region
 End Class

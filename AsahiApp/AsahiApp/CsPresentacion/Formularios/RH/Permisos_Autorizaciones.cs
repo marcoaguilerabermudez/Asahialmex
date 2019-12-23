@@ -31,19 +31,21 @@ namespace CsPresentacion
         int indice = 0;
         SqlCommand cmd;
         SqlDataReader dr;
-
-        SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
+       SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
         //Principal
         private void Permisos_Autorizaciones_Load(object sender, EventArgs e)
         {
             nuevo();
             autocompletar_responsable(txt_nombre);
+
         }
         //Métodos
         private void Diseño_Grid(DataGridView dgv)
         {
             dgv.Columns[0].Width = 80;
             dgv.Columns[1].Width = 50;
+            dgv.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.Columns[2].Width = 110;
             dgv.Columns[3].Width = 110;
             dgv.Columns[4].Width = 110;
