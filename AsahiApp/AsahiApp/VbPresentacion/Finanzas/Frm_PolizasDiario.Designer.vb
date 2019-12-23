@@ -93,11 +93,12 @@ Partial Class Frm_PolizasDiario
         Me.Lbl_Filtros = New System.Windows.Forms.Label()
         Me.Txt_FiltroFactura = New System.Windows.Forms.TextBox()
         Me.Txt_FiltroOC = New System.Windows.Forms.TextBox()
+        Me.Txt_FiltroProveedor = New System.Windows.Forms.TextBox()
         Me.Txt_FiltroCompras = New System.Windows.Forms.TextBox()
-        Me.Btn_Txt = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Txt_FiltroProveedor = New System.Windows.Forms.TextBox()
+        Me.Btn_LimpiarFiltros = New System.Windows.Forms.Button()
+        Me.Btn_Txt = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.Dgv_Prepolizas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -568,6 +569,7 @@ Partial Class Frm_PolizasDiario
         '
         'Panel12
         '
+        Me.Panel12.Controls.Add(Me.Btn_LimpiarFiltros)
         Me.Panel12.Controls.Add(Me.Label7)
         Me.Panel12.Controls.Add(Me.Dtp_FiltroFechaFactura)
         Me.Panel12.Controls.Add(Me.Label6)
@@ -661,6 +663,7 @@ Partial Class Frm_PolizasDiario
         '
         'Txt_FiltroFactura
         '
+        Me.Txt_FiltroFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_FiltroFactura.Location = New System.Drawing.Point(189, 22)
         Me.Txt_FiltroFactura.Name = "Txt_FiltroFactura"
         Me.Txt_FiltroFactura.Size = New System.Drawing.Size(47, 20)
@@ -668,31 +671,29 @@ Partial Class Frm_PolizasDiario
         '
         'Txt_FiltroOC
         '
+        Me.Txt_FiltroOC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_FiltroOC.Location = New System.Drawing.Point(136, 22)
         Me.Txt_FiltroOC.Name = "Txt_FiltroOC"
         Me.Txt_FiltroOC.Size = New System.Drawing.Size(47, 20)
         Me.Txt_FiltroOC.TabIndex = 8
         '
+        'Txt_FiltroProveedor
+        '
+        Me.Txt_FiltroProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_FiltroProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_FiltroProveedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_FiltroProveedor.Location = New System.Drawing.Point(242, 22)
+        Me.Txt_FiltroProveedor.Name = "Txt_FiltroProveedor"
+        Me.Txt_FiltroProveedor.Size = New System.Drawing.Size(172, 20)
+        Me.Txt_FiltroProveedor.TabIndex = 7
+        '
         'Txt_FiltroCompras
         '
+        Me.Txt_FiltroCompras.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_FiltroCompras.Location = New System.Drawing.Point(83, 22)
         Me.Txt_FiltroCompras.Name = "Txt_FiltroCompras"
         Me.Txt_FiltroCompras.Size = New System.Drawing.Size(47, 20)
         Me.Txt_FiltroCompras.TabIndex = 6
-        '
-        'Btn_Txt
-        '
-        Me.Btn_Txt.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Btn_Txt.FlatAppearance.BorderSize = 0
-        Me.Btn_Txt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
-        Me.Btn_Txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Txt.Image = Global.Presentacion.My.Resources.Resources.txt
-        Me.Btn_Txt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Txt.Location = New System.Drawing.Point(384, 3)
-        Me.Btn_Txt.Name = "Btn_Txt"
-        Me.Btn_Txt.Size = New System.Drawing.Size(39, 40)
-        Me.Btn_Txt.TabIndex = 4
-        Me.Btn_Txt.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -716,12 +717,33 @@ Partial Class Frm_PolizasDiario
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Fecha Inicial"
         '
-        'Txt_FiltroProveedor
+        'Btn_LimpiarFiltros
         '
-        Me.Txt_FiltroProveedor.Location = New System.Drawing.Point(242, 22)
-        Me.Txt_FiltroProveedor.Name = "Txt_FiltroProveedor"
-        Me.Txt_FiltroProveedor.Size = New System.Drawing.Size(172, 20)
-        Me.Txt_FiltroProveedor.TabIndex = 7
+        Me.Btn_LimpiarFiltros.AllowDrop = True
+        Me.Btn_LimpiarFiltros.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Btn_LimpiarFiltros.FlatAppearance.BorderSize = 0
+        Me.Btn_LimpiarFiltros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
+        Me.Btn_LimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_LimpiarFiltros.Image = Global.Presentacion.My.Resources.Resources.pagina_blanca_de_origami
+        Me.Btn_LimpiarFiltros.Location = New System.Drawing.Point(588, 4)
+        Me.Btn_LimpiarFiltros.Name = "Btn_LimpiarFiltros"
+        Me.Btn_LimpiarFiltros.Size = New System.Drawing.Size(39, 40)
+        Me.Btn_LimpiarFiltros.TabIndex = 17
+        Me.Btn_LimpiarFiltros.UseVisualStyleBackColor = True
+        '
+        'Btn_Txt
+        '
+        Me.Btn_Txt.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Btn_Txt.FlatAppearance.BorderSize = 0
+        Me.Btn_Txt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
+        Me.Btn_Txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Txt.Image = Global.Presentacion.My.Resources.Resources.txt
+        Me.Btn_Txt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_Txt.Location = New System.Drawing.Point(384, 3)
+        Me.Btn_Txt.Name = "Btn_Txt"
+        Me.Btn_Txt.Size = New System.Drawing.Size(39, 40)
+        Me.Btn_Txt.TabIndex = 4
+        Me.Btn_Txt.UseVisualStyleBackColor = True
         '
         'Frm_PolizasDiario
         '
@@ -823,4 +845,5 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents Txt_FiltroCompras As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Txt_FiltroProveedor As TextBox
+    Friend WithEvents Btn_LimpiarFiltros As Button
 End Class
