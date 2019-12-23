@@ -387,7 +387,7 @@ Public Class Frm_Principal
         polD.Show()
     End Sub
     Private Sub Incapacidades_RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Incapacidades_RetardosToolStripMenuItem.Click
-        Dim Ag As New Frm_Incapacidades_retardos(Me.emp)
+        Dim Ag As New Frm_Incapacidades(Me.emp)
         Ag.Show()
     End Sub
 #End Region

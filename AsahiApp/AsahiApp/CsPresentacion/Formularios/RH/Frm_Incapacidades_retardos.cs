@@ -12,10 +12,10 @@ using Clases;
 
 namespace CsPresentacion
 {
-    public partial class Frm_Incapacidades_retardos : Form
+    public partial class Frm_Incapacidades : Form
     {
         
-        public Frm_Incapacidades_retardos(Empleado classEmpleado)
+        public Frm_Incapacidades(Empleado classEmpleado)
         {
             InitializeComponent();
             var tt = new ToolTip();
