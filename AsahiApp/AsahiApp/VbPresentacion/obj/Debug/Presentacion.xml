@@ -102,6 +102,11 @@ Presentacion
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Presentacion.My.Resources.Resources.pagina_blanca_de_origami">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Presentacion.My.Resources.Resources.prenomina">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

@@ -629,6 +629,7 @@
     <None Include="Resources\020_293_report_diagram_analytics_analysis_hands-512.png" />
     <None Include="Resources\report.png" />
     <None Include="Resources\1492533500-arrow-41_83313.png" />
+    <None Include="Resources\pagina-blanca-de-origami.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
