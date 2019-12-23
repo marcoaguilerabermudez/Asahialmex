@@ -99,6 +99,12 @@
     <Compile Include="Ausentismos_Fecha.Designer.cs">
       <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\RH\Frm_Incapacidades_retardos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Incapacidades_retardos.Designer.cs">
+      <DependentUpon>Frm_Incapacidades_retardos.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS_Ausentismos_Fecha.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,6 +165,12 @@
     </Compile>
     <Compile Include="Formularios\RH\Frm_Ausentismo_Fecha.Designer.cs">
       <DependentUpon>Frm_Ausentismo_Fecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Comedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Comedor.Designer.cs">
+      <DependentUpon>Frm_Comedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Frm_Rep_Historial.cs">
       <SubType>Form</SubType>
@@ -501,6 +513,9 @@
       <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ausentismo_dia.rdlc" />
+    <EmbeddedResource Include="Formularios\RH\Frm_Incapacidades_retardos.resx">
+      <DependentUpon>Frm_Incapacidades_retardos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Ausentismo Global.resx">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,6 +533,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Ausentismo_Fecha.resx">
       <DependentUpon>Frm_Ausentismo_Fecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Comedor.resx">
+      <DependentUpon>Frm_Comedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Frm_Rep_Historial.resx">
       <DependentUpon>Frm_Rep_Historial.cs</DependentUpon>
@@ -962,6 +980,15 @@
       <VersionMinor>8</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSXML2">
+      <Guid>{F5078F18-C551-11D3-89B9-0000F81FE221}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>

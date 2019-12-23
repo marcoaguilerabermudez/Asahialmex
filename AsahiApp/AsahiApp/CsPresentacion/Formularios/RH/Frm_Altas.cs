@@ -132,6 +132,7 @@ namespace CsPresentacion
                 {
                     txt_SDO1.Text = dt.Rows[0]["SUELDO"].ToString();
                 }
+
                 txt_SDO2.Text = "0.00";
                 txt_SDO4.Text = "0.00";
                 lbl_factor.Text = "1.07808";
