@@ -211,10 +211,10 @@ namespace CsPresentacion
         }
         private void Diseño_Grid(DataGridView dgv)
         {
-            dgv.Columns[0].Width = 60;//Clave
-            dgv.Columns[1].Width = 70; //Fecha
-            dgv.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[0].Width = 70;//Clave
+            dgv.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[1].Width = 60; //Fecha
             dgv.Columns[2].Width = 60;//Hora
             dgv.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
