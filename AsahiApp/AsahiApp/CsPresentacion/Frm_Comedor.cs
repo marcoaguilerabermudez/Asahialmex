@@ -49,9 +49,14 @@ namespace CsPresentacion
             txt_nombre.Text = "";
             dtm_com_fecha.Text = "";
             lbl_estado.Text = "";
+            cmb_tipo.Text = "";
+            txt_costo.Text = "";
+            txt_hora.Text = "";
+
             txt_nombre.Enabled = true;
             txt_clave.Focus();
-
+            txt_hora.Enabled = false;
+            txt_costo.Enabled = false;
             btn_com_primero.Enabled = false;
             btn_com_siguiente.Enabled = false;
             btn_com_anterior.Enabled = false;
@@ -64,7 +69,6 @@ namespace CsPresentacion
             btn_com_exportar.Enabled = false;
             
         }
-
         private void Mostrar_Grid()//Mostrar grid de incapacidades.
         {
             try
@@ -76,6 +80,8 @@ namespace CsPresentacion
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@FECHA", dtm_com_fecha.Text);
                 cmd.Parameters.AddWithValue("@HORA", txt_hora.Text);
+                cmd.Parameters.AddWithValue("@TIPO", cmb_tipo.Text);
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 con.Close();
@@ -101,7 +107,30 @@ namespace CsPresentacion
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@FECHA", dtm_com_fecha.Text);
                 cmd.Parameters.AddWithValue("@HORA", txt_hora.Text);
+                cmd.Parameters.AddWithValue("@TIPO", cmb_tipo.Text);
 
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                con.Close();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void Inserta_comedor()//Inserta comedores.
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[SP_Registros_comedor]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "3");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_com_fecha.Text);
+                cmd.Parameters.AddWithValue("@HORA", txt_hora.Text);
+                cmd.Parameters.AddWithValue("@TIPO", cmb_tipo.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 con.Close();
@@ -211,10 +240,10 @@ namespace CsPresentacion
         }
         private void Diseño_Grid(DataGridView dgv)
         {
-            dgv.Columns[0].Width = 60;//Clave
-            dgv.Columns[1].Width = 70; //Fecha
-            dgv.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[0].Width = 70;//Clave
+            dgv.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[1].Width = 60; //Fecha
             dgv.Columns[2].Width = 60;//Hora
             dgv.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -252,6 +281,12 @@ namespace CsPresentacion
             txt_hora.Text = "";
             txt_costo.Text = "";
             cmb_tipo.Text = "";
+
+            txt_hora.Enabled = false;
+            txt_costo.Enabled = false;
+            btn_com_guardar.Enabled = true;
+            btn_com_cancelar.Enabled = true;
+            btn_com_eliminar.Enabled = false;
             dtm_com_fecha.Focus();
         }
         private void Btn_com_primero_Click(object sender, EventArgs e)
@@ -314,6 +349,34 @@ namespace CsPresentacion
             {
             }
         }
+        private void Btn_com_eliminar_Click(object sender, EventArgs e)
+        {
+            Elimina_comedor();
+            Mostrar_Grid();
+            dtm_com_fecha.Text = "";
+            txt_hora.Text = "";
+            txt_costo.Text = "";
+            cmb_tipo.Text = "";
+            dtm_com_fecha.Focus();
+        }
+        private void Btn_com_guardar_Click(object sender, EventArgs e)
+        {
+            if (cmb_tipo.Text == "")
+            {
+                MessageBox.Show("Es necesario seleccionar tipo de comedor", "Aviso");
+                cmb_tipo.Focus();
+            }
+            else
+            {
+                Inserta_comedor();
+                Mostrar_Grid();
+                dtm_com_fecha.Text = "";
+                txt_hora.Text = "";
+                txt_costo.Text = "";
+                cmb_tipo.Text = "";
+                dtm_com_fecha.Focus();
+            }
+        }
 
         //Eventos
         private void Txt_clave_KeyPress(object sender, KeyPressEventArgs e)
@@ -355,12 +418,10 @@ namespace CsPresentacion
             txt_nombre.Enabled = false;
             dtm_com_fecha.Focus();
         }
-
         private void ComboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
         private void Dgv_comedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -373,6 +434,7 @@ namespace CsPresentacion
                 btn_com_eliminar.Enabled = true;
                 btn_com_cancelar.Enabled = true;
                 btn_com_agregar.Enabled = true;
+                btn_com_guardar.Enabled = false;
                 dtm_com_fecha.Focus();
             }
         }
@@ -392,16 +454,18 @@ namespace CsPresentacion
         {
             if (dgv_comedor.CurrentCell != null) { indice = dgv_comedor.CurrentRow.Index; }
         }
-
-        private void Btn_com_eliminar_Click(object sender, EventArgs e)
+        private void Lbl_estado_TextChanged(object sender, EventArgs e)
         {
-            Elimina_comedor();
-            Mostrar_Grid();
-            dtm_com_fecha.Text = "";
-            txt_hora.Text = "";
-            txt_costo.Text = "";
-            cmb_tipo.Text = "";
-            dtm_com_fecha.Focus();
+            if (lbl_estado.Text == "VIGENTE")
+            {
+                lbl_estado.ForeColor = Color.Black;
+                btn_com_agregar.Enabled = true;
+            }
+            else
+            {
+                lbl_estado.ForeColor = Color.Red;
+                btn_com_agregar.Enabled = false;
+            }
         }
     }
 }

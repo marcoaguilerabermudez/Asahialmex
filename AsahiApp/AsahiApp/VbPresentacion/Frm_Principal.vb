@@ -53,7 +53,7 @@ Public Class Frm_Principal
         PreNominaGlobalToolStripMenuItem.Enabled = False
         BonoMensualToolStripMenuItem.Enabled = False
         ChecadasToolStripMenuItem.Enabled = False
-        ComidasToolStripMenuItem.Enabled = False
+        Kardex_comedorToolStripMenuItem.Enabled = False
         ReportesToolStripMenuItem1.Enabled = False
         EmpleadosToolStripMenuItem.Enabled = False
         AltaToolStripMenuItem.Enabled = False
@@ -82,6 +82,7 @@ Public Class Frm_Principal
         Incapacidades_RetardosToolStripMenuItem.Enabled = False
 
 
+
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
         For Each item In lstPer
@@ -91,7 +92,7 @@ Public Class Frm_Principal
                 Case "PreNominaGlobalToolStripMenuItem" : PreNominaGlobalToolStripMenuItem.Enabled = True
                 Case "BonoMensualToolStripMenuItem" : BonoMensualToolStripMenuItem.Enabled = True
                 Case "ChecadasToolStripMenuItem" : ChecadasToolStripMenuItem.Enabled = True
-                Case "ComidasToolStripMenuItem" : ComidasToolStripMenuItem.Enabled = True
+                Case "ComidasToolStripMenuItem" : Kardex_comedorToolStripMenuItem.Enabled = True
                 Case "ReportesToolStripMenuItem1" : ReportesToolStripMenuItem1.Enabled = True
                 Case "EmpleadosToolStripMenuItem" : EmpleadosToolStripMenuItem.Enabled = True
                 Case "AltaToolStripMenuItem" : AltaToolStripMenuItem.Enabled = True
@@ -391,7 +392,7 @@ Public Class Frm_Principal
         Ag.Show()
     End Sub
 
-    Private Sub ComidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComidasToolStripMenuItem.Click
+    Private Sub ComidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Kardex_comedorToolStripMenuItem.Click
         Dim Co As New Frm_Comedor 'Captura de registros de comedor'
         Co.Show()
     End Sub

@@ -41,6 +41,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tp_permisos = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmb_tipo = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_costo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_hora = new System.Windows.Forms.TextBox();
             this.dtm_com_fecha = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_comedor = new System.Windows.Forms.DataGridView();
@@ -53,12 +59,6 @@
             this.btn_com_eliminar = new System.Windows.Forms.Button();
             this.btn_com_ultimo = new System.Windows.Forms.Button();
             this.btn_com_agregar = new System.Windows.Forms.Button();
-            this.txt_hora = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_costo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmb_tipo = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -141,6 +141,7 @@
             this.lbl_estado.Size = new System.Drawing.Size(57, 13);
             this.lbl_estado.TabIndex = 147;
             this.lbl_estado.Text = "ESTADO";
+            this.lbl_estado.TextChanged += new System.EventHandler(this.Lbl_estado_TextChanged);
             // 
             // txt_nombre
             // 
@@ -199,6 +200,59 @@
             this.tp_permisos.TabIndex = 0;
             this.tp_permisos.Text = "1. Catálogo";
             this.tp_permisos.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(527, 58);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 165;
+            this.label6.Text = "TIPO";
+            // 
+            // cmb_tipo
+            // 
+            this.cmb_tipo.FormattingEnabled = true;
+            this.cmb_tipo.Items.AddRange(new object[] {
+            "JAPONES",
+            "MEXICANO"});
+            this.cmb_tipo.Location = new System.Drawing.Point(526, 75);
+            this.cmb_tipo.Name = "cmb_tipo";
+            this.cmb_tipo.Size = new System.Drawing.Size(121, 21);
+            this.cmb_tipo.TabIndex = 1;
+            this.cmb_tipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox1_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(371, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 163;
+            this.label5.Text = "COSTO";
+            // 
+            // txt_costo
+            // 
+            this.txt_costo.Location = new System.Drawing.Point(372, 75);
+            this.txt_costo.Name = "txt_costo";
+            this.txt_costo.Size = new System.Drawing.Size(100, 20);
+            this.txt_costo.TabIndex = 162;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(213, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 161;
+            this.label4.Text = "HORA";
+            // 
+            // txt_hora
+            // 
+            this.txt_hora.Location = new System.Drawing.Point(215, 75);
+            this.txt_hora.Name = "txt_hora";
+            this.txt_hora.Size = new System.Drawing.Size(100, 20);
+            this.txt_hora.TabIndex = 160;
             // 
             // dtm_com_fecha
             // 
@@ -309,8 +363,9 @@
             this.btn_com_guardar.Location = new System.Drawing.Point(264, 6);
             this.btn_com_guardar.Name = "btn_com_guardar";
             this.btn_com_guardar.Size = new System.Drawing.Size(40, 30);
-            this.btn_com_guardar.TabIndex = 5;
+            this.btn_com_guardar.TabIndex = 2;
             this.btn_com_guardar.UseVisualStyleBackColor = false;
+            this.btn_com_guardar.Click += new System.EventHandler(this.Btn_com_guardar_Click);
             // 
             // btn_com_siguiente
             // 
@@ -363,59 +418,6 @@
             this.btn_com_agregar.TabIndex = 154;
             this.btn_com_agregar.UseVisualStyleBackColor = false;
             this.btn_com_agregar.Click += new System.EventHandler(this.Btn_com_insertar_Click);
-            // 
-            // txt_hora
-            // 
-            this.txt_hora.Location = new System.Drawing.Point(215, 75);
-            this.txt_hora.Name = "txt_hora";
-            this.txt_hora.Size = new System.Drawing.Size(100, 20);
-            this.txt_hora.TabIndex = 160;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(213, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 161;
-            this.label4.Text = "HORA";
-            // 
-            // txt_costo
-            // 
-            this.txt_costo.Location = new System.Drawing.Point(372, 75);
-            this.txt_costo.Name = "txt_costo";
-            this.txt_costo.Size = new System.Drawing.Size(100, 20);
-            this.txt_costo.TabIndex = 162;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(371, 57);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 163;
-            this.label5.Text = "COSTO";
-            // 
-            // cmb_tipo
-            // 
-            this.cmb_tipo.FormattingEnabled = true;
-            this.cmb_tipo.Items.AddRange(new object[] {
-            "JAPONES",
-            "MEXICANO"});
-            this.cmb_tipo.Location = new System.Drawing.Point(526, 75);
-            this.cmb_tipo.Name = "cmb_tipo";
-            this.cmb_tipo.Size = new System.Drawing.Size(121, 21);
-            this.cmb_tipo.TabIndex = 164;
-            this.cmb_tipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox1_KeyPress);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(527, 58);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 165;
-            this.label6.Text = "TIPO";
             // 
             // Frm_Comedor
             // 
