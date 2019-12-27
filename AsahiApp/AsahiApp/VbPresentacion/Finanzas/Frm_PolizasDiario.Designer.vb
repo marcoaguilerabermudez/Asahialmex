@@ -59,25 +59,6 @@ Partial Class Frm_PolizasDiario
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Dgv_Compras = New System.Windows.Forms.DataGridView()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Dtp_Inicio = New System.Windows.Forms.DateTimePicker()
-        Me.Dtp_Fin = New System.Windows.Forms.DateTimePicker()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Dtp_FiltroFechaFactura = New System.Windows.Forms.DateTimePicker()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Lbl_Filtros = New System.Windows.Forms.Label()
-        Me.Txt_FiltroFactura = New System.Windows.Forms.TextBox()
-        Me.Txt_FiltroOC = New System.Windows.Forms.TextBox()
-        Me.Txt_FiltroProveedor = New System.Windows.Forms.TextBox()
-        Me.Txt_FiltroCompras = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.provision = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.compra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -97,10 +78,29 @@ Partial Class Frm_PolizasDiario
         Me.uuid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tazaCambio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.seleccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Dtp_Inicio = New System.Windows.Forms.DateTimePicker()
+        Me.Dtp_Fin = New System.Windows.Forms.DateTimePicker()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Btn_Limpiar = New System.Windows.Forms.Button()
         Me.Btn_Actualizar = New System.Windows.Forms.Button()
+        Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Btn_LimpiarFiltros = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Dtp_FiltroFechaFactura = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Lbl_Filtros = New System.Windows.Forms.Label()
+        Me.Txt_FiltroFactura = New System.Windows.Forms.TextBox()
+        Me.Txt_FiltroOC = New System.Windows.Forms.TextBox()
+        Me.Txt_FiltroProveedor = New System.Windows.Forms.TextBox()
+        Me.Txt_FiltroCompras = New System.Windows.Forms.TextBox()
         Me.Btn_Txt = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.Dgv_Prepolizas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -389,205 +389,6 @@ Partial Class Frm_PolizasDiario
         Me.Dgv_Compras.Size = New System.Drawing.Size(1240, 280)
         Me.Dgv_Compras.TabIndex = 5
         '
-        'Panel11
-        '
-        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel11.Location = New System.Drawing.Point(0, 0)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(10, 280)
-        Me.Panel11.TabIndex = 4
-        '
-        'Panel10
-        '
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel10.Location = New System.Drawing.Point(1250, 0)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(10, 280)
-        Me.Panel10.TabIndex = 3
-        '
-        'Dtp_Inicio
-        '
-        Me.Dtp_Inicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_Inicio.Location = New System.Drawing.Point(93, 15)
-        Me.Dtp_Inicio.Name = "Dtp_Inicio"
-        Me.Dtp_Inicio.Size = New System.Drawing.Size(96, 20)
-        Me.Dtp_Inicio.TabIndex = 0
-        '
-        'Dtp_Fin
-        '
-        Me.Dtp_Fin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_Fin.Location = New System.Drawing.Point(274, 15)
-        Me.Dtp_Fin.Name = "Dtp_Fin"
-        Me.Dtp_Fin.Size = New System.Drawing.Size(95, 20)
-        Me.Dtp_Fin.TabIndex = 1
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.Btn_Limpiar)
-        Me.Panel1.Controls.Add(Me.Btn_Actualizar)
-        Me.Panel1.Controls.Add(Me.Panel12)
-        Me.Panel1.Controls.Add(Me.Btn_Txt)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.Dtp_Fin)
-        Me.Panel1.Controls.Add(Me.Dtp_Inicio)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1260, 51)
-        Me.Panel1.TabIndex = 0
-        '
-        'Panel12
-        '
-        Me.Panel12.Controls.Add(Me.Btn_LimpiarFiltros)
-        Me.Panel12.Controls.Add(Me.Label7)
-        Me.Panel12.Controls.Add(Me.Dtp_FiltroFechaFactura)
-        Me.Panel12.Controls.Add(Me.Label6)
-        Me.Panel12.Controls.Add(Me.Label5)
-        Me.Panel12.Controls.Add(Me.Label4)
-        Me.Panel12.Controls.Add(Me.Label3)
-        Me.Panel12.Controls.Add(Me.Lbl_Filtros)
-        Me.Panel12.Controls.Add(Me.Txt_FiltroFactura)
-        Me.Panel12.Controls.Add(Me.Txt_FiltroOC)
-        Me.Panel12.Controls.Add(Me.Txt_FiltroProveedor)
-        Me.Panel12.Controls.Add(Me.Txt_FiltroCompras)
-        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel12.Location = New System.Drawing.Point(584, 0)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(676, 51)
-        Me.Panel12.TabIndex = 5
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(415, 4)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(89, 13)
-        Me.Label7.TabIndex = 16
-        Me.Label7.Text = "Fecha Factura"
-        '
-        'Dtp_FiltroFechaFactura
-        '
-        Me.Dtp_FiltroFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_FiltroFechaFactura.Location = New System.Drawing.Point(420, 21)
-        Me.Dtp_FiltroFechaFactura.Name = "Dtp_FiltroFechaFactura"
-        Me.Dtp_FiltroFechaFactura.Size = New System.Drawing.Size(84, 20)
-        Me.Dtp_FiltroFechaFactura.TabIndex = 15
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(241, 5)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(65, 13)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Proveedor"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(186, 5)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(50, 13)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Factura"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(138, 6)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(24, 13)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "OC"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(80, 6)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 13)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Compra"
-        '
-        'Lbl_Filtros
-        '
-        Me.Lbl_Filtros.AutoSize = True
-        Me.Lbl_Filtros.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Filtros.ForeColor = System.Drawing.Color.White
-        Me.Lbl_Filtros.Location = New System.Drawing.Point(4, 4)
-        Me.Lbl_Filtros.Name = "Lbl_Filtros"
-        Me.Lbl_Filtros.Size = New System.Drawing.Size(74, 15)
-        Me.Lbl_Filtros.TabIndex = 10
-        Me.Lbl_Filtros.Text = "Filtrar por:"
-        '
-        'Txt_FiltroFactura
-        '
-        Me.Txt_FiltroFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_FiltroFactura.Location = New System.Drawing.Point(189, 22)
-        Me.Txt_FiltroFactura.Name = "Txt_FiltroFactura"
-        Me.Txt_FiltroFactura.Size = New System.Drawing.Size(47, 20)
-        Me.Txt_FiltroFactura.TabIndex = 9
-        '
-        'Txt_FiltroOC
-        '
-        Me.Txt_FiltroOC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_FiltroOC.Location = New System.Drawing.Point(136, 22)
-        Me.Txt_FiltroOC.Name = "Txt_FiltroOC"
-        Me.Txt_FiltroOC.Size = New System.Drawing.Size(47, 20)
-        Me.Txt_FiltroOC.TabIndex = 8
-        '
-        'Txt_FiltroProveedor
-        '
-        Me.Txt_FiltroProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.Txt_FiltroProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.Txt_FiltroProveedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_FiltroProveedor.Location = New System.Drawing.Point(242, 22)
-        Me.Txt_FiltroProveedor.Name = "Txt_FiltroProveedor"
-        Me.Txt_FiltroProveedor.Size = New System.Drawing.Size(172, 20)
-        Me.Txt_FiltroProveedor.TabIndex = 7
-        '
-        'Txt_FiltroCompras
-        '
-        Me.Txt_FiltroCompras.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_FiltroCompras.Location = New System.Drawing.Point(83, 22)
-        Me.Txt_FiltroCompras.Name = "Txt_FiltroCompras"
-        Me.Txt_FiltroCompras.Size = New System.Drawing.Size(47, 20)
-        Me.Txt_FiltroCompras.TabIndex = 6
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(195, 17)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(73, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Fecha Final"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Fecha Inicial"
-        '
         'provision
         '
         Me.provision.HeaderText = "Provisión"
@@ -721,6 +522,55 @@ Partial Class Frm_PolizasDiario
         Me.seleccion.ReadOnly = True
         Me.seleccion.Visible = False
         '
+        'Panel11
+        '
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel11.Location = New System.Drawing.Point(0, 0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(10, 280)
+        Me.Panel11.TabIndex = 4
+        '
+        'Panel10
+        '
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel10.Location = New System.Drawing.Point(1250, 0)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(10, 280)
+        Me.Panel10.TabIndex = 3
+        '
+        'Dtp_Inicio
+        '
+        Me.Dtp_Inicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Dtp_Inicio.Location = New System.Drawing.Point(93, 15)
+        Me.Dtp_Inicio.Name = "Dtp_Inicio"
+        Me.Dtp_Inicio.Size = New System.Drawing.Size(96, 20)
+        Me.Dtp_Inicio.TabIndex = 0
+        '
+        'Dtp_Fin
+        '
+        Me.Dtp_Fin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Dtp_Fin.Location = New System.Drawing.Point(274, 15)
+        Me.Dtp_Fin.Name = "Dtp_Fin"
+        Me.Dtp_Fin.Size = New System.Drawing.Size(95, 20)
+        Me.Dtp_Fin.TabIndex = 1
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Btn_Limpiar)
+        Me.Panel1.Controls.Add(Me.Btn_Actualizar)
+        Me.Panel1.Controls.Add(Me.Panel12)
+        Me.Panel1.Controls.Add(Me.Btn_Txt)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Dtp_Fin)
+        Me.Panel1.Controls.Add(Me.Dtp_Inicio)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1260, 51)
+        Me.Panel1.TabIndex = 0
+        '
         'Btn_Limpiar
         '
         Me.Btn_Limpiar.AllowDrop = True
@@ -749,6 +599,26 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Actualizar.TabIndex = 18
         Me.Btn_Actualizar.UseVisualStyleBackColor = True
         '
+        'Panel12
+        '
+        Me.Panel12.Controls.Add(Me.Btn_LimpiarFiltros)
+        Me.Panel12.Controls.Add(Me.Label7)
+        Me.Panel12.Controls.Add(Me.Dtp_FiltroFechaFactura)
+        Me.Panel12.Controls.Add(Me.Label6)
+        Me.Panel12.Controls.Add(Me.Label5)
+        Me.Panel12.Controls.Add(Me.Label4)
+        Me.Panel12.Controls.Add(Me.Label3)
+        Me.Panel12.Controls.Add(Me.Lbl_Filtros)
+        Me.Panel12.Controls.Add(Me.Txt_FiltroFactura)
+        Me.Panel12.Controls.Add(Me.Txt_FiltroOC)
+        Me.Panel12.Controls.Add(Me.Txt_FiltroProveedor)
+        Me.Panel12.Controls.Add(Me.Txt_FiltroCompras)
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel12.Location = New System.Drawing.Point(584, 0)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(676, 51)
+        Me.Panel12.TabIndex = 5
+        '
         'Btn_LimpiarFiltros
         '
         Me.Btn_LimpiarFiltros.AllowDrop = True
@@ -763,6 +633,116 @@ Partial Class Frm_PolizasDiario
         Me.Btn_LimpiarFiltros.TabIndex = 17
         Me.Btn_LimpiarFiltros.UseVisualStyleBackColor = True
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(415, 4)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(89, 13)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Fecha Factura"
+        Me.Label7.Visible = False
+        '
+        'Dtp_FiltroFechaFactura
+        '
+        Me.Dtp_FiltroFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Dtp_FiltroFechaFactura.Location = New System.Drawing.Point(420, 21)
+        Me.Dtp_FiltroFechaFactura.Name = "Dtp_FiltroFechaFactura"
+        Me.Dtp_FiltroFechaFactura.Size = New System.Drawing.Size(84, 20)
+        Me.Dtp_FiltroFechaFactura.TabIndex = 15
+        Me.Dtp_FiltroFechaFactura.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(241, 5)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(65, 13)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "Proveedor"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(186, 5)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(50, 13)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Factura"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(138, 6)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(24, 13)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "OC"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(80, 6)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(49, 13)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "Compra"
+        '
+        'Lbl_Filtros
+        '
+        Me.Lbl_Filtros.AutoSize = True
+        Me.Lbl_Filtros.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Filtros.ForeColor = System.Drawing.Color.White
+        Me.Lbl_Filtros.Location = New System.Drawing.Point(4, 4)
+        Me.Lbl_Filtros.Name = "Lbl_Filtros"
+        Me.Lbl_Filtros.Size = New System.Drawing.Size(74, 15)
+        Me.Lbl_Filtros.TabIndex = 10
+        Me.Lbl_Filtros.Text = "Filtrar por:"
+        '
+        'Txt_FiltroFactura
+        '
+        Me.Txt_FiltroFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_FiltroFactura.Location = New System.Drawing.Point(189, 22)
+        Me.Txt_FiltroFactura.Name = "Txt_FiltroFactura"
+        Me.Txt_FiltroFactura.Size = New System.Drawing.Size(47, 20)
+        Me.Txt_FiltroFactura.TabIndex = 9
+        '
+        'Txt_FiltroOC
+        '
+        Me.Txt_FiltroOC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_FiltroOC.Location = New System.Drawing.Point(136, 22)
+        Me.Txt_FiltroOC.Name = "Txt_FiltroOC"
+        Me.Txt_FiltroOC.Size = New System.Drawing.Size(47, 20)
+        Me.Txt_FiltroOC.TabIndex = 8
+        '
+        'Txt_FiltroProveedor
+        '
+        Me.Txt_FiltroProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_FiltroProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_FiltroProveedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_FiltroProveedor.Location = New System.Drawing.Point(242, 22)
+        Me.Txt_FiltroProveedor.Name = "Txt_FiltroProveedor"
+        Me.Txt_FiltroProveedor.Size = New System.Drawing.Size(172, 20)
+        Me.Txt_FiltroProveedor.TabIndex = 7
+        '
+        'Txt_FiltroCompras
+        '
+        Me.Txt_FiltroCompras.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_FiltroCompras.Location = New System.Drawing.Point(83, 22)
+        Me.Txt_FiltroCompras.Name = "Txt_FiltroCompras"
+        Me.Txt_FiltroCompras.Size = New System.Drawing.Size(47, 20)
+        Me.Txt_FiltroCompras.TabIndex = 6
+        '
         'Btn_Txt
         '
         Me.Btn_Txt.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
@@ -776,6 +756,28 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Txt.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Txt.TabIndex = 4
         Me.Btn_Txt.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(195, 17)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(73, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Fecha Final"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(12, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Fecha Inicial"
         '
         'Frm_PolizasDiario
         '
