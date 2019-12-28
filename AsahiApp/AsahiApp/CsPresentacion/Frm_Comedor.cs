@@ -52,7 +52,8 @@ namespace CsPresentacion
             cmb_tipo.Text = "";
             txt_costo.Text = "";
             txt_hora.Text = "";
-
+            lbl_tipo_falta.Text = "";
+            lbl_tipo_falta.Visible = false;
             txt_nombre.Enabled = true;
             txt_clave.Focus();
             txt_hora.Enabled = false;
@@ -61,13 +62,12 @@ namespace CsPresentacion
             btn_com_siguiente.Enabled = false;
             btn_com_anterior.Enabled = false;
             btn_com_ultimo.Enabled = false;
-
+            pictureBox1.ImageLocation = "V:/Sistemas/SAAM/Logo.jpg";
             btn_com_agregar.Enabled = false;
             btn_com_guardar.Enabled = false;
             btn_com_eliminar.Enabled = false;
             btn_com_cancelar.Enabled = false;
-            btn_com_exportar.Enabled = false;
-            
+            btn_com_exportar.Enabled = false;    
         }
         private void Mostrar_Grid()//Mostrar grid de incapacidades.
         {
@@ -163,6 +163,91 @@ namespace CsPresentacion
             {
             }
         }
+        private void Verifica_Vacaciones()//Verifica fecha de vacaciones
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "[dbo].[SP_Registros_comedor]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "4";
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@FECHA", SqlDbType.VarChar, 100).Value = dtm_com_fecha.Text;
+            da.SelectCommand.Parameters.Add("@HORA", SqlDbType.VarChar, 100).Value = txt_hora.Text;
+            da.SelectCommand.Parameters.Add("@TIPO", SqlDbType.VarChar, 100).Value = cmb_tipo.Text;
+            da.Fill(dt);
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("El empleado tiene vacaciones en esta Fecha, Favor de verificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_com_fecha.Focus();  
+            }
+            else
+            {
+                Verifica_Incapacidad();
+            }
+        }
+        private void Verifica_Incapacidad()//Verifica si hay incapacidad
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "[dbo].[SP_Registros_comedor]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "5";
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@FECHA", SqlDbType.VarChar, 100).Value = dtm_com_fecha.Text;
+            da.SelectCommand.Parameters.Add("@HORA", SqlDbType.VarChar, 100).Value = txt_hora.Text;
+            da.SelectCommand.Parameters.Add("@TIPO", SqlDbType.VarChar, 100).Value = cmb_tipo.Text;
+            da.Fill(dt);
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("El empleado tiene incapacidad en esta Fecha, Favor de verificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_com_fecha.Focus();  
+            }
+            else
+            {
+                Inserta_comedor();
+                Mostrar_Grid();
+                dtm_com_fecha.Text = "";
+                txt_hora.Text = "";
+                txt_costo.Text = "";
+                cmb_tipo.Text = "";
+                dtm_com_fecha.Focus();
+            }
+           
+        }
+        private void Verifica_Falta()//Verifica si hay una falta
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "[dbo].[SP_Registros_comedor]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "6";
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@FECHA", SqlDbType.VarChar, 100).Value = dtm_com_fecha.Text;
+            da.SelectCommand.Parameters.Add("@HORA", SqlDbType.VarChar, 100).Value = txt_hora.Text;
+            da.SelectCommand.Parameters.Add("@TIPO", SqlDbType.VarChar, 100).Value = cmb_tipo.Text;
+            da.Fill(dt);
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+            {
+                lbl_tipo_falta.Text = dt.Rows[0]["TIPO"].ToString();
+                dtm_com_fecha.Focus();
+            }
+            else
+            {    
+            }
+
+        }
         public void autocompletar_responsable(TextBox cajaTexto)
         {
             try
@@ -241,9 +326,9 @@ namespace CsPresentacion
         private void Diseño_Grid(DataGridView dgv)
         {
             dgv.Columns[0].Width = 70;//Clave
-            dgv.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.Columns[1].Width = 60; //Fecha
+            dgv.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.Columns[2].Width = 60;//Hora
             dgv.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -255,7 +340,6 @@ namespace CsPresentacion
             dgv.Columns[6].Width = 120;//Registro
             dgv.Columns[7].Width = 200;//Registro
         }
-
 
         //Botones
         private void Btn_com_exportar_Click(object sender, EventArgs e)
@@ -361,21 +445,35 @@ namespace CsPresentacion
         }
         private void Btn_com_guardar_Click(object sender, EventArgs e)
         {
+            Verifica_Falta();
             if (cmb_tipo.Text == "")
             {
-                MessageBox.Show("Es necesario seleccionar tipo de comedor", "Aviso");
-                cmb_tipo.Focus();
-            }
-            else
+                MessageBox.Show("Es necesario seleccionar tipo de comedor.", "Aviso");
+                cmb_tipo.Focus(); }    
+          else  if (lbl_tipo_falta.Text == "N")
+           {
+                MessageBox.Show("El empleado tiene suspensión en esta Fecha, Favor de verificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_com_fecha.Focus(); }
+            else if (lbl_tipo_falta.Text == "P")
             {
-                Inserta_comedor();
-                Mostrar_Grid();
-                dtm_com_fecha.Text = "";
-                txt_hora.Text = "";
-                txt_costo.Text = "";
-                cmb_tipo.Text = "";
+                MessageBox.Show("El empleado tiene permiso sin goce en esta Fecha, Favor de verificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_com_fecha.Focus();}
+            else if (lbl_tipo_falta.Text == "G")
+            {
+                MessageBox.Show("El empleado tiene permiso con goce en esta Fecha, Favor de verificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_com_fecha.Focus(); }
+            else if (lbl_tipo_falta.Text == "U")
+            {
+                MessageBox.Show("El empleado tiene falta justificada en esta Fecha, Favor de verificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtm_com_fecha.Focus();
             }
+            else if (lbl_tipo_falta.Text == "F")
+            {
+                MessageBox.Show("El empleado tiene falta injustificada en esta Fecha, Favor de verificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_com_fecha.Focus(); }
+            else
+            {
+                Verifica_Vacaciones();}
         }
 
         //Eventos

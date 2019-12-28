@@ -99,11 +99,11 @@
     <Compile Include="Ausentismos_Fecha.Designer.cs">
       <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Incapacidades_retardos.cs">
+    <Compile Include="Formularios\RH\Frm_Incapacidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Frm_Incapacidades_retardos.Designer.cs">
-      <DependentUpon>Frm_Incapacidades_retardos.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Incapacidades.Designer.cs">
+      <DependentUpon>Frm_Incapacidades.cs</DependentUpon>
     </Compile>
     <Compile Include="DS_Ausentismos_Fecha.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -513,8 +513,8 @@
       <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ausentismo_dia.rdlc" />
-    <EmbeddedResource Include="Formularios\RH\Frm_Incapacidades_retardos.resx">
-      <DependentUpon>Frm_Incapacidades_retardos.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Frm_Incapacidades.resx">
+      <DependentUpon>Frm_Incapacidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Ausentismo Global.resx">
       <DependentUpon>Ausentismo Global.cs</DependentUpon>

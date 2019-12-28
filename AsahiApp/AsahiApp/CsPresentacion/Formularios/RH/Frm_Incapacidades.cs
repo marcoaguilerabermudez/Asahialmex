@@ -509,11 +509,10 @@ namespace CsPresentacion
                     MessageBox.Show("Es necesario capturar el caso de incapacidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cmb_inc_caso.Focus();
                 }
-                else
-                {
-                    verifica_certificado();
-                }
+                else   {  verifica_certificado();  }
             }
+
+
             else
             {
                 if (txt_inc_duracion.Text == "")
@@ -554,6 +553,8 @@ namespace CsPresentacion
                 }
             }
         }
+
+
         private void Btn_inc_eliminar_Click(object sender, EventArgs e)//Botón elimina incapacidades
         {
             Elimina_incapacidades();
