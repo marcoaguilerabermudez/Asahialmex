@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,6 +74,7 @@
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.btn_anterior = new System.Windows.Forms.Button();
             this.btn_primero = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.tp_edicion.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -588,6 +590,10 @@
             this.btn_primero.UseVisualStyleBackColor = false;
             this.btn_primero.Click += new System.EventHandler(this.Btn_primero_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // Permisos_Autorizaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -676,5 +682,6 @@
         public System.Windows.Forms.TextBox txt_tipo_permiso;
         public System.Windows.Forms.DateTimePicker dtm_fecha;
         public System.Windows.Forms.Label lbl_mod;
+        private System.Windows.Forms.Timer timer1;
     }
 }
