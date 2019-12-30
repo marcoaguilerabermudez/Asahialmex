@@ -34,6 +34,7 @@ Public Class Frm_PolizasDiario
         fila = Dgv_Compras.CurrentRow.Index
         If Dgv_Compras.Rows(fila).DefaultCellStyle.BackColor <> Color.DarkRed Then
             If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 0 Then
+                Me.pasoPol = ""
                 uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
                 moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
                 tc = Dgv_Compras.Rows(fila).Cells("tazaCambio").Value
@@ -209,8 +210,18 @@ Public Class Frm_PolizasDiario
     End Sub
     Private Sub Dtp_FiltroFechaFactura_ValueChanged(sender As Object, e As EventArgs) Handles Dtp_FiltroFechaFactura.ValueChanged
     End Sub
+    Private Sub Btn_Actualizar_Click(sender As Object, e As EventArgs) Handles Btn_Actualizar.Click
+        LimpiarDgv()
+        LimpiarFiltros()
+        RecuperarCompras()
+        RecuperarProveedores()
+    End Sub
+    Private Sub Btn_Limpiar_Click(sender As Object, e As EventArgs) Handles Btn_Limpiar.Click
+        LimpiarDgv()
+        LimpiarFiltros()
+    End Sub
     Private Sub Btn_LimpiarFiltros_Click(sender As Object, e As EventArgs) Handles Btn_LimpiarFiltros.Click
-        LimpirarFiltros()
+        LimpiarFiltros()
     End Sub
 #End Region
 #Region "Recuperar"
@@ -501,11 +512,25 @@ Public Class Frm_PolizasDiario
             Case Else : Return "1"
         End Select
     End Function
-    Private Sub LimpirarFiltros()
+    Private Sub LimpiarFiltros()
         Txt_FiltroOC.Text = ""
         Txt_FiltroCompras.Text = ""
         Txt_FiltroFactura.Text = ""
         Txt_FiltroProveedor.Text = ""
+    End Sub
+    Private Sub LimpiarDgv()
+        Dim fila As Integer, totalFilas As Integer = Dgv_Compras.Rows.Count()
+        Dim var
+        Dgv_Prepolizas.DataSource = Nothing
+        Dgv_Prepolizas.Rows.Clear()
+        For fila = 0 To totalFilas - 1
+            With Dgv_Compras.Rows(fila)
+                var = .Cells("seleccion").Value
+                If .Cells("seleccion").Value = 1 Then
+                    .Cells("seleccion").Value = 0
+                End If
+            End With
+        Next
     End Sub
 #End Region
 End Class
