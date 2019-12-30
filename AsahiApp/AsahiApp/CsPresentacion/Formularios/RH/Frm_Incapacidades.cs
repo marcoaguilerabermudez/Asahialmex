@@ -387,6 +387,8 @@ namespace CsPresentacion
         //Botones
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
+            timer1.Start();
             nuevo();
             Mostrar_Grid();
         }
@@ -509,9 +511,10 @@ namespace CsPresentacion
                     MessageBox.Show("Es necesario capturar el caso de incapacidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cmb_inc_caso.Focus();
                 }
-                else   {  verifica_certificado();  }
+                else
+                {  verifica_certificado();
+                }
             }
-
 
             else
             {
@@ -766,6 +769,12 @@ namespace CsPresentacion
         }
         private void Txt_inc_certificado_Leave(object sender, EventArgs e)
         {
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Start();
+            Cursor = Cursors.Default;
         }
     }  
 }

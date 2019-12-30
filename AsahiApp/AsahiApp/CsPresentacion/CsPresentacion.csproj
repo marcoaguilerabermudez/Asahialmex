@@ -93,10 +93,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Ausentismos_Fecha.cs">
+    <Compile Include="Reportes\RH\Ausentismos_Fecha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ausentismos_Fecha.Designer.cs">
+    <Compile Include="Reportes\RH\Ausentismos_Fecha.Designer.cs">
       <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Incapacidades.cs">
@@ -166,10 +166,10 @@
     <Compile Include="Formularios\RH\Frm_Ausentismo_Fecha.Designer.cs">
       <DependentUpon>Frm_Ausentismo_Fecha.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Comedor.cs">
+    <Compile Include="Formularios\RH\Frm_Comedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Comedor.Designer.cs">
+    <Compile Include="Formularios\RH\Frm_Comedor.Designer.cs">
       <DependentUpon>Frm_Comedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Frm_Rep_Historial.cs">
@@ -509,7 +509,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Ausentismos_Fecha.resx">
+    <EmbeddedResource Include="Reportes\RH\Ausentismos_Fecha.resx">
       <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ausentismo_dia.rdlc" />
@@ -534,7 +534,7 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Ausentismo_Fecha.resx">
       <DependentUpon>Frm_Ausentismo_Fecha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Comedor.resx">
+    <EmbeddedResource Include="Formularios\RH\Frm_Comedor.resx">
       <DependentUpon>Frm_Comedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Frm_Rep_Historial.resx">

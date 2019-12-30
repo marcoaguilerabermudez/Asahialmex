@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -60,6 +61,7 @@
             this.btn_com_ultimo = new System.Windows.Forms.Button();
             this.btn_com_agregar = new System.Windows.Forms.Button();
             this.lbl_tipo_falta = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -429,6 +431,10 @@
             this.lbl_tipo_falta.TabIndex = 161;
             this.lbl_tipo_falta.Text = "@Falta";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // Frm_Comedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,5 +500,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_hora;
         private System.Windows.Forms.Label lbl_tipo_falta;
+        private System.Windows.Forms.Timer timer1;
     }
 }

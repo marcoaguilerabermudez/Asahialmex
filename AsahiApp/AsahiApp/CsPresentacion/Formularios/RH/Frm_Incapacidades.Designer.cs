@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,34 +41,35 @@
             this.lbl_estado = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.tp_permisos = new System.Windows.Forms.TabPage();
-            this.btn_inc_insertar = new System.Windows.Forms.Button();
-            this.btn_inc_ultimo = new System.Windows.Forms.Button();
-            this.btn_inc_eliminar = new System.Windows.Forms.Button();
-            this.btn_inc_siguiente = new System.Windows.Forms.Button();
-            this.btn_inc_guardar = new System.Windows.Forms.Button();
-            this.btn_inc_anterior = new System.Windows.Forms.Button();
-            this.btn_inc_cancelar = new System.Windows.Forms.Button();
-            this.btn_inc_primero = new System.Windows.Forms.Button();
-            this.btn_inc_exportar = new System.Windows.Forms.Button();
-            this.dgv_incapacidades = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtm_inc_fecha = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_inc_duracion = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmb_inc_tipo = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dtm_inc_termina = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dtm_inc_aplicacion = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmb_inc_caso = new System.Windows.Forms.ComboBox();
-            this.txt_inc_certificado = new System.Windows.Forms.MaskedTextBox();
-            this.lbl_inc_tipo = new System.Windows.Forms.Label();
-            this.lbl_inc_caso = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
+            this.lbl_inc_caso = new System.Windows.Forms.Label();
+            this.lbl_inc_tipo = new System.Windows.Forms.Label();
+            this.txt_inc_certificado = new System.Windows.Forms.MaskedTextBox();
+            this.cmb_inc_caso = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dtm_inc_aplicacion = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtm_inc_termina = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmb_inc_tipo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_inc_duracion = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtm_inc_fecha = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgv_incapacidades = new System.Windows.Forms.DataGridView();
+            this.btn_inc_exportar = new System.Windows.Forms.Button();
+            this.btn_inc_primero = new System.Windows.Forms.Button();
+            this.btn_inc_cancelar = new System.Windows.Forms.Button();
+            this.btn_inc_anterior = new System.Windows.Forms.Button();
+            this.btn_inc_guardar = new System.Windows.Forms.Button();
+            this.btn_inc_siguiente = new System.Windows.Forms.Button();
+            this.btn_inc_eliminar = new System.Windows.Forms.Button();
+            this.btn_inc_ultimo = new System.Windows.Forms.Button();
+            this.btn_inc_insertar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -211,122 +213,175 @@
             this.tp_permisos.Text = "1. Incapacidades";
             this.tp_permisos.UseVisualStyleBackColor = true;
             // 
-            // btn_inc_insertar
+            // lbl_id
             // 
-            this.btn_inc_insertar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_insertar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_insertar.FlatAppearance.BorderSize = 0;
-            this.btn_inc_insertar.Image = global::CsPresentacion.Properties.Resources.math_add_icon2;
-            this.btn_inc_insertar.Location = new System.Drawing.Point(182, 6);
-            this.btn_inc_insertar.Name = "btn_inc_insertar";
-            this.btn_inc_insertar.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_insertar.TabIndex = 154;
-            this.btn_inc_insertar.UseVisualStyleBackColor = false;
-            this.btn_inc_insertar.Click += new System.EventHandler(this.Btn_inc_insertar_Click);
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Location = new System.Drawing.Point(450, 139);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(13, 13);
+            this.lbl_id.TabIndex = 174;
+            this.lbl_id.Text = "0";
             // 
-            // btn_inc_ultimo
+            // lbl_inc_caso
             // 
-            this.btn_inc_ultimo.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_ultimo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_ultimo.FlatAppearance.BorderSize = 0;
-            this.btn_inc_ultimo.Image = global::CsPresentacion.Properties.Resources.Hide_right_icon;
-            this.btn_inc_ultimo.Location = new System.Drawing.Point(142, 6);
-            this.btn_inc_ultimo.Name = "btn_inc_ultimo";
-            this.btn_inc_ultimo.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_ultimo.TabIndex = 155;
-            this.btn_inc_ultimo.UseVisualStyleBackColor = false;
-            this.btn_inc_ultimo.Click += new System.EventHandler(this.Btn_inc_ultimo_Click);
+            this.lbl_inc_caso.AutoSize = true;
+            this.lbl_inc_caso.Location = new System.Drawing.Point(613, 142);
+            this.lbl_inc_caso.Name = "lbl_inc_caso";
+            this.lbl_inc_caso.Size = new System.Drawing.Size(42, 13);
+            this.lbl_inc_caso.TabIndex = 173;
+            this.lbl_inc_caso.Text = "@Caso";
             // 
-            // btn_inc_eliminar
+            // lbl_inc_tipo
             // 
-            this.btn_inc_eliminar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_eliminar.FlatAppearance.BorderSize = 0;
-            this.btn_inc_eliminar.Image = global::CsPresentacion.Properties.Resources.math_minus_icon;
-            this.btn_inc_eliminar.Location = new System.Drawing.Point(223, 6);
-            this.btn_inc_eliminar.Name = "btn_inc_eliminar";
-            this.btn_inc_eliminar.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_eliminar.TabIndex = 153;
-            this.btn_inc_eliminar.UseVisualStyleBackColor = false;
-            this.btn_inc_eliminar.Click += new System.EventHandler(this.Btn_inc_eliminar_Click);
+            this.lbl_inc_tipo.AutoSize = true;
+            this.lbl_inc_tipo.Location = new System.Drawing.Point(234, 143);
+            this.lbl_inc_tipo.Name = "lbl_inc_tipo";
+            this.lbl_inc_tipo.Size = new System.Drawing.Size(39, 13);
+            this.lbl_inc_tipo.TabIndex = 172;
+            this.lbl_inc_tipo.Text = "@Tipo";
             // 
-            // btn_inc_siguiente
+            // txt_inc_certificado
             // 
-            this.btn_inc_siguiente.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_siguiente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_siguiente.FlatAppearance.BorderSize = 0;
-            this.btn_inc_siguiente.Image = global::CsPresentacion.Properties.Resources.Next;
-            this.btn_inc_siguiente.Location = new System.Drawing.Point(101, 6);
-            this.btn_inc_siguiente.Name = "btn_inc_siguiente";
-            this.btn_inc_siguiente.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_siguiente.TabIndex = 156;
-            this.btn_inc_siguiente.UseVisualStyleBackColor = false;
-            this.btn_inc_siguiente.Click += new System.EventHandler(this.Btn_inc_siguiente_Click);
+            this.txt_inc_certificado.Location = new System.Drawing.Point(18, 119);
+            this.txt_inc_certificado.Name = "txt_inc_certificado";
+            this.txt_inc_certificado.Size = new System.Drawing.Size(135, 20);
+            this.txt_inc_certificado.TabIndex = 2;
+            this.txt_inc_certificado.Leave += new System.EventHandler(this.Txt_inc_certificado_Leave);
             // 
-            // btn_inc_guardar
+            // cmb_inc_caso
             // 
-            this.btn_inc_guardar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_guardar.FlatAppearance.BorderSize = 0;
-            this.btn_inc_guardar.Image = global::CsPresentacion.Properties.Resources.Actions_dialog_ok_apply_icon;
-            this.btn_inc_guardar.Location = new System.Drawing.Point(264, 6);
-            this.btn_inc_guardar.Name = "btn_inc_guardar";
-            this.btn_inc_guardar.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_guardar.TabIndex = 5;
-            this.btn_inc_guardar.UseVisualStyleBackColor = false;
-            this.btn_inc_guardar.Click += new System.EventHandler(this.Btn_inc_guardar_Click);
+            this.cmb_inc_caso.FormattingEnabled = true;
+            this.cmb_inc_caso.Items.AddRange(new object[] {
+            "Unica",
+            "Inicial",
+            "Subsecuente",
+            "Alta Médica ST2"});
+            this.cmb_inc_caso.Location = new System.Drawing.Point(611, 118);
+            this.cmb_inc_caso.Name = "cmb_inc_caso";
+            this.cmb_inc_caso.Size = new System.Drawing.Size(135, 21);
+            this.cmb_inc_caso.TabIndex = 4;
+            this.cmb_inc_caso.SelectedIndexChanged += new System.EventHandler(this.Cmb_inc_caso_SelectedIndexChanged);
+            this.cmb_inc_caso.TextChanged += new System.EventHandler(this.Cmb_inc_caso_TextChanged);
+            this.cmb_inc_caso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_inc_caso_KeyPress);
             // 
-            // btn_inc_anterior
+            // label9
             // 
-            this.btn_inc_anterior.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_anterior.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_anterior.FlatAppearance.BorderSize = 0;
-            this.btn_inc_anterior.Image = global::CsPresentacion.Properties.Resources.Navigate_left_icon;
-            this.btn_inc_anterior.Location = new System.Drawing.Point(60, 6);
-            this.btn_inc_anterior.Name = "btn_inc_anterior";
-            this.btn_inc_anterior.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_anterior.TabIndex = 157;
-            this.btn_inc_anterior.UseVisualStyleBackColor = false;
-            this.btn_inc_anterior.Click += new System.EventHandler(this.Btn_inc_anterior_Click);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(609, 101);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 13);
+            this.label9.TabIndex = 171;
+            this.label9.Text = "CASO";
             // 
-            // btn_inc_cancelar
+            // dtm_inc_aplicacion
             // 
-            this.btn_inc_cancelar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_cancelar.FlatAppearance.BorderSize = 0;
-            this.btn_inc_cancelar.Image = global::CsPresentacion.Properties.Resources.delete_icon;
-            this.btn_inc_cancelar.Location = new System.Drawing.Point(305, 6);
-            this.btn_inc_cancelar.Name = "btn_inc_cancelar";
-            this.btn_inc_cancelar.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_cancelar.TabIndex = 151;
-            this.btn_inc_cancelar.UseVisualStyleBackColor = false;
-            this.btn_inc_cancelar.Click += new System.EventHandler(this.Btn_inc_cancelar_Click);
+            this.dtm_inc_aplicacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_inc_aplicacion.Location = new System.Drawing.Point(611, 75);
+            this.dtm_inc_aplicacion.Name = "dtm_inc_aplicacion";
+            this.dtm_inc_aplicacion.Size = new System.Drawing.Size(135, 20);
+            this.dtm_inc_aplicacion.TabIndex = 2;
             // 
-            // btn_inc_primero
+            // label8
             // 
-            this.btn_inc_primero.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_primero.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_primero.FlatAppearance.BorderSize = 0;
-            this.btn_inc_primero.Image = global::CsPresentacion.Properties.Resources.Hide_left_icon;
-            this.btn_inc_primero.Location = new System.Drawing.Point(19, 6);
-            this.btn_inc_primero.Name = "btn_inc_primero";
-            this.btn_inc_primero.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_primero.TabIndex = 158;
-            this.btn_inc_primero.UseVisualStyleBackColor = false;
-            this.btn_inc_primero.Click += new System.EventHandler(this.Btn_inc_primero_Click);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(607, 57);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(154, 13);
+            this.label8.TabIndex = 169;
+            this.label8.Text = "FECHA APLICACION NOMINA";
             // 
-            // btn_inc_exportar
+            // dtm_inc_termina
             // 
-            this.btn_inc_exportar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_exportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_exportar.FlatAppearance.BorderSize = 0;
-            this.btn_inc_exportar.Image = global::CsPresentacion.Properties.Resources.Excel;
-            this.btn_inc_exportar.Location = new System.Drawing.Point(347, 6);
-            this.btn_inc_exportar.Name = "btn_inc_exportar";
-            this.btn_inc_exportar.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_exportar.TabIndex = 152;
-            this.btn_inc_exportar.UseVisualStyleBackColor = false;
-            this.btn_inc_exportar.Click += new System.EventHandler(this.Btn_inc_exportar_Click);
+            this.dtm_inc_termina.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_inc_termina.Location = new System.Drawing.Point(410, 75);
+            this.dtm_inc_termina.Name = "dtm_inc_termina";
+            this.dtm_inc_termina.Size = new System.Drawing.Size(135, 20);
+            this.dtm_inc_termina.TabIndex = 1;
+            this.dtm_inc_termina.ValueChanged += new System.EventHandler(this.Dtm_inc_termina_ValueChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(408, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 167;
+            this.label7.Text = "TERMINA";
+            // 
+            // cmb_inc_tipo
+            // 
+            this.cmb_inc_tipo.FormattingEnabled = true;
+            this.cmb_inc_tipo.Items.AddRange(new object[] {
+            "Enfermermedad General",
+            "Accidente de Trabajo",
+            "Accidente de Trayecto",
+            "Enfermedad Profesional",
+            "Pre Maternidad",
+            "Maternidad Enlace",
+            "Post Maternidad"});
+            this.cmb_inc_tipo.Location = new System.Drawing.Point(233, 118);
+            this.cmb_inc_tipo.Name = "cmb_inc_tipo";
+            this.cmb_inc_tipo.Size = new System.Drawing.Size(135, 21);
+            this.cmb_inc_tipo.TabIndex = 3;
+            this.cmb_inc_tipo.SelectedIndexChanged += new System.EventHandler(this.Cmb_inc_tipo_SelectedIndexChanged);
+            this.cmb_inc_tipo.TextChanged += new System.EventHandler(this.Cmb_inc_tipo_TextChanged);
+            this.cmb_inc_tipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_inc_tipo_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(230, 101);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 165;
+            this.label6.Text = "TIPO";
+            // 
+            // txt_inc_duracion
+            // 
+            this.txt_inc_duracion.Location = new System.Drawing.Point(233, 75);
+            this.txt_inc_duracion.MaxLength = 6;
+            this.txt_inc_duracion.Name = "txt_inc_duracion";
+            this.txt_inc_duracion.Size = new System.Drawing.Size(81, 20);
+            this.txt_inc_duracion.TabIndex = 1;
+            this.txt_inc_duracion.TextChanged += new System.EventHandler(this.Txt_inc_duracion_TextChanged);
+            this.txt_inc_duracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_inc_duracion_KeyPress);
+            this.txt_inc_duracion.Leave += new System.EventHandler(this.Txt_inc_duracion_Leave);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(231, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 163;
+            this.label5.Text = "DURACION";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 161;
+            this.label4.Text = "CERTIFICADO";
+            // 
+            // dtm_inc_fecha
+            // 
+            this.dtm_inc_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_inc_fecha.Location = new System.Drawing.Point(18, 75);
+            this.dtm_inc_fecha.Name = "dtm_inc_fecha";
+            this.dtm_inc_fecha.Size = new System.Drawing.Size(135, 20);
+            this.dtm_inc_fecha.TabIndex = 0;
+            this.dtm_inc_fecha.ValueChanged += new System.EventHandler(this.Dtm_inc_inicia_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 159;
+            this.label3.Text = "INICIA";
             // 
             // dgv_incapacidades
             // 
@@ -360,175 +415,122 @@
             this.dgv_incapacidades.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_incapacidades_RowEnter);
             this.dgv_incapacidades.DoubleClick += new System.EventHandler(this.Dgv_incapacidades_DoubleClick);
             // 
-            // label3
+            // btn_inc_exportar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 57);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 159;
-            this.label3.Text = "INICIA";
+            this.btn_inc_exportar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inc_exportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inc_exportar.FlatAppearance.BorderSize = 0;
+            this.btn_inc_exportar.Image = global::CsPresentacion.Properties.Resources.Excel;
+            this.btn_inc_exportar.Location = new System.Drawing.Point(347, 6);
+            this.btn_inc_exportar.Name = "btn_inc_exportar";
+            this.btn_inc_exportar.Size = new System.Drawing.Size(40, 30);
+            this.btn_inc_exportar.TabIndex = 152;
+            this.btn_inc_exportar.UseVisualStyleBackColor = false;
+            this.btn_inc_exportar.Click += new System.EventHandler(this.Btn_inc_exportar_Click);
             // 
-            // dtm_inc_fecha
+            // btn_inc_primero
             // 
-            this.dtm_inc_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_inc_fecha.Location = new System.Drawing.Point(18, 75);
-            this.dtm_inc_fecha.Name = "dtm_inc_fecha";
-            this.dtm_inc_fecha.Size = new System.Drawing.Size(135, 20);
-            this.dtm_inc_fecha.TabIndex = 0;
-            this.dtm_inc_fecha.ValueChanged += new System.EventHandler(this.Dtm_inc_inicia_ValueChanged);
+            this.btn_inc_primero.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inc_primero.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inc_primero.FlatAppearance.BorderSize = 0;
+            this.btn_inc_primero.Image = global::CsPresentacion.Properties.Resources.Hide_left_icon;
+            this.btn_inc_primero.Location = new System.Drawing.Point(19, 6);
+            this.btn_inc_primero.Name = "btn_inc_primero";
+            this.btn_inc_primero.Size = new System.Drawing.Size(40, 30);
+            this.btn_inc_primero.TabIndex = 158;
+            this.btn_inc_primero.UseVisualStyleBackColor = false;
+            this.btn_inc_primero.Click += new System.EventHandler(this.Btn_inc_primero_Click);
             // 
-            // label4
+            // btn_inc_cancelar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 161;
-            this.label4.Text = "CERTIFICADO";
+            this.btn_inc_cancelar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inc_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inc_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_inc_cancelar.Image = global::CsPresentacion.Properties.Resources.delete_icon;
+            this.btn_inc_cancelar.Location = new System.Drawing.Point(305, 6);
+            this.btn_inc_cancelar.Name = "btn_inc_cancelar";
+            this.btn_inc_cancelar.Size = new System.Drawing.Size(40, 30);
+            this.btn_inc_cancelar.TabIndex = 151;
+            this.btn_inc_cancelar.UseVisualStyleBackColor = false;
+            this.btn_inc_cancelar.Click += new System.EventHandler(this.Btn_inc_cancelar_Click);
             // 
-            // label5
+            // btn_inc_anterior
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(231, 57);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 13);
-            this.label5.TabIndex = 163;
-            this.label5.Text = "DURACION";
+            this.btn_inc_anterior.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inc_anterior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inc_anterior.FlatAppearance.BorderSize = 0;
+            this.btn_inc_anterior.Image = global::CsPresentacion.Properties.Resources.Navigate_left_icon;
+            this.btn_inc_anterior.Location = new System.Drawing.Point(60, 6);
+            this.btn_inc_anterior.Name = "btn_inc_anterior";
+            this.btn_inc_anterior.Size = new System.Drawing.Size(40, 30);
+            this.btn_inc_anterior.TabIndex = 157;
+            this.btn_inc_anterior.UseVisualStyleBackColor = false;
+            this.btn_inc_anterior.Click += new System.EventHandler(this.Btn_inc_anterior_Click);
             // 
-            // txt_inc_duracion
+            // btn_inc_guardar
             // 
-            this.txt_inc_duracion.Location = new System.Drawing.Point(233, 75);
-            this.txt_inc_duracion.MaxLength = 6;
-            this.txt_inc_duracion.Name = "txt_inc_duracion";
-            this.txt_inc_duracion.Size = new System.Drawing.Size(81, 20);
-            this.txt_inc_duracion.TabIndex = 1;
-            this.txt_inc_duracion.TextChanged += new System.EventHandler(this.Txt_inc_duracion_TextChanged);
-            this.txt_inc_duracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_inc_duracion_KeyPress);
-            this.txt_inc_duracion.Leave += new System.EventHandler(this.Txt_inc_duracion_Leave);
+            this.btn_inc_guardar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inc_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inc_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_inc_guardar.Image = global::CsPresentacion.Properties.Resources.Actions_dialog_ok_apply_icon;
+            this.btn_inc_guardar.Location = new System.Drawing.Point(264, 6);
+            this.btn_inc_guardar.Name = "btn_inc_guardar";
+            this.btn_inc_guardar.Size = new System.Drawing.Size(40, 30);
+            this.btn_inc_guardar.TabIndex = 5;
+            this.btn_inc_guardar.UseVisualStyleBackColor = false;
+            this.btn_inc_guardar.Click += new System.EventHandler(this.Btn_inc_guardar_Click);
             // 
-            // label6
+            // btn_inc_siguiente
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(230, 101);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 165;
-            this.label6.Text = "TIPO";
+            this.btn_inc_siguiente.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inc_siguiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inc_siguiente.FlatAppearance.BorderSize = 0;
+            this.btn_inc_siguiente.Image = global::CsPresentacion.Properties.Resources.Next;
+            this.btn_inc_siguiente.Location = new System.Drawing.Point(101, 6);
+            this.btn_inc_siguiente.Name = "btn_inc_siguiente";
+            this.btn_inc_siguiente.Size = new System.Drawing.Size(40, 30);
+            this.btn_inc_siguiente.TabIndex = 156;
+            this.btn_inc_siguiente.UseVisualStyleBackColor = false;
+            this.btn_inc_siguiente.Click += new System.EventHandler(this.Btn_inc_siguiente_Click);
             // 
-            // cmb_inc_tipo
+            // btn_inc_eliminar
             // 
-            this.cmb_inc_tipo.FormattingEnabled = true;
-            this.cmb_inc_tipo.Items.AddRange(new object[] {
-            "Enfermermedad General",
-            "Accidente de Trabajo",
-            "Accidente de Trayecto",
-            "Enfermedad Profesional",
-            "Pre Maternidad",
-            "Maternidad Enlace",
-            "Post Maternidad"});
-            this.cmb_inc_tipo.Location = new System.Drawing.Point(233, 118);
-            this.cmb_inc_tipo.Name = "cmb_inc_tipo";
-            this.cmb_inc_tipo.Size = new System.Drawing.Size(135, 21);
-            this.cmb_inc_tipo.TabIndex = 3;
-            this.cmb_inc_tipo.SelectedIndexChanged += new System.EventHandler(this.Cmb_inc_tipo_SelectedIndexChanged);
-            this.cmb_inc_tipo.TextChanged += new System.EventHandler(this.Cmb_inc_tipo_TextChanged);
-            this.cmb_inc_tipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_inc_tipo_KeyPress);
+            this.btn_inc_eliminar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inc_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inc_eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_inc_eliminar.Image = global::CsPresentacion.Properties.Resources.math_minus_icon;
+            this.btn_inc_eliminar.Location = new System.Drawing.Point(223, 6);
+            this.btn_inc_eliminar.Name = "btn_inc_eliminar";
+            this.btn_inc_eliminar.Size = new System.Drawing.Size(40, 30);
+            this.btn_inc_eliminar.TabIndex = 153;
+            this.btn_inc_eliminar.UseVisualStyleBackColor = false;
+            this.btn_inc_eliminar.Click += new System.EventHandler(this.Btn_inc_eliminar_Click);
             // 
-            // label7
+            // btn_inc_ultimo
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(408, 57);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 167;
-            this.label7.Text = "TERMINA";
+            this.btn_inc_ultimo.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inc_ultimo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inc_ultimo.FlatAppearance.BorderSize = 0;
+            this.btn_inc_ultimo.Image = global::CsPresentacion.Properties.Resources.Hide_right_icon;
+            this.btn_inc_ultimo.Location = new System.Drawing.Point(142, 6);
+            this.btn_inc_ultimo.Name = "btn_inc_ultimo";
+            this.btn_inc_ultimo.Size = new System.Drawing.Size(40, 30);
+            this.btn_inc_ultimo.TabIndex = 155;
+            this.btn_inc_ultimo.UseVisualStyleBackColor = false;
+            this.btn_inc_ultimo.Click += new System.EventHandler(this.Btn_inc_ultimo_Click);
             // 
-            // dtm_inc_termina
+            // btn_inc_insertar
             // 
-            this.dtm_inc_termina.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_inc_termina.Location = new System.Drawing.Point(410, 75);
-            this.dtm_inc_termina.Name = "dtm_inc_termina";
-            this.dtm_inc_termina.Size = new System.Drawing.Size(135, 20);
-            this.dtm_inc_termina.TabIndex = 1;
-            this.dtm_inc_termina.ValueChanged += new System.EventHandler(this.Dtm_inc_termina_ValueChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(607, 57);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(154, 13);
-            this.label8.TabIndex = 169;
-            this.label8.Text = "FECHA APLICACION NOMINA";
-            // 
-            // dtm_inc_aplicacion
-            // 
-            this.dtm_inc_aplicacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_inc_aplicacion.Location = new System.Drawing.Point(611, 75);
-            this.dtm_inc_aplicacion.Name = "dtm_inc_aplicacion";
-            this.dtm_inc_aplicacion.Size = new System.Drawing.Size(135, 20);
-            this.dtm_inc_aplicacion.TabIndex = 2;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(609, 101);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 13);
-            this.label9.TabIndex = 171;
-            this.label9.Text = "CASO";
-            // 
-            // cmb_inc_caso
-            // 
-            this.cmb_inc_caso.FormattingEnabled = true;
-            this.cmb_inc_caso.Items.AddRange(new object[] {
-            "Unica",
-            "Inicial",
-            "Subsecuente",
-            "Alta Médica ST2"});
-            this.cmb_inc_caso.Location = new System.Drawing.Point(611, 118);
-            this.cmb_inc_caso.Name = "cmb_inc_caso";
-            this.cmb_inc_caso.Size = new System.Drawing.Size(135, 21);
-            this.cmb_inc_caso.TabIndex = 4;
-            this.cmb_inc_caso.SelectedIndexChanged += new System.EventHandler(this.Cmb_inc_caso_SelectedIndexChanged);
-            this.cmb_inc_caso.TextChanged += new System.EventHandler(this.Cmb_inc_caso_TextChanged);
-            this.cmb_inc_caso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_inc_caso_KeyPress);
-            // 
-            // txt_inc_certificado
-            // 
-            this.txt_inc_certificado.Location = new System.Drawing.Point(18, 119);
-            this.txt_inc_certificado.Name = "txt_inc_certificado";
-            this.txt_inc_certificado.Size = new System.Drawing.Size(135, 20);
-            this.txt_inc_certificado.TabIndex = 2;
-            this.txt_inc_certificado.Leave += new System.EventHandler(this.Txt_inc_certificado_Leave);
-            // 
-            // lbl_inc_tipo
-            // 
-            this.lbl_inc_tipo.AutoSize = true;
-            this.lbl_inc_tipo.Location = new System.Drawing.Point(234, 143);
-            this.lbl_inc_tipo.Name = "lbl_inc_tipo";
-            this.lbl_inc_tipo.Size = new System.Drawing.Size(39, 13);
-            this.lbl_inc_tipo.TabIndex = 172;
-            this.lbl_inc_tipo.Text = "@Tipo";
-            // 
-            // lbl_inc_caso
-            // 
-            this.lbl_inc_caso.AutoSize = true;
-            this.lbl_inc_caso.Location = new System.Drawing.Point(613, 142);
-            this.lbl_inc_caso.Name = "lbl_inc_caso";
-            this.lbl_inc_caso.Size = new System.Drawing.Size(42, 13);
-            this.lbl_inc_caso.TabIndex = 173;
-            this.lbl_inc_caso.Text = "@Caso";
-            // 
-            // lbl_id
-            // 
-            this.lbl_id.AutoSize = true;
-            this.lbl_id.Location = new System.Drawing.Point(450, 139);
-            this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(13, 13);
-            this.lbl_id.TabIndex = 174;
-            this.lbl_id.Text = "0";
+            this.btn_inc_insertar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inc_insertar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_inc_insertar.FlatAppearance.BorderSize = 0;
+            this.btn_inc_insertar.Image = global::CsPresentacion.Properties.Resources.math_add_icon2;
+            this.btn_inc_insertar.Location = new System.Drawing.Point(182, 6);
+            this.btn_inc_insertar.Name = "btn_inc_insertar";
+            this.btn_inc_insertar.Size = new System.Drawing.Size(40, 30);
+            this.btn_inc_insertar.TabIndex = 154;
+            this.btn_inc_insertar.UseVisualStyleBackColor = false;
+            this.btn_inc_insertar.Click += new System.EventHandler(this.Btn_inc_insertar_Click);
             // 
             // tabControl1
             // 
@@ -538,6 +540,10 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(804, 436);
             this.tabControl1.TabIndex = 159;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // Frm_Incapacidades
             // 
@@ -608,5 +614,6 @@
         private System.Windows.Forms.Button btn_inc_ultimo;
         private System.Windows.Forms.Button btn_inc_insertar;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

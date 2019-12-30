@@ -348,6 +348,8 @@ namespace CsPresentacion
         }
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
+            timer1.Start();
             Nuevo();
             Mostrar_Grid();
         }
@@ -564,6 +566,12 @@ namespace CsPresentacion
                 lbl_estado.ForeColor = Color.Red;
                 btn_com_agregar.Enabled = false;
             }
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Start();
+            Cursor = Cursors.Default;
         }
     }
 }
