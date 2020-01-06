@@ -62,7 +62,7 @@ namespace CsPresentacion
             txt_certificado.Mask = ">LL000000";
             lbl_inc_tipo.Visible = false;
             lbl_inc_caso.Visible = false;
-           lbl_id.Visible = false;
+            lbl_id.Visible = false;
             lbl_id.Text = "0";
             cmb_caso.Enabled = true;
             btn_primero.Enabled = false;
@@ -350,6 +350,16 @@ namespace CsPresentacion
             }
             else
             {
+                Inserta_incapacidades();
+                Mostrar_Grid();
+                dtm_fecha.Text = "";
+                txt_duracion.Text = "";
+                dtm_termina.Text = "";
+                txt_certificado.Text = "";
+                cmb_caso.Text = "";
+                cmb_tipo.Text = "";
+                lbl_id.Text = "0";
+                dtm_fecha.Focus();
             }
         }
 
