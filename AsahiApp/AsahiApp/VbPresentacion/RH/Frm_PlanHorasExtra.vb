@@ -18,7 +18,11 @@ Public Class Frm_PlanHorasExtra
         RellenaCmbSemanas()
         RellenaCmbDepartamento()
         hrs = NPre.RecuperarDiasSemana(Me.conex.conexionContpaq, DateTime.Now)
-        Cmb_Semanas.SelectedIndex = hrs.Semana - 1
+        If hrs.Semana > 1 Then
+            Cmb_Semanas.SelectedIndex = hrs.Semana - 1
+        Else
+            Cmb_Semanas.SelectedIndex = 52
+        End If
         Me.semana = hrs.Semana
         Cmb_Semanas_SelectionChangeCommitted(sender, e)
         BuscarDiasFestivo()

@@ -262,7 +262,7 @@ Public Class Frm_PolizasDiario
             Dgv_Compras.Rows.Add()
             'Dgv_Compras.Columns("acum").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             With Dgv_Compras.Rows(fila)
-                .Cells("provision").Value = item.IdProvicion
+                .Cells("provision").Value = item.IdProvision
                 .Cells("compra").Value = item.IdCompra
                 .Cells("oc").Value = item.IdOrdenCompra
                 .Cells("serie").Value = item.Serie

@@ -80,7 +80,7 @@ Public Class Frm_Principal
         AusentismosGlobalToolStripMenuItem.Enabled = False
         AusentismoGeneralToolStripMenuItem.Enabled = False
         Incapacidades_RetardosToolStripMenuItem.Enabled = False
-
+        ProvicionesToolStripMenuItem.Enabled = False
 
 
     End Sub
@@ -119,6 +119,7 @@ Public Class Frm_Principal
                 Case "AusentismosGlobalToolStripMenuItem" : AusentismosGlobalToolStripMenuItem.Enabled = True
                 Case "AusentismoGeneralToolStripMenuItem" : AusentismoGeneralToolStripMenuItem.Enabled = True
                 Case "Incapacidades_RetardosToolStripMenuItem" : Incapacidades_RetardosToolStripMenuItem.Enabled = True
+                Case "ProvicionesToolStripMenuItem" : ProvicionesToolStripMenuItem.Enabled = True
             End Select
         Next
     End Sub
@@ -391,10 +392,16 @@ Public Class Frm_Principal
         Dim Ag As New Frm_Incapacidades(Me.emp)
         Ag.Show()
     End Sub
-
     Private Sub ComidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Kardex_comedorToolStripMenuItem.Click
         Dim Co As New Frm_Comedor 'Captura de registros de comedor'
         Co.Show()
+    End Sub
+    Private Sub ProvicionesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProvicionesToolStripMenuItem1.Click
+        Dim FrmProv As New Frm_Provisiones()
+        FrmProv.Show()
+    End Sub
+    Private Sub AutorizaContabilidadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AutorizaContabilidadToolStripMenuItem.Click
+
     End Sub
 #End Region
 End Class

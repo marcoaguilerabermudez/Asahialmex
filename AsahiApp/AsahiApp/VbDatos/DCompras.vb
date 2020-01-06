@@ -16,7 +16,7 @@ Public Class DCompras
             dr = query.ExecuteReader
             While (dr.Read)
                 Dim comp As New Compras()
-                comp.IdProvicion = Convert.ToInt32(dr("Id_provision").ToString)
+                comp.IdProvision = Convert.ToInt32(dr("Id_provision").ToString)
                 comp.IdCompra = Convert.ToInt32(dr("Compra").ToString)
                 comp.IdOrdenCompra = Convert.ToInt32(dr("Oc").ToString)
                 comp.Serie = dr("Serie").ToString
@@ -169,4 +169,77 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
+    Public Function RecuperarLstPorProvicionar(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstComp As New LCompras()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Sp_muestraprovisionescomprasPrueba", oCon)
+            query.Parameters.AddWithValue("@fecha", fi)
+            query.Parameters.AddWithValue("@fecha2", ff)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim comp As New Compras()
+                comp.IdProvision = Convert.ToInt32(dr("Id_provision").ToString)
+                comp.Oc = dr("Oc").ToString
+                comp.IdCompra = Convert.ToInt32(dr("Compra").ToString)
+                comp.Factura = dr("Factura").ToString
+                comp.Proveedor = dr("Proveedor").ToString
+                comp.Rfc = dr("RFC").ToString
+                comp.RfcEmisor = dr("RFCEmisor").ToString
+                comp.Moneda = dr("Moneda").ToString
+                comp.MontoOC = Convert.ToDouble(dr("MontoOc").ToString)
+                comp.MontoCompra = Convert.ToDouble(dr("MontoCompra").ToString)
+                comp.MontoFact = Convert.ToDouble(dr("MontoFact").ToString)
+                comp.MontoPagar = Convert.ToDouble(dr("MontoaPagar").ToString)
+                comp.FechaFact = Convert.ToDateTime(dr("FechaFactura").ToString)
+                comp.FechaPagoFact = Convert.ToDateTime(dr("FechaPagoFact").ToString)
+                comp.FechaPagoReal = Convert.ToDateTime(dr("FechaPagoReal").ToString)
+                comp.Status = dr("Status").ToString
+                comp.ObservaCompra = dr("ObservaCompra").ToString
+                comp.ObservaConta = dr("ObservaConta").ToString
+                comp.Empresa = dr("Empresa").ToString
+                comp.NombreEmisor = dr("NombreEmisor").ToString
+                comp.Add = dr("Add").ToString
+                comp.StatusConta = dr("StatusConta").ToString
+                comp.Val1 = Convert.ToInt32(dr("Val1").ToString)
+                comp.Val2 = Convert.ToInt32(dr("Val2").ToString)
+                comp.Val3 = Convert.ToInt32(dr("Val3").ToString)
+                comp.Val4 = Convert.ToInt32(dr("Val4").ToString)
+                comp.Ruta = dr("Ruta").ToString
+                comp.IdOrdenCompra = Convert.ToInt32(dr("o").ToString)
+                comp.Serie = dr("Serie").ToString
+                comp.FechaCompra = Convert.ToDateTime(dr("FechaCompra").ToString)
+                lstComp.Add(comp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstComp
+    End Function
+    Public Sub ActualizarXml(ByVal cadenaConex As String)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Sp_actualizaxml", oCon)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteNonQuery()
+            MsgBox("¡Actualizado con éxito!")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
 End Class

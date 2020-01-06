@@ -72,6 +72,11 @@ Presentacion
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Presentacion.My.Resources.Resources.comprobado">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Presentacion.My.Resources.Resources.Excel">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -107,6 +112,11 @@ Presentacion
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Presentacion.My.Resources.Resources.lupa">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Presentacion.My.Resources.Resources.pagina_blanca_de_origami">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -138,6 +148,11 @@ Presentacion
 </summary>
 </member>
 <member name="P:Presentacion.My.Resources.Resources.txt1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Presentacion.My.Resources.Resources.xml">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
