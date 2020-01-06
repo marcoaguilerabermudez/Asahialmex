@@ -37,7 +37,6 @@ namespace CsPresentacion
         {
             nuevo();
             autocompletar_responsable(txt_nombre);
-
         }
         //Métodos
         private void Diseño_Grid(DataGridView dgv)
@@ -311,6 +310,8 @@ namespace CsPresentacion
         }
        private void Btn_nuevo_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
+            timer1.Start();
             nuevo();
             Mostrar_Grid();
         }
@@ -687,5 +688,12 @@ namespace CsPresentacion
         private void Txt_clave_Leave(object sender, EventArgs e)
         {
         }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Start();
+            Cursor = Cursors.Default;
+        }
+
     }
 }
