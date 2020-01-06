@@ -1,11 +1,11 @@
 ﻿Public Class Compras
-    Private idProvicion_ As Integer
-    Public Property IdProvicion() As Integer
+    Private idProvision_ As Integer
+    Public Property IdProvision() As Integer
         Get
-            Return idProvicion_
+            Return idProvision_
         End Get
         Set(ByVal value As Integer)
-            idProvicion_ = value
+            idProvision_ = value
         End Set
     End Property
     Private idCompra_ As Integer
@@ -15,6 +15,15 @@
         End Get
         Set(ByVal value As Integer)
             idCompra_ = value
+        End Set
+    End Property
+    Private oc_ As String
+    Public Property Oc() As String
+        Get
+            Return oc_
+        End Get
+        Set(ByVal value As String)
+            oc_ = value
         End Set
     End Property
     Private idOc_ As Integer
@@ -312,6 +321,96 @@
         End Get
         Set(ByVal value As Double)
             impuesto_ = value
+        End Set
+    End Property
+    Private status_ As String
+    Public Property Status() As String
+        Get
+            Return status_
+        End Get
+        Set(ByVal value As String)
+            status_ = value
+        End Set
+    End Property
+    Private statusConta_ As Integer
+    Public Property StatusConta() As Integer
+        Get
+            Return statusConta_
+        End Get
+        Set(ByVal value As Integer)
+            statusConta_ = value
+        End Set
+    End Property
+    Private observaCompra_ As String
+    Public Property ObservaCompra() As String
+        Get
+            Return observaCompra_
+        End Get
+        Set(ByVal value As String)
+            observaCompra_ = value
+        End Set
+    End Property
+    Private observaConta_ As String
+    Public Property ObservaConta() As String
+        Get
+            Return observaConta_
+        End Get
+        Set(ByVal value As String)
+            observaConta_ = value
+        End Set
+    End Property
+    Private add_ As String
+    Public Property Add() As String
+        Get
+            Return add_
+        End Get
+        Set(ByVal value As String)
+            add_ = value
+        End Set
+    End Property
+    Private val1_ As Integer
+    Public Property Val1() As Integer
+        Get
+            Return val1_
+        End Get
+        Set(ByVal value As Integer)
+            val1_ = value
+        End Set
+    End Property
+    Private val2_ As Integer
+    Public Property Val2() As Integer
+        Get
+            Return val2_
+        End Get
+        Set(ByVal value As Integer)
+            val2_ = value
+        End Set
+    End Property
+    Private val3_ As Integer
+    Public Property Val3() As Integer
+        Get
+            Return val3_
+        End Get
+        Set(ByVal value As Integer)
+            val3_ = value
+        End Set
+    End Property
+    Private val4_ As Integer
+    Public Property Val4() As Integer
+        Get
+            Return val4_
+        End Get
+        Set(ByVal value As Integer)
+            val4_ = value
+        End Set
+    End Property
+    Private ruta_ As String
+    Public Property Ruta() As String
+        Get
+            Return ruta_
+        End Get
+        Set(ByVal value As String)
+            ruta_ = value
         End Set
     End Property
 End Class
