@@ -96,7 +96,7 @@ Partial Class Frm_ConceptoPoliza
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(72, 15)
         Me.Label3.TabIndex = 5
-        Me.Label3.Text = "PROVICIÓN"
+        Me.Label3.Text = "PROVISIÓN"
         '
         'Txt_Prov
         '

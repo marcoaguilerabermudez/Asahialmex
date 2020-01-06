@@ -163,6 +163,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property comprobado() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("comprobado", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Excel() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Excel", resourceCulture)
@@ -233,6 +243,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property lupa() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lupa", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property pagina_blanca_de_origami() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("pagina-blanca-de-origami", resourceCulture)
@@ -296,6 +316,16 @@ Namespace My.Resources
         Friend ReadOnly Property txt1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("txt1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property xml() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("xml", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

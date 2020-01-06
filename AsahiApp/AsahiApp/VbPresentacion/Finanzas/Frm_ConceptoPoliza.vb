@@ -48,7 +48,7 @@ Public Class Frm_ConceptoPoliza
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
                 Dim concepto As String
-                concepto = "PO " & Txt_Po.Text & " PROVICIÓN " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
+                concepto = "PO " & Txt_Po.Text & " PROVISION " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
                 Me.Concepto = concepto
                 DialogResult = DialogResult.OK
                 Me.Dispose()
@@ -57,7 +57,7 @@ Public Class Frm_ConceptoPoliza
     End Sub
     Private Sub Btn_Guardar_Click(sender As Object, e As EventArgs) Handles Btn_Guardar.Click
         Dim concepto As String
-        concepto = "PO " & Txt_Po.Text & " PROVICIÓN " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
+        concepto = "PO " & Txt_Po.Text & " PROVISION " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
         Me.Concepto = concepto
         DialogResult = DialogResult.OK
         Me.Dispose()
@@ -66,7 +66,7 @@ Public Class Frm_ConceptoPoliza
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
                 Dim concepto As String
-                concepto = "PO " & Txt_Po.Text & " PROVICIÓN " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
+                concepto = "PO " & Txt_Po.Text & " PROVISION " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
                 Me.Concepto = concepto
                 DialogResult = DialogResult.OK
                 Me.Dispose()
@@ -77,7 +77,7 @@ Public Class Frm_ConceptoPoliza
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
                 Dim concepto As String
-                concepto = "PO " & Txt_Po.Text & " PROVICIÓN " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
+                concepto = "PO " & Txt_Po.Text & " PROVISION " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
                 Me.Concepto = concepto
                 DialogResult = DialogResult.OK
                 Me.Dispose()
@@ -88,7 +88,7 @@ Public Class Frm_ConceptoPoliza
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
                 Dim concepto As String
-                concepto = "PO " & Txt_Po.Text & " PROVICIÓN " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
+                concepto = "PO " & Txt_Po.Text & " PROVISION " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
                 Me.Concepto = concepto
                 DialogResult = DialogResult.OK
                 Me.Dispose()
@@ -99,7 +99,7 @@ Public Class Frm_ConceptoPoliza
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
                 Dim concepto As String
-                concepto = "PO " & Txt_Po.Text & " PROVICIÓN " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
+                concepto = "PO " & Txt_Po.Text & " PROVISION " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
                 Me.Concepto = concepto
                 DialogResult = DialogResult.OK
                 Me.Dispose()
@@ -110,7 +110,7 @@ Public Class Frm_ConceptoPoliza
         If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
                 Dim concepto As String
-                concepto = "PO " & Txt_Po.Text & " PROVICIÓN " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
+                concepto = "PO " & Txt_Po.Text & " PROVISION " & Txt_Prov.Text & " " & Txt_Familia.Text & " " & Txt_Proveedor.Text & " S-" & Txt_SegNeg.Text & ""
                 Me.Concepto = concepto
                 DialogResult = DialogResult.OK
                 Me.Dispose()

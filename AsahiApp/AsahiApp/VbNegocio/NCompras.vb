@@ -22,4 +22,12 @@ Public Class NCompras
         Dim DComp As New DCompras()
         Return DComp.RecuperarListaSegNeg(cadenaConex, uuid)
     End Function
+    Public Function RecuperarLstPorProvicionar(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
+        Dim DComp As New DCompras()
+        Return DComp.RecuperarLstPorProvicionar(cadenaConex, fi, ff)
+    End Function
+    Public Sub ActualizarXml(ByVal cadenaConex As String)
+        Dim DComp As New DCompras
+        DComp.ActualizarXml(cadenaConex)
+    End Sub
 End Class
