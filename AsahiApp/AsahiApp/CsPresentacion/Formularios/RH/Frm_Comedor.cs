@@ -475,7 +475,8 @@ namespace CsPresentacion
                 dtm_com_fecha.Focus(); }
             else
             {
-                Verifica_Vacaciones();}
+                Verifica_Vacaciones();
+            }
         }
 
         //Eventos
