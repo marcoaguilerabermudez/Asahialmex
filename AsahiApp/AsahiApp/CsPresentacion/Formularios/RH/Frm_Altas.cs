@@ -27,6 +27,7 @@ namespace CsPresentacion
             txt_curp.Mask = ">LLLL000000LLLLLLCC";
             txt_rfc.Mask = ">LLLL000000CCC";
         }
+//Métodos
         public void cargar_departemento(ComboBox inte)//Cargar departamento en cmb
         {
             try
@@ -46,7 +47,6 @@ namespace CsPresentacion
                 MessageBox.Show("No se llenó información de campo departamento" + Error.ToString());
             }
         }
-
         private void nuevo()
         {
             lbl_var.Visible = false;
@@ -114,7 +114,6 @@ namespace CsPresentacion
             rdb_nacional.Checked = true;
             txt_infonavit.Text = "";
         }
-
         private void selecciona_sueldo()
         {
             try
@@ -148,7 +147,6 @@ namespace CsPresentacion
                 MessageBox.Show("No se pudo cargar el sueldo");
             }
         }
-
         private void Registra_empleado()
         {
             try
@@ -208,9 +206,6 @@ namespace CsPresentacion
                 MessageBox.Show(Error.ToString());
             }
         }
-
-    
-
         private void Comprueba_Existencia()
         {
             try
@@ -315,7 +310,6 @@ namespace CsPresentacion
             }
             con.Close();
         }
-
         private void selecciona_clave()
         {
             try
@@ -338,7 +332,6 @@ namespace CsPresentacion
                 MessageBox.Show("No se pudo cargar la ultima CLAVE");
             }
         }
-
         public void cargar_puesto(ComboBox inte)//Cargar puesto CMB
         {
             try
@@ -359,32 +352,33 @@ namespace CsPresentacion
             }
         }
 
+//Botones
         private void Button1_Click(object sender, EventArgs e)//Primer botón siguinte
         {
             if (string.IsNullOrEmpty(txt_nombre.Text))
             {
-                MessageBox.Show("Es necesario capturar el nombre de Empleado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Es necesario capturar el nombre de Empleado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_nombre.Focus();
             }
          
             else if (string.IsNullOrEmpty(cmb_departamento.Text))
             {
-                MessageBox.Show("Es necesario capturar el Departamento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Es necesario capturar el Departamento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cmb_departamento.Focus();
             }
             else if (string.IsNullOrEmpty(cmb_puesto.Text))
             {
-                MessageBox.Show("Es necesario capturar el Puesto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Es necesario capturar el Puesto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cmb_puesto.Focus();
             }
             else if (string.IsNullOrEmpty(txt_SDO1 .Text))
             {
-                MessageBox.Show("Es necesario capturar el Sueldo diario", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Es necesario capturar el Sueldo diario", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_SDO1.Focus();
             }
             else if (string.IsNullOrEmpty(txt_SDO3.Text))
             {
-                MessageBox.Show("Es necesario capturar el Var. IMMS", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Es necesario capturar el Var. IMMS", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_SDO1.Focus();
             }
             else
@@ -393,27 +387,26 @@ namespace CsPresentacion
                 Panel_principal.Visible = false;
             }
         }
-
         private void Btn_ps_siguiente_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_calle.Text))
             {
-                MessageBox.Show("Es necesario capturar información de la calle", "Aviso");
+                MessageBox.Show("Es necesario capturar información de la calle", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_calle.Focus();
             }
             else if (string.IsNullOrEmpty(txt_numero.Text))
             {
-                MessageBox.Show("Es necesario capturar información de la dirección completa", "Aviso");
+                MessageBox.Show("Es necesario capturar información de la dirección completa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_numero.Focus();
             }
             else if (string.IsNullOrEmpty(txt_cp.Text))
             {
-                MessageBox.Show("Es necesario capturar información del Código Postal", "Aviso");
+                MessageBox.Show("Es necesario capturar información del Código Postal", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_cp.Focus();
             }
             else if (string.IsNullOrEmpty(txt_colonia.Text))
             {
-                MessageBox.Show("Es necesario capturar información de la colonia", "Aviso");
+                MessageBox.Show("Es necesario capturar información de la colonia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_colonia.Focus();
             }
             else
@@ -422,22 +415,80 @@ namespace CsPresentacion
                 Panel_secundario.Visible = false;
             }
         }
-
         private void Btn_ps_anterior_Click(object sender, EventArgs e)
         {
             Panel_secundario.Visible = false;
             Panel_principal.Visible = true;
         }
-
         private void Btn_pf_anterior_Click(object sender, EventArgs e)
         {
             Panel_secundario.Visible = true;
         }
+        private void Btn_nuevo2_Click(object sender, EventArgs e)
+        {
+            nuevo();
+            selecciona_clave();
+        }
+        private void Btn_comprueba_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_curp.Text))
+            {
+                MessageBox.Show("Es necesario capturar el Curp", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_curp.Focus();
+            }
+            else
+            {
+                Comprueba_Existencia();
+            }
+        }
+        private void Button2_Click(object sender, EventArgs e)//Alta de empleado
+        {
+            if (string.IsNullOrEmpty(cmb_turno.Text))
+            {
+                MessageBox.Show("Es necesario capturar el turno.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmb_turno.Focus();
+            }
+            else if (string.IsNullOrEmpty(cmb_ruta.Text))
+            {
+                MessageBox.Show("Es necesario capturar la ruta.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmb_ruta.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_contacto.Text))
+            {
+                MessageBox.Show("Es necesario capturar información de contacto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_contacto.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_tel_contacto.Text))
+            {
+                MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_tel_contacto.Focus();
+            }
+            else if (string.IsNullOrEmpty(txt_infonavit.Text))
+            {
+                txt_infonavit.Text = "0";
+            }
 
+            else
+            {
+                Registra_empleado();
+                Frm_Rep_Alta_empleado Rep = new Frm_Rep_Alta_empleado();
+                Rep.CLAVE = Convert.ToInt32(txt_Clave.Text);
+                Rep.ShowDialog();
+                Panel_principal.Visible = true;
+                nuevo();
+                selecciona_clave();
+            }
+        }
+        private void Btn_fin_anterior_Click(object sender, EventArgs e)
+        {
+            Panel_secundario.Visible = true;
+            panel_final.Visible = false;
+        }
+
+//Eventos
         private void Panel_principal_Paint(object sender, PaintEventArgs e)
         {
         }
-
         private void Cmb_puesto_SelectedIndexChanged(object sender, EventArgs e)
         {
             selecciona_sueldo();
@@ -461,11 +512,6 @@ namespace CsPresentacion
         private void Cmb_puesto_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
-        }
-        private void Btn_nuevo2_Click(object sender, EventArgs e)
-        {
-            nuevo();
-            selecciona_clave();
         }
         private void Txt_Clave_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -548,63 +594,6 @@ namespace CsPresentacion
         }
         private void Txt_nacionalidad_TextChanged(object sender, EventArgs e)
         {
-        }
-        private void Btn_comprueba_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txt_curp.Text))
-            {
-                MessageBox.Show("Es necesario capturar el Curp", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_curp.Focus();
-            }
-            else
-            {
-                Comprueba_Existencia();
-            }            
-        }
-        private void Button2_Click(object sender, EventArgs e)//Alta de empleado
-        {
-            if (string.IsNullOrEmpty(cmb_turno.Text))
-            {
-                MessageBox.Show("Es necesario capturar el turno.", "Aviso");
-                cmb_turno.Focus();
-            }
-            else if (string.IsNullOrEmpty(cmb_ruta.Text))
-            {
-                MessageBox.Show("Es necesario capturar la ruta.", "Aviso");
-                cmb_ruta.Focus();
-            }
-            else if (string.IsNullOrEmpty(txt_contacto.Text))
-            {
-                MessageBox.Show("Es necesario capturar información de contacto.", "Aviso");
-                txt_contacto.Focus();
-            }
-            else if (string.IsNullOrEmpty(txt_tel_contacto.Text))
-            {
-                MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso");
-                txt_tel_contacto.Focus();
-            }
-            else if (string.IsNullOrEmpty(txt_infonavit.Text))
-            {
-                txt_infonavit.Text = "0";
-            }
-
-            else
-            {
-                Registra_empleado();
-                Frm_Rep_Alta_empleado Rep = new Frm_Rep_Alta_empleado();
-                Rep.CLAVE = Convert.ToInt32(txt_Clave.Text);
-                Rep.ShowDialog();
-                Panel_principal.Visible = true;
-               nuevo();
-            selecciona_clave();
-            }
-        }
-
-
-        private void Btn_fin_anterior_Click(object sender, EventArgs e)
-        {
-            Panel_secundario.Visible = true;
-            panel_final.Visible = false;
         }
         private void Panel_secundario_Paint(object sender, PaintEventArgs e)
         {
@@ -811,8 +800,7 @@ namespace CsPresentacion
             }
         }
         private void Txt_tel_contacto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-         
+        {      
         }
         private void TextBox8_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -888,7 +876,6 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Txt_interior_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
@@ -908,7 +895,6 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Txt_email_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsSeparator(e.KeyChar))
@@ -920,17 +906,14 @@ namespace CsPresentacion
                 e.Handled = false;
             }
         }
-
         private void Cmb_estado_nacimiento_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
         private void Cmb_turno_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
         private void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if (rdb_expatriado.Checked == true)
@@ -982,7 +965,6 @@ namespace CsPresentacion
             txt_SDO3.Text = r.ToString();
             txt_SDO5.Text = r.ToString();
         }
-
         private void Txt_SDO3_TextChanged(object sender, EventArgs e)
         {  
         }
@@ -993,7 +975,6 @@ namespace CsPresentacion
         {
            // lbl_sueldo.Text = Letras(txt_SDO1.Text);
         }
-
         private void Txt_hijos_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsNumber(e.KeyChar))
@@ -1013,11 +994,9 @@ namespace CsPresentacion
         {
             e.Handled = true;
         }
-
         private void Cmb_infonavit_SelectedIndexChanged(object sender, EventArgs e)
         {    
         }
-
         private void Txt_infonavit_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsNumber(e.KeyChar))
@@ -1033,7 +1012,6 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Txt_curp_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (string.IsNullOrEmpty(txt_curp.Text))

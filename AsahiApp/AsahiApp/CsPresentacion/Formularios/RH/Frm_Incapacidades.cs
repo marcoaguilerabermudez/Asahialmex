@@ -12,10 +12,10 @@ using Clases;
 
 namespace CsPresentacion
 {
-    public partial class Frm_Incapacidades : Form
+    public partial class Frm_Aussentismos_Retardos : Form
     {
         
-        public Frm_Incapacidades(Empleado classEmpleado)
+        public Frm_Aussentismos_Retardos(Empleado classEmpleado)
         {
             InitializeComponent();
             var tt = new ToolTip();
@@ -155,7 +155,7 @@ namespace CsPresentacion
             da.SelectCommand.Parameters.Add("@FECHA_APLICACION", SqlDbType.VarChar, 100).Value = dtm_aplicacion.Text;
             da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
             da.SelectCommand.Parameters.Add("@ID", SqlDbType.VarChar, 100).Value = lbl_id.Text;
-
+            
             da.Fill(dt);
             con.Close();
 
@@ -362,7 +362,6 @@ namespace CsPresentacion
                 dtm_fecha.Focus();
             }
         }
-
         private void Inserta_incapacidades()//Inserta incapacidades.
         {
             try
@@ -414,7 +413,6 @@ namespace CsPresentacion
                 DataTable dt = new DataTable();
                 con.Close();
                 adapter.Fill(dt);
-                MessageBox.Show("Vacaciones eliminadas con éxito", "Aviso");
             }
             catch (Exception ex)
             {
@@ -443,7 +441,6 @@ namespace CsPresentacion
                 DataTable dt = new DataTable();
                 con.Close();
                 adapter.Fill(dt);
-                MessageBox.Show("Incidencia eliminada con éxito", "Aviso");
             }
             catch (Exception ex)
             {
@@ -647,27 +644,18 @@ namespace CsPresentacion
             nuevo();
             Mostrar_Grid();
         }
-        private void Btn_inc_cancelar_Click(object sender, EventArgs e)//Cancela incapacidades
+        private void Btn_primero_Click(object sender, EventArgs e)
         {
-            dtm_fecha.Text = "";
-            dtm_termina.Text = "";
-            txt_duracion.Text = "";
-            dtm_aplicacion.Text = "";
-            txt_certificado.Text = "";
-            cmb_tipo.Text = "";
-            cmb_caso.Text = "";
-            lbl_inc_caso.Text = "";
-            lbl_inc_tipo.Text = "";
-            btn_eliminar.Enabled = false;
-            lbl_id.Text = "0";
+            dgv_incapacidades.CurrentCell = dgv_incapacidades.Rows[0].Cells[dgv_incapacidades.CurrentCell.ColumnIndex];
+            btn_anterior.Enabled = false;
+            btn_primero.Enabled = false;
+            btn_siguiente.Enabled = true;
+            btn_ultimo.Enabled = true;
+            btn_guardar.Enabled = false;
+            btn_cancelar.Enabled = false;
             dtm_fecha.Focus();
         }
-        private void Btn_inc_exportar_Click(object sender, EventArgs e)//Botón exportar excel, módulo de incapacidades
-        {
-            Exportara_Exel();
-            dtm_fecha.Focus();
-        }
-        private void Btn_inc_anterior_Click(object sender, EventArgs e)
+        private void Btn_anterior_Click(object sender, EventArgs e)
         {
             int Anterior = indice - 1;
 
@@ -689,18 +677,7 @@ namespace CsPresentacion
                 dtm_fecha.Focus();
             }
         }
-        private void Btn_inc_primero_Click(object sender, EventArgs e)
-        {
-            dgv_incapacidades.CurrentCell = dgv_incapacidades.Rows[0].Cells[dgv_incapacidades.CurrentCell.ColumnIndex];
-            btn_anterior.Enabled = false;
-            btn_primero.Enabled = false;
-            btn_siguiente.Enabled = true;
-            btn_ultimo.Enabled = true;
-            btn_guardar.Enabled = false;
-            btn_cancelar.Enabled = false;
-            dtm_fecha.Focus();
-        }
-        private void Btn_inc_siguiente_Click(object sender, EventArgs e)
+        private void Btn_siguiente_Click(object sender, EventArgs e)
         {
             int Siguiente = indice + 1;
             try
@@ -722,7 +699,7 @@ namespace CsPresentacion
                 dtm_fecha.Focus();
             }
         }
-        private void Btn_inc_ultimo_Click(object sender, EventArgs e)
+        private void Btn_ultimo_Click(object sender, EventArgs e)
         {
             try
             {
@@ -739,7 +716,7 @@ namespace CsPresentacion
             {
             }
         }
-        private void Btn_inc_insertar_Click(object sender, EventArgs e)
+        private void Btn_insertar_Click(object sender, EventArgs e)
         {
             dtm_fecha.Text = "";
             dtm_termina.Text = "";
@@ -759,42 +736,8 @@ namespace CsPresentacion
             cmb_caso.Enabled = true;
             cmb_tipo.Enabled = true;
             dtm_fecha.Focus();
-        }//Botón Para crear una nueva incapacidad
-        private void Btn_inc_guardar_Click(object sender, EventArgs e)//botón Inserta o modifica incapacidades
-        {  
-                if (txt_duracion.Text == "")
-                {
-                    MessageBox.Show("Es necesario capturar la cantidad de días.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txt_duracion.Focus();
-                }
-                else if (txt_certificado.Text == "")
-                {
-                    MessageBox.Show("Es necesario capturar el Certificado de Incapacidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txt_certificado.Focus();
-                }
-                else if (cmb_tipo.Text == "")
-                {
-                    MessageBox.Show("Es necesario capturar el tipo de incapacidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cmb_tipo.Focus();
-                }
-                else if (cmb_caso.Text == "")
-                {
-                    MessageBox.Show("Es necesario capturar el caso de incapacidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cmb_caso.Focus();
-                }
-            else
-            {
-                if (lbl_id.Text == "0")
-                {
-                    Verifica_certificado();
-                }
-                else
-                {
-                    Modifica_incapacidades();
-                }
-            }
         }
-        private void Btn_inc_eliminar_Click(object sender, EventArgs e)//Botón elimina incapacidades
+        private void Btn_eliminar_Click(object sender, EventArgs e)
         {
             Elimina_incapacidades();
             Mostrar_Grid();
@@ -811,13 +754,63 @@ namespace CsPresentacion
             lbl_id.Text = "0";
             dtm_fecha.Focus();
         }
+        private void Btn_guardar_Click(object sender, EventArgs e)
+        {
+            if (txt_duracion.Text == "")
+            {
+                MessageBox.Show("Es necesario capturar la cantidad de días.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_duracion.Focus();
+            }
+            else if (txt_certificado.Text == "")
+            {
+                MessageBox.Show("Es necesario capturar el Certificado de Incapacidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_certificado.Focus();
+            }
+            else if (cmb_tipo.Text == "")
+            {
+                MessageBox.Show("Es necesario capturar el tipo de incapacidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmb_tipo.Focus();
+            }
+            else if (cmb_caso.Text == "")
+            {
+                MessageBox.Show("Es necesario capturar el caso de incapacidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmb_caso.Focus();
+            }
+            else
+            {
+                if (lbl_id.Text == "0")
+                {
+                    Verifica_certificado();
+                }
+                else
+                {
+                    Modifica_incapacidades();
+                }
+            }
+        }
+        private void Btn_cancelar_Click(object sender, EventArgs e)
+        {
+            dtm_fecha.Text = "";
+            dtm_termina.Text = "";
+            txt_duracion.Text = "";
+            dtm_aplicacion.Text = "";
+            txt_certificado.Text = "";
+            cmb_tipo.Text = "";
+            cmb_caso.Text = "";
+            lbl_inc_caso.Text = "";
+            lbl_inc_tipo.Text = "";
+            btn_eliminar.Enabled = false;
+            lbl_id.Text = "0";
+            dtm_fecha.Focus();
+        }
+        private void Btn_exportar_Click(object sender, EventArgs e)
+        {
+            Exportara_Exel();
+            dtm_fecha.Focus();
+        }
+
+
         //Eventos
-        private void Dtm_inc_termina_ValueChanged(object sender, EventArgs e)
-        { 
-        }
-        private void Cmb_inc_tipo_SelectedIndexChanged(object sender, EventArgs e)
-        {    
-        }
         private void Txt_clave_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar)) { e.Handled = false; }
@@ -837,36 +830,6 @@ namespace CsPresentacion
                 dtm_fecha.Focus();
             }
         }
-        private void Cmb_inc_caso_SelectedIndexChanged(object sender, EventArgs e)
-        {   
-        }
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-        private void Dtm_inc_inicia_ValueChanged(object sender, EventArgs e)
-        {
-             dtm_aplicacion.Text = dtm_fecha.Text ;
-        }
-        private void Txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar)) { e.Handled = false; }
-            else if (Char.IsControl(e.KeyChar))
-            { e.Handled = false; }
-            else if (Char.IsSeparator(e.KeyChar))
-            { e.Handled = false; }
-            else { e.Handled = true; }
-        }
-        private void Txt_nombre_Leave(object sender, EventArgs e)
-        {
-            cargar_clave();
-            Mostrar_Grid();
-            btn_exportar.Enabled = true;
-            btn_siguiente.Enabled = true;
-            btn_ultimo.Enabled = true;
-            pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
-            txt_nombre.Enabled = false;
-            dtm_fecha.Focus();
-        }
         private void Lbl_estado_TextChanged(object sender, EventArgs e)
         {
             if (lbl_estado.Text == "VIGENTE")
@@ -882,7 +845,41 @@ namespace CsPresentacion
                 btn_cancelar.Enabled = false;
             }
         }
-        private void Dgv_incapacidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+        private void Txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {          
+        }
+        private void Txt_nombre_Leave(object sender, EventArgs e)
+        {   
+        }
+
+        private void Dtm_fecha_ValueChanged(object sender, EventArgs e)
+        {
+            dtm_aplicacion.Text = dtm_fecha.Text;
+        }
+        private void Txt_certificado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar)) { e.Handled = false; }
+            else if (Char.IsControl(e.KeyChar))
+            { e.Handled = false; }
+            else if (Char.IsSeparator(e.KeyChar))
+            { e.Handled = false; }
+            else { e.Handled = true; }
+        }
+        private void Txt_certificado_Leave(object sender, EventArgs e)
+        {
+            cargar_clave();
+            Mostrar_Grid();
+            btn_exportar.Enabled = true;
+            btn_siguiente.Enabled = true;
+            btn_ultimo.Enabled = true;
+            pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
+            txt_nombre.Enabled = false;
+            dtm_fecha.Focus();
+        }
+        private void Dgv_incapacidades_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -897,7 +894,7 @@ namespace CsPresentacion
                 dtm_fecha.Focus();
             }
         }
-        private void Dgv_incapacidades_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void Dgv_incapacidades_RowEnter_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -911,11 +908,11 @@ namespace CsPresentacion
                 lbl_id.Text = row.Cells["ID"].Value.ToString();
             }
         }
-        private void Dgv_incapacidades_CurrentCellChanged(object sender, EventArgs e)
+        private void Dgv_incapacidades_CurrentCellChanged_1(object sender, EventArgs e)
         {
-            if (dgv_incapacidades.CurrentCell != null)   {   indice = dgv_incapacidades.CurrentRow.Index;}
+            if (dgv_incapacidades.CurrentCell != null) { indice = dgv_incapacidades.CurrentRow.Index; }
         }
-        private void Dgv_incapacidades_DoubleClick(object sender, EventArgs e)
+        private void Dgv_incapacidades_DoubleClick_1(object sender, EventArgs e)
         {
             if (lbl_estado.Text == "VIGENTE")
             {
@@ -939,13 +936,13 @@ namespace CsPresentacion
             {
             }
         }
-        private void Txt_inc_duracion_KeyPress(object sender, KeyPressEventArgs e)
-        {  
-           if (Char.IsDigit(e.KeyChar)) { e.Handled = false; }
+        private void Txt_duracion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) { e.Handled = false; }
             else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
             else { e.Handled = true; }
         }
-        private void Txt_inc_duracion_Leave(object sender, EventArgs e)
+        private void Txt_duracion_Leave(object sender, EventArgs e)
         {
             try
             {
@@ -956,21 +953,17 @@ namespace CsPresentacion
             }
             catch
             {
-            }   
+            }
         }
-        private void Txt_inc_duracion_TextChanged(object sender, EventArgs e)
-        {
-         
-        }
-        private void Cmb_inc_tipo_KeyPress(object sender, KeyPressEventArgs e)
+        private void Cmb_tipo_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-        private void Cmb_inc_caso_KeyPress(object sender, KeyPressEventArgs e)
+        private void Cmb_caso_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-        private void Cmb_inc_tipo_TextChanged(object sender, EventArgs e)
+        private void Cmb_tipo_TextChanged(object sender, EventArgs e)
         {
             if (cmb_tipo.Text == "Enfermermedad General")
             {
@@ -1010,7 +1003,7 @@ namespace CsPresentacion
                 cmb_caso.Enabled = true;
             }
         }
-        private void Cmb_inc_caso_TextChanged(object sender, EventArgs e)
+        private void Cmb_caso_TextChanged(object sender, EventArgs e)
         {
             if (cmb_caso.Text == "Unica") { lbl_inc_caso.Text = "U"; }
             else if (cmb_caso.Text == "Inicial") { lbl_inc_caso.Text = "I"; }
@@ -1019,8 +1012,7 @@ namespace CsPresentacion
             else if (cmb_caso.Text == "Ninguna") { lbl_inc_caso.Text = "N"; }
             else { lbl_inc_caso.Text = ""; }
         }
-        private void Txt_inc_certificado_Leave(object sender, EventArgs e)
-        {
-        }
+
+
     }  
 }
