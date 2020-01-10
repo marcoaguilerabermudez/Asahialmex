@@ -23,13 +23,51 @@ Public Class Frm_Provisiones
     End Sub
     Private Sub Btn_ActualizarXml_Click(sender As Object, e As EventArgs) Handles Btn_ActualizarXml.Click
         ActualizaXml()
+        RecuperarCompras()
     End Sub
     Private Sub Btn_Validar_Click(sender As Object, e As EventArgs) Handles Btn_Validar.Click
         Dim NComp As New NCompras()
         Dim lstComp As New LCompras()
 
         lstComp = RellenaObjetoCompras()
+        RecuperarCompras()
+    End Sub
+    Private Sub Btn_BuscaProvisionadas_Click(sender As Object, e As EventArgs) Handles Btn_BuscaProvisionadas.Click
+        RecuperarProvisionadas()
+    End Sub
+    Private Sub Dgv_Provisionadas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Provisionadas.CellContentClick
+        Dim NComp As New NCompras(), lstComp As New LCompras
+        If Me.Dgv_Provisionadas.Columns(e.ColumnIndex).Name = "pdf" Then
 
+            Dim folder As New OpenFileDialog
+            Dim result As DialogResult = folder.ShowDialog()
+
+            If result = DialogResult.OK Then
+                For Each fila As DataGridViewRow In Dgv_Provisionadas.Rows
+                    If fila.Cells(1).Selected Then
+                        fila.Cells("Ruta").Value = folder.FileName
+
+                        Dim comp As New Compras
+                        comp.IdProvision = fila.Cells("idProvision2").Value
+                        comp.Ruta = fila.Cells("Ruta").Value
+                        lstComp.Add(comp)
+                        NComp.InsertarRuta(cadenaConex, lstComp)
+                    End If
+                Next
+            Else
+                MessageBox.Show("Salió sin guardar ningún documento", "¡Aviso!")
+            End If
+
+        End If
+    End Sub
+    Private Sub Dgv_Provisionadas_DoubleClick(sender As Object, e As EventArgs) Handles Dgv_Provisionadas.DoubleClick
+        Dim fila = Dgv_Provisionadas.CurrentRow.Index
+        Try
+            System.Diagnostics.Process.Start(Me.Dgv_Provisionadas.Rows(fila).Cells("ruta").Value.ToString())
+        Catch ex As Exception
+            MessageBox.Show("¡No se encuentra el archivo! Verifique que se haya anexado el archivo y su conexión a las unidades de red.")
+            MessageBox.Show(ex.ToString)
+        End Try
     End Sub
 #End Region
 #Region "Recuperar"
@@ -37,8 +75,15 @@ Public Class Frm_Provisiones
         Dim NComp As New NCompras()
         Dim lstComp As New LCompras()
         Dim fi As Date = Dtp_Inicio.Value, ff As Date = Dtp_Final.Value
-        lstComp = NComp.RecuperarLstPorProvicionar(Me.cadenaConex, fi, ff)
+        lstComp = NComp.RecuperarLstPorProvisionar(Me.cadenaConex, fi, ff)
         RellenarDgvPorProvisionar(lstComp)
+    End Sub
+    Private Sub RecuperarProvisionadas()
+        Dim NComp As New NCompras()
+        Dim lstComp As New LCompras()
+        Dim fi As Date = Dtp_InicioProv.Value, ff As Date = Dtp_FinalProv.Value
+        lstComp = NComp.RecuperarLstProvisionadas(Me.cadenaConex, fi, ff)
+        RellenarDgvProvisionadas(lstComp)
     End Sub
 #End Region
 #Region "Rellena Formulario"
@@ -70,10 +115,58 @@ Public Class Frm_Provisiones
                 .Cells("nombreEmisor").Value = item.NombreEmisor
                 .Cells("serie").Value = item.Serie
                 If item.FechaCompra <> "1/1/1900 12:00:00 AM" Then .Cells("fechaCompra").Value = Format(item.FechaCompra, "dd/MM/yyyy")
-                If item.Status = "D" Then
-                    .DefaultCellStyle.BackColor = Color.OrangeRed
-                    .DefaultCellStyle.ForeColor = Color.White
-                End If
+                Select Case item.Status
+                    Case "D"
+                        .DefaultCellStyle.BackColor = Color.OrangeRed
+                        .DefaultCellStyle.ForeColor = Color.White
+                    Case "C"
+                        .DefaultCellStyle.BackColor = Color.LightGreen
+                    Case "P"
+                        .DefaultCellStyle.BackColor = Color.LightSteelBlue
+                End Select
+            End With
+            fila += 1
+        Next
+    End Sub
+    Private Sub RellenarDgvProvisionadas(ByVal lstComp As LCompras)
+        Dim fila As Integer = 0
+        Dgv_Provisionadas.DataSource = Nothing
+        Dgv_Provisionadas.Rows.Clear()
+
+        For Each item In lstComp
+            Dgv_Provisionadas.Rows.Add()
+            With Dgv_Provisionadas.Rows(fila)
+                .Cells("idProvision2").Value = item.IdProvision
+                .Cells("oc2").Value = item.Oc
+                .Cells("compra2").Value = item.IdCompra
+                .Cells("factura2").Value = item.Factura
+                .Cells("proveedor2").Value = item.Proveedor
+                .Cells("rfc2").Value = item.Rfc
+                .Cells("rfcEmisor2").Value = item.RfcEmisor
+                .Cells("moneda2").Value = item.Moneda
+                If item.MontoOC <> 0 Then .Cells("montoOc2").Value = Format(item.MontoOC, "$ #,###,##0.00")
+                If item.MontoCompra <> 0 Then .Cells("montoCompra2").Value = Format(item.MontoCompra, "$ #,###,##0.00")
+                If item.MontoFact <> 0 Then .Cells("montoFactura2").Value = Format(item.MontoFact, "$ #,###,##0.00")
+                If item.MontoPagar <> 0 Then .Cells("montoPagar").Value = Format(item.MontoPagar, "$ #,###,##0.00")
+                If item.FP <> "1/1/1900 12:00:00 AM" Then .Cells("fp").Value = Format(item.FechaFact, "dd/MM/yyyy")
+                If item.FechaFact <> "1/1/1900 12:00:00 AM" Then .Cells("fechaFactura2").Value = Format(item.FechaFact, "dd/MM/yyyy")
+                If item.FechaPagoFact <> "1/1/1900 12:00:00 AM" Then .Cells("fechaPagoFact").Value = Format(item.FechaPagoFact, "dd/MM/yyyy")
+                .Cells("statusPago").Value = item.StatusPago
+                .Cells("status2").Value = item.Status
+                .Cells("observaComp").Value = item.ObservaCompra
+                .Cells("observaConta").Value = item.ObservaConta
+                .Cells("empresa2").Value = item.Empresa
+                .Cells("nombreEmisor2").Value = item.NombreEmisor
+                If item.FechaProv <> "1/1/1900 12:00:00 AM" Then .Cells("fdp").Value = Format(item.FechaCompra, "dd/MM/yyyy")
+                .Cells("serie2").Value = item.Serie
+                .Cells("uuid").Value = item.UUID
+                .Cells("ruta").Value = item.Ruta
+                Select Case item.StatusConta
+                    Case "A"
+                        .DefaultCellStyle.BackColor = Color.LightSteelBlue
+                    Case "R"
+                        .DefaultCellStyle.BackColor = Color.FromArgb(255, 192, 192)
+                End Select
             End With
             fila += 1
         Next
@@ -81,7 +174,7 @@ Public Class Frm_Provisiones
 #End Region
 #Region "Rellena Objetos"
     Private Function RellenaObjetoCompras() As LCompras
-        Dim lstComp As New LCompras()
+        Dim lstComp As New LCompras(), NCompra As New NCompras()
         Dim fila As Integer, totalFilas As Integer = Dgv_PorProvisionar.Rows.Count - 1, ctaSelect As Integer = 0
 
         For fila = 0 To totalFilas
@@ -97,7 +190,7 @@ Public Class Frm_Provisiones
                     comp.Proveedor = .Cells("proveedor").Value
                     comp.Serie = .Cells("serie").Value
                     comp.Status = .Cells("status").Value
-                    comp.RfcEmisor = .Cells("rfcEmisor").Value
+                    comp.RfcEmisor = .Cells("rfc").Value
                     comp.ObservaCompra = .Cells("observacionCompra").Value
                     comp.IdCompra = .Cells("compra").Value
                 End If

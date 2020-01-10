@@ -19,6 +19,12 @@ Public Class Frm_Gastos
         RellenaCmbMeses()
         RellenaCmbAño()
 
+        Lbl_MontoPlan.Text = 0
+        Lbl_CantPlan.Text = 0
+        Lbl_MontoDif.Text = 0
+        Lbl_MontoActualReal.Text = 0
+        Lbl_CantActualReal.Text = 0
+        Lbl_CantDif.Text = 0
         Rdb_Español.Checked = True
         Dim mes As Double = DateTime.Now.ToString("MM")
         Dim año As Double = DateTime.Now.ToString("yyyy")
@@ -287,6 +293,9 @@ Public Class Frm_Gastos
         Dim NHor As New NHorasExtra()
 
         lstaño = NHor.RecuperarAños(Me.cadConex)
+        Dim hora As New Horarios()
+        hora.Año = 2020
+        lstaño.Add(hora)
         With Cmb_Años
             .DataSource = lstaño
             .ValueMember = "Año"
@@ -419,42 +428,42 @@ Public Class Frm_Gastos
         Lbl_TAPorcentaje.Text = Lbl_TAPorcentaje.Text & "%"
     End Sub
     Private Sub RellenaPlanVentas(ByVal lstGastos As LGastos)
-        Dim smaM As Double = 0
-        Dim smaC As Double = 0
-        For Each item In lstGastos
-            Select Case item.SegmNegocio
-                Case 4
-                    Lbl_MontoFF1.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
-                    Lbl_CantFF1.Text = Format(item.Plan, "#,###,##0.00")
-                Case 6
-                    Lbl_MontoMF1.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
-                    Lbl_CantMF1.Text = Format(item.Plan, "#,###,##0.00")
-                Case 11
-                    Lbl_MontoFF2.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
-                    Lbl_CantFF2.Text = Format(item.Plan, "#,###,##0.00")
-                Case 12
-                    Lbl_MontoMF2.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
-                    Lbl_CantMF2.Text = Format(item.Plan, "#,###,##0.00")
-            End Select
-            smaM += item.PlanMonto
-            smaC += item.Plan
-            Lbl_MontoActualReal.Text = Format(item.ActualMonto, "$ #,###,##0.00")
-            Lbl_CantActualReal.Text = Format(item.Actual, "#,###,##0.00")
-        Next
-        Lbl_MontoPlan.Text = Format(smaM * 20, "$ #,###,##0.00")
-        Lbl_CantPlan.Text = Format(smaC, "#,###,##")
-        Lbl_MontoDif.Text = Format((Lbl_MontoActualReal.Text - Lbl_MontoPlan.Text), "$ #,###,##0.00")
-        If Lbl_MontoDif.Text < 0 Then
-            Lbl_MontoDif.ForeColor = Color.Red
-        Else
-            Lbl_MontoDif.ForeColor = Color.Black
-        End If
-        Lbl_CantDif.Text = Format((Lbl_CantActualReal.Text - Lbl_CantPlan.Text), "#,###,##")
-        If Lbl_CantDif.Text < 0 Then
-            Lbl_CantDif.ForeColor = Color.Red
-        Else
-            Lbl_CantDif.ForeColor = Color.Black
-        End If
+        'Dim smaM As Double = 0
+        'Dim smaC As Double = 0
+        'For Each item In lstGastos
+        '    Select Case item.SegmNegocio
+        '        Case 4
+        '            Lbl_MontoFF1.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
+        '            Lbl_CantFF1.Text = Format(item.Plan, "#,###,##0.00")
+        '        Case 6
+        '            Lbl_MontoMF1.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
+        '            Lbl_CantMF1.Text = Format(item.Plan, "#,###,##0.00")
+        '        Case 11
+        '            Lbl_MontoFF2.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
+        '            Lbl_CantFF2.Text = Format(item.Plan, "#,###,##0.00")
+        '        Case 12
+        '            Lbl_MontoMF2.Text = Format(item.PlanMonto * 20, "$ #,###,##0.00")
+        '            Lbl_CantMF2.Text = Format(item.Plan, "#,###,##0.00")
+        '    End Select
+        '    smaM += item.PlanMonto
+        '    smaC += item.Plan
+        '    Lbl_MontoActualReal.Text = Format(item.ActualMonto, "$ #,###,##0.00")
+        '    Lbl_CantActualReal.Text = Format(item.Actual, "#,###,##0.00")
+        'Next
+        'Lbl_MontoPlan.Text = Format(smaM * 20, "$ #,###,##0.00")
+        'Lbl_CantPlan.Text = Format(smaC, "#,###,##")
+        'Lbl_MontoDif.Text = Format((Lbl_MontoActualReal.Text - Lbl_MontoPlan.Text), "$ #,###,##0.00")
+        'If Lbl_MontoDif.Text < 0 Then
+        '    Lbl_MontoDif.ForeColor = Color.Red
+        'Else
+        '    Lbl_MontoDif.ForeColor = Color.Black
+        'End If
+        'Lbl_CantDif.Text = Format((Lbl_CantActualReal.Text - Lbl_CantPlan.Text), "#,###,##")
+        'If Lbl_CantDif.Text < 0 Then
+        '    Lbl_CantDif.ForeColor = Color.Red
+        'Else
+        '    Lbl_CantDif.ForeColor = Color.Black
+        'End If
     End Sub
 #End Region
 #Region "Recuperar"

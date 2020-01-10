@@ -81,11 +81,11 @@ Partial Class Frm_Provisiones
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Btn_BuscaProvisionadas = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Dtp_FinalProv = New System.Windows.Forms.DateTimePicker()
+        Me.Dtp_InicioProv = New System.Windows.Forms.DateTimePicker()
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
@@ -93,8 +93,6 @@ Partial Class Frm_Provisiones
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Dgv_PorProvisionar = New System.Windows.Forms.DataGridView()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel10 = New System.Windows.Forms.Panel()
         Me.seleccion = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.idProvision = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -116,6 +114,35 @@ Partial Class Frm_Provisiones
         Me.nombreEmisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.serie = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.selección = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.pdf = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.idProvision2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.oc2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.compra2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.factura2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.proveedor2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rfc2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rfcEmisor2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.moneda2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoOc2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoCompra2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoFactura2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoPagar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFactura2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaPagoFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.statusPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.status2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.observaComp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.observaConta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empresa2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreEmisor2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fdp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serie2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.uuid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ruta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -481,10 +508,13 @@ Partial Class Frm_Provisiones
         '
         'Dgv_Provisionadas
         '
+        Me.Dgv_Provisionadas.AllowUserToAddRows = False
         Me.Dgv_Provisionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv_Provisionadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.selección, Me.pdf, Me.idProvision2, Me.oc2, Me.compra2, Me.factura2, Me.proveedor2, Me.rfc2, Me.rfcEmisor2, Me.moneda2, Me.montoOc2, Me.montoCompra2, Me.montoFactura2, Me.montoPagar, Me.fp, Me.fechaFactura2, Me.fechaPagoFact, Me.statusPago, Me.status2, Me.observaComp, Me.observaConta, Me.empresa2, Me.nombreEmisor2, Me.fdp, Me.serie2, Me.uuid, Me.ruta})
         Me.Dgv_Provisionadas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Provisionadas.Location = New System.Drawing.Point(5, 0)
         Me.Dgv_Provisionadas.Name = "Dgv_Provisionadas"
+        Me.Dgv_Provisionadas.RowHeadersVisible = False
         Me.Dgv_Provisionadas.Size = New System.Drawing.Size(1203, 223)
         Me.Dgv_Provisionadas.TabIndex = 6
         '
@@ -739,11 +769,11 @@ Partial Class Frm_Provisiones
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.Button1)
+        Me.GroupBox4.Controls.Add(Me.Btn_BuscaProvisionadas)
         Me.GroupBox4.Controls.Add(Me.Label10)
         Me.GroupBox4.Controls.Add(Me.Label11)
-        Me.GroupBox4.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox4.Controls.Add(Me.DateTimePicker2)
+        Me.GroupBox4.Controls.Add(Me.Dtp_FinalProv)
+        Me.GroupBox4.Controls.Add(Me.Dtp_InicioProv)
         Me.GroupBox4.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.White
@@ -754,19 +784,19 @@ Partial Class Frm_Provisiones
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Fechas de Compra"
         '
-        'Button1
+        'Btn_BuscaProvisionadas
         '
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = Global.Presentacion.My.Resources.Resources.lupa
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(152, 13)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(39, 40)
-        Me.Button1.TabIndex = 5
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Btn_BuscaProvisionadas.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Btn_BuscaProvisionadas.FlatAppearance.BorderSize = 0
+        Me.Btn_BuscaProvisionadas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
+        Me.Btn_BuscaProvisionadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_BuscaProvisionadas.Image = Global.Presentacion.My.Resources.Resources.lupa
+        Me.Btn_BuscaProvisionadas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_BuscaProvisionadas.Location = New System.Drawing.Point(152, 13)
+        Me.Btn_BuscaProvisionadas.Name = "Btn_BuscaProvisionadas"
+        Me.Btn_BuscaProvisionadas.Size = New System.Drawing.Size(39, 40)
+        Me.Btn_BuscaProvisionadas.TabIndex = 5
+        Me.Btn_BuscaProvisionadas.UseVisualStyleBackColor = True
         '
         'Label10
         '
@@ -788,23 +818,23 @@ Partial Class Frm_Provisiones
         Me.Label11.TabIndex = 2
         Me.Label11.Text = "Inicio"
         '
-        'DateTimePicker1
+        'Dtp_FinalProv
         '
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(60, 38)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(80, 20)
-        Me.DateTimePicker1.TabIndex = 1
+        Me.Dtp_FinalProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Dtp_FinalProv.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Dtp_FinalProv.Location = New System.Drawing.Point(60, 38)
+        Me.Dtp_FinalProv.Name = "Dtp_FinalProv"
+        Me.Dtp_FinalProv.Size = New System.Drawing.Size(80, 20)
+        Me.Dtp_FinalProv.TabIndex = 1
         '
-        'DateTimePicker2
+        'Dtp_InicioProv
         '
-        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(60, 15)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(80, 20)
-        Me.DateTimePicker2.TabIndex = 0
+        Me.Dtp_InicioProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Dtp_InicioProv.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Dtp_InicioProv.Location = New System.Drawing.Point(60, 15)
+        Me.Dtp_InicioProv.Name = "Dtp_InicioProv"
+        Me.Dtp_InicioProv.Size = New System.Drawing.Size(80, 20)
+        Me.Dtp_InicioProv.TabIndex = 0
         '
         'Panel20
         '
@@ -868,22 +898,6 @@ Partial Class Frm_Provisiones
         Me.Dgv_PorProvisionar.RowHeadersVisible = False
         Me.Dgv_PorProvisionar.Size = New System.Drawing.Size(1203, 296)
         Me.Dgv_PorProvisionar.TabIndex = 5
-        '
-        'Panel5
-        '
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(5, 296)
-        Me.Panel5.TabIndex = 4
-        '
-        'Panel10
-        '
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel10.Location = New System.Drawing.Point(1208, 0)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(5, 296)
-        Me.Panel10.TabIndex = 3
         '
         'seleccion
         '
@@ -1011,6 +1025,171 @@ Partial Class Frm_Provisiones
         Me.serie.ReadOnly = True
         Me.serie.Visible = False
         '
+        'Panel5
+        '
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(5, 296)
+        Me.Panel5.TabIndex = 4
+        '
+        'Panel10
+        '
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel10.Location = New System.Drawing.Point(1208, 0)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(5, 296)
+        Me.Panel10.TabIndex = 3
+        '
+        'selección
+        '
+        Me.selección.HeaderText = ""
+        Me.selección.Name = "selección"
+        Me.selección.Width = 30
+        '
+        'pdf
+        '
+        Me.pdf.HeaderText = "PDF"
+        Me.pdf.Name = "pdf"
+        Me.pdf.Width = 30
+        '
+        'idProvision2
+        '
+        Me.idProvision2.HeaderText = "Id Provision"
+        Me.idProvision2.Name = "idProvision2"
+        Me.idProvision2.ReadOnly = True
+        Me.idProvision2.Visible = False
+        '
+        'oc2
+        '
+        Me.oc2.HeaderText = "OC"
+        Me.oc2.Name = "oc2"
+        Me.oc2.Width = 60
+        '
+        'compra2
+        '
+        Me.compra2.HeaderText = "Compra"
+        Me.compra2.Name = "compra2"
+        Me.compra2.Width = 60
+        '
+        'factura2
+        '
+        Me.factura2.HeaderText = "Factura"
+        Me.factura2.Name = "factura2"
+        Me.factura2.Width = 65
+        '
+        'proveedor2
+        '
+        Me.proveedor2.HeaderText = "Proveedor"
+        Me.proveedor2.Name = "proveedor2"
+        Me.proveedor2.Width = 150
+        '
+        'rfc2
+        '
+        Me.rfc2.HeaderText = "RFC"
+        Me.rfc2.Name = "rfc2"
+        '
+        'rfcEmisor2
+        '
+        Me.rfcEmisor2.HeaderText = "RFC Emisor"
+        Me.rfcEmisor2.Name = "rfcEmisor2"
+        '
+        'moneda2
+        '
+        Me.moneda2.HeaderText = "Moneda"
+        Me.moneda2.Name = "moneda2"
+        '
+        'montoOc2
+        '
+        Me.montoOc2.HeaderText = "Monto OC"
+        Me.montoOc2.Name = "montoOc2"
+        '
+        'montoCompra2
+        '
+        Me.montoCompra2.HeaderText = "Monto Compra"
+        Me.montoCompra2.Name = "montoCompra2"
+        '
+        'montoFactura2
+        '
+        Me.montoFactura2.HeaderText = "Monto Factura"
+        Me.montoFactura2.Name = "montoFactura2"
+        '
+        'montoPagar
+        '
+        Me.montoPagar.HeaderText = "Monto A Pagar"
+        Me.montoPagar.Name = "montoPagar"
+        '
+        'fp
+        '
+        Me.fp.HeaderText = "FP"
+        Me.fp.Name = "fp"
+        '
+        'fechaFactura2
+        '
+        Me.fechaFactura2.HeaderText = "Fecha Factura"
+        Me.fechaFactura2.Name = "fechaFactura2"
+        '
+        'fechaPagoFact
+        '
+        Me.fechaPagoFact.HeaderText = "Fecha Pago Fact"
+        Me.fechaPagoFact.Name = "fechaPagoFact"
+        '
+        'statusPago
+        '
+        Me.statusPago.HeaderText = "Status Pago"
+        Me.statusPago.Name = "statusPago"
+        '
+        'status2
+        '
+        Me.status2.HeaderText = "Status"
+        Me.status2.Name = "status2"
+        '
+        'observaComp
+        '
+        Me.observaComp.HeaderText = "Observa Compra"
+        Me.observaComp.Name = "observaComp"
+        '
+        'observaConta
+        '
+        Me.observaConta.HeaderText = "Observa Conta"
+        Me.observaConta.Name = "observaConta"
+        '
+        'empresa2
+        '
+        Me.empresa2.HeaderText = "Empresa"
+        Me.empresa2.Name = "empresa2"
+        '
+        'nombreEmisor2
+        '
+        Me.nombreEmisor2.HeaderText = "Nombre Emisor"
+        Me.nombreEmisor2.Name = "nombreEmisor2"
+        '
+        'fdp
+        '
+        Me.fdp.HeaderText = "FDP"
+        Me.fdp.Name = "fdp"
+        '
+        'serie2
+        '
+        Me.serie2.HeaderText = "Serie"
+        Me.serie2.Name = "serie2"
+        Me.serie2.ReadOnly = True
+        Me.serie2.Visible = False
+        '
+        'uuid
+        '
+        Me.uuid.HeaderText = "UUID"
+        Me.uuid.Name = "uuid"
+        Me.uuid.ReadOnly = True
+        Me.uuid.Visible = False
+        '
+        'ruta
+        '
+        Me.ruta.HeaderText = "Ruta"
+        Me.ruta.Name = "ruta"
+        Me.ruta.ReadOnly = True
+        Me.ruta.Visible = False
+        '
         'Frm_Provisiones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1099,11 +1278,11 @@ Partial Class Frm_Provisiones
     Friend WithEvents Btn_BuscarCompras As Button
     Friend WithEvents Btn_Validar As Button
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Btn_BuscaProvisionadas As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents Dtp_FinalProv As DateTimePicker
+    Friend WithEvents Dtp_InicioProv As DateTimePicker
     Friend WithEvents Panel20 As Panel
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents Label17 As Label
@@ -1147,4 +1326,31 @@ Partial Class Frm_Provisiones
     Friend WithEvents nombreEmisor As DataGridViewTextBoxColumn
     Friend WithEvents fechaCompra As DataGridViewTextBoxColumn
     Friend WithEvents serie As DataGridViewTextBoxColumn
+    Friend WithEvents selección As DataGridViewCheckBoxColumn
+    Friend WithEvents pdf As DataGridViewButtonColumn
+    Friend WithEvents idProvision2 As DataGridViewTextBoxColumn
+    Friend WithEvents oc2 As DataGridViewTextBoxColumn
+    Friend WithEvents compra2 As DataGridViewTextBoxColumn
+    Friend WithEvents factura2 As DataGridViewTextBoxColumn
+    Friend WithEvents proveedor2 As DataGridViewTextBoxColumn
+    Friend WithEvents rfc2 As DataGridViewTextBoxColumn
+    Friend WithEvents rfcEmisor2 As DataGridViewTextBoxColumn
+    Friend WithEvents moneda2 As DataGridViewTextBoxColumn
+    Friend WithEvents montoOc2 As DataGridViewTextBoxColumn
+    Friend WithEvents montoCompra2 As DataGridViewTextBoxColumn
+    Friend WithEvents montoFactura2 As DataGridViewTextBoxColumn
+    Friend WithEvents montoPagar As DataGridViewTextBoxColumn
+    Friend WithEvents fp As DataGridViewTextBoxColumn
+    Friend WithEvents fechaFactura2 As DataGridViewTextBoxColumn
+    Friend WithEvents fechaPagoFact As DataGridViewTextBoxColumn
+    Friend WithEvents statusPago As DataGridViewTextBoxColumn
+    Friend WithEvents status2 As DataGridViewTextBoxColumn
+    Friend WithEvents observaComp As DataGridViewTextBoxColumn
+    Friend WithEvents observaConta As DataGridViewTextBoxColumn
+    Friend WithEvents empresa2 As DataGridViewTextBoxColumn
+    Friend WithEvents nombreEmisor2 As DataGridViewTextBoxColumn
+    Friend WithEvents fdp As DataGridViewTextBoxColumn
+    Friend WithEvents serie2 As DataGridViewTextBoxColumn
+    Friend WithEvents uuid As DataGridViewTextBoxColumn
+    Friend WithEvents ruta As DataGridViewTextBoxColumn
 End Class

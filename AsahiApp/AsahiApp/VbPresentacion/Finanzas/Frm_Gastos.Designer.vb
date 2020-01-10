@@ -24,18 +24,6 @@ Partial Class Frm_Gastos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Gastos))
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Btn_Reporte = New System.Windows.Forms.Button()
-        Me.Pct_Limpiar = New System.Windows.Forms.PictureBox()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Rdb_Japones = New System.Windows.Forms.RadioButton()
-        Me.Rdb_Español = New System.Windows.Forms.RadioButton()
-        Me.Lbl_Año = New System.Windows.Forms.Label()
-        Me.Cmb_Años = New System.Windows.Forms.ComboBox()
-        Me.Lbl_Depto = New System.Windows.Forms.Label()
-        Me.Lbl_Mes = New System.Windows.Forms.Label()
-        Me.Cmb_Depto = New System.Windows.Forms.ComboBox()
-        Me.Cmb_Meses = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -120,9 +108,18 @@ Partial Class Frm_Gastos
         Me.Lbl_Actual = New System.Windows.Forms.Label()
         Me.Lbl_Real = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel1.SuspendLayout()
-        CType(Me.Pct_Limpiar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel10.SuspendLayout()
+        Me.Cmb_Meses = New System.Windows.Forms.ComboBox()
+        Me.Cmb_Depto = New System.Windows.Forms.ComboBox()
+        Me.Lbl_Mes = New System.Windows.Forms.Label()
+        Me.Lbl_Depto = New System.Windows.Forms.Label()
+        Me.Cmb_Años = New System.Windows.Forms.ComboBox()
+        Me.Lbl_Año = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Rdb_Español = New System.Windows.Forms.RadioButton()
+        Me.Rdb_Japones = New System.Windows.Forms.RadioButton()
+        Me.Pct_Limpiar = New System.Windows.Forms.PictureBox()
+        Me.Btn_Reporte = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -136,142 +133,10 @@ Partial Class Frm_Gastos
         Me.Panel12.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        CType(Me.Pct_Limpiar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.Btn_Reporte)
-        Me.Panel1.Controls.Add(Me.Pct_Limpiar)
-        Me.Panel1.Controls.Add(Me.Panel10)
-        Me.Panel1.Controls.Add(Me.Lbl_Año)
-        Me.Panel1.Controls.Add(Me.Cmb_Años)
-        Me.Panel1.Controls.Add(Me.Lbl_Depto)
-        Me.Panel1.Controls.Add(Me.Lbl_Mes)
-        Me.Panel1.Controls.Add(Me.Cmb_Depto)
-        Me.Panel1.Controls.Add(Me.Cmb_Meses)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1269, 48)
-        Me.Panel1.TabIndex = 0
-        '
-        'Btn_Reporte
-        '
-        Me.Btn_Reporte.BackColor = System.Drawing.Color.SteelBlue
-        Me.Btn_Reporte.BackgroundImage = Global.Presentacion.My.Resources.Resources.report
-        Me.Btn_Reporte.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Btn_Reporte.FlatAppearance.BorderSize = 0
-        Me.Btn_Reporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy
-        Me.Btn_Reporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue
-        Me.Btn_Reporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Btn_Reporte.Location = New System.Drawing.Point(534, 8)
-        Me.Btn_Reporte.Name = "Btn_Reporte"
-        Me.Btn_Reporte.Size = New System.Drawing.Size(33, 33)
-        Me.Btn_Reporte.TabIndex = 9
-        Me.Btn_Reporte.UseVisualStyleBackColor = False
-        '
-        'Pct_Limpiar
-        '
-        Me.Pct_Limpiar.Image = Global.Presentacion.My.Resources.Resources._New
-        Me.Pct_Limpiar.Location = New System.Drawing.Point(477, 11)
-        Me.Pct_Limpiar.Name = "Pct_Limpiar"
-        Me.Pct_Limpiar.Size = New System.Drawing.Size(29, 30)
-        Me.Pct_Limpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Pct_Limpiar.TabIndex = 8
-        Me.Pct_Limpiar.TabStop = False
-        '
-        'Panel10
-        '
-        Me.Panel10.Controls.Add(Me.Rdb_Japones)
-        Me.Panel10.Controls.Add(Me.Rdb_Español)
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel10.Location = New System.Drawing.Point(1134, 0)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(135, 48)
-        Me.Panel10.TabIndex = 6
-        '
-        'Rdb_Japones
-        '
-        Me.Rdb_Japones.AutoSize = True
-        Me.Rdb_Japones.ForeColor = System.Drawing.Color.White
-        Me.Rdb_Japones.Location = New System.Drawing.Point(20, 27)
-        Me.Rdb_Japones.Name = "Rdb_Japones"
-        Me.Rdb_Japones.Size = New System.Drawing.Size(61, 17)
-        Me.Rdb_Japones.TabIndex = 1
-        Me.Rdb_Japones.TabStop = True
-        Me.Rdb_Japones.Text = "日本語"
-        Me.Rdb_Japones.UseVisualStyleBackColor = True
-        '
-        'Rdb_Español
-        '
-        Me.Rdb_Español.AutoSize = True
-        Me.Rdb_Español.ForeColor = System.Drawing.Color.White
-        Me.Rdb_Español.Location = New System.Drawing.Point(20, 4)
-        Me.Rdb_Español.Name = "Rdb_Español"
-        Me.Rdb_Español.Size = New System.Drawing.Size(63, 17)
-        Me.Rdb_Español.TabIndex = 0
-        Me.Rdb_Español.TabStop = True
-        Me.Rdb_Español.Text = "Español"
-        Me.Rdb_Español.UseVisualStyleBackColor = True
-        '
-        'Lbl_Año
-        '
-        Me.Lbl_Año.AutoSize = True
-        Me.Lbl_Año.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Lbl_Año.Location = New System.Drawing.Point(352, 3)
-        Me.Lbl_Año.Name = "Lbl_Año"
-        Me.Lbl_Año.Size = New System.Drawing.Size(26, 13)
-        Me.Lbl_Año.TabIndex = 5
-        Me.Lbl_Año.Text = "Año"
-        '
-        'Cmb_Años
-        '
-        Me.Cmb_Años.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Cmb_Años.FormattingEnabled = True
-        Me.Cmb_Años.Location = New System.Drawing.Point(352, 21)
-        Me.Cmb_Años.Name = "Cmb_Años"
-        Me.Cmb_Años.Size = New System.Drawing.Size(82, 21)
-        Me.Cmb_Años.TabIndex = 4
-        '
-        'Lbl_Depto
-        '
-        Me.Lbl_Depto.AutoSize = True
-        Me.Lbl_Depto.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Lbl_Depto.Location = New System.Drawing.Point(12, 2)
-        Me.Lbl_Depto.Name = "Lbl_Depto"
-        Me.Lbl_Depto.Size = New System.Drawing.Size(74, 13)
-        Me.Lbl_Depto.TabIndex = 3
-        Me.Lbl_Depto.Text = "Departamento"
-        '
-        'Lbl_Mes
-        '
-        Me.Lbl_Mes.AutoSize = True
-        Me.Lbl_Mes.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Lbl_Mes.Location = New System.Drawing.Point(216, 3)
-        Me.Lbl_Mes.Name = "Lbl_Mes"
-        Me.Lbl_Mes.Size = New System.Drawing.Size(27, 13)
-        Me.Lbl_Mes.TabIndex = 2
-        Me.Lbl_Mes.Text = "Mes"
-        '
-        'Cmb_Depto
-        '
-        Me.Cmb_Depto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Cmb_Depto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cmb_Depto.FormattingEnabled = True
-        Me.Cmb_Depto.Location = New System.Drawing.Point(22, 21)
-        Me.Cmb_Depto.Name = "Cmb_Depto"
-        Me.Cmb_Depto.Size = New System.Drawing.Size(182, 21)
-        Me.Cmb_Depto.TabIndex = 1
-        '
-        'Cmb_Meses
-        '
-        Me.Cmb_Meses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Cmb_Meses.FormattingEnabled = True
-        Me.Cmb_Meses.Location = New System.Drawing.Point(216, 21)
-        Me.Cmb_Meses.Name = "Cmb_Meses"
-        Me.Cmb_Meses.Size = New System.Drawing.Size(112, 21)
-        Me.Cmb_Meses.TabIndex = 0
         '
         'Panel2
         '
@@ -1079,6 +944,141 @@ Partial Class Frm_Gastos
         'Timer1
         '
         '
+        'Cmb_Meses
+        '
+        Me.Cmb_Meses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_Meses.FormattingEnabled = True
+        Me.Cmb_Meses.Location = New System.Drawing.Point(216, 21)
+        Me.Cmb_Meses.Name = "Cmb_Meses"
+        Me.Cmb_Meses.Size = New System.Drawing.Size(112, 21)
+        Me.Cmb_Meses.TabIndex = 0
+        '
+        'Cmb_Depto
+        '
+        Me.Cmb_Depto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_Depto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cmb_Depto.FormattingEnabled = True
+        Me.Cmb_Depto.Location = New System.Drawing.Point(22, 21)
+        Me.Cmb_Depto.Name = "Cmb_Depto"
+        Me.Cmb_Depto.Size = New System.Drawing.Size(182, 21)
+        Me.Cmb_Depto.TabIndex = 1
+        '
+        'Lbl_Mes
+        '
+        Me.Lbl_Mes.AutoSize = True
+        Me.Lbl_Mes.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Lbl_Mes.Location = New System.Drawing.Point(216, 3)
+        Me.Lbl_Mes.Name = "Lbl_Mes"
+        Me.Lbl_Mes.Size = New System.Drawing.Size(27, 13)
+        Me.Lbl_Mes.TabIndex = 2
+        Me.Lbl_Mes.Text = "Mes"
+        '
+        'Lbl_Depto
+        '
+        Me.Lbl_Depto.AutoSize = True
+        Me.Lbl_Depto.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Lbl_Depto.Location = New System.Drawing.Point(12, 2)
+        Me.Lbl_Depto.Name = "Lbl_Depto"
+        Me.Lbl_Depto.Size = New System.Drawing.Size(74, 13)
+        Me.Lbl_Depto.TabIndex = 3
+        Me.Lbl_Depto.Text = "Departamento"
+        '
+        'Cmb_Años
+        '
+        Me.Cmb_Años.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_Años.FormattingEnabled = True
+        Me.Cmb_Años.Location = New System.Drawing.Point(352, 21)
+        Me.Cmb_Años.Name = "Cmb_Años"
+        Me.Cmb_Años.Size = New System.Drawing.Size(82, 21)
+        Me.Cmb_Años.TabIndex = 4
+        '
+        'Lbl_Año
+        '
+        Me.Lbl_Año.AutoSize = True
+        Me.Lbl_Año.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Lbl_Año.Location = New System.Drawing.Point(352, 3)
+        Me.Lbl_Año.Name = "Lbl_Año"
+        Me.Lbl_Año.Size = New System.Drawing.Size(26, 13)
+        Me.Lbl_Año.TabIndex = 5
+        Me.Lbl_Año.Text = "Año"
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.Rdb_Japones)
+        Me.Panel10.Controls.Add(Me.Rdb_Español)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel10.Location = New System.Drawing.Point(1134, 0)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(135, 48)
+        Me.Panel10.TabIndex = 6
+        '
+        'Rdb_Español
+        '
+        Me.Rdb_Español.AutoSize = True
+        Me.Rdb_Español.ForeColor = System.Drawing.Color.White
+        Me.Rdb_Español.Location = New System.Drawing.Point(20, 4)
+        Me.Rdb_Español.Name = "Rdb_Español"
+        Me.Rdb_Español.Size = New System.Drawing.Size(63, 17)
+        Me.Rdb_Español.TabIndex = 0
+        Me.Rdb_Español.TabStop = True
+        Me.Rdb_Español.Text = "Español"
+        Me.Rdb_Español.UseVisualStyleBackColor = True
+        '
+        'Rdb_Japones
+        '
+        Me.Rdb_Japones.AutoSize = True
+        Me.Rdb_Japones.ForeColor = System.Drawing.Color.White
+        Me.Rdb_Japones.Location = New System.Drawing.Point(20, 27)
+        Me.Rdb_Japones.Name = "Rdb_Japones"
+        Me.Rdb_Japones.Size = New System.Drawing.Size(61, 17)
+        Me.Rdb_Japones.TabIndex = 1
+        Me.Rdb_Japones.TabStop = True
+        Me.Rdb_Japones.Text = "日本語"
+        Me.Rdb_Japones.UseVisualStyleBackColor = True
+        '
+        'Pct_Limpiar
+        '
+        Me.Pct_Limpiar.Image = Global.Presentacion.My.Resources.Resources._New
+        Me.Pct_Limpiar.Location = New System.Drawing.Point(477, 11)
+        Me.Pct_Limpiar.Name = "Pct_Limpiar"
+        Me.Pct_Limpiar.Size = New System.Drawing.Size(29, 30)
+        Me.Pct_Limpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Pct_Limpiar.TabIndex = 8
+        Me.Pct_Limpiar.TabStop = False
+        '
+        'Btn_Reporte
+        '
+        Me.Btn_Reporte.BackColor = System.Drawing.Color.SteelBlue
+        Me.Btn_Reporte.BackgroundImage = Global.Presentacion.My.Resources.Resources.report
+        Me.Btn_Reporte.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Btn_Reporte.FlatAppearance.BorderSize = 0
+        Me.Btn_Reporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy
+        Me.Btn_Reporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateBlue
+        Me.Btn_Reporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Btn_Reporte.Location = New System.Drawing.Point(534, 8)
+        Me.Btn_Reporte.Name = "Btn_Reporte"
+        Me.Btn_Reporte.Size = New System.Drawing.Size(33, 33)
+        Me.Btn_Reporte.TabIndex = 9
+        Me.Btn_Reporte.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Btn_Reporte)
+        Me.Panel1.Controls.Add(Me.Pct_Limpiar)
+        Me.Panel1.Controls.Add(Me.Panel10)
+        Me.Panel1.Controls.Add(Me.Lbl_Año)
+        Me.Panel1.Controls.Add(Me.Cmb_Años)
+        Me.Panel1.Controls.Add(Me.Lbl_Depto)
+        Me.Panel1.Controls.Add(Me.Lbl_Mes)
+        Me.Panel1.Controls.Add(Me.Cmb_Depto)
+        Me.Panel1.Controls.Add(Me.Cmb_Meses)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1269, 48)
+        Me.Panel1.TabIndex = 0
+        '
         'Frm_Gastos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1091,11 +1091,6 @@ Partial Class Frm_Gastos
         Me.ShowIcon = False
         Me.Text = "Gastos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.Pct_Limpiar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel10.ResumeLayout(False)
-        Me.Panel10.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
@@ -1112,28 +1107,23 @@ Partial Class Frm_Gastos
         Me.Panel11.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        CType(Me.Pct_Limpiar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents Lbl_Mes As Label
-    Friend WithEvents Cmb_Meses As ComboBox
-    Friend WithEvents Lbl_Año As Label
-    Friend WithEvents Cmb_Años As ComboBox
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Dgv_GastosDepto As DataGridView
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Dgv_GastosGlobal As DataGridView
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents Rdb_Japones As RadioButton
-    Friend WithEvents Rdb_Español As RadioButton
-    Friend WithEvents Pct_Limpiar As PictureBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Lbl_CantActualReal As Label
     Friend WithEvents Lbl_CantDif As Label
@@ -1148,8 +1138,6 @@ Partial Class Frm_Gastos
     Friend WithEvents Lbl_Ventas As Label
     Friend WithEvents Lbl_Actual As Label
     Friend WithEvents Lbl_Real As Label
-    Friend WithEvents Lbl_Depto As Label
-    Friend WithEvents Cmb_Depto As ComboBox
     Friend WithEvents Dgv_DesplegadoAcum As DataGridView
     Friend WithEvents Btn_Regresar As Button
     Friend WithEvents Label1 As Label
@@ -1200,7 +1188,6 @@ Partial Class Frm_Gastos
     Friend WithEvents Lbl_TADif As Label
     Friend WithEvents Lbl_TAReal As Label
     Friend WithEvents Lbl_TAPLan As Label
-    Friend WithEvents Btn_Reporte As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents noCta As DataGridViewTextBoxColumn
     Friend WithEvents cta As DataGridViewTextBoxColumn
@@ -1212,4 +1199,16 @@ Partial Class Frm_Gastos
     Friend WithEvents cosPoliza As DataGridViewTextBoxColumn
     Friend WithEvents cantPoliza As DataGridViewTextBoxColumn
     Friend WithEvents segNeg As DataGridViewTextBoxColumn
+    Friend WithEvents Cmb_Meses As ComboBox
+    Friend WithEvents Cmb_Depto As ComboBox
+    Friend WithEvents Lbl_Mes As Label
+    Friend WithEvents Lbl_Depto As Label
+    Friend WithEvents Cmb_Años As ComboBox
+    Friend WithEvents Lbl_Año As Label
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Rdb_Japones As RadioButton
+    Friend WithEvents Rdb_Español As RadioButton
+    Friend WithEvents Pct_Limpiar As PictureBox
+    Friend WithEvents Btn_Reporte As Button
+    Friend WithEvents Panel1 As Panel
 End Class
