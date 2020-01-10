@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,32 +43,32 @@
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_inc_caso = new System.Windows.Forms.Label();
             this.lbl_inc_tipo = new System.Windows.Forms.Label();
-            this.txt_inc_certificado = new System.Windows.Forms.MaskedTextBox();
-            this.cmb_inc_caso = new System.Windows.Forms.ComboBox();
+            this.txt_certificado = new System.Windows.Forms.MaskedTextBox();
+            this.cmb_caso = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dtm_inc_aplicacion = new System.Windows.Forms.DateTimePicker();
+            this.dtm_aplicacion = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtm_inc_termina = new System.Windows.Forms.DateTimePicker();
+            this.dtm_termina = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmb_inc_tipo = new System.Windows.Forms.ComboBox();
+            this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_inc_duracion = new System.Windows.Forms.TextBox();
+            this.txt_duracion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtm_inc_fecha = new System.Windows.Forms.DateTimePicker();
+            this.dtm_fecha = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_incapacidades = new System.Windows.Forms.DataGridView();
-            this.btn_inc_exportar = new System.Windows.Forms.Button();
-            this.btn_inc_primero = new System.Windows.Forms.Button();
-            this.btn_inc_cancelar = new System.Windows.Forms.Button();
-            this.btn_inc_anterior = new System.Windows.Forms.Button();
-            this.btn_inc_guardar = new System.Windows.Forms.Button();
-            this.btn_inc_siguiente = new System.Windows.Forms.Button();
-            this.btn_inc_eliminar = new System.Windows.Forms.Button();
-            this.btn_inc_ultimo = new System.Windows.Forms.Button();
-            this.btn_inc_insertar = new System.Windows.Forms.Button();
+            this.btn_exportar = new System.Windows.Forms.Button();
+            this.btn_primero = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_anterior = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
+            this.btn_siguiente = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_ultimo = new System.Windows.Forms.Button();
+            this.btn_insertar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbl_tipo_falta = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -178,33 +177,34 @@
             // 
             // tp_permisos
             // 
+            this.tp_permisos.Controls.Add(this.lbl_tipo_falta);
             this.tp_permisos.Controls.Add(this.lbl_id);
             this.tp_permisos.Controls.Add(this.lbl_inc_caso);
             this.tp_permisos.Controls.Add(this.lbl_inc_tipo);
-            this.tp_permisos.Controls.Add(this.txt_inc_certificado);
-            this.tp_permisos.Controls.Add(this.cmb_inc_caso);
+            this.tp_permisos.Controls.Add(this.txt_certificado);
+            this.tp_permisos.Controls.Add(this.cmb_caso);
             this.tp_permisos.Controls.Add(this.label9);
-            this.tp_permisos.Controls.Add(this.dtm_inc_aplicacion);
+            this.tp_permisos.Controls.Add(this.dtm_aplicacion);
             this.tp_permisos.Controls.Add(this.label8);
-            this.tp_permisos.Controls.Add(this.dtm_inc_termina);
+            this.tp_permisos.Controls.Add(this.dtm_termina);
             this.tp_permisos.Controls.Add(this.label7);
-            this.tp_permisos.Controls.Add(this.cmb_inc_tipo);
+            this.tp_permisos.Controls.Add(this.cmb_tipo);
             this.tp_permisos.Controls.Add(this.label6);
-            this.tp_permisos.Controls.Add(this.txt_inc_duracion);
+            this.tp_permisos.Controls.Add(this.txt_duracion);
             this.tp_permisos.Controls.Add(this.label5);
             this.tp_permisos.Controls.Add(this.label4);
-            this.tp_permisos.Controls.Add(this.dtm_inc_fecha);
+            this.tp_permisos.Controls.Add(this.dtm_fecha);
             this.tp_permisos.Controls.Add(this.label3);
             this.tp_permisos.Controls.Add(this.dgv_incapacidades);
-            this.tp_permisos.Controls.Add(this.btn_inc_exportar);
-            this.tp_permisos.Controls.Add(this.btn_inc_primero);
-            this.tp_permisos.Controls.Add(this.btn_inc_cancelar);
-            this.tp_permisos.Controls.Add(this.btn_inc_anterior);
-            this.tp_permisos.Controls.Add(this.btn_inc_guardar);
-            this.tp_permisos.Controls.Add(this.btn_inc_siguiente);
-            this.tp_permisos.Controls.Add(this.btn_inc_eliminar);
-            this.tp_permisos.Controls.Add(this.btn_inc_ultimo);
-            this.tp_permisos.Controls.Add(this.btn_inc_insertar);
+            this.tp_permisos.Controls.Add(this.btn_exportar);
+            this.tp_permisos.Controls.Add(this.btn_primero);
+            this.tp_permisos.Controls.Add(this.btn_cancelar);
+            this.tp_permisos.Controls.Add(this.btn_anterior);
+            this.tp_permisos.Controls.Add(this.btn_guardar);
+            this.tp_permisos.Controls.Add(this.btn_siguiente);
+            this.tp_permisos.Controls.Add(this.btn_eliminar);
+            this.tp_permisos.Controls.Add(this.btn_ultimo);
+            this.tp_permisos.Controls.Add(this.btn_insertar);
             this.tp_permisos.Location = new System.Drawing.Point(4, 22);
             this.tp_permisos.Name = "tp_permisos";
             this.tp_permisos.Padding = new System.Windows.Forms.Padding(3);
@@ -216,7 +216,7 @@
             // lbl_id
             // 
             this.lbl_id.AutoSize = true;
-            this.lbl_id.Location = new System.Drawing.Point(450, 139);
+            this.lbl_id.Location = new System.Drawing.Point(446, 140);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(13, 13);
             this.lbl_id.TabIndex = 174;
@@ -240,29 +240,29 @@
             this.lbl_inc_tipo.TabIndex = 172;
             this.lbl_inc_tipo.Text = "@Tipo";
             // 
-            // txt_inc_certificado
+            // txt_certificado
             // 
-            this.txt_inc_certificado.Location = new System.Drawing.Point(18, 119);
-            this.txt_inc_certificado.Name = "txt_inc_certificado";
-            this.txt_inc_certificado.Size = new System.Drawing.Size(135, 20);
-            this.txt_inc_certificado.TabIndex = 2;
-            this.txt_inc_certificado.Leave += new System.EventHandler(this.Txt_inc_certificado_Leave);
+            this.txt_certificado.Location = new System.Drawing.Point(18, 119);
+            this.txt_certificado.Name = "txt_certificado";
+            this.txt_certificado.Size = new System.Drawing.Size(135, 20);
+            this.txt_certificado.TabIndex = 2;
+            this.txt_certificado.Leave += new System.EventHandler(this.Txt_inc_certificado_Leave);
             // 
-            // cmb_inc_caso
+            // cmb_caso
             // 
-            this.cmb_inc_caso.FormattingEnabled = true;
-            this.cmb_inc_caso.Items.AddRange(new object[] {
+            this.cmb_caso.FormattingEnabled = true;
+            this.cmb_caso.Items.AddRange(new object[] {
             "Unica",
             "Inicial",
             "Subsecuente",
             "Alta Médica ST2"});
-            this.cmb_inc_caso.Location = new System.Drawing.Point(611, 118);
-            this.cmb_inc_caso.Name = "cmb_inc_caso";
-            this.cmb_inc_caso.Size = new System.Drawing.Size(135, 21);
-            this.cmb_inc_caso.TabIndex = 4;
-            this.cmb_inc_caso.SelectedIndexChanged += new System.EventHandler(this.Cmb_inc_caso_SelectedIndexChanged);
-            this.cmb_inc_caso.TextChanged += new System.EventHandler(this.Cmb_inc_caso_TextChanged);
-            this.cmb_inc_caso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_inc_caso_KeyPress);
+            this.cmb_caso.Location = new System.Drawing.Point(611, 118);
+            this.cmb_caso.Name = "cmb_caso";
+            this.cmb_caso.Size = new System.Drawing.Size(135, 21);
+            this.cmb_caso.TabIndex = 4;
+            this.cmb_caso.SelectedIndexChanged += new System.EventHandler(this.Cmb_inc_caso_SelectedIndexChanged);
+            this.cmb_caso.TextChanged += new System.EventHandler(this.Cmb_inc_caso_TextChanged);
+            this.cmb_caso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_inc_caso_KeyPress);
             // 
             // label9
             // 
@@ -273,13 +273,13 @@
             this.label9.TabIndex = 171;
             this.label9.Text = "CASO";
             // 
-            // dtm_inc_aplicacion
+            // dtm_aplicacion
             // 
-            this.dtm_inc_aplicacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_inc_aplicacion.Location = new System.Drawing.Point(611, 75);
-            this.dtm_inc_aplicacion.Name = "dtm_inc_aplicacion";
-            this.dtm_inc_aplicacion.Size = new System.Drawing.Size(135, 20);
-            this.dtm_inc_aplicacion.TabIndex = 2;
+            this.dtm_aplicacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_aplicacion.Location = new System.Drawing.Point(611, 75);
+            this.dtm_aplicacion.Name = "dtm_aplicacion";
+            this.dtm_aplicacion.Size = new System.Drawing.Size(135, 20);
+            this.dtm_aplicacion.TabIndex = 2;
             // 
             // label8
             // 
@@ -290,14 +290,14 @@
             this.label8.TabIndex = 169;
             this.label8.Text = "FECHA APLICACION NOMINA";
             // 
-            // dtm_inc_termina
+            // dtm_termina
             // 
-            this.dtm_inc_termina.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_inc_termina.Location = new System.Drawing.Point(410, 75);
-            this.dtm_inc_termina.Name = "dtm_inc_termina";
-            this.dtm_inc_termina.Size = new System.Drawing.Size(135, 20);
-            this.dtm_inc_termina.TabIndex = 1;
-            this.dtm_inc_termina.ValueChanged += new System.EventHandler(this.Dtm_inc_termina_ValueChanged);
+            this.dtm_termina.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_termina.Location = new System.Drawing.Point(410, 75);
+            this.dtm_termina.Name = "dtm_termina";
+            this.dtm_termina.Size = new System.Drawing.Size(135, 20);
+            this.dtm_termina.TabIndex = 1;
+            this.dtm_termina.ValueChanged += new System.EventHandler(this.Dtm_inc_termina_ValueChanged);
             // 
             // label7
             // 
@@ -308,10 +308,10 @@
             this.label7.TabIndex = 167;
             this.label7.Text = "TERMINA";
             // 
-            // cmb_inc_tipo
+            // cmb_tipo
             // 
-            this.cmb_inc_tipo.FormattingEnabled = true;
-            this.cmb_inc_tipo.Items.AddRange(new object[] {
+            this.cmb_tipo.FormattingEnabled = true;
+            this.cmb_tipo.Items.AddRange(new object[] {
             "Enfermermedad General",
             "Accidente de Trabajo",
             "Accidente de Trayecto",
@@ -319,13 +319,13 @@
             "Pre Maternidad",
             "Maternidad Enlace",
             "Post Maternidad"});
-            this.cmb_inc_tipo.Location = new System.Drawing.Point(233, 118);
-            this.cmb_inc_tipo.Name = "cmb_inc_tipo";
-            this.cmb_inc_tipo.Size = new System.Drawing.Size(135, 21);
-            this.cmb_inc_tipo.TabIndex = 3;
-            this.cmb_inc_tipo.SelectedIndexChanged += new System.EventHandler(this.Cmb_inc_tipo_SelectedIndexChanged);
-            this.cmb_inc_tipo.TextChanged += new System.EventHandler(this.Cmb_inc_tipo_TextChanged);
-            this.cmb_inc_tipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_inc_tipo_KeyPress);
+            this.cmb_tipo.Location = new System.Drawing.Point(233, 118);
+            this.cmb_tipo.Name = "cmb_tipo";
+            this.cmb_tipo.Size = new System.Drawing.Size(135, 21);
+            this.cmb_tipo.TabIndex = 3;
+            this.cmb_tipo.SelectedIndexChanged += new System.EventHandler(this.Cmb_inc_tipo_SelectedIndexChanged);
+            this.cmb_tipo.TextChanged += new System.EventHandler(this.Cmb_inc_tipo_TextChanged);
+            this.cmb_tipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_inc_tipo_KeyPress);
             // 
             // label6
             // 
@@ -336,16 +336,16 @@
             this.label6.TabIndex = 165;
             this.label6.Text = "TIPO";
             // 
-            // txt_inc_duracion
+            // txt_duracion
             // 
-            this.txt_inc_duracion.Location = new System.Drawing.Point(233, 75);
-            this.txt_inc_duracion.MaxLength = 6;
-            this.txt_inc_duracion.Name = "txt_inc_duracion";
-            this.txt_inc_duracion.Size = new System.Drawing.Size(81, 20);
-            this.txt_inc_duracion.TabIndex = 1;
-            this.txt_inc_duracion.TextChanged += new System.EventHandler(this.Txt_inc_duracion_TextChanged);
-            this.txt_inc_duracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_inc_duracion_KeyPress);
-            this.txt_inc_duracion.Leave += new System.EventHandler(this.Txt_inc_duracion_Leave);
+            this.txt_duracion.Location = new System.Drawing.Point(233, 75);
+            this.txt_duracion.MaxLength = 6;
+            this.txt_duracion.Name = "txt_duracion";
+            this.txt_duracion.Size = new System.Drawing.Size(81, 20);
+            this.txt_duracion.TabIndex = 1;
+            this.txt_duracion.TextChanged += new System.EventHandler(this.Txt_inc_duracion_TextChanged);
+            this.txt_duracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_inc_duracion_KeyPress);
+            this.txt_duracion.Leave += new System.EventHandler(this.Txt_inc_duracion_Leave);
             // 
             // label5
             // 
@@ -365,14 +365,14 @@
             this.label4.TabIndex = 161;
             this.label4.Text = "CERTIFICADO";
             // 
-            // dtm_inc_fecha
+            // dtm_fecha
             // 
-            this.dtm_inc_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_inc_fecha.Location = new System.Drawing.Point(18, 75);
-            this.dtm_inc_fecha.Name = "dtm_inc_fecha";
-            this.dtm_inc_fecha.Size = new System.Drawing.Size(135, 20);
-            this.dtm_inc_fecha.TabIndex = 0;
-            this.dtm_inc_fecha.ValueChanged += new System.EventHandler(this.Dtm_inc_inicia_ValueChanged);
+            this.dtm_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_fecha.Location = new System.Drawing.Point(18, 75);
+            this.dtm_fecha.Name = "dtm_fecha";
+            this.dtm_fecha.Size = new System.Drawing.Size(135, 20);
+            this.dtm_fecha.TabIndex = 0;
+            this.dtm_fecha.ValueChanged += new System.EventHandler(this.Dtm_inc_inicia_ValueChanged);
             // 
             // label3
             // 
@@ -395,17 +395,17 @@
             this.dgv_incapacidades.Location = new System.Drawing.Point(7, 159);
             this.dgv_incapacidades.MultiSelect = false;
             this.dgv_incapacidades.Name = "dgv_incapacidades";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_incapacidades.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_incapacidades.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_incapacidades.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dgv_incapacidades.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.dgv_incapacidades.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_incapacidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_incapacidades.ShowCellErrors = false;
             this.dgv_incapacidades.Size = new System.Drawing.Size(780, 245);
@@ -415,122 +415,122 @@
             this.dgv_incapacidades.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_incapacidades_RowEnter);
             this.dgv_incapacidades.DoubleClick += new System.EventHandler(this.Dgv_incapacidades_DoubleClick);
             // 
-            // btn_inc_exportar
+            // btn_exportar
             // 
-            this.btn_inc_exportar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_exportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_exportar.FlatAppearance.BorderSize = 0;
-            this.btn_inc_exportar.Image = global::CsPresentacion.Properties.Resources.Excel;
-            this.btn_inc_exportar.Location = new System.Drawing.Point(347, 6);
-            this.btn_inc_exportar.Name = "btn_inc_exportar";
-            this.btn_inc_exportar.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_exportar.TabIndex = 152;
-            this.btn_inc_exportar.UseVisualStyleBackColor = false;
-            this.btn_inc_exportar.Click += new System.EventHandler(this.Btn_inc_exportar_Click);
+            this.btn_exportar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_exportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_exportar.FlatAppearance.BorderSize = 0;
+            this.btn_exportar.Image = global::CsPresentacion.Properties.Resources.Excel;
+            this.btn_exportar.Location = new System.Drawing.Point(347, 6);
+            this.btn_exportar.Name = "btn_exportar";
+            this.btn_exportar.Size = new System.Drawing.Size(40, 30);
+            this.btn_exportar.TabIndex = 152;
+            this.btn_exportar.UseVisualStyleBackColor = false;
+            this.btn_exportar.Click += new System.EventHandler(this.Btn_inc_exportar_Click);
             // 
-            // btn_inc_primero
+            // btn_primero
             // 
-            this.btn_inc_primero.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_primero.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_primero.FlatAppearance.BorderSize = 0;
-            this.btn_inc_primero.Image = global::CsPresentacion.Properties.Resources.Hide_left_icon;
-            this.btn_inc_primero.Location = new System.Drawing.Point(19, 6);
-            this.btn_inc_primero.Name = "btn_inc_primero";
-            this.btn_inc_primero.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_primero.TabIndex = 158;
-            this.btn_inc_primero.UseVisualStyleBackColor = false;
-            this.btn_inc_primero.Click += new System.EventHandler(this.Btn_inc_primero_Click);
+            this.btn_primero.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_primero.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_primero.FlatAppearance.BorderSize = 0;
+            this.btn_primero.Image = global::CsPresentacion.Properties.Resources.Hide_left_icon;
+            this.btn_primero.Location = new System.Drawing.Point(19, 6);
+            this.btn_primero.Name = "btn_primero";
+            this.btn_primero.Size = new System.Drawing.Size(40, 30);
+            this.btn_primero.TabIndex = 158;
+            this.btn_primero.UseVisualStyleBackColor = false;
+            this.btn_primero.Click += new System.EventHandler(this.Btn_inc_primero_Click);
             // 
-            // btn_inc_cancelar
+            // btn_cancelar
             // 
-            this.btn_inc_cancelar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_cancelar.FlatAppearance.BorderSize = 0;
-            this.btn_inc_cancelar.Image = global::CsPresentacion.Properties.Resources.delete_icon;
-            this.btn_inc_cancelar.Location = new System.Drawing.Point(305, 6);
-            this.btn_inc_cancelar.Name = "btn_inc_cancelar";
-            this.btn_inc_cancelar.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_cancelar.TabIndex = 151;
-            this.btn_inc_cancelar.UseVisualStyleBackColor = false;
-            this.btn_inc_cancelar.Click += new System.EventHandler(this.Btn_inc_cancelar_Click);
+            this.btn_cancelar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.Image = global::CsPresentacion.Properties.Resources.delete_icon;
+            this.btn_cancelar.Location = new System.Drawing.Point(305, 6);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(40, 30);
+            this.btn_cancelar.TabIndex = 151;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.Btn_inc_cancelar_Click);
             // 
-            // btn_inc_anterior
+            // btn_anterior
             // 
-            this.btn_inc_anterior.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_anterior.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_anterior.FlatAppearance.BorderSize = 0;
-            this.btn_inc_anterior.Image = global::CsPresentacion.Properties.Resources.Navigate_left_icon;
-            this.btn_inc_anterior.Location = new System.Drawing.Point(60, 6);
-            this.btn_inc_anterior.Name = "btn_inc_anterior";
-            this.btn_inc_anterior.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_anterior.TabIndex = 157;
-            this.btn_inc_anterior.UseVisualStyleBackColor = false;
-            this.btn_inc_anterior.Click += new System.EventHandler(this.Btn_inc_anterior_Click);
+            this.btn_anterior.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_anterior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_anterior.FlatAppearance.BorderSize = 0;
+            this.btn_anterior.Image = global::CsPresentacion.Properties.Resources.Navigate_left_icon;
+            this.btn_anterior.Location = new System.Drawing.Point(60, 6);
+            this.btn_anterior.Name = "btn_anterior";
+            this.btn_anterior.Size = new System.Drawing.Size(40, 30);
+            this.btn_anterior.TabIndex = 157;
+            this.btn_anterior.UseVisualStyleBackColor = false;
+            this.btn_anterior.Click += new System.EventHandler(this.Btn_inc_anterior_Click);
             // 
-            // btn_inc_guardar
+            // btn_guardar
             // 
-            this.btn_inc_guardar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_guardar.FlatAppearance.BorderSize = 0;
-            this.btn_inc_guardar.Image = global::CsPresentacion.Properties.Resources.Actions_dialog_ok_apply_icon;
-            this.btn_inc_guardar.Location = new System.Drawing.Point(264, 6);
-            this.btn_inc_guardar.Name = "btn_inc_guardar";
-            this.btn_inc_guardar.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_guardar.TabIndex = 5;
-            this.btn_inc_guardar.UseVisualStyleBackColor = false;
-            this.btn_inc_guardar.Click += new System.EventHandler(this.Btn_inc_guardar_Click);
+            this.btn_guardar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_guardar.Image = global::CsPresentacion.Properties.Resources.Actions_dialog_ok_apply_icon;
+            this.btn_guardar.Location = new System.Drawing.Point(264, 6);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(40, 30);
+            this.btn_guardar.TabIndex = 5;
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.Btn_inc_guardar_Click);
             // 
-            // btn_inc_siguiente
+            // btn_siguiente
             // 
-            this.btn_inc_siguiente.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_siguiente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_siguiente.FlatAppearance.BorderSize = 0;
-            this.btn_inc_siguiente.Image = global::CsPresentacion.Properties.Resources.Next;
-            this.btn_inc_siguiente.Location = new System.Drawing.Point(101, 6);
-            this.btn_inc_siguiente.Name = "btn_inc_siguiente";
-            this.btn_inc_siguiente.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_siguiente.TabIndex = 156;
-            this.btn_inc_siguiente.UseVisualStyleBackColor = false;
-            this.btn_inc_siguiente.Click += new System.EventHandler(this.Btn_inc_siguiente_Click);
+            this.btn_siguiente.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_siguiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_siguiente.FlatAppearance.BorderSize = 0;
+            this.btn_siguiente.Image = global::CsPresentacion.Properties.Resources.Next;
+            this.btn_siguiente.Location = new System.Drawing.Point(101, 6);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(40, 30);
+            this.btn_siguiente.TabIndex = 156;
+            this.btn_siguiente.UseVisualStyleBackColor = false;
+            this.btn_siguiente.Click += new System.EventHandler(this.Btn_inc_siguiente_Click);
             // 
-            // btn_inc_eliminar
+            // btn_eliminar
             // 
-            this.btn_inc_eliminar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_eliminar.FlatAppearance.BorderSize = 0;
-            this.btn_inc_eliminar.Image = global::CsPresentacion.Properties.Resources.math_minus_icon;
-            this.btn_inc_eliminar.Location = new System.Drawing.Point(223, 6);
-            this.btn_inc_eliminar.Name = "btn_inc_eliminar";
-            this.btn_inc_eliminar.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_eliminar.TabIndex = 153;
-            this.btn_inc_eliminar.UseVisualStyleBackColor = false;
-            this.btn_inc_eliminar.Click += new System.EventHandler(this.Btn_inc_eliminar_Click);
+            this.btn_eliminar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_eliminar.Image = global::CsPresentacion.Properties.Resources.math_minus_icon;
+            this.btn_eliminar.Location = new System.Drawing.Point(223, 6);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(40, 30);
+            this.btn_eliminar.TabIndex = 153;
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.Btn_inc_eliminar_Click);
             // 
-            // btn_inc_ultimo
+            // btn_ultimo
             // 
-            this.btn_inc_ultimo.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_ultimo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_ultimo.FlatAppearance.BorderSize = 0;
-            this.btn_inc_ultimo.Image = global::CsPresentacion.Properties.Resources.Hide_right_icon;
-            this.btn_inc_ultimo.Location = new System.Drawing.Point(142, 6);
-            this.btn_inc_ultimo.Name = "btn_inc_ultimo";
-            this.btn_inc_ultimo.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_ultimo.TabIndex = 155;
-            this.btn_inc_ultimo.UseVisualStyleBackColor = false;
-            this.btn_inc_ultimo.Click += new System.EventHandler(this.Btn_inc_ultimo_Click);
+            this.btn_ultimo.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_ultimo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ultimo.FlatAppearance.BorderSize = 0;
+            this.btn_ultimo.Image = global::CsPresentacion.Properties.Resources.Hide_right_icon;
+            this.btn_ultimo.Location = new System.Drawing.Point(142, 6);
+            this.btn_ultimo.Name = "btn_ultimo";
+            this.btn_ultimo.Size = new System.Drawing.Size(40, 30);
+            this.btn_ultimo.TabIndex = 155;
+            this.btn_ultimo.UseVisualStyleBackColor = false;
+            this.btn_ultimo.Click += new System.EventHandler(this.Btn_inc_ultimo_Click);
             // 
-            // btn_inc_insertar
+            // btn_insertar
             // 
-            this.btn_inc_insertar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_inc_insertar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_inc_insertar.FlatAppearance.BorderSize = 0;
-            this.btn_inc_insertar.Image = global::CsPresentacion.Properties.Resources.math_add_icon2;
-            this.btn_inc_insertar.Location = new System.Drawing.Point(182, 6);
-            this.btn_inc_insertar.Name = "btn_inc_insertar";
-            this.btn_inc_insertar.Size = new System.Drawing.Size(40, 30);
-            this.btn_inc_insertar.TabIndex = 154;
-            this.btn_inc_insertar.UseVisualStyleBackColor = false;
-            this.btn_inc_insertar.Click += new System.EventHandler(this.Btn_inc_insertar_Click);
+            this.btn_insertar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_insertar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_insertar.FlatAppearance.BorderSize = 0;
+            this.btn_insertar.Image = global::CsPresentacion.Properties.Resources.math_add_icon2;
+            this.btn_insertar.Location = new System.Drawing.Point(182, 6);
+            this.btn_insertar.Name = "btn_insertar";
+            this.btn_insertar.Size = new System.Drawing.Size(40, 30);
+            this.btn_insertar.TabIndex = 154;
+            this.btn_insertar.UseVisualStyleBackColor = false;
+            this.btn_insertar.Click += new System.EventHandler(this.Btn_inc_insertar_Click);
             // 
             // tabControl1
             // 
@@ -541,9 +541,14 @@
             this.tabControl1.Size = new System.Drawing.Size(804, 436);
             this.tabControl1.TabIndex = 159;
             // 
-            // timer1
+            // lbl_tipo_falta
             // 
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            this.lbl_tipo_falta.AutoSize = true;
+            this.lbl_tipo_falta.Location = new System.Drawing.Point(504, 141);
+            this.lbl_tipo_falta.Name = "lbl_tipo_falta";
+            this.lbl_tipo_falta.Size = new System.Drawing.Size(24, 13);
+            this.lbl_tipo_falta.TabIndex = 160;
+            this.lbl_tipo_falta.Text = "@F";
             // 
             // Frm_Incapacidades
             // 
@@ -589,31 +594,31 @@
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Label lbl_inc_caso;
         private System.Windows.Forms.Label lbl_inc_tipo;
-        private System.Windows.Forms.MaskedTextBox txt_inc_certificado;
-        private System.Windows.Forms.ComboBox cmb_inc_caso;
+        private System.Windows.Forms.MaskedTextBox txt_certificado;
+        private System.Windows.Forms.ComboBox cmb_caso;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dtm_inc_aplicacion;
+        private System.Windows.Forms.DateTimePicker dtm_aplicacion;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dtm_inc_termina;
+        private System.Windows.Forms.DateTimePicker dtm_termina;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmb_inc_tipo;
+        private System.Windows.Forms.ComboBox cmb_tipo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_inc_duracion;
+        private System.Windows.Forms.TextBox txt_duracion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtm_inc_fecha;
+        private System.Windows.Forms.DateTimePicker dtm_fecha;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgv_incapacidades;
-        private System.Windows.Forms.Button btn_inc_exportar;
-        private System.Windows.Forms.Button btn_inc_primero;
-        private System.Windows.Forms.Button btn_inc_cancelar;
-        private System.Windows.Forms.Button btn_inc_anterior;
-        private System.Windows.Forms.Button btn_inc_guardar;
-        private System.Windows.Forms.Button btn_inc_siguiente;
-        private System.Windows.Forms.Button btn_inc_eliminar;
-        private System.Windows.Forms.Button btn_inc_ultimo;
-        private System.Windows.Forms.Button btn_inc_insertar;
+        private System.Windows.Forms.Button btn_exportar;
+        private System.Windows.Forms.Button btn_primero;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_anterior;
+        private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Button btn_siguiente;
+        private System.Windows.Forms.Button btn_eliminar;
+        private System.Windows.Forms.Button btn_ultimo;
+        private System.Windows.Forms.Button btn_insertar;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbl_tipo_falta;
     }
 }
