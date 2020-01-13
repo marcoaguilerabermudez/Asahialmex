@@ -154,6 +154,12 @@
     <Compile Include="Compras\Frm_Proviciones.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Compras\Frm_ValidarConta.Designer.vb">
+      <DependentUpon>Frm_ValidarConta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\Frm_ValidarConta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="conexion.vb" />
     <Compile Include="DataSet\Dts_BonoMensual.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\Frm_Proviciones.resx">
       <DependentUpon>Frm_Proviciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Frm_ValidarConta.resx">
+      <DependentUpon>Frm_ValidarConta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DefectoM.resx">
       <DependentUpon>DefectoM.vb</DependentUpon>

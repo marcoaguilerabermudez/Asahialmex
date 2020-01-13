@@ -174,7 +174,8 @@ Public Class Frm_GlobalPrenomina
         Dim conex As New conexion
         Dim cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
 
-        fechaI = (Lbl_Dia1.Text & "/" & Lbl_año.Text)
+
+        fechaI = Lbl_SemaI.Text '(Lbl_Dia1.Text & "/" & Lbl_año.Text)
         fechaF = Format(DateAdd(DateInterval.Day, 6, fechaI), "dd/MM/yyyy")
 
         lstAus = NPre.RecuperarAusentismo(cadConex, fechaI, fechaF)
@@ -258,7 +259,7 @@ Public Class Frm_GlobalPrenomina
     End Sub
     Private Sub RellenaIncidenciasDgvPrenomina(ByVal lstAus As LAusentismo, ByVal lstVac As LVacaciones, ByVal lstInc As LIncapacidad, ByVal lstHE As LHorasExtra,
                                                ByVal lstBja As LBaja, ByVal lstCom As LComedor)
-        Dim fecha As Date = Format((Lbl_Dia1.Text + "/" + Lbl_año.Text))
+        Dim fecha As Date = Format((Lbl_SemaI.Text)) 'Format((Lbl_Dia1.Text + "/" + Lbl_año.Text))
         Dim totalFilas As Integer = Dgv_Prenomina_Global.Rows.Count()
 
         RellenaBajas(lstBja, fecha, totalFilas)
@@ -1061,7 +1062,7 @@ Public Class Frm_GlobalPrenomina
                                                 tx.Write("D")
                                                 tx.Write(" Semanal")
                                                 tx.Write("                 ")
-                                                tx.Write(semana)
+                                                tx.Write(String.Format("{0:00}", semana))
                                                 tx.Write(" 2                   ")
                                                 tx.Write("Horas extras 2                               ")
                                                 tx.Write(Format(VV, "#0.00"))
@@ -1077,7 +1078,7 @@ Public Class Frm_GlobalPrenomina
                                                     tx.Write("D")
                                                     tx.Write(" Semanal")
                                                     tx.Write("                 ")
-                                                    tx.Write(semana)
+                                                    tx.Write(String.Format("{0:00}", semana))
                                                     tx.Write(" 2                   ")
                                                     tx.Write("Horas extras 3                              ")
                                                     If (Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))) < 10 Then
@@ -1097,7 +1098,7 @@ Public Class Frm_GlobalPrenomina
                                                     tx.Write("D")
                                                     tx.Write(" Semanal")
                                                     tx.Write("                 ")
-                                                    tx.Write(semana)
+                                                    tx.Write(String.Format("{0:00}", semana))
                                                     tx.Write(" 2                   ")
                                                     tx.Write("Horas extras 2                               ")
                                                     tx.Write(Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "#0.00"))
@@ -1111,7 +1112,7 @@ Public Class Frm_GlobalPrenomina
                                                     tx.Write("D")
                                                     tx.Write(" Semanal")
                                                     tx.Write("                 ")
-                                                    tx.Write(semana)
+                                                    tx.Write(String.Format("{0:00}", semana))
                                                     tx.Write(" 2                   ")
                                                     tx.Write("Horas extras 3                              ")
                                                     If (Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))) < 10 Then
@@ -1133,7 +1134,7 @@ Public Class Frm_GlobalPrenomina
                                                 tx.Write("D")
                                                 tx.Write(" Semanal")
                                                 tx.Write("                 ")
-                                                tx.Write(semana)
+                                                tx.Write(String.Format("{0:00}", semana))
                                                 tx.Write(" 2                   ")
                                                 tx.Write("Horas extras 2                               ")
                                                 tx.Write(Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "#0.00"))
@@ -1147,7 +1148,7 @@ Public Class Frm_GlobalPrenomina
                                             tx.Write("D")
                                             tx.Write(" Semanal")
                                             tx.Write("                 ")
-                                            tx.Write(semana)
+                                            tx.Write(String.Format("{0:00}", semana))
                                             tx.Write(" 2                   ")
                                             fgg = (Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666)))
                                             If fgg >= 10 Then
@@ -1166,7 +1167,7 @@ Public Class Frm_GlobalPrenomina
                                         tx.Write("D")
                                         tx.Write(" Semanal")
                                         tx.Write("                 ")
-                                        tx.Write(semana)
+                                        tx.Write(String.Format("{0:00}", semana))
                                         tx.Write(" 2                   ")
                                         texto = "Retardos                                     "
                                         val = .Cells("tiempo").Value
@@ -1181,7 +1182,7 @@ Public Class Frm_GlobalPrenomina
                                         tx.Write("D")
                                         tx.Write(" Semanal")
                                         tx.Write("                 ")
-                                        tx.Write(semana)
+                                        tx.Write(String.Format("{0:00}", semana))
                                         tx.Write(" 2                   ")
                                         texto = "Faltas injustificadas                        "
                                         val = 1
@@ -1196,7 +1197,7 @@ Public Class Frm_GlobalPrenomina
                                         tx.Write("D")
                                         tx.Write(" Semanal")
                                         tx.Write("                 ")
-                                        tx.Write(semana)
+                                        tx.Write(String.Format("{0:00}", semana))
                                         tx.Write(" 2                   ")
                                         texto = "Permisos con goce de sueldo                  "
                                         val = 1
@@ -1211,7 +1212,7 @@ Public Class Frm_GlobalPrenomina
                                         tx.Write("D")
                                         tx.Write(" Semanal")
                                         tx.Write("                 ")
-                                        tx.Write(semana)
+                                        tx.Write(String.Format("{0:00}", semana))
                                         tx.Write(" 2                   ")
                                         texto = "Permisos sin goce de sueldo                  "
                                         val = 1
@@ -1226,7 +1227,7 @@ Public Class Frm_GlobalPrenomina
                                         tx.Write("D")
                                         tx.Write(" Semanal")
                                         tx.Write("                 ")
-                                        tx.Write(semana)
+                                        tx.Write(String.Format("{0:00}", semana))
                                         tx.Write(" 2                   ")
                                         texto = "Días de castigo                              "
                                         val = 1

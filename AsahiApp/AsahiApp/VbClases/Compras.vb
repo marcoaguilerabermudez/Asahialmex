@@ -53,6 +53,15 @@
             serie_ = value
         End Set
     End Property
+    Private serieC_ As String
+    Public Property SerieC() As String
+        Get
+            Return serieC_
+        End Get
+        Set(ByVal value As String)
+            serieC_ = value
+        End Set
+    End Property
     Private factura_ As String
     Public Property Factura() As String
         Get
@@ -332,12 +341,21 @@
             status_ = value
         End Set
     End Property
-    Private statusConta_ As Integer
-    Public Property StatusConta() As Integer
+    Private statusPago_ As String
+    Public Property StatusPago() As String
+        Get
+            Return statusPago_
+        End Get
+        Set(ByVal value As String)
+            statusPago_ = value
+        End Set
+    End Property
+    Private statusConta_ As String
+    Public Property StatusConta() As String
         Get
             Return statusConta_
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             statusConta_ = value
         End Set
     End Property
@@ -411,6 +429,33 @@
         End Get
         Set(ByVal value As String)
             ruta_ = value
+        End Set
+    End Property
+    Private fp_ As Date
+    Public Property FP() As Date
+        Get
+            Return fp_
+        End Get
+        Set(ByVal value As Date)
+            fp_ = value
+        End Set
+    End Property
+    Private fechaProv_ As Date
+    Public Property FechaProv() As Date
+        Get
+            Return fechaProv_
+        End Get
+        Set(ByVal value As Date)
+            fechaProv_ = value
+        End Set
+    End Property
+    Private xml_ As String
+    Public Property Xml() As String
+        Get
+            Return xml_
+        End Get
+        Set(ByVal value As String)
+            xml_ = value
         End Set
     End Property
 End Class
