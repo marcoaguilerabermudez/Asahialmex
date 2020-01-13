@@ -7,6 +7,7 @@ Public Class Frm_PlanHorasExtra
     Dim conex As New conexion()
     Dim cadenaConex As String = conex.conexion2008
     Dim cadConex As String = conex.cadenaConexExpress
+    Dim conexConta As String = conex.conexionCont
     Dim columna As String
     Dim fila As Integer, semana As Integer, idioma As Integer
 #End Region
@@ -35,7 +36,7 @@ Public Class Frm_PlanHorasExtra
         Dim semana As Integer = Cmb_Semanas.SelectedIndex
 
         semana += 1
-        objHrsEx = NHrsEx.ObtenerFechasSemana(Me.cadenaConex, año, semana)
+        objHrsEx = NHrsEx.ObtenerFechasSemana(Me.conexConta, año, semana)
         Lbl_Dia1.Text = Format(objHrsEx.FechaI, "dd/MM")
         Lbl_Dia2.Text = Format(DateAdd(DateInterval.Day, 1, objHrsEx.FechaI), "dd/MM")
         Lbl_Dia3.Text = Format(DateAdd(DateInterval.Day, 2, objHrsEx.FechaI), "dd/MM")
@@ -654,7 +655,7 @@ Public Class Frm_PlanHorasExtra
         Dim lstHrsEx As New LHorasExtra()
         Dim NHrsEx As New NHorasExtra()
 
-        lstHrsEx = NHrsEx.ObtenerSemanas(Me.cadenaConex, Lbl_año.Text)
+        lstHrsEx = NHrsEx.ObtenerSemanas(Me.conexConta, Lbl_año.Text)
         With Cmb_Semanas
             .DataSource = lstHrsEx
             .ValueMember = "Mes"

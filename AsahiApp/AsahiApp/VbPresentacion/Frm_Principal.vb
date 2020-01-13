@@ -389,7 +389,7 @@ Public Class Frm_Principal
         polD.Show()
     End Sub
     Private Sub Incapacidades_RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Incapacidades_RetardosToolStripMenuItem.Click
-        Dim Ag As New Frm_Incapacidades(Me.emp)
+        Dim Ag As New Frm_Aussentismos_Retardos(Me.emp)
         Ag.Show()
     End Sub
     Private Sub ComidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Kardex_comedorToolStripMenuItem.Click

@@ -154,11 +154,11 @@
     <Compile Include="Formularios\RH\Frm_Rotacion.Designer.cs">
       <DependentUpon>Frm_Rotacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RH\Permisos_Autorizaciones.cs">
+    <Compile Include="Formularios\RH\Frm_Permisos_Autorizaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RH\Permisos_Autorizaciones.Designer.cs">
-      <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
+    <Compile Include="Formularios\RH\Frm_Permisos_Autorizaciones.Designer.cs">
+      <DependentUpon>Frm_Permisos_Autorizaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Ausentismo_Fecha.cs">
       <SubType>Form</SubType>
@@ -528,8 +528,8 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Rotacion.resx">
       <DependentUpon>Frm_Rotacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RH\Permisos_Autorizaciones.resx">
-      <DependentUpon>Permisos_Autorizaciones.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\RH\Frm_Permisos_Autorizaciones.resx">
+      <DependentUpon>Frm_Permisos_Autorizaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Ausentismo_Fecha.resx">
       <DependentUpon>Frm_Ausentismo_Fecha.cs</DependentUpon>
