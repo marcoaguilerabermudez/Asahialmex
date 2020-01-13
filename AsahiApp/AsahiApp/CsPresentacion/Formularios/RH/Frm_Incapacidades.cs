@@ -29,10 +29,21 @@ namespace CsPresentacion
             tt.SetToolTip(btn_guardar, "Guardar");
             tt.SetToolTip(btn_cancelar, "Cancelar");
             tt.SetToolTip(btn_exportar, "Exportar");
+
+            tt.SetToolTip(btn_f_primero, "Primero [Inicio]");
+            tt.SetToolTip(btn_f_anterior, "Anterior [Re. Pág.]");
+            tt.SetToolTip(btn_f_siguiente, "Siguiente [Av. Pág.]");
+            tt.SetToolTip(btn_f_ultimo, "Último [Fin]");
+            tt.SetToolTip(btn_f_insertar, "Insertar");
+            tt.SetToolTip(btn_f_eliminar, "Eliminar");
+            tt.SetToolTip(btn_f_guardar, "Guardar");
+            tt.SetToolTip(btn_f_cancelar, "Cancelar");
+            tt.SetToolTip(btn_f_exportar, "Exportar");
             claseEmp = classEmpleado;
         }
         
         int indice = 0;
+        int indicef = 0;
         SqlCommand cmd;
         SqlDataReader dr;
         Empleado claseEmp;
@@ -45,26 +56,33 @@ namespace CsPresentacion
             txt_clave.Focus();
         }
 
-        //Métodos
+        //Métodos Módulo de incapacidades
         private void nuevo()
         {
             txt_clave.Text = "";
             txt_nombre.Text = "";
+            txt_nombre.Enabled = true;
             dtm_fecha.Text = "";
+            dtm_fecha.Enabled = false;
             dtm_termina.Text = "";
+            dtm_termina.Enabled = false;
             txt_certificado.Text = "";
+            txt_certificado.Enabled = false;
             cmb_tipo.Text = "";
+            cmb_tipo.Enabled = false;
             cmb_caso.Text = "";
+            cmb_caso.Enabled = false;
             txt_duracion.Text = "";
+            txt_duracion.Enabled = false;
             dtm_aplicacion.Text = "";
+            dtm_aplicacion.Enabled = false;
             lbl_inc_tipo.Text = "";
-            lbl_inc_caso.Text = "";
-            txt_certificado.Mask = ">LL000000";
             lbl_inc_tipo.Visible = false;
+            lbl_inc_caso.Text = "";
             lbl_inc_caso.Visible = false;
+            txt_certificado.Mask = ">LL000000"; 
             lbl_id.Visible = false;
             lbl_id.Text = "0";
-            cmb_caso.Enabled = true;
             btn_primero.Enabled = false;
             btn_anterior.Enabled = false;
             btn_siguiente.Enabled = false;
@@ -74,18 +92,28 @@ namespace CsPresentacion
             btn_guardar.Enabled = false;
             btn_cancelar.Enabled = false;
             btn_exportar.Enabled = false;
-            txt_nombre.Enabled = true;
-            lbl_estado.Text = "";
-            dtm_aplicacion.Enabled = false;
-            pictureBox1.ImageLocation = "V:/Sistemas/SAAM/Logo.jpg";
-            dtm_termina.Enabled = false;
-            lbl_tipo_falta.Text = "";
-            lbl_tipo_falta.Visible = false;
-            dtm_fecha.Enabled = false;
-            txt_duracion.Enabled = false;
-            txt_certificado.Enabled = false;
-            cmb_caso.Enabled = false;
-            cmb_tipo.Enabled = false;
+            lbl_estado.Text = ""; 
+            pictureBox1.ImageLocation = "V:/Sistemas/SAAM/Logo.jpg"; 
+            //Módulo de Faltas
+            dtm_f_termina.Text = "";
+            dtm_f_termina.Enabled = false;
+            dtm_f_aplicacion.Text = "";
+            dtm_f_aplicacion.Enabled = false;
+            btn_f_primero.Enabled = false;
+            btn_f_siguiente.Enabled = false;
+            btn_f_anterior.Enabled = false;
+            btn_f_ultimo.Enabled = false;
+            btn_f_exportar.Enabled = false;
+            dtm_f_fecha.Enabled = false;
+            txt_f_duracion.Text = "";
+            txt_f_duracion.Enabled = false;
+            cmb_f_tipo.Text = "";
+            dtm_f_fecha.Text = "";
+            lbl_f_id.Text = "0";
+            lbl_f_id.Visible = false;
+            txt_f_tipo.Text = "";
+            cmb_f_tipo.Enabled = false;
+            txt_f_tipo.Enabled = false;
             txt_clave.Focus();
         }
         private void cargar_informacion()
@@ -232,99 +260,9 @@ namespace CsPresentacion
 
             if (dt.Rows.Count > 0)
             {
-                lbl_tipo_falta.Text = dt.Rows[0]["TIPO"].ToString();
-
-                if (lbl_tipo_falta.Text == "N")
+                if (dt.Rows.Count > 0)
                 {
-                    DialogResult resul = MessageBox.Show("El empleado tiene Suspensión dentro de esta fecha, ¿Desea eliminar la suspensión? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (resul == DialogResult.Yes)
-                    {
-                        Borra_falta();
-                        Inserta_incapacidades();
-                        Mostrar_Grid();
-                        dtm_fecha.Text = "";
-                        txt_duracion.Text = "";
-                        dtm_termina.Text = "";
-                        txt_certificado.Text = "";
-                        cmb_caso.Text = "";
-                        cmb_tipo.Text = "";
-                        lbl_id.Text = "0";
-                        dtm_fecha.Focus();
-                    }
-                    else if (resul == DialogResult.No)
-                    {
-                        dtm_fecha.Focus();
-                    }
-                }
-                else if (lbl_tipo_falta.Text == "P")
-                {
-                    DialogResult resul = MessageBox.Show("El empleado tiene Permiso sin Goce dentro de esta fecha, ¿Desea eliminar el permiso?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (resul == DialogResult.Yes)
-                    {
-                        Borra_falta();
-                        Inserta_incapacidades();
-                        Mostrar_Grid();
-                        dtm_fecha.Text = "";
-                        txt_duracion.Text = "";
-                        dtm_termina.Text = "";
-                        txt_certificado.Text = "";
-                        cmb_caso.Text = "";
-                        cmb_tipo.Text = "";
-                        lbl_id.Text = "0";
-                        dtm_fecha.Focus();
-                    }
-                    else if (resul == DialogResult.No)
-                    {
-                        dtm_fecha.Focus();
-                    }
-                }
-                else if (lbl_tipo_falta.Text == "G")
-                {
-                    DialogResult resul = MessageBox.Show("El empleado tiene Permiso con Goce dentro de esta fecha, ¿Desea eliminar el permiso?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (resul == DialogResult.Yes)
-                    {
-                        Borra_falta();
-                        Inserta_incapacidades();
-                        Mostrar_Grid();
-                        dtm_fecha.Text = "";
-                        txt_duracion.Text = "";
-                        dtm_termina.Text = "";
-                        txt_certificado.Text = "";
-                        cmb_caso.Text = "";
-                        cmb_tipo.Text = "";
-                        lbl_id.Text = "0";
-                        dtm_fecha.Focus();
-                    }
-                    else if (resul == DialogResult.No)
-                    {
-                        dtm_fecha.Focus();
-                    }
-                }
-                else if (lbl_tipo_falta.Text == "U")
-                {
-                    DialogResult resul = MessageBox.Show("El empleado tiene Falta Justificada dentro de esta fecha, ¿Desea eliminar la falta?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (resul == DialogResult.Yes)
-                    {
-                        Borra_falta();
-                        Inserta_incapacidades();
-                        Mostrar_Grid();
-                        dtm_fecha.Text = "";
-                        txt_duracion.Text = "";
-                        dtm_termina.Text = "";
-                        txt_certificado.Text = "";
-                        cmb_caso.Text = "";
-                        cmb_tipo.Text = "";
-                        lbl_id.Text = "0";
-                        dtm_fecha.Focus();
-                    }
-                    else if (resul == DialogResult.No)
-                    {
-                        dtm_fecha.Focus();
-                    }
-                }
-                else if (lbl_tipo_falta.Text == "F")
-                {
-                    DialogResult resul = MessageBox.Show("El empleado tiene Falta Injustificada dentro de esta fecha, ¿Desea eliminar esta falta?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult resul = MessageBox.Show("El empleado tiene una incidencia dentro de esta Fecha, ¿Desea eliminar la incidencia?", "¡Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resul == DialogResult.Yes)
                     {
                         Borra_falta();
@@ -346,20 +284,17 @@ namespace CsPresentacion
                 }
                 else
                 {
+                    Inserta_incapacidades();
+                    Mostrar_Grid();
+                    dtm_fecha.Text = "";
+                    txt_duracion.Text = "";
+                    dtm_termina.Text = "";
+                    txt_certificado.Text = "";
+                    cmb_caso.Text = "";
+                    cmb_tipo.Text = "";
+                    lbl_id.Text = "0";
+                    dtm_fecha.Focus();
                 }
-            }
-            else
-            {
-                Inserta_incapacidades();
-                Mostrar_Grid();
-                dtm_fecha.Text = "";
-                txt_duracion.Text = "";
-                dtm_termina.Text = "";
-                txt_certificado.Text = "";
-                cmb_caso.Text = "";
-                cmb_tipo.Text = "";
-                lbl_id.Text = "0";
-                dtm_fecha.Focus();
             }
         }
         private void Inserta_incapacidades()//Inserta incapacidades.
@@ -385,6 +320,13 @@ namespace CsPresentacion
                 DataTable dt = new DataTable();
                 con.Close();
                 adapter.Fill(dt);
+                btn_guardar.Enabled = false;
+                btn_cancelar.Enabled = false;
+                dtm_fecha.Enabled = false;
+                txt_duracion.Enabled = false;
+                txt_certificado.Enabled = false;
+                cmb_tipo.Enabled = false;
+                cmb_caso.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -441,6 +383,7 @@ namespace CsPresentacion
                 DataTable dt = new DataTable();
                 con.Close();
                 adapter.Fill(dt);
+                Mostrar_Grid_Faltas();
             }
             catch (Exception ex)
             {
@@ -553,6 +496,13 @@ namespace CsPresentacion
                 DataTable dt = new DataTable();
                 con.Close();
                 adapter.Fill(dt);
+                btn_guardar.Enabled = false;
+                btn_cancelar.Enabled = false;
+                dtm_fecha.Enabled = false;
+                txt_duracion.Enabled = false;
+                txt_certificado.Enabled = false;
+                cmb_tipo.Enabled = false;
+                cmb_caso.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -638,13 +588,14 @@ namespace CsPresentacion
             }
         }
         
-        //Botones
+        //Botones Módulo de incapacidades
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
             nuevo();
             Mostrar_Grid();
+            Mostrar_Grid_Faltas();
         }
-        private void Btn_primero_Click(object sender, EventArgs e)
+        private void Btn_primero_Click_1(object sender, EventArgs e)
         {
             dgv_incapacidades.CurrentCell = dgv_incapacidades.Rows[0].Cells[dgv_incapacidades.CurrentCell.ColumnIndex];
             btn_anterior.Enabled = false;
@@ -655,7 +606,7 @@ namespace CsPresentacion
             btn_cancelar.Enabled = false;
             dtm_fecha.Focus();
         }
-        private void Btn_anterior_Click(object sender, EventArgs e)
+        private void Btn_anterior_Click_1(object sender, EventArgs e)
         {
             int Anterior = indice - 1;
 
@@ -677,7 +628,7 @@ namespace CsPresentacion
                 dtm_fecha.Focus();
             }
         }
-        private void Btn_siguiente_Click(object sender, EventArgs e)
+        private void Btn_siguiente_Click_1(object sender, EventArgs e)
         {
             int Siguiente = indice + 1;
             try
@@ -699,7 +650,7 @@ namespace CsPresentacion
                 dtm_fecha.Focus();
             }
         }
-        private void Btn_ultimo_Click(object sender, EventArgs e)
+        private void Btn_ultimo_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -716,7 +667,7 @@ namespace CsPresentacion
             {
             }
         }
-        private void Btn_insertar_Click(object sender, EventArgs e)
+        private void Btn_insertar_Click_1(object sender, EventArgs e)
         {
             dtm_fecha.Text = "";
             dtm_termina.Text = "";
@@ -729,7 +680,6 @@ namespace CsPresentacion
             lbl_id.Text = "0";
             btn_guardar.Enabled = true;
             btn_cancelar.Enabled = true;
-            lbl_tipo_falta.Visible = false;
             dtm_fecha.Enabled = true;
             txt_duracion.Enabled = true;
             txt_certificado.Enabled = true;
@@ -737,7 +687,7 @@ namespace CsPresentacion
             cmb_tipo.Enabled = true;
             dtm_fecha.Focus();
         }
-        private void Btn_eliminar_Click(object sender, EventArgs e)
+        private void Btn_eliminar_Click_1(object sender, EventArgs e)
         {
             Elimina_incapacidades();
             Mostrar_Grid();
@@ -750,11 +700,18 @@ namespace CsPresentacion
             cmb_caso.Text = "";
             lbl_inc_caso.Text = "";
             lbl_inc_tipo.Text = "";
-            btn_eliminar.Enabled = false;
             lbl_id.Text = "0";
+            btn_eliminar.Enabled = false;
+            btn_guardar.Enabled = false;
+            btn_cancelar.Enabled = false;
+            dtm_fecha.Enabled = false;
+            txt_duracion.Enabled = false;
+            txt_certificado.Enabled = false;
+            cmb_tipo.Enabled = false;
+            cmb_caso.Enabled = false;
             dtm_fecha.Focus();
         }
-        private void Btn_guardar_Click(object sender, EventArgs e)
+        private void Btn_guardar_Click_1(object sender, EventArgs e)
         {
             if (txt_duracion.Text == "")
             {
@@ -781,6 +738,7 @@ namespace CsPresentacion
                 if (lbl_id.Text == "0")
                 {
                     Verifica_certificado();
+                   
                 }
                 else
                 {
@@ -788,7 +746,7 @@ namespace CsPresentacion
                 }
             }
         }
-        private void Btn_cancelar_Click(object sender, EventArgs e)
+        private void Btn_cancelar_Click_1(object sender, EventArgs e)
         {
             dtm_fecha.Text = "";
             dtm_termina.Text = "";
@@ -803,14 +761,14 @@ namespace CsPresentacion
             lbl_id.Text = "0";
             dtm_fecha.Focus();
         }
-        private void Btn_exportar_Click(object sender, EventArgs e)
+        private void Btn_exportar_Click_1(object sender, EventArgs e)
         {
             Exportara_Exel();
             dtm_fecha.Focus();
         }
+   
 
-
-        //Eventos
+        //Eventos Módulo de incapacidades
         private void Txt_clave_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar)) { e.Handled = false; }
@@ -822,12 +780,16 @@ namespace CsPresentacion
             {
                 cargar_informacion();
                 Mostrar_Grid();
+                Mostrar_Grid_Faltas();
                 txt_nombre.Enabled = false;
                 btn_exportar.Enabled = true;
+                btn_f_exportar.Enabled = true;
                 btn_siguiente.Enabled = true;
                 btn_ultimo.Enabled = true;
+                btn_f_siguiente.Enabled = true;
+                btn_f_ultimo.Enabled = true;
                 pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
-                dtm_fecha.Focus();
+                dtm_f_fecha.Focus();
             }
         }
         private void Lbl_estado_TextChanged(object sender, EventArgs e)
@@ -836,6 +798,7 @@ namespace CsPresentacion
             {
                 lbl_estado.ForeColor = Color.Black;
                 btn_insertar.Enabled = true;
+                btn_f_insertar.Enabled = true;
             }
             else
             {
@@ -843,6 +806,10 @@ namespace CsPresentacion
                 btn_insertar.Enabled = false;
                 btn_guardar.Enabled = false;
                 btn_cancelar.Enabled = false;
+                btn_f_insertar.Enabled = false;
+                btn_f_guardar.Enabled = false;
+                btn_f_cancelar.Enabled = false;
+                btn_f_eliminar.Enabled = false;
             }
         }
         private void Panel1_Paint(object sender, PaintEventArgs e)
@@ -852,14 +819,26 @@ namespace CsPresentacion
         {          
         }
         private void Txt_nombre_Leave(object sender, EventArgs e)
-        {   
+        {
+            cargar_clave();
+            Mostrar_Grid();
+            Mostrar_Grid_Faltas();
+            btn_exportar.Enabled = true;
+            btn_f_exportar.Enabled = true;
+            btn_siguiente.Enabled = true;
+            btn_ultimo.Enabled = true;
+            btn_f_siguiente.Enabled = true;
+            btn_f_ultimo.Enabled = true;
+            btn_f_insertar.Focus();
+            pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
+            txt_nombre.Enabled = false;
+            dtm_f_fecha.Focus();
         }
-
-        private void Dtm_fecha_ValueChanged(object sender, EventArgs e)
+        private void Dtm_fecha_ValueChanged_1(object sender, EventArgs e)
         {
             dtm_aplicacion.Text = dtm_fecha.Text;
         }
-        private void Txt_certificado_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txt_certificado_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar)) { e.Handled = false; }
             else if (Char.IsControl(e.KeyChar))
@@ -868,18 +847,10 @@ namespace CsPresentacion
             { e.Handled = false; }
             else { e.Handled = true; }
         }
-        private void Txt_certificado_Leave(object sender, EventArgs e)
-        {
-            cargar_clave();
-            Mostrar_Grid();
-            btn_exportar.Enabled = true;
-            btn_siguiente.Enabled = true;
-            btn_ultimo.Enabled = true;
-            pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
-            txt_nombre.Enabled = false;
-            dtm_fecha.Focus();
+        private void Txt_certificado_Leave_1(object sender, EventArgs e)
+        {    
         }
-        private void Dgv_incapacidades_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void Dgv_incapacidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -893,8 +864,9 @@ namespace CsPresentacion
                 lbl_id.Text = row.Cells["ID"].Value.ToString();
                 dtm_fecha.Focus();
             }
+
         }
-        private void Dgv_incapacidades_RowEnter_1(object sender, DataGridViewCellEventArgs e)
+        private void Dgv_incapacidades_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -908,11 +880,11 @@ namespace CsPresentacion
                 lbl_id.Text = row.Cells["ID"].Value.ToString();
             }
         }
-        private void Dgv_incapacidades_CurrentCellChanged_1(object sender, EventArgs e)
+        private void Dgv_incapacidades_CurrentCellChanged(object sender, EventArgs e)
         {
             if (dgv_incapacidades.CurrentCell != null) { indice = dgv_incapacidades.CurrentRow.Index; }
         }
-        private void Dgv_incapacidades_DoubleClick_1(object sender, EventArgs e)
+        private void Dgv_incapacidades_DoubleClick(object sender, EventArgs e)
         {
             if (lbl_estado.Text == "VIGENTE")
             {
@@ -922,6 +894,11 @@ namespace CsPresentacion
                     btn_guardar.Enabled = true;
                     btn_eliminar.Enabled = true;
                     btn_cancelar.Enabled = true;
+                    dtm_fecha.Enabled = true;
+                    txt_duracion.Enabled = true;
+                    txt_certificado.Enabled = true;
+                    cmb_tipo.Enabled = true;
+                    cmb_caso.Enabled = true;
                     dtm_fecha.Focus();
                 }
                 if (resul == DialogResult.No)
@@ -929,6 +906,11 @@ namespace CsPresentacion
                     btn_guardar.Enabled = false;
                     btn_eliminar.Enabled = false;
                     btn_cancelar.Enabled = false;
+                    dtm_fecha.Enabled = false;
+                    txt_duracion.Enabled = false;
+                    txt_certificado.Enabled = false;
+                    cmb_tipo.Enabled = false;
+                    cmb_caso.Enabled = false;
                     dtm_fecha.Focus();
                 }
             }
@@ -936,13 +918,13 @@ namespace CsPresentacion
             {
             }
         }
-        private void Txt_duracion_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txt_duracion_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar)) { e.Handled = false; }
             else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
             else { e.Handled = true; }
         }
-        private void Txt_duracion_Leave(object sender, EventArgs e)
+        private void Txt_duracion_Leave_1(object sender, EventArgs e)
         {
             try
             {
@@ -955,15 +937,15 @@ namespace CsPresentacion
             {
             }
         }
-        private void Cmb_tipo_KeyPress(object sender, KeyPressEventArgs e)
+        private void Cmb_tipo_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-        private void Cmb_caso_KeyPress(object sender, KeyPressEventArgs e)
+        private void Cmb_caso_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-        private void Cmb_tipo_TextChanged(object sender, EventArgs e)
+        private void Cmb_tipo_TextChanged_1(object sender, EventArgs e)
         {
             if (cmb_tipo.Text == "Enfermermedad General")
             {
@@ -1003,7 +985,7 @@ namespace CsPresentacion
                 cmb_caso.Enabled = true;
             }
         }
-        private void Cmb_caso_TextChanged(object sender, EventArgs e)
+        private void Cmb_caso_TextChanged_1(object sender, EventArgs e)
         {
             if (cmb_caso.Text == "Unica") { lbl_inc_caso.Text = "U"; }
             else if (cmb_caso.Text == "Inicial") { lbl_inc_caso.Text = "I"; }
@@ -1014,5 +996,584 @@ namespace CsPresentacion
         }
 
 
+//Módulo de Faltas
+
+        //Botones Módulo de faltas
+        private void Btn_f_insertar_Click(object sender, EventArgs e)
+        {
+            dtm_f_fecha.Text = "";
+            dtm_f_fecha.Enabled = true;
+            dtm_f_fecha.Focus();
+            txt_f_duracion.Text = "";
+            dtm_f_termina.Text = "";
+            dtm_f_aplicacion.Text = "";
+            cmb_f_tipo.Text = "";
+            cmb_f_tipo.Enabled = true;
+            btn_f_guardar.Enabled = true;
+            btn_f_cancelar.Enabled = true;
+            btn_f_eliminar.Enabled = false;
+            txt_f_duracion.Enabled = true;
+            lbl_f_id.Text = "0";
+            txt_f_tipo.Text = "";
+            txt_f_tipo.Enabled = true;  
+        }
+        private void Btn_f_cancelar_Click(object sender, EventArgs e)
+        {
+            dtm_f_fecha.Text = "";
+            txt_f_duracion.Text = "";
+            dtm_f_termina.Text = "";
+            dtm_f_aplicacion.Text = "";
+            cmb_f_tipo.Text = "";
+            lbl_f_id.Text = "0";
+            txt_f_tipo.Text = "";
+            dtm_f_fecha.Focus();
+        }
+        private void Btn_f_primero_Click(object sender, EventArgs e)
+        {
+            dgv_faltas.CurrentCell = dgv_faltas.Rows[0].Cells[dgv_faltas.CurrentCell.ColumnIndex];
+            btn_f_anterior.Enabled = false;
+            btn_f_primero.Enabled = false;
+            btn_f_siguiente.Enabled = true;
+            btn_f_ultimo.Enabled = true;
+            btn_f_guardar.Enabled = false;
+            btn_f_cancelar.Enabled = false;
+            dtm_f_fecha.Focus();
+        }
+        private void Btn_f_anterior_Click(object sender, EventArgs e)
+        {
+            int Anterior = indicef - 1;
+
+            try
+            {
+                dgv_faltas.CurrentCell = dgv_faltas.Rows[Anterior].Cells[dgv_faltas.CurrentCell.ColumnIndex];
+                btn_f_siguiente.Enabled = true;
+                btn_f_ultimo.Enabled = true;
+                btn_f_guardar.Enabled = false;
+                btn_f_cancelar.Enabled = false;
+                dtm_f_fecha.Focus();
+            }
+            catch
+            {
+                btn_f_anterior.Enabled = false;
+                btn_f_primero.Enabled = false;
+                btn_f_guardar.Enabled = false;
+                btn_f_cancelar.Enabled = false;
+                dtm_f_fecha.Focus();
+            }
+        }
+        private void Btn_f_siguiente_Click(object sender, EventArgs e)
+        {
+            int Siguiente = indicef + 1;
+            try
+            {
+                dgv_faltas.CurrentCell = dgv_faltas.Rows[Siguiente].Cells[dgv_faltas.CurrentCell.ColumnIndex];
+                btn_f_anterior.Enabled = true;
+                btn_f_primero.Enabled = true;
+                btn_f_guardar.Enabled = false;
+                btn_f_cancelar.Enabled = false;
+                dtm_f_fecha.Focus();
+            }
+            catch
+            {
+                btn_f_siguiente.Enabled = false;
+                btn_f_ultimo.Enabled = false;
+                btn_f_guardar.Enabled = false;
+                btn_f_cancelar.Enabled = false;
+                MessageBox.Show("Llegó al final!", "Aviso");
+                dtm_f_fecha.Focus();
+            }
+        }
+        private void Btn_f_ultimo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgv_faltas.CurrentCell = dgv_faltas.Rows[50].Cells[dgv_faltas.CurrentCell.ColumnIndex];
+                btn_f_siguiente.Enabled = false;
+                btn_f_ultimo.Enabled = false;
+                btn_f_anterior.Enabled = true;
+                btn_f_primero.Enabled = true;
+                btn_f_guardar.Enabled = false;
+                btn_f_cancelar.Enabled = false;
+                dtm_f_fecha.Focus();
+            }
+            catch
+            {
+            }
+        }
+        private void Btn_f_guardar_Click(object sender, EventArgs e)
+        {
+            if (txt_f_duracion.Text == "")
+            {
+                MessageBox.Show("Es necesario seleccionar la Duración de la Falta.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_f_duracion.Focus();
+            }
+            else if (txt_f_tipo.Text == "")
+            {
+                MessageBox.Show("Es necesario seleccionar Tipo de Falta.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_f_tipo.Focus();
+            }
+            else
+            {
+                if (lbl_f_id.Text == "0")
+                {
+                    Verifica_exitencia_Falta();
+                }
+                else
+                {
+                    Actualiza_Falta();
+                    Mostrar_Grid_Faltas();
+                }
+            }
+        }
+        private void Btn_f_eliminar_Click(object sender, EventArgs e)
+        {
+            Elimina_Faltas();
+            Mostrar_Grid_Faltas();
+        }
+        //Métodos 
+        private void Verifica_exitencia_Falta()//Verifica si hay una falta
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "[dbo].[SP_Captura_Faltas]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "4";
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@FECHA", SqlDbType.VarChar, 100).Value = dtm_f_fecha.Text;
+            da.SelectCommand.Parameters.Add("@FECHA_FINAL", SqlDbType.VarChar, 100).Value = dtm_f_termina.Text;
+            da.SelectCommand.Parameters.Add("@TIPO", SqlDbType.VarChar, 100).Value = txt_f_tipo.Text;
+            da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_f_duracion.Text;
+            da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+            da.SelectCommand.Parameters.Add("@ID", SqlDbType.VarChar, 100).Value = lbl_f_id.Text;
+
+            da.Fill(dt);
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+            {              
+             MessageBox.Show("Ya hay una Incidencia dentro de esta fecha, Favor de verificar.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_f_fecha.Focus();
+            }
+            else
+            {
+                Verifica_exitencia_Vacaciones();
+            }
+        }
+        private void Verifica_exitencia_Vacaciones()//Verifica si hay vacaciones
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "[dbo].[SP_Captura_Faltas]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "5";
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@FECHA", SqlDbType.VarChar, 100).Value = dtm_f_fecha.Text;
+            da.SelectCommand.Parameters.Add("@FECHA_FINAL", SqlDbType.VarChar, 100).Value = dtm_f_termina.Text;
+            da.SelectCommand.Parameters.Add("@TIPO", SqlDbType.VarChar, 100).Value = txt_f_tipo.Text;
+            da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_f_duracion.Text;
+            da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+            da.SelectCommand.Parameters.Add("@ID", SqlDbType.VarChar, 100).Value = lbl_f_id.Text;
+
+            da.Fill(dt);
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("El empleado tiene Vacaciones dentro de esta Fecha, Favor de verificar", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_f_fecha.Focus();
+            }
+            else
+            {
+                Verifica_exitencia_incapacidades();
+            }
+        }
+        private void Verifica_exitencia_incapacidades()//Verifica si hay incapacidades
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "[dbo].[SP_Captura_Faltas]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "6";
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@FECHA", SqlDbType.VarChar, 100).Value = dtm_f_fecha.Text;
+            da.SelectCommand.Parameters.Add("@FECHA_FINAL", SqlDbType.VarChar, 100).Value = dtm_f_termina.Text;
+            da.SelectCommand.Parameters.Add("@TIPO", SqlDbType.VarChar, 100).Value = txt_f_tipo.Text;
+            da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_f_duracion.Text;
+            da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+            da.SelectCommand.Parameters.Add("@ID", SqlDbType.VarChar, 100).Value = lbl_f_id.Text;
+
+            da.Fill(dt);
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("El empleado tiene Incapacidad dentro de esta Fecha, Favor de verificar.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_f_fecha.Focus();
+            }
+            else
+            {
+                Inserta_Faltas();
+                Mostrar_Grid_Faltas();
+            }
+        }
+        private void Mostrar_Grid_Faltas()//Mostrar grid faltas.
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[SP_Captura_Faltas]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "1");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_f_fecha.Text);
+                cmd.Parameters.AddWithValue("@FECHA_FINAL", dtm_f_termina.Text);
+                cmd.Parameters.AddWithValue("@TIPO", txt_f_tipo.Text);
+                cmd.Parameters.AddWithValue("@DURACION", txt_f_duracion.Text);
+                cmd.Parameters.AddWithValue("@USUARIO", claseEmp.IdEmpleado);
+                cmd.Parameters.AddWithValue("@ID", lbl_f_id.Text);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                con.Close();
+                adapter.Fill(dt);
+                dgv_faltas.DataSource = dt;
+                Diseño_Grid_Faltas(dgv_faltas);
+                dgv_faltas.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+                dgv_faltas.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void Diseño_Grid_Faltas(DataGridView dgv)
+        {
+            dgv.Columns[0].Width = 60;//Clave
+            dgv.Columns[1].Width = 80;//Inicio
+            dgv.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[2].Width = 80;//Termino
+            dgv.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[3].Width = 70;//Duración
+            dgv.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[4].Width = 40;//id
+            dgv.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[5].Width = 160;//tipo
+            dgv.Columns[6].Width = 80;//Aplicación
+            dgv.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[7].Width = 190;//Espacio
+        }
+        private void Inserta_Faltas()//Inserta faltas.
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[SP_Captura_Faltas]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "2");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_f_fecha.Text);
+                cmd.Parameters.AddWithValue("@FECHA_FINAL", dtm_f_termina.Text);
+                cmd.Parameters.AddWithValue("@TIPO", txt_f_tipo.Text);
+                cmd.Parameters.AddWithValue("@DURACION", txt_f_duracion.Text);
+                cmd.Parameters.AddWithValue("@USUARIO", claseEmp.IdEmpleado);
+                cmd.Parameters.AddWithValue("@ID", lbl_f_id.Text);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                con.Close();
+                adapter.Fill(dt);
+                btn_f_guardar.Enabled = false;
+                btn_f_cancelar.Enabled = false;
+                dtm_f_fecha.Enabled = false; ;
+                txt_f_duracion.Enabled = false;
+                cmb_f_tipo.Enabled = false;
+                txt_f_tipo.Enabled = false;
+                btn_f_insertar.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void Elimina_Faltas()//Elimina faltas.
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[SP_Captura_Faltas]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "3");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_f_fecha.Text);
+                cmd.Parameters.AddWithValue("@FECHA_FINAL", dtm_f_termina.Text);
+                cmd.Parameters.AddWithValue("@TIPO", txt_f_tipo.Text);
+                cmd.Parameters.AddWithValue("@DURACION", txt_f_duracion.Text);
+                cmd.Parameters.AddWithValue("@USUARIO", claseEmp.IdEmpleado);
+                cmd.Parameters.AddWithValue("@ID", lbl_f_id.Text);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                con.Close();
+                adapter.Fill(dt);
+                btn_f_guardar.Enabled = false;
+                btn_f_cancelar.Enabled = false;
+                dtm_f_fecha.Enabled = false; ;
+                txt_f_duracion.Enabled = false;
+                cmb_f_tipo.Enabled = false;
+                txt_f_tipo.Enabled = false;
+                btn_f_eliminar.Enabled = false;
+                dtm_f_fecha.Text = "";
+                txt_f_duracion.Text = "";
+                txt_f_tipo.Text = "";
+                cmb_f_tipo.Text = "";
+                btn_f_insertar.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void Actualiza_Falta()//Elimina faltas.
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[SP_Captura_Faltas]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "7");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@FECHA", dtm_f_fecha.Text);
+                cmd.Parameters.AddWithValue("@FECHA_FINAL", dtm_f_termina.Text);
+                cmd.Parameters.AddWithValue("@TIPO", txt_f_tipo.Text);
+                cmd.Parameters.AddWithValue("@DURACION", txt_f_duracion.Text);
+                cmd.Parameters.AddWithValue("@USUARIO", claseEmp.IdEmpleado);
+                cmd.Parameters.AddWithValue("@ID", lbl_f_id.Text);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                con.Close();
+                adapter.Fill(dt);
+                btn_f_guardar.Enabled = false;
+                btn_f_cancelar.Enabled = false;
+                dtm_f_fecha.Enabled = false; ;
+                txt_f_duracion.Enabled = false;
+                cmb_f_tipo.Enabled = false;
+                txt_f_tipo.Enabled = false;
+                btn_f_eliminar.Enabled = false;
+                dtm_f_fecha.Text = "";
+                txt_f_duracion.Text = "";
+                txt_f_tipo.Text = "";
+                cmb_f_tipo.Text = "";
+                btn_f_insertar.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        //Eventos módulo de faltas
+        private void Dtm_f_inicia_ValueChanged(object sender, EventArgs e)
+        {
+            dtm_f_aplicacion.Text = dtm_f_fecha.Text;
+        }
+        private void Txt_f_duracion_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime Inicia = dtm_f_fecha.Value.Date;
+                int dias = Int32.Parse(txt_f_duracion.Text);
+                DateTime Final = Inicia.AddDays(dias - 1);
+                dtm_f_termina.Text = Final.ToString();
+            }
+            catch
+            {
+            }
+        }
+        private void Dgv_faltas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_faltas.Rows[e.RowIndex];
+                dtm_f_fecha.Text = row.Cells["INICIA"].Value.ToString();
+                dtm_f_termina.Text = row.Cells["TERMINA"].Value.ToString();
+                txt_f_duracion.Text = row.Cells["DURACION"].Value.ToString();
+                lbl_f_id.Text = row.Cells["ID"].Value.ToString();
+                cmb_f_tipo.Text = row.Cells["TIPO"].Value.ToString();
+                dtm_f_fecha.Focus();
+            }
+        }
+        private void Dgv_faltas_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (dgv_faltas.CurrentCell != null) { indicef = dgv_faltas.CurrentRow.Index; }
+        }
+        private void Dgv_faltas_DoubleClick(object sender, EventArgs e)
+        {
+            if (lbl_estado.Text == "VIGENTE")
+            {
+                DialogResult resul = MessageBox.Show("¿Desea modificar el Registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resul == DialogResult.Yes)
+                {
+                    btn_f_guardar.Enabled = true;
+                    btn_f_eliminar.Enabled = true;
+                    btn_f_cancelar.Enabled = true;
+                    dtm_f_fecha.Enabled = true;
+                    txt_f_duracion.Enabled = true;
+                    cmb_f_tipo.Enabled = true;
+                    txt_f_tipo.Enabled = true;
+                    dtm_fecha.Focus();
+                }
+                if (resul == DialogResult.No)
+                {
+                    btn_f_guardar.Enabled = false;
+                    btn_f_eliminar.Enabled = false;
+                    btn_f_cancelar.Enabled = false;
+                    dtm_f_fecha.Enabled = false;
+                    txt_f_duracion.Enabled = false;
+                    cmb_f_tipo.Enabled = false;
+                    txt_f_tipo.Enabled = false;
+                    btn_f_insertar.Focus();
+                }
+            }
+            else
+            {
+            }
+        }
+        private void Dgv_faltas_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_faltas.Rows[e.RowIndex];
+                dtm_f_fecha.Text = row.Cells["INICIA"].Value.ToString();
+                dtm_f_termina.Text = row.Cells["TERMINA"].Value.ToString();
+                txt_f_duracion.Text = row.Cells["DURACION"].Value.ToString();
+                lbl_f_id.Text = row.Cells["ID"].Value.ToString();
+                cmb_f_tipo.Text = row.Cells["TIPO"].Value.ToString();
+                dtm_f_fecha.Focus();
+            }
+        }
+        private void Txt_f_duracion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) { e.Handled = false; }
+            else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
+            else if (Char.IsSeparator(e.KeyChar)) { e.Handled = false; }
+            else { e.Handled = true; }
+        }
+        private void Exportara_f_Excel()// Método para exportar a excel, múdulo incapacidades.
+        {
+            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            try
+            {
+                worksheet = workbook.ActiveSheet;
+                worksheet.Name = "Libro1";
+                int cellRowIndex = 2;//ok
+                int cellColumnIndex = 1;//ok
+                //Pasa por cada fila y lee el valor de cada columna.
+                for (int i = -1; i < dgv_faltas.Rows.Count - 0; i++)//Primera y ultima fila
+                {
+                    for (int j = 0; j < dgv_faltas.Columns.Count - 0; j++)//Columnas lado izquierdo y derecho
+                    {
+                        // El índice de Excel comienza desde 1,1. Como first Row tendría los encabezados de Columna, agregando una verificación de condición.
+                        if (cellRowIndex == 2)
+                        {
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgv_faltas.Columns[j].HeaderText;
+                        }
+                        else
+                        {
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgv_faltas.Rows[i].Cells[j].Value.ToString();
+                        }
+                        cellColumnIndex++;
+                    }
+                    cellColumnIndex = 1;//ok
+                    cellRowIndex++;
+                }
+                excel.Visible = true;
+            }
+            catch (Exception error)
+            {
+                //MessageBox.Show("No se exportó correctamente" + error.Message);
+            }
+        }
+        private void Btn_f_exportar_Click(object sender, EventArgs e)
+        {
+            Exportara_f_Excel();
+            dtm_f_fecha.Focus();
+        }
+        private void Cmb_f_tipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cmb_f_tipo.Text)
+            {
+                case "ABANDONO DE TRABAJO": txt_f_tipo.Text = "A"; break;
+                case "PRESTACION POR MATRIMONIO": txt_f_tipo.Text = "B"; break;
+                case "CITA IMSS": txt_f_tipo.Text = "C";  break;
+                case "ENFERMEDAD": txt_f_tipo.Text = "E"; break;
+                case "FALTA INJUSTIFICADA": txt_f_tipo.Text = "F"; break;
+                case "PERMISO CON GOCE": txt_f_tipo.Text = "G"; break;
+                case "ENFERMEDAD LEVE": txt_f_tipo.Text = "L"; break;
+                case "ENFERMEDAD MODERADA": txt_f_tipo.Text = "M"; break;
+                case "SUSPENSION": txt_f_tipo.Text = "N"; break;
+                case "PERMISO SIN GOCE": txt_f_tipo.Text = "P"; break;
+                case "FAMILIAR": txt_f_tipo.Text = "R";   break;
+                case "ASUNTOS PERSONALES": txt_f_tipo.Text = "S"; break;
+                case "TRANSPORTE": txt_f_tipo.Text = "T"; break;
+                case "FALTA JUSTIFICADA": txt_f_tipo.Text = "U"; break;
+                case "VIAJE": txt_f_tipo.Text = "V"; break;
+            }
+        }
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 'A' || e.KeyChar == 'a' || e.KeyChar == 'B' || e.KeyChar == 'b' || e.KeyChar == 'C' || e.KeyChar == 'c' || e.KeyChar == 'E' || e.KeyChar == 'e' || e.KeyChar == 'F' || e.KeyChar == 'f' || e.KeyChar == 'G' || e.KeyChar == 'g' || e.KeyChar == 'L' || e.KeyChar == 'l' || e.KeyChar == 'M' || e.KeyChar == 'm' || e.KeyChar == 'N' || e.KeyChar == 'n' || e.KeyChar == 'P' || e.KeyChar == 'p' || e.KeyChar == 'R' || e.KeyChar == 'r' || e.KeyChar == 'S' || e.KeyChar == 's' || e.KeyChar == 'T' || e.KeyChar == 't' || e.KeyChar == 'U' || e.KeyChar == 'u' || e.KeyChar == 'V' || e.KeyChar == 'v')
+                e.Handled = false;
+            else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
+            else
+                e.Handled = true;
+        }
+        private void Txt_f_tipo_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_f_tipo.Text == "")
+            {
+                cmb_f_tipo.Text = "";
+            }
+            else
+            {
+                switch (txt_f_tipo.Text)
+                {
+                    case "A": cmb_f_tipo.Text = "ABANDONO DE TRABAJO"; break;
+                    case "B": cmb_f_tipo.Text = "PRESTACION POR MATRIMONIO"; break;
+                    case "C": cmb_f_tipo.Text = "CITA IMSS"; break;
+                    case "E": cmb_f_tipo.Text = "ENFERMEDAD"; break;
+                    case "F": cmb_f_tipo.Text = "FALTA INJUSTIFICADA"; break;
+                    case "G": cmb_f_tipo.Text = "PERMISO CON GOCE"; break;
+                    case "L": cmb_f_tipo.Text = "ENFERMEDAD LEVE"; break;
+                    case "M": cmb_f_tipo.Text = "ENFERMEDAD MODERADA"; break;
+                    case "N": cmb_f_tipo.Text = "SUSPENSION"; break;
+                    case "P": cmb_f_tipo.Text = "PERMISO SIN GOCE"; break;
+                    case "R": cmb_f_tipo.Text = "FAMILIAR"; break;
+                    case "S": cmb_f_tipo.Text = "ASUNTOS PERSONALES"; break;
+                    case "T": cmb_f_tipo.Text = "TRANSPORTE"; break;
+                    case "U": cmb_f_tipo.Text = "FALTA JUSTIFICADA"; break;
+                    case "V": cmb_f_tipo.Text = "VIAJE"; break;
+                }
+            }
+        }
+        private void Cmb_f_tipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
+            else { e.Handled = true; }
+        }
     }  
 }
