@@ -230,7 +230,7 @@ Public Class DCompras
         Dim lstComp As New LCompras()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("Sp_muestraprovisionescomprasvalidadas", oCon)
+            Dim query As New SqlCommand("Sp_muestraprovisionescomprasvalidadasPruebas", oCon)
             query.Parameters.AddWithValue("@inicio", fi)
             query.Parameters.AddWithValue("@fin", ff)
             query.CommandType = CommandType.StoredProcedure
@@ -267,7 +267,7 @@ Public Class DCompras
                 comp.Val3 = Convert.ToInt32(dr("Val3").ToString)
                 comp.Val4 = Convert.ToInt32(dr("Val4").ToString)
                 comp.Ruta = dr("Ruta").ToString
-                comp.FechaProv = Convert.ToDateTime(dr("FDP").ToString)
+                comp.FechaPagoReal = Convert.ToDateTime(dr("FDP").ToString)
                 comp.IdOrdenCompra = Convert.ToInt32(dr("o").ToString)
                 comp.Serie = dr("Serie").ToString
                 comp.UUID = dr("idfact").ToString
