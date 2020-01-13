@@ -233,7 +233,7 @@ namespace CsPresentacion
             }
             else
             {
-                Verifica_Falta();
+              Verifica_Falta();
             }
         }
         private void Verifica_Falta()//Verifica si hay una falta
@@ -282,19 +282,19 @@ namespace CsPresentacion
                         dtm_fecha.Focus();
                     }
                 }
-                else
-                {
-                    Inserta_incapacidades();
-                    Mostrar_Grid();
-                    dtm_fecha.Text = "";
-                    txt_duracion.Text = "";
-                    dtm_termina.Text = "";
-                    txt_certificado.Text = "";
-                    cmb_caso.Text = "";
-                    cmb_tipo.Text = "";
-                    lbl_id.Text = "0";
-                    dtm_fecha.Focus();
-                }
+            }
+            else
+            {
+                Inserta_incapacidades();
+                Mostrar_Grid();
+                dtm_fecha.Text = "";
+                txt_duracion.Text = "";
+                dtm_termina.Text = "";
+                txt_certificado.Text = "";
+                cmb_caso.Text = "";
+                cmb_tipo.Text = "";
+                lbl_id.Text = "0";
+                dtm_fecha.Focus();
             }
         }
         private void Inserta_incapacidades()//Inserta incapacidades.
@@ -503,6 +503,14 @@ namespace CsPresentacion
                 txt_certificado.Enabled = false;
                 cmb_tipo.Enabled = false;
                 cmb_caso.Enabled = false;
+                dtm_fecha.Text = "";
+                txt_duracion.Text = "";
+                dtm_termina.Text = "";
+                txt_certificado.Text = "";
+                cmb_caso.Text = "";
+                cmb_tipo.Text = "";
+                lbl_id.Text = "0";
+                btn_insertar.Focus();
             }
             catch (Exception ex)
             {
@@ -737,12 +745,13 @@ namespace CsPresentacion
             {
                 if (lbl_id.Text == "0")
                 {
-                    Verifica_certificado();
-                   
+                    Verifica_certificado();      
                 }
                 else
                 {
+
                     Modifica_incapacidades();
+                    Mostrar_Grid();
                 }
             }
         }
