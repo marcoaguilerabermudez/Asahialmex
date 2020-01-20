@@ -39,11 +39,24 @@ namespace CsPresentacion
             tt.SetToolTip(btn_f_guardar, "Guardar");
             tt.SetToolTip(btn_f_cancelar, "Cancelar");
             tt.SetToolTip(btn_f_exportar, "Exportar");
+
+            tt.SetToolTip(btn_v_primero, "Primero [Inicio]");
+            tt.SetToolTip(btn_v_anterior, "Anterior [Re. Pág.]");
+            tt.SetToolTip(btn_v_siguiente, "Siguiente [Av. Pág.]");
+            tt.SetToolTip(btn_v_ultimo, "Último [Fin]");
+            tt.SetToolTip(btn_v_insertar, "Insertar");
+            tt.SetToolTip(btn_v_eliminar, "Eliminar");
+            tt.SetToolTip(btn_v_guardar, "Guardar");
+            tt.SetToolTip(btn_v_cancelar, "Cancelar");
+            tt.SetToolTip(btn_v_exportar, "Exportar");
             claseEmp = classEmpleado;
         }
         
         int indice = 0;
         int indicef = 0;
+        double Duracion;
+        double Prima;
+        double Resultado;
         SqlCommand cmd;
         SqlDataReader dr;
         Empleado claseEmp;
@@ -115,6 +128,26 @@ namespace CsPresentacion
             cmb_f_tipo.Enabled = false;
             txt_f_tipo.Enabled = false;
             txt_clave.Focus();
+            //Módulo de vacaciones
+            txt_v_prima.Text = "";
+            dtm_v_inicia.Text = "";
+            dtm_v_termina.Text = "";
+            txt_v_antiguedad.Text = "";
+            txt_v_duracion.Text = "";
+            btn_v_primero.Enabled = false;
+            btn_v_siguiente.Enabled = false;
+            btn_v_anterior.Enabled = false;
+            btn_v_ultimo.Enabled = false;
+            btn_v_insertar.Enabled = false;
+            btn_v_eliminar.Enabled = false;
+            btn_v_guardar.Enabled = false;
+            btn_v_cancelar.Enabled = false;
+            btn_v_exportar.Enabled = false;
+            txt_v_prima.Enabled = false;
+            dtm_v_inicia.Enabled = false;
+            dtm_v_termina.Enabled = false;
+            txt_v_antiguedad.Enabled = false;
+            txt_v_duracion.Enabled = false;
         }
         private void cargar_informacion()
         {
@@ -132,6 +165,7 @@ namespace CsPresentacion
             {
                 txt_nombre.Text = dt.Rows[0]["NOMBRE_EMPLEADO"].ToString();
                 lbl_estado.Text = dt.Rows[0]["VIGENCIA"].ToString();
+                txt_v_antiguedad.Text = dt.Rows[0]["ANTIGUEDAD"].ToString();
             }
             con.Close();
         }
@@ -554,7 +588,8 @@ namespace CsPresentacion
                 //MessageBox.Show("No se exportó correctamente" + error.Message);
             }
         }
-        public void autocompletar_responsable(TextBox cajaTexto)
+
+        public void autocompletar_responsable(TextBox tex)
         {
             try
             {
@@ -563,7 +598,7 @@ namespace CsPresentacion
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    cajaTexto.AutoCompleteCustomSource.Add(dr["NOMBRE"].ToString());
+                    tex.AutoCompleteCustomSource.Add(dr["NOMBRE"].ToString());
                 }
                 dr.Close();
                 con.Close();
@@ -573,6 +608,7 @@ namespace CsPresentacion
                 MessageBox.Show("No se pudo autcompletar nombre " + error.ToString());
             }
         }
+
         private void cargar_clave()
         {
             try
@@ -602,6 +638,7 @@ namespace CsPresentacion
             nuevo();
             Mostrar_Grid();
             Mostrar_Grid_Faltas();
+            Mostrar_Grid_Vacaciones();
         }
         private void Btn_primero_Click_1(object sender, EventArgs e)
         {
@@ -790,6 +827,7 @@ namespace CsPresentacion
                 cargar_informacion();
                 Mostrar_Grid();
                 Mostrar_Grid_Faltas();
+                Mostrar_Grid_Vacaciones();
                 txt_nombre.Enabled = false;
                 btn_exportar.Enabled = true;
                 btn_f_exportar.Enabled = true;
@@ -797,6 +835,9 @@ namespace CsPresentacion
                 btn_ultimo.Enabled = true;
                 btn_f_siguiente.Enabled = true;
                 btn_f_ultimo.Enabled = true;
+                btn_v_exportar.Enabled = true;
+                btn_v_siguiente.Enabled = true;
+                btn_v_ultimo.Enabled = true;
                 pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
                 dtm_f_fecha.Focus();
             }
@@ -808,6 +849,7 @@ namespace CsPresentacion
                 lbl_estado.ForeColor = Color.Black;
                 btn_insertar.Enabled = true;
                 btn_f_insertar.Enabled = true;
+                btn_v_insertar.Enabled = true;
             }
             else
             {
@@ -819,6 +861,7 @@ namespace CsPresentacion
                 btn_f_guardar.Enabled = false;
                 btn_f_cancelar.Enabled = false;
                 btn_f_eliminar.Enabled = false;
+                btn_v_insertar.Enabled = false;
             }
         }
         private void Panel1_Paint(object sender, PaintEventArgs e)
@@ -832,6 +875,7 @@ namespace CsPresentacion
             cargar_clave();
             Mostrar_Grid();
             Mostrar_Grid_Faltas();
+            Mostrar_Grid_Vacaciones();
             btn_exportar.Enabled = true;
             btn_f_exportar.Enabled = true;
             btn_siguiente.Enabled = true;
@@ -839,6 +883,9 @@ namespace CsPresentacion
             btn_f_siguiente.Enabled = true;
             btn_f_ultimo.Enabled = true;
             btn_f_insertar.Focus();
+            btn_v_exportar.Enabled = true;
+            btn_v_siguiente.Enabled = true;
+            btn_v_ultimo.Enabled = true;
             pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
             txt_nombre.Enabled = false;
             dtm_f_fecha.Focus();
@@ -1583,6 +1630,213 @@ namespace CsPresentacion
         {
             if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
             else { e.Handled = true; }
+        }
+
+
+
+ //Botones módulo de vacaciones
+        private void Btn_v_insertar_Click(object sender, EventArgs e)
+        {
+            dtm_v_inicia.Text = "";
+            txt_v_duracion.Text = "";
+            dtm_v_termina.Text = "";
+            txt_v_prima.Text = "";
+            btn_v_guardar.Enabled = true;
+            dtm_v_inicia.Enabled = true;
+            txt_v_duracion.Enabled = true;
+            txt_v_prima.Enabled = true;
+            txt_v_duracion.Enabled = true;
+            txt_v_antiguedad.Enabled = true;
+            btn_v_cancelar.Enabled = true;
+            dtm_v_inicia.Focus();
+        }
+        private void Btn_v_cancelar_Click(object sender, EventArgs e)
+        {
+        }
+        private void Btn_v_exportar_Click(object sender, EventArgs e)
+        {
+            Exportara_v_Excel();
+        }
+
+ //Métodos módulo de vacaciones
+        private void Exportara_v_Excel()// Método para exportar a excel, múdulo vacaciones.
+        {
+            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            try
+            {
+                worksheet = workbook.ActiveSheet;
+                worksheet.Name = "Libro1";
+                int cellRowIndex = 2;//ok
+                int cellColumnIndex = 1;//ok
+                //Pasa por cada fila y lee el valor de cada columna.
+                for (int i = -1; i < dgv_vacaciones.Rows.Count - 0; i++)//Primera y ultima fila
+                {
+                    for (int j = 0; j < dgv_vacaciones.Columns.Count - 0; j++)//Columnas lado izquierdo y derecho
+                    {
+                        // El índice de Excel comienza desde 1,1. Como first Row tendría los encabezados de Columna, agregando una verificación de condición.
+                        if (cellRowIndex == 2)
+                        {
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgv_vacaciones.Columns[j].HeaderText;
+                        }
+                        else
+                        {
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dgv_vacaciones.Rows[i].Cells[j].Value.ToString();
+                        }
+                        cellColumnIndex++;
+                    }
+                    cellColumnIndex = 1;//ok
+                    cellRowIndex++;
+                }
+                excel.Visible = true;
+            }
+            catch (Exception error)
+            {
+                //MessageBox.Show("No se exportó correctamente" + error.Message);
+            }
+        }
+
+        //Métodos módulo de vacaciones
+        private void Mostrar_Grid_Vacaciones()//Mostrar grid de incapacidades.
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("[dbo].[Sp_Captura_Vacaciones]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@VAR", "1");
+                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+    
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                con.Close();
+                adapter.Fill(dt);
+                dgv_vacaciones.DataSource = dt;
+               Diseño_Grid_Vacaciones(dgv_vacaciones);
+                dgv_vacaciones.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+                dgv_vacaciones.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void Diseño_Grid_Vacaciones(DataGridView dgv)
+        {
+            dgv.Columns[0].Width = 60;//Clave
+            dgv.Columns[1].Width = 80;//Inicio
+            dgv.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[2].Width = 80;//Termino
+            dgv.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[3].Width = 70;//Duracion
+            dgv.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[4].Width = 50;//Prima
+            dgv.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[5].Width = 100;//Pagadas
+            dgv.Columns[6].Width = 100;//disfrutadas
+            dgv.Columns[7].Width = 220;//espacio
+            dgv.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+
+        //Eventos módulo de vacaciones
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+        private void Label3_Click(object sender, EventArgs e)
+        {
+        }
+        private void Label5_Click(object sender, EventArgs e)
+        {
+        }
+        private void Txt_duracion_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private void Dtm_termina_ValueChanged(object sender, EventArgs e)
+        {
+        }
+        private void Label7_Click(object sender, EventArgs e)
+        {
+        }
+        private void Label8_Click(object sender, EventArgs e)
+        {
+        }
+        private void Dtm_aplicacion_ValueChanged(object sender, EventArgs e)
+        {
+        }
+        private void Label9_Click(object sender, EventArgs e)
+        {
+        }
+        private void Cmb_caso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+        private void Label6_Click(object sender, EventArgs e)
+        {
+        }
+        private void Cmb_tipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+        private void Txt_certificado_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+        }
+        private void Label4_Click(object sender, EventArgs e)
+        {
+        }
+        private void Lbl_id_Click(object sender, EventArgs e)
+        {
+        }
+        private void Txt_v_duracion_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime Inicia = dtm_v_inicia.Value.Date;
+                int dias = Int32.Parse(txt_v_duracion.Text);
+                DateTime Final = Inicia.AddDays(dias - 1);
+                dtm_v_termina.Text = Final.ToString();
+
+                Duracion = double.Parse(txt_v_duracion.Text);
+                Prima = double.Parse("0.35");
+                Resultado = Duracion * Prima;
+                txt_v_prima.Text = Resultado.ToString();
+            }
+            catch
+            {
+            }
+        }
+        private void Txt_v_duracion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) { e.Handled = false; }
+            else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
+            else { e.Handled = true; }
+        }
+        private void Txt_v_prima_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void Txt_v_duracion_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_v_duracion.Text == "")
+            {
+                txt_v_prima.Text = "";
+            }
+        }
+        private void Txt_v_antiguedad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        private void TabPage2_Click(object sender, EventArgs e)
+        {
+            btn_v_insertar.Focus();
+        }
+
+        private void Btn_v_guardar_Click(object sender, EventArgs e)
+        {
         }
     }  
 }

@@ -113,6 +113,7 @@ namespace CsPresentacion
             Aviso_empleado = 0;
             rdb_nacional.Checked = true;
             txt_infonavit.Text = "";
+            txt_curp.Focus();
         }
         private void selecciona_sueldo()
         {
@@ -235,7 +236,7 @@ namespace CsPresentacion
                         }
                         else if (txt_estado.Text == "VIGENTE")
                         {
-                            MessageBox.Show("EMPLEADO SE ENCUENTRA VIGENTE", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            MessageBox.Show("EMPLEADO SE ENCUENTRA VIGENTE", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             btn_pp_siguiente.Enabled = false;
                             lbl_tipo_ingreso.Text = "VIGENTE";
                         }   
@@ -249,6 +250,7 @@ namespace CsPresentacion
                 {
                     MessageBox.Show("Empleado disponible para registro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     txt_estado.Text = "A";
+                    txt_paterno.Focus();
                     btn_pp_siguiente.Enabled = true;
                 }
             }
@@ -385,6 +387,7 @@ namespace CsPresentacion
             {
                 Panel_secundario.Visible = true;
                 Panel_principal.Visible = false;
+                txt_calle.Focus();
             }
         }
         private void Btn_ps_siguiente_Click(object sender, EventArgs e)
@@ -413,12 +416,14 @@ namespace CsPresentacion
             {
                 panel_final.Visible = true;
                 Panel_secundario.Visible = false;
+                cmb_escolaridad.Focus();
             }
         }
         private void Btn_ps_anterior_Click(object sender, EventArgs e)
         {
             Panel_secundario.Visible = false;
             Panel_principal.Visible = true;
+            cmb_puesto.Focus();
         }
         private void Btn_pf_anterior_Click(object sender, EventArgs e)
         {
@@ -483,6 +488,7 @@ namespace CsPresentacion
         {
             Panel_secundario.Visible = true;
             panel_final.Visible = false;
+            txt_lugar_nac.Focus();
         }
 
 //Eventos
@@ -493,12 +499,16 @@ namespace CsPresentacion
         {
             selecciona_sueldo();
 
-            if (cmb_puesto.Text == "DIRECTOR" || cmb_puesto.Text == "GERENTE" || cmb_puesto.Text == "COORDINADOR")
+            if (cmb_puesto.Text == "DIRECTOR" || cmb_puesto.Text == "GERENTE" || cmb_puesto.Text == "COORDINADOR" || cmb_puesto.Text == "PRESIDENTE")
             {
                 txt_SDO1.Enabled = true;
                 txt_SDO1.Text = "";
                 txt_SDO3.Text = "";
                 txt_SDO5.Text = "";
+            }
+            else if (cmb_puesto.Text == "ASISTENTE DE GERENTE" || cmb_puesto.Text == "SUPERVISOR" || cmb_puesto.Text == "SUPERVISOR ISO" || cmb_puesto.Text == "STAFF" || cmb_puesto.Text == "TRADUCTOR" || cmb_puesto.Text == "LIDER ADMON")
+            {
+                txt_SDO1.Enabled = true;
             }
             else
             {
@@ -507,11 +517,19 @@ namespace CsPresentacion
         }
         private void Cmb_departamento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else { e.Handled = true; }
         }
         private void Cmb_puesto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else { e.Handled = true;  }
         }
         private void Txt_Clave_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -615,27 +633,51 @@ namespace CsPresentacion
         }
         private void Cmb_estado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else { e.Handled = true; }
         }
         private void Cmb_Civil_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else { e.Handled = true; }
         }
         private void Cmb_genero_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else { e.Handled = true; }
         }
         private void Cmb_escolaridad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else { e.Handled = true; }
         }
         private void Cmb_relacion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else { e.Handled = true; }
         }
         private void Cmb_ruta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else { e.Handled = true; }
         }
         private void Txt_numero_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -908,16 +950,26 @@ namespace CsPresentacion
         }
         private void Cmb_estado_nacimiento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else { e.Handled = true; }
         }
         private void Cmb_turno_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else { e.Handled = true; }
         }
         private void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if (rdb_expatriado.Checked == true)
             {
+                rdb_nacional.Checked =false;
+                rdb_otro.Checked = false;
                 cmb_estado_nacimiento.Enabled = false;
                 Aviso_empleado = 1;
             }
@@ -926,6 +978,18 @@ namespace CsPresentacion
         {
             if (rdb_nacional.Checked == true)
             {
+                rdb_expatriado.Checked = false;
+                rdb_otro.Checked = false;
+                cmb_estado_nacimiento.Enabled = true;
+                Aviso_empleado = 0;
+            }
+        }
+        private void Rdb_otro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdb_otro.Checked == true)
+            {
+                rdb_nacional.Checked = false;
+                rdb_expatriado.Checked = false;
                 cmb_estado_nacimiento.Enabled = true;
                 Aviso_empleado = 0;
             }
@@ -1025,5 +1089,7 @@ namespace CsPresentacion
                 btn_comprueba.Enabled = true;
             }
         }
+
+    
     }
 }
