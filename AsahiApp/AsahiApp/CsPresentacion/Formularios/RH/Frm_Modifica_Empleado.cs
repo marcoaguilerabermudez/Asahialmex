@@ -48,14 +48,13 @@ namespace CsPresentacion
                 cmd.Parameters.AddWithValue("@VAR", "2");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@TURNO", cmb_turno.Text);
-                cmd.Parameters.AddWithValue("@FECHA", "22-08-2019");
+                cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_turno.Text);
                 cmd.Parameters.AddWithValue("@CAMBIO", lbl_cambio.Text);
                 cmd.Parameters.AddWithValue("@CATALOGO", lbl_Catalogo.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 con.Close();
-                MessageBox.Show("Turno modificado correctamente", "Aviso");
             }
             catch (Exception ex)
             {
@@ -79,7 +78,6 @@ namespace CsPresentacion
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 con.Close();
-                MessageBox.Show("Registro eliminado correctamente", "Aviso");
             }
             catch (Exception ex)
             {
@@ -96,7 +94,7 @@ namespace CsPresentacion
                 cmd.Parameters.AddWithValue("@VAR", "1");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@TURNO", cmb_turno.Text);
-                cmd.Parameters.AddWithValue("@FECHA", "16-08-2019");
+                cmd.Parameters.AddWithValue("@FECHA", dtm_fecha_turno.Text);
                 cmd.Parameters.AddWithValue("@CAMBIO", lbl_cambio.Text);
                 cmd.Parameters.AddWithValue("@CATALOGO", lbl_Catalogo.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -115,9 +113,11 @@ namespace CsPresentacion
         {
             dgv.Columns[0].Width = 55;//No. Empleado
             dgv.Columns[1].Width = 210;//Nombre empleado
-            dgv.Columns[2].Width = 120;//Departamento
-            dgv.Columns[3].Width = 100;//turno
-            dgv.Columns[4].Width = 100;//cambio turno
+            dgv.Columns[2].Width = 120;//turno
+            dgv.Columns[3].Width = 100;//cambio turno
+            dgv.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns[4].Width = 55;//espacio
         }
 
         private void Modifica_ruta()// Método para modificar ruta de empleado
@@ -134,7 +134,6 @@ namespace CsPresentacion
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 con.Close();
-                MessageBox.Show("Se modificó correctamente", "Aviso");
             }
             catch (Exception ex)
             {
@@ -168,7 +167,7 @@ namespace CsPresentacion
             dgv.Columns[0].Width = 55;//No. Empleado
             dgv.Columns[1].Width = 220;//Nombre empleado
             dgv.Columns[2].Width = 140;//Departamento
-            dgv.Columns[3].Width = 140;//Ruta
+            dgv.Columns[3].Width = 135;//Ruta
         }
 
         private void Modifica_depto()// Método para modificar departamento de empleado
@@ -186,7 +185,6 @@ namespace CsPresentacion
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 con.Close(); 
-                MessageBox.Show("Se modificó correctamente", "Aviso");
             }
             catch (Exception ex)
             {
@@ -208,7 +206,6 @@ namespace CsPresentacion
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 con.Close();
-                MessageBox.Show("Se Eliminó correctamente", "Aviso");
             }
             catch (Exception ex)
             {
@@ -245,7 +242,6 @@ namespace CsPresentacion
             dgv.Columns[2].Width = 150;//Departamento
             dgv.Columns[3].Width = 90;//Fecha_Mod
         }
-
         private void mostrar_dgv_puesto()// Método para llenar DatagridView de puesto
         {
             try
@@ -257,7 +253,7 @@ namespace CsPresentacion
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@PUESTO", cmb_puesto.Text);
                 cmd.Parameters.AddWithValue("@FECHA", dtm_puesto.Text);
-                cmd.Parameters.AddWithValue("@SD01", txt_SDO1.Text);
+                cmd.Parameters.AddWithValue("@SD01", txt_sueldo_departamento.Text);
                 cmd.Parameters.AddWithValue("@SD02", txt_SDO3.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -289,13 +285,12 @@ namespace CsPresentacion
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@PUESTO", lbl_id_puesto.Text);
                 cmd.Parameters.AddWithValue("@FECHA", dtm_puesto.Text);
-                cmd.Parameters.AddWithValue("@SD01", txt_SDO1.Text);
+                cmd.Parameters.AddWithValue("@SD01", txt_sueldo_departamento.Text);
                 cmd.Parameters.AddWithValue("@SD02", txt_SDO3.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 con.Close();
-                MessageBox.Show("Se modificó correctamente", "Aviso");
             }
             catch (Exception ex)
             {
@@ -313,20 +308,18 @@ namespace CsPresentacion
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@PUESTO", cmb_departamento.Text);
                 cmd.Parameters.AddWithValue("@FECHA", dtm_puesto.Text);
-                cmd.Parameters.AddWithValue("@SD01", txt_SDO1.Text);
+                cmd.Parameters.AddWithValue("@SD01", txt_sueldo_departamento.Text);
                 cmd.Parameters.AddWithValue("@SD02", txt_SDO3.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 con.Close();
-                MessageBox.Show("Se eliminó correctamente", "Aviso");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al eliminar, contacte al administrador");
             }
         }
-
         private void mostrar_dgv_sueldo()// Método para llenar DatagridView de sueldo
         {
             try
@@ -355,13 +348,12 @@ namespace CsPresentacion
         private void Diseño_dgv_sueldo(DataGridView dgv)
         {
             dgv.Columns[0].Width = 60;//No. Empleado
-            dgv.Columns[1].Width = 230;//Nombre empleado
-            dgv.Columns[2].Width = 80;//Fecha
-            dgv.Columns[3].Width = 60;//Fecha_Mod
-            dgv.Columns[4].Width = 60;//sueldo
-            dgv.Columns[5].Width = 60;//sueldo2
-            dgv.Columns[6].Width = 60;//sueldo3
-            dgv.Columns[7].Width = 140;//sueldo4
+            dgv.Columns[1].Width = 80;//Fecha
+            dgv.Columns[2].Width = 60;//Fecha_Mod
+            dgv.Columns[3].Width = 60;//sueldo
+            dgv.Columns[4].Width = 60;//sueldo2
+            dgv.Columns[5].Width = 60;//sueldo3
+            dgv.Columns[6].Width = 173;//sueldo4
         }
         private void elimina_sueldo()// Método para eliminar información
         {
@@ -380,6 +372,9 @@ namespace CsPresentacion
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 con.Close();
+                cmb_motivo_sueldo.Text = "";
+                dtm_sueldo.Text = "";
+                txt_SDO1_2.Focus();
             }
             catch (Exception ex)
             {
@@ -409,7 +404,6 @@ namespace CsPresentacion
                 MessageBox.Show(ex.ToString());
             }
         }
-
         private void cargar_informacion()
         {
             DataTable dt = new DataTable();
@@ -459,7 +453,7 @@ namespace CsPresentacion
                 txt_num_infonavit.Text = dt.Rows[0]["INFONAVIT"].ToString();
                 txt_compara2.Text = dt.Rows[0]["SUELDO"].ToString();
                 txt_compara1.Text = dt.Rows[0]["SUELDO"].ToString();
-                txt_SDO1.Text = dt.Rows[0]["SUELDO"].ToString();
+                txt_sueldo_departamento.Text = dt.Rows[0]["SUELDO"].ToString();
                 txt_SDO2.Text = dt.Rows[0]["SD2"].ToString();
                 txt_SDO3.Text = dt.Rows[0]["SD3"].ToString();
                 txt_SDO4.Text = dt.Rows[0]["SD4"].ToString();
@@ -536,7 +530,7 @@ namespace CsPresentacion
                 con.Close();
                 if (dt.Rows.Count > 0)
                 {
-                    txt_compara1.Text = dt.Rows[0]["SUELDO"].ToString();            
+                    txt_compara1.Text = dt.Rows[0]["SUELDO"].ToString();
                 }
             }
             catch
@@ -576,7 +570,7 @@ namespace CsPresentacion
             lbl_valida_puesto.Text = "";
             lbl_valida_puesto.Visible = false;
             txt_nacionalidad.Text = "";
-            txt_SDO1.Text = "0.00";
+            txt_sueldo_departamento.Text = "0.00";
             txt_SDO2.Text = "0.00";
             txt_SDO3.Text = "0.00";
             txt_SDO4.Text = "0.00";
@@ -664,7 +658,7 @@ namespace CsPresentacion
             dtm_sueldo.Text = "";
             btn_eliminar_sueldo.Enabled = false;
             lbl_comprueba_sueldo.Text = "";
-            lbl_comprueba_sueldo.Visible = false;
+          lbl_comprueba_sueldo.Visible = false;
             dtm_sueldo.Enabled = false;
             lbl_motivo.Text = "";
             lbl_motivo.Visible = false;
@@ -675,12 +669,12 @@ namespace CsPresentacion
             cmb_departamento.Enabled = false;
             dtm_fecha_dep.Enabled = false;
             btn_mod_general.Enabled = false;
+            dtm_fecha_turno.Enabled = false;
             btn_mod_fam.Enabled = false;
         }
         private void Btn_buscar_Click(object sender, EventArgs e)
         {      
         }
-    
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
 
@@ -691,7 +685,6 @@ namespace CsPresentacion
             mostrar_dgv_puesto();
             mostrar_dgv_sueldo();  
         }
-
         private void Cmb_genero_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -868,7 +861,7 @@ namespace CsPresentacion
                 mostrar_dgv_ruta();
             }
         }
-        private void Btn_ps_anterior_Click(object sender, EventArgs e)
+       private void Btn_ps_anterior_Click(object sender, EventArgs e)
         {
         }
         private void Btn_ps_siguiente_Click(object sender, EventArgs e)
@@ -1323,7 +1316,7 @@ namespace CsPresentacion
             double n1, n2, r;
 
             n1 = double.Parse(txt_factor.Text);
-            n2 = double.Parse(txt_SDO1.Text);
+            n2 = double.Parse(txt_sueldo_departamento.Text);
             r = n1 * n2;
             txt_SDO3.Text = r.ToString();
             txt_SDO5.Text = r.ToString();
@@ -1348,11 +1341,11 @@ namespace CsPresentacion
 
             if (Val1 > Val2)
             {
-                txt_SDO1.Text = txt_compara1.Text;
+                txt_sueldo_departamento.Text = txt_compara1.Text;
                 txt_SDO2.Text = "0.00";
                 txt_SDO4.Text = "0.00";
                 lbl_factor.Text = "1.07808";
-                Sueldo = double.Parse(txt_SDO1.Text);
+                Sueldo = double.Parse(txt_sueldo_departamento.Text);
                 Factor = double.Parse(lbl_factor.Text);
                 Resultado = Sueldo * Factor;
                 txt_SDO3.Text = Resultado.ToString();
@@ -1413,8 +1406,8 @@ namespace CsPresentacion
                 Modifica_turno();
                 mostrar_dgv_turno();
                 cmb_turno.Text = "";
-                btn_mod_turno.Enabled = false;
-                txt_clave.Focus();
+                dtm_fecha_turno.Text = "";
+                cmb_turno.Focus();
             }   
         }
 
@@ -1425,21 +1418,19 @@ namespace CsPresentacion
 
             if (sd1 < sd2)
             {
-                MessageBox.Show("Debe ser un sueldo mayor", "Aviso");
+                MessageBox.Show("Debe ser un sueldo mayor, al sueldo actual", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_SDO1_2.Focus();
             }
             else if (sd1 == sd2)
             {
-                MessageBox.Show("Debe ser un sueldo diferente", "Aviso");
+                MessageBox.Show("Debe ser un sueldo mayor, al sueldo actual", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_SDO1_2.Focus();
             }
             else
             {
-
                 inserta_sueldo();
                 mostrar_dgv_sueldo();
             }
-
         }
 
         private void Btn_mod_puesto_Click(object sender, EventArgs e)
@@ -1458,8 +1449,7 @@ namespace CsPresentacion
                 cmb_puesto.Text = "";
                 dtm_puesto.Text = "";
                 lbl_id_puesto.Text = "";
-                btn_mod_puesto.Enabled = false;
-                dtm_puesto.Enabled = false;
+                cmb_puesto.Enabled = true;
                 cmb_puesto.Focus();
             }
         }
@@ -1494,6 +1484,7 @@ namespace CsPresentacion
             else
             {
                 btn_mod_departamento.Enabled = true;
+       
             }
         }
         private void Dgv_depto_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1501,7 +1492,6 @@ namespace CsPresentacion
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgv_depto.Rows[e.RowIndex];
-                txt_clave.Text = row.Cells["CLAVE"].Value.ToString();
                 dtm_fecha_dep.Text = row.Cells["MODIFICACION"].Value.ToString();
                 cmb_departamento.Text = row.Cells["DEPARTAMENTO"].Value.ToString();
 
@@ -1520,7 +1510,6 @@ namespace CsPresentacion
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgv_turno.Rows[e.RowIndex];
-                txt_clave.Text = row.Cells["CLAVE"].Value.ToString();
                 cmb_turno.Text = row.Cells["TURNO"].Value.ToString();
                 dtm_fecha_turno.Text = row.Cells["CAMBIO_TURNO"].Value.ToString();
                 btn_eliminar_turno.Enabled = true;
@@ -1533,7 +1522,7 @@ namespace CsPresentacion
             cmb_turno.Text = "";
             dtm_fecha_turno.Text = "";
             btn_eliminar_turno.Enabled = false;
-            txt_clave.Focus();
+            cmb_turno.Focus();
         }
         private void Cmb_escolaridad_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1643,7 +1632,7 @@ namespace CsPresentacion
             Modifica_ruta();
             mostrar_dgv_ruta();
             cmb_ruta.Text = "";
-            btn_mod_ruta.Enabled = false;
+            cmb_ruta.Focus();
         }
 
         private void Btn_eliminar_depto_Click(object sender, EventArgs e)
@@ -1664,6 +1653,7 @@ namespace CsPresentacion
             else
             {
                 btn_mod_turno.Enabled = true;
+                dtm_fecha_turno.Enabled = true;
             }
         }
 
@@ -1687,7 +1677,6 @@ namespace CsPresentacion
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgv_puesto.Rows[e.RowIndex];
-                txt_clave.Text = row.Cells["CLAVE"].Value.ToString();
                 dtm_puesto.Text = row.Cells["FECHA"].Value.ToString();
                 cmb_puesto.Text = row.Cells["PUESTO"].Value.ToString();
 
@@ -1715,9 +1704,9 @@ namespace CsPresentacion
             cmb_puesto.Text = "";
             dtm_puesto.Text = "";
             lbl_id_puesto.Text = "";
-            btn_mod_puesto.Enabled = false;
-            dtm_puesto.Enabled = false;
-            txt_clave.Focus();
+            dtm_puesto.Enabled = true;
+            cmb_puesto.Enabled = true;
+            cmb_puesto.Focus();
         }
 
         private void Cmb_cambio_sueldo_KeyPress(object sender, KeyPressEventArgs e)
@@ -1731,6 +1720,7 @@ namespace CsPresentacion
             else if (cmb_motivo_sueldo.Text == "ANTIGUEDAD") { lbl_motivo.Text = "03"; }
             else if (cmb_motivo_sueldo.Text == "EVALUACION 3 MESES") { lbl_motivo.Text = "04"; }
             else if (cmb_motivo_sueldo.Text == "EVALUACION ANUAL") { lbl_motivo.Text = "05"; }
+            dtm_sueldo.Text = "";
             dtm_sueldo.Enabled = true;
             btn_mod_sueldo.Enabled = true;
         }
@@ -1758,8 +1748,8 @@ namespace CsPresentacion
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgv_sueldo.Rows[e.RowIndex];
-                txt_clave.Text = row.Cells["CLAVE"].Value.ToString();
                 dtm_sueldo.Text = row.Cells["FECHA"].Value.ToString();
+                cmb_motivo_sueldo.Text = row.Cells["MOTIVO"].Value.ToString();
 
                 if (txt_vigencia.Text == "VIGENTE")
                 {
@@ -1782,10 +1772,11 @@ namespace CsPresentacion
         {
             elimina_sueldo();
             mostrar_dgv_sueldo();
+            cargar_informacion();
         }
 
         private void Txt_SDO1_Leave_1(object sender, EventArgs e)
-        {      
+        {
         }
 
         private void Cmb_motivo_sueldo_Leave(object sender, EventArgs e)
@@ -1839,6 +1830,43 @@ namespace CsPresentacion
             {
                 e.Handled = true;
             }
+        }
+
+        private void Dtm_puesto_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Dtm_fecha_dep_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Dgv_sueldo_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void Dgv_ruta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_ruta.Rows[e.RowIndex];
+                cmb_ruta.Text = row.Cells["RUTA"].Value.ToString();
+                btn_eliminar_turno.Enabled = true;
+            }
+        }
+        private void Dgv_turno_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_turno.Rows[e.RowIndex];
+                cmb_turno.Text = row.Cells["TURNO"].Value.ToString();
+                dtm_fecha_turno.Text = row.Cells["CAMBIO_TURNO"].Value.ToString();
+                btn_eliminar_turno.Enabled = true;
+            }
+        }
+
+        private void Cmb_turno_Leave(object sender, EventArgs e)
+        {
+            dtm_fecha_turno.Text = "";
         }
     }
 }
