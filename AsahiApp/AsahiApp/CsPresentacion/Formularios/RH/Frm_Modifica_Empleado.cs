@@ -675,7 +675,6 @@ namespace CsPresentacion
         private void Btn_buscar_Click(object sender, EventArgs e)
         {      
         }
-    
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
 
@@ -686,7 +685,6 @@ namespace CsPresentacion
             mostrar_dgv_puesto();
             mostrar_dgv_sueldo();  
         }
-
         private void Cmb_genero_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -863,7 +861,7 @@ namespace CsPresentacion
                 mostrar_dgv_ruta();
             }
         }
-        private void Btn_ps_anterior_Click(object sender, EventArgs e)
+       private void Btn_ps_anterior_Click(object sender, EventArgs e)
         {
         }
         private void Btn_ps_siguiente_Click(object sender, EventArgs e)
