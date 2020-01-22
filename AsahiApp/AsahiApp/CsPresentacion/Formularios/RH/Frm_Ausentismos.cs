@@ -828,6 +828,7 @@ namespace CsPresentacion
                 Mostrar_Grid();
                 Mostrar_Grid_Faltas();
                 Mostrar_Grid_Vacaciones();
+                cargar_dias();
                 txt_nombre.Enabled = false;
                 btn_exportar.Enabled = true;
                 btn_f_exportar.Enabled = true;
@@ -876,6 +877,7 @@ namespace CsPresentacion
             Mostrar_Grid();
             Mostrar_Grid_Faltas();
             Mostrar_Grid_Vacaciones();
+            cargar_dias();
             btn_exportar.Enabled = true;
             btn_f_exportar.Enabled = true;
             btn_siguiente.Enabled = true;
@@ -1652,6 +1654,11 @@ namespace CsPresentacion
         }
         private void Btn_v_cancelar_Click(object sender, EventArgs e)
         {
+            dtm_v_inicia.Text = "";
+            dtm_v_termina.Text = "";
+            txt_v_duracion.Text = "";
+            txt_v_prima.Text = "";
+            dtm_v_inicia.Focus();
         }
         private void Btn_v_exportar_Click(object sender, EventArgs e)
         {
@@ -1722,6 +1729,30 @@ namespace CsPresentacion
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cargar_dias()
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "[dbo].[Sp_Captura_Vacaciones]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "2";
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+
+            da.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                lbl_x_pagar.Text = dt.Rows[0]["(No column name)"].ToString();
+                lbl_x_disfrutar.Text = dt.Rows[0]["No column name"].ToString();
+            }
+            con.Close();
+        }
+
+
         private void Diseño_Grid_Vacaciones(DataGridView dgv)
         {
             dgv.Columns[0].Width = 60;//Clave

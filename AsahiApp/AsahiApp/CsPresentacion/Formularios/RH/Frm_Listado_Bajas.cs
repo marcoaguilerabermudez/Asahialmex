@@ -112,7 +112,6 @@ namespace CsPresentacion
             dgv.Columns[4].Width = 80;//Fecha Alta
             dgv.Columns[5].Width = 80;//Fecha baja
             dgv.Columns[6].Width = 40;//dias
-
             dgv.Columns[7].Width = 40;//Días laborados
             dgv.Columns[8].Width = 50;//Meses baja
             dgv.Columns[9].Width = 40;//Años baja
