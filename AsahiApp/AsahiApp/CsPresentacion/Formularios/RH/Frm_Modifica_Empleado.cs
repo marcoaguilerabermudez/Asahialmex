@@ -119,7 +119,6 @@ namespace CsPresentacion
             dgv.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.Columns[4].Width = 55;//espacio
         }
-
         private void Modifica_ruta()// Método para modificar ruta de empleado
         {
             try
@@ -169,7 +168,6 @@ namespace CsPresentacion
             dgv.Columns[2].Width = 140;//Departamento
             dgv.Columns[3].Width = 135;//Ruta
         }
-
         private void Modifica_depto()// Método para modificar departamento de empleado
         {
             try
@@ -537,7 +535,6 @@ namespace CsPresentacion
             { 
             }
         }
-
         private void Actualizar()
         {
             try
@@ -1410,7 +1407,6 @@ namespace CsPresentacion
                 cmb_turno.Focus();
             }   
         }
-
         private void Btn_mod_sueldo_Click_1(object sender, EventArgs e)
         {
             sd1 = double.Parse(txt_SDO1_2.Text);
@@ -1432,7 +1428,6 @@ namespace CsPresentacion
                 mostrar_dgv_sueldo();
             }
         }
-
         private void Btn_mod_puesto_Click(object sender, EventArgs e)
         {
             if (cmb_puesto.Text == lbl_valida_puesto.Text)
@@ -1453,7 +1448,6 @@ namespace CsPresentacion
                 cmb_puesto.Focus();
             }
         }
-
         private void Btn_mod_departamento_Click(object sender, EventArgs e)
         {
             if (cmb_departamento.Text == lbl_Comprueba_depto.Text)
@@ -1626,7 +1620,6 @@ namespace CsPresentacion
                 lbl_civil.Text = "ULI";
             }
         }
-
         private void Btn_mod_ruta_Click(object sender, EventArgs e)
         {
             Modifica_ruta();
@@ -1634,7 +1627,6 @@ namespace CsPresentacion
             cmb_ruta.Text = "";
             cmb_ruta.Focus();
         }
-
         private void Btn_eliminar_depto_Click(object sender, EventArgs e)
         {
             Elimina_depto();
@@ -1644,7 +1636,6 @@ namespace CsPresentacion
             txt_clave.Focus();
             btn_eliminar_depto.Enabled = false;
         }
-
         private void Cmb_turno_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (txt_clave.Text == "")
@@ -1656,7 +1647,6 @@ namespace CsPresentacion
                 dtm_fecha_turno.Enabled = true;
             }
         }
-
         private void Cmb_turno_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;

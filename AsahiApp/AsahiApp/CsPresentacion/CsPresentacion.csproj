@@ -93,6 +93,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Bajas_Contabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bajas_Contabilidad.Designer.cs">
+      <DependentUpon>Bajas_Contabilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\RH\Ausentismos_Fecha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -509,6 +515,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Bajas_Contabilidad.rdlc" />
+    <EmbeddedResource Include="Bajas_Contabilidad.resx">
+      <DependentUpon>Bajas_Contabilidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Ausentismos_Fecha.resx">
       <DependentUpon>Ausentismos_Fecha.cs</DependentUpon>
     </EmbeddedResource>
