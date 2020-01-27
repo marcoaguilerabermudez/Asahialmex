@@ -14,7 +14,7 @@ namespace CsPresentacion
 {
     public partial class Frm_Aussentismos_Retardos : Form
     {
-        
+
         public Frm_Aussentismos_Retardos(Empleado classEmpleado)
         {
             InitializeComponent();
@@ -51,20 +51,22 @@ namespace CsPresentacion
             tt.SetToolTip(btn_v_exportar, "Exportar");
             claseEmp = classEmpleado;
         }
-        
+
         int indice = 0;
         int indicef = 0;
         double Duracion;
         double Prima;
         double Resultado;
+        int x, y;
+
         SqlCommand cmd;
         SqlDataReader dr;
         Empleado claseEmp;
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
- 
+
         private void Ausentismo_retardos_Load(object sender, EventArgs e)
         {
-            nuevo(); 
+            nuevo();
             autocompletar_responsable(txt_nombre);
             txt_clave.Focus();
         }
@@ -93,7 +95,7 @@ namespace CsPresentacion
             lbl_inc_tipo.Visible = false;
             lbl_inc_caso.Text = "";
             lbl_inc_caso.Visible = false;
-            txt_certificado.Mask = ">LL000000"; 
+            txt_certificado.Mask = ">LL000000";
             lbl_id.Visible = false;
             lbl_id.Text = "0";
             btn_primero.Enabled = false;
@@ -105,8 +107,8 @@ namespace CsPresentacion
             btn_guardar.Enabled = false;
             btn_cancelar.Enabled = false;
             btn_exportar.Enabled = false;
-            lbl_estado.Text = ""; 
-            pictureBox1.ImageLocation = "V:/Sistemas/SAAM/Logo.jpg"; 
+            lbl_estado.Text = "";
+            pictureBox1.ImageLocation = "V:/Sistemas/SAAM/Logo.jpg";
             //Módulo de Faltas
             dtm_f_termina.Text = "";
             dtm_f_termina.Enabled = false;
@@ -148,6 +150,9 @@ namespace CsPresentacion
             dtm_v_termina.Enabled = false;
             txt_v_antiguedad.Enabled = false;
             txt_v_duracion.Enabled = false;
+            lbl_x_pagar.Text = "";
+            lbl_x_disfrutar.Text = "";
+            lbl_prima.Text = "";
         }
         private void cargar_informacion()
         {
@@ -217,7 +222,7 @@ namespace CsPresentacion
             da.SelectCommand.Parameters.Add("@FECHA_APLICACION", SqlDbType.VarChar, 100).Value = dtm_aplicacion.Text;
             da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
             da.SelectCommand.Parameters.Add("@ID", SqlDbType.VarChar, 100).Value = lbl_id.Text;
-            
+
             da.Fill(dt);
             con.Close();
 
@@ -267,7 +272,7 @@ namespace CsPresentacion
             }
             else
             {
-              Verifica_Falta();
+                Verifica_Falta();
             }
         }
         private void Verifica_Falta()//Verifica si hay una falta
@@ -461,7 +466,7 @@ namespace CsPresentacion
                 cmd.Parameters.AddWithValue("@TIPO", lbl_inc_tipo.Text);
                 cmd.Parameters.AddWithValue("@CASO", lbl_inc_caso.Text);
                 cmd.Parameters.AddWithValue("@FECHA_TERMINO", dtm_termina.Text);
-                cmd.Parameters.AddWithValue("@FECHA_APLICACION",dtm_aplicacion.Text);
+                cmd.Parameters.AddWithValue("@FECHA_APLICACION", dtm_aplicacion.Text);
                 cmd.Parameters.AddWithValue("@USUARIO", claseEmp.IdEmpleado);
                 cmd.Parameters.AddWithValue("@ID", lbl_id.Text);
 
@@ -470,7 +475,7 @@ namespace CsPresentacion
                 con.Close();
                 adapter.Fill(dt);
                 dgv_incapacidades.DataSource = dt;
-              Diseño_Grid(dgv_incapacidades);
+                Diseño_Grid(dgv_incapacidades);
                 dgv_incapacidades.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
                 dgv_incapacidades.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             }
@@ -631,7 +636,7 @@ namespace CsPresentacion
             {
             }
         }
-        
+
         //Botones Módulo de incapacidades
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
@@ -782,7 +787,7 @@ namespace CsPresentacion
             {
                 if (lbl_id.Text == "0")
                 {
-                    Verifica_certificado();      
+                    Verifica_certificado();
                 }
                 else
                 {
@@ -812,7 +817,7 @@ namespace CsPresentacion
             Exportara_Exel();
             dtm_fecha.Focus();
         }
-   
+
 
         //Eventos Módulo de incapacidades
         private void Txt_clave_KeyPress(object sender, KeyPressEventArgs e)
@@ -829,6 +834,7 @@ namespace CsPresentacion
                 Mostrar_Grid_Faltas();
                 Mostrar_Grid_Vacaciones();
                 cargar_dias();
+                calcula_prima();
                 txt_nombre.Enabled = false;
                 btn_exportar.Enabled = true;
                 btn_f_exportar.Enabled = true;
@@ -869,7 +875,7 @@ namespace CsPresentacion
         {
         }
         private void Txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
-        {          
+        {
         }
         private void Txt_nombre_Leave(object sender, EventArgs e)
         {
@@ -878,6 +884,7 @@ namespace CsPresentacion
             Mostrar_Grid_Faltas();
             Mostrar_Grid_Vacaciones();
             cargar_dias();
+            calcula_prima();
             btn_exportar.Enabled = true;
             btn_f_exportar.Enabled = true;
             btn_siguiente.Enabled = true;
@@ -906,7 +913,7 @@ namespace CsPresentacion
             else { e.Handled = true; }
         }
         private void Txt_certificado_Leave_1(object sender, EventArgs e)
-        {    
+        {
         }
         private void Dgv_incapacidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1054,7 +1061,7 @@ namespace CsPresentacion
         }
 
 
-//Módulo de Faltas
+        //Módulo de Faltas
 
         //Botones Módulo de faltas
         private void Btn_f_insertar_Click(object sender, EventArgs e)
@@ -1073,7 +1080,7 @@ namespace CsPresentacion
             txt_f_duracion.Enabled = true;
             lbl_f_id.Text = "0";
             txt_f_tipo.Text = "";
-            txt_f_tipo.Enabled = true;  
+            txt_f_tipo.Enabled = true;
         }
         private void Btn_f_cancelar_Click(object sender, EventArgs e)
         {
@@ -1210,8 +1217,8 @@ namespace CsPresentacion
             con.Close();
 
             if (dt.Rows.Count > 0)
-            {              
-             MessageBox.Show("Ya hay una Incidencia dentro de esta fecha, Favor de verificar.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                MessageBox.Show("Ya hay una Incidencia dentro de esta fecha, Favor de verificar.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtm_f_fecha.Focus();
             }
             else
@@ -1402,7 +1409,7 @@ namespace CsPresentacion
                 MessageBox.Show(ex.Message);
             }
         }
-        private void Actualiza_Falta()//Elimina faltas.
+        private void Actualiza_Falta()
         {
             try
             {
@@ -1577,7 +1584,7 @@ namespace CsPresentacion
             {
                 case "ABANDONO DE TRABAJO": txt_f_tipo.Text = "A"; break;
                 case "PRESTACION POR MATRIMONIO": txt_f_tipo.Text = "B"; break;
-                case "CITA IMSS": txt_f_tipo.Text = "C";  break;
+                case "CITA IMSS": txt_f_tipo.Text = "C"; break;
                 case "ENFERMEDAD": txt_f_tipo.Text = "E"; break;
                 case "FALTA INJUSTIFICADA": txt_f_tipo.Text = "F"; break;
                 case "PERMISO CON GOCE": txt_f_tipo.Text = "G"; break;
@@ -1585,7 +1592,7 @@ namespace CsPresentacion
                 case "ENFERMEDAD MODERADA": txt_f_tipo.Text = "M"; break;
                 case "SUSPENSION": txt_f_tipo.Text = "N"; break;
                 case "PERMISO SIN GOCE": txt_f_tipo.Text = "P"; break;
-                case "FAMILIAR": txt_f_tipo.Text = "R";   break;
+                case "FAMILIAR": txt_f_tipo.Text = "R"; break;
                 case "ASUNTOS PERSONALES": txt_f_tipo.Text = "S"; break;
                 case "TRANSPORTE": txt_f_tipo.Text = "T"; break;
                 case "FALTA JUSTIFICADA": txt_f_tipo.Text = "U"; break;
@@ -1636,7 +1643,7 @@ namespace CsPresentacion
 
 
 
- //Botones módulo de vacaciones
+        //Botones módulo de vacaciones
         private void Btn_v_insertar_Click(object sender, EventArgs e)
         {
             dtm_v_inicia.Text = "";
@@ -1664,8 +1671,99 @@ namespace CsPresentacion
         {
             Exportara_v_Excel();
         }
+        private void Btn_v_primero_Click(object sender, EventArgs e)
+        {
+            dgv_vacaciones.CurrentCell = dgv_vacaciones.Rows[0].Cells[dgv_vacaciones.CurrentCell.ColumnIndex];
+            btn_v_anterior.Enabled = false;
+            btn_v_primero.Enabled = false;
+            btn_v_siguiente.Enabled = true;
+            btn_v_ultimo.Enabled = true;
+            btn_v_guardar.Enabled = false;
+            btn_v_cancelar.Enabled = false;
+            dtm_v_inicia.Focus();
+        }
+        private void Btn_v_anterior_Click(object sender, EventArgs e)
+        {
+            int Anterior = indice - 1;
 
- //Métodos módulo de vacaciones
+            try
+            {
+                dgv_vacaciones.CurrentCell = dgv_vacaciones.Rows[Anterior].Cells[dgv_vacaciones.CurrentCell.ColumnIndex];
+                btn_v_siguiente.Enabled = true;
+                btn_v_ultimo.Enabled = true;
+                btn_v_guardar.Enabled = false;
+                btn_v_cancelar.Enabled = false;
+                dtm_v_inicia.Focus();
+            }
+            catch
+            {
+                btn_v_anterior.Enabled = false;
+                btn_v_primero.Enabled = false;
+                btn_v_guardar.Enabled = false;
+                btn_v_cancelar.Enabled = false;
+                dtm_v_inicia.Focus();
+            }
+        }
+        private void Btn_v_siguiente_Click(object sender, EventArgs e)
+        {
+            int Siguiente = indice + 1;
+            try
+            {
+                dgv_vacaciones.CurrentCell = dgv_vacaciones.Rows[Siguiente].Cells[dgv_vacaciones.CurrentCell.ColumnIndex];
+                btn_v_anterior.Enabled = true;
+                btn_v_primero.Enabled = true;
+                btn_v_guardar.Enabled = false;
+                btn_v_cancelar.Enabled = false;
+                dtm_v_inicia.Focus();
+            }
+            catch
+            {
+                btn_v_siguiente.Enabled = false;
+                btn_v_ultimo.Enabled = false;
+                btn_v_guardar.Enabled = false;
+                btn_v_cancelar.Enabled = false;
+                MessageBox.Show("Llegó al final!", "Aviso");
+                dtm_v_inicia.Focus();
+            }
+        }
+        private void Btn_v_ultimo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgv_vacaciones.CurrentCell = dgv_vacaciones.Rows[50].Cells[dgv_vacaciones.CurrentCell.ColumnIndex];
+                btn_v_siguiente.Enabled = false;
+                btn_v_ultimo.Enabled = false;
+                btn_v_anterior.Enabled = true;
+                btn_v_primero.Enabled = true;
+                btn_v_guardar.Enabled = false;
+                btn_v_cancelar.Enabled = false;
+                dtm_v_inicia.Focus();
+            }
+            catch
+            {
+            }
+        }
+        private void Btn_v_guardar_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txt_v_duracion.Text))
+            {
+                MessageBox.Show("Es necesario capturar la duración", "¡Aviso!");
+                txt_v_duracion.Focus();   
+            }
+            else if ((int.Parse(txt_v_duracion.Text)) > (int.Parse(lbl_x_pagar.Text)))
+            {
+                MessageBox.Show("Días solicitados Insuficientes", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_v_duracion.Focus();
+            }
+            else
+            {
+                Verifica_v_vacaciones();
+            }
+
+
+        }
+
+        //Métodos módulo de vacaciones
         private void Exportara_v_Excel()// Método para exportar a excel, múdulo vacaciones.
         {
             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -1703,8 +1801,6 @@ namespace CsPresentacion
                 //MessageBox.Show("No se exportó correctamente" + error.Message);
             }
         }
-
-        //Métodos módulo de vacaciones
         private void Mostrar_Grid_Vacaciones()//Mostrar grid de incapacidades.
         {
             try
@@ -1714,7 +1810,11 @@ namespace CsPresentacion
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@VAR", "1");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
-    
+                cmd.Parameters.AddWithValue("@INICIA", dtm_v_inicia.Text);
+                cmd.Parameters.AddWithValue("@TERMINA", dtm_v_termina.Text);
+                cmd.Parameters.AddWithValue("@DURACION", txt_v_duracion.Text);
+                cmd.Parameters.AddWithValue("@USUARIO", claseEmp.IdEmpleado);
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 con.Close();
@@ -1729,7 +1829,6 @@ namespace CsPresentacion
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void cargar_dias()
         {
             DataTable dt = new DataTable();
@@ -1741,18 +1840,27 @@ namespace CsPresentacion
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "2";
             da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
-
+            da.SelectCommand.Parameters.Add("@INICIA", SqlDbType.VarChar, 100).Value = dtm_v_inicia.Text;
+            da.SelectCommand.Parameters.Add("@TERMINA", SqlDbType.VarChar, 100).Value = dtm_v_termina.Text;
+            da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
+            da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+    
             da.Fill(dt);
 
             if (dt.Rows.Count > 0)
             {
-                lbl_x_pagar.Text = dt.Rows[0]["(No column name)"].ToString();
-                lbl_x_disfrutar.Text = dt.Rows[0]["No column name"].ToString();
+                lbl_x_pagar.Text = dt.Rows[0]["DIAS"].ToString();
+                lbl_x_disfrutar.Text = dt.Rows[0]["DIAS"].ToString();
             }
             con.Close();
         }
-
-
+        private void calcula_prima()
+        {
+                Duracion = double.Parse(lbl_x_pagar.Text);
+                Prima = double.Parse("0.35");
+                Resultado = Duracion * Prima;
+                lbl_prima.Text = Resultado.ToString();
+        }
         private void Diseño_Grid_Vacaciones(DataGridView dgv)
         {
             dgv.Columns[0].Width = 60;//Clave
@@ -1773,6 +1881,163 @@ namespace CsPresentacion
             dgv.Columns[7].Width = 220;//espacio
             dgv.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+        private void Verifica_v_vacaciones()//Verifica si hay vacaciones
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "[dbo].[Sp_Captura_Vacaciones]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "3";
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@INICIA", SqlDbType.VarChar, 100).Value = dtm_v_inicia.Text;
+            da.SelectCommand.Parameters.Add("@TERMINA", SqlDbType.VarChar, 100).Value = dtm_v_termina.Text;
+            da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
+            da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+
+            da.Fill(dt);
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("El empleado tiene vacaciones en esta Fecha, Favor de Verificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_v_inicia.Focus();
+            }
+            else
+            {
+              Verifica_v_incapacidad();
+            }
+        }
+        private void Verifica_v_incapacidad()//Verifica si hay incapacidad
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "[dbo].[Sp_Captura_Vacaciones]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "4";
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@INICIA", SqlDbType.VarChar, 100).Value = dtm_v_inicia.Text;
+            da.SelectCommand.Parameters.Add("@TERMINA", SqlDbType.VarChar, 100).Value = dtm_v_termina.Text;
+            da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
+            da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+            da.Fill(dt);
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("El empleado tiene incapacidad en esta Fecha, Favor de Verificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtm_v_inicia.Focus();
+            }
+            else
+            {
+                Verifica_v_falta();
+            }
+        }
+        private void Verifica_v_falta()//Verifica si hay falta
+        {
+            DataTable dt = new DataTable();
+            String strSql;
+            strSql = "[dbo].[Sp_Captura_Vacaciones]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+            con.Open();
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "5";
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@INICIA", SqlDbType.VarChar, 100).Value = dtm_v_inicia.Text;
+            da.SelectCommand.Parameters.Add("@TERMINA", SqlDbType.VarChar, 100).Value = dtm_v_termina.Text;
+            da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
+            da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+            da.Fill(dt);
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+            {
+                DialogResult resul = MessageBox.Show("El empleado tiene una incidencia dentro de esta Fecha, ¿Desea eliminar la incidencia?", "¡Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resul == DialogResult.Yes)
+                {
+                    Borra_v_incidencia();
+                    Mostrar_Grid_Faltas();
+                   Inserta_vacaciones();
+                   Mostrar_Grid_Vacaciones();
+                    dtm_v_inicia.Text = "";
+                    dtm_v_termina.Text = "";
+                    txt_v_duracion.Text = "";
+                    dtm_v_termina.Text = "";
+                    lbl_id.Text = "0";
+                    dtm_v_inicia.Focus();
+                }
+                else if (resul == DialogResult.No)
+                {
+                    dtm_v_inicia.Focus();
+                }
+            }
+            else
+            {
+                Inserta_vacaciones();
+                Mostrar_Grid_Vacaciones();
+                dtm_v_inicia.Text = "";
+                dtm_v_termina.Text = "";
+                txt_v_duracion.Text = "";
+                dtm_v_termina.Text = "";
+                lbl_id.Text = "0";
+                dtm_v_inicia.Focus();
+            }
+        }
+
+        private void Inserta_vacaciones()//inserta vacaciones
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                String strSql;
+                strSql = "[dbo].[Sp_Captura_Vacaciones]";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+                con.Open();
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "7";
+                da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+                da.SelectCommand.Parameters.Add("@INICIA", SqlDbType.VarChar, 100).Value = dtm_v_inicia.Text;
+                da.SelectCommand.Parameters.Add("@TERMINA", SqlDbType.VarChar, 100).Value = dtm_v_termina.Text;
+                da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
+                da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+                da.Fill(dt);
+                con.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error al insertar incidencia");
+            }
+        }
+
+
+
+        private void Borra_v_incidencia()//Borra incidencia
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                String strSql;
+                strSql = "[dbo].[Sp_Captura_Vacaciones]";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+                con.Open();
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "6";
+                da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+                da.SelectCommand.Parameters.Add("@INICIA", SqlDbType.VarChar, 100).Value = dtm_v_inicia.Text;
+                da.SelectCommand.Parameters.Add("@TERMINA", SqlDbType.VarChar, 100).Value = dtm_v_termina.Text;
+                da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
+                da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+                da.Fill(dt);
+                con.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error al borrar incidencia");
+            }    
         }
 
 
@@ -1861,13 +2126,66 @@ namespace CsPresentacion
         {
             e.Handled = true;
         }
+        private void Dgv_vacaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_vacaciones.Rows[e.RowIndex];
+                dtm_v_inicia.Text = row.Cells["INICIA"].Value.ToString();
+                txt_v_duracion.Text = row.Cells["DURACION"].Value.ToString();
+                txt_v_prima.Text = row.Cells["PRIMA"].Value.ToString();
+                dtm_v_termina.Text = row.Cells["TERMINA"].Value.ToString();
+                dtm_fecha.Focus();
+            }
+        }
+        private void Dgv_vacaciones_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (dgv_vacaciones.CurrentCell != null) { indice = dgv_vacaciones.CurrentRow.Index; }
+        }
+        private void Dgv_vacaciones_DoubleClick(object sender, EventArgs e)
+        {
+            if (lbl_estado.Text == "VIGENTE")
+            {
+                DialogResult resul = MessageBox.Show("¿Desea modificar el Registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resul == DialogResult.Yes)
+                {
+                    btn_v_guardar.Enabled = true;
+                    btn_v_eliminar.Enabled = true;
+                    btn_v_cancelar.Enabled = true;
+                    dtm_v_inicia.Enabled = true;
+                    txt_v_duracion.Enabled = true;
+                    txt_v_prima.Enabled = true;
+                    dtm_v_inicia.Focus();
+                }
+                if (resul == DialogResult.No)
+                {
+                    btn_v_guardar.Enabled = false;
+                    btn_v_eliminar.Enabled = false;
+                    btn_v_cancelar.Enabled = false;
+                    dtm_v_inicia.Enabled = false;
+                    txt_v_duracion.Enabled = false;
+                    dtm_v_inicia.Focus();
+                }
+            }
+            else
+            {
+            }
+        }
+        private void Dgv_vacaciones_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv_vacaciones.Rows[e.RowIndex];
+                dtm_v_inicia.Text = row.Cells["INICIA"].Value.ToString();
+                txt_v_duracion.Text = row.Cells["DURACION"].Value.ToString();
+                txt_v_prima.Text = row.Cells["PRIMA"].Value.ToString();
+                dtm_v_termina.Text = row.Cells["TERMINA"].Value.ToString();
+                dtm_fecha.Focus();
+            }
+        }
         private void TabPage2_Click(object sender, EventArgs e)
         {
             btn_v_insertar.Focus();
-        }
-
-        private void Btn_v_guardar_Click(object sender, EventArgs e)
-        {
-        }
+        }   
     }  
 }
