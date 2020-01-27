@@ -71,6 +71,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txt_SDO5 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rdb_otro = new System.Windows.Forms.RadioButton();
             this.lbl_inf = new System.Windows.Forms.Label();
             this.btn_finalizar = new System.Windows.Forms.Button();
             this.cmb_turno = new System.Windows.Forms.ComboBox();
@@ -151,6 +152,7 @@
             this.btn_fin_anterior = new System.Windows.Forms.Button();
             this.Panel_principal.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Panel_secundario.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -202,14 +204,14 @@
             this.txt_rfc.Location = new System.Drawing.Point(21, 73);
             this.txt_rfc.Name = "txt_rfc";
             this.txt_rfc.Size = new System.Drawing.Size(215, 20);
-            this.txt_rfc.TabIndex = 237;
+            this.txt_rfc.TabIndex = 1;
             // 
             // txt_curp
             // 
             this.txt_curp.Location = new System.Drawing.Point(20, 31);
             this.txt_curp.Name = "txt_curp";
             this.txt_curp.Size = new System.Drawing.Size(216, 20);
-            this.txt_curp.TabIndex = 236;
+            this.txt_curp.TabIndex = 0;
             this.txt_curp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_curp_KeyPress_1);
             // 
             // lbl_infonavit
@@ -242,7 +244,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(19, 462);
+            this.label32.Location = new System.Drawing.Point(19, 499);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(54, 13);
             this.label32.TabIndex = 42;
@@ -252,7 +254,7 @@
             // 
             this.lbl_tipo_ingreso.AutoSize = true;
             this.lbl_tipo_ingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tipo_ingreso.Location = new System.Drawing.Point(74, 462);
+            this.lbl_tipo_ingreso.Location = new System.Drawing.Point(74, 499);
             this.lbl_tipo_ingreso.Name = "lbl_tipo_ingreso";
             this.lbl_tipo_ingreso.Size = new System.Drawing.Size(111, 13);
             this.lbl_tipo_ingreso.TabIndex = 41;
@@ -261,7 +263,7 @@
             // rdb_expatriado
             // 
             this.rdb_expatriado.AutoSize = true;
-            this.rdb_expatriado.Location = new System.Drawing.Point(133, 154);
+            this.rdb_expatriado.Location = new System.Drawing.Point(25, 173);
             this.rdb_expatriado.Name = "rdb_expatriado";
             this.rdb_expatriado.Size = new System.Drawing.Size(94, 17);
             this.rdb_expatriado.TabIndex = 40;
@@ -273,7 +275,7 @@
             // rdb_nacional
             // 
             this.rdb_nacional.AutoSize = true;
-            this.rdb_nacional.Location = new System.Drawing.Point(25, 154);
+            this.rdb_nacional.Location = new System.Drawing.Point(26, 149);
             this.rdb_nacional.Name = "rdb_nacional";
             this.rdb_nacional.Size = new System.Drawing.Size(79, 17);
             this.rdb_nacional.TabIndex = 39;
@@ -365,7 +367,7 @@
             // txt_nacionalidad
             // 
             this.txt_nacionalidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_nacionalidad.Location = new System.Drawing.Point(21, 306);
+            this.txt_nacionalidad.Location = new System.Drawing.Point(21, 344);
             this.txt_nacionalidad.MaxLength = 20;
             this.txt_nacionalidad.Name = "txt_nacionalidad";
             this.txt_nacionalidad.Size = new System.Drawing.Size(215, 20);
@@ -376,7 +378,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(19, 289);
+            this.label9.Location = new System.Drawing.Point(19, 327);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 13);
             this.label9.TabIndex = 12;
@@ -386,9 +388,9 @@
             // cmb_puesto
             // 
             this.cmb_puesto.FormattingEnabled = true;
-            this.cmb_puesto.Location = new System.Drawing.Point(328, 349);
+            this.cmb_puesto.Location = new System.Drawing.Point(329, 387);
             this.cmb_puesto.Name = "cmb_puesto";
-            this.cmb_puesto.Size = new System.Drawing.Size(219, 21);
+            this.cmb_puesto.Size = new System.Drawing.Size(215, 21);
             this.cmb_puesto.TabIndex = 10;
             this.cmb_puesto.SelectedIndexChanged += new System.EventHandler(this.Cmb_puesto_SelectedIndexChanged);
             this.cmb_puesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_puesto_KeyPress);
@@ -396,7 +398,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(326, 332);
+            this.label8.Location = new System.Drawing.Point(327, 370);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 10;
@@ -405,7 +407,7 @@
             // cmb_departamento
             // 
             this.cmb_departamento.FormattingEnabled = true;
-            this.cmb_departamento.Location = new System.Drawing.Point(21, 349);
+            this.cmb_departamento.Location = new System.Drawing.Point(21, 387);
             this.cmb_departamento.Name = "cmb_departamento";
             this.cmb_departamento.Size = new System.Drawing.Size(215, 21);
             this.cmb_departamento.TabIndex = 9;
@@ -414,7 +416,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 332);
+            this.label7.Location = new System.Drawing.Point(19, 370);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 13);
             this.label7.TabIndex = 8;
@@ -423,7 +425,7 @@
             // txt_nombre
             // 
             this.txt_nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_nombre.Location = new System.Drawing.Point(21, 264);
+            this.txt_nombre.Location = new System.Drawing.Point(21, 302);
             this.txt_nombre.MaxLength = 30;
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(215, 20);
@@ -433,7 +435,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 247);
+            this.label6.Location = new System.Drawing.Point(18, 285);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 6;
@@ -442,7 +444,7 @@
             // txt_materno
             // 
             this.txt_materno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_materno.Location = new System.Drawing.Point(329, 221);
+            this.txt_materno.Location = new System.Drawing.Point(329, 259);
             this.txt_materno.MaxLength = 30;
             this.txt_materno.Name = "txt_materno";
             this.txt_materno.Size = new System.Drawing.Size(215, 20);
@@ -452,7 +454,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(326, 204);
+            this.label5.Location = new System.Drawing.Point(326, 242);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 13);
             this.label5.TabIndex = 4;
@@ -461,7 +463,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 204);
+            this.label4.Location = new System.Drawing.Point(20, 242);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 13);
             this.label4.TabIndex = 3;
@@ -470,7 +472,7 @@
             // txt_paterno
             // 
             this.txt_paterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_paterno.Location = new System.Drawing.Point(21, 221);
+            this.txt_paterno.Location = new System.Drawing.Point(21, 259);
             this.txt_paterno.MaxLength = 30;
             this.txt_paterno.Name = "txt_paterno";
             this.txt_paterno.Size = new System.Drawing.Size(215, 20);
@@ -503,7 +505,7 @@
             this.groupBox1.Controls.Add(this.txt_SDO4);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txt_SDO5);
-            this.groupBox1.Location = new System.Drawing.Point(15, 392);
+            this.groupBox1.Location = new System.Drawing.Point(15, 429);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(547, 62);
             this.groupBox1.TabIndex = 26;
@@ -599,11 +601,24 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(21, 144);
+            this.groupBox3.Controls.Add(this.rdb_otro);
+            this.groupBox3.Location = new System.Drawing.Point(21, 137);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(215, 33);
+            this.groupBox3.Size = new System.Drawing.Size(215, 81);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
+            // 
+            // rdb_otro
+            // 
+            this.rdb_otro.AutoSize = true;
+            this.rdb_otro.Location = new System.Drawing.Point(4, 59);
+            this.rdb_otro.Name = "rdb_otro";
+            this.rdb_otro.Size = new System.Drawing.Size(97, 17);
+            this.rdb_otro.TabIndex = 236;
+            this.rdb_otro.TabStop = true;
+            this.rdb_otro.Text = "EXTRANJERO";
+            this.rdb_otro.UseVisualStyleBackColor = true;
+            this.rdb_otro.CheckedChanged += new System.EventHandler(this.Rdb_otro_CheckedChanged);
             // 
             // lbl_inf
             // 
@@ -742,7 +757,7 @@
             this.txt_telefono.Mask = "9990000000";
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(147, 20);
-            this.txt_telefono.TabIndex = 242;
+            this.txt_telefono.TabIndex = 23;
             // 
             // label33
             // 
@@ -981,6 +996,9 @@
             // 
             // cmb_Civil
             // 
+            this.cmb_Civil.AutoCompleteCustomSource.AddRange(new string[] {
+            "SOLTERO",
+            "CASADO"});
             this.cmb_Civil.FormattingEnabled = true;
             this.cmb_Civil.Items.AddRange(new object[] {
             "SOLTERO",
@@ -993,11 +1011,17 @@
             // 
             // cmb_genero
             // 
+            this.cmb_genero.AutoCompleteCustomSource.AddRange(new string[] {
+            "M",
+            "F"});
+            this.cmb_genero.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmb_genero.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_genero.FormattingEnabled = true;
             this.cmb_genero.Items.AddRange(new object[] {
             "M",
             "F"});
             this.cmb_genero.Location = new System.Drawing.Point(194, 333);
+            this.cmb_genero.MaxLength = 1;
             this.cmb_genero.Name = "cmb_genero";
             this.cmb_genero.Size = new System.Drawing.Size(74, 21);
             this.cmb_genero.TabIndex = 24;
@@ -1345,7 +1369,7 @@
             this.txt_tel_contacto.Mask = "9990000000";
             this.txt_tel_contacto.Name = "txt_tel_contacto";
             this.txt_tel_contacto.Size = new System.Drawing.Size(166, 20);
-            this.txt_tel_contacto.TabIndex = 241;
+            this.txt_tel_contacto.TabIndex = 33;
             // 
             // txt_infonavit
             // 
@@ -1521,7 +1545,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(593, 619);
+            this.ClientSize = new System.Drawing.Size(594, 619);
             this.Controls.Add(this.Panel_secundario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);
@@ -1538,6 +1562,8 @@
             this.Panel_principal.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.Panel_secundario.ResumeLayout(false);
@@ -1673,5 +1699,6 @@
         private System.Windows.Forms.MaskedTextBox txt_rfc;
         private System.Windows.Forms.MaskedTextBox txt_telefono;
         private System.Windows.Forms.MaskedTextBox txt_tel_contacto;
+        private System.Windows.Forms.RadioButton rdb_otro;
     }
 }

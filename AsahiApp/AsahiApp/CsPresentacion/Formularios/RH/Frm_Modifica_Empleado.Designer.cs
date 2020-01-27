@@ -124,7 +124,7 @@
             this.txt_compara2 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.txt_SDO1 = new System.Windows.Forms.TextBox();
+            this.txt_sueldo_departamento = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.txt_SDO2 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -159,6 +159,7 @@
             this.txt_SDO5_2 = new System.Windows.Forms.TextBox();
             this.txt_factor_sueldo = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label43 = new System.Windows.Forms.Label();
             this.dgv_turno = new System.Windows.Forms.DataGridView();
             this.lbl_cambio = new System.Windows.Forms.Label();
             this.lbl_Catalogo = new System.Windows.Forms.Label();
@@ -1123,6 +1124,7 @@
             this.dtm_fecha_dep.Name = "dtm_fecha_dep";
             this.dtm_fecha_dep.Size = new System.Drawing.Size(195, 20);
             this.dtm_fecha_dep.TabIndex = 245;
+            this.dtm_fecha_dep.ValueChanged += new System.EventHandler(this.Dtm_fecha_dep_ValueChanged);
             // 
             // lbl_Comprueba_depto
             // 
@@ -1162,7 +1164,7 @@
             this.btn_mod_departamento.Name = "btn_mod_departamento";
             this.btn_mod_departamento.Size = new System.Drawing.Size(72, 29);
             this.btn_mod_departamento.TabIndex = 241;
-            this.btn_mod_departamento.Text = "&Modificar";
+            this.btn_mod_departamento.Text = "&Aplicar";
             this.btn_mod_departamento.UseVisualStyleBackColor = true;
             this.btn_mod_departamento.Click += new System.EventHandler(this.Btn_mod_departamento_Click);
             // 
@@ -1258,6 +1260,7 @@
             this.dtm_puesto.Name = "dtm_puesto";
             this.dtm_puesto.Size = new System.Drawing.Size(196, 20);
             this.dtm_puesto.TabIndex = 247;
+            this.dtm_puesto.ValueChanged += new System.EventHandler(this.Dtm_puesto_ValueChanged);
             // 
             // dgv_puesto
             // 
@@ -1294,7 +1297,7 @@
             this.btn_mod_puesto.Name = "btn_mod_puesto";
             this.btn_mod_puesto.Size = new System.Drawing.Size(61, 31);
             this.btn_mod_puesto.TabIndex = 243;
-            this.btn_mod_puesto.Text = "&Modificar";
+            this.btn_mod_puesto.Text = "&Aplicar";
             this.btn_mod_puesto.UseVisualStyleBackColor = true;
             this.btn_mod_puesto.Click += new System.EventHandler(this.Btn_mod_puesto_Click);
             // 
@@ -1310,7 +1313,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label31);
-            this.groupBox2.Controls.Add(this.txt_SDO1);
+            this.groupBox2.Controls.Add(this.txt_sueldo_departamento);
             this.groupBox2.Controls.Add(this.label33);
             this.groupBox2.Controls.Add(this.txt_SDO2);
             this.groupBox2.Controls.Add(this.label34);
@@ -1334,14 +1337,14 @@
             this.label31.TabIndex = 14;
             this.label31.Text = "SUELDO DIARIO:";
             // 
-            // txt_SDO1
+            // txt_sueldo_departamento
             // 
-            this.txt_SDO1.Location = new System.Drawing.Point(6, 33);
-            this.txt_SDO1.MaxLength = 10;
-            this.txt_SDO1.Name = "txt_SDO1";
-            this.txt_SDO1.Size = new System.Drawing.Size(89, 20);
-            this.txt_SDO1.TabIndex = 11;
-            this.txt_SDO1.Leave += new System.EventHandler(this.Txt_SDO1_Leave_1);
+            this.txt_sueldo_departamento.Location = new System.Drawing.Point(6, 33);
+            this.txt_sueldo_departamento.MaxLength = 10;
+            this.txt_sueldo_departamento.Name = "txt_sueldo_departamento";
+            this.txt_sueldo_departamento.Size = new System.Drawing.Size(89, 20);
+            this.txt_sueldo_departamento.TabIndex = 11;
+            this.txt_sueldo_departamento.Leave += new System.EventHandler(this.Txt_SDO1_Leave_1);
             // 
             // label33
             // 
@@ -1549,6 +1552,7 @@
             this.dgv_sueldo.Size = new System.Drawing.Size(558, 208);
             this.dgv_sueldo.TabIndex = 251;
             this.dgv_sueldo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_sueldo_CellContentClick);
+            this.dgv_sueldo.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_sueldo_RowEnter);
             // 
             // btn_mod_sueldo
             // 
@@ -1560,7 +1564,7 @@
             this.btn_mod_sueldo.Name = "btn_mod_sueldo";
             this.btn_mod_sueldo.Size = new System.Drawing.Size(61, 31);
             this.btn_mod_sueldo.TabIndex = 14;
-            this.btn_mod_sueldo.Text = "&Modificar";
+            this.btn_mod_sueldo.Text = "&Aplicar";
             this.btn_mod_sueldo.UseVisualStyleBackColor = true;
             this.btn_mod_sueldo.Click += new System.EventHandler(this.Btn_mod_sueldo_Click_1);
             // 
@@ -1675,6 +1679,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.label43);
             this.tabPage6.Controls.Add(this.dgv_turno);
             this.tabPage6.Controls.Add(this.lbl_cambio);
             this.tabPage6.Controls.Add(this.lbl_Catalogo);
@@ -1692,6 +1697,15 @@
             this.tabPage6.Text = "Turno";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(23, 72);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(108, 13);
+            this.label43.TabIndex = 254;
+            this.label43.Text = "FECHA APLICACION";
+            // 
             // dgv_turno
             // 
             this.dgv_turno.AllowUserToAddRows = false;
@@ -1700,13 +1714,14 @@
             this.dgv_turno.AllowUserToResizeRows = false;
             this.dgv_turno.BackgroundColor = System.Drawing.Color.White;
             this.dgv_turno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_turno.Location = new System.Drawing.Point(18, 84);
+            this.dgv_turno.Location = new System.Drawing.Point(18, 124);
             this.dgv_turno.Name = "dgv_turno";
             this.dgv_turno.RowHeadersVisible = false;
             this.dgv_turno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_turno.Size = new System.Drawing.Size(562, 264);
+            this.dgv_turno.Size = new System.Drawing.Size(562, 315);
             this.dgv_turno.TabIndex = 239;
             this.dgv_turno.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_turno_CellContentClick);
+            this.dgv_turno.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_turno_RowEnter);
             // 
             // lbl_cambio
             // 
@@ -1743,7 +1758,7 @@
             this.btn_eliminar_turno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_eliminar_turno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_eliminar_turno.ForeColor = System.Drawing.Color.Black;
-            this.btn_eliminar_turno.Location = new System.Drawing.Point(504, 353);
+            this.btn_eliminar_turno.Location = new System.Drawing.Point(504, 445);
             this.btn_eliminar_turno.Name = "btn_eliminar_turno";
             this.btn_eliminar_turno.Size = new System.Drawing.Size(76, 29);
             this.btn_eliminar_turno.TabIndex = 244;
@@ -1757,11 +1772,11 @@
             this.btn_mod_turno.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_mod_turno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_mod_turno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mod_turno.Location = new System.Drawing.Point(202, 37);
+            this.btn_mod_turno.Location = new System.Drawing.Point(204, 82);
             this.btn_mod_turno.Name = "btn_mod_turno";
             this.btn_mod_turno.Size = new System.Drawing.Size(63, 29);
-            this.btn_mod_turno.TabIndex = 240;
-            this.btn_mod_turno.Text = "&Modificar";
+            this.btn_mod_turno.TabIndex = 3;
+            this.btn_mod_turno.Text = "&Aplicar";
             this.btn_mod_turno.UseVisualStyleBackColor = true;
             this.btn_mod_turno.Click += new System.EventHandler(this.Btn_mod_turno_Click);
             // 
@@ -1785,17 +1800,18 @@
             this.cmb_turno.Location = new System.Drawing.Point(22, 40);
             this.cmb_turno.Name = "cmb_turno";
             this.cmb_turno.Size = new System.Drawing.Size(163, 21);
-            this.cmb_turno.TabIndex = 236;
+            this.cmb_turno.TabIndex = 1;
             this.cmb_turno.SelectedIndexChanged += new System.EventHandler(this.Cmb_turno_SelectedIndexChanged);
             this.cmb_turno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_turno_KeyPress_1);
+            this.cmb_turno.Leave += new System.EventHandler(this.Cmb_turno_Leave);
             // 
             // dtm_fecha_turno
             // 
             this.dtm_fecha_turno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_fecha_turno.Location = new System.Drawing.Point(23, 324);
+            this.dtm_fecha_turno.Location = new System.Drawing.Point(22, 90);
             this.dtm_fecha_turno.Name = "dtm_fecha_turno";
-            this.dtm_fecha_turno.Size = new System.Drawing.Size(104, 20);
-            this.dtm_fecha_turno.TabIndex = 253;
+            this.dtm_fecha_turno.Size = new System.Drawing.Size(163, 20);
+            this.dtm_fecha_turno.TabIndex = 1;
             // 
             // tabPage7
             // 
@@ -1823,8 +1839,9 @@
             this.dgv_ruta.Name = "dgv_ruta";
             this.dgv_ruta.RowHeadersVisible = false;
             this.dgv_ruta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ruta.Size = new System.Drawing.Size(555, 126);
+            this.dgv_ruta.Size = new System.Drawing.Size(555, 142);
             this.dgv_ruta.TabIndex = 245;
+            this.dgv_ruta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_ruta_CellContentClick);
             // 
             // btn_mod_ruta
             // 
@@ -1832,11 +1849,11 @@
             this.btn_mod_ruta.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_mod_ruta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_mod_ruta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mod_ruta.Location = new System.Drawing.Point(223, 35);
+            this.btn_mod_ruta.Location = new System.Drawing.Point(219, 35);
             this.btn_mod_ruta.Name = "btn_mod_ruta";
             this.btn_mod_ruta.Size = new System.Drawing.Size(61, 31);
-            this.btn_mod_ruta.TabIndex = 241;
-            this.btn_mod_ruta.Text = "&Modificar";
+            this.btn_mod_ruta.TabIndex = 1;
+            this.btn_mod_ruta.Text = "&Aplicar";
             this.btn_mod_ruta.UseVisualStyleBackColor = true;
             this.btn_mod_ruta.Click += new System.EventHandler(this.Btn_mod_ruta_Click);
             // 
@@ -1861,7 +1878,7 @@
             this.cmb_ruta.Location = new System.Drawing.Point(24, 41);
             this.cmb_ruta.Name = "cmb_ruta";
             this.cmb_ruta.Size = new System.Drawing.Size(181, 21);
-            this.cmb_ruta.TabIndex = 239;
+            this.cmb_ruta.TabIndex = 0;
             this.cmb_ruta.SelectedIndexChanged += new System.EventHandler(this.Cmb_ruta_SelectedIndexChanged);
             // 
             // label19
@@ -2010,7 +2027,7 @@
         private System.Windows.Forms.TextBox txt_compara2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox txt_SDO1;
+        private System.Windows.Forms.TextBox txt_sueldo_departamento;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox txt_SDO2;
         private System.Windows.Forms.Label label34;
@@ -2069,5 +2086,6 @@
         private System.Windows.Forms.MaskedTextBox txt_telefono;
         private System.Windows.Forms.MaskedTextBox txt_curp;
         private System.Windows.Forms.MaskedTextBox txt_rfc;
+        private System.Windows.Forms.Label label43;
     }
 }
