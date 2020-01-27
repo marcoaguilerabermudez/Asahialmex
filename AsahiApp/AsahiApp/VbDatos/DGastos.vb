@@ -258,6 +258,7 @@ Public Class DGastos
                 gst.Cuenta = dr("Codigo").ToString
                 gst.NombreCuenta = dr("Nombre").ToString
                 gst.PlanMonto = Convert.ToDouble(dr("PlanM").ToString)
+                gst.Empresa = dr("Empresa").ToString
                 'gst.Modif = dr("Modif").ToString
                 lstGst.Add(gst)
             End While

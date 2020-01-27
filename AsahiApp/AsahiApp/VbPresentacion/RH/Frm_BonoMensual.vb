@@ -82,10 +82,11 @@ Public Class Frm_BonoMensual
     Private Sub Btn_Mostrar_Click(sender As Object, e As EventArgs) Handles Btn_Mostrar.Click
         If open = True Then
             Dim fecha As Date
+            Dim año As Integer = Convert.ToInt32(Format(Dtp_FechaInicioSemana.Value, "yyyy"))
             Dim lstEmp As New LEmpleado(), NPre As New NPrenomina(), conex As New conexion()
             Dim cadConex = conex.conexion2008
 
-            Me.mes = NPre.VerificarUltimoMesCalculado(cadConex)
+            Me.mes = NPre.VerificarUltimoMesCalculado(cadConex, año)
             fecha = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             ProcesoBonoMensual(lstEmp, fecha)
             If rec = False Then
@@ -888,11 +889,17 @@ Public Class Frm_BonoMensual
         Dim dia As String
 
         dia = DateTime.Now
-
+        'If Format(dia, "dd/MM/yyyy") >= "27/01/2020" And Format(dia, "dd/MM/yyyy") <= "29/02/2020" Then
+        '    fecha = Format(DateSerial(Year(dia), Month(dia) + 1, 0), "dd/MM/yyyy")
+        '    Me.da = Format(DateAdd(DateInterval.Day, -5, fecha), "dd")
+        '    Me.ud = 0
+        '    Dtp_FechaInicioSemana.Value = DateAdd(DateInterval.Day, -5, fecha)
+        'Else
         fecha = Format(DateSerial(Year(dia), Month(dia) + 0, 0), "dd/MM/yyyy")
         Me.da = Format(fecha, "dd")
         Me.ud = 0
         Dtp_FechaInicioSemana.Value = fecha
+        'End If
     End Sub
     Private Sub CalcularBono(ByVal totalFilas As Integer)
         Dim fila As Integer, rtt As Integer
