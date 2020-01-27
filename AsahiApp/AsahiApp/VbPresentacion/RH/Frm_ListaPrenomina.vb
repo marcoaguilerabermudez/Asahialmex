@@ -87,6 +87,12 @@ Public Class Frm_ListaPrenomina
             'Btn_Excel.Visible = False
             Txt_FiltroId.Enabled = False
             Txt_FiltroId.Text = ""
+            Txt_FiltroNombre.Enabled = False
+            Txt_FiltroNombre.Text = ""
+            Txt_FiltroHorario.Enabled = False
+            Txt_FiltroHorario.Text = ""
+            Txt_FiltroDpto.Enabled = False
+            Txt_FiltroDpto.Text = ""
             open = True
 
         Else
@@ -121,7 +127,7 @@ Public Class Frm_ListaPrenomina
             Btn_Reporte.Visible = True
         End If
     End Sub
-    Private Sub Bgw_HiloSegundoPlano_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Bgw_HiloSeundoPlano.DoWork
+    Private Sub Bgw_HiloSegundoPlano_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Bgw_HiloSegundoPlano.DoWork
 
     End Sub
     Private Sub Dgv_ListaPrenomina_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListaPrenomina.CellEndEdit
@@ -267,6 +273,70 @@ Public Class Frm_ListaPrenomina
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Start()
         Cursor = Cursors.Default
+    End Sub
+    Private Sub Txt_FiltroHorario_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroHorario.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, horario As String
+        If Len(Txt_FiltroHorario.Text) > 8 Or Len(Txt_FiltroHorario.Text) = 0 Then
+            Txt_FiltroId.Text = ""
+            Txt_FiltroNombre.Text = ""
+            Txt_FiltroDpto.Text = ""
+            If Txt_FiltroHorario.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        horario = .Cells("horarioEmpleado").Value
+                        If Not (horario Like Txt_FiltroHorario.Text) And horario <> "" Then
+                            .Visible = True
+                        End If
+                        If Not (horario Like Txt_FiltroHorario.Text) And horario <> "" Then
+                            .Visible = False
+                        End If
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
+    End Sub
+    Private Sub Txt_FiltroDpto_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroDpto.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, dpto As String
+        If Len(Txt_FiltroDpto.Text) > 6 Or Len(Txt_FiltroDpto.Text) = 0 Then
+            Txt_FiltroId.Text = ""
+            Txt_FiltroNombre.Text = ""
+            Txt_FiltroHorario.Text = ""
+            If Txt_FiltroDpto.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        dpto = .Cells("departamentoEmpleado").Value
+                        If Not (dpto Like Txt_FiltroDpto.Text) And dpto <> "" Then
+                            .Visible = True
+                        End If
+                        If Not (dpto Like Txt_FiltroDpto.Text) And dpto <> "" Then
+                            .Visible = False
+                        End If
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
     End Sub
 #End Region
 #Region "Rellena cmb"
@@ -614,6 +684,7 @@ Public Class Frm_ListaPrenomina
                 Dgv_ListaPrenomina.Rows(fila).Cells("b7").Value = item.Nota6
             End If
             Dgv_ListaPrenomina.Rows(fila).Cells("idTurno").Value = item.IdTurno
+            Dgv_ListaPrenomina.Rows(fila).Cells("nacional").Value = item.Nacional
             fila += 1
         Next
         Dgv_ListaPrenomina.Enabled = True
@@ -1151,6 +1222,318 @@ Public Class Frm_ListaPrenomina
 
         Next
     End Sub
+    Private Sub RellenaChecadasExpatriadosMazda()
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count()
+
+        For fila = 0 To totalFilas - 2
+            With Dgv_ListaPrenomina.Rows(fila)
+                Dim idTurno As Integer = .Cells("idTurno").Value
+                Dim nac As Boolean = .Cells("nacional").Value
+                If nac = True Then
+                    If .Cells("entrada1").Value = "" Then
+                        .Cells("entrada1").Value = "08:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("entrada1").Style.BackColor = Color.Green
+                        .Cells("entrada1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida1").Value = "" Then
+                        .Cells("salida1").Value = "17:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("salida1").Style.BackColor = Color.Green
+                        .Cells("salida1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada2").Value = "" Then
+                        .Cells("entrada2").Value = "08:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("entrada2").Style.BackColor = Color.Green
+                        .Cells("entrada2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida2").Value = "" Then
+                        .Cells("salida2").Value = "17:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("salida2").Style.BackColor = Color.Green
+                        .Cells("salida2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada3").Value = "" Then
+                        .Cells("entrada3").Value = "08:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("entrada3").Style.BackColor = Color.Green
+                        .Cells("entrada3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida3").Value = "" Then
+                        .Cells("salida3").Value = "17:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("salida3").Style.BackColor = Color.Green
+                        .Cells("salida3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada4").Value = "" Then
+                        .Cells("entrada4").Value = "08:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("entrada4").Style.BackColor = Color.Green
+                        .Cells("entrada4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida4").Value = "" Then
+                        .Cells("salida4").Value = "17:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("salida4").Style.BackColor = Color.Green
+                        .Cells("salida4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada5").Value = "" Then
+                        .Cells("entrada5").Value = "08:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("entrada5").Style.BackColor = Color.Green
+                        .Cells("entrada5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida5").Value = "" Then
+                        .Cells("salida5").Value = "17:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("salida5").Style.BackColor = Color.Green
+                        .Cells("salida5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                ElseIf idTurno = 5 Then
+                    If .Cells("entrada1").Value = "" Then
+                        .Cells("entrada1").Value = "07:44"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("entrada1").Style.BackColor = Color.Green
+                        .Cells("entrada1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida1").Value = "" Then
+                        .Cells("salida1").Value = "18:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("salida1").Style.BackColor = Color.Green
+                        .Cells("salida1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada2").Value = "" Then
+                        .Cells("entrada2").Value = "07:44"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("entrada2").Style.BackColor = Color.Green
+                        .Cells("entrada2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida2").Value = "" Then
+                        .Cells("salida2").Value = "18:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("salida2").Style.BackColor = Color.Green
+                        .Cells("salida2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada3").Value = "" Then
+                        .Cells("entrada3").Value = "07:44"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("entrada3").Style.BackColor = Color.Green
+                        .Cells("entrada3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida3").Value = "" Then
+                        .Cells("salida3").Value = "18:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("salida3").Style.BackColor = Color.Green
+                        .Cells("salida3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada4").Value = "" Then
+                        .Cells("entrada4").Value = "07:44"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("entrada4").Style.BackColor = Color.Green
+                        .Cells("entrada4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida4").Value = "" Then
+                        .Cells("salida4").Value = "18:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("salida4").Style.BackColor = Color.Green
+                        .Cells("salida4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada5").Value = "" Then
+                        .Cells("entrada5").Value = "07:44"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("entrada5").Style.BackColor = Color.Green
+                        .Cells("entrada5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida5").Value = "" Then
+                        .Cells("salida5").Value = "18:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("salida5").Style.BackColor = Color.Green
+                        .Cells("salida5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                ElseIf idTurno = 6 Then
+                    If .Cells("entrada1").Value = "" Then
+                        .Cells("entrada1").Value = "20:20"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("entrada1").Style.BackColor = Color.Green
+                        .Cells("entrada1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida1").Value = "" Then
+                        .Cells("salida1").Value = "06:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("salida1").Style.BackColor = Color.Green
+                        .Cells("salida1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada2").Value = "" Then
+                        .Cells("entrada2").Value = "20:20"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("entrada2").Style.BackColor = Color.Green
+                        .Cells("entrada2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida2").Value = "" Then
+                        .Cells("salida2").Value = "06:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("salida2").Style.BackColor = Color.Green
+                        .Cells("salida2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada3").Value = "" Then
+                        .Cells("entrada3").Value = "20:20"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("entrada3").Style.BackColor = Color.Green
+                        .Cells("entrada3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida3").Value = "" Then
+                        .Cells("salida3").Value = "06:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("salida3").Style.BackColor = Color.Green
+                        .Cells("salida3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada4").Value = "" Then
+                        .Cells("entrada4").Value = "20:20"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("entrada4").Style.BackColor = Color.Green
+                        .Cells("entrada4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida4").Value = "" Then
+                        .Cells("salida4").Value = "06:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("salida4").Style.BackColor = Color.Green
+                        .Cells("salida4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada5").Value = "" Then
+                        .Cells("entrada5").Value = "20:20"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("entrada5").Style.BackColor = Color.Green
+                        .Cells("entrada5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida5").Value = "" Then
+                        .Cells("salida5").Value = "06:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("salida5").Style.BackColor = Color.Green
+                        .Cells("salida5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                End If
+            End With
+        Next
+    End Sub
+    Private Sub RellenarTxtHorario()
+        Dim lstEmp As New LEmpleado()
+        Dim NEmp As New NEmpleado()
+        Dim emp As New Empleado()
+        'Dim fi As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
+
+        lstEmp = NEmp.HorariosRecuperar(Me.cadenaConex)
+        emp.Horario = ""
+        lstEmp.Add(emp)
+        For Each item In lstEmp
+            Txt_FiltroHorario.AutoCompleteCustomSource.Add(item.Horario)
+        Next
+    End Sub
+    Private Sub RellenarTxtDptos()
+        Dim lstEmp As New LEmpleado()
+        Dim NEmp As New NEmpleado()
+        Dim emp As New Empleado()
+        Dim fi As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
+        Dim conex As New conexion
+        Dim cadConex = conex.conexion2008
+
+        lstEmp = NEmp.DptosRecuperar(cadConex, fi)
+        emp.Departamento = ""
+        lstEmp.Add(emp)
+        For Each item In lstEmp
+            Txt_FiltroDpto.AutoCompleteCustomSource.Add(item.Departamento)
+        Next
+    End Sub
 #End Region
 #Region "Rellena objetos"
     Private Function RellenaObjetoEmpleado() As LEmpleado
@@ -1259,9 +1642,15 @@ Public Class Frm_ListaPrenomina
         If lstEmp(0).Err = False Then
             RellenaChecadasDgvPrenomina(lstEmp)
             RecuperarIncidencias()
+            RellenaChecadasExpatriadosMazda()
             CalcularBono()
             'Btn_Excel.Visible = True
             Txt_FiltroId.Enabled = True
+            Txt_FiltroNombre.Enabled = True
+            Txt_FiltroHorario.Enabled = True
+            Txt_FiltroDpto.Enabled = True
+            RellenarTxtHorario()
+            RellenarTxtDptos()
         End If
     End Sub
     Private Sub ModificarDiaInicio()

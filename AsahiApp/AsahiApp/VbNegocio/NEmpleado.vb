@@ -29,4 +29,12 @@ Public Class NEmpleado
         Dim DEmp As New DEmpleado()
         Return DEmp.EmpleadosRecuperarSG(cadConex, objEmp)
     End Function
+    Public Function DptosRecuperar(ByVal cadenaConex As String, ByVal fecha As Date) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.DptosRecuperar(cadenaConex, fecha)
+    End Function
+    Public Function HorariosRecuperar(ByVal cadenaConex As String) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.HorariosRecuperar(cadenaConex)
+    End Function
 End Class

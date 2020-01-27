@@ -242,4 +242,13 @@
             ordenCompra_ = value
         End Set
     End Property
+    Private empresa_ As String
+    Public Property Empresa() As String
+        Get
+            Return empresa_
+        End Get
+        Set(ByVal value As String)
+            empresa_ = value
+        End Set
+    End Property
 End Class

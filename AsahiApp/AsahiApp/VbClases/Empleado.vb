@@ -948,4 +948,13 @@
             eMail_ = value
         End Set
     End Property
+    Private nacional_ As Boolean
+    Public Property Nacional() As Boolean
+        Get
+            Return nacional_
+        End Get
+        Set(ByVal value As Boolean)
+            nacional_ = value
+        End Set
+    End Property
 End Class

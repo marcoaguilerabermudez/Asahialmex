@@ -23,6 +23,7 @@ Public Class DEmpleado
                 empleados.Departamento = dr("DEPARTAMENTO").ToString
                 empleados.TP = dr("TP").ToString
                 empleados.FechaBaja = Convert.ToDateTime(dr("BAJA").ToString)
+                empleados.Nacional = Convert.ToBoolean(dr("AVISO").ToString)
                 empleados.HoraEntrada = Convert.ToDateTime(dr("Entrada").ToString)
                 empleados.HoraSalida = Convert.ToDateTime(dr("Salida").ToString)
                 empleados.HoraEntradaReal0 = Convert.ToDateTime(dr("ERF0").ToString)
@@ -344,5 +345,53 @@ Public Class DEmpleado
             oCon.Dispose()
         End Try
         Return objEmp
+    End Function
+    Public Function DptosRecuperar(ByVal cadenaConex As String, ByVal fecha As Date) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstDep As New LEmpleado()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Select IEB.DEPARTAMENTO From asahi16.dbo.Vista_InfoEmpleadosBasica IEB where TP = 'A' or TP = 'R' or (TP='B' and (IEB.BAJA >= '" & fecha & "')) Group by DEPARTAMENTO", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.Departamento = dr("DEPARTAMENTO").ToString
+                lstDep.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstDep
+    End Function
+    Public Function HorariosRecuperar(ByVal cadenaConex As String) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstHr As New LEmpleado()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT 'MAÑANA 6:55 a 15:25' as Horario union SELECT 'TARDE 15:25 a 11:25' union SELECT 'NOCHE 11:25 a 7:00' union SELECT 'ADMINISTRATIVO 8:00 a 17:00' union SELECT 'MAZDA DIA 6:00 a 18:00' union SELECT 'MAZDA NOCHE 18:00 a 6:00' union SELECT 'DIA 7:00 a 19:00' union SELECT 'NOCHE 19:00 a 7:00'", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.Horario = dr("Horario").ToString
+                lstHr.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstHr
     End Function
 End Class

@@ -260,6 +260,7 @@ Public Class Frm_PlanGastos
             Dgv_Datos.Columns("planActual").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             Dgv_Datos.Columns("nuevoPlan").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             With Dgv_Datos.Rows(fila)
+                If item.Empresa = "AAMS" Then .DefaultCellStyle.BackColor = Color.PeachPuff
                 .Cells("codigo2").Value = item.Cuenta
                 .Cells("cuenta").Value = item.NombreCuenta
                 .Cells("planActual").Value = Format(item.PlanMonto, "$ #,###,##0.00")
