@@ -458,4 +458,13 @@
             xml_ = value
         End Set
     End Property
+    Private fechaValidado_ As Date
+    Public Property FechaValidado() As Date
+        Get
+            Return fechaValidado_
+        End Get
+        Set(ByVal value As Date)
+            fechaValidado_ = value
+        End Set
+    End Property
 End Class

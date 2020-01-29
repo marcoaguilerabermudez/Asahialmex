@@ -102,9 +102,9 @@ Public Class NPrenomina
         objBono = CrearXmlAcumulado(lstBono)
         DPre.InsertarAcumulado(cadenaConex, objBono, mes)
     End Sub
-    Public Function VerificarUltimoMesCalculado(ByVal cadenaConex As String) As Integer
+    Public Function VerificarUltimoMesCalculado(ByVal cadenaConex As String, ByVal año As Integer) As Integer
         Dim DPre As New DPrenomina()
-        Return DPre.VerificarUltimoMesCalculado(cadenaConex)
+        Return DPre.VerificarUltimoMesCalculado(cadenaConex, año)
     End Function
 #Region "XML"
     Private Function CreaXml(ByVal lstEmp As LEmpleado, ByVal sem As Integer) As Empleado

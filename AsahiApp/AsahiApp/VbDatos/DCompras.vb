@@ -283,6 +283,61 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
+    Public Function RecuperarProvValidadas(ByVal cadenaConex As String) As LCompras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstComp As New LCompras()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Sp_muestraprovisionescontabilidadvalidadas", oCon)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim comp As New Compras()
+                comp.FechaValidado = Convert.ToDateTime(dr("FechaVal").ToString)
+                comp.IdProvision = Convert.ToInt32(dr("Id_Provision").ToString)
+                comp.Oc = dr("Oc").ToString
+                comp.IdCompra = Convert.ToInt32(dr("Compra").ToString)
+                comp.Factura = Convert.ToInt32(dr("Factura").ToString)
+                comp.Proveedor = dr("Proveedor").ToString
+                comp.Rfc = dr("RFC").ToString
+                comp.RfcEmisor = dr("RFCEmisor").ToString
+                comp.MontoCompra = dr("MontoCompra").ToString
+                comp.MontoFact = Convert.ToDouble(dr("MontoFact").ToString)
+                comp.MontoPagar = Convert.ToDouble(dr("MontoPagar").ToString)
+                comp.MontoOC = Convert.ToDouble(dr("MontoOC").ToString)
+                comp.FechaFactura = Convert.ToDateTime(dr("FechaFactura").ToString)
+                comp.FechaPagoFact = Convert.ToDateTime(dr("FechaPagoFact").ToString)
+                comp.ObservaCompra = dr("ObservaCompra").ToString
+                comp.Moneda = dr("Moneda").ToString
+                comp.FechaPagoReal = Convert.ToDateTime(dr("FechaPagoReal").ToString)
+                comp.Status = dr("Status").ToString
+                comp.StatusConta = dr("Statusconta").ToString
+                comp.StatusPago = dr("StatusPago").ToString
+                comp.ObservaConta = dr("ObservaConta").ToString
+                comp.Empresa = dr("Empresa").ToString
+                comp.NombreEmisor = dr("NombreEmisor").ToString
+                comp.Add = dr("Add").ToString
+                comp.Val1 = dr("Val1").ToString
+                comp.Val2 = dr("Val2").ToString
+                comp.Val3 = dr("Val3").ToString
+                comp.Val4 = dr("Val4").ToString
+                comp.Ruta = dr("Ruta").ToString
+                comp.IdCompra = Convert.ToInt32(dr("o").ToString)
+                comp.Serie = dr("Serie").ToString
+                lstComp.Add(comp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstComp
+    End Function
     Public Sub ActualizarXml(ByVal cadenaConex As String)
         Dim oCon As New SqlConnection(cadenaConex)
         Try

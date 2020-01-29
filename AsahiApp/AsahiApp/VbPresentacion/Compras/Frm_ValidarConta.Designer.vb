@@ -23,19 +23,24 @@ Partial Class Frm_ValidarConta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Btn_Validar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Txt_FecPago = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Txt_FechRecepcion = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Txt_Moneda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Txt_Serie = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Txt_Status = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -71,9 +76,6 @@ Partial Class Frm_ValidarConta
         Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.add1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Btn_Validar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -92,11 +94,27 @@ Partial Class Frm_ValidarConta
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1202, 94)
+        Me.Panel1.Size = New System.Drawing.Size(1202, 92)
         Me.Panel1.TabIndex = 0
+        '
+        'Btn_Validar
+        '
+        Me.Btn_Validar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Btn_Validar.FlatAppearance.BorderSize = 0
+        Me.Btn_Validar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
+        Me.Btn_Validar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Validar.Image = Global.Presentacion.My.Resources.Resources.comprobado
+        Me.Btn_Validar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_Validar.Location = New System.Drawing.Point(850, 19)
+        Me.Btn_Validar.Name = "Btn_Validar"
+        Me.Btn_Validar.Size = New System.Drawing.Size(43, 55)
+        Me.Btn_Validar.TabIndex = 11
+        Me.Btn_Validar.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button2)
+        Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.TextBox6)
         Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Left
@@ -104,31 +122,70 @@ Partial Class Frm_ValidarConta
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.GroupBox2.Location = New System.Drawing.Point(551, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(273, 94)
+        Me.GroupBox2.Size = New System.Drawing.Size(273, 92)
         Me.GroupBox2.TabIndex = 10
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Status y Monto"
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button2.Location = New System.Drawing.Point(154, 50)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(86, 30)
+        Me.Button2.TabIndex = 27
+        Me.Button2.Text = "Monto"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Location = New System.Drawing.Point(25, 50)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(86, 31)
+        Me.Button1.TabIndex = 26
+        Me.Button1.Text = "Marcar Status"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(148, 25)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(98, 20)
+        Me.TextBox6.TabIndex = 25
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(20, 25)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(98, 20)
+        Me.DateTimePicker1.TabIndex = 0
         '
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel9.Location = New System.Drawing.Point(541, 0)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(10, 94)
+        Me.Panel9.Size = New System.Drawing.Size(10, 92)
         Me.Panel9.TabIndex = 9
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.Txt_FecPago)
         Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
+        Me.GroupBox1.Controls.Add(Me.Txt_FechRecepcion)
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.Txt_Moneda)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.Txt_Serie)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.Txt_Status)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -142,7 +199,7 @@ Partial Class Frm_ValidarConta
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.GroupBox1.Location = New System.Drawing.Point(10, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(531, 94)
+        Me.GroupBox1.Size = New System.Drawing.Size(531, 92)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "FILTROS"
@@ -150,70 +207,70 @@ Partial Class Frm_ValidarConta
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(329, 51)
+        Me.Label9.Location = New System.Drawing.Point(329, 48)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(93, 13)
         Me.Label9.TabIndex = 25
         Me.Label9.Text = "Fecha de Pago"
         '
-        'TextBox5
+        'Txt_FecPago
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(327, 64)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox5.TabIndex = 24
+        Me.Txt_FecPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_FecPago.Location = New System.Drawing.Point(327, 61)
+        Me.Txt_FecPago.Name = "Txt_FecPago"
+        Me.Txt_FecPago.Size = New System.Drawing.Size(95, 20)
+        Me.Txt_FecPago.TabIndex = 8
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(206, 51)
+        Me.Label8.Location = New System.Drawing.Point(206, 48)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(125, 13)
         Me.Label8.TabIndex = 23
         Me.Label8.Text = "Fecha de Recepción"
         '
-        'TextBox4
+        'Txt_FechRecepcion
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(219, 64)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox4.TabIndex = 22
+        Me.Txt_FechRecepcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_FechRecepcion.Location = New System.Drawing.Point(219, 61)
+        Me.Txt_FechRecepcion.Name = "Txt_FechRecepcion"
+        Me.Txt_FechRecepcion.Size = New System.Drawing.Size(95, 20)
+        Me.Txt_FechRecepcion.TabIndex = 7
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(136, 51)
+        Me.Label7.Location = New System.Drawing.Point(136, 48)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(52, 13)
         Me.Label7.TabIndex = 21
         Me.Label7.Text = "Moneda"
         '
-        'TextBox3
+        'Txt_Moneda
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(114, 64)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox3.TabIndex = 20
+        Me.Txt_Moneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Moneda.Location = New System.Drawing.Point(114, 61)
+        Me.Txt_Moneda.Name = "Txt_Moneda"
+        Me.Txt_Moneda.Size = New System.Drawing.Size(95, 20)
+        Me.Txt_Moneda.TabIndex = 6
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 51)
+        Me.Label2.Location = New System.Drawing.Point(36, 48)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(36, 13)
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "Serie"
         '
-        'TextBox2
+        'Txt_Serie
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(7, 64)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox2.TabIndex = 18
+        Me.Txt_Serie.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Serie.Location = New System.Drawing.Point(7, 61)
+        Me.Txt_Serie.Name = "Txt_Serie"
+        Me.Txt_Serie.Size = New System.Drawing.Size(95, 20)
+        Me.Txt_Serie.TabIndex = 5
         '
         'Label1
         '
@@ -224,18 +281,18 @@ Partial Class Frm_ValidarConta
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Status"
         '
-        'TextBox1
+        'Txt_Status
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(114, 25)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox1.TabIndex = 16
+        Me.Txt_Status.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Status.Location = New System.Drawing.Point(114, 25)
+        Me.Txt_Status.Name = "Txt_Status"
+        Me.Txt_Status.Size = New System.Drawing.Size(95, 20)
+        Me.Txt_Status.TabIndex = 2
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(443, 51)
+        Me.Label6.Location = New System.Drawing.Point(443, 48)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(55, 13)
         Me.Label6.TabIndex = 15
@@ -271,10 +328,10 @@ Partial Class Frm_ValidarConta
         'Txt_Empresa
         '
         Me.Txt_Empresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Empresa.Location = New System.Drawing.Point(446, 64)
+        Me.Txt_Empresa.Location = New System.Drawing.Point(446, 61)
         Me.Txt_Empresa.Name = "Txt_Empresa"
         Me.Txt_Empresa.Size = New System.Drawing.Size(52, 20)
-        Me.Txt_Empresa.TabIndex = 11
+        Me.Txt_Empresa.TabIndex = 9
         '
         'Txt_Proveedor
         '
@@ -282,7 +339,7 @@ Partial Class Frm_ValidarConta
         Me.Txt_Proveedor.Location = New System.Drawing.Point(327, 25)
         Me.Txt_Proveedor.Name = "Txt_Proveedor"
         Me.Txt_Proveedor.Size = New System.Drawing.Size(196, 20)
-        Me.Txt_Proveedor.TabIndex = 10
+        Me.Txt_Proveedor.TabIndex = 4
         '
         'Txt_Factura
         '
@@ -290,7 +347,7 @@ Partial Class Frm_ValidarConta
         Me.Txt_Factura.Location = New System.Drawing.Point(218, 25)
         Me.Txt_Factura.Name = "Txt_Factura"
         Me.Txt_Factura.Size = New System.Drawing.Size(95, 20)
-        Me.Txt_Factura.TabIndex = 9
+        Me.Txt_Factura.TabIndex = 3
         '
         'Txt_Oc
         '
@@ -298,20 +355,20 @@ Partial Class Frm_ValidarConta
         Me.Txt_Oc.Location = New System.Drawing.Point(7, 25)
         Me.Txt_Oc.Name = "Txt_Oc"
         Me.Txt_Oc.Size = New System.Drawing.Size(95, 20)
-        Me.Txt_Oc.TabIndex = 8
+        Me.Txt_Oc.TabIndex = 1
         '
         'Panel8
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel8.Location = New System.Drawing.Point(0, 0)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(10, 94)
+        Me.Panel8.Size = New System.Drawing.Size(10, 92)
         Me.Panel8.TabIndex = 7
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 94)
+        Me.Panel2.Location = New System.Drawing.Point(0, 92)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1202, 10)
         Me.Panel2.TabIndex = 1
@@ -327,17 +384,17 @@ Partial Class Frm_ValidarConta
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel4.Location = New System.Drawing.Point(1192, 104)
+        Me.Panel4.Location = New System.Drawing.Point(1192, 102)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(10, 477)
+        Me.Panel4.Size = New System.Drawing.Size(10, 479)
         Me.Panel4.TabIndex = 5
         '
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(0, 104)
+        Me.Panel3.Location = New System.Drawing.Point(0, 102)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(10, 477)
+        Me.Panel3.Size = New System.Drawing.Size(10, 479)
         Me.Panel3.TabIndex = 6
         '
         'Panel6
@@ -345,9 +402,9 @@ Partial Class Frm_ValidarConta
         Me.Panel6.Controls.Add(Me.DataGridView1)
         Me.Panel6.Controls.Add(Me.Panel7)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(10, 104)
+        Me.Panel6.Location = New System.Drawing.Point(10, 102)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1182, 477)
+        Me.Panel6.Size = New System.Drawing.Size(1182, 479)
         Me.Panel6.TabIndex = 7
         '
         'DataGridView1
@@ -359,13 +416,14 @@ Partial Class Frm_ValidarConta
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(1182, 427)
+        Me.DataGridView1.Size = New System.Drawing.Size(1182, 469)
         Me.DataGridView1.TabIndex = 6
         '
         'seleccion
         '
         Me.seleccion.HeaderText = ""
         Me.seleccion.Name = "seleccion"
+        Me.seleccion.Width = 35
         '
         'fechaValid
         '
@@ -461,41 +519,10 @@ Partial Class Frm_ValidarConta
         'Panel7
         '
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel7.Location = New System.Drawing.Point(0, 427)
+        Me.Panel7.Location = New System.Drawing.Point(0, 469)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1182, 50)
+        Me.Panel7.Size = New System.Drawing.Size(1182, 10)
         Me.Panel7.TabIndex = 5
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(20, 25)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(98, 20)
-        Me.DateTimePicker1.TabIndex = 0
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(148, 25)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(98, 20)
-        Me.TextBox6.TabIndex = 25
-        '
-        'Btn_Validar
-        '
-        Me.Btn_Validar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Btn_Validar.FlatAppearance.BorderSize = 0
-        Me.Btn_Validar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
-        Me.Btn_Validar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Validar.Image = Global.Presentacion.My.Resources.Resources.comprobado
-        Me.Btn_Validar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Validar.Location = New System.Drawing.Point(838, 25)
-        Me.Btn_Validar.Name = "Btn_Validar"
-        Me.Btn_Validar.Size = New System.Drawing.Size(39, 40)
-        Me.Btn_Validar.TabIndex = 11
-        Me.Btn_Validar.UseVisualStyleBackColor = True
         '
         'Frm_ValidarConta
         '
@@ -509,7 +536,9 @@ Partial Class Frm_ValidarConta
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Frm_ValidarConta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Validar Conta"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -533,6 +562,27 @@ Partial Class Frm_ValidarConta
     Friend WithEvents Panel9 As Panel
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel8 As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Txt_Empresa As TextBox
+    Friend WithEvents Txt_Proveedor As TextBox
+    Friend WithEvents Txt_Factura As TextBox
+    Friend WithEvents Txt_Oc As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Txt_Moneda As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Txt_Serie As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Txt_Status As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Txt_FecPago As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Txt_FechRecepcion As TextBox
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents Btn_Validar As Button
     Friend WithEvents seleccion As DataGridViewTextBoxColumn
     Friend WithEvents fechaValid As DataGridViewTextBoxColumn
     Friend WithEvents idPovision As DataGridViewTextBoxColumn
@@ -552,25 +602,6 @@ Partial Class Frm_ValidarConta
     Friend WithEvents observaConta As DataGridViewTextBoxColumn
     Friend WithEvents empresa As DataGridViewTextBoxColumn
     Friend WithEvents add1 As DataGridViewTextBoxColumn
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Txt_Empresa As TextBox
-    Friend WithEvents Txt_Proveedor As TextBox
-    Friend WithEvents Txt_Factura As TextBox
-    Friend WithEvents Txt_Oc As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Btn_Validar As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class

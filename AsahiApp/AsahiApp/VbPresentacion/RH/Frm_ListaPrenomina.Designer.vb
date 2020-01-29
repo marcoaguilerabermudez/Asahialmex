@@ -23,7 +23,7 @@ Partial Class Frm_ListaPrenomina
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Dgv_ListaPrenomina = New System.Windows.Forms.DataGridView()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -69,6 +69,7 @@ Partial Class Frm_ListaPrenomina
         Me.comentarios = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.aplicaBono = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.idTurno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nacional = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.manual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Lbl_Dia1 = New System.Windows.Forms.Label()
         Me.Lbl_Dia2 = New System.Windows.Forms.Label()
@@ -83,15 +84,22 @@ Partial Class Frm_ListaPrenomina
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Btn_GuardarBono = New System.Windows.Forms.Button()
         Me.Btn_Reporte = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Btn_Guardar = New System.Windows.Forms.Button()
         Me.Btn_Excel = New System.Windows.Forms.Button()
-        Me.Bgw_HiloSeundoPlano = New System.ComponentModel.BackgroundWorker()
+        Me.Bgw_HiloSegundoPlano = New System.ComponentModel.BackgroundWorker()
         Me.Btn_Mostrar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Txt_FiltroDpto = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Txt_FiltroHorario = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Txt_FiltroNombre = New System.Windows.Forms.TextBox()
         Me.Lbl_FiltroId = New System.Windows.Forms.Label()
         Me.Txt_FiltroId = New System.Windows.Forms.TextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -106,15 +114,15 @@ Partial Class Frm_ListaPrenomina
         'Dgv_ListaPrenomina
         '
         Me.Dgv_ListaPrenomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.E, Me.S, Me.entrada1, Me.salida1, Me.manual1, Me.b1, Me.mnl1, Me.entrada2, Me.salida2, Me.manual2, Me.b2, Me.mnl2, Me.entrada3, Me.salida3, Me.manual3, Me.b3, Me.mnl3, Me.entrada4, Me.salida4, Me.manual4, Me.b4, Me.mnl4, Me.entrada5, Me.salida5, Me.manual5, Me.b5, Me.mnl5, Me.entrada6, Me.salida6, Me.manual6, Me.b6, Me.mnl6, Me.entrada7, Me.salida7, Me.manual7, Me.b7, Me.mnl7, Me.comentarios, Me.aplicaBono, Me.idTurno, Me.manual})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.E, Me.S, Me.entrada1, Me.salida1, Me.manual1, Me.b1, Me.mnl1, Me.entrada2, Me.salida2, Me.manual2, Me.b2, Me.mnl2, Me.entrada3, Me.salida3, Me.manual3, Me.b3, Me.mnl3, Me.entrada4, Me.salida4, Me.manual4, Me.b4, Me.mnl4, Me.entrada5, Me.salida5, Me.manual5, Me.b5, Me.mnl5, Me.entrada6, Me.salida6, Me.manual6, Me.b6, Me.mnl6, Me.entrada7, Me.salida7, Me.manual7, Me.b7, Me.mnl7, Me.comentarios, Me.aplicaBono, Me.idTurno, Me.nacional, Me.manual})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle3
         Me.Dgv_ListaPrenomina.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_ListaPrenomina.Enabled = False
         Me.Dgv_ListaPrenomina.Location = New System.Drawing.Point(0, 0)
@@ -410,6 +418,13 @@ Partial Class Frm_ListaPrenomina
         Me.idTurno.Name = "idTurno"
         Me.idTurno.Visible = False
         '
+        'nacional
+        '
+        Me.nacional.HeaderText = "Nacional"
+        Me.nacional.Name = "nacional"
+        Me.nacional.ReadOnly = True
+        Me.nacional.Visible = False
+        '
         'manual
         '
         Me.manual.HeaderText = "Manual"
@@ -527,6 +542,7 @@ Partial Class Frm_ListaPrenomina
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Btn_GuardarBono)
         Me.Panel1.Controls.Add(Me.Btn_Reporte)
         Me.Panel1.Controls.Add(Me.Panel5)
         Me.Panel1.Controls.Add(Me.Btn_Excel)
@@ -536,6 +552,20 @@ Partial Class Frm_ListaPrenomina
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1197, 60)
         Me.Panel1.TabIndex = 14
+        '
+        'Btn_GuardarBono
+        '
+        Me.Btn_GuardarBono.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_GuardarBono.Image = Global.Presentacion.My.Resources.Resources.Acumulado
+        Me.Btn_GuardarBono.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_GuardarBono.Location = New System.Drawing.Point(591, 5)
+        Me.Btn_GuardarBono.Name = "Btn_GuardarBono"
+        Me.Btn_GuardarBono.Size = New System.Drawing.Size(82, 41)
+        Me.Btn_GuardarBono.TabIndex = 31
+        Me.Btn_GuardarBono.Text = "Guardar Bono"
+        Me.Btn_GuardarBono.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_GuardarBono.UseVisualStyleBackColor = True
+        Me.Btn_GuardarBono.Visible = False
         '
         'Btn_Reporte
         '
@@ -551,16 +581,16 @@ Partial Class Frm_ListaPrenomina
         '
         Me.Panel5.Controls.Add(Me.Btn_Guardar)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel5.Location = New System.Drawing.Point(1038, 0)
+        Me.Panel5.Location = New System.Drawing.Point(1044, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(159, 60)
+        Me.Panel5.Size = New System.Drawing.Size(153, 60)
         Me.Panel5.TabIndex = 16
         '
         'Btn_Guardar
         '
         Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
         Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Guardar.Location = New System.Drawing.Point(39, 8)
+        Me.Btn_Guardar.Location = New System.Drawing.Point(41, 8)
         Me.Btn_Guardar.Name = "Btn_Guardar"
         Me.Btn_Guardar.Size = New System.Drawing.Size(53, 43)
         Me.Btn_Guardar.TabIndex = 14
@@ -582,10 +612,10 @@ Partial Class Frm_ListaPrenomina
         Me.Btn_Excel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Btn_Excel.UseVisualStyleBackColor = True
         '
-        'Bgw_HiloSeundoPlano
+        'Bgw_HiloSegundoPlano
         '
-        Me.Bgw_HiloSeundoPlano.WorkerReportsProgress = True
-        Me.Bgw_HiloSeundoPlano.WorkerSupportsCancellation = True
+        Me.Bgw_HiloSegundoPlano.WorkerReportsProgress = True
+        Me.Bgw_HiloSegundoPlano.WorkerSupportsCancellation = True
         '
         'Btn_Mostrar
         '
@@ -620,6 +650,12 @@ Partial Class Frm_ListaPrenomina
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.Txt_FiltroDpto)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.Txt_FiltroHorario)
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.Txt_FiltroNombre)
         Me.Panel3.Controls.Add(Me.Lbl_FiltroId)
         Me.Panel3.Controls.Add(Me.Txt_FiltroId)
         Me.Panel3.Controls.Add(Me.Lbl_Dia3)
@@ -635,12 +671,73 @@ Partial Class Frm_ListaPrenomina
         Me.Panel3.Size = New System.Drawing.Size(1197, 43)
         Me.Panel3.TabIndex = 11
         '
+        'Txt_FiltroDpto
+        '
+        Me.Txt_FiltroDpto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_FiltroDpto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_FiltroDpto.Location = New System.Drawing.Point(345, 20)
+        Me.Txt_FiltroDpto.Name = "Txt_FiltroDpto"
+        Me.Txt_FiltroDpto.Size = New System.Drawing.Size(96, 20)
+        Me.Txt_FiltroDpto.TabIndex = 19
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(344, 5)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(87, 12)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "DEPARTAMENTO:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(246, 5)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(53, 12)
+        Me.Label3.TabIndex = 16
+        Me.Label3.Text = "HORARIO:"
+        '
+        'Txt_FiltroHorario
+        '
+        Me.Txt_FiltroHorario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_FiltroHorario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_FiltroHorario.Enabled = False
+        Me.Txt_FiltroHorario.Location = New System.Drawing.Point(244, 20)
+        Me.Txt_FiltroHorario.Name = "Txt_FiltroHorario"
+        Me.Txt_FiltroHorario.Size = New System.Drawing.Size(94, 20)
+        Me.Txt_FiltroHorario.TabIndex = 15
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(49, 5)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(50, 12)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "NOMBRE:"
+        '
+        'Txt_FiltroNombre
+        '
+        Me.Txt_FiltroNombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_FiltroNombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_FiltroNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_FiltroNombre.Enabled = False
+        Me.Txt_FiltroNombre.Location = New System.Drawing.Point(46, 20)
+        Me.Txt_FiltroNombre.Name = "Txt_FiltroNombre"
+        Me.Txt_FiltroNombre.Size = New System.Drawing.Size(192, 20)
+        Me.Txt_FiltroNombre.TabIndex = 13
+        '
         'Lbl_FiltroId
         '
         Me.Lbl_FiltroId.AutoSize = True
-        Me.Lbl_FiltroId.Location = New System.Drawing.Point(5, 5)
+        Me.Lbl_FiltroId.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_FiltroId.Location = New System.Drawing.Point(1, 5)
         Me.Lbl_FiltroId.Name = "Lbl_FiltroId"
-        Me.Lbl_FiltroId.Size = New System.Drawing.Size(44, 13)
+        Me.Lbl_FiltroId.Size = New System.Drawing.Size(40, 12)
         Me.Lbl_FiltroId.TabIndex = 12
         Me.Lbl_FiltroId.Text = "CLAVE:"
         '
@@ -649,7 +746,7 @@ Partial Class Frm_ListaPrenomina
         Me.Txt_FiltroId.Enabled = False
         Me.Txt_FiltroId.Location = New System.Drawing.Point(2, 20)
         Me.Txt_FiltroId.Name = "Txt_FiltroId"
-        Me.Txt_FiltroId.Size = New System.Drawing.Size(47, 20)
+        Me.Txt_FiltroId.Size = New System.Drawing.Size(40, 20)
         Me.Txt_FiltroId.TabIndex = 11
         '
         'Timer1
@@ -698,7 +795,7 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents Dtp_FechaInicioSemana As DateTimePicker
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Btn_Mostrar As Button
-    Friend WithEvents Bgw_HiloSeundoPlano As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Bgw_HiloSegundoPlano As System.ComponentModel.BackgroundWorker
     Friend WithEvents Btn_Guardar As Button
     Friend WithEvents Btn_Excel As Button
     Friend WithEvents Panel2 As Panel
@@ -708,6 +805,12 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents Lbl_FiltroId As Label
     Friend WithEvents Txt_FiltroId As TextBox
     Friend WithEvents Btn_Reporte As Button
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Btn_GuardarBono As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Txt_FiltroNombre As TextBox
     Friend WithEvents idEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents nombreEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents horarioEmpleado As DataGridViewTextBoxColumn
@@ -752,6 +855,8 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents comentarios As DataGridViewTextBoxColumn
     Friend WithEvents aplicaBono As DataGridViewCheckBoxColumn
     Friend WithEvents idTurno As DataGridViewTextBoxColumn
+    Friend WithEvents nacional As DataGridViewTextBoxColumn
     Friend WithEvents manual As DataGridViewTextBoxColumn
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Txt_FiltroHorario As TextBox
+    Friend WithEvents Txt_FiltroDpto As TextBox
 End Class

@@ -499,12 +499,12 @@ Public Class DPrenomina
             oCon.Dispose()
         End Try
     End Sub
-    Public Function VerificarUltimoMesCalculado(ByVal cadenaConex As String) As Integer
+    Public Function VerificarUltimoMesCalculado(ByVal cadenaConex As String, ByVal año As Integer) As Integer
         Dim mes As Integer
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT top 1 Calculado from Supervisor_giro.Empacum order by Calculado desc", oCon)
+            Dim query As New SqlCommand("SELECT top 1 Calculado from Supervisor_giro.Empacum where año = " & año & " order by Calculado desc", oCon)
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read)

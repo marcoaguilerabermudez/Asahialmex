@@ -401,7 +401,8 @@ Public Class Frm_Principal
         FrmProv.Show()
     End Sub
     Private Sub AutorizaContabilidadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AutorizaContabilidadToolStripMenuItem.Click
-
+        Dim frmAut As New Frm_ValidarConta()
+        frmAut.Show()
     End Sub
 #End Region
 End Class
