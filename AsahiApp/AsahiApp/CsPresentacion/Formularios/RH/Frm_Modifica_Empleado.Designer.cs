@@ -1549,7 +1549,7 @@
             this.dgv_sueldo.Name = "dgv_sueldo";
             this.dgv_sueldo.RowHeadersVisible = false;
             this.dgv_sueldo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_sueldo.Size = new System.Drawing.Size(558, 208);
+            this.dgv_sueldo.Size = new System.Drawing.Size(558, 209);
             this.dgv_sueldo.TabIndex = 251;
             this.dgv_sueldo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_sueldo_CellContentClick);
             this.dgv_sueldo.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_sueldo_RowEnter);

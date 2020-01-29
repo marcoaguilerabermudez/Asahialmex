@@ -655,7 +655,7 @@ namespace CsPresentacion
             dtm_sueldo.Text = "";
             btn_eliminar_sueldo.Enabled = false;
             lbl_comprueba_sueldo.Text = "";
-          lbl_comprueba_sueldo.Visible = false;
+            lbl_comprueba_sueldo.Visible = false;
             dtm_sueldo.Enabled = false;
             lbl_motivo.Text = "";
             lbl_motivo.Visible = false;
@@ -1341,9 +1341,9 @@ namespace CsPresentacion
                 txt_sueldo_departamento.Text = txt_compara1.Text;
                 txt_SDO2.Text = "0.00";
                 txt_SDO4.Text = "0.00";
-                lbl_factor.Text = "1.07808";
+
                 Sueldo = double.Parse(txt_sueldo_departamento.Text);
-                Factor = double.Parse(lbl_factor.Text);
+                Factor = double.Parse(txt_factor_sueldo.Text);
                 Resultado = Sueldo * Factor;
                 txt_SDO3.Text = Resultado.ToString();
                 txt_SDO5.Text = Resultado.ToString();

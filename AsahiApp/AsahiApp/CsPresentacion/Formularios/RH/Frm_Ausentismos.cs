@@ -153,6 +153,12 @@ namespace CsPresentacion
             lbl_x_pagar.Text = "";
             lbl_x_disfrutar.Text = "";
             lbl_prima.Text = "";
+            lbl_v_id.Text = "0";
+            lbl_v_id.Visible = false;
+            lbl_v_inicia.Text = "0";
+            lbl_v_termina.Text = "0";
+            lbl_v_inicia.Visible = false;
+            lbl_v_termina.Visible = false;
         }
         private void cargar_informacion()
         {
@@ -1642,7 +1648,6 @@ namespace CsPresentacion
         }
 
 
-
         //Botones módulo de vacaciones
         private void Btn_v_insertar_Click(object sender, EventArgs e)
         {
@@ -1657,6 +1662,8 @@ namespace CsPresentacion
             txt_v_duracion.Enabled = true;
             txt_v_antiguedad.Enabled = true;
             btn_v_cancelar.Enabled = true;
+            lbl_v_inicia.Text = "0";
+            lbl_v_termina.Text = "0";
             dtm_v_inicia.Focus();
         }
         private void Btn_v_cancelar_Click(object sender, EventArgs e)
@@ -1665,6 +1672,8 @@ namespace CsPresentacion
             dtm_v_termina.Text = "";
             txt_v_duracion.Text = "";
             txt_v_prima.Text = "";
+            lbl_v_inicia.Text = "0";
+            lbl_v_termina.Text = "0";
             dtm_v_inicia.Focus();
         }
         private void Btn_v_exportar_Click(object sender, EventArgs e)
@@ -1748,19 +1757,52 @@ namespace CsPresentacion
             if (String.IsNullOrEmpty(txt_v_duracion.Text))
             {
                 MessageBox.Show("Es necesario capturar la duración", "¡Aviso!");
-                txt_v_duracion.Focus();   
+                txt_v_duracion.Focus();
             }
             else if ((int.Parse(txt_v_duracion.Text)) > (int.Parse(lbl_x_pagar.Text)))
             {
                 MessageBox.Show("Días solicitados Insuficientes", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_v_duracion.Focus();
             }
-            else
+            else if (lbl_v_id.Text == "0")
             {
                 Verifica_v_vacaciones();
             }
-
-
+            else if (lbl_v_id.Text == "1")
+            {
+                Actualiza_v_vacaciones();
+                Mostrar_Grid_Vacaciones();
+                cargar_dias();
+                calcula_prima();
+                dtm_v_inicia.Text = "";
+                dtm_v_termina.Text = "";
+                txt_v_duracion.Text = "";
+                dtm_v_termina.Text = "";
+                lbl_v_id.Text = "0";
+                lbl_v_inicia.Text = "0";
+                lbl_v_termina.Text = "0";
+                dtm_v_inicia.Focus();
+            }
+            else if (txt_v_duracion.Text == "0")
+            {
+                MessageBox.Show("Es necesario capturar la duración", "¡Aviso!");
+                txt_v_duracion.Focus();
+            }
+        }
+        private void Btn_v_eliminar_Click(object sender, EventArgs e)
+        {
+            Borra_v_vacaciones();
+            Mostrar_Grid_Vacaciones();
+            cargar_dias();
+            calcula_prima();
+            dtm_v_inicia.Text = "";
+            dtm_v_termina.Text = "";
+            txt_v_duracion.Text = "";
+            dtm_v_termina.Text = "";
+            lbl_v_id.Text = "0";
+            lbl_v_inicia.Text = "0";
+            lbl_v_termina.Text = "0";
+            dtm_v_inicia.Focus();
         }
 
         //Métodos módulo de vacaciones
@@ -1961,13 +2003,15 @@ namespace CsPresentacion
                 {
                     Borra_v_incidencia();
                     Mostrar_Grid_Faltas();
-                   Inserta_vacaciones();
-                   Mostrar_Grid_Vacaciones();
+                    Inserta_vacaciones();
+                    Mostrar_Grid_Vacaciones();
+                    cargar_dias();
+                    calcula_prima();
                     dtm_v_inicia.Text = "";
                     dtm_v_termina.Text = "";
                     txt_v_duracion.Text = "";
                     dtm_v_termina.Text = "";
-                    lbl_id.Text = "0";
+                    lbl_v_id.Text = "0";
                     dtm_v_inicia.Focus();
                 }
                 else if (resul == DialogResult.No)
@@ -1979,15 +2023,16 @@ namespace CsPresentacion
             {
                 Inserta_vacaciones();
                 Mostrar_Grid_Vacaciones();
+                cargar_dias();
+                calcula_prima();
                 dtm_v_inicia.Text = "";
                 dtm_v_termina.Text = "";
                 txt_v_duracion.Text = "";
                 dtm_v_termina.Text = "";
-                lbl_id.Text = "0";
+                lbl_v_id.Text = "0";
                 dtm_v_inicia.Focus();
             }
         }
-
         private void Inserta_vacaciones()//inserta vacaciones
         {
             try
@@ -2012,9 +2057,6 @@ namespace CsPresentacion
                 MessageBox.Show("Error al insertar incidencia");
             }
         }
-
-
-
         private void Borra_v_incidencia()//Borra incidencia
         {
             try
@@ -2039,7 +2081,54 @@ namespace CsPresentacion
                 MessageBox.Show("Error al borrar incidencia");
             }    
         }
-
+        private void Borra_v_vacaciones()//Borra vacaciones
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                String strSql;
+                strSql = "[dbo].[Sp_Captura_Vacaciones]";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+                con.Open();
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "8";
+                da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+                da.SelectCommand.Parameters.Add("@INICIA", SqlDbType.VarChar, 100).Value = dtm_v_inicia.Text;
+                da.SelectCommand.Parameters.Add("@TERMINA", SqlDbType.VarChar, 100).Value = dtm_v_termina.Text;
+                da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
+                da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+                da.Fill(dt);
+                con.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error al borrar vacaciones");
+            }
+        }
+        private void Actualiza_v_vacaciones()//actualiza vacaciones
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                String strSql;
+                strSql = "[dbo].[Sp_Captura_Vacaciones]";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
+                con.Open();
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "9";
+                da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+                da.SelectCommand.Parameters.Add("@INICIA", SqlDbType.VarChar, 100).Value = lbl_v_inicia.Text;
+                da.SelectCommand.Parameters.Add("@TERMINA", SqlDbType.VarChar, 100).Value = lbl_v_termina.Text;
+                da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
+                da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
+                da.Fill(dt);
+                con.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error al borrar vacaciones");
+            }
+        }
 
         //Eventos módulo de vacaciones
         private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -2155,7 +2244,11 @@ namespace CsPresentacion
                     dtm_v_inicia.Enabled = true;
                     txt_v_duracion.Enabled = true;
                     txt_v_prima.Enabled = true;
+                    lbl_v_id.Text = "1";
+                    lbl_v_inicia.Text = dtm_v_inicia.Text;
+                    lbl_v_termina.Text = dtm_v_termina.Text;
                     dtm_v_inicia.Focus();
+
                 }
                 if (resul == DialogResult.No)
                 {
@@ -2165,6 +2258,7 @@ namespace CsPresentacion
                     dtm_v_inicia.Enabled = false;
                     txt_v_duracion.Enabled = false;
                     dtm_v_inicia.Focus();
+                    lbl_v_id.Text = "0";
                 }
             }
             else

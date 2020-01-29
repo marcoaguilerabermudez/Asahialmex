@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -126,6 +126,8 @@
             this.btn_v_eliminar = new System.Windows.Forms.Button();
             this.btn_v_ultimo = new System.Windows.Forms.Button();
             this.btn_v_insertar = new System.Windows.Forms.Button();
+            this.lbl_v_inicia = new System.Windows.Forms.Label();
+            this.lbl_v_termina = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -467,17 +469,17 @@
             this.dgv_incapacidades.Location = new System.Drawing.Point(8, 159);
             this.dgv_incapacidades.MultiSelect = false;
             this.dgv_incapacidades.Name = "dgv_incapacidades";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_incapacidades.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_incapacidades.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_incapacidades.RowHeadersVisible = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
-            this.dgv_incapacidades.RowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.dgv_incapacidades.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_incapacidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_incapacidades.ShowCellErrors = false;
             this.dgv_incapacidades.Size = new System.Drawing.Size(780, 245);
@@ -788,17 +790,17 @@
             this.dgv_faltas.Location = new System.Drawing.Point(8, 159);
             this.dgv_faltas.MultiSelect = false;
             this.dgv_faltas.Name = "dgv_faltas";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_faltas.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_faltas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_faltas.RowHeadersVisible = false;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
-            this.dgv_faltas.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgv_faltas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_faltas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_faltas.ShowCellErrors = false;
             this.dgv_faltas.Size = new System.Drawing.Size(780, 245);
@@ -927,6 +929,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lbl_v_termina);
+            this.tabPage2.Controls.Add(this.lbl_v_inicia);
             this.tabPage2.Controls.Add(this.txt_v_prima);
             this.tabPage2.Controls.Add(this.txt_v_antiguedad);
             this.tabPage2.Controls.Add(this.groupBox1);
@@ -1081,7 +1085,7 @@
             // lbl_v_id
             // 
             this.lbl_v_id.AutoSize = true;
-            this.lbl_v_id.Location = new System.Drawing.Point(414, 122);
+            this.lbl_v_id.Location = new System.Drawing.Point(414, 101);
             this.lbl_v_id.Name = "lbl_v_id";
             this.lbl_v_id.Size = new System.Drawing.Size(13, 13);
             this.lbl_v_id.TabIndex = 257;
@@ -1159,17 +1163,17 @@
             this.dgv_vacaciones.Location = new System.Drawing.Point(8, 159);
             this.dgv_vacaciones.MultiSelect = false;
             this.dgv_vacaciones.Name = "dgv_vacaciones";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_vacaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_vacaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_vacaciones.RowHeadersVisible = false;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            this.dgv_vacaciones.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dgv_vacaciones.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_vacaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_vacaciones.ShowCellErrors = false;
             this.dgv_vacaciones.Size = new System.Drawing.Size(780, 245);
@@ -1268,6 +1272,7 @@
             this.btn_v_eliminar.Size = new System.Drawing.Size(40, 30);
             this.btn_v_eliminar.TabIndex = 242;
             this.btn_v_eliminar.UseVisualStyleBackColor = false;
+            this.btn_v_eliminar.Click += new System.EventHandler(this.Btn_v_eliminar_Click);
             // 
             // btn_v_ultimo
             // 
@@ -1294,6 +1299,24 @@
             this.btn_v_insertar.TabIndex = 243;
             this.btn_v_insertar.UseVisualStyleBackColor = false;
             this.btn_v_insertar.Click += new System.EventHandler(this.Btn_v_insertar_Click);
+            // 
+            // lbl_v_inicia
+            // 
+            this.lbl_v_inicia.AutoSize = true;
+            this.lbl_v_inicia.Location = new System.Drawing.Point(412, 120);
+            this.lbl_v_inicia.Name = "lbl_v_inicia";
+            this.lbl_v_inicia.Size = new System.Drawing.Size(43, 13);
+            this.lbl_v_inicia.TabIndex = 268;
+            this.lbl_v_inicia.Text = "@Inicia";
+            // 
+            // lbl_v_termina
+            // 
+            this.lbl_v_termina.AutoSize = true;
+            this.lbl_v_termina.Location = new System.Drawing.Point(410, 139);
+            this.lbl_v_termina.Name = "lbl_v_termina";
+            this.lbl_v_termina.Size = new System.Drawing.Size(56, 13);
+            this.lbl_v_termina.TabIndex = 269;
+            this.lbl_v_termina.Text = "@Termina";
             // 
             // Frm_Aussentismos_Retardos
             // 
@@ -1427,5 +1450,7 @@
         private System.Windows.Forms.TextBox txt_v_antiguedad;
         private System.Windows.Forms.Label lbl_f_id;
         private System.Windows.Forms.Label lbl_v_id;
+        private System.Windows.Forms.Label lbl_v_termina;
+        private System.Windows.Forms.Label lbl_v_inicia;
     }
 }
