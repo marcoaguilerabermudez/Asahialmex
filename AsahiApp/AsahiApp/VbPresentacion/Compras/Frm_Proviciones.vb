@@ -445,10 +445,10 @@ Public Class Frm_Provisiones
                         .DefaultCellStyle.BackColor = Color.FromArgb(255, 192, 192)
                 End Select
             End With
-            Txt_Oc2.AutoCompleteCustomSource.Add(item.IdOrdenCompra)
             Txt_Proveedor2.AutoCompleteCustomSource.Add(item.Proveedor)
             Txt_Factura2.AutoCompleteCustomSource.Add(item.Factura)
             Txt_StatusCompra.AutoCompleteCustomSource.Add(item.Status)
+            Txt_Oc2.AutoCompleteCustomSource.Add(item.IdOrdenCompra)
             fila += 1
         Next
     End Sub
