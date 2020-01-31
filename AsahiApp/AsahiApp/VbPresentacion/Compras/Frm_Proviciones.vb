@@ -444,11 +444,11 @@ Public Class Frm_Provisiones
                     Case "R"
                         .DefaultCellStyle.BackColor = Color.FromArgb(255, 192, 192)
                 End Select
+                Txt_Oc2.AutoCompleteCustomSource.Add(item.IdOrdenCompra)
+                Txt_Proveedor2.AutoCompleteCustomSource.Add(item.Proveedor)
+                Txt_Factura2.AutoCompleteCustomSource.Add(item.Factura)
+                Txt_StatusCompra.AutoCompleteCustomSource.Add(item.Status)
             End With
-            Txt_Proveedor2.AutoCompleteCustomSource.Add(item.Proveedor)
-            Txt_Factura2.AutoCompleteCustomSource.Add(item.Factura)
-            Txt_StatusCompra.AutoCompleteCustomSource.Add(item.Status)
-            Txt_Oc2.AutoCompleteCustomSource.Add(item.IdOrdenCompra)
             fila += 1
         Next
     End Sub
