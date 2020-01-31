@@ -338,6 +338,38 @@ Public Class Frm_ListaPrenomina
             End If
         End If
     End Sub
+    Private Sub Txt_FiltroNombre_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroNombre.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, nombre As String
+        If Len(Txt_FiltroNombre.Text) > 15 Or Len(Txt_FiltroNombre.Text) = 0 Then
+            Txt_FiltroId.Text = ""
+            Txt_FiltroHorario.Text = ""
+            Txt_FiltroDpto.Text = ""
+            If Txt_FiltroNombre.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        nombre = .Cells("nombreEmpleado").Value
+                        If Not (nombre Like Txt_FiltroNombre.Text) And nombre <> "" Then
+                            .Visible = True
+                        End If
+                        If Not (nombre Like Txt_FiltroNombre.Text) And nombre <> "" Then
+                            .Visible = False
+                        End If
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
+    End Sub
 #End Region
 #Region "Rellena cmb"
     Private Sub RellenaCmbSemanas()
@@ -1224,13 +1256,16 @@ Public Class Frm_ListaPrenomina
     End Sub
     Private Sub RellenaChecadasExpatriadosMazda()
         Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count()
+        Dim d1 As Date = Format(Convert.ToDateTime(Lbl_Dia1.Text & "/2020"), "dd/MM/yyyy"), d2 As Date = Format(Convert.ToDateTime(Lbl_Dia2.Text & "/2020"), "dd/MM/yyyy"),
+            d3 As Date = Format(Convert.ToDateTime(Lbl_Dia3.Text & "/2020"), "dd/MM/yyyy"), d4 As Date = Format(Convert.ToDateTime(Lbl_Dia4.Text & "/2020"), "dd/MM/yyyy"),
+            d5 As Date = Format(Convert.ToDateTime(Lbl_Dia5.Text & "/2020"), "dd/MM/yyyy")
 
         For fila = 0 To totalFilas - 2
             With Dgv_ListaPrenomina.Rows(fila)
                 Dim idTurno As Integer = .Cells("idTurno").Value
                 Dim nac As Boolean = .Cells("nacional").Value
                 If nac = True Then
-                    If .Cells("entrada1").Value = "" Then
+                    If .Cells("entrada1").Value = "" And (d1 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Then
                         .Cells("entrada1").Value = "08:00"
                         .Cells("manual").Value = "M"
                         .Cells("manual1").Value = "M"
@@ -1239,7 +1274,7 @@ Public Class Frm_ListaPrenomina
                         .Cells("entrada1").Style.ForeColor = Color.White
                         Btn_Guardar.Visible = True
                     End If
-                    If .Cells("salida1").Value = "" Then
+                    If .Cells("salida1").Value = "" And (d1 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Then
                         .Cells("salida1").Value = "17:00"
                         .Cells("manual").Value = "M"
                         .Cells("manual1").Value = "M"
@@ -1248,7 +1283,7 @@ Public Class Frm_ListaPrenomina
                         .Cells("salida1").Style.ForeColor = Color.White
                         Btn_Guardar.Visible = True
                     End If
-                    If .Cells("entrada2").Value = "" Then
+                    If .Cells("entrada2").Value = "" And (d2 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Then
                         .Cells("entrada2").Value = "08:00"
                         .Cells("manual").Value = "M"
                         .Cells("manual2").Value = "M"
@@ -1257,7 +1292,7 @@ Public Class Frm_ListaPrenomina
                         .Cells("entrada2").Style.ForeColor = Color.White
                         Btn_Guardar.Visible = True
                     End If
-                    If .Cells("salida2").Value = "" Then
+                    If .Cells("salida2").Value = "" And (d2 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Then
                         .Cells("salida2").Value = "17:00"
                         .Cells("manual").Value = "M"
                         .Cells("manual2").Value = "M"
@@ -1266,7 +1301,7 @@ Public Class Frm_ListaPrenomina
                         .Cells("salida2").Style.ForeColor = Color.White
                         Btn_Guardar.Visible = True
                     End If
-                    If .Cells("entrada3").Value = "" Then
+                    If .Cells("entrada3").Value = "" And (d3 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Then
                         .Cells("entrada3").Value = "08:00"
                         .Cells("manual").Value = "M"
                         .Cells("manual3").Value = "M"
@@ -1275,7 +1310,7 @@ Public Class Frm_ListaPrenomina
                         .Cells("entrada3").Style.ForeColor = Color.White
                         Btn_Guardar.Visible = True
                     End If
-                    If .Cells("salida3").Value = "" Then
+                    If .Cells("salida3").Value = "" And (d3 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Then
                         .Cells("salida3").Value = "17:00"
                         .Cells("manual").Value = "M"
                         .Cells("manual3").Value = "M"
@@ -1284,7 +1319,7 @@ Public Class Frm_ListaPrenomina
                         .Cells("salida3").Style.ForeColor = Color.White
                         Btn_Guardar.Visible = True
                     End If
-                    If .Cells("entrada4").Value = "" Then
+                    If .Cells("entrada4").Value = "" And (d4 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Then
                         .Cells("entrada4").Value = "08:00"
                         .Cells("manual").Value = "M"
                         .Cells("manual4").Value = "M"
@@ -1293,7 +1328,7 @@ Public Class Frm_ListaPrenomina
                         .Cells("entrada4").Style.ForeColor = Color.White
                         Btn_Guardar.Visible = True
                     End If
-                    If .Cells("salida4").Value = "" Then
+                    If .Cells("salida4").Value = "" And (d4 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Then
                         .Cells("salida4").Value = "17:00"
                         .Cells("manual").Value = "M"
                         .Cells("manual4").Value = "M"
@@ -1302,7 +1337,7 @@ Public Class Frm_ListaPrenomina
                         .Cells("salida4").Style.ForeColor = Color.White
                         Btn_Guardar.Visible = True
                     End If
-                    If .Cells("entrada5").Value = "" Then
+                    If .Cells("entrada5").Value = "" And (d5 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Then
                         .Cells("entrada5").Value = "08:00"
                         .Cells("manual").Value = "M"
                         .Cells("manual5").Value = "M"
@@ -1311,7 +1346,7 @@ Public Class Frm_ListaPrenomina
                         .Cells("entrada5").Style.ForeColor = Color.White
                         Btn_Guardar.Visible = True
                     End If
-                    If .Cells("salida5").Value = "" Then
+                    If .Cells("salida5").Value = "" And (d5 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Then
                         .Cells("salida5").Value = "17:00"
                         .Cells("manual").Value = "M"
                         .Cells("manual5").Value = "M"
@@ -1534,6 +1569,11 @@ Public Class Frm_ListaPrenomina
             Txt_FiltroDpto.AutoCompleteCustomSource.Add(item.Departamento)
         Next
     End Sub
+    Private Sub RellenarTxtEmpl(ByVal lstEmp As LEmpleado)
+        For Each item In lstEmp
+            Txt_FiltroNombre.AutoCompleteCustomSource.Add(item.NombreCompleto)
+        Next
+    End Sub
 #End Region
 #Region "Rellena objetos"
     Private Function RellenaObjetoEmpleado() As LEmpleado
@@ -1649,6 +1689,7 @@ Public Class Frm_ListaPrenomina
             Txt_FiltroNombre.Enabled = True
             Txt_FiltroHorario.Enabled = True
             Txt_FiltroDpto.Enabled = True
+            RellenarTxtEmpl(lstEmp)
             RellenarTxtHorario()
             RellenarTxtDptos()
         End If

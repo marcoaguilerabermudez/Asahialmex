@@ -25,8 +25,8 @@ Partial Class Frm_ValidarConta
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Btn_Validar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Btn_Monto = New System.Windows.Forms.Button()
+        Me.Btn_MarcaStatus = New System.Windows.Forms.Button()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel9 = New System.Windows.Forms.Panel()
@@ -56,6 +56,7 @@ Partial Class Frm_ValidarConta
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.seleccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fechaValid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idPovision = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -75,7 +76,6 @@ Partial Class Frm_ValidarConta
         Me.observaConta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.add1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -113,8 +113,8 @@ Partial Class Frm_ValidarConta
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.Btn_Monto)
+        Me.GroupBox2.Controls.Add(Me.Btn_MarcaStatus)
         Me.GroupBox2.Controls.Add(Me.TextBox6)
         Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Left
@@ -127,27 +127,27 @@ Partial Class Frm_ValidarConta
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Status y Monto"
         '
-        'Button2
+        'Btn_Monto
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Location = New System.Drawing.Point(154, 50)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(86, 30)
-        Me.Button2.TabIndex = 27
-        Me.Button2.Text = "Monto"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Btn_Monto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Monto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Btn_Monto.Location = New System.Drawing.Point(154, 50)
+        Me.Btn_Monto.Name = "Btn_Monto"
+        Me.Btn_Monto.Size = New System.Drawing.Size(86, 30)
+        Me.Btn_Monto.TabIndex = 27
+        Me.Btn_Monto.Text = "Monto"
+        Me.Btn_Monto.UseVisualStyleBackColor = True
         '
-        'Button1
+        'Btn_MarcaStatus
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(25, 50)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(86, 31)
-        Me.Button1.TabIndex = 26
-        Me.Button1.Text = "Marcar Status"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Btn_MarcaStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_MarcaStatus.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Btn_MarcaStatus.Location = New System.Drawing.Point(25, 50)
+        Me.Btn_MarcaStatus.Name = "Btn_MarcaStatus"
+        Me.Btn_MarcaStatus.Size = New System.Drawing.Size(86, 31)
+        Me.Btn_MarcaStatus.TabIndex = 26
+        Me.Btn_MarcaStatus.Text = "Marcar Status"
+        Me.Btn_MarcaStatus.UseVisualStyleBackColor = True
         '
         'TextBox6
         '
@@ -419,11 +419,19 @@ Partial Class Frm_ValidarConta
         Me.DataGridView1.Size = New System.Drawing.Size(1182, 469)
         Me.DataGridView1.TabIndex = 6
         '
+        'Panel7
+        '
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel7.Location = New System.Drawing.Point(0, 469)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(1182, 10)
+        Me.Panel7.TabIndex = 5
+        '
         'seleccion
         '
         Me.seleccion.HeaderText = ""
         Me.seleccion.Name = "seleccion"
-        Me.seleccion.Width = 35
+        Me.seleccion.Width = 30
         '
         'fechaValid
         '
@@ -516,14 +524,6 @@ Partial Class Frm_ValidarConta
         Me.add1.HeaderText = "Add"
         Me.add1.Name = "add1"
         '
-        'Panel7
-        '
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel7.Location = New System.Drawing.Point(0, 469)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1182, 10)
-        Me.Panel7.TabIndex = 5
-        '
         'Frm_ValidarConta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -583,6 +583,8 @@ Partial Class Frm_ValidarConta
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Btn_Validar As Button
+    Friend WithEvents Btn_Monto As Button
+    Friend WithEvents Btn_MarcaStatus As Button
     Friend WithEvents seleccion As DataGridViewTextBoxColumn
     Friend WithEvents fechaValid As DataGridViewTextBoxColumn
     Friend WithEvents idPovision As DataGridViewTextBoxColumn
@@ -602,6 +604,4 @@ Partial Class Frm_ValidarConta
     Friend WithEvents observaConta As DataGridViewTextBoxColumn
     Friend WithEvents empresa As DataGridViewTextBoxColumn
     Friend WithEvents add1 As DataGridViewTextBoxColumn
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
 End Class

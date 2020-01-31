@@ -70,15 +70,15 @@ Partial Class Frm_Provisiones
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Txt_StatusCompra = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Txt_Empresa2 = New System.Windows.Forms.TextBox()
+        Me.Txt_Proveedor2 = New System.Windows.Forms.TextBox()
+        Me.Txt_Factura2 = New System.Windows.Forms.TextBox()
+        Me.Txt_Oc2 = New System.Windows.Forms.TextBox()
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Btn_BuscaProvisionadas = New System.Windows.Forms.Button()
@@ -96,6 +96,7 @@ Partial Class Frm_Provisiones
         Me.seleccion = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.idProvision = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idOc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.compra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -120,6 +121,7 @@ Partial Class Frm_Provisiones
         Me.pdf = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.idProvision2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.oc2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idOc2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.compra2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.factura2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.proveedor2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -351,6 +353,10 @@ Partial Class Frm_Provisiones
         '
         'Txt_Empresa
         '
+        Me.Txt_Empresa.AutoCompleteCustomSource.AddRange(New String() {"AAM", "AAMS"})
+        Me.Txt_Empresa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_Empresa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_Empresa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_Empresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_Empresa.Location = New System.Drawing.Point(223, 40)
         Me.Txt_Empresa.Name = "Txt_Empresa"
@@ -359,6 +365,8 @@ Partial Class Frm_Provisiones
         '
         'Txt_Proveedor
         '
+        Me.Txt_Proveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_Proveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.Txt_Proveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_Proveedor.Location = New System.Drawing.Point(223, 15)
         Me.Txt_Proveedor.Name = "Txt_Proveedor"
@@ -367,6 +375,8 @@ Partial Class Frm_Provisiones
         '
         'Txt_Factura
         '
+        Me.Txt_Factura.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_Factura.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.Txt_Factura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_Factura.Location = New System.Drawing.Point(56, 40)
         Me.Txt_Factura.Name = "Txt_Factura"
@@ -375,6 +385,8 @@ Partial Class Frm_Provisiones
         '
         'Txt_Oc
         '
+        Me.Txt_Oc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_Oc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.Txt_Oc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_Oc.Location = New System.Drawing.Point(56, 15)
         Me.Txt_Oc.Name = "Txt_Oc"
@@ -510,7 +522,7 @@ Partial Class Frm_Provisiones
         '
         Me.Dgv_Provisionadas.AllowUserToAddRows = False
         Me.Dgv_Provisionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Provisionadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.selección, Me.pdf, Me.idProvision2, Me.oc2, Me.compra2, Me.factura2, Me.proveedor2, Me.rfc2, Me.rfcEmisor2, Me.moneda2, Me.montoOc2, Me.montoCompra2, Me.montoFactura2, Me.montoPagar, Me.fp, Me.fechaFactura2, Me.fechaPagoFact, Me.statusPago, Me.status2, Me.observaComp, Me.observaConta, Me.empresa2, Me.nombreEmisor2, Me.fdp, Me.serie2, Me.uuid, Me.ruta})
+        Me.Dgv_Provisionadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.selección, Me.pdf, Me.idProvision2, Me.oc2, Me.idOc2, Me.compra2, Me.factura2, Me.proveedor2, Me.rfc2, Me.rfcEmisor2, Me.moneda2, Me.montoOc2, Me.montoCompra2, Me.montoFactura2, Me.montoPagar, Me.fp, Me.fechaFactura2, Me.fechaPagoFact, Me.statusPago, Me.status2, Me.observaComp, Me.observaConta, Me.empresa2, Me.nombreEmisor2, Me.fdp, Me.serie2, Me.uuid, Me.ruta})
         Me.Dgv_Provisionadas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Provisionadas.Location = New System.Drawing.Point(5, 0)
         Me.Dgv_Provisionadas.Name = "Dgv_Provisionadas"
@@ -656,15 +668,15 @@ Partial Class Frm_Provisiones
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.Label16)
-        Me.GroupBox5.Controls.Add(Me.TextBox5)
+        Me.GroupBox5.Controls.Add(Me.Txt_StatusCompra)
         Me.GroupBox5.Controls.Add(Me.Label12)
         Me.GroupBox5.Controls.Add(Me.Label13)
         Me.GroupBox5.Controls.Add(Me.Label14)
         Me.GroupBox5.Controls.Add(Me.Label15)
-        Me.GroupBox5.Controls.Add(Me.TextBox1)
-        Me.GroupBox5.Controls.Add(Me.TextBox2)
-        Me.GroupBox5.Controls.Add(Me.TextBox3)
-        Me.GroupBox5.Controls.Add(Me.TextBox4)
+        Me.GroupBox5.Controls.Add(Me.Txt_Empresa2)
+        Me.GroupBox5.Controls.Add(Me.Txt_Proveedor2)
+        Me.GroupBox5.Controls.Add(Me.Txt_Factura2)
+        Me.GroupBox5.Controls.Add(Me.Txt_Oc2)
         Me.GroupBox5.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.White
@@ -683,13 +695,13 @@ Partial Class Frm_Provisiones
         Me.Label16.TabIndex = 9
         Me.Label16.Text = "Status Compra"
         '
-        'TextBox5
+        'Txt_StatusCompra
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(361, 35)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(77, 20)
-        Me.TextBox5.TabIndex = 8
+        Me.Txt_StatusCompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_StatusCompra.Location = New System.Drawing.Point(361, 35)
+        Me.Txt_StatusCompra.Name = "Txt_StatusCompra"
+        Me.Txt_StatusCompra.Size = New System.Drawing.Size(77, 20)
+        Me.Txt_StatusCompra.TabIndex = 8
         '
         'Label12
         '
@@ -727,37 +739,46 @@ Partial Class Frm_Provisiones
         Me.Label15.TabIndex = 4
         Me.Label15.Text = "OC"
         '
-        'TextBox1
+        'Txt_Empresa2
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(223, 35)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(77, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.Txt_Empresa2.AutoCompleteCustomSource.AddRange(New String() {"AAM", "AAMS"})
+        Me.Txt_Empresa2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_Empresa2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_Empresa2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Empresa2.Location = New System.Drawing.Point(223, 35)
+        Me.Txt_Empresa2.Name = "Txt_Empresa2"
+        Me.Txt_Empresa2.Size = New System.Drawing.Size(77, 20)
+        Me.Txt_Empresa2.TabIndex = 3
         '
-        'TextBox2
+        'Txt_Proveedor2
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(223, 12)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(214, 20)
-        Me.TextBox2.TabIndex = 2
+        Me.Txt_Proveedor2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_Proveedor2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_Proveedor2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Proveedor2.Location = New System.Drawing.Point(223, 12)
+        Me.Txt_Proveedor2.Name = "Txt_Proveedor2"
+        Me.Txt_Proveedor2.Size = New System.Drawing.Size(214, 20)
+        Me.Txt_Proveedor2.TabIndex = 2
         '
-        'TextBox3
+        'Txt_Factura2
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(56, 35)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox3.TabIndex = 1
+        Me.Txt_Factura2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_Factura2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_Factura2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Factura2.Location = New System.Drawing.Point(56, 35)
+        Me.Txt_Factura2.Name = "Txt_Factura2"
+        Me.Txt_Factura2.Size = New System.Drawing.Size(95, 20)
+        Me.Txt_Factura2.TabIndex = 1
         '
-        'TextBox4
+        'Txt_Oc2
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(56, 12)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox4.TabIndex = 0
+        Me.Txt_Oc2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_Oc2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_Oc2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Oc2.Location = New System.Drawing.Point(56, 12)
+        Me.Txt_Oc2.Name = "Txt_Oc2"
+        Me.Txt_Oc2.Size = New System.Drawing.Size(95, 20)
+        Me.Txt_Oc2.TabIndex = 0
         '
         'Panel21
         '
@@ -891,7 +912,7 @@ Partial Class Frm_Provisiones
         '
         Me.Dgv_PorProvisionar.AllowUserToAddRows = False
         Me.Dgv_PorProvisionar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_PorProvisionar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.seleccion, Me.idProvision, Me.oc, Me.compra, Me.factura, Me.proveedor, Me.rfc, Me.rfcEmisor, Me.moneda, Me.montoOc, Me.montoCompra, Me.montoFactura, Me.montoPago, Me.fechaFactura, Me.fechaPago, Me.status, Me.observacionCompra, Me.empresa, Me.nombreEmisor, Me.fechaCompra, Me.serie})
+        Me.Dgv_PorProvisionar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.seleccion, Me.idProvision, Me.oc, Me.idOc, Me.compra, Me.factura, Me.proveedor, Me.rfc, Me.rfcEmisor, Me.moneda, Me.montoOc, Me.montoCompra, Me.montoFactura, Me.montoPago, Me.fechaFactura, Me.fechaPago, Me.status, Me.observacionCompra, Me.empresa, Me.nombreEmisor, Me.fechaCompra, Me.serie})
         Me.Dgv_PorProvisionar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_PorProvisionar.Location = New System.Drawing.Point(5, 0)
         Me.Dgv_PorProvisionar.Name = "Dgv_PorProvisionar"
@@ -917,6 +938,13 @@ Partial Class Frm_Provisiones
         Me.oc.HeaderText = "Oc"
         Me.oc.Name = "oc"
         Me.oc.Width = 60
+        '
+        'idOc
+        '
+        Me.idOc.HeaderText = "Id Oc"
+        Me.idOc.Name = "idOc"
+        Me.idOc.ReadOnly = True
+        Me.idOc.Visible = False
         '
         'compra
         '
@@ -1065,6 +1093,13 @@ Partial Class Frm_Provisiones
         Me.oc2.HeaderText = "OC"
         Me.oc2.Name = "oc2"
         Me.oc2.Width = 60
+        '
+        'idOc2
+        '
+        Me.idOc2.HeaderText = "IdOc"
+        Me.idOc2.Name = "idOc2"
+        Me.idOc2.ReadOnly = True
+        Me.idOc2.Visible = False
         '
         'compra2
         '
@@ -1294,20 +1329,21 @@ Partial Class Frm_Provisiones
     Friend WithEvents Panel22 As Panel
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents Label16 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Txt_StatusCompra As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Txt_Empresa2 As TextBox
+    Friend WithEvents Txt_Proveedor2 As TextBox
+    Friend WithEvents Txt_Factura2 As TextBox
     Friend WithEvents Panel21 As Panel
     Friend WithEvents Btn_ActualizarXml As Button
+    Friend WithEvents Txt_Oc2 As TextBox
     Friend WithEvents seleccion As DataGridViewCheckBoxColumn
     Friend WithEvents idProvision As DataGridViewTextBoxColumn
     Friend WithEvents oc As DataGridViewTextBoxColumn
+    Friend WithEvents idOc As DataGridViewTextBoxColumn
     Friend WithEvents compra As DataGridViewTextBoxColumn
     Friend WithEvents factura As DataGridViewTextBoxColumn
     Friend WithEvents proveedor As DataGridViewTextBoxColumn
@@ -1330,6 +1366,7 @@ Partial Class Frm_Provisiones
     Friend WithEvents pdf As DataGridViewButtonColumn
     Friend WithEvents idProvision2 As DataGridViewTextBoxColumn
     Friend WithEvents oc2 As DataGridViewTextBoxColumn
+    Friend WithEvents idOc2 As DataGridViewTextBoxColumn
     Friend WithEvents compra2 As DataGridViewTextBoxColumn
     Friend WithEvents factura2 As DataGridViewTextBoxColumn
     Friend WithEvents proveedor2 As DataGridViewTextBoxColumn
