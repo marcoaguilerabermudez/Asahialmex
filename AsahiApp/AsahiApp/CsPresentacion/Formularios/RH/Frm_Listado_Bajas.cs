@@ -21,6 +21,7 @@ namespace CsPresentacion
             tt.SetToolTip(btn_buscar,   "FILTRAR INFORMACION");
             tt.SetToolTip(btn_exportar, "EXPORTAR EXCEL");
             tt.SetToolTip(btn_reporte,  "GENERAR INFORME");
+            tt.SetToolTip(btn_contabilidad, "GENERAR INFORME DE CONTABILIDAD");
             timer1.Enabled = true;
         }
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
@@ -110,17 +111,18 @@ namespace CsPresentacion
             dgv.Columns[3].Width = 120;//Puesto
             dgv.Columns[4].Width = 80;//Fecha Alta
             dgv.Columns[5].Width = 80;//Fecha baja
-            dgv.Columns[6].Width = 40;//Días laborados
-            dgv.Columns[7].Width = 50;//Meses baja
-            dgv.Columns[8].Width = 40;//Años baja
-            dgv.Columns[9].Width = 140;//Antiguedad
-            dgv.Columns[10].Width = 60;//semana baja
-            dgv.Columns[11].Width = 60;//Mes baja
-            dgv.Columns[12].Width = 40;//año baja
-            dgv.Columns[13].Width = 150;
-            dgv.Columns[14].Width = 70;//Municipio
-            dgv.Columns[15].Width = 50;//Estado civil
-            dgv.Columns[16].Width = 40;//Genero
+            dgv.Columns[6].Width = 40;//dias
+            dgv.Columns[7].Width = 40;//Días laborados
+            dgv.Columns[8].Width = 50;//Meses baja
+            dgv.Columns[9].Width = 40;//Años baja
+            dgv.Columns[10].Width = 140;//Antiguedad
+            dgv.Columns[11].Width = 60;//semana baja
+            dgv.Columns[12].Width = 60;//Mes baja
+            dgv.Columns[13].Width = 40;//año baja
+            dgv.Columns[14].Width = 150;
+            dgv.Columns[15].Width = 70;//Municipio
+            dgv.Columns[16].Width = 50;//Estado civil
+            dgv.Columns[17].Width = 40;//Genero
         }
 
         private void Llenar_dgv()// Método para llenar DatagridView
@@ -614,6 +616,160 @@ namespace CsPresentacion
         private void Txt_semana_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_contabilidad_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_año.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //Todo el reporte
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(0);
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //  MessageBox.Show("Filtro por año 3");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(3);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.ShowDialog();
+            }
+
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //  MessageBox.Show("Filtro por año y mes 1");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(1);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //  MessageBox.Show("Filtro por año y semana 2");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(2);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text);
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //  MessageBox.Show("Filtro por año y departamento 4");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(4);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Departamento = cmb_departamento.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //MessageBox.Show("Filtro por año y puesto 5");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(5);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //MessageBox.Show("Filtro por año mes y departamento 6");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(6);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.Departamento = cmb_departamento.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //MessageBox.Show("Filtro por año, mes y puesto 7");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(7);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_puesto.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //MessageBox.Show("Filtro por año, semana y departamento 8");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(8);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text); ;
+                rep.Departamento = cmb_departamento.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                // MessageBox.Show("Filtro  por año, semana y puesto 9");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(9);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text); ;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_semana.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //MessageBox.Show("Filtro  por año, departamento y puesto 10");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(10);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Departamento = cmb_departamento.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(txt_semana.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //  MessageBox.Show("Filtro  por año, mes, departamento y puesto 11");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(11);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Mes = cmb_mes.Text;
+                rep.Departamento = cmb_departamento.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                Cursor = Cursors.WaitCursor;
+                timer1.Start();
+                //MessageBox.Show("Filtro  por año, semana, departamento  y puesto  12");
+                Bajas_Contabilidad rep = new Bajas_Contabilidad();
+                rep.Var = Convert.ToInt32(12);
+                rep.Año = Convert.ToInt32(cmb_año.Text);
+                rep.Semana = Convert.ToInt32(txt_semana.Text);
+                rep.Departamento = cmb_departamento.Text;
+                rep.Puesto = cmb_puesto.Text;
+                rep.ShowDialog();
+            }
         }
     }
 }

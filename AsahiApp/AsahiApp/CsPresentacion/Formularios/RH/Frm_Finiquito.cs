@@ -96,6 +96,25 @@ namespace CsPresentacion
                 MessageBox.Show("No se insertó. " + error.Message);
             }
         }
+        private void Elimina_Duplicados()
+        {
+            try
+            {
+                if (txt_dias.Text == "")
+                {
+                    txt_dias.Text = "0";
+                }
+                con2.Open();
+                SqlCommand cmd = new SqlCommand("Delete from Pago_finiquito where No_empleado = ( " + txt_clave.Text + ")", con2);
+                cmd.ExecuteNonQuery();
+                con2.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se eliminó " + error.Message);
+            }
+        }
+
         private void Mostrar_Grid()
         {
             try
@@ -278,6 +297,7 @@ namespace CsPresentacion
 
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
+                   Elimina_Duplicados();
                     insertar();
                     Mostrar_Grid();
                     Diseño_Grid(dgv_empleados);
