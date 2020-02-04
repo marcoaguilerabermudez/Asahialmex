@@ -23,54 +23,8 @@ Partial Class Frm_ListaPrenomina
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Dgv_ListaPrenomina = New System.Windows.Forms.DataGridView()
-        Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horarioEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.departamentoEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.E = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.S = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entrada1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.salida1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.manual1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.b1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mnl1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entrada2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.salida2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.manual2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.b2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mnl2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entrada3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.salida3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.manual3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.b3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mnl3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entrada4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.salida4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.manual4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.b4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mnl4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entrada5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.salida5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.manual5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.b5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mnl5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entrada6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.salida6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.manual6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.b6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mnl6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entrada7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.salida7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.manual7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.b7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mnl7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.comentarios = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.aplicaBono = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.idTurno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nacional = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.manual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Lbl_Dia1 = New System.Windows.Forms.Label()
         Me.Lbl_Dia2 = New System.Windows.Forms.Label()
         Me.Lbl_Dia4 = New System.Windows.Forms.Label()
@@ -103,6 +57,52 @@ Partial Class Frm_ListaPrenomina
         Me.Lbl_FiltroId = New System.Windows.Forms.Label()
         Me.Txt_FiltroId = New System.Windows.Forms.TextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.manual = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nacional = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idTurno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.aplicaBono = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.comentarios = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mnl7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.b7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.manual7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.salida7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entrada7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mnl6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.b6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.manual6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.salida6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entrada6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mnl5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.b5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.manual5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.salida5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entrada5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mnl4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.b4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.manual4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.salida4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entrada4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mnl3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.b3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.manual3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.salida3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entrada3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mnl2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.b2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.manual2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.salida2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entrada2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mnl1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.b1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.manual1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.salida1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entrada1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.S = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.E = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.departamentoEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horarioEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -115,14 +115,14 @@ Partial Class Frm_ListaPrenomina
         '
         Me.Dgv_ListaPrenomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.E, Me.S, Me.entrada1, Me.salida1, Me.manual1, Me.b1, Me.mnl1, Me.entrada2, Me.salida2, Me.manual2, Me.b2, Me.mnl2, Me.entrada3, Me.salida3, Me.manual3, Me.b3, Me.mnl3, Me.entrada4, Me.salida4, Me.manual4, Me.b4, Me.mnl4, Me.entrada5, Me.salida5, Me.manual5, Me.b5, Me.mnl5, Me.entrada6, Me.salida6, Me.manual6, Me.b6, Me.mnl6, Me.entrada7, Me.salida7, Me.manual7, Me.b7, Me.mnl7, Me.comentarios, Me.aplicaBono, Me.idTurno, Me.nacional, Me.manual})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle1
         Me.Dgv_ListaPrenomina.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_ListaPrenomina.Enabled = False
         Me.Dgv_ListaPrenomina.Location = New System.Drawing.Point(0, 0)
@@ -132,305 +132,6 @@ Partial Class Frm_ListaPrenomina
         Me.Dgv_ListaPrenomina.RowTemplate.Height = 50
         Me.Dgv_ListaPrenomina.Size = New System.Drawing.Size(1197, 439)
         Me.Dgv_ListaPrenomina.TabIndex = 0
-        '
-        'idEmpleado
-        '
-        Me.idEmpleado.HeaderText = "Id"
-        Me.idEmpleado.Name = "idEmpleado"
-        Me.idEmpleado.ReadOnly = True
-        Me.idEmpleado.Width = 40
-        '
-        'nombreEmpleado
-        '
-        Me.nombreEmpleado.HeaderText = "Nombre"
-        Me.nombreEmpleado.Name = "nombreEmpleado"
-        Me.nombreEmpleado.ReadOnly = True
-        Me.nombreEmpleado.Width = 200
-        '
-        'horarioEmpleado
-        '
-        Me.horarioEmpleado.HeaderText = "Horario"
-        Me.horarioEmpleado.Name = "horarioEmpleado"
-        Me.horarioEmpleado.ReadOnly = True
-        '
-        'departamentoEmpleado
-        '
-        Me.departamentoEmpleado.HeaderText = "Departamento"
-        Me.departamentoEmpleado.Name = "departamentoEmpleado"
-        Me.departamentoEmpleado.ReadOnly = True
-        '
-        'E
-        '
-        Me.E.HeaderText = "E"
-        Me.E.Name = "E"
-        Me.E.ReadOnly = True
-        Me.E.Visible = False
-        '
-        'S
-        '
-        Me.S.HeaderText = "S"
-        Me.S.Name = "S"
-        Me.S.ReadOnly = True
-        Me.S.Visible = False
-        '
-        'entrada1
-        '
-        Me.entrada1.HeaderText = "E1"
-        Me.entrada1.Name = "entrada1"
-        Me.entrada1.Width = 38
-        '
-        'salida1
-        '
-        Me.salida1.HeaderText = "S1"
-        Me.salida1.Name = "salida1"
-        Me.salida1.Width = 38
-        '
-        'manual1
-        '
-        Me.manual1.HeaderText = "M1"
-        Me.manual1.Name = "manual1"
-        Me.manual1.Visible = False
-        '
-        'b1
-        '
-        Me.b1.HeaderText = "B1"
-        Me.b1.Name = "b1"
-        Me.b1.ReadOnly = True
-        Me.b1.Visible = False
-        '
-        'mnl1
-        '
-        Me.mnl1.HeaderText = "ML1"
-        Me.mnl1.Name = "mnl1"
-        Me.mnl1.ReadOnly = True
-        Me.mnl1.Visible = False
-        '
-        'entrada2
-        '
-        Me.entrada2.HeaderText = "E2"
-        Me.entrada2.Name = "entrada2"
-        Me.entrada2.Width = 38
-        '
-        'salida2
-        '
-        Me.salida2.HeaderText = "S2"
-        Me.salida2.Name = "salida2"
-        Me.salida2.Width = 38
-        '
-        'manual2
-        '
-        Me.manual2.HeaderText = "M2"
-        Me.manual2.Name = "manual2"
-        Me.manual2.Visible = False
-        '
-        'b2
-        '
-        Me.b2.HeaderText = "B2"
-        Me.b2.Name = "b2"
-        Me.b2.ReadOnly = True
-        Me.b2.Visible = False
-        '
-        'mnl2
-        '
-        Me.mnl2.HeaderText = "ML2"
-        Me.mnl2.Name = "mnl2"
-        Me.mnl2.ReadOnly = True
-        Me.mnl2.Visible = False
-        '
-        'entrada3
-        '
-        Me.entrada3.HeaderText = "E3"
-        Me.entrada3.Name = "entrada3"
-        Me.entrada3.Width = 38
-        '
-        'salida3
-        '
-        Me.salida3.HeaderText = "S3"
-        Me.salida3.Name = "salida3"
-        Me.salida3.Width = 38
-        '
-        'manual3
-        '
-        Me.manual3.HeaderText = "M3"
-        Me.manual3.Name = "manual3"
-        Me.manual3.Visible = False
-        '
-        'b3
-        '
-        Me.b3.HeaderText = "B3"
-        Me.b3.Name = "b3"
-        Me.b3.ReadOnly = True
-        Me.b3.Visible = False
-        '
-        'mnl3
-        '
-        Me.mnl3.HeaderText = "ML3"
-        Me.mnl3.Name = "mnl3"
-        Me.mnl3.ReadOnly = True
-        Me.mnl3.Visible = False
-        '
-        'entrada4
-        '
-        Me.entrada4.HeaderText = "E4"
-        Me.entrada4.Name = "entrada4"
-        Me.entrada4.Width = 38
-        '
-        'salida4
-        '
-        Me.salida4.HeaderText = "S4"
-        Me.salida4.Name = "salida4"
-        Me.salida4.Width = 38
-        '
-        'manual4
-        '
-        Me.manual4.HeaderText = "M4"
-        Me.manual4.Name = "manual4"
-        Me.manual4.Visible = False
-        '
-        'b4
-        '
-        Me.b4.HeaderText = "B4"
-        Me.b4.Name = "b4"
-        Me.b4.ReadOnly = True
-        Me.b4.Visible = False
-        '
-        'mnl4
-        '
-        Me.mnl4.HeaderText = "ML4"
-        Me.mnl4.Name = "mnl4"
-        Me.mnl4.ReadOnly = True
-        Me.mnl4.Visible = False
-        '
-        'entrada5
-        '
-        Me.entrada5.HeaderText = "E5"
-        Me.entrada5.Name = "entrada5"
-        Me.entrada5.Width = 38
-        '
-        'salida5
-        '
-        Me.salida5.HeaderText = "S5"
-        Me.salida5.Name = "salida5"
-        Me.salida5.Width = 38
-        '
-        'manual5
-        '
-        Me.manual5.HeaderText = "M5"
-        Me.manual5.Name = "manual5"
-        Me.manual5.Visible = False
-        '
-        'b5
-        '
-        Me.b5.HeaderText = "B5"
-        Me.b5.Name = "b5"
-        Me.b5.ReadOnly = True
-        Me.b5.Visible = False
-        '
-        'mnl5
-        '
-        Me.mnl5.HeaderText = "ML5"
-        Me.mnl5.Name = "mnl5"
-        Me.mnl5.ReadOnly = True
-        Me.mnl5.Visible = False
-        '
-        'entrada6
-        '
-        Me.entrada6.HeaderText = "E6"
-        Me.entrada6.Name = "entrada6"
-        Me.entrada6.Width = 38
-        '
-        'salida6
-        '
-        Me.salida6.HeaderText = "S6"
-        Me.salida6.Name = "salida6"
-        Me.salida6.Width = 38
-        '
-        'manual6
-        '
-        Me.manual6.HeaderText = "M6"
-        Me.manual6.Name = "manual6"
-        Me.manual6.Visible = False
-        '
-        'b6
-        '
-        Me.b6.HeaderText = "B6"
-        Me.b6.Name = "b6"
-        Me.b6.ReadOnly = True
-        Me.b6.Visible = False
-        '
-        'mnl6
-        '
-        Me.mnl6.HeaderText = "ML6"
-        Me.mnl6.Name = "mnl6"
-        Me.mnl6.ReadOnly = True
-        Me.mnl6.Visible = False
-        '
-        'entrada7
-        '
-        Me.entrada7.HeaderText = "E7"
-        Me.entrada7.Name = "entrada7"
-        Me.entrada7.Width = 38
-        '
-        'salida7
-        '
-        Me.salida7.HeaderText = "S7"
-        Me.salida7.Name = "salida7"
-        Me.salida7.Width = 38
-        '
-        'manual7
-        '
-        Me.manual7.HeaderText = "M7"
-        Me.manual7.Name = "manual7"
-        Me.manual7.Visible = False
-        '
-        'b7
-        '
-        Me.b7.HeaderText = "B7"
-        Me.b7.Name = "b7"
-        Me.b7.ReadOnly = True
-        Me.b7.Visible = False
-        '
-        'mnl7
-        '
-        Me.mnl7.HeaderText = "ML7"
-        Me.mnl7.Name = "mnl7"
-        Me.mnl7.ReadOnly = True
-        Me.mnl7.Visible = False
-        '
-        'comentarios
-        '
-        Me.comentarios.HeaderText = "Comentarios"
-        Me.comentarios.Name = "comentarios"
-        Me.comentarios.Width = 150
-        '
-        'aplicaBono
-        '
-        Me.aplicaBono.HeaderText = "Aplica bono"
-        Me.aplicaBono.Name = "aplicaBono"
-        Me.aplicaBono.ReadOnly = True
-        Me.aplicaBono.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.aplicaBono.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.aplicaBono.Width = 45
-        '
-        'idTurno
-        '
-        Me.idTurno.HeaderText = "IdTurno"
-        Me.idTurno.Name = "idTurno"
-        Me.idTurno.Visible = False
-        '
-        'nacional
-        '
-        Me.nacional.HeaderText = "Nacional"
-        Me.nacional.Name = "nacional"
-        Me.nacional.ReadOnly = True
-        Me.nacional.Visible = False
-        '
-        'manual
-        '
-        Me.manual.HeaderText = "Manual"
-        Me.manual.Name = "manual"
-        Me.manual.ReadOnly = True
-        Me.manual.Visible = False
         '
         'Lbl_Dia1
         '
@@ -675,9 +376,10 @@ Partial Class Frm_ListaPrenomina
         '
         Me.Txt_FiltroDpto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.Txt_FiltroDpto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_FiltroDpto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_FiltroDpto.Location = New System.Drawing.Point(345, 20)
         Me.Txt_FiltroDpto.Name = "Txt_FiltroDpto"
-        Me.Txt_FiltroDpto.Size = New System.Drawing.Size(96, 20)
+        Me.Txt_FiltroDpto.Size = New System.Drawing.Size(96, 18)
         Me.Txt_FiltroDpto.TabIndex = 19
         '
         'Label4
@@ -705,9 +407,10 @@ Partial Class Frm_ListaPrenomina
         Me.Txt_FiltroHorario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.Txt_FiltroHorario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.Txt_FiltroHorario.Enabled = False
+        Me.Txt_FiltroHorario.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_FiltroHorario.Location = New System.Drawing.Point(244, 20)
         Me.Txt_FiltroHorario.Name = "Txt_FiltroHorario"
-        Me.Txt_FiltroHorario.Size = New System.Drawing.Size(94, 20)
+        Me.Txt_FiltroHorario.Size = New System.Drawing.Size(94, 18)
         Me.Txt_FiltroHorario.TabIndex = 15
         '
         'Label2
@@ -726,9 +429,10 @@ Partial Class Frm_ListaPrenomina
         Me.Txt_FiltroNombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.Txt_FiltroNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_FiltroNombre.Enabled = False
+        Me.Txt_FiltroNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_FiltroNombre.Location = New System.Drawing.Point(46, 20)
         Me.Txt_FiltroNombre.Name = "Txt_FiltroNombre"
-        Me.Txt_FiltroNombre.Size = New System.Drawing.Size(192, 20)
+        Me.Txt_FiltroNombre.Size = New System.Drawing.Size(192, 18)
         Me.Txt_FiltroNombre.TabIndex = 13
         '
         'Lbl_FiltroId
@@ -744,13 +448,313 @@ Partial Class Frm_ListaPrenomina
         'Txt_FiltroId
         '
         Me.Txt_FiltroId.Enabled = False
+        Me.Txt_FiltroId.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_FiltroId.Location = New System.Drawing.Point(2, 20)
         Me.Txt_FiltroId.Name = "Txt_FiltroId"
-        Me.Txt_FiltroId.Size = New System.Drawing.Size(40, 20)
+        Me.Txt_FiltroId.Size = New System.Drawing.Size(40, 18)
         Me.Txt_FiltroId.TabIndex = 11
         '
         'Timer1
         '
+        '
+        'manual
+        '
+        Me.manual.HeaderText = "Manual"
+        Me.manual.Name = "manual"
+        Me.manual.ReadOnly = True
+        Me.manual.Visible = False
+        '
+        'nacional
+        '
+        Me.nacional.HeaderText = "Nacional"
+        Me.nacional.Name = "nacional"
+        Me.nacional.ReadOnly = True
+        Me.nacional.Visible = False
+        '
+        'idTurno
+        '
+        Me.idTurno.HeaderText = "IdTurno"
+        Me.idTurno.Name = "idTurno"
+        Me.idTurno.Visible = False
+        '
+        'aplicaBono
+        '
+        Me.aplicaBono.HeaderText = "Aplica bono"
+        Me.aplicaBono.Name = "aplicaBono"
+        Me.aplicaBono.ReadOnly = True
+        Me.aplicaBono.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.aplicaBono.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.aplicaBono.Width = 45
+        '
+        'comentarios
+        '
+        Me.comentarios.HeaderText = "Comentarios"
+        Me.comentarios.Name = "comentarios"
+        Me.comentarios.Width = 150
+        '
+        'mnl7
+        '
+        Me.mnl7.HeaderText = "ML7"
+        Me.mnl7.Name = "mnl7"
+        Me.mnl7.ReadOnly = True
+        Me.mnl7.Visible = False
+        '
+        'b7
+        '
+        Me.b7.HeaderText = "B7"
+        Me.b7.Name = "b7"
+        Me.b7.ReadOnly = True
+        Me.b7.Visible = False
+        '
+        'manual7
+        '
+        Me.manual7.HeaderText = "M7"
+        Me.manual7.Name = "manual7"
+        Me.manual7.Visible = False
+        '
+        'salida7
+        '
+        Me.salida7.HeaderText = "S7"
+        Me.salida7.Name = "salida7"
+        Me.salida7.Width = 38
+        '
+        'entrada7
+        '
+        Me.entrada7.HeaderText = "E7"
+        Me.entrada7.Name = "entrada7"
+        Me.entrada7.Width = 38
+        '
+        'mnl6
+        '
+        Me.mnl6.HeaderText = "ML6"
+        Me.mnl6.Name = "mnl6"
+        Me.mnl6.ReadOnly = True
+        Me.mnl6.Visible = False
+        '
+        'b6
+        '
+        Me.b6.HeaderText = "B6"
+        Me.b6.Name = "b6"
+        Me.b6.ReadOnly = True
+        Me.b6.Visible = False
+        '
+        'manual6
+        '
+        Me.manual6.HeaderText = "M6"
+        Me.manual6.Name = "manual6"
+        Me.manual6.Visible = False
+        '
+        'salida6
+        '
+        Me.salida6.HeaderText = "S6"
+        Me.salida6.Name = "salida6"
+        Me.salida6.Width = 38
+        '
+        'entrada6
+        '
+        Me.entrada6.HeaderText = "E6"
+        Me.entrada6.Name = "entrada6"
+        Me.entrada6.Width = 38
+        '
+        'mnl5
+        '
+        Me.mnl5.HeaderText = "ML5"
+        Me.mnl5.Name = "mnl5"
+        Me.mnl5.ReadOnly = True
+        Me.mnl5.Visible = False
+        '
+        'b5
+        '
+        Me.b5.HeaderText = "B5"
+        Me.b5.Name = "b5"
+        Me.b5.ReadOnly = True
+        Me.b5.Visible = False
+        '
+        'manual5
+        '
+        Me.manual5.HeaderText = "M5"
+        Me.manual5.Name = "manual5"
+        Me.manual5.Visible = False
+        '
+        'salida5
+        '
+        Me.salida5.HeaderText = "S5"
+        Me.salida5.Name = "salida5"
+        Me.salida5.Width = 38
+        '
+        'entrada5
+        '
+        Me.entrada5.HeaderText = "E5"
+        Me.entrada5.Name = "entrada5"
+        Me.entrada5.Width = 38
+        '
+        'mnl4
+        '
+        Me.mnl4.HeaderText = "ML4"
+        Me.mnl4.Name = "mnl4"
+        Me.mnl4.ReadOnly = True
+        Me.mnl4.Visible = False
+        '
+        'b4
+        '
+        Me.b4.HeaderText = "B4"
+        Me.b4.Name = "b4"
+        Me.b4.ReadOnly = True
+        Me.b4.Visible = False
+        '
+        'manual4
+        '
+        Me.manual4.HeaderText = "M4"
+        Me.manual4.Name = "manual4"
+        Me.manual4.Visible = False
+        '
+        'salida4
+        '
+        Me.salida4.HeaderText = "S4"
+        Me.salida4.Name = "salida4"
+        Me.salida4.Width = 38
+        '
+        'entrada4
+        '
+        Me.entrada4.HeaderText = "E4"
+        Me.entrada4.Name = "entrada4"
+        Me.entrada4.Width = 38
+        '
+        'mnl3
+        '
+        Me.mnl3.HeaderText = "ML3"
+        Me.mnl3.Name = "mnl3"
+        Me.mnl3.ReadOnly = True
+        Me.mnl3.Visible = False
+        '
+        'b3
+        '
+        Me.b3.HeaderText = "B3"
+        Me.b3.Name = "b3"
+        Me.b3.ReadOnly = True
+        Me.b3.Visible = False
+        '
+        'manual3
+        '
+        Me.manual3.HeaderText = "M3"
+        Me.manual3.Name = "manual3"
+        Me.manual3.Visible = False
+        '
+        'salida3
+        '
+        Me.salida3.HeaderText = "S3"
+        Me.salida3.Name = "salida3"
+        Me.salida3.Width = 38
+        '
+        'entrada3
+        '
+        Me.entrada3.HeaderText = "E3"
+        Me.entrada3.Name = "entrada3"
+        Me.entrada3.Width = 38
+        '
+        'mnl2
+        '
+        Me.mnl2.HeaderText = "ML2"
+        Me.mnl2.Name = "mnl2"
+        Me.mnl2.ReadOnly = True
+        Me.mnl2.Visible = False
+        '
+        'b2
+        '
+        Me.b2.HeaderText = "B2"
+        Me.b2.Name = "b2"
+        Me.b2.ReadOnly = True
+        Me.b2.Visible = False
+        '
+        'manual2
+        '
+        Me.manual2.HeaderText = "M2"
+        Me.manual2.Name = "manual2"
+        Me.manual2.Visible = False
+        '
+        'salida2
+        '
+        Me.salida2.HeaderText = "S2"
+        Me.salida2.Name = "salida2"
+        Me.salida2.Width = 38
+        '
+        'entrada2
+        '
+        Me.entrada2.HeaderText = "E2"
+        Me.entrada2.Name = "entrada2"
+        Me.entrada2.Width = 38
+        '
+        'mnl1
+        '
+        Me.mnl1.HeaderText = "ML1"
+        Me.mnl1.Name = "mnl1"
+        Me.mnl1.ReadOnly = True
+        Me.mnl1.Visible = False
+        '
+        'b1
+        '
+        Me.b1.HeaderText = "B1"
+        Me.b1.Name = "b1"
+        Me.b1.ReadOnly = True
+        Me.b1.Visible = False
+        '
+        'manual1
+        '
+        Me.manual1.HeaderText = "M1"
+        Me.manual1.Name = "manual1"
+        Me.manual1.Visible = False
+        '
+        'salida1
+        '
+        Me.salida1.HeaderText = "S1"
+        Me.salida1.Name = "salida1"
+        Me.salida1.Width = 38
+        '
+        'entrada1
+        '
+        Me.entrada1.HeaderText = "E1"
+        Me.entrada1.Name = "entrada1"
+        Me.entrada1.Width = 38
+        '
+        'S
+        '
+        Me.S.HeaderText = "S"
+        Me.S.Name = "S"
+        Me.S.ReadOnly = True
+        Me.S.Visible = False
+        '
+        'E
+        '
+        Me.E.HeaderText = "E"
+        Me.E.Name = "E"
+        Me.E.ReadOnly = True
+        Me.E.Visible = False
+        '
+        'departamentoEmpleado
+        '
+        Me.departamentoEmpleado.HeaderText = "Departamento"
+        Me.departamentoEmpleado.Name = "departamentoEmpleado"
+        Me.departamentoEmpleado.ReadOnly = True
+        '
+        'horarioEmpleado
+        '
+        Me.horarioEmpleado.HeaderText = "Horario"
+        Me.horarioEmpleado.Name = "horarioEmpleado"
+        Me.horarioEmpleado.ReadOnly = True
+        '
+        'nombreEmpleado
+        '
+        Me.nombreEmpleado.HeaderText = "Nombre"
+        Me.nombreEmpleado.Name = "nombreEmpleado"
+        Me.nombreEmpleado.ReadOnly = True
+        Me.nombreEmpleado.Width = 200
+        '
+        'idEmpleado
+        '
+        Me.idEmpleado.HeaderText = "Id"
+        Me.idEmpleado.Name = "idEmpleado"
+        Me.idEmpleado.ReadOnly = True
+        Me.idEmpleado.Width = 40
         '
         'Frm_ListaPrenomina
         '
@@ -811,6 +815,8 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Txt_FiltroNombre As TextBox
+    Friend WithEvents Txt_FiltroHorario As TextBox
+    Friend WithEvents Txt_FiltroDpto As TextBox
     Friend WithEvents idEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents nombreEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents horarioEmpleado As DataGridViewTextBoxColumn
@@ -857,6 +863,4 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents idTurno As DataGridViewTextBoxColumn
     Friend WithEvents nacional As DataGridViewTextBoxColumn
     Friend WithEvents manual As DataGridViewTextBoxColumn
-    Friend WithEvents Txt_FiltroHorario As TextBox
-    Friend WithEvents Txt_FiltroDpto As TextBox
 End Class

@@ -69,6 +69,278 @@ Public Class Frm_Provisiones
             MessageBox.Show(ex.ToString)
         End Try
     End Sub
+    Private Sub Txt_Oc_TextChanged(sender As Object, e As EventArgs) Handles Txt_Oc.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_PorProvisionar.Rows.Count, oc As String
+        If Len(Txt_Oc.Text) > 3 Or Len(Txt_Oc.Text) = 0 Then
+            'Txt_FiltroId.Text = ""
+            'Txt_FiltroNombre.Text = ""
+            'Txt_FiltroDpto.Text = ""
+            If Txt_Oc.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        oc = .Cells("idOc").Value
+                        If Not (oc Like Txt_Oc.Text) And oc <> "" Then
+                            .Visible = True
+                        End If
+                        If Not (oc Like Txt_Oc.Text) And oc <> "" Then
+                            .Visible = False
+                        End If
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
+    End Sub
+    Private Sub Txt_Proveedor_TextChanged(sender As Object, e As EventArgs) Handles Txt_Proveedor.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_PorProvisionar.Rows.Count, prov As String
+        If Len(Txt_Proveedor.Text) > 7 Or Len(Txt_Proveedor.Text) = 0 Then
+            'Txt_FiltroId.Text = ""
+            'Txt_FiltroNombre.Text = ""
+            'Txt_FiltroDpto.Text = ""
+            If Txt_Proveedor.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        prov = .Cells("proveedor").Value
+                        If Not (prov Like Txt_Proveedor.Text) And prov <> "" Then .Visible = True
+                        If Not (prov Like Txt_Proveedor.Text) And prov <> "" Then .Visible = False
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
+    End Sub
+    Private Sub Txt_Factura_TextChanged(sender As Object, e As EventArgs) Handles Txt_Factura.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_PorProvisionar.Rows.Count, factura As String
+        If Len(Txt_Factura.Text) > 3 Or Len(Txt_Factura.Text) = 0 Then
+            'Txt_FiltroId.Text = ""
+            'Txt_FiltroNombre.Text = ""
+            'Txt_FiltroDpto.Text = ""
+            If Txt_Factura.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        factura = .Cells("factura").Value
+                        If Not (factura Like Txt_Factura.Text) And factura = "" Then .Visible = True
+                        If Not (factura Like Txt_Factura.Text) And factura = "" Then .Visible = False
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
+    End Sub
+    Private Sub Txt_Empresa_TextChanged(sender As Object, e As EventArgs) Handles Txt_Empresa.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_PorProvisionar.Rows.Count, emp As String
+        If Len(Txt_Empresa.Text) > 2 Or Len(Txt_Empresa.Text) = 0 Then
+            'Txt_FiltroId.Text = ""
+            'Txt_FiltroNombre.Text = ""
+            'Txt_FiltroDpto.Text = ""
+            If Txt_Empresa.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        emp = .Cells("empresa").Value
+                        If Not (emp Like Txt_Empresa.Text) And emp <> "" Then .Visible = True
+                        If Not (emp Like Txt_Empresa.Text) And emp <> "" Then .Visible = False
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
+    End Sub
+    Private Sub Txt_Oc2_TextChanged(sender As Object, e As EventArgs) Handles Txt_Oc2.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_PorProvisionar.Rows.Count, oc As String
+        If Len(Txt_Oc2.Text) > 3 Or Len(Txt_Oc2.Text) = 0 Then
+            'Txt_FiltroId.Text = ""
+            'Txt_FiltroNombre.Text = ""
+            'Txt_FiltroDpto.Text = ""
+            If Txt_Oc2.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        oc = .Cells("idOc2").Value
+                        If Not (oc Like Txt_Oc2.Text) And oc <> "" Then .Visible = True
+                        If Not (oc Like Txt_Oc2.Text) And oc <> "" Then .Visible = False
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_PorProvisionar.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
+    End Sub
+    Private Sub Txt_Proveedor2_TextChanged(sender As Object, e As EventArgs) Handles Txt_Proveedor2.TextChanged
+        'Dim fila As Integer, totalFilas As Integer = Dgv_PorProvisionar.Rows.Count, oc As String
+        'If Len(Txt_Oc.Text) > 3 Or Len(Txt_Oc.Text) = 0 Then
+        '    'Txt_FiltroId.Text = ""
+        '    'Txt_FiltroNombre.Text = ""
+        '    'Txt_FiltroDpto.Text = ""
+        '    If Txt_Oc.Text <> "" Then
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                .Visible = True
+        '            End With
+        '        Next
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                oc = .Cells("idOc").Value
+        '                If Not (oc Like Txt_Oc.Text) And oc <> "" Then
+        '                    .Visible = True
+        '                End If
+        '                If Not (oc Like Txt_Oc.Text) And oc <> "" Then
+        '                    .Visible = False
+        '                End If
+        '            End With
+        '        Next
+        '    Else
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                .Visible = True
+        '            End With
+        '        Next
+        '    End If
+        'End If
+    End Sub
+    Private Sub Txt_Factura2_TextChanged(sender As Object, e As EventArgs) Handles Txt_Factura2.TextChanged
+        'Dim fila As Integer, totalFilas As Integer = Dgv_PorProvisionar.Rows.Count, oc As String
+        'If Len(Txt_Oc.Text) > 3 Or Len(Txt_Oc.Text) = 0 Then
+        '    'Txt_FiltroId.Text = ""
+        '    'Txt_FiltroNombre.Text = ""
+        '    'Txt_FiltroDpto.Text = ""
+        '    If Txt_Oc.Text <> "" Then
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                .Visible = True
+        '            End With
+        '        Next
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                oc = .Cells("idOc").Value
+        '                If Not (oc Like Txt_Oc.Text) And oc <> "" Then
+        '                    .Visible = True
+        '                End If
+        '                If Not (oc Like Txt_Oc.Text) And oc <> "" Then
+        '                    .Visible = False
+        '                End If
+        '            End With
+        '        Next
+        '    Else
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                .Visible = True
+        '            End With
+        '        Next
+        '    End If
+        'End If
+    End Sub
+    Private Sub Txt_Empresa2_TextChanged(sender As Object, e As EventArgs) Handles Txt_Empresa2.TextChanged
+        'Dim fila As Integer, totalFilas As Integer = Dgv_PorProvisionar.Rows.Count, oc As String
+        'If Len(Txt_Oc.Text) > 3 Or Len(Txt_Oc.Text) = 0 Then
+        '    'Txt_FiltroId.Text = ""
+        '    'Txt_FiltroNombre.Text = ""
+        '    'Txt_FiltroDpto.Text = ""
+        '    If Txt_Oc.Text <> "" Then
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                .Visible = True
+        '            End With
+        '        Next
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                oc = .Cells("idOc").Value
+        '                If Not (oc Like Txt_Oc.Text) And oc <> "" Then
+        '                    .Visible = True
+        '                End If
+        '                If Not (oc Like Txt_Oc.Text) And oc <> "" Then
+        '                    .Visible = False
+        '                End If
+        '            End With
+        '        Next
+        '    Else
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                .Visible = True
+        '            End With
+        '        Next
+        '    End If
+        'End If
+    End Sub
+    Private Sub Txt_StatusCompra_TextChanged(sender As Object, e As EventArgs) Handles Txt_StatusCompra.TextChanged
+        'Dim fila As Integer, totalFilas As Integer = Dgv_PorProvisionar.Rows.Count, oc As String
+        'If Len(Txt_Oc.Text) > 3 Or Len(Txt_Oc.Text) = 0 Then
+        '    'Txt_FiltroId.Text = ""
+        '    'Txt_FiltroNombre.Text = ""
+        '    'Txt_FiltroDpto.Text = ""
+        '    If Txt_Oc.Text <> "" Then
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                .Visible = True
+        '            End With
+        '        Next
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                oc = .Cells("idOc").Value
+        '                If Not (oc Like Txt_Oc.Text) And oc <> "" Then
+        '                    .Visible = True
+        '                End If
+        '                If Not (oc Like Txt_Oc.Text) And oc <> "" Then
+        '                    .Visible = False
+        '                End If
+        '            End With
+        '        Next
+        '    Else
+        '        For fila = 0 To totalFilas - 1
+        '            With Dgv_PorProvisionar.Rows(fila)
+        '                .Visible = True
+        '            End With
+        '        Next
+        '    End If
+        'End If
+    End Sub
 #End Region
 #Region "Recuperar"
     Private Sub RecuperarCompras()
@@ -97,6 +369,7 @@ Public Class Frm_Provisiones
             With Dgv_PorProvisionar.Rows(fila)
                 .Cells("idProvision").Value = item.IdProvision
                 .Cells("oc").Value = item.Oc
+                .Cells("idOc").Value = item.IdOrdenCompra
                 .Cells("compra").Value = item.IdCompra
                 .Cells("factura").Value = item.Factura
                 .Cells("proveedor").Value = item.Proveedor
@@ -126,6 +399,9 @@ Public Class Frm_Provisiones
                 End Select
             End With
             fila += 1
+            Txt_Oc.AutoCompleteCustomSource.Add(item.IdOrdenCompra)
+            Txt_Proveedor.AutoCompleteCustomSource.Add(item.Proveedor)
+            Txt_Factura.AutoCompleteCustomSource.Add(item.Factura)
         Next
     End Sub
     Private Sub RellenarDgvProvisionadas(ByVal lstComp As LCompras)
@@ -138,6 +414,7 @@ Public Class Frm_Provisiones
             With Dgv_Provisionadas.Rows(fila)
                 .Cells("idProvision2").Value = item.IdProvision
                 .Cells("oc2").Value = item.Oc
+                .Cells("idOc2").Value = item.IdOrdenCompra
                 .Cells("compra2").Value = item.IdCompra
                 .Cells("factura2").Value = item.Factura
                 .Cells("proveedor2").Value = item.Proveedor
@@ -167,6 +444,10 @@ Public Class Frm_Provisiones
                     Case "R"
                         .DefaultCellStyle.BackColor = Color.FromArgb(255, 192, 192)
                 End Select
+                Txt_Oc2.AutoCompleteCustomSource.Add(item.IdOrdenCompra)
+                Txt_Proveedor2.AutoCompleteCustomSource.Add(item.Proveedor)
+                Txt_Factura2.AutoCompleteCustomSource.Add(item.Factura)
+                Txt_StatusCompra.AutoCompleteCustomSource.Add(item.Status)
             End With
             fila += 1
         Next
