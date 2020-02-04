@@ -37,7 +37,7 @@ namespace CsPresentacion
 
         private void Frm_Comedor_Load(object sender, EventArgs e)
         {
-           Nuevo();
+            Nuevo();
             autocompletar_responsable(txt_nombre);
             txt_clave.Focus();
         }
@@ -55,7 +55,6 @@ namespace CsPresentacion
             lbl_tipo_falta.Text = "";
             lbl_tipo_falta.Visible = false;
             txt_nombre.Enabled = true;
-            txt_clave.Focus();
             txt_hora.Enabled = false;
             txt_costo.Enabled = false;
             btn_com_primero.Enabled = false;

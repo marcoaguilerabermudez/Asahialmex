@@ -1336,6 +1336,7 @@ namespace CsPresentacion
             Val1 = double.Parse(txt_compara1.Text);
             Val2 = double.Parse(txt_compara2.Text);
 
+
             if (Val1 > Val2)
             {
                 txt_sueldo_departamento.Text = txt_compara1.Text;
@@ -1369,7 +1370,12 @@ namespace CsPresentacion
             cmb_puesto.Enabled = false;
             btn_mod_puesto.Enabled = true;
             dtm_puesto.Enabled = true;
-            dtm_puesto.Focus();
+            groupBox2.Enabled = true;
+            txt_SDO2.Enabled = false;
+            txt_SDO3.Enabled = false;
+            txt_SDO4.Enabled = false;
+            txt_SDO5.Enabled = false;
+            txt_sueldo_departamento.Enabled = true;
         }
         private void Btn_mod_turno_Click(object sender, EventArgs e)
         {
@@ -1684,7 +1690,6 @@ namespace CsPresentacion
         {
             e.Handled = true;
         }
-
         private void Btn_eliminar_puesto_Click(object sender, EventArgs e)
         {
             Elimina_puesto();
@@ -1698,7 +1703,6 @@ namespace CsPresentacion
             cmb_puesto.Enabled = true;
             cmb_puesto.Focus();
         }
-
         private void Cmb_cambio_sueldo_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -1714,7 +1718,6 @@ namespace CsPresentacion
             dtm_sueldo.Enabled = true;
             btn_mod_sueldo.Enabled = true;
         }
-
         public static void Solo_numeros(object sender, KeyPressEventArgs e, char cSymbol)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != cSymbol)
@@ -1727,12 +1730,10 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Txt_SDO1_2_KeyPress(object sender, KeyPressEventArgs e)
         {
             Solo_numeros(sender, e, '.');
         }
-
         private void Dgv_sueldo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -1751,7 +1752,6 @@ namespace CsPresentacion
                 }
             }
         }
-
         private void Dtm_sueldo_ValueChanged(object sender, EventArgs e)
         {       
         }
@@ -1764,15 +1764,19 @@ namespace CsPresentacion
             mostrar_dgv_sueldo();
             cargar_informacion();
         }
-
         private void Txt_SDO1_Leave_1(object sender, EventArgs e)
         {
-        }
+            double f, sd, Re;
 
+            f = double.Parse(txt_factor_sueldo.Text);
+            sd = double.Parse(txt_sueldo_departamento.Text);
+            Re = f * sd;
+            txt_SDO3.Text = Re.ToString();
+            txt_SDO5.Text = Re.ToString();
+        }
         private void Cmb_motivo_sueldo_Leave(object sender, EventArgs e)
         {      
         }
-
         private void Txt_SDO1_2_Leave(object sender, EventArgs e)
         {
             double f, sd, Re;
@@ -1783,7 +1787,6 @@ namespace CsPresentacion
             txt_SDO3_2.Text = Re.ToString();
             txt_SDO5_2.Text = Re.ToString();
         }
-
         private void Cmb_parentesco_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
@@ -1821,19 +1824,15 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Dtm_puesto_ValueChanged(object sender, EventArgs e)
         {
         }
-
         private void Dtm_fecha_dep_ValueChanged(object sender, EventArgs e)
         {
         }
-
         private void Dgv_sueldo_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
         }
-
         private void Dgv_ruta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -1853,7 +1852,6 @@ namespace CsPresentacion
                 btn_eliminar_turno.Enabled = true;
             }
         }
-
         private void Cmb_turno_Leave(object sender, EventArgs e)
         {
             dtm_fecha_turno.Text = "";

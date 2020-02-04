@@ -1235,7 +1235,7 @@
             this.btn_eliminar_puesto.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_eliminar_puesto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_eliminar_puesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminar_puesto.Location = new System.Drawing.Point(517, 427);
+            this.btn_eliminar_puesto.Location = new System.Drawing.Point(517, 432);
             this.btn_eliminar_puesto.Name = "btn_eliminar_puesto";
             this.btn_eliminar_puesto.Size = new System.Drawing.Size(61, 31);
             this.btn_eliminar_puesto.TabIndex = 249;
@@ -1246,7 +1246,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(20, 65);
+            this.label14.Location = new System.Drawing.Point(22, 144);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(129, 13);
             this.label14.TabIndex = 248;
@@ -1256,10 +1256,10 @@
             // dtm_puesto
             // 
             this.dtm_puesto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_puesto.Location = new System.Drawing.Point(21, 83);
+            this.dtm_puesto.Location = new System.Drawing.Point(23, 162);
             this.dtm_puesto.Name = "dtm_puesto";
-            this.dtm_puesto.Size = new System.Drawing.Size(196, 20);
-            this.dtm_puesto.TabIndex = 247;
+            this.dtm_puesto.Size = new System.Drawing.Size(197, 20);
+            this.dtm_puesto.TabIndex = 3;
             this.dtm_puesto.ValueChanged += new System.EventHandler(this.Dtm_puesto_ValueChanged);
             // 
             // dgv_puesto
@@ -1270,11 +1270,11 @@
             this.dgv_puesto.AllowUserToResizeRows = false;
             this.dgv_puesto.BackgroundColor = System.Drawing.Color.White;
             this.dgv_puesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_puesto.Location = new System.Drawing.Point(17, 183);
+            this.dgv_puesto.Location = new System.Drawing.Point(17, 197);
             this.dgv_puesto.Name = "dgv_puesto";
             this.dgv_puesto.RowHeadersVisible = false;
             this.dgv_puesto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_puesto.Size = new System.Drawing.Size(561, 231);
+            this.dgv_puesto.Size = new System.Drawing.Size(561, 224);
             this.dgv_puesto.TabIndex = 245;
             this.dgv_puesto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_puesto_CellContentClick);
             // 
@@ -1293,10 +1293,10 @@
             this.btn_mod_puesto.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_mod_puesto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_mod_puesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mod_puesto.Location = new System.Drawing.Point(233, 73);
+            this.btn_mod_puesto.Location = new System.Drawing.Point(239, 151);
             this.btn_mod_puesto.Name = "btn_mod_puesto";
             this.btn_mod_puesto.Size = new System.Drawing.Size(61, 31);
-            this.btn_mod_puesto.TabIndex = 243;
+            this.btn_mod_puesto.TabIndex = 4;
             this.btn_mod_puesto.Text = "&Aplicar";
             this.btn_mod_puesto.UseVisualStyleBackColor = true;
             this.btn_mod_puesto.Click += new System.EventHandler(this.Btn_mod_puesto_Click);
@@ -1322,7 +1322,7 @@
             this.groupBox2.Controls.Add(this.txt_SDO4);
             this.groupBox2.Controls.Add(this.label36);
             this.groupBox2.Controls.Add(this.txt_SDO5);
-            this.groupBox2.Location = new System.Drawing.Point(17, 110);
+            this.groupBox2.Location = new System.Drawing.Point(17, 66);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(561, 62);
             this.groupBox2.TabIndex = 240;
@@ -1343,7 +1343,7 @@
             this.txt_sueldo_departamento.MaxLength = 10;
             this.txt_sueldo_departamento.Name = "txt_sueldo_departamento";
             this.txt_sueldo_departamento.Size = new System.Drawing.Size(89, 20);
-            this.txt_sueldo_departamento.TabIndex = 11;
+            this.txt_sueldo_departamento.TabIndex = 2;
             this.txt_sueldo_departamento.Leave += new System.EventHandler(this.Txt_SDO1_Leave_1);
             // 
             // label33
@@ -1423,10 +1423,10 @@
             // 
             this.cmb_puesto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_puesto.FormattingEnabled = true;
-            this.cmb_puesto.Location = new System.Drawing.Point(21, 38);
+            this.cmb_puesto.Location = new System.Drawing.Point(24, 38);
             this.cmb_puesto.Name = "cmb_puesto";
             this.cmb_puesto.Size = new System.Drawing.Size(196, 21);
-            this.cmb_puesto.TabIndex = 238;
+            this.cmb_puesto.TabIndex = 1;
             this.cmb_puesto.SelectedIndexChanged += new System.EventHandler(this.Cmb_puesto_SelectedIndexChanged_1);
             this.cmb_puesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_puesto_KeyPress_1);
             // 
