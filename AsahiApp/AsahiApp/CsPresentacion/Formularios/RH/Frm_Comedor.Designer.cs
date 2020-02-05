@@ -178,6 +178,7 @@
             // 
             // tp_permisos
             // 
+            this.tp_permisos.Controls.Add(this.lbl_tipo_falta);
             this.tp_permisos.Controls.Add(this.label6);
             this.tp_permisos.Controls.Add(this.cmb_tipo);
             this.tp_permisos.Controls.Add(this.label5);
@@ -425,7 +426,7 @@
             // lbl_tipo_falta
             // 
             this.lbl_tipo_falta.AutoSize = true;
-            this.lbl_tipo_falta.Location = new System.Drawing.Point(538, 146);
+            this.lbl_tipo_falta.Location = new System.Drawing.Point(675, 78);
             this.lbl_tipo_falta.Name = "lbl_tipo_falta";
             this.lbl_tipo_falta.Size = new System.Drawing.Size(41, 13);
             this.lbl_tipo_falta.TabIndex = 161;
@@ -441,7 +442,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(824, 612);
-            this.Controls.Add(this.lbl_tipo_falta);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
@@ -463,7 +463,6 @@
             this.tp_permisos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_comedor)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
