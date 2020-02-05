@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tp_permisos = new System.Windows.Forms.TabPage();
+            this.lbl_tipo_falta = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.btn_com_eliminar = new System.Windows.Forms.Button();
             this.btn_com_ultimo = new System.Windows.Forms.Button();
             this.btn_com_agregar = new System.Windows.Forms.Button();
-            this.lbl_tipo_falta = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -205,6 +205,15 @@
             this.tp_permisos.Text = "1. Catálogo";
             this.tp_permisos.UseVisualStyleBackColor = true;
             // 
+            // lbl_tipo_falta
+            // 
+            this.lbl_tipo_falta.AutoSize = true;
+            this.lbl_tipo_falta.Location = new System.Drawing.Point(675, 78);
+            this.lbl_tipo_falta.Name = "lbl_tipo_falta";
+            this.lbl_tipo_falta.Size = new System.Drawing.Size(41, 13);
+            this.lbl_tipo_falta.TabIndex = 161;
+            this.lbl_tipo_falta.Text = "@Falta";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -287,17 +296,17 @@
             this.dgv_comedor.Location = new System.Drawing.Point(7, 118);
             this.dgv_comedor.MultiSelect = false;
             this.dgv_comedor.Name = "dgv_comedor";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_comedor.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_comedor.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_comedor.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dgv_comedor.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dgv_comedor.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_comedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_comedor.ShowCellErrors = false;
             this.dgv_comedor.Size = new System.Drawing.Size(780, 286);
@@ -423,15 +432,6 @@
             this.btn_com_agregar.UseVisualStyleBackColor = false;
             this.btn_com_agregar.Click += new System.EventHandler(this.Btn_com_insertar_Click);
             // 
-            // lbl_tipo_falta
-            // 
-            this.lbl_tipo_falta.AutoSize = true;
-            this.lbl_tipo_falta.Location = new System.Drawing.Point(675, 78);
-            this.lbl_tipo_falta.Name = "lbl_tipo_falta";
-            this.lbl_tipo_falta.Size = new System.Drawing.Size(41, 13);
-            this.lbl_tipo_falta.TabIndex = 161;
-            this.lbl_tipo_falta.Text = "@Falta";
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
@@ -447,6 +447,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Comedor";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
