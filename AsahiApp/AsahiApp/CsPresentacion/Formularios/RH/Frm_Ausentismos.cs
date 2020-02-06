@@ -631,7 +631,7 @@ namespace CsPresentacion
                 con.Open();
                 DataTable dt = new DataTable();
                 String strSql;
-                strSql = "SELECT Convert(Int,RTRIM(CLAVE)) AS 'CLAVE', VIGENCIA FROM [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] WHERE RTRIM(RTRIM(NOMBREN)+ ' '+ RTRIM(NOMBREP)+ ' ' + RTRIM(NOMBREM)) = @Nombre";
+                strSql = "SELECT Convert(Int,RTRIM(CLAVE)) AS 'CLAVE', TURNO, VIGENCIA FROM [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] WHERE RTRIM(RTRIM(NOMBREN)+ ' '+ RTRIM(NOMBREP)+ ' ' + RTRIM(NOMBREM)) = @Nombre";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, con);
                 da.SelectCommand.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txt_nombre.Text;
                 da.Fill(dt);
@@ -640,6 +640,7 @@ namespace CsPresentacion
                 {
                     txt_clave.Text = dt.Rows[0]["CLAVE"].ToString();
                     lbl_estado.Text = dt.Rows[0]["VIGENCIA"].ToString();
+                    lbl_turno.Text = dt.Rows[0]["TURNO"].ToString();
                 }
             }
             catch
@@ -901,7 +902,6 @@ namespace CsPresentacion
             btn_ultimo.Enabled = true;
             btn_f_siguiente.Enabled = true;
             btn_f_ultimo.Enabled = true;
-            btn_f_insertar.Focus();
             btn_v_exportar.Enabled = true;
             btn_v_siguiente.Enabled = true;
             btn_v_ultimo.Enabled = true;
@@ -2335,6 +2335,17 @@ namespace CsPresentacion
             {
                 MessageBox.Show("Favor de validar la fecha final", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
+        }
+
+        private void Lbl_turno_TextChanged(object sender, EventArgs e)
+        {
+            switch (lbl_turno.Text)
+            {
+                case "4": lbl_turno.Text = "ADMINISTRATIVO"; break;
+                case "1": lbl_turno.Text = "MATUTINO"; break;
+                case "2": lbl_turno.Text = "VESPERTINO"; break;
+                case "3": lbl_turno.Text = "NOCTURNO"; break;
+            }
         }
 
         private void TabPage2_Click(object sender, EventArgs e)
