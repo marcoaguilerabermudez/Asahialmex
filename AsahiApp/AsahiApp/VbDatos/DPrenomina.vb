@@ -270,7 +270,8 @@ Public Class DPrenomina
         End Try
         Return lstTxtNom
     End Function
-    Public Function VerificarDiaHabil(ByVal cadConex As String, ByVal año As Integer, ByVal mes As Integer, ByVal dia As Integer, ByVal idEmp As Integer) As Integer
+    Public Function VerificarDiaHabil(ByVal cadConex As String, ByVal año As Integer, ByVal mes As Integer, ByVal dia As Integer, ByVal idEmp As Integer,
+                                      ByVal modulo As Integer) As Integer
         Dim valor As Integer
         Dim oCon As New SqlConnection(cadConex)
         Try
@@ -280,6 +281,7 @@ Public Class DPrenomina
             query.Parameters.AddWithValue("@mes", mes)
             query.Parameters.AddWithValue("@dia", dia)
             query.Parameters.AddWithValue("@idEmp", idEmp)
+            query.Parameters.AddWithValue("@modulo", modulo)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 60
 
@@ -520,4 +522,23 @@ Public Class DPrenomina
         End Try
         Return mes
     End Function
+    Public Sub InsertarBonoPuntualidad(ByVal cadenaConex As String, ByVal objBono As Bono)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("BonoPuntualidad_Insertar", oCon)
+            query.Parameters.AddWithValue("@XML", objBono.XML)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar() 'En un Insert de XML, NO olvidar esta línea si no, no inserta mi madres
+
+            MsgBox("Registros guardados")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
 End Class

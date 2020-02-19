@@ -74,10 +74,13 @@ Public Class Frm_GlobalPrenomina
             Lbl_SemaF.Text = Format(hrs.FechaF, "dd/MM/yyyy")
             If sem <> hrs.Semana Then Cmb_Semanas.SelectedItem = hrs.Semana
             Btn_Txt.Visible = False
+            Btn_TxtPDO.Visible = False
             Btn_Excel.Visible = False
             Btn_Reporte.Visible = False
             Txt_FiltroId.Enabled = False
             Txt_FiltroId.Text = ""
+            Lbl_Inc.Visible = False
+            Lbl_PDO.Visible = False
             open = True
 
         Else
@@ -149,6 +152,10 @@ Public Class Frm_GlobalPrenomina
         Almacenar()
         llamarReporte()
     End Sub
+    Private Sub Btn_TxtPDO_Click(sender As Object, e As EventArgs) Handles Btn_TxtPDO.Click
+        CrearTxtPDO()
+        EscribirArchivoPDO()
+    End Sub
 #End Region
 #Region "Rellena cmb"
     Private Sub RellenaCmbSemanas()
@@ -162,8 +169,9 @@ Public Class Frm_GlobalPrenomina
         Dim NPre As New NPrenomina()
         Dim conex As New conexion
         Dim cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Dim semana As Integer = Cmb_Semanas.Text, año As Integer = Lbl_año.Text
 
-        Return NPre.EmpleadoGlobalRecuperar(cadConex, fecha)
+        Return NPre.EmpleadoGlobalRecuperar(cadConex, fecha, semana, año)
     End Function
     Private Sub RecuperarIncidencias(ByVal dgv As Boolean)
         Dim lstAus As New LAusentismo(), lstVac As New LVacaciones(), lstInc As New LIncapacidad(), lstHE As New LHorasExtra(), lstBja As New LBaja(),
@@ -223,6 +231,12 @@ Public Class Frm_GlobalPrenomina
                 Dgv_Prenomina_Global.Rows(fila).Cells("idEmpleado").Style.ForeColor = Color.White
                 Dgv_Prenomina_Global.Rows(fila).Cells("nombreEmpleado").Style.BackColor = Color.FromArgb(64, 64, 0)
                 Dgv_Prenomina_Global.Rows(fila).Cells("nombreEmpleado").Style.ForeColor = Color.White
+            End If
+            If item.Bono = True Then
+                Dgv_Prenomina_Global.Rows(fila).Cells("bono").Value = "SI"
+                Dgv_Prenomina_Global.Rows(fila).Cells("bono").Style.BackColor = Color.White
+            ElseIf item.Bono = False Then
+                Dgv_Prenomina_Global.Rows(fila).Cells("bono").Value = "NO"
             End If
 
             With Dgv_Prenomina_Global.Rows(fila)
@@ -962,7 +976,10 @@ Public Class Frm_GlobalPrenomina
             Btn_Excel.Visible = True
             Txt_FiltroId.Enabled = True
             Btn_Txt.Visible = True
+            Btn_TxtPDO.Visible = True
             Btn_Reporte.Visible = True
+            Lbl_Inc.Visible = True
+            Lbl_PDO.Visible = True
         End If
     End Sub
     Private Sub ModificarDiaInicio()
@@ -1398,6 +1415,316 @@ Public Class Frm_GlobalPrenomina
         Frm_ReportePrenominaGlobal.ReportViewer1.LocalReport.DataSources.Add(fuente)
         Frm_ReportePrenominaGlobal.ReportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Rpt_PrenominaGlobal.rdlc" 'exactamente como se llaman el proyecto y reporte
         Frm_ReportePrenominaGlobal.Show()
+    End Sub
+    Private Sub CrearTxtPDO()
+        Me.userName = Environment.UserName
+        Me.ruta = "C:\Users\" & Me.userName & "\Desktop\NominaSAAM\"
+        Me.archivo = "PDO_Semanal_W" & Cmb_Semanas.Text & ".txt"
+        Dim fs As FileStream
+
+        'Validamos si la carpeta de ruta existe, si no existe la creamos
+        Try
+            If File.Exists(ruta) Then
+
+                'Si la carpeta existe creamos o sobreescribios el archivo txt
+                fs = File.Create(ruta & archivo)
+                fs.Close()
+                MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, "")
+            Else
+
+                'Si la carpeta no existe la creamos
+                Directory.CreateDirectory(ruta)
+
+                'Una vez creada la carpeta creamos o sobreescribios el archivo txt
+                fs = File.Create(ruta & archivo)
+                fs.Close()
+                'MsgBox("Archivo creado correctamente", MsgBoxStyle.Information, "")
+            End If
+        Catch ex As Exception
+            MsgBox("Se presento un problema al momento de crear el archivo: " & ex.Message, MsgBoxStyle.Critical, "")
+            fs.Close()
+        End Try
+    End Sub
+    Private Sub EscribirArchivoPDO()
+        Dim tx As New StreamWriter(Me.ruta & Me.archivo)
+        Dim fila As Integer, idX As Integer = 0, e As Integer, totalFilas As Integer = Dgv_Prenomina_Global.Rows.Count
+        Dim folio As String = ""
+        Dim NPol As New NPolizas(), pol As New Polizas()
+        Try
+            'fecha = Dgv_Prenomina_Global.Rows(0).Cells("fechaFact").Value
+            'e = pol.FolioPoliza
+            For fila = 0 To totalFilas - 2
+                Dim cargo As Integer = 0
+                With Dgv_Prenomina_Global.Rows(fila)
+                    folio = String.Format("{0:0000}", .Cells("idEmpleado").Value)
+                    If .Cells("Bono").Value = "SI" Then
+                        tx.Write(String.Format("{0,-8}", "E"))
+                        tx.Write(String.Format("{0,-7}", folio))
+                        tx.Write(String.Format("{0,-88}", ""))
+                        tx.WriteLine()
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "15") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "219.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+                        '----------------------------------------------------------------------------------------------------------------------------
+#Region "ceros"
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "6") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "11") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "12") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "13") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "16") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "19") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "21") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "22") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "24") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "135") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,-22}", "Semanal") & " ")
+                        tx.Write(String.Format("{0,3}", Cmb_Semanas.Text) & " ")
+                        tx.Write("2")
+                        tx.Write(String.Format("{0,3}", "136") & " ")
+                        tx.Write(String.Format("{0,32}", "") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write(String.Format("{0,15}", "0.00") & " ")
+                        tx.Write("P ")
+                        tx.Write(String.Format("{0,4}", Lbl_año.Text) & " ")
+                        tx.Write("0 ")
+                        tx.Write("1 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(" ")
+                        tx.WriteLine()
+#End Region
+                        '----------------------------------------------------------------------------------------------------------------------------
+                    End If
+                End With
+            Next
+            MsgBox("Registro guardado correctamente", MsgBoxStyle.Information, "")
+            tx.Close()
+        Catch ex As Exception
+            MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "")
+            tx.Close()
+        End Try
     End Sub
 #End Region
 End Class

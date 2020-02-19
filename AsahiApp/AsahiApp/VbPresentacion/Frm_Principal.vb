@@ -129,7 +129,7 @@ Public Class Frm_Principal
 
 #Region "Botónes"
     Private Sub PreNominaListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaListadoToolStripMenuItem.Click
-        Dim lista As New Frm_ListaPrenomina(cadConex, cadenaConex)
+        Dim lista As New Frm_ListaPrenomina(cadConex, cadenaConex, Me.emp.IdEmpleado)
         lista.Show()
     End Sub
     Private Sub ControlDeProducciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeProducciónToolStripMenuItem.Click

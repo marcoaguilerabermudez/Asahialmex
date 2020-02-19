@@ -57,4 +57,8 @@ Public Class NCompras
         comp.Xml = "<Provisiones>" & comp.Xml & "</Provisiones>"
         Return comp
     End Function
+    Public Function RecuperarProvValidadas(ByVal cadenaConex As String) As LCompras
+        Dim DComp As New DCompras()
+        Return DComp.RecuperarProvValidadas(cadenaConex)
+    End Function
 End Class

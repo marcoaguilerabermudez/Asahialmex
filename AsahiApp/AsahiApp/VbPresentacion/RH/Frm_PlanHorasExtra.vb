@@ -823,7 +823,7 @@ Public Class Frm_PlanHorasExtra
                     año = Lbl_año.Text
                     mes = Month(fecha)
                     dia = Convert.ToInt16(Format(fecha, "dd"))
-                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1)
+                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1, 1)
                     If valor = 1 Then
                         Lbl_Dia1.BackColor = Color.DarkViolet
                         Lbl_Dia1.ForeColor = Color.White
@@ -836,7 +836,7 @@ Public Class Frm_PlanHorasExtra
                     año = Lbl_año.Text
                     mes = Month(fecha)
                     dia = Convert.ToInt16(Format(fecha, "dd"))
-                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1)
+                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1, 1)
                     If valor = 1 Then
                         Lbl_Dia2.BackColor = Color.DarkViolet
                         Lbl_Dia2.ForeColor = Color.White
@@ -849,7 +849,7 @@ Public Class Frm_PlanHorasExtra
                     año = Lbl_año.Text
                     mes = Month(fecha)
                     dia = Convert.ToInt16(Format(fecha, "dd"))
-                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1)
+                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1, 1)
                     If valor = 1 Then
                         Lbl_Dia3.BackColor = Color.DarkViolet
                         Lbl_Dia3.ForeColor = Color.White
@@ -862,7 +862,7 @@ Public Class Frm_PlanHorasExtra
                     año = Lbl_año.Text
                     mes = Month(fecha)
                     dia = Convert.ToInt16(Format(fecha, "dd"))
-                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1)
+                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1, 1)
                     If valor = 1 Then
                         Lbl_Dia4.BackColor = Color.DarkViolet
                         Lbl_Dia4.ForeColor = Color.White
@@ -875,7 +875,7 @@ Public Class Frm_PlanHorasExtra
                     año = Lbl_año.Text
                     mes = Month(fecha)
                     dia = Convert.ToInt16(Format(fecha, "dd"))
-                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1)
+                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1, 1)
                     If valor = 1 Then
                         Lbl_Dia5.BackColor = Color.DarkViolet
                         Lbl_Dia5.ForeColor = Color.White
@@ -888,7 +888,7 @@ Public Class Frm_PlanHorasExtra
                     año = Lbl_año.Text
                     mes = Month(fecha)
                     dia = Convert.ToInt16(Format(fecha, "dd"))
-                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1)
+                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1, 1)
                     If valor = 1 Then
                         Lbl_Dia6.BackColor = Color.DarkViolet
                         Lbl_Dia6.ForeColor = Color.White
@@ -901,7 +901,7 @@ Public Class Frm_PlanHorasExtra
                     año = Lbl_año.Text
                     mes = Month(fecha)
                     dia = Convert.ToInt16(Format(fecha, "dd"))
-                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1)
+                    valor = NPren.VerificarDiaHabil(cadenaConex, año, mes, dia, 1, 1)
                     If valor = 1 Then
                         Lbl_Dia7.BackColor = Color.DarkViolet
                         Lbl_Dia7.ForeColor = Color.White

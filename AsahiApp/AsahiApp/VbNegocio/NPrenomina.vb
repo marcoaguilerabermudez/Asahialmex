@@ -6,9 +6,9 @@ Public Class NPrenomina
         Dim DPrenomina As New DPrenomina()
         Return DPrenomina.RecuperarDiasSemana(cadConex, fecha)
     End Function
-    Public Function EmpleadosRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
+    Public Function EmpleadosRecuperar(ByVal cadConex As String, ByVal fecha As Date, ByVal semana As Integer, ByVal año As Integer) As LEmpleado
         Dim DEmpleado As New DEmpleado()
-        Return DEmpleado.EmpleadosRecuperar(cadConex, fecha)
+        Return DEmpleado.EmpleadosRecuperar(cadConex, fecha, semana, año)
     End Function
     Public Function RecuperarAusentismo(ByVal cadConex As String, ByVal fechaI As Date, ByVal fechaF As Date) As LAusentismo
         Dim DPrenomina As New DPrenomina
@@ -42,9 +42,10 @@ Public Class NPrenomina
         Dim DPrenimina As New DPrenomina()
         Return DPrenimina.RecuperarChecadas(cadConex, fechaI, fechaF)
     End Function
-    Public Function VerificarDiaHabil(ByVal cadConex As String, ByVal año As Integer, ByVal mes As Integer, ByVal dia As Integer, ByVal idEmp As Integer) As Integer
+    Public Function VerificarDiaHabil(ByVal cadConex As String, ByVal año As Integer, ByVal mes As Integer, ByVal dia As Integer, ByVal idEmp As Integer,
+                                      ByVal modulo As Integer) As Integer
         Dim DPren As New DPrenomina()
-        Return DPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp)
+        Return DPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp, modulo)
     End Function
     Public Sub InsertarModificacionesIncidencias(ByVal cadenaConex As String, ByVal lstEmp As LEmpleado, ByVal sem As Integer)
         Dim objEmp As New Empleado()
@@ -78,9 +79,9 @@ Public Class NPrenomina
         objEmp = CrearXmlChecadas(lstEmp)
         DPrenom.InsertarModificacionesChecadas(cadenaConex, objEmp)
     End Sub
-    Public Function EmpleadoGlobalRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
+    Public Function EmpleadoGlobalRecuperar(ByVal cadConex As String, ByVal fecha As Date, ByVal semana As Integer, ByVal año As Integer) As LEmpleado
         Dim DEmp As New DEmpleado()
-        Return DEmp.EmpleadoGlobalRecuperar(cadConex, fecha)
+        Return DEmp.EmpleadoGlobalRecuperar(cadConex, fecha, semana, año)
     End Function
     Public Function RecuperarMotivosRetardo(ByVal cadenaConex As String) As LHorarios
         Dim dPren As New DPrenomina()
@@ -106,6 +107,13 @@ Public Class NPrenomina
         Dim DPre As New DPrenomina()
         Return DPre.VerificarUltimoMesCalculado(cadenaConex, año)
     End Function
+    Public Sub InsertarBonoPuntualidad(ByVal cadenaConex As String, ByVal lstBono As LBono)
+        Dim DPrenom As New DPrenomina()
+        Dim objBono As New Bono
+
+        objBono = CrearXmlBonoPuntualidad(lstBono)
+        DPrenom.InsertarBonoPuntualidad(cadenaConex, objBono)
+    End Sub
 #Region "XML"
     Private Function CreaXml(ByVal lstEmp As LEmpleado, ByVal sem As Integer) As Empleado
         Dim objEmp As New Empleado()
@@ -206,6 +214,21 @@ Public Class NPrenomina
         Next
 
         objBono.XML = "<Acumulado>" & objBono.XML & "</Acumulado>"
+        Return objBono
+    End Function
+    Private Function CrearXmlBonoPuntualidad(ByVal lstBono As LBono) As Bono
+        Dim objBono As New Bono()
+        Dim i As Integer
+        Dim str As String
+
+        For i = 0 To lstBono.Count - 1
+            str = "<Info><empleado>" & lstBono.Item(i).IdEmpleado & "</empleado><semana>" & lstBono.Item(i).Semana &
+                "</semana><año>" & lstBono(i).Año & "</año><bono>" & lstBono.Item(i).Bono & "</bono><modifico>" & lstBono.Item(i).IdModif &
+                "</modifico></Info>"
+            objBono.XML = objBono.XML & str
+        Next
+
+        objBono.XML = "<Bono>" & objBono.XML & "</Bono>"
         Return objBono
     End Function
 #End Region
