@@ -119,7 +119,6 @@ namespace CsPresentacion
             dgv.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.Columns[4].Width = 55;//espacio
         }
-
         private void Modifica_ruta()// Método para modificar ruta de empleado
         {
             try
@@ -169,7 +168,6 @@ namespace CsPresentacion
             dgv.Columns[2].Width = 140;//Departamento
             dgv.Columns[3].Width = 135;//Ruta
         }
-
         private void Modifica_depto()// Método para modificar departamento de empleado
         {
             try
@@ -537,7 +535,6 @@ namespace CsPresentacion
             { 
             }
         }
-
         private void Actualizar()
         {
             try
@@ -658,7 +655,7 @@ namespace CsPresentacion
             dtm_sueldo.Text = "";
             btn_eliminar_sueldo.Enabled = false;
             lbl_comprueba_sueldo.Text = "";
-          lbl_comprueba_sueldo.Visible = false;
+            lbl_comprueba_sueldo.Visible = false;
             dtm_sueldo.Enabled = false;
             lbl_motivo.Text = "";
             lbl_motivo.Visible = false;
@@ -1339,14 +1336,15 @@ namespace CsPresentacion
             Val1 = double.Parse(txt_compara1.Text);
             Val2 = double.Parse(txt_compara2.Text);
 
+
             if (Val1 > Val2)
             {
                 txt_sueldo_departamento.Text = txt_compara1.Text;
                 txt_SDO2.Text = "0.00";
                 txt_SDO4.Text = "0.00";
-                lbl_factor.Text = "1.07808";
+
                 Sueldo = double.Parse(txt_sueldo_departamento.Text);
-                Factor = double.Parse(lbl_factor.Text);
+                Factor = double.Parse(txt_factor_sueldo.Text);
                 Resultado = Sueldo * Factor;
                 txt_SDO3.Text = Resultado.ToString();
                 txt_SDO5.Text = Resultado.ToString();
@@ -1372,7 +1370,12 @@ namespace CsPresentacion
             cmb_puesto.Enabled = false;
             btn_mod_puesto.Enabled = true;
             dtm_puesto.Enabled = true;
-            dtm_puesto.Focus();
+            groupBox2.Enabled = true;
+            txt_SDO2.Enabled = false;
+            txt_SDO3.Enabled = false;
+            txt_SDO4.Enabled = false;
+            txt_SDO5.Enabled = false;
+            txt_sueldo_departamento.Enabled = true;
         }
         private void Btn_mod_turno_Click(object sender, EventArgs e)
         {
@@ -1410,7 +1413,6 @@ namespace CsPresentacion
                 cmb_turno.Focus();
             }   
         }
-
         private void Btn_mod_sueldo_Click_1(object sender, EventArgs e)
         {
             sd1 = double.Parse(txt_SDO1_2.Text);
@@ -1432,7 +1434,6 @@ namespace CsPresentacion
                 mostrar_dgv_sueldo();
             }
         }
-
         private void Btn_mod_puesto_Click(object sender, EventArgs e)
         {
             if (cmb_puesto.Text == lbl_valida_puesto.Text)
@@ -1453,7 +1454,6 @@ namespace CsPresentacion
                 cmb_puesto.Focus();
             }
         }
-
         private void Btn_mod_departamento_Click(object sender, EventArgs e)
         {
             if (cmb_departamento.Text == lbl_Comprueba_depto.Text)
@@ -1626,7 +1626,6 @@ namespace CsPresentacion
                 lbl_civil.Text = "ULI";
             }
         }
-
         private void Btn_mod_ruta_Click(object sender, EventArgs e)
         {
             Modifica_ruta();
@@ -1634,7 +1633,6 @@ namespace CsPresentacion
             cmb_ruta.Text = "";
             cmb_ruta.Focus();
         }
-
         private void Btn_eliminar_depto_Click(object sender, EventArgs e)
         {
             Elimina_depto();
@@ -1644,7 +1642,6 @@ namespace CsPresentacion
             txt_clave.Focus();
             btn_eliminar_depto.Enabled = false;
         }
-
         private void Cmb_turno_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (txt_clave.Text == "")
@@ -1656,7 +1653,6 @@ namespace CsPresentacion
                 dtm_fecha_turno.Enabled = true;
             }
         }
-
         private void Cmb_turno_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -1694,7 +1690,6 @@ namespace CsPresentacion
         {
             e.Handled = true;
         }
-
         private void Btn_eliminar_puesto_Click(object sender, EventArgs e)
         {
             Elimina_puesto();
@@ -1708,7 +1703,6 @@ namespace CsPresentacion
             cmb_puesto.Enabled = true;
             cmb_puesto.Focus();
         }
-
         private void Cmb_cambio_sueldo_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -1724,7 +1718,6 @@ namespace CsPresentacion
             dtm_sueldo.Enabled = true;
             btn_mod_sueldo.Enabled = true;
         }
-
         public static void Solo_numeros(object sender, KeyPressEventArgs e, char cSymbol)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != cSymbol)
@@ -1737,12 +1730,10 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Txt_SDO1_2_KeyPress(object sender, KeyPressEventArgs e)
         {
             Solo_numeros(sender, e, '.');
         }
-
         private void Dgv_sueldo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -1761,7 +1752,6 @@ namespace CsPresentacion
                 }
             }
         }
-
         private void Dtm_sueldo_ValueChanged(object sender, EventArgs e)
         {       
         }
@@ -1774,15 +1764,19 @@ namespace CsPresentacion
             mostrar_dgv_sueldo();
             cargar_informacion();
         }
-
         private void Txt_SDO1_Leave_1(object sender, EventArgs e)
         {
-        }
+            double f, sd, Re;
 
+            f = double.Parse(txt_factor_sueldo.Text);
+            sd = double.Parse(txt_sueldo_departamento.Text);
+            Re = f * sd;
+            txt_SDO3.Text = Re.ToString();
+            txt_SDO5.Text = Re.ToString();
+        }
         private void Cmb_motivo_sueldo_Leave(object sender, EventArgs e)
         {      
         }
-
         private void Txt_SDO1_2_Leave(object sender, EventArgs e)
         {
             double f, sd, Re;
@@ -1793,7 +1787,6 @@ namespace CsPresentacion
             txt_SDO3_2.Text = Re.ToString();
             txt_SDO5_2.Text = Re.ToString();
         }
-
         private void Cmb_parentesco_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
@@ -1831,19 +1824,15 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Dtm_puesto_ValueChanged(object sender, EventArgs e)
         {
         }
-
         private void Dtm_fecha_dep_ValueChanged(object sender, EventArgs e)
         {
         }
-
         private void Dgv_sueldo_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
         }
-
         private void Dgv_ruta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -1863,7 +1852,6 @@ namespace CsPresentacion
                 btn_eliminar_turno.Enabled = true;
             }
         }
-
         private void Cmb_turno_Leave(object sender, EventArgs e)
         {
             dtm_fecha_turno.Text = "";
