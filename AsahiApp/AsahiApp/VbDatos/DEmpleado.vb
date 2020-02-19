@@ -1,13 +1,15 @@
 ﻿Imports Clases
 Imports System.Data.SqlClient
 Public Class DEmpleado
-    Public Function EmpleadosRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
+    Public Function EmpleadosRecuperar(ByVal cadConex As String, ByVal fecha As Date, ByVal semana As Integer, ByVal año As Integer) As LEmpleado
         Dim oCon As New SqlConnection(cadConex)
         Dim lstEmp As New LEmpleado()
         Try
             oCon.Open()
             Dim query As New SqlCommand("asahi16.dbo.LLInfoGralYChPrenomina", oCon)
             query.Parameters.AddWithValue("@fecha", fecha)
+            query.Parameters.AddWithValue("@año", año)
+            query.Parameters.AddWithValue("@semana", semana)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 120
             Dim dr As SqlDataReader
@@ -24,6 +26,7 @@ Public Class DEmpleado
                 empleados.TP = dr("TP").ToString
                 empleados.FechaBaja = Convert.ToDateTime(dr("BAJA").ToString)
                 empleados.Nacional = Convert.ToBoolean(dr("AVISO").ToString)
+                empleados.Puesto = dr("PUESTO").ToString
                 empleados.HoraEntrada = Convert.ToDateTime(dr("Entrada").ToString)
                 empleados.HoraSalida = Convert.ToDateTime(dr("Salida").ToString)
                 empleados.HoraEntradaReal0 = Convert.ToDateTime(dr("ERF0").ToString)
@@ -58,6 +61,10 @@ Public Class DEmpleado
                 empleados.HoraSalidaReal7 = Convert.ToDateTime(dr("SRF7").ToString)
                 empleados.TipoRegistro7 = dr("TRF7").ToString
                 empleados.Nota7 = dr("NTF7").ToString
+                empleados.Bono = Convert.ToBoolean(dr("Bono").ToString)
+                empleados.Semana = Convert.ToInt32(dr("sem").ToString)
+                empleados.Año = Convert.ToInt32(dr("año").ToString)
+                empleados.FechaIngreso = Convert.ToDateTime(dr("INGRESO").ToString)
                 lstEmp.Add(empleados)
             End While
         Catch ex As Exception
@@ -73,12 +80,12 @@ Public Class DEmpleado
         End Try
         Return lstEmp
     End Function
-    Public Function EmpleadoGlobalRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
+    Public Function EmpleadoGlobalRecuperar(ByVal cadConex As String, ByVal fecha As Date, ByVal semana As Integer, ByVal año As Integer) As LEmpleado
         Dim lstEmp As New LEmpleado
         Dim oCon As New SqlConnection(cadConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT ID,NOMBRE,APELLIDOP,APELLIDOM,isnull(VEB.TURNO,0) as TURNO,tur,DEPARTAMENTO, (SELECT TOP 1 P.DESCRIPCION from asahi16.Supervisor_giro.Emppues EPP LEFT JOIN asahi16.Supervisor_giro.Puesto P on EPP.CATALOGO = P.CLAVE WHERE VEB.ID = EPP.CLAVE ORDER BY EPP.CLAVE desc) as PUESTO,TP,EP.INGRESO as INGRESO,isnull(BAJA,'') as BAJA FROM Vista_InfoEmpleadosBasica VEB LEFT JOIN asahi16.Supervisor_giro.Empprin EP on VEB.ID = EP.CLAVE WHERE TP in ('A','R') or (TP = 'B' and BAJA > '" & Format(fecha, "dd/MM/yyyy") & "')", oCon)
+            Dim query As New SqlCommand("SELECT ID,NOMBRE,APELLIDOP,APELLIDOM,isnull(VEB.TURNO,0) as TURNO,tur,DEPARTAMENTO, (SELECT TOP 1 P.DESCRIPCION from asahi16.Supervisor_giro.Emppues EPP LEFT JOIN asahi16.Supervisor_giro.Puesto P on EPP.CATALOGO = P.CLAVE WHERE VEB.ID = EPP.CLAVE ORDER BY EPP.CLAVE desc) as PUESTO,TP,EP.INGRESO as INGRESO,isnull(BAJA,'') as BAJA, ISNULL(BP.bono,0) AS BONO FROM Vista_InfoEmpleadosBasica VEB LEFT JOIN asahi16.Supervisor_giro.Empprin EP on VEB.ID = EP.CLAVE LEFT JOIN Bono_Puntualidad BP on VEB.ID = BP.empleado and BP.semana = " & semana & " and BP.año = " & año & " WHERE TP in ('A','R') or (TP = 'B' and BAJA > '" & Format(fecha, "dd/MM/yyyy") & "')", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -95,6 +102,7 @@ Public Class DEmpleado
                 emp.TP = dr("TP").ToString
                 emp.FechaIngreso = Convert.ToDateTime(dr("INGRESO").ToString)
                 emp.FechaBaja = Convert.ToDateTime(dr("BAJA").ToString)
+                emp.Bono = Convert.ToBoolean(dr("BONO").ToString)
                 lstEmp.Add(emp)
             End While
         Catch ex As Exception
