@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>131</ApplicationRevision>
+    <ApplicationRevision>135</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -652,6 +652,9 @@
     <None Include="Resources\lupa.png" />
     <None Include="Resources\xml.png" />
     <None Include="Resources\comprobado.png" />
+    <None Include="Resources\systemtask_sistema_3126.png" />
+    <None Include="Resources\pay_perclick_icon-icons.com_66877.png" />
+    <None Include="Resources\Acumulado1.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

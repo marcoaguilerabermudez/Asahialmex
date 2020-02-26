@@ -12,7 +12,7 @@ Public Class Frm_ListaPrenomina
     Dim colum
     'Dim bd As New BindingSource
     'Dim super As Thread
-    Dim valor
+    Dim valor, rangoPermiso
     Dim fuente As New ReportDataSource
     Dim idEmp As String, rec As String = "N"
 #End Region
@@ -47,9 +47,41 @@ Public Class Frm_ListaPrenomina
 #End Region
 #Region "Eventos del fomulario"
     Private Sub Frm_Prenomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim NEmp As New NEmpleado(), conex As New conexion()
+        Dim cadenaConex As String = conex.cadenaConexExpress
+        Me.rangoPermiso = NEmp.RevisarRangoPermisos(cadenaConex, Me.idEmp, "PreNominaListadoToolStripMenuItem")
         Lbl_año.Text = Format(DateTime.Now, "yyyy")
         RellenaCmbSemanas()
         ModificarDiaInicio()
+        If Me.rangoPermiso = 2 Then
+            Btn_GuardarBono.Visible = False
+            Dgv_ListaPrenomina.Columns("aplicaBono").ReadOnly = True
+        ElseIf Me.rangoPermiso = 3 Then
+            Dgv_ListaPrenomina.Columns("entrada1").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida1").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada2").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida2").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada3").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida3").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada4").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida4").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada5").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida5").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada6").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida6").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada7").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida7").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("comentarios").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("aplicaBono").ReadOnly = False
+            Btn_Excel.Visible = False
+            Btn_Reporte.Visible = False
+            Btn_Guardar.Visible = False
+        ElseIf Me.rangoPermiso = 4 Then
+            Btn_Mostrar.Visible = False
+            Btn_Reporte.Visible = False
+            Btn_Guardar.Visible = False
+            Btn_GuardarBono.Visible = False
+        End If
     End Sub
     Private Sub Dtp_FechaInicioSemana_TextChanged(sender As Object, e As EventArgs) Handles Dtp_FechaInicioSemana.TextChanged
         If Dtp_FechaInicioSemana.Value < DateTime.Now Or Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyy") = Format(DateTime.Now, "dd/MM/yyy") Then
@@ -93,10 +125,10 @@ Public Class Frm_ListaPrenomina
                 Btn_GuardarBono.Visible = False
             Else
                 Dgv_ListaPrenomina.Columns("aplicaBono").Visible = True
-                Btn_GuardarBono.Visible = True
+                If Me.rangoPermiso = 1 Or Me.rangoPermiso = 3 Then Btn_GuardarBono.Visible = True
             End If
 
-            If sem <> hrs.Semana Then Cmb_Semanas.SelectedItem = hrs.Semana
+                If sem <> hrs.Semana Then Cmb_Semanas.SelectedItem = hrs.Semana
             'Btn_Excel.Visible = False
             Txt_FiltroId.Enabled = False
             Txt_FiltroId.Text = ""
@@ -127,8 +159,8 @@ Public Class Frm_ListaPrenomina
         End If
     End Sub
     Private Sub Btn_Mostrar_Click(sender As Object, e As EventArgs) Handles Btn_Mostrar.Click
-        Cursor = Cursors.WaitCursor
-        Timer1.Start()
+        'Cursor = Cursors.WaitCursor
+        'Timer1.Start()
 
         If open = True Then
             Dim fecha As Date
@@ -140,7 +172,7 @@ Public Class Frm_ListaPrenomina
             año = Lbl_año.Text
             semana = Cmb_Semanas.Text
             ProcesoPrenomina(lstEmp, fecha, semana, año)
-            Btn_Reporte.Visible = True
+            If Me.rangoPermiso = 1 Or Me.rangoPermiso = 2 Then Btn_Reporte.Visible = True
         End If
     End Sub
     Private Sub Bgw_HiloSegundoPlano_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Bgw_HiloSegundoPlano.DoWork
@@ -286,10 +318,10 @@ Public Class Frm_ListaPrenomina
         Almacenar()
         llamarReporte()
     End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Timer1.Start()
-        Cursor = Cursors.Default
-    End Sub
+    'Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    '    Timer1.Start()
+    '    Cursor = Cursors.Default
+    'End Sub
     Private Sub Txt_FiltroHorario_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroHorario.TextChanged
         Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, horario As String
         If Len(Txt_FiltroHorario.Text) > 8 Or Len(Txt_FiltroHorario.Text) = 0 Then
@@ -2050,7 +2082,7 @@ Public Class Frm_ListaPrenomina
         Return True
     End Function
     Private Sub CrearExcel()
-        Me.Cursor = Cursors.WaitCursor
+        'Me.Cursor = Cursors.WaitCursor
         Try
             ' Creamos todo lo necesario para un excel
             Dim appXL As Excel.Application
@@ -2239,7 +2271,7 @@ Public Class Frm_ListaPrenomina
         Catch ex As Exception
             MessageBox.Show("Errorxportar los datos a excel.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
-            Me.Cursor = Cursors.Arrow
+            'Me.Cursor = Cursors.Arrow
         End Try
     End Sub
     Private Sub Almacenar()

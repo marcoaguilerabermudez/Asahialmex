@@ -81,6 +81,7 @@
     <Compile Include="HorasExtra.vb" />
     <Compile Include="Incapacidad.vb" />
     <Compile Include="Impuestos.vb" />
+    <Compile Include="Incidencias.vb" />
     <Compile Include="Listas Heredadas\LBono.vb" />
     <Compile Include="Listas Heredadas\LComedor.vb" />
     <Compile Include="Listas Heredadas\LAusentismo.vb" />
@@ -91,6 +92,7 @@
     <Compile Include="Listas Heredadas\LHorarios.vb" />
     <Compile Include="Listas Heredadas\LHorasExtra.vb" />
     <Compile Include="Listas Heredadas\LIncapacidad.vb" />
+    <Compile Include="Listas Heredadas\LIncidencias.vb" />
     <Compile Include="Listas Heredadas\LPermisos.vb" />
     <Compile Include="Listas Heredadas\LPolizas.vb" />
     <Compile Include="Listas Heredadas\LTxtNominas.vb" />

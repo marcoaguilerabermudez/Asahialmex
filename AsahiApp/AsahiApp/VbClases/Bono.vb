@@ -44,6 +44,15 @@
             bono_ = value
         End Set
     End Property
+    Private importeBono_ As Double
+    Public Property ImporteBono() As Double
+        Get
+            Return importeBono_
+        End Get
+        Set(ByVal value As Double)
+            importeBono_ = value
+        End Set
+    End Property
     Private idModif_ As String
     Public Property IdModif() As String
         Get
