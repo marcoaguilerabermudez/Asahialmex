@@ -13,6 +13,7 @@ Public Class Frm_GlobalPrenomina
     Dim ruta As String
     Dim archivo As String
     Dim fuente As New ReportDataSource
+    Dim emp As New Empleado
 #End Region
 #Region "Constructores"
     Sub New()
@@ -32,10 +33,22 @@ Public Class Frm_GlobalPrenomina
         Me.cadConex = cadConex
         Me.cadenaConex = cadenaConex
     End Sub
+    Sub New(ByVal cadConex As SqlConnection, ByVal cadenaConex As String, ByVal emp As Empleado)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Me.cadConex = cadConex
+        Me.cadenaConex = cadenaConex
+        Me.emp = emp
+    End Sub
 #End Region
 #Region "Acciones del formulario"
     Private Sub Frm_GlobalPrenomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Lbl_año.Text = Format(DateTime.Now, "yyyy")
+        Dim lst As New LIncidencias(), NPre As New NPrenomina(), conex As New conexion()
+        Dim cadenaConex As String = conex.conexionCont
         RellenaCmbSemanas()
         ModificarDiaInicio()
     End Sub
@@ -44,16 +57,16 @@ Public Class Frm_GlobalPrenomina
 
             Dim conex As New conexion
             Dim cadenaConexContpaq = conex.conexionContpaq 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
+            Dim cadenaConex As String = conex.conexionCont
             Dim fechaI As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
-            Dim NPrenomina As New NPrenomina()
-            Dim hrs As New Horarios()
+            Dim NPre As New NPrenomina(), lst As New LIncidencias(), hrs As New Horarios()
             Dim sem As Integer
             Dim type As String
 
             Lbl_año.Text = Format(fechaI, "yyyy")
             'nWeek = CInt(DatePart(DateInterval.WeekOfYear, fechaI, FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFullWeek)) + 1 'En base a la fecha seleccionada se pone el numero de semana
 
-            hrs = NPrenomina.RecuperarDiasSemana(cadenaConexContpaq, fechaI)
+            hrs = NPre.RecuperarDiasSemana(cadenaConexContpaq, fechaI)
 
             type = Cmb_Semanas.Text.GetType.ToString
             If type = "System.String" Then
@@ -73,22 +86,59 @@ Public Class Frm_GlobalPrenomina
             Lbl_SemaI.Text = Format(hrs.FechaI, "dd/MM/yyyy")
             Lbl_SemaF.Text = Format(hrs.FechaF, "dd/MM/yyyy")
             If sem <> hrs.Semana Then Cmb_Semanas.SelectedItem = hrs.Semana
-            Btn_Txt.Visible = False
-            Btn_TxtPDO.Visible = False
+            Btn_Incidencias.Visible = False
+            Btn_PDO.Visible = False
             Btn_Excel.Visible = False
             Btn_Reporte.Visible = False
             Txt_FiltroId.Enabled = False
             Txt_FiltroId.Text = ""
             Lbl_Inc.Visible = False
             Lbl_PDO.Visible = False
+            Dgv_Prenomina_Global.DataSource = Nothing
+            Dgv_Prenomina_Global.Refresh()
             open = True
 
+            lst = NPre.VerificarBitacora(cadenaConex, Cmb_Semanas.Text, Lbl_año.Text)
+            If lst.Count > 0 Then
+                For Each item In lst
+                    If item.Tipo = 1 Then
+                        Btn_Incidencias.Enabled = False
+                        If lst.Count = 1 Then Btn_PDO.Enabled = True
+                    ElseIf item.Tipo = 2 Then
+                        Btn_PDO.Enabled = False
+                        If lst.Count = 1 Then Btn_Incidencias.Enabled = True
+                    End If
+                Next
+            Else
+                Btn_Incidencias.Enabled = True
+                Btn_PDO.Enabled = True
+            End If
         Else
+            Dim conex As New conexion
+            Dim cadenaConex As String = conex.conexionCont 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
+            Dim NPre As New NPrenomina(), lst As New LIncidencias()
+
             Dgv_Prenomina_Global.Enabled = False
             MsgBox("Tienes que ingresar una fecha menor a la actual")
             ModificarDiaInicio()
             Dgv_Prenomina_Global.DataSource = Nothing
             Dgv_Prenomina_Global.Refresh()
+
+            lst = NPre.VerificarBitacora(cadenaConex, Cmb_Semanas.Text, Lbl_año.Text)
+            If lst.Count > 0 Then
+                For Each item In lst
+                    If item.Tipo = 1 Then
+                        Btn_Incidencias.Enabled = False
+                        If lst.Count = 1 Then Btn_PDO.Enabled = True
+                    ElseIf item.Tipo = 2 Then
+                        Btn_PDO.Enabled = False
+                        If lst.Count = 1 Then Btn_Incidencias.Enabled = True
+                    End If
+                Next
+            Else
+                Btn_Incidencias.Enabled = True
+                Btn_PDO.Enabled = True
+            End If
         End If
     End Sub
     Private Sub CmbSemanas_SelectedValueChanged(sender As Object, e As EventArgs) Handles Cmb_Semanas.SelectedValueChanged
@@ -111,12 +161,18 @@ Public Class Frm_GlobalPrenomina
             ProcesoPrenominaGlobal(lstEmp, fecha)
         End If
     End Sub
-    Private Sub Btn_Txt_Click(sender As Object, e As EventArgs) Handles Btn_Txt.Click
+    Private Sub Btn_Incidencias_Click(sender As Object, e As EventArgs) Handles Btn_Incidencias.Click
         'Dgv_Lista.Visible = True
-        RecuperarIncidencias(0)
-        CrearArchivo()
-        EscribirArchivo()
-        LeerArchivo()
+        Dim res As Integer
+        res = MsgBox("¿Está Seguro que desea registrar las incidencias?.", vbYesNo + vbExclamation + vbDefaultButton2, "¡Se van a registrar las incidencias!")
+
+        If res = vbYes Then
+            ProcesoInsertaIncidenciasNomina()
+            Btn_Incidencias.Enabled = False
+        End If
+        'CrearArchivo()
+        'EscribirArchivo()
+        'LeerArchivo()
     End Sub
     Private Sub Btn_Excel_Click(sender As Object, e As EventArgs) Handles Btn_Excel.Click
         GridAExcel(Dgv_Prenomina_Global)
@@ -152,9 +208,16 @@ Public Class Frm_GlobalPrenomina
         Almacenar()
         llamarReporte()
     End Sub
-    Private Sub Btn_TxtPDO_Click(sender As Object, e As EventArgs) Handles Btn_TxtPDO.Click
-        CrearTxtPDO()
-        EscribirArchivoPDO()
+    Private Sub Btn_PDO_Click(sender As Object, e As EventArgs) Handles Btn_PDO.Click
+        'CrearTxtPDO()
+        'EscribirArchivoPDO()
+        Dim res As Integer
+        res = MsgBox("¿Está Seguro que desea registrar el bono?.", vbYesNo + vbExclamation + vbDefaultButton2, "¡Se va a registrar el bono!")
+
+        If res = vbYes Then
+            ProcesoInsertaBonoNomina()
+            Btn_PDO.Enabled = False
+        End If
     End Sub
 #End Region
 #Region "Rellena cmb"
@@ -885,7 +948,7 @@ Public Class Frm_GlobalPrenomina
         Dim con As New conexion()
         Dim fila As Integer = 0, dur As Integer
         Dim fechaI As Date, fechaF As Date, fecI As Date, fecF As Date
-        Dim idEmp As Integer
+        Dim idEmp As Integer, idExt As Integer
         Dim tp As String, tip As String, inc As String
         Dim hr
         Dgv_Lista.DataSource = Nothing
@@ -896,12 +959,14 @@ Public Class Frm_GlobalPrenomina
             If item.Tabla = 1 Then
                 Dgv_Lista.Rows.Add()
                 idEmp = item.IdEmpleado
+                idExt = item.IdExt
                 hr = item.Autorizado
                 fechaI = item.Fecha
                 tp = item.Tipo
 
                 With Dgv_Lista.Rows(fila)
                     .Cells("idEmp").Value = idEmp
+                    .Cells("idExt").Value = idExt
                     .Cells("tiempo").Value = hr
                     .Cells("fecha").Value = fechaI
 
@@ -918,16 +983,14 @@ Public Class Frm_GlobalPrenomina
                     ElseIf tp = "P" Or tp = "P " Or tp = " P" Then
                         .Cells("inc").Value = "R"
                     End If
-
                 End With
                 fila += 1
-
             ElseIf item.Tabla = 2 Then
-
                 fecI = Lbl_Dia1.Text & "/" & Lbl_año.Text
                 fecF = lbl_Dia6.Text & "/" & Lbl_año.Text
 
                 idEmp = item.IdEmpleado
+                idExt = item.IdExt
                 fechaI = item.Fecha
                 fechaF = item.FechaF
                 dur = item.Duracion
@@ -936,6 +999,7 @@ Public Class Frm_GlobalPrenomina
                     Dgv_Lista.Rows.Add()
                     With Dgv_Lista.Rows(fila)
                         .Cells("idEmp").Value = idEmp
+                        .Cells("idExt").Value = idExt
                         .Cells("fecha").Value = fechaI
                         If (fechaF >= fecF And fechaI <= fecF) Or (fechaF <= fecF And fechaF >= fecI) Then
                             tip = item.Tipo
@@ -963,9 +1027,167 @@ Public Class Frm_GlobalPrenomina
                 Next
             End If
         Next
-
-
     End Sub
+#End Region
+#Region "Rellena Objetos"
+    Private Function RellenaObjetoBono() As LBono
+        Dim lstBono As New LBono()
+        Dim fila As Integer, totalFilas As Integer = Dgv_Prenomina_Global.Rows.Count()
+        For fila = 0 To totalFilas - 2
+            Dim objBono As New Bono()
+            With Dgv_Prenomina_Global.Rows(fila)
+                Dim ab As Object = .Cells("bono").Value
+                objBono.IdEmpleado = .Cells("idEmpleado").Value
+                objBono.Semana = Cmb_Semanas.Text
+                objBono.Año = Lbl_año.Text
+                If ab = "SI" Then
+                    objBono.ImporteBono = "219.00"
+                ElseIf ab = "NO" Then
+                    objBono.ImporteBono = "0.00"
+                End If
+                lstBono.Add(objBono)
+            End With
+        Next
+        Return lstBono
+    End Function
+    Private Function RellenaObjetoIncidencias() As LIncidencias
+        Dim lstInc As New LIncidencias(), NPre As New NPrenomina(), conex As New conexion()
+        Dim cadenaConex As String = conex.conexionCont
+        Dim fila As Integer, e As Integer, id As Integer, idX As Integer = 0, sema As Integer = Cmb_Semanas.Text
+        Dim inc As String, val As String
+        Dim VV As Double
+        Dim totalFilas As Integer = Dgv_Lista.Rows.Count
+        Try
+            For e = 1 To 7000
+                Dim V = 0, V2 = 0, H = 0, HE = 0, HE2 = 0, HE3 = 0
+                'Dim objInci As New Incidencias
+                For fila = 0 To totalFilas - 2
+                    Dim objInci As New Incidencias
+                    id = Dgv_Lista.Rows(fila).Cells("idEmp").Value
+                    If id = e Then
+                        With Dgv_Lista.Rows(fila)
+                            objInci.IdEmpleado = id
+                            objInci.Semana = sema
+                            objInci.Año = Lbl_año.Text
+                            inc = .Cells("inc").Value
+
+                            If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Or inc = "DT" Then
+                                Select Case inc
+                                    Case "HE"
+                                        V = .Cells("hrsAprobadas").Value
+                                        H = V + H
+                                        If V <= 540 Then
+                                            If H <= 540 Then
+                                                HE2 = HE2 + V
+                                                VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
+
+                                                objInci.Incidencia = 2
+                                                objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                objInci.Valor = VV
+                                                objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+
+                                            ElseIf H >= 540 Then
+                                                If HE2 >= 540 Then
+                                                    HE3 = HE3 + V
+                                                    Dim V3 = Format((Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))), "0.00")
+
+                                                    objInci.Incidencia = 3
+                                                    objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                    objInci.Valor = V3
+                                                    objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                Else
+                                                    V2 = 540 - HE2
+                                                    HE3 = H - 540
+                                                    HE2 = 540
+                                                    Dim vh2 = Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "0.00")
+                                                    Dim vh3 = Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "0.00")
+                                                    Dim objInci2 As New Incidencias
+                                                    objInci2.IdEmpleado = id
+                                                    objInci2.Semana = sema
+                                                    objInci2.Año = Lbl_año.Text
+                                                    objInci2.Incidencia = 2
+                                                    objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                    objInci2.Valor = vh2
+                                                    objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                    lstInc.Add(objInci2)
+                                                    '--------------------------------------
+                                                    objInci.Incidencia = 3
+                                                    objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                    objInci.Valor = vh3
+                                                    objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                End If
+                                            End If
+                                        Else
+                                            V2 = 540 - HE2
+                                            HE3 = H - 540
+                                            HE2 = 540
+                                            Dim vh2 = Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "0.00")
+                                            Dim vh3 = Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "0.00")
+                                            If V2 > 0 Then
+                                                Dim objInci2 As New Incidencias
+                                                objInci2.IdEmpleado = id
+                                                objInci2.Semana = sema
+                                                objInci2.Año = Lbl_año.Text
+                                                objInci2.Incidencia = 2
+                                                objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                objInci2.Valor = vh2
+                                                objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                lstInc.Add(objInci2)
+                                            End If
+                                            objInci.Incidencia = 3
+                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            objInci.Valor = vh3
+                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                        End If
+                                    Case "R"
+                                        val = .Cells("tiempo").Value
+                                        Dim Vr = Format((Int(val / 60) + (((val / 60 - Int(val / 60)) / 1.666))), "0.00")
+                                        objInci.Incidencia = 17
+                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                        objInci.Valor = Vr
+                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                    Case "F", "FJ"
+                                        val = 1
+                                        objInci.Incidencia = 15
+                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                        objInci.Valor = val
+                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                    Case "PCS"
+                                        val = 1
+                                        objInci.Incidencia = 7
+                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                        objInci.Valor = val
+                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                    Case "PSS"
+                                        val = 1
+                                        objInci.Incidencia = 8
+                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                        objInci.Valor = val
+                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                    Case "SUS"
+                                        val = 1
+                                        objInci.Incidencia = 16
+                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                        objInci.Valor = val
+                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                    Case "DF", "DT"
+                                        val = 1
+                                        objInci.Incidencia = 19
+                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                        objInci.Valor = val
+                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                End Select
+                                lstInc.Add(objInci)
+                            End If
+                        End With
+                    End If
+                Next
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+        Return lstInc
+    End Function
 #End Region
 #Region "Procesos Varios"
     Private Sub ProcesoPrenominaGlobal(ByVal lstEmp As LEmpleado, ByVal fecha As Date)
@@ -975,8 +1197,8 @@ Public Class Frm_GlobalPrenomina
             RecuperarIncidencias(1)
             Btn_Excel.Visible = True
             Txt_FiltroId.Enabled = True
-            Btn_Txt.Visible = True
-            Btn_TxtPDO.Visible = True
+            Btn_Incidencias.Visible = True
+            Btn_PDO.Visible = True
             Btn_Reporte.Visible = True
             Lbl_Inc.Visible = True
             Lbl_PDO.Visible = True
@@ -1066,7 +1288,7 @@ Public Class Frm_GlobalPrenomina
                             End If
 
                             inc = .Cells("inc").Value
-                            If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Then
+                            If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Then
                                 Select Case inc
                                     Case "HE"
                                         V = .Cells("hrsAprobadas").Value
@@ -1725,6 +1947,21 @@ Public Class Frm_GlobalPrenomina
             MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "")
             tx.Close()
         End Try
+    End Sub
+    Private Sub ProcesoInsertaIncidenciasNomina()
+        Dim lstInci As New LIncidencias(), NPren As New NPrenomina(), conex As New conexion()
+        Dim cadenaConex As String = conex.conexionCont
+        RecuperarIncidencias(0)
+        lstInci = RellenaObjetoIncidencias()
+        NPren.InsertarIncidenciasNomina(cadenaConex, lstInci)
+        NPren.BitacoraInsertar(cadenaConex, Cmb_Semanas.Text, Lbl_año.Text, Me.emp.IdEmpleado, Format(Date.Now(), "dd/MM/yyyy"), 1)
+    End Sub
+    Private Sub ProcesoInsertaBonoNomina()
+        Dim lstBono As New LBono(), NPren As New NPrenomina(), conex As New conexion()
+        Dim cadenaConex As String = conex.conexionCont
+        lstBono = RellenaObjetoBono()
+        NPren.InsertarBonoNomina(cadenaConex, lstBono)
+        NPren.BitacoraInsertar(cadenaConex, Cmb_Semanas.Text, Lbl_año.Text, Me.emp.IdEmpleado, Format(Date.Now(), "dd/MM/yyyy"), 2)
     End Sub
 #End Region
 End Class

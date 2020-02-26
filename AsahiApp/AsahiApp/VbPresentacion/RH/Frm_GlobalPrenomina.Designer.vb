@@ -23,12 +23,6 @@ Partial Class Frm_GlobalPrenomina
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Lbl_PDO = New System.Windows.Forms.Label()
-        Me.Lbl_Inc = New System.Windows.Forms.Label()
-        Me.Btn_TxtPDO = New System.Windows.Forms.Button()
-        Me.Btn_Reporte = New System.Windows.Forms.Button()
-        Me.Btn_Excel = New System.Windows.Forms.Button()
-        Me.Btn_Txt = New System.Windows.Forms.Button()
         Me.Lbl_SemaF = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Lbl_SemaI = New System.Windows.Forms.Label()
@@ -38,7 +32,6 @@ Partial Class Frm_GlobalPrenomina
         Me.Lbl_Semana = New System.Windows.Forms.Label()
         Me.Cmb_Semanas = New System.Windows.Forms.ComboBox()
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
-        Me.Btn_Mostrar = New System.Windows.Forms.Button()
         Me.Dgv_Prenomina_Global = New System.Windows.Forms.DataGridView()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -100,6 +93,7 @@ Partial Class Frm_GlobalPrenomina
         Me.Lbl_Dia1 = New System.Windows.Forms.Label()
         Me.Dgv_Lista = New System.Windows.Forms.DataGridView()
         Me.idEmp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idExt = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.inc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tiempo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -109,6 +103,13 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Btn_PDO = New System.Windows.Forms.Button()
+        Me.Btn_Reporte = New System.Windows.Forms.Button()
+        Me.Btn_Excel = New System.Windows.Forms.Button()
+        Me.Btn_Incidencias = New System.Windows.Forms.Button()
+        Me.Btn_Mostrar = New System.Windows.Forms.Button()
+        Me.Lbl_Inc = New System.Windows.Forms.Label()
+        Me.Lbl_PDO = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Dgv_Prenomina_Global, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_Lista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,10 +123,10 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
         Me.Panel1.Controls.Add(Me.Lbl_PDO)
         Me.Panel1.Controls.Add(Me.Lbl_Inc)
-        Me.Panel1.Controls.Add(Me.Btn_TxtPDO)
+        Me.Panel1.Controls.Add(Me.Btn_PDO)
         Me.Panel1.Controls.Add(Me.Btn_Reporte)
         Me.Panel1.Controls.Add(Me.Btn_Excel)
-        Me.Panel1.Controls.Add(Me.Btn_Txt)
+        Me.Panel1.Controls.Add(Me.Btn_Incidencias)
         Me.Panel1.Controls.Add(Me.Lbl_SemaF)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Lbl_SemaI)
@@ -141,75 +142,6 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1253, 56)
         Me.Panel1.TabIndex = 15
-        '
-        'Lbl_PDO
-        '
-        Me.Lbl_PDO.AutoSize = True
-        Me.Lbl_PDO.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Lbl_PDO.Location = New System.Drawing.Point(548, 43)
-        Me.Lbl_PDO.Name = "Lbl_PDO"
-        Me.Lbl_PDO.Size = New System.Drawing.Size(30, 13)
-        Me.Lbl_PDO.TabIndex = 34
-        Me.Lbl_PDO.Text = "PDO"
-        Me.Lbl_PDO.Visible = False
-        '
-        'Lbl_Inc
-        '
-        Me.Lbl_Inc.AutoSize = True
-        Me.Lbl_Inc.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Lbl_Inc.Location = New System.Drawing.Point(504, 43)
-        Me.Lbl_Inc.Name = "Lbl_Inc"
-        Me.Lbl_Inc.Size = New System.Drawing.Size(22, 13)
-        Me.Lbl_Inc.TabIndex = 33
-        Me.Lbl_Inc.Text = "Inc"
-        Me.Lbl_Inc.Visible = False
-        '
-        'Btn_TxtPDO
-        '
-        Me.Btn_TxtPDO.Image = Global.Presentacion.My.Resources.Resources.txt1
-        Me.Btn_TxtPDO.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_TxtPDO.Location = New System.Drawing.Point(541, 2)
-        Me.Btn_TxtPDO.Name = "Btn_TxtPDO"
-        Me.Btn_TxtPDO.Size = New System.Drawing.Size(41, 39)
-        Me.Btn_TxtPDO.TabIndex = 32
-        Me.Btn_TxtPDO.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_TxtPDO.UseVisualStyleBackColor = True
-        Me.Btn_TxtPDO.Visible = False
-        '
-        'Btn_Reporte
-        '
-        Me.Btn_Reporte.Image = Global.Presentacion.My.Resources.Resources.reportes
-        Me.Btn_Reporte.Location = New System.Drawing.Point(588, 2)
-        Me.Btn_Reporte.Name = "Btn_Reporte"
-        Me.Btn_Reporte.Size = New System.Drawing.Size(40, 39)
-        Me.Btn_Reporte.TabIndex = 31
-        Me.Btn_Reporte.UseVisualStyleBackColor = True
-        Me.Btn_Reporte.Visible = False
-        '
-        'Btn_Excel
-        '
-        Me.Btn_Excel.Image = Global.Presentacion.My.Resources.Resources.Excel1
-        Me.Btn_Excel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Excel.Location = New System.Drawing.Point(439, 3)
-        Me.Btn_Excel.Name = "Btn_Excel"
-        Me.Btn_Excel.Size = New System.Drawing.Size(41, 39)
-        Me.Btn_Excel.TabIndex = 27
-        Me.Btn_Excel.Text = "Excel"
-        Me.Btn_Excel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Excel.UseVisualStyleBackColor = True
-        Me.Btn_Excel.Visible = False
-        '
-        'Btn_Txt
-        '
-        Me.Btn_Txt.Image = Global.Presentacion.My.Resources.Resources.txt1
-        Me.Btn_Txt.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Txt.Location = New System.Drawing.Point(494, 3)
-        Me.Btn_Txt.Name = "Btn_Txt"
-        Me.Btn_Txt.Size = New System.Drawing.Size(41, 39)
-        Me.Btn_Txt.TabIndex = 26
-        Me.Btn_Txt.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Txt.UseVisualStyleBackColor = True
-        Me.Btn_Txt.Visible = False
         '
         'Lbl_SemaF
         '
@@ -277,7 +209,7 @@ Partial Class Frm_GlobalPrenomina
         Me.Lbl_Semana.AutoSize = True
         Me.Lbl_Semana.BackColor = System.Drawing.Color.SteelBlue
         Me.Lbl_Semana.ForeColor = System.Drawing.Color.White
-        Me.Lbl_Semana.Location = New System.Drawing.Point(41, 0)
+        Me.Lbl_Semana.Location = New System.Drawing.Point(41, 1)
         Me.Lbl_Semana.Name = "Lbl_Semana"
         Me.Lbl_Semana.Size = New System.Drawing.Size(46, 13)
         Me.Lbl_Semana.TabIndex = 17
@@ -301,18 +233,6 @@ Partial Class Frm_GlobalPrenomina
         Me.Dtp_FechaInicioSemana.Name = "Dtp_FechaInicioSemana"
         Me.Dtp_FechaInicioSemana.Size = New System.Drawing.Size(109, 20)
         Me.Dtp_FechaInicioSemana.TabIndex = 20
-        '
-        'Btn_Mostrar
-        '
-        Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
-        Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Mostrar.Location = New System.Drawing.Point(373, 3)
-        Me.Btn_Mostrar.Name = "Btn_Mostrar"
-        Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 39)
-        Me.Btn_Mostrar.TabIndex = 21
-        Me.Btn_Mostrar.Text = "Mostrar"
-        Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Mostrar.UseVisualStyleBackColor = True
         '
         'Dgv_Prenomina_Global
         '
@@ -750,7 +670,7 @@ Partial Class Frm_GlobalPrenomina
         'Dgv_Lista
         '
         Me.Dgv_Lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Lista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmp, Me.fecha, Me.inc, Me.tiempo, Me.hrsAprobadas})
+        Me.Dgv_Lista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmp, Me.idExt, Me.fecha, Me.inc, Me.tiempo, Me.hrsAprobadas})
         Me.Dgv_Lista.Location = New System.Drawing.Point(49, 19)
         Me.Dgv_Lista.Name = "Dgv_Lista"
         Me.Dgv_Lista.Size = New System.Drawing.Size(327, 310)
@@ -763,6 +683,13 @@ Partial Class Frm_GlobalPrenomina
         Me.idEmp.Name = "idEmp"
         Me.idEmp.ReadOnly = True
         Me.idEmp.Width = 45
+        '
+        'idExt
+        '
+        Me.idExt.HeaderText = "Id Ext"
+        Me.idExt.Name = "idExt"
+        Me.idExt.ReadOnly = True
+        Me.idExt.Visible = False
         '
         'fecha
         '
@@ -803,7 +730,7 @@ Partial Class Frm_GlobalPrenomina
         'Txt_FiltroId
         '
         Me.Txt_FiltroId.Enabled = False
-        Me.Txt_FiltroId.Location = New System.Drawing.Point(4, 20)
+        Me.Txt_FiltroId.Location = New System.Drawing.Point(2, 21)
         Me.Txt_FiltroId.Name = "Txt_FiltroId"
         Me.Txt_FiltroId.Size = New System.Drawing.Size(40, 20)
         Me.Txt_FiltroId.TabIndex = 25
@@ -844,6 +771,86 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1253, 46)
         Me.Panel3.TabIndex = 0
+        '
+        'Btn_PDO
+        '
+        Me.Btn_PDO.Image = Global.Presentacion.My.Resources.Resources.Acumulado
+        Me.Btn_PDO.Location = New System.Drawing.Point(541, 3)
+        Me.Btn_PDO.Name = "Btn_PDO"
+        Me.Btn_PDO.Size = New System.Drawing.Size(41, 39)
+        Me.Btn_PDO.TabIndex = 32
+        Me.Btn_PDO.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_PDO.UseVisualStyleBackColor = True
+        Me.Btn_PDO.Visible = False
+        '
+        'Btn_Reporte
+        '
+        Me.Btn_Reporte.Image = Global.Presentacion.My.Resources.Resources.reportes
+        Me.Btn_Reporte.Location = New System.Drawing.Point(588, 3)
+        Me.Btn_Reporte.Name = "Btn_Reporte"
+        Me.Btn_Reporte.Size = New System.Drawing.Size(40, 39)
+        Me.Btn_Reporte.TabIndex = 31
+        Me.Btn_Reporte.UseVisualStyleBackColor = True
+        Me.Btn_Reporte.Visible = False
+        '
+        'Btn_Excel
+        '
+        Me.Btn_Excel.Image = Global.Presentacion.My.Resources.Resources.Excel1
+        Me.Btn_Excel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Excel.Location = New System.Drawing.Point(439, 3)
+        Me.Btn_Excel.Name = "Btn_Excel"
+        Me.Btn_Excel.Size = New System.Drawing.Size(41, 39)
+        Me.Btn_Excel.TabIndex = 27
+        Me.Btn_Excel.Text = "Excel"
+        Me.Btn_Excel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Excel.UseVisualStyleBackColor = True
+        Me.Btn_Excel.Visible = False
+        '
+        'Btn_Incidencias
+        '
+        Me.Btn_Incidencias.Image = Global.Presentacion.My.Resources.Resources.systemtask_sistema_3126
+        Me.Btn_Incidencias.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Incidencias.Location = New System.Drawing.Point(494, 3)
+        Me.Btn_Incidencias.Name = "Btn_Incidencias"
+        Me.Btn_Incidencias.Size = New System.Drawing.Size(41, 39)
+        Me.Btn_Incidencias.TabIndex = 26
+        Me.Btn_Incidencias.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Incidencias.UseVisualStyleBackColor = True
+        Me.Btn_Incidencias.Visible = False
+        '
+        'Btn_Mostrar
+        '
+        Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
+        Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Mostrar.Location = New System.Drawing.Point(373, 3)
+        Me.Btn_Mostrar.Name = "Btn_Mostrar"
+        Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 39)
+        Me.Btn_Mostrar.TabIndex = 21
+        Me.Btn_Mostrar.Text = "Mostrar"
+        Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Mostrar.UseVisualStyleBackColor = True
+        '
+        'Lbl_Inc
+        '
+        Me.Lbl_Inc.AutoSize = True
+        Me.Lbl_Inc.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Lbl_Inc.Location = New System.Drawing.Point(504, 42)
+        Me.Lbl_Inc.Name = "Lbl_Inc"
+        Me.Lbl_Inc.Size = New System.Drawing.Size(22, 13)
+        Me.Lbl_Inc.TabIndex = 33
+        Me.Lbl_Inc.Text = "Inc"
+        Me.Lbl_Inc.Visible = False
+        '
+        'Lbl_PDO
+        '
+        Me.Lbl_PDO.AutoSize = True
+        Me.Lbl_PDO.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Lbl_PDO.Location = New System.Drawing.Point(547, 42)
+        Me.Lbl_PDO.Name = "Lbl_PDO"
+        Me.Lbl_PDO.Size = New System.Drawing.Size(32, 13)
+        Me.Lbl_PDO.TabIndex = 34
+        Me.Lbl_PDO.Text = "Bono"
+        Me.Lbl_PDO.Visible = False
         '
         'Frm_GlobalPrenomina
         '
@@ -887,13 +894,8 @@ Partial Class Frm_GlobalPrenomina
     Friend WithEvents Label4 As Label
     Friend WithEvents Lbl_SemaI As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Btn_Txt As Button
+    Friend WithEvents Btn_Incidencias As Button
     Friend WithEvents Dgv_Lista As DataGridView
-    Friend WithEvents idEmp As DataGridViewTextBoxColumn
-    Friend WithEvents fecha As DataGridViewTextBoxColumn
-    Friend WithEvents inc As DataGridViewTextBoxColumn
-    Friend WithEvents tiempo As DataGridViewTextBoxColumn
-    Friend WithEvents hrsAprobadas As DataGridViewTextBoxColumn
     Friend WithEvents Btn_Excel As Button
     Friend WithEvents Lbl_FiltroId As Label
     Friend WithEvents Txt_FiltroId As TextBox
@@ -952,7 +954,13 @@ Partial Class Frm_GlobalPrenomina
     Friend WithEvents diferencia As DataGridViewTextBoxColumn
     Friend WithEvents grupo As DataGridViewTextBoxColumn
     Friend WithEvents bono As DataGridViewTextBoxColumn
+    Friend WithEvents Btn_PDO As Button
+    Friend WithEvents idEmp As DataGridViewTextBoxColumn
+    Friend WithEvents idExt As DataGridViewTextBoxColumn
+    Friend WithEvents fecha As DataGridViewTextBoxColumn
+    Friend WithEvents inc As DataGridViewTextBoxColumn
+    Friend WithEvents tiempo As DataGridViewTextBoxColumn
+    Friend WithEvents hrsAprobadas As DataGridViewTextBoxColumn
     Friend WithEvents Lbl_PDO As Label
     Friend WithEvents Lbl_Inc As Label
-    Friend WithEvents Btn_TxtPDO As Button
 End Class

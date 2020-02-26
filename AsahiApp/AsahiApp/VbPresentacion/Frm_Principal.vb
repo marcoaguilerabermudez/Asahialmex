@@ -181,7 +181,7 @@ Public Class Frm_Principal
         Mejora.Show()
     End Sub
     Private Sub PreNominaGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaGlobalToolStripMenuItem.Click
-        Dim globPren As New Frm_GlobalPrenomina(cadConex, cadenaConex)
+        Dim globPren As New Frm_GlobalPrenomina(cadConex, cadenaConex, Me.emp)
         globPren.Show()
     End Sub
     Private Sub AltaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem.Click

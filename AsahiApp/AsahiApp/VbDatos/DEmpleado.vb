@@ -402,4 +402,26 @@ Public Class DEmpleado
         End Try
         Return lstHr
     End Function
+    Public Function RevisarRangoPermisos(ByVal cadenaConex As String, ByVal idEmp As Integer, ByVal nModulo As String) As Integer
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim per As New Permisos()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT rangoPermiso FROM Permisos_saam ps left join Modulos_saam ms on ps.idModulo = ms.idModulo WHERE idEmpleado = " & idEmp & " and ms.nombreModulo = '" & nModulo & "'", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                per.RangoPermiso = Convert.ToInt32(dr("rangoPermiso").ToString)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return per.RangoPermiso
+    End Function
 End Class

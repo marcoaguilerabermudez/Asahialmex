@@ -250,6 +250,7 @@ Public Class DPrenomina
             While (dr.Read())
                 Dim txtNom As New TxtNominas
                 txtNom.IdEmpleado = Convert.ToInt32(dr("ID").ToString)
+                txtNom.IdExt = Convert.ToInt32(dr("EXT").ToString)
                 txtNom.Tipo = dr("TIPO").ToString
                 txtNom.Monto = Convert.ToInt32(dr("MONTO").ToString)
                 txtNom.Autorizado = Convert.ToInt32(dr("AUTORIZADO").ToString)
@@ -541,4 +542,101 @@ Public Class DPrenomina
             oCon.Dispose()
         End Try
     End Sub
+    Public Sub InsertarBonoNomina(ByVal cadenaConex As String, ByVal objBono As Bono)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.Sp_InsertarBono", oCon)
+            query.Parameters.AddWithValue("@xml", objBono.XML)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar() 'En un Insert de XML, NO olvidar esta línea si no, no inserta mi madres
+
+            MsgBox("Registros guardados")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
+    Public Sub InsertarIncidenciasNomina(ByVal cadenaConex As String, ByVal objInci As Incidencias)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.Sp_IncidenciasInsertar", oCon)
+            query.Parameters.AddWithValue("@xml", objInci.Xml)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar() 'En un Insert de XML, NO olvidar esta línea si no, no inserta mi madres
+
+            MsgBox("Registros guardados")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
+    Public Function RecuperarIdSemanaNomina(ByVal cadenaConex As String, ByVal semana As Integer, ByVal año As Integer) As Integer
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Select idperiodo from ctAsahi_Aluminium.dbo.nom10002 where numeroperiodo = " & semana & " and ejercicio = " & año & " and idtipoperiodo = 2", oCon)
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                semana = Convert.ToInt32(dr("idperiodo").ToString)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return semana
+    End Function
+    Public Sub BitacoraInsertar(ByVal cadenaConex As String, ByVal sem As Integer, ByVal año As Integer, ByVal cod As Integer, ByVal fecha As Date, ByVal tip As Integer)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("INSERT INTO Asahi.dbo.Bitacora_InsertInciBono (PERIODO,EJERCICIO,CODIGOEMPLEADO,FECHA,TIPO) VALUES (" & sem & "," & año & "," & cod & ",'" & fecha & "'," & tip & ")", oCon)
+            query.ExecuteScalar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
+    Public Function VerificarBitacora(ByVal cadenaConex As String, ByVal sem As Integer, ByVal año As Integer) As LIncidencias
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstInc As New LIncidencias()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT TIPO FROM Asahi.dbo.Bitacora_InsertInciBono WHERE PERIODO = " & sem & " and EJERCICIO = " & año & "", oCon)
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim inc As New Incidencias()
+                inc.Tipo = Convert.ToInt32(dr("TIPO").ToString)
+                lstInc.Add(inc)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstInc
+    End Function
 End Class
