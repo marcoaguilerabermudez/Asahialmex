@@ -55,6 +55,8 @@ Public Class Frm_ListaPrenomina
         ModificarDiaInicio()
         If Me.rangoPermiso = 2 Then
             Btn_GuardarBono.Visible = False
+            Dgv_ListaPrenomina.Columns("comentarios").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("comentariosExt").ReadOnly = True
             Dgv_ListaPrenomina.Columns("aplicaBono").ReadOnly = True
         ElseIf Me.rangoPermiso = 3 Then
             Dgv_ListaPrenomina.Columns("entrada1").ReadOnly = True
@@ -71,7 +73,6 @@ Public Class Frm_ListaPrenomina
             Dgv_ListaPrenomina.Columns("salida6").ReadOnly = True
             Dgv_ListaPrenomina.Columns("entrada7").ReadOnly = True
             Dgv_ListaPrenomina.Columns("salida7").ReadOnly = True
-            Dgv_ListaPrenomina.Columns("comentarios").ReadOnly = True
             Dgv_ListaPrenomina.Columns("aplicaBono").ReadOnly = False
             Btn_Excel.Visible = False
             Btn_Reporte.Visible = False
@@ -496,7 +497,10 @@ Public Class Frm_ListaPrenomina
             Dgv_ListaPrenomina.Rows(fila).Cells("ingreso").Value = item.FechaIngreso
             Dgv_ListaPrenomina.Rows(fila).Cells("E").Value = item.HoraEntrada
             Dgv_ListaPrenomina.Rows(fila).Cells("S").Value = item.HoraSalida
+            Dgv_ListaPrenomina.Rows(fila).Cells("comentarios").Value = item.ComenBono
+            Dgv_ListaPrenomina.Rows(fila).Cells("comentariosExt").Value = item.ComenBonoExt
             Dgv_ListaPrenomina.Rows(fila).Cells("comentarios").Style.BackColor = Color.White
+            Dgv_ListaPrenomina.Rows(fila).Cells("comentariosExt").Style.BackColor = Color.White
             Dgv_ListaPrenomina.Rows(fila).Cells("aplicaBono").Style.BackColor = Color.White
             If item.IdTurno <> 3 Then
                 If item.HoraEntradaReal1 <> "1/1/1900 12:00:00 AM" Then
@@ -1757,6 +1761,8 @@ Public Class Frm_ListaPrenomina
                     objBono.IdEmpleado = .Cells("idEmpleado").Value
                     objBono.Semana = Cmb_Semanas.Text
                     objBono.Año = Lbl_año.Text
+                    objBono.Comentario = .Cells("comentarios").Value
+                    objBono.ComentarioExt = .Cells("comentariosExt").Value
                     objBono.Bono = .Cells("aplicaBono").Value
                     objBono.IdModif = .Cells("idModificaBono").Value
                     lstBono.Add(objBono)

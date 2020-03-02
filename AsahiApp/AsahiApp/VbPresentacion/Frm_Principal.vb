@@ -404,5 +404,9 @@ Public Class Frm_Principal
         Dim frmAut As New Frm_ValidarConta()
         frmAut.Show()
     End Sub
+    Private Sub ConsultaXMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaXMLToolStripMenuItem.Click
+        Dim frm As New Frm_ConsultaXml(Me.emp)
+        frm.Show()
+    End Sub
 #End Region
 End Class

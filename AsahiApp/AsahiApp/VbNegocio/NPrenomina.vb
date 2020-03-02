@@ -250,8 +250,8 @@ Public Class NPrenomina
 
         For i = 0 To lstBono.Count - 1
             str = "<Info><empleado>" & lstBono.Item(i).IdEmpleado & "</empleado><semana>" & lstBono.Item(i).Semana &
-                "</semana><año>" & lstBono(i).Año & "</año><bono>" & lstBono.Item(i).Bono & "</bono><modifico>" & lstBono.Item(i).IdModif &
-                "</modifico></Info>"
+                "</semana><año>" & lstBono(i).Año & "</año><bono>" & lstBono.Item(i).Bono & "</bono><comentarios>" & lstBono.Item(i).Comentario &
+                "</comentarios><comentariosExt>" & lstBono(i).ComentarioExt & "</comentariosExt><modifico>" & lstBono.Item(i).IdModif & "</modifico></Info>"
             objBono.XML = objBono.XML & str
         Next
 

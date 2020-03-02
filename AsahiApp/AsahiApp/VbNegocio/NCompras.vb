@@ -44,6 +44,14 @@ Public Class NCompras
 
         DComp.InsertarRuta(cadenaConex, comp)
     End Sub
+    Public Function RecuperarProvValidadas(ByVal cadenaConex As String) As LCompras
+        Dim DComp As New DCompras()
+        Return DComp.RecuperarProvValidadas(cadenaConex)
+    End Function
+    Public Function FacturasRecuperarUUID(ByVal cadenaConex As String, ByVal factura As String) As LCompras
+        Dim DComp As New DCompras()
+        Return DComp.FacturasRecuperarUUID(cadenaConex, factura)
+    End Function
     Private Function CreaXmlRuta(ByVal lstComp As LCompras) As Compras
         Dim comp As New Compras()
         Dim i As Byte
@@ -56,9 +64,5 @@ Public Class NCompras
 
         comp.Xml = "<Provisiones>" & comp.Xml & "</Provisiones>"
         Return comp
-    End Function
-    Public Function RecuperarProvValidadas(ByVal cadenaConex As String) As LCompras
-        Dim DComp As New DCompras()
-        Return DComp.RecuperarProvValidadas(cadenaConex)
     End Function
 End Class

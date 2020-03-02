@@ -71,4 +71,22 @@
             xml_ = value
         End Set
     End Property
+    Private comentario_ As String
+    Public Property Comentario() As String
+        Get
+            Return comentario_
+        End Get
+        Set(ByVal value As String)
+            comentario_ = value
+        End Set
+    End Property
+    Private comentarioExt_ As String
+    Public Property ComentarioExt() As String
+        Get
+            Return comentarioExt_
+        End Get
+        Set(ByVal value As String)
+            comentarioExt_ = value
+        End Set
+    End Property
 End Class

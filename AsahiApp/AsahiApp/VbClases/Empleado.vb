@@ -975,4 +975,22 @@
             año_ = value
         End Set
     End Property
+    Private comenBono_ As String
+    Public Property ComenBono() As String
+        Get
+            Return comenBono_
+        End Get
+        Set(ByVal value As String)
+            comenBono_ = value
+        End Set
+    End Property
+    Private comenBonoExt_ As String
+    Public Property ComenBonoExt() As String
+        Get
+            Return comenBonoExt_
+        End Get
+        Set(ByVal value As String)
+            comenBonoExt_ = value
+        End Set
+    End Property
 End Class
