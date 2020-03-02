@@ -64,6 +64,8 @@ Public Class DEmpleado
                 empleados.Bono = Convert.ToBoolean(dr("Bono").ToString)
                 empleados.Semana = Convert.ToInt32(dr("sem").ToString)
                 empleados.Año = Convert.ToInt32(dr("año").ToString)
+                empleados.ComenBono = dr("comen").ToString
+                empleados.ComenBonoExt = dr("comenExt").ToString
                 empleados.FechaIngreso = Convert.ToDateTime(dr("INGRESO").ToString)
                 lstEmp.Add(empleados)
             End While

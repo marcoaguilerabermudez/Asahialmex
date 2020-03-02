@@ -148,6 +148,12 @@
     <Compile Include="CapturaOee2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Compras\Frm_ConsultaXml.Designer.vb">
+      <DependentUpon>Frm_ConsultaXml.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\Frm_ConsultaXml.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Compras\Frm_Proviciones.Designer.vb">
       <DependentUpon>Frm_Proviciones.vb</DependentUpon>
     </Compile>
@@ -390,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapturaOee2.resx">
       <DependentUpon>CapturaOee2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Frm_ConsultaXml.resx">
+      <DependentUpon>Frm_ConsultaXml.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\Frm_Proviciones.resx">
       <DependentUpon>Frm_Proviciones.vb</DependentUpon>

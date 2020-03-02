@@ -404,4 +404,34 @@ Public Class DCompras
             oCon.Dispose()
         End Try
     End Sub
+    Public Function FacturasRecuperarUUID(ByVal cadenaConex As String, ByVal factura As String) As LCompras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstComp As New LCompras()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.RecuperarFacturas", oCon)
+            query.Parameters.AddWithValue("@folio", factura)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim comp As New Compras
+                comp.Factura = dr("folio").ToString
+                comp.RfcEmisor = dr("RFCEmisor").ToString
+                comp.NombreEmisor = dr("NombreEmisor").ToString
+                comp.TotalFactura = dr("total").ToString
+                comp.UUID = dr("GuidDocument").ToString
+                lstComp.Add(comp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstComp
+    End Function
 End Class
