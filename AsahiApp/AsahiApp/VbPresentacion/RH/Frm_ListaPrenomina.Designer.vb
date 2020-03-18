@@ -37,6 +37,9 @@ Partial Class Frm_ListaPrenomina
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Cmb_FiltoIncidecias = New System.Windows.Forms.ComboBox()
         Me.Btn_GuardarBono = New System.Windows.Forms.Button()
         Me.Btn_Reporte = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -47,6 +50,8 @@ Partial Class Frm_ListaPrenomina
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Cmb_FiltroComen = New System.Windows.Forms.ComboBox()
         Me.Txt_FiltroDpto = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -97,7 +102,7 @@ Partial Class Frm_ListaPrenomina
         Me.manual7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.b7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mnl7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.comentarios = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.comentarios = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.comentariosExt = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.aplicaBono = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.modificaBono = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -108,6 +113,7 @@ Partial Class Frm_ListaPrenomina
         Me.manual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -246,6 +252,7 @@ Partial Class Frm_ListaPrenomina
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Panel6)
         Me.Panel1.Controls.Add(Me.Btn_GuardarBono)
         Me.Panel1.Controls.Add(Me.Btn_Reporte)
         Me.Panel1.Controls.Add(Me.Panel5)
@@ -256,6 +263,37 @@ Partial Class Frm_ListaPrenomina
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1197, 60)
         Me.Panel1.TabIndex = 14
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.Label5)
+        Me.Panel6.Controls.Add(Me.Cmb_FiltoIncidecias)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel6.Location = New System.Drawing.Point(827, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(217, 60)
+        Me.Panel6.TabIndex = 33
+        '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(3, 14)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(57, 26)
+        Me.Label5.TabIndex = 33
+        Me.Label5.Text = "Filtro incidencia"
+        '
+        'Cmb_FiltoIncidecias
+        '
+        Me.Cmb_FiltoIncidecias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_FiltoIncidecias.Enabled = False
+        Me.Cmb_FiltoIncidecias.FormattingEnabled = True
+        Me.Cmb_FiltoIncidecias.Items.AddRange(New Object() {"FALTA", "FALTA JUSTIFICADA", "SUSPENCIÓN", "RETARDO", "SALIDA ANTICIPADA", "SIN CHECADAS", "PERMISO SIN GOCE", "PERMISO CON GOCE", "INCAPACIDAD", "BAJA", " "})
+        Me.Cmb_FiltoIncidecias.Location = New System.Drawing.Point(66, 17)
+        Me.Cmb_FiltoIncidecias.Name = "Cmb_FiltoIncidecias"
+        Me.Cmb_FiltoIncidecias.Size = New System.Drawing.Size(145, 21)
+        Me.Cmb_FiltoIncidecias.TabIndex = 32
         '
         'Btn_GuardarBono
         '
@@ -354,6 +392,8 @@ Partial Class Frm_ListaPrenomina
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Controls.Add(Me.Cmb_FiltroComen)
         Me.Panel3.Controls.Add(Me.Txt_FiltroDpto)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.Label3)
@@ -374,6 +414,27 @@ Partial Class Frm_ListaPrenomina
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1197, 43)
         Me.Panel3.TabIndex = 11
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(903, 11)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(64, 26)
+        Me.Label6.TabIndex = 34
+        Me.Label6.Text = "Filtro comentarios"
+        '
+        'Cmb_FiltroComen
+        '
+        Me.Cmb_FiltroComen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_FiltroComen.Enabled = False
+        Me.Cmb_FiltroComen.FormattingEnabled = True
+        Me.Cmb_FiltroComen.Items.AddRange(New Object() {"FALTA", "CHECADA", "PERMISO SIN GOCE", "SALIDA ANTICIPADA", "INCAPACIDAD", "RETARDO", "SUSPENSIÓN", "JAPONÉS", "BAJA", "OTROS", " "})
+        Me.Cmb_FiltroComen.Location = New System.Drawing.Point(974, 16)
+        Me.Cmb_FiltroComen.Name = "Cmb_FiltroComen"
+        Me.Cmb_FiltroComen.Size = New System.Drawing.Size(145, 21)
+        Me.Cmb_FiltroComen.TabIndex = 33
         '
         'Txt_FiltroDpto
         '
@@ -731,7 +792,10 @@ Partial Class Frm_ListaPrenomina
         'comentarios
         '
         Me.comentarios.HeaderText = "Comentarios"
+        Me.comentarios.Items.AddRange(New Object() {"FALTA", "CHECADA", "PERMISO SIN GOCE", "SALIDA ANTICIPADA", "INCAPACIDAD", "RETARDO", "SUSPENSIÓN", "JAPONÉS", "BAJA", "OTROS", " "})
         Me.comentarios.Name = "comentarios"
+        Me.comentarios.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.comentarios.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.comentarios.Width = 150
         '
         'comentariosExt
@@ -808,6 +872,7 @@ Partial Class Frm_ListaPrenomina
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
@@ -849,6 +914,11 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents Txt_FiltroNombre As TextBox
     Friend WithEvents Txt_FiltroHorario As TextBox
     Friend WithEvents Txt_FiltroDpto As TextBox
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Cmb_FiltoIncidecias As ComboBox
+    Friend WithEvents Cmb_FiltroComen As ComboBox
+    Friend WithEvents Label6 As Label
     Friend WithEvents idEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents nombreEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents horarioEmpleado As DataGridViewTextBoxColumn
@@ -891,7 +961,7 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents manual7 As DataGridViewTextBoxColumn
     Friend WithEvents b7 As DataGridViewTextBoxColumn
     Friend WithEvents mnl7 As DataGridViewTextBoxColumn
-    Friend WithEvents comentarios As DataGridViewTextBoxColumn
+    Friend WithEvents comentarios As DataGridViewComboBoxColumn
     Friend WithEvents comentariosExt As DataGridViewTextBoxColumn
     Friend WithEvents aplicaBono As DataGridViewCheckBoxColumn
     Friend WithEvents modificaBono As DataGridViewTextBoxColumn
