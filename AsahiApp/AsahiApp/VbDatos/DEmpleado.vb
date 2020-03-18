@@ -6,12 +6,12 @@ Public Class DEmpleado
         Dim lstEmp As New LEmpleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("asahi16.dbo.LLInfoGralYChPrenomina", oCon)
+            Dim query As New SqlCommand("asahi16.dbo.LLInfoGralYChPrenominaPruebas", oCon)
             query.Parameters.AddWithValue("@fecha", fecha)
             query.Parameters.AddWithValue("@año", año)
             query.Parameters.AddWithValue("@semana", semana)
             query.CommandType = CommandType.StoredProcedure
-            query.CommandTimeout = 120
+            query.CommandTimeout = 480
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read)
@@ -29,8 +29,8 @@ Public Class DEmpleado
                 empleados.Puesto = dr("PUESTO").ToString
                 empleados.HoraEntrada = Convert.ToDateTime(dr("Entrada").ToString)
                 empleados.HoraSalida = Convert.ToDateTime(dr("Salida").ToString)
-                empleados.HoraEntradaReal0 = Convert.ToDateTime(dr("ERF0").ToString)
-                empleados.HoraSalidaReal0 = Convert.ToDateTime(dr("SRF0").ToString)
+                'empleados.HoraEntradaReal0 = Convert.ToDateTime(dr("ERF0").ToString)
+                'empleados.HoraSalidaReal0 = Convert.ToDateTime(dr("SRF0").ToString)
                 empleados.TipoRegistro0 = dr("TRF0").ToString
                 empleados.Nota0 = dr("NTF0").ToString
                 empleados.HoraEntradaReal1 = Convert.ToDateTime(dr("ERF1").ToString)
