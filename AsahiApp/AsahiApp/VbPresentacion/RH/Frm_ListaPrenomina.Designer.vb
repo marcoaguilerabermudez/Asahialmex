@@ -24,42 +24,6 @@ Partial Class Frm_ListaPrenomina
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Dgv_ListaPrenomina = New System.Windows.Forms.DataGridView()
-        Me.Lbl_Dia1 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia2 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia4 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia3 = New System.Windows.Forms.Label()
-        Me.lbl_Dia7 = New System.Windows.Forms.Label()
-        Me.lbl_Dia6 = New System.Windows.Forms.Label()
-        Me.Lbl_Dia5 = New System.Windows.Forms.Label()
-        Me.Lbl_año = New System.Windows.Forms.Label()
-        Me.Cmb_Semanas = New System.Windows.Forms.ComboBox()
-        Me.Lbl_Semana = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Cmb_FiltoIncidecias = New System.Windows.Forms.ComboBox()
-        Me.Btn_GuardarBono = New System.Windows.Forms.Button()
-        Me.Btn_Reporte = New System.Windows.Forms.Button()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Btn_Guardar = New System.Windows.Forms.Button()
-        Me.Btn_Excel = New System.Windows.Forms.Button()
-        Me.Bgw_HiloSegundoPlano = New System.ComponentModel.BackgroundWorker()
-        Me.Btn_Mostrar = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Cmb_FiltroComen = New System.Windows.Forms.ComboBox()
-        Me.Txt_FiltroDpto = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Txt_FiltroHorario = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Txt_FiltroNombre = New System.Windows.Forms.TextBox()
-        Me.Lbl_FiltroId = New System.Windows.Forms.Label()
-        Me.Txt_FiltroId = New System.Windows.Forms.TextBox()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.horarioEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -111,6 +75,42 @@ Partial Class Frm_ListaPrenomina
         Me.nacional = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.puesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.manual = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Lbl_Dia1 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia2 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia4 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia3 = New System.Windows.Forms.Label()
+        Me.lbl_Dia7 = New System.Windows.Forms.Label()
+        Me.lbl_Dia6 = New System.Windows.Forms.Label()
+        Me.Lbl_Dia5 = New System.Windows.Forms.Label()
+        Me.Lbl_año = New System.Windows.Forms.Label()
+        Me.Cmb_Semanas = New System.Windows.Forms.ComboBox()
+        Me.Lbl_Semana = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Dtp_FechaInicioSemana = New System.Windows.Forms.DateTimePicker()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Cmb_FiltoIncidecias = New System.Windows.Forms.ComboBox()
+        Me.Btn_GuardarBono = New System.Windows.Forms.Button()
+        Me.Btn_Reporte = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Btn_Guardar = New System.Windows.Forms.Button()
+        Me.Btn_Excel = New System.Windows.Forms.Button()
+        Me.Bgw_HiloSegundoPlano = New System.ComponentModel.BackgroundWorker()
+        Me.Btn_Mostrar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Cmb_FiltroComen = New System.Windows.Forms.ComboBox()
+        Me.Txt_FiltroDpto = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Txt_FiltroHorario = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Txt_FiltroNombre = New System.Windows.Forms.TextBox()
+        Me.Lbl_FiltroId = New System.Windows.Forms.Label()
+        Me.Txt_FiltroId = New System.Windows.Forms.TextBox()
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -141,382 +141,6 @@ Partial Class Frm_ListaPrenomina
         Me.Dgv_ListaPrenomina.RowTemplate.Height = 50
         Me.Dgv_ListaPrenomina.Size = New System.Drawing.Size(1197, 439)
         Me.Dgv_ListaPrenomina.TabIndex = 0
-        '
-        'Lbl_Dia1
-        '
-        Me.Lbl_Dia1.AutoSize = True
-        Me.Lbl_Dia1.Location = New System.Drawing.Point(464, 20)
-        Me.Lbl_Dia1.Name = "Lbl_Dia1"
-        Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia1.TabIndex = 4
-        '
-        'Lbl_Dia2
-        '
-        Me.Lbl_Dia2.AutoSize = True
-        Me.Lbl_Dia2.Location = New System.Drawing.Point(541, 20)
-        Me.Lbl_Dia2.Name = "Lbl_Dia2"
-        Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia2.TabIndex = 5
-        '
-        'Lbl_Dia4
-        '
-        Me.Lbl_Dia4.AutoSize = True
-        Me.Lbl_Dia4.Location = New System.Drawing.Point(693, 20)
-        Me.Lbl_Dia4.Name = "Lbl_Dia4"
-        Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia4.TabIndex = 7
-        '
-        'Lbl_Dia3
-        '
-        Me.Lbl_Dia3.AutoSize = True
-        Me.Lbl_Dia3.Location = New System.Drawing.Point(617, 20)
-        Me.Lbl_Dia3.Name = "Lbl_Dia3"
-        Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia3.TabIndex = 6
-        '
-        'lbl_Dia7
-        '
-        Me.lbl_Dia7.AutoSize = True
-        Me.lbl_Dia7.Location = New System.Drawing.Point(920, 20)
-        Me.lbl_Dia7.Name = "lbl_Dia7"
-        Me.lbl_Dia7.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_Dia7.TabIndex = 10
-        '
-        'lbl_Dia6
-        '
-        Me.lbl_Dia6.AutoSize = True
-        Me.lbl_Dia6.Location = New System.Drawing.Point(844, 20)
-        Me.lbl_Dia6.Name = "lbl_Dia6"
-        Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_Dia6.TabIndex = 9
-        '
-        'Lbl_Dia5
-        '
-        Me.Lbl_Dia5.AutoSize = True
-        Me.Lbl_Dia5.Location = New System.Drawing.Point(769, 20)
-        Me.Lbl_Dia5.Name = "Lbl_Dia5"
-        Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
-        Me.Lbl_Dia5.TabIndex = 8
-        '
-        'Lbl_año
-        '
-        Me.Lbl_año.AutoSize = True
-        Me.Lbl_año.BackColor = System.Drawing.Color.SteelBlue
-        Me.Lbl_año.ForeColor = System.Drawing.Color.White
-        Me.Lbl_año.Location = New System.Drawing.Point(108, 22)
-        Me.Lbl_año.Name = "Lbl_año"
-        Me.Lbl_año.Size = New System.Drawing.Size(25, 13)
-        Me.Lbl_año.TabIndex = 3
-        Me.Lbl_año.Text = "año"
-        '
-        'Cmb_Semanas
-        '
-        Me.Cmb_Semanas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Cmb_Semanas.Enabled = False
-        Me.Cmb_Semanas.FormattingEnabled = True
-        Me.Cmb_Semanas.Location = New System.Drawing.Point(14, 21)
-        Me.Cmb_Semanas.Name = "Cmb_Semanas"
-        Me.Cmb_Semanas.Size = New System.Drawing.Size(87, 21)
-        Me.Cmb_Semanas.TabIndex = 1
-        '
-        'Lbl_Semana
-        '
-        Me.Lbl_Semana.AutoSize = True
-        Me.Lbl_Semana.BackColor = System.Drawing.Color.SteelBlue
-        Me.Lbl_Semana.ForeColor = System.Drawing.Color.White
-        Me.Lbl_Semana.Location = New System.Drawing.Point(15, 5)
-        Me.Lbl_Semana.Name = "Lbl_Semana"
-        Me.Lbl_Semana.Size = New System.Drawing.Size(46, 13)
-        Me.Lbl_Semana.TabIndex = 2
-        Me.Lbl_Semana.Text = "Semana"
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(150, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 26)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Fecha inicio semana" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'Dtp_FechaInicioSemana
-        '
-        Me.Dtp_FechaInicioSemana.Checked = False
-        Me.Dtp_FechaInicioSemana.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_FechaInicioSemana.Location = New System.Drawing.Point(234, 18)
-        Me.Dtp_FechaInicioSemana.Name = "Dtp_FechaInicioSemana"
-        Me.Dtp_FechaInicioSemana.Size = New System.Drawing.Size(109, 20)
-        Me.Dtp_FechaInicioSemana.TabIndex = 13
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.Panel6)
-        Me.Panel1.Controls.Add(Me.Btn_GuardarBono)
-        Me.Panel1.Controls.Add(Me.Btn_Reporte)
-        Me.Panel1.Controls.Add(Me.Panel5)
-        Me.Panel1.Controls.Add(Me.Btn_Excel)
-        Me.Panel1.Controls.Add(Me.Dtp_FechaInicioSemana)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1197, 60)
-        Me.Panel1.TabIndex = 14
-        '
-        'Panel6
-        '
-        Me.Panel6.Controls.Add(Me.Label5)
-        Me.Panel6.Controls.Add(Me.Cmb_FiltoIncidecias)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel6.Location = New System.Drawing.Point(827, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(217, 60)
-        Me.Panel6.TabIndex = 33
-        '
-        'Label5
-        '
-        Me.Label5.BackColor = System.Drawing.Color.SteelBlue
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(3, 14)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 26)
-        Me.Label5.TabIndex = 33
-        Me.Label5.Text = "Filtro incidencia"
-        '
-        'Cmb_FiltoIncidecias
-        '
-        Me.Cmb_FiltoIncidecias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Cmb_FiltoIncidecias.Enabled = False
-        Me.Cmb_FiltoIncidecias.FormattingEnabled = True
-        Me.Cmb_FiltoIncidecias.Items.AddRange(New Object() {"FALTA", "FALTA JUSTIFICADA", "SUSPENCIÓN", "RETARDO", "SALIDA ANTICIPADA", "SIN CHECADAS", "PERMISO SIN GOCE", "PERMISO CON GOCE", "INCAPACIDAD", "BAJA", " "})
-        Me.Cmb_FiltoIncidecias.Location = New System.Drawing.Point(66, 17)
-        Me.Cmb_FiltoIncidecias.Name = "Cmb_FiltoIncidecias"
-        Me.Cmb_FiltoIncidecias.Size = New System.Drawing.Size(145, 21)
-        Me.Cmb_FiltoIncidecias.TabIndex = 32
-        '
-        'Btn_GuardarBono
-        '
-        Me.Btn_GuardarBono.Enabled = False
-        Me.Btn_GuardarBono.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_GuardarBono.Image = Global.Presentacion.My.Resources.Resources.Acumulado
-        Me.Btn_GuardarBono.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_GuardarBono.Location = New System.Drawing.Point(591, 5)
-        Me.Btn_GuardarBono.Name = "Btn_GuardarBono"
-        Me.Btn_GuardarBono.Size = New System.Drawing.Size(81, 41)
-        Me.Btn_GuardarBono.TabIndex = 31
-        Me.Btn_GuardarBono.Text = "Guardar Bono"
-        Me.Btn_GuardarBono.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_GuardarBono.UseVisualStyleBackColor = True
-        '
-        'Btn_Reporte
-        '
-        Me.Btn_Reporte.Image = Global.Presentacion.My.Resources.Resources.reportes
-        Me.Btn_Reporte.Location = New System.Drawing.Point(523, 6)
-        Me.Btn_Reporte.Name = "Btn_Reporte"
-        Me.Btn_Reporte.Size = New System.Drawing.Size(49, 40)
-        Me.Btn_Reporte.TabIndex = 30
-        Me.Btn_Reporte.UseVisualStyleBackColor = True
-        Me.Btn_Reporte.Visible = False
-        '
-        'Panel5
-        '
-        Me.Panel5.Controls.Add(Me.Btn_Guardar)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel5.Location = New System.Drawing.Point(1044, 0)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(153, 60)
-        Me.Panel5.TabIndex = 16
-        '
-        'Btn_Guardar
-        '
-        Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
-        Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Guardar.Location = New System.Drawing.Point(41, 8)
-        Me.Btn_Guardar.Name = "Btn_Guardar"
-        Me.Btn_Guardar.Size = New System.Drawing.Size(53, 43)
-        Me.Btn_Guardar.TabIndex = 14
-        Me.Btn_Guardar.Text = "Guardar"
-        Me.Btn_Guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Guardar.UseVisualStyleBackColor = True
-        Me.Btn_Guardar.Visible = False
-        '
-        'Btn_Excel
-        '
-        Me.Btn_Excel.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Excel.Image = Global.Presentacion.My.Resources.Resources.Excel1
-        Me.Btn_Excel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Excel.Location = New System.Drawing.Point(436, 8)
-        Me.Btn_Excel.Name = "Btn_Excel"
-        Me.Btn_Excel.Size = New System.Drawing.Size(53, 40)
-        Me.Btn_Excel.TabIndex = 15
-        Me.Btn_Excel.Text = "Exp. Emp"
-        Me.Btn_Excel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Excel.UseVisualStyleBackColor = True
-        '
-        'Bgw_HiloSegundoPlano
-        '
-        Me.Bgw_HiloSegundoPlano.WorkerReportsProgress = True
-        Me.Bgw_HiloSegundoPlano.WorkerSupportsCancellation = True
-        '
-        'Btn_Mostrar
-        '
-        Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
-        Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Mostrar.Location = New System.Drawing.Point(355, 8)
-        Me.Btn_Mostrar.Name = "Btn_Mostrar"
-        Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 40)
-        Me.Btn_Mostrar.TabIndex = 15
-        Me.Btn_Mostrar.Text = "Mostrar"
-        Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Mostrar.UseVisualStyleBackColor = True
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Panel4)
-        Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 60)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1197, 482)
-        Me.Panel2.TabIndex = 16
-        '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.Dgv_ListaPrenomina)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(0, 43)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1197, 439)
-        Me.Panel4.TabIndex = 12
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.Label6)
-        Me.Panel3.Controls.Add(Me.Cmb_FiltroComen)
-        Me.Panel3.Controls.Add(Me.Txt_FiltroDpto)
-        Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.Txt_FiltroHorario)
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.Txt_FiltroNombre)
-        Me.Panel3.Controls.Add(Me.Lbl_FiltroId)
-        Me.Panel3.Controls.Add(Me.Txt_FiltroId)
-        Me.Panel3.Controls.Add(Me.Lbl_Dia3)
-        Me.Panel3.Controls.Add(Me.Lbl_Dia4)
-        Me.Panel3.Controls.Add(Me.lbl_Dia7)
-        Me.Panel3.Controls.Add(Me.Lbl_Dia5)
-        Me.Panel3.Controls.Add(Me.Lbl_Dia1)
-        Me.Panel3.Controls.Add(Me.lbl_Dia6)
-        Me.Panel3.Controls.Add(Me.Lbl_Dia2)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1197, 43)
-        Me.Panel3.TabIndex = 11
-        '
-        'Label6
-        '
-        Me.Label6.BackColor = System.Drawing.Color.White
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(903, 11)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(64, 26)
-        Me.Label6.TabIndex = 34
-        Me.Label6.Text = "Filtro comentarios"
-        '
-        'Cmb_FiltroComen
-        '
-        Me.Cmb_FiltroComen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Cmb_FiltroComen.Enabled = False
-        Me.Cmb_FiltroComen.FormattingEnabled = True
-        Me.Cmb_FiltroComen.Items.AddRange(New Object() {"FALTA", "CHECADA", "PERMISO SIN GOCE", "SALIDA ANTICIPADA", "INCAPACIDAD", "RETARDO", "SUSPENSIÓN", "JAPONÉS", "BAJA", "OTROS", " "})
-        Me.Cmb_FiltroComen.Location = New System.Drawing.Point(974, 16)
-        Me.Cmb_FiltroComen.Name = "Cmb_FiltroComen"
-        Me.Cmb_FiltroComen.Size = New System.Drawing.Size(145, 21)
-        Me.Cmb_FiltroComen.TabIndex = 33
-        '
-        'Txt_FiltroDpto
-        '
-        Me.Txt_FiltroDpto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.Txt_FiltroDpto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.Txt_FiltroDpto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_FiltroDpto.Location = New System.Drawing.Point(345, 20)
-        Me.Txt_FiltroDpto.Name = "Txt_FiltroDpto"
-        Me.Txt_FiltroDpto.Size = New System.Drawing.Size(96, 18)
-        Me.Txt_FiltroDpto.TabIndex = 19
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(344, 5)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(87, 12)
-        Me.Label4.TabIndex = 18
-        Me.Label4.Text = "DEPARTAMENTO:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(246, 5)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 12)
-        Me.Label3.TabIndex = 16
-        Me.Label3.Text = "HORARIO:"
-        '
-        'Txt_FiltroHorario
-        '
-        Me.Txt_FiltroHorario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.Txt_FiltroHorario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.Txt_FiltroHorario.Enabled = False
-        Me.Txt_FiltroHorario.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_FiltroHorario.Location = New System.Drawing.Point(244, 20)
-        Me.Txt_FiltroHorario.Name = "Txt_FiltroHorario"
-        Me.Txt_FiltroHorario.Size = New System.Drawing.Size(94, 18)
-        Me.Txt_FiltroHorario.TabIndex = 15
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(49, 5)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 12)
-        Me.Label2.TabIndex = 14
-        Me.Label2.Text = "NOMBRE:"
-        '
-        'Txt_FiltroNombre
-        '
-        Me.Txt_FiltroNombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.Txt_FiltroNombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.Txt_FiltroNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.Txt_FiltroNombre.Enabled = False
-        Me.Txt_FiltroNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_FiltroNombre.Location = New System.Drawing.Point(46, 20)
-        Me.Txt_FiltroNombre.Name = "Txt_FiltroNombre"
-        Me.Txt_FiltroNombre.Size = New System.Drawing.Size(192, 18)
-        Me.Txt_FiltroNombre.TabIndex = 13
-        '
-        'Lbl_FiltroId
-        '
-        Me.Lbl_FiltroId.AutoSize = True
-        Me.Lbl_FiltroId.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_FiltroId.Location = New System.Drawing.Point(1, 5)
-        Me.Lbl_FiltroId.Name = "Lbl_FiltroId"
-        Me.Lbl_FiltroId.Size = New System.Drawing.Size(40, 12)
-        Me.Lbl_FiltroId.TabIndex = 12
-        Me.Lbl_FiltroId.Text = "CLAVE:"
-        '
-        'Txt_FiltroId
-        '
-        Me.Txt_FiltroId.Enabled = False
-        Me.Txt_FiltroId.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_FiltroId.Location = New System.Drawing.Point(2, 20)
-        Me.Txt_FiltroId.Name = "Txt_FiltroId"
-        Me.Txt_FiltroId.Size = New System.Drawing.Size(40, 18)
-        Me.Txt_FiltroId.TabIndex = 11
         '
         'idEmpleado
         '
@@ -852,6 +476,382 @@ Partial Class Frm_ListaPrenomina
         Me.manual.Name = "manual"
         Me.manual.ReadOnly = True
         Me.manual.Visible = False
+        '
+        'Lbl_Dia1
+        '
+        Me.Lbl_Dia1.AutoSize = True
+        Me.Lbl_Dia1.Location = New System.Drawing.Point(464, 20)
+        Me.Lbl_Dia1.Name = "Lbl_Dia1"
+        Me.Lbl_Dia1.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia1.TabIndex = 4
+        '
+        'Lbl_Dia2
+        '
+        Me.Lbl_Dia2.AutoSize = True
+        Me.Lbl_Dia2.Location = New System.Drawing.Point(541, 20)
+        Me.Lbl_Dia2.Name = "Lbl_Dia2"
+        Me.Lbl_Dia2.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia2.TabIndex = 5
+        '
+        'Lbl_Dia4
+        '
+        Me.Lbl_Dia4.AutoSize = True
+        Me.Lbl_Dia4.Location = New System.Drawing.Point(693, 20)
+        Me.Lbl_Dia4.Name = "Lbl_Dia4"
+        Me.Lbl_Dia4.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia4.TabIndex = 7
+        '
+        'Lbl_Dia3
+        '
+        Me.Lbl_Dia3.AutoSize = True
+        Me.Lbl_Dia3.Location = New System.Drawing.Point(617, 20)
+        Me.Lbl_Dia3.Name = "Lbl_Dia3"
+        Me.Lbl_Dia3.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia3.TabIndex = 6
+        '
+        'lbl_Dia7
+        '
+        Me.lbl_Dia7.AutoSize = True
+        Me.lbl_Dia7.Location = New System.Drawing.Point(920, 20)
+        Me.lbl_Dia7.Name = "lbl_Dia7"
+        Me.lbl_Dia7.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_Dia7.TabIndex = 10
+        '
+        'lbl_Dia6
+        '
+        Me.lbl_Dia6.AutoSize = True
+        Me.lbl_Dia6.Location = New System.Drawing.Point(844, 20)
+        Me.lbl_Dia6.Name = "lbl_Dia6"
+        Me.lbl_Dia6.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_Dia6.TabIndex = 9
+        '
+        'Lbl_Dia5
+        '
+        Me.Lbl_Dia5.AutoSize = True
+        Me.Lbl_Dia5.Location = New System.Drawing.Point(769, 20)
+        Me.Lbl_Dia5.Name = "Lbl_Dia5"
+        Me.Lbl_Dia5.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Dia5.TabIndex = 8
+        '
+        'Lbl_año
+        '
+        Me.Lbl_año.AutoSize = True
+        Me.Lbl_año.BackColor = System.Drawing.Color.SteelBlue
+        Me.Lbl_año.ForeColor = System.Drawing.Color.White
+        Me.Lbl_año.Location = New System.Drawing.Point(108, 22)
+        Me.Lbl_año.Name = "Lbl_año"
+        Me.Lbl_año.Size = New System.Drawing.Size(25, 13)
+        Me.Lbl_año.TabIndex = 3
+        Me.Lbl_año.Text = "año"
+        '
+        'Cmb_Semanas
+        '
+        Me.Cmb_Semanas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_Semanas.Enabled = False
+        Me.Cmb_Semanas.FormattingEnabled = True
+        Me.Cmb_Semanas.Location = New System.Drawing.Point(14, 21)
+        Me.Cmb_Semanas.Name = "Cmb_Semanas"
+        Me.Cmb_Semanas.Size = New System.Drawing.Size(87, 21)
+        Me.Cmb_Semanas.TabIndex = 1
+        '
+        'Lbl_Semana
+        '
+        Me.Lbl_Semana.AutoSize = True
+        Me.Lbl_Semana.BackColor = System.Drawing.Color.SteelBlue
+        Me.Lbl_Semana.ForeColor = System.Drawing.Color.White
+        Me.Lbl_Semana.Location = New System.Drawing.Point(15, 5)
+        Me.Lbl_Semana.Name = "Lbl_Semana"
+        Me.Lbl_Semana.Size = New System.Drawing.Size(46, 13)
+        Me.Lbl_Semana.TabIndex = 2
+        Me.Lbl_Semana.Text = "Semana"
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(150, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(66, 26)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Fecha inicio semana" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Dtp_FechaInicioSemana
+        '
+        Me.Dtp_FechaInicioSemana.Checked = False
+        Me.Dtp_FechaInicioSemana.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Dtp_FechaInicioSemana.Location = New System.Drawing.Point(234, 18)
+        Me.Dtp_FechaInicioSemana.Name = "Dtp_FechaInicioSemana"
+        Me.Dtp_FechaInicioSemana.Size = New System.Drawing.Size(109, 20)
+        Me.Dtp_FechaInicioSemana.TabIndex = 13
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Panel6)
+        Me.Panel1.Controls.Add(Me.Btn_GuardarBono)
+        Me.Panel1.Controls.Add(Me.Btn_Reporte)
+        Me.Panel1.Controls.Add(Me.Panel5)
+        Me.Panel1.Controls.Add(Me.Btn_Excel)
+        Me.Panel1.Controls.Add(Me.Dtp_FechaInicioSemana)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1197, 60)
+        Me.Panel1.TabIndex = 14
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.Label5)
+        Me.Panel6.Controls.Add(Me.Cmb_FiltoIncidecias)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel6.Location = New System.Drawing.Point(827, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(217, 60)
+        Me.Panel6.TabIndex = 33
+        '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(3, 14)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(57, 26)
+        Me.Label5.TabIndex = 33
+        Me.Label5.Text = "Filtro incidencia"
+        '
+        'Cmb_FiltoIncidecias
+        '
+        Me.Cmb_FiltoIncidecias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_FiltoIncidecias.Enabled = False
+        Me.Cmb_FiltoIncidecias.FormattingEnabled = True
+        Me.Cmb_FiltoIncidecias.Items.AddRange(New Object() {"FALTA", "FALTA JUSTIFICADA", "SUSPENCIÓN", "RETARDO", "SALIDA ANTICIPADA", "SIN CHECADAS", "PERMISO SIN GOCE", "PERMISO CON GOCE", "INCAPACIDAD", "BAJA", " "})
+        Me.Cmb_FiltoIncidecias.Location = New System.Drawing.Point(66, 17)
+        Me.Cmb_FiltoIncidecias.Name = "Cmb_FiltoIncidecias"
+        Me.Cmb_FiltoIncidecias.Size = New System.Drawing.Size(145, 21)
+        Me.Cmb_FiltoIncidecias.TabIndex = 32
+        '
+        'Btn_GuardarBono
+        '
+        Me.Btn_GuardarBono.Enabled = False
+        Me.Btn_GuardarBono.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_GuardarBono.Image = Global.Presentacion.My.Resources.Resources.Acumulado
+        Me.Btn_GuardarBono.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_GuardarBono.Location = New System.Drawing.Point(591, 5)
+        Me.Btn_GuardarBono.Name = "Btn_GuardarBono"
+        Me.Btn_GuardarBono.Size = New System.Drawing.Size(81, 41)
+        Me.Btn_GuardarBono.TabIndex = 31
+        Me.Btn_GuardarBono.Text = "Guardar Bono"
+        Me.Btn_GuardarBono.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_GuardarBono.UseVisualStyleBackColor = True
+        '
+        'Btn_Reporte
+        '
+        Me.Btn_Reporte.Image = Global.Presentacion.My.Resources.Resources.reportes
+        Me.Btn_Reporte.Location = New System.Drawing.Point(523, 6)
+        Me.Btn_Reporte.Name = "Btn_Reporte"
+        Me.Btn_Reporte.Size = New System.Drawing.Size(49, 40)
+        Me.Btn_Reporte.TabIndex = 30
+        Me.Btn_Reporte.UseVisualStyleBackColor = True
+        Me.Btn_Reporte.Visible = False
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Btn_Guardar)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel5.Location = New System.Drawing.Point(1044, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(153, 60)
+        Me.Panel5.TabIndex = 16
+        '
+        'Btn_Guardar
+        '
+        Me.Btn_Guardar.Image = Global.Presentacion.My.Resources.Resources.save
+        Me.Btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Guardar.Location = New System.Drawing.Point(41, 8)
+        Me.Btn_Guardar.Name = "Btn_Guardar"
+        Me.Btn_Guardar.Size = New System.Drawing.Size(53, 43)
+        Me.Btn_Guardar.TabIndex = 14
+        Me.Btn_Guardar.Text = "Guardar"
+        Me.Btn_Guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Guardar.UseVisualStyleBackColor = True
+        Me.Btn_Guardar.Visible = False
+        '
+        'Btn_Excel
+        '
+        Me.Btn_Excel.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Excel.Image = Global.Presentacion.My.Resources.Resources.Excel1
+        Me.Btn_Excel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Excel.Location = New System.Drawing.Point(436, 8)
+        Me.Btn_Excel.Name = "Btn_Excel"
+        Me.Btn_Excel.Size = New System.Drawing.Size(53, 40)
+        Me.Btn_Excel.TabIndex = 15
+        Me.Btn_Excel.Text = "Exp. Emp"
+        Me.Btn_Excel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Excel.UseVisualStyleBackColor = True
+        '
+        'Bgw_HiloSegundoPlano
+        '
+        Me.Bgw_HiloSegundoPlano.WorkerReportsProgress = True
+        Me.Bgw_HiloSegundoPlano.WorkerSupportsCancellation = True
+        '
+        'Btn_Mostrar
+        '
+        Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
+        Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Mostrar.Location = New System.Drawing.Point(355, 8)
+        Me.Btn_Mostrar.Name = "Btn_Mostrar"
+        Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 40)
+        Me.Btn_Mostrar.TabIndex = 15
+        Me.Btn_Mostrar.Text = "Mostrar"
+        Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Mostrar.UseVisualStyleBackColor = True
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Panel4)
+        Me.Panel2.Controls.Add(Me.Panel3)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 60)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1197, 482)
+        Me.Panel2.TabIndex = 16
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Dgv_ListaPrenomina)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(0, 43)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1197, 439)
+        Me.Panel4.TabIndex = 12
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Controls.Add(Me.Cmb_FiltroComen)
+        Me.Panel3.Controls.Add(Me.Txt_FiltroDpto)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.Txt_FiltroHorario)
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.Txt_FiltroNombre)
+        Me.Panel3.Controls.Add(Me.Lbl_FiltroId)
+        Me.Panel3.Controls.Add(Me.Txt_FiltroId)
+        Me.Panel3.Controls.Add(Me.Lbl_Dia3)
+        Me.Panel3.Controls.Add(Me.Lbl_Dia4)
+        Me.Panel3.Controls.Add(Me.lbl_Dia7)
+        Me.Panel3.Controls.Add(Me.Lbl_Dia5)
+        Me.Panel3.Controls.Add(Me.Lbl_Dia1)
+        Me.Panel3.Controls.Add(Me.lbl_Dia6)
+        Me.Panel3.Controls.Add(Me.Lbl_Dia2)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1197, 43)
+        Me.Panel3.TabIndex = 11
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(903, 11)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(64, 26)
+        Me.Label6.TabIndex = 34
+        Me.Label6.Text = "Filtro comentarios"
+        '
+        'Cmb_FiltroComen
+        '
+        Me.Cmb_FiltroComen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_FiltroComen.Enabled = False
+        Me.Cmb_FiltroComen.FormattingEnabled = True
+        Me.Cmb_FiltroComen.Items.AddRange(New Object() {"FALTA", "CHECADA", "PERMISO SIN GOCE", "SALIDA ANTICIPADA", "INCAPACIDAD", "RETARDO", "SUSPENSIÓN", "JAPONÉS", "BAJA", "OTROS", "VACIO", " "})
+        Me.Cmb_FiltroComen.Location = New System.Drawing.Point(974, 16)
+        Me.Cmb_FiltroComen.Name = "Cmb_FiltroComen"
+        Me.Cmb_FiltroComen.Size = New System.Drawing.Size(145, 21)
+        Me.Cmb_FiltroComen.TabIndex = 33
+        '
+        'Txt_FiltroDpto
+        '
+        Me.Txt_FiltroDpto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_FiltroDpto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_FiltroDpto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_FiltroDpto.Location = New System.Drawing.Point(345, 20)
+        Me.Txt_FiltroDpto.Name = "Txt_FiltroDpto"
+        Me.Txt_FiltroDpto.Size = New System.Drawing.Size(96, 18)
+        Me.Txt_FiltroDpto.TabIndex = 19
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(344, 5)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(87, 12)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "DEPARTAMENTO:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(246, 5)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(53, 12)
+        Me.Label3.TabIndex = 16
+        Me.Label3.Text = "HORARIO:"
+        '
+        'Txt_FiltroHorario
+        '
+        Me.Txt_FiltroHorario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_FiltroHorario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_FiltroHorario.Enabled = False
+        Me.Txt_FiltroHorario.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_FiltroHorario.Location = New System.Drawing.Point(244, 20)
+        Me.Txt_FiltroHorario.Name = "Txt_FiltroHorario"
+        Me.Txt_FiltroHorario.Size = New System.Drawing.Size(94, 18)
+        Me.Txt_FiltroHorario.TabIndex = 15
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(49, 5)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(50, 12)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "NOMBRE:"
+        '
+        'Txt_FiltroNombre
+        '
+        Me.Txt_FiltroNombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.Txt_FiltroNombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_FiltroNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_FiltroNombre.Enabled = False
+        Me.Txt_FiltroNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_FiltroNombre.Location = New System.Drawing.Point(46, 20)
+        Me.Txt_FiltroNombre.Name = "Txt_FiltroNombre"
+        Me.Txt_FiltroNombre.Size = New System.Drawing.Size(192, 18)
+        Me.Txt_FiltroNombre.TabIndex = 13
+        '
+        'Lbl_FiltroId
+        '
+        Me.Lbl_FiltroId.AutoSize = True
+        Me.Lbl_FiltroId.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_FiltroId.Location = New System.Drawing.Point(1, 5)
+        Me.Lbl_FiltroId.Name = "Lbl_FiltroId"
+        Me.Lbl_FiltroId.Size = New System.Drawing.Size(40, 12)
+        Me.Lbl_FiltroId.TabIndex = 12
+        Me.Lbl_FiltroId.Text = "CLAVE:"
+        '
+        'Txt_FiltroId
+        '
+        Me.Txt_FiltroId.Enabled = False
+        Me.Txt_FiltroId.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_FiltroId.Location = New System.Drawing.Point(2, 20)
+        Me.Txt_FiltroId.Name = "Txt_FiltroId"
+        Me.Txt_FiltroId.Size = New System.Drawing.Size(40, 18)
+        Me.Txt_FiltroId.TabIndex = 11
         '
         'Frm_ListaPrenomina
         '
