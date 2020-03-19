@@ -602,9 +602,9 @@ Public Class Frm_ListaPrenomina
             For fila = 0 To totalFilas - 2
                 With Dgv_ListaPrenomina.Rows(fila)
                     comen = .Cells("comentarios").Value
-                    If (comen = Cmb_FiltroComen.Text) Then
+                    If (comen = Cmb_FiltroComen.Text) Or ((comen = "" Or comen = " ") And Cmb_FiltroComen.Text = "VACIO") Then
                         .Visible = True
-                    ElseIf (comen <> Cmb_FiltroComen.Text) Or comen = "" Then
+                    ElseIf (comen <> Cmb_FiltroComen.Text) Then
                         .Visible = False
                     End If
                 End With
