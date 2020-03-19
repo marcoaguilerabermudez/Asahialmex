@@ -6,7 +6,7 @@ Public Class DEmpleado
         Dim lstEmp As New LEmpleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("asahi16.dbo.LLInfoGralYChPrenominaPruebas", oCon)
+            Dim query As New SqlCommand("asahi16.dbo.LLInfoGralYChPrenomina", oCon)
             query.Parameters.AddWithValue("@fecha", fecha)
             query.Parameters.AddWithValue("@año", año)
             query.Parameters.AddWithValue("@semana", semana)
