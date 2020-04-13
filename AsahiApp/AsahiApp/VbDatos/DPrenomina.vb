@@ -3,6 +3,7 @@ Imports System.Data.SqlClient
 Imports System
 Public Class DPrenomina
     Public Function RecuperarDiasSemana(ByVal oCon As SqlConnection, ByVal fecha As Date) As Horarios
+        'Dim oCon As New SqlConnection(cadenaConex)
         Dim hrs As New Horarios()
         Try
             oCon.Open()

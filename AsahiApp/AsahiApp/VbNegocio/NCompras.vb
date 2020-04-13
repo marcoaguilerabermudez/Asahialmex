@@ -52,6 +52,10 @@ Public Class NCompras
         Dim DComp As New DCompras()
         Return DComp.FacturasRecuperarUUID(cadenaConex, factura)
     End Function
+    Public Function ConsultarImpuestosExtra(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
+        Dim DComp As New DCompras()
+        Return DComp.ConsultarImpuestosExtra(cadenaConex, uuid)
+    End Function
     Private Function CreaXmlRuta(ByVal lstComp As LCompras) As Compras
         Dim comp As New Compras()
         Dim i As Byte

@@ -7,7 +7,9 @@ Imports Excel = Microsoft.Office.Interop.Excel
 Public Class Frm_ListaPrenomina
 #Region "Variables de Clase"
     Dim cadConex As SqlConnection
+    Dim con As New conexion()
     Dim cadenaConex As String
+    Dim cadenaConexExp As String
     Dim open As Boolean
     Dim colum
     'Dim bd As New BindingSource
@@ -16,6 +18,7 @@ Public Class Frm_ListaPrenomina
     Dim fin = 0
     Dim fuente As New ReportDataSource
     Dim idEmp As String, rec As String = "N"
+    Dim ip As String = Strings.Left(Me.con.getIp(), 6)
 #End Region
 #Region "Constructores"
     Sub New()
@@ -35,7 +38,7 @@ Public Class Frm_ListaPrenomina
         Me.cadConex = cadConex
         Me.cadenaConex = cadenaConex
     End Sub
-    Sub New(ByVal cadConex As SqlConnection, ByVal cadenaConex As String, ByVal idEmp As String)
+    Sub New(ByVal cadConex As SqlConnection, ByVal cadenaConex As String, ByVal cadenaConexExp As String, ByVal idEmp As String)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
@@ -43,6 +46,7 @@ Public Class Frm_ListaPrenomina
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         Me.cadConex = cadConex
         Me.cadenaConex = cadenaConex
+        Me.cadenaConexExp = cadenaConexExp
         Me.idEmp = idEmp
     End Sub
 #End Region
@@ -50,7 +54,7 @@ Public Class Frm_ListaPrenomina
     Private Sub Frm_Prenomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim NEmp As New NEmpleado(), conex As New conexion()
         Dim cadenaConex As String = conex.cadenaConexExpress
-        Me.rangoPermiso = NEmp.RevisarRangoPermisos(cadenaConex, Me.idEmp, "PreNominaListadoToolStripMenuItem")
+        Me.rangoPermiso = NEmp.RevisarRangoPermisos(Me.cadenaConexExp, Me.idEmp, "PreNominaListadoToolStripMenuItem")
         Lbl_año.Text = Format(DateTime.Now, "yyyy")
         RellenaCmbSemanas()
         ModificarDiaInicio()
@@ -89,12 +93,18 @@ Public Class Frm_ListaPrenomina
         If Dtp_FechaInicioSemana.Value < DateTime.Now Or Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyy") = Format(DateTime.Now, "dd/MM/yyy") Then
 
             Dim conex As New conexion
-            Dim cadenaConexContpaq = conex.conexionContpaq 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
+            Dim cadenaConexContpaq As New SqlConnection() 'As String 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
             Dim fechaI As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             Dim NPrenomina As New NPrenomina()
             Dim hrs As New Horarios()
             Dim sem As Integer
             Dim type As String
+
+            If Me.ip = "172.16" Then
+                cadenaConexContpaq = conex.conexionContpaq
+            Else
+                cadenaConexContpaq = conex.conexionContpaqFor
+            End If
 
             Dgv_ListaPrenomina.DataSource = Nothing
             Dgv_ListaPrenomina.Rows.Clear()
@@ -233,7 +243,13 @@ Public Class Frm_ListaPrenomina
             Dim fechaI As Date
             Dim fechaF As Date
             Dim conex As New conexion
-            Dim cadConex = conex.conexion2008
+            Dim cadConex As String
+
+            If Me.ip = "172.16" Then
+                cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+            Else
+                cadConex = conex.conexion2008For
+            End If
             fechaI = (Lbl_Dia1.Text + "/" + Lbl_año.Text)
             fechaF = DateAdd(DateInterval.Day, 6, fechaI)
             NPren.InsertarModificacionesIncidencias(Me.cadenaConex, lstEmp, Cmb_Semanas.Text)
@@ -278,7 +294,13 @@ Public Class Frm_ListaPrenomina
                 If apBono.ShowDialog() = DialogResult.OK Then
                     Dim NPre As New NPrenomina()
                     Dim conex As New conexion()
-                    Dim cadConex2008 As String = conex.conexion2008
+                    Dim cadConex2008 As String
+
+                    If Me.ip = "172.16" Then
+                        cadConex2008 = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+                    Else
+                        cadConex2008 = conex.conexion2008For
+                    End If
                     idMotivo = apBono.idMotivo
                     Dgv_ListaPrenomina.Rows(fila).Cells(c).Value = idMotivo
                     CalcularBonoIndividual(fila)
@@ -645,7 +667,12 @@ Public Class Frm_ListaPrenomina
     Private Function RecuperarEmpleados(ByVal fecha As Date, ByVal semana As Integer, ByVal año As Integer) As LEmpleado
         Dim NPre As New NPrenomina
         Dim conex As New conexion
-        Dim cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Dim cadConex As String
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
 
         Return NPre.EmpleadosRecuperar(cadConex, fecha, semana, año)
     End Function
@@ -656,7 +683,13 @@ Public Class Frm_ListaPrenomina
         Dim fechaI As Date
         Dim fechaF As Date
         Dim conex As New conexion
-        Dim cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Dim cadConex As String
+
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
 
         fechaI = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
         fechaF = Format(DateAdd(DateInterval.Day, 6, fechaI), "dd/MM/yyyy")
@@ -1753,7 +1786,13 @@ Public Class Frm_ListaPrenomina
         Dim emp As New Empleado()
         Dim fi As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
         Dim conex As New conexion
-        Dim cadConex = conex.conexion2008
+        Dim cadConex As String
+
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
 
         lstEmp = NEmp.DptosRecuperar(cadConex, fi)
         emp.Departamento = ""
@@ -2216,7 +2255,14 @@ Public Class Frm_ListaPrenomina
             Dim lstEmp As New LEmpleado()
             Dim NEmp As New NEmpleado()
             Dim conex As New conexion()
-            Dim cadenaConex As String = conex.conexion2008
+            Dim cadenaConex
+            Dim cadConex As String
+
+            If Me.ip = "172.16" Then
+                cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+            Else
+                cadConex = conex.conexion2008For
+            End If
             appXL = CreateObject("Excel.Application")
             appXL.Visible = False 'Para que no se muestre mientras se crea
             wbXl = appXL.Workbooks.Add
@@ -2466,7 +2512,12 @@ Public Class Frm_ListaPrenomina
         Dim cadConex As String
         Dim conex As New conexion()
 
-        cadConex = conex.conexion2008
+
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
         lstBono = RellenaObjetoBono()
         NPre.InsertarBonoPuntualidad(cadConex, lstBono)
     End Sub
@@ -2475,7 +2526,13 @@ Public Class Frm_ListaPrenomina
         Dim dia As Integer, mes As Integer, año As Integer, valor As Integer
         Dim NPren As New NPrenomina()
         Dim conex As New conexion()
-        Dim cadConex As String = conex.conexion2008
+        Dim cadConex As String
+
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
         Select Case vuelta
             Case 1
                 fecha = Lbl_Dia1.Text
