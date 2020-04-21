@@ -41,6 +41,7 @@ Public Class Frm_Principal
         If Me.emp.TipoUsuario = 0 Then
             Dim lstPer As New LPermisos(), NEmp As New NEmpleado()
             BloquearPestañas()
+
             lstPer = NEmp.RecuperarPermisosUsuario(Me.cadenaConesExp, Me.emp)
             DesbloquearPestañas(lstPer)
             ''ElseIf Me.emp.TipoUsuario = 1 Then
