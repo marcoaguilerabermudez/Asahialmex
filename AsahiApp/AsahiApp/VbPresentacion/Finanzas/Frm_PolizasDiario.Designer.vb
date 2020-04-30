@@ -59,6 +59,25 @@ Partial Class Frm_PolizasDiario
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Dgv_Compras = New System.Windows.Forms.DataGridView()
+        Me.provision = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.compra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serie = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoOc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoPagar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaPagoFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaPagoReal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.moneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.uuid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tazaCambio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.seleccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Dtp_Inicio = New System.Windows.Forms.DateTimePicker()
@@ -82,25 +101,9 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Txt = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.provision = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.compra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.oc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serie = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.montoOc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.montoCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.montoFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.montoPagar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaPagoFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaPagoReal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.moneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.uuid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tazaCambio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.seleccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.Dgv_Prepolizas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -389,6 +392,139 @@ Partial Class Frm_PolizasDiario
         Me.Dgv_Compras.Size = New System.Drawing.Size(1240, 280)
         Me.Dgv_Compras.TabIndex = 5
         '
+        'provision
+        '
+        Me.provision.HeaderText = "Provisión"
+        Me.provision.Name = "provision"
+        Me.provision.ReadOnly = True
+        Me.provision.Width = 60
+        '
+        'compra
+        '
+        Me.compra.HeaderText = "Compra"
+        Me.compra.Name = "compra"
+        Me.compra.ReadOnly = True
+        Me.compra.Width = 50
+        '
+        'oc
+        '
+        Me.oc.HeaderText = "OC"
+        Me.oc.Name = "oc"
+        Me.oc.ReadOnly = True
+        Me.oc.Width = 40
+        '
+        'serie
+        '
+        Me.serie.HeaderText = "Serie"
+        Me.serie.Name = "serie"
+        Me.serie.ReadOnly = True
+        Me.serie.Width = 40
+        '
+        'factura
+        '
+        Me.factura.HeaderText = "Factutra"
+        Me.factura.Name = "factura"
+        Me.factura.ReadOnly = True
+        Me.factura.Width = 50
+        '
+        'proveedor
+        '
+        Me.proveedor.HeaderText = "Proveedor"
+        Me.proveedor.Name = "proveedor"
+        Me.proveedor.ReadOnly = True
+        Me.proveedor.Width = 170
+        '
+        'montoOc
+        '
+        Me.montoOc.HeaderText = "Monto OC"
+        Me.montoOc.Name = "montoOc"
+        Me.montoOc.ReadOnly = True
+        Me.montoOc.Width = 80
+        '
+        'montoCompra
+        '
+        Me.montoCompra.HeaderText = "Monto Compra"
+        Me.montoCompra.Name = "montoCompra"
+        Me.montoCompra.ReadOnly = True
+        Me.montoCompra.Width = 80
+        '
+        'montoFact
+        '
+        Me.montoFact.HeaderText = "Monto Factura"
+        Me.montoFact.Name = "montoFact"
+        Me.montoFact.ReadOnly = True
+        Me.montoFact.Width = 80
+        '
+        'montoPagar
+        '
+        Me.montoPagar.HeaderText = "Monto a Pagar"
+        Me.montoPagar.Name = "montoPagar"
+        Me.montoPagar.ReadOnly = True
+        Me.montoPagar.Width = 80
+        '
+        'fechaFactura
+        '
+        Me.fechaFactura.HeaderText = "Fecha Factura"
+        Me.fechaFactura.Name = "fechaFactura"
+        Me.fechaFactura.ReadOnly = True
+        Me.fechaFactura.Width = 70
+        '
+        'fechaPagoFactura
+        '
+        Me.fechaPagoFactura.HeaderText = "Fecha Pago Factura"
+        Me.fechaPagoFactura.Name = "fechaPagoFactura"
+        Me.fechaPagoFactura.ReadOnly = True
+        Me.fechaPagoFactura.Width = 70
+        '
+        'fechaPagoReal
+        '
+        Me.fechaPagoReal.HeaderText = "Fecha Pago Real"
+        Me.fechaPagoReal.Name = "fechaPagoReal"
+        Me.fechaPagoReal.ReadOnly = True
+        Me.fechaPagoReal.Width = 70
+        '
+        'moneda
+        '
+        Me.moneda.HeaderText = "Moneda"
+        Me.moneda.Name = "moneda"
+        Me.moneda.ReadOnly = True
+        Me.moneda.Width = 55
+        '
+        'empresa
+        '
+        Me.empresa.HeaderText = "Empresa"
+        Me.empresa.Name = "empresa"
+        Me.empresa.ReadOnly = True
+        Me.empresa.Width = 55
+        '
+        'fechaCompra
+        '
+        Me.fechaCompra.HeaderText = "Fecha Compra"
+        Me.fechaCompra.Name = "fechaCompra"
+        Me.fechaCompra.ReadOnly = True
+        Me.fechaCompra.Width = 70
+        '
+        'uuid
+        '
+        Me.uuid.HeaderText = "Id Factura"
+        Me.uuid.Name = "uuid"
+        Me.uuid.ReadOnly = True
+        Me.uuid.Width = 215
+        '
+        'tazaCambio
+        '
+        Me.tazaCambio.HeaderText = "TC"
+        Me.tazaCambio.Name = "tazaCambio"
+        Me.tazaCambio.ReadOnly = True
+        Me.tazaCambio.Width = 60
+        '
+        'seleccion
+        '
+        Me.seleccion.HeaderText = "seleccion"
+        Me.seleccion.Name = "seleccion"
+        Me.seleccion.ReadOnly = True
+        Me.seleccion.Visible = False
+        '
         'Panel11
         '
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
@@ -424,6 +560,9 @@ Partial Class Frm_PolizasDiario
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Btn_Limpiar)
         Me.Panel1.Controls.Add(Me.Btn_Actualizar)
         Me.Panel1.Controls.Add(Me.Panel12)
@@ -446,7 +585,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.Btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Limpiar.Image = Global.Presentacion.My.Resources.Resources.pagina_blanca_de_origami
-        Me.Btn_Limpiar.Location = New System.Drawing.Point(474, 4)
+        Me.Btn_Limpiar.Location = New System.Drawing.Point(509, -1)
         Me.Btn_Limpiar.Name = "Btn_Limpiar"
         Me.Btn_Limpiar.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Limpiar.TabIndex = 19
@@ -460,7 +599,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.Btn_Actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Actualizar.Image = Global.Presentacion.My.Resources.Resources.actualizar
-        Me.Btn_Actualizar.Location = New System.Drawing.Point(429, 4)
+        Me.Btn_Actualizar.Location = New System.Drawing.Point(464, -1)
         Me.Btn_Actualizar.Name = "Btn_Actualizar"
         Me.Btn_Actualizar.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Actualizar.TabIndex = 18
@@ -618,7 +757,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Txt.Image = Global.Presentacion.My.Resources.Resources.txt
         Me.Btn_Txt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Txt.Location = New System.Drawing.Point(384, 3)
+        Me.Btn_Txt.Location = New System.Drawing.Point(384, -2)
         Me.Btn_Txt.Name = "Btn_Txt"
         Me.Btn_Txt.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Txt.TabIndex = 4
@@ -646,138 +785,39 @@ Partial Class Frm_PolizasDiario
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Fecha Inicial"
         '
-        'provision
+        'Button1
         '
-        Me.provision.HeaderText = "Provisión"
-        Me.provision.Name = "provision"
-        Me.provision.ReadOnly = True
-        Me.provision.Width = 60
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Image = Global.Presentacion.My.Resources.Resources.txt
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(425, -3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(39, 40)
+        Me.Button1.TabIndex = 20
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'compra
+        'Label8
         '
-        Me.compra.HeaderText = "Compra"
-        Me.compra.Name = "compra"
-        Me.compra.ReadOnly = True
-        Me.compra.Width = 50
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(388, 36)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(39, 13)
+        Me.Label8.TabIndex = 21
+        Me.Label8.Text = "Label8"
         '
-        'oc
+        'Label9
         '
-        Me.oc.HeaderText = "OC"
-        Me.oc.Name = "oc"
-        Me.oc.ReadOnly = True
-        Me.oc.Width = 40
-        '
-        'serie
-        '
-        Me.serie.HeaderText = "Serie"
-        Me.serie.Name = "serie"
-        Me.serie.ReadOnly = True
-        Me.serie.Width = 40
-        '
-        'factura
-        '
-        Me.factura.HeaderText = "Factutra"
-        Me.factura.Name = "factura"
-        Me.factura.ReadOnly = True
-        Me.factura.Width = 50
-        '
-        'proveedor
-        '
-        Me.proveedor.HeaderText = "Proveedor"
-        Me.proveedor.Name = "proveedor"
-        Me.proveedor.ReadOnly = True
-        Me.proveedor.Width = 170
-        '
-        'montoOc
-        '
-        Me.montoOc.HeaderText = "Monto OC"
-        Me.montoOc.Name = "montoOc"
-        Me.montoOc.ReadOnly = True
-        Me.montoOc.Width = 80
-        '
-        'montoCompra
-        '
-        Me.montoCompra.HeaderText = "Monto Compra"
-        Me.montoCompra.Name = "montoCompra"
-        Me.montoCompra.ReadOnly = True
-        Me.montoCompra.Width = 80
-        '
-        'montoFact
-        '
-        Me.montoFact.HeaderText = "Monto Factura"
-        Me.montoFact.Name = "montoFact"
-        Me.montoFact.ReadOnly = True
-        Me.montoFact.Width = 80
-        '
-        'montoPagar
-        '
-        Me.montoPagar.HeaderText = "Monto a Pagar"
-        Me.montoPagar.Name = "montoPagar"
-        Me.montoPagar.ReadOnly = True
-        Me.montoPagar.Width = 80
-        '
-        'fechaFactura
-        '
-        Me.fechaFactura.HeaderText = "Fecha Factura"
-        Me.fechaFactura.Name = "fechaFactura"
-        Me.fechaFactura.ReadOnly = True
-        Me.fechaFactura.Width = 70
-        '
-        'fechaPagoFactura
-        '
-        Me.fechaPagoFactura.HeaderText = "Fecha Pago Factura"
-        Me.fechaPagoFactura.Name = "fechaPagoFactura"
-        Me.fechaPagoFactura.ReadOnly = True
-        Me.fechaPagoFactura.Width = 70
-        '
-        'fechaPagoReal
-        '
-        Me.fechaPagoReal.HeaderText = "Fecha Pago Real"
-        Me.fechaPagoReal.Name = "fechaPagoReal"
-        Me.fechaPagoReal.ReadOnly = True
-        Me.fechaPagoReal.Width = 70
-        '
-        'moneda
-        '
-        Me.moneda.HeaderText = "Moneda"
-        Me.moneda.Name = "moneda"
-        Me.moneda.ReadOnly = True
-        Me.moneda.Width = 55
-        '
-        'empresa
-        '
-        Me.empresa.HeaderText = "Empresa"
-        Me.empresa.Name = "empresa"
-        Me.empresa.ReadOnly = True
-        Me.empresa.Width = 55
-        '
-        'fechaCompra
-        '
-        Me.fechaCompra.HeaderText = "Fecha Compra"
-        Me.fechaCompra.Name = "fechaCompra"
-        Me.fechaCompra.ReadOnly = True
-        Me.fechaCompra.Width = 70
-        '
-        'uuid
-        '
-        Me.uuid.HeaderText = "Id Factura"
-        Me.uuid.Name = "uuid"
-        Me.uuid.ReadOnly = True
-        Me.uuid.Width = 215
-        '
-        'tazaCambio
-        '
-        Me.tazaCambio.HeaderText = "TC"
-        Me.tazaCambio.Name = "tazaCambio"
-        Me.tazaCambio.ReadOnly = True
-        Me.tazaCambio.Width = 60
-        '
-        'seleccion
-        '
-        Me.seleccion.HeaderText = "seleccion"
-        Me.seleccion.Name = "seleccion"
-        Me.seleccion.ReadOnly = True
-        Me.seleccion.Visible = False
+        Me.Label9.AutoSize = True
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(431, 36)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(39, 13)
+        Me.Label9.TabIndex = 22
+        Me.Label9.Text = "Label9"
         '
         'Frm_PolizasDiario
         '
@@ -882,4 +922,7 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents uuid As DataGridViewTextBoxColumn
     Friend WithEvents tazaCambio As DataGridViewTextBoxColumn
     Friend WithEvents seleccion As DataGridViewTextBoxColumn
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Button1 As Button
 End Class

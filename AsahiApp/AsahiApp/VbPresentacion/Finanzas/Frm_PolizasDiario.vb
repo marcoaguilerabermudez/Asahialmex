@@ -6,20 +6,30 @@ Imports Microsoft.Reporting.WinForms
 
 Public Class Frm_PolizasDiario
 #Region "Varianbles de clase"
+    Dim conex As New conexion()
     Dim cadenaConex As String
     Dim cadConex As String
+    Dim cadConexCont As String
     Dim userName As String
     Dim ruta As String
     Dim archivo As String
     Dim fechaPago As Date
     Dim tCamb As Double
     Dim pasoPol As String
+    Dim ip As String = Strings.Left(Me.conex.getIp(), 6)
 #End Region
 #Region "Acciones del formulario"
     Private Sub Frm_PolizasDiario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim conex As New conexion()
-        Me.cadenaConex = conex.cadenaConexExpress
-        Me.cadConex = conex.conexion2008
+        'Dim conex As New conexion()
+        If Me.ip = "172.16" Then
+            Me.cadenaConex = Me.conex.cadenaConexExpress
+            Me.cadConex = Me.conex.conexion2008
+            Me.cadConexCont = Me.conex.conexionCont
+        Else
+            Me.cadenaConex = Me.conex.cadenaConexExpressFor
+            Me.cadConex = Me.conex.conexion2008For
+            Me.cadConexCont = Me.conex.conexionContFor
+        End If
         Dtp_Inicio.Value = DateAdd(DateInterval.Day, -7, Date.Now())
         Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
         Dgv_Prepolizas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
@@ -34,6 +44,7 @@ Public Class Frm_PolizasDiario
         fila = Dgv_Compras.CurrentRow.Index
         If Dgv_Compras.Rows(fila).DefaultCellStyle.BackColor <> Color.DarkRed Then
             If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 0 Then
+
                 Me.pasoPol = ""
                 uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
                 moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
@@ -248,6 +259,10 @@ Public Class Frm_PolizasDiario
     Private Sub RecuperarPolizas(ByVal moneda As String, ByVal uuid As String, ByVal tc As Double, ByVal oc As Integer)
         Dim NComp As New NCompras()
         Dim lstComp As New LCompras()
+        Dim cuenta As Integer
+
+        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, uuid)
+        cuenta = lstComp.Count
         lstComp = NComp.VistaPoliza(Me.cadenaConex, moneda, uuid, tc)
         RellenarDgvVistaPolizas(lstComp, oc)
     End Sub
@@ -291,7 +306,7 @@ Public Class Frm_PolizasDiario
     End Sub
     Private Sub RellenarDgvVistaPolizas(ByVal lstComp As LCompras, ByVal oc As Integer)
         Dim fila As Integer = Dgv_Prepolizas.Rows.Count(), pfila As Integer = fila
-        Dim sum As Double, sumCargo As Double, t As Double
+        Dim sum As Double, sumCargo As Double, sumRet As Double, t As Double
         Dim frm As New Frm_ConceptoPoliza("" & oc & "", lstComp)
 
         If frm.ShowDialog() = DialogResult.OK Then
@@ -300,7 +315,9 @@ Public Class Frm_PolizasDiario
                 'Dgv_Prepolizas.Columns("acum").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 If item.Pivote = 1 Or item.Pivote = 2 Then
                     sum = sum + item.Total
-                ElseIf item.Pivote = 3 Or item.Pivote = 4 Then
+                ElseIf item.Pivote = 3 Then
+                    sumRet = sumRet + item.Total
+                ElseIf item.Pivote = 4 Or item.Pivote = 5 Then
                     sumCargo = sumCargo + item.Total
                 End If
                 With Dgv_Prepolizas.Rows(fila)
@@ -337,10 +354,10 @@ Public Class Frm_PolizasDiario
             Me.pasoPol = "Ok"
             t = sum - sumCargo
             If Dgv_Prepolizas.Rows(pfila).Cells("total").Value > 0 Then
-                Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format(Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t, "$ #,###,##0.00")
+                Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format((Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t) + sumRet, "$ #,###,##0.00")
             Else
                 pfila += 1
-                Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format(Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t, "$ #,###,##0.00")
+                Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format((Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t) + sumRet, "$ #,###,##0.00")
             End If
         End If
     End Sub
@@ -422,7 +439,8 @@ Public Class Frm_PolizasDiario
                             folio = "F/" & .Cells("idFactura").Value & " TC " & tc
                         End If
                     End If
-                    If .Cells("familia").Value = "Cargo" Or .Cells("familia").Value = "ProveedorUSD" Or .Cells("familia").Value = "ComplementariaUSD" Then
+                    If .Cells("familia").Value = "Cargo" Or .Cells("familia").Value = "ProveedorUSD" Or .Cells("familia").Value = "ComplementariaUSD" Or .Cells("familia").Value = "Retencion de IVA" Or
+                        .Cells("familia").Value = "Traslado" Then
                         cargo = 1
                     End If
                     sn = idSegNeg(.Cells("area").Value)
@@ -441,7 +459,7 @@ Public Class Frm_PolizasDiario
                     tx.Write("AM ")
                     tx.Write(String.Format("{0,-30}", .Cells("uuidFactura").Value) & " ")
                     tx.WriteLine()
-                    If (.Cells("monedaVP").Value = "MXN" And .Cells("pivot").Value = "3") Or (.Cells("monedaVP").Value = "USD" And .Cells("pivot").Value = "4") Then
+                    If (.Cells("monedaVP").Value = "MXN" And .Cells("pivot").Value = "4") Or (.Cells("monedaVP").Value = "USD" And .Cells("pivot").Value = "5") Then
                         tx.Write("AD ")
                         tx.Write(String.Format("{0,-30}", .Cells("uuidFactura").Value) & " ")
                         tx.WriteLine()

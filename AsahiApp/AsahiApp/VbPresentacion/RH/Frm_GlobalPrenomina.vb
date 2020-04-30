@@ -7,6 +7,7 @@ Imports Microsoft.Reporting.WinForms
 Public Class Frm_GlobalPrenomina
 #Region "Variables de clase"
     Dim cadConex As SqlConnection
+    Dim conex As New conexion
     Dim cadenaConex As String
     Dim open As Boolean
     Dim userName As String
@@ -14,6 +15,7 @@ Public Class Frm_GlobalPrenomina
     Dim archivo As String
     Dim fuente As New ReportDataSource
     Dim emp As New Empleado
+    Dim ip As String = Strings.Left(Me.conex.getIp(), 6)
 #End Region
 #Region "Constructores"
     Sub New()
@@ -56,12 +58,20 @@ Public Class Frm_GlobalPrenomina
         If Dtp_FechaInicioSemana.Value < DateTime.Now Or Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyy") = Format(DateTime.Now, "dd/MM/yyy") Then
 
             Dim conex As New conexion
-            Dim cadenaConexContpaq = conex.conexionContpaq 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
-            Dim cadenaConex As String = conex.conexionCont
+            Dim cadenaConexContpaq  'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
+            Dim cadenaConex As String
             Dim fechaI As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             Dim NPre As New NPrenomina(), lst As New LIncidencias(), hrs As New Horarios()
             Dim sem As Integer
             Dim type As String
+
+            If Me.ip = "172.16" Then
+                cadenaConexContpaq = conex.conexionContpaq 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
+                cadenaConex = conex.conexionCont
+            Else
+                cadenaConexContpaq = conex.conexionContpaqFor 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
+                cadenaConex = conex.conexionContFor
+            End If
 
             Lbl_año.Text = Format(fechaI, "yyyy")
             'nWeek = CInt(DatePart(DateInterval.WeekOfYear, fechaI, FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFullWeek)) + 1 'En base a la fecha seleccionada se pone el numero de semana
@@ -115,8 +125,14 @@ Public Class Frm_GlobalPrenomina
             End If
         Else
             Dim conex As New conexion
-            Dim cadenaConex As String = conex.conexionCont 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
+            Dim cadenaConex As String  'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
             Dim NPre As New NPrenomina(), lst As New LIncidencias()
+
+            If Me.ip = "172.16" Then
+                cadenaConex = conex.conexionCont
+            Else
+                cadenaConex = conex.conexionContFor
+            End If
 
             Dgv_Prenomina_Global.Enabled = False
             MsgBox("Tienes que ingresar una fecha menor a la actual")
@@ -231,7 +247,14 @@ Public Class Frm_GlobalPrenomina
     Private Function RecuperarEmpleados(ByVal fecha As Date) As LEmpleado
         Dim NPre As New NPrenomina()
         Dim conex As New conexion
-        Dim cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Dim cadConex As String 'Conexion a la BD de asahi16 de la instancia sql2008
+
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
+
         Dim semana As Integer = Cmb_Semanas.Text, año As Integer = Lbl_año.Text
 
         Return NPre.EmpleadoGlobalRecuperar(cadConex, fecha, semana, año)
@@ -243,7 +266,13 @@ Public Class Frm_GlobalPrenomina
         Dim fechaI As Date
         Dim fechaF As Date
         Dim conex As New conexion
-        Dim cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Dim cadConex As String
+
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
 
 
         fechaI = Lbl_SemaI.Text '(Lbl_Dia1.Text & "/" & Lbl_año.Text)
@@ -259,7 +288,6 @@ Public Class Frm_GlobalPrenomina
         If dgv Then
             RellenaIncidenciasDgvPrenomina(lstAus, lstVac, lstInc, lstHE, lstBja, lstCom)
         Else
-
             RellenaIncidenciasDgvLista(lstTxt)
         End If
     End Sub
@@ -945,7 +973,6 @@ Public Class Frm_GlobalPrenomina
         Next
     End Sub
     Private Sub RellenarHrsExtraDTRetLista(ByVal lstTxt As LTxtNominas)
-        Dim con As New conexion()
         Dim fila As Integer = 0, dur As Integer
         Dim fechaI As Date, fechaF As Date, fecI As Date, fecF As Date
         Dim idEmp As Integer, idExt As Integer
@@ -1052,11 +1079,18 @@ Public Class Frm_GlobalPrenomina
     End Function
     Private Function RellenaObjetoIncidencias() As LIncidencias
         Dim lstInc As New LIncidencias(), NPre As New NPrenomina(), conex As New conexion()
-        Dim cadenaConex As String = conex.conexionCont
+        Dim cadenaConex As String
         Dim fila As Integer, e As Integer, id As Integer, idX As Integer = 0, sema As Integer = Cmb_Semanas.Text
         Dim inc As String, val As String
         Dim VV As Double
         Dim totalFilas As Integer = Dgv_Lista.Rows.Count
+
+        If Me.ip = "172.16" Then
+            cadenaConex = conex.conexionCont
+        Else
+            cadenaConex = conex.conexionContFor
+        End If
+
         Try
             For e = 1 To 7000
                 Dim V = 0, V2 = 0, H = 0, HE = 0, HE2 = 0, HE3 = 0
@@ -1950,7 +1984,14 @@ Public Class Frm_GlobalPrenomina
     End Sub
     Private Sub ProcesoInsertaIncidenciasNomina()
         Dim lstInci As New LIncidencias(), NPren As New NPrenomina(), conex As New conexion()
-        Dim cadenaConex As String = conex.conexionCont
+        Dim cadenaConex As String
+
+        If Me.ip = "172.16" Then
+            cadenaConex = conex.conexionCont
+        Else
+            cadenaConex = conex.conexionContFor
+        End If
+
         RecuperarIncidencias(0)
         lstInci = RellenaObjetoIncidencias()
         NPren.InsertarIncidenciasNomina(cadenaConex, lstInci)

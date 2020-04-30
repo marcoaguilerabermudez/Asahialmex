@@ -6,6 +6,7 @@ Imports Clases
 Public Class Frm_BonoMensual
 #Region "Variables de clase"
     Dim cadConex As SqlConnection
+    Dim conex As New conexion
     Dim cadenaConex As String
     Dim open As Boolean
     Dim ud As Integer
@@ -14,6 +15,7 @@ Public Class Frm_BonoMensual
     Dim mes As Integer
     Dim rec As Boolean = False
     Dim fuente As New ReportDataSource
+    Dim ip As String = Strings.Left(Me.conex.getIp(), 6)
 #End Region
 #Region "Acciones del formulario"
     Private Sub Frm_BonoMensual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -26,11 +28,17 @@ Public Class Frm_BonoMensual
         If Dtp_FechaInicioSemana.Value < DateTime.Now Or Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyy") = Format(DateTime.Now, "dd/MM/yyy") Then
 
             Dim conex As New conexion
-            Dim cadenaConexContpaq = conex.conexionContpaq 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
+            Dim cadenaConexContpaq As New SqlConnection 'As String 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
             Dim fechaI As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             Dim NPrenomina As New NPrenomina()
             Dim hrs As New Horarios()
             Dim fecha As Date
+
+            If Me.ip = "172.16" Then
+                cadenaConexContpaq = Me.conex.conexionContpaq
+            Else
+                cadenaConexContpaq = Me.conex.conexionContpaqFor
+            End If
 
             Btn_Acumulado.Visible = False
             Dgv_BonoMensual.DataSource = Nothing
