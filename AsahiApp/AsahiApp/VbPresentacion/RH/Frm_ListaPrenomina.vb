@@ -732,6 +732,8 @@ Public Class Frm_ListaPrenomina
             Dgv_ListaPrenomina.Rows(fila).Cells("comentarios").Style.BackColor = Color.White
             Dgv_ListaPrenomina.Rows(fila).Cells("comentariosExt").Style.BackColor = Color.White
             Dgv_ListaPrenomina.Rows(fila).Cells("aplicaBono").Style.BackColor = Color.White
+            item.HoraEntrada = Horarios(item.IdTurno, "Entrada")
+            item.HoraSalida = Horarios(item.IdTurno, "Salida")
 
             If item.HoraEntradaReal1 <> "1/1/1900 12:00:00 AM" Then
                 Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value = Format(item.HoraEntradaReal1, "HH:mm")
@@ -2600,6 +2602,31 @@ Public Class Frm_ListaPrenomina
             Case "INCAPACIDAD" : Return "INC"
             Case "BAJA" : Return "BAJA"
             Case Else : Return ""
+        End Select
+    End Function
+    Private Function Horarios(ByVal turno As Integer, ByVal evento As String) As Date
+        Select Case evento
+            Case "Entrada"
+                Select Case turno
+                    Case 1 : Return "06:55:00"
+                    Case 2 : Return "15:25:00"
+                    Case 3 : Return "23:25:00"
+                    Case 4 : Return "08:00:00"
+                    Case 5 : Return "07:44:00"
+                    Case 6 : Return "20:20:00"
+                    Case Else : Return "00:00:00"
+                End Select
+            Case "Salida"
+                Select Case turno
+                    Case 1 : Return "15:25:00"
+                    Case 2 : Return "23:25:00"
+                    Case 3 : Return "07:00:00"
+                    Case 4 : Return "17:00:00"
+                    Case 5 : Return "18:21:00"
+                    Case 6 : Return "06:21:00"
+                    Case Else : Return "00:00:00"
+                End Select
+            Case Else : Return "00:00:00"
         End Select
     End Function
 #End Region
