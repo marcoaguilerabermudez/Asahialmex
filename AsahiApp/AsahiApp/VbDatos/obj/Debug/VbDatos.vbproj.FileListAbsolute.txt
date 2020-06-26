@@ -57,3 +57,4 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.xml
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\Datos.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbDatos\obj\Debug\VbDatos.vbproj.CoreCompileInputs.cache

@@ -30,3 +30,4 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\ob
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CoreCompileInputs.cache

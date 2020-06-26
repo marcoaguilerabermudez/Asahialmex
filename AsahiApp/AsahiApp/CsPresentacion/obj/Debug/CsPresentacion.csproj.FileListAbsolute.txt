@@ -529,3 +529,4 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentaci
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Aussentismos_Retardos.resources
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Bajas_Contabilidad.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Bajas_Contabilidad.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csproj.CoreCompileInputs.cache
