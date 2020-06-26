@@ -60,3 +60,4 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\ob
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.xml
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbproj.CoreCompileInputs.cache

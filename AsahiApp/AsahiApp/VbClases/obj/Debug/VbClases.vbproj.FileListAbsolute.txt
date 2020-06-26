@@ -48,3 +48,4 @@ C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.dll
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.xml
 C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CoreCompileInputs.cache
