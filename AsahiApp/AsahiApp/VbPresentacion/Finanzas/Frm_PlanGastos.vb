@@ -45,7 +45,7 @@ Public Class Frm_PlanGastos
         Me.mes = DateTime.Now.ToString("MM")
         Me.año = DateTime.Now.ToString("yyyy")
         Dim mesLetra As String = UCase(MonthName(Me.mes))
-        If Me.empleado.IdDepartamento = 1 Or Me.empleado.TipoUsuario <> 1 Then Cmb_Depto.Enabled = False
+        If (Me.empleado.IdDepartamento <> 1 And Me.empleado.TipoUsuario <> 1) Then Cmb_Depto.Enabled = False
         Cmb_Depto.SelectedValue = Me.empleado.IdDepartamento
         Cmb_Meses.SelectedItem = mesLetra
         Cmb_Años.Text = Me.año
