@@ -71,10 +71,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>566D87F01A2253FF46C9B1AC915A948443155C78</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>8E5D0D66CB3A8EFAB025036D0150723E6A706469</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -573,6 +573,7 @@
     <None Include="Reportes\dtsEjemplo.xss">
       <DependentUpon>dtsEjemplo.xsd</DependentUpon>
     </None>
+    <None Include="VbPresentacion_1_TemporaryKey.pfx" />
     <None Include="VbPresentacion_TemporaryKey.pfx" />
     <None Include="Views\Report\ReportViewer.cshtml" />
   </ItemGroup>

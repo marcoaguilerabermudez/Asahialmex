@@ -84,10 +84,9 @@
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource Reporte_Mejoras_ContinuasBindingSource;
         private DS_Mejoras3 DS_Mejoras3;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private DS_Mejoras3TableAdapters.Reporte_Mejoras_ContinuasTableAdapter Reporte_Mejoras_ContinuasTableAdapter;
     }
 }

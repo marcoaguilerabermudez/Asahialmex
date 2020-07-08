@@ -53,9 +53,10 @@ namespace CsPresentacion
             txt_clave.Text = "";
             cmb_departamento.Text = "";
             cmb_mes.Text = "";
-            btn_aceptar.Enabled = false;
-            lbl_var.Text = "0";
             cmb_departamento.Enabled = true;
+            txt_año.Text = "";
+            lbl_var.Text = "0";
+            txt_clave.Focus();
         }
 
         private void Frm_Mejora_Param_Load(object sender, EventArgs e)
@@ -64,21 +65,16 @@ namespace CsPresentacion
             lbl_var.Text = "0";
             lbl_var.Visible = false;
             cargar_departemento(cmb_departamento);
-            Nuevo();
-            
+            Nuevo();   
         }
 
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
+            if (Char.IsNumber(e.KeyChar))
             {
                 e.Handled = false;
             }
             else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -90,27 +86,99 @@ namespace CsPresentacion
 
         private void Btn_aceptar_Click(object sender, EventArgs e)
         {
-
-            if (lbl_var.Text == ("1"))
+            if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(txt_año.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
             {
-                Frm_Rep_Mejoras3 Mejora = new Frm_Rep_Mejoras3();
-                Mejora.VAR = Convert.ToInt32(lbl_var.Text);
-                Mejora.CLAVE = Convert.ToInt32(txt_clave.Text);
-                Mejora.MES = cmb_mes.Text;
-                Mejora.ShowDialog();
-                Nuevo();
+                MessageBox.Show("Faltan datos para realizar su busqueda, favor de verificar.");
+                txt_clave.Focus();
             }
-            else if (lbl_var.Text == ("2"))
+            else
             {
-                Frm_Rep_Mejoras3 Mejora = new Frm_Rep_Mejoras3();
-                Mejora.VAR = Convert.ToInt32(lbl_var.Text);
-                Mejora.MES = cmb_mes.Text;
-                Mejora.DEPARTAMENTO = cmb_departamento.Text;
-                Mejora.ShowDialog();
-                Nuevo();
-            }           
-        }
+                if (lbl_var.Text == "0")
+                {
+                    MessageBox.Show("Faltan datos para realizar su busqueda, favor de verificar.");
+                    txt_clave.Focus();
+                }
 
+                else if (lbl_var.Text == ("1"))
+                {
+                    Frm_Rep_Mejoras3 Mejora = new Frm_Rep_Mejoras3();
+                    Mejora.VAR = Convert.ToInt32(lbl_var.Text);
+                    Mejora.CLAVE = Convert.ToInt32(txt_clave.Text);
+                    Mejora.MES = cmb_mes.Text;
+                    Mejora.AÑO = Convert.ToInt32(txt_año.Text); 
+                    Mejora.ShowDialog();
+                    Nuevo();
+                }
+                else if (lbl_var.Text == ("2"))
+                {
+                    Frm_Rep_Mejoras3 Mejora = new Frm_Rep_Mejoras3();
+                    Mejora.VAR = Convert.ToInt32(lbl_var.Text);
+                    Mejora.AÑO = Convert.ToInt32(txt_año.Text);
+                    Mejora.MES = cmb_mes.Text;
+                    Mejora.DEPARTAMENTO = cmb_departamento.Text;
+                    Mejora.ShowDialog();
+                    Nuevo();
+                }
+                else if (lbl_var.Text == ("3"))
+                {
+                    Frm_Rep_Mejoras3 Mejora = new Frm_Rep_Mejoras3();
+                    Mejora.VAR = Convert.ToInt32(lbl_var.Text);
+                    Mejora.AÑO = Convert.ToInt32(txt_año.Text);
+                    Mejora.DEPARTAMENTO = cmb_departamento.Text;
+                    Mejora.ShowDialog();
+                    Nuevo();
+                }
+                else if (lbl_var.Text == ("4"))
+                {
+                    Frm_Rep_Mejoras3 Mejora = new Frm_Rep_Mejoras3();
+                    Mejora.VAR = Convert.ToInt32(lbl_var.Text);
+                    Mejora.CLAVE = Convert.ToInt32(txt_clave.Text);
+                    Mejora.AÑO = Convert.ToInt32(txt_año.Text);
+                    Mejora.ShowDialog();
+                    Nuevo();
+                }
+                else if (lbl_var.Text == ("5"))
+                {
+                    Frm_Rep_Mejoras3 Mejora = new Frm_Rep_Mejoras3();
+                    Mejora.VAR = Convert.ToInt32(lbl_var.Text);
+                    Mejora.AÑO = Convert.ToInt32(txt_año.Text);
+                    Mejora.MES = cmb_mes.Text;
+                    Mejora.ShowDialog();
+                    Nuevo();
+                }
+                else if (lbl_var.Text == ("6"))
+                {
+                    Frm_Rep_Mejoras3 Mejora = new Frm_Rep_Mejoras3();
+                    Mejora.VAR = Convert.ToInt32(lbl_var.Text);
+                    Mejora.CLAVE = Convert.ToInt32(txt_clave.Text);
+                    Mejora.AÑO = Convert.ToInt32(txt_año.Text);
+                    Mejora.MES = cmb_mes.Text;
+                    Mejora.DEPARTAMENTO = cmb_departamento.Text;
+                 
+                    Mejora.ShowDialog();
+                    Nuevo();
+                }
+                else if (lbl_var.Text == ("7"))
+                {
+                    Frm_Rep_Mejoras3 Mejora = new Frm_Rep_Mejoras3();
+                    Mejora.VAR = Convert.ToInt32(lbl_var.Text);
+                    Mejora.AÑO = Convert.ToInt32(txt_año.Text);
+                    Mejora.ShowDialog();
+                    Nuevo();
+                }
+                else if (lbl_var.Text == ("8"))
+                {
+                    Frm_Rep_Mejoras3 Mejora = new Frm_Rep_Mejoras3();
+                    Mejora.VAR = Convert.ToInt32(lbl_var.Text);
+                    Mejora.CLAVE = Convert.ToInt32(txt_clave.Text);
+                    Mejora.AÑO = Convert.ToInt32(txt_año.Text);
+                    Mejora.DEPARTAMENTO = cmb_departamento.Text;
+                    Mejora.ShowDialog();
+                    Nuevo();
+                }
+            }    
+
+        }
         private void Cmb_departamento_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
@@ -121,69 +189,188 @@ namespace CsPresentacion
             e.Handled = true;
         }
 
-        private void Cmb_departamento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txt_clave.Text = "";
-            if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(cmb_mes.Text))
-            {
-
-                btn_aceptar.Enabled = false;
-            }
-
-            else if (string.IsNullOrEmpty(cmb_mes.Text))
-            {
-                txt_clave.Text = "";
-                lbl_var.Text = "0";
-                btn_aceptar.Enabled = false;
-            }
-            else
-            {
-                lbl_var.Text = "2";
-                btn_aceptar.Enabled = true;
-            }
-        }
-
-        private void Cmb_mes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
-            {
-
-                btn_aceptar.Enabled = false;
-            }
-
-            else if (string.IsNullOrEmpty(txt_clave.Text)) //  && string.is(cmb_departamento.Text))
-            {
-                lbl_var.Text = "2";
-                btn_aceptar.Enabled = true;
-            }
-
-            else
-            {
-                lbl_var.Text = "1";
-                btn_aceptar.Enabled = true;
-                cmb_departamento.Enabled = false;
-            }
-        }
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
             Nuevo();
         }
 
-        private void Txt_clave_TextChanged(object sender, EventArgs e)
-        {
-            cmb_departamento.Text = "";
-            if (string.IsNullOrEmpty(cmb_mes.Text))
-            {
+      
 
-                btn_aceptar.Enabled = false;
+        private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
             }
             else
             {
-                lbl_var.Text = "1";
-                btn_aceptar.Enabled = true;
-                cmb_departamento.Enabled = false;
+                e.Handled = true;
             }
         }
+
+        private void Txt_clave_TextChanged(object sender, EventArgs e)//Clave
+        {
+             if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_año.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(txt_año.Text) && string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(txt_año.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                lbl_var.Text = "4";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                lbl_var.Text = "3";
+            }
+            else if (string.IsNullOrEmpty(txt_año.Text) && string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text))
+            {
+                lbl_var.Text = "2";
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                lbl_var.Text = "1";
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                lbl_var.Text = "8";
+            }
+            else if (string.IsNullOrEmpty(txt_año.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else
+            {
+                lbl_var.Text = "6";
+            }
+        }
+        private void txt_año_TextChanged(object sender, EventArgs e)//Año
+        {
+             if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                lbl_var.Text = "7";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(txt_año.Text) && string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_clave.Text))
+            {
+                lbl_var.Text = "3";
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                lbl_var.Text = "4";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                lbl_var.Text = "5";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(txt_año.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(txt_año.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text))
+            {
+                lbl_var.Text = "2";
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                lbl_var.Text = "1";
+            }
+            else if (string.IsNullOrEmpty(txt_año.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                lbl_var.Text = "8";
+            }
+            else
+            {
+                lbl_var.Text = "6";
+            }
+        }
+
+        private void Cmb_mes_SelectedIndexChanged(object sender, EventArgs e)//mes
+        {
+            if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(txt_año.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                lbl_var.Text = "0";
+            }
+           else if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                lbl_var.Text = "5";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(txt_año.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(txt_año.Text) && string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(cmb_departamento.Text))
+            {
+                lbl_var.Text = "1";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text))
+            {
+                lbl_var.Text = "2";
+            }
+        }
+
+        private void Cmb_departamento_SelectedIndexChanged(object sender, EventArgs e)//departamento
+        {
+            if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(cmb_mes.Text) && string.IsNullOrEmpty(txt_año.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                lbl_var.Text = "3";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text) && string.IsNullOrEmpty(txt_año.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(txt_clave.Text))
+            {
+                lbl_var.Text = "2";
+            }
+            else if (string.IsNullOrEmpty(txt_año.Text))
+            {
+                lbl_var.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(cmb_mes.Text))
+            {
+                lbl_var.Text = "8";
+            }
+            else
+            {
+                lbl_var.Text = "6";
+            }
+
+        }  
     }
 }
