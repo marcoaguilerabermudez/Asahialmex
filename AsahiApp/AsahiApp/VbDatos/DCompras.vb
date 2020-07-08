@@ -51,7 +51,7 @@ Public Class DCompras
         Dim lstComp As New LCompras()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("Sp_vistaPrincipalPoliza", oCon)
+            Dim query As New SqlCommand("Sp_vistaPrincipalPolizaPrueba", oCon)
             query.Parameters.AddWithValue("@variable", moneda)
             query.Parameters.AddWithValue("@uuid", idFac)
             query.Parameters.AddWithValue("@tc", tc)
@@ -404,4 +404,62 @@ Public Class DCompras
             oCon.Dispose()
         End Try
     End Sub
+    Public Function FacturasRecuperarUUID(ByVal cadenaConex As String, ByVal factura As String) As LCompras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstComp As New LCompras()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.RecuperarFacturas", oCon)
+            query.Parameters.AddWithValue("@folio", factura)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim comp As New Compras
+                comp.Factura = dr("folio").ToString
+                comp.RfcEmisor = dr("RFCEmisor").ToString
+                comp.NombreEmisor = dr("NombreEmisor").ToString
+                comp.TotalFactura = dr("total").ToString
+                comp.UUID = dr("GuidDocument").ToString
+                lstComp.Add(comp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstComp
+    End Function
+    Public Function ConsultarImpuestosExtra(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim LComp As New LCompras()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.ImpuestosExtraRecuperar", oCon)
+            query.Parameters.AddWithValue("@uuid", uuid)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim comp As New Compras
+                comp.ImpExtNombre = dr("Tipo").ToString
+                comp.ImpExtTasaOCuota = Convert.ToDouble(dr("TasaOCuota").ToString)
+                comp.ImpExtImporte = Convert.ToDouble(dr("Importe").ToString)
+                LComp.Add(comp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return LComp
+    End Function
 End Class

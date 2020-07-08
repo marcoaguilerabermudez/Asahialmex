@@ -182,7 +182,7 @@ Partial Class Frm_Provisiones
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1213, 71)
+        Me.Panel1.Size = New System.Drawing.Size(1229, 71)
         Me.Panel1.TabIndex = 0
         '
         'Btn_Validar
@@ -224,7 +224,7 @@ Partial Class Frm_Provisiones
         Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Right
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.GroupBox3.Location = New System.Drawing.Point(1033, 0)
+        Me.GroupBox3.Location = New System.Drawing.Point(1049, 0)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(164, 71)
         Me.GroupBox3.TabIndex = 7
@@ -290,7 +290,7 @@ Partial Class Frm_Provisiones
         'Panel14
         '
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel14.Location = New System.Drawing.Point(1197, 0)
+        Me.Panel14.Location = New System.Drawing.Point(1213, 0)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(16, 71)
         Me.Panel14.TabIndex = 6
@@ -367,6 +367,7 @@ Partial Class Frm_Provisiones
         '
         Me.Txt_Proveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.Txt_Proveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_Proveedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_Proveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_Proveedor.Location = New System.Drawing.Point(223, 15)
         Me.Txt_Proveedor.Name = "Txt_Proveedor"
@@ -483,7 +484,7 @@ Partial Class Frm_Provisiones
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 71)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1213, 10)
+        Me.Panel2.Size = New System.Drawing.Size(1229, 10)
         Me.Panel2.TabIndex = 1
         '
         'Panel3
@@ -492,7 +493,7 @@ Partial Class Frm_Provisiones
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 81)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1213, 599)
+        Me.Panel3.Size = New System.Drawing.Size(1229, 599)
         Me.Panel3.TabIndex = 2
         '
         'PanelP
@@ -504,7 +505,7 @@ Partial Class Frm_Provisiones
         Me.PanelP.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelP.Location = New System.Drawing.Point(0, 0)
         Me.PanelP.Name = "PanelP"
-        Me.PanelP.Size = New System.Drawing.Size(1213, 599)
+        Me.PanelP.Size = New System.Drawing.Size(1229, 599)
         Me.PanelP.TabIndex = 5
         '
         'Panel8
@@ -515,7 +516,7 @@ Partial Class Frm_Provisiones
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel8.Location = New System.Drawing.Point(0, 371)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1213, 223)
+        Me.Panel8.Size = New System.Drawing.Size(1229, 223)
         Me.Panel8.TabIndex = 4
         '
         'Dgv_Provisionadas
@@ -527,13 +528,13 @@ Partial Class Frm_Provisiones
         Me.Dgv_Provisionadas.Location = New System.Drawing.Point(5, 0)
         Me.Dgv_Provisionadas.Name = "Dgv_Provisionadas"
         Me.Dgv_Provisionadas.RowHeadersVisible = False
-        Me.Dgv_Provisionadas.Size = New System.Drawing.Size(1203, 223)
+        Me.Dgv_Provisionadas.Size = New System.Drawing.Size(1219, 223)
         Me.Dgv_Provisionadas.TabIndex = 6
         '
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel9.Location = New System.Drawing.Point(1208, 0)
+        Me.Panel9.Location = New System.Drawing.Point(1224, 0)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(5, 223)
         Me.Panel9.TabIndex = 3
@@ -551,7 +552,7 @@ Partial Class Frm_Provisiones
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel7.Location = New System.Drawing.Point(0, 594)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1213, 5)
+        Me.Panel7.Size = New System.Drawing.Size(1229, 5)
         Me.Panel7.TabIndex = 3
         '
         'Panel6
@@ -564,7 +565,7 @@ Partial Class Frm_Provisiones
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel6.Location = New System.Drawing.Point(0, 296)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1213, 75)
+        Me.Panel6.Size = New System.Drawing.Size(1229, 75)
         Me.Panel6.TabIndex = 2
         '
         'Panel19
@@ -580,7 +581,7 @@ Partial Class Frm_Provisiones
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel19.Location = New System.Drawing.Point(5, 5)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(1203, 65)
+        Me.Panel19.Size = New System.Drawing.Size(1219, 65)
         Me.Panel19.TabIndex = 8
         '
         'GroupBox6
@@ -594,7 +595,7 @@ Partial Class Frm_Provisiones
         Me.GroupBox6.Dock = System.Windows.Forms.DockStyle.Right
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.White
-        Me.GroupBox6.Location = New System.Drawing.Point(992, 0)
+        Me.GroupBox6.Location = New System.Drawing.Point(1008, 0)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(199, 63)
         Me.GroupBox6.TabIndex = 9
@@ -660,7 +661,7 @@ Partial Class Frm_Provisiones
         'Panel22
         '
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel22.Location = New System.Drawing.Point(1191, 0)
+        Me.Panel22.Location = New System.Drawing.Point(1207, 0)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(10, 63)
         Me.Panel22.TabIndex = 8
@@ -697,6 +698,7 @@ Partial Class Frm_Provisiones
         '
         'Txt_StatusCompra
         '
+        Me.Txt_StatusCompra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_StatusCompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_StatusCompra.Location = New System.Drawing.Point(361, 35)
         Me.Txt_StatusCompra.Name = "Txt_StatusCompra"
@@ -744,6 +746,7 @@ Partial Class Frm_Provisiones
         Me.Txt_Empresa2.AutoCompleteCustomSource.AddRange(New String() {"AAM", "AAMS"})
         Me.Txt_Empresa2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.Txt_Empresa2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_Empresa2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_Empresa2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_Empresa2.Location = New System.Drawing.Point(223, 35)
         Me.Txt_Empresa2.Name = "Txt_Empresa2"
@@ -754,6 +757,7 @@ Partial Class Frm_Provisiones
         '
         Me.Txt_Proveedor2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.Txt_Proveedor2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.Txt_Proveedor2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_Proveedor2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_Proveedor2.Location = New System.Drawing.Point(223, 12)
         Me.Txt_Proveedor2.Name = "Txt_Proveedor2"
@@ -876,7 +880,7 @@ Partial Class Frm_Provisiones
         'Panel17
         '
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel17.Location = New System.Drawing.Point(1208, 5)
+        Me.Panel17.Location = New System.Drawing.Point(1224, 5)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(5, 65)
         Me.Panel17.TabIndex = 6
@@ -886,7 +890,7 @@ Partial Class Frm_Provisiones
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel16.Location = New System.Drawing.Point(0, 70)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(1213, 5)
+        Me.Panel16.Size = New System.Drawing.Size(1229, 5)
         Me.Panel16.TabIndex = 5
         '
         'Panel15
@@ -894,7 +898,7 @@ Partial Class Frm_Provisiones
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel15.Location = New System.Drawing.Point(0, 0)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(1213, 5)
+        Me.Panel15.Size = New System.Drawing.Size(1229, 5)
         Me.Panel15.TabIndex = 4
         '
         'Panel4
@@ -905,7 +909,7 @@ Partial Class Frm_Provisiones
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1213, 296)
+        Me.Panel4.Size = New System.Drawing.Size(1229, 296)
         Me.Panel4.TabIndex = 1
         '
         'Dgv_PorProvisionar
@@ -917,7 +921,7 @@ Partial Class Frm_Provisiones
         Me.Dgv_PorProvisionar.Location = New System.Drawing.Point(5, 0)
         Me.Dgv_PorProvisionar.Name = "Dgv_PorProvisionar"
         Me.Dgv_PorProvisionar.RowHeadersVisible = False
-        Me.Dgv_PorProvisionar.Size = New System.Drawing.Size(1203, 296)
+        Me.Dgv_PorProvisionar.Size = New System.Drawing.Size(1219, 296)
         Me.Dgv_PorProvisionar.TabIndex = 5
         '
         'seleccion
@@ -1064,7 +1068,7 @@ Partial Class Frm_Provisiones
         'Panel10
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel10.Location = New System.Drawing.Point(1208, 0)
+        Me.Panel10.Location = New System.Drawing.Point(1224, 0)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(5, 296)
         Me.Panel10.TabIndex = 3
@@ -1133,76 +1137,91 @@ Partial Class Frm_Provisiones
         '
         Me.moneda2.HeaderText = "Moneda"
         Me.moneda2.Name = "moneda2"
+        Me.moneda2.Width = 60
         '
         'montoOc2
         '
         Me.montoOc2.HeaderText = "Monto OC"
         Me.montoOc2.Name = "montoOc2"
+        Me.montoOc2.Width = 75
         '
         'montoCompra2
         '
         Me.montoCompra2.HeaderText = "Monto Compra"
         Me.montoCompra2.Name = "montoCompra2"
+        Me.montoCompra2.Width = 75
         '
         'montoFactura2
         '
         Me.montoFactura2.HeaderText = "Monto Factura"
         Me.montoFactura2.Name = "montoFactura2"
+        Me.montoFactura2.Width = 75
         '
         'montoPagar
         '
         Me.montoPagar.HeaderText = "Monto A Pagar"
         Me.montoPagar.Name = "montoPagar"
+        Me.montoPagar.Width = 75
         '
         'fp
         '
         Me.fp.HeaderText = "FP"
         Me.fp.Name = "fp"
+        Me.fp.Width = 75
         '
         'fechaFactura2
         '
         Me.fechaFactura2.HeaderText = "Fecha Factura"
         Me.fechaFactura2.Name = "fechaFactura2"
+        Me.fechaFactura2.Width = 75
         '
         'fechaPagoFact
         '
         Me.fechaPagoFact.HeaderText = "Fecha Pago Fact"
         Me.fechaPagoFact.Name = "fechaPagoFact"
+        Me.fechaPagoFact.Width = 80
         '
         'statusPago
         '
         Me.statusPago.HeaderText = "Status Pago"
         Me.statusPago.Name = "statusPago"
+        Me.statusPago.Width = 55
         '
         'status2
         '
         Me.status2.HeaderText = "Status"
         Me.status2.Name = "status2"
+        Me.status2.Width = 55
         '
         'observaComp
         '
         Me.observaComp.HeaderText = "Observa Compra"
         Me.observaComp.Name = "observaComp"
+        Me.observaComp.Width = 200
         '
         'observaConta
         '
         Me.observaConta.HeaderText = "Observa Conta"
         Me.observaConta.Name = "observaConta"
+        Me.observaConta.Width = 200
         '
         'empresa2
         '
         Me.empresa2.HeaderText = "Empresa"
         Me.empresa2.Name = "empresa2"
+        Me.empresa2.Width = 60
         '
         'nombreEmisor2
         '
         Me.nombreEmisor2.HeaderText = "Nombre Emisor"
         Me.nombreEmisor2.Name = "nombreEmisor2"
+        Me.nombreEmisor2.Width = 150
         '
         'fdp
         '
         Me.fdp.HeaderText = "FDP"
         Me.fdp.Name = "fdp"
+        Me.fdp.Width = 80
         '
         'serie2
         '
@@ -1229,7 +1248,7 @@ Partial Class Frm_Provisiones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1213, 680)
+        Me.ClientSize = New System.Drawing.Size(1229, 680)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -1335,7 +1354,6 @@ Partial Class Frm_Provisiones
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Txt_Empresa2 As TextBox
-    Friend WithEvents Txt_Proveedor2 As TextBox
     Friend WithEvents Txt_Factura2 As TextBox
     Friend WithEvents Panel21 As Panel
     Friend WithEvents Btn_ActualizarXml As Button
@@ -1362,6 +1380,7 @@ Partial Class Frm_Provisiones
     Friend WithEvents nombreEmisor As DataGridViewTextBoxColumn
     Friend WithEvents fechaCompra As DataGridViewTextBoxColumn
     Friend WithEvents serie As DataGridViewTextBoxColumn
+    Friend WithEvents Txt_Proveedor2 As TextBox
     Friend WithEvents selección As DataGridViewCheckBoxColumn
     Friend WithEvents pdf As DataGridViewButtonColumn
     Friend WithEvents idProvision2 As DataGridViewTextBoxColumn

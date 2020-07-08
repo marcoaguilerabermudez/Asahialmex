@@ -25,7 +25,7 @@ Public Class Frm_Principal
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
-    Sub New(ByVal cadConex As SqlConnection, ByVal cadenaConex As String, ByVal emp As Empleado)
+    Sub New(ByVal cadConex As SqlConnection, ByVal cadenaConex As String, ByVal cadenaConexExpress As String, ByVal emp As Empleado)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
@@ -33,14 +33,15 @@ Public Class Frm_Principal
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         Me.cadConex = cadConex
         Me.cadenaConex = cadenaConex
-        Me.cadenaConesExp = conex.cadenaConexExpress
         Me.emp = emp
+        Me.cadenaConesExp = cadenaConexExpress
     End Sub
 #End Region
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Me.emp.TipoUsuario = 0 Then
             Dim lstPer As New LPermisos(), NEmp As New NEmpleado()
             BloquearPestañas()
+
             lstPer = NEmp.RecuperarPermisosUsuario(Me.cadenaConesExp, Me.emp)
             DesbloquearPestañas(lstPer)
             ''ElseIf Me.emp.TipoUsuario = 1 Then
@@ -129,7 +130,7 @@ Public Class Frm_Principal
 
 #Region "Botónes"
     Private Sub PreNominaListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaListadoToolStripMenuItem.Click
-        Dim lista As New Frm_ListaPrenomina(cadConex, cadenaConex)
+        Dim lista As New Frm_ListaPrenomina(cadConex, cadenaConex, cadenaConesExp, Me.emp.IdEmpleado)
         lista.Show()
     End Sub
     Private Sub ControlDeProducciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeProducciónToolStripMenuItem.Click
@@ -181,7 +182,7 @@ Public Class Frm_Principal
         Mejora.Show()
     End Sub
     Private Sub PreNominaGlobalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaGlobalToolStripMenuItem.Click
-        Dim globPren As New Frm_GlobalPrenomina(cadConex, cadenaConex)
+        Dim globPren As New Frm_GlobalPrenomina(cadConex, cadenaConex, Me.emp)
         globPren.Show()
     End Sub
     Private Sub AltaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem.Click
@@ -403,6 +404,10 @@ Public Class Frm_Principal
     Private Sub AutorizaContabilidadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AutorizaContabilidadToolStripMenuItem.Click
         Dim frmAut As New Frm_ValidarConta()
         frmAut.Show()
+    End Sub
+    Private Sub ConsultaXMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaXMLToolStripMenuItem.Click
+        Dim frm As New Frm_ConsultaXml(Me.emp)
+        frm.Show()
     End Sub
 #End Region
 End Class

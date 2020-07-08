@@ -467,4 +467,31 @@
             fechaValidado_ = value
         End Set
     End Property
+    Private impExtNombre_ As String
+    Public Property ImpExtNombre() As String
+        Get
+            Return impExtNombre_
+        End Get
+        Set(ByVal value As String)
+            impExtNombre_ = value
+        End Set
+    End Property
+    Private impExtTasaOCuota_ As Double
+    Public Property ImpExtTasaOCuota() As Double
+        Get
+            Return impExtTasaOCuota_
+        End Get
+        Set(ByVal value As Double)
+            impExtTasaOCuota_ = value
+        End Set
+    End Property
+    Private impExtImporte_ As Double
+    Public Property ImpExtImporte() As Double
+        Get
+            Return impExtImporte_
+        End Get
+        Set(ByVal value As Double)
+            impExtImporte_ = value
+        End Set
+    End Property
 End Class

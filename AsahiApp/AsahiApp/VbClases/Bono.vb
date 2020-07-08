@@ -26,6 +26,42 @@
             año_ = value
         End Set
     End Property
+    Private semana_ As Integer
+    Public Property Semana() As Integer
+        Get
+            Return semana_
+        End Get
+        Set(ByVal value As Integer)
+            semana_ = value
+        End Set
+    End Property
+    Private bono_ As Boolean
+    Public Property Bono() As Boolean
+        Get
+            Return bono_
+        End Get
+        Set(ByVal value As Boolean)
+            bono_ = value
+        End Set
+    End Property
+    Private importeBono_ As Double
+    Public Property ImporteBono() As Double
+        Get
+            Return importeBono_
+        End Get
+        Set(ByVal value As Double)
+            importeBono_ = value
+        End Set
+    End Property
+    Private idModif_ As String
+    Public Property IdModif() As String
+        Get
+            Return idModif_
+        End Get
+        Set(ByVal value As String)
+            idModif_ = value
+        End Set
+    End Property
     Private xml_ As String
     Public Property XML() As String
         Get
@@ -33,6 +69,24 @@
         End Get
         Set(ByVal value As String)
             xml_ = value
+        End Set
+    End Property
+    Private comentario_ As String
+    Public Property Comentario() As String
+        Get
+            Return comentario_
+        End Get
+        Set(ByVal value As String)
+            comentario_ = value
+        End Set
+    End Property
+    Private comentarioExt_ As String
+    Public Property ComentarioExt() As String
+        Get
+            Return comentarioExt_
+        End Get
+        Set(ByVal value As String)
+            comentarioExt_ = value
         End Set
     End Property
 End Class

@@ -8,6 +8,15 @@
             idEmpleado_ = value
         End Set
     End Property
+    Private idExt_ As Integer
+    Public Property IdExt() As Integer
+        Get
+            Return idExt_
+        End Get
+        Set(ByVal value As Integer)
+            idExt_ = value
+        End Set
+    End Property
     Private tipo_ As String
     Public Property Tipo() As String
         Get

@@ -3,7 +3,9 @@ Imports Negocio
 
 Public Class Frm_ConceptoPoliza
     Dim lstComp As New LCompras
+    Dim conex As New conexion()
     Dim cadenaConex As String
+    Dim ip As String = Strings.Left(Me.conex.getIp(), 6)
     Sub New()
 
         ' Esta llamada es exigida por el diseñador.
@@ -31,9 +33,12 @@ Public Class Frm_ConceptoPoliza
         End Set
     End Property
     Private Sub Frm_ConceptoPoliza_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim conex As New conexion()
         Dim proveedor() As String
-        Me.cadenaConex = conex.cadenaConexExpress
+        If Me.ip = "172.16" Then
+            Me.cadenaConex = Me.conex.cadenaConexExpress
+        Else
+            Me.cadenaConex = Me.conex.cadenaConexExpressFor
+        End If
         Try
             proveedor = Me.lstComp.Item(0).Proveedor.Split(New Char() {" "c})
             Txt_Proveedor.Text = proveedor(0) & " " & proveedor(1)

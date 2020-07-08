@@ -6,20 +6,30 @@ Imports Microsoft.Reporting.WinForms
 
 Public Class Frm_PolizasDiario
 #Region "Varianbles de clase"
+    Dim conex As New conexion()
     Dim cadenaConex As String
     Dim cadConex As String
+    Dim cadConexCont As String
     Dim userName As String
     Dim ruta As String
     Dim archivo As String
     Dim fechaPago As Date
     Dim tCamb As Double
     Dim pasoPol As String
+    Dim ip As String = Strings.Left(Me.conex.getIp(), 6)
 #End Region
 #Region "Acciones del formulario"
     Private Sub Frm_PolizasDiario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim conex As New conexion()
-        Me.cadenaConex = conex.cadenaConexExpress
-        Me.cadConex = conex.conexion2008
+        'Dim conex As New conexion()
+        If Me.ip = "172.16" Then
+            Me.cadenaConex = Me.conex.cadenaConexExpress
+            Me.cadConex = Me.conex.conexion2008
+            Me.cadConexCont = Me.conex.conexionCont
+        Else
+            Me.cadenaConex = Me.conex.cadenaConexExpressFor
+            Me.cadConex = Me.conex.conexion2008For
+            Me.cadConexCont = Me.conex.conexionContFor
+        End If
         Dtp_Inicio.Value = DateAdd(DateInterval.Day, -7, Date.Now())
         Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
         Dgv_Prepolizas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
@@ -34,6 +44,7 @@ Public Class Frm_PolizasDiario
         fila = Dgv_Compras.CurrentRow.Index
         If Dgv_Compras.Rows(fila).DefaultCellStyle.BackColor <> Color.DarkRed Then
             If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 0 Then
+
                 Me.pasoPol = ""
                 uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
                 moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
@@ -248,6 +259,10 @@ Public Class Frm_PolizasDiario
     Private Sub RecuperarPolizas(ByVal moneda As String, ByVal uuid As String, ByVal tc As Double, ByVal oc As Integer)
         Dim NComp As New NCompras()
         Dim lstComp As New LCompras()
+        Dim cuenta As Integer
+
+        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, uuid)
+        cuenta = lstComp.Count
         lstComp = NComp.VistaPoliza(Me.cadenaConex, moneda, uuid, tc)
         RellenarDgvVistaPolizas(lstComp, oc)
     End Sub
@@ -291,7 +306,7 @@ Public Class Frm_PolizasDiario
     End Sub
     Private Sub RellenarDgvVistaPolizas(ByVal lstComp As LCompras, ByVal oc As Integer)
         Dim fila As Integer = Dgv_Prepolizas.Rows.Count(), pfila As Integer = fila
-        Dim sum As Double, sumCargo As Double, t As Double
+        Dim sum As Double, sumCargo As Double, sumRet As Double, t As Double
         Dim frm As New Frm_ConceptoPoliza("" & oc & "", lstComp)
 
         If frm.ShowDialog() = DialogResult.OK Then
@@ -300,7 +315,9 @@ Public Class Frm_PolizasDiario
                 'Dgv_Prepolizas.Columns("acum").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 If item.Pivote = 1 Or item.Pivote = 2 Then
                     sum = sum + item.Total
-                ElseIf item.Pivote = 3 Or item.Pivote = 4 Then
+                ElseIf item.Pivote = 3 Then
+                    sumRet = sumRet + item.Total
+                ElseIf item.Pivote = 4 Or item.Pivote = 5 Then
                     sumCargo = sumCargo + item.Total
                 End If
                 With Dgv_Prepolizas.Rows(fila)
@@ -337,10 +354,10 @@ Public Class Frm_PolizasDiario
             Me.pasoPol = "Ok"
             t = sum - sumCargo
             If Dgv_Prepolizas.Rows(pfila).Cells("total").Value > 0 Then
-                Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format(Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t, "$ #,###,##0.00")
+                Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format((Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t) + sumRet, "$ #,###,##0.00")
             Else
                 pfila += 1
-                Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format(Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t, "$ #,###,##0.00")
+                Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format((Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t) + sumRet, "$ #,###,##0.00")
             End If
         End If
     End Sub
@@ -422,7 +439,8 @@ Public Class Frm_PolizasDiario
                             folio = "F/" & .Cells("idFactura").Value & " TC " & tc
                         End If
                     End If
-                    If .Cells("familia").Value = "Cargo" Or .Cells("familia").Value = "ProveedorUSD" Or .Cells("familia").Value = "ComplementariaUSD" Then
+                    If .Cells("familia").Value = "Cargo" Or .Cells("familia").Value = "ProveedorUSD" Or .Cells("familia").Value = "ComplementariaUSD" Or .Cells("familia").Value = "Retencion de IVA" Or
+                        .Cells("familia").Value = "Traslado" Then
                         cargo = 1
                     End If
                     sn = idSegNeg(.Cells("area").Value)
@@ -441,7 +459,7 @@ Public Class Frm_PolizasDiario
                     tx.Write("AM ")
                     tx.Write(String.Format("{0,-30}", .Cells("uuidFactura").Value) & " ")
                     tx.WriteLine()
-                    If (.Cells("monedaVP").Value = "MXN" And .Cells("pivot").Value = "3") Or (.Cells("monedaVP").Value = "USD" And .Cells("pivot").Value = "4") Then
+                    If (.Cells("monedaVP").Value = "MXN" And .Cells("pivot").Value = "4") Or (.Cells("monedaVP").Value = "USD" And .Cells("pivot").Value = "5") Then
                         tx.Write("AD ")
                         tx.Write(String.Format("{0,-30}", .Cells("uuidFactura").Value) & " ")
                         tx.WriteLine()
@@ -457,58 +475,58 @@ Public Class Frm_PolizasDiario
     End Sub
     Private Function idSegNeg(ByVal segneg As String) As String
         Select Case segneg
-            Case "ARTICULOS DE LIMPIEZA" : Return "7"
-            Case "ASEGURAMIENTO DE CALIDAD" : Return "2"
-            Case "ASUNTOS GENERALES" : Return "7"
-            Case "ASUNTOS GENERALES." : Return "7"
-            Case "CALIDAD" : Return "2"
-            Case "COMPRAS" : Return "8"
-            Case "COMPRAS." : Return "8"
             Case "CONTABILIDAD" : Return "1"
+            Case "CALIDAD" : Return "2"
+            Case "ASEGURAMIENTO DE CALIDAD" : Return "2"
             Case "Control" : Return "3"
             Case "CONTROL DE PRODUCCIÓN" : Return "3"
-            Case "FUNCICIÓN F2" : Return "11"
-            Case "FUNDICION" : Return "4"
-            Case "FUNDICIÓN" : Return "4"
-            Case "FUNDICION 1" : Return "4"
-            Case "FUNDICIÓN 1" : Return "4"
-            Case "FUNDICION 1 Y 2" : Return "4, 11"
-            Case "FUNDICION 2" : Return "11"
-            Case "FUNDICIÓN 2" : Return "11"
-            Case "FUNDICION F1" : Return "4"
-            Case "FUNDICIÓN F1" : Return "4"
-            Case "FUNDICION F2" : Return "11"
-            Case "Fundición F2" : Return "11"
-            Case "FUNDICIÓN F2" : Return "11"
-            Case "GESTION" : Return "10"
-            Case "GESTIÓN" : Return "10"
-            Case "GESTIÓN/ FACILITIES" : Return "10"
-            Case "GESTION/FACILITIES" : Return "10"
-            Case "GESTIÓN/FACILITIES" : Return "10"
-            Case "INGENIERIA" : Return "9"
-            Case "INGENIERÍA" : Return "9"
-            Case "INSPECCION DE CALIDAD" : Return "13"
-            Case "INSPECCIÓN DE CALIDAD" : Return "13"
-            Case "MAQUINADO" : Return "6"
-            Case "MAQUINADO 2" : Return "12"
-            Case "Maquinado F1" : Return "6"
-            Case "Maquinado F2" : Return "12"
-            Case "MAQUINADO F1" : Return "6"
-            Case "MAQUINADO F2" : Return "12"
-            Case "MAQUINADOF1" : Return "6"
-            Case "MOLDES" : Return "5"
-            Case "MOLDES." : Return "5"
-            Case "RECURSOS HUMANOS" : Return "7"
-            Case "SEGURIDAD" : Return "7"
-            Case "SEGURIDAD E HIGIENE" : Return "7"
-            Case "SEGURIDAD E HIGIENE." : Return "7"
-            Case "SISTEMAS IT" : Return "7"
             Case "VENTAS/ CONTROL DE PRODUCCIÓN" : Return "3"
             Case "VENTAS/C PRODUCCIÓN" : Return "3"
             Case "VENTAS/CONTROL DE PRODUCCIÓN" : Return "3"
             Case "VENTAS/CPRODUCCIION" : Return "3"
             Case "VENTAS/CPRODUCCION" : Return "3"
             Case "VENTAS/CPRODUCCIÓN" : Return "3"
+            Case "FUNDICION" : Return "4"
+            Case "FUNDICIÓN" : Return "4"
+            Case "FUNDICION 1" : Return "4"
+            Case "FUNDICIÓN 1" : Return "4"
+            Case "FUNDICION F1" : Return "4"
+            Case "FUNDICIÓN F1" : Return "4"
+            Case "FUNDICION 1 Y 2" : Return "4, 11"
+            Case "MOLDES" : Return "5"
+            Case "MOLDES." : Return "5"
+            Case "MAQUINADO" : Return "6"
+            Case "Maquinado F1" : Return "6"
+            Case "MAQUINADO F1" : Return "6"
+            Case "MAQUINADOF1" : Return "6"
+            Case "ARTICULOS DE LIMPIEZA" : Return "7"
+            Case "ASUNTOS GENERALES" : Return "7"
+            Case "ASUNTOS GENERALES." : Return "7"
+            Case "RECURSOS HUMANOS" : Return "7"
+            Case "SEGURIDAD" : Return "7"
+            Case "SEGURIDAD E HIGIENE" : Return "7"
+            Case "SEGURIDAD E HIGIENE." : Return "7"
+            Case "SISTEMAS IT" : Return "7"
+            Case "COMPRAS" : Return "8"
+            Case "COMPRAS." : Return "8"
+            Case "INGENIERIA" : Return "9"
+            Case "INGENIERÍA" : Return "9"
+            Case "GESTION" : Return "10"
+            Case "GESTIÓN" : Return "10"
+            Case "GESTIÓN/ FACILITIES" : Return "10"
+            Case "GESTION/FACILITIES" : Return "10"
+            Case "GESTIÓN/FACILITIES" : Return "10"
+            Case "FUNCICIÓN F2" : Return "11"
+            Case "FUNDICION 2" : Return "11"
+            Case "FUNDICIÓN 2" : Return "11"
+            Case "FUNDICION F2" : Return "11"
+            Case "Fundición F2" : Return "11"
+            Case "FUNDICIÓN F2" : Return "11"
+            Case "MAQUINADO 2" : Return "12"
+            Case "Maquinado F2" : Return "12"
+            Case "MAQUINADO F2" : Return "12"
+            Case "INSPECCION DE CALIDAD" : Return "13"
+            Case "INSPECCIÓN DE CALIDAD" : Return "13"
             Case Else : Return "1"
         End Select
     End Function

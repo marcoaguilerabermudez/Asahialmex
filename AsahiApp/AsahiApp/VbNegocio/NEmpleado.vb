@@ -37,4 +37,8 @@ Public Class NEmpleado
         Dim DEmp As New DEmpleado()
         Return DEmp.HorariosRecuperar(cadenaConex)
     End Function
+    Public Function RevisarRangoPermisos(ByVal cadenaConex As String, ByVal idEmp As Integer, ByVal nModulo As String) As Integer
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RevisarRangoPermisos(cadenaConex, idEmp, nModulo)
+    End Function
 End Class
