@@ -1484,7 +1484,6 @@ namespace CsPresentacion
             else
             {
                 btn_mod_departamento.Enabled = true;
-       
             }
         }
         private void Dgv_depto_CellContentClick(object sender, DataGridViewCellEventArgs e)

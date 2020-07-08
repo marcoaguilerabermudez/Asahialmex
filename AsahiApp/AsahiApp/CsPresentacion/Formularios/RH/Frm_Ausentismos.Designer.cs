@@ -40,6 +40,8 @@
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl_turno = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -96,6 +98,8 @@
             this.btn_f_ultimo = new System.Windows.Forms.Button();
             this.btn_f_insertar = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbl_v_termina = new System.Windows.Forms.Label();
+            this.lbl_v_inicia = new System.Windows.Forms.Label();
             this.txt_v_prima = new System.Windows.Forms.TextBox();
             this.txt_v_antiguedad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -111,7 +115,6 @@
             this.lbl_v_id = new System.Windows.Forms.Label();
             this.dtm_v_termina = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.dtm_v_inicia = new System.Windows.Forms.DateTimePicker();
@@ -126,8 +129,6 @@
             this.btn_v_eliminar = new System.Windows.Forms.Button();
             this.btn_v_ultimo = new System.Windows.Forms.Button();
             this.btn_v_insertar = new System.Windows.Forms.Button();
-            this.lbl_v_inicia = new System.Windows.Forms.Label();
-            this.lbl_v_termina = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -198,14 +199,36 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lbl_turno);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lbl_estado);
             this.groupBox2.Controls.Add(this.txt_nombre);
             this.groupBox2.Location = new System.Drawing.Point(12, 69);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(494, 73);
+            this.groupBox2.Size = new System.Drawing.Size(494, 93);
             this.groupBox2.TabIndex = 149;
             this.groupBox2.TabStop = false;
+            // 
+            // lbl_turno
+            // 
+            this.lbl_turno.AutoSize = true;
+            this.lbl_turno.Location = new System.Drawing.Point(65, 72);
+            this.lbl_turno.Name = "lbl_turno";
+            this.lbl_turno.Size = new System.Drawing.Size(46, 13);
+            this.lbl_turno.TabIndex = 256;
+            this.lbl_turno.Text = "@Turno";
+            this.lbl_turno.TextChanged += new System.EventHandler(this.Lbl_turno_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 13);
+            this.label10.TabIndex = 148;
+            this.label10.Text = "TURNO";
             // 
             // label2
             // 
@@ -220,7 +243,7 @@
             // 
             this.lbl_estado.AutoSize = true;
             this.lbl_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_estado.Location = new System.Drawing.Point(9, 52);
+            this.lbl_estado.Location = new System.Drawing.Point(7, 53);
             this.lbl_estado.Name = "lbl_estado";
             this.lbl_estado.Size = new System.Drawing.Size(57, 13);
             this.lbl_estado.TabIndex = 147;
@@ -939,7 +962,6 @@
             this.tabPage2.Controls.Add(this.lbl_v_id);
             this.tabPage2.Controls.Add(this.dtm_v_termina);
             this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Controls.Add(this.label23);
             this.tabPage2.Controls.Add(this.dtm_v_inicia);
@@ -962,6 +984,24 @@
             this.tabPage2.Text = "3. Vacaciones";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.TabPage2_Click);
+            // 
+            // lbl_v_termina
+            // 
+            this.lbl_v_termina.AutoSize = true;
+            this.lbl_v_termina.Location = new System.Drawing.Point(410, 139);
+            this.lbl_v_termina.Name = "lbl_v_termina";
+            this.lbl_v_termina.Size = new System.Drawing.Size(56, 13);
+            this.lbl_v_termina.TabIndex = 269;
+            this.lbl_v_termina.Text = "@Termina";
+            // 
+            // lbl_v_inicia
+            // 
+            this.lbl_v_inicia.AutoSize = true;
+            this.lbl_v_inicia.Location = new System.Drawing.Point(412, 120);
+            this.lbl_v_inicia.Name = "lbl_v_inicia";
+            this.lbl_v_inicia.Size = new System.Drawing.Size(43, 13);
+            this.lbl_v_inicia.TabIndex = 268;
+            this.lbl_v_inicia.Text = "@Inicia";
             // 
             // txt_v_prima
             // 
@@ -1073,11 +1113,11 @@
             // 
             // txt_v_duracion
             // 
-            this.txt_v_duracion.Location = new System.Drawing.Point(234, 75);
+            this.txt_v_duracion.Location = new System.Drawing.Point(451, 75);
             this.txt_v_duracion.MaxLength = 6;
             this.txt_v_duracion.Name = "txt_v_duracion";
             this.txt_v_duracion.Size = new System.Drawing.Size(81, 20);
-            this.txt_v_duracion.TabIndex = 1;
+            this.txt_v_duracion.TabIndex = 3;
             this.txt_v_duracion.TextChanged += new System.EventHandler(this.Txt_v_duracion_TextChanged);
             this.txt_v_duracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_v_duracion_KeyPress);
             this.txt_v_duracion.Leave += new System.EventHandler(this.Txt_v_duracion_Leave);
@@ -1094,32 +1134,25 @@
             // dtm_v_termina
             // 
             this.dtm_v_termina.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_v_termina.Location = new System.Drawing.Point(411, 75);
+            this.dtm_v_termina.Location = new System.Drawing.Point(234, 75);
             this.dtm_v_termina.Name = "dtm_v_termina";
-            this.dtm_v_termina.Size = new System.Drawing.Size(135, 20);
-            this.dtm_v_termina.TabIndex = 237;
+            this.dtm_v_termina.Size = new System.Drawing.Size(136, 20);
+            this.dtm_v_termina.TabIndex = 1;
+            this.dtm_v_termina.Leave += new System.EventHandler(this.Dtm_v_termina_Leave);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(409, 57);
+            this.label17.Location = new System.Drawing.Point(233, 57);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(56, 13);
             this.label17.TabIndex = 252;
             this.label17.Text = "TERMINA";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(234, 75);
-            this.textBox1.MaxLength = 6;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(81, 20);
-            this.textBox1.TabIndex = 232;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(232, 57);
+            this.label22.Location = new System.Drawing.Point(448, 58);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(64, 13);
             this.label22.TabIndex = 250;
@@ -1300,24 +1333,6 @@
             this.btn_v_insertar.UseVisualStyleBackColor = false;
             this.btn_v_insertar.Click += new System.EventHandler(this.Btn_v_insertar_Click);
             // 
-            // lbl_v_inicia
-            // 
-            this.lbl_v_inicia.AutoSize = true;
-            this.lbl_v_inicia.Location = new System.Drawing.Point(412, 120);
-            this.lbl_v_inicia.Name = "lbl_v_inicia";
-            this.lbl_v_inicia.Size = new System.Drawing.Size(43, 13);
-            this.lbl_v_inicia.TabIndex = 268;
-            this.lbl_v_inicia.Text = "@Inicia";
-            // 
-            // lbl_v_termina
-            // 
-            this.lbl_v_termina.AutoSize = true;
-            this.lbl_v_termina.Location = new System.Drawing.Point(410, 139);
-            this.lbl_v_termina.Name = "lbl_v_termina";
-            this.lbl_v_termina.Size = new System.Drawing.Size(56, 13);
-            this.lbl_v_termina.TabIndex = 269;
-            this.lbl_v_termina.Text = "@Termina";
-            // 
             // Frm_Aussentismos_Retardos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1422,7 +1437,6 @@
         private System.Windows.Forms.TextBox txt_v_duracion;
         private System.Windows.Forms.DateTimePicker dtm_v_termina;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DateTimePicker dtm_v_inicia;
@@ -1452,5 +1466,7 @@
         private System.Windows.Forms.Label lbl_v_id;
         private System.Windows.Forms.Label lbl_v_termina;
         private System.Windows.Forms.Label lbl_v_inicia;
+        private System.Windows.Forms.Label lbl_turno;
+        private System.Windows.Forms.Label label10;
     }
 }

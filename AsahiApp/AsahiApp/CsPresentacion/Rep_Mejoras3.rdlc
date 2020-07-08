@@ -2283,7 +2283,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>3)  機械設備に関する改善</Value>
+                                  <Value>3)  整理整頓に関する改善</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>yu Gothic</FontFamily>
@@ -2300,7 +2300,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mejoramiento de las maquinas y equipos</Value>
+                                  <Value>Mejorar limpieza, orden</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Calibri</FontFamily>
@@ -2338,10 +2338,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>4)  作業環境に関する改善</Value>
+                                  <Value>4) 機械設備に関する改善</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
-                                    <FontFamily>yu Gothic</FontFamily>
+                                    <FontFamily>Yu Gothic</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
@@ -2355,7 +2355,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mejorar el ambiente laboral</Value>
+                                  <Value>Mejoramiento de las maquinas y equipos</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Calibri</FontFamily>
@@ -2365,6 +2365,8 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
                               <Style>
                                 <TextAlign>Center</TextAlign>
                               </Style>
@@ -2393,10 +2395,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>5)  安全衛生に関する改善</Value>
+                                  <Value>5) 作業環境に関する改善</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
-                                    <FontFamily>yu Gothic</FontFamily>
+                                    <FontFamily>Yu Gothic</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
@@ -2410,7 +2412,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mejorar la Seguridad e higiene</Value>
+                                  <Value>Mejorar el ambiente laboral</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Calibri</FontFamily>
@@ -2420,6 +2422,8 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
                               <Style>
                                 <TextAlign>Center</TextAlign>
                               </Style>
@@ -2448,10 +2452,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>6)  整理整頓に関する改善</Value>
+                                  <Value>6) 安全衛生に関する改善</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
-                                    <FontFamily>yu Gothic</FontFamily>
+                                    <FontFamily>Yu Gothic</FontFamily>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
@@ -2465,7 +2469,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mejorar limpieza, orden</Value>
+                                  <Value>Mejorar la Seguridad e higiene</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Calibri</FontFamily>
@@ -2475,6 +2479,8 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
                               <Style>
                                 <TextAlign>Center</TextAlign>
                               </Style>
