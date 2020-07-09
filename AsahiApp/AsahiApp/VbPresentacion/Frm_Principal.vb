@@ -394,7 +394,7 @@ Public Class Frm_Principal
         Ag.Show()
     End Sub
     Private Sub ComidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Kardex_comedorToolStripMenuItem.Click
-        Dim Co As New Frm_Comedor 'Captura de registros de comedor'
+        Dim Co As New Frm_Comedor
         Co.Show()
     End Sub
     Private Sub ProvicionesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProvicionesToolStripMenuItem1.Click

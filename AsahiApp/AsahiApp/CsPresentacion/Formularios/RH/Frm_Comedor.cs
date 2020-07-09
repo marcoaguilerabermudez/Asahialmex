@@ -39,7 +39,6 @@ namespace CsPresentacion
         {
             Nuevo();
             autocompletar_responsable(txt_nombre);
-            txt_clave.Focus();
         }
 
         //Métodos
@@ -66,7 +65,8 @@ namespace CsPresentacion
             btn_com_guardar.Enabled = false;
             btn_com_eliminar.Enabled = false;
             btn_com_cancelar.Enabled = false;
-            btn_com_exportar.Enabled = false;    
+            btn_com_exportar.Enabled = false;
+            txt_clave.Focus();
         }
         private void Mostrar_Grid()//Mostrar grid de incapacidades.
         {
