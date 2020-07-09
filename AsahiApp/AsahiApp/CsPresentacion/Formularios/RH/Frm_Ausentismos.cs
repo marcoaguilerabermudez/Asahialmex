@@ -159,9 +159,6 @@ namespace CsPresentacion
             lbl_v_termina.Text = "0";
             lbl_v_inicia.Visible = false;
             lbl_v_termina.Visible = false;
-            lbl_turno.Text = "";
-            txt_v_duracion.Enabled = false;
-
         }
         private void cargar_informacion()
         {
@@ -180,7 +177,6 @@ namespace CsPresentacion
                 txt_nombre.Text = dt.Rows[0]["NOMBRE_EMPLEADO"].ToString();
                 lbl_estado.Text = dt.Rows[0]["VIGENCIA"].ToString();
                 txt_v_antiguedad.Text = dt.Rows[0]["ANTIGUEDAD"].ToString();
-               lbl_turno.Text = dt.Rows[0]["TURNO"].ToString();
             }
             con.Close();
         }
@@ -631,7 +627,7 @@ namespace CsPresentacion
                 con.Open();
                 DataTable dt = new DataTable();
                 String strSql;
-                strSql = "SELECT Convert(Int,RTRIM(CLAVE)) AS 'CLAVE', TURNO, VIGENCIA FROM [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] WHERE RTRIM(RTRIM(NOMBREN)+ ' '+ RTRIM(NOMBREP)+ ' ' + RTRIM(NOMBREM)) = @Nombre";
+                strSql = "SELECT Convert(Int,RTRIM(CLAVE)) AS 'CLAVE', VIGENCIA FROM [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] WHERE RTRIM(RTRIM(NOMBREN)+ ' '+ RTRIM(NOMBREP)+ ' ' + RTRIM(NOMBREM)) = @Nombre";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, con);
                 da.SelectCommand.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txt_nombre.Text;
                 da.Fill(dt);
@@ -640,7 +636,6 @@ namespace CsPresentacion
                 {
                     txt_clave.Text = dt.Rows[0]["CLAVE"].ToString();
                     lbl_estado.Text = dt.Rows[0]["VIGENCIA"].ToString();
-                    lbl_turno.Text = dt.Rows[0]["TURNO"].ToString();
                 }
             }
             catch
@@ -902,6 +897,7 @@ namespace CsPresentacion
             btn_ultimo.Enabled = true;
             btn_f_siguiente.Enabled = true;
             btn_f_ultimo.Enabled = true;
+            btn_f_insertar.Focus();
             btn_v_exportar.Enabled = true;
             btn_v_siguiente.Enabled = true;
             btn_v_ultimo.Enabled = true;
@@ -1661,9 +1657,9 @@ namespace CsPresentacion
             txt_v_prima.Text = "";
             btn_v_guardar.Enabled = true;
             dtm_v_inicia.Enabled = true;
-            dtm_v_termina.Enabled = true;
-            txt_v_duracion.Enabled = false;
+            txt_v_duracion.Enabled = true;
             txt_v_prima.Enabled = true;
+            txt_v_duracion.Enabled = true;
             txt_v_antiguedad.Enabled = true;
             btn_v_cancelar.Enabled = true;
             lbl_v_inicia.Text = "0";
@@ -1760,7 +1756,8 @@ namespace CsPresentacion
         {
             if (String.IsNullOrEmpty(txt_v_duracion.Text))
             {
-                MessageBox.Show("Es necesario validar fecha final", "¡Aviso!");
+                MessageBox.Show("Es necesario capturar la duración", "¡Aviso!");
+                txt_v_duracion.Focus();
             }
             else if ((int.Parse(txt_v_duracion.Text)) > (int.Parse(lbl_x_pagar.Text)))
             {
@@ -2181,7 +2178,21 @@ namespace CsPresentacion
         }
         private void Txt_v_duracion_Leave(object sender, EventArgs e)
         {
-                
+            try
+            {
+                DateTime Inicia = dtm_v_inicia.Value.Date;
+                int dias = Int32.Parse(txt_v_duracion.Text);
+                DateTime Final = Inicia.AddDays(dias - 1);
+                dtm_v_termina.Text = Final.ToString();
+
+                Duracion = double.Parse(txt_v_duracion.Text);
+                Prima = double.Parse("0.35");
+                Resultado = Duracion * Prima;
+                txt_v_prima.Text = Resultado.ToString();
+            }
+            catch
+            {
+            }
         }
         private void Txt_v_duracion_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -2266,88 +2277,6 @@ namespace CsPresentacion
                 dtm_fecha.Focus();
             }
         }
-
-        private void Dtm_v_termina_Leave(object sender, EventArgs e)
-        {
-            DateTime Inicia = dtm_v_inicia.Value.Date;
-            DateTime Termina = dtm_v_termina.Value.Date;
-
-            int dias = 0;
-
-            if (Inicia < Termina)
-            {
-                if (lbl_turno.Text == "ADMINISTRATIVO")
-                {
-                    while (Inicia <= Termina)
-                    {
-                        if (Inicia.DayOfWeek != DayOfWeek.Saturday && Inicia.DayOfWeek != DayOfWeek.Sunday)
-                            dias++;
-                        Inicia = Inicia.AddDays(1);
-                        txt_v_duracion.Text = dias.ToString();
-                    }
-                }
-
-                else if (lbl_turno.Text == "MATUTINO")
-                {
-                    while (Inicia <= Termina)
-                    {
-                        if (Inicia.DayOfWeek != DayOfWeek.Sunday)
-                            dias++;
-                        Inicia = Inicia.AddDays(1);
-                        txt_v_duracion.Text = dias.ToString();
-                    }
-                }
-
-                else if (lbl_turno.Text == "VESPERTINO")
-                {
-                    while (Inicia <= Termina)
-                    {
-                        if (Inicia.DayOfWeek != DayOfWeek.Sunday)
-                            dias++;
-                        Inicia = Inicia.AddDays(1);
-                        txt_v_duracion.Text = dias.ToString();
-                    }
-                }
-
-                else if (lbl_turno.Text == "NOCTURNO")
-                {
-                    while (Inicia <= Termina)
-                    {
-                        if (Inicia.DayOfWeek != DayOfWeek.Saturday)
-                            dias++;
-                        Inicia = Inicia.AddDays(1);
-                        txt_v_duracion.Text = dias.ToString();
-                    }
-                }
-
-                else
-                {
-                    MessageBox.Show("Es necesario capturar el turno", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                Duracion = double.Parse(txt_v_duracion.Text);
-                Prima = double.Parse("0.35");
-                Resultado = Duracion * Prima;
-                txt_v_prima.Text = Resultado.ToString();
-
-            }
-            else
-            {
-                MessageBox.Show("Favor de validar la fecha final", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
-        }
-
-        private void Lbl_turno_TextChanged(object sender, EventArgs e)
-        {
-            switch (lbl_turno.Text)
-            {
-                case "4": lbl_turno.Text = "ADMINISTRATIVO"; break;
-                case "1": lbl_turno.Text = "MATUTINO"; break;
-                case "2": lbl_turno.Text = "VESPERTINO"; break;
-                case "3": lbl_turno.Text = "NOCTURNO"; break;
-            }
-        }
-
         private void TabPage2_Click(object sender, EventArgs e)
         {
             btn_v_insertar.Focus();

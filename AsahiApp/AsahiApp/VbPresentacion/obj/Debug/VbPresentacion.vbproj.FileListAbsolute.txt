@@ -641,3 +641,5 @@ C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPre
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.application
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\VbPresentacion.vbproj.CopyComplete
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_ConsultaXml.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_ConsultaXml.resources
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\VbPresentacion.vbproj.CoreCompileInputs.cache
