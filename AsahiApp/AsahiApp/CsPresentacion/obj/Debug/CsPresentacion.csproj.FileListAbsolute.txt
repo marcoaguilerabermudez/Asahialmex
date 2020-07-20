@@ -719,3 +719,5 @@ C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPre
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csproj.CopyComplete
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.dll
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.pdb
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Historico_personal.resources
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Rep_Historial_empleado.resources
