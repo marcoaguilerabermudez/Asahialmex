@@ -25,7 +25,10 @@ namespace CsPresentacion
         {
             // TODO: esta línea de código carga datos en la tabla 'DS_Historico.SP_historico_personal' Puede moverla o quitarla según sea necesario.
             this.SP_historico_personalTableAdapter.Fill(this.DS_Historico.SP_historico_personal, Var, Fecha, Depto);
+            // TODO: esta línea de código carga datos en la tabla 'DS_Historico.SP_historico_personal' Puede moverla o quitarla según sea necesario.
+            // this.SP_historico_personalTableAdapter.Fill(this.DS_Historico.SP_historico_personal, Var, Fecha, Depto);
 
+            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
     }

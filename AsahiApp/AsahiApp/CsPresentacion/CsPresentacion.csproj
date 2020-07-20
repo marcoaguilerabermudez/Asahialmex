@@ -96,6 +96,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="asahi16DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>asahi16DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_Historial_Empleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Historial_Empleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Historico_personal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Historico_personal.Designer.cs">
+      <DependentUpon>Frm_Historico_personal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Bajas_Contabilidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -479,6 +495,12 @@
     <Compile Include="Reportes\RH\Rep_Ausentismo.Designer.cs">
       <DependentUpon>Rep_Ausentismo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\RH\Rep_Historial_empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RH\Rep_Historial_empleado.Designer.cs">
+      <DependentUpon>Rep_Historial_empleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -519,6 +541,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Bajas_Contabilidad.rdlc" />
+    <EmbeddedResource Include="Formularios\RH\Frm_Historico_personal.resx">
+      <DependentUpon>Frm_Historico_personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Historial_empleado.rdlc" />
     <EmbeddedResource Include="Reportes\Bajas_Contabilidad.resx">
       <DependentUpon>Bajas_Contabilidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -666,6 +692,9 @@
     <EmbeddedResource Include="Rep_Filtro2.rdlc" />
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
     <EmbeddedResource Include="Rep_grafica_rotacion.rdlc" />
+    <EmbeddedResource Include="Reportes\RH\Rep_Historial_empleado.resx">
+      <DependentUpon>Rep_Historial_empleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rep_Historico.rdlc" />
     <EmbeddedResource Include="Rep_Incapacidades.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Activos.rdlc" />
@@ -704,6 +733,17 @@
     </None>
     <None Include="asahi16DataSet.xss">
       <DependentUpon>asahi16DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="asahi16DataSet1.xsc">
+      <DependentUpon>asahi16DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="asahi16DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>asahi16DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="asahi16DataSet1.xss">
+      <DependentUpon>asahi16DataSet1.xsd</DependentUpon>
     </None>
     <None Include="DS_Ausentismos.xsc">
       <DependentUpon>DS_Ausentismos.xsd</DependentUpon>
@@ -781,6 +821,17 @@
     </None>
     <None Include="DS_Finiquito.xss">
       <DependentUpon>DS_Finiquito.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Historial_Empleado.xsc">
+      <DependentUpon>DS_Historial_Empleado.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Historial_Empleado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Historial_Empleado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Historial_Empleado.xss">
+      <DependentUpon>DS_Historial_Empleado.xsd</DependentUpon>
     </None>
     <None Include="DS_Historico.xsc">
       <DependentUpon>DS_Historico.xsd</DependentUpon>

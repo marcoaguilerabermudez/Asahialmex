@@ -82,8 +82,7 @@ Public Class Frm_Principal
         AusentismoGeneralToolStripMenuItem.Enabled = False
         Incapacidades_RetardosToolStripMenuItem.Enabled = False
         ProvicionesToolStripMenuItem.Enabled = False
-
-
+        HistorialToolStripMenuItem.Enabled = False
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
         For Each item In lstPer
@@ -121,6 +120,7 @@ Public Class Frm_Principal
                 Case "AusentismoGeneralToolStripMenuItem" : AusentismoGeneralToolStripMenuItem.Enabled = True
                 Case "Incapacidades_RetardosToolStripMenuItem" : Incapacidades_RetardosToolStripMenuItem.Enabled = True
                 Case "ProvicionesToolStripMenuItem" : ProvicionesToolStripMenuItem.Enabled = True
+                Case "HistorialToolStripMenuItem" : HistorialToolStripMenuItem.Enabled = True
             End Select
         Next
     End Sub
@@ -407,6 +407,11 @@ Public Class Frm_Principal
     End Sub
     Private Sub ConsultaXMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaXMLToolStripMenuItem.Click
         Dim frm As New Frm_ConsultaXml(Me.emp)
+        frm.Show()
+    End Sub
+
+    Private Sub HistorialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HistorialToolStripMenuItem.Click
+        Dim frm As New Frm_Historico_personal()
         frm.Show()
     End Sub
 #End Region
