@@ -37,8 +37,9 @@ namespace CsPresentacion
 
         private void Frm_Comedor_Load(object sender, EventArgs e)
         {
-            Nuevo();
+           Nuevo();
             autocompletar_responsable(txt_nombre);
+            txt_clave.Focus();
         }
 
         //Métodos
