@@ -120,16 +120,14 @@ namespace CsPresentacion
             con.Close();
         }
 
-
-
         private void Diseño_dgv(DataGridView dgv)
         {
-            dgv.Columns[0].Width = 50;//No. Empleado
-            dgv.Columns[1].Width = 150;//Puesto
+            dgv.Columns[0].Width = 60;//No. Empleado
+            dgv.Columns[1].Width = 160;//Puesto
             dgv.Columns[2].Width = 60;//sd0
             dgv.Columns[3].Width = 80;//Fecha
             dgv.Columns[4].Width = 130;//tipo
-            dgv.Columns[5].Width = 155;//motivo
+            dgv.Columns[5].Width = 190;//motivo
         }
 
         private void Exportara_Exel()// Método para exportar a excel.
@@ -275,6 +273,7 @@ namespace CsPresentacion
         {
             cargar_clave();
             Llenar_dgv();
+            Diseño_dgv(dgv_datos);
             pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
             txt_nombre.Enabled = false;
 
