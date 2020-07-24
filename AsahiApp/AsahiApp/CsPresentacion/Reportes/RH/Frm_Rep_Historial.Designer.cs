@@ -31,13 +31,23 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Rep_Historial));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DS_Historico = new CsPresentacion.DS_Historico();
             this.SP_historico_personalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DS_Historico = new CsPresentacion.DS_Historico();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SP_historico_personalTableAdapter = new CsPresentacion.DS_HistoricoTableAdapters.SP_historico_personalTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Historico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_historico_personalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_Historico)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SP_historico_personalBindingSource
+            // 
+            this.SP_historico_personalBindingSource.DataMember = "SP_historico_personal";
+            this.SP_historico_personalBindingSource.DataSource = this.DS_Historico;
+            // 
+            // DS_Historico
+            // 
+            this.DS_Historico.DataSetName = "DS_Historico";
+            this.DS_Historico.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1035, 572);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // DS_Historico
-            // 
-            this.DS_Historico.DataSetName = "DS_Historico";
-            this.DS_Historico.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // SP_historico_personalBindingSource
-            // 
-            this.SP_historico_personalBindingSource.DataMember = "SP_historico_personal";
-            this.SP_historico_personalBindingSource.DataSource = this.DS_Historico;
             // 
             // SP_historico_personalTableAdapter
             // 
@@ -77,17 +77,17 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historico";
             this.Load += new System.EventHandler(this.Frm_Rep_Historial_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Historico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_historico_personalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_Historico)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource SP_historico_personalBindingSource;
         private DS_Historico DS_Historico;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private DS_HistoricoTableAdapters.SP_historico_personalTableAdapter SP_historico_personalTableAdapter;
+        // private DS_HistoricoTableAdapters.SP_historico_personalTableAdapter SP_historico_personalTableAdapter;
     }
 }
