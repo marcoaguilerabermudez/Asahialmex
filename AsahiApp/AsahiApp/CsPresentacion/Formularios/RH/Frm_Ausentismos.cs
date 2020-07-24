@@ -110,6 +110,7 @@ namespace CsPresentacion
             lbl_estado.Text = "";
             pictureBox1.ImageLocation = "V:/Sistemas/SAAM/Logo.jpg";
             //Módulo de Faltas
+            btn_f_insertar.Enabled = false;
             dtm_f_termina.Text = "";
             dtm_f_termina.Enabled = false;
             dtm_f_aplicacion.Text = "";
@@ -145,6 +146,7 @@ namespace CsPresentacion
             btn_v_guardar.Enabled = false;
             btn_v_cancelar.Enabled = false;
             btn_v_exportar.Enabled = false;
+            btn_v_insertar.Enabled = false;
             txt_v_prima.Enabled = false;
             dtm_v_inicia.Enabled = false;
             dtm_v_termina.Enabled = false;
@@ -312,7 +314,7 @@ namespace CsPresentacion
                     {
                         Borra_falta();
                         Inserta_incapacidades();
-                        Mostrar_Grid();
+                        Mostrar_Grid_Incapacidades();
                         dtm_fecha.Text = "";
                         txt_duracion.Text = "";
                         dtm_termina.Text = "";
@@ -331,7 +333,7 @@ namespace CsPresentacion
             else
             {
                 Inserta_incapacidades();
-                Mostrar_Grid();
+                Mostrar_Grid_Incapacidades();
                 dtm_fecha.Text = "";
                 txt_duracion.Text = "";
                 dtm_termina.Text = "";
@@ -457,7 +459,7 @@ namespace CsPresentacion
             dgv.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
-        private void Mostrar_Grid()//Mostrar grid de incapacidades.
+        private void Mostrar_Grid_Incapacidades()//Mostrar grid de incapacidades.
         {
             try
             {
@@ -647,7 +649,7 @@ namespace CsPresentacion
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
             nuevo();
-            Mostrar_Grid();
+            Mostrar_Grid_Incapacidades();
             Mostrar_Grid_Faltas();
             Mostrar_Grid_Vacaciones();
         }
@@ -746,7 +748,7 @@ namespace CsPresentacion
         private void Btn_eliminar_Click_1(object sender, EventArgs e)
         {
             Elimina_incapacidades();
-            Mostrar_Grid();
+            Mostrar_Grid_Incapacidades();
             dtm_fecha.Text = "";
             dtm_termina.Text = "";
             txt_duracion.Text = "";
@@ -799,7 +801,7 @@ namespace CsPresentacion
                 {
 
                     Modifica_incapacidades();
-                    Mostrar_Grid();
+                    Mostrar_Grid_Incapacidades();
                 }
             }
         }
@@ -836,7 +838,7 @@ namespace CsPresentacion
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 cargar_informacion();
-                Mostrar_Grid();
+                Mostrar_Grid_Incapacidades();
                 Mostrar_Grid_Faltas();
                 Mostrar_Grid_Vacaciones();
                 cargar_dias();
@@ -867,14 +869,16 @@ namespace CsPresentacion
             else
             {
                 lbl_estado.ForeColor = Color.Red;
-                btn_insertar.Enabled = false;
+                btn_insertar.Enabled = true;
+                btn_f_insertar.Enabled = true;
+                btn_v_insertar.Enabled = true;
                 btn_guardar.Enabled = false;
                 btn_cancelar.Enabled = false;
-                btn_f_insertar.Enabled = false;
+            
                 btn_f_guardar.Enabled = false;
                 btn_f_cancelar.Enabled = false;
                 btn_f_eliminar.Enabled = false;
-                btn_v_insertar.Enabled = false;
+               
             }
         }
         private void Panel1_Paint(object sender, PaintEventArgs e)
@@ -886,7 +890,7 @@ namespace CsPresentacion
         private void Txt_nombre_Leave(object sender, EventArgs e)
         {
             cargar_clave();
-            Mostrar_Grid();
+            Mostrar_Grid_Incapacidades();
             Mostrar_Grid_Faltas();
             Mostrar_Grid_Vacaciones();
             cargar_dias();
