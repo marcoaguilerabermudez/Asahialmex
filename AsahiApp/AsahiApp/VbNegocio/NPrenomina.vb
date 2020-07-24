@@ -132,7 +132,7 @@ Public Class NPrenomina
         Dim DPre As New DPrenomina()
         Return DPre.RecuperarIdSemanaNomina(cadenaConex, semana, año)
     End Function
-    Public Sub BitacoraInsertar(ByVal cadenaConex As String, ByVal sem As Integer, ByVal año As Integer, ByVal cod As Integer, ByVal fecha As Date, ByVal tip As Integer)
+    Public Sub BitacoraInsertar(ByVal cadenaConex As String, ByVal sem As Integer, ByVal año As Integer, ByVal cod As Integer, ByVal fecha As DateTime, ByVal tip As Integer)
         Dim DPre As New DPrenomina()
 
         DPre.BitacoraInsertar(cadenaConex, sem, año, cod, fecha, tip)

@@ -386,7 +386,7 @@ Public Class Frm_Principal
         Ag.Show()
     End Sub
     Private Sub PolizasDeDiarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PolizasDeDiarioToolStripMenuItem.Click
-        Dim polD As New Frm_PolizasDiario
+        Dim polD As New Frm_PolizasDiario(Me.emp, 1)
         polD.Show()
     End Sub
     Private Sub Incapacidades_RetardosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Incapacidades_RetardosToolStripMenuItem.Click
@@ -408,6 +408,10 @@ Public Class Frm_Principal
     Private Sub ConsultaXMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaXMLToolStripMenuItem.Click
         Dim frm As New Frm_ConsultaXml(Me.emp)
         frm.Show()
+    End Sub
+    Private Sub EgresosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EgresosToolStripMenuItem.Click
+        Dim frmPol As New Frm_PolizasDiario(Me.emp, 2)
+        frmPol.Show()
     End Sub
 #End Region
 End Class

@@ -179,6 +179,15 @@
             fechaCompra_ = value
         End Set
     End Property
+    Private guidDocument_ As String
+    Public Property GuidDocument() As String
+        Get
+            Return guidDocument_
+        End Get
+        Set(ByVal value As String)
+            guidDocument_ = value
+        End Set
+    End Property
     Private uuid_ As String
     Public Property UUID() As String
         Get
@@ -492,6 +501,69 @@
         End Get
         Set(ByVal value As Double)
             impExtImporte_ = value
+        End Set
+    End Property
+    Private ejercicio_ As Integer
+    Public Property Ejercicio() As Integer
+        Get
+            Return ejercicio_
+        End Get
+        Set(ByVal value As Integer)
+            ejercicio_ = value
+        End Set
+    End Property
+    Private periodo_ As Integer
+    Public Property Periodo() As Integer
+        Get
+            Return periodo_
+        End Get
+        Set(ByVal value As Integer)
+            periodo_ = value
+        End Set
+    End Property
+    Private ejercicioPago_ As Integer
+    Public Property EjercicioPago() As Integer
+        Get
+            Return ejercicioPago_
+        End Get
+        Set(ByVal value As Integer)
+            ejercicioPago_ = value
+        End Set
+    End Property
+    Private periodoPago_ As Integer
+    Public Property PeriodoPago() As Integer
+        Get
+            Return periodoPago_
+        End Get
+        Set(ByVal value As Integer)
+            periodoPago_ = value
+        End Set
+    End Property
+    Private idProveedor_ As Integer
+    Public Property IdProveedor() As Integer
+        Get
+            Return idProveedor_
+        End Get
+        Set(ByVal value As Integer)
+            idProveedor_ = value
+        End Set
+    End Property
+    Private concepto_ As String
+    Public Property Concepto() As String
+        Get
+            Return concepto_
+        End Get
+        Set(ByVal value As String)
+            concepto_ = value
+        End Set
+    End Property
+    Private cuentaClabe_ As String
+    Public Property CuentaClabe() As String
+        Get
+            Return cuentaClabe_
+        End Get
+        Set(ByVal value As String)
+            cuentaClabe_ = value
         End Set
     End Property
 End Class
