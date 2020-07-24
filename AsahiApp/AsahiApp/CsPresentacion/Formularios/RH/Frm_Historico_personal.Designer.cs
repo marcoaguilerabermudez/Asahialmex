@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_datos = new System.Windows.Forms.DataGridView();
             this.btn_exportar = new System.Windows.Forms.Button();
             this.btn_reporte = new System.Windows.Forms.Button();
@@ -62,20 +62,20 @@
             this.dgv_datos.Location = new System.Drawing.Point(12, 175);
             this.dgv_datos.MultiSelect = false;
             this.dgv_datos.Name = "dgv_datos";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_datos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_datos.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_datos.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_datos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_datos.ShowCellErrors = false;
-            this.dgv_datos.Size = new System.Drawing.Size(741, 228);
+            this.dgv_datos.Size = new System.Drawing.Size(699, 228);
             this.dgv_datos.TabIndex = 23;
             this.dgv_datos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_datos_CellFormatting);
             // 
@@ -85,7 +85,7 @@
             this.btn_exportar.FlatAppearance.BorderSize = 0;
             this.btn_exportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exportar.Image = global::CsPresentacion.Properties.Resources.Excel;
-            this.btn_exportar.Location = new System.Drawing.Point(629, 413);
+            this.btn_exportar.Location = new System.Drawing.Point(578, 413);
             this.btn_exportar.Name = "btn_exportar";
             this.btn_exportar.Size = new System.Drawing.Size(32, 34);
             this.btn_exportar.TabIndex = 26;
@@ -98,7 +98,7 @@
             this.btn_reporte.FlatAppearance.BorderSize = 0;
             this.btn_reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reporte.Image = global::CsPresentacion.Properties.Resources.Adobe_PDF_Document_icon;
-            this.btn_reporte.Location = new System.Drawing.Point(694, 412);
+            this.btn_reporte.Location = new System.Drawing.Point(643, 412);
             this.btn_reporte.Name = "btn_reporte";
             this.btn_reporte.Size = new System.Drawing.Size(42, 34);
             this.btn_reporte.TabIndex = 25;
@@ -152,7 +152,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(619, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(582, 58);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(113, 111);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,7 +208,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(761, 455);
+            this.ClientSize = new System.Drawing.Size(725, 455);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.groupBox2);

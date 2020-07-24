@@ -393,9 +393,7 @@ Public Class Frm_Principal
         Dim Ag As New Frm_Aussentismos_Retardos(Me.emp)
         Ag.Show()
     End Sub
-    Private Sub ComidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Kardex_comedorToolStripMenuItem.Click
-        Dim Co As New Frm_Comedor
-        Co.Show()
+    Private Sub ComidasToolStripMenuItem_Click(sender As Object, e As EventArgs)
     End Sub
     Private Sub ProvicionesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProvicionesToolStripMenuItem1.Click
         Dim FrmProv As New Frm_Provisiones()
@@ -417,6 +415,11 @@ Public Class Frm_Principal
     Private Sub EgresosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EgresosToolStripMenuItem.Click
         Dim frmPol As New Frm_PolizasDiario(Me.emp, 2)
         frmPol.Show()
+    End Sub
+
+    Private Sub Kardex_comedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Kardex_comedorToolStripMenuItem.Click
+        Dim Co As New Frm_Comedor
+        Co.Show()
     End Sub
 #End Region
 End Class
