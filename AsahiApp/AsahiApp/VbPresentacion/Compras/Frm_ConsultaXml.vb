@@ -51,9 +51,17 @@ Public Class Frm_ConsultaXml
                 .Cells("rfc").Value = item.RfcEmisor
                 .Cells("nombre").Value = item.NombreEmisor
                 .Cells("total").Value = Format(item.TotalFactura, "$ #,###,##0.0000")
-                .Cells("xml").Value = item.UUID
+                .Cells("xml").Value = item.GuidDocument
+                .Cells("UUID").Value = item.UUID
             End With
             fila += 1
         Next
+    End Sub
+    Private Sub Txt_Fact_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_Fact.KeyPress
+        If Char.IsDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+                RecuperarFacturas()
+            End If
+        End If
     End Sub
 End Class

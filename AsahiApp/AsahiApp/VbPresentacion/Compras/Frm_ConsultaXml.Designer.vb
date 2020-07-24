@@ -39,6 +39,7 @@ Partial Class Frm_ConsultaXml
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.xml = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UUID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.Dgv_Facturas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +56,7 @@ Partial Class Frm_ConsultaXml
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(600, 46)
+        Me.Panel1.Size = New System.Drawing.Size(794, 46)
         Me.Panel1.TabIndex = 0
         '
         'Btn_Buscar
@@ -65,7 +66,7 @@ Partial Class Frm_ConsultaXml
         Me.Btn_Buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.Btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Buscar.Image = Global.Presentacion.My.Resources.Resources.lupa
-        Me.Btn_Buscar.Location = New System.Drawing.Point(355, 5)
+        Me.Btn_Buscar.Location = New System.Drawing.Point(745, 5)
         Me.Btn_Buscar.Name = "Btn_Buscar"
         Me.Btn_Buscar.Size = New System.Drawing.Size(37, 35)
         Me.Btn_Buscar.TabIndex = 4
@@ -114,7 +115,7 @@ Partial Class Frm_ConsultaXml
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 46)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(600, 5)
+        Me.Panel2.Size = New System.Drawing.Size(794, 5)
         Me.Panel2.TabIndex = 1
         '
         'Panel3
@@ -122,13 +123,13 @@ Partial Class Frm_ConsultaXml
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel3.Location = New System.Drawing.Point(0, 223)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(600, 5)
+        Me.Panel3.Size = New System.Drawing.Size(794, 5)
         Me.Panel3.TabIndex = 2
         '
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel4.Location = New System.Drawing.Point(595, 51)
+        Me.Panel4.Location = New System.Drawing.Point(789, 51)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(5, 172)
         Me.Panel4.TabIndex = 3
@@ -147,19 +148,19 @@ Partial Class Frm_ConsultaXml
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(5, 51)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(590, 172)
+        Me.Panel6.Size = New System.Drawing.Size(784, 172)
         Me.Panel6.TabIndex = 5
         '
         'Dgv_Facturas
         '
         Me.Dgv_Facturas.AllowUserToAddRows = False
         Me.Dgv_Facturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Facturas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.folio, Me.rfc, Me.nombre, Me.total, Me.xml})
+        Me.Dgv_Facturas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.folio, Me.rfc, Me.nombre, Me.total, Me.xml, Me.UUID})
         Me.Dgv_Facturas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Facturas.Location = New System.Drawing.Point(0, 0)
         Me.Dgv_Facturas.Name = "Dgv_Facturas"
         Me.Dgv_Facturas.RowHeadersVisible = False
-        Me.Dgv_Facturas.Size = New System.Drawing.Size(590, 172)
+        Me.Dgv_Facturas.Size = New System.Drawing.Size(784, 172)
         Me.Dgv_Facturas.TabIndex = 0
         '
         'folio
@@ -197,17 +198,26 @@ Partial Class Frm_ConsultaXml
         Me.xml.ReadOnly = True
         Me.xml.Width = 195
         '
+        'UUID
+        '
+        Me.UUID.HeaderText = "UUID"
+        Me.UUID.Name = "UUID"
+        Me.UUID.ReadOnly = True
+        Me.UUID.Width = 195
+        '
         'Frm_ConsultaXml
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(600, 228)
+        Me.ClientSize = New System.Drawing.Size(794, 228)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Frm_ConsultaXml"
         Me.Text = "Consulta XML"
         Me.Panel1.ResumeLayout(False)
@@ -235,4 +245,5 @@ Partial Class Frm_ConsultaXml
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
     Friend WithEvents xml As DataGridViewTextBoxColumn
+    Friend WithEvents UUID As DataGridViewTextBoxColumn
 End Class

@@ -2345,7 +2345,7 @@ Public Class Frm_ListaPrenomina
             shXL.Cells(1, 71).Value = "Entidad federativa de nacimiento"
             shXL.Cells(1, 72).Value = "Tipo de prestación"
             shXL.Cells(1, 73).Value = "Extranjero sin CURP"
-            lstEmp = NEmp.RecuperarEmpleadosExportar(cadenaConex, (Lbl_Dia1.Text & "/" & Lbl_año.Text), (lbl_Dia7.Text & "/" & Lbl_año.Text))
+            lstEmp = NEmp.RecuperarEmpleadosExportar(cadConex, (Lbl_Dia1.Text & "/" & Lbl_año.Text), (lbl_Dia7.Text & "/" & Lbl_año.Text))
 
             If lstEmp.Count > 0 Then
                 For Each item In lstEmp

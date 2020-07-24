@@ -26,7 +26,7 @@ Public Class DPrenomina
             If (oCon.State = ConnectionState.Open) Then
                 oCon.Close()
             End If
-            oCon.Dispose()
+            'oCon.Dispose()
         End Try
         Return hrs
     End Function
@@ -601,7 +601,7 @@ Public Class DPrenomina
         End Try
         Return semana
     End Function
-    Public Sub BitacoraInsertar(ByVal cadenaConex As String, ByVal sem As Integer, ByVal año As Integer, ByVal cod As Integer, ByVal fecha As Date, ByVal tip As Integer)
+    Public Sub BitacoraInsertar(ByVal cadenaConex As String, ByVal sem As Integer, ByVal año As Integer, ByVal cod As Integer, ByVal fecha As DateTime, ByVal tip As Integer)
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()

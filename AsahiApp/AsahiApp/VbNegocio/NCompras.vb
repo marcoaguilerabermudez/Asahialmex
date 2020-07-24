@@ -56,6 +56,18 @@ Public Class NCompras
         Dim DComp As New DCompras()
         Return DComp.ConsultarImpuestosExtra(cadenaConex, uuid)
     End Function
+    Public Function RecuperarEgreso(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String) As LCompras
+        Dim DComp As New DCompras()
+        Return DComp.RecuperarEgreso(cadenaConex, moneda, idFac)
+    End Function
+    Public Function RecuperaCtasBancos(ByVal cadenaConex As String, ByVal lstCompras As LCompras) As LBancos
+        Dim DComp As New DCompras()
+        Return DComp.RecuperaCtasBancos(cadenaConex, lstCompras)
+    End Function
+    Public Function RecuperaCategorias(ByVal cadenaConex As String, ByVal lstCompras As LCompras, ByVal cta As String, ByVal segneg As String) As String
+        Dim DComp As New DCompras()
+        Return DComp.RecuperaCategorias(cadenaConex, lstCompras, cta, segneg)
+    End Function
     Private Function CreaXmlRuta(ByVal lstComp As LCompras) As Compras
         Dim comp As New Compras()
         Dim i As Byte
