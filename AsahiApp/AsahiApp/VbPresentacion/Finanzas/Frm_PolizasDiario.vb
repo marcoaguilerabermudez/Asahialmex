@@ -6,6 +6,7 @@ Imports Microsoft.Reporting.WinForms
 
 Public Class Frm_PolizasDiario
 #Region "Varianbles de clase"
+    Dim origen As Integer '1:Diario, 2:Egresos
     Dim conex As New conexion()
     Dim cadenaConex As String
     Dim cadConex As String
@@ -16,7 +17,29 @@ Public Class Frm_PolizasDiario
     Dim fechaPago As Date
     Dim tCamb As Double
     Dim pasoPol As String
+    Dim pasoEgre As String
     Dim ip As String = Strings.Left(Me.conex.getIp(), 6)
+    Dim emp As New Empleado()
+#End Region
+#Region "Constructores"
+    Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+    End Sub
+    Sub New(ByVal emp As Empleado, ByVal origen As Integer)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+        Me.emp = emp
+        Me.origen = origen
+    End Sub
 #End Region
 #Region "Acciones del formulario"
     Private Sub Frm_PolizasDiario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -29,6 +52,11 @@ Public Class Frm_PolizasDiario
             Me.cadenaConex = Me.conex.cadenaConexExpressFor
             Me.cadConex = Me.conex.conexion2008For
             Me.cadConexCont = Me.conex.conexionContFor
+        End If
+        If origen = 1 Then
+            Dgv_Prepolizas.Visible = True
+        ElseIf origen = 2 Then
+            Dgv_Egresos.Visible = True
         End If
         Dtp_Inicio.Value = DateAdd(DateInterval.Day, -7, Date.Now())
         Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
@@ -43,35 +71,54 @@ Public Class Frm_PolizasDiario
         Dim fila As Integer
         fila = Dgv_Compras.CurrentRow.Index
         If Dgv_Compras.Rows(fila).DefaultCellStyle.BackColor <> Color.DarkRed Then
-            If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 0 Then
+            If Me.origen = 1 Then
+                If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 0 Then
 
-                Me.pasoPol = ""
-                uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
-                moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
-                tc = Dgv_Compras.Rows(fila).Cells("tazaCambio").Value
-                Me.tCamb = Dgv_Compras.Rows(fila).Cells("tazaCambio").Value
-                oc = Dgv_Compras.Rows(fila).Cells("oc").Value
-                Me.fechaPago = Dgv_Compras.Rows(fila).Cells("fechaPagoFactura").Value
-                RecuperarPolizas(moneda, uuid, tc, oc)
-                If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
-            Else
-                MsgBox("ESTA PROVICION YA SE ESTA PREPARADA PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
+                    Me.pasoPol = ""
+                    uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
+                    moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
+                    tc = Dgv_Compras.Rows(fila).Cells("tazaCambio").Value
+                    Me.tCamb = Dgv_Compras.Rows(fila).Cells("tazaCambio").Value
+                    oc = Dgv_Compras.Rows(fila).Cells("oc").Value
+                    Me.fechaPago = Dgv_Compras.Rows(fila).Cells("fechaPagoFactura").Value
+                    RecuperarPolizas(moneda, uuid, tc, oc)
+                    If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+                Else
+                    MsgBox("ESTA PROVICION YA ESTA PREPARADA PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
+                End If
+            ElseIf Me.origen = 2 Then
+                If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 0 Then
+                    Me.pasoPol = ""
+                    uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
+                    moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
+                    oc = Dgv_Compras.Rows(fila).Cells("oc").Value
+                    RecuperarEgreso(moneda, uuid, oc)
+                    If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+                Else
+                    MsgBox("ESTE EGRESO YA ESTA PREPARADO PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
+                End If
             End If
         Else
             MsgBox("NO COINCIDEN MONTOS DE COMPRA Y DE FACTURA", MsgBoxStyle.Critical, "")
         End If
     End Sub
     Private Sub Dtp_Inicio_ValueChanged(sender As Object, e As EventArgs) Handles Dtp_Inicio.ValueChanged
+        'If Me.origen = 1 Then
         RecuperarCompras()
         RecuperarProveedores()
         Dgv_Prepolizas.DataSource = Nothing
         Dgv_Prepolizas.Rows.Clear()
+        'Else
+        'End If
     End Sub
     Private Sub Dtp_Fin_ValueChanged(sender As Object, e As EventArgs) Handles Dtp_Fin.ValueChanged
+        'If Me.origen = 1 Then
         RecuperarCompras()
         RecuperarProveedores()
         Dgv_Prepolizas.DataSource = Nothing
         Dgv_Prepolizas.Rows.Clear()
+        'Else
+        'End If
     End Sub
     Private Sub Btn_Txt_Click(sender As Object, e As EventArgs) Handles Btn_Txt.Click
         CrearTxt()
@@ -266,6 +313,16 @@ Public Class Frm_PolizasDiario
         lstComp = NComp.VistaPoliza(Me.cadenaConex, moneda, uuid, tc)
         RellenarDgvVistaPolizas(lstComp, oc)
     End Sub
+    Private Sub RecuperarEgreso(ByVal moneda As String, ByVal uuid As String, ByVal oc As Integer)
+        Dim NComp As New NCompras()
+        Dim lstComp As New LCompras()
+        Dim cuenta As Integer
+
+        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, uuid)
+        cuenta = lstComp.Count
+        lstComp = NComp.RecuperarEgreso(Me.cadenaConex, moneda, uuid)
+        RellenaDGVPolizasEgresos(lstComp)
+    End Sub
 #End Region
 #Region "Rellenar Dgv"
     Private Sub RellenarDgvCompras(ByVal lstComp As LCompras)
@@ -359,6 +416,43 @@ Public Class Frm_PolizasDiario
                 pfila += 1
                 Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format((Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t) + sumRet, "$ #,###,##0.00")
             End If
+        End If
+    End Sub
+    Private Sub RellenaDGVPolizasEgresos(ByVal lstComp As LCompras)
+        Dim fila As Integer = Dgv_Egresos.Rows.Count(), pfila As Integer = fila
+        Dim sNeg As String = ""
+        'Dim sum As Double, sumCargo As Double, sumRet As Double, t As Double
+        Dim frm As New Frm_ConceptoEgreso(lstComp), NComp As New NCompras()
+
+        If frm.ShowDialog() = DialogResult.OK Then
+            For Each item In lstComp
+                Dgv_Egresos.Rows.Add()
+                If item.Pivote = 2 Then sNeg = NComp.RecuperaCategorias(Me.cadenaConex, lstComp, item.Cuenta, idSegNeg(item.Area))
+
+                With Dgv_Egresos.Rows(fila)
+                    .Cells("pivote").Value = item.Pivote
+                    .Cells("fechaFac").Value = item.FechaFactura
+                    .Cells("ejercicio").Value = item.Ejercicio
+                    .Cells("periodo").Value = item.Periodo
+                    .Cells("fechaPag").Value = item.FechaPagoFact
+                    .Cells("ejercicioPag").Value = item.EjercicioPago
+                    .Cells("periodoPag").Value = item.PeriodoPago
+                    .Cells("idProv").Value = item.IdProveedor
+                    .Cells("prov").Value = item.Proveedor
+                    .Cells("moneda2").Value = item.Moneda
+                    .Cells("tipCambio").Value = item.TazaCambio
+                    .Cells("total2").Value = item.TotalFactura
+                    .Cells("oCompra").Value = item.IdOrdenCompra
+                    .Cells("conceptoCuenta").Value = frm.Concepto
+                    .Cells("cuentaClabe").Value = item.CuentaClabe
+                    .Cells("idBanco").Value = frm.IdBanco
+                    .Cells("banco").Value = frm.Banco
+                    .Cells("codBanco").Value = frm.CodigoBanco
+                    .Cells("sc").Value = sNeg
+                    .Cells("cuentaS").Value = item.Cuenta
+                End With
+                fila += 1
+            Next
         End If
     End Sub
 #End Region

@@ -1,4 +1,5 @@
 ﻿Imports Clases
+Imports System.Collections.Concurrent
 Imports System.Data.SqlClient
 
 Public Class DCompras
@@ -87,6 +88,68 @@ Public Class DCompras
                 comp.CuentaP = (dr("CuentaP").ToString)
                 comp.Impuesto = Convert.ToDouble(dr("Impuesto").ToString)
                 lstComp.Add(comp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstComp
+    End Function
+    Public Function RecuperarEgreso(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String) As LCompras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstComp As New LCompras()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("PolizaEgresoRecuperar", oCon)
+            query.Parameters.AddWithValue("@uuid", idFac)
+            query.Parameters.AddWithValue("@moneda", moneda)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim comp As New Compras()
+                comp.Pivote = Convert.ToInt32(dr("Pivot").ToString)
+                comp.FechaFactura = Convert.ToDateTime(dr("Fecha").ToString)
+                comp.Ejercicio = Convert.ToInt32(dr("Ejercicio").ToString)
+                comp.Periodo = Convert.ToInt32(dr("Periodo").ToString)
+                comp.FechaPagoFact = Convert.ToDateTime(dr("FechaAplicacion").ToString)
+                comp.EjercicioPago = Convert.ToInt32(dr("EjercicioAp").ToString)
+                comp.PeriodoPago = Convert.ToInt32(dr("PeriodoAp").ToString)
+                comp.IdProveedor = Convert.ToInt32(dr("CodPersona").ToString)
+                comp.Proveedor = (dr("Persona").ToString)
+                comp.Moneda = Convert.ToInt32(dr("Moneda").ToString)
+                comp.TazaCambio = Convert.ToDouble(dr("TC").ToString)
+                comp.TotalFactura = Convert.ToDouble(dr("Total").ToString)
+                comp.IdOrdenCompra = Convert.ToInt32(dr("OC").ToString)
+                comp.Concepto = dr("Concepto").ToString
+                comp.CuentaClabe = dr("Clabe").ToString
+                comp.Area = dr("SC").ToString
+                comp.Cuenta = (dr("Cuenta").ToString)
+                lstComp.Add(comp)
+#Region "Comentados"
+                'comp.IdCompra = Convert.ToInt32(dr("Compra").ToString)
+                'comp.Serie = (dr("Serie").ToString)
+                'comp.Factura = (dr("Factura").ToString)
+                'comp.Rfc = (dr("RFC").ToString)
+                'comp.TotalFactura = Convert.ToDouble(dr("Total_Factura").ToString)
+                'comp.CompraTotal = Convert.ToDouble(dr("CompraTotal").ToString)
+                'comp.Empresa = (dr("Empresa").ToString)
+                'comp.RfcEmisor = (dr("RFCEmisor").ToString)
+                'comp.NombreEmisor = (dr("NombreEmisor").ToString)
+                'comp.UUID = (dr("UUID").ToString)
+                'comp.Area = (dr("Área").ToString)
+                'comp.Familia = (dr("Familia").ToString)
+                'comp.Neto = Convert.ToDouble(dr("Neto").ToString)
+                'comp.CuentaIva = (dr("Cuenta_iva").ToString)
+                'comp.IvaT = Convert.ToDouble(dr("Iva_t").ToString)
+                'comp.CuentaP = (dr("CuentaP").ToString)
+                'comp.Impuesto = Convert.ToDouble(dr("Impuesto").ToString)
+#End Region
             End While
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -421,7 +484,8 @@ Public Class DCompras
                 comp.RfcEmisor = dr("RFCEmisor").ToString
                 comp.NombreEmisor = dr("NombreEmisor").ToString
                 comp.TotalFactura = dr("total").ToString
-                comp.UUID = dr("GuidDocument").ToString
+                comp.GuidDocument = dr("GuidDocument").ToString
+                comp.UUID = dr("UUID").ToString
                 lstComp.Add(comp)
             End While
         Catch ex As Exception
@@ -461,5 +525,53 @@ Public Class DCompras
             oCon.Dispose()
         End Try
         Return LComp
+    End Function
+    Public Function RecuperaCtasBancos(ByVal cadenaConex As String, ByVal lstCompras As LCompras) As LBancos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstBanc As New LBancos()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Select IdBanco, Nombre, Codigo from Conta.ctAAM.dbo.CuentasCheques where CodigoMoneda = " & lstCompras(0).Moneda & "", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim banc As New Bancos
+                banc.IdBanco = Convert.ToInt32(dr("IdBanco").ToString)
+                banc.NombreBanco = dr("Nombre").ToString
+                banc.Codigo = dr("Codigo").ToString
+                lstBanc.Add(banc)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstBanc
+    End Function
+    Public Function RecuperaCategorias(ByVal cadenaConex As String, ByVal lstCompras As LCompras, ByVal cta As String, ByVal segneg As String) As String
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim cd As String = "0"
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT Codigo FROM Conta.ctAAM.dbo.Categorias where CodigoCuenta = '" & cta & "' and IdSegNeg = (SELECT Id FROM Conta.ctAAM.dbo.SegmentosNegocio where Codigo = " & segneg & ") and CodigoMoneda = " & lstCompras(0).Moneda & "", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                cd = dr("Codigo").ToString
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return cd
     End Function
 End Class
