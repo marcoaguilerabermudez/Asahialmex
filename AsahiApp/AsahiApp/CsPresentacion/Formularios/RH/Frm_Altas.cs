@@ -468,6 +468,13 @@ namespace CsPresentacion
                 MessageBox.Show("Es necesario capturar información de contacto completa.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_tel_contacto.Focus();
             }
+            else if (string.IsNullOrEmpty(txt_email.Text))
+            {
+                MessageBox.Show("Es necesario capturar una dirección de correo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_email.Focus();
+            }
+
+
             else if (string.IsNullOrEmpty(txt_infonavit.Text))
             {
                 txt_infonavit.Text = "0";
