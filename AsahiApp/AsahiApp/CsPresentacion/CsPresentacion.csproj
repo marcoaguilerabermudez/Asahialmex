@@ -544,6 +544,7 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Historico_personal.resx">
       <DependentUpon>Frm_Historico_personal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Contrato.rdlc" />
     <EmbeddedResource Include="Rep_Historial_empleado.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Bajas_Contabilidad.resx">
       <DependentUpon>Bajas_Contabilidad.cs</DependentUpon>

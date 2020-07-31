@@ -102,14 +102,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CsPresentacion.dll" size="5266944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CsPresentacion.dll" size="5892608">
       <assemblyIdentity name="CsPresentacion" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1v/NpY4ODRf+2QtJiKkGQR5s9vsF14279MXpzGoXftE=</dsig:DigestValue>
+        <dsig:DigestValue>K+R9HGfSO5CvTVPM56mGwDBUm1prRKNREVCqywjJrHg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -786,18 +786,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="526336">
-      <assemblyIdentity name="Newtonsoft.Json" version="9.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>V14w+Y5OpCyeUW7ci7sprYtQsXOj5rNrW6OeEzzOlAY=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="3241456">
       <assemblyIdentity name="Presentacion" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -830,13 +818,13 @@
       <dsig:DigestValue>ZnZJ1PwkuPn+Yb6itin1V9iHqDT2PAbRRiH1qeeWqS8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Presentacion.exe.config" size="2298">
+  <file name="Presentacion.exe.config" size="982">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>XpK7FKj+CT7C3nQSDrTzwE2a92tyShDYphrhCjtqOhQ=</dsig:DigestValue>
+      <dsig:DigestValue>d3OjWJoBLLB2BHew+gPa/m7c4GPwOvys3o6FZQyq55k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SqlServerTypes\Loader.cs" size="1739">
