@@ -102,7 +102,6 @@ namespace CsPresentacion
             btn_anterior.Enabled = false;
             btn_siguiente.Enabled = false;
             btn_ultimo.Enabled = false;
-            btn_insertar.Enabled = false;
             btn_eliminar.Enabled = false;
             btn_guardar.Enabled = false;
             btn_cancelar.Enabled = false;
@@ -130,6 +129,7 @@ namespace CsPresentacion
             txt_f_tipo.Text = "";
             cmb_f_tipo.Enabled = false;
             txt_f_tipo.Enabled = false;
+            btn_insertar.Enabled = false;
             txt_clave.Focus();
             //Módulo de vacaciones
             txt_v_prima.Text = "";
@@ -161,6 +161,7 @@ namespace CsPresentacion
             lbl_v_termina.Text = "0";
             lbl_v_inicia.Visible = false;
             lbl_v_termina.Visible = false;
+          
         }
         private void cargar_informacion()
         {
@@ -500,7 +501,7 @@ namespace CsPresentacion
                 SqlCommand cmd = new SqlCommand("[dbo].[Incapacidades_Retardos]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@VAR", "3");
-                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@CLAVE", Convert.ToInt32(txt_clave.Text));
                 cmd.Parameters.AddWithValue("@FECHA", dtm_fecha.Text);
                 cmd.Parameters.AddWithValue("@DURACION", txt_duracion.Text);
                 cmd.Parameters.AddWithValue("@NUMERO", txt_certificado.Text);
@@ -529,7 +530,7 @@ namespace CsPresentacion
                 SqlCommand cmd = new SqlCommand("[dbo].[Incapacidades_Retardos]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@VAR", "4");
-                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+                cmd.Parameters.AddWithValue("@CLAVE", Convert.ToInt32(txt_clave.Text));
                 cmd.Parameters.AddWithValue("@FECHA", dtm_fecha.Text);
                 cmd.Parameters.AddWithValue("@DURACION", txt_duracion.Text);
                 cmd.Parameters.AddWithValue("@NUMERO", txt_certificado.Text);
@@ -838,7 +839,7 @@ namespace CsPresentacion
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 cargar_informacion();
-                Mostrar_Grid_Incapacidades();
+               Mostrar_Grid_Incapacidades();
                 Mostrar_Grid_Faltas();
                 Mostrar_Grid_Vacaciones();
                 cargar_dias();
@@ -1215,7 +1216,7 @@ namespace CsPresentacion
             con.Open();
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "4";
-            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
+            da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar,100).Value = txt_clave.Text;
             da.SelectCommand.Parameters.Add("@FECHA", SqlDbType.VarChar, 100).Value = dtm_f_fecha.Text;
             da.SelectCommand.Parameters.Add("@FECHA_FINAL", SqlDbType.VarChar, 100).Value = dtm_f_termina.Text;
             da.SelectCommand.Parameters.Add("@TIPO", SqlDbType.VarChar, 100).Value = txt_f_tipo.Text;

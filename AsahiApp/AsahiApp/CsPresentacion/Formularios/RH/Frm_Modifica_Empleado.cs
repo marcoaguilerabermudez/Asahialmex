@@ -165,8 +165,8 @@ namespace CsPresentacion
         {
             dgv.Columns[0].Width = 55;//No. Empleado
             dgv.Columns[1].Width = 220;//Nombre empleado
-            dgv.Columns[2].Width = 140;//Departamento
-            dgv.Columns[3].Width = 135;//Ruta
+            //dgv.Columns[2].Width = 140;//Departamento
+            dgv.Columns[2].Width = 135;//Ruta
         }
         private void Modifica_depto()// Método para modificar departamento de empleado
         {

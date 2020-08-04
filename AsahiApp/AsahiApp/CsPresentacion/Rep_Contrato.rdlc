@@ -9844,6 +9844,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -9883,13 +9884,47 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Recibí por parte de la empresa Asahi Aluminium México Servicios; el curso de inducción de la empresa; así como el reglamento interior de trabajo, horarios de trabajo, prestaciones y más beneficios que ofrece la empresa.</Value>
+                <Value>Recibí por parte de la empresa Asahi Aluminium México Servicios; </Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
-                  <FontFamily>Calibri</FontFamily>
+                  <FontFamily>Arial Narrow</FontFamily>
                   <FontSize>11pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>el curso de inducción inicial, la Misión y Visión</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Arial Narrow</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> de la empresa; así como </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Arial Narrow</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>el reglamento interior de trabajo, horarios de trabajo, prestaciones y más beneficios que ofrece la empresa.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Arial Narrow</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -9919,7 +9954,7 @@
         <rd:DefaultName>Textbox31</rd:DefaultName>
         <Top>192.50244cm</Top>
         <Left>0.44663cm</Left>
-        <Height>1.50943cm</Height>
+        <Height>1.71924cm</Height>
         <Width>19.59208cm</Width>
         <ZIndex>117</ZIndex>
         <Style>
