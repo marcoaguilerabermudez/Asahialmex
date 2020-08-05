@@ -482,9 +482,9 @@
           <Source>Embedded</Source>
           <Value>Logo</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.25149cm</Top>
+          <Top>0.41024cm</Top>
           <Left>0.49897cm</Left>
-          <Height>1.07625cm</Height>
+          <Height>0.9175cm</Height>
           <Width>1.07667cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
@@ -1131,7 +1131,7 @@
                 <TextRun>
                   <Value>Director</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1165,7 +1165,7 @@
                 <TextRun>
                   <Value>Asistente de Gerente/Gerente</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
