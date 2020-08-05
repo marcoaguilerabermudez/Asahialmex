@@ -198,7 +198,7 @@ Public Class Frm_Principal
     End Sub
     Private Sub TodosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'Ejecuta todos los reportes de pre nomina
-        Dim Retardos As New Frm_Parametros_rep_prenomina()
+        Dim Retardos As New Frm_Parametros_rep_prenomina(Me.emp)
         Var = 0
         Retardos.lbl_var.Text = Var
         Retardos.Show()
@@ -247,28 +247,28 @@ Public Class Frm_Principal
     End Sub
     Private Sub DescansoLaboradoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DescansoLaboradoToolStripMenuItem1.Click
         'Ejecuta reporte de Descanso Laborado de RH
-        Dim Descanso As New Frm_Parametros_rep_prenomina()
+        Dim Descanso As New Frm_Parametros_rep_prenomina(Me.emp)
         Var = 1
         Descanso.lbl_var.Text = Var
         Descanso.Show()
     End Sub
     Private Sub PermisoDeSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermisoDeSalidaToolStripMenuItem.Click
         'Ejecuta reporte de Permisos de salida RH
-        Dim Retardos As New Frm_Parametros_rep_prenomina()
+        Dim Retardos As New Frm_Parametros_rep_prenomina(Me.emp)
         Var = 3
         Retardos.lbl_var.Text = Var
         Retardos.Show()
     End Sub
     Private Sub RetardosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RetardosToolStripMenuItem1.Click
         'Ejecuta reporte de Retardos de RH
-        Dim Retardos As New Frm_Parametros_rep_prenomina()
+        Dim Retardos As New Frm_Parametros_rep_prenomina(Me.emp)
         Var = 2
         Retardos.lbl_var.Text = Var
         Retardos.Show()
     End Sub
     Private Sub AusentismosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AusentismosToolStripMenuItem1.Click
         'Ejecuta reporte de Ausentismos de RH
-        Dim Aus As New Frm_Parametros_rep_prenomina()
+        Dim Aus As New Frm_Parametros_rep_prenomina(Me.emp)
         Var = 4
         Aus.lbl_var.Text = Var
         Aus.Show()
@@ -276,7 +276,7 @@ Public Class Frm_Principal
     End Sub
     Private Sub IncapacidadesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles IncapacidadesToolStripMenuItem1.Click
         'Ejecuta reporte de Incapacidades de RH
-        Dim Retardos As New Frm_Parametros_rep_prenomina()
+        Dim Retardos As New Frm_Parametros_rep_prenomina(Me.emp)
         Var = 5
         Retardos.lbl_var.Text = Var
         Retardos.Show()
@@ -284,7 +284,7 @@ Public Class Frm_Principal
     End Sub
     Private Sub VacacionesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles VacacionesToolStripMenuItem1.Click
         'Ejecuta reporte de Vacaciones de RH
-        Dim Vac As New Frm_Parametros_rep_prenomina()
+        Dim Vac As New Frm_Parametros_rep_prenomina(Me.emp)
         Var = 6
         Vac.lbl_var.Text = Var
         Vac.Show()

@@ -7,22 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Clases;
 
 namespace CsPresentacion
 {
     public partial class Frm_Parametros_rep_prenomina : Form
     {
-        public Frm_Parametros_rep_prenomina()
+        public Frm_Parametros_rep_prenomina(Empleado classEmpleado)
         {
             InitializeComponent();
             timer1.Enabled = true;
             var tt = new ToolTip();
             tt.SetToolTip(btn_reporte, "GENERA REPORTE");
+            claseEmp = classEmpleado;
         }
         //Variable para seleccionar tipo de reporte
+ 
         int Tipo;
-        
+        Empleado claseEmp;
+
+
         private void Frm_Fecha_rep_prenomina_Load(object sender, EventArgs e)
         {
             nuevo();
@@ -30,7 +34,6 @@ namespace CsPresentacion
             txt_año.Enabled = true;
             dtm_inicial.Enabled = true;
             txt_clave.Enabled = true;
-            txt_clave.Focus();
             cmb_tipo.Visible = false;
             lbl_tipo_aus.Visible = false;
             if (lbl_var.Text == "4")
@@ -39,6 +42,9 @@ namespace CsPresentacion
                 lbl_tipo_aus.Visible = true;
             }
         }
+
+   
+
 
         private void Frm_Fecha_rep_prenomina_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -378,6 +384,8 @@ namespace CsPresentacion
                 }
             }
 
+//-----------------------------------------------------------------------------------------------------------
+
             else if (lbl_var.Text == "4")//Reporte de Ausentismos
             {
                 if (lbl_tipo.Text == "0")
@@ -403,6 +411,7 @@ namespace CsPresentacion
                     aus.Inicia = dtm_inicial.Value;
                     aus.Termina = dtm_final.Value;
                     aus.Descripcion = lbl_descripcion.Text;
+                    aus.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -421,6 +430,7 @@ namespace CsPresentacion
                     aus.Inicia = dtm_inicial.Value;
                     aus.Termina = dtm_final.Value;
                     aus.Descripcion = lbl_descripcion.Text;
+                    aus.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -440,6 +450,7 @@ namespace CsPresentacion
                     aus.Termina = dtm_final.Value;
                     aus.Clave = Convert.ToInt32(txt_clave.Text);
                     aus.Descripcion = lbl_descripcion.Text;
+                    aus.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -457,6 +468,7 @@ namespace CsPresentacion
                     aus.Termina = dtm_final.Value;
                     aus.Clave = Convert.ToInt32(txt_clave.Text);
                     aus.Descripcion = lbl_descripcion.Text;
+                    aus.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -466,6 +478,7 @@ namespace CsPresentacion
                     aus.Show();
                 }
             }
+//----------------------------------------------------------------------------------------------------------
 
             else if (lbl_var.Text == "5")//Reporte de incapacidades
             {
@@ -522,6 +535,7 @@ namespace CsPresentacion
                     inc.Inicia = dtm_inicial.Value;
                     inc.Termina = dtm_final.Value;
                     inc.Clave = Convert.ToInt32(txt_clave.Text);
+
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;

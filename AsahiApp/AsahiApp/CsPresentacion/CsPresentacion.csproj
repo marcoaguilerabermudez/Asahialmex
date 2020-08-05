@@ -101,6 +101,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_Ausentismos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Ausentismos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_Historial_Empleado.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -231,11 +236,6 @@
     </Compile>
     <Compile Include="Reportes\RH\Ausentismos.Designer.cs">
       <DependentUpon>Ausentismos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DS_Ausentismos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_Ausentismos.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_Listado_Activos.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -544,6 +544,7 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Historico_personal.resx">
       <DependentUpon>Frm_Historico_personal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Ausentismos3.rdlc" />
     <EmbeddedResource Include="Rep_Contrato.rdlc" />
     <EmbeddedResource Include="Rep_Historial_empleado.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Bajas_Contabilidad.resx">
@@ -677,7 +678,6 @@
     <EmbeddedResource Include="Reportes\RH\Rep_Ausentismo.resx">
       <DependentUpon>Rep_Ausentismo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rep_Ausentismos.rdlc" />
     <EmbeddedResource Include="Rep_Ausentismo_Fecha.rdlc" />
     <EmbeddedResource Include="Rep_bajas.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Finiquito.resx">
