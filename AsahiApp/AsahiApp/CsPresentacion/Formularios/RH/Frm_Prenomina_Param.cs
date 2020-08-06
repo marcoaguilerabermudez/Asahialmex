@@ -43,9 +43,6 @@ namespace CsPresentacion
             }
         }
 
-   
-
-
         private void Frm_Fecha_rep_prenomina_KeyPress(object sender, KeyPressEventArgs e)
         {
         }
@@ -143,7 +140,8 @@ namespace CsPresentacion
         }
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
-            //Ejecuta reportes individuales
+            //-----------------------------------------------------------------------------------------
+            //Ejecuta reportes de descanso laborado
             if (lbl_var.Text == "1")//Reporte de descanso laborado
             {
                 if (lbl_tipo.Text == "0")
@@ -163,6 +161,7 @@ namespace CsPresentacion
                     dl.Tipo = Convert.ToInt32(lbl_tipo.Text);
                     dl.Inicia = dtm_inicial.Value;
                     dl.Termina = dtm_final.Value;
+                    dl.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -180,6 +179,7 @@ namespace CsPresentacion
                     dls.Semana = Convert.ToInt32(txt_semana.Text);
                     dls.Inicia = dtm_inicial.Value;
                     dls.Termina = dtm_final.Value;
+                    dls.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -198,6 +198,7 @@ namespace CsPresentacion
                     dls.Inicia = dtm_inicial.Value;
                     dls.Termina = dtm_final.Value;
                     dls.Clave = Convert.ToInt32(txt_clave.Text);
+                    dls.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -214,6 +215,7 @@ namespace CsPresentacion
                     dl.Inicia = dtm_inicial.Value;
                     dl.Termina = dtm_final.Value;
                     dl.Clave = Convert.ToInt32(txt_clave.Text);
+                    dl.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -223,7 +225,8 @@ namespace CsPresentacion
                     dl.Show();
                 }
             }
-
+            //-----------------------------------------------------------------------------------------
+            //Ejecuta Reportes de Retardos
             else if (lbl_var.Text == "2")//Reporte de Retardos
             {
                 if (lbl_tipo.Text == "0")
@@ -243,6 +246,7 @@ namespace CsPresentacion
                     Re.Tipo = Convert.ToInt32(lbl_tipo.Text);
                     Re.Inicia = dtm_inicial.Value;
                     Re.Termina = dtm_final.Value;
+                    Re.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -260,6 +264,7 @@ namespace CsPresentacion
                     RS.Año = Convert.ToInt32(txt_año.Text);
                     RS.Inicia = dtm_inicial.Value;
                     RS.Termina = dtm_final.Value;
+                    RS.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -278,6 +283,7 @@ namespace CsPresentacion
                     RS.Inicia = dtm_inicial.Value;
                     RS.Termina = dtm_final.Value;
                     RS.Clave = Convert.ToInt32(txt_clave.Text);
+                    RS.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -294,6 +300,7 @@ namespace CsPresentacion
                     Re.Inicia = dtm_inicial.Value;
                     Re.Termina = dtm_final.Value;
                     Re.Clave = Convert.ToInt32(txt_clave.Text);
+                    Re.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -303,7 +310,8 @@ namespace CsPresentacion
                     Re.Show();
                 }
             }
-
+            //-----------------------------------------------------------------------------------------  
+            //Ejecuta Permisos de salida anticipada
             else if (lbl_var.Text == "3")//Permisos de salida anticipada
             {
                 if (lbl_tipo.Text == "0")
@@ -323,6 +331,7 @@ namespace CsPresentacion
                     sa.Tipo = Convert.ToInt32(lbl_tipo.Text);
                     sa.Inicia = dtm_inicial.Value;
                     sa.Termina = dtm_final.Value;
+                    sa.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -340,6 +349,7 @@ namespace CsPresentacion
                     sa.Año = Convert.ToInt32(txt_año.Text);
                     sa.Inicia = dtm_inicial.Value;
                     sa.Termina = dtm_final.Value;
+                    sa.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -358,6 +368,7 @@ namespace CsPresentacion
                     sa.Inicia = dtm_inicial.Value;
                     sa.Termina = dtm_final.Value;
                     sa.Clave = Convert.ToInt32(txt_clave.Text);
+                    sa.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -374,6 +385,7 @@ namespace CsPresentacion
                     sa.Inicia = dtm_inicial.Value;
                     sa.Termina = dtm_final.Value;
                     sa.Clave = Convert.ToInt32(txt_clave.Text);
+                    sa.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -383,9 +395,8 @@ namespace CsPresentacion
                     sa.Show();
                 }
             }
-
-//-----------------------------------------------------------------------------------------------------------
-
+           //--------------------------------------------------------------------------------------------
+           //Ejecuta reportes de Ausentismo
             else if (lbl_var.Text == "4")//Reporte de Ausentismos
             {
                 if (lbl_tipo.Text == "0")
@@ -478,8 +489,9 @@ namespace CsPresentacion
                     aus.Show();
                 }
             }
-//----------------------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
 
+           //Ejecuta reportes de Incapacidades
             else if (lbl_var.Text == "5")//Reporte de incapacidades
             {
                 if (lbl_tipo.Text == "0")
@@ -500,6 +512,7 @@ namespace CsPresentacion
                     inc.Inicia = dtm_inicial.Value;
                     inc.Termina = dtm_final.Value;
                     inc.Inicia2 = dtm_inicial.Value;
+                    inc.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -517,6 +530,7 @@ namespace CsPresentacion
                     inc.Año = Convert.ToInt32(txt_año.Text);
                     inc.Inicia = dtm_inicial.Value;
                     inc.Termina = dtm_final.Value;
+                    inc.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -535,7 +549,7 @@ namespace CsPresentacion
                     inc.Inicia = dtm_inicial.Value;
                     inc.Termina = dtm_final.Value;
                     inc.Clave = Convert.ToInt32(txt_clave.Text);
-
+                    inc.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -552,6 +566,7 @@ namespace CsPresentacion
                     inc.Inicia = dtm_inicial.Value;
                     inc.Termina = dtm_final.Value;
                     inc.Clave = Convert.ToInt32(txt_clave.Text);
+                    inc.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -561,7 +576,9 @@ namespace CsPresentacion
                     inc.Show();
                 }
             }
+            //------------------------------------------------------------------------------------------
 
+            //Ejecuta reportes de vacaciones
             else if (lbl_var.Text == "6")//Reporte de Vacaciones
             {
                 if (lbl_tipo.Text == "0")
@@ -581,6 +598,7 @@ namespace CsPresentacion
                     vac.Tipo = Convert.ToInt32(lbl_tipo.Text);
                     vac.Inicia = dtm_inicial.Value;
                     vac.Termina = dtm_final.Value;
+                    vac.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -598,6 +616,7 @@ namespace CsPresentacion
                     vac.Año = Convert.ToInt32(txt_año.Text);
                     vac.Inicia = dtm_inicial.Value;
                     vac.Termina = dtm_final.Value;
+                    vac.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -616,6 +635,7 @@ namespace CsPresentacion
                     vac.Inicia = dtm_inicial.Value;
                     vac.Termina = dtm_final.Value;
                     vac.Clave = Convert.ToInt32(txt_clave.Text);
+                    vac.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -632,6 +652,7 @@ namespace CsPresentacion
                     vac.Inicia = dtm_inicial.Value;
                     vac.Termina = dtm_final.Value;
                     vac.Clave = Convert.ToInt32(txt_clave.Text);
+                    vac.Usuario = Convert.ToInt32(claseEmp.IdEmpleado);
                     nuevo();
                     txt_año.Enabled = true;
                     txt_semana.Enabled = true;
@@ -641,7 +662,9 @@ namespace CsPresentacion
                     vac.Show();
                 }
             }
+            //---------------------------------------------------------------------------------------------
         }
+
 
         private void Txt_año_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -660,16 +683,13 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Timer1_Tick(object sender, EventArgs e)
         {
             txt_año.Text = DateTime.Now.ToString("yyyy");
         }
-
         private void Btn_reporte_erik_Click(object sender, EventArgs e)
         {    
         }
-
         private void Txt_clave_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_clave.Text))
@@ -681,8 +701,6 @@ namespace CsPresentacion
                 lbl_tipo.Text = "3";
             }
         }
-
-
         private void Txt_clave_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsNumber(e.KeyChar))
@@ -698,7 +716,6 @@ namespace CsPresentacion
                 e.Handled = true;
             }
         }
-
         private void Cmb_tipo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
