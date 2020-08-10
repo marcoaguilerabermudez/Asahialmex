@@ -160,8 +160,7 @@ namespace CsPresentacion
             lbl_v_inicia.Text = "0";
             lbl_v_termina.Text = "0";
             lbl_v_inicia.Visible = false;
-            lbl_v_termina.Visible = false;
-          
+            lbl_v_termina.Visible = false; 
         }
         private void cargar_informacion()
         {
