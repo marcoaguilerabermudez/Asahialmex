@@ -35,7 +35,7 @@ namespace CsPresentacion
             nuevo();
             cargar_departemento(cmb_departamento);
             cargar_puesto(cmb_puesto);
-            txt_curp.Mask = ">LLLL000000LLLLLL00";
+            txt_curp.Mask = ">LLLL000000LLLLLLCC";
             txt_rfc.Mask = ">LLLL000000CCC";
         }
         private void Modifica_turno()// Método para modificar turno de empleado
