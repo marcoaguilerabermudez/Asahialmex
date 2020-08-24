@@ -686,81 +686,6 @@
                                 </Border>
                               </Style>
                             </Tablix>
-                            <Tablix Name="Tablix20">
-                              <TablixBody>
-                                <TablixColumns>
-                                  <TablixColumn>
-                                    <Width>2.73195cm</Width>
-                                  </TablixColumn>
-                                </TablixColumns>
-                                <TablixRows>
-                                  <TablixRow>
-                                    <Height>1.2915cm</Height>
-                                    <TablixCells>
-                                      <TablixCell>
-                                        <CellContents>
-                                          <Textbox Name="Departamento5">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>=Fields!CLAVE.Value</Value>
-                                                    <Style>
-                                                      <FontFamily>IDAutomationHC39M</FontFamily>
-                                                      <FontSize>9pt</FontSize>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style>
-                                                  <TextAlign>Center</TextAlign>
-                                                </Style>
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <Style>
-                                              <Border>
-                                                <Style>None</Style>
-                                              </Border>
-                                              <PaddingLeft>2pt</PaddingLeft>
-                                              <PaddingRight>2pt</PaddingRight>
-                                              <PaddingTop>2pt</PaddingTop>
-                                              <PaddingBottom>2pt</PaddingBottom>
-                                            </Style>
-                                          </Textbox>
-                                        </CellContents>
-                                      </TablixCell>
-                                    </TablixCells>
-                                  </TablixRow>
-                                </TablixRows>
-                              </TablixBody>
-                              <TablixColumnHierarchy>
-                                <TablixMembers>
-                                  <TablixMember />
-                                </TablixMembers>
-                              </TablixColumnHierarchy>
-                              <TablixRowHierarchy>
-                                <TablixMembers>
-                                  <TablixMember>
-                                    <Group Name="Detalles6" />
-                                    <TablixMembers>
-                                      <TablixMember />
-                                    </TablixMembers>
-                                  </TablixMember>
-                                </TablixMembers>
-                              </TablixRowHierarchy>
-                              <DataSetName>DataSet1</DataSetName>
-                              <Top>7.22934cm</Top>
-                              <Left>0.42678cm</Left>
-                              <Height>1.2915cm</Height>
-                              <Width>2.73195cm</Width>
-                              <ZIndex>11</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                              </Style>
-                            </Tablix>
                             <Tablix Name="Tablix21">
                               <TablixBody>
                                 <TablixColumns>
@@ -831,7 +756,7 @@
                               <Left>3.33512cm</Left>
                               <Height>1.2915cm</Height>
                               <Width>1.95877cm</Width>
-                              <ZIndex>12</ZIndex>
+                              <ZIndex>11</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -906,7 +831,7 @@
                               <Left>0.42678cm</Left>
                               <Height>0.74995cm</Height>
                               <Width>4.86711cm</Width>
-                              <ZIndex>13</ZIndex>
+                              <ZIndex>12</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>

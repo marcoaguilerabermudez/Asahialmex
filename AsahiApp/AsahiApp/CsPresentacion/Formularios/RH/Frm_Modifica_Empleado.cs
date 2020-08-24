@@ -35,7 +35,7 @@ namespace CsPresentacion
             nuevo();
             cargar_departemento(cmb_departamento);
             cargar_puesto(cmb_puesto);
-            txt_curp.Mask = ">LLLL000000LLLLLL00";
+            txt_curp.Mask = ">LLLL000000LLLLLLCC";
             txt_rfc.Mask = ">LLLL000000CCC";
         }
         private void Modifica_turno()// Método para modificar turno de empleado
@@ -165,8 +165,8 @@ namespace CsPresentacion
         {
             dgv.Columns[0].Width = 55;//No. Empleado
             dgv.Columns[1].Width = 220;//Nombre empleado
-            dgv.Columns[2].Width = 140;//Departamento
-            dgv.Columns[3].Width = 135;//Ruta
+            //dgv.Columns[2].Width = 140;//Departamento
+            dgv.Columns[2].Width = 135;//Ruta
         }
         private void Modifica_depto()// Método para modificar departamento de empleado
         {

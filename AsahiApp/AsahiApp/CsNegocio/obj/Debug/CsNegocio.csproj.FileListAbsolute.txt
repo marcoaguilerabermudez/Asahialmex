@@ -19,17 +19,6 @@ C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\D
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.pdb
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.pdb
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsClases.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsClases.pdb
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.pdb
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csprojAssemblyReference.cache
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CoreCompileInputs.cache
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
-C:\Users\francisco.mojica\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.pdb
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CoreCompileInputs.cache
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.dll
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.pdb
@@ -42,3 +31,14 @@ C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNeg
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.pdb
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.dll
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.pdb
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsClases.dll
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.dll
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsClases.pdb
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.pdb
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csprojAssemblyReference.cache
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CoreCompileInputs.cache
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.pdb

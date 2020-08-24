@@ -23,12 +23,12 @@ namespace CsPresentacion
         public DateTime Inicia { get; set; }
         public DateTime Termina { get; set; }
         public int Clave;
+        public int Usuario;
 
         private void Frm_Vacaciones_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'DS_Vacaciones.SP_Reportes_Vacaciones' Puede moverla o quitarla según sea necesario.
-            this.SP_Reportes_VacacionesTableAdapter.Fill(this.DS_Vacaciones.SP_Reportes_Vacaciones, Var, Tipo, Semana, Año, Inicia, Termina, Clave);
-
+            // TODO: esta línea de código carga datos en la tabla 'DS_Vacaciones2.SP_Reportes_Vacaciones' Puede moverla o quitarla según sea necesario.
+            this.SP_Reportes_VacacionesTableAdapter.Fill(this.DS_Vacaciones2.SP_Reportes_Vacaciones, Var, Tipo, Semana, Año, Inicia, Termina, Clave, Usuario);
             this.reportViewer1.RefreshReport();
         }
     }

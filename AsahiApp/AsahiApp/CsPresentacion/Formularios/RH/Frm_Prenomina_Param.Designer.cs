@@ -121,7 +121,7 @@
             // lbl_var
             // 
             this.lbl_var.AutoSize = true;
-            this.lbl_var.Location = new System.Drawing.Point(7, 222);
+            this.lbl_var.Location = new System.Drawing.Point(3, 222);
             this.lbl_var.Name = "lbl_var";
             this.lbl_var.Size = new System.Drawing.Size(34, 13);
             this.lbl_var.TabIndex = 149;
@@ -130,7 +130,7 @@
             // lbl_tipo
             // 
             this.lbl_tipo.AutoSize = true;
-            this.lbl_tipo.Location = new System.Drawing.Point(6, 238);
+            this.lbl_tipo.Location = new System.Drawing.Point(3, 239);
             this.lbl_tipo.Name = "lbl_tipo";
             this.lbl_tipo.Size = new System.Drawing.Size(39, 13);
             this.lbl_tipo.TabIndex = 150;
@@ -204,7 +204,7 @@
             // lbl_descripcion
             // 
             this.lbl_descripcion.AutoSize = true;
-            this.lbl_descripcion.Location = new System.Drawing.Point(45, 224);
+            this.lbl_descripcion.Location = new System.Drawing.Point(50, 224);
             this.lbl_descripcion.Name = "lbl_descripcion";
             this.lbl_descripcion.Size = new System.Drawing.Size(43, 13);
             this.lbl_descripcion.TabIndex = 156;

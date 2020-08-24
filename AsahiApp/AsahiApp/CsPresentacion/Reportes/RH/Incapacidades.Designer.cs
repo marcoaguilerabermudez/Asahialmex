@@ -31,23 +31,13 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incapacidades));
-            this.SP_Reportes_Prenomina2_FMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DS_Prenomina_2 = new CsPresentacion.DS_Prenomina_2();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DS_Prenomina_2 = new CsPresentacion.DS_Prenomina_2();
+            this.SP_Reportes_Prenomina2_FMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SP_Reportes_Prenomina2_FMTableAdapter = new CsPresentacion.DS_Prenomina_2TableAdapters.SP_Reportes_Prenomina2_FMTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina2_FMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_Prenomina_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina2_FMBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // SP_Reportes_Prenomina2_FMBindingSource
-            // 
-            this.SP_Reportes_Prenomina2_FMBindingSource.DataMember = "SP_Reportes_Prenomina2_FM";
-            this.SP_Reportes_Prenomina2_FMBindingSource.DataSource = this.DS_Prenomina_2;
-            // 
-            // DS_Prenomina_2
-            // 
-            this.DS_Prenomina_2.DataSetName = "DS_Prenomina_2";
-            this.DS_Prenomina_2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -55,12 +45,22 @@
             reportDataSource1.Name = "DS_Incapacidades";
             reportDataSource1.Value = this.SP_Reportes_Prenomina2_FMBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Incapacidades.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Incapacidades2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1048, 548);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // DS_Prenomina_2
+            // 
+            this.DS_Prenomina_2.DataSetName = "DS_Prenomina_2";
+            this.DS_Prenomina_2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // SP_Reportes_Prenomina2_FMBindingSource
+            // 
+            this.SP_Reportes_Prenomina2_FMBindingSource.DataMember = "SP_Reportes_Prenomina2_FM";
+            this.SP_Reportes_Prenomina2_FMBindingSource.DataSource = this.DS_Prenomina_2;
             // 
             // SP_Reportes_Prenomina2_FMTableAdapter
             // 
@@ -79,8 +79,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de Incapacidades";
             this.Load += new System.EventHandler(this.Incapacidades_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina2_FMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_Prenomina_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina2_FMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

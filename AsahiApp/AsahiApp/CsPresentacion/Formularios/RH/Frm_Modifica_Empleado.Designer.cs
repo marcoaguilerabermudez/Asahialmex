@@ -174,6 +174,8 @@
             this.btn_mod_ruta = new System.Windows.Forms.Button();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.txt_paradero = new System.Windows.Forms.ComboBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grb_nacimiento.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1815,6 +1817,8 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.txt_paradero);
+            this.tabPage7.Controls.Add(this.label44);
             this.tabPage7.Controls.Add(this.dgv_ruta);
             this.tabPage7.Controls.Add(this.btn_mod_ruta);
             this.tabPage7.Controls.Add(this.cmb_ruta);
@@ -1835,7 +1839,7 @@
             this.dgv_ruta.AllowUserToResizeRows = false;
             this.dgv_ruta.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ruta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ruta.Location = new System.Drawing.Point(24, 86);
+            this.dgv_ruta.Location = new System.Drawing.Point(26, 151);
             this.dgv_ruta.Name = "dgv_ruta";
             this.dgv_ruta.RowHeadersVisible = false;
             this.dgv_ruta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1849,7 +1853,7 @@
             this.btn_mod_ruta.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btn_mod_ruta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_mod_ruta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mod_ruta.Location = new System.Drawing.Point(219, 35);
+            this.btn_mod_ruta.Location = new System.Drawing.Point(430, 75);
             this.btn_mod_ruta.Name = "btn_mod_ruta";
             this.btn_mod_ruta.Size = new System.Drawing.Size(61, 31);
             this.btn_mod_ruta.TabIndex = 1;
@@ -1875,7 +1879,7 @@
             "LEÓN-ADMINISTRATIVO",
             "GUANAJUATO-ADMINISTRATIVO",
             "IRAPUATO-ADMINISTRATIVO"});
-            this.cmb_ruta.Location = new System.Drawing.Point(24, 41);
+            this.cmb_ruta.Location = new System.Drawing.Point(24, 34);
             this.cmb_ruta.Name = "cmb_ruta";
             this.cmb_ruta.Size = new System.Drawing.Size(181, 21);
             this.cmb_ruta.TabIndex = 0;
@@ -1884,11 +1888,28 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(22, 24);
+            this.label19.Location = new System.Drawing.Point(22, 17);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(40, 13);
             this.label19.TabIndex = 240;
             this.label19.Text = "RUTA:";
+            // 
+            // txt_paradero
+            // 
+            this.txt_paradero.FormattingEnabled = true;
+            this.txt_paradero.Location = new System.Drawing.Point(25, 81);
+            this.txt_paradero.Name = "txt_paradero";
+            this.txt_paradero.Size = new System.Drawing.Size(399, 21);
+            this.txt_paradero.TabIndex = 246;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(23, 64);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(70, 13);
+            this.label44.TabIndex = 247;
+            this.label44.Text = "PARADERO:";
             // 
             // Frm_Modificaciones
             // 
@@ -2087,5 +2108,7 @@
         private System.Windows.Forms.MaskedTextBox txt_curp;
         private System.Windows.Forms.MaskedTextBox txt_rfc;
         private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.ComboBox txt_paradero;
+        private System.Windows.Forms.Label label44;
     }
 }

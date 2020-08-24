@@ -31,23 +31,13 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rep_Descanso_Laborado));
-            this.SP_Reportes_Prenomina_FMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DS_Prenomina = new CsPresentacion.DS_Prenomina();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DS_Prenomina = new CsPresentacion.DS_Prenomina();
+            this.SP_Reportes_Prenomina_FMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SP_Reportes_Prenomina_FMTableAdapter = new CsPresentacion.DS_PrenominaTableAdapters.SP_Reportes_Prenomina_FMTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina_FMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_Prenomina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina_FMBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // SP_Reportes_Prenomina_FMBindingSource
-            // 
-            this.SP_Reportes_Prenomina_FMBindingSource.DataMember = "SP_Reportes_Prenomina_FM";
-            this.SP_Reportes_Prenomina_FMBindingSource.DataSource = this.DS_Prenomina;
-            // 
-            // DS_Prenomina
-            // 
-            this.DS_Prenomina.DataSetName = "DS_Prenomina";
-            this.DS_Prenomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -55,12 +45,22 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.SP_Reportes_Prenomina_FMBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Descanso_Laborado.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Descanso_Laborado2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(836, 739);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // DS_Prenomina
+            // 
+            this.DS_Prenomina.DataSetName = "DS_Prenomina";
+            this.DS_Prenomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // SP_Reportes_Prenomina_FMBindingSource
+            // 
+            this.SP_Reportes_Prenomina_FMBindingSource.DataMember = "SP_Reportes_Prenomina_FM";
+            this.SP_Reportes_Prenomina_FMBindingSource.DataSource = this.DS_Prenomina;
             // 
             // SP_Reportes_Prenomina_FMTableAdapter
             // 
@@ -79,8 +79,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Descanso Laborado";
             this.Load += new System.EventHandler(this.Rep_Descanso_Laborado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina_FMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_Prenomina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina_FMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

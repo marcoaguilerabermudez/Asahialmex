@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace CsPresentacion
 {
-    public partial class Descanso_laborado_Semana : Form
+    public partial class Frm_Rep_Retardos : Form
     {
-        public Descanso_laborado_Semana()
+        public Frm_Rep_Retardos()
         {
             InitializeComponent();
         }
-
         public int Var;
         public int Tipo;
         public int Semana;
@@ -25,7 +24,7 @@ namespace CsPresentacion
         public DateTime Termina { get; set; }
         public int Clave;
         public int Usuario;
-        private void Descanso_laborado_Semana_Load(object sender, EventArgs e)
+        private void Frm_Rep_Retardos_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'DS_Prenomina.SP_Reportes_Prenomina_FM' Puede moverla o quitarla según sea necesario.
             this.SP_Reportes_Prenomina_FMTableAdapter.Fill(this.DS_Prenomina.SP_Reportes_Prenomina_FM, Var, Tipo, Semana, Año, Inicia, Termina, Clave, Usuario);

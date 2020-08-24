@@ -25,10 +25,11 @@ namespace CsPresentacion
         public int Clave;
         public string Descripcion;
 
+        public int Usuario; 
         private void Ausentismos_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'DS_Ausentismos.SP_Reportes_Ausentismos_FM' Puede moverla o quitarla según sea necesario.
-            this.SP_Reportes_Ausentismos_FMTableAdapter.Fill(this.DS_Ausentismos.SP_Reportes_Ausentismos_FM, Var, Tipo, Semana, Año, Inicia, Termina, Clave, Descripcion );
+            this.SP_Reportes_Ausentismos_FMTableAdapter.Fill(this.DS_Ausentismos.SP_Reportes_Ausentismos_FM, Var, Tipo, Semana, Año, Inicia, Termina, Clave, Descripcion, Usuario);
             this.reportViewer1.RefreshReport();
         }
     }
