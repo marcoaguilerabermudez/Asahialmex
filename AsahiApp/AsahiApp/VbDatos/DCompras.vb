@@ -18,7 +18,7 @@ Public Class DCompras
             While (dr.Read)
                 Dim comp As New Compras()
                 comp.IdProvision = Convert.ToInt32(dr("Id_provision").ToString)
-                comp.IdCompra = Convert.ToInt32(dr("Compra").ToString)
+                comp.IdCompra = dr("Compra").ToString
                 comp.IdOrdenCompra = Convert.ToInt32(dr("Oc").ToString)
                 comp.Serie = dr("Serie").ToString
                 comp.Factura = dr("Factura").ToString

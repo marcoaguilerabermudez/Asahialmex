@@ -8,12 +8,12 @@
             idProvision_ = value
         End Set
     End Property
-    Private idCompra_ As Integer
-    Public Property IdCompra() As Integer
+    Private idCompra_ As String
+    Public Property IdCompra() As String
         Get
             Return idCompra_
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             idCompra_ = value
         End Set
     End Property

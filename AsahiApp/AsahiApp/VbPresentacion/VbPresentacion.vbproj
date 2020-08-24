@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>154</ApplicationRevision>
-    <ApplicationVersion>1.0.0.154</ApplicationVersion>
+    <ApplicationRevision>155</ApplicationRevision>
+    <ApplicationVersion>1.0.0.155</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -71,7 +71,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>8E5D0D66CB3A8EFAB025036D0150723E6A706469</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>BE6B326FB5F7606B8467B2B7221723234AD1BB56</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>VbPresentacion_1_TemporaryKey.pfx</ManifestKeyFile>
