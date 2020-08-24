@@ -1,6 +1,6 @@
 ﻿namespace CsPresentacion
 {
-    partial class Retardos_Semana
+    partial class Frm_Rep_Retardos
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Retardos_Semana));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DS_Prenomina = new CsPresentacion.DS_Prenomina();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Rep_Retardos));
             this.SP_Reportes_Prenomina_FMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DS_Prenomina = new CsPresentacion.DS_Prenomina();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SP_Reportes_Prenomina_FMTableAdapter = new CsPresentacion.DS_PrenominaTableAdapters.SP_Reportes_Prenomina_FMTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Prenomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina_FMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_Prenomina)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SP_Reportes_Prenomina_FMBindingSource
+            // 
+            this.SP_Reportes_Prenomina_FMBindingSource.DataMember = "SP_Reportes_Prenomina_FM";
+            this.SP_Reportes_Prenomina_FMBindingSource.DataSource = this.DS_Prenomina;
+            // 
+            // DS_Prenomina
+            // 
+            this.DS_Prenomina.DataSetName = "DS_Prenomina";
+            this.DS_Prenomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -52,21 +62,11 @@
             this.reportViewer1.Size = new System.Drawing.Size(836, 739);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DS_Prenomina
-            // 
-            this.DS_Prenomina.DataSetName = "DS_Prenomina";
-            this.DS_Prenomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // SP_Reportes_Prenomina_FMBindingSource
-            // 
-            this.SP_Reportes_Prenomina_FMBindingSource.DataMember = "SP_Reportes_Prenomina_FM";
-            this.SP_Reportes_Prenomina_FMBindingSource.DataSource = this.DS_Prenomina;
-            // 
             // SP_Reportes_Prenomina_FMTableAdapter
             // 
             this.SP_Reportes_Prenomina_FMTableAdapter.ClearBeforeFill = true;
             // 
-            // Retardos_Semana
+            // Frm_Rep_Retardos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -75,12 +75,12 @@
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Retardos_Semana";
+            this.Name = "Frm_Rep_Retardos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte de Retardos por Semana";
-            this.Load += new System.EventHandler(this.Retardos_Semana_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Prenomina)).EndInit();
+            this.Text = "Reporte de Retardos";
+            this.Load += new System.EventHandler(this.Frm_Rep_Retardos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_Prenomina_FMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_Prenomina)).EndInit();
             this.ResumeLayout(false);
 
         }

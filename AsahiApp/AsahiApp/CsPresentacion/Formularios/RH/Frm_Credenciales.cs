@@ -95,7 +95,7 @@ namespace CsPresentacion
                 SqlCommand cmd = new SqlCommand("INSERT INTO Credencial_Empleados(CLAVE, NOMBRE, REFERENCIA, TEL_REFERENCIA, DEPARTAMENTO, PUESTO, AFILIACION, FECHA_NACIMIENTO, FECHA, Foto) VALUES (" + txt_clave.Text + ", '" + txt_nombre.Text + "', '" + txt_referencia.Text + "', '" + txt_telefono_referencia.Text + "',  '" + txt_departamento.Text + "', '" + txt_puesto.Text + "','" + txt_afiliacion.Text + "', '" + dtm_nacimiento.Text + "', '" + lbl_fecha.Text + "', '" + pictureBox1.Image + "')", con);
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Agregado correctamente.");
+               // MessageBox.Show("Agregado correctamente.");
             }
             catch (Exception error)
             {
@@ -332,6 +332,10 @@ namespace CsPresentacion
         }
 
         private void Txt_clave_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_todo_Click(object sender, EventArgs e)
         {
 
         }

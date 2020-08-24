@@ -301,6 +301,8 @@ namespace CsPresentacion {
             
             private global::System.Data.DataColumn columnSEMANA;
             
+            private global::System.Data.DataColumn columnUSUARIO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Reportes_Prenomina_FMDataTable() {
@@ -424,6 +426,14 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn USUARIOColumn {
+                get {
+                    return this.columnUSUARIO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +469,7 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Reportes_Prenomina_FMRow AddSP_Reportes_Prenomina_FMRow(int CLAVE, string NOMBRE, string DEPARTAMENTO, string TIPO, string PUESTO, int HORA, System.DateTime FECHA, System.DateTime INICIAp, System.DateTime TERMINAp, int SEMANAP, int SEMANA) {
+            public SP_Reportes_Prenomina_FMRow AddSP_Reportes_Prenomina_FMRow(int CLAVE, string NOMBRE, string DEPARTAMENTO, string TIPO, string PUESTO, int HORA, System.DateTime FECHA, System.DateTime INICIAp, System.DateTime TERMINAp, int SEMANAP, int SEMANA, string USUARIO) {
                 SP_Reportes_Prenomina_FMRow rowSP_Reportes_Prenomina_FMRow = ((SP_Reportes_Prenomina_FMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CLAVE,
@@ -472,7 +482,8 @@ namespace CsPresentacion {
                         INICIAp,
                         TERMINAp,
                         SEMANAP,
-                        SEMANA};
+                        SEMANA,
+                        USUARIO};
                 rowSP_Reportes_Prenomina_FMRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Reportes_Prenomina_FMRow);
                 return rowSP_Reportes_Prenomina_FMRow;
@@ -506,6 +517,7 @@ namespace CsPresentacion {
                 this.columnTERMINAp = base.Columns["TERMINAp"];
                 this.columnSEMANAP = base.Columns["SEMANAP"];
                 this.columnSEMANA = base.Columns["SEMANA"];
+                this.columnUSUARIO = base.Columns["USUARIO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -533,6 +545,8 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnSEMANAP);
                 this.columnSEMANA = new global::System.Data.DataColumn("SEMANA", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSEMANA);
+                this.columnUSUARIO = new global::System.Data.DataColumn("USUARIO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUSUARIO);
                 this.columnCLAVE.ReadOnly = true;
                 this.columnNOMBRE.ReadOnly = true;
                 this.columnNOMBRE.MaxLength = 92;
@@ -545,6 +559,8 @@ namespace CsPresentacion {
                 this.columnTERMINAp.ReadOnly = true;
                 this.columnSEMANAP.ReadOnly = true;
                 this.columnSEMANA.ReadOnly = true;
+                this.columnUSUARIO.ReadOnly = true;
+                this.columnUSUARIO.MaxLength = 92;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -860,6 +876,23 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string USUARIO {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Reportes_Prenomina_FM.USUARIOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'USUARIO\' de la tabla \'SP_Reportes_Prenomina_FM\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Reportes_Prenomina_FM.USUARIOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCLAVENull() {
                 return this.IsNull(this.tableSP_Reportes_Prenomina_FM.CLAVEColumn);
             }
@@ -964,6 +997,18 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSEMANANull() {
                 this[this.tableSP_Reportes_Prenomina_FM.SEMANAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUSUARIONull() {
+                return this.IsNull(this.tableSP_Reportes_Prenomina_FM.USUARIOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUSUARIONull() {
+                this[this.tableSP_Reportes_Prenomina_FM.USUARIOColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1137,6 +1182,7 @@ namespace CsPresentacion.DS_PrenominaTableAdapters {
             tableMapping.ColumnMappings.Add("TERMINAp", "TERMINAp");
             tableMapping.ColumnMappings.Add("SEMANAP", "SEMANAP");
             tableMapping.ColumnMappings.Add("SEMANA", "SEMANA");
+            tableMapping.ColumnMappings.Add("USUARIO", "USUARIO");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1163,13 +1209,14 @@ namespace CsPresentacion.DS_PrenominaTableAdapters {
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inicia", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Termina", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Clave", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Prenomina.SP_Reportes_Prenomina_FMDataTable dataTable, global::System.Nullable<int> Var, global::System.Nullable<int> Tipo, global::System.Nullable<int> Semana, global::System.Nullable<int> Año, global::System.Nullable<global::System.DateTime> Inicia, global::System.Nullable<global::System.DateTime> Termina, global::System.Nullable<int> Clave) {
+        public virtual int Fill(DS_Prenomina.SP_Reportes_Prenomina_FMDataTable dataTable, global::System.Nullable<int> Var, global::System.Nullable<int> Tipo, global::System.Nullable<int> Semana, global::System.Nullable<int> Año, global::System.Nullable<global::System.DateTime> Inicia, global::System.Nullable<global::System.DateTime> Termina, global::System.Nullable<int> Clave, global::System.Nullable<int> Usuario) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Var.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Var.Value));
@@ -1212,6 +1259,12 @@ namespace CsPresentacion.DS_PrenominaTableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Usuario.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((int)(Usuario.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1224,7 +1277,7 @@ namespace CsPresentacion.DS_PrenominaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Prenomina.SP_Reportes_Prenomina_FMDataTable GetData(global::System.Nullable<int> Var, global::System.Nullable<int> Tipo, global::System.Nullable<int> Semana, global::System.Nullable<int> Año, global::System.Nullable<global::System.DateTime> Inicia, global::System.Nullable<global::System.DateTime> Termina, global::System.Nullable<int> Clave) {
+        public virtual DS_Prenomina.SP_Reportes_Prenomina_FMDataTable GetData(global::System.Nullable<int> Var, global::System.Nullable<int> Tipo, global::System.Nullable<int> Semana, global::System.Nullable<int> Año, global::System.Nullable<global::System.DateTime> Inicia, global::System.Nullable<global::System.DateTime> Termina, global::System.Nullable<int> Clave, global::System.Nullable<int> Usuario) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Var.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Var.Value));
@@ -1267,6 +1320,12 @@ namespace CsPresentacion.DS_PrenominaTableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Usuario.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[8].Value = ((int)(Usuario.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             DS_Prenomina.SP_Reportes_Prenomina_FMDataTable dataTable = new DS_Prenomina.SP_Reportes_Prenomina_FMDataTable();
             this.Adapter.Fill(dataTable);

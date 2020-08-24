@@ -20,17 +20,17 @@ namespace CsPresentacion {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DS_Prenomina_2")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DS_Vacaciones2")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DS_Prenomina_2 : global::System.Data.DataSet {
+    public partial class DS_Vacaciones2 : global::System.Data.DataSet {
         
-        private SP_Reportes_Prenomina2_FMDataTable tableSP_Reportes_Prenomina2_FM;
+        private SP_Reportes_VacacionesDataTable tableSP_Reportes_Vacaciones;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DS_Prenomina_2() {
+        public DS_Vacaciones2() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CsPresentacion {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DS_Prenomina_2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DS_Vacaciones2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace CsPresentacion {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["SP_Reportes_Prenomina2_FM"] != null)) {
-                    base.Tables.Add(new SP_Reportes_Prenomina2_FMDataTable(ds.Tables["SP_Reportes_Prenomina2_FM"]));
+                if ((ds.Tables["SP_Reportes_Vacaciones"] != null)) {
+                    base.Tables.Add(new SP_Reportes_VacacionesDataTable(ds.Tables["SP_Reportes_Vacaciones"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CsPresentacion {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SP_Reportes_Prenomina2_FMDataTable SP_Reportes_Prenomina2_FM {
+        public SP_Reportes_VacacionesDataTable SP_Reportes_Vacaciones {
             get {
-                return this.tableSP_Reportes_Prenomina2_FM;
+                return this.tableSP_Reportes_Vacaciones;
             }
         }
         
@@ -127,7 +127,7 @@ namespace CsPresentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DS_Prenomina_2 cln = ((DS_Prenomina_2)(base.Clone()));
+            DS_Vacaciones2 cln = ((DS_Vacaciones2)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace CsPresentacion {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["SP_Reportes_Prenomina2_FM"] != null)) {
-                    base.Tables.Add(new SP_Reportes_Prenomina2_FMDataTable(ds.Tables["SP_Reportes_Prenomina2_FM"]));
+                if ((ds.Tables["SP_Reportes_Vacaciones"] != null)) {
+                    base.Tables.Add(new SP_Reportes_VacacionesDataTable(ds.Tables["SP_Reportes_Vacaciones"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CsPresentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableSP_Reportes_Prenomina2_FM = ((SP_Reportes_Prenomina2_FMDataTable)(base.Tables["SP_Reportes_Prenomina2_FM"]));
+            this.tableSP_Reportes_Vacaciones = ((SP_Reportes_VacacionesDataTable)(base.Tables["SP_Reportes_Vacaciones"]));
             if ((initTable == true)) {
-                if ((this.tableSP_Reportes_Prenomina2_FM != null)) {
-                    this.tableSP_Reportes_Prenomina2_FM.InitVars();
+                if ((this.tableSP_Reportes_Vacaciones != null)) {
+                    this.tableSP_Reportes_Vacaciones.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace CsPresentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DS_Prenomina_2";
+            this.DataSetName = "DS_Vacaciones2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DS_Prenomina_2.xsd";
+            this.Namespace = "http://tempuri.org/DS_Vacaciones2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableSP_Reportes_Prenomina2_FM = new SP_Reportes_Prenomina2_FMDataTable();
-            base.Tables.Add(this.tableSP_Reportes_Prenomina2_FM);
+            this.tableSP_Reportes_Vacaciones = new SP_Reportes_VacacionesDataTable();
+            base.Tables.Add(this.tableSP_Reportes_Vacaciones);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSP_Reportes_Prenomina2_FM() {
+        private bool ShouldSerializeSP_Reportes_Vacaciones() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CsPresentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DS_Prenomina_2 ds = new DS_Prenomina_2();
+            DS_Vacaciones2 ds = new DS_Vacaciones2();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace CsPresentacion {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SP_Reportes_Prenomina2_FMRowChangeEventHandler(object sender, SP_Reportes_Prenomina2_FMRowChangeEvent e);
+        public delegate void SP_Reportes_VacacionesRowChangeEventHandler(object sender, SP_Reportes_VacacionesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_Reportes_Prenomina2_FMDataTable : global::System.Data.TypedTableBase<SP_Reportes_Prenomina2_FMRow> {
+        public partial class SP_Reportes_VacacionesDataTable : global::System.Data.TypedTableBase<SP_Reportes_VacacionesRow> {
             
             private global::System.Data.DataColumn columnCLAVE;
             
@@ -287,34 +287,26 @@ namespace CsPresentacion {
             
             private global::System.Data.DataColumn columnPUESTO;
             
-            private global::System.Data.DataColumn columnFECHA;
-            
-            private global::System.Data.DataColumn columnTERMINO;
-            
-            private global::System.Data.DataColumn columnDURACION;
-            
-            private global::System.Data.DataColumn columnNUMERO;
-            
             private global::System.Data.DataColumn columnINICIA;
             
             private global::System.Data.DataColumn columnTERMINA;
             
-            private global::System.Data.DataColumn columnSEMANA;
+            private global::System.Data.DataColumn columnINICIAp;
             
-            private global::System.Data.DataColumn columnTIPO;
+            private global::System.Data.DataColumn columnTERMINAp;
             
-            private global::System.Data.DataColumn columnCASO;
+            private global::System.Data.DataColumn columnSEMANAp;
             
-            private global::System.Data.DataColumn columnSECUELA;
+            private global::System.Data.DataColumn columnDURACION;
             
-            private global::System.Data.DataColumn columnPERSONAS;
+            private global::System.Data.DataColumn columnPRIMA_VACACIONAL;
             
             private global::System.Data.DataColumn columnUSUARIO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Reportes_Prenomina2_FMDataTable() {
-                this.TableName = "SP_Reportes_Prenomina2_FM";
+            public SP_Reportes_VacacionesDataTable() {
+                this.TableName = "SP_Reportes_Vacaciones";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -322,7 +314,7 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_Reportes_Prenomina2_FMDataTable(global::System.Data.DataTable table) {
+            internal SP_Reportes_VacacionesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -339,7 +331,7 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SP_Reportes_Prenomina2_FMDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SP_Reportes_VacacionesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -378,38 +370,6 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FECHAColumn {
-                get {
-                    return this.columnFECHA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TERMINOColumn {
-                get {
-                    return this.columnTERMINO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DURACIONColumn {
-                get {
-                    return this.columnDURACION;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NUMEROColumn {
-                get {
-                    return this.columnNUMERO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn INICIAColumn {
                 get {
                     return this.columnINICIA;
@@ -426,41 +386,41 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SEMANAColumn {
+            public global::System.Data.DataColumn INICIApColumn {
                 get {
-                    return this.columnSEMANA;
+                    return this.columnINICIAp;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TIPOColumn {
+            public global::System.Data.DataColumn TERMINApColumn {
                 get {
-                    return this.columnTIPO;
+                    return this.columnTERMINAp;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CASOColumn {
+            public global::System.Data.DataColumn SEMANApColumn {
                 get {
-                    return this.columnCASO;
+                    return this.columnSEMANAp;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SECUELAColumn {
+            public global::System.Data.DataColumn DURACIONColumn {
                 get {
-                    return this.columnSECUELA;
+                    return this.columnDURACION;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PERSONASColumn {
+            public global::System.Data.DataColumn PRIMA_VACACIONALColumn {
                 get {
-                    return this.columnPERSONAS;
+                    return this.columnPRIMA_VACACIONAL;
                 }
             }
             
@@ -483,76 +443,56 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Reportes_Prenomina2_FMRow this[int index] {
+            public SP_Reportes_VacacionesRow this[int index] {
                 get {
-                    return ((SP_Reportes_Prenomina2_FMRow)(this.Rows[index]));
+                    return ((SP_Reportes_VacacionesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_Reportes_Prenomina2_FMRowChangeEventHandler SP_Reportes_Prenomina2_FMRowChanging;
+            public event SP_Reportes_VacacionesRowChangeEventHandler SP_Reportes_VacacionesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_Reportes_Prenomina2_FMRowChangeEventHandler SP_Reportes_Prenomina2_FMRowChanged;
+            public event SP_Reportes_VacacionesRowChangeEventHandler SP_Reportes_VacacionesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_Reportes_Prenomina2_FMRowChangeEventHandler SP_Reportes_Prenomina2_FMRowDeleting;
+            public event SP_Reportes_VacacionesRowChangeEventHandler SP_Reportes_VacacionesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_Reportes_Prenomina2_FMRowChangeEventHandler SP_Reportes_Prenomina2_FMRowDeleted;
+            public event SP_Reportes_VacacionesRowChangeEventHandler SP_Reportes_VacacionesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSP_Reportes_Prenomina2_FMRow(SP_Reportes_Prenomina2_FMRow row) {
+            public void AddSP_Reportes_VacacionesRow(SP_Reportes_VacacionesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Reportes_Prenomina2_FMRow AddSP_Reportes_Prenomina2_FMRow(
-                        int CLAVE, 
-                        string NOMBRE, 
-                        string DEPARTAMENTO, 
-                        string PUESTO, 
-                        System.DateTime FECHA, 
-                        System.DateTime TERMINO, 
-                        decimal DURACION, 
-                        string NUMERO, 
-                        System.DateTime INICIA, 
-                        System.DateTime TERMINA, 
-                        int SEMANA, 
-                        string TIPO, 
-                        string CASO, 
-                        string SECUELA, 
-                        int PERSONAS, 
-                        string USUARIO) {
-                SP_Reportes_Prenomina2_FMRow rowSP_Reportes_Prenomina2_FMRow = ((SP_Reportes_Prenomina2_FMRow)(this.NewRow()));
+            public SP_Reportes_VacacionesRow AddSP_Reportes_VacacionesRow(string CLAVE, string NOMBRE, string DEPARTAMENTO, string PUESTO, System.DateTime INICIA, System.DateTime TERMINA, System.DateTime INICIAp, System.DateTime TERMINAp, int SEMANAp, decimal DURACION, double PRIMA_VACACIONAL, string USUARIO) {
+                SP_Reportes_VacacionesRow rowSP_Reportes_VacacionesRow = ((SP_Reportes_VacacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CLAVE,
                         NOMBRE,
                         DEPARTAMENTO,
                         PUESTO,
-                        FECHA,
-                        TERMINO,
-                        DURACION,
-                        NUMERO,
                         INICIA,
                         TERMINA,
-                        SEMANA,
-                        TIPO,
-                        CASO,
-                        SECUELA,
-                        PERSONAS,
+                        INICIAp,
+                        TERMINAp,
+                        SEMANAp,
+                        DURACION,
+                        PRIMA_VACACIONAL,
                         USUARIO};
-                rowSP_Reportes_Prenomina2_FMRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_Reportes_Prenomina2_FMRow);
-                return rowSP_Reportes_Prenomina2_FMRow;
+                rowSP_Reportes_VacacionesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_Reportes_VacacionesRow);
+                return rowSP_Reportes_VacacionesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SP_Reportes_Prenomina2_FMDataTable cln = ((SP_Reportes_Prenomina2_FMDataTable)(base.Clone()));
+                SP_Reportes_VacacionesDataTable cln = ((SP_Reportes_VacacionesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -560,7 +500,7 @@ namespace CsPresentacion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_Reportes_Prenomina2_FMDataTable();
+                return new SP_Reportes_VacacionesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -570,24 +510,20 @@ namespace CsPresentacion {
                 this.columnNOMBRE = base.Columns["NOMBRE"];
                 this.columnDEPARTAMENTO = base.Columns["DEPARTAMENTO"];
                 this.columnPUESTO = base.Columns["PUESTO"];
-                this.columnFECHA = base.Columns["FECHA"];
-                this.columnTERMINO = base.Columns["TERMINO"];
-                this.columnDURACION = base.Columns["DURACION"];
-                this.columnNUMERO = base.Columns["NUMERO"];
                 this.columnINICIA = base.Columns["INICIA"];
                 this.columnTERMINA = base.Columns["TERMINA"];
-                this.columnSEMANA = base.Columns["SEMANA"];
-                this.columnTIPO = base.Columns["TIPO"];
-                this.columnCASO = base.Columns["CASO"];
-                this.columnSECUELA = base.Columns["SECUELA"];
-                this.columnPERSONAS = base.Columns["PERSONAS"];
+                this.columnINICIAp = base.Columns["INICIAp"];
+                this.columnTERMINAp = base.Columns["TERMINAp"];
+                this.columnSEMANAp = base.Columns["SEMANAp"];
+                this.columnDURACION = base.Columns["DURACION"];
+                this.columnPRIMA_VACACIONAL = base.Columns["PRIMA_VACACIONAL"];
                 this.columnUSUARIO = base.Columns["USUARIO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnCLAVE = new global::System.Data.DataColumn("CLAVE", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnCLAVE = new global::System.Data.DataColumn("CLAVE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCLAVE);
                 this.columnNOMBRE = new global::System.Data.DataColumn("NOMBRE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNOMBRE);
@@ -595,73 +531,60 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnDEPARTAMENTO);
                 this.columnPUESTO = new global::System.Data.DataColumn("PUESTO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPUESTO);
-                this.columnFECHA = new global::System.Data.DataColumn("FECHA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFECHA);
-                this.columnTERMINO = new global::System.Data.DataColumn("TERMINO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTERMINO);
-                this.columnDURACION = new global::System.Data.DataColumn("DURACION", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDURACION);
-                this.columnNUMERO = new global::System.Data.DataColumn("NUMERO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNUMERO);
                 this.columnINICIA = new global::System.Data.DataColumn("INICIA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnINICIA);
                 this.columnTERMINA = new global::System.Data.DataColumn("TERMINA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTERMINA);
-                this.columnSEMANA = new global::System.Data.DataColumn("SEMANA", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSEMANA);
-                this.columnTIPO = new global::System.Data.DataColumn("TIPO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTIPO);
-                this.columnCASO = new global::System.Data.DataColumn("CASO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCASO);
-                this.columnSECUELA = new global::System.Data.DataColumn("SECUELA", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSECUELA);
-                this.columnPERSONAS = new global::System.Data.DataColumn("PERSONAS", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPERSONAS);
+                this.columnINICIAp = new global::System.Data.DataColumn("INICIAp", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINICIAp);
+                this.columnTERMINAp = new global::System.Data.DataColumn("TERMINAp", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTERMINAp);
+                this.columnSEMANAp = new global::System.Data.DataColumn("SEMANAp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSEMANAp);
+                this.columnDURACION = new global::System.Data.DataColumn("DURACION", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDURACION);
+                this.columnPRIMA_VACACIONAL = new global::System.Data.DataColumn("PRIMA_VACACIONAL", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRIMA_VACACIONAL);
                 this.columnUSUARIO = new global::System.Data.DataColumn("USUARIO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUSUARIO);
-                this.columnCLAVE.ReadOnly = true;
+                this.columnCLAVE.AllowDBNull = false;
+                this.columnCLAVE.MaxLength = 10;
                 this.columnNOMBRE.ReadOnly = true;
                 this.columnNOMBRE.MaxLength = 92;
                 this.columnDEPARTAMENTO.MaxLength = 30;
                 this.columnPUESTO.MaxLength = 30;
-                this.columnFECHA.AllowDBNull = false;
-                this.columnNUMERO.MaxLength = 8;
-                this.columnINICIA.ReadOnly = true;
-                this.columnTERMINA.ReadOnly = true;
-                this.columnSEMANA.ReadOnly = true;
-                this.columnTIPO.ReadOnly = true;
-                this.columnTIPO.MaxLength = 22;
-                this.columnCASO.MaxLength = 1;
-                this.columnSECUELA.MaxLength = 1;
-                this.columnPERSONAS.ReadOnly = true;
+                this.columnINICIA.AllowDBNull = false;
+                this.columnINICIAp.ReadOnly = true;
+                this.columnTERMINAp.ReadOnly = true;
+                this.columnSEMANAp.ReadOnly = true;
                 this.columnUSUARIO.ReadOnly = true;
                 this.columnUSUARIO.MaxLength = 92;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Reportes_Prenomina2_FMRow NewSP_Reportes_Prenomina2_FMRow() {
-                return ((SP_Reportes_Prenomina2_FMRow)(this.NewRow()));
+            public SP_Reportes_VacacionesRow NewSP_Reportes_VacacionesRow() {
+                return ((SP_Reportes_VacacionesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_Reportes_Prenomina2_FMRow(builder);
+                return new SP_Reportes_VacacionesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SP_Reportes_Prenomina2_FMRow);
+                return typeof(SP_Reportes_VacacionesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SP_Reportes_Prenomina2_FMRowChanged != null)) {
-                    this.SP_Reportes_Prenomina2_FMRowChanged(this, new SP_Reportes_Prenomina2_FMRowChangeEvent(((SP_Reportes_Prenomina2_FMRow)(e.Row)), e.Action));
+                if ((this.SP_Reportes_VacacionesRowChanged != null)) {
+                    this.SP_Reportes_VacacionesRowChanged(this, new SP_Reportes_VacacionesRowChangeEvent(((SP_Reportes_VacacionesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -669,8 +592,8 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SP_Reportes_Prenomina2_FMRowChanging != null)) {
-                    this.SP_Reportes_Prenomina2_FMRowChanging(this, new SP_Reportes_Prenomina2_FMRowChangeEvent(((SP_Reportes_Prenomina2_FMRow)(e.Row)), e.Action));
+                if ((this.SP_Reportes_VacacionesRowChanging != null)) {
+                    this.SP_Reportes_VacacionesRowChanging(this, new SP_Reportes_VacacionesRowChangeEvent(((SP_Reportes_VacacionesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -678,8 +601,8 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SP_Reportes_Prenomina2_FMRowDeleted != null)) {
-                    this.SP_Reportes_Prenomina2_FMRowDeleted(this, new SP_Reportes_Prenomina2_FMRowChangeEvent(((SP_Reportes_Prenomina2_FMRow)(e.Row)), e.Action));
+                if ((this.SP_Reportes_VacacionesRowDeleted != null)) {
+                    this.SP_Reportes_VacacionesRowDeleted(this, new SP_Reportes_VacacionesRowChangeEvent(((SP_Reportes_VacacionesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -687,14 +610,14 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SP_Reportes_Prenomina2_FMRowDeleting != null)) {
-                    this.SP_Reportes_Prenomina2_FMRowDeleting(this, new SP_Reportes_Prenomina2_FMRowChangeEvent(((SP_Reportes_Prenomina2_FMRow)(e.Row)), e.Action));
+                if ((this.SP_Reportes_VacacionesRowDeleting != null)) {
+                    this.SP_Reportes_VacacionesRowDeleting(this, new SP_Reportes_VacacionesRowChangeEvent(((SP_Reportes_VacacionesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSP_Reportes_Prenomina2_FMRow(SP_Reportes_Prenomina2_FMRow row) {
+            public void RemoveSP_Reportes_VacacionesRow(SP_Reportes_VacacionesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -703,7 +626,7 @@ namespace CsPresentacion {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_Prenomina_2 ds = new DS_Prenomina_2();
+                DS_Vacaciones2 ds = new DS_Vacaciones2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -721,7 +644,7 @@ namespace CsPresentacion {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_Reportes_Prenomina2_FMDataTable";
+                attribute2.FixedValue = "SP_Reportes_VacacionesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -765,31 +688,25 @@ namespace CsPresentacion {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SP_Reportes_Prenomina2_FMRow : global::System.Data.DataRow {
+        public partial class SP_Reportes_VacacionesRow : global::System.Data.DataRow {
             
-            private SP_Reportes_Prenomina2_FMDataTable tableSP_Reportes_Prenomina2_FM;
+            private SP_Reportes_VacacionesDataTable tableSP_Reportes_Vacaciones;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_Reportes_Prenomina2_FMRow(global::System.Data.DataRowBuilder rb) : 
+            internal SP_Reportes_VacacionesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSP_Reportes_Prenomina2_FM = ((SP_Reportes_Prenomina2_FMDataTable)(this.Table));
+                this.tableSP_Reportes_Vacaciones = ((SP_Reportes_VacacionesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CLAVE {
+            public string CLAVE {
                 get {
-                    try {
-                        return ((int)(this[this.tableSP_Reportes_Prenomina2_FM.CLAVEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CLAVE\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNull." +
-                                "", e);
-                    }
+                    return ((string)(this[this.tableSP_Reportes_Vacaciones.CLAVEColumn]));
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.CLAVEColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.CLAVEColumn] = value;
                 }
             }
             
@@ -798,15 +715,14 @@ namespace CsPresentacion {
             public string NOMBRE {
                 get {
                     try {
-                        return ((string)(this[this.tableSP_Reportes_Prenomina2_FM.NOMBREColumn]));
+                        return ((string)(this[this.tableSP_Reportes_Vacaciones.NOMBREColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NOMBRE\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NOMBRE\' de la tabla \'SP_Reportes_Vacaciones\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.NOMBREColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.NOMBREColumn] = value;
                 }
             }
             
@@ -815,15 +731,15 @@ namespace CsPresentacion {
             public string DEPARTAMENTO {
                 get {
                     try {
-                        return ((string)(this[this.tableSP_Reportes_Prenomina2_FM.DEPARTAMENTOColumn]));
+                        return ((string)(this[this.tableSP_Reportes_Vacaciones.DEPARTAMENTOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DEPARTAMENTO\' de la tabla \'SP_Reportes_Prenomina2_FM\' es " +
-                                "DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DEPARTAMENTO\' de la tabla \'SP_Reportes_Vacaciones\' es DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.DEPARTAMENTOColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.DEPARTAMENTOColumn] = value;
                 }
             }
             
@@ -832,77 +748,14 @@ namespace CsPresentacion {
             public string PUESTO {
                 get {
                     try {
-                        return ((string)(this[this.tableSP_Reportes_Prenomina2_FM.PUESTOColumn]));
+                        return ((string)(this[this.tableSP_Reportes_Vacaciones.PUESTOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PUESTO\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PUESTO\' de la tabla \'SP_Reportes_Vacaciones\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.PUESTOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime FECHA {
-                get {
-                    return ((global::System.DateTime)(this[this.tableSP_Reportes_Prenomina2_FM.FECHAColumn]));
-                }
-                set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.FECHAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime TERMINO {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_Reportes_Prenomina2_FM.TERMINOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TERMINO\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.TERMINOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal DURACION {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableSP_Reportes_Prenomina2_FM.DURACIONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DURACION\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.DURACIONColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NUMERO {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_Reportes_Prenomina2_FM.NUMEROColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NUMERO\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.NUMEROColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.PUESTOColumn] = value;
                 }
             }
             
@@ -910,16 +763,10 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime INICIA {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_Reportes_Prenomina2_FM.INICIAColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'INICIA\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNull" +
-                                ".", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableSP_Reportes_Vacaciones.INICIAColumn]));
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.INICIAColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.INICIAColumn] = value;
                 }
             }
             
@@ -928,98 +775,97 @@ namespace CsPresentacion {
             public System.DateTime TERMINA {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableSP_Reportes_Prenomina2_FM.TERMINAColumn]));
+                        return ((global::System.DateTime)(this[this.tableSP_Reportes_Vacaciones.TERMINAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TERMINA\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TERMINA\' de la tabla \'SP_Reportes_Vacaciones\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.TERMINAColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.TERMINAColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int SEMANA {
+            public System.DateTime INICIAp {
                 get {
                     try {
-                        return ((int)(this[this.tableSP_Reportes_Prenomina2_FM.SEMANAColumn]));
+                        return ((global::System.DateTime)(this[this.tableSP_Reportes_Vacaciones.INICIApColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SEMANA\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'INICIAp\' de la tabla \'SP_Reportes_Vacaciones\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.SEMANAColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.INICIApColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string TIPO {
+            public System.DateTime TERMINAp {
                 get {
                     try {
-                        return ((string)(this[this.tableSP_Reportes_Prenomina2_FM.TIPOColumn]));
+                        return ((global::System.DateTime)(this[this.tableSP_Reportes_Vacaciones.TERMINApColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TIPO\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TERMINAp\' de la tabla \'SP_Reportes_Vacaciones\' es DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.TIPOColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.TERMINApColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CASO {
+            public int SEMANAp {
                 get {
                     try {
-                        return ((string)(this[this.tableSP_Reportes_Prenomina2_FM.CASOColumn]));
+                        return ((int)(this[this.tableSP_Reportes_Vacaciones.SEMANApColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CASO\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SEMANAp\' de la tabla \'SP_Reportes_Vacaciones\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.CASOColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.SEMANApColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string SECUELA {
+            public decimal DURACION {
                 get {
                     try {
-                        return ((string)(this[this.tableSP_Reportes_Prenomina2_FM.SECUELAColumn]));
+                        return ((decimal)(this[this.tableSP_Reportes_Vacaciones.DURACIONColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SECUELA\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DURACION\' de la tabla \'SP_Reportes_Vacaciones\' es DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.SECUELAColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.DURACIONColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int PERSONAS {
+            public double PRIMA_VACACIONAL {
                 get {
                     try {
-                        return ((int)(this[this.tableSP_Reportes_Prenomina2_FM.PERSONASColumn]));
+                        return ((double)(this[this.tableSP_Reportes_Vacaciones.PRIMA_VACACIONALColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PERSONAS\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNu" +
-                                "ll.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PRIMA_VACACIONAL\' de la tabla \'SP_Reportes_Vacaciones\' es" +
+                                " DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.PERSONASColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.PRIMA_VACACIONALColumn] = value;
                 }
             }
             
@@ -1028,196 +874,135 @@ namespace CsPresentacion {
             public string USUARIO {
                 get {
                     try {
-                        return ((string)(this[this.tableSP_Reportes_Prenomina2_FM.USUARIOColumn]));
+                        return ((string)(this[this.tableSP_Reportes_Vacaciones.USUARIOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'USUARIO\' de la tabla \'SP_Reportes_Prenomina2_FM\' es DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'USUARIO\' de la tabla \'SP_Reportes_Vacaciones\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSP_Reportes_Prenomina2_FM.USUARIOColumn] = value;
+                    this[this.tableSP_Reportes_Vacaciones.USUARIOColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCLAVENull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.CLAVEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCLAVENull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.CLAVEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNOMBRENull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.NOMBREColumn);
+                return this.IsNull(this.tableSP_Reportes_Vacaciones.NOMBREColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNOMBRENull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.NOMBREColumn] = global::System.Convert.DBNull;
+                this[this.tableSP_Reportes_Vacaciones.NOMBREColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDEPARTAMENTONull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.DEPARTAMENTOColumn);
+                return this.IsNull(this.tableSP_Reportes_Vacaciones.DEPARTAMENTOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDEPARTAMENTONull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.DEPARTAMENTOColumn] = global::System.Convert.DBNull;
+                this[this.tableSP_Reportes_Vacaciones.DEPARTAMENTOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPUESTONull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.PUESTOColumn);
+                return this.IsNull(this.tableSP_Reportes_Vacaciones.PUESTOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPUESTONull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.PUESTOColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTERMINONull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.TERMINOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTERMINONull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.TERMINOColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDURACIONNull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.DURACIONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDURACIONNull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.DURACIONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNUMERONull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.NUMEROColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNUMERONull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.NUMEROColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsINICIANull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.INICIAColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetINICIANull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.INICIAColumn] = global::System.Convert.DBNull;
+                this[this.tableSP_Reportes_Vacaciones.PUESTOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTERMINANull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.TERMINAColumn);
+                return this.IsNull(this.tableSP_Reportes_Vacaciones.TERMINAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTERMINANull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.TERMINAColumn] = global::System.Convert.DBNull;
+                this[this.tableSP_Reportes_Vacaciones.TERMINAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSEMANANull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.SEMANAColumn);
+            public bool IsINICIApNull() {
+                return this.IsNull(this.tableSP_Reportes_Vacaciones.INICIApColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSEMANANull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.SEMANAColumn] = global::System.Convert.DBNull;
+            public void SetINICIApNull() {
+                this[this.tableSP_Reportes_Vacaciones.INICIApColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTIPONull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.TIPOColumn);
+            public bool IsTERMINApNull() {
+                return this.IsNull(this.tableSP_Reportes_Vacaciones.TERMINApColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTIPONull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.TIPOColumn] = global::System.Convert.DBNull;
+            public void SetTERMINApNull() {
+                this[this.tableSP_Reportes_Vacaciones.TERMINApColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCASONull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.CASOColumn);
+            public bool IsSEMANApNull() {
+                return this.IsNull(this.tableSP_Reportes_Vacaciones.SEMANApColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCASONull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.CASOColumn] = global::System.Convert.DBNull;
+            public void SetSEMANApNull() {
+                this[this.tableSP_Reportes_Vacaciones.SEMANApColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSECUELANull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.SECUELAColumn);
+            public bool IsDURACIONNull() {
+                return this.IsNull(this.tableSP_Reportes_Vacaciones.DURACIONColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSECUELANull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.SECUELAColumn] = global::System.Convert.DBNull;
+            public void SetDURACIONNull() {
+                this[this.tableSP_Reportes_Vacaciones.DURACIONColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPERSONASNull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.PERSONASColumn);
+            public bool IsPRIMA_VACACIONALNull() {
+                return this.IsNull(this.tableSP_Reportes_Vacaciones.PRIMA_VACACIONALColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPERSONASNull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.PERSONASColumn] = global::System.Convert.DBNull;
+            public void SetPRIMA_VACACIONALNull() {
+                this[this.tableSP_Reportes_Vacaciones.PRIMA_VACACIONALColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsUSUARIONull() {
-                return this.IsNull(this.tableSP_Reportes_Prenomina2_FM.USUARIOColumn);
+                return this.IsNull(this.tableSP_Reportes_Vacaciones.USUARIOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetUSUARIONull() {
-                this[this.tableSP_Reportes_Prenomina2_FM.USUARIOColumn] = global::System.Convert.DBNull;
+                this[this.tableSP_Reportes_Vacaciones.USUARIOColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1225,22 +1010,22 @@ namespace CsPresentacion {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SP_Reportes_Prenomina2_FMRowChangeEvent : global::System.EventArgs {
+        public class SP_Reportes_VacacionesRowChangeEvent : global::System.EventArgs {
             
-            private SP_Reportes_Prenomina2_FMRow eventRow;
+            private SP_Reportes_VacacionesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Reportes_Prenomina2_FMRowChangeEvent(SP_Reportes_Prenomina2_FMRow row, global::System.Data.DataRowAction action) {
+            public SP_Reportes_VacacionesRowChangeEvent(SP_Reportes_VacacionesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Reportes_Prenomina2_FMRow Row {
+            public SP_Reportes_VacacionesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1256,7 +1041,7 @@ namespace CsPresentacion {
         }
     }
 }
-namespace CsPresentacion.DS_Prenomina_2TableAdapters {
+namespace CsPresentacion.DS_Vacaciones2TableAdapters {
     
     
     /// <summary>
@@ -1268,7 +1053,7 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SP_Reportes_Prenomina2_FMTableAdapter : global::System.ComponentModel.Component {
+    public partial class SP_Reportes_VacacionesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1282,7 +1067,7 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SP_Reportes_Prenomina2_FMTableAdapter() {
+        public SP_Reportes_VacacionesTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1379,22 +1164,18 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SP_Reportes_Prenomina2_FM";
+            tableMapping.DataSetTable = "SP_Reportes_Vacaciones";
             tableMapping.ColumnMappings.Add("CLAVE", "CLAVE");
             tableMapping.ColumnMappings.Add("NOMBRE", "NOMBRE");
             tableMapping.ColumnMappings.Add("DEPARTAMENTO", "DEPARTAMENTO");
             tableMapping.ColumnMappings.Add("PUESTO", "PUESTO");
-            tableMapping.ColumnMappings.Add("FECHA", "FECHA");
-            tableMapping.ColumnMappings.Add("TERMINO", "TERMINO");
-            tableMapping.ColumnMappings.Add("DURACION", "DURACION");
-            tableMapping.ColumnMappings.Add("NUMERO", "NUMERO");
             tableMapping.ColumnMappings.Add("INICIA", "INICIA");
             tableMapping.ColumnMappings.Add("TERMINA", "TERMINA");
-            tableMapping.ColumnMappings.Add("SEMANA", "SEMANA");
-            tableMapping.ColumnMappings.Add("TIPO", "TIPO");
-            tableMapping.ColumnMappings.Add("CASO", "CASO");
-            tableMapping.ColumnMappings.Add("SECUELA", "SECUELA");
-            tableMapping.ColumnMappings.Add("PERSONAS", "PERSONAS");
+            tableMapping.ColumnMappings.Add("INICIAp", "INICIAp");
+            tableMapping.ColumnMappings.Add("TERMINAp", "TERMINAp");
+            tableMapping.ColumnMappings.Add("SEMANAp", "SEMANAp");
+            tableMapping.ColumnMappings.Add("DURACION", "DURACION");
+            tableMapping.ColumnMappings.Add("PRIMA_VACACIONAL", "PRIMA_VACACIONAL");
             tableMapping.ColumnMappings.Add("USUARIO", "USUARIO");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -1412,7 +1193,7 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.SP_Reportes_Prenomina2_FM";
+            this._commandCollection[0].CommandText = "dbo.SP_Reportes_Vacaciones";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Var", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1429,7 +1210,7 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Prenomina_2.SP_Reportes_Prenomina2_FMDataTable dataTable, global::System.Nullable<int> Var, global::System.Nullable<int> Tipo, global::System.Nullable<int> Semana, global::System.Nullable<int> Año, global::System.Nullable<global::System.DateTime> Inicia, global::System.Nullable<global::System.DateTime> Termina, global::System.Nullable<int> Clave, global::System.Nullable<int> Usuario) {
+        public virtual int Fill(DS_Vacaciones2.SP_Reportes_VacacionesDataTable dataTable, global::System.Nullable<int> Var, global::System.Nullable<int> Tipo, global::System.Nullable<int> Semana, global::System.Nullable<int> Año, global::System.Nullable<global::System.DateTime> Inicia, global::System.Nullable<global::System.DateTime> Termina, global::System.Nullable<int> Clave, global::System.Nullable<int> Usuario) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Var.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Var.Value));
@@ -1490,7 +1271,7 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Prenomina_2.SP_Reportes_Prenomina2_FMDataTable GetData(global::System.Nullable<int> Var, global::System.Nullable<int> Tipo, global::System.Nullable<int> Semana, global::System.Nullable<int> Año, global::System.Nullable<global::System.DateTime> Inicia, global::System.Nullable<global::System.DateTime> Termina, global::System.Nullable<int> Clave, global::System.Nullable<int> Usuario) {
+        public virtual DS_Vacaciones2.SP_Reportes_VacacionesDataTable GetData(global::System.Nullable<int> Var, global::System.Nullable<int> Tipo, global::System.Nullable<int> Semana, global::System.Nullable<int> Año, global::System.Nullable<global::System.DateTime> Inicia, global::System.Nullable<global::System.DateTime> Termina, global::System.Nullable<int> Clave, global::System.Nullable<int> Usuario) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Var.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Var.Value));
@@ -1540,7 +1321,7 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            DS_Prenomina_2.SP_Reportes_Prenomina2_FMDataTable dataTable = new DS_Prenomina_2.SP_Reportes_Prenomina2_FMDataTable();
+            DS_Vacaciones2.SP_Reportes_VacacionesDataTable dataTable = new DS_Vacaciones2.SP_Reportes_VacacionesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1614,7 +1395,7 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DS_Prenomina_2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DS_Vacaciones2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1624,7 +1405,7 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DS_Prenomina_2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DS_Vacaciones2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1634,7 +1415,7 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DS_Prenomina_2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DS_Vacaciones2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1668,7 +1449,7 @@ namespace CsPresentacion.DS_Prenomina_2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DS_Prenomina_2 dataSet) {
+        public virtual int UpdateAll(DS_Vacaciones2 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

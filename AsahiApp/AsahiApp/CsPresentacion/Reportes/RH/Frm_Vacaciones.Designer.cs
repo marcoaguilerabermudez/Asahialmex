@@ -32,10 +32,10 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Vacaciones));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DS_Vacaciones = new CsPresentacion.DS_Vacaciones();
+            this.DS_Vacaciones2 = new CsPresentacion.DS_Vacaciones2();
             this.SP_Reportes_VacacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SP_Reportes_VacacionesTableAdapter = new CsPresentacion.DS_VacacionesTableAdapters.SP_Reportes_VacacionesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Vacaciones)).BeginInit();
+            this.SP_Reportes_VacacionesTableAdapter = new CsPresentacion.DS_Vacaciones2TableAdapters.SP_Reportes_VacacionesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_Vacaciones2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_VacacionesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,22 +45,22 @@
             reportDataSource1.Name = "DS_Vacaciones";
             reportDataSource1.Value = this.SP_Reportes_VacacionesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Vacaciones.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Vacaciones3.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(871, 546);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DS_Vacaciones
+            // DS_Vacaciones2
             // 
-            this.DS_Vacaciones.DataSetName = "DS_Vacaciones";
-            this.DS_Vacaciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.DS_Vacaciones2.DataSetName = "DS_Vacaciones2";
+            this.DS_Vacaciones2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // SP_Reportes_VacacionesBindingSource
             // 
             this.SP_Reportes_VacacionesBindingSource.DataMember = "SP_Reportes_Vacaciones";
-            this.SP_Reportes_VacacionesBindingSource.DataSource = this.DS_Vacaciones;
+            this.SP_Reportes_VacacionesBindingSource.DataSource = this.DS_Vacaciones2;
             // 
             // SP_Reportes_VacacionesTableAdapter
             // 
@@ -77,7 +77,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de Vacaciones";
             this.Load += new System.EventHandler(this.Frm_Vacaciones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DS_Vacaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_Vacaciones2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_Reportes_VacacionesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -87,7 +87,7 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource SP_Reportes_VacacionesBindingSource;
-        private DS_Vacaciones DS_Vacaciones;
-        private DS_VacacionesTableAdapters.SP_Reportes_VacacionesTableAdapter SP_Reportes_VacacionesTableAdapter;
+        private DS_Vacaciones2 DS_Vacaciones2;
+        private DS_Vacaciones2TableAdapters.SP_Reportes_VacacionesTableAdapter SP_Reportes_VacacionesTableAdapter;
     }
 }

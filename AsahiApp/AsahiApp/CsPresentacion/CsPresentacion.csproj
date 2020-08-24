@@ -101,10 +101,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_Ausentismos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Ausentismos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_Historial_Empleado.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Historial_Empleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_Vacaciones2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Vacaciones2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RH\Frm_Historico_personal.cs">
       <SubType>Form</SubType>
@@ -215,11 +225,6 @@
     <Compile Include="Formularios\RH\Credencial_visitantes_param.Designer.cs">
       <DependentUpon>Credencial_visitantes_param.cs</DependentUpon>
     </Compile>
-    <Compile Include="DS_Vacaciones.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_Vacaciones.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\RH\Frm_Vacaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,11 +236,6 @@
     </Compile>
     <Compile Include="Reportes\RH\Ausentismos.Designer.cs">
       <DependentUpon>Ausentismos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DS_Ausentismos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_Ausentismos.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_Listado_Activos.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -299,11 +299,11 @@
     <Compile Include="Reportes\RH\Permiso_Salida.Designer.cs">
       <DependentUpon>Permiso_Salida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\RH\Retardos.cs">
+    <Compile Include="Reportes\RH\Frm_Rep_Retardos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\RH\Retardos.Designer.cs">
-      <DependentUpon>Retardos.cs</DependentUpon>
+    <Compile Include="Reportes\RH\Frm_Rep_Retardos.Designer.cs">
+      <DependentUpon>Frm_Rep_Retardos.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RH\Descanso_Laborado_Semana.cs">
       <SubType>Form</SubType>
@@ -544,6 +544,9 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Historico_personal.resx">
       <DependentUpon>Frm_Historico_personal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Ausentismos3.rdlc" />
+    <EmbeddedResource Include="Rep_Contrato.rdlc" />
+    <EmbeddedResource Include="Rep_Descanso_Laborado2.rdlc" />
     <EmbeddedResource Include="Rep_Historial_empleado.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Bajas_Contabilidad.resx">
       <DependentUpon>Bajas_Contabilidad.cs</DependentUpon>
@@ -614,8 +617,8 @@
     <EmbeddedResource Include="Reportes\RH\Permiso_Salida.resx">
       <DependentUpon>Permiso_Salida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\RH\Retardos.resx">
-      <DependentUpon>Retardos.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\RH\Frm_Rep_Retardos.resx">
+      <DependentUpon>Frm_Rep_Retardos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RH\Descanso_Laborado_Semana.resx">
       <DependentUpon>Descanso_Laborado_Semana.cs</DependentUpon>
@@ -676,7 +679,6 @@
     <EmbeddedResource Include="Reportes\RH\Rep_Ausentismo.resx">
       <DependentUpon>Rep_Ausentismo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rep_Ausentismos.rdlc" />
     <EmbeddedResource Include="Rep_Ausentismo_Fecha.rdlc" />
     <EmbeddedResource Include="Rep_bajas.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Finiquito.resx">
@@ -687,7 +689,6 @@
       <DependentUpon>Descanso_Laborado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Credenciales_Visitantes.rdlc" />
-    <EmbeddedResource Include="Rep_Descanso_Laborado.rdlc" />
     <EmbeddedResource Include="Rep_Filtro1.rdlc" />
     <EmbeddedResource Include="Rep_Filtro2.rdlc" />
     <EmbeddedResource Include="Rep_Finiquito.rdlc" />
@@ -696,18 +697,17 @@
       <DependentUpon>Rep_Historial_empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Historico.rdlc" />
-    <EmbeddedResource Include="Rep_Incapacidades.rdlc" />
+    <EmbeddedResource Include="Rep_Incapacidades2.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Activos.rdlc" />
     <EmbeddedResource Include="Rep_Listado_Altas.rdlc" />
     <EmbeddedResource Include="Rep_Listado_bajas.rdlc" />
     <EmbeddedResource Include="Rep_Mejoras3.rdlc" />
-    <EmbeddedResource Include="Rep_Permisos_Salida.rdlc" />
-    <EmbeddedResource Include="Rep_Retardos.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Retardos_Semana.resx">
       <DependentUpon>Retardos_Semana.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Permisos_Salida2.rdlc" />
+    <EmbeddedResource Include="Rep_Retardos_2.rdlc" />
     <EmbeddedResource Include="Rep_total_rotacion.rdlc" />
-    <EmbeddedResource Include="Rep_Vacaciones.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Rotacion.resx">
       <DependentUpon>Rotacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -720,6 +720,7 @@
     <EmbeddedResource Include="Reportes\RH\Rotacion_Grafico.resx">
       <DependentUpon>Rotacion_Grafico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rep_Vacaciones3.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -932,16 +933,16 @@
     <None Include="DS_Rotacion_grafica.xss">
       <DependentUpon>DS_Rotacion_grafica.xsd</DependentUpon>
     </None>
-    <None Include="DS_Vacaciones.xsc">
-      <DependentUpon>DS_Vacaciones.xsd</DependentUpon>
+    <None Include="DS_Vacaciones2.xsc">
+      <DependentUpon>DS_Vacaciones2.xsd</DependentUpon>
     </None>
-    <None Include="DS_Vacaciones.xsd">
+    <None Include="DS_Vacaciones2.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_Vacaciones.Designer.cs</LastGenOutput>
+      <LastGenOutput>DS_Vacaciones2.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DS_Vacaciones.xss">
-      <DependentUpon>DS_Vacaciones.xsd</DependentUpon>
+    <None Include="DS_Vacaciones2.xss">
+      <DependentUpon>DS_Vacaciones2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
