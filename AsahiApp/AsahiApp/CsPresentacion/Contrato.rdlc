@@ -9340,7 +9340,14 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>CONTRATO INDIVIDUAL DE TRABAJO POR TIEMPO INDETERMINADO, SUJETO A CAPACITACIÓN INICIAL, SUSCRITO DE CONFORMIDAD CON LO ESTABLECIDO EN LOS ARTÍCULOS 39 A Y 39 B DE LA LEY FEDERAL DEL TRABAJO QUE CELEBRAN, POR UNA PARTE LA PERSONA MORAL DENOMINADA ASAHI ALUMINIUM MÉXICO SERVICIOS, S.A. DE C.V., A QUIEN EN LO SUCESIVO SE LE DENOMINARÁ “LA EMPRESA” Y POR LA OTRA: </Value>
+                <Value>CONTRATO INDIVIDUAL DE TRABAJO POR TIEMPO INDETERMINADO, SUJETO A CAPACITACIÓN INICIAL, SUSCRITO DE CONFORMIDAD CON LO ESTABLECIDO EN LOS ARTÍCULOS 39 A Y 39 B DE LA LEY FEDERAL DEL TRABAJO QUE CELEBRAN, POR UNA PARTE LA PERSONA MORAL DENOMINADA ASAHI ALUMINIUM MÉXICO SERVICIOS, S.A. DE C.V., A QUIEN EN LO SUCESIVO SE LE DENOMINARÁ “LA EMPRESA” Y POR LA OTRA:</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <TextDecoration>None</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calibri</FontFamily>
@@ -9348,14 +9355,618 @@
                   <TextDecoration>None</TextDecoration>
                 </Style>
               </TextRun>
+              <TextRun>
+                <Value>=Fields!NOMBRE.Value</Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve">   </Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>por su propio derecho a quien se le denominará: “el trabajador”, identificándose a ambas como “las partes” cuando actúen en conjunto, de conformidad con las siguientes declaraciones y cláusulas.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>General</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>DECLARACIONES</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>I.-</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>DECLARA “LA EMPRESA”:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>a) Ser una Sociedad Mercantil constituida de acuerdo con las Leyes mexicanas.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>b) Tener su domicilio en </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CALLE AVENIDA MINERAL DE VALENCIANA 140, SANTA FE II, PUERTO</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>INTERIOR, SILAO, GUANAJUATO. CP 36275</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>d) Que requiere de los servicios de “EL TRABAJADOR” por tiempo indeterminado sujeto a capacitación inicial, para desempeñar el puesto y las funciones que más adelante se asientan, así como en general todas las que le sean similares y asignadas por el “LA EMPRESA” en cualquiera de los establecimiento o sucursales o cualquier lugar que le sea asignado por “LA EMPRESA”.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>e) Que se encuentra inscrito en el Registro Federal de Contribuyentes, bajo la clave: AAM120301JS7.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>II.- DECLARA “EL TRABAJADOR”:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>a) Llamarse el trabajador como ha quedado escrito en el encabezado de este contrato.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>b) Ser de nacionalidad </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!NACIONALIDAD.Value</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>c) Ser de sexo: </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!NACIONALIDAD.Value</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>d) Ser su estado civil: </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Parametro</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>e) Tener </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Parametro</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> años, en razón de haber nacido</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>f) Tener su domicilio en : </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Parámetro</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Que es donde habita y que lo señala para recibir avisos y notificaciones por parte de: “LA EMPRESA”.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>g) Que su número de Registro Federal de Causantes es: </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> Parametro</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve">       </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>y CURP: </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Parametro</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>h) Que, bajo protesta de decir verdad, declara tener la experiencia, capacidad, aptitudes y conocimientos convenientes y/o necesarios para la realización de los trabajos origen de este contrato y que requiere “LA EMPRESA” y, en especial, para desempeñar el puesto de:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Parametro</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>en los domicilios a que se hace referencia en la "DECLARACION" I.C) del presente contrato y en cualquier otro que indique “LA EMPRESA”.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Conforme a las condiciones establecidas en este contrato, debido a que no existe impedimento legal alguno para ello, manifestando conocer plenamente la normatividad interna, tales como, manuales, políticas, circulares y reglamentos emitidos por “LA EMPRESA” para su personal, de manera enunciativa y no limitativa en materia de seguridad e higiene, del trabajo, relaciones obrero patronales, prestaciones y beneficios, protección de datos personales y/o cualquier otra que se emitida por “LA EMPRESA”.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.10583cm</Top>
         <Left>1.63583cm</Left>
-        <Height>1.65806cm</Height>
+        <Height>11.78077cm</Height>
         <Width>17.95167cm</Width>
         <ZIndex>107</ZIndex>
         <Style>
@@ -9368,7 +9979,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>10.21858cm</Width>
+              <Width>4.7687cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -9377,14 +9988,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NACIONALIDAD2">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NOMBRE.Value</Value>
+                              <Value />
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -9396,7 +10007,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NACIONALIDAD</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -9427,9 +10038,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>1.79917cm</Top>
-        <Left>1.63583cm</Left>
+        <Left>7.08571cm</Left>
         <Height>0.4cm</Height>
-        <Width>10.21858cm</Width>
+        <Width>4.7687cm</Width>
         <ZIndex>108</ZIndex>
         <Style>
           <Border>
@@ -9437,37 +10048,6 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox5">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>POR SU PROPIO DERECHO A QUIEN SE LE DENOMINARÁ: “EL TRABAJADOR”, INDENTIFICANDOSE A AMBAS COMO “LAS PARTES” CUANDO ACTUEN EN CONJUNTO, DE CONFORMIDAD CON LAS SIGUIENTES DECLARACIONES Y CLÁUSULAS.</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>2.26972cm</Top>
-        <Left>1.63583cm</Left>
-        <Height>1.18461cm</Height>
-        <Width>17.95167cm</Width>
-        <ZIndex>109</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox106">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -9523,7 +10103,7 @@
         <Left>0.55216cm</Left>
         <Height>1.26146cm</Height>
         <Width>13.60423cm</Width>
-        <ZIndex>110</ZIndex>
+        <ZIndex>109</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -9604,7 +10184,7 @@
         <Left>14.15639cm</Left>
         <Height>1.26146cm</Height>
         <Width>3.17676cm</Width>
-        <ZIndex>111</ZIndex>
+        <ZIndex>110</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -9687,7 +10267,7 @@
         <Left>17.33315cm</Left>
         <Height>1.26146cm</Height>
         <Width>2.77441cm</Width>
-        <ZIndex>112</ZIndex>
+        <ZIndex>111</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -9720,7 +10300,7 @@
         <Left>0.55216cm</Left>
         <Height>0.41479cm</Height>
         <Width>3.56782cm</Width>
-        <ZIndex>113</ZIndex>
+        <ZIndex>112</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -9790,7 +10370,7 @@
         <Left>4.15526cm</Left>
         <Height>0.41479cm</Height>
         <Width>2.91073cm</Width>
-        <ZIndex>114</ZIndex>
+        <ZIndex>113</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -9823,7 +10403,7 @@
         <Left>0.55216cm</Left>
         <Height>0.41479cm</Height>
         <Width>7.6109cm</Width>
-        <ZIndex>115</ZIndex>
+        <ZIndex>114</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -9891,7 +10471,7 @@
         <Left>8.16306cm</Left>
         <Height>0.41479cm</Height>
         <Width>8.54448cm</Width>
-        <ZIndex>116</ZIndex>
+        <ZIndex>115</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -9943,7 +10523,7 @@
         <Left>0.51542cm</Left>
         <Height>1.50943cm</Height>
         <Width>19.59208cm</Width>
-        <ZIndex>117</ZIndex>
+        <ZIndex>116</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -11086,9 +11666,9 @@
         </TablixRowHierarchy>
         <Top>194.5039cm</Top>
         <Left>0.51541cm</Left>
-        <Height>4.27cm</Height>
+        <Height>4.26999cm</Height>
         <Width>19.55535cm</Width>
-        <ZIndex>118</ZIndex>
+        <ZIndex>117</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -14576,7 +15156,7 @@
         <Left>0.55216cm</Left>
         <Height>5.4cm</Height>
         <Width>19.51859cm</Width>
-        <ZIndex>119</ZIndex>
+        <ZIndex>118</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -14605,7 +15185,7 @@
         <Left>0.55216cm</Left>
         <Height>0.6cm</Height>
         <Width>2.55048cm</Width>
-        <ZIndex>120</ZIndex>
+        <ZIndex>119</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -14638,7 +15218,7 @@
         <Left>0.51541cm</Left>
         <Height>0.6cm</Height>
         <Width>19.55534cm</Width>
-        <ZIndex>121</ZIndex>
+        <ZIndex>120</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -14671,7 +15251,7 @@
         <Left>0.51541cm</Left>
         <Height>0.6cm</Height>
         <Width>3.77214cm</Width>
-        <ZIndex>122</ZIndex>
+        <ZIndex>121</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -14683,7 +15263,7 @@
         <Left>4.42648cm</Left>
         <Height>0cm</Height>
         <Width>12.17595cm</Width>
-        <ZIndex>123</ZIndex>
+        <ZIndex>122</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -14873,7 +15453,7 @@
         <Left>0.37648cm</Left>
         <Height>1.2cm</Height>
         <Width>16.22594cm</Width>
-        <ZIndex>124</ZIndex>
+        <ZIndex>123</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -14947,7 +15527,7 @@
         <Left>0.47867cm</Left>
         <Height>0.41039cm</Height>
         <Width>19.59208cm</Width>
-        <ZIndex>125</ZIndex>
+        <ZIndex>124</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -14981,7 +15561,7 @@
         <Left>0.47861cm</Left>
         <Height>0.35575cm</Height>
         <Width>3.1007cm</Width>
-        <ZIndex>126</ZIndex>
+        <ZIndex>125</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -15014,7 +15594,7 @@
         <Left>16.32062cm</Left>
         <Height>0.35575cm</Height>
         <Width>3.75013cm</Width>
-        <ZIndex>127</ZIndex>
+        <ZIndex>126</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -15143,7 +15723,7 @@
         <Left>1.60871cm</Left>
         <Height>2.92806cm</Height>
         <Width>17.95167cm</Width>
-        <ZIndex>128</ZIndex>
+        <ZIndex>127</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -15220,7 +15800,7 @@
         <Left>1.60871cm</Left>
         <Height>1.04008cm</Height>
         <Width>17.95167cm</Width>
-        <ZIndex>129</ZIndex>
+        <ZIndex>128</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -15299,7 +15879,7 @@
         <Left>11.92497cm</Left>
         <Height>0.3716cm</Height>
         <Width>3.59224cm</Width>
-        <ZIndex>130</ZIndex>
+        <ZIndex>129</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -15372,7 +15952,7 @@
         <Left>1.60228cm</Left>
         <Height>0.35217cm</Height>
         <Width>10.25213cm</Width>
-        <ZIndex>131</ZIndex>
+        <ZIndex>130</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -15381,6 +15961,41 @@
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
+        </Style>
+      </Textbox>
+      <Textbox Name="NACIONALIDAD2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!NOMBRE.Value</Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NACIONALIDAD</rd:DefaultName>
+        <Top>3.26007cm</Top>
+        <Left>1.63583cm</Left>
+        <Height>0.4cm</Height>
+        <Width>10.21858cm</Width>
+        <ZIndex>131</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Bottom</VerticalAlign>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
     </ReportItems>
