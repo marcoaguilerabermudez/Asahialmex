@@ -491,7 +491,7 @@ Public Class Frm_PolizasDiario
         Dim fila As Integer, pivot As Integer, idX As Integer = 0, e As Integer
         Dim total As Double, tc As Double
         Dim fecha As Date
-        Dim folio As String = "", uuid As String = "", sn As String
+        Dim folio As String = "", uuid As String = "", sn As String, idFol As String = ""
         Dim totalFilas As Integer = Dgv_Prepolizas.Rows.Count
         Dim NPol As New NPolizas(), pol As New Polizas()
         Try
@@ -519,18 +519,22 @@ Public Class Frm_PolizasDiario
                         tx.WriteLine()
                         uuid = Dgv_Prepolizas.Rows(fila).Cells("uuidFactura").Value
                     End If
-                    If DatePart("m", .Cells("fechaFact").Value) = DatePart("m", .Cells("fechaPagoFact").Value) And
-                            DatePart("yyyy", .Cells("fechaFact").Value) = DatePart("yyyy", .Cells("fechaPagoFact").Value) Then
+                    If DatePart("m", .Cells("fechaFact").Value) = DatePart("m", .Cells("fechaPagoFact").Value) And'''''''''''''''''''''''\
+                       DatePart("yyyy", .Cells("fechaFact").Value) = DatePart("yyyy", .Cells("fechaPagoFact").Value) Then '''''''''''''''/
                         If .Cells("monedaVP").Value = "MXN" Then folio = "F-" & .Cells("idFactura").Value
                         If .Cells("monedaVP").Value = "USD" Then
+                            idFol = .Cells("idFactura").Value
                             tc = .Cells("tc").Value
-                            folio = "F-" & .Cells("idFactura").Value & " TC " & tc
+                            If Len(idFol) > 6 Then idFol = Strings.Right(idFol, 6)
+                            folio = "F-" & idFol & " TC " & tc
                         End If
                     Else
                         If .Cells("monedaVP").Value = "MXN" Then folio = "F/" & .Cells("idFactura").Value
                         If .Cells("monedaVP").Value = "USD" Then
+                            idFol = .Cells("idFactura").Value
                             tc = .Cells("tc").Value
-                            folio = "F/" & .Cells("idFactura").Value & " TC " & tc
+                            If Len(idFol) > 6 Then idFol = Strings.Right(idFol, 6)
+                            folio = "F/" & idFol & " TC " & tc
                         End If
                     End If
                     If .Cells("familia").Value = "Cargo" Or .Cells("familia").Value = "ProveedorUSD" Or .Cells("familia").Value = "ComplementariaUSD" Or .Cells("familia").Value = "Retencion de IVA" Or
