@@ -41,8 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_interior = new System.Windows.Forms.TextBox();
-            this.dtm_nacimiento = new System.Windows.Forms.DateTimePicker();
-            this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txt_cp = new System.Windows.Forms.TextBox();
             this.txt_colonia = new System.Windows.Forms.TextBox();
@@ -61,7 +59,7 @@
             this.txt_municipio = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.grb_nacimiento = new System.Windows.Forms.GroupBox();
+            this.nacimiento = new System.Windows.Forms.GroupBox();
             this.txt_num_infonavit = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -71,6 +69,8 @@
             this.cmb_escolaridad = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dtm_nacimiento = new System.Windows.Forms.DateTimePicker();
+            this.label21 = new System.Windows.Forms.Label();
             this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
             this.txt_curp = new System.Windows.Forms.MaskedTextBox();
             this.lbl_escolaridad = new System.Windows.Forms.Label();
@@ -170,14 +170,14 @@
             this.cmb_turno = new System.Windows.Forms.ComboBox();
             this.dtm_fecha_turno = new System.Windows.Forms.DateTimePicker();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.txt_paradero = new System.Windows.Forms.ComboBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.dgv_ruta = new System.Windows.Forms.DataGridView();
             this.btn_mod_ruta = new System.Windows.Forms.Button();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txt_paradero = new System.Windows.Forms.ComboBox();
-            this.label44 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.grb_nacimiento.SuspendLayout();
+            this.nacimiento.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -227,6 +227,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(606, 69);
             this.panel1.TabIndex = 58;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btn_nuevo
             // 
@@ -236,7 +237,7 @@
             this.btn_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo.Location = new System.Drawing.Point(114, 46);
+            this.btn_nuevo.Location = new System.Drawing.Point(112, 45);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(18, 23);
             this.btn_nuevo.TabIndex = 105;
@@ -310,16 +311,16 @@
             "VER",
             "YUC",
             "ZAC"});
-            this.cmb_estado_nacimiento.Location = new System.Drawing.Point(181, 36);
+            this.cmb_estado_nacimiento.Location = new System.Drawing.Point(9, 36);
             this.cmb_estado_nacimiento.Name = "cmb_estado_nacimiento";
-            this.cmb_estado_nacimiento.Size = new System.Drawing.Size(74, 21);
+            this.cmb_estado_nacimiento.Size = new System.Drawing.Size(84, 21);
             this.cmb_estado_nacimiento.TabIndex = 26;
             this.cmb_estado_nacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_estado_nacimiento_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(182, 20);
+            this.label2.Location = new System.Drawing.Point(11, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 226;
@@ -362,23 +363,6 @@
             this.txt_interior.Size = new System.Drawing.Size(68, 20);
             this.txt_interior.TabIndex = 15;
             this.txt_interior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_interior_KeyPress);
-            // 
-            // dtm_nacimiento
-            // 
-            this.dtm_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_nacimiento.Location = new System.Drawing.Point(9, 37);
-            this.dtm_nacimiento.Name = "dtm_nacimiento";
-            this.dtm_nacimiento.Size = new System.Drawing.Size(146, 20);
-            this.dtm_nacimiento.TabIndex = 25;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 20);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(115, 13);
-            this.label21.TabIndex = 214;
-            this.label21.Text = "FECHA NACIMIENTO:";
             // 
             // label20
             // 
@@ -484,9 +468,9 @@
             this.cmb_Civil.Items.AddRange(new object[] {
             "SOLTERO",
             "CASADO"});
-            this.cmb_Civil.Location = new System.Drawing.Point(18, 194);
+            this.cmb_Civil.Location = new System.Drawing.Point(19, 194);
             this.cmb_Civil.Name = "cmb_Civil";
-            this.cmb_Civil.Size = new System.Drawing.Size(148, 21);
+            this.cmb_Civil.Size = new System.Drawing.Size(147, 21);
             this.cmb_Civil.TabIndex = 21;
             this.cmb_Civil.SelectedIndexChanged += new System.EventHandler(this.Cmb_Civil_SelectedIndexChanged_1);
             this.cmb_Civil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_Civil_KeyPress_1);
@@ -588,20 +572,17 @@
             this.label12.TabIndex = 194;
             this.label12.Text = "ESTADO CIVIL:";
             // 
-            // grb_nacimiento
+            // nacimiento
             // 
-            this.grb_nacimiento.Controls.Add(this.dtm_nacimiento);
-            this.grb_nacimiento.Controls.Add(this.label21);
-            this.grb_nacimiento.Controls.Add(this.label4);
-            this.grb_nacimiento.Controls.Add(this.txt_lugar_nac);
-            this.grb_nacimiento.Controls.Add(this.cmb_estado_nacimiento);
-            this.grb_nacimiento.Controls.Add(this.label2);
-            this.grb_nacimiento.Location = new System.Drawing.Point(9, 328);
-            this.grb_nacimiento.Name = "grb_nacimiento";
-            this.grb_nacimiento.Size = new System.Drawing.Size(271, 108);
-            this.grb_nacimiento.TabIndex = 227;
-            this.grb_nacimiento.TabStop = false;
-            this.grb_nacimiento.Text = "Nacimiento";
+            this.nacimiento.Controls.Add(this.label4);
+            this.nacimiento.Controls.Add(this.txt_lugar_nac);
+            this.nacimiento.Controls.Add(this.cmb_estado_nacimiento);
+            this.nacimiento.Controls.Add(this.label2);
+            this.nacimiento.Location = new System.Drawing.Point(9, 316);
+            this.nacimiento.Name = "nacimiento";
+            this.nacimiento.Size = new System.Drawing.Size(271, 108);
+            this.nacimiento.TabIndex = 227;
+            this.nacimiento.TabStop = false;
             // 
             // txt_num_infonavit
             // 
@@ -614,7 +595,6 @@
             // 
             // txt_email
             // 
-            this.txt_email.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_email.Location = new System.Drawing.Point(18, 418);
             this.txt_email.MaxLength = 40;
             this.txt_email.Name = "txt_email";
@@ -693,6 +673,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dtm_nacimiento);
+            this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.txt_rfc);
             this.tabPage1.Controls.Add(this.txt_curp);
             this.tabPage1.Controls.Add(this.lbl_escolaridad);
@@ -741,6 +723,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Información General";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dtm_nacimiento
+            // 
+            this.dtm_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_nacimiento.Location = new System.Drawing.Point(18, 469);
+            this.dtm_nacimiento.Name = "dtm_nacimiento";
+            this.dtm_nacimiento.Size = new System.Drawing.Size(129, 20);
+            this.dtm_nacimiento.TabIndex = 244;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(18, 450);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(115, 13);
+            this.label21.TabIndex = 243;
+            this.label21.Text = "FECHA NACIMIENTO:";
             // 
             // txt_rfc
             // 
@@ -946,7 +945,7 @@
             this.tabPage2.Controls.Add(this.label42);
             this.tabPage2.Controls.Add(this.txt_contacto);
             this.tabPage2.Controls.Add(this.lbl_contacto);
-            this.tabPage2.Controls.Add(this.grb_nacimiento);
+            this.tabPage2.Controls.Add(this.nacimiento);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label11);
@@ -1022,9 +1021,9 @@
             "HERMANO",
             "HIJO",
             "OTRO"});
-            this.cmb_parentesco.Location = new System.Drawing.Point(19, 125);
+            this.cmb_parentesco.Location = new System.Drawing.Point(18, 125);
             this.cmb_parentesco.Name = "cmb_parentesco";
-            this.cmb_parentesco.Size = new System.Drawing.Size(147, 21);
+            this.cmb_parentesco.Size = new System.Drawing.Size(148, 21);
             this.cmb_parentesco.TabIndex = 233;
             this.cmb_parentesco.SelectedIndexChanged += new System.EventHandler(this.Cmb_parentesco_SelectedIndexChanged);
             this.cmb_parentesco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_parentesco_KeyPress_1);
@@ -1831,6 +1830,23 @@
             this.tabPage7.Text = "Ruta";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // txt_paradero
+            // 
+            this.txt_paradero.FormattingEnabled = true;
+            this.txt_paradero.Location = new System.Drawing.Point(25, 81);
+            this.txt_paradero.Name = "txt_paradero";
+            this.txt_paradero.Size = new System.Drawing.Size(399, 21);
+            this.txt_paradero.TabIndex = 246;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(23, 64);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(70, 13);
+            this.label44.TabIndex = 247;
+            this.label44.Text = "PARADERO:";
+            // 
             // dgv_ruta
             // 
             this.dgv_ruta.AllowUserToAddRows = false;
@@ -1894,23 +1910,6 @@
             this.label19.TabIndex = 240;
             this.label19.Text = "RUTA:";
             // 
-            // txt_paradero
-            // 
-            this.txt_paradero.FormattingEnabled = true;
-            this.txt_paradero.Location = new System.Drawing.Point(25, 81);
-            this.txt_paradero.Name = "txt_paradero";
-            this.txt_paradero.Size = new System.Drawing.Size(399, 21);
-            this.txt_paradero.TabIndex = 246;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(23, 64);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(70, 13);
-            this.label44.TabIndex = 247;
-            this.label44.Text = "PARADERO:";
-            // 
             // Frm_Modificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1930,8 +1929,8 @@
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Frm_Empleados_Detalle_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.grb_nacimiento.ResumeLayout(false);
-            this.grb_nacimiento.PerformLayout();
+            this.nacimiento.ResumeLayout(false);
+            this.nacimiento.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1975,8 +1974,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_interior;
-        private System.Windows.Forms.DateTimePicker dtm_nacimiento;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txt_cp;
         private System.Windows.Forms.TextBox txt_colonia;
@@ -1995,7 +1992,7 @@
         private System.Windows.Forms.TextBox txt_municipio;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox grb_nacimiento;
+        private System.Windows.Forms.GroupBox nacimiento;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txt_año_graduacion;
@@ -2110,5 +2107,7 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.ComboBox txt_paradero;
         private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.DateTimePicker dtm_nacimiento;
+        private System.Windows.Forms.Label label21;
     }
 }
