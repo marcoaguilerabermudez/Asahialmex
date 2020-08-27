@@ -594,7 +594,6 @@
     <EmbeddedResource Include="Reportes\RH\Ausentismos.resx">
       <DependentUpon>Ausentismos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Contrato.rdlc" />
     <EmbeddedResource Include="Reportes\RH\Incapacidades.resx">
       <DependentUpon>Incapacidades.cs</DependentUpon>
     </EmbeddedResource>
