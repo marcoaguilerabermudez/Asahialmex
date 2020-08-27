@@ -96,6 +96,8 @@
             this.btn_f_ultimo = new System.Windows.Forms.Button();
             this.btn_f_insertar = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbl_v_termina = new System.Windows.Forms.Label();
+            this.lbl_v_inicia = new System.Windows.Forms.Label();
             this.txt_v_prima = new System.Windows.Forms.TextBox();
             this.txt_v_antiguedad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -126,8 +128,6 @@
             this.btn_v_eliminar = new System.Windows.Forms.Button();
             this.btn_v_ultimo = new System.Windows.Forms.Button();
             this.btn_v_insertar = new System.Windows.Forms.Button();
-            this.lbl_v_inicia = new System.Windows.Forms.Label();
-            this.lbl_v_termina = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -963,6 +963,24 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.TabPage2_Click);
             // 
+            // lbl_v_termina
+            // 
+            this.lbl_v_termina.AutoSize = true;
+            this.lbl_v_termina.Location = new System.Drawing.Point(410, 139);
+            this.lbl_v_termina.Name = "lbl_v_termina";
+            this.lbl_v_termina.Size = new System.Drawing.Size(56, 13);
+            this.lbl_v_termina.TabIndex = 269;
+            this.lbl_v_termina.Text = "@Termina";
+            // 
+            // lbl_v_inicia
+            // 
+            this.lbl_v_inicia.AutoSize = true;
+            this.lbl_v_inicia.Location = new System.Drawing.Point(412, 120);
+            this.lbl_v_inicia.Name = "lbl_v_inicia";
+            this.lbl_v_inicia.Size = new System.Drawing.Size(43, 13);
+            this.lbl_v_inicia.TabIndex = 268;
+            this.lbl_v_inicia.Text = "@Inicia";
+            // 
             // txt_v_prima
             // 
             this.txt_v_prima.Location = new System.Drawing.Point(19, 122);
@@ -1299,24 +1317,6 @@
             this.btn_v_insertar.TabIndex = 243;
             this.btn_v_insertar.UseVisualStyleBackColor = false;
             this.btn_v_insertar.Click += new System.EventHandler(this.Btn_v_insertar_Click);
-            // 
-            // lbl_v_inicia
-            // 
-            this.lbl_v_inicia.AutoSize = true;
-            this.lbl_v_inicia.Location = new System.Drawing.Point(412, 120);
-            this.lbl_v_inicia.Name = "lbl_v_inicia";
-            this.lbl_v_inicia.Size = new System.Drawing.Size(43, 13);
-            this.lbl_v_inicia.TabIndex = 268;
-            this.lbl_v_inicia.Text = "@Inicia";
-            // 
-            // lbl_v_termina
-            // 
-            this.lbl_v_termina.AutoSize = true;
-            this.lbl_v_termina.Location = new System.Drawing.Point(410, 139);
-            this.lbl_v_termina.Name = "lbl_v_termina";
-            this.lbl_v_termina.Size = new System.Drawing.Size(56, 13);
-            this.lbl_v_termina.TabIndex = 269;
-            this.lbl_v_termina.Text = "@Termina";
             // 
             // Frm_Aussentismos_Retardos
             // 

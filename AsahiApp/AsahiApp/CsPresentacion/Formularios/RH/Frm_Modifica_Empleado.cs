@@ -37,6 +37,7 @@ namespace CsPresentacion
             cargar_puesto(cmb_puesto);
             txt_curp.Mask = ">LLLL000000LLLLLLCC";
             txt_rfc.Mask = ">LLLL000000CCC";
+
         }
         private void Modifica_turno()// Método para modificar turno de empleado
         {
@@ -437,7 +438,7 @@ namespace CsPresentacion
                 txt_sector.Text = dt.Rows[0]["SECTOR"].ToString();
                 cmb_Civil.Text = dt.Rows[0]["E_CIVIL"].ToString();
                 cmb_genero.Text = dt.Rows[0]["GEN"].ToString();
-                dtm_nacimiento.Text = dt.Rows[0]["NACIMIENTO"].ToString();
+               
                 txt_nss.Text = dt.Rows[0]["AFILIACION"].ToString();
                 txt_contacto.Text = dt.Rows[0]["CONTACTO"].ToString();
                 cmb_parentesco.Text = dt.Rows[0]["PARENTESCO"].ToString();
@@ -468,6 +469,8 @@ namespace CsPresentacion
                 lbl_civil.Text = dt.Rows[0]["ESTADO_CIVIL"].ToString();
                lbl_id_turno.Text = dt.Rows[0]["CATALOGO"].ToString();
                 txt_factor_sueldo.Text = dt.Rows[0]["FACTOR"].ToString();
+
+                dtm_nacimiento.Text = dt.Rows[0]["NACIMIENTO"].ToString();
             }
             else
             {
@@ -585,7 +588,7 @@ namespace CsPresentacion
             txt_sector.Text = "";
             cmb_Civil.Text = "";
             cmb_genero.Text = "";
-            dtm_nacimiento.Text = "";
+          
             txt_lugar_nac.Text = "";
             cmb_escolaridad.Text = "";
             txt_email.Text = "";
@@ -668,6 +671,8 @@ namespace CsPresentacion
             btn_mod_general.Enabled = false;
             dtm_fecha_turno.Enabled = false;
             btn_mod_fam.Enabled = false;
+            dtm_nacimiento.Text = "";
+            tabControl1.Enabled = true;
         }
         private void Btn_buscar_Click(object sender, EventArgs e)
         {      
@@ -729,6 +734,7 @@ namespace CsPresentacion
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 cargar_informacion();
+
                 mostrar_dgv_departamento();
                 mostrar_dgv_turno();
                 mostrar_dgv_ruta();
@@ -752,6 +758,7 @@ namespace CsPresentacion
                     cmb_turno.Enabled = true;
                     cmb_departamento.Enabled = true;
                     dtm_fecha_dep.Enabled = true;
+                    dtm_nacimiento.Enabled = true;
                 }
                 else if (txt_vigencia.Text == "BAJA")
                 {
@@ -1854,6 +1861,11 @@ namespace CsPresentacion
         private void Cmb_turno_Leave(object sender, EventArgs e)
         {
             dtm_fecha_turno.Text = "";
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
