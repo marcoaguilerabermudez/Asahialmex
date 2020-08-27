@@ -1467,7 +1467,6 @@
             // 
             // txt_email
             // 
-            this.txt_email.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_email.Location = new System.Drawing.Point(20, 76);
             this.txt_email.MaxLength = 40;
             this.txt_email.Name = "txt_email";
@@ -1545,7 +1544,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(594, 619);
+            this.ClientSize = new System.Drawing.Size(595, 619);
             this.Controls.Add(this.Panel_secundario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);
