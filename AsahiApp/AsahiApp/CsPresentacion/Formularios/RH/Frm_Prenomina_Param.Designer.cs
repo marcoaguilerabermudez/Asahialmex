@@ -189,12 +189,6 @@
             // cmb_tipo
             // 
             this.cmb_tipo.FormattingEnabled = true;
-            this.cmb_tipo.Items.AddRange(new object[] {
-            "FALTA INJUSTIFICADA",
-            "FALTA JUSTIFICADA",
-            "PERMISO CON GOCE",
-            "PERMISO SIN GOCE",
-            "SUSPENSION"});
             this.cmb_tipo.Location = new System.Drawing.Point(17, 186);
             this.cmb_tipo.Name = "cmb_tipo";
             this.cmb_tipo.Size = new System.Drawing.Size(168, 21);

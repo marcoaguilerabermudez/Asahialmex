@@ -69,6 +69,26 @@ namespace CsPresentacion
             nuevo();
             autocompletar_responsable(txt_nombre);
             txt_clave.Focus();
+            cargar_ausentismo(cmb_f_tipo);
+        }
+        public void cargar_ausentismo(ComboBox inte)//Cargar ausentismos
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT RTRIM(DESCRIPCION)AS 'DESCRIPCION' FROM [asahi16].[Supervisor_giro].[Falta] ", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    inte.Items.Add(dr["DESCRIPCION"].ToString());
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception Error)
+            {
+                MessageBox.Show("No se llenó información de campo Ausentismos" + Error.ToString());
+            }
         }
 
         //Métodos Módulo de incapacidades
