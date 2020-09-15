@@ -6,6 +6,7 @@ Imports Clases
 Public Class Frm_BonoMensual
 #Region "Variables de clase"
     Dim cadConex As SqlConnection
+    Dim conex As New conexion
     Dim cadenaConex As String
     Dim open As Boolean
     Dim ud As Integer
@@ -14,6 +15,7 @@ Public Class Frm_BonoMensual
     Dim mes As Integer
     Dim rec As Boolean = False
     Dim fuente As New ReportDataSource
+    Dim ip As String = Strings.Left(Me.conex.getIp(), 6)
 #End Region
 #Region "Acciones del formulario"
     Private Sub Frm_BonoMensual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -26,11 +28,17 @@ Public Class Frm_BonoMensual
         If Dtp_FechaInicioSemana.Value < DateTime.Now Or Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyy") = Format(DateTime.Now, "dd/MM/yyy") Then
 
             Dim conex As New conexion
-            Dim cadenaConexContpaq = conex.conexionContpaq 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
+            Dim cadenaConexContpaq As New SqlConnection 'As String 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
             Dim fechaI As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             Dim NPrenomina As New NPrenomina()
             Dim hrs As New Horarios()
             Dim fecha As Date
+
+            If Me.ip = "172.16" Then
+                cadenaConexContpaq = Me.conex.conexionContpaq
+            Else
+                cadenaConexContpaq = Me.conex.conexionContpaqFor
+            End If
 
             Btn_Acumulado.Visible = False
             Dgv_BonoMensual.DataSource = Nothing
@@ -82,10 +90,11 @@ Public Class Frm_BonoMensual
     Private Sub Btn_Mostrar_Click(sender As Object, e As EventArgs) Handles Btn_Mostrar.Click
         If open = True Then
             Dim fecha As Date
+            Dim año As Integer = Convert.ToInt32(Format(Dtp_FechaInicioSemana.Value, "yyyy"))
             Dim lstEmp As New LEmpleado(), NPre As New NPrenomina(), conex As New conexion()
             Dim cadConex = conex.conexion2008
 
-            Me.mes = NPre.VerificarUltimoMesCalculado(cadConex)
+            Me.mes = NPre.VerificarUltimoMesCalculado(cadConex, año)
             fecha = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             ProcesoBonoMensual(lstEmp, fecha)
             If rec = False Then
@@ -573,7 +582,7 @@ Public Class Frm_BonoMensual
                                             Select Case tur
                                                 Case 4 'Administrativo
                                                     If er > "08:01" Or sr < "16:59" Then
-                                                        valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp)
+                                                        valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp, 2)
                                                         .Cells(ce).Value = Format(er, "HH:mm")
                                                         .Cells(cs).Value = Format(sr, "HH:mm")
                                                         If ((item.TipoRegistro0 = "" And item.Nota0 = 0) And valor = 0) And (er > "08:03") Then .Cells("rtt").Value = .Cells("rtt").Value + 1
@@ -589,7 +598,7 @@ Public Class Frm_BonoMensual
                                                     End If
                                                 Case 1 'Mañana
                                                     If er > "06:56" Or sr < "15:24" Then
-                                                        valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp)
+                                                        valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp, 2)
                                                         .Cells(ce).Value = Format(er, "HH:mm")
                                                         .Cells(cs).Value = Format(sr, "HH:mm")
                                                         If ((item.TipoRegistro0 = "" And item.Nota0 = 0) And valor = 0) And (er > "06:58") Then .Cells("rtt").Value = .Cells("rtt").Value + 1
@@ -605,7 +614,7 @@ Public Class Frm_BonoMensual
                                                     End If
                                                 Case 2 'Tarde
                                                     If er > "15:26" Or sr < "23:25" Then
-                                                        valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp)
+                                                        valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp, 2)
                                                         .Cells(ce).Value = Format(er, "HH:mm")
                                                         .Cells(cs).Value = Format(sr, "HH:mm")
                                                         If ((item.TipoRegistro0 = "" And item.Nota0 = 0) And valor = 0) And (er > "15:28") Then .Cells("rtt").Value = .Cells("rtt").Value + 1
@@ -621,7 +630,7 @@ Public Class Frm_BonoMensual
                                                     End If
                                                 Case 3 'Noche
                                                     If er > "23:26" Or sr < "06:54" Then
-                                                        valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp)
+                                                        valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp, 2)
                                                         .Cells(ce).Value = Format(er, "HH:mm")
                                                         .Cells(cs).Value = Format(sr, "HH:mm")
                                                         If ((item.TipoRegistro0 = "" And item.Nota0 = 0) And valor = 0) And (er > "15:28") Then .Cells("rtt").Value = .Cells("rtt").Value + 1
@@ -636,7 +645,7 @@ Public Class Frm_BonoMensual
                                                         .Cells(cs).Style.ForeColor = Color.FromArgb(0, 51, 102)
                                                     End If
                                                 Case 5 'Mazda Día
-                                                    valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp)
+                                                    valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp, 2)
                                                     .Cells(ce).Value = Format(er, "HH:mm")
                                                     .Cells(cs).Value = Format(sr, "HH:mm")
                                                     If (item.TipoRegistro0 = "" And item.Nota0 = 0) And valor = 0 Then .Cells("rtt").Value = .Cells("rtt").Value + 1
@@ -650,7 +659,7 @@ Public Class Frm_BonoMensual
                                                         .Cells(cs).Style.ForeColor = Color.FromArgb(0, 51, 102)
                                                     End If
                                                 Case 6 'Mazda Noche
-                                                    valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp)
+                                                    valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp, 2)
                                                     .Cells(ce).Value = Format(er, "HH:mm")
                                                     .Cells(cs).Value = Format(sr, "HH:mm")
                                                     If (item.TipoRegistro0 = "" And item.Nota0 = 0) And valor = 0 Then .Cells("rtt").Value = .Cells("rtt").Value + 1
@@ -664,7 +673,7 @@ Public Class Frm_BonoMensual
                                                         .Cells(cs).Style.ForeColor = Color.FromArgb(0, 51, 102)
                                                     End If
                                                 Case Else
-                                                    valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp)
+                                                    valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp, 2)
                                                     .Cells(ce).Value = Format(er, "HH:mm")
                                                     .Cells(cs).Value = Format(sr, "HH:mm")
                                                     If (item.TipoRegistro0 = "" And item.Nota0 = 0) And valor = 0 Then .Cells("rtt").Value = .Cells("rtt").Value + 1
@@ -673,7 +682,7 @@ Public Class Frm_BonoMensual
                                                     If (item.TipoRegistro0 = "" And item.Nota0 = 0) And valor = 0 Then .Cells("rtt").Style.BackColor = Color.White
                                             End Select
                                         ElseIf er = "1/1/0001 12:00:00 AM" Or sr = "1/1/0001 12:00:00 AM" Then
-                                            valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp)
+                                            valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, idEmp, 2)
                                             If er <> "1/1/0001 12:00:00 AM" Then .Cells(ce).Value = Format(er, "HH:mm")
                                             If sr <> "1/1/0001 12:00:00 AM" Then .Cells(cs).Value = Format(sr, "HH:mm")
                                             .Cells(ce).Style.BackColor = Color.FromArgb(192, 192, 192)
@@ -776,7 +785,7 @@ Public Class Frm_BonoMensual
         Dim conex As New conexion
         Dim cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
 
-        Return NPre.EmpleadoGlobalRecuperar(cadConex, fecha)
+        Return NPre.EmpleadoGlobalRecuperar(cadConex, fecha, 5, 2020)
     End Function
     Private Sub RecuperarIncidencias()
         Dim lstAus As New LAusentismo(), lstVac As New LVacaciones(), lstInc As New LIncapacidad(), lstHE As New LHorasExtra(), lstCH As New LHorarios()
@@ -888,11 +897,17 @@ Public Class Frm_BonoMensual
         Dim dia As String
 
         dia = DateTime.Now
-
+        'If Format(dia, "dd/MM/yyyy") >= "27/01/2020" And Format(dia, "dd/MM/yyyy") <= "29/02/2020" Then
+        '    fecha = Format(DateSerial(Year(dia), Month(dia) + 1, 0), "dd/MM/yyyy")
+        '    Me.da = Format(DateAdd(DateInterval.Day, -5, fecha), "dd")
+        '    Me.ud = 0
+        '    Dtp_FechaInicioSemana.Value = DateAdd(DateInterval.Day, -5, fecha)
+        'Else
         fecha = Format(DateSerial(Year(dia), Month(dia) + 0, 0), "dd/MM/yyyy")
         Me.da = Format(fecha, "dd")
         Me.ud = 0
         Dtp_FechaInicioSemana.Value = fecha
+        'End If
     End Sub
     Private Sub CalcularBono(ByVal totalFilas As Integer)
         Dim fila As Integer, rtt As Integer

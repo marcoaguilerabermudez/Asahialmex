@@ -21,12 +21,13 @@ namespace CsPresentacion
         public Int32 CLAVE;
         public String MES;
         public String DEPARTAMENTO;
-     
-
+        public Int32 AÑO;
+       
+       
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'DS_Mejoras3.Reporte_Mejoras_Continuas' Puede moverla o quitarla según sea necesario.
-            this.Reporte_Mejoras_ContinuasTableAdapter.Fill(this.DS_Mejoras3.Reporte_Mejoras_Continuas, VAR, CLAVE, MES, DEPARTAMENTO);
+            this.Reporte_Mejoras_ContinuasTableAdapter.Fill(this.DS_Mejoras3.Reporte_Mejoras_Continuas, VAR, CLAVE, MES, DEPARTAMENTO, AÑO);
             this.reportViewer1.RefreshReport();
         }
     }

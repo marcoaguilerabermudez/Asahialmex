@@ -6,7 +6,7 @@ Public Class DHorasExtra
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT numeroperiodo FROM asahi16.dbo.periodos WHERE ejercicio = " & año & "", oCon)
+            Dim query As New SqlCommand("SELECT numeroperiodo FROM ctAsahi_Aluminium.dbo.nom10002 where ejercicio = " & año & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -30,13 +30,13 @@ Public Class DHorasExtra
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT fecinicio, fecfin, mes FROM asahi16.dbo.periodos WHERE ejercicio = " & año & "and numeroperiodo = " & semana & "", oCon)
+            Dim query As New SqlCommand("SELECT fechainicio, fechafin, mes FROM ctAsahi_Aluminium.dbo.nom10002 WHERE ejercicio = " & año & "and numeroperiodo = " & semana & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read())
-                hrsEx.FechaI = Convert.ToDateTime(dr("fecinicio").ToString)
-                hrsEx.FechaF = Convert.ToDateTime(dr("fecfin").ToString)
+                hrsEx.FechaI = Convert.ToDateTime(dr("fechainicio").ToString)
+                hrsEx.FechaF = Convert.ToDateTime(dr("fechafin").ToString)
                 hrsEx.Mes = Convert.ToInt32(dr("mes").ToString)
             End While
         Catch ex As Exception
@@ -113,7 +113,4 @@ Public Class DHorasExtra
         End Try
         Return tSemanas
     End Function
-
-
-
 End Class

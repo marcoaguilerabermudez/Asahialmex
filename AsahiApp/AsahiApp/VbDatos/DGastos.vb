@@ -189,7 +189,7 @@ Public Class DGastos
                 Dim gastos As New Gastos()
                 gastos.Cuenta = dr("Cuenta")
                 gastos.NombreCuenta = dr("CNOMBREPRODUCTO")
-                gastos.IdCompra = Convert.ToInt32(dr("Compra").ToString)
+                gastos.OrdenCompra = dr("Compra").ToString
                 gastos.Compras = Convert.ToDouble(dr("CosCompra").ToString)
                 gastos.CantCompra = Convert.ToDouble(dr("CantCompra").ToString)
                 gastos.SegmNegocio = dr("SegNeg").ToString
@@ -258,6 +258,7 @@ Public Class DGastos
                 gst.Cuenta = dr("Codigo").ToString
                 gst.NombreCuenta = dr("Nombre").ToString
                 gst.PlanMonto = Convert.ToDouble(dr("PlanM").ToString)
+                gst.Empresa = dr("Empresa").ToString
                 'gst.Modif = dr("Modif").ToString
                 lstGst.Add(gst)
             End While

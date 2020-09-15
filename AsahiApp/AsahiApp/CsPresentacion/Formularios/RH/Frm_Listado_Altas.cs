@@ -30,6 +30,7 @@ namespace CsPresentacion
 
         public DataTable dt = new DataTable();
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
+       
         int Var;
 
         private void Frm_Listado_Altas_Load(object sender, EventArgs e)
@@ -193,6 +194,8 @@ namespace CsPresentacion
                 //MessageBox.Show("No se exportó correctamente" + error.Message);
             }
         }
+
+
         private void Btn_exportar_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;

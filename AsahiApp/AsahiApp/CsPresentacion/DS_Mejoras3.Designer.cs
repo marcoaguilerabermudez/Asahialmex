@@ -1807,13 +1807,14 @@ namespace CsPresentacion.DS_Mejoras3TableAdapters {
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CLAVE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MES", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEPARTAMENTO", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AÑO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_Mejoras3.Reporte_Mejoras_ContinuasDataTable dataTable, global::System.Nullable<int> VAR, global::System.Nullable<int> CLAVE, string MES, string DEPARTAMENTO) {
+        public virtual int Fill(DS_Mejoras3.Reporte_Mejoras_ContinuasDataTable dataTable, global::System.Nullable<int> VAR, global::System.Nullable<int> CLAVE, string MES, string DEPARTAMENTO, global::System.Nullable<int> AÑO) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((VAR.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(VAR.Value));
@@ -1838,6 +1839,12 @@ namespace CsPresentacion.DS_Mejoras3TableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[4].Value = ((string)(DEPARTAMENTO));
+            }
+            if ((AÑO.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(AÑO.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1850,7 +1857,7 @@ namespace CsPresentacion.DS_Mejoras3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_Mejoras3.Reporte_Mejoras_ContinuasDataTable GetData(global::System.Nullable<int> VAR, global::System.Nullable<int> CLAVE, string MES, string DEPARTAMENTO) {
+        public virtual DS_Mejoras3.Reporte_Mejoras_ContinuasDataTable GetData(global::System.Nullable<int> VAR, global::System.Nullable<int> CLAVE, string MES, string DEPARTAMENTO, global::System.Nullable<int> AÑO) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((VAR.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(VAR.Value));
@@ -1875,6 +1882,12 @@ namespace CsPresentacion.DS_Mejoras3TableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[4].Value = ((string)(DEPARTAMENTO));
+            }
+            if ((AÑO.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(AÑO.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             DS_Mejoras3.Reporte_Mejoras_ContinuasDataTable dataTable = new DS_Mejoras3.Reporte_Mejoras_ContinuasDataTable();
             this.Adapter.Fill(dataTable);

@@ -33,6 +33,7 @@
               <Mapping SourceColumn="PUESTO" DataSetColumn="PUESTO" />
               <Mapping SourceColumn="INGRESO" DataSetColumn="INGRESO" />
               <Mapping SourceColumn="BAJA" DataSetColumn="BAJA" />
+              <Mapping SourceColumn="DIAS_LAB" DataSetColumn="DIAS_LAB" />
               <Mapping SourceColumn="DIAS" DataSetColumn="DIAS" />
               <Mapping SourceColumn="MESES" DataSetColumn="MESES" />
               <Mapping SourceColumn="AÑOS" DataSetColumn="AÑOS" />
@@ -90,6 +91,7 @@
               </xs:element>
               <xs:element name="INGRESO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINGRESO" msprop:Generator_ColumnPropNameInRow="INGRESO" msprop:Generator_ColumnPropNameInTable="INGRESOColumn" msprop:Generator_UserColumnName="INGRESO" type="xs:dateTime" minOccurs="0" />
               <xs:element name="BAJA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBAJA" msprop:Generator_ColumnPropNameInRow="BAJA" msprop:Generator_ColumnPropNameInTable="BAJAColumn" msprop:Generator_UserColumnName="BAJA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DIAS_LAB" msprop:Generator_ColumnVarNameInTable="columnDIAS_LAB" msprop:Generator_ColumnPropNameInRow="DIAS_LAB" msprop:Generator_ColumnPropNameInTable="DIAS_LABColumn" msprop:Generator_UserColumnName="DIAS_LAB" type="xs:int" minOccurs="0" />
               <xs:element name="DIAS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDIAS" msprop:Generator_ColumnPropNameInRow="DIAS" msprop:Generator_ColumnPropNameInTable="DIASColumn" msprop:Generator_UserColumnName="DIAS" type="xs:int" minOccurs="0" />
               <xs:element name="MESES" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMESES" msprop:Generator_ColumnPropNameInRow="MESES" msprop:Generator_ColumnPropNameInTable="MESESColumn" msprop:Generator_UserColumnName="MESES" type="xs:double" minOccurs="0" />
               <xs:element name="AÑOS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAÑOS" msprop:Generator_ColumnPropNameInRow="AÑOS" msprop:Generator_ColumnPropNameInTable="AÑOSColumn" msprop:Generator_UserColumnName="AÑOS" type="xs:double" minOccurs="0" />

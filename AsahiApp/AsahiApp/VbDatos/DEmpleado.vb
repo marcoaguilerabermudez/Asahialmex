@@ -1,15 +1,17 @@
 ﻿Imports Clases
 Imports System.Data.SqlClient
 Public Class DEmpleado
-    Public Function EmpleadosRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
+    Public Function EmpleadosRecuperar(ByVal cadConex As String, ByVal fecha As Date, ByVal semana As Integer, ByVal año As Integer) As LEmpleado
         Dim oCon As New SqlConnection(cadConex)
         Dim lstEmp As New LEmpleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("asahi16.dbo.LLInfoGralYChPrenomina", oCon)
+            Dim query As New SqlCommand("LLInfoGralYChPrenomina", oCon)
             query.Parameters.AddWithValue("@fecha", fecha)
+            query.Parameters.AddWithValue("@año", año)
+            query.Parameters.AddWithValue("@semana", semana)
             query.CommandType = CommandType.StoredProcedure
-            query.CommandTimeout = 120
+            query.CommandTimeout = 480
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read)
@@ -23,10 +25,12 @@ Public Class DEmpleado
                 empleados.Departamento = dr("DEPARTAMENTO").ToString
                 empleados.TP = dr("TP").ToString
                 empleados.FechaBaja = Convert.ToDateTime(dr("BAJA").ToString)
+                empleados.Nacional = Convert.ToBoolean(dr("AVISO").ToString)
+                empleados.Puesto = dr("PUESTO").ToString
                 empleados.HoraEntrada = Convert.ToDateTime(dr("Entrada").ToString)
                 empleados.HoraSalida = Convert.ToDateTime(dr("Salida").ToString)
-                empleados.HoraEntradaReal0 = Convert.ToDateTime(dr("ERF0").ToString)
-                empleados.HoraSalidaReal0 = Convert.ToDateTime(dr("SRF0").ToString)
+                'empleados.HoraEntradaReal0 = Convert.ToDateTime(dr("ERF0").ToString)
+                'empleados.HoraSalidaReal0 = Convert.ToDateTime(dr("SRF0").ToString)
                 empleados.TipoRegistro0 = dr("TRF0").ToString
                 empleados.Nota0 = dr("NTF0").ToString
                 empleados.HoraEntradaReal1 = Convert.ToDateTime(dr("ERF1").ToString)
@@ -57,6 +61,12 @@ Public Class DEmpleado
                 empleados.HoraSalidaReal7 = Convert.ToDateTime(dr("SRF7").ToString)
                 empleados.TipoRegistro7 = dr("TRF7").ToString
                 empleados.Nota7 = dr("NTF7").ToString
+                empleados.Bono = Convert.ToBoolean(dr("Bono").ToString)
+                empleados.Semana = Convert.ToInt32(dr("sem").ToString)
+                empleados.Año = Convert.ToInt32(dr("año").ToString)
+                empleados.ComenBono = dr("comen").ToString
+                empleados.ComenBonoExt = dr("comenExt").ToString
+                empleados.FechaIngreso = Convert.ToDateTime(dr("INGRESO").ToString)
                 lstEmp.Add(empleados)
             End While
         Catch ex As Exception
@@ -72,12 +82,12 @@ Public Class DEmpleado
         End Try
         Return lstEmp
     End Function
-    Public Function EmpleadoGlobalRecuperar(ByVal cadConex As String, ByVal fecha As Date) As LEmpleado
+    Public Function EmpleadoGlobalRecuperar(ByVal cadConex As String, ByVal fecha As Date, ByVal semana As Integer, ByVal año As Integer) As LEmpleado
         Dim lstEmp As New LEmpleado
         Dim oCon As New SqlConnection(cadConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT ID,NOMBRE,APELLIDOP,APELLIDOM,isnull(VEB.TURNO,0) as TURNO,tur,DEPARTAMENTO, (SELECT TOP 1 P.DESCRIPCION from asahi16.Supervisor_giro.Emppues EPP LEFT JOIN asahi16.Supervisor_giro.Puesto P on EPP.CATALOGO = P.CLAVE WHERE VEB.ID = EPP.CLAVE ORDER BY EPP.CLAVE desc) as PUESTO,TP,EP.INGRESO as INGRESO,isnull(BAJA,'') as BAJA FROM Vista_InfoEmpleadosBasica VEB LEFT JOIN asahi16.Supervisor_giro.Empprin EP on VEB.ID = EP.CLAVE WHERE TP in ('A','R') or (TP = 'B' and BAJA > '" & Format(fecha, "dd/MM/yyyy") & "')", oCon)
+            Dim query As New SqlCommand("SELECT ID,NOMBRE,APELLIDOP,APELLIDOM,isnull(VEB.TURNO,0) as TURNO,tur,DEPARTAMENTO, (SELECT TOP 1 P.DESCRIPCION from asahi16.Supervisor_giro.Emppues EPP LEFT JOIN asahi16.Supervisor_giro.Puesto P on EPP.CATALOGO = P.CLAVE WHERE VEB.ID = EPP.CLAVE ORDER BY EPP.CLAVE desc) as PUESTO,TP,EP.INGRESO as INGRESO,isnull(BAJA,'') as BAJA, ISNULL(BP.bono,0) AS BONO FROM Vista_InfoEmpleadosBasica VEB LEFT JOIN asahi16.Supervisor_giro.Empprin EP on VEB.ID = EP.CLAVE LEFT JOIN Bono_Puntualidad BP on VEB.ID = BP.empleado and BP.semana = " & semana & " and BP.año = " & año & " WHERE TP in ('A','R') or (TP = 'B' and BAJA > '" & Format(fecha, "dd/MM/yyyy") & "')", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -94,6 +104,7 @@ Public Class DEmpleado
                 emp.TP = dr("TP").ToString
                 emp.FechaIngreso = Convert.ToDateTime(dr("INGRESO").ToString)
                 emp.FechaBaja = Convert.ToDateTime(dr("BAJA").ToString)
+                emp.Bono = Convert.ToBoolean(dr("BONO").ToString)
                 lstEmp.Add(emp)
             End While
         Catch ex As Exception
@@ -344,5 +355,75 @@ Public Class DEmpleado
             oCon.Dispose()
         End Try
         Return objEmp
+    End Function
+    Public Function DptosRecuperar(ByVal cadenaConex As String, ByVal fecha As Date) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstDep As New LEmpleado()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Select IEB.DEPARTAMENTO From asahi16.dbo.Vista_InfoEmpleadosBasica IEB where TP = 'A' or TP = 'R' or (TP='B' and (IEB.BAJA >= '" & fecha & "')) Group by DEPARTAMENTO", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.Departamento = dr("DEPARTAMENTO").ToString
+                lstDep.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstDep
+    End Function
+    Public Function HorariosRecuperar(ByVal cadenaConex As String) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstHr As New LEmpleado()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT 'MAÑANA 6:55 a 15:25' as Horario union SELECT 'TARDE 15:25 a 11:25' union SELECT 'NOCHE 11:25 a 7:00' union SELECT 'ADMINISTRATIVO 8:00 a 17:00' union SELECT 'MAZDA DIA 6:00 a 18:00' union SELECT 'MAZDA NOCHE 18:00 a 6:00' union SELECT 'DIA 7:00 a 19:00' union SELECT 'NOCHE 19:00 a 7:00'", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.Horario = dr("Horario").ToString
+                lstHr.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstHr
+    End Function
+    Public Function RevisarRangoPermisos(ByVal cadenaConex As String, ByVal idEmp As Integer, ByVal nModulo As String) As Integer
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim per As New Permisos()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT rangoPermiso FROM Permisos_saam ps left join Modulos_saam ms on ps.idModulo = ms.idModulo WHERE idEmpleado = " & idEmp & " and ms.nombreModulo = '" & nModulo & "'", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                per.RangoPermiso = Convert.ToInt32(dr("rangoPermiso").ToString)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return per.RangoPermiso
     End Function
 End Class

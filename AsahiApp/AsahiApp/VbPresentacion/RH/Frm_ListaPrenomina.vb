@@ -7,13 +7,18 @@ Imports Excel = Microsoft.Office.Interop.Excel
 Public Class Frm_ListaPrenomina
 #Region "Variables de Clase"
     Dim cadConex As SqlConnection
+    Dim con As New conexion()
     Dim cadenaConex As String
+    Dim cadenaConexExp As String
     Dim open As Boolean
     Dim colum
     'Dim bd As New BindingSource
     'Dim super As Thread
-    Dim valor
+    Dim valor, rangoPermiso
+    Dim fin = 0
     Dim fuente As New ReportDataSource
+    Dim idEmp As String, rec As String = "N"
+    Dim ip As String = Strings.Left(Me.con.getIp(), 6)
 #End Region
 #Region "Constructores"
     Sub New()
@@ -33,23 +38,73 @@ Public Class Frm_ListaPrenomina
         Me.cadConex = cadConex
         Me.cadenaConex = cadenaConex
     End Sub
+    Sub New(ByVal cadConex As SqlConnection, ByVal cadenaConex As String, ByVal cadenaConexExp As String, ByVal idEmp As String)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Me.cadConex = cadConex
+        Me.cadenaConex = cadenaConex
+        Me.cadenaConexExp = cadenaConexExp
+        Me.idEmp = idEmp
+    End Sub
 #End Region
 #Region "Eventos del fomulario"
     Private Sub Frm_Prenomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim NEmp As New NEmpleado(), conex As New conexion()
+        Dim cadenaConex As String = conex.cadenaConexExpress
+        Me.rangoPermiso = NEmp.RevisarRangoPermisos(Me.cadenaConexExp, Me.idEmp, "PreNominaListadoToolStripMenuItem")
         Lbl_año.Text = Format(DateTime.Now, "yyyy")
         RellenaCmbSemanas()
         ModificarDiaInicio()
+        If Me.rangoPermiso = 2 Then
+            Btn_GuardarBono.Visible = False
+            Dgv_ListaPrenomina.Columns("comentarios").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("comentariosExt").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("aplicaBono").ReadOnly = True
+        ElseIf Me.rangoPermiso = 3 Then
+            Dgv_ListaPrenomina.Columns("entrada1").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida1").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada2").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida2").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada3").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida3").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada4").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida4").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada5").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida5").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada6").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida6").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("entrada7").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("salida7").ReadOnly = True
+            Dgv_ListaPrenomina.Columns("aplicaBono").ReadOnly = False
+            Btn_Excel.Visible = False
+            Btn_Reporte.Visible = False
+            Btn_Guardar.Visible = False
+        ElseIf Me.rangoPermiso = 4 Then
+            Btn_Mostrar.Visible = False
+            Btn_Reporte.Visible = False
+            Btn_Guardar.Visible = False
+            Btn_GuardarBono.Visible = False
+        End If
     End Sub
     Private Sub Dtp_FechaInicioSemana_TextChanged(sender As Object, e As EventArgs) Handles Dtp_FechaInicioSemana.TextChanged
         If Dtp_FechaInicioSemana.Value < DateTime.Now Or Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyy") = Format(DateTime.Now, "dd/MM/yyy") Then
 
             Dim conex As New conexion
-            Dim cadenaConexContpaq = conex.conexionContpaq 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
+            Dim cadenaConexContpaq As New SqlConnection() 'As String 'Conexion a la BD de contpaq solo se va a usar para traer las fechas que corresponden la semana que se manda
             Dim fechaI As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             Dim NPrenomina As New NPrenomina()
             Dim hrs As New Horarios()
             Dim sem As Integer
             Dim type As String
+
+            If Me.ip = "172.16" Then
+                cadenaConexContpaq = conex.conexionContpaq
+            Else
+                cadenaConexContpaq = conex.conexionContpaqFor
+            End If
 
             Dgv_ListaPrenomina.DataSource = Nothing
             Dgv_ListaPrenomina.Rows.Clear()
@@ -59,11 +114,11 @@ Public Class Frm_ListaPrenomina
 
             hrs = NPrenomina.RecuperarDiasSemana(cadenaConexContpaq, fechaI)
 
-            type = CmbSemanas.Text.GetType.ToString
+            type = Cmb_Semanas.Text.GetType.ToString
             If type = "System.String" Then
                 sem = 0
             Else
-                sem = CmbSemanas.Text
+                sem = Cmb_Semanas.Text
             End If
 
             Lbl_año.Text = hrs.Año
@@ -79,16 +134,25 @@ Public Class Frm_ListaPrenomina
             Dim fh As Date = DateTime.Now.ToString("dd/MM/yyyy")
             If fi >= fh Then
                 Dgv_ListaPrenomina.Columns("aplicaBono").Visible = False
+                Btn_GuardarBono.Visible = False
             Else
                 Dgv_ListaPrenomina.Columns("aplicaBono").Visible = True
+                If Me.rangoPermiso = 1 Or Me.rangoPermiso = 3 Then Btn_GuardarBono.Visible = True
             End If
 
-            If sem <> hrs.Semana Then CmbSemanas.SelectedItem = hrs.Semana
+                If sem <> hrs.Semana Then Cmb_Semanas.SelectedItem = hrs.Semana
             'Btn_Excel.Visible = False
             Txt_FiltroId.Enabled = False
             Txt_FiltroId.Text = ""
+            Txt_FiltroNombre.Enabled = False
+            Txt_FiltroNombre.Text = ""
+            Txt_FiltroHorario.Enabled = False
+            Txt_FiltroHorario.Text = ""
+            Txt_FiltroDpto.Enabled = False
+            Txt_FiltroDpto.Text = ""
             open = True
-
+            Btn_GuardarBono.Enabled = False
+            Cmb_FiltoIncidecias.Enabled = False
         Else
             Dgv_ListaPrenomina.Enabled = False
             MsgBox("Tienes que ingresar una fecha menor a la actual")
@@ -97,7 +161,7 @@ Public Class Frm_ListaPrenomina
             Dgv_ListaPrenomina.Refresh()
         End If
     End Sub
-    Private Sub CmbSemanas_SelectedValueChanged(sender As Object, e As EventArgs) Handles CmbSemanas.SelectedValueChanged
+    Private Sub Cmb_Semanas_SelectedValueChanged(sender As Object, e As EventArgs) Handles Cmb_Semanas.SelectedValueChanged
         If open = True Then
             Dim fecha As Date
             Dim lstEmp As New LEmpleado
@@ -108,20 +172,29 @@ Public Class Frm_ListaPrenomina
         End If
     End Sub
     Private Sub Btn_Mostrar_Click(sender As Object, e As EventArgs) Handles Btn_Mostrar.Click
-        Cursor = Cursors.WaitCursor
-        Timer1.Start()
+        'Cursor = Cursors.WaitCursor
+        'Timer1.Start()
 
         If open = True Then
             Dim fecha As Date
+            Dim año As Integer, semana As Integer
             Dim lstEmp As New LEmpleado
 
+            Me.fin = 0
             'ModificarDiaInicio()
             fecha = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
-            ProcesoPrenomina(lstEmp, fecha)
-            Btn_Reporte.Visible = True
+            año = Lbl_año.Text
+            semana = Cmb_Semanas.Text
+            ProcesoPrenomina(lstEmp, fecha, semana, año)
+            Cmb_FiltoIncidecias.Text = " "
+            Cmb_FiltoIncidecias.Enabled = True
+            Cmb_FiltroComen.Text = " "
+            Cmb_FiltroComen.Enabled = True
+            If Me.rangoPermiso = 1 Or Me.rangoPermiso = 2 Then Btn_Reporte.Visible = True
+            Me.fin = 1
         End If
     End Sub
-    Private Sub Bgw_HiloSegundoPlano_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Bgw_HiloSeundoPlano.DoWork
+    Private Sub Bgw_HiloSegundoPlano_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Bgw_HiloSegundoPlano.DoWork
 
     End Sub
     Private Sub Dgv_ListaPrenomina_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListaPrenomina.CellEndEdit
@@ -170,21 +243,27 @@ Public Class Frm_ListaPrenomina
             Dim fechaI As Date
             Dim fechaF As Date
             Dim conex As New conexion
-            Dim cadConex = conex.conexion2008
+            Dim cadConex As String
+
+            If Me.ip = "172.16" Then
+                cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+            Else
+                cadConex = conex.conexion2008For
+            End If
             fechaI = (Lbl_Dia1.Text + "/" + Lbl_año.Text)
             fechaF = DateAdd(DateInterval.Day, 6, fechaI)
-            NPren.InsertarModificacionesIncidencias(Me.cadenaConex, lstEmp, CmbSemanas.Text)
-            lstEmp = NPren.RecuperarInc(Me.cadenaConex, "A", CmbSemanas.Text, fechaI, fechaF)
+            NPren.InsertarModificacionesIncidencias(Me.cadenaConex, lstEmp, Cmb_Semanas.Text)
+            lstEmp = NPren.RecuperarInc(Me.cadenaConex, "A", Cmb_Semanas.Text, fechaI, fechaF)
             If lstEmp.Item(0).Err = Nothing Then
                 lstEmp = CambiarTipoIncidenciaA(lstEmp)
                 NPren.InsertarModificacionesAusentismo(cadConex, lstEmp)
             End If
-            lstEmp = NPren.RecuperarInc(Me.cadenaConex, "HE", CmbSemanas.Text, fechaI, fechaF)
+            lstEmp = NPren.RecuperarInc(Me.cadenaConex, "HE", Cmb_Semanas.Text, fechaI, fechaF)
             If lstEmp.Item(0).Err = Nothing Then
                 lstEmp = CambiarTipoIncidenciaHE(lstEmp)
                 NPren.InsertarModificacionesHE(cadConex, lstEmp)
             End If
-            lstEmp = NPren.RecuperarInc(Me.cadenaConex, "CH", CmbSemanas.Text, fechaI, fechaF)
+            lstEmp = NPren.RecuperarInc(Me.cadenaConex, "CH", Cmb_Semanas.Text, fechaI, fechaF)
             If lstEmp.Item(0).Err = False Then
                 NPren.InsertarModificacionesChecadas(cadConex, lstEmp)
             End If
@@ -215,7 +294,13 @@ Public Class Frm_ListaPrenomina
                 If apBono.ShowDialog() = DialogResult.OK Then
                     Dim NPre As New NPrenomina()
                     Dim conex As New conexion()
-                    Dim cadConex2008 As String = conex.conexion2008
+                    Dim cadConex2008 As String
+
+                    If Me.ip = "172.16" Then
+                        cadConex2008 = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+                    Else
+                        cadConex2008 = conex.conexion2008For
+                    End If
                     idMotivo = apBono.idMotivo
                     Dgv_ListaPrenomina.Rows(fila).Cells(c).Value = idMotivo
                     CalcularBonoIndividual(fila)
@@ -264,25 +349,332 @@ Public Class Frm_ListaPrenomina
         Almacenar()
         llamarReporte()
     End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Timer1.Start()
-        Cursor = Cursors.Default
+    'Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    '    Timer1.Start()
+    '    Cursor = Cursors.Default
+    'End Sub
+    Private Sub Txt_FiltroHorario_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroHorario.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, horario As String
+        If Len(Txt_FiltroHorario.Text) > 8 Or Len(Txt_FiltroHorario.Text) = 0 Then
+            Txt_FiltroId.Text = ""
+            Txt_FiltroNombre.Text = ""
+            Txt_FiltroDpto.Text = ""
+            If Txt_FiltroHorario.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        horario = .Cells("horarioEmpleado").Value
+                        If Not (horario Like Txt_FiltroHorario.Text) And horario <> "" Then
+                            .Visible = True
+                        End If
+                        If Not (horario Like Txt_FiltroHorario.Text) And horario <> "" Then
+                            .Visible = False
+                        End If
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
+    End Sub
+    Private Sub Txt_FiltroDpto_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroDpto.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, dpto As String
+        If Len(Txt_FiltroDpto.Text) > 6 Or Len(Txt_FiltroDpto.Text) = 0 Then
+            Txt_FiltroId.Text = ""
+            Txt_FiltroNombre.Text = ""
+            Txt_FiltroHorario.Text = ""
+            If Txt_FiltroDpto.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        dpto = .Cells("departamentoEmpleado").Value
+                        If Not (dpto Like Txt_FiltroDpto.Text) And dpto <> "" Then
+                            .Visible = True
+                        End If
+                        If Not (dpto Like Txt_FiltroDpto.Text) And dpto <> "" Then
+                            .Visible = False
+                        End If
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
+    End Sub
+    Private Sub Txt_FiltroNombre_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroNombre.TextChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, nombre As String
+        If Len(Txt_FiltroNombre.Text) > 10 Or Len(Txt_FiltroNombre.Text) = 0 Then
+            Txt_FiltroId.Text = ""
+            Txt_FiltroHorario.Text = ""
+            Txt_FiltroDpto.Text = ""
+            If Txt_FiltroNombre.Text <> "" Then
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        nombre = .Cells("nombreEmpleado").Value
+                        If Not (nombre Like Txt_FiltroNombre.Text) And nombre <> "" Then
+                            .Visible = True
+                        End If
+                        If Not (nombre Like Txt_FiltroNombre.Text) And nombre <> "" Then
+                            .Visible = False
+                        End If
+                    End With
+                Next
+            Else
+                For fila = 0 To totalFilas - 1
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        .Visible = True
+                    End With
+                Next
+            End If
+        End If
+    End Sub
+    Private Sub Btn_GuardarBono_Click(sender As Object, e As EventArgs) Handles Btn_GuardarBono.Click
+        ProcesoGuardarBono()
+        Btn_GuardarBono.Enabled = False
+    End Sub
+    Private Sub Dgv_ListaPrenomina_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListaPrenomina.CellContentClick
+        Dim fila As Integer
+        Dim columna As String
+        columna = Dgv_ListaPrenomina.Columns(e.ColumnIndex).Name
+        If (columna = "aplicaBono" Or columna = "comentarios") And Me.rec = "M" Then
+            fila = Dgv_ListaPrenomina.CurrentRow.Index
+            With Dgv_ListaPrenomina.Rows(fila)
+                .Cells("modificaBono").Value = "M"
+                .Cells("IdmodificaBono").Value = Me.idEmp
+                Btn_GuardarBono.Enabled = True
+            End With
+        End If
+    End Sub
+    Private Sub Cmb_FiltoIncidecias_SelectedValueChanged(sender As Object, e As EventArgs) Handles Cmb_FiltoIncidecias.SelectedValueChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, inc As String, incColE As String, incColS As String, columna As Integer
+        Txt_FiltroId.Text = ""
+        Txt_FiltroNombre.Text = ""
+        Txt_FiltroHorario.Text = ""
+        Txt_FiltroDpto.Text = ""
+        If Cmb_FiltoIncidecias.Text <> " " Then
+            Cmb_FiltroComen.Text = ""
+            inc = RecuperarDatoInc(Cmb_FiltoIncidecias.Text)
+            For fila = 0 To totalFilas - 1
+                With Dgv_ListaPrenomina.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+            For columna = 1 To 6
+                Dim ce As String = "entrada" & columna
+                Dim cs As String = "salida" & columna
+                For fila = 0 To totalFilas - 2
+                    With Dgv_ListaPrenomina.Rows(fila)
+                        incColE = .Cells(ce).Value
+                        incColS = .Cells(cs).Value
+                        Select Case inc
+                            Case "F"
+                                If (incColE = inc Or incColS = inc) Or (incColE = "F/B" Or incColS = "F/B") Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+                            Case "FJ"
+                                If (incColE = inc Or incColS = inc) Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+                            Case "SUS"
+                                If (incColE = inc Or incColS = inc) Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+                            Case "R"
+                                If incColE = inc Or incColE = "M-R" Or incColE = "M-M-R" Or incColE = "M-M-M-R" Or incColE = "M-M-M-M-R" Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf .Cells(ce).Style.BackColor = Color.White And .Cells(ce).Style.ForeColor = Color.Red Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+                            Case "PS"
+                                If incColS = inc Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf .Cells(cs).Style.BackColor = Color.White And .Cells(cs).Style.ForeColor = Color.Red Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+                            Case "SC"
+                                If (incColE = "" Or incColS = "") Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+                            Case "PSS"
+                                If (incColE = inc Or incColS = inc) Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+                            Case "PCS"
+                                If (incColE = inc Or incColS = inc) Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+                            Case "INC"
+                                If (incColE = inc Or incColS = inc) Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+                            Case "BAJA"
+                                If (incColE = inc Or incColS = inc) Or (incColE = "F/B" Or incColS = "F/B") Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+                        End Select
+                    End With
+                Next
+            Next
+        ElseIf Cmb_FiltoIncidecias.Text = " " Then
+            For fila = 0 To totalFilas - 1
+                With Dgv_ListaPrenomina.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+        End If
+    End Sub
+    Private Sub Cmb_FiltroComen_SelectedValueChanged(sender As Object, e As EventArgs) Handles Cmb_FiltroComen.SelectedValueChanged
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count, comen As String
+        Txt_FiltroId.Text = ""
+        Txt_FiltroNombre.Text = ""
+        Txt_FiltroHorario.Text = ""
+        Txt_FiltroDpto.Text = ""
+        If Cmb_FiltroComen.Text <> " " Then
+            Cmb_FiltoIncidecias.Text = ""
+            For fila = 0 To totalFilas - 1
+                With Dgv_ListaPrenomina.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+            For fila = 0 To totalFilas - 2
+                With Dgv_ListaPrenomina.Rows(fila)
+                    comen = .Cells("comentarios").Value
+                    If (comen = Cmb_FiltroComen.Text) Or ((comen = "" Or comen = " ") And Cmb_FiltroComen.Text = "VACIO") Then
+                        .Visible = True
+                    ElseIf (comen <> Cmb_FiltroComen.Text) Then
+                        .Visible = False
+                    End If
+                End With
+            Next
+        ElseIf Cmb_FiltroComen.Text = " " Then
+            For fila = 0 To totalFilas - 1
+                With Dgv_ListaPrenomina.Rows(fila)
+                    .Visible = True
+                End With
+            Next
+        End If
+    End Sub
+    Private Sub Dgv_ListaPrenomina_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListaPrenomina.CellValueChanged
+        Dim fila As Integer
+        Dim columna As String
+        If Me.fin = 1 Then
+            fila = Dgv_ListaPrenomina.CurrentRow.Index
+            columna = Dgv_ListaPrenomina.Columns(e.ColumnIndex).Name
+            If columna = "comentarios" And Me.rec = "M" Then
+                fila = Dgv_ListaPrenomina.CurrentRow.Index
+                With Dgv_ListaPrenomina.Rows(fila)
+                    .Cells("modificaBono").Value = "M"
+                    .Cells("IdmodificaBono").Value = Me.idEmp
+                    Btn_GuardarBono.Enabled = True
+                End With
+            End If
+        End If
     End Sub
 #End Region
 #Region "Rellena cmb"
     Private Sub RellenaCmbSemanas()
         For i = 1 To 52
-            CmbSemanas.Items.Add(i)
+            Cmb_Semanas.Items.Add(i)
         Next
     End Sub
 #End Region
 #Region "Recuperar"
-    Private Function RecuperarEmpleados(ByVal fecha As Date) As LEmpleado
+    Private Function RecuperarEmpleados(ByVal fecha As Date, ByVal semana As Integer, ByVal año As Integer) As LEmpleado
         Dim NPre As New NPrenomina
         Dim conex As New conexion
-        Dim cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Dim cadConex As String
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
 
-        Return NPre.EmpleadosRecuperar(cadConex, fecha)
+        Return NPre.EmpleadosRecuperar(cadConex, fecha, semana, año)
     End Function
     Private Sub RecuperarIncidencias()
         Dim lstAus As New LAusentismo(), lstVac As New LVacaciones(), lstInc As New LIncapacidad(), lstHE As New LHorasExtra(), lstBja As New LBaja(),
@@ -291,7 +683,13 @@ Public Class Frm_ListaPrenomina
         Dim fechaI As Date
         Dim fechaF As Date
         Dim conex As New conexion
-        Dim cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Dim cadConex As String
+
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
 
         fechaI = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
         fechaF = Format(DateAdd(DateInterval.Day, 6, fechaI), "dd/MM/yyyy")
@@ -326,95 +724,110 @@ Public Class Frm_ListaPrenomina
             Dgv_ListaPrenomina.Rows(fila).Cells("horarioEmpleado").Style.BackColor = Color.White
             Dgv_ListaPrenomina.Rows(fila).Cells("departamentoEmpleado").Value = item.Departamento
             Dgv_ListaPrenomina.Rows(fila).Cells("departamentoEmpleado").Style.BackColor = Color.White
+            Dgv_ListaPrenomina.Rows(fila).Cells("ingreso").Value = item.FechaIngreso
             Dgv_ListaPrenomina.Rows(fila).Cells("E").Value = item.HoraEntrada
             Dgv_ListaPrenomina.Rows(fila).Cells("S").Value = item.HoraSalida
+            Dgv_ListaPrenomina.Rows(fila).Cells("comentarios").Value = item.ComenBono
+            Dgv_ListaPrenomina.Rows(fila).Cells("comentariosExt").Value = item.ComenBonoExt
             Dgv_ListaPrenomina.Rows(fila).Cells("comentarios").Style.BackColor = Color.White
+            Dgv_ListaPrenomina.Rows(fila).Cells("comentariosExt").Style.BackColor = Color.White
             Dgv_ListaPrenomina.Rows(fila).Cells("aplicaBono").Style.BackColor = Color.White
+            item.HoraEntrada = Horarios(item.IdTurno, "Entrada")
+            item.HoraSalida = Horarios(item.IdTurno, "Salida")
+
+            If item.HoraEntradaReal1 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value = Format(item.HoraEntradaReal1, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").ReadOnly = True
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) <item.HoraEntradaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.Red
+            End If
+            If item.HoraSalidaReal1 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value = Format(item.HoraSalidaReal1, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida1").ReadOnly = True
+                If item.HoraSalida > item.HoraSalidaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.Red
+            End If
+            If item.HoraEntradaReal2 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Value = Format(item.HoraEntradaReal2, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").ReadOnly = True
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.Red
+            End If
+            If item.HoraSalidaReal2 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Value = Format(item.HoraSalidaReal2, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida2").ReadOnly = True
+                If item.HoraSalida > item.HoraSalidaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.Red
+            End If
+            If item.HoraEntradaReal3 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Value = Format(item.HoraEntradaReal3, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").ReadOnly = True
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.Red
+            End If
+            If item.HoraSalidaReal3 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Value = Format(item.HoraSalidaReal3, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida3").ReadOnly = True
+                If item.HoraSalida > item.HoraSalidaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.Red
+            End If
+            If item.HoraEntradaReal4 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Value = Format(item.HoraEntradaReal4, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").ReadOnly = True
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.Red
+            End If
+            If item.HoraSalidaReal4 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Value = Format(item.HoraSalidaReal4, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida4").ReadOnly = True
+                If item.HoraSalida > item.HoraSalidaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.Red
+            End If
+            If item.HoraEntradaReal5 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value = Format(item.HoraEntradaReal5, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").ReadOnly = True
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal5 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.Red
+            End If
+            If item.HoraSalidaReal5 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value = Format(item.HoraSalidaReal5, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").ReadOnly = True
+                If item.HoraSalida > item.HoraSalidaReal5 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.Red
+            End If
+            If item.HoraEntradaReal6 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value = Format(item.HoraEntradaReal6, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").ReadOnly = True
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal6 And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.Red
+            End If
+            If item.HoraSalidaReal6 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value = Format(item.HoraSalidaReal6, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").ReadOnly = True
+                If (item.HoraSalida > item.HoraSalidaReal6) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.Red
+            End If
+            If item.HoraEntradaReal7 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value = Format(item.HoraEntradaReal7, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").ReadOnly = True
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal7 And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.Red
+            End If
+            If item.HoraSalidaReal7 <> "1/1/1900 12:00:00 AM" Then
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value = Format(item.HoraSalidaReal7, "HH:mm")
+                Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.White
+                If Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").ReadOnly = True
+                If (item.HoraSalida > item.HoraSalidaReal7) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.Red
+            End If
+            Dgv_ListaPrenomina.Rows(fila).Cells("b1").Value = item.Nota1
+            Dgv_ListaPrenomina.Rows(fila).Cells("b2").Value = item.Nota2
+            Dgv_ListaPrenomina.Rows(fila).Cells("b3").Value = item.Nota3
+            Dgv_ListaPrenomina.Rows(fila).Cells("b4").Value = item.Nota4
+            Dgv_ListaPrenomina.Rows(fila).Cells("b5").Value = item.Nota5
+            Dgv_ListaPrenomina.Rows(fila).Cells("b6").Value = item.Nota6
+            Dgv_ListaPrenomina.Rows(fila).Cells("b7").Value = item.Nota7
+
             If item.IdTurno <> 3 Then
-                If item.HoraEntradaReal1 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value = Format(item.HoraEntradaReal1, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal1 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value = Format(item.HoraSalidaReal1, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida1").ReadOnly = True
-                    If item.HoraSalida > item.HoraSalidaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal2 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Value = Format(item.HoraEntradaReal2, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal2 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Value = Format(item.HoraSalidaReal2, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida2").ReadOnly = True
-                    If item.HoraSalida > item.HoraSalidaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal3 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Value = Format(item.HoraEntradaReal3, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal3 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Value = Format(item.HoraSalidaReal3, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida3").ReadOnly = True
-                    If item.HoraSalida > item.HoraSalidaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal4 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Value = Format(item.HoraEntradaReal4, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal4 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Value = Format(item.HoraSalidaReal4, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida4").ReadOnly = True
-                    If item.HoraSalida > item.HoraSalidaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal5 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value = Format(item.HoraEntradaReal5, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal5 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal5 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value = Format(item.HoraSalidaReal5, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").ReadOnly = True
-                    If item.HoraSalida > item.HoraSalidaReal5 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal6 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value = Format(item.HoraEntradaReal6, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal6 And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal6 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value = Format(item.HoraSalidaReal6, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").ReadOnly = True
-                    If (item.HoraSalida > item.HoraSalidaReal6) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal7 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value = Format(item.HoraEntradaReal7, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal7 And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal7 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value = Format(item.HoraSalidaReal7, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").ReadOnly = True
-                    If (item.HoraSalida > item.HoraSalidaReal7) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.Red
-                End If
                 If item.TipoRegistro1 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.Green
@@ -464,98 +877,9 @@ Public Class Frm_ListaPrenomina
                     Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.Green
                     Dgv_ListaPrenomina.Rows(fila).Cells("mnl7").Value = item.TipoRegistro7
                 End If
-                Dgv_ListaPrenomina.Rows(fila).Cells("b1").Value = item.Nota1
-                Dgv_ListaPrenomina.Rows(fila).Cells("b2").Value = item.Nota2
-                Dgv_ListaPrenomina.Rows(fila).Cells("b3").Value = item.Nota3
-                Dgv_ListaPrenomina.Rows(fila).Cells("b4").Value = item.Nota4
-                Dgv_ListaPrenomina.Rows(fila).Cells("b5").Value = item.Nota5
-                Dgv_ListaPrenomina.Rows(fila).Cells("b6").Value = item.Nota6
-                Dgv_ListaPrenomina.Rows(fila).Cells("b7").Value = item.Nota7
+
             ElseIf item.IdTurno = 3 Then
-                If item.HoraEntradaReal0 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value = Format(item.HoraEntradaReal0, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal0 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal0 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value = Format(item.HoraSalidaReal0, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida1").ReadOnly = True
-                    If item.HoraSalida > item.HoraSalidaReal0 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal1 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Value = Format(item.HoraEntradaReal1, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada2").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal1 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Value = Format(item.HoraSalidaReal1, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida2").ReadOnly = True
-                    If item.HoraSalida > item.HoraSalidaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida2").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal2 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Value = Format(item.HoraEntradaReal2, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada3").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal2 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Value = Format(item.HoraSalidaReal2, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida3").ReadOnly = True
-                    If item.HoraSalida > item.HoraSalidaReal2 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida3").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal3 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Value = Format(item.HoraEntradaReal3, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada4").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal3 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Value = Format(item.HoraSalidaReal3, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida4").ReadOnly = True
-                    If item.HoraSalida > item.HoraSalidaReal3 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida4").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal4 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value = Format(item.HoraEntradaReal4, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal4 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value = Format(item.HoraSalidaReal4, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").ReadOnly = True
-                    If item.HoraSalida > item.HoraSalidaReal4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal5 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value = Format(item.HoraEntradaReal5, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal5 And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal5 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value = Format(item.HoraSalidaReal5, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").ReadOnly = True
-                    If (item.HoraSalida > item.HoraSalidaReal5) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.Red
-                End If
-                If item.HoraEntradaReal6 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value = Format(item.HoraEntradaReal6, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").ReadOnly = True
-                    If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal6 And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.Red
-                End If
-                If item.HoraSalidaReal6 <> "1/1/1900 12:00:00 AM" Then
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value = Format(item.HoraSalidaReal6, "HH:mm")
-                    Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.White
-                    If Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").ReadOnly = True
-                    If (item.HoraSalida > item.HoraSalidaReal6) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.Red
-                End If
+
                 If item.TipoRegistro0 = "M" Then
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.White
                     Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.Green
@@ -613,7 +937,11 @@ Public Class Frm_ListaPrenomina
                 Dgv_ListaPrenomina.Rows(fila).Cells("b6").Value = item.Nota5
                 Dgv_ListaPrenomina.Rows(fila).Cells("b7").Value = item.Nota6
             End If
+
+            Dgv_ListaPrenomina.Rows(fila).Cells("aplicaBono").Value = item.Bono
             Dgv_ListaPrenomina.Rows(fila).Cells("idTurno").Value = item.IdTurno
+            Dgv_ListaPrenomina.Rows(fila).Cells("nacional").Value = item.Nacional
+            Dgv_ListaPrenomina.Rows(fila).Cells("puesto").Value = item.Puesto
             fila += 1
         Next
         Dgv_ListaPrenomina.Enabled = True
@@ -1151,6 +1479,335 @@ Public Class Frm_ListaPrenomina
 
         Next
     End Sub
+    Private Sub RellenaChecadasExpatriadosMazda()
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count()
+        Dim d1 As Date = Format(Convert.ToDateTime(Lbl_Dia1.Text & "/" & Lbl_año.Text), "dd/MM/yyyy"),
+            d2 As Date = Format(Convert.ToDateTime(Lbl_Dia2.Text & "/" & Lbl_año.Text), "dd/MM/yyyy"),
+            d3 As Date = Format(Convert.ToDateTime(Lbl_Dia3.Text & "/" & Lbl_año.Text), "dd/MM/yyyy"),
+            d4 As Date = Format(Convert.ToDateTime(Lbl_Dia4.Text & "/" & Lbl_año.Text), "dd/MM/yyyy"),
+            d5 As Date = Format(Convert.ToDateTime(Lbl_Dia5.Text & "/" & Lbl_año.Text), "dd/MM/yyyy")
+
+        For fila = 0 To totalFilas - 2
+            With Dgv_ListaPrenomina.Rows(fila)
+                Dim idTurno As Integer = .Cells("idTurno").Value
+                Dim nac As Boolean = .Cells("nacional").Value
+                Dim pues As String = .Cells("puesto").Value
+                If nac = True And (pues = "007" Or pues = "003") Then
+                    If .Cells("entrada1").Value = "" Then 'And ((d1 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Or (pues = "007" Or pues = "003")) Then
+                        .Cells("entrada1").Value = "08:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("entrada1").Style.BackColor = Color.Green
+                        .Cells("entrada1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida1").Value = "" Then 'And ((d1 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Or (pues = "007" Or pues = "003")) Then
+                        .Cells("salida1").Value = "17:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("salida1").Style.BackColor = Color.Green
+                        .Cells("salida1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada2").Value = "" Then 'And ((d2 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Or (pues = "007" Or pues = "003")) Then
+                        .Cells("entrada2").Value = "08:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("entrada2").Style.BackColor = Color.Green
+                        .Cells("entrada2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida2").Value = "" Then 'And ((d2 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Or (pues = "007" Or pues = "003")) Then
+                        .Cells("salida2").Value = "17:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("salida2").Style.BackColor = Color.Green
+                        .Cells("salida2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada3").Value = "" Then 'And ((d3 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Or (pues = "007" Or pues = "003")) Then
+                        .Cells("entrada3").Value = "08:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("entrada3").Style.BackColor = Color.Green
+                        .Cells("entrada3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida3").Value = "" Then 'And ((d3 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Or (pues = "007" Or pues = "003")) Then
+                        .Cells("salida3").Value = "17:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("salida3").Style.BackColor = Color.Green
+                        .Cells("salida3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada4").Value = "" Then 'And ((d4 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Or (pues = "007" Or pues = "003")) Then
+                        .Cells("entrada4").Value = "08:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("entrada4").Style.BackColor = Color.Green
+                        .Cells("entrada4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida4").Value = "" Then 'And ((d4 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Or (pues = "007" Or pues = "003")) Then
+                        .Cells("salida4").Value = "17:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("salida4").Style.BackColor = Color.Green
+                        .Cells("salida4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada5").Value = "" Then 'And ((d5 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Or (pues = "007" Or pues = "003")) Then
+                        .Cells("entrada5").Value = "08:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("entrada5").Style.BackColor = Color.Green
+                        .Cells("entrada5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida5").Value = "" Then 'And ((d5 < Format(Convert.ToDateTime("01/02/2020"), "dd/MM/yyyy")) Or (pues = "007" Or pues = "003")) Then
+                        .Cells("salida5").Value = "17:00"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("salida5").Style.BackColor = Color.Green
+                        .Cells("salida5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                ElseIf idTurno = 5 Then
+                    If .Cells("entrada1").Value = "" Then
+                        .Cells("entrada1").Value = "07:44"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("entrada1").Style.BackColor = Color.Green
+                        .Cells("entrada1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida1").Value = "" Then
+                        .Cells("salida1").Value = "18:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("salida1").Style.BackColor = Color.Green
+                        .Cells("salida1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada2").Value = "" Then
+                        .Cells("entrada2").Value = "07:44"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("entrada2").Style.BackColor = Color.Green
+                        .Cells("entrada2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida2").Value = "" Then
+                        .Cells("salida2").Value = "18:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("salida2").Style.BackColor = Color.Green
+                        .Cells("salida2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada3").Value = "" Then
+                        .Cells("entrada3").Value = "07:44"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("entrada3").Style.BackColor = Color.Green
+                        .Cells("entrada3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida3").Value = "" Then
+                        .Cells("salida3").Value = "18:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("salida3").Style.BackColor = Color.Green
+                        .Cells("salida3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada4").Value = "" Then
+                        .Cells("entrada4").Value = "07:44"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("entrada4").Style.BackColor = Color.Green
+                        .Cells("entrada4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida4").Value = "" Then
+                        .Cells("salida4").Value = "18:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("salida4").Style.BackColor = Color.Green
+                        .Cells("salida4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada5").Value = "" Then
+                        .Cells("entrada5").Value = "07:44"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("entrada5").Style.BackColor = Color.Green
+                        .Cells("entrada5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida5").Value = "" Then
+                        .Cells("salida5").Value = "18:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("salida5").Style.BackColor = Color.Green
+                        .Cells("salida5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                ElseIf idTurno = 6 Then
+                    If .Cells("entrada1").Value = "" Then
+                        .Cells("entrada1").Value = "20:20"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("entrada1").Style.BackColor = Color.Green
+                        .Cells("entrada1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida1").Value = "" Then
+                        .Cells("salida1").Value = "06:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual1").Value = "M"
+                        .Cells("b1").Value = "1"
+                        .Cells("salida1").Style.BackColor = Color.Green
+                        .Cells("salida1").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada2").Value = "" Then
+                        .Cells("entrada2").Value = "20:20"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("entrada2").Style.BackColor = Color.Green
+                        .Cells("entrada2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida2").Value = "" Then
+                        .Cells("salida2").Value = "06:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual2").Value = "M"
+                        .Cells("b2").Value = "1"
+                        .Cells("salida2").Style.BackColor = Color.Green
+                        .Cells("salida2").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada3").Value = "" Then
+                        .Cells("entrada3").Value = "20:20"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("entrada3").Style.BackColor = Color.Green
+                        .Cells("entrada3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida3").Value = "" Then
+                        .Cells("salida3").Value = "06:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual3").Value = "M"
+                        .Cells("b3").Value = "1"
+                        .Cells("salida3").Style.BackColor = Color.Green
+                        .Cells("salida3").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada4").Value = "" Then
+                        .Cells("entrada4").Value = "20:20"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("entrada4").Style.BackColor = Color.Green
+                        .Cells("entrada4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida4").Value = "" Then
+                        .Cells("salida4").Value = "06:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual4").Value = "M"
+                        .Cells("b4").Value = "1"
+                        .Cells("salida4").Style.BackColor = Color.Green
+                        .Cells("salida4").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("entrada5").Value = "" Then
+                        .Cells("entrada5").Value = "20:20"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("entrada5").Style.BackColor = Color.Green
+                        .Cells("entrada5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                    If .Cells("salida5").Value = "" Then
+                        .Cells("salida5").Value = "06:21"
+                        .Cells("manual").Value = "M"
+                        .Cells("manual5").Value = "M"
+                        .Cells("b5").Value = "1"
+                        .Cells("salida5").Style.BackColor = Color.Green
+                        .Cells("salida5").Style.ForeColor = Color.White
+                        Btn_Guardar.Visible = True
+                    End If
+                End If
+            End With
+        Next
+    End Sub
+    Private Sub RellenarTxtHorario()
+        Dim lstEmp As New LEmpleado()
+        Dim NEmp As New NEmpleado()
+        Dim emp As New Empleado()
+        'Dim fi As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
+
+        lstEmp = NEmp.HorariosRecuperar(Me.cadenaConex)
+        emp.Horario = ""
+        lstEmp.Add(emp)
+        For Each item In lstEmp
+            Txt_FiltroHorario.AutoCompleteCustomSource.Add(item.Horario)
+        Next
+    End Sub
+    Private Sub RellenarTxtDptos()
+        Dim lstEmp As New LEmpleado()
+        Dim NEmp As New NEmpleado()
+        Dim emp As New Empleado()
+        Dim fi As Date = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
+        Dim conex As New conexion
+        Dim cadConex As String
+
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
+
+        lstEmp = NEmp.DptosRecuperar(cadConex, fi)
+        emp.Departamento = ""
+        lstEmp.Add(emp)
+        For Each item In lstEmp
+            Txt_FiltroDpto.AutoCompleteCustomSource.Add(item.Departamento)
+        Next
+    End Sub
+    Private Sub RellenarTxtEmpl(ByVal lstEmp As LEmpleado)
+        For Each item In lstEmp
+            Txt_FiltroNombre.AutoCompleteCustomSource.Add(item.NombreCompleto)
+        Next
+    End Sub
 #End Region
 #Region "Rellena objetos"
     Private Function RellenaObjetoEmpleado() As LEmpleado
@@ -1252,16 +1909,47 @@ Public Class Frm_ListaPrenomina
         End With
         Return objEmp
     End Function
+    Private Function RellenaObjetoBono() As LBono
+        Dim lstBono As New LBono()
+        Dim fila As Integer, totalFilas As Integer = Dgv_ListaPrenomina.Rows.Count()
+        For fila = 0 To totalFilas - 2
+            With Dgv_ListaPrenomina.Rows(fila)
+                Dim modif As Object = .Cells("modificaBono").Value
+                If modif = "M" Then
+                    Dim objBono As New Bono()
+                    objBono.IdEmpleado = .Cells("idEmpleado").Value
+                    objBono.Semana = Cmb_Semanas.Text
+                    objBono.Año = Lbl_año.Text
+                    objBono.Comentario = .Cells("comentarios").Value
+                    objBono.ComentarioExt = .Cells("comentariosExt").Value
+                    objBono.Bono = .Cells("aplicaBono").Value
+                    objBono.IdModif = .Cells("idModificaBono").Value
+                    lstBono.Add(objBono)
+                End If
+            End With
+        Next
+        Return lstBono
+    End Function
 #End Region
 #Region "Otros Procesos"
-    Private Sub ProcesoPrenomina(ByVal lstEmp As LEmpleado, ByVal fecha As Date)
-        lstEmp = RecuperarEmpleados(fecha)
+    Private Sub ProcesoPrenomina(ByVal lstEmp As LEmpleado, ByVal fecha As Date, ByVal semana As Integer, ByVal año As Integer)
+        lstEmp = RecuperarEmpleados(fecha, semana, año)
         If lstEmp(0).Err = False Then
             RellenaChecadasDgvPrenomina(lstEmp)
             RecuperarIncidencias()
-            CalcularBono()
+            RellenaChecadasExpatriadosMazda()
+            If lstEmp(0).Año = 0 And lstEmp(0).Semana = 0 Then
+                CalcularBono()
+            End If
+            Me.rec = "M"
             'Btn_Excel.Visible = True
             Txt_FiltroId.Enabled = True
+            Txt_FiltroNombre.Enabled = True
+            Txt_FiltroHorario.Enabled = True
+            Txt_FiltroDpto.Enabled = True
+            RellenarTxtEmpl(lstEmp)
+            RellenarTxtHorario()
+            RellenarTxtDptos()
         End If
     End Sub
     Private Sub ModificarDiaInicio()
@@ -1401,6 +2089,7 @@ Public Class Frm_ListaPrenomina
         Dim fila As Integer
         Dim totalFila As Integer = Dgv_ListaPrenomina.Rows.Count()
         Dim tof As Integer
+        Dim fi As Date = Lbl_Dia1.Text & "/" & Lbl_año.Text, ff As Date = Lbl_Dia5.Text & "/" & Lbl_año.Text, f As Date = fi
         For fila = 0 To totalFila - 1
             Dim bono As Integer = 0
             With Dgv_ListaPrenomina.Rows(fila)
@@ -1415,28 +2104,44 @@ Public Class Frm_ListaPrenomina
                     Dim valorSO = Format(Convert.ToDateTime(.Cells("S").Value), "HH:mm")
                     Dim b As String = "b" & column
                     Dim mr As String = .Cells(b).Value
-                    If (valorE IsNot Nothing And valorS IsNot Nothing) And (IsDate(.Cells(ce).FormattedValue) And IsDate(.Cells(cs).FormattedValue)) Then
-                        If (valorE <= valorEO) And (valorS >= valorSO) Then
-                            bono += 1
-                        Else
-                            If mr = "1" Or mr = "2" Or mr = "3" Or mr = "4" Then
-                                bono += 1
-                            End If
-                        End If
+                    Dim valor As Integer
+                    Dim fIng As Date = .Cells("ingreso").Value
+                    .Cells("modificaBono").Value = "M"
+                    .Cells("idModificaBono").Value = "0"
+                    valor = BuscarDiasFestivo(column, .Cells("idEmpleado").Value)
+                    f = DateAdd(DateInterval.Day, (column - 1), fi)
+                    If valor = 1 Then
+                        bono += 1
                     Else
-                        If (valorE IsNot Nothing And valorS IsNot Nothing) And
-                            ((valorE = "D" Or valorE = "DT" Or valorE = "INC" Or valorE = "PM" Or valorE = "PCS" Or valorE Like "M-DT" Or valorE Like "J-DT" Or
-                            valorE = "VAC") Or
-                            (valorS = "D" Or valorS = "DT" Or valorS = "INC" Or valorS = "PM" Or valorS = "PCS" Or valorS Like "M-DT" Or valorS Like "J-DT" Or
-                            valorS = "VAC")) Then
-                            bono += 1
-                        ElseIf (valorE Is Nothing Or valorS Is Nothing) Or
-                            ((valorE = "F" Or valorE = "FJ" Or valorE = "PSS" Or valorE Like "M-SUS" Or valorE Like "PS" Or valorE = "RET" Or
-                            valorE = "RT") Or
-                            (valorS = "F" Or valorS = "FJ" Or valorS = "PSS" Or valorS Like "M-SUS" Or valorS Like "PS" Or valorS = "RET" Or
-                            valorE = "RT")) Then
-                            If mr = "1" Or mr = "2" Or mr = "3" Or mr = "4" Then
+                        If (valorE IsNot Nothing And valorS IsNot Nothing) And (IsDate(.Cells(ce).FormattedValue) And IsDate(.Cells(cs).FormattedValue)) Then
+                            If ((valorE <= valorEO) Or (f = fIng)) And (valorS >= valorSO) Then
                                 bono += 1
+                            Else
+                                If mr = "1" Or mr = "2" Or mr = "3" Or mr = "4" Then
+                                    bono += 1
+                                End If
+                            End If
+                        Else
+                            If (valorE IsNot Nothing And valorS IsNot Nothing) And
+                                ((valorE = "D" Or valorE = "DT" Or valorE = "PM" Or valorE = "PCS" Or valorE Like "M-DT" Or valorE Like "J-DT" Or
+                                valorE = "VAC") Or
+                                (valorS = "D" Or valorS = "DT" Or valorS = "PM" Or valorS = "PCS" Or valorS Like "M-DT" Or valorS Like "J-DT" Or
+                                valorS = "VAC")) Then
+                                bono += 1
+                            ElseIf (valorE Is Nothing Or valorS Is Nothing) Or
+                                ((valorE = "F" Or valorE = "FJ" Or valorE = "PSS" Or valorE Like "M-SUS" Or valorE Like "PS" Or valorE = "RET" Or
+                                valorE = "RT") Or
+                                (valorS = "F" Or valorS = "FJ" Or valorS = "PSS" Or valorS Like "M-SUS" Or valorS Like "PS" Or valorS = "RET" Or
+                                valorE = "RT")) Or ((fi >= fIng) Or (ff <= fIng)) Then
+                                If (mr = "1" Or mr = "2" Or mr = "3" Or mr = "4") Then
+                                    bono += 1
+                                ElseIf ((((fIng >= fi) And (fIng <= ff)) And (f <= fIng)) And
+                                ((valorE <> "F" And valorE <> "FJ" And valorE <> "PSS" And valorE <> "M-SUS" And valorE <> "PS" And valorE <> "RET" And
+                                valorE <> "RT") And
+                                (valorS <> "F" And valorS <> "FJ" And valorS <> "PSS" And valorS <> "M-SUS" And valorS <> "PS" And valorS <> "RET" And
+                                valorE <> "RT"))) Then
+                                    bono += 1
+                                End If
                             End If
                         End If
                     End If
@@ -1445,9 +2150,12 @@ Public Class Frm_ListaPrenomina
                     If bono = 5 Then .Cells("aplicaBono").Value = True
                 ElseIf .Cells("idTurno").Value = 1 Or .Cells("idTurno").Value = 2 Or .Cells("idTurno").Value = 3 Then
                     If bono = 6 Then .Cells("aplicaBono").Value = True
+                Else
+                    If bono = 6 Or bono = 5 Then .Cells("aplicaBono").Value = True
                 End If
             End With
         Next
+        Btn_GuardarBono.Enabled = True
     End Sub
     Private Sub CalcularBonoIndividual(ByVal fila As Integer)
         Dim totalFila As Integer = Dgv_ListaPrenomina.Rows.Count()
@@ -1466,6 +2174,8 @@ Public Class Frm_ListaPrenomina
                 Dim valorSO = Format(Convert.ToDateTime(.Cells("S").Value), "HH:mm")
                 Dim b As String = "b" & column
                 Dim mr As String = .Cells(b).Value
+                .Cells("modificaBono").Value = "M"
+                .Cells("idModificaBono").Value = "0"
                 If (valorE IsNot Nothing And valorS IsNot Nothing) And (IsDate(.Cells(ce).FormattedValue) And IsDate(.Cells(cs).FormattedValue)) Then
                     If (valorE <= valorEO) And (valorS >= valorSO) Then
                         bono += 1
@@ -1476,8 +2186,8 @@ Public Class Frm_ListaPrenomina
                     End If
                 Else
                     If (valorE IsNot Nothing And valorS IsNot Nothing) And
-                            ((valorE = "D" Or valorE = "DT" Or valorE = "INC" Or valorE = "PM" Or valorE Like "M-DT" Or valorE Like "J-DT" Or valorE = "VAC") Or
-                            (valorS = "D" Or valorS = "DT" Or valorS = "INC" Or valorS = "PM" Or valorS Like "M-DT" Or valorS Like "J-DT" Or valorS = "VAC")) Then
+                            ((valorE = "D" Or valorE = "DT" Or valorE = "PM" Or valorE Like "M-DT" Or valorE Like "J-DT" Or valorE = "VAC") Or
+                            (valorS = "D" Or valorS = "DT" Or valorS = "PM" Or valorS Like "M-DT" Or valorS Like "J-DT" Or valorS = "VAC")) Then
                         bono += 1
                     ElseIf (valorE Is Nothing Or valorS Is Nothing) Or
                             ((valorE = "F" Or valorE = "FJ" Or valorE = "PCS" Or valorE = "PSS" Or valorE Like "M-SUS" Or valorE Like "PS" Or valorE = "RET" Or
@@ -1496,6 +2206,7 @@ Public Class Frm_ListaPrenomina
                 If bono = 6 Then .Cells("aplicaBono").Value = True
             End If
         End With
+        Btn_GuardarBono.Enabled = True
     End Sub
     Function GridAExcel(ByVal ElGrid As DataGridView) As Boolean
 
@@ -1536,7 +2247,7 @@ Public Class Frm_ListaPrenomina
         Return True
     End Function
     Private Sub CrearExcel()
-        Me.Cursor = Cursors.WaitCursor
+        'Me.Cursor = Cursors.WaitCursor
         Try
             ' Creamos todo lo necesario para un excel
             Dim appXL As Excel.Application
@@ -1546,7 +2257,14 @@ Public Class Frm_ListaPrenomina
             Dim lstEmp As New LEmpleado()
             Dim NEmp As New NEmpleado()
             Dim conex As New conexion()
-            Dim cadenaConex As String = conex.conexion2008
+            Dim cadenaConex
+            Dim cadConex As String
+
+            If Me.ip = "172.16" Then
+                cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+            Else
+                cadConex = conex.conexion2008For
+            End If
             appXL = CreateObject("Excel.Application")
             appXL.Visible = False 'Para que no se muestre mientras se crea
             wbXl = appXL.Workbooks.Add
@@ -1627,7 +2345,7 @@ Public Class Frm_ListaPrenomina
             shXL.Cells(1, 71).Value = "Entidad federativa de nacimiento"
             shXL.Cells(1, 72).Value = "Tipo de prestación"
             shXL.Cells(1, 73).Value = "Extranjero sin CURP"
-            lstEmp = NEmp.RecuperarEmpleadosExportar(cadenaConex, (Lbl_Dia1.Text & "/" & Lbl_año.Text), (lbl_Dia7.Text & "/" & Lbl_año.Text))
+            lstEmp = NEmp.RecuperarEmpleadosExportar(cadConex, (Lbl_Dia1.Text & "/" & Lbl_año.Text), (lbl_Dia7.Text & "/" & Lbl_año.Text))
 
             If lstEmp.Count > 0 Then
                 For Each item In lstEmp
@@ -1725,7 +2443,7 @@ Public Class Frm_ListaPrenomina
         Catch ex As Exception
             MessageBox.Show("Errorxportar los datos a excel.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
-            Me.Cursor = Cursors.Arrow
+            'Me.Cursor = Cursors.Arrow
         End Try
     End Sub
     Private Sub Almacenar()
@@ -1790,5 +2508,126 @@ Public Class Frm_ListaPrenomina
         Frm_ReportePrenominaLista.ReportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Rpt_PrenominaListado.rdlc" 'exactamente como se llaman el proyecto y reporte
         Frm_ReportePrenominaLista.Show()
     End Sub
+    Private Sub ProcesoGuardarBono()
+        Dim NPre As New NPrenomina()
+        Dim lstBono As New LBono()
+        Dim cadConex As String
+        Dim conex As New conexion()
+
+
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
+        lstBono = RellenaObjetoBono()
+        NPre.InsertarBonoPuntualidad(cadConex, lstBono)
+    End Sub
+    Private Function BuscarDiasFestivo(ByVal vuelta As Integer, ByVal idEmp As Integer) As Integer
+        Dim fecha As Date
+        Dim dia As Integer, mes As Integer, año As Integer, valor As Integer
+        Dim NPren As New NPrenomina()
+        Dim conex As New conexion()
+        Dim cadConex As String
+
+        If Me.ip = "172.16" Then
+            cadConex = conex.conexion2008 'Conexion a la BD de asahi16 de la instancia sql2008
+        Else
+            cadConex = conex.conexion2008For
+        End If
+        Select Case vuelta
+            Case 1
+                fecha = Lbl_Dia1.Text
+                año = Lbl_año.Text
+                mes = Month(fecha)
+                dia = Convert.ToInt16(Format(fecha, "dd"))
+                valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, 1, 2)
+                Return valor
+            Case 2
+                fecha = Lbl_Dia2.Text
+                año = Lbl_año.Text
+                mes = Month(fecha)
+                dia = Convert.ToInt16(Format(fecha, "dd"))
+                valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, 1, 2)
+                Return valor
+            Case 3
+                fecha = Lbl_Dia3.Text
+                año = Lbl_año.Text
+                mes = Month(fecha)
+                dia = Convert.ToInt16(Format(fecha, "dd"))
+                valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, 1, 2)
+                Return valor
+            Case 4
+                fecha = Lbl_Dia4.Text
+                año = Lbl_año.Text
+                mes = Month(fecha)
+                dia = Convert.ToInt16(Format(fecha, "dd"))
+                valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, 1, 2)
+                Return valor
+            Case 5
+                fecha = Lbl_Dia5.Text
+                año = Lbl_año.Text
+                mes = Month(fecha)
+                dia = Convert.ToInt16(Format(fecha, "dd"))
+                valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, 1, 2)
+                Return valor
+            Case 6
+                fecha = lbl_Dia6.Text
+                año = Lbl_año.Text
+                mes = Month(fecha)
+                dia = Convert.ToInt16(Format(fecha, "dd"))
+                valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, 1, 2)
+                Return valor
+            Case 7
+                fecha = lbl_Dia7.Text
+                año = Lbl_año.Text
+                mes = Month(fecha)
+                dia = Convert.ToInt16(Format(fecha, "dd"))
+                valor = NPren.VerificarDiaHabil(cadConex, año, mes, dia, 1, 2)
+                Return valor
+            Case Else
+                Return valor = 0
+        End Select
+    End Function
+    Private Function RecuperarDatoInc(ByVal dato As String) As String
+        Select Case dato
+            Case "FALTA" : Return "F"
+            Case "FALTA JUSTIFICADA" : Return "FJ"
+            Case "SUSPENCIÓN" : Return "SUS"
+            Case "RETARDO" : Return "R"
+            Case "SALIDA ANTICIPADA" : Return "PS"
+            Case "SIN CHECADAS" : Return "SC"
+            Case "PERMISO SIN GOCE" : Return "PSS"
+            Case "PERMISO CON GOCE" : Return "PCS"
+            Case "INCAPACIDAD" : Return "INC"
+            Case "BAJA" : Return "BAJA"
+            Case Else : Return ""
+        End Select
+    End Function
+    Private Function Horarios(ByVal turno As Integer, ByVal evento As String) As Date
+        Select Case evento
+            Case "Entrada"
+                Select Case turno
+                    Case 1 : Return "06:55:00"
+                    Case 2 : Return "15:25:00"
+                    Case 3 : Return "23:25:00"
+                    Case 4 : Return "08:00:00"
+                    Case 5 : Return "07:44:00"
+                    Case 6 : Return "20:20:00"
+                    Case Else : Return "00:00:00"
+                End Select
+            Case "Salida"
+                Select Case turno
+                    Case 1 : Return "15:25:00"
+                    Case 2 : Return "23:25:00"
+                    Case 3 : Return "07:00:00"
+                    Case 4 : Return "17:00:00"
+                    Case 5 : Return "18:21:00"
+                    Case 6 : Return "06:21:00"
+                    Case Else : Return "00:00:00"
+                End Select
+            Case Else : Return "00:00:00"
+        End Select
+    End Function
 #End Region
 End Class

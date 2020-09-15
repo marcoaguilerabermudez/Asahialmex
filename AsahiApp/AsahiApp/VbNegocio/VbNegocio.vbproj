@@ -85,10 +85,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NCompras.vb" />
     <Compile Include="NEmpleado.vb" />
     <Compile Include="NGastos.vb" />
     <Compile Include="NHorasExtra.vb" />
     <Compile Include="NImpuestos.vb" />
+    <Compile Include="NPolizas.vb" />
     <Compile Include="NPrenomina.vb" />
   </ItemGroup>
   <ItemGroup>

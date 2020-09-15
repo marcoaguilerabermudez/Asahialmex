@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>112</ApplicationRevision>
+    <ApplicationRevision>159</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -71,10 +71,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>566D87F01A2253FF46C9B1AC915A948443155C78</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>8E5D0D66CB3A8EFAB025036D0150723E6A706469</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -148,6 +148,24 @@
     <Compile Include="CapturaOee2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Compras\Frm_ConsultaXml.Designer.vb">
+      <DependentUpon>Frm_ConsultaXml.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\Frm_ConsultaXml.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\Frm_Proviciones.Designer.vb">
+      <DependentUpon>Frm_Proviciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\Frm_Proviciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\Frm_ValidarConta.Designer.vb">
+      <DependentUpon>Frm_ValidarConta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\Frm_ValidarConta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="conexion.vb" />
     <Compile Include="DataSet\Dts_BonoMensual.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -193,6 +211,24 @@
       <DependentUpon>Detalle2oee.vb</DependentUpon>
     </Compile>
     <Compile Include="Detalle2oee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\Frm_ConceptoEgreso.Designer.vb">
+      <DependentUpon>Frm_ConceptoEgreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Frm_ConceptoEgreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\Frm_ConceptoPoliza.Designer.vb">
+      <DependentUpon>Frm_ConceptoPoliza.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Frm_ConceptoPoliza.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\Frm_PolizasDiario.Designer.vb">
+      <DependentUpon>Frm_PolizasDiario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Frm_PolizasDiario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Acerca.Designer.vb">
@@ -367,14 +403,32 @@
     <EmbeddedResource Include="CapturaOee2.resx">
       <DependentUpon>CapturaOee2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Frm_ConsultaXml.resx">
+      <DependentUpon>Frm_ConsultaXml.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Frm_Proviciones.resx">
+      <DependentUpon>Frm_Proviciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Frm_ValidarConta.resx">
+      <DependentUpon>Frm_ValidarConta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DefectoM.resx">
       <DependentUpon>DefectoM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Detalle2oee.resx">
       <DependentUpon>Detalle2oee.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\Frm_ConceptoEgreso.resx">
+      <DependentUpon>Frm_ConceptoEgreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\Frm_ConceptoPoliza.resx">
+      <DependentUpon>Frm_ConceptoPoliza.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Finanzas\Frm_PlanGastos.resx">
       <DependentUpon>Frm_PlanGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\Frm_PolizasDiario.resx">
+      <DependentUpon>Frm_PolizasDiario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Acerca.resx">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
@@ -537,6 +591,7 @@
     <None Include="Reportes\dtsEjemplo.xss">
       <DependentUpon>dtsEjemplo.xsd</DependentUpon>
     </None>
+    <None Include="VbPresentacion_1_TemporaryKey.pfx" />
     <None Include="VbPresentacion_TemporaryKey.pfx" />
     <None Include="Views\Report\ReportViewer.cshtml" />
   </ItemGroup>
@@ -611,6 +666,14 @@
     <None Include="Resources\020_293_report_diagram_analytics_analysis_hands-512.png" />
     <None Include="Resources\report.png" />
     <None Include="Resources\1492533500-arrow-41_83313.png" />
+    <None Include="Resources\pagina-blanca-de-origami.png" />
+    <None Include="Resources\actualizar.png" />
+    <None Include="Resources\lupa.png" />
+    <None Include="Resources\xml.png" />
+    <None Include="Resources\comprobado.png" />
+    <None Include="Resources\systemtask_sistema_3126.png" />
+    <None Include="Resources\pay_perclick_icon-icons.com_66877.png" />
+    <None Include="Resources\Acumulado1.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

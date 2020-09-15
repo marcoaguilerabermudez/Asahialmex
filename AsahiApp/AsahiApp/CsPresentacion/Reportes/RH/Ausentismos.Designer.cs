@@ -55,11 +55,11 @@
             reportDataSource1.Name = "DS_AUS";
             reportDataSource1.Value = this.SP_Reportes_Ausentismos_FMBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Ausentismos.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Ausentismos3.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1092, 646);
+            this.reportViewer1.Size = new System.Drawing.Size(1022, 646);
             this.reportViewer1.TabIndex = 0;
             // 
             // SP_Reportes_Ausentismos_FMTableAdapter
@@ -71,7 +71,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1092, 646);
+            this.ClientSize = new System.Drawing.Size(1022, 646);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ausentismos";

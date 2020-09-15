@@ -20,9 +20,15 @@ Public Class Frm_Login
     ' como el nombre de usuario, nombre para mostrar, etc.
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim conexion As New conexion()
-        Me.cadenaConex = conexion.cadenaConex
-        Me.cadConex = conexion.conexion
-        Me.cadenaCExpress = conexion.cadenaConexExpress
+        If Strings.Left(conexion.getIp(), 6) = "172.16" Then
+            Me.cadenaConex = conexion.cadenaConex
+            Me.cadConex = conexion.conexion
+            Me.cadenaCExpress = conexion.cadenaConexExpress
+        Else
+            Me.cadenaConex = conexion.cadenaConexFor
+            Me.cadConex = conexion.conexionFor
+            Me.cadenaCExpress = conexion.cadenaConexExpressFor
+        End If
     End Sub
     Private Sub BtnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Aceptar.Click
         Dim NEmple As New NEmpleado()
@@ -32,7 +38,7 @@ Public Class Frm_Login
         If Txt_NombreUsuario.Text <> "" And Txt_Contraseña.Text <> "" Then
             emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
             If emp.Respuesta = 2 Then
-                Dim principal As New Frm_Principal(cadConex, cadenaConex, emp)
+                Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
                 principal.Show()
 
                 Me.Close()

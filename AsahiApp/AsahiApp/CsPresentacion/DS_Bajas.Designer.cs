@@ -291,6 +291,8 @@ namespace CsPresentacion {
             
             private global::System.Data.DataColumn columnBAJA;
             
+            private global::System.Data.DataColumn columnDIAS_LAB;
+            
             private global::System.Data.DataColumn columnDIAS;
             
             private global::System.Data.DataColumn columnMESES;
@@ -395,6 +397,14 @@ namespace CsPresentacion {
             public global::System.Data.DataColumn BAJAColumn {
                 get {
                     return this.columnBAJA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DIAS_LABColumn {
+                get {
+                    return this.columnDIAS_LAB;
                 }
             }
             
@@ -546,6 +556,7 @@ namespace CsPresentacion {
                         string PUESTO, 
                         System.DateTime INGRESO, 
                         System.DateTime BAJA, 
+                        int DIAS_LAB, 
                         int DIAS, 
                         double MESES, 
                         double AÑOS, 
@@ -567,6 +578,7 @@ namespace CsPresentacion {
                         PUESTO,
                         INGRESO,
                         BAJA,
+                        DIAS_LAB,
                         DIAS,
                         MESES,
                         AÑOS,
@@ -608,6 +620,7 @@ namespace CsPresentacion {
                 this.columnPUESTO = base.Columns["PUESTO"];
                 this.columnINGRESO = base.Columns["INGRESO"];
                 this.columnBAJA = base.Columns["BAJA"];
+                this.columnDIAS_LAB = base.Columns["DIAS_LAB"];
                 this.columnDIAS = base.Columns["DIAS"];
                 this.columnMESES = base.Columns["MESES"];
                 this.columnAÑOS = base.Columns["AÑOS"];
@@ -638,6 +651,8 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnINGRESO);
                 this.columnBAJA = new global::System.Data.DataColumn("BAJA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBAJA);
+                this.columnDIAS_LAB = new global::System.Data.DataColumn("DIAS_LAB", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIAS_LAB);
                 this.columnDIAS = new global::System.Data.DataColumn("DIAS", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDIAS);
                 this.columnMESES = new global::System.Data.DataColumn("MESES", typeof(double), null, global::System.Data.MappingType.Element);
@@ -922,6 +937,22 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int DIAS_LAB {
+                get {
+                    try {
+                        return ((int)(this[this.tableFM_LISTADO_BAJAS.DIAS_LABColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DIAS_LAB\' de la tabla \'FM_LISTADO_BAJAS\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFM_LISTADO_BAJAS.DIAS_LABColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int DIAS {
                 get {
                     try {
@@ -1186,6 +1217,18 @@ namespace CsPresentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetBAJANull() {
                 this[this.tableFM_LISTADO_BAJAS.BAJAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDIAS_LABNull() {
+                return this.IsNull(this.tableFM_LISTADO_BAJAS.DIAS_LABColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDIAS_LABNull() {
+                this[this.tableFM_LISTADO_BAJAS.DIAS_LABColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1510,6 +1553,7 @@ namespace CsPresentacion.DS_BajasTableAdapters {
             tableMapping.ColumnMappings.Add("PUESTO", "PUESTO");
             tableMapping.ColumnMappings.Add("INGRESO", "INGRESO");
             tableMapping.ColumnMappings.Add("BAJA", "BAJA");
+            tableMapping.ColumnMappings.Add("DIAS_LAB", "DIAS_LAB");
             tableMapping.ColumnMappings.Add("DIAS", "DIAS");
             tableMapping.ColumnMappings.Add("MESES", "MESES");
             tableMapping.ColumnMappings.Add("AÑOS", "AÑOS");

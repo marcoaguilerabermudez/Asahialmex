@@ -948,4 +948,49 @@
             eMail_ = value
         End Set
     End Property
+    Private nacional_ As Boolean
+    Public Property Nacional() As Boolean
+        Get
+            Return nacional_
+        End Get
+        Set(ByVal value As Boolean)
+            nacional_ = value
+        End Set
+    End Property
+    Private semana_ As Integer
+    Public Property Semana() As Integer
+        Get
+            Return semana_
+        End Get
+        Set(ByVal value As Integer)
+            semana_ = value
+        End Set
+    End Property
+    Private año_ As Integer
+    Public Property Año() As Integer
+        Get
+            Return año_
+        End Get
+        Set(ByVal value As Integer)
+            año_ = value
+        End Set
+    End Property
+    Private comenBono_ As String
+    Public Property ComenBono() As String
+        Get
+            Return comenBono_
+        End Get
+        Set(ByVal value As String)
+            comenBono_ = value
+        End Set
+    End Property
+    Private comenBonoExt_ As String
+    Public Property ComenBonoExt() As String
+        Get
+            Return comenBonoExt_
+        End Get
+        Set(ByVal value As String)
+            comenBonoExt_ = value
+        End Set
+    End Property
 End Class

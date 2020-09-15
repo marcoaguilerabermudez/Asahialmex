@@ -335,6 +335,8 @@ namespace CsPresentacion {
             
             private global::System.Data.DataColumn columnTURNO;
             
+            private global::System.Data.DataColumn columnCORREO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Sp_Genera_ContratoDataTable() {
@@ -594,6 +596,14 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CORREOColumn {
+                get {
+                    return this.columnCORREO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -657,7 +667,8 @@ namespace CsPresentacion {
                         string INFONAVIT, 
                         string TIPO_EMPLEADO, 
                         string DESCRIPCION_TURNO, 
-                        string TURNO) {
+                        string TURNO, 
+                        string CORREO) {
                 Sp_Genera_ContratoRow rowSp_Genera_ContratoRow = ((Sp_Genera_ContratoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CLAVE,
@@ -687,7 +698,8 @@ namespace CsPresentacion {
                         INFONAVIT,
                         TIPO_EMPLEADO,
                         DESCRIPCION_TURNO,
-                        TURNO};
+                        TURNO,
+                        CORREO};
                 rowSp_Genera_ContratoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSp_Genera_ContratoRow);
                 return rowSp_Genera_ContratoRow;
@@ -738,6 +750,7 @@ namespace CsPresentacion {
                 this.columnTIPO_EMPLEADO = base.Columns["TIPO_EMPLEADO"];
                 this.columnDESCRIPCION_TURNO = base.Columns["DESCRIPCION_TURNO"];
                 this.columnTURNO = base.Columns["TURNO"];
+                this.columnCORREO = base.Columns["CORREO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -799,6 +812,8 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnDESCRIPCION_TURNO);
                 this.columnTURNO = new global::System.Data.DataColumn("TURNO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTURNO);
+                this.columnCORREO = new global::System.Data.DataColumn("CORREO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCORREO);
                 this.columnCLAVE.AllowDBNull = false;
                 this.columnCLAVE.MaxLength = 10;
                 this.columnNACIONALIDAD.ReadOnly = true;
@@ -838,6 +853,7 @@ namespace CsPresentacion {
                 this.columnDESCRIPCION_TURNO.MaxLength = 14;
                 this.columnTURNO.ReadOnly = true;
                 this.columnTURNO.MaxLength = 13;
+                this.columnCORREO.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1433,6 +1449,22 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CORREO {
+                get {
+                    try {
+                        return ((string)(this[this.tableSp_Genera_Contrato.CORREOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CORREO\' de la tabla \'Sp_Genera_Contrato\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSp_Genera_Contrato.CORREOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNACIONALIDADNull() {
                 return this.IsNull(this.tableSp_Genera_Contrato.NACIONALIDADColumn);
             }
@@ -1754,6 +1786,18 @@ namespace CsPresentacion {
             public void SetTURNONull() {
                 this[this.tableSp_Genera_Contrato.TURNOColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCORREONull() {
+                return this.IsNull(this.tableSp_Genera_Contrato.CORREOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCORREONull() {
+                this[this.tableSp_Genera_Contrato.CORREOColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1943,6 +1987,7 @@ namespace CsPresentacion.DS_Contrato_empleadoTableAdapters {
             tableMapping.ColumnMappings.Add("TIPO_EMPLEADO", "TIPO_EMPLEADO");
             tableMapping.ColumnMappings.Add("DESCRIPCION_TURNO", "DESCRIPCION_TURNO");
             tableMapping.ColumnMappings.Add("TURNO", "TURNO");
+            tableMapping.ColumnMappings.Add("CORREO", "CORREO");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

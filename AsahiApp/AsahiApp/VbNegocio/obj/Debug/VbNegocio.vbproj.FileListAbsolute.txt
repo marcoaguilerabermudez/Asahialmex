@@ -39,6 +39,28 @@ C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\D
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.dll
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.xml
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.pdb
+C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbproj.CoreCompileInputs.cache
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.dll
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.pdb
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.xml
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Clases.dll
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\CsClases.dll
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\CsDatos.dll
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Datos.dll
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\CsClases.pdb
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\CsDatos.pdb
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Clases.pdb
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Clases.xml
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Datos.pdb
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Datos.xml
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbprojAssemblyReference.cache
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.Resources.resources
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbproj.GenerateResource.cache
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbproj.CoreCompileInputs.cache
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbproj.CopyComplete
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.dll
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.xml
+C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.pdb
 C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.dll
 C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.pdb
 C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.xml

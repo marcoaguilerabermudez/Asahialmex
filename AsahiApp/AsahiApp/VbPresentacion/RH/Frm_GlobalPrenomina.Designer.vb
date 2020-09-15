@@ -83,6 +83,7 @@ Partial Class Frm_GlobalPrenomina
         Me.suma = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.diferencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.grupo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbl_Dia7 = New System.Windows.Forms.Label()
         Me.lbl_Dia6 = New System.Windows.Forms.Label()
         Me.Lbl_Dia5 = New System.Windows.Forms.Label()
@@ -92,6 +93,7 @@ Partial Class Frm_GlobalPrenomina
         Me.Lbl_Dia1 = New System.Windows.Forms.Label()
         Me.Dgv_Lista = New System.Windows.Forms.DataGridView()
         Me.idEmp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idExt = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.inc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tiempo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -101,10 +103,13 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Btn_PDO = New System.Windows.Forms.Button()
         Me.Btn_Reporte = New System.Windows.Forms.Button()
         Me.Btn_Excel = New System.Windows.Forms.Button()
-        Me.Btn_Txt = New System.Windows.Forms.Button()
+        Me.Btn_Incidencias = New System.Windows.Forms.Button()
         Me.Btn_Mostrar = New System.Windows.Forms.Button()
+        Me.Lbl_Inc = New System.Windows.Forms.Label()
+        Me.Lbl_PDO = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Dgv_Prenomina_Global, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_Lista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,9 +121,12 @@ Partial Class Frm_GlobalPrenomina
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Lbl_PDO)
+        Me.Panel1.Controls.Add(Me.Lbl_Inc)
+        Me.Panel1.Controls.Add(Me.Btn_PDO)
         Me.Panel1.Controls.Add(Me.Btn_Reporte)
         Me.Panel1.Controls.Add(Me.Btn_Excel)
-        Me.Panel1.Controls.Add(Me.Btn_Txt)
+        Me.Panel1.Controls.Add(Me.Btn_Incidencias)
         Me.Panel1.Controls.Add(Me.Lbl_SemaF)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Lbl_SemaI)
@@ -132,14 +140,14 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1253, 54)
+        Me.Panel1.Size = New System.Drawing.Size(1253, 56)
         Me.Panel1.TabIndex = 15
         '
         'Lbl_SemaF
         '
         Me.Lbl_SemaF.AutoSize = True
         Me.Lbl_SemaF.ForeColor = System.Drawing.Color.White
-        Me.Lbl_SemaF.Location = New System.Drawing.Point(753, 25)
+        Me.Lbl_SemaF.Location = New System.Drawing.Point(826, 19)
         Me.Lbl_SemaF.Name = "Lbl_SemaF"
         Me.Lbl_SemaF.Size = New System.Drawing.Size(65, 13)
         Me.Lbl_SemaF.TabIndex = 25
@@ -149,7 +157,7 @@ Partial Class Frm_GlobalPrenomina
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(740, 25)
+        Me.Label4.Location = New System.Drawing.Point(813, 19)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(13, 13)
         Me.Label4.TabIndex = 24
@@ -159,7 +167,7 @@ Partial Class Frm_GlobalPrenomina
         '
         Me.Lbl_SemaI.AutoSize = True
         Me.Lbl_SemaI.ForeColor = System.Drawing.Color.White
-        Me.Lbl_SemaI.Location = New System.Drawing.Point(675, 25)
+        Me.Lbl_SemaI.Location = New System.Drawing.Point(748, 19)
         Me.Lbl_SemaI.Name = "Lbl_SemaI"
         Me.Lbl_SemaI.Size = New System.Drawing.Size(65, 13)
         Me.Lbl_SemaI.TabIndex = 23
@@ -169,7 +177,7 @@ Partial Class Frm_GlobalPrenomina
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(614, 25)
+        Me.Label2.Location = New System.Drawing.Point(687, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 22
@@ -179,7 +187,7 @@ Partial Class Frm_GlobalPrenomina
         '
         Me.Label1.BackColor = System.Drawing.Color.SteelBlue
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(176, 18)
+        Me.Label1.Location = New System.Drawing.Point(176, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 26)
         Me.Label1.TabIndex = 19
@@ -190,7 +198,7 @@ Partial Class Frm_GlobalPrenomina
         Me.Lbl_año.AutoSize = True
         Me.Lbl_año.BackColor = System.Drawing.Color.SteelBlue
         Me.Lbl_año.ForeColor = System.Drawing.Color.White
-        Me.Lbl_año.Location = New System.Drawing.Point(134, 23)
+        Me.Lbl_año.Location = New System.Drawing.Point(134, 17)
         Me.Lbl_año.Name = "Lbl_año"
         Me.Lbl_año.Size = New System.Drawing.Size(25, 13)
         Me.Lbl_año.TabIndex = 18
@@ -201,7 +209,7 @@ Partial Class Frm_GlobalPrenomina
         Me.Lbl_Semana.AutoSize = True
         Me.Lbl_Semana.BackColor = System.Drawing.Color.SteelBlue
         Me.Lbl_Semana.ForeColor = System.Drawing.Color.White
-        Me.Lbl_Semana.Location = New System.Drawing.Point(41, 6)
+        Me.Lbl_Semana.Location = New System.Drawing.Point(41, 1)
         Me.Lbl_Semana.Name = "Lbl_Semana"
         Me.Lbl_Semana.Size = New System.Drawing.Size(46, 13)
         Me.Lbl_Semana.TabIndex = 17
@@ -212,7 +220,7 @@ Partial Class Frm_GlobalPrenomina
         Me.Cmb_Semanas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cmb_Semanas.Enabled = False
         Me.Cmb_Semanas.FormattingEnabled = True
-        Me.Cmb_Semanas.Location = New System.Drawing.Point(40, 22)
+        Me.Cmb_Semanas.Location = New System.Drawing.Point(40, 16)
         Me.Cmb_Semanas.Name = "Cmb_Semanas"
         Me.Cmb_Semanas.Size = New System.Drawing.Size(87, 21)
         Me.Cmb_Semanas.TabIndex = 16
@@ -221,7 +229,7 @@ Partial Class Frm_GlobalPrenomina
         '
         Me.Dtp_FechaInicioSemana.Checked = False
         Me.Dtp_FechaInicioSemana.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_FechaInicioSemana.Location = New System.Drawing.Point(248, 19)
+        Me.Dtp_FechaInicioSemana.Location = New System.Drawing.Point(248, 13)
         Me.Dtp_FechaInicioSemana.Name = "Dtp_FechaInicioSemana"
         Me.Dtp_FechaInicioSemana.Size = New System.Drawing.Size(109, 20)
         Me.Dtp_FechaInicioSemana.TabIndex = 20
@@ -229,7 +237,7 @@ Partial Class Frm_GlobalPrenomina
         'Dgv_Prenomina_Global
         '
         Me.Dgv_Prenomina_Global.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Prenomina_Global.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.lun, Me.te1, Me.cm1, Me.mar, Me.te2, Me.cm2, Me.mie, Me.te3, Me.cm3, Me.jue, Me.te4, Me.cm4, Me.vie, Me.te5, Me.cm5, Me.sab, Me.te6, Me.cm6, Me.dom, Me.te7, Me.cm7, Me.te, Me.com, Me.cm, Me.sp, Me.spBono, Me.departamentoEmpleado, Me.turnoEmpleado, Me.idTurnoEmpleado, Me.retardo, Me.permisoSalida, Me.falta, Me.faltaJustificada, Me.suspension, Me.permisoSinSueldo, Me.permisoConSueldo, Me.permisoMaternidad, Me.incapacidad, Me.vacaciones, Me.ujap, Me.dJap, Me.umex, Me.dMex, Me.jpMx, Me.mxJp, Me.suma, Me.diferencia, Me.grupo})
+        Me.Dgv_Prenomina_Global.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.lun, Me.te1, Me.cm1, Me.mar, Me.te2, Me.cm2, Me.mie, Me.te3, Me.cm3, Me.jue, Me.te4, Me.cm4, Me.vie, Me.te5, Me.cm5, Me.sab, Me.te6, Me.cm6, Me.dom, Me.te7, Me.cm7, Me.te, Me.com, Me.cm, Me.sp, Me.spBono, Me.departamentoEmpleado, Me.turnoEmpleado, Me.idTurnoEmpleado, Me.retardo, Me.permisoSalida, Me.falta, Me.faltaJustificada, Me.suspension, Me.permisoSinSueldo, Me.permisoConSueldo, Me.permisoMaternidad, Me.incapacidad, Me.vacaciones, Me.ujap, Me.dJap, Me.umex, Me.dMex, Me.jpMx, Me.mxJp, Me.suma, Me.diferencia, Me.grupo, Me.bono})
         Me.Dgv_Prenomina_Global.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Prenomina_Global.Enabled = False
         Me.Dgv_Prenomina_Global.GridColor = System.Drawing.Color.SteelBlue
@@ -237,7 +245,7 @@ Partial Class Frm_GlobalPrenomina
         Me.Dgv_Prenomina_Global.Name = "Dgv_Prenomina_Global"
         Me.Dgv_Prenomina_Global.RowHeadersVisible = False
         Me.Dgv_Prenomina_Global.RowTemplate.Height = 20
-        Me.Dgv_Prenomina_Global.Size = New System.Drawing.Size(1253, 466)
+        Me.Dgv_Prenomina_Global.Size = New System.Drawing.Size(1253, 470)
         Me.Dgv_Prenomina_Global.TabIndex = 0
         '
         'idEmpleado
@@ -588,6 +596,14 @@ Partial Class Frm_GlobalPrenomina
         Me.grupo.ReadOnly = True
         Me.grupo.Visible = False
         '
+        'bono
+        '
+        Me.bono.HeaderText = "Bono Sem"
+        Me.bono.Name = "bono"
+        Me.bono.ReadOnly = True
+        Me.bono.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bono.Width = 35
+        '
         'lbl_Dia7
         '
         Me.lbl_Dia7.AutoSize = True
@@ -654,7 +670,7 @@ Partial Class Frm_GlobalPrenomina
         'Dgv_Lista
         '
         Me.Dgv_Lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Lista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmp, Me.fecha, Me.inc, Me.tiempo, Me.hrsAprobadas})
+        Me.Dgv_Lista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmp, Me.idExt, Me.fecha, Me.inc, Me.tiempo, Me.hrsAprobadas})
         Me.Dgv_Lista.Location = New System.Drawing.Point(49, 19)
         Me.Dgv_Lista.Name = "Dgv_Lista"
         Me.Dgv_Lista.Size = New System.Drawing.Size(327, 310)
@@ -667,6 +683,13 @@ Partial Class Frm_GlobalPrenomina
         Me.idEmp.Name = "idEmp"
         Me.idEmp.ReadOnly = True
         Me.idEmp.Width = 45
+        '
+        'idExt
+        '
+        Me.idExt.HeaderText = "Id Ext"
+        Me.idExt.Name = "idExt"
+        Me.idExt.ReadOnly = True
+        Me.idExt.Visible = False
         '
         'fecha
         '
@@ -698,7 +721,7 @@ Partial Class Frm_GlobalPrenomina
         'Lbl_FiltroId
         '
         Me.Lbl_FiltroId.AutoSize = True
-        Me.Lbl_FiltroId.Location = New System.Drawing.Point(23, 5)
+        Me.Lbl_FiltroId.Location = New System.Drawing.Point(13, 5)
         Me.Lbl_FiltroId.Name = "Lbl_FiltroId"
         Me.Lbl_FiltroId.Size = New System.Drawing.Size(16, 13)
         Me.Lbl_FiltroId.TabIndex = 26
@@ -707,7 +730,7 @@ Partial Class Frm_GlobalPrenomina
         'Txt_FiltroId
         '
         Me.Txt_FiltroId.Enabled = False
-        Me.Txt_FiltroId.Location = New System.Drawing.Point(14, 20)
+        Me.Txt_FiltroId.Location = New System.Drawing.Point(2, 21)
         Me.Txt_FiltroId.Name = "Txt_FiltroId"
         Me.Txt_FiltroId.Size = New System.Drawing.Size(40, 20)
         Me.Txt_FiltroId.TabIndex = 25
@@ -717,9 +740,9 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 54)
+        Me.Panel2.Location = New System.Drawing.Point(0, 56)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1253, 518)
+        Me.Panel2.Size = New System.Drawing.Size(1253, 516)
         Me.Panel2.TabIndex = 27
         '
         'Panel4
@@ -727,9 +750,9 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel4.Controls.Add(Me.Dgv_Prenomina_Global)
         Me.Panel4.Controls.Add(Me.Dgv_Lista)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(0, 52)
+        Me.Panel4.Location = New System.Drawing.Point(0, 46)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1253, 466)
+        Me.Panel4.Size = New System.Drawing.Size(1253, 470)
         Me.Panel4.TabIndex = 1
         '
         'Panel3
@@ -746,13 +769,24 @@ Partial Class Frm_GlobalPrenomina
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1253, 52)
+        Me.Panel3.Size = New System.Drawing.Size(1253, 46)
         Me.Panel3.TabIndex = 0
+        '
+        'Btn_PDO
+        '
+        Me.Btn_PDO.Image = Global.Presentacion.My.Resources.Resources.Acumulado
+        Me.Btn_PDO.Location = New System.Drawing.Point(541, 3)
+        Me.Btn_PDO.Name = "Btn_PDO"
+        Me.Btn_PDO.Size = New System.Drawing.Size(41, 39)
+        Me.Btn_PDO.TabIndex = 32
+        Me.Btn_PDO.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_PDO.UseVisualStyleBackColor = True
+        Me.Btn_PDO.Visible = False
         '
         'Btn_Reporte
         '
         Me.Btn_Reporte.Image = Global.Presentacion.My.Resources.Resources.reportes
-        Me.Btn_Reporte.Location = New System.Drawing.Point(550, 8)
+        Me.Btn_Reporte.Location = New System.Drawing.Point(588, 3)
         Me.Btn_Reporte.Name = "Btn_Reporte"
         Me.Btn_Reporte.Size = New System.Drawing.Size(40, 39)
         Me.Btn_Reporte.TabIndex = 31
@@ -763,7 +797,7 @@ Partial Class Frm_GlobalPrenomina
         '
         Me.Btn_Excel.Image = Global.Presentacion.My.Resources.Resources.Excel1
         Me.Btn_Excel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Excel.Location = New System.Drawing.Point(439, 9)
+        Me.Btn_Excel.Location = New System.Drawing.Point(439, 3)
         Me.Btn_Excel.Name = "Btn_Excel"
         Me.Btn_Excel.Size = New System.Drawing.Size(41, 39)
         Me.Btn_Excel.TabIndex = 27
@@ -772,29 +806,51 @@ Partial Class Frm_GlobalPrenomina
         Me.Btn_Excel.UseVisualStyleBackColor = True
         Me.Btn_Excel.Visible = False
         '
-        'Btn_Txt
+        'Btn_Incidencias
         '
-        Me.Btn_Txt.Image = Global.Presentacion.My.Resources.Resources.txt1
-        Me.Btn_Txt.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Txt.Location = New System.Drawing.Point(494, 9)
-        Me.Btn_Txt.Name = "Btn_Txt"
-        Me.Btn_Txt.Size = New System.Drawing.Size(41, 39)
-        Me.Btn_Txt.TabIndex = 26
-        Me.Btn_Txt.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Txt.UseVisualStyleBackColor = True
-        Me.Btn_Txt.Visible = False
+        Me.Btn_Incidencias.Image = Global.Presentacion.My.Resources.Resources.systemtask_sistema_3126
+        Me.Btn_Incidencias.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Incidencias.Location = New System.Drawing.Point(494, 3)
+        Me.Btn_Incidencias.Name = "Btn_Incidencias"
+        Me.Btn_Incidencias.Size = New System.Drawing.Size(41, 39)
+        Me.Btn_Incidencias.TabIndex = 26
+        Me.Btn_Incidencias.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Incidencias.UseVisualStyleBackColor = True
+        Me.Btn_Incidencias.Visible = False
         '
         'Btn_Mostrar
         '
         Me.Btn_Mostrar.Image = Global.Presentacion.My.Resources.Resources.iconfinder_115_List_183241__2_
         Me.Btn_Mostrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Mostrar.Location = New System.Drawing.Point(373, 9)
+        Me.Btn_Mostrar.Location = New System.Drawing.Point(373, 3)
         Me.Btn_Mostrar.Name = "Btn_Mostrar"
         Me.Btn_Mostrar.Size = New System.Drawing.Size(50, 39)
         Me.Btn_Mostrar.TabIndex = 21
         Me.Btn_Mostrar.Text = "Mostrar"
         Me.Btn_Mostrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Btn_Mostrar.UseVisualStyleBackColor = True
+        '
+        'Lbl_Inc
+        '
+        Me.Lbl_Inc.AutoSize = True
+        Me.Lbl_Inc.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Lbl_Inc.Location = New System.Drawing.Point(504, 42)
+        Me.Lbl_Inc.Name = "Lbl_Inc"
+        Me.Lbl_Inc.Size = New System.Drawing.Size(22, 13)
+        Me.Lbl_Inc.TabIndex = 33
+        Me.Lbl_Inc.Text = "Inc"
+        Me.Lbl_Inc.Visible = False
+        '
+        'Lbl_PDO
+        '
+        Me.Lbl_PDO.AutoSize = True
+        Me.Lbl_PDO.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Lbl_PDO.Location = New System.Drawing.Point(547, 42)
+        Me.Lbl_PDO.Name = "Lbl_PDO"
+        Me.Lbl_PDO.Size = New System.Drawing.Size(32, 13)
+        Me.Lbl_PDO.TabIndex = 34
+        Me.Lbl_PDO.Text = "Bono"
+        Me.Lbl_PDO.Visible = False
         '
         'Frm_GlobalPrenomina
         '
@@ -838,13 +894,15 @@ Partial Class Frm_GlobalPrenomina
     Friend WithEvents Label4 As Label
     Friend WithEvents Lbl_SemaI As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Btn_Txt As Button
+    Friend WithEvents Btn_Incidencias As Button
     Friend WithEvents Dgv_Lista As DataGridView
-    Friend WithEvents idEmp As DataGridViewTextBoxColumn
-    Friend WithEvents fecha As DataGridViewTextBoxColumn
-    Friend WithEvents inc As DataGridViewTextBoxColumn
-    Friend WithEvents tiempo As DataGridViewTextBoxColumn
-    Friend WithEvents hrsAprobadas As DataGridViewTextBoxColumn
+    Friend WithEvents Btn_Excel As Button
+    Friend WithEvents Lbl_FiltroId As Label
+    Friend WithEvents Txt_FiltroId As TextBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Btn_Reporte As Button
     Friend WithEvents idEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents nombreEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents lun As DataGridViewTextBoxColumn
@@ -895,11 +953,14 @@ Partial Class Frm_GlobalPrenomina
     Friend WithEvents suma As DataGridViewTextBoxColumn
     Friend WithEvents diferencia As DataGridViewTextBoxColumn
     Friend WithEvents grupo As DataGridViewTextBoxColumn
-    Friend WithEvents Btn_Excel As Button
-    Friend WithEvents Lbl_FiltroId As Label
-    Friend WithEvents Txt_FiltroId As TextBox
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Btn_Reporte As Button
+    Friend WithEvents bono As DataGridViewTextBoxColumn
+    Friend WithEvents Btn_PDO As Button
+    Friend WithEvents idEmp As DataGridViewTextBoxColumn
+    Friend WithEvents idExt As DataGridViewTextBoxColumn
+    Friend WithEvents fecha As DataGridViewTextBoxColumn
+    Friend WithEvents inc As DataGridViewTextBoxColumn
+    Friend WithEvents tiempo As DataGridViewTextBoxColumn
+    Friend WithEvents hrsAprobadas As DataGridViewTextBoxColumn
+    Friend WithEvents Lbl_PDO As Label
+    Friend WithEvents Lbl_Inc As Label
 End Class

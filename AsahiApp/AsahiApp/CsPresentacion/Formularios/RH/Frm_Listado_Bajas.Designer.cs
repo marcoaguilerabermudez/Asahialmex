@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_total = new System.Windows.Forms.Label();
             this.btn_exportar = new System.Windows.Forms.Button();
             this.btn_reporte = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@
             this.lbl_filtro = new System.Windows.Forms.Label();
             this.dgv_bajas = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_contabilidad = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bajas)).BeginInit();
             this.SuspendLayout();
@@ -72,10 +73,13 @@
             this.btn_exportar.FlatAppearance.BorderSize = 0;
             this.btn_exportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exportar.Image = global::CsPresentacion.Properties.Resources.Excel;
-            this.btn_exportar.Location = new System.Drawing.Point(1074, 618);
+            this.btn_exportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_exportar.Location = new System.Drawing.Point(1040, 596);
             this.btn_exportar.Name = "btn_exportar";
-            this.btn_exportar.Size = new System.Drawing.Size(53, 34);
+            this.btn_exportar.Size = new System.Drawing.Size(81, 48);
             this.btn_exportar.TabIndex = 20;
+            this.btn_exportar.Text = "Exportar";
+            this.btn_exportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_exportar.UseVisualStyleBackColor = true;
             this.btn_exportar.Click += new System.EventHandler(this.Btn_exportar_Click);
             // 
@@ -85,10 +89,13 @@
             this.btn_reporte.FlatAppearance.BorderSize = 0;
             this.btn_reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reporte.Image = global::CsPresentacion.Properties.Resources.Adobe_PDF_Document_icon;
-            this.btn_reporte.Location = new System.Drawing.Point(1016, 617);
+            this.btn_reporte.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_reporte.Location = new System.Drawing.Point(956, 597);
             this.btn_reporte.Name = "btn_reporte";
-            this.btn_reporte.Size = new System.Drawing.Size(57, 34);
+            this.btn_reporte.Size = new System.Drawing.Size(81, 48);
             this.btn_reporte.TabIndex = 18;
+            this.btn_reporte.Text = "General";
+            this.btn_reporte.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_reporte.UseVisualStyleBackColor = true;
             this.btn_reporte.Click += new System.EventHandler(this.Btn_reporte_Click);
             // 
@@ -290,26 +297,42 @@
             this.dgv_bajas.Location = new System.Drawing.Point(4, 55);
             this.dgv_bajas.MultiSelect = false;
             this.dgv_bajas.Name = "dgv_bajas";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_bajas.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_bajas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_bajas.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dgv_bajas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgv_bajas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_bajas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_bajas.ShowCellErrors = false;
-            this.dgv_bajas.Size = new System.Drawing.Size(1123, 558);
+            this.dgv_bajas.Size = new System.Drawing.Size(1123, 537);
             this.dgv_bajas.TabIndex = 14;
             this.dgv_bajas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Dgv_bajas_CellFormatting);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // btn_contabilidad
+            // 
+            this.btn_contabilidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_contabilidad.FlatAppearance.BorderSize = 0;
+            this.btn_contabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_contabilidad.Image = global::CsPresentacion.Properties.Resources.Adobe_PDF_Document_icon;
+            this.btn_contabilidad.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_contabilidad.Location = new System.Drawing.Point(861, 598);
+            this.btn_contabilidad.Name = "btn_contabilidad";
+            this.btn_contabilidad.Size = new System.Drawing.Size(81, 48);
+            this.btn_contabilidad.TabIndex = 25;
+            this.btn_contabilidad.Text = "Contabilidad";
+            this.btn_contabilidad.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_contabilidad.UseVisualStyleBackColor = true;
+            this.btn_contabilidad.Click += new System.EventHandler(this.Btn_contabilidad_Click);
             // 
             // Frm_Listado_Bajas
             // 
@@ -318,6 +341,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1132, 655);
+            this.Controls.Add(this.btn_contabilidad);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.btn_exportar);
             this.Controls.Add(this.btn_reporte);
@@ -361,5 +385,6 @@
         public System.Windows.Forms.ComboBox cmb_año;
         private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.Button btn_reporte;
+        public System.Windows.Forms.Button btn_contabilidad;
     }
 }
