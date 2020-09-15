@@ -866,5 +866,10 @@ namespace CsPresentacion
             timer1.Start();
             Cursor = Cursors.Default;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

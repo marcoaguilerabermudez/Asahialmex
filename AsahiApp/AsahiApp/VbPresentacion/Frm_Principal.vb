@@ -421,5 +421,10 @@ Public Class Frm_Principal
         Dim Co As New Frm_Comedor
         Co.Show()
     End Sub
+
+    Private Sub ChecadasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChecadasToolStripMenuItem.Click
+        Dim Che As New Frm_Registros
+        Che.Show()
+    End Sub
 #End Region
 End Class
