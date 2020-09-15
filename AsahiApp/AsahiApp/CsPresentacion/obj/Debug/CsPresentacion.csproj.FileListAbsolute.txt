@@ -515,7 +515,7 @@ C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentaci
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\Interop.CRDESIGNERLib.dll
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\Interop.Crystal.dll
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Ausentismo_Fecha.resources
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Rep_Ausentismo_Fecha.resources
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.frm_ausentismo_global.resources
 C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Ausentismos_Fecha.resources
 C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.frm_ausentismo_global.resources
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Ausentismos_Fecha.resources
