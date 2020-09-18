@@ -2,17 +2,17 @@
 Imports Datos
 
 Public Class NCompras
-    Public Function RecuperarLstCompras(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
+    Public Function RecuperarLstCompras(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date, Optional ByVal subsi As String = "") As LCompras
         Dim DComp As New DCompras()
-        Return DComp.RecuperarLstCompras(cadenaConex, fi, ff)
+        Return DComp.RecuperarLstCompras(cadenaConex, fi, ff, subsi)
     End Function
-    Public Function VistaPoliza(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String, ByVal tc As Double) As LCompras
+    Public Function VistaPoliza(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String, ByVal tc As Double, Optional subsi As String = "") As LCompras
         Dim DComp As New DCompras()
-        Return DComp.VistaPoliza(cadenaConex, moneda, idFac, tc)
+        Return DComp.VistaPoliza(cadenaConex, moneda, idFac, tc, subsi)
     End Function
-    Public Function RecuperarListaProveedores(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
+    Public Function RecuperarListaProveedores(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date, Optional subsi As String = "") As LCompras
         Dim DComp As New DCompras()
-        Return DComp.RecuperarListaProveedores(cadenaConex, fi, ff)
+        Return DComp.RecuperarListaProveedores(cadenaConex, fi, ff, subsi)
     End Function
     Public Function RecuperarListaFamilia(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
         Dim DComp As New DCompras()
@@ -56,17 +56,25 @@ Public Class NCompras
         Dim DComp As New DCompras()
         Return DComp.ConsultarImpuestosExtra(cadenaConex, uuid)
     End Function
-    Public Function RecuperarEgreso(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String) As LCompras
+    Public Function RecuperarEgreso(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String, Optional subsi As String = "") As LCompras
         Dim DComp As New DCompras()
-        Return DComp.RecuperarEgreso(cadenaConex, moneda, idFac)
+        Return DComp.RecuperarEgreso(cadenaConex, moneda, idFac, subsi)
     End Function
-    Public Function RecuperaCtasBancos(ByVal cadenaConex As String, ByVal lstCompras As LCompras) As LBancos
+    Public Function RecuperaCtasBancos(ByVal cadenaConex As String, Optional ByVal subsi As String = "") As LBancos
         Dim DComp As New DCompras()
-        Return DComp.RecuperaCtasBancos(cadenaConex, lstCompras)
+        Return DComp.RecuperarBancos(cadenaConex, subsi)
     End Function
-    Public Function RecuperaCategorias(ByVal cadenaConex As String, ByVal lstCompras As LCompras, ByVal cta As String, ByVal segneg As String) As String
+    Public Function RecuperarIdBanco(ByVal cadenaConex As String, ByVal codigo As String, Optional ByVal subsi As String = "") As Integer
         Dim DComp As New DCompras()
-        Return DComp.RecuperaCategorias(cadenaConex, lstCompras, cta, segneg)
+        Return DComp.RecuperarIdBanco(cadenaConex, codigo, subsi)
+    End Function
+    Public Function RecuperaCategorias(ByVal cadenaConex As String, ByVal moneda As Integer) As String
+        Dim DComp As New DCompras()
+        Return DComp.RecuperaCategorias(cadenaConex, moneda)
+    End Function
+    Public Function RecuperaSubCategorias(ByVal cadenaConex As String, ByVal lstCompras As LCompras, ByVal cta As String, ByVal segneg As String) As String
+        Dim DComp As New DCompras()
+        Return DComp.RecuperaSubCategorias(cadenaConex, lstCompras, cta, segneg)
     End Function
     Private Function CreaXmlRuta(ByVal lstComp As LCompras) As Compras
         Dim comp As New Compras()

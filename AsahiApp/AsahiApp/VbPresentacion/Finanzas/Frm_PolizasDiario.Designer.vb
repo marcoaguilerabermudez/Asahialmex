@@ -84,15 +84,12 @@ Partial Class Frm_PolizasDiario
         Me.Dtp_Inicio = New System.Windows.Forms.DateTimePicker()
         Me.Dtp_Fin = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Btn_Limpiar = New System.Windows.Forms.Button()
         Me.Btn_Actualizar = New System.Windows.Forms.Button()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Cmb_BancoMoneda = New System.Windows.Forms.ComboBox()
         Me.Btn_LimpiarFiltros = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Dtp_FiltroFechaFactura = New System.Windows.Forms.DateTimePicker()
+        Me.Lbl_BancoMoneda = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -118,9 +115,9 @@ Partial Class Frm_PolizasDiario
         Me.tipCambio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.total2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.oCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.uuidE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.conceptoCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cuentaClabe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.banco = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.sc = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -171,7 +168,7 @@ Partial Class Frm_PolizasDiario
         '
         Me.Dgv_Egresos.AllowUserToAddRows = False
         Me.Dgv_Egresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Egresos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivote, Me.fechaFac, Me.ejercicio, Me.periodo, Me.fechaPag, Me.ejercicioPag, Me.periodoPag, Me.idProv, Me.prov, Me.moneda2, Me.tipCambio, Me.total2, Me.oCompra, Me.conceptoCuenta, Me.cuentaClabe, Me.idBanco, Me.codBanco, Me.banco, Me.sc, Me.cuentaS})
+        Me.Dgv_Egresos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivote, Me.fechaFac, Me.ejercicio, Me.periodo, Me.fechaPag, Me.ejercicioPag, Me.periodoPag, Me.idProv, Me.prov, Me.moneda2, Me.tipCambio, Me.total2, Me.oCompra, Me.uuidE, Me.conceptoCuenta, Me.cuentaClabe, Me.codBanco, Me.banco, Me.sc, Me.cuentaS})
         Me.Dgv_Egresos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Egresos.Location = New System.Drawing.Point(10, 0)
         Me.Dgv_Egresos.Name = "Dgv_Egresos"
@@ -597,9 +594,6 @@ Partial Class Frm_PolizasDiario
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Btn_Limpiar)
         Me.Panel1.Controls.Add(Me.Btn_Actualizar)
         Me.Panel1.Controls.Add(Me.Panel12)
@@ -614,40 +608,6 @@ Partial Class Frm_PolizasDiario
         Me.Panel1.Size = New System.Drawing.Size(1260, 51)
         Me.Panel1.TabIndex = 0
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(431, 36)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(39, 13)
-        Me.Label9.TabIndex = 22
-        Me.Label9.Text = "Label9"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(388, 36)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(39, 13)
-        Me.Label8.TabIndex = 21
-        Me.Label8.Text = "Label8"
-        '
-        'Button1
-        '
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = Global.Presentacion.My.Resources.Resources.txt
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(425, -3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(39, 40)
-        Me.Button1.TabIndex = 20
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Btn_Limpiar
         '
         Me.Btn_Limpiar.AllowDrop = True
@@ -656,7 +616,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.Btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Limpiar.Image = Global.Presentacion.My.Resources.Resources.pagina_blanca_de_origami
-        Me.Btn_Limpiar.Location = New System.Drawing.Point(509, -1)
+        Me.Btn_Limpiar.Location = New System.Drawing.Point(471, -1)
         Me.Btn_Limpiar.Name = "Btn_Limpiar"
         Me.Btn_Limpiar.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Limpiar.TabIndex = 19
@@ -670,7 +630,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.Btn_Actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Actualizar.Image = Global.Presentacion.My.Resources.Resources.actualizar
-        Me.Btn_Actualizar.Location = New System.Drawing.Point(464, -1)
+        Me.Btn_Actualizar.Location = New System.Drawing.Point(430, 0)
         Me.Btn_Actualizar.Name = "Btn_Actualizar"
         Me.Btn_Actualizar.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Actualizar.TabIndex = 18
@@ -678,9 +638,9 @@ Partial Class Frm_PolizasDiario
         '
         'Panel12
         '
+        Me.Panel12.Controls.Add(Me.Cmb_BancoMoneda)
         Me.Panel12.Controls.Add(Me.Btn_LimpiarFiltros)
-        Me.Panel12.Controls.Add(Me.Label7)
-        Me.Panel12.Controls.Add(Me.Dtp_FiltroFechaFactura)
+        Me.Panel12.Controls.Add(Me.Lbl_BancoMoneda)
         Me.Panel12.Controls.Add(Me.Label6)
         Me.Panel12.Controls.Add(Me.Label5)
         Me.Panel12.Controls.Add(Me.Label4)
@@ -691,10 +651,22 @@ Partial Class Frm_PolizasDiario
         Me.Panel12.Controls.Add(Me.Txt_FiltroProveedor)
         Me.Panel12.Controls.Add(Me.Txt_FiltroCompras)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel12.Location = New System.Drawing.Point(584, 0)
+        Me.Panel12.Location = New System.Drawing.Point(596, 0)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(676, 51)
+        Me.Panel12.Size = New System.Drawing.Size(664, 51)
         Me.Panel12.TabIndex = 5
+        '
+        'Cmb_BancoMoneda
+        '
+        Me.Cmb_BancoMoneda.BackColor = System.Drawing.Color.White
+        Me.Cmb_BancoMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_BancoMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Cmb_BancoMoneda.FormattingEnabled = True
+        Me.Cmb_BancoMoneda.Location = New System.Drawing.Point(420, 21)
+        Me.Cmb_BancoMoneda.Name = "Cmb_BancoMoneda"
+        Me.Cmb_BancoMoneda.Size = New System.Drawing.Size(176, 21)
+        Me.Cmb_BancoMoneda.TabIndex = 18
+        Me.Cmb_BancoMoneda.Visible = False
         '
         'Btn_LimpiarFiltros
         '
@@ -704,32 +676,23 @@ Partial Class Frm_PolizasDiario
         Me.Btn_LimpiarFiltros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.Btn_LimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_LimpiarFiltros.Image = Global.Presentacion.My.Resources.Resources.pagina_blanca_de_origami
-        Me.Btn_LimpiarFiltros.Location = New System.Drawing.Point(588, 4)
+        Me.Btn_LimpiarFiltros.Location = New System.Drawing.Point(613, 6)
         Me.Btn_LimpiarFiltros.Name = "Btn_LimpiarFiltros"
         Me.Btn_LimpiarFiltros.Size = New System.Drawing.Size(39, 40)
         Me.Btn_LimpiarFiltros.TabIndex = 17
         Me.Btn_LimpiarFiltros.UseVisualStyleBackColor = True
         '
-        'Label7
+        'Lbl_BancoMoneda
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(415, 4)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(89, 13)
-        Me.Label7.TabIndex = 16
-        Me.Label7.Text = "Fecha Factura"
-        Me.Label7.Visible = False
-        '
-        'Dtp_FiltroFechaFactura
-        '
-        Me.Dtp_FiltroFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_FiltroFechaFactura.Location = New System.Drawing.Point(420, 21)
-        Me.Dtp_FiltroFechaFactura.Name = "Dtp_FiltroFechaFactura"
-        Me.Dtp_FiltroFechaFactura.Size = New System.Drawing.Size(84, 20)
-        Me.Dtp_FiltroFechaFactura.TabIndex = 15
-        Me.Dtp_FiltroFechaFactura.Visible = False
+        Me.Lbl_BancoMoneda.AutoSize = True
+        Me.Lbl_BancoMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_BancoMoneda.ForeColor = System.Drawing.Color.White
+        Me.Lbl_BancoMoneda.Location = New System.Drawing.Point(421, 4)
+        Me.Lbl_BancoMoneda.Name = "Lbl_BancoMoneda"
+        Me.Lbl_BancoMoneda.Size = New System.Drawing.Size(92, 13)
+        Me.Lbl_BancoMoneda.TabIndex = 16
+        Me.Lbl_BancoMoneda.Text = "Banco Moneda"
+        Me.Lbl_BancoMoneda.Visible = False
         '
         'Label6
         '
@@ -947,6 +910,12 @@ Partial Class Frm_PolizasDiario
         Me.oCompra.ReadOnly = True
         Me.oCompra.Width = 75
         '
+        'uuidE
+        '
+        Me.uuidE.HeaderText = "UUID"
+        Me.uuidE.Name = "uuidE"
+        Me.uuidE.ReadOnly = True
+        '
         'conceptoCuenta
         '
         Me.conceptoCuenta.HeaderText = "Concepto"
@@ -960,19 +929,11 @@ Partial Class Frm_PolizasDiario
         Me.cuentaClabe.Name = "cuentaClabe"
         Me.cuentaClabe.ReadOnly = True
         '
-        'idBanco
-        '
-        Me.idBanco.HeaderText = "Id Banco"
-        Me.idBanco.Name = "idBanco"
-        Me.idBanco.ReadOnly = True
-        Me.idBanco.Width = 65
-        '
         'codBanco
         '
         Me.codBanco.HeaderText = "Código Banco"
         Me.codBanco.Name = "codBanco"
         Me.codBanco.ReadOnly = True
-        Me.codBanco.Visible = False
         '
         'banco
         '
@@ -1065,7 +1026,6 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents impuesto As DataGridViewTextBoxColumn
     Friend WithEvents concepto As DataGridViewTextBoxColumn
     Friend WithEvents Panel12 As Panel
-    Friend WithEvents Dtp_FiltroFechaFactura As DateTimePicker
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
@@ -1074,7 +1034,7 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents Txt_FiltroFactura As TextBox
     Friend WithEvents Txt_FiltroOC As TextBox
     Friend WithEvents Txt_FiltroCompras As TextBox
-    Friend WithEvents Label7 As Label
+    Friend WithEvents Lbl_BancoMoneda As Label
     Friend WithEvents Txt_FiltroProveedor As TextBox
     Friend WithEvents Btn_LimpiarFiltros As Button
     Friend WithEvents Btn_Limpiar As Button
@@ -1098,10 +1058,8 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents uuid As DataGridViewTextBoxColumn
     Friend WithEvents tazaCambio As DataGridViewTextBoxColumn
     Friend WithEvents seleccion As DataGridViewTextBoxColumn
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents Dgv_Egresos As DataGridView
+    Friend WithEvents Cmb_BancoMoneda As ComboBox
     Friend WithEvents pivote As DataGridViewTextBoxColumn
     Friend WithEvents fechaFac As DataGridViewTextBoxColumn
     Friend WithEvents ejercicio As DataGridViewTextBoxColumn
@@ -1115,9 +1073,9 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents tipCambio As DataGridViewTextBoxColumn
     Friend WithEvents total2 As DataGridViewTextBoxColumn
     Friend WithEvents oCompra As DataGridViewTextBoxColumn
+    Friend WithEvents uuidE As DataGridViewTextBoxColumn
     Friend WithEvents conceptoCuenta As DataGridViewTextBoxColumn
     Friend WithEvents cuentaClabe As DataGridViewTextBoxColumn
-    Friend WithEvents idBanco As DataGridViewTextBoxColumn
     Friend WithEvents codBanco As DataGridViewTextBoxColumn
     Friend WithEvents banco As DataGridViewTextBoxColumn
     Friend WithEvents sc As DataGridViewTextBoxColumn

@@ -566,4 +566,22 @@
             cuentaClabe_ = value
         End Set
     End Property
+    Private nombreBanco_ As String
+    Public Property NombreBanco() As String
+        Get
+            Return nombreBanco_
+        End Get
+        Set(ByVal value As String)
+            nombreBanco_ = value
+        End Set
+    End Property
+    Private codigoBanco_ As String
+    Public Property CodigoBanco() As String
+        Get
+            Return codigoBanco_
+        End Get
+        Set(ByVal value As String)
+            codigoBanco_ = value
+        End Set
+    End Property
 End Class
