@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clases;
+using System.Data.SqlClient;
 
 namespace CsPresentacion
 {
@@ -25,6 +26,11 @@ namespace CsPresentacion
  
         int Tipo;
         Empleado claseEmp;
+        
+        SqlCommand cmd;
+        SqlDataReader dr;
+        SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
+
 
 
         private void Frm_Fecha_rep_prenomina_Load(object sender, EventArgs e)
@@ -40,6 +46,28 @@ namespace CsPresentacion
             {
                 cmb_tipo.Visible = true;
                 lbl_tipo_aus.Visible = true;
+            }
+
+            cargar_ausentismo(cmb_tipo);
+        }
+
+        public void cargar_ausentismo(ComboBox inte)//Cargar ausentismos
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT RTRIM(DESCRIPCION)AS 'DESCRIPCION' FROM [asahi16].[Supervisor_giro].[Falta] ", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    inte.Items.Add(dr["DESCRIPCION"].ToString());
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception Error)
+            {
+                MessageBox.Show("No se llenó información de campo Ausentismos" + Error.ToString());
             }
         }
 
@@ -718,36 +746,28 @@ namespace CsPresentacion
         }
         private void Cmb_tipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-           if (cmb_tipo.Text == "ABANDONO DE TRABAJO")  {  lbl_descripcion.Text = "A";
-            }
-            else if (cmb_tipo.Text == "PRESTACION POR MATRIMONIO")  { lbl_descripcion.Text = "B";
-            }
-            else if (cmb_tipo.Text == "CITA IMSS"){ lbl_descripcion.Text = "C";
-            }
-            else if (cmb_tipo.Text == "ENFERMEDAD") { lbl_descripcion.Text = "E";
-            }
-            else if (cmb_tipo.Text == "FALTA INJUSTIFICADA") { lbl_descripcion.Text = "F";
-            }
-            else if (cmb_tipo.Text == "PERMISO CON GOCE") {lbl_descripcion.Text = "G";
-            }
-            else if (cmb_tipo.Text == "ENFERMEDAD LEVE") { lbl_descripcion.Text = "L";
-            }
-            else if (cmb_tipo.Text == "ENFERMENDAD MODERADA") {lbl_descripcion.Text = "M";
-            }
-            else if (cmb_tipo.Text == "SUSPENSION") {lbl_descripcion.Text = "N";
-            }
-            else if (cmb_tipo.Text == "PERMISO SIN GOCE"){lbl_descripcion.Text = "P";
-            }
-            else if (cmb_tipo.Text == "FAMILIAR") {lbl_descripcion.Text = "R";
-            }
-            else if (cmb_tipo.Text == "ASUNTOS PERSONALES"){lbl_descripcion.Text = "S";
-            }
-            else if (cmb_tipo.Text == "TRANSPORTE"){lbl_descripcion.Text = "T";
-            }
-            else if (cmb_tipo.Text == "FALTA JUSTIFICADA"){lbl_descripcion.Text = "U";
-            }
-            else if (cmb_tipo.Text == "VIAJE") {lbl_descripcion.Text = "V";
+            switch (cmb_tipo.Text)
+            {
+                case "ABANDONO DE TRABAJO": lbl_descripcion.Text = "A"; break;
+                case "PRESTACION POR MATRIMONIO": lbl_descripcion.Text = "B"; break;
+                case "CITA IMSS": lbl_descripcion.Text = "C"; break;
+                case "EMPLEADO VULNERABLE": lbl_descripcion.Text = "D"; break;
+                case "ENFERMEDAD": lbl_descripcion.Text = "E"; break;
+                case "FALTA INJUSTIFICADA": lbl_descripcion.Text = "F"; break;
+                case "PERMISO CON GOCE": lbl_descripcion.Text = "G"; break;
+                case "HOME OFFICE": lbl_descripcion.Text = "H"; break;
+                case "CONFIRMADO": lbl_descripcion.Text = "J"; break;
+                case "CONSULTA SOSPECHOSA": lbl_descripcion.Text = "K"; break;
+                case "ENFERMEDAD LEVE": lbl_descripcion.Text = "L"; break;
+                case "ENFERMEDAD MODERADA": lbl_descripcion.Text = "M"; break;
+                case "SUSPENSION": lbl_descripcion.Text = "N"; break;
+                case "SOSPECHOSO ENFERMEDAD": lbl_descripcion.Text = "O"; break;
+                case "PERMISO SIN GOCE": lbl_descripcion.Text = "P"; break;
+                case "FAMILIAR": lbl_descripcion.Text = "R"; break;
+                case "ASUNTOS PERSONALES": lbl_descripcion.Text = "S"; break;
+                case "TRANSPORTE": lbl_descripcion.Text = "T"; break;
+                case "FALTA JUSTIFICADA": lbl_descripcion.Text = "U"; break;
+                case "VIAJE": lbl_descripcion.Text = "V"; break;
             }
         }
     }

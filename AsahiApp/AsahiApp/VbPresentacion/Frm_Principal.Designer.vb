@@ -169,7 +169,13 @@ Partial Class Frm_Principal
         '
         Me.ChecadasToolStripMenuItem.Name = "ChecadasToolStripMenuItem"
         Me.ChecadasToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.ChecadasToolStripMenuItem.Text = "Checadas"
+        Me.ChecadasToolStripMenuItem.Text = "Registro de Huellas"
+        '
+        'Kardex_comedorToolStripMenuItem
+        '
+        Me.Kardex_comedorToolStripMenuItem.Name = "Kardex_comedorToolStripMenuItem"
+        Me.Kardex_comedorToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
+        Me.Kardex_comedorToolStripMenuItem.Text = "Kardex Comedor"
         '
         'Kardex_comedorToolStripMenuItem
         '
@@ -531,7 +537,7 @@ Partial Class Frm_Principal
         'PolizasDeDiarioToolStripMenuItem
         '
         Me.PolizasDeDiarioToolStripMenuItem.Name = "PolizasDeDiarioToolStripMenuItem"
-        Me.PolizasDeDiarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PolizasDeDiarioToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
         Me.PolizasDeDiarioToolStripMenuItem.Text = "Polizas de Diario"
         '
         'EgresosToolStripMenuItem
