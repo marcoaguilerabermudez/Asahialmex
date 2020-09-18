@@ -69,9 +69,10 @@ namespace CsPresentacion
             nuevo();
             autocompletar_responsable(txt_nombre);
             txt_clave.Focus();
-            cargar_ausentismo(cmb_f_tipo);
+            cargar_descripcion_ausentismo(cmb_f_tipo);
+            Cargar_clave_ausentismo(txt_f_tipo);
         }
-        public void cargar_ausentismo(ComboBox inte)//Cargar ausentismos
+        public void cargar_descripcion_ausentismo(ComboBox inte)//Cargar ausentismos
         {
             try
             {
@@ -88,6 +89,25 @@ namespace CsPresentacion
             catch (Exception Error)
             {
                 MessageBox.Show("No se llenó información de campo Ausentismos" + Error.ToString());
+            }
+        }
+        public void Cargar_clave_ausentismo(TextBox tex)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT RTRIM(CLAVE)AS 'CLAVE' FROM [asahi16].[Supervisor_giro].[Falta]", con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    tex.AutoCompleteCustomSource.Add(dr["CLAVE"].ToString());
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudo autcompletar nombre " + error.ToString());
             }
         }
 
@@ -641,6 +661,8 @@ namespace CsPresentacion
                 MessageBox.Show("No se pudo autcompletar nombre " + error.ToString());
             }
         }
+
+
 
         private void cargar_clave()
         {
@@ -1615,12 +1637,12 @@ namespace CsPresentacion
                 case "ABANDONO DE TRABAJO": txt_f_tipo.Text = "A"; break;
                 case "PRESTACION POR MATRIMONIO": txt_f_tipo.Text = "B"; break;
                 case "CITA IMSS": txt_f_tipo.Text = "C"; break;
-               case "EMPLEADO VULNERABLE": txt_f_tipo.Text = "D"; break;
+                case "EMPLEADO VULNERABLE": txt_f_tipo.Text = "D"; break;
                 case "ENFERMEDAD": txt_f_tipo.Text = "E"; break;
                 case "FALTA INJUSTIFICADA": txt_f_tipo.Text = "F"; break;
                 case "PERMISO CON GOCE": txt_f_tipo.Text = "G"; break;
-                 case "HOME OFFICE": txt_f_tipo.Text = "H"; break;
-                 case "CONFIRMADO": txt_f_tipo.Text = "J"; break;
+                case "HOME OFFICE": txt_f_tipo.Text = "H"; break;
+                case "CONFIRMADO": txt_f_tipo.Text = "J"; break;
                 case "CONSULTA SOSPECHOSA": txt_f_tipo.Text = "K"; break;
                 case "ENFERMEDAD LEVE": txt_f_tipo.Text = "L"; break;
                 case "ENFERMEDAD MODERADA": txt_f_tipo.Text = "M"; break;
@@ -1636,7 +1658,26 @@ namespace CsPresentacion
         }
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 'A' || e.KeyChar == 'a' || e.KeyChar == 'B' || e.KeyChar == 'b' || e.KeyChar == 'C' || e.KeyChar == 'c' || e.KeyChar == 'D' || e.KeyChar == 'd' || e.KeyChar == 'E' || e.KeyChar == 'e' || e.KeyChar == 'F' || e.KeyChar == 'f' || e.KeyChar == 'G' || e.KeyChar == 'g' || e.KeyChar == 'H' || e.KeyChar == 'h' || e.KeyChar == 'J' || e.KeyChar == 'j' || e.KeyChar == 'K' || e.KeyChar == 'k' || e.KeyChar == 'L' || e.KeyChar == 'l' || e.KeyChar == 'M' || e.KeyChar == 'm' || e.KeyChar == 'N' || e.KeyChar == 'n' || e.KeyChar == 'O' || e.KeyChar == 'o' || e.KeyChar == 'P' || e.KeyChar == 'p' || e.KeyChar == 'R' || e.KeyChar == 'r' || e.KeyChar == 'S' || e.KeyChar == 's' || e.KeyChar == 'T' || e.KeyChar == 't' || e.KeyChar == 'U' || e.KeyChar == 'u' || e.KeyChar == 'V' || e.KeyChar == 'v')
+            if (e.KeyChar == 'A' || e.KeyChar == 'a' ||
+                e.KeyChar == 'B' || e.KeyChar == 'b' ||
+                e.KeyChar == 'C' || e.KeyChar == 'c' ||
+                e.KeyChar == 'D' || e.KeyChar == 'd' ||
+                e.KeyChar == 'E' || e.KeyChar == 'e' ||
+                e.KeyChar == 'F' || e.KeyChar == 'f' ||
+                e.KeyChar == 'G' || e.KeyChar == 'g' ||
+                e.KeyChar == 'H' || e.KeyChar == 'h' ||
+                e.KeyChar == 'J' || e.KeyChar == 'j' ||
+                e.KeyChar == 'K' || e.KeyChar == 'k' ||
+                e.KeyChar == 'L' || e.KeyChar == 'l' ||
+                e.KeyChar == 'M' || e.KeyChar == 'm' ||
+                e.KeyChar == 'N' || e.KeyChar == 'n' ||
+                e.KeyChar == 'O' || e.KeyChar == 'o' ||
+                e.KeyChar == 'P' || e.KeyChar == 'p' ||
+                e.KeyChar == 'R' || e.KeyChar == 'r' ||
+                e.KeyChar == 'S' || e.KeyChar == 's' ||
+                e.KeyChar == 'T' || e.KeyChar == 't' ||
+                e.KeyChar == 'U' || e.KeyChar == 'u' ||
+                e.KeyChar == 'V' || e.KeyChar == 'v')
                 e.Handled = false;
             else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
             else

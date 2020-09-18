@@ -65,13 +65,7 @@
         <xs:element name="Sp_Genera_Contrato" msprop:Generator_TableClassName="Sp_Genera_ContratoDataTable" msprop:Generator_TableVarName="tableSp_Genera_Contrato" msprop:Generator_TablePropName="Sp_Genera_Contrato" msprop:Generator_RowDeletingName="Sp_Genera_ContratoRowDeleting" msprop:Generator_RowChangingName="Sp_Genera_ContratoRowChanging" msprop:Generator_RowEvHandlerName="Sp_Genera_ContratoRowChangeEventHandler" msprop:Generator_RowDeletedName="Sp_Genera_ContratoRowDeleted" msprop:Generator_UserTableName="Sp_Genera_Contrato" msprop:Generator_RowChangedName="Sp_Genera_ContratoRowChanged" msprop:Generator_RowEvArgName="Sp_Genera_ContratoRowChangeEvent" msprop:Generator_RowClassName="Sp_Genera_ContratoRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CLAVE" msprop:Generator_ColumnVarNameInTable="columnCLAVE" msprop:Generator_ColumnPropNameInRow="CLAVE" msprop:Generator_ColumnPropNameInTable="CLAVEColumn" msprop:Generator_UserColumnName="CLAVE">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="CLAVE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCLAVE" msprop:Generator_ColumnPropNameInRow="CLAVE" msprop:Generator_ColumnPropNameInTable="CLAVEColumn" msprop:Generator_UserColumnName="CLAVE" type="xs:int" minOccurs="0" />
               <xs:element name="NACIONALIDAD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNACIONALIDAD" msprop:Generator_ColumnPropNameInRow="NACIONALIDAD" msprop:Generator_ColumnPropNameInTable="NACIONALIDADColumn" msprop:Generator_UserColumnName="NACIONALIDAD" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -79,10 +73,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="GENERO" msprop:Generator_ColumnVarNameInTable="columnGENERO" msprop:Generator_ColumnPropNameInRow="GENERO" msprop:Generator_ColumnPropNameInTable="GENEROColumn" msprop:Generator_UserColumnName="GENERO" minOccurs="0">
+              <xs:element name="GENERO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGENERO" msprop:Generator_ColumnPropNameInRow="GENERO" msprop:Generator_ColumnPropNameInTable="GENEROColumn" msprop:Generator_UserColumnName="GENERO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
+                    <xs:maxLength value="12" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -122,10 +116,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ESTADO_CIVIL" msprop:Generator_ColumnVarNameInTable="columnESTADO_CIVIL" msprop:Generator_ColumnPropNameInRow="ESTADO_CIVIL" msprop:Generator_ColumnPropNameInTable="ESTADO_CIVILColumn" msprop:Generator_UserColumnName="ESTADO_CIVIL" minOccurs="0">
+              <xs:element name="ESTADO_CIVIL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnESTADO_CIVIL" msprop:Generator_ColumnPropNameInRow="ESTADO_CIVIL" msprop:Generator_ColumnPropNameInTable="ESTADO_CIVILColumn" msprop:Generator_UserColumnName="ESTADO_CIVIL" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
+                    <xs:maxLength value="16" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
