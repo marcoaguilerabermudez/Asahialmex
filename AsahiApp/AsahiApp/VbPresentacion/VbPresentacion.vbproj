@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>163</ApplicationRevision>
+    <ApplicationRevision>165</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -71,7 +71,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>8E5D0D66CB3A8EFAB025036D0150723E6A706469</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>BE6B326FB5F7606B8467B2B7221723234AD1BB56</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>VbPresentacion_1_TemporaryKey.pfx</ManifestKeyFile>
@@ -261,6 +261,12 @@
     <Compile Include="Finanzas\Frm_PlanGastos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Finanzas\Frm_Subsidiaria.Designer.vb">
+      <DependentUpon>Frm_Subsidiaria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Frm_Subsidiaria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MuestradatosOEE.Designer.vb">
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>
     </Compile>
@@ -441,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpcionesReportes.resx">
       <DependentUpon>Frm_OpcionesReportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\Frm_Subsidiaria.resx">
+      <DependentUpon>Frm_Subsidiaria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MuestradatosOEE.resx">
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>
@@ -674,6 +683,10 @@
     <None Include="Resources\systemtask_sistema_3126.png" />
     <None Include="Resources\pay_perclick_icon-icons.com_66877.png" />
     <None Include="Resources\Acumulado1.png" />
+    <None Include="Resources\mexican-republic.png" />
+    <None Include="Resources\mexican-republic1.png" />
+    <None Include="Resources\mexico.png" />
+    <None Include="Resources\customer.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
