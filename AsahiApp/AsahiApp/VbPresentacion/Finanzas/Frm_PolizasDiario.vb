@@ -25,6 +25,7 @@ Public Class Frm_PolizasDiario
     Dim emp As New Empleado()
     Dim LComp As New LCompras()
     Dim subsid As String
+    Dim Ocomp As Integer, IdProvi As Integer
 #End Region
 #Region "Constructores"
     Sub New()
@@ -108,34 +109,72 @@ Public Class Frm_PolizasDiario
         End If
     End Sub
     Private Sub Dgv_Compras_DoubleClick(sender As Object, e As EventArgs) Handles Dgv_Compras.DoubleClick
-        Dim uuid As String, moneda As String, tc As Double, oc As Integer
-        Dim fila As Integer
+        Dim uuid As String, moneda As String, respuesta As String
+        Dim fila As Integer, tc As Double
+        Dim Comp As New Compras(), NComp As New NCompras()
+        Dim emp As String = ""
+        Select Case Me.subsid
+            Case "MEX" : emp = "AAM"
+            Case "SERV" : emp = "AAMS"
+        End Select
         fila = Dgv_Compras.CurrentRow.Index
+        Comp.IdOrdenCompra = Dgv_Compras.Rows(fila).Cells("oc").Value
+        Comp.MontoFact = Dgv_Compras.Rows(fila).Cells("montoFact").Value
+        Comp.IdProvision = Dgv_Compras.Rows(fila).Cells("provision").Value
+        Comp.Empresa = emp
+        Select Case Me.origen
+            Case 1 : Comp.Tipo = 3
+            Case 2 : Comp.Tipo = 48
+        End Select
+        Comp = NComp.ConsultaBitacoraCreados(cadConexCont, Comp)
         If Dgv_Compras.Rows(fila).DefaultCellStyle.BackColor <> Color.DarkRed Then
             If Me.origen = 1 Then
                 If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 0 Then
+                    If Comp.DocContableCrea = False Then
+                        If Comp.TxtCreado = True Then
+                            respuesta = MsgBox("El Txt ya fue creado. Desea continuar?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Txt Creado")
+                        Else
+                            respuesta = "6"
+                        End If
+                        If respuesta = "6" Then
+                            Me.pasoPol = ""
+                            uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
+                            moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
+                            tc = Dgv_Compras.Rows(fila).Cells("tazaCambio").Value
+                            Me.tCamb = Dgv_Compras.Rows(fila).Cells("tazaCambio").Value
+                            Me.Ocomp = Dgv_Compras.Rows(fila).Cells("oc").Value
+                            Me.IdProvi = Dgv_Compras.Rows(fila).Cells("provision").Value
+                            Me.fechaPago = Dgv_Compras.Rows(fila).Cells("fechaPagoFactura").Value
+                            RecuperarPolizas(moneda, uuid, tc, Me.Ocomp)
+                            If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
 
-                    Me.pasoPol = ""
-                    uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
-                    moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
-                    tc = Dgv_Compras.Rows(fila).Cells("tazaCambio").Value
-                    Me.tCamb = Dgv_Compras.Rows(fila).Cells("tazaCambio").Value
-                    oc = Dgv_Compras.Rows(fila).Cells("oc").Value
-                    Me.fechaPago = Dgv_Compras.Rows(fila).Cells("fechaPagoFactura").Value
-                    RecuperarPolizas(moneda, uuid, tc, oc)
-                    If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+                        End If
+                    Else
+                        MsgBox("EL DOCUMENTO CONTABLE ESTA CREADO", MsgBoxStyle.Information)
+                    End If
                 Else
                     MsgBox("ESTA PROVICION YA ESTA PREPARADA PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
                 End If
             ElseIf Me.origen = 2 Then
                 If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 0 Then
-
-                    Me.pasoPol = ""
-                    uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
-                    moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
-                    oc = Dgv_Compras.Rows(fila).Cells("oc").Value
-                    RecuperarEgreso(moneda, uuid, oc)
-                    If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+                    If Comp.DocContableCrea = False Then
+                        If Comp.TxtCreado = True Then
+                            respuesta = MsgBox("El Txt ya fue creado. Desea continuar?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Txt Creado")
+                        Else
+                            respuesta = "6"
+                        End If
+                        If respuesta = "6" Then
+                            Me.pasoPol = ""
+                            uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
+                            moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
+                            Me.Ocomp = Dgv_Compras.Rows(fila).Cells("oc").Value
+                            Me.IdProvi = Dgv_Compras.Rows(fila).Cells("provision").Value
+                            RecuperarEgreso(moneda, uuid, Me.Ocomp)
+                            If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+                        End If
+                    Else
+                        MsgBox("EL DOCUMENTO CONTABLE ESTA CREADO", MsgBoxStyle.Information)
+                    End If
                 Else
                     MsgBox("ESTE EGRESO YA ESTA PREPARADO PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
                 End If
@@ -170,8 +209,10 @@ Public Class Frm_PolizasDiario
         CrearTxt()
         If Me.origen = 1 Then
             EscribirArchivoDiarios()
+            InsertaBitacora(1)
         Else
-            EscribirArchivoEgresos()
+            EscribirArchivoProyecciones()
+            InsertaBitacora(2)
         End If
     End Sub
     Private Sub Txt_FiltroCompras_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroCompras.TextChanged
@@ -495,7 +536,7 @@ Public Class Frm_PolizasDiario
                 End If
                 With Dgv_Prepolizas.Rows(fila)
                     .Cells("pivot").Value = item.Pivote
-                    .Cells("ordenCompra").Value = item.IdOrdenCompra
+                    .Cells("ordenCompra").Value = oc
                     .Cells("idCompra").Value = item.IdCompra
                     .Cells("serieF").Value = item.Serie
                     .Cells("idFactura").Value = item.Factura
@@ -521,6 +562,7 @@ Public Class Frm_PolizasDiario
                     .Cells("cuentaP").Value = item.CuentaP
                     .Cells("impuesto").Value = Format(item.Impuesto, "$ #,###,##0.00")
                     .Cells("concepto").Value = frm.Concepto
+                    .Cells("folioProvisionPol").Value = Me.IdProvi
                 End With
                 fila += 1
             Next
@@ -566,6 +608,7 @@ Public Class Frm_PolizasDiario
                     .Cells("Banco").Value = Cmb_BancoMoneda.Text
                     .Cells("sc").Value = sNeg
                     .Cells("cuentaS").Value = item.Cuenta
+                    .Cells("folioProvisionProy").Value = Me.IdProvi
                 End With
                 fila += 1
             Next
@@ -645,6 +688,7 @@ Public Class Frm_PolizasDiario
                     If pivot = 1 And uuid <> Dgv_Prepolizas.Rows(fila).Cells("uuidFactura").Value Then
                         'Escribimos una linea en nuestro archivo TXT con el formato que este separado por coma (,)
                         e += 1
+                        .Cells("folioPoliza").Value = e
                         tx.Write("P  ")
                         tx.Write(CDate(.Cells("fechaFact").Value).ToString("yyyyMMdd") & " ") 'ToString("yyyyMMdd", .Cells("fechaFact").Value))
                         tx.Write("   3 ")
@@ -702,6 +746,7 @@ Public Class Frm_PolizasDiario
                         tx.Write(String.Format("{0,-30}", .Cells("uuidFactura").Value) & " ")
                         tx.WriteLine()
                     End If
+                    .Cells("folioPoliza").Value = e
                 End With
             Next
             MsgBox("Registro guardado correctamente", MsgBoxStyle.Information, "")
@@ -711,7 +756,7 @@ Public Class Frm_PolizasDiario
             tx.Close()
         End Try
     End Sub
-    Private Sub EscribirArchivoEgresos()
+    Private Sub EscribirArchivoProyecciones()
         Dim tx As New StreamWriter(Me.ruta & Me.archivo)
         Dim fila As Integer, pivot As Integer, idX As Integer = 0, e As Long, mon As Integer
         Dim folio As String = "", uuid As String = "", idFol As String = ""
@@ -729,6 +774,7 @@ Public Class Frm_PolizasDiario
                     If pivot = 1 And uuid <> Dgv_Egresos.Rows(fila).Cells("uuidE").Value Then
                         'Escribimos una linea en nuestro archivo TXT con el formato que este separado por coma (,)
                         e += ei
+                        .Cells("folioProyeccion").Value = e
                         tx.Write("EG ")
                         tx.Write("04040 ")
                         tx.Write(String.Format("{0,30}", 48) & " ")
@@ -789,7 +835,7 @@ Public Class Frm_PolizasDiario
                         tx.WriteLine()
                         uuid = Dgv_Egresos.Rows(fila).Cells("uuidE").Value
                         tot = .Cells("total2").Value
-                        ei += 1
+                        ei = 1
                     End If
                     If pivot = 2 And uuid = Dgv_Egresos.Rows(fila).Cells("uuidE").Value Then
                         tx.Write("DC ")
@@ -921,5 +967,53 @@ Public Class Frm_PolizasDiario
             Case Else : Return "MXN"
         End Select
     End Function
+    Private Sub InsertaBitacora(ByVal de As Integer)
+        Dim NCompras As New NCompras(), lstComp As New LCompras
+        Dim fila As Integer, totalFila As Integer
+        Dim emp As String = ""
+        Select Case Me.subsid
+            Case "MEX" : emp = "AAM"
+            Case "SERV" : emp = "AAMS"
+        End Select
+        If de = 1 Then
+            totalFila = Dgv_Prepolizas.Rows.Count - 1
+            For fila = 0 To totalFila
+                With Dgv_Prepolizas.Rows(fila)
+                    If .Cells("Pivot").Value = 4 Then
+                        Dim comp As New Compras()
+                        comp.IdProvision = .Cells("folioProvisionPol").Value
+                        comp.IdOrdenCompra = .Cells("ordenCompra").Value
+                        comp.MontoFact = .Cells("total").Value
+                        comp.MontoOC = .Cells("total").Value
+                        comp.FolioDocCont = .Cells("folioPoliza").Value
+                        comp.FechaFactura = .Cells("fechaFact").Value
+                        comp.Empresa = emp
+                        comp.Tipo = 3
+                        lstComp.Add(comp)
+                    End If
+                End With
+            Next
+            NCompras.AgregarBitacora(Me.cadConexCont, lstComp)
+        ElseIf de = 2 Then
+            totalFila = Dgv_Egresos.Rows.Count - 1
+            For fila = 0 To totalFila
+                With Dgv_Egresos.Rows(fila)
+                    If .Cells("Pivote").Value = 1 Then
+                        Dim comp As New Compras()
+                        comp.IdProvision = .Cells("folioProvisionProy").Value
+                        comp.IdOrdenCompra = .Cells("oCompra").Value
+                        comp.MontoFact = .Cells("total2").Value
+                        comp.MontoOC = .Cells("total2").Value
+                        comp.FolioDocCont = .Cells("folioProyeccion").Value
+                        comp.FechaFactura = .Cells("fechaFac").Value
+                        comp.Empresa = emp
+                        comp.Tipo = 48
+                        lstComp.Add(comp)
+                    End If
+                End With
+            Next
+            NCompras.AgregarBitacora(Me.cadConexCont, lstComp)
+        End If
+    End Sub
 #End Region
 End Class

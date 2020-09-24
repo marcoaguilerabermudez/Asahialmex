@@ -27,33 +27,6 @@ Partial Class Frm_PolizasDiario
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Dgv_Egresos = New System.Windows.Forms.DataGridView()
         Me.Dgv_Prepolizas = New System.Windows.Forms.DataGridView()
-        Me.pivot = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ordenCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serieF = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rfcProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.totalFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.compraTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaPagoFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.monedaVP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.empresaVP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rfcEmisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreEmisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.uuidFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.familia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.neto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuentaIva = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ivaT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuentaP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.impuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -122,6 +95,37 @@ Partial Class Frm_PolizasDiario
         Me.banco = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.sc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cuentaS = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioProyeccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioProvisionProy = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pivot = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ordenCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serieF = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rfcProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.compraTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaPagoFact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.monedaVP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empresaVP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rfcEmisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreEmisor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.uuidFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.familia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.neto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentaIva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ivaT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentaP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.impuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioProvisionPol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.Dgv_Egresos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -168,7 +172,7 @@ Partial Class Frm_PolizasDiario
         '
         Me.Dgv_Egresos.AllowUserToAddRows = False
         Me.Dgv_Egresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Egresos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivote, Me.fechaFac, Me.ejercicio, Me.periodo, Me.fechaPag, Me.ejercicioPag, Me.periodoPag, Me.idProv, Me.prov, Me.moneda2, Me.tipCambio, Me.total2, Me.oCompra, Me.uuidE, Me.conceptoCuenta, Me.cuentaClabe, Me.codBanco, Me.banco, Me.sc, Me.cuentaS})
+        Me.Dgv_Egresos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivote, Me.fechaFac, Me.ejercicio, Me.periodo, Me.fechaPag, Me.ejercicioPag, Me.periodoPag, Me.idProv, Me.prov, Me.moneda2, Me.tipCambio, Me.total2, Me.oCompra, Me.uuidE, Me.conceptoCuenta, Me.cuentaClabe, Me.codBanco, Me.banco, Me.sc, Me.cuentaS, Me.folioProyeccion, Me.folioProvisionProy})
         Me.Dgv_Egresos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Egresos.Location = New System.Drawing.Point(10, 0)
         Me.Dgv_Egresos.Name = "Dgv_Egresos"
@@ -181,7 +185,7 @@ Partial Class Frm_PolizasDiario
         '
         Me.Dgv_Prepolizas.AllowUserToAddRows = False
         Me.Dgv_Prepolizas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Prepolizas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivot, Me.ordenCompra, Me.idCompra, Me.serieF, Me.idFactura, Me.nombreProveedor, Me.rfcProveedor, Me.totalFactura, Me.compraTotal, Me.fechaFact, Me.fechaPagoFact, Me.monedaVP, Me.tc, Me.empresaVP, Me.rfcEmisor, Me.nombreEmisor, Me.uuidFactura, Me.total, Me.area, Me.familia, Me.cuenta, Me.neto, Me.cuentaIva, Me.ivaT, Me.cuentaP, Me.impuesto, Me.concepto})
+        Me.Dgv_Prepolizas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivot, Me.ordenCompra, Me.idCompra, Me.serieF, Me.idFactura, Me.nombreProveedor, Me.rfcProveedor, Me.totalFactura, Me.compraTotal, Me.fechaFact, Me.fechaPagoFact, Me.monedaVP, Me.tc, Me.empresaVP, Me.rfcEmisor, Me.nombreEmisor, Me.uuidFactura, Me.total, Me.area, Me.familia, Me.cuenta, Me.neto, Me.cuentaIva, Me.ivaT, Me.cuentaP, Me.impuesto, Me.concepto, Me.folioPoliza, Me.folioProvisionPol})
         Me.Dgv_Prepolizas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Prepolizas.Location = New System.Drawing.Point(10, 0)
         Me.Dgv_Prepolizas.Name = "Dgv_Prepolizas"
@@ -189,187 +193,6 @@ Partial Class Frm_PolizasDiario
         Me.Dgv_Prepolizas.Size = New System.Drawing.Size(1240, 257)
         Me.Dgv_Prepolizas.TabIndex = 6
         Me.Dgv_Prepolizas.Visible = False
-        '
-        'pivot
-        '
-        Me.pivot.HeaderText = "Pivote"
-        Me.pivot.Name = "pivot"
-        Me.pivot.ReadOnly = True
-        Me.pivot.Width = 45
-        '
-        'ordenCompra
-        '
-        Me.ordenCompra.HeaderText = "OC"
-        Me.ordenCompra.Name = "ordenCompra"
-        Me.ordenCompra.ReadOnly = True
-        Me.ordenCompra.Width = 40
-        '
-        'idCompra
-        '
-        Me.idCompra.HeaderText = "Compra"
-        Me.idCompra.Name = "idCompra"
-        Me.idCompra.ReadOnly = True
-        Me.idCompra.Width = 50
-        '
-        'serieF
-        '
-        Me.serieF.HeaderText = "Serie"
-        Me.serieF.Name = "serieF"
-        Me.serieF.ReadOnly = True
-        Me.serieF.Width = 40
-        '
-        'idFactura
-        '
-        Me.idFactura.HeaderText = "Factura"
-        Me.idFactura.Name = "idFactura"
-        Me.idFactura.ReadOnly = True
-        Me.idFactura.Width = 50
-        '
-        'nombreProveedor
-        '
-        Me.nombreProveedor.HeaderText = "Proveedor"
-        Me.nombreProveedor.Name = "nombreProveedor"
-        Me.nombreProveedor.ReadOnly = True
-        Me.nombreProveedor.Width = 170
-        '
-        'rfcProveedor
-        '
-        Me.rfcProveedor.HeaderText = "RFC"
-        Me.rfcProveedor.Name = "rfcProveedor"
-        Me.rfcProveedor.ReadOnly = True
-        '
-        'totalFactura
-        '
-        Me.totalFactura.HeaderText = "Total Factura"
-        Me.totalFactura.Name = "totalFactura"
-        Me.totalFactura.ReadOnly = True
-        Me.totalFactura.Width = 80
-        '
-        'compraTotal
-        '
-        Me.compraTotal.HeaderText = "Compra Total"
-        Me.compraTotal.Name = "compraTotal"
-        Me.compraTotal.ReadOnly = True
-        Me.compraTotal.Width = 80
-        '
-        'fechaFact
-        '
-        Me.fechaFact.HeaderText = "Fecha Factura"
-        Me.fechaFact.Name = "fechaFact"
-        Me.fechaFact.ReadOnly = True
-        Me.fechaFact.Width = 80
-        '
-        'fechaPagoFact
-        '
-        Me.fechaPagoFact.HeaderText = "Fecha Pago"
-        Me.fechaPagoFact.Name = "fechaPagoFact"
-        Me.fechaPagoFact.ReadOnly = True
-        '
-        'monedaVP
-        '
-        Me.monedaVP.HeaderText = "Moneda"
-        Me.monedaVP.Name = "monedaVP"
-        Me.monedaVP.ReadOnly = True
-        Me.monedaVP.Width = 55
-        '
-        'tc
-        '
-        Me.tc.HeaderText = "Tipo Cambio"
-        Me.tc.Name = "tc"
-        Me.tc.ReadOnly = True
-        '
-        'empresaVP
-        '
-        Me.empresaVP.HeaderText = "Empresa"
-        Me.empresaVP.Name = "empresaVP"
-        Me.empresaVP.ReadOnly = True
-        Me.empresaVP.Width = 55
-        '
-        'rfcEmisor
-        '
-        Me.rfcEmisor.HeaderText = "RFC Emisor"
-        Me.rfcEmisor.Name = "rfcEmisor"
-        Me.rfcEmisor.ReadOnly = True
-        '
-        'nombreEmisor
-        '
-        Me.nombreEmisor.HeaderText = "Emisor"
-        Me.nombreEmisor.Name = "nombreEmisor"
-        Me.nombreEmisor.ReadOnly = True
-        Me.nombreEmisor.Width = 170
-        '
-        'uuidFactura
-        '
-        Me.uuidFactura.HeaderText = "UUID"
-        Me.uuidFactura.Name = "uuidFactura"
-        Me.uuidFactura.ReadOnly = True
-        Me.uuidFactura.Width = 215
-        '
-        'total
-        '
-        Me.total.HeaderText = "Total"
-        Me.total.Name = "total"
-        Me.total.ReadOnly = True
-        '
-        'area
-        '
-        Me.area.HeaderText = "Área"
-        Me.area.Name = "area"
-        Me.area.ReadOnly = True
-        '
-        'familia
-        '
-        Me.familia.HeaderText = "Familia"
-        Me.familia.Name = "familia"
-        Me.familia.ReadOnly = True
-        '
-        'cuenta
-        '
-        Me.cuenta.HeaderText = "Cuenta"
-        Me.cuenta.Name = "cuenta"
-        Me.cuenta.ReadOnly = True
-        Me.cuenta.Width = 70
-        '
-        'neto
-        '
-        Me.neto.HeaderText = "Neto"
-        Me.neto.Name = "neto"
-        Me.neto.ReadOnly = True
-        Me.neto.Width = 80
-        '
-        'cuentaIva
-        '
-        Me.cuentaIva.HeaderText = "Cuenta IVA"
-        Me.cuentaIva.Name = "cuentaIva"
-        Me.cuentaIva.ReadOnly = True
-        Me.cuentaIva.Width = 70
-        '
-        'ivaT
-        '
-        Me.ivaT.HeaderText = "IVA"
-        Me.ivaT.Name = "ivaT"
-        Me.ivaT.ReadOnly = True
-        Me.ivaT.Width = 80
-        '
-        'cuentaP
-        '
-        Me.cuentaP.HeaderText = "Cuenta P"
-        Me.cuentaP.Name = "cuentaP"
-        Me.cuentaP.ReadOnly = True
-        Me.cuentaP.Width = 70
-        '
-        'impuesto
-        '
-        Me.impuesto.HeaderText = "Impuesto"
-        Me.impuesto.Name = "impuesto"
-        Me.impuesto.ReadOnly = True
-        Me.impuesto.Width = 80
-        '
-        'concepto
-        '
-        Me.concepto.HeaderText = "Concepto"
-        Me.concepto.Name = "concepto"
-        Me.concepto.ReadOnly = True
         '
         'Panel8
         '
@@ -616,7 +439,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.Btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Limpiar.Image = Global.Presentacion.My.Resources.Resources.pagina_blanca_de_origami
-        Me.Btn_Limpiar.Location = New System.Drawing.Point(471, -1)
+        Me.Btn_Limpiar.Location = New System.Drawing.Point(471, 0)
         Me.Btn_Limpiar.Name = "Btn_Limpiar"
         Me.Btn_Limpiar.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Limpiar.TabIndex = 19
@@ -791,7 +614,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Txt.Image = Global.Presentacion.My.Resources.Resources.txt
         Me.Btn_Txt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Txt.Location = New System.Drawing.Point(384, -2)
+        Me.Btn_Txt.Location = New System.Drawing.Point(384, 0)
         Me.Btn_Txt.Name = "Btn_Txt"
         Me.Btn_Txt.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Txt.TabIndex = 4
@@ -955,6 +778,215 @@ Partial Class Frm_PolizasDiario
         Me.cuentaS.ReadOnly = True
         Me.cuentaS.Width = 70
         '
+        'folioProyeccion
+        '
+        Me.folioProyeccion.HeaderText = "FolioProyeccion"
+        Me.folioProyeccion.Name = "folioProyeccion"
+        Me.folioProyeccion.ReadOnly = True
+        Me.folioProyeccion.Visible = False
+        '
+        'folioProvisionProy
+        '
+        Me.folioProvisionProy.HeaderText = "FolioProvisionProy"
+        Me.folioProvisionProy.Name = "folioProvisionProy"
+        Me.folioProvisionProy.ReadOnly = True
+        Me.folioProvisionProy.Visible = False
+        '
+        'pivot
+        '
+        Me.pivot.HeaderText = "Pivote"
+        Me.pivot.Name = "pivot"
+        Me.pivot.ReadOnly = True
+        Me.pivot.Width = 45
+        '
+        'ordenCompra
+        '
+        Me.ordenCompra.HeaderText = "OC"
+        Me.ordenCompra.Name = "ordenCompra"
+        Me.ordenCompra.ReadOnly = True
+        Me.ordenCompra.Width = 40
+        '
+        'idCompra
+        '
+        Me.idCompra.HeaderText = "Compra"
+        Me.idCompra.Name = "idCompra"
+        Me.idCompra.ReadOnly = True
+        Me.idCompra.Width = 50
+        '
+        'serieF
+        '
+        Me.serieF.HeaderText = "Serie"
+        Me.serieF.Name = "serieF"
+        Me.serieF.ReadOnly = True
+        Me.serieF.Width = 40
+        '
+        'idFactura
+        '
+        Me.idFactura.HeaderText = "Factura"
+        Me.idFactura.Name = "idFactura"
+        Me.idFactura.ReadOnly = True
+        Me.idFactura.Width = 50
+        '
+        'nombreProveedor
+        '
+        Me.nombreProveedor.HeaderText = "Proveedor"
+        Me.nombreProveedor.Name = "nombreProveedor"
+        Me.nombreProveedor.ReadOnly = True
+        Me.nombreProveedor.Width = 170
+        '
+        'rfcProveedor
+        '
+        Me.rfcProveedor.HeaderText = "RFC"
+        Me.rfcProveedor.Name = "rfcProveedor"
+        Me.rfcProveedor.ReadOnly = True
+        '
+        'totalFactura
+        '
+        Me.totalFactura.HeaderText = "Total Factura"
+        Me.totalFactura.Name = "totalFactura"
+        Me.totalFactura.ReadOnly = True
+        Me.totalFactura.Width = 80
+        '
+        'compraTotal
+        '
+        Me.compraTotal.HeaderText = "Compra Total"
+        Me.compraTotal.Name = "compraTotal"
+        Me.compraTotal.ReadOnly = True
+        Me.compraTotal.Width = 80
+        '
+        'fechaFact
+        '
+        Me.fechaFact.HeaderText = "Fecha Factura"
+        Me.fechaFact.Name = "fechaFact"
+        Me.fechaFact.ReadOnly = True
+        Me.fechaFact.Width = 80
+        '
+        'fechaPagoFact
+        '
+        Me.fechaPagoFact.HeaderText = "Fecha Pago"
+        Me.fechaPagoFact.Name = "fechaPagoFact"
+        Me.fechaPagoFact.ReadOnly = True
+        '
+        'monedaVP
+        '
+        Me.monedaVP.HeaderText = "Moneda"
+        Me.monedaVP.Name = "monedaVP"
+        Me.monedaVP.ReadOnly = True
+        Me.monedaVP.Width = 55
+        '
+        'tc
+        '
+        Me.tc.HeaderText = "Tipo Cambio"
+        Me.tc.Name = "tc"
+        Me.tc.ReadOnly = True
+        '
+        'empresaVP
+        '
+        Me.empresaVP.HeaderText = "Empresa"
+        Me.empresaVP.Name = "empresaVP"
+        Me.empresaVP.ReadOnly = True
+        Me.empresaVP.Width = 55
+        '
+        'rfcEmisor
+        '
+        Me.rfcEmisor.HeaderText = "RFC Emisor"
+        Me.rfcEmisor.Name = "rfcEmisor"
+        Me.rfcEmisor.ReadOnly = True
+        '
+        'nombreEmisor
+        '
+        Me.nombreEmisor.HeaderText = "Emisor"
+        Me.nombreEmisor.Name = "nombreEmisor"
+        Me.nombreEmisor.ReadOnly = True
+        Me.nombreEmisor.Width = 170
+        '
+        'uuidFactura
+        '
+        Me.uuidFactura.HeaderText = "UUID"
+        Me.uuidFactura.Name = "uuidFactura"
+        Me.uuidFactura.ReadOnly = True
+        Me.uuidFactura.Width = 215
+        '
+        'total
+        '
+        Me.total.HeaderText = "Total"
+        Me.total.Name = "total"
+        Me.total.ReadOnly = True
+        '
+        'area
+        '
+        Me.area.HeaderText = "Área"
+        Me.area.Name = "area"
+        Me.area.ReadOnly = True
+        '
+        'familia
+        '
+        Me.familia.HeaderText = "Familia"
+        Me.familia.Name = "familia"
+        Me.familia.ReadOnly = True
+        '
+        'cuenta
+        '
+        Me.cuenta.HeaderText = "Cuenta"
+        Me.cuenta.Name = "cuenta"
+        Me.cuenta.ReadOnly = True
+        Me.cuenta.Width = 70
+        '
+        'neto
+        '
+        Me.neto.HeaderText = "Neto"
+        Me.neto.Name = "neto"
+        Me.neto.ReadOnly = True
+        Me.neto.Width = 80
+        '
+        'cuentaIva
+        '
+        Me.cuentaIva.HeaderText = "Cuenta IVA"
+        Me.cuentaIva.Name = "cuentaIva"
+        Me.cuentaIva.ReadOnly = True
+        Me.cuentaIva.Width = 70
+        '
+        'ivaT
+        '
+        Me.ivaT.HeaderText = "IVA"
+        Me.ivaT.Name = "ivaT"
+        Me.ivaT.ReadOnly = True
+        Me.ivaT.Width = 80
+        '
+        'cuentaP
+        '
+        Me.cuentaP.HeaderText = "Cuenta P"
+        Me.cuentaP.Name = "cuentaP"
+        Me.cuentaP.ReadOnly = True
+        Me.cuentaP.Width = 70
+        '
+        'impuesto
+        '
+        Me.impuesto.HeaderText = "Impuesto"
+        Me.impuesto.Name = "impuesto"
+        Me.impuesto.ReadOnly = True
+        Me.impuesto.Width = 80
+        '
+        'concepto
+        '
+        Me.concepto.HeaderText = "Concepto"
+        Me.concepto.Name = "concepto"
+        Me.concepto.ReadOnly = True
+        '
+        'folioPoliza
+        '
+        Me.folioPoliza.HeaderText = "FolioPoliza"
+        Me.folioPoliza.Name = "folioPoliza"
+        Me.folioPoliza.ReadOnly = True
+        Me.folioPoliza.Visible = False
+        '
+        'folioProvisionPol
+        '
+        Me.folioProvisionPol.HeaderText = "FolioProvisionPol"
+        Me.folioProvisionPol.Name = "folioProvisionPol"
+        Me.folioProvisionPol.ReadOnly = True
+        Me.folioProvisionPol.Visible = False
+        '
         'Frm_PolizasDiario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -998,33 +1030,6 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Btn_Txt As Button
-    Friend WithEvents pivot As DataGridViewTextBoxColumn
-    Friend WithEvents ordenCompra As DataGridViewTextBoxColumn
-    Friend WithEvents idCompra As DataGridViewTextBoxColumn
-    Friend WithEvents serieF As DataGridViewTextBoxColumn
-    Friend WithEvents idFactura As DataGridViewTextBoxColumn
-    Friend WithEvents nombreProveedor As DataGridViewTextBoxColumn
-    Friend WithEvents rfcProveedor As DataGridViewTextBoxColumn
-    Friend WithEvents totalFactura As DataGridViewTextBoxColumn
-    Friend WithEvents compraTotal As DataGridViewTextBoxColumn
-    Friend WithEvents fechaFact As DataGridViewTextBoxColumn
-    Friend WithEvents fechaPagoFact As DataGridViewTextBoxColumn
-    Friend WithEvents monedaVP As DataGridViewTextBoxColumn
-    Friend WithEvents tc As DataGridViewTextBoxColumn
-    Friend WithEvents empresaVP As DataGridViewTextBoxColumn
-    Friend WithEvents rfcEmisor As DataGridViewTextBoxColumn
-    Friend WithEvents nombreEmisor As DataGridViewTextBoxColumn
-    Friend WithEvents uuidFactura As DataGridViewTextBoxColumn
-    Friend WithEvents total As DataGridViewTextBoxColumn
-    Friend WithEvents area As DataGridViewTextBoxColumn
-    Friend WithEvents familia As DataGridViewTextBoxColumn
-    Friend WithEvents cuenta As DataGridViewTextBoxColumn
-    Friend WithEvents neto As DataGridViewTextBoxColumn
-    Friend WithEvents cuentaIva As DataGridViewTextBoxColumn
-    Friend WithEvents ivaT As DataGridViewTextBoxColumn
-    Friend WithEvents cuentaP As DataGridViewTextBoxColumn
-    Friend WithEvents impuesto As DataGridViewTextBoxColumn
-    Friend WithEvents concepto As DataGridViewTextBoxColumn
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
@@ -1080,4 +1085,35 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents banco As DataGridViewTextBoxColumn
     Friend WithEvents sc As DataGridViewTextBoxColumn
     Friend WithEvents cuentaS As DataGridViewTextBoxColumn
+    Friend WithEvents folioProyeccion As DataGridViewTextBoxColumn
+    Friend WithEvents folioProvisionProy As DataGridViewTextBoxColumn
+    Friend WithEvents pivot As DataGridViewTextBoxColumn
+    Friend WithEvents ordenCompra As DataGridViewTextBoxColumn
+    Friend WithEvents idCompra As DataGridViewTextBoxColumn
+    Friend WithEvents serieF As DataGridViewTextBoxColumn
+    Friend WithEvents idFactura As DataGridViewTextBoxColumn
+    Friend WithEvents nombreProveedor As DataGridViewTextBoxColumn
+    Friend WithEvents rfcProveedor As DataGridViewTextBoxColumn
+    Friend WithEvents totalFactura As DataGridViewTextBoxColumn
+    Friend WithEvents compraTotal As DataGridViewTextBoxColumn
+    Friend WithEvents fechaFact As DataGridViewTextBoxColumn
+    Friend WithEvents fechaPagoFact As DataGridViewTextBoxColumn
+    Friend WithEvents monedaVP As DataGridViewTextBoxColumn
+    Friend WithEvents tc As DataGridViewTextBoxColumn
+    Friend WithEvents empresaVP As DataGridViewTextBoxColumn
+    Friend WithEvents rfcEmisor As DataGridViewTextBoxColumn
+    Friend WithEvents nombreEmisor As DataGridViewTextBoxColumn
+    Friend WithEvents uuidFactura As DataGridViewTextBoxColumn
+    Friend WithEvents total As DataGridViewTextBoxColumn
+    Friend WithEvents area As DataGridViewTextBoxColumn
+    Friend WithEvents familia As DataGridViewTextBoxColumn
+    Friend WithEvents cuenta As DataGridViewTextBoxColumn
+    Friend WithEvents neto As DataGridViewTextBoxColumn
+    Friend WithEvents cuentaIva As DataGridViewTextBoxColumn
+    Friend WithEvents ivaT As DataGridViewTextBoxColumn
+    Friend WithEvents cuentaP As DataGridViewTextBoxColumn
+    Friend WithEvents impuesto As DataGridViewTextBoxColumn
+    Friend WithEvents concepto As DataGridViewTextBoxColumn
+    Friend WithEvents folioPoliza As DataGridViewTextBoxColumn
+    Friend WithEvents folioProvisionPol As DataGridViewTextBoxColumn
 End Class
