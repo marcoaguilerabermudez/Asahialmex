@@ -76,6 +76,17 @@ Public Class NCompras
         Dim DComp As New DCompras()
         Return DComp.RecuperaSubCategorias(cadenaConex, lstCompras, cta, segneg)
     End Function
+    Public Sub AgregarBitacora(ByVal cadenaConex As String, ByVal lstComp As LCompras)
+        Dim DComp As New DCompras
+        Dim comp As New Compras
+
+        comp = CreaXMLBitacora(lstComp)
+        DComp.AgregarBitacora(cadenaConex, comp)
+    End Sub
+    Public Function ConsultaBitacoraCreados(ByVal cadenaConex As String, ByVal comp As Compras) As Compras
+        Dim DComp As New DCompras()
+        Return DComp.ConsultaBitacoraCreados(cadenaConex, comp)
+    End Function
     Private Function CreaXmlRuta(ByVal lstComp As LCompras) As Compras
         Dim comp As New Compras()
         Dim i As Byte
@@ -87,6 +98,22 @@ Public Class NCompras
         Next
 
         comp.Xml = "<Provisiones>" & comp.Xml & "</Provisiones>"
+        Return comp
+    End Function
+    Private Function CreaXMLBitacora(ByVal lstComp As LCompras) As Compras
+        Dim comp As New Compras()
+        Dim i As Byte
+        Dim str As String
+
+        For i = 0 To lstComp.Count - 1
+            With lstComp.Item(i)
+                str = "<Info><idProv>" & .IdProvision & "</idProv><oc>" & .IdOrdenCompra & "</oc><monto>" & .MontoFact & "</monto><montoTxt>" & .MontoFact &
+                    "</montoTxt><folioDocTxt>" & .FolioDocCont & "</folioDocTxt><docContMonto></docContMonto><fechaDocConta>" & .FechaFactura &
+                    "</fechaDocConta><fechaCreaDoc></fechaCreaDoc><subsid>" & .Empresa & "</subsid><tipoDoc>" & .Tipo & "</tipoDoc></Info>"
+            End With
+            comp.Xml = comp.Xml & str
+        Next
+        comp.Xml = "<DocCont>" & comp.Xml & "</DocCont>"
         Return comp
     End Function
 End Class

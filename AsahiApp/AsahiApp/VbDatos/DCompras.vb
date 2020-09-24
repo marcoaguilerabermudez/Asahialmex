@@ -640,4 +640,52 @@ Public Class DCompras
         End Try
         Return idBanco
     End Function
+    Public Sub AgregarBitacora(ByVal cadenaConex As String, ByVal comp As Compras)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.AgregarBitacora", oCon)
+            query.Parameters.AddWithValue("@xml", comp.Xml)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+
+            'MsgBox("Se insertó correctamente")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
+    Public Function ConsultaBitacoraCreados(ByVal cadenaConex As String, ByVal comp As Compras) As Compras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim com As New Compras
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.BitacoraCreados", oCon)
+            query.Parameters.AddWithValue("@oc", comp.IdOrdenCompra)
+            query.Parameters.AddWithValue("@monto", comp.MontoFact)
+            query.Parameters.AddWithValue("@provi", comp.IdProvision)
+            query.Parameters.AddWithValue("@subsi", comp.Empresa)
+            query.Parameters.AddWithValue("@tipo", comp.Tipo)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                com.TxtCreado = Convert.ToBoolean(dr("creaTxt").ToString)
+                com.DocContableCrea = Convert.ToBoolean(dr("creaDoc").ToString)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return com
+    End Function
 End Class
