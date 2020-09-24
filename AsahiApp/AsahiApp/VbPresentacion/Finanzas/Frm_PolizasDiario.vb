@@ -408,6 +408,7 @@ Public Class Frm_PolizasDiario
         Dim fi As Date = Dtp_Inicio.Value, ff As Date = Dtp_Fin.Value
         LimpiarFiltros()
         Me.LComp = NComp.RecuperarLstCompras(Me.cadenaConex, fi, ff, Me.subsid)
+        NComp.EmpatarDocumentosContablesBitacora(Me.cadConexCont, Me.subsid)
         If Me.origen = 1 Then
             RellenarDgvCompras(Me.LComp)
         End If
@@ -1005,7 +1006,7 @@ Public Class Frm_PolizasDiario
                         comp.MontoFact = .Cells("total2").Value
                         comp.MontoOC = .Cells("total2").Value
                         comp.FolioDocCont = .Cells("folioProyeccion").Value
-                        comp.FechaFactura = .Cells("fechaFac").Value
+                        comp.FechaFactura = .Cells("fechaPag").Value
                         comp.Empresa = emp
                         comp.Tipo = 48
                         lstComp.Add(comp)
