@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtm_termina = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtm_inicia = new System.Windows.Forms.DateTimePicker();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_nuevo = new System.Windows.Forms.Button();
-            this.dgv_faltas = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dgv_datos = new System.Windows.Forms.DataGridView();
             this.btn_reporte = new System.Windows.Forms.Button();
             this.btn_exportar = new System.Windows.Forms.Button();
+            this.lbl_var = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_faltas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.dtm_termina);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtm_inicia);
             this.panel1.Controls.Add(this.txt_clave);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_nuevo);
@@ -59,6 +60,44 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(832, 69);
             this.panel1.TabIndex = 145;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.SteelBlue;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(160, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "TERMINA";
+            // 
+            // dtm_termina
+            // 
+            this.dtm_termina.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_termina.Location = new System.Drawing.Point(159, 42);
+            this.dtm_termina.Name = "dtm_termina";
+            this.dtm_termina.Size = new System.Drawing.Size(133, 20);
+            this.dtm_termina.TabIndex = 32;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.SteelBlue;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(25, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "INICIA";
+            // 
+            // dtm_inicia
+            // 
+            this.dtm_inicia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtm_inicia.Location = new System.Drawing.Point(24, 42);
+            this.dtm_inicia.Name = "dtm_inicia";
+            this.dtm_inicia.Size = new System.Drawing.Size(129, 20);
+            this.dtm_inicia.TabIndex = 30;
             // 
             // txt_clave
             // 
@@ -92,71 +131,33 @@
             this.btn_nuevo.TabIndex = 27;
             this.btn_nuevo.UseVisualStyleBackColor = false;
             // 
-            // dgv_faltas
+            // dgv_datos
             // 
-            this.dgv_faltas.AllowUserToAddRows = false;
-            this.dgv_faltas.AllowUserToDeleteRows = false;
-            this.dgv_faltas.AllowUserToResizeColumns = false;
-            this.dgv_faltas.AllowUserToResizeRows = false;
-            this.dgv_faltas.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_faltas.CausesValidation = false;
-            this.dgv_faltas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_faltas.Location = new System.Drawing.Point(22, 95);
-            this.dgv_faltas.MultiSelect = false;
-            this.dgv_faltas.Name = "dgv_faltas";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_faltas.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv_faltas.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dgv_faltas.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgv_faltas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_faltas.ShowCellErrors = false;
-            this.dgv_faltas.Size = new System.Drawing.Size(780, 465);
-            this.dgv_faltas.TabIndex = 240;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(24, 42);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(129, 20);
-            this.dateTimePicker1.TabIndex = 30;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.SteelBlue;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(25, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "INICIA";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.SteelBlue;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(160, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "TERMINA";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(159, 42);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(133, 20);
-            this.dateTimePicker2.TabIndex = 32;
+            this.dgv_datos.AllowUserToAddRows = false;
+            this.dgv_datos.AllowUserToDeleteRows = false;
+            this.dgv_datos.AllowUserToResizeColumns = false;
+            this.dgv_datos.AllowUserToResizeRows = false;
+            this.dgv_datos.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_datos.CausesValidation = false;
+            this.dgv_datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_datos.Location = new System.Drawing.Point(22, 73);
+            this.dgv_datos.MultiSelect = false;
+            this.dgv_datos.Name = "dgv_datos";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_datos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_datos.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgv_datos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_datos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_datos.ShowCellErrors = false;
+            this.dgv_datos.Size = new System.Drawing.Size(780, 487);
+            this.dgv_datos.TabIndex = 240;
             // 
             // btn_reporte
             // 
@@ -189,6 +190,16 @@
             this.btn_exportar.Size = new System.Drawing.Size(53, 34);
             this.btn_exportar.TabIndex = 242;
             this.btn_exportar.UseVisualStyleBackColor = true;
+            this.btn_exportar.Click += new System.EventHandler(this.btn_exportar_Click);
+            // 
+            // lbl_var
+            // 
+            this.lbl_var.AutoSize = true;
+            this.lbl_var.Location = new System.Drawing.Point(27, 578);
+            this.lbl_var.Name = "lbl_var";
+            this.lbl_var.Size = new System.Drawing.Size(13, 13);
+            this.lbl_var.TabIndex = 243;
+            this.lbl_var.Text = "1";
             // 
             // Frm_Registros
             // 
@@ -196,19 +207,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(824, 610);
+            this.Controls.Add(this.lbl_var);
             this.Controls.Add(this.btn_exportar);
             this.Controls.Add(this.btn_reporte);
-            this.Controls.Add(this.dgv_faltas);
+            this.Controls.Add(this.dgv_datos);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Registros";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Huellas";
+            this.Load += new System.EventHandler(this.Frm_Registros_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_faltas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -219,11 +233,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtm_termina;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dgv_faltas;
+        private System.Windows.Forms.DateTimePicker dtm_inicia;
+        private System.Windows.Forms.DataGridView dgv_datos;
         private System.Windows.Forms.Button btn_reporte;
         private System.Windows.Forms.Button btn_exportar;
+        private System.Windows.Forms.Label lbl_var;
     }
 }
