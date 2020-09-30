@@ -83,6 +83,9 @@ Public Class Frm_Principal
         Incapacidades_RetardosToolStripMenuItem.Enabled = False
         ProvicionesToolStripMenuItem.Enabled = False
         HistorialToolStripMenuItem.Enabled = False
+        ChecadasToolStripMenuItem.Enabled = False
+
+
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
         For Each item In lstPer
