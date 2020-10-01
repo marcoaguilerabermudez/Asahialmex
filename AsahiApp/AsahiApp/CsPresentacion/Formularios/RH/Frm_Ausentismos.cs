@@ -1634,6 +1634,17 @@ namespace CsPresentacion
         {
             switch (cmb_f_tipo.Text)
             {
+                case "PATERNIDAD": txt_f_tipo.Text = "0"; break;
+                case "TRAMITE DE DOCUMENTO": txt_f_tipo.Text = "1"; break;
+                case "ASUNTO ESCOLAR": txt_f_tipo.Text = "2"; break;
+                case "SE QUEDO DORMIDO": txt_f_tipo.Text = "3"; break;
+                case "DEFUNCION FAMILIAR": txt_f_tipo.Text = "4"; break;
+                case "SALIO DE LA CIUDAD": txt_f_tipo.Text = "5"; break;
+                case "NO TENIA GANAS DE TRABAJAR": txt_f_tipo.Text = "6"; break;
+                case "TRAMITE DE DOCUMENTO CG": txt_f_tipo.Text = "7"; break;
+                case "IMSS TRAMITES": txt_f_tipo.Text = "8"; break;
+               // case "ASUNTO ESCOLAR": txt_f_tipo.Text = "9"; break;
+
                 case "ABANDONO DE TRABAJO": txt_f_tipo.Text = "A"; break;
                 case "PRESTACION POR MATRIMONIO": txt_f_tipo.Text = "B"; break;
                 case "CITA IMSS": txt_f_tipo.Text = "C"; break;
@@ -1658,7 +1669,13 @@ namespace CsPresentacion
         }
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 'A' || e.KeyChar == 'a' ||
+            if (e.KeyChar == '0' || e.KeyChar == '1' ||
+                e.KeyChar == '2' || e.KeyChar == '3' ||
+                e.KeyChar == '4' || e.KeyChar == '5' ||
+                e.KeyChar == '6' || e.KeyChar == '7' ||
+                e.KeyChar == '8' || e.KeyChar == '9' ||
+
+                e.KeyChar == 'A' || e.KeyChar == 'a' ||
                 e.KeyChar == 'B' || e.KeyChar == 'b' ||
                 e.KeyChar == 'C' || e.KeyChar == 'c' ||
                 e.KeyChar == 'D' || e.KeyChar == 'd' ||
@@ -1677,7 +1694,13 @@ namespace CsPresentacion
                 e.KeyChar == 'S' || e.KeyChar == 's' ||
                 e.KeyChar == 'T' || e.KeyChar == 't' ||
                 e.KeyChar == 'U' || e.KeyChar == 'u' ||
-                e.KeyChar == 'V' || e.KeyChar == 'v')
+                e.KeyChar == 'V' || e.KeyChar == 'v' ||
+
+                e.KeyChar == 'W' || e.KeyChar == 'w' ||
+                e.KeyChar == 'X' || e.KeyChar == 'x' ||
+                e.KeyChar == 'Y' || e.KeyChar == 'y' 
+                )
+
                 e.Handled = false;
             else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
             else
@@ -1693,6 +1716,17 @@ namespace CsPresentacion
             {
                 switch (txt_f_tipo.Text)
                 {
+                    case "0": cmb_f_tipo.Text = "PATERNIDAD"; break;
+                    case "1": cmb_f_tipo.Text = "TRAMITE DE DOCUMENTO"; break;
+                    case "2": cmb_f_tipo.Text = "ASUNTO ESCOLAR"; break;
+                    case "3": cmb_f_tipo.Text = "SE QUEDO DORMIDO"; break;
+                    case "4": cmb_f_tipo.Text = "DEFUNCION FAMILIAR"; break;
+                    case "5": cmb_f_tipo.Text = "SALIO DE LA CIUDAD"; break;
+                    case "6": cmb_f_tipo.Text = "NO TENIA GANAS DE TRABAJAR"; break;
+                    case "7": cmb_f_tipo.Text = "TRAMITE DE DOCUMENTO CG"; break;
+                    case "8": cmb_f_tipo.Text = "IMSS TRAMITES"; break;
+                    case "9": cmb_f_tipo.Text = "ASUNTO ESCOLAR"; break;
+
                     case "A": cmb_f_tipo.Text = "ABANDONO DE TRABAJO"; break;
                     case "B": cmb_f_tipo.Text = "PRESTACION POR MATRIMONIO"; break;
                     case "C": cmb_f_tipo.Text = "CITA IMSS"; break;
@@ -1713,6 +1747,10 @@ namespace CsPresentacion
                     case "T": cmb_f_tipo.Text = "TRANSPORTE"; break;
                     case "U": cmb_f_tipo.Text = "FALTA JUSTIFICADA"; break;
                     case "V": cmb_f_tipo.Text = "VIAJE"; break;
+
+                    case "W": cmb_f_tipo.Text = "ASUNTO PERSONAL"; break;
+                    case "X": cmb_f_tipo.Text = "IMSS ENFERMEDAD"; break;
+                    case "Y": cmb_f_tipo.Text = "DEFUNCION"; break;
                 }
             }
         }
