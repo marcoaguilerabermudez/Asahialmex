@@ -173,7 +173,7 @@
                               <Value>Logo</Value>
                               <Sizing>FitProportional</Sizing>
                               <Top>0.19876cm</Top>
-                              <Left>2.5334cm</Left>
+                              <Left>0.42678cm</Left>
                               <Height>0.89145cm</Height>
                               <Width>0.89145cm</Width>
                               <ZIndex>1</ZIndex>
@@ -838,6 +838,40 @@
                                 </Border>
                               </Style>
                             </Tablix>
+                            <Textbox Name="CLAVE">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!CLAVE.Value)</Value>
+                                      <Style>
+                                        <FontSize>15pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Right</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>CLAVE</rd:DefaultName>
+                              <Top>0.19876cm</Top>
+                              <Left>1.73966cm</Left>
+                              <Height>0.92673cm</Height>
+                              <Width>3.55423cm</Width>
+                              <ZIndex>13</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Style>
