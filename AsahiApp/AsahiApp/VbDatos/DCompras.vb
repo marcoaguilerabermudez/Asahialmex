@@ -688,4 +688,23 @@ Public Class DCompras
         End Try
         Return com
     End Function
+    Public Sub EmpatarDocumentosContablesBitacora(ByVal cadenaConex As String, ByVal subsid As String)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.AgregaPolizaProyeccionesBitacora", oCon)
+            query.Parameters.AddWithValue("@subsid", subsid)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+
+            'MsgBox("Se insertó correctamente", MsgBoxStyle.Information)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
 End Class

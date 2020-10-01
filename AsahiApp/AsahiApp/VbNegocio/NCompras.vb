@@ -87,6 +87,10 @@ Public Class NCompras
         Dim DComp As New DCompras()
         Return DComp.ConsultaBitacoraCreados(cadenaConex, comp)
     End Function
+    Public Sub EmpatarDocumentosContablesBitacora(ByVal cadenaConex As String, ByVal subsid As String)
+        Dim DCompras As New DCompras()
+        DCompras.EmpatarDocumentosContablesBitacora(cadenaConex, subsid)
+    End Sub
     Private Function CreaXmlRuta(ByVal lstComp As LCompras) As Compras
         Dim comp As New Compras()
         Dim i As Byte
