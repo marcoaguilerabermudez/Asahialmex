@@ -529,11 +529,11 @@ Public Class Frm_PolizasDiario
                 Dgv_Prepolizas.Rows.Add()
                 'Dgv_Prepolizas.Columns("acum").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 If item.Pivote = 1 Or item.Pivote = 2 Then
-                    sum = sum + item.Total
+                    sum = sum + Format(item.Total, "0.00")
                 ElseIf item.Pivote = 3 Then
-                    sumRet = sumRet + item.Total
+                    sumRet = sumRet + Format(item.Total, "0.00")
                 ElseIf item.Pivote = 4 Or item.Pivote = 5 Then
-                    sumCargo = sumCargo + item.Total
+                    sumCargo = sumCargo + Format(item.Total, "0.00")
                 End If
                 With Dgv_Prepolizas.Rows(fila)
                     .Cells("pivot").Value = item.Pivote
@@ -568,7 +568,7 @@ Public Class Frm_PolizasDiario
                 fila += 1
             Next
             Me.pasoPol = "Ok"
-            t = sum - sumCargo
+            t = Format(sum, "0.00") - Format(sumCargo, "0.00")
             If Dgv_Prepolizas.Rows(pfila).Cells("total").Value > 0 Then
                 Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format((Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t) + sumRet, "$ #,###,##0.00")
             Else
