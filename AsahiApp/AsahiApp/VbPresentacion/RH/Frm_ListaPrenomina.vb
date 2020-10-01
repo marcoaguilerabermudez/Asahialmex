@@ -1354,6 +1354,26 @@ Public Class Frm_ListaPrenomina
                             inc = "SUS"
                             cb = Color.Red
                             cf = Color.Orange
+                        Case "H"
+                            inc = "HO"
+                            cb = Color.GreenYellow
+                            cf = Color.Navy
+                        Case "D"
+                            inc = "VUL"
+                            cb = Color.GreenYellow
+                            cf = Color.Black
+                        Case "K"
+                            inc = "CC"
+                            cb = Color.GreenYellow
+                            cf = Color.OrangeRed
+                        Case "O"
+                            inc = "SO"
+                            cb = Color.GreenYellow
+                            cf = Color.OrangeRed
+                        Case "J"
+                            inc = "CF"
+                            cb = Color.GreenYellow
+                            cf = Color.Red
                         Case Else
                             inc = "error"
                     End Select
@@ -2016,6 +2036,21 @@ Public Class Frm_ListaPrenomina
             Case "D"
                 cb = Color.Black
                 cf = Color.White
+            Case "HO"
+                cb = Color.GreenYellow
+                cf = Color.Navy
+            Case "VUL"
+                cb = Color.GreenYellow
+                cf = Color.Black
+            Case "CC"
+                cb = Color.GreenYellow
+                cf = Color.OrangeRed
+            Case "SO"
+                cb = Color.GreenYellow
+                cf = Color.OrangeRed
+            Case "CF"
+                cb = Color.GreenYellow
+                cf = Color.Red
             Case ""
                 cb = Color.Gray
                 cf = Color.Black
@@ -2042,6 +2077,16 @@ Public Class Frm_ListaPrenomina
                     item.Incidencia1 = "U"
                 Case "SUS"
                     item.Incidencia1 = "N"
+                Case "HO"
+                    item.Incidencia1 = "H"
+                Case  "VUL"
+                    item.Incidencia1 = "D"
+                Case  "CC"
+                    item.Incidencia1 = "K"
+                Case  "SO"
+                    item.Incidencia1 = "O"
+                Case  "CF"
+                    item.Incidencia1 = "J"
             End Select
             Select Case item.Incidencia2
                 Case "PM"
@@ -2056,6 +2101,16 @@ Public Class Frm_ListaPrenomina
                     item.Incidencia1 = "U"
                 Case "SUS"
                     item.Incidencia1 = "N"
+                Case "HO"
+                    item.Incidencia1 = "H"
+                Case "VUL"
+                    item.Incidencia1 = "D"
+                Case "CC"
+                    item.Incidencia1 = "K"
+                Case "SO"
+                    item.Incidencia1 = "O"
+                Case "CF"
+                    item.Incidencia1 = "J"
             End Select
         Next
         Return lstEmp
@@ -2102,8 +2157,8 @@ Public Class Frm_ListaPrenomina
                     Dim valorS = (.Cells(cs).Value)
                     Dim valorEO = Format(DateAdd(DateInterval.Minute, 3, .Cells("E").Value), "HH:mm")
                     Dim valorSO = Format(Convert.ToDateTime(.Cells("S").Value), "HH:mm")
-                    Dim b As String = "b" & column
-                    Dim mr As String = .Cells(b).Value
+                    Dim b As String = "b" & column 'Aquí se guarda la justifiación de retardo o falta
+                    Dim mr As String = .Cells(b).Value 'Movimiento de justificación de retardo o falta
                     Dim valor As Integer
                     Dim fIng As Date = .Cells("ingreso").Value
                     .Cells("modificaBono").Value = "M"
@@ -2124,22 +2179,22 @@ Public Class Frm_ListaPrenomina
                         Else
                             If (valorE IsNot Nothing And valorS IsNot Nothing) And
                                 ((valorE = "D" Or valorE = "DT" Or valorE = "PM" Or valorE = "PCS" Or valorE Like "M-DT" Or valorE Like "J-DT" Or
-                                valorE = "VAC") Or
+                                valorE = "VAC" Or valorE = "HO") Or
                                 (valorS = "D" Or valorS = "DT" Or valorS = "PM" Or valorS = "PCS" Or valorS Like "M-DT" Or valorS Like "J-DT" Or
-                                valorS = "VAC")) Then
+                                valorS = "VAC" Or valorS = "HO")) Then
                                 bono += 1
                             ElseIf (valorE Is Nothing Or valorS Is Nothing) Or
                                 ((valorE = "F" Or valorE = "FJ" Or valorE = "PSS" Or valorE Like "M-SUS" Or valorE Like "PS" Or valorE = "RET" Or
-                                valorE = "RT") Or
+                                valorE = "RT" Or valorE = "VUL" Or valorE = "CC" Or valorE = "SO" Or valorE = "CF") Or
                                 (valorS = "F" Or valorS = "FJ" Or valorS = "PSS" Or valorS Like "M-SUS" Or valorS Like "PS" Or valorS = "RET" Or
-                                valorE = "RT")) Or ((fi >= fIng) Or (ff <= fIng)) Then
+                                valorE = "RT" Or valorS = "VUL" Or valorS = "CC" Or valorS = "SO" Or valorS = "CF")) Or ((fi >= fIng) Or (ff <= fIng)) Then
                                 If (mr = "1" Or mr = "2" Or mr = "3" Or mr = "4") Then
                                     bono += 1
                                 ElseIf ((((fIng >= fi) And (fIng <= ff)) And (f <= fIng)) And
                                 ((valorE <> "F" And valorE <> "FJ" And valorE <> "PSS" And valorE <> "M-SUS" And valorE <> "PS" And valorE <> "RET" And
-                                valorE <> "RT") And
+                                valorE <> "RT" Or valorE <> "VUL" Or valorE <> "CC" Or valorE <> "SO" Or valorE <> "CF") And
                                 (valorS <> "F" And valorS <> "FJ" And valorS <> "PSS" And valorS <> "M-SUS" And valorS <> "PS" And valorS <> "RET" And
-                                valorE <> "RT"))) Then
+                                valorE <> "RT" Or valorS <> "VUL" Or valorS <> "CC" Or valorS <> "SO" Or valorS = "CF"))) Then
                                     bono += 1
                                 End If
                             End If
@@ -2601,6 +2656,11 @@ Public Class Frm_ListaPrenomina
             Case "PERMISO CON GOCE" : Return "PCS"
             Case "INCAPACIDAD" : Return "INC"
             Case "BAJA" : Return "BAJA"
+            Case "HOME OFFICE" : Return "HO"
+            Case "EMPLEADO VULNERABLE" : Return "VUL"
+            Case "CONSULTA SOSPECHA" : Return "CC"
+            Case "SOSPECHOSO ENFERMEDAD" : Return "SO"
+            Case "CONFIRMADO" : Return "CF"
             Case Else : Return ""
         End Select
     End Function

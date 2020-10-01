@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Presentacion.exe" version="1.0.0.166" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Presentacion.exe" version="1.0.0.167" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Presentacion" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hGSWI6ykZ2ERm4i98oPkuLEg2/wtu61bxMRnAZZgvLE=</dsig:DigestValue>
+        <dsig:DigestValue>ZRtjIk8LZ5+3E7Uu2lT+o2yZa37fzj9fGakuX1++O+Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1134,14 +1134,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="3279272">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="3283880">
       <assemblyIdentity name="Presentacion" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6hQE8cLD3dcSg69yaSwYXJR5NXIimX+p9g/m2MIMax8=</dsig:DigestValue>
+        <dsig:DigestValue>zcXcXGls0Cm5Suw3E+fM1VL2c6jtBan2mWJAFbUX/Gs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

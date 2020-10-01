@@ -344,6 +344,11 @@ Public Class Frm_GlobalPrenomina
                 .Cells("suspension").Value = 0
                 .Cells("permisoSinSueldo").Value = 0
                 .Cells("permisoConSueldo").Value = 0
+                .Cells("homeOffice").Value = 0
+                .Cells("empleadoVulnerable").Value = 0
+                .Cells("consultaSospecha").Value = 0
+                .Cells("sospechaEnfermedad").Value = 0
+                .Cells("confirmado").Value = 0
                 .Cells("permisoMaternidad").Value = 0
                 .Cells("incapacidad").Value = 0
                 .Cells("vacaciones").Value = 0
@@ -840,6 +845,31 @@ Public Class Frm_GlobalPrenomina
                         inc = "SUS"
                         cb = Color.Red
                         cf = Color.Black
+                    Case "H"
+                        yy = "homeOffice"
+                        inc = "HO"
+                        cb = Color.GreenYellow
+                        cf = Color.Navy
+                    Case "D"
+                        yy = "empleadoVulnerable"
+                        inc = "VUL"
+                        cb = Color.GreenYellow
+                        cf = Color.Black
+                    Case "K"
+                        yy = "consultaSospecha"
+                        inc = "CC"
+                        cb = Color.GreenYellow
+                        cf = Color.OrangeRed
+                    Case "O"
+                        yy = "sospechaEnfermedad"
+                        inc = "SO"
+                        cb = Color.GreenYellow
+                        cf = Color.OrangeRed
+                    Case "J"
+                        yy = "confirmado"
+                        inc = "CF"
+                        cb = Color.GreenYellow
+                        cf = Color.Red
                     Case Else
                         yy = ""
                         inc = "FF"
@@ -1043,6 +1073,16 @@ Public Class Frm_GlobalPrenomina
                                     inc = "FJ"
                                 Case "N", "N "
                                     inc = "SUS"
+                                'Case "H", "H "
+                                '    inc = "HO"
+                                Case "D", "D "
+                                    inc = "PCV"
+                                Case "K", "K "
+                                    inc = "PCV"
+                                Case "O", "O "
+                                    inc = "PCV"
+                                Case "J", "J "
+                                    inc = "PCV"
                                 Case Else
                                     inc = "xx"
                             End Select
@@ -1105,7 +1145,7 @@ Public Class Frm_GlobalPrenomina
                             objInci.Año = Lbl_año.Text
                             inc = .Cells("inc").Value
 
-                            If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Or inc = "DT" Then
+                            If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Or inc = "DT" Or inc = "PCV" Then
                                 Select Case inc
                                     Case "HE"
                                         V = .Cells("hrsAprobadas").Value
@@ -1207,6 +1247,12 @@ Public Class Frm_GlobalPrenomina
                                     Case "DF", "DT"
                                         val = 1
                                         objInci.Incidencia = 19
+                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                        objInci.Valor = val
+                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                    Case "PCV"
+                                        val = 1
+                                        objInci.Incidencia = 22
                                         objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
                                         objInci.Valor = val
                                         objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
@@ -1552,7 +1598,7 @@ Public Class Frm_GlobalPrenomina
             MsgBox("Se presento un problema al leer el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
         End Try
     End Sub
-    Function GridAExcel(ByVal ElGrid As DataGridView) As Boolean
+    Function GridAExcel(ByVal dgv As DataGridView) As Boolean
 
         Dim exApp As New Microsoft.Office.Interop.Excel.Application
         Dim exLibro As Microsoft.Office.Interop.Excel.Workbook
@@ -1562,17 +1608,17 @@ Public Class Frm_GlobalPrenomina
             exLibro = exApp.Workbooks.Add
             exHoja = exLibro.Worksheets.Add()
 
-            Dim NCol As Integer = ElGrid.ColumnCount
-            Dim NRow As Integer = ElGrid.RowCount
+            Dim NCol As Integer = dgv.ColumnCount
+            Dim NRow As Integer = dgv.RowCount
 
             For i As Integer = 1 To NCol
-                If ElGrid.Columns(i - 1).Visible = True Then
-                    exHoja.Cells.Item(1, i) = ElGrid.Columns(i - 1).HeaderText.ToString
+                If dgv.Columns(i - 1).Visible = True Then
+                    exHoja.Cells.Item(1, i) = dgv.Columns(i - 1).HeaderText.ToString
                 End If
             Next
             For Fila As Integer = 0 To NRow - 1
                 For Col As Integer = 0 To NCol - 1
-                    exHoja.Cells.Item(Fila + 2, Col + 1) = ElGrid.Rows(Fila).Cells(Col).Value
+                    exHoja.Cells.Item(Fila + 2, Col + 1) = dgv.Rows(Fila).Cells(Col).Value
                 Next
             Next
 
