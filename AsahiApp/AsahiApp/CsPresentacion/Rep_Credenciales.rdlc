@@ -172,8 +172,8 @@
                               <Sizing>FitProportional</Sizing>
                               <Top>0.09604cm</Top>
                               <Left>0.42678cm</Left>
-                              <Height>1.1cm</Height>
-                              <Width>1.1cm</Width>
+                              <Height>0.81778cm</Height>
+                              <Width>0.99417cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <Border>
@@ -279,9 +279,9 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Asahi Aluminium México</Value>
+                                      <Value>Asahi Aluminium México Servicios</Value>
                                       <Style>
-                                        <FontSize>12.5pt</FontSize>
+                                        <FontSize>10.5pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -292,8 +292,8 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox34</rd:DefaultName>
-                              <Top>1.2666cm</Top>
-                              <Height>0.63011cm</Height>
+                              <Top>0.91382cm</Top>
+                              <Height>0.98289cm</Height>
                               <Width>5.59375cm</Width>
                               <ZIndex>4</ZIndex>
                               <Style>
@@ -313,7 +313,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Asahi Aluminium México</Value>
+                                      <Value>Asahi Aluminium México Servicios</Value>
                                       <Style>
                                         <FontSize>12.5pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
@@ -827,7 +827,7 @@
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>1.03256cm</Height>
+                                    <Height>0.85617cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -841,7 +841,7 @@
                                                     <Value>=Fields!CLAVE.Value</Value>
                                                     <Style>
                                                       <FontFamily>arial</FontFamily>
-                                                      <FontSize>17pt</FontSize>
+                                                      <FontSize>16pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                       <TextDecoration>None</TextDecoration>
                                                       <NumeralVariant>2</NumeralVariant>
@@ -886,9 +886,9 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet1</DataSetName>
-                              <Top>0.23404cm</Top>
+                              <Top>0.05765cm</Top>
                               <Left>2.32184cm</Left>
-                              <Height>1.03256cm</Height>
+                              <Height>0.85617cm</Height>
                               <Width>2.97205cm</Width>
                               <ZIndex>13</ZIndex>
                               <Style>
