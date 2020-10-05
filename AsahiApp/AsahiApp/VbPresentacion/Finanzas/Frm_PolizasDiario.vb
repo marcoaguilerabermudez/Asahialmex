@@ -431,7 +431,7 @@ Public Class Frm_PolizasDiario
         Dim lstComp As New LCompras()
         Dim cuenta As Integer
 
-        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, uuid)
+        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, uuid, Me.subsid)
         cuenta = lstComp.Count
         lstComp = NComp.VistaPoliza(Me.cadenaConex, moneda, uuid, tc, Me.subsid)
         RellenarDgvVistaPolizas(lstComp, oc)

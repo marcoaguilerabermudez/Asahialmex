@@ -508,7 +508,7 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
-    Public Function ConsultarImpuestosExtra(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
+    Public Function ConsultarImpuestosExtra(ByVal cadenaConex As String, ByVal uuid As String, Optional subsi As String = "") As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
         Dim LComp As New LCompras()
         Try

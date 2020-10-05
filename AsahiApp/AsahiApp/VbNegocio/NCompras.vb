@@ -52,9 +52,9 @@ Public Class NCompras
         Dim DComp As New DCompras()
         Return DComp.FacturasRecuperarUUID(cadenaConex, factura)
     End Function
-    Public Function ConsultarImpuestosExtra(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
+    Public Function ConsultarImpuestosExtra(ByVal cadenaConex As String, ByVal uuid As String, Optional subsi As String = "") As LCompras
         Dim DComp As New DCompras()
-        Return DComp.ConsultarImpuestosExtra(cadenaConex, uuid)
+        Return DComp.ConsultarImpuestosExtra(cadenaConex, uuid, subsi)
     End Function
     Public Function RecuperarEgreso(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String, Optional subsi As String = "") As LCompras
         Dim DComp As New DCompras()
