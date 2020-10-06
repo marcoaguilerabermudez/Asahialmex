@@ -279,7 +279,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Asahi Aluminium México </Value>
+                                      <Value>ASAHI ALUMINIUM MEXICO</Value>
                                       <Style>
                                         <FontSize>11.5pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
@@ -313,9 +313,8 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Asahi Aluminium México </Value>
+                                      <Value>ASAHI ALUMINIUM MEXICO </Value>
                                       <Style>
-                                        <FontSize>11.5pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -762,7 +761,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!CLAVE.Value</Value>
+                                                    <Value>="*"&amp; Fields!CLAVE.Value &amp;"*"</Value>
                                                     <Style>
                                                       <FontFamily>CCode39</FontFamily>
                                                       <FontSize>12pt</FontSize>
@@ -778,7 +777,7 @@
                                               <Border>
                                                 <Style>None</Style>
                                               </Border>
-                                              <VerticalAlign>Bottom</VerticalAlign>
+                                              <VerticalAlign>Middle</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>

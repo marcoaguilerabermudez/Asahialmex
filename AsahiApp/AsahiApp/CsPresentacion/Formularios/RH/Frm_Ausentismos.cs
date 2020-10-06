@@ -1643,7 +1643,7 @@ namespace CsPresentacion
                 case "NO TENIA GANAS DE TRABAJAR": txt_f_tipo.Text = "6"; break;
                 case "TRAMITE DE DOCUMENTO CG": txt_f_tipo.Text = "7"; break;
                 case "IMSS TRAMITES": txt_f_tipo.Text = "8"; break;
-               // case "ASUNTO ESCOLAR": txt_f_tipo.Text = "9"; break;
+              //  case "ASUNTO ESCOLAR": txt_f_tipo.Text = "9"; break;
 
                 case "ABANDONO DE TRABAJO": txt_f_tipo.Text = "A"; break;
                 case "PRESTACION POR MATRIMONIO": txt_f_tipo.Text = "B"; break;
@@ -1665,6 +1665,10 @@ namespace CsPresentacion
                 case "TRANSPORTE": txt_f_tipo.Text = "T"; break;
                 case "FALTA JUSTIFICADA": txt_f_tipo.Text = "U"; break;
                 case "VIAJE": txt_f_tipo.Text = "V"; break;
+                
+                case "ASUNTO PERSONAL": txt_f_tipo.Text = "W"; break;
+                case "IMSS ENFERMEDAD": txt_f_tipo.Text = "X"; break;
+                case "DEFUNCION": txt_f_tipo.Text = "Y"; break;
             }
         }
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
