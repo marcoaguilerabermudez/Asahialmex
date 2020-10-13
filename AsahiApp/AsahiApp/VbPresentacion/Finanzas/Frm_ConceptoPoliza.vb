@@ -44,6 +44,7 @@ Public Class Frm_ConceptoPoliza
             Txt_Proveedor.Text = proveedor(0) & " " & proveedor(1)
             RellenarTxtFamilia(lstComp)
             RellenarTxtSegNeg(lstComp)
+            Txt_Prov.Select()
         Catch ex As Exception
             MsgBox("NO HAY XML LIGADO", MsgBoxStyle.Critical)
             Me.Dispose()

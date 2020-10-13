@@ -26,6 +26,7 @@ Public Class Frm_PolizasDiario
     Dim LComp As New LCompras()
     Dim subsid As String
     Dim Ocomp As Integer, IdProvi As Integer
+    Dim cadOC As String
 #End Region
 #Region "Constructores"
     Sub New()
@@ -65,38 +66,56 @@ Public Class Frm_PolizasDiario
             If Me.subsid = "MEX" Then
                 If origen = 1 Then
                     Dgv_Prepolizas.Visible = True
+                    Dgv_Egresos.Visible = True
                     Me.Text = "Polizas de Diario " & Me.subsid
+                    Lbl_BancoMoneda.Visible = True
+                    Cmb_BancoMoneda.Visible = True
+                    RellenarCmbBancos()
                     Dtp_Inicio.Value = DateAdd(DateInterval.Day, -7, Date.Now())
                     Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
+                    Dgv_Compras.DefaultCellStyle.SelectionBackColor = Color.LimeGreen
                     Dgv_Prepolizas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
+                    Dgv_Egresos.AlternatingRowsDefaultCellStyle.BackColor = Color.Chartreuse
+                    Dgv_Egresos.DefaultCellStyle.SelectionBackColor = Color.LimeGreen
                 ElseIf origen = 2 Then
+                    Dgv_Prepolizas.Visible = True
                     Dgv_Egresos.Visible = True
                     Me.Text = "Proyecciones " & Me.subsid
                     Lbl_BancoMoneda.Visible = True
                     Cmb_BancoMoneda.Visible = True
                     RellenarCmbBancos()
                     Dtp_Inicio.Value = DateAdd(DateInterval.Day, -7, Date.Now())
-                    Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.Chartreuse
+                    Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
                     Dgv_Compras.DefaultCellStyle.SelectionBackColor = Color.LimeGreen
+                    Dgv_Prepolizas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
                     Dgv_Egresos.AlternatingRowsDefaultCellStyle.BackColor = Color.Chartreuse
                     Dgv_Egresos.DefaultCellStyle.SelectionBackColor = Color.LimeGreen
                 End If
             ElseIf Me.subsid = "SERV" Then
                 If origen = 1 Then
                     Dgv_Prepolizas.Visible = True
+                    Dgv_Egresos.Visible = True
                     Me.Text = "Polizas de Diario " & Me.subsid
+                    Lbl_BancoMoneda.Visible = True
+                    Cmb_BancoMoneda.Visible = True
+                    RellenarCmbBancos()
                     Dtp_Inicio.Value = DateAdd(DateInterval.Day, -7, Date.Now())
                     Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
+                    Dgv_Compras.DefaultCellStyle.SelectionBackColor = Color.LimeGreen
                     Dgv_Prepolizas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
+                    Dgv_Egresos.AlternatingRowsDefaultCellStyle.BackColor = Color.Chartreuse
+                    Dgv_Egresos.DefaultCellStyle.SelectionBackColor = Color.LimeGreen
                 ElseIf origen = 2 Then
+                    Dgv_Prepolizas.Visible = True
                     Dgv_Egresos.Visible = True
                     Me.Text = "Proyecciones " & Me.subsid
                     Lbl_BancoMoneda.Visible = True
                     Cmb_BancoMoneda.Visible = True
                     RellenarCmbBancos()
                     Dtp_Inicio.Value = DateAdd(DateInterval.Day, -7, Date.Now())
-                    Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.Chartreuse
+                    Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
                     Dgv_Compras.DefaultCellStyle.SelectionBackColor = Color.LimeGreen
+                    Dgv_Prepolizas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
                     Dgv_Egresos.AlternatingRowsDefaultCellStyle.BackColor = Color.Chartreuse
                     Dgv_Egresos.DefaultCellStyle.SelectionBackColor = Color.LimeGreen
                 End If
@@ -176,7 +195,7 @@ Public Class Frm_PolizasDiario
                         MsgBox("EL DOCUMENTO CONTABLE ESTA CREADO", MsgBoxStyle.Information)
                     End If
                 Else
-                    MsgBox("ESTE EGRESO YA ESTA PREPARADO PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
+                    MsgBox("ESTA PROYECCION YA ESTA PREPARADO PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
                 End If
             End If
         Else
@@ -206,14 +225,14 @@ Public Class Frm_PolizasDiario
         End If
     End Sub
     Private Sub Btn_Txt_Click(sender As Object, e As EventArgs) Handles Btn_Txt.Click
-        CrearTxt()
-        If Me.origen = 1 Then
-            EscribirArchivoDiarios()
-            InsertaBitacora(1)
-        Else
-            EscribirArchivoProyecciones()
-            InsertaBitacora(2)
-        End If
+        CrearTxt("PolizasDiario")
+        EscribirArchivoDiarios()
+        InsertaBitacora(1)
+
+        CrearTxt("Proyección")
+        EscribirArchivoProyecciones()
+        InsertaBitacora(2)
+
     End Sub
     Private Sub Txt_FiltroCompras_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroCompras.TextChanged
         Dim fila As Integer, totalFilas As Integer = Dgv_Compras.Rows.Count, folio As Integer
@@ -350,6 +369,7 @@ Public Class Frm_PolizasDiario
                         proveedor = .Cells("proveedor").Value
                         If Not (proveedor Like Txt_FiltroProveedor.Text) And proveedor <> "" Then
                             .Visible = True
+                            Dgv_Compras.Columns("selectItm").ReadOnly = False
                         End If
                         If Not (proveedor Like Txt_FiltroProveedor.Text) And proveedor <> "" Then
                             .Visible = False
@@ -360,6 +380,7 @@ Public Class Frm_PolizasDiario
                 For fila = 0 To totalFilas - 1
                     With Dgv_Compras.Rows(fila)
                         .Visible = True
+                        Dgv_Compras.Columns("selectItm").ReadOnly = True
                     End With
                 Next
             End If
@@ -379,25 +400,135 @@ Public Class Frm_PolizasDiario
         LimpiarFiltros()
     End Sub
     Private Sub Cmb_BancoMoneda_SelectedValueChanged(sender As Object, e As EventArgs) Handles Cmb_BancoMoneda.SelectedValueChanged
-        If Me.origen = 2 Then
-            If rec = True Then
-                Dim moneda As String = RegresoMonedaLetra(Cmb_BancoMoneda.Text)
-                Dim NComp As New NCompras()
-                Me.codigoBanco = Cmb_BancoMoneda.SelectedValue
-                Me.idBanco = NComp.RecuperarIdBanco(Me.cadenaConex, Me.codigoBanco, Me.subsid)
-                If Cmb_BancoMoneda.Text <> "" Then
-                    Txt_FiltroOC.Text = ""
-                    Txt_FiltroCompras.Text = ""
-                    Txt_FiltroProveedor.Text = ""
-                    RellenarDgvCompras(Me.LComp, moneda)
-                Else
-                    Txt_FiltroOC.Text = ""
-                    Txt_FiltroCompras.Text = ""
-                    Txt_FiltroProveedor.Text = ""
-                    Dgv_Compras.DataSource = Nothing
-                    Dgv_Compras.Rows.Clear()
-                End If
+        'If Me.origen = 2 Then
+        If rec = True Then
+            Dim moneda As String = RegresoMonedaLetra(Cmb_BancoMoneda.Text)
+            Dim NComp As New NCompras()
+            Me.codigoBanco = Cmb_BancoMoneda.SelectedValue
+            Me.idBanco = NComp.RecuperarIdBanco(Me.cadenaConex, Me.codigoBanco, Me.subsid)
+            If Cmb_BancoMoneda.Text <> "" Then
+                Txt_FiltroOC.Text = ""
+                Txt_FiltroCompras.Text = ""
+                Txt_FiltroProveedor.Text = ""
+                RellenarDgvCompras(Me.LComp, moneda)
+            Else
+                Txt_FiltroOC.Text = ""
+                Txt_FiltroCompras.Text = ""
+                Txt_FiltroProveedor.Text = ""
+                Dgv_Compras.DataSource = Nothing
+                Dgv_Compras.Rows.Clear()
             End If
+        End If
+        'End If
+    End Sub
+    Private Sub Btn_Enviar_Click(sender As Object, e As EventArgs) Handles Btn_Enviar.Click
+        Dim fila As Long, tFilas As Long = Dgv_Compras.Rows.Count
+        Dim uuid As String, prov As String, moneda As String, respuesta As String
+        Dim tc As Double
+        Dim selItm As Boolean
+        Dim Comp As New Compras(), NComp As New NCompras()
+        Dim emp As String = ""
+        Select Case Me.subsid
+            Case "MEX" : emp = "AAM"
+            Case "SERV" : emp = "AAMS"
+        End Select
+        If Not Txt_FiltroProveedor.Text = "" Then
+            'Proceso para polizas diario
+            For fila = 0 To tFilas - 1
+                With Dgv_Compras.Rows(fila)
+                    If .Visible = True Then
+                        prov = .Cells("proveedor").Value
+                        selItm = .Cells("selectItm").Value
+                        If selItm = True And prov = Txt_FiltroProveedor.Text Then
+                            Comp.IdOrdenCompra = .Cells("oc").Value
+                            Comp.MontoFact = .Cells("montoFact").Value
+                            Comp.IdProvision = .Cells("provision").Value
+                            Comp.Empresa = emp
+                            If .DefaultCellStyle.BackColor <> Color.DarkRed Then
+                                If .Cells("seleccionPol").Value = 0 Then
+                                    Comp.Tipo = 3
+                                    Comp = NComp.ConsultaBitacoraCreados(cadConexCont, Comp)
+                                    If Comp.DocContableCrea = False Then
+                                        If Comp.TxtCreado = True Then
+                                            respuesta = MsgBox("El Txt de la OC:" & .Cells("oc").Value & " ya fue creado. Desea continuar?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Txt Creado")
+                                        Else
+                                            respuesta = "6"
+                                        End If
+                                        If respuesta = "6" Then
+                                            Me.pasoPol = ""
+                                            uuid = .Cells("uuid").Value
+                                            moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
+                                            tc = .Cells("tazaCambio").Value
+                                            Me.tCamb = .Cells("tazaCambio").Value
+                                            Me.Ocomp = .Cells("oc").Value
+                                            Me.IdProvi = .Cells("provision").Value
+                                            Me.fechaPago = .Cells("fechaPagoFactura").Value
+                                            RecuperarPolizas(moneda, uuid, tc, Me.Ocomp)
+                                            If Me.pasoPol = "Ok" Then .Cells("seleccionPol").Value = 1
+                                        End If
+                                    Else
+                                        MsgBox("EL DOCUMENTO CONTABLE DE LA PROVISIÓN: " & .Cells("provision").Value & " ESTA CREADO", MsgBoxStyle.Information)
+                                    End If
+                                Else
+                                    MsgBox("ESTA PROVICION CON OC:" & .Cells("oc").Value & " YA ESTA PREPARADA PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
+                                End If
+                            Else
+                                MsgBox("NO COINCIDEN MONTOS DE COMPRA Y DE FACTURA DE LA OC:" & .Cells("oc").Value, MsgBoxStyle.Critical, "")
+                            End If
+                        End If
+                    End If
+                End With
+            Next
+            'Proceso para proyecciones
+            Dim inc = 0
+            uuid = ""
+            For fila = 0 To tFilas - 1
+                With Dgv_Compras.Rows(fila)
+                    If .Visible = True Then
+                        prov = .Cells("proveedor").Value
+                        selItm = .Cells("selectItm").Value
+                        If selItm = True And prov = Txt_FiltroProveedor.Text Then
+                            Comp.IdOrdenCompra = .Cells("oc").Value
+                            Comp.MontoFact = .Cells("montoFact").Value
+                            Comp.IdProvision = .Cells("provision").Value
+                            Comp.Empresa = emp
+                            If .DefaultCellStyle.BackColor <> Color.DarkRed Then
+                                If .Cells("seleccionPro").Value = 0 Then
+                                    Comp.Tipo = 48
+                                    Comp = NComp.ConsultaBitacoraCreados(cadConexCont, Comp)
+                                    If Comp.DocContableCrea = False Then
+                                        If Comp.TxtCreado = True Then
+                                            respuesta = MsgBox("El Txt de la OC:" & .Cells("oc").Value & "para proyeccion, ya fue creado. Desea continuar?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Txt Creado")
+                                        Else
+                                            respuesta = "6"
+                                        End If
+                                        If respuesta = "6" Then
+                                            If inc = 1 Then
+                                                uuid = uuid & "'','"
+                                                Me.cadOC = Me.Ocomp & "','"
+                                            End If
+                                            uuid = uuid & "'" & .Cells("uuid").Value & ""
+                                            Me.cadOC = Me.cadOC & "" & .Cells("oc").Value & ""
+                                            moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
+                                            .Cells("seleccionPro").Value = 1
+                                            inc = 1
+                                        End If
+                                    Else
+                                        MsgBox("EL DOCUMENTO CONTABLE DE LA PROVISIÓN: " & .Cells("provision").Value & " PARA LA PROYECCION, ESTA CREADO", MsgBoxStyle.Information)
+                                    End If
+                                Else
+                                    MsgBox("ESTA PROYECCION CON OC:" & .Cells("oc").Value & " YA ESTA PREPARADA PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
+                                End If
+                            Else
+                                MsgBox("NO COINCIDEN MONTOS DE COMPRA Y DE FACTURA DE LA OC:" & .Cells("oc").Value, MsgBoxStyle.Critical, "")
+                            End If
+                        End If
+                    End If
+                End With
+            Next
+            RecuperarEgreso(moneda, uuid, Me.Ocomp)
+        Else
+            MsgBox("DEBE FILTRAR POR PROVEEDOR", MsgBoxStyle.Exclamation, "")
         End If
     End Sub
 #End Region
@@ -409,9 +540,9 @@ Public Class Frm_PolizasDiario
         LimpiarFiltros()
         Me.LComp = NComp.RecuperarLstCompras(Me.cadenaConex, fi, ff, Me.subsid)
         NComp.EmpatarDocumentosContablesBitacora(Me.cadConexCont, Me.subsid)
-        If Me.origen = 1 Then
-            RellenarDgvCompras(Me.LComp)
-        End If
+        'If Me.origen = 1 Then
+        '    RellenarDgvCompras(Me.LComp)
+        'End If
     End Sub
     Private Sub RecuperarProveedores()
         Dim lstComp As New LCompras()
@@ -431,17 +562,17 @@ Public Class Frm_PolizasDiario
         Dim lstComp As New LCompras()
         Dim cuenta As Integer
 
-        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, uuid, Me.subsid)
+        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, "'" & uuid & "'", Me.subsid)
         cuenta = lstComp.Count
         lstComp = NComp.VistaPoliza(Me.cadenaConex, moneda, uuid, tc, Me.subsid)
         RellenarDgvVistaPolizas(lstComp, oc)
     End Sub
-    Private Sub RecuperarEgreso(ByVal moneda As String, ByVal uuid As String, ByVal oc As Integer)
+    Private Sub RecuperarEgreso(ByVal moneda As String, ByVal uuid As String, ByVal oc As String)
         Dim NComp As New NCompras()
         Dim lstComp As New LCompras()
         Dim cuenta As Integer
 
-        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, uuid)
+        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, "''" & uuid & "'''", Me.subsid)
         cuenta = lstComp.Count
         lstComp = NComp.RecuperarEgreso(Me.cadenaConex, moneda, uuid, Me.subsid)
         RellenaDGVPolizasEgresos(lstComp)
@@ -453,8 +584,40 @@ Public Class Frm_PolizasDiario
         Dgv_Compras.DataSource = Nothing
         Dgv_Compras.Rows.Clear()
 
-        If Me.origen = 1 Then
-            For Each item In lstComp
+        'If Me.origen = 1 Then
+        '    For Each item In lstComp
+        '        Dgv_Compras.Rows.Add()
+        '        'Dgv_Compras.Columns("acum").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        '        With Dgv_Compras.Rows(fila)
+        '            .Cells("provision").Value = item.IdProvision
+        '            .Cells("compra").Value = item.IdCompra
+        '            .Cells("oc").Value = item.IdOrdenCompra
+        '            .Cells("serie").Value = item.Serie
+        '            .Cells("factura").Value = item.Factura
+        '            .Cells("proveedor").Value = item.Proveedor
+        '            .Cells("montoOc").Value = Format(item.MontoOC, "$ #,###,##0.00")
+        '            .Cells("montoFact").Value = Format(item.MontoFact, "$ #,###,##0.00")
+        '            .Cells("montoPagar").Value = Format(item.MontoPagar, "$ #,###,##0.00")
+        '            .Cells("montoCompra").Value = Format(item.MontoCompra, "$ #,###,##0.00")
+        '            .Cells("fechaFactura").Value = Format(item.FechaFact, "dd/MM/yyyy")
+        '            .Cells("fechaPagoFactura").Value = Format(item.FechaPagoFact, "dd/MM/yyyy")
+        '            .Cells("fechaPagoReal").Value = Format(item.FechaPagoReal, "dd/MM/yyyy")
+        '            .Cells("moneda").Value = item.Moneda
+        '            .Cells("empresa").Value = item.Empresa
+        '            .Cells("fechaCompra").Value = Format(item.FechaCompra, "dd/MM/yyyy")
+        '            .Cells("uuid").Value = item.UUID
+        '            .Cells("tazaCambio").Value = Format(item.TazaCambio, "$ #,###,##0.0000")
+        '            Dim res = .Cells("montoCompra").Value - .Cells("montoFact").Value
+        '            If res >= 0.05 Or res <= -0.05 Then
+        '                .DefaultCellStyle.BackColor = Color.DarkRed
+        '                .DefaultCellStyle.ForeColor = Color.White
+        '            End If
+        '        End With
+        '        fila += 1
+        '    Next
+        'ElseIf Me.origen = 2 Then
+        For Each item In lstComp
+            If item.Moneda = moneda Then
                 Dgv_Compras.Rows.Add()
                 'Dgv_Compras.Columns("acum").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
                 With Dgv_Compras.Rows(fila)
@@ -483,41 +646,8 @@ Public Class Frm_PolizasDiario
                     End If
                 End With
                 fila += 1
-            Next
-        ElseIf Me.origen = 2 Then
-            For Each item In lstComp
-                If item.Moneda = moneda Then
-                    Dgv_Compras.Rows.Add()
-                    'Dgv_Compras.Columns("acum").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-                    With Dgv_Compras.Rows(fila)
-                        .Cells("provision").Value = item.IdProvision
-                        .Cells("compra").Value = item.IdCompra
-                        .Cells("oc").Value = item.IdOrdenCompra
-                        .Cells("serie").Value = item.Serie
-                        .Cells("factura").Value = item.Factura
-                        .Cells("proveedor").Value = item.Proveedor
-                        .Cells("montoOc").Value = Format(item.MontoOC, "$ #,###,##0.00")
-                        .Cells("montoFact").Value = Format(item.MontoFact, "$ #,###,##0.00")
-                        .Cells("montoPagar").Value = Format(item.MontoPagar, "$ #,###,##0.00")
-                        .Cells("montoCompra").Value = Format(item.MontoCompra, "$ #,###,##0.00")
-                        .Cells("fechaFactura").Value = Format(item.FechaFact, "dd/MM/yyyy")
-                        .Cells("fechaPagoFactura").Value = Format(item.FechaPagoFact, "dd/MM/yyyy")
-                        .Cells("fechaPagoReal").Value = Format(item.FechaPagoReal, "dd/MM/yyyy")
-                        .Cells("moneda").Value = item.Moneda
-                        .Cells("empresa").Value = item.Empresa
-                        .Cells("fechaCompra").Value = Format(item.FechaCompra, "dd/MM/yyyy")
-                        .Cells("uuid").Value = item.UUID
-                        .Cells("tazaCambio").Value = Format(item.TazaCambio, "$ #,###,##0.0000")
-                        Dim res = .Cells("montoCompra").Value - .Cells("montoFact").Value
-                        If res >= 0.05 Or res <= -0.05 Then
-                            .DefaultCellStyle.BackColor = Color.DarkRed
-                            .DefaultCellStyle.ForeColor = Color.White
-                        End If
-                    End With
-                    fila += 1
-                End If
-            Next
-        End If
+            End If
+        Next
     End Sub
     Private Sub RellenarDgvVistaPolizas(ByVal lstComp As LCompras, ByVal oc As Integer)
         Dim fila As Integer = Dgv_Prepolizas.Rows.Count(), pfila As Integer = fila
@@ -613,7 +743,7 @@ Public Class Frm_PolizasDiario
                 End With
                 fila += 1
             Next
-            Me.pasoPol = "Ok"
+            'Me.pasoPol = "Ok"
         End If
     End Sub
     Private Sub RellenarCmbBancos()
@@ -637,14 +767,14 @@ Public Class Frm_PolizasDiario
     End Sub
 #End Region
 #Region "Otros"
-    Private Sub CrearTxt()
+    Private Sub CrearTxt(ByVal nom As String)
         Me.userName = Environment.UserName
         Me.ruta = "C:\Users\" & Me.userName & "\Desktop\Polizas\"
-        If Me.origen = 1 Then
-            Me.archivo = "PolizasDiario" & Format(Date.Now(), "yyyyMMddHHmmss") & ".txt"
-        ElseIf Me.origen = 2 Then
-            Me.archivo = "Proyección" & Format(Date.Now(), "yyyyMMddHHmmss") & ".txt"
-        End If
+        'If Me.origen = 1 Then
+        Me.archivo = "" & nom & Format(Date.Now(), "yyyyMMddHHmmss") & ".txt"
+        'ElseIf Me.origen = 2 Then
+        '    Me.archivo = "Proyección" & Format(Date.Now(), "yyyyMMddHHmmss") & ".txt"
+        'End If
         Dim fs As FileStream
 
         'Validamos si la carpeta de ruta existe, si no existe la creamos

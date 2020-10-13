@@ -515,6 +515,7 @@ Public Class DCompras
             oCon.Open()
             Dim query As New SqlCommand("Asahi.dbo.ImpuestosExtraRecuperar", oCon)
             query.Parameters.AddWithValue("@uuid", uuid)
+            query.Parameters.AddWithValue("@subsid", subsi)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 120
             Dim dr As SqlDataReader

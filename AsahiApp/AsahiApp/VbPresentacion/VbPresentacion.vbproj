@@ -687,6 +687,7 @@
     <None Include="Resources\mexican-republic1.png" />
     <None Include="Resources\mexico.png" />
     <None Include="Resources\customer.png" />
+    <None Include="Resources\enviar.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
