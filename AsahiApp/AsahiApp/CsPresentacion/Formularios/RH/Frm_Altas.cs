@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace CsPresentacion
 {
@@ -115,6 +116,29 @@ namespace CsPresentacion
             txt_infonavit.Text = "";
             txt_curp.Focus();
         }
+
+        private Boolean valida_email(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
         private void selecciona_sueldo()
         {
             try
@@ -1097,6 +1121,17 @@ namespace CsPresentacion
             }
         }
 
-    
+        private void txt_email_Leave(object sender, EventArgs e)
+        {
+
+            if (valida_email(txt_email.Text))
+            {
+            }
+            else
+            {
+                MessageBox.Show("Correo Erroneo, Favor de verificar.", "Aviso!");
+            }
+
+        }
     }
 }

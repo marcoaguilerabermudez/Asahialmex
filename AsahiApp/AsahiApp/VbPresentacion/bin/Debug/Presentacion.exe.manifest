@@ -102,14 +102,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CsPresentacion.dll" size="5413888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CsPresentacion.dll" size="5415936">
       <assemblyIdentity name="CsPresentacion" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>T+kRnBrCea7m+lE8vl0/lkAPldTqraV+d9Sv3NsnDEE=</dsig:DigestValue>
+        <dsig:DigestValue>N7v0ZJUYtuhQkBMuWB6ACLX2Mz779cGNg5YqtNlP3so=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

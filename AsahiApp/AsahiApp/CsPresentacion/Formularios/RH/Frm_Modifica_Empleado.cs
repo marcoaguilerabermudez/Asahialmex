@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Net;
+using System.Net.Mail;
 
 namespace CsPresentacion
 {
@@ -39,6 +42,64 @@ namespace CsPresentacion
             txt_rfc.Mask = ">LLLL000000CCC";
 
         }
+        private Boolean valida_email(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void EnviarCorreo(string CC)
+        {
+
+            try
+            {
+                SmtpClient smtp = new SmtpClient();
+                MailMessage email = new MailMessage();
+                email.From = new MailAddress("nominas@asahialmex.com");
+                email.Body = "Mensaje de correo electrónico enviado automáticamente para comprobar la configuración de su cuenta. ";
+                email.Subject = "Nóminas Asahi:";
+
+                email.BodyEncoding = System.Text.Encoding.GetEncoding(1252);
+                email.IsBodyHtml = true;
+                email.Priority = MailPriority.Normal;
+
+                foreach (string address in CC.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    email.To.Add(new MailAddress(address.Trim()));
+                }
+
+                smtp.Credentials = new NetworkCredential("nominas@asahialmex.com", "AsahiMail*2018");
+                smtp.Host = "mail.asahialmex.com";
+                smtp.Port = 25;
+
+                smtp.Send(email);
+                email.Dispose();
+
+                MessageBox.Show("Se envió correo");
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudo encontrar la cuenta, favor de verificar.", "Aviso!");
+                MessageBox.Show(error.ToString());
+            }
+        }
+
+
         private void Modifica_turno()// Método para modificar turno de empleado
         {
             try
@@ -1866,6 +1927,22 @@ namespace CsPresentacion
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txt_email_Leave(object sender, EventArgs e)
+        {
+
+            EnviarCorreo(txt_email.Text);
+
+
+            //if (valida_email(txt_email.Text))
+            //{
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Correo Erroneo, Favor de verificar.", "Aviso!");
+            //}
         }
     }
 }

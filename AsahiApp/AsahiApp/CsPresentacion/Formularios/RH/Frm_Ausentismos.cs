@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
+
 using Clases;
 
 namespace CsPresentacion
@@ -72,6 +74,7 @@ namespace CsPresentacion
             cargar_descripcion_ausentismo(cmb_f_tipo);
             Cargar_clave_ausentismo(txt_f_tipo);
         }
+
         public void cargar_descripcion_ausentismo(ComboBox inte)//Cargar ausentismos
         {
             try
@@ -2394,6 +2397,17 @@ namespace CsPresentacion
                 dtm_fecha.Focus();
             }
         }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+             
+        }
+
+        private void tabPage1_Leave(object sender, EventArgs e)
+        {
+
+        }
+
         private void TabPage2_Click(object sender, EventArgs e)
         {
             btn_v_insertar.Focus();
