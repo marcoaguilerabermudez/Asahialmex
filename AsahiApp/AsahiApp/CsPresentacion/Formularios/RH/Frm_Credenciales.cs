@@ -339,5 +339,10 @@ namespace CsPresentacion
         {
 
         }
+
+        private void txt_vigencia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

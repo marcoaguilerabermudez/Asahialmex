@@ -110,6 +110,7 @@
             this.txt_vigencia.Size = new System.Drawing.Size(130, 20);
             this.txt_vigencia.TabIndex = 200;
             this.txt_vigencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_vigencia.TextChanged += new System.EventHandler(this.txt_vigencia_TextChanged);
             // 
             // txt_curp
             // 

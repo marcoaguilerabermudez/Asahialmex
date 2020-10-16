@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_fecha = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.btn_nuevo = new System.Windows.Forms.Button();
@@ -54,6 +53,8 @@
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.txt_rfc = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_credenciales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +63,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.lbl_fecha);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_clave);
             this.panel1.Controls.Add(this.btn_nuevo);
@@ -71,23 +71,12 @@
             this.panel1.Size = new System.Drawing.Size(583, 55);
             this.panel1.TabIndex = 168;
             // 
-            // lbl_fecha
-            // 
-            this.lbl_fecha.AutoSize = true;
-            this.lbl_fecha.BackColor = System.Drawing.Color.SteelBlue;
-            this.lbl_fecha.ForeColor = System.Drawing.Color.White;
-            this.lbl_fecha.Location = new System.Drawing.Point(470, 23);
-            this.lbl_fecha.Name = "lbl_fecha";
-            this.lbl_fecha.Size = new System.Drawing.Size(51, 13);
-            this.lbl_fecha.TabIndex = 148;
-            this.lbl_fecha.Text = "@Fecha:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.SteelBlue;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(23, 14);
+            this.label3.Location = new System.Drawing.Point(20, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 113;
@@ -100,6 +89,7 @@
             this.txt_clave.Name = "txt_clave";
             this.txt_clave.Size = new System.Drawing.Size(84, 20);
             this.txt_clave.TabIndex = 0;
+            this.txt_clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_clave_KeyPress);
             // 
             // btn_nuevo
             // 
@@ -113,6 +103,7 @@
             this.btn_nuevo.Size = new System.Drawing.Size(18, 23);
             this.btn_nuevo.TabIndex = 147;
             this.btn_nuevo.UseVisualStyleBackColor = false;
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // lbl_total
             // 
@@ -180,17 +171,17 @@
             this.dgv_credenciales.Location = new System.Drawing.Point(12, 389);
             this.dgv_credenciales.MultiSelect = false;
             this.dgv_credenciales.Name = "dgv_credenciales";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_credenciales.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_credenciales.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgv_credenciales.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dgv_credenciales.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            this.dgv_credenciales.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgv_credenciales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_credenciales.ShowCellErrors = false;
             this.dgv_credenciales.Size = new System.Drawing.Size(553, 154);
@@ -198,11 +189,12 @@
             // 
             // txt_imss
             // 
-            this.txt_imss.Location = new System.Drawing.Point(19, 178);
+            this.txt_imss.Location = new System.Drawing.Point(20, 178);
             this.txt_imss.MaxLength = 12;
             this.txt_imss.Name = "txt_imss";
-            this.txt_imss.Size = new System.Drawing.Size(167, 20);
+            this.txt_imss.Size = new System.Drawing.Size(166, 20);
             this.txt_imss.TabIndex = 215;
+            this.txt_imss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_imss_KeyPress);
             // 
             // label6
             // 
@@ -220,6 +212,7 @@
             this.txt_vigencia.Size = new System.Drawing.Size(130, 20);
             this.txt_vigencia.TabIndex = 230;
             this.txt_vigencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_vigencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_vigencia_KeyPress);
             // 
             // lbl_estado
             // 
@@ -232,11 +225,12 @@
             // 
             // txt_departamento
             // 
-            this.txt_departamento.Location = new System.Drawing.Point(19, 220);
+            this.txt_departamento.Location = new System.Drawing.Point(20, 220);
             this.txt_departamento.MaxLength = 30;
             this.txt_departamento.Name = "txt_departamento";
-            this.txt_departamento.Size = new System.Drawing.Size(167, 20);
+            this.txt_departamento.Size = new System.Drawing.Size(166, 20);
             this.txt_departamento.TabIndex = 216;
+            this.txt_departamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_departamento_KeyPress);
             // 
             // label15
             // 
@@ -249,11 +243,12 @@
             // 
             // txt_puesto
             // 
-            this.txt_puesto.Location = new System.Drawing.Point(19, 137);
+            this.txt_puesto.Location = new System.Drawing.Point(20, 137);
             this.txt_puesto.MaxLength = 70;
             this.txt_puesto.Name = "txt_puesto";
-            this.txt_puesto.Size = new System.Drawing.Size(326, 20);
+            this.txt_puesto.Size = new System.Drawing.Size(325, 20);
             this.txt_puesto.TabIndex = 214;
+            this.txt_puesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_puesto_KeyPress);
             // 
             // label13
             // 
@@ -280,6 +275,7 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(326, 20);
             this.txt_nombre.TabIndex = 213;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // lbl_nombre
             // 
@@ -292,11 +288,12 @@
             // 
             // txt_rfc
             // 
-            this.txt_rfc.Location = new System.Drawing.Point(19, 262);
+            this.txt_rfc.Location = new System.Drawing.Point(20, 262);
             this.txt_rfc.MaxLength = 30;
             this.txt_rfc.Name = "txt_rfc";
-            this.txt_rfc.Size = new System.Drawing.Size(167, 20);
+            this.txt_rfc.Size = new System.Drawing.Size(166, 20);
             this.txt_rfc.TabIndex = 218;
+            this.txt_rfc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_rfc_KeyPress);
             // 
             // label16
             // 
@@ -307,12 +304,51 @@
             this.label16.TabIndex = 227;
             this.label16.Text = "RFC:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 287);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 240;
+            this.label1.Text = "TIPO:";
+            // 
+            // cmb_tipo
+            // 
+            this.cmb_tipo.FormattingEnabled = true;
+            this.cmb_tipo.Items.AddRange(new object[] {
+            "GRÚAS VIAJERAS",
+            "POLIPASTOS",
+            "GRÚAS TERREST.",
+            "MONTACARGAS",
+            "AUTOMOVILISTA",
+            "TRAB. EN ALTURA",
+            "SOLD. AUTÓGENA",
+            "SOLD. ELÉCTRICA",
+            "SOLD. ESPECIAL",
+            "ABRASIVOS",
+            "TRAB. ALTA TENS.",
+            "TRAB. BAJA TENS.",
+            "ÁREAS CONFINAD.",
+            "SUST. PELIGROSAS",
+            "OPER. DE HORNOS",
+            "OPER. CALDERAS",
+            "OPER. DE ROBOTS",
+            "OPER. DE PRENSAS"});
+            this.cmb_tipo.Location = new System.Drawing.Point(20, 304);
+            this.cmb_tipo.Name = "cmb_tipo";
+            this.cmb_tipo.Size = new System.Drawing.Size(166, 21);
+            this.cmb_tipo.TabIndex = 241;
+            this.cmb_tipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_tipo_KeyPress);
+            // 
             // Credenciales_Montacargas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(576, 577);
+            this.Controls.Add(this.cmb_tipo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.btn_eliminar);
@@ -333,9 +369,12 @@
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.lbl_nombre);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "Credenciales_Montacargas";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Credenciales de Montacargas";
+            this.Load += new System.EventHandler(this.Credenciales_Montacargas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_credenciales)).EndInit();
@@ -348,7 +387,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_fecha;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txt_clave;
         private System.Windows.Forms.Button btn_nuevo;
@@ -371,5 +409,7 @@
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.TextBox txt_rfc;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmb_tipo;
     }
 }

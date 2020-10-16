@@ -102,14 +102,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CsPresentacion.dll" size="5415936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CsPresentacion.dll" size="5423616">
       <assemblyIdentity name="CsPresentacion" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>N7v0ZJUYtuhQkBMuWB6ACLX2Mz779cGNg5YqtNlP3so=</dsig:DigestValue>
+        <dsig:DigestValue>KyKHc55Dle/ZK266rnSSF0qrjb+Qyk/qkL7zkb4avLY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -786,14 +786,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="3283952">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="3284464">
       <assemblyIdentity name="Presentacion" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>N3KZojlzj9T6DmMI/EBwUpe90p0TfnkK2w8Q0VKkFtc=</dsig:DigestValue>
+        <dsig:DigestValue>8DroCuu8BsJXOcwAjTddiVp3cqmwtcNVlaZ80pfuFMo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
