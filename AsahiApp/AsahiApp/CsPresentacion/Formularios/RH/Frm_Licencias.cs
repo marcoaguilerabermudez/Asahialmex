@@ -8,18 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Clases;
 
 namespace CsPresentacion
 {
-    public partial class Credenciales_Montacargas : Form
+    public partial class Frm_Licencias : Form
     {
-        public Credenciales_Montacargas()
+        public Frm_Licencias(Empleado classEmpleado)
         {
             InitializeComponent();
+            claseEmp = classEmpleado;
         }
+        Empleado claseEmp;
 
         private void Credenciales_Montacargas_Load(object sender, EventArgs e)
         {
+            txt_vigencia.Visible = false;
+            lbl_estado.Visible = false;
         }
 
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
@@ -49,6 +54,8 @@ namespace CsPresentacion
                 cargar_informacion();
                 
                 pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
+                txt_vigencia.Visible = true;
+                lbl_estado.Visible = true;
                 txt_vigencia.Visible = true;
                 lbl_estado.Visible = true;
                 if (txt_vigencia.Text == "VIGENTE")
@@ -104,6 +111,10 @@ namespace CsPresentacion
             txt_clave.Enabled = true;
             pictureBox1.ImageLocation = "V:/Sistemas/SAAM/LogoFinal" + ".png";
             cmb_tipo.Text = "";
+            cmb_tipo.Enabled = true;
+            txt_vigencia.Visible = false;
+            lbl_estado.Visible = false;
+            btn_agregar.Enabled = false;
             txt_clave.Focus();
         }
 
@@ -140,6 +151,27 @@ namespace CsPresentacion
         {
             e.Handled = true;
         }
+        private void txt_vigencia_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_vigencia.Text == "VIGENTE")
+            {
+                txt_vigencia.BackColor = Color.Green;
+                cmb_tipo.Enabled = true;
+            }
+            else if (txt_vigencia.Text == "BAJA")
+            {
+                txt_vigencia.BackColor = Color.IndianRed;
+                cmb_tipo.Enabled = false;
+            }
+        }
 
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            if (cmb_tipo.Text == "")
+            {
+                MessageBox.Show("Es necesario seleccionar una opción.", "Aviso");
+                cmb_tipo.Focus();
+            }
+        }
     }
 }

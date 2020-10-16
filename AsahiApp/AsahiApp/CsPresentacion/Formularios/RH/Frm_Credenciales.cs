@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 
+
 namespace CsPresentacion
 {
     public partial class Frm_Rep_Cred : Form

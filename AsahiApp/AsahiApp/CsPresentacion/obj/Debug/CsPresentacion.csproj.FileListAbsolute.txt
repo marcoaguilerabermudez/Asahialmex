@@ -680,4 +680,4 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debu
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Rep_Historial_empleado.resources
 C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Registros.resources
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Registros.resources
-C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Credenciales_Montacargas.resources
+C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Frm_Licencias.resources

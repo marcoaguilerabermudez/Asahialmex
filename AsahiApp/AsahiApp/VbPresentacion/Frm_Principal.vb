@@ -431,7 +431,7 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub MontacargasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MontacargasToolStripMenuItem.Click
-        Dim Cre As New Credenciales_Montacargas
+        Dim Cre As New Frm_Licencias(Me.emp)
         Cre.Show()
     End Sub
 #End Region

@@ -55,6 +55,7 @@ Partial Class Frm_Principal
         Me.EmpleadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RojasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VisitantesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MontacargasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActivosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -98,7 +99,6 @@ Partial Class Frm_Principal
         Me.MensualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SemanalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MontacargasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -306,6 +306,12 @@ Partial Class Frm_Principal
         Me.VisitantesToolStripMenuItem.Name = "VisitantesToolStripMenuItem"
         Me.VisitantesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.VisitantesToolStripMenuItem.Text = "Visitantes"
+        '
+        'MontacargasToolStripMenuItem
+        '
+        Me.MontacargasToolStripMenuItem.Name = "MontacargasToolStripMenuItem"
+        Me.MontacargasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MontacargasToolStripMenuItem.Text = "Licencias"
         '
         'ListadosToolStripMenuItem
         '
@@ -577,12 +583,6 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem.Name = "GeneralToolStripMenuItem"
         Me.GeneralToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GeneralToolStripMenuItem.Text = "General"
-        '
-        'MontacargasToolStripMenuItem
-        '
-        Me.MontacargasToolStripMenuItem.Name = "MontacargasToolStripMenuItem"
-        Me.MontacargasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MontacargasToolStripMenuItem.Text = "Montacargas"
         '
         'Frm_Principal
         '

@@ -1,6 +1,6 @@
 ﻿namespace CsPresentacion
 {
-    partial class Credenciales_Montacargas
+    partial class Frm_Licencias
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.btn_nuevo = new System.Windows.Forms.Button();
-            this.lbl_total = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
@@ -105,19 +104,10 @@
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
-            // lbl_total
-            // 
-            this.lbl_total.AutoSize = true;
-            this.lbl_total.Location = new System.Drawing.Point(14, 554);
-            this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(42, 13);
-            this.lbl_total.TabIndex = 239;
-            this.lbl_total.Text = "@Total";
-            // 
             // lbl_id
             // 
             this.lbl_id.AutoSize = true;
-            this.lbl_id.Location = new System.Drawing.Point(85, 553);
+            this.lbl_id.Location = new System.Drawing.Point(17, 553);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(32, 13);
             this.lbl_id.TabIndex = 238;
@@ -146,6 +136,7 @@
             this.btn_agregar.TabIndex = 236;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // btn_reporte
             // 
@@ -171,17 +162,17 @@
             this.dgv_credenciales.Location = new System.Drawing.Point(12, 389);
             this.dgv_credenciales.MultiSelect = false;
             this.dgv_credenciales.Name = "dgv_credenciales";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_credenciales.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_credenciales.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_credenciales.RowHeadersVisible = false;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            this.dgv_credenciales.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.dgv_credenciales.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_credenciales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_credenciales.ShowCellErrors = false;
             this.dgv_credenciales.Size = new System.Drawing.Size(553, 154);
@@ -212,6 +203,7 @@
             this.txt_vigencia.Size = new System.Drawing.Size(130, 20);
             this.txt_vigencia.TabIndex = 230;
             this.txt_vigencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_vigencia.TextChanged += new System.EventHandler(this.txt_vigencia_TextChanged);
             this.txt_vigencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_vigencia_KeyPress);
             // 
             // lbl_estado
@@ -341,7 +333,7 @@
             this.cmb_tipo.TabIndex = 241;
             this.cmb_tipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_tipo_KeyPress);
             // 
-            // Credenciales_Montacargas
+            // Frm_Licencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -349,7 +341,6 @@
             this.ClientSize = new System.Drawing.Size(576, 577);
             this.Controls.Add(this.cmb_tipo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btn_agregar);
@@ -370,10 +361,10 @@
             this.Controls.Add(this.lbl_nombre);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "Credenciales_Montacargas";
+            this.Name = "Frm_Licencias";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Credenciales de Montacargas";
+            this.Text = "Licencias";
             this.Load += new System.EventHandler(this.Credenciales_Montacargas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -390,7 +381,6 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txt_clave;
         private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.Label lbl_id;
         public System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_agregar;

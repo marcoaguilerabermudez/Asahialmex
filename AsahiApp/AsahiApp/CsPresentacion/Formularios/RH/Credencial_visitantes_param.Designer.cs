@@ -36,23 +36,22 @@
             // btn_Reporte
             // 
             this.btn_Reporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Reporte.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btn_Reporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_Reporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_Reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Reporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Reporte.ForeColor = System.Drawing.Color.Black;
-            this.btn_Reporte.Location = new System.Drawing.Point(80, 51);
+            this.btn_Reporte.Location = new System.Drawing.Point(16, 46);
             this.btn_Reporte.Name = "btn_Reporte";
             this.btn_Reporte.Size = new System.Drawing.Size(81, 39);
             this.btn_Reporte.TabIndex = 244;
-            this.btn_Reporte.Text = "&Generar";
             this.btn_Reporte.UseVisualStyleBackColor = true;
             this.btn_Reporte.Click += new System.EventHandler(this.Btn_eliminar_depto_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 3);
+            this.label1.Location = new System.Drawing.Point(11, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 245;
@@ -60,7 +59,8 @@
             // 
             // txt_cantidad
             // 
-            this.txt_cantidad.Location = new System.Drawing.Point(16, 20);
+            this.txt_cantidad.AcceptsTab = true;
+            this.txt_cantidad.Location = new System.Drawing.Point(81, 4);
             this.txt_cantidad.MaxLength = 3;
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(64, 20);
@@ -73,7 +73,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(168, 97);
+            this.ClientSize = new System.Drawing.Size(158, 45);
             this.Controls.Add(this.txt_cantidad);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Reporte);
