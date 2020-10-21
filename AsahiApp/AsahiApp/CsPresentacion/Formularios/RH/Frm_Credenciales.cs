@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 
+
 namespace CsPresentacion
 {
     public partial class Frm_Rep_Cred : Form
@@ -336,6 +337,11 @@ namespace CsPresentacion
         }
 
         private void btn_todo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_vigencia_TextChanged(object sender, EventArgs e)
         {
 
         }

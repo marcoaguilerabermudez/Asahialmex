@@ -429,5 +429,10 @@ Public Class Frm_Principal
         Dim Che As New Frm_Registros
         Che.Show()
     End Sub
+
+    Private Sub MontacargasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MontacargasToolStripMenuItem.Click
+        Dim Cre As New Frm_Licencias(Me.emp)
+        Cre.Show()
+    End Sub
 #End Region
 End Class

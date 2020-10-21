@@ -19,6 +19,7 @@ namespace CsPresentacion
 
         private void Credencial_visitantes_param_Load(object sender, EventArgs e)
         {
+            txt_cantidad.Text = "";
             txt_cantidad.Focus();
         }
         private void Txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -39,6 +40,13 @@ namespace CsPresentacion
             {
                 e.Handled = true;
             }
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+
+                
+            }
+
         }
 
         private void Btn_eliminar_depto_Click(object sender, EventArgs e)
@@ -55,6 +63,7 @@ namespace CsPresentacion
                 Cre.Cant = Convert.ToInt32(txt_cantidad.Text);
                 Cre.Show();
             }
+            txt_cantidad.Text = "";
         }
     }
 }
