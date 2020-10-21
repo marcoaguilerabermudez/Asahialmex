@@ -169,9 +169,9 @@ Public Class DCompras
         Dim lstComp As New LCompras()
         Dim querytxt As String = ""
         If subsi = "MEX" Then
-            querytxt = "SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1	AND (Serie = 'A' or Serie = 'N') and Empresa = 'AAM' group by Proveedor"
+            querytxt = "SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1 AND (Serie = 'A' or Serie = 'N') and Empresa = 'AAM' group by Proveedor"
         ElseIf subsi = "SERV" Then
-            querytxt = "SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1	AND (Serie = 'A' or Serie = 'N') and Empresa = 'AAMS' group by Proveedor"
+            querytxt = "SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1 AND (Serie = 'A' or Serie = 'N') and Empresa = 'AAMS' group by Proveedor"
         End If
         Try
             oCon.Open()
