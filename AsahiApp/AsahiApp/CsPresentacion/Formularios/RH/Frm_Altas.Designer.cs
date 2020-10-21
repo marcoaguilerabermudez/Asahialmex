@@ -1473,6 +1473,7 @@
             this.txt_email.Size = new System.Drawing.Size(246, 20);
             this.txt_email.TabIndex = 31;
             this.txt_email.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_email_KeyPress);
+            this.txt_email.Leave += new System.EventHandler(this.txt_email_Leave);
             // 
             // label45
             // 
@@ -1544,7 +1545,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(595, 619);
+            this.ClientSize = new System.Drawing.Size(596, 619);
             this.Controls.Add(this.Panel_secundario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);

@@ -649,6 +649,7 @@
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "1. Faltas";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Leave += new System.EventHandler(this.tabPage1_Leave);
             // 
             // txt_f_tipo
             // 
