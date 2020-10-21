@@ -169,9 +169,9 @@ Public Class DCompras
         Dim lstComp As New LCompras()
         Dim querytxt As String = ""
         If subsi = "MEX" Then
-            querytxt = "SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1	AND (Serie = 'A' or Serie = 'N') and Empresa = 'AAM' group by Proveedor"
+            querytxt = "SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1 AND (Serie = 'A' or Serie = 'N') and Empresa = 'AAM' group by Proveedor"
         ElseIf subsi = "SERV" Then
-            querytxt = "SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1	AND (Serie = 'A' or Serie = 'N') and Empresa = 'AAMS' group by Proveedor"
+            querytxt = "SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1 AND (Serie = 'A' or Serie = 'N') and Empresa = 'AAMS' group by Proveedor"
         End If
         Try
             oCon.Open()
@@ -508,7 +508,7 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
-    Public Function ConsultarImpuestosExtra(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
+    Public Function ConsultarImpuestosExtra(ByVal cadenaConex As String, ByVal uuid As String, Optional subsi As String = "") As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
         Dim LComp As New LCompras()
         Try

@@ -431,7 +431,7 @@ Public Class Frm_PolizasDiario
         Dim lstComp As New LCompras()
         Dim cuenta As Integer
 
-        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, uuid)
+        lstComp = NComp.ConsultarImpuestosExtra(Me.cadConexCont, uuid, Me.subsid)
         cuenta = lstComp.Count
         lstComp = NComp.VistaPoliza(Me.cadenaConex, moneda, uuid, tc, Me.subsid)
         RellenarDgvVistaPolizas(lstComp, oc)
@@ -870,6 +870,7 @@ Public Class Frm_PolizasDiario
             Case "CONTABILIDAD" : Return "1"
             Case "CALIDAD" : Return "2"
             Case "ASEGURAMIENTO DE CALIDAD" : Return "2"
+            Case "ASEGURAMIENTO DE CALIDAD F1" : Return "2"
             Case "Control" : Return "3"
             Case "CONTROL DE PRODUCCIÓN" : Return "3"
             Case "VENTAS/ CONTROL DE PRODUCCIÓN" : Return "3"
@@ -911,6 +912,7 @@ Public Class Frm_PolizasDiario
             Case "GESTIÓN/ FACILITIES" : Return "10"
             Case "GESTION/FACILITIES" : Return "10"
             Case "GESTIÓN/FACILITIES" : Return "10"
+            Case "MANTENIMIENTO DE PLANTA" : Return "10"
             Case "FUNCICIÓN F2" : Return "11"
             Case "FUNDICION 2" : Return "11"
             Case "FUNDICIÓN 2" : Return "11"
