@@ -93,12 +93,65 @@ Public Class DCompras
             End While
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
             If (oCon.State = ConnectionState.Open) Then
                 oCon.Close()
             End If
             oCon.Dispose()
         End Try
         Return lstComp
+    End Function
+    Public Function PolizaVenta(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String, ByVal tc As Double) As LVentas
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstVent As New LVentas()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.Sp_PolizaVenta", oCon)
+            query.Parameters.AddWithValue("@variable", moneda)
+            query.Parameters.AddWithValue("@uuid", idFac)
+            query.Parameters.AddWithValue("@tc", tc)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim vent As New Ventas()
+                vent.Pivot = Convert.ToInt32(dr("pivote").ToString)
+                vent.Pedido = Convert.ToInt32(dr("Pedido").ToString)
+                vent.Venta = Convert.ToInt32(dr("Venta").ToString)
+                vent.Serie = (dr("Serie").ToString)
+                vent.Factura = (dr("Factura").ToString)
+                vent.Cliente = (dr("Cliente").ToString)
+                vent.RFC = (dr("RFC").ToString)
+                vent.TotalFactura = Convert.ToDouble(dr("TotalFactura").ToString)
+                vent.TotalVenta = Convert.ToDouble(dr("TotalPedido").ToString)
+                vent.FechaFact = Convert.ToDateTime(dr("FechaFactura").ToString)
+                vent.Moneda = (dr("Moneda").ToString)
+                vent.Empresa = (dr("Empresa").ToString)
+                vent.RfcEmisor = (dr("RFCEmisor").ToString)
+                vent.NombreEmisor = (dr("NombreEmisor").ToString)
+                vent.UUID = (dr("UUID").ToString)
+                vent.Total = Convert.ToDouble(dr("Total").ToString)
+                vent.Area = (dr("Area").ToString)
+                vent.Familia = (dr("Familia").ToString)
+                vent.Cuenta = (dr("Cuenta").ToString)
+                vent.Neto = Convert.ToDouble(dr("Neto").ToString)
+                vent.CuentaIva = (dr("Cuenta_iva").ToString)
+                vent.IvaT = Convert.ToDouble(dr("Iva_t").ToString)
+                vent.CuentaP = (dr("CuentaP").ToString)
+                'vent.Impuesto = Convert.ToDouble(dr("Impuesto").ToString)
+                lstVent.Add(vent)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstVent
     End Function
     Public Function RecuperarEgreso(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String, Optional subsi As String = "") As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
@@ -707,4 +760,44 @@ Public Class DCompras
             oCon.Dispose()
         End Try
     End Sub
+    Public Function RecuperarLstVentas(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LVentas
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstven As New LVentas()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.PrevioPolizasVentas", oCon)
+            query.Parameters.AddWithValue("@fechai", fi)
+            query.Parameters.AddWithValue("@fechaf", ff)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim vent As New Ventas()
+                vent.IdDoc = Convert.ToInt32(dr("Id").ToString)
+                vent.Venta = dr("Venta").ToString
+                vent.Pedido = Convert.ToInt32(dr("Pedido").ToString)
+                vent.Serie = dr("Serie").ToString
+                vent.Factura = dr("Factura").ToString
+                vent.Cliente = dr("Cliente").ToString
+                vent.RFC = dr("RFC").ToString
+                vent.MontoPed = Convert.ToDouble(dr("MontoOc").ToString)
+                vent.MontoFact = Convert.ToDouble(dr("MontoFact").ToString)
+                vent.FechaFact = Convert.ToDateTime(dr("FechaFactura").ToString)
+                vent.Moneda = dr("Moneda").ToString
+                vent.Empresa = dr("Empresa").ToString
+                vent.UUID = dr("idfact").ToString
+                vent.TipoCambio = dr("tc").ToString
+                lstven.Add(vent)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstven
+    End Function
 End Class

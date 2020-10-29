@@ -434,5 +434,10 @@ Public Class Frm_Principal
         Dim Cre As New Frm_Licencias(Me.emp)
         Cre.Show()
     End Sub
+
+    Private Sub PolizasDiarioVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PolizasDiarioVentasToolStripMenuItem.Click
+        Dim frmPol As New Frm_PolizasDiario(Me.emp, 3)
+        frmPol.Show()
+    End Sub
 #End Region
 End Class

@@ -99,6 +99,7 @@ Partial Class Frm_Principal
         Me.MensualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SemanalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PolizasDiarioVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -145,7 +146,7 @@ Partial Class Frm_Principal
         '
         Me.PreNominaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaListadoToolStripMenuItem, Me.PreNominaGlobalToolStripMenuItem, Me.BonoMensualToolStripMenuItem, Me.ChecadasToolStripMenuItem, Me.Kardex_comedorToolStripMenuItem, Me.PermisosYAutorizacionesToolStripMenuItem, Me.Incapacidades_RetardosToolStripMenuItem, Me.ReportesToolStripMenuItem1})
         Me.PreNominaToolStripMenuItem.Name = "PreNominaToolStripMenuItem"
-        Me.PreNominaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PreNominaToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.PreNominaToolStripMenuItem.Text = "Pre nomina"
         '
         'PreNominaListadoToolStripMenuItem
@@ -249,75 +250,75 @@ Partial Class Frm_Principal
         '
         Me.EmpleadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem, Me.BajaToolStripMenuItem, Me.InformaciónToolStripMenuItem, Me.HistorialToolStripMenuItem, Me.ContratoToolStripMenuItem, Me.CredencialesToolStripMenuItem, Me.ListadosToolStripMenuItem})
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
-        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.EmpleadosToolStripMenuItem.Text = "Empleados"
         '
         'AltaToolStripMenuItem
         '
         Me.AltaToolStripMenuItem.Name = "AltaToolStripMenuItem"
-        Me.AltaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AltaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.AltaToolStripMenuItem.Text = "Alta"
         '
         'BajaToolStripMenuItem
         '
         Me.BajaToolStripMenuItem.Name = "BajaToolStripMenuItem"
-        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.BajaToolStripMenuItem.Text = "Baja"
         '
         'InformaciónToolStripMenuItem
         '
         Me.InformaciónToolStripMenuItem.Name = "InformaciónToolStripMenuItem"
-        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InformaciónToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.InformaciónToolStripMenuItem.Text = "Modificaciones"
         '
         'HistorialToolStripMenuItem
         '
         Me.HistorialToolStripMenuItem.Name = "HistorialToolStripMenuItem"
-        Me.HistorialToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.HistorialToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.HistorialToolStripMenuItem.Text = "Historial"
         '
         'ContratoToolStripMenuItem
         '
         Me.ContratoToolStripMenuItem.Name = "ContratoToolStripMenuItem"
-        Me.ContratoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ContratoToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.ContratoToolStripMenuItem.Text = "Contrato"
         '
         'CredencialesToolStripMenuItem
         '
         Me.CredencialesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadosToolStripMenuItem1, Me.RojasToolStripMenuItem, Me.VisitantesToolStripMenuItem, Me.MontacargasToolStripMenuItem})
         Me.CredencialesToolStripMenuItem.Name = "CredencialesToolStripMenuItem"
-        Me.CredencialesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CredencialesToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.CredencialesToolStripMenuItem.Text = "Credenciales"
         '
         'EmpleadosToolStripMenuItem1
         '
         Me.EmpleadosToolStripMenuItem1.Name = "EmpleadosToolStripMenuItem1"
-        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(132, 22)
         Me.EmpleadosToolStripMenuItem1.Text = "Empleados"
         '
         'RojasToolStripMenuItem
         '
         Me.RojasToolStripMenuItem.Name = "RojasToolStripMenuItem"
-        Me.RojasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RojasToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
         Me.RojasToolStripMenuItem.Text = "Seguridad"
         '
         'VisitantesToolStripMenuItem
         '
         Me.VisitantesToolStripMenuItem.Name = "VisitantesToolStripMenuItem"
-        Me.VisitantesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VisitantesToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
         Me.VisitantesToolStripMenuItem.Text = "Visitantes"
         '
         'MontacargasToolStripMenuItem
         '
         Me.MontacargasToolStripMenuItem.Name = "MontacargasToolStripMenuItem"
-        Me.MontacargasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MontacargasToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
         Me.MontacargasToolStripMenuItem.Text = "Licencias"
         '
         'ListadosToolStripMenuItem
         '
         Me.ListadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActivosToolStripMenuItem, Me.BajaEmpleadosToolStripMenuItem, Me.BajaEmpleadosToolStripMenuItem1, Me.HistóricoToolStripMenuItem, Me.RotaciónToolStripMenuItem, Me.AusentismoGeneralToolStripMenuItem})
         Me.ListadosToolStripMenuItem.Name = "ListadosToolStripMenuItem"
-        Me.ListadosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListadosToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.ListadosToolStripMenuItem.Text = "Listados"
         '
         'ActivosToolStripMenuItem
@@ -359,14 +360,14 @@ Partial Class Frm_Principal
         'PlanHorasExtraToolStripMenuItem
         '
         Me.PlanHorasExtraToolStripMenuItem.Name = "PlanHorasExtraToolStripMenuItem"
-        Me.PlanHorasExtraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PlanHorasExtraToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.PlanHorasExtraToolStripMenuItem.Text = "Plan Tiempo Extra"
         '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MejoraContinuaToolStripMenuItem, Me.ReporteMejorasToolStripMenuItem, Me.PlanTiempoExtraToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.ReportesToolStripMenuItem.Text = "Reportes Generales"
         '
         'MejoraContinuaToolStripMenuItem
@@ -422,7 +423,7 @@ Partial Class Frm_Principal
         'PlanDePersonalToolStripMenuItem
         '
         Me.PlanDePersonalToolStripMenuItem.Name = "PlanDePersonalToolStripMenuItem"
-        Me.PlanDePersonalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PlanDePersonalToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.PlanDePersonalToolStripMenuItem.Text = "Plan de Personal"
         '
         'ControlDePruducciónToolStripMenuItem
@@ -530,7 +531,7 @@ Partial Class Frm_Principal
         '
         'PolizToolStripMenuItem
         '
-        Me.PolizToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PolizasDeDiarioToolStripMenuItem, Me.EgresosToolStripMenuItem})
+        Me.PolizToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PolizasDeDiarioToolStripMenuItem, Me.EgresosToolStripMenuItem, Me.PolizasDiarioVentasToolStripMenuItem})
         Me.PolizToolStripMenuItem.Name = "PolizToolStripMenuItem"
         Me.PolizToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.PolizToolStripMenuItem.Text = "Documentos Contables"
@@ -538,13 +539,13 @@ Partial Class Frm_Principal
         'PolizasDeDiarioToolStripMenuItem
         '
         Me.PolizasDeDiarioToolStripMenuItem.Name = "PolizasDeDiarioToolStripMenuItem"
-        Me.PolizasDeDiarioToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.PolizasDeDiarioToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.PolizasDeDiarioToolStripMenuItem.Text = "Polizas de Diario"
         '
         'EgresosToolStripMenuItem
         '
         Me.EgresosToolStripMenuItem.Name = "EgresosToolStripMenuItem"
-        Me.EgresosToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.EgresosToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.EgresosToolStripMenuItem.Text = "Proyecciones"
         '
         'AyudaToolStripMenuItem
@@ -583,6 +584,12 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem.Name = "GeneralToolStripMenuItem"
         Me.GeneralToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GeneralToolStripMenuItem.Text = "General"
+        '
+        'PolizasDiarioVentasToolStripMenuItem
+        '
+        Me.PolizasDiarioVentasToolStripMenuItem.Name = "PolizasDiarioVentasToolStripMenuItem"
+        Me.PolizasDiarioVentasToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.PolizasDiarioVentasToolStripMenuItem.Text = "Polizas Diario Ventas"
         '
         'Frm_Principal
         '
@@ -679,4 +686,5 @@ Partial Class Frm_Principal
     Friend WithEvents EgresosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Kardex_comedorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MontacargasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PolizasDiarioVentasToolStripMenuItem As ToolStripMenuItem
 End Class
