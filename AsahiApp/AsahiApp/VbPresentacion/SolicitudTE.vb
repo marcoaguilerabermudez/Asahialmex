@@ -155,26 +155,28 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
         Catch
         End Try
 
+        Try
 
-        If CDbl(di1.Text) > 0 Then
-            di1.ForeColor = Color.Green
-        ElseIf CDbl(di1.Text) < 0 Then
-            di1.ForeColor = Color.Red
-        ElseIf CDbl(di2.Text) > 0 Then
-            di2.ForeColor = Color.Green
-        ElseIf CDbl(di2.Text) < 0 Then
-            di2.ForeColor = Color.Red
-        ElseIf CDbl(di3.Text) > 0 Then
-            di3.ForeColor = Color.Green
-        ElseIf CDbl(di3.Text) < 0 Then
-            di3.ForeColor = Color.Red
-        ElseIf CDbl(di4.Text) > 0 Then
-            di4.ForeColor = Color.Green
-        ElseIf CDbl(di4.Text) < 0 Then
-            di4.ForeColor = Color.Red
+            If CDbl(di1.Text) > 0 Then
+                di1.ForeColor = Color.Green
+            ElseIf CDbl(di1.Text) < 0 Then
+                di1.ForeColor = Color.Red
+            ElseIf CDbl(di2.Text) > 0 Then
+                di2.ForeColor = Color.Green
+            ElseIf CDbl(di2.Text) < 0 Then
+                di2.ForeColor = Color.Red
+            ElseIf CDbl(di3.Text) > 0 Then
+                di3.ForeColor = Color.Green
+            ElseIf CDbl(di3.Text) < 0 Then
+                di3.ForeColor = Color.Red
+            ElseIf CDbl(di4.Text) > 0 Then
+                di4.ForeColor = Color.Green
+            ElseIf CDbl(di4.Text) < 0 Then
+                di4.ForeColor = Color.Red
 
-        End If
-
+            End If
+        Catch
+        End Try
 
     End Sub
 
