@@ -8,6 +8,18 @@
             idEmpleado_ = value
         End Set
     End Property
+
+    Private rh_permiso_ As Integer
+    Public Property rh_permiso() As Integer
+        Get
+            Return rh_permiso_
+        End Get
+        Set(ByVal value As Integer)
+            rh_permiso_ = value
+        End Set
+    End Property
+
+
     Private usuario_ As String
     Public Property Usuario() As String
         Get

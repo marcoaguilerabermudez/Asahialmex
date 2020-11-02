@@ -46,6 +46,20 @@ Public Class Frm_Principal
             DesbloquearPestañas(lstPer)
             ''ElseIf Me.emp.TipoUsuario = 1 Then
         End If
+
+        If Me.emp.rh_permiso = 1 OrElse Me.emp.rh_permiso = 2 Then
+            SolicitudToolStripMenuItem.Enabled = True
+            ValidaciónToolStripMenuItem.Enabled = True
+            SolicitudToolStripMenuItem1.Enabled = True
+        ElseIf Me.emp.rh_permiso = 3 Then
+            SolicitudToolStripMenuItem.Enabled = True
+            ValidaciónToolStripMenuItem.Enabled = True
+            SolicitudToolStripMenuItem1.Enabled = True
+            ValidaciónRHToolStripMenuItem.Enabled = True
+            ValidaciónRHToolStripMenuItem1.Enabled = True
+
+        End If
+
     End Sub
 #Region "Procesos"
     Private Sub BloquearPestañas()
@@ -125,6 +139,7 @@ Public Class Frm_Principal
         Next
     End Sub
 #End Region
+
 
 
 
@@ -412,6 +427,7 @@ Public Class Frm_Principal
         Dim frm As New Frm_Historico_personal()
         frm.Show()
     End Sub
+
     Private Sub EgresosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EgresosToolStripMenuItem.Click
         Dim frmPol As New Frm_PolizasDiario(Me.emp, 2)
         frmPol.Show()
@@ -420,6 +436,36 @@ Public Class Frm_Principal
     Private Sub Kardex_comedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Kardex_comedorToolStripMenuItem.Click
         Dim Co As New Frm_Comedor
         Co.Show()
+    End Sub
+
+    Private Sub IncidenciasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncidenciasToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub SolicitudToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SolicitudToolStripMenuItem.Click
+        Dim solte As New SolicitudTE(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        solte.Show()
+    End Sub
+
+    Private Sub ValidaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ValidaciónToolStripMenuItem.Click
+
+        Dim validath As New Validath(Me.emp.IdEmpleado, Me.emp.IdDepartamento)
+
+        validath.Show()
+    End Sub
+
+
+    Private Sub SolicitudToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SolicitudToolStripMenuItem1.Click
+        Dim FormatoSM As New FormatoSM(Me.emp.IdEmpleado, Me.emp.IdDepartamento)
+        FormatoSM.Show()
+    End Sub
+
+    Private Sub ValidaciónRHToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ValidaciónRHToolStripMenuItem.Click
+        ValidaIncidenciaMultiple.Show()
+    End Sub
+
+    Private Sub ValidaciónRHToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ValidaciónRHToolStripMenuItem1.Click
+        ValidaRh.Show()
     End Sub
 #End Region
 End Class
