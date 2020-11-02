@@ -39,6 +39,9 @@ Public Class Frm_Login
             emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
             If emp.Respuesta = 2 Then
                 Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
+
+
+
                 principal.Show()
 
                 Me.Close()

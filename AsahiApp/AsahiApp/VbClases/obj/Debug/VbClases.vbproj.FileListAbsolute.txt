@@ -14,23 +14,6 @@ C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsCl
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsDatos.pdb
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsNegocio.pdb
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CopyComplete
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.dll
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.pdb
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.xml
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsClases.dll
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsDatos.dll
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsNegocio.dll
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsClases.pdb
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsDatos.pdb
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsNegocio.pdb
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbprojAssemblyReference.cache
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.Resources.resources
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.GenerateResource.cache
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CoreCompileInputs.cache
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CopyComplete
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.dll
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.xml
-C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.pdb
 C:\Users\Admin\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CoreCompileInputs.cache
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.dll
 C:\Users\francisco.mojica.AAM102\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.pdb
@@ -66,3 +49,20 @@ C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj
 C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.dll
 C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.xml
 C:\Users\francisco.mojica\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.pdb
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.dll
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.pdb
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.xml
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsClases.dll
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsDatos.dll
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsNegocio.dll
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsClases.pdb
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsDatos.pdb
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsNegocio.pdb
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbprojAssemblyReference.cache
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.Resources.resources
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.GenerateResource.cache
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CoreCompileInputs.cache
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CopyComplete
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.dll
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.xml
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.pdb

@@ -138,9 +138,13 @@ Public Class MuestraOeeCompleto
             Me.dtgv2.Columns("OEE").DefaultCellStyle.Format = "0.00%"
 
             CapturaOEE.Cn.Close()
+
         Catch ex As Exception
+
             MessageBox.Show(ex.Message)
+
             CapturaOEE.Cn.Close()
+
         End Try
 
     End Sub
@@ -173,9 +177,12 @@ Public Class MuestraOeeCompleto
             Me.dtgv.Columns("OEE").DefaultCellStyle.Format = "0.00%"
 
             CapturaOEE.Cn.Close()
+
         Catch ex As Exception
+
             MessageBox.Show(ex.Message)
             CapturaOEE.Cn.Close()
+
         End Try
 
     End Sub
@@ -211,9 +218,12 @@ Public Class MuestraOeeCompleto
             Me.dtgv2.Columns("OEE").DefaultCellStyle.Format = "0.00%"
 
             CapturaOEE.Cn.Close()
+
         Catch ex As Exception
+
             MessageBox.Show(ex.Message)
             CapturaOEE.Cn.Close()
+
         End Try
 
     End Sub
