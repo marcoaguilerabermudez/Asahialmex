@@ -566,4 +566,58 @@
             cuentaClabe_ = value
         End Set
     End Property
+    Private nombreBanco_ As String
+    Public Property NombreBanco() As String
+        Get
+            Return nombreBanco_
+        End Get
+        Set(ByVal value As String)
+            nombreBanco_ = value
+        End Set
+    End Property
+    Private codigoBanco_ As String
+    Public Property CodigoBanco() As String
+        Get
+            Return codigoBanco_
+        End Get
+        Set(ByVal value As String)
+            codigoBanco_ = value
+        End Set
+    End Property
+    Private folioDocCont_ As Long
+    Public Property FolioDocCont() As Long
+        Get
+            Return folioDocCont_
+        End Get
+        Set(ByVal value As Long)
+            folioDocCont_ = value
+        End Set
+    End Property
+    Private txtCreado_ As Boolean
+    Public Property TxtCreado() As Boolean
+        Get
+            Return txtCreado_
+        End Get
+        Set(ByVal value As Boolean)
+            txtCreado_ = value
+        End Set
+    End Property
+    Private docContableCrea_ As Boolean
+    Public Property DocContableCrea() As Boolean
+        Get
+            Return docContableCrea_
+        End Get
+        Set(ByVal value As Boolean)
+            docContableCrea_ = value
+        End Set
+    End Property
+    Private tipo_ As Integer
+    Public Property Tipo() As Integer
+        Get
+            Return tipo_
+        End Get
+        Set(ByVal value As Integer)
+            tipo_ = value
+        End Set
+    End Property
 End Class

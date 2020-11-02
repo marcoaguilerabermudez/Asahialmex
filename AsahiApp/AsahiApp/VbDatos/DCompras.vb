@@ -3,7 +3,7 @@ Imports System.Collections.Concurrent
 Imports System.Data.SqlClient
 
 Public Class DCompras
-    Public Function RecuperarLstCompras(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
+    Public Function RecuperarLstCompras(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date, Optional ByVal subsi As String = "") As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstComp As New LCompras()
         Try
@@ -11,6 +11,7 @@ Public Class DCompras
             Dim query As New SqlCommand("Sp_previopoliza", oCon)
             query.Parameters.AddWithValue("@fechai", fi)
             query.Parameters.AddWithValue("@fechaf", ff)
+            query.Parameters.AddWithValue("@subsi", subsi)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 120
             Dim dr As SqlDataReader
@@ -47,7 +48,7 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
-    Public Function VistaPoliza(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String, ByVal tc As Double) As LCompras
+    Public Function VistaPoliza(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String, ByVal tc As Double, Optional subsi As String = "") As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstComp As New LCompras()
         Try
@@ -56,6 +57,7 @@ Public Class DCompras
             query.Parameters.AddWithValue("@variable", moneda)
             query.Parameters.AddWithValue("@uuid", idFac)
             query.Parameters.AddWithValue("@tc", tc)
+            query.Parameters.AddWithValue("@subsid", subsi)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 120
 
@@ -91,6 +93,7 @@ Public Class DCompras
             End While
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
             If (oCon.State = ConnectionState.Open) Then
                 oCon.Close()
             End If
@@ -98,7 +101,59 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
-    Public Function RecuperarEgreso(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String) As LCompras
+    Public Function PolizaVenta(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String, ByVal tc As Double) As LVentas
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstVent As New LVentas()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.Sp_PolizaVenta", oCon)
+            query.Parameters.AddWithValue("@variable", moneda)
+            query.Parameters.AddWithValue("@uuid", idFac)
+            query.Parameters.AddWithValue("@tc", tc)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim vent As New Ventas()
+                vent.Pivot = Convert.ToInt32(dr("pivote").ToString)
+                vent.Pedido = Convert.ToInt32(dr("Pedido").ToString)
+                vent.Venta = Convert.ToInt32(dr("Venta").ToString)
+                vent.Serie = (dr("Serie").ToString)
+                vent.Factura = (dr("Factura").ToString)
+                vent.Cliente = (dr("Cliente").ToString)
+                vent.RFC = (dr("RFC").ToString)
+                vent.TotalFactura = Convert.ToDouble(dr("TotalFactura").ToString)
+                vent.TotalVenta = Convert.ToDouble(dr("TotalPedido").ToString)
+                vent.FechaFact = Convert.ToDateTime(dr("FechaFactura").ToString)
+                vent.Moneda = (dr("Moneda").ToString)
+                vent.Empresa = (dr("Empresa").ToString)
+                vent.RfcEmisor = (dr("RFCEmisor").ToString)
+                vent.NombreEmisor = (dr("NombreEmisor").ToString)
+                vent.UUID = (dr("UUID").ToString)
+                vent.Total = Convert.ToDouble(dr("Total").ToString)
+                vent.Area = (dr("Area").ToString)
+                vent.Familia = (dr("Familia").ToString)
+                vent.Cuenta = (dr("Cuenta").ToString)
+                vent.Neto = Convert.ToDouble(dr("Neto").ToString)
+                vent.CuentaIva = (dr("Cuenta_iva").ToString)
+                vent.IvaT = Convert.ToDouble(dr("Iva_t").ToString)
+                vent.CuentaP = (dr("CuentaP").ToString)
+                'vent.Impuesto = Convert.ToDouble(dr("Impuesto").ToString)
+                lstVent.Add(vent)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstVent
+    End Function
+    Public Function RecuperarEgreso(ByVal cadenaConex As String, ByVal moneda As String, ByVal idFac As String, Optional subsi As String = "") As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstComp As New LCompras()
         Try
@@ -106,6 +161,7 @@ Public Class DCompras
             Dim query As New SqlCommand("PolizaEgresoRecuperar", oCon)
             query.Parameters.AddWithValue("@uuid", idFac)
             query.Parameters.AddWithValue("@moneda", moneda)
+            query.Parameters.AddWithValue("@subsid", subsi)
             query.CommandType = CommandType.StoredProcedure
             query.CommandTimeout = 120
 
@@ -130,6 +186,7 @@ Public Class DCompras
                 comp.CuentaClabe = dr("Clabe").ToString
                 comp.Area = dr("SC").ToString
                 comp.Cuenta = (dr("Cuenta").ToString)
+                comp.UUID = dr("Uuid").ToString
                 lstComp.Add(comp)
 #Region "Comentados"
                 'comp.IdCompra = Convert.ToInt32(dr("Compra").ToString)
@@ -160,12 +217,18 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
-    Public Function RecuperarListaProveedores(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
+    Public Function RecuperarListaProveedores(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date, Optional subsi As String = "") As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstComp As New LCompras()
+        Dim querytxt As String = ""
+        If subsi = "MEX" Then
+            querytxt = "SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1 AND (Serie = 'A' or Serie = 'N') and Empresa = 'AAM' group by Proveedor"
+        ElseIf subsi = "SERV" Then
+            querytxt = "SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1 AND (Serie = 'A' or Serie = 'N') and Empresa = 'AAMS' group by Proveedor"
+        End If
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT Proveedor FROM AsahiSystem.dbo.Provisiones_compras where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1	AND Serie = 'A' and Empresa = 'AAM' group by Proveedor", oCon)
+            Dim query As New SqlCommand(querytxt, oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -498,7 +561,7 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
-    Public Function ConsultarImpuestosExtra(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
+    Public Function ConsultarImpuestosExtra(ByVal cadenaConex As String, ByVal uuid As String, Optional subsi As String = "") As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
         Dim LComp As New LCompras()
         Try
@@ -526,38 +589,12 @@ Public Class DCompras
         End Try
         Return LComp
     End Function
-    Public Function RecuperaCtasBancos(ByVal cadenaConex As String, ByVal lstCompras As LCompras) As LBancos
-        Dim oCon As New SqlConnection(cadenaConex)
-        Dim lstBanc As New LBancos()
-        Try
-            oCon.Open()
-            Dim query As New SqlCommand("Select IdBanco, Nombre, Codigo from Conta.ctAAM.dbo.CuentasCheques where CodigoMoneda = " & lstCompras(0).Moneda & "", oCon)
-            query.CommandTimeout = 60
-            Dim dr As SqlDataReader
-            dr = query.ExecuteReader
-            While (dr.Read())
-                Dim banc As New Bancos
-                banc.IdBanco = Convert.ToInt32(dr("IdBanco").ToString)
-                banc.NombreBanco = dr("Nombre").ToString
-                banc.Codigo = dr("Codigo").ToString
-                lstBanc.Add(banc)
-            End While
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            If (oCon.State = ConnectionState.Open) Then
-                oCon.Close()
-            End If
-            oCon.Dispose()
-        End Try
-        Return lstBanc
-    End Function
-    Public Function RecuperaCategorias(ByVal cadenaConex As String, ByVal lstCompras As LCompras, ByVal cta As String, ByVal segneg As String) As String
+    Public Function RecuperaSubCategorias(ByVal cadenaConex As String, ByVal lstCompras As LCompras, ByVal cta As String, ByVal segneg As String) As String
         Dim oCon As New SqlConnection(cadenaConex)
         Dim cd As String = "0"
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT Codigo FROM Conta.ctAAM.dbo.Categorias where CodigoCuenta = '" & cta & "' and IdSegNeg = (SELECT Id FROM Conta.ctAAM.dbo.SegmentosNegocio where Codigo = " & segneg & ") and CodigoMoneda = " & lstCompras(0).Moneda & "", oCon)
+            Dim query As New SqlCommand("SELECT Top 1 Codigo FROM Conta.ctAAM.dbo.Categorias where CodigoCuenta = '" & cta & "' and IdSegNeg = (SELECT Id FROM Conta.ctAAM.dbo.SegmentosNegocio where Codigo = " & segneg & ") and CodigoMoneda = " & lstCompras(0).Moneda & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -573,5 +610,194 @@ Public Class DCompras
             oCon.Dispose()
         End Try
         Return cd
+    End Function
+    Public Function RecuperaCategorias(ByVal cadenaConex As String, ByVal moneda As Integer) As String
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim cd As String = "0"
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Select Codigo from conta.ctAAM.dbo.Categorias where IdSegNeg = 0 and Nivel = 'C' and Tipo = 'E' and CodigoMoneda =  " & moneda & "", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                cd = dr("Codigo").ToString
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return cd
+    End Function
+    Public Function RecuperarBancos(ByVal cadenaConex As String, Optional ByVal subsi As String = "") As LBancos
+        Dim lstBanc As New LBancos()
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim cd As String = "0"
+        Dim querytxt As String = ""
+        If subsi = "MEX" Then
+            querytxt = "Select Nombre, Codigo from conta.ctAAM.dbo.CuentasCheques"
+        ElseIf subsi = "SERV" Then
+            querytxt = "Select Nombre, Codigo from conta.ctAAMS.dbo.CuentasCheques"
+        End If
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand(querytxt, oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim banc As New Bancos()
+                banc.NombreBanco = dr("Nombre").ToString
+                banc.Codigo = dr("Codigo").ToString
+                lstBanc.Add(banc)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstBanc
+    End Function
+    Public Function RecuperarIdBanco(ByVal cadenaConex As String, ByVal codigo As String, Optional ByVal subsi As String = "") As Integer
+        Dim idBanco As Integer
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim querytxt As String = ""
+        If subsi = "MEX" Then
+            querytxt = "Select IdBanco from conta.ctAAM.dbo.CuentasCheques where Codigo = '" & codigo & "'"
+        ElseIf subsi = "SERV" Then
+            querytxt = "Select IdBanco from conta.ctAAMS.dbo.CuentasCheques where Codigo = '" & codigo & "'"
+        End If
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand(querytxt, oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                idBanco = Convert.ToInt32(dr("IdBanco").ToString)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return idBanco
+    End Function
+    Public Sub AgregarBitacora(ByVal cadenaConex As String, ByVal comp As Compras)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.AgregarBitacora", oCon)
+            query.Parameters.AddWithValue("@xml", comp.Xml)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+
+            'MsgBox("Se insertó correctamente")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
+    Public Function ConsultaBitacoraCreados(ByVal cadenaConex As String, ByVal comp As Compras) As Compras
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim com As New Compras
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.BitacoraCreados", oCon)
+            query.Parameters.AddWithValue("@oc", comp.IdOrdenCompra)
+            query.Parameters.AddWithValue("@monto", comp.MontoFact)
+            query.Parameters.AddWithValue("@provi", comp.IdProvision)
+            query.Parameters.AddWithValue("@subsi", comp.Empresa)
+            query.Parameters.AddWithValue("@tipo", comp.Tipo)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                com.TxtCreado = Convert.ToBoolean(dr("creaTxt").ToString)
+                com.DocContableCrea = Convert.ToBoolean(dr("creaDoc").ToString)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return com
+    End Function
+    Public Sub EmpatarDocumentosContablesBitacora(ByVal cadenaConex As String, ByVal subsid As String)
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.AgregaPolizaProyeccionesBitacora", oCon)
+            query.Parameters.AddWithValue("@subsid", subsid)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+
+            'MsgBox("Se insertó correctamente", MsgBoxStyle.Information)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+    End Sub
+    Public Function RecuperarLstVentas(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LVentas
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstven As New LVentas()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Asahi.dbo.PrevioPolizasVentas", oCon)
+            query.Parameters.AddWithValue("@fechai", fi)
+            query.Parameters.AddWithValue("@fechaf", ff)
+            query.CommandType = CommandType.StoredProcedure
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim vent As New Ventas()
+                vent.IdDoc = Convert.ToInt32(dr("Id").ToString)
+                vent.Venta = dr("Venta").ToString
+                vent.Pedido = Convert.ToInt32(dr("Pedido").ToString)
+                vent.Serie = dr("Serie").ToString
+                vent.Factura = dr("Factura").ToString
+                vent.Cliente = dr("Cliente").ToString
+                vent.RFC = dr("RFC").ToString
+                vent.MontoPed = Convert.ToDouble(dr("MontoOc").ToString)
+                vent.MontoFact = Convert.ToDouble(dr("MontoFact").ToString)
+                vent.FechaFact = Convert.ToDateTime(dr("FechaFactura").ToString)
+                vent.Moneda = dr("Moneda").ToString
+                vent.Empresa = dr("Empresa").ToString
+                vent.UUID = dr("idfact").ToString
+                vent.TipoCambio = dr("tc").ToString
+                lstven.Add(vent)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstven
     End Function
 End Class

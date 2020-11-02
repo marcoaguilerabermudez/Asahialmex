@@ -97,6 +97,9 @@ Public Class Frm_Principal
         Incapacidades_RetardosToolStripMenuItem.Enabled = False
         ProvicionesToolStripMenuItem.Enabled = False
         HistorialToolStripMenuItem.Enabled = False
+        ChecadasToolStripMenuItem.Enabled = False
+
+
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
         For Each item In lstPer
@@ -466,6 +469,21 @@ Public Class Frm_Principal
 
     Private Sub ValidaciónRHToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ValidaciónRHToolStripMenuItem1.Click
         ValidaRh.Show()
+    End Sub
+
+    Private Sub ChecadasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChecadasToolStripMenuItem.Click
+        Dim Che As New Frm_Registros
+        Che.Show()
+    End Sub
+
+    Private Sub MontacargasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MontacargasToolStripMenuItem.Click
+        Dim Cre As New Frm_Licencias(Me.emp)
+        Cre.Show()
+    End Sub
+
+    Private Sub PolizasDiarioVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PolizasDiarioVentasToolStripMenuItem.Click
+        Dim frmPol As New Frm_PolizasDiario(Me.emp, 3)
+        frmPol.Show()
     End Sub
 #End Region
 End Class

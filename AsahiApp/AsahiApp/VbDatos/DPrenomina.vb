@@ -605,7 +605,7 @@ Public Class DPrenomina
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("INSERT INTO Asahi.dbo.Bitacora_InsertInciBono (PERIODO,EJERCICIO,CODIGOEMPLEADO,FECHA,TIPO) VALUES (" & sem & "," & año & "," & cod & ",'" & fecha & "'," & tip & ")", oCon)
+            Dim query As New SqlCommand("INSERT INTO Asahi.dbo.Bitacora_InsertInciBono (PERIODO,EJERCICIO,CODIGOEMPLEADO,FECHA,TIPO) VALUES (" & sem & "," & año & "," & cod & ",'" & Format(fecha, "dd/MM/yyyy HH:mm:ss") & "'," & tip & ")", oCon)
             query.ExecuteScalar()
 
         Catch ex As Exception

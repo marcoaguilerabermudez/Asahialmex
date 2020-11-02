@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>159</ApplicationRevision>
+    <ApplicationRevision>183</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -328,6 +328,12 @@
     <Compile Include="ImprimirAnteriores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Finanzas\Frm_Subsidiaria.Designer.vb">
+      <DependentUpon>Frm_Subsidiaria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Frm_Subsidiaria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MuestradatosOEE.Designer.vb">
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>
     </Compile>
@@ -562,6 +568,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpcionesReportes.resx">
       <DependentUpon>Frm_OpcionesReportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\Frm_Subsidiaria.resx">
+      <DependentUpon>Frm_Subsidiaria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fr_reportefaltajusinj.resx">
       <DependentUpon>Fr_reportefaltajusinj.vb</DependentUpon>
@@ -884,6 +893,10 @@
     <None Include="Resources\systemtask_sistema_3126.png" />
     <None Include="Resources\pay_perclick_icon-icons.com_66877.png" />
     <None Include="Resources\Acumulado1.png" />
+    <None Include="Resources\mexican-republic.png" />
+    <None Include="Resources\mexican-republic1.png" />
+    <None Include="Resources\mexico.png" />
+    <None Include="Resources\customer.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

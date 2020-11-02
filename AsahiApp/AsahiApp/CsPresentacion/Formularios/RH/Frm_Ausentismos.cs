@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
+
 using Clases;
 
 namespace CsPresentacion
@@ -69,6 +71,47 @@ namespace CsPresentacion
             nuevo();
             autocompletar_responsable(txt_nombre);
             txt_clave.Focus();
+            cargar_descripcion_ausentismo(cmb_f_tipo);
+            Cargar_clave_ausentismo(txt_f_tipo);
+        }
+
+        public void cargar_descripcion_ausentismo(ComboBox inte)//Cargar ausentismos
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT RTRIM(DESCRIPCION)AS 'DESCRIPCION' FROM [asahi16].[Supervisor_giro].[Falta] ", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    inte.Items.Add(dr["DESCRIPCION"].ToString());
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception Error)
+            {
+                MessageBox.Show("No se llenó información de campo Ausentismos" + Error.ToString());
+            }
+        }
+        public void Cargar_clave_ausentismo(TextBox tex)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT RTRIM(CLAVE)AS 'CLAVE' FROM [asahi16].[Supervisor_giro].[Falta]", con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    tex.AutoCompleteCustomSource.Add(dr["CLAVE"].ToString());
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudo autcompletar nombre " + error.ToString());
+            }
         }
 
         //Métodos Módulo de incapacidades
@@ -621,6 +664,8 @@ namespace CsPresentacion
                 MessageBox.Show("No se pudo autcompletar nombre " + error.ToString());
             }
         }
+
+
 
         private void cargar_clave()
         {
@@ -1592,26 +1637,77 @@ namespace CsPresentacion
         {
             switch (cmb_f_tipo.Text)
             {
+                case "PATERNIDAD": txt_f_tipo.Text = "0"; break;
+                case "TRAMITE DE DOCUMENTO": txt_f_tipo.Text = "1"; break;
+                case "ASUNTO ESCOLAR": txt_f_tipo.Text = "2"; break;
+                case "SE QUEDO DORMIDO": txt_f_tipo.Text = "3"; break;
+                case "DEFUNCION FAMILIAR": txt_f_tipo.Text = "4"; break;
+                case "SALIO DE LA CIUDAD": txt_f_tipo.Text = "5"; break;
+                case "NO TENIA GANAS DE TRABAJAR": txt_f_tipo.Text = "6"; break;
+                case "TRAMITE DE DOCUMENTO CG": txt_f_tipo.Text = "7"; break;
+                case "IMSS TRAMITES": txt_f_tipo.Text = "8"; break;
+              //  case "ASUNTO ESCOLAR": txt_f_tipo.Text = "9"; break;
+
                 case "ABANDONO DE TRABAJO": txt_f_tipo.Text = "A"; break;
                 case "PRESTACION POR MATRIMONIO": txt_f_tipo.Text = "B"; break;
                 case "CITA IMSS": txt_f_tipo.Text = "C"; break;
+                case "EMPLEADO VULNERABLE": txt_f_tipo.Text = "D"; break;
                 case "ENFERMEDAD": txt_f_tipo.Text = "E"; break;
                 case "FALTA INJUSTIFICADA": txt_f_tipo.Text = "F"; break;
                 case "PERMISO CON GOCE": txt_f_tipo.Text = "G"; break;
+                case "HOME OFFICE": txt_f_tipo.Text = "H"; break;
+                case "CONFIRMADO": txt_f_tipo.Text = "J"; break;
+                case "CONSULTA SOSPECHOSA": txt_f_tipo.Text = "K"; break;
                 case "ENFERMEDAD LEVE": txt_f_tipo.Text = "L"; break;
                 case "ENFERMEDAD MODERADA": txt_f_tipo.Text = "M"; break;
                 case "SUSPENSION": txt_f_tipo.Text = "N"; break;
+                case "SOSPECHOSO ENFERMEDAD": txt_f_tipo.Text = "O"; break;
                 case "PERMISO SIN GOCE": txt_f_tipo.Text = "P"; break;
                 case "FAMILIAR": txt_f_tipo.Text = "R"; break;
                 case "ASUNTOS PERSONALES": txt_f_tipo.Text = "S"; break;
                 case "TRANSPORTE": txt_f_tipo.Text = "T"; break;
                 case "FALTA JUSTIFICADA": txt_f_tipo.Text = "U"; break;
                 case "VIAJE": txt_f_tipo.Text = "V"; break;
+                
+                case "ASUNTO PERSONAL": txt_f_tipo.Text = "W"; break;
+                case "IMSS ENFERMEDAD": txt_f_tipo.Text = "X"; break;
+                case "DEFUNCION": txt_f_tipo.Text = "Y"; break;
             }
         }
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 'A' || e.KeyChar == 'a' || e.KeyChar == 'B' || e.KeyChar == 'b' || e.KeyChar == 'C' || e.KeyChar == 'c' || e.KeyChar == 'E' || e.KeyChar == 'e' || e.KeyChar == 'F' || e.KeyChar == 'f' || e.KeyChar == 'G' || e.KeyChar == 'g' || e.KeyChar == 'L' || e.KeyChar == 'l' || e.KeyChar == 'M' || e.KeyChar == 'm' || e.KeyChar == 'N' || e.KeyChar == 'n' || e.KeyChar == 'P' || e.KeyChar == 'p' || e.KeyChar == 'R' || e.KeyChar == 'r' || e.KeyChar == 'S' || e.KeyChar == 's' || e.KeyChar == 'T' || e.KeyChar == 't' || e.KeyChar == 'U' || e.KeyChar == 'u' || e.KeyChar == 'V' || e.KeyChar == 'v')
+            if (e.KeyChar == '0' || e.KeyChar == '1' ||
+                e.KeyChar == '2' || e.KeyChar == '3' ||
+                e.KeyChar == '4' || e.KeyChar == '5' ||
+                e.KeyChar == '6' || e.KeyChar == '7' ||
+                e.KeyChar == '8' || e.KeyChar == '9' ||
+
+                e.KeyChar == 'A' || e.KeyChar == 'a' ||
+                e.KeyChar == 'B' || e.KeyChar == 'b' ||
+                e.KeyChar == 'C' || e.KeyChar == 'c' ||
+                e.KeyChar == 'D' || e.KeyChar == 'd' ||
+                e.KeyChar == 'E' || e.KeyChar == 'e' ||
+                e.KeyChar == 'F' || e.KeyChar == 'f' ||
+                e.KeyChar == 'G' || e.KeyChar == 'g' ||
+                e.KeyChar == 'H' || e.KeyChar == 'h' ||
+                e.KeyChar == 'J' || e.KeyChar == 'j' ||
+                e.KeyChar == 'K' || e.KeyChar == 'k' ||
+                e.KeyChar == 'L' || e.KeyChar == 'l' ||
+                e.KeyChar == 'M' || e.KeyChar == 'm' ||
+                e.KeyChar == 'N' || e.KeyChar == 'n' ||
+                e.KeyChar == 'O' || e.KeyChar == 'o' ||
+                e.KeyChar == 'P' || e.KeyChar == 'p' ||
+                e.KeyChar == 'R' || e.KeyChar == 'r' ||
+                e.KeyChar == 'S' || e.KeyChar == 's' ||
+                e.KeyChar == 'T' || e.KeyChar == 't' ||
+                e.KeyChar == 'U' || e.KeyChar == 'u' ||
+                e.KeyChar == 'V' || e.KeyChar == 'v' ||
+
+                e.KeyChar == 'W' || e.KeyChar == 'w' ||
+                e.KeyChar == 'X' || e.KeyChar == 'x' ||
+                e.KeyChar == 'Y' || e.KeyChar == 'y' 
+                )
+
                 e.Handled = false;
             else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
             else
@@ -1627,21 +1723,41 @@ namespace CsPresentacion
             {
                 switch (txt_f_tipo.Text)
                 {
+                    case "0": cmb_f_tipo.Text = "PATERNIDAD"; break;
+                    case "1": cmb_f_tipo.Text = "TRAMITE DE DOCUMENTO"; break;
+                    case "2": cmb_f_tipo.Text = "ASUNTO ESCOLAR"; break;
+                    case "3": cmb_f_tipo.Text = "SE QUEDO DORMIDO"; break;
+                    case "4": cmb_f_tipo.Text = "DEFUNCION FAMILIAR"; break;
+                    case "5": cmb_f_tipo.Text = "SALIO DE LA CIUDAD"; break;
+                    case "6": cmb_f_tipo.Text = "NO TENIA GANAS DE TRABAJAR"; break;
+                    case "7": cmb_f_tipo.Text = "TRAMITE DE DOCUMENTO CG"; break;
+                    case "8": cmb_f_tipo.Text = "IMSS TRAMITES"; break;
+                    case "9": cmb_f_tipo.Text = "ASUNTO ESCOLAR"; break;
+
                     case "A": cmb_f_tipo.Text = "ABANDONO DE TRABAJO"; break;
                     case "B": cmb_f_tipo.Text = "PRESTACION POR MATRIMONIO"; break;
                     case "C": cmb_f_tipo.Text = "CITA IMSS"; break;
+                    case "D": cmb_f_tipo.Text = "EMPLEADO VULNERABLE"; break;
                     case "E": cmb_f_tipo.Text = "ENFERMEDAD"; break;
                     case "F": cmb_f_tipo.Text = "FALTA INJUSTIFICADA"; break;
                     case "G": cmb_f_tipo.Text = "PERMISO CON GOCE"; break;
+                    case "H": cmb_f_tipo.Text = "HOME OFFICE"; break;
+                    case "J": cmb_f_tipo.Text = "CONFIRMADO"; break;
+                    case "K": cmb_f_tipo.Text = "CONSULTA SOSPECHOSA"; break;
                     case "L": cmb_f_tipo.Text = "ENFERMEDAD LEVE"; break;
                     case "M": cmb_f_tipo.Text = "ENFERMEDAD MODERADA"; break;
                     case "N": cmb_f_tipo.Text = "SUSPENSION"; break;
+                    case "O": cmb_f_tipo.Text = "SOSPECHOSO ENFERMEDAD"; break;
                     case "P": cmb_f_tipo.Text = "PERMISO SIN GOCE"; break;
                     case "R": cmb_f_tipo.Text = "FAMILIAR"; break;
                     case "S": cmb_f_tipo.Text = "ASUNTOS PERSONALES"; break;
                     case "T": cmb_f_tipo.Text = "TRANSPORTE"; break;
                     case "U": cmb_f_tipo.Text = "FALTA JUSTIFICADA"; break;
                     case "V": cmb_f_tipo.Text = "VIAJE"; break;
+
+                    case "W": cmb_f_tipo.Text = "ASUNTO PERSONAL"; break;
+                    case "X": cmb_f_tipo.Text = "IMSS ENFERMEDAD"; break;
+                    case "Y": cmb_f_tipo.Text = "DEFUNCION"; break;
                 }
             }
         }
@@ -2281,6 +2397,17 @@ namespace CsPresentacion
                 dtm_fecha.Focus();
             }
         }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+             
+        }
+
+        private void tabPage1_Leave(object sender, EventArgs e)
+        {
+
+        }
+
         private void TabPage2_Click(object sender, EventArgs e)
         {
             btn_v_insertar.Focus();

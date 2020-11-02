@@ -99,6 +99,7 @@
     <Compile Include="Listas Heredadas\LPolizas.vb" />
     <Compile Include="Listas Heredadas\LTxtNominas.vb" />
     <Compile Include="Listas Heredadas\LVacaciones.vb" />
+    <Compile Include="Listas Heredadas\LVentas.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -118,6 +119,7 @@
     <Compile Include="Polizas.vb" />
     <Compile Include="TxtNominas.vb" />
     <Compile Include="Vacaciones.vb" />
+    <Compile Include="Ventas.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

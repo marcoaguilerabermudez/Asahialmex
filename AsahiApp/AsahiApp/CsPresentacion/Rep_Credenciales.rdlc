@@ -85,7 +85,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>8.80031cm</Height>
+                  <Height>8.74739cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -95,12 +95,12 @@
                               <TablixBody>
                                 <TablixColumns>
                                   <TablixColumn>
-                                    <Width>4.86711cm</Width>
+                                    <Width>5.59375cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>0.67938cm</Height>
+                                    <Height>0.99688cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -113,7 +113,6 @@
                                                   <TextRun>
                                                     <Value>=Fields!NOMBRE.Value</Value>
                                                     <Style>
-                                                      <FontSize>7.5pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                       <TextDecoration>Underline</TextDecoration>
                                                     </Style>
@@ -129,7 +128,7 @@
                                               <Border>
                                                 <Style>None</Style>
                                               </Border>
-                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <VerticalAlign>Top</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -158,10 +157,9 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet1</DataSetName>
-                              <Top>4.57412cm</Top>
-                              <Left>0.42678cm</Left>
-                              <Height>0.67938cm</Height>
-                              <Width>4.86711cm</Width>
+                              <Top>5.60628cm</Top>
+                              <Height>0.99688cm</Height>
+                              <Width>5.59375cm</Width>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -172,10 +170,10 @@
                               <Source>Embedded</Source>
                               <Value>Logo</Value>
                               <Sizing>FitProportional</Sizing>
-                              <Top>0.19876cm</Top>
-                              <Left>2.5334cm</Left>
-                              <Height>0.89145cm</Height>
-                              <Width>0.89145cm</Width>
+                              <Top>0.19563cm</Top>
+                              <Left>0.42678cm</Left>
+                              <Height>1.40895cm</Height>
+                              <Width>1.41906cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <Border>
@@ -187,10 +185,10 @@
                               <Source>External</Source>
                               <Value>="//172.16.6.51/v/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" &amp; Fields!CLAVE.Value &amp; ".jpg"</Value>
                               <Sizing>Fit</Sizing>
-                              <Top>2.0731cm</Top>
-                              <Left>1.73966cm</Left>
-                              <Height>2.32463cm</Height>
-                              <Width>2.34511cm</Width>
+                              <Top>2.19059cm</Top>
+                              <Left>1.03411cm</Left>
+                              <Height>3.41569cm</Height>
+                              <Width>3.36518cm</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -207,7 +205,7 @@
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>0.74995cm</Height>
+                                    <Height>0.60883cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -220,7 +218,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!DEPARTAMENTO.Value</Value>
                                                     <Style>
-                                                      <FontSize>7.5pt</FontSize>
+                                                      <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -234,7 +232,7 @@
                                               <Border>
                                                 <Style>None</Style>
                                               </Border>
-                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <VerticalAlign>Top</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -263,9 +261,9 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet1</DataSetName>
-                              <Top>5.28877cm</Top>
+                              <Top>6.63844cm</Top>
                               <Left>0.42678cm</Left>
-                              <Height>0.74995cm</Height>
+                              <Height>0.60883cm</Height>
                               <Width>4.86711cm</Width>
                               <ZIndex>3</ZIndex>
                               <Style>
@@ -281,9 +279,9 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Asahi Aluminium México</Value>
+                                      <Value>ASAHI ALUMINIUM MEXICO</Value>
                                       <Style>
-                                        <FontSize>8pt</FontSize>
+                                        <FontSize>11.5pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -294,10 +292,9 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox34</rd:DefaultName>
-                              <Top>1.2666cm</Top>
-                              <Left>0.42678cm</Left>
-                              <Height>0.46771cm</Height>
-                              <Width>4.86711cm</Width>
+                              <Top>1.60458cm</Top>
+                              <Height>0.55073cm</Height>
+                              <Width>5.59375cm</Width>
                               <ZIndex>4</ZIndex>
                               <Style>
                                 <Border>
@@ -316,9 +313,8 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Asahi Aluminium México S.A DE C.V</Value>
+                                      <Value>ASAHI ALUMINIUM MEXICO </Value>
                                       <Style>
-                                        <FontSize>7.5pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -331,13 +327,14 @@
                               <rd:DefaultName>Textbox34</rd:DefaultName>
                               <Top>0.6225cm</Top>
                               <Left>6.10528cm</Left>
-                              <Height>0.46771cm</Height>
+                              <Height>1.27421cm</Height>
                               <Width>5.23115cm</Width>
                               <ZIndex>5</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -352,9 +349,7 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>Av. Mineral de Valenciana No 140</Value>
-                                      <Style>
-                                        <FontSize>8pt</FontSize>
-                                      </Style>
+                                      <Style />
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
@@ -365,9 +360,7 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>Santa Fe ll (Ampliación) Puerto Interior</Value>
-                                      <Style>
-                                        <FontSize>8pt</FontSize>
-                                      </Style>
+                                      <Style />
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
@@ -378,9 +371,7 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>Silao, Guanajuato.</Value>
-                                      <Style>
-                                        <FontSize>8pt</FontSize>
-                                      </Style>
+                                      <Style />
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
@@ -391,9 +382,7 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>Tel: 01-4725003000 / 7489008</Value>
-                                      <Style>
-                                        <FontSize>8pt</FontSize>
-                                      </Style>
+                                      <Style />
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
@@ -402,9 +391,9 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox34</rd:DefaultName>
-                              <Top>1.49585cm</Top>
+                              <Top>2.00254cm</Top>
                               <Left>6.10528cm</Left>
-                              <Height>1.68479cm</Height>
+                              <Height>2.78325cm</Height>
                               <Width>5.23115cm</Width>
                               <ZIndex>6</ZIndex>
                               <Style>
@@ -426,7 +415,6 @@
                                     <TextRun>
                                       <Value>En Caso de Emergencia avisar a:</Value>
                                       <Style>
-                                        <FontSize>7.5pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -437,15 +425,16 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox34</rd:DefaultName>
-                              <Top>4.00057cm</Top>
+                              <Top>4.96219cm</Top>
                               <Left>6.10528cm</Left>
-                              <Height>0.46771cm</Height>
+                              <Height>1.08536cm</Height>
                               <Width>5.23115cm</Width>
                               <ZIndex>7</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
+                                <VerticalAlign>Bottom</VerticalAlign>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
                                 <PaddingTop>2pt</PaddingTop>
@@ -461,7 +450,7 @@
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>0.91751cm</Height>
+                                    <Height>1.0939cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -473,9 +462,7 @@
                                                 <TextRuns>
                                                   <TextRun>
                                                     <Value>=Fields!REFERENCIA.Value</Value>
-                                                    <Style>
-                                                      <FontSize>8pt</FontSize>
-                                                    </Style>
+                                                    <Style />
                                                   </TextRun>
                                                 </TextRuns>
                                                 <Style>
@@ -515,9 +502,9 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet1</DataSetName>
-                              <Top>4.57412cm</Top>
+                              <Top>6.04754cm</Top>
                               <Left>6.10528cm</Left>
-                              <Height>0.91751cm</Height>
+                              <Height>1.0939cm</Height>
                               <Width>5.23115cm</Width>
                               <ZIndex>8</ZIndex>
                               <Style>
@@ -547,15 +534,11 @@
                                                 <TextRuns>
                                                   <TextRun>
                                                     <Value>Tel: </Value>
-                                                    <Style>
-                                                      <FontSize>8pt</FontSize>
-                                                    </Style>
+                                                    <Style />
                                                   </TextRun>
                                                   <TextRun>
                                                     <Value>=Fields!TELEFONO.Value</Value>
-                                                    <Style>
-                                                      <FontSize>8pt</FontSize>
-                                                    </Style>
+                                                    <Style />
                                                   </TextRun>
                                                 </TextRuns>
                                                 <Style>
@@ -595,7 +578,7 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet1</DataSetName>
-                              <Top>5.49163cm</Top>
+                              <Top>7.14144cm</Top>
                               <Left>6.10528cm</Left>
                               <Height>0.54709cm</Height>
                               <Width>5.23115cm</Width>
@@ -627,15 +610,11 @@
                                                 <TextRuns>
                                                   <TextRun>
                                                     <Value>N.S.S: </Value>
-                                                    <Style>
-                                                      <FontSize>8pt</FontSize>
-                                                    </Style>
+                                                    <Style />
                                                   </TextRun>
                                                   <TextRun>
                                                     <Value>=Fields!AFILIACION.Value</Value>
-                                                    <Style>
-                                                      <FontSize>8pt</FontSize>
-                                                    </Style>
+                                                    <Style />
                                                   </TextRun>
                                                 </TextRuns>
                                                 <Style>
@@ -675,88 +654,11 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet1</DataSetName>
-                              <Top>6.074cm</Top>
+                              <Top>7.72381cm</Top>
                               <Left>6.10528cm</Left>
                               <Height>0.54709cm</Height>
                               <Width>5.23115cm</Width>
                               <ZIndex>10</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                              </Style>
-                            </Tablix>
-                            <Tablix Name="Tablix21">
-                              <TablixBody>
-                                <TablixColumns>
-                                  <TablixColumn>
-                                    <Width>1.95877cm</Width>
-                                  </TablixColumn>
-                                </TablixColumns>
-                                <TablixRows>
-                                  <TablixRow>
-                                    <Height>1.2915cm</Height>
-                                    <TablixCells>
-                                      <TablixCell>
-                                        <CellContents>
-                                          <Textbox Name="Departamento6">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>=Fields!CLAVE.Value</Value>
-                                                    <Style>
-                                                      <FontFamily>arial</FontFamily>
-                                                      <FontSize>12pt</FontSize>
-                                                      <FontWeight>Bold</FontWeight>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style>
-                                                  <TextAlign>Center</TextAlign>
-                                                </Style>
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <Style>
-                                              <Border>
-                                                <Style>None</Style>
-                                              </Border>
-                                              <VerticalAlign>Middle</VerticalAlign>
-                                              <PaddingLeft>2pt</PaddingLeft>
-                                              <PaddingRight>2pt</PaddingRight>
-                                              <PaddingTop>2pt</PaddingTop>
-                                              <PaddingBottom>2pt</PaddingBottom>
-                                            </Style>
-                                          </Textbox>
-                                        </CellContents>
-                                      </TablixCell>
-                                    </TablixCells>
-                                  </TablixRow>
-                                </TablixRows>
-                              </TablixBody>
-                              <TablixColumnHierarchy>
-                                <TablixMembers>
-                                  <TablixMember />
-                                </TablixMembers>
-                              </TablixColumnHierarchy>
-                              <TablixRowHierarchy>
-                                <TablixMembers>
-                                  <TablixMember>
-                                    <Group Name="Detalles7" />
-                                    <TablixMembers>
-                                      <TablixMember />
-                                    </TablixMembers>
-                                  </TablixMember>
-                                </TablixMembers>
-                              </TablixRowHierarchy>
-                              <DataSetName>DataSet1</DataSetName>
-                              <Top>7.22934cm</Top>
-                              <Left>3.33512cm</Left>
-                              <Height>1.2915cm</Height>
-                              <Width>1.95877cm</Width>
-                              <ZIndex>11</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -772,7 +674,7 @@
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>0.74995cm</Height>
+                                    <Height>0.45008cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
@@ -785,6 +687,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!PUESTO.Value</Value>
                                                     <Style>
+                                                      <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                     </Style>
                                                   </TextRun>
@@ -798,7 +701,7 @@
                                               <Border>
                                                 <Style>None</Style>
                                               </Border>
-                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <VerticalAlign>Top</VerticalAlign>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -827,11 +730,166 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet1</DataSetName>
-                              <Top>6.074cm</Top>
+                              <Top>7.28255cm</Top>
                               <Left>0.42678cm</Left>
-                              <Height>0.74995cm</Height>
+                              <Height>0.45008cm</Height>
+                              <Width>4.86711cm</Width>
+                              <ZIndex>11</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Tablix>
+                            <Tablix Name="Tablix23">
+                              <TablixBody>
+                                <TablixColumns>
+                                  <TablixColumn>
+                                    <Width>4.86711cm</Width>
+                                  </TablixColumn>
+                                </TablixColumns>
+                                <TablixRows>
+                                  <TablixRow>
+                                    <Height>0.87365cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Departamento8">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>="*"&amp; Fields!CLAVE.Value &amp;"*"</Value>
+                                                    <Style>
+                                                      <FontFamily>CCode39</FontFamily>
+                                                      <FontSize>12pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                    </TablixCells>
+                                  </TablixRow>
+                                </TablixRows>
+                              </TablixBody>
+                              <TablixColumnHierarchy>
+                                <TablixMembers>
+                                  <TablixMember />
+                                </TablixMembers>
+                              </TablixColumnHierarchy>
+                              <TablixRowHierarchy>
+                                <TablixMembers>
+                                  <TablixMember>
+                                    <Group Name="Detalles9" />
+                                    <TablixMembers>
+                                      <TablixMember />
+                                    </TablixMembers>
+                                  </TablixMember>
+                                </TablixMembers>
+                              </TablixRowHierarchy>
+                              <DataSetName>DataSet1</DataSetName>
+                              <Top>7.87374cm</Top>
+                              <Left>0.42678cm</Left>
+                              <Height>0.87365cm</Height>
                               <Width>4.86711cm</Width>
                               <ZIndex>12</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Tablix>
+                            <Tablix Name="Tablix24">
+                              <TablixBody>
+                                <TablixColumns>
+                                  <TablixColumn>
+                                    <Width>2.97205cm</Width>
+                                  </TablixColumn>
+                                </TablixColumns>
+                                <TablixRows>
+                                  <TablixRow>
+                                    <Height>0.85617cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Departamento9">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!CLAVE.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>arial</FontFamily>
+                                                      <FontSize>16pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <TextDecoration>None</TextDecoration>
+                                                      <NumeralVariant>2</NumeralVariant>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                    </TablixCells>
+                                  </TablixRow>
+                                </TablixRows>
+                              </TablixBody>
+                              <TablixColumnHierarchy>
+                                <TablixMembers>
+                                  <TablixMember />
+                                </TablixMembers>
+                              </TablixColumnHierarchy>
+                              <TablixRowHierarchy>
+                                <TablixMembers>
+                                  <TablixMember>
+                                    <Group Name="Detalles10" />
+                                    <TablixMembers>
+                                      <TablixMember />
+                                    </TablixMembers>
+                                  </TablixMember>
+                                </TablixMembers>
+                              </TablixRowHierarchy>
+                              <DataSetName>DataSet1</DataSetName>
+                              <Top>0.50147cm</Top>
+                              <Left>2.32184cm</Left>
+                              <Height>0.85617cm</Height>
+                              <Width>2.97205cm</Width>
+                              <ZIndex>13</ZIndex>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -882,6 +940,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <FixedColumnHeaders>true</FixedColumnHeaders>
             <KeepTogether>true</KeepTogether>
             <DataSetName>DataSet1</DataSetName>
             <SortExpressions>
@@ -889,9 +948,9 @@
                 <Value>=Fields!ID.Value</Value>
               </SortExpression>
             </SortExpressions>
-            <Top>0.4718cm</Top>
+            <Top>0.17639cm</Top>
             <Left>0.87147cm</Left>
-            <Height>8.80031cm</Height>
+            <Height>8.74739cm</Height>
             <Width>11.4158cm</Width>
             <Style>
               <Border>
@@ -900,11 +959,21 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>4.24649in</Height>
+        <Height>3.54336in</Height>
         <Style />
       </Body>
-      <Width>5.75639in</Width>
+      <Width>4.98035in</Width>
       <Page>
+        <PageHeader>
+          <Height>0.50271cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
         <PageHeight>27.94cm</PageHeight>
         <PageWidth>21.59cm</PageWidth>
         <LeftMargin>0cm</LeftMargin>

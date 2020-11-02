@@ -25,7 +25,36 @@ Partial Class Frm_PolizasDiario
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Dgv_Egresos = New System.Windows.Forms.DataGridView()
+        Me.Dgv_PolizasVentas = New System.Windows.Forms.DataGridView()
+        Me.pivotPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pedPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ventaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.seriePV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.facturaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clientePV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rfcPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalFacturaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.compraTotalPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFacturaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaPagoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.monedaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tcPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empresaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rfcEmisorPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.emisorPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.uuidPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.areaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.familiaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.netoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentaIvaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ivaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentaPPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.impuestoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.conceptoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioPolizaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioProvisionPolPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Dgv_Prepolizas = New System.Windows.Forms.DataGridView()
         Me.pivot = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ordenCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,11 +83,52 @@ Partial Class Frm_PolizasDiario
         Me.cuentaP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.impuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.concepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioPoliza = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioProvisionPol = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Dgv_Egresos = New System.Windows.Forms.DataGridView()
+        Me.pivote = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFac = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ejercicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.periodo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaPag = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ejercicioPag = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.periodoPag = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idProv = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.prov = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.moneda2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipCambio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.total2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.oCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.uuidE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.conceptoCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentaClabe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.banco = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentaS = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioProyeccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioProvisionProy = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Dgv_Ventas = New System.Windows.Forms.DataGridView()
+        Me.IdPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pedido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serieV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.facturaV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rfcV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoPed = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.montoFactV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFactV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.monedaV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empresaV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.uuidV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tcV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.seleccionV = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Dgv_Compras = New System.Windows.Forms.DataGridView()
         Me.provision = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.compra = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -84,19 +154,16 @@ Partial Class Frm_PolizasDiario
         Me.Dtp_Inicio = New System.Windows.Forms.DateTimePicker()
         Me.Dtp_Fin = New System.Windows.Forms.DateTimePicker()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Btn_Limpiar = New System.Windows.Forms.Button()
         Me.Btn_Actualizar = New System.Windows.Forms.Button()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Cmb_BancoMoneda = New System.Windows.Forms.ComboBox()
         Me.Btn_LimpiarFiltros = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Dtp_FiltroFechaFactura = New System.Windows.Forms.DateTimePicker()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Lbl_BancoMoneda = New System.Windows.Forms.Label()
+        Me.Lbl_CteProv = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Lbl_PedOc = New System.Windows.Forms.Label()
+        Me.Lbl_TitComVen = New System.Windows.Forms.Label()
         Me.Lbl_Filtros = New System.Windows.Forms.Label()
         Me.Txt_FiltroFactura = New System.Windows.Forms.TextBox()
         Me.Txt_FiltroOC = New System.Windows.Forms.TextBox()
@@ -105,31 +172,13 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Txt = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.pivote = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaFac = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ejercicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.periodo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaPag = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ejercicioPag = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.periodoPag = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idProv = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.prov = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.moneda2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipCambio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.total2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.oCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.conceptoCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuentaClabe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codBanco = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.banco = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuentaS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         Me.Panel7.SuspendLayout()
-        CType(Me.Dgv_Egresos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Dgv_PolizasVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_Prepolizas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Dgv_Egresos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
+        CType(Me.Dgv_Ventas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_Compras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel12.SuspendLayout()
@@ -152,44 +201,240 @@ Partial Class Frm_PolizasDiario
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 67)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1260, 573)
+        Me.Panel3.Size = New System.Drawing.Size(1260, 680)
         Me.Panel3.TabIndex = 2
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.Dgv_Egresos)
+        Me.Panel7.Controls.Add(Me.Dgv_PolizasVentas)
         Me.Panel7.Controls.Add(Me.Dgv_Prepolizas)
+        Me.Panel7.Controls.Add(Me.Dgv_Egresos)
         Me.Panel7.Controls.Add(Me.Panel8)
         Me.Panel7.Controls.Add(Me.Panel9)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(0, 306)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1260, 257)
+        Me.Panel7.Size = New System.Drawing.Size(1260, 364)
         Me.Panel7.TabIndex = 3
         '
-        'Dgv_Egresos
+        'Dgv_PolizasVentas
         '
-        Me.Dgv_Egresos.AllowUserToAddRows = False
-        Me.Dgv_Egresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Egresos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivote, Me.fechaFac, Me.ejercicio, Me.periodo, Me.fechaPag, Me.ejercicioPag, Me.periodoPag, Me.idProv, Me.prov, Me.moneda2, Me.tipCambio, Me.total2, Me.oCompra, Me.conceptoCuenta, Me.cuentaClabe, Me.idBanco, Me.codBanco, Me.banco, Me.sc, Me.cuentaS})
-        Me.Dgv_Egresos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Dgv_Egresos.Location = New System.Drawing.Point(10, 0)
-        Me.Dgv_Egresos.Name = "Dgv_Egresos"
-        Me.Dgv_Egresos.RowHeadersVisible = False
-        Me.Dgv_Egresos.Size = New System.Drawing.Size(1240, 257)
-        Me.Dgv_Egresos.TabIndex = 6
-        Me.Dgv_Egresos.Visible = False
+        Me.Dgv_PolizasVentas.AllowUserToAddRows = False
+        Me.Dgv_PolizasVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv_PolizasVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivotPV, Me.pedPV, Me.ventaPV, Me.seriePV, Me.facturaPV, Me.clientePV, Me.rfcPV, Me.totalFacturaPV, Me.compraTotalPV, Me.fechaFacturaPV, Me.fechaPagoPV, Me.monedaPV, Me.tcPV, Me.empresaPV, Me.rfcEmisorPV, Me.emisorPV, Me.uuidPV, Me.totalPV, Me.areaPV, Me.familiaPV, Me.cuentaPV, Me.netoPV, Me.cuentaIvaPV, Me.ivaPV, Me.cuentaPPV, Me.impuestoPV, Me.conceptoPV, Me.folioPolizaPV, Me.folioProvisionPolPV})
+        Me.Dgv_PolizasVentas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Dgv_PolizasVentas.Location = New System.Drawing.Point(10, 0)
+        Me.Dgv_PolizasVentas.Name = "Dgv_PolizasVentas"
+        Me.Dgv_PolizasVentas.RowHeadersVisible = False
+        Me.Dgv_PolizasVentas.Size = New System.Drawing.Size(1240, 364)
+        Me.Dgv_PolizasVentas.TabIndex = 7
+        Me.Dgv_PolizasVentas.Visible = False
+        '
+        'pivotPV
+        '
+        Me.pivotPV.HeaderText = "Pivote"
+        Me.pivotPV.Name = "pivotPV"
+        Me.pivotPV.ReadOnly = True
+        Me.pivotPV.Width = 45
+        '
+        'pedPV
+        '
+        Me.pedPV.HeaderText = "PED"
+        Me.pedPV.Name = "pedPV"
+        Me.pedPV.ReadOnly = True
+        Me.pedPV.Width = 40
+        '
+        'ventaPV
+        '
+        Me.ventaPV.HeaderText = "Venta"
+        Me.ventaPV.Name = "ventaPV"
+        Me.ventaPV.ReadOnly = True
+        Me.ventaPV.Width = 50
+        '
+        'seriePV
+        '
+        Me.seriePV.HeaderText = "Serie"
+        Me.seriePV.Name = "seriePV"
+        Me.seriePV.ReadOnly = True
+        Me.seriePV.Width = 40
+        '
+        'facturaPV
+        '
+        Me.facturaPV.HeaderText = "Factura"
+        Me.facturaPV.Name = "facturaPV"
+        Me.facturaPV.ReadOnly = True
+        Me.facturaPV.Width = 50
+        '
+        'clientePV
+        '
+        Me.clientePV.HeaderText = "Cliente"
+        Me.clientePV.Name = "clientePV"
+        Me.clientePV.ReadOnly = True
+        Me.clientePV.Width = 170
+        '
+        'rfcPV
+        '
+        Me.rfcPV.HeaderText = "RFC"
+        Me.rfcPV.Name = "rfcPV"
+        Me.rfcPV.ReadOnly = True
+        '
+        'totalFacturaPV
+        '
+        Me.totalFacturaPV.HeaderText = "Total Factura"
+        Me.totalFacturaPV.Name = "totalFacturaPV"
+        Me.totalFacturaPV.ReadOnly = True
+        Me.totalFacturaPV.Width = 80
+        '
+        'compraTotalPV
+        '
+        Me.compraTotalPV.HeaderText = "Compra Total"
+        Me.compraTotalPV.Name = "compraTotalPV"
+        Me.compraTotalPV.ReadOnly = True
+        Me.compraTotalPV.Width = 80
+        '
+        'fechaFacturaPV
+        '
+        Me.fechaFacturaPV.HeaderText = "Fecha Factura"
+        Me.fechaFacturaPV.Name = "fechaFacturaPV"
+        Me.fechaFacturaPV.ReadOnly = True
+        Me.fechaFacturaPV.Width = 80
+        '
+        'fechaPagoPV
+        '
+        Me.fechaPagoPV.HeaderText = "Fecha Pago"
+        Me.fechaPagoPV.Name = "fechaPagoPV"
+        Me.fechaPagoPV.ReadOnly = True
+        '
+        'monedaPV
+        '
+        Me.monedaPV.HeaderText = "Moneda"
+        Me.monedaPV.Name = "monedaPV"
+        Me.monedaPV.ReadOnly = True
+        Me.monedaPV.Width = 55
+        '
+        'tcPV
+        '
+        Me.tcPV.HeaderText = "Tipo Cambio"
+        Me.tcPV.Name = "tcPV"
+        Me.tcPV.ReadOnly = True
+        '
+        'empresaPV
+        '
+        Me.empresaPV.HeaderText = "Empresa"
+        Me.empresaPV.Name = "empresaPV"
+        Me.empresaPV.ReadOnly = True
+        Me.empresaPV.Width = 55
+        '
+        'rfcEmisorPV
+        '
+        Me.rfcEmisorPV.HeaderText = "RFC Emisor"
+        Me.rfcEmisorPV.Name = "rfcEmisorPV"
+        Me.rfcEmisorPV.ReadOnly = True
+        '
+        'emisorPV
+        '
+        Me.emisorPV.HeaderText = "Emisor"
+        Me.emisorPV.Name = "emisorPV"
+        Me.emisorPV.ReadOnly = True
+        Me.emisorPV.Width = 170
+        '
+        'uuidPV
+        '
+        Me.uuidPV.HeaderText = "UUID"
+        Me.uuidPV.Name = "uuidPV"
+        Me.uuidPV.ReadOnly = True
+        Me.uuidPV.Width = 215
+        '
+        'totalPV
+        '
+        Me.totalPV.HeaderText = "Total"
+        Me.totalPV.Name = "totalPV"
+        Me.totalPV.ReadOnly = True
+        '
+        'areaPV
+        '
+        Me.areaPV.HeaderText = "Área"
+        Me.areaPV.Name = "areaPV"
+        Me.areaPV.ReadOnly = True
+        '
+        'familiaPV
+        '
+        Me.familiaPV.HeaderText = "Familia"
+        Me.familiaPV.Name = "familiaPV"
+        Me.familiaPV.ReadOnly = True
+        '
+        'cuentaPV
+        '
+        Me.cuentaPV.HeaderText = "Cuenta"
+        Me.cuentaPV.Name = "cuentaPV"
+        Me.cuentaPV.ReadOnly = True
+        Me.cuentaPV.Width = 70
+        '
+        'netoPV
+        '
+        Me.netoPV.HeaderText = "Neto"
+        Me.netoPV.Name = "netoPV"
+        Me.netoPV.ReadOnly = True
+        Me.netoPV.Width = 80
+        '
+        'cuentaIvaPV
+        '
+        Me.cuentaIvaPV.HeaderText = "Cuenta IVA"
+        Me.cuentaIvaPV.Name = "cuentaIvaPV"
+        Me.cuentaIvaPV.ReadOnly = True
+        Me.cuentaIvaPV.Width = 70
+        '
+        'ivaPV
+        '
+        Me.ivaPV.HeaderText = "IVA"
+        Me.ivaPV.Name = "ivaPV"
+        Me.ivaPV.ReadOnly = True
+        Me.ivaPV.Width = 80
+        '
+        'cuentaPPV
+        '
+        Me.cuentaPPV.HeaderText = "Cuenta P"
+        Me.cuentaPPV.Name = "cuentaPPV"
+        Me.cuentaPPV.ReadOnly = True
+        Me.cuentaPPV.Width = 70
+        '
+        'impuestoPV
+        '
+        Me.impuestoPV.HeaderText = "Impuesto"
+        Me.impuestoPV.Name = "impuestoPV"
+        Me.impuestoPV.ReadOnly = True
+        Me.impuestoPV.Width = 80
+        '
+        'conceptoPV
+        '
+        Me.conceptoPV.HeaderText = "Concepto"
+        Me.conceptoPV.Name = "conceptoPV"
+        Me.conceptoPV.ReadOnly = True
+        '
+        'folioPolizaPV
+        '
+        Me.folioPolizaPV.HeaderText = "FolioPoliza"
+        Me.folioPolizaPV.Name = "folioPolizaPV"
+        Me.folioPolizaPV.ReadOnly = True
+        Me.folioPolizaPV.Visible = False
+        '
+        'folioProvisionPolPV
+        '
+        Me.folioProvisionPolPV.HeaderText = "FolioProvisionPol"
+        Me.folioProvisionPolPV.Name = "folioProvisionPolPV"
+        Me.folioProvisionPolPV.ReadOnly = True
+        Me.folioProvisionPolPV.Visible = False
         '
         'Dgv_Prepolizas
         '
         Me.Dgv_Prepolizas.AllowUserToAddRows = False
         Me.Dgv_Prepolizas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Prepolizas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivot, Me.ordenCompra, Me.idCompra, Me.serieF, Me.idFactura, Me.nombreProveedor, Me.rfcProveedor, Me.totalFactura, Me.compraTotal, Me.fechaFact, Me.fechaPagoFact, Me.monedaVP, Me.tc, Me.empresaVP, Me.rfcEmisor, Me.nombreEmisor, Me.uuidFactura, Me.total, Me.area, Me.familia, Me.cuenta, Me.neto, Me.cuentaIva, Me.ivaT, Me.cuentaP, Me.impuesto, Me.concepto})
+        Me.Dgv_Prepolizas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivot, Me.ordenCompra, Me.idCompra, Me.serieF, Me.idFactura, Me.nombreProveedor, Me.rfcProveedor, Me.totalFactura, Me.compraTotal, Me.fechaFact, Me.fechaPagoFact, Me.monedaVP, Me.tc, Me.empresaVP, Me.rfcEmisor, Me.nombreEmisor, Me.uuidFactura, Me.total, Me.area, Me.familia, Me.cuenta, Me.neto, Me.cuentaIva, Me.ivaT, Me.cuentaP, Me.impuesto, Me.concepto, Me.folioPoliza, Me.folioProvisionPol})
         Me.Dgv_Prepolizas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Prepolizas.Location = New System.Drawing.Point(10, 0)
         Me.Dgv_Prepolizas.Name = "Dgv_Prepolizas"
         Me.Dgv_Prepolizas.RowHeadersVisible = False
-        Me.Dgv_Prepolizas.Size = New System.Drawing.Size(1240, 257)
+        Me.Dgv_Prepolizas.Size = New System.Drawing.Size(1240, 364)
         Me.Dgv_Prepolizas.TabIndex = 6
         Me.Dgv_Prepolizas.Visible = False
         '
@@ -374,12 +619,189 @@ Partial Class Frm_PolizasDiario
         Me.concepto.Name = "concepto"
         Me.concepto.ReadOnly = True
         '
+        'folioPoliza
+        '
+        Me.folioPoliza.HeaderText = "FolioPoliza"
+        Me.folioPoliza.Name = "folioPoliza"
+        Me.folioPoliza.ReadOnly = True
+        Me.folioPoliza.Visible = False
+        '
+        'folioProvisionPol
+        '
+        Me.folioProvisionPol.HeaderText = "FolioProvisionPol"
+        Me.folioProvisionPol.Name = "folioProvisionPol"
+        Me.folioProvisionPol.ReadOnly = True
+        Me.folioProvisionPol.Visible = False
+        '
+        'Dgv_Egresos
+        '
+        Me.Dgv_Egresos.AllowUserToAddRows = False
+        Me.Dgv_Egresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv_Egresos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pivote, Me.fechaFac, Me.ejercicio, Me.periodo, Me.fechaPag, Me.ejercicioPag, Me.periodoPag, Me.idProv, Me.prov, Me.moneda2, Me.tipCambio, Me.total2, Me.oCompra, Me.uuidE, Me.conceptoCuenta, Me.cuentaClabe, Me.codBanco, Me.banco, Me.sc, Me.cuentaS, Me.folioProyeccion, Me.folioProvisionProy})
+        Me.Dgv_Egresos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Dgv_Egresos.Location = New System.Drawing.Point(10, 0)
+        Me.Dgv_Egresos.Name = "Dgv_Egresos"
+        Me.Dgv_Egresos.RowHeadersVisible = False
+        Me.Dgv_Egresos.Size = New System.Drawing.Size(1240, 364)
+        Me.Dgv_Egresos.TabIndex = 6
+        Me.Dgv_Egresos.Visible = False
+        '
+        'pivote
+        '
+        Me.pivote.HeaderText = "Pivote"
+        Me.pivote.Name = "pivote"
+        Me.pivote.ReadOnly = True
+        Me.pivote.Width = 55
+        '
+        'fechaFac
+        '
+        Me.fechaFac.HeaderText = "Fecha"
+        Me.fechaFac.Name = "fechaFac"
+        Me.fechaFac.ReadOnly = True
+        Me.fechaFac.Width = 65
+        '
+        'ejercicio
+        '
+        Me.ejercicio.HeaderText = "Ejercicio"
+        Me.ejercicio.Name = "ejercicio"
+        Me.ejercicio.ReadOnly = True
+        Me.ejercicio.Width = 50
+        '
+        'periodo
+        '
+        Me.periodo.HeaderText = "Periodo"
+        Me.periodo.Name = "periodo"
+        Me.periodo.ReadOnly = True
+        Me.periodo.Width = 50
+        '
+        'fechaPag
+        '
+        Me.fechaPag.HeaderText = "Fecha Pago"
+        Me.fechaPag.Name = "fechaPag"
+        Me.fechaPag.ReadOnly = True
+        Me.fechaPag.Width = 65
+        '
+        'ejercicioPag
+        '
+        Me.ejercicioPag.HeaderText = "Ejercicio Pago"
+        Me.ejercicioPag.Name = "ejercicioPag"
+        Me.ejercicioPag.ReadOnly = True
+        Me.ejercicioPag.Width = 50
+        '
+        'periodoPag
+        '
+        Me.periodoPag.HeaderText = "Periodo Pago"
+        Me.periodoPag.Name = "periodoPag"
+        Me.periodoPag.ReadOnly = True
+        Me.periodoPag.Width = 50
+        '
+        'idProv
+        '
+        Me.idProv.HeaderText = "Cod Proveedor"
+        Me.idProv.Name = "idProv"
+        Me.idProv.ReadOnly = True
+        Me.idProv.Width = 60
+        '
+        'prov
+        '
+        Me.prov.HeaderText = "Proveedor"
+        Me.prov.Name = "prov"
+        Me.prov.ReadOnly = True
+        Me.prov.Width = 170
+        '
+        'moneda2
+        '
+        Me.moneda2.HeaderText = "Moneda"
+        Me.moneda2.Name = "moneda2"
+        Me.moneda2.ReadOnly = True
+        Me.moneda2.Width = 75
+        '
+        'tipCambio
+        '
+        Me.tipCambio.HeaderText = "TC"
+        Me.tipCambio.Name = "tipCambio"
+        Me.tipCambio.ReadOnly = True
+        Me.tipCambio.Width = 75
+        '
+        'total2
+        '
+        Me.total2.HeaderText = "Total"
+        Me.total2.Name = "total2"
+        Me.total2.ReadOnly = True
+        Me.total2.Width = 75
+        '
+        'oCompra
+        '
+        Me.oCompra.HeaderText = "OC"
+        Me.oCompra.Name = "oCompra"
+        Me.oCompra.ReadOnly = True
+        Me.oCompra.Width = 75
+        '
+        'uuidE
+        '
+        Me.uuidE.HeaderText = "UUID"
+        Me.uuidE.Name = "uuidE"
+        Me.uuidE.ReadOnly = True
+        '
+        'conceptoCuenta
+        '
+        Me.conceptoCuenta.HeaderText = "Concepto"
+        Me.conceptoCuenta.Name = "conceptoCuenta"
+        Me.conceptoCuenta.ReadOnly = True
+        Me.conceptoCuenta.Width = 170
+        '
+        'cuentaClabe
+        '
+        Me.cuentaClabe.HeaderText = "CLABE"
+        Me.cuentaClabe.Name = "cuentaClabe"
+        Me.cuentaClabe.ReadOnly = True
+        '
+        'codBanco
+        '
+        Me.codBanco.HeaderText = "Código Banco"
+        Me.codBanco.Name = "codBanco"
+        Me.codBanco.ReadOnly = True
+        '
+        'banco
+        '
+        Me.banco.HeaderText = "Banco"
+        Me.banco.Name = "banco"
+        Me.banco.ReadOnly = True
+        '
+        'sc
+        '
+        Me.sc.HeaderText = "SC"
+        Me.sc.Name = "sc"
+        Me.sc.ReadOnly = True
+        Me.sc.Width = 70
+        '
+        'cuentaS
+        '
+        Me.cuentaS.HeaderText = "Cuenta"
+        Me.cuentaS.Name = "cuentaS"
+        Me.cuentaS.ReadOnly = True
+        Me.cuentaS.Width = 70
+        '
+        'folioProyeccion
+        '
+        Me.folioProyeccion.HeaderText = "FolioProyeccion"
+        Me.folioProyeccion.Name = "folioProyeccion"
+        Me.folioProyeccion.ReadOnly = True
+        Me.folioProyeccion.Visible = False
+        '
+        'folioProvisionProy
+        '
+        Me.folioProvisionProy.HeaderText = "FolioProvisionProy"
+        Me.folioProvisionProy.Name = "folioProvisionProy"
+        Me.folioProvisionProy.ReadOnly = True
+        Me.folioProvisionProy.Visible = False
+        '
         'Panel8
         '
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel8.Location = New System.Drawing.Point(0, 0)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(10, 257)
+        Me.Panel8.Size = New System.Drawing.Size(10, 364)
         Me.Panel8.TabIndex = 2
         '
         'Panel9
@@ -387,13 +809,13 @@ Partial Class Frm_PolizasDiario
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel9.Location = New System.Drawing.Point(1250, 0)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(10, 257)
+        Me.Panel9.Size = New System.Drawing.Size(10, 364)
         Me.Panel9.TabIndex = 3
         '
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(0, 563)
+        Me.Panel6.Location = New System.Drawing.Point(0, 670)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1260, 10)
         Me.Panel6.TabIndex = 2
@@ -408,6 +830,7 @@ Partial Class Frm_PolizasDiario
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.Dgv_Ventas)
         Me.Panel4.Controls.Add(Me.Dgv_Compras)
         Me.Panel4.Controls.Add(Me.Panel11)
         Me.Panel4.Controls.Add(Me.Panel10)
@@ -416,6 +839,125 @@ Partial Class Frm_PolizasDiario
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1260, 280)
         Me.Panel4.TabIndex = 0
+        '
+        'Dgv_Ventas
+        '
+        Me.Dgv_Ventas.AllowUserToAddRows = False
+        Me.Dgv_Ventas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.Dgv_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv_Ventas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdPV, Me.venta, Me.pedido, Me.serieV, Me.facturaV, Me.cliente, Me.rfcV, Me.montoPed, Me.montoFactV, Me.fechaFactV, Me.monedaV, Me.empresaV, Me.uuidV, Me.tcV, Me.seleccionV})
+        Me.Dgv_Ventas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Dgv_Ventas.Location = New System.Drawing.Point(10, 0)
+        Me.Dgv_Ventas.Name = "Dgv_Ventas"
+        Me.Dgv_Ventas.RowHeadersVisible = False
+        Me.Dgv_Ventas.Size = New System.Drawing.Size(1240, 280)
+        Me.Dgv_Ventas.TabIndex = 6
+        Me.Dgv_Ventas.Visible = False
+        '
+        'IdPV
+        '
+        Me.IdPV.HeaderText = "IdDoc"
+        Me.IdPV.Name = "IdPV"
+        Me.IdPV.ReadOnly = True
+        Me.IdPV.Width = 61
+        '
+        'venta
+        '
+        Me.venta.HeaderText = "Venta"
+        Me.venta.Name = "venta"
+        Me.venta.ReadOnly = True
+        Me.venta.Width = 60
+        '
+        'pedido
+        '
+        Me.pedido.HeaderText = "Pedido"
+        Me.pedido.Name = "pedido"
+        Me.pedido.ReadOnly = True
+        Me.pedido.Width = 65
+        '
+        'serieV
+        '
+        Me.serieV.HeaderText = "Serie"
+        Me.serieV.Name = "serieV"
+        Me.serieV.ReadOnly = True
+        Me.serieV.Width = 56
+        '
+        'facturaV
+        '
+        Me.facturaV.HeaderText = "Factura"
+        Me.facturaV.Name = "facturaV"
+        Me.facturaV.ReadOnly = True
+        Me.facturaV.Width = 68
+        '
+        'cliente
+        '
+        Me.cliente.HeaderText = "Cliente"
+        Me.cliente.Name = "cliente"
+        Me.cliente.ReadOnly = True
+        Me.cliente.Width = 64
+        '
+        'rfcV
+        '
+        Me.rfcV.HeaderText = "RFC"
+        Me.rfcV.Name = "rfcV"
+        Me.rfcV.ReadOnly = True
+        Me.rfcV.Width = 53
+        '
+        'montoPed
+        '
+        Me.montoPed.HeaderText = "MontoPed"
+        Me.montoPed.Name = "montoPed"
+        Me.montoPed.ReadOnly = True
+        Me.montoPed.Width = 81
+        '
+        'montoFactV
+        '
+        Me.montoFactV.HeaderText = "MontoFact"
+        Me.montoFactV.Name = "montoFactV"
+        Me.montoFactV.ReadOnly = True
+        Me.montoFactV.Width = 83
+        '
+        'fechaFactV
+        '
+        Me.fechaFactV.HeaderText = "FechaFact"
+        Me.fechaFactV.Name = "fechaFactV"
+        Me.fechaFactV.ReadOnly = True
+        Me.fechaFactV.Width = 83
+        '
+        'monedaV
+        '
+        Me.monedaV.HeaderText = "Moneda"
+        Me.monedaV.Name = "monedaV"
+        Me.monedaV.ReadOnly = True
+        Me.monedaV.Width = 71
+        '
+        'empresaV
+        '
+        Me.empresaV.HeaderText = "Empresa"
+        Me.empresaV.Name = "empresaV"
+        Me.empresaV.ReadOnly = True
+        Me.empresaV.Width = 73
+        '
+        'uuidV
+        '
+        Me.uuidV.HeaderText = "UUID"
+        Me.uuidV.Name = "uuidV"
+        Me.uuidV.ReadOnly = True
+        Me.uuidV.Width = 59
+        '
+        'tcV
+        '
+        Me.tcV.HeaderText = "TC"
+        Me.tcV.Name = "tcV"
+        Me.tcV.ReadOnly = True
+        Me.tcV.Width = 46
+        '
+        'seleccionV
+        '
+        Me.seleccionV.HeaderText = "Seleccion"
+        Me.seleccionV.Name = "seleccionV"
+        Me.seleccionV.ReadOnly = True
+        Me.seleccionV.Visible = False
         '
         'Dgv_Compras
         '
@@ -597,9 +1139,6 @@ Partial Class Frm_PolizasDiario
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Btn_Limpiar)
         Me.Panel1.Controls.Add(Me.Btn_Actualizar)
         Me.Panel1.Controls.Add(Me.Panel12)
@@ -614,40 +1153,6 @@ Partial Class Frm_PolizasDiario
         Me.Panel1.Size = New System.Drawing.Size(1260, 51)
         Me.Panel1.TabIndex = 0
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(431, 36)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(39, 13)
-        Me.Label9.TabIndex = 22
-        Me.Label9.Text = "Label9"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(388, 36)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(39, 13)
-        Me.Label8.TabIndex = 21
-        Me.Label8.Text = "Label8"
-        '
-        'Button1
-        '
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = Global.Presentacion.My.Resources.Resources.txt
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(425, -3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(39, 40)
-        Me.Button1.TabIndex = 20
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Btn_Limpiar
         '
         Me.Btn_Limpiar.AllowDrop = True
@@ -656,7 +1161,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.Btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Limpiar.Image = Global.Presentacion.My.Resources.Resources.pagina_blanca_de_origami
-        Me.Btn_Limpiar.Location = New System.Drawing.Point(509, -1)
+        Me.Btn_Limpiar.Location = New System.Drawing.Point(471, 0)
         Me.Btn_Limpiar.Name = "Btn_Limpiar"
         Me.Btn_Limpiar.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Limpiar.TabIndex = 19
@@ -670,7 +1175,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.Btn_Actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Actualizar.Image = Global.Presentacion.My.Resources.Resources.actualizar
-        Me.Btn_Actualizar.Location = New System.Drawing.Point(464, -1)
+        Me.Btn_Actualizar.Location = New System.Drawing.Point(430, 0)
         Me.Btn_Actualizar.Name = "Btn_Actualizar"
         Me.Btn_Actualizar.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Actualizar.TabIndex = 18
@@ -678,23 +1183,35 @@ Partial Class Frm_PolizasDiario
         '
         'Panel12
         '
+        Me.Panel12.Controls.Add(Me.Cmb_BancoMoneda)
         Me.Panel12.Controls.Add(Me.Btn_LimpiarFiltros)
-        Me.Panel12.Controls.Add(Me.Label7)
-        Me.Panel12.Controls.Add(Me.Dtp_FiltroFechaFactura)
-        Me.Panel12.Controls.Add(Me.Label6)
+        Me.Panel12.Controls.Add(Me.Lbl_BancoMoneda)
+        Me.Panel12.Controls.Add(Me.Lbl_CteProv)
         Me.Panel12.Controls.Add(Me.Label5)
-        Me.Panel12.Controls.Add(Me.Label4)
-        Me.Panel12.Controls.Add(Me.Label3)
+        Me.Panel12.Controls.Add(Me.Lbl_PedOc)
+        Me.Panel12.Controls.Add(Me.Lbl_TitComVen)
         Me.Panel12.Controls.Add(Me.Lbl_Filtros)
         Me.Panel12.Controls.Add(Me.Txt_FiltroFactura)
         Me.Panel12.Controls.Add(Me.Txt_FiltroOC)
         Me.Panel12.Controls.Add(Me.Txt_FiltroProveedor)
         Me.Panel12.Controls.Add(Me.Txt_FiltroCompras)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel12.Location = New System.Drawing.Point(584, 0)
+        Me.Panel12.Location = New System.Drawing.Point(596, 0)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(676, 51)
+        Me.Panel12.Size = New System.Drawing.Size(664, 51)
         Me.Panel12.TabIndex = 5
+        '
+        'Cmb_BancoMoneda
+        '
+        Me.Cmb_BancoMoneda.BackColor = System.Drawing.Color.White
+        Me.Cmb_BancoMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_BancoMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Cmb_BancoMoneda.FormattingEnabled = True
+        Me.Cmb_BancoMoneda.Location = New System.Drawing.Point(420, 21)
+        Me.Cmb_BancoMoneda.Name = "Cmb_BancoMoneda"
+        Me.Cmb_BancoMoneda.Size = New System.Drawing.Size(176, 21)
+        Me.Cmb_BancoMoneda.TabIndex = 18
+        Me.Cmb_BancoMoneda.Visible = False
         '
         'Btn_LimpiarFiltros
         '
@@ -704,43 +1221,34 @@ Partial Class Frm_PolizasDiario
         Me.Btn_LimpiarFiltros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue
         Me.Btn_LimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_LimpiarFiltros.Image = Global.Presentacion.My.Resources.Resources.pagina_blanca_de_origami
-        Me.Btn_LimpiarFiltros.Location = New System.Drawing.Point(588, 4)
+        Me.Btn_LimpiarFiltros.Location = New System.Drawing.Point(613, 6)
         Me.Btn_LimpiarFiltros.Name = "Btn_LimpiarFiltros"
         Me.Btn_LimpiarFiltros.Size = New System.Drawing.Size(39, 40)
         Me.Btn_LimpiarFiltros.TabIndex = 17
         Me.Btn_LimpiarFiltros.UseVisualStyleBackColor = True
         '
-        'Label7
+        'Lbl_BancoMoneda
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(415, 4)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(89, 13)
-        Me.Label7.TabIndex = 16
-        Me.Label7.Text = "Fecha Factura"
-        Me.Label7.Visible = False
+        Me.Lbl_BancoMoneda.AutoSize = True
+        Me.Lbl_BancoMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_BancoMoneda.ForeColor = System.Drawing.Color.White
+        Me.Lbl_BancoMoneda.Location = New System.Drawing.Point(421, 4)
+        Me.Lbl_BancoMoneda.Name = "Lbl_BancoMoneda"
+        Me.Lbl_BancoMoneda.Size = New System.Drawing.Size(92, 13)
+        Me.Lbl_BancoMoneda.TabIndex = 16
+        Me.Lbl_BancoMoneda.Text = "Banco Moneda"
+        Me.Lbl_BancoMoneda.Visible = False
         '
-        'Dtp_FiltroFechaFactura
+        'Lbl_CteProv
         '
-        Me.Dtp_FiltroFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_FiltroFechaFactura.Location = New System.Drawing.Point(420, 21)
-        Me.Dtp_FiltroFechaFactura.Name = "Dtp_FiltroFechaFactura"
-        Me.Dtp_FiltroFechaFactura.Size = New System.Drawing.Size(84, 20)
-        Me.Dtp_FiltroFechaFactura.TabIndex = 15
-        Me.Dtp_FiltroFechaFactura.Visible = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(241, 5)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(65, 13)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Proveedor"
+        Me.Lbl_CteProv.AutoSize = True
+        Me.Lbl_CteProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_CteProv.ForeColor = System.Drawing.Color.White
+        Me.Lbl_CteProv.Location = New System.Drawing.Point(241, 5)
+        Me.Lbl_CteProv.Name = "Lbl_CteProv"
+        Me.Lbl_CteProv.Size = New System.Drawing.Size(65, 13)
+        Me.Lbl_CteProv.TabIndex = 14
+        Me.Lbl_CteProv.Text = "Proveedor"
         '
         'Label5
         '
@@ -753,27 +1261,27 @@ Partial Class Frm_PolizasDiario
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Factura"
         '
-        'Label4
+        'Lbl_PedOc
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(138, 6)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(24, 13)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "OC"
+        Me.Lbl_PedOc.AutoSize = True
+        Me.Lbl_PedOc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_PedOc.ForeColor = System.Drawing.Color.White
+        Me.Lbl_PedOc.Location = New System.Drawing.Point(138, 6)
+        Me.Lbl_PedOc.Name = "Lbl_PedOc"
+        Me.Lbl_PedOc.Size = New System.Drawing.Size(24, 13)
+        Me.Lbl_PedOc.TabIndex = 12
+        Me.Lbl_PedOc.Text = "OC"
         '
-        'Label3
+        'Lbl_TitComVen
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(80, 6)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 13)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Compra"
+        Me.Lbl_TitComVen.AutoSize = True
+        Me.Lbl_TitComVen.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TitComVen.ForeColor = System.Drawing.Color.White
+        Me.Lbl_TitComVen.Location = New System.Drawing.Point(80, 6)
+        Me.Lbl_TitComVen.Name = "Lbl_TitComVen"
+        Me.Lbl_TitComVen.Size = New System.Drawing.Size(49, 13)
+        Me.Lbl_TitComVen.TabIndex = 11
+        Me.Lbl_TitComVen.Text = "Compra"
         '
         'Lbl_Filtros
         '
@@ -828,7 +1336,7 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Txt.Image = Global.Presentacion.My.Resources.Resources.txt
         Me.Btn_Txt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_Txt.Location = New System.Drawing.Point(384, -2)
+        Me.Btn_Txt.Location = New System.Drawing.Point(384, 0)
         Me.Btn_Txt.Name = "Btn_Txt"
         Me.Btn_Txt.Size = New System.Drawing.Size(39, 40)
         Me.Btn_Txt.TabIndex = 4
@@ -856,149 +1364,11 @@ Partial Class Frm_PolizasDiario
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Fecha Inicial"
         '
-        'pivote
-        '
-        Me.pivote.HeaderText = "Pivote"
-        Me.pivote.Name = "pivote"
-        Me.pivote.ReadOnly = True
-        Me.pivote.Width = 55
-        '
-        'fechaFac
-        '
-        Me.fechaFac.HeaderText = "Fecha"
-        Me.fechaFac.Name = "fechaFac"
-        Me.fechaFac.ReadOnly = True
-        Me.fechaFac.Width = 65
-        '
-        'ejercicio
-        '
-        Me.ejercicio.HeaderText = "Ejercicio"
-        Me.ejercicio.Name = "ejercicio"
-        Me.ejercicio.ReadOnly = True
-        Me.ejercicio.Width = 50
-        '
-        'periodo
-        '
-        Me.periodo.HeaderText = "Periodo"
-        Me.periodo.Name = "periodo"
-        Me.periodo.ReadOnly = True
-        Me.periodo.Width = 50
-        '
-        'fechaPag
-        '
-        Me.fechaPag.HeaderText = "Fecha Pago"
-        Me.fechaPag.Name = "fechaPag"
-        Me.fechaPag.ReadOnly = True
-        Me.fechaPag.Width = 65
-        '
-        'ejercicioPag
-        '
-        Me.ejercicioPag.HeaderText = "Ejercicio Pago"
-        Me.ejercicioPag.Name = "ejercicioPag"
-        Me.ejercicioPag.ReadOnly = True
-        Me.ejercicioPag.Width = 50
-        '
-        'periodoPag
-        '
-        Me.periodoPag.HeaderText = "Periodo Pago"
-        Me.periodoPag.Name = "periodoPag"
-        Me.periodoPag.ReadOnly = True
-        Me.periodoPag.Width = 50
-        '
-        'idProv
-        '
-        Me.idProv.HeaderText = "Cod Proveedor"
-        Me.idProv.Name = "idProv"
-        Me.idProv.ReadOnly = True
-        Me.idProv.Width = 60
-        '
-        'prov
-        '
-        Me.prov.HeaderText = "Proveedor"
-        Me.prov.Name = "prov"
-        Me.prov.ReadOnly = True
-        Me.prov.Width = 170
-        '
-        'moneda2
-        '
-        Me.moneda2.HeaderText = "Moneda"
-        Me.moneda2.Name = "moneda2"
-        Me.moneda2.ReadOnly = True
-        Me.moneda2.Width = 75
-        '
-        'tipCambio
-        '
-        Me.tipCambio.HeaderText = "TC"
-        Me.tipCambio.Name = "tipCambio"
-        Me.tipCambio.ReadOnly = True
-        Me.tipCambio.Width = 75
-        '
-        'total2
-        '
-        Me.total2.HeaderText = "Total"
-        Me.total2.Name = "total2"
-        Me.total2.ReadOnly = True
-        Me.total2.Width = 75
-        '
-        'oCompra
-        '
-        Me.oCompra.HeaderText = "OC"
-        Me.oCompra.Name = "oCompra"
-        Me.oCompra.ReadOnly = True
-        Me.oCompra.Width = 75
-        '
-        'conceptoCuenta
-        '
-        Me.conceptoCuenta.HeaderText = "Concepto"
-        Me.conceptoCuenta.Name = "conceptoCuenta"
-        Me.conceptoCuenta.ReadOnly = True
-        Me.conceptoCuenta.Width = 170
-        '
-        'cuentaClabe
-        '
-        Me.cuentaClabe.HeaderText = "CLABE"
-        Me.cuentaClabe.Name = "cuentaClabe"
-        Me.cuentaClabe.ReadOnly = True
-        '
-        'idBanco
-        '
-        Me.idBanco.HeaderText = "Id Banco"
-        Me.idBanco.Name = "idBanco"
-        Me.idBanco.ReadOnly = True
-        Me.idBanco.Width = 65
-        '
-        'codBanco
-        '
-        Me.codBanco.HeaderText = "Código Banco"
-        Me.codBanco.Name = "codBanco"
-        Me.codBanco.ReadOnly = True
-        Me.codBanco.Visible = False
-        '
-        'banco
-        '
-        Me.banco.HeaderText = "Banco"
-        Me.banco.Name = "banco"
-        Me.banco.ReadOnly = True
-        '
-        'sc
-        '
-        Me.sc.HeaderText = "SC"
-        Me.sc.Name = "sc"
-        Me.sc.ReadOnly = True
-        Me.sc.Width = 70
-        '
-        'cuentaS
-        '
-        Me.cuentaS.HeaderText = "Cuenta"
-        Me.cuentaS.Name = "cuentaS"
-        Me.cuentaS.ReadOnly = True
-        Me.cuentaS.Width = 70
-        '
         'Frm_PolizasDiario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1260, 640)
+        Me.ClientSize = New System.Drawing.Size(1260, 747)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -1008,9 +1378,11 @@ Partial Class Frm_PolizasDiario
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel3.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
-        CType(Me.Dgv_Egresos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Dgv_PolizasVentas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Dgv_Prepolizas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Dgv_Egresos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
+        CType(Me.Dgv_Ventas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Dgv_Compras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -1037,6 +1409,63 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Btn_Txt As Button
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Lbl_CteProv As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Lbl_PedOc As Label
+    Friend WithEvents Lbl_TitComVen As Label
+    Friend WithEvents Lbl_Filtros As Label
+    Friend WithEvents Txt_FiltroFactura As TextBox
+    Friend WithEvents Txt_FiltroOC As TextBox
+    Friend WithEvents Txt_FiltroCompras As TextBox
+    Friend WithEvents Lbl_BancoMoneda As Label
+    Friend WithEvents Txt_FiltroProveedor As TextBox
+    Friend WithEvents Btn_LimpiarFiltros As Button
+    Friend WithEvents Btn_Limpiar As Button
+    Friend WithEvents Btn_Actualizar As Button
+    Friend WithEvents provision As DataGridViewTextBoxColumn
+    Friend WithEvents compra As DataGridViewTextBoxColumn
+    Friend WithEvents oc As DataGridViewTextBoxColumn
+    Friend WithEvents serie As DataGridViewTextBoxColumn
+    Friend WithEvents factura As DataGridViewTextBoxColumn
+    Friend WithEvents proveedor As DataGridViewTextBoxColumn
+    Friend WithEvents montoOc As DataGridViewTextBoxColumn
+    Friend WithEvents montoCompra As DataGridViewTextBoxColumn
+    Friend WithEvents montoFact As DataGridViewTextBoxColumn
+    Friend WithEvents montoPagar As DataGridViewTextBoxColumn
+    Friend WithEvents fechaFactura As DataGridViewTextBoxColumn
+    Friend WithEvents fechaPagoFactura As DataGridViewTextBoxColumn
+    Friend WithEvents fechaPagoReal As DataGridViewTextBoxColumn
+    Friend WithEvents moneda As DataGridViewTextBoxColumn
+    Friend WithEvents empresa As DataGridViewTextBoxColumn
+    Friend WithEvents fechaCompra As DataGridViewTextBoxColumn
+    Friend WithEvents uuid As DataGridViewTextBoxColumn
+    Friend WithEvents tazaCambio As DataGridViewTextBoxColumn
+    Friend WithEvents seleccion As DataGridViewTextBoxColumn
+    Friend WithEvents Dgv_Egresos As DataGridView
+    Friend WithEvents Cmb_BancoMoneda As ComboBox
+    Friend WithEvents pivote As DataGridViewTextBoxColumn
+    Friend WithEvents fechaFac As DataGridViewTextBoxColumn
+    Friend WithEvents ejercicio As DataGridViewTextBoxColumn
+    Friend WithEvents periodo As DataGridViewTextBoxColumn
+    Friend WithEvents fechaPag As DataGridViewTextBoxColumn
+    Friend WithEvents ejercicioPag As DataGridViewTextBoxColumn
+    Friend WithEvents periodoPag As DataGridViewTextBoxColumn
+    Friend WithEvents idProv As DataGridViewTextBoxColumn
+    Friend WithEvents prov As DataGridViewTextBoxColumn
+    Friend WithEvents moneda2 As DataGridViewTextBoxColumn
+    Friend WithEvents tipCambio As DataGridViewTextBoxColumn
+    Friend WithEvents total2 As DataGridViewTextBoxColumn
+    Friend WithEvents oCompra As DataGridViewTextBoxColumn
+    Friend WithEvents uuidE As DataGridViewTextBoxColumn
+    Friend WithEvents conceptoCuenta As DataGridViewTextBoxColumn
+    Friend WithEvents cuentaClabe As DataGridViewTextBoxColumn
+    Friend WithEvents codBanco As DataGridViewTextBoxColumn
+    Friend WithEvents banco As DataGridViewTextBoxColumn
+    Friend WithEvents sc As DataGridViewTextBoxColumn
+    Friend WithEvents cuentaS As DataGridViewTextBoxColumn
+    Friend WithEvents folioProyeccion As DataGridViewTextBoxColumn
+    Friend WithEvents folioProvisionProy As DataGridViewTextBoxColumn
     Friend WithEvents pivot As DataGridViewTextBoxColumn
     Friend WithEvents ordenCompra As DataGridViewTextBoxColumn
     Friend WithEvents idCompra As DataGridViewTextBoxColumn
@@ -1064,62 +1493,52 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents cuentaP As DataGridViewTextBoxColumn
     Friend WithEvents impuesto As DataGridViewTextBoxColumn
     Friend WithEvents concepto As DataGridViewTextBoxColumn
-    Friend WithEvents Panel12 As Panel
-    Friend WithEvents Dtp_FiltroFechaFactura As DateTimePicker
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Lbl_Filtros As Label
-    Friend WithEvents Txt_FiltroFactura As TextBox
-    Friend WithEvents Txt_FiltroOC As TextBox
-    Friend WithEvents Txt_FiltroCompras As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Txt_FiltroProveedor As TextBox
-    Friend WithEvents Btn_LimpiarFiltros As Button
-    Friend WithEvents Btn_Limpiar As Button
-    Friend WithEvents Btn_Actualizar As Button
-    Friend WithEvents provision As DataGridViewTextBoxColumn
-    Friend WithEvents compra As DataGridViewTextBoxColumn
-    Friend WithEvents oc As DataGridViewTextBoxColumn
-    Friend WithEvents serie As DataGridViewTextBoxColumn
-    Friend WithEvents factura As DataGridViewTextBoxColumn
-    Friend WithEvents proveedor As DataGridViewTextBoxColumn
-    Friend WithEvents montoOc As DataGridViewTextBoxColumn
-    Friend WithEvents montoCompra As DataGridViewTextBoxColumn
-    Friend WithEvents montoFact As DataGridViewTextBoxColumn
-    Friend WithEvents montoPagar As DataGridViewTextBoxColumn
-    Friend WithEvents fechaFactura As DataGridViewTextBoxColumn
-    Friend WithEvents fechaPagoFactura As DataGridViewTextBoxColumn
-    Friend WithEvents fechaPagoReal As DataGridViewTextBoxColumn
-    Friend WithEvents moneda As DataGridViewTextBoxColumn
-    Friend WithEvents empresa As DataGridViewTextBoxColumn
-    Friend WithEvents fechaCompra As DataGridViewTextBoxColumn
-    Friend WithEvents uuid As DataGridViewTextBoxColumn
-    Friend WithEvents tazaCambio As DataGridViewTextBoxColumn
-    Friend WithEvents seleccion As DataGridViewTextBoxColumn
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Dgv_Egresos As DataGridView
-    Friend WithEvents pivote As DataGridViewTextBoxColumn
-    Friend WithEvents fechaFac As DataGridViewTextBoxColumn
-    Friend WithEvents ejercicio As DataGridViewTextBoxColumn
-    Friend WithEvents periodo As DataGridViewTextBoxColumn
-    Friend WithEvents fechaPag As DataGridViewTextBoxColumn
-    Friend WithEvents ejercicioPag As DataGridViewTextBoxColumn
-    Friend WithEvents periodoPag As DataGridViewTextBoxColumn
-    Friend WithEvents idProv As DataGridViewTextBoxColumn
-    Friend WithEvents prov As DataGridViewTextBoxColumn
-    Friend WithEvents moneda2 As DataGridViewTextBoxColumn
-    Friend WithEvents tipCambio As DataGridViewTextBoxColumn
-    Friend WithEvents total2 As DataGridViewTextBoxColumn
-    Friend WithEvents oCompra As DataGridViewTextBoxColumn
-    Friend WithEvents conceptoCuenta As DataGridViewTextBoxColumn
-    Friend WithEvents cuentaClabe As DataGridViewTextBoxColumn
-    Friend WithEvents idBanco As DataGridViewTextBoxColumn
-    Friend WithEvents codBanco As DataGridViewTextBoxColumn
-    Friend WithEvents banco As DataGridViewTextBoxColumn
-    Friend WithEvents sc As DataGridViewTextBoxColumn
-    Friend WithEvents cuentaS As DataGridViewTextBoxColumn
+    Friend WithEvents folioPoliza As DataGridViewTextBoxColumn
+    Friend WithEvents folioProvisionPol As DataGridViewTextBoxColumn
+    Friend WithEvents Dgv_Ventas As DataGridView
+    Friend WithEvents IdPV As DataGridViewTextBoxColumn
+    Friend WithEvents venta As DataGridViewTextBoxColumn
+    Friend WithEvents pedido As DataGridViewTextBoxColumn
+    Friend WithEvents serieV As DataGridViewTextBoxColumn
+    Friend WithEvents facturaV As DataGridViewTextBoxColumn
+    Friend WithEvents cliente As DataGridViewTextBoxColumn
+    Friend WithEvents rfcV As DataGridViewTextBoxColumn
+    Friend WithEvents montoPed As DataGridViewTextBoxColumn
+    Friend WithEvents montoFactV As DataGridViewTextBoxColumn
+    Friend WithEvents fechaFactV As DataGridViewTextBoxColumn
+    Friend WithEvents monedaV As DataGridViewTextBoxColumn
+    Friend WithEvents empresaV As DataGridViewTextBoxColumn
+    Friend WithEvents uuidV As DataGridViewTextBoxColumn
+    Friend WithEvents tcV As DataGridViewTextBoxColumn
+    Friend WithEvents seleccionV As DataGridViewTextBoxColumn
+    Friend WithEvents Dgv_PolizasVentas As DataGridView
+    Friend WithEvents pivotPV As DataGridViewTextBoxColumn
+    Friend WithEvents pedPV As DataGridViewTextBoxColumn
+    Friend WithEvents ventaPV As DataGridViewTextBoxColumn
+    Friend WithEvents seriePV As DataGridViewTextBoxColumn
+    Friend WithEvents facturaPV As DataGridViewTextBoxColumn
+    Friend WithEvents clientePV As DataGridViewTextBoxColumn
+    Friend WithEvents rfcPV As DataGridViewTextBoxColumn
+    Friend WithEvents totalFacturaPV As DataGridViewTextBoxColumn
+    Friend WithEvents compraTotalPV As DataGridViewTextBoxColumn
+    Friend WithEvents fechaFacturaPV As DataGridViewTextBoxColumn
+    Friend WithEvents fechaPagoPV As DataGridViewTextBoxColumn
+    Friend WithEvents monedaPV As DataGridViewTextBoxColumn
+    Friend WithEvents tcPV As DataGridViewTextBoxColumn
+    Friend WithEvents empresaPV As DataGridViewTextBoxColumn
+    Friend WithEvents rfcEmisorPV As DataGridViewTextBoxColumn
+    Friend WithEvents emisorPV As DataGridViewTextBoxColumn
+    Friend WithEvents uuidPV As DataGridViewTextBoxColumn
+    Friend WithEvents totalPV As DataGridViewTextBoxColumn
+    Friend WithEvents areaPV As DataGridViewTextBoxColumn
+    Friend WithEvents familiaPV As DataGridViewTextBoxColumn
+    Friend WithEvents cuentaPV As DataGridViewTextBoxColumn
+    Friend WithEvents netoPV As DataGridViewTextBoxColumn
+    Friend WithEvents cuentaIvaPV As DataGridViewTextBoxColumn
+    Friend WithEvents ivaPV As DataGridViewTextBoxColumn
+    Friend WithEvents cuentaPPV As DataGridViewTextBoxColumn
+    Friend WithEvents impuestoPV As DataGridViewTextBoxColumn
+    Friend WithEvents conceptoPV As DataGridViewTextBoxColumn
+    Friend WithEvents folioPolizaPV As DataGridViewTextBoxColumn
+    Friend WithEvents folioProvisionPolPV As DataGridViewTextBoxColumn
 End Class

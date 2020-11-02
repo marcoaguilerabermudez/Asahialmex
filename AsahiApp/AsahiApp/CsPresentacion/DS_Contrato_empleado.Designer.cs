@@ -640,7 +640,7 @@ namespace CsPresentacion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Sp_Genera_ContratoRow AddSp_Genera_ContratoRow(
-                        string CLAVE, 
+                        int CLAVE, 
                         string NACIONALIDAD, 
                         string GENERO, 
                         System.DateTime FECHA_NACIMIENTO, 
@@ -756,7 +756,7 @@ namespace CsPresentacion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnCLAVE = new global::System.Data.DataColumn("CLAVE", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCLAVE = new global::System.Data.DataColumn("CLAVE", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCLAVE);
                 this.columnNACIONALIDAD = new global::System.Data.DataColumn("NACIONALIDAD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNACIONALIDAD);
@@ -814,11 +814,11 @@ namespace CsPresentacion {
                 base.Columns.Add(this.columnTURNO);
                 this.columnCORREO = new global::System.Data.DataColumn("CORREO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCORREO);
-                this.columnCLAVE.AllowDBNull = false;
-                this.columnCLAVE.MaxLength = 10;
+                this.columnCLAVE.ReadOnly = true;
                 this.columnNACIONALIDAD.ReadOnly = true;
                 this.columnNACIONALIDAD.MaxLength = 20;
-                this.columnGENERO.MaxLength = 1;
+                this.columnGENERO.ReadOnly = true;
+                this.columnGENERO.MaxLength = 12;
                 this.columnDIRECCION.ReadOnly = true;
                 this.columnDIRECCION.MaxLength = 69;
                 this.columnRFC.ReadOnly = true;
@@ -829,7 +829,8 @@ namespace CsPresentacion {
                 this.columnDEPARTAMENTO.MaxLength = 30;
                 this.columnPUESTO.ReadOnly = true;
                 this.columnPUESTO.MaxLength = 30;
-                this.columnESTADO_CIVIL.MaxLength = 5;
+                this.columnESTADO_CIVIL.ReadOnly = true;
+                this.columnESTADO_CIVIL.MaxLength = 16;
                 this.columnPRIMERA_EVALUACION.ReadOnly = true;
                 this.columnSDO1.ReadOnly = true;
                 this.columnSDO2.ReadOnly = true;
@@ -996,9 +997,14 @@ namespace CsPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CLAVE {
+            public int CLAVE {
                 get {
-                    return ((string)(this[this.tableSp_Genera_Contrato.CLAVEColumn]));
+                    try {
+                        return ((int)(this[this.tableSp_Genera_Contrato.CLAVEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CLAVE\' de la tabla \'Sp_Genera_Contrato\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSp_Genera_Contrato.CLAVEColumn] = value;
@@ -1461,6 +1467,18 @@ namespace CsPresentacion {
                 set {
                     this[this.tableSp_Genera_Contrato.CORREOColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCLAVENull() {
+                return this.IsNull(this.tableSp_Genera_Contrato.CLAVEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCLAVENull() {
+                this[this.tableSp_Genera_Contrato.CLAVEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

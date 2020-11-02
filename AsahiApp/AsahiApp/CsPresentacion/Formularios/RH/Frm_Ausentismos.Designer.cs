@@ -649,6 +649,7 @@
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "1. Faltas";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Leave += new System.EventHandler(this.tabPage1_Leave);
             // 
             // txt_f_tipo
             // 
@@ -675,22 +676,6 @@
             this.cmb_f_tipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_f_tipo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_f_tipo.FormattingEnabled = true;
-            this.cmb_f_tipo.Items.AddRange(new object[] {
-            "ABANDONO DE TRABAJO",
-            "PRESTACION POR MATRIMONIO",
-            "CITA IMSS",
-            "ENFERMEDAD",
-            "FALTA INJUSTIFICADA",
-            "PERMISO CON GOCE",
-            "ENFERMEDAD LEVE",
-            "ENFERMEDAD MODERADA",
-            "SUSPENSION",
-            "PERMISO SIN GOCE",
-            "FAMILIAR",
-            "ASUNTOS PERSONALES",
-            "TRANSPORTE",
-            "FALTA JUSTIFICADA",
-            "VIAJE"});
             this.cmb_f_tipo.Location = new System.Drawing.Point(234, 118);
             this.cmb_f_tipo.Name = "cmb_f_tipo";
             this.cmb_f_tipo.Size = new System.Drawing.Size(312, 21);
