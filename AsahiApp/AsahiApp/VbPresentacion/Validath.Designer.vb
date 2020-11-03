@@ -24,8 +24,6 @@ Partial Class Validath
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Validath))
         Me.panel1 = New System.Windows.Forms.Panel()
-        Me.pbx = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -65,15 +63,19 @@ Partial Class Validath
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.pbx = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.panel1.SuspendLayout()
-        CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.panel1.Controls.Add(Me.Button3)
         Me.panel1.Controls.Add(Me.Button1)
         Me.panel1.Controls.Add(Me.pbx)
         Me.panel1.Controls.Add(Me.Button2)
@@ -87,26 +89,6 @@ Partial Class Validath
         Me.panel1.Name = "panel1"
         Me.panel1.Size = New System.Drawing.Size(1229, 169)
         Me.panel1.TabIndex = 145
-        '
-        'pbx
-        '
-        Me.pbx.ErrorImage = CType(resources.GetObject("pbx.ErrorImage"), System.Drawing.Image)
-        Me.pbx.Location = New System.Drawing.Point(906, 10)
-        Me.pbx.Name = "pbx"
-        Me.pbx.Size = New System.Drawing.Size(132, 138)
-        Me.pbx.TabIndex = 176
-        Me.pbx.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(32, 71)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(63, 80)
-        Me.Button2.TabIndex = 149
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
@@ -526,6 +508,37 @@ Partial Class Validath
         Me.Button1.TabIndex = 177
         Me.Button1.Text = "Acomodar Checadas"
         Me.Button1.UseVisualStyleBackColor = False
+        Me.Button1.Visible = False
+        '
+        'Button3
+        '
+        Me.Button3.ForeColor = System.Drawing.Color.Aqua
+        Me.Button3.Location = New System.Drawing.Point(376, 46)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(78, 35)
+        Me.Button3.TabIndex = 178
+        Me.Button3.Text = "Histórico Checadas"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'pbx
+        '
+        Me.pbx.ErrorImage = CType(resources.GetObject("pbx.ErrorImage"), System.Drawing.Image)
+        Me.pbx.Location = New System.Drawing.Point(906, 10)
+        Me.pbx.Name = "pbx"
+        Me.pbx.Size = New System.Drawing.Size(132, 138)
+        Me.pbx.TabIndex = 176
+        Me.pbx.TabStop = False
+        '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(32, 71)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(63, 80)
+        Me.Button2.TabIndex = 149
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Validath
         '
@@ -540,10 +553,10 @@ Partial Class Validath
         Me.Text = "Validación de Incidencias y Tiempo Extra"
         Me.panel1.ResumeLayout(False)
         Me.panel1.PerformLayout()
-        CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -590,4 +603,5 @@ Partial Class Validath
     Friend WithEvents Label6 As Label
     Friend WithEvents x As DataGridViewCheckBoxColumn
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button3 As Button
 End Class
