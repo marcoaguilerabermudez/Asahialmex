@@ -131,4 +131,7 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
         ContenedorReporteTeN.Show()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        AcomodaHoras.Show()
+    End Sub
 End Class

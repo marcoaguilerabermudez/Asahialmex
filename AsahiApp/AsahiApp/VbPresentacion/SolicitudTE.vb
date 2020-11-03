@@ -30,6 +30,7 @@ Public Class SolicitudTE
 
         Muestragrid()
         muestraetiquetaplan()
+
     End Sub
 
 
@@ -52,7 +53,7 @@ set @fecha = '" & parametro2 & "'
 
 select CLAVE, RTRIM(LTRIM(NOMBREN)) + ' ' + RTRIM(LTRIM(NOMBREP)) + ' ' + RTRIM(LTRIM(NOMBREM)) AS Empleado
 ,Turno = CASE (select TOP 1 ETT.CATALOGO  from GIRO.[asahi16].[Supervisor_giro].[Empturno] ETT
-  where ett.clave = vig.CLAVE and ett.FECHA_ENTRADA <= '27/10/2020'
+  where ett.clave = vig.CLAVE and ett.FECHA_ENTRADA <= @fecha
   order by ETT.FECHA_ENTRADA desc)/1 /*EM.TURNO*/
    when 1 then 'Matutino'
    when 2 then 'Vespertino'
@@ -415,13 +416,8 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
                 If fila.Cells("x").Value = True Then
                     preau.Parameters.Clear()
                     preau.Parameters.Add("@ID", SqlDbType.Int).Value = (fila.Cells("id").Value)
-
-
                     preau.ExecuteNonQuery()
-
                     RI = "¡Registro Preautorizado!"
-
-
                 End If
             Next
 
