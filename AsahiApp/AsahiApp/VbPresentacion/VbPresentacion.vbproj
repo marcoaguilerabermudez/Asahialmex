@@ -136,6 +136,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcomodaHoras.Designer.vb">
+      <DependentUpon>AcomodaHoras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AcomodaHoras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CapturaOEE.Designer.vb">
       <DependentUpon>CapturaOEE.vb</DependentUpon>
     </Compile>
@@ -512,6 +518,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AcomodaHoras.resx">
+      <DependentUpon>AcomodaHoras.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapturaOEE.resx">
       <DependentUpon>CapturaOEE.vb</DependentUpon>
     </EmbeddedResource>

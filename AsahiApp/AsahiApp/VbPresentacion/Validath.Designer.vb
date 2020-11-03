@@ -64,6 +64,7 @@ Partial Class Validath
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.panel1.SuspendLayout()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -73,6 +74,7 @@ Partial Class Validath
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.panel1.Controls.Add(Me.Button1)
         Me.panel1.Controls.Add(Me.pbx)
         Me.panel1.Controls.Add(Me.Button2)
         Me.panel1.Controls.Add(Me.GroupBox1)
@@ -445,7 +447,7 @@ Partial Class Validath
         'btn_desma
         '
         Me.btn_desma.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btn_desma.Location = New System.Drawing.Point(355, 111)
+        Me.btn_desma.Location = New System.Drawing.Point(243, 107)
         Me.btn_desma.Name = "btn_desma"
         Me.btn_desma.Size = New System.Drawing.Size(78, 35)
         Me.btn_desma.TabIndex = 148
@@ -455,7 +457,7 @@ Partial Class Validath
         'btn_selec
         '
         Me.btn_selec.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btn_selec.Location = New System.Drawing.Point(252, 110)
+        Me.btn_selec.Location = New System.Drawing.Point(140, 106)
         Me.btn_selec.Name = "btn_selec"
         Me.btn_selec.Size = New System.Drawing.Size(74, 35)
         Me.btn_selec.TabIndex = 147
@@ -467,7 +469,7 @@ Partial Class Validath
         Me.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_guardar.ForeColor = System.Drawing.Color.LawnGreen
-        Me.btn_guardar.Location = New System.Drawing.Point(298, 19)
+        Me.btn_guardar.Location = New System.Drawing.Point(186, 15)
         Me.btn_guardar.Name = "btn_guardar"
         Me.btn_guardar.Size = New System.Drawing.Size(78, 74)
         Me.btn_guardar.TabIndex = 145
@@ -514,6 +516,16 @@ Partial Class Validath
         Me.x.HeaderText = "x"
         Me.x.Name = "x"
         Me.x.Width = 18
+        '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.Color.Aqua
+        Me.Button1.Location = New System.Drawing.Point(376, 107)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(78, 35)
+        Me.Button1.TabIndex = 177
+        Me.Button1.Text = "Acomodar Checadas"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Validath
         '
@@ -577,4 +589,5 @@ Partial Class Validath
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents x As DataGridViewCheckBoxColumn
+    Friend WithEvents Button1 As Button
 End Class
