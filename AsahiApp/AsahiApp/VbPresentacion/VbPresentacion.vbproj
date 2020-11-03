@@ -328,6 +328,12 @@
     <Compile Include="F_reportePCSGoce.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HistoricoChecadas.Designer.vb">
+      <DependentUpon>HistoricoChecadas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HistoricoChecadas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ImprimirAnteriores.Designer.vb">
       <DependentUpon>ImprimirAnteriores.vb</DependentUpon>
     </Compile>
@@ -586,6 +592,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_reportePCSGoce.resx">
       <DependentUpon>F_reportePCSGoce.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoricoChecadas.resx">
+      <DependentUpon>HistoricoChecadas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImprimirAnteriores.resx">
       <DependentUpon>ImprimirAnteriores.vb</DependentUpon>

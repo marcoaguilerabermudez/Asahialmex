@@ -644,3 +644,4 @@ C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.xml
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.pdb
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.AcomodaHoras.resources
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.HistoricoChecadas.resources
