@@ -722,11 +722,8 @@ end
                         row.DefaultCellStyle.BackColor = Color.LightBlue
                     ElseIf row.Cells(“Estado”).Value = 2 Then
                         row.DefaultCellStyle.BackColor = Color.ForestGreen
-
                     End If
-
                 Next
-
             End Using
         Catch ex As Exception
             MessageBox.Show(ex.Message)
