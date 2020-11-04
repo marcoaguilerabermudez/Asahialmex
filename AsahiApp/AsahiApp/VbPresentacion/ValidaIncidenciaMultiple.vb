@@ -604,4 +604,10 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
     Private Sub Btn_autorizar_Click(sender As Object, e As EventArgs) Handles Btn_autorizar.Click
         revisaincidencia()
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        HistoricoChecadas.Show()
+    End Sub
+
+
 End Class
