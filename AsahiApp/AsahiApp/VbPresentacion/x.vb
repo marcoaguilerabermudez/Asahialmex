@@ -10,7 +10,7 @@ Public Class FormatoSM
     Dim permiso As Integer
 
 
-    Sub New(id As Integer, depto As String)
+    Sub New(id As Integer, depto As String, permiso As Integer)
         InitializeComponent()
         Me.id = id
         Me.depto = depto
