@@ -459,7 +459,7 @@ Public Class Frm_Principal
 
 
     Private Sub SolicitudToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SolicitudToolStripMenuItem1.Click
-        Dim FormatoSM As New FormatoSM(Me.emp.IdEmpleado, Me.emp.IdDepartamento)
+        Dim FormatoSM As New FormatoSM(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
         FormatoSM.Show()
     End Sub
 

@@ -7,12 +7,15 @@ Public Class FormatoSM
     Dim y As Integer
     Dim id As Integer
     Dim depto As String
+    Dim permiso As Integer
 
 
     Sub New(id As Integer, depto As String)
         InitializeComponent()
         Me.id = id
         Me.depto = depto
+        Me.permiso = permiso
+
     End Sub
 
 
@@ -459,11 +462,18 @@ SELECT  [Id_motivopermiso]
 
 
     Sub revisavacaciones()
-        If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) And cbx_tipo.Text = "Vacaciones" Then
-            MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Else
-            revisaincidencia()
 
+        If permiso = 3 Then
+            revisaincidencia()
+        Else
+
+
+            If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) And cbx_tipo.Text = "Vacaciones" Then
+                MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                revisaincidencia()
+
+            End If
         End If
 
     End Sub
