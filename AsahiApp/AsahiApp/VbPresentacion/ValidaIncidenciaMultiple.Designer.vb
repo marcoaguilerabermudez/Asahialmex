@@ -48,12 +48,13 @@ Partial Class ValidaIncidenciaMultiple
         Me.txt_retardo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.gbx_inicidencia = New System.Windows.Forms.GroupBox()
+        Me.lbl_hora = New System.Windows.Forms.DateTimePicker()
         Me.lbl_hasta = New System.Windows.Forms.DateTimePicker()
         Me.lbl_desde = New System.Windows.Forms.DateTimePicker()
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dtgvi = New System.Windows.Forms.DataGridView()
-        Me.lbl_hora = New System.Windows.Forms.DateTimePicker()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.panel1.SuspendLayout()
         Me.Empleado.SuspendLayout()
         Me.gbx_inicidencia.SuspendLayout()
@@ -369,6 +370,17 @@ Partial Class ValidaIncidenciaMultiple
         Me.gbx_inicidencia.Text = "Incidencia"
         Me.gbx_inicidencia.Visible = False
         '
+        'lbl_hora
+        '
+        Me.lbl_hora.CustomFormat = "HH:mm:ss"
+        Me.lbl_hora.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.lbl_hora.Location = New System.Drawing.Point(516, 41)
+        Me.lbl_hora.Name = "lbl_hora"
+        Me.lbl_hora.ShowUpDown = True
+        Me.lbl_hora.Size = New System.Drawing.Size(100, 20)
+        Me.lbl_hora.TabIndex = 197
+        Me.lbl_hora.Visible = False
+        '
         'lbl_hasta
         '
         Me.lbl_hasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
@@ -421,22 +433,22 @@ Partial Class ValidaIncidenciaMultiple
         Me.dtgvi.Size = New System.Drawing.Size(323, 186)
         Me.dtgvi.TabIndex = 192
         '
-        'lbl_hora
+        'Button3
         '
-        Me.lbl_hora.CustomFormat = "HH:mm:ss"
-        Me.lbl_hora.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.lbl_hora.Location = New System.Drawing.Point(516, 41)
-        Me.lbl_hora.Name = "lbl_hora"
-        Me.lbl_hora.ShowUpDown = True
-        Me.lbl_hora.Size = New System.Drawing.Size(100, 20)
-        Me.lbl_hora.TabIndex = 197
-        Me.lbl_hora.Visible = False
+        Me.Button3.ForeColor = System.Drawing.Color.Aqua
+        Me.Button3.Location = New System.Drawing.Point(710, 109)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(78, 35)
+        Me.Button3.TabIndex = 193
+        Me.Button3.Text = "Histórico Checadas"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'ValidaIncidenciaMultiple
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 505)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.dtgvi)
         Me.Controls.Add(Me.gbx_inicidencia)
         Me.Controls.Add(Me.Empleado)
@@ -488,4 +500,5 @@ Partial Class ValidaIncidenciaMultiple
     Friend WithEvents lbl_hasta As DateTimePicker
     Friend WithEvents lbl_desde As DateTimePicker
     Friend WithEvents lbl_hora As DateTimePicker
+    Friend WithEvents Button3 As Button
 End Class

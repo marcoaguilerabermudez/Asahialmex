@@ -131,10 +131,10 @@ Public Class ValidaIncidenciaMultiple
   CASE (select TOP 1 ETT.CATALOGO  from GIRO.[asahi16].[Supervisor_giro].[Empturno] ETT
   where ett.clave = vig.CLAVE and ett.FECHA_ENTRADA <= @fecha
   order by ETT.FECHA_ENTRADA desc)/1 /*EM.TURNO*/
-   when 1 then datediff(minute,'06:55:00', desdeh)
-   when 2 then datediff(minute,'15:25:00', desdeh)
-   when 3 then datediff(minute,'23:25:00', desdeh)
-   when 4 then datediff(minute,'08:00:00', desdeh)
+   when 1 then datediff(minute,desdeh, hastah)
+   when 2 then datediff(minute,desdeh, hastah)
+   when 3 then datediff(minute,desdeh, hastah)
+   when 4 then datediff(minute,desdeh, hastah)
    else 'Error'
    end
    end
@@ -604,4 +604,10 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
     Private Sub Btn_autorizar_Click(sender As Object, e As EventArgs) Handles Btn_autorizar.Click
         revisaincidencia()
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        HistoricoChecadas.Show()
+    End Sub
+
+
 End Class

@@ -85,7 +85,7 @@ where vigencia = 'VIGENTE'
             If row.Cells(“excedido”).Value = 0 Then
                 row.DefaultCellStyle.BackColor = Color.LightBlue
             ElseIf row.Cells(“excedido”).Value = 1 Then
-                row.DefaultCellStyle.BackColor = Color.LightCyan
+                row.DefaultCellStyle.BackColor = Color.LightCoral
             End If
 
         Next
