@@ -175,14 +175,32 @@ SELECT  [Id_motivopermiso]
     Private Sub txt_clave_TextChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_clave.KeyPress
         If AscW(e.KeyChar) = CInt(Keys.Enter) Then
             muestraetiqueta()
+            muestraetiquetavacaciones()
+
+
             cbx_tipo.Enabled = True
             cbx_motivo.Enabled = True
+
+
+
+            cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
+            cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
+            cbx_tipo.Text = "---Seleccionar---"
+            cbx_motivo.Text = "---Seleccionar---"
+
+
+
 
         ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then
             txt_clave.Clear()
             lbl_empleado.Text = "Empleado"
             lbl_depto.Text = "Departamento"
             lbl_turno.Text = "Turno"
+
+            cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
+            cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
+            cbx_tipo.Text = ""
+            cbx_motivo.Text = ""
 
             cbx_tipo.Enabled = False
             cbx_motivo.Enabled = False
@@ -195,6 +213,10 @@ SELECT  [Id_motivopermiso]
             txt_quien.Clear()
             btn_solicitar.Enabled = False
             dtgvp.Visible = False
+            gbx_vacaciones.Visible = False
+            lbl_pendientes.Text = "0"
+            lbl_tomados.Text = "0"
+
 
         End If
 
@@ -204,6 +226,8 @@ SELECT  [Id_motivopermiso]
 
 
     Private Sub cbx_tipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_tipo.SelectedIndexChanged
+        cbx_motivo.DropDownStyle = ComboBoxStyle.DropDownList
+        cbx_tipo.DropDownStyle = ComboBoxStyle.DropDownList
         llenacombomotivo()
         If cbx_tipo.Text = "Registro en reloj checador" Then
             Check_entrada.Visible = True
@@ -223,6 +247,7 @@ SELECT  [Id_motivopermiso]
             'rbt_nocturno.Visible = True
             vpermiso = 6
             dtgvp.Visible = False
+            gbx_vacaciones.Visible = False
         ElseIf cbx_tipo.Text = "Vacaciones" Then
             Check_entrada.Visible = False
             Check_salida.Visible = False
@@ -239,7 +264,9 @@ SELECT  [Id_motivopermiso]
             gb_aviso.Visible = False
             Check_aviso.Checked = False
             gbx_tipo.Visible = False
+            gbx_vacaciones.Visible = True
             'rbt_nocturno.Visible = False
+            muestraetiquetavacaciones()
             dtp1.Value = Today.Now.AddDays(3)
             dtp2.Value = Today.Now.AddDays(3)
             vpermiso = 5
@@ -262,6 +289,7 @@ SELECT  [Id_motivopermiso]
             'rbt_nocturno.Visible = False
             vpermiso = 4
             dtgvp.Visible = True
+            gbx_vacaciones.Visible = False
         ElseIf cbx_tipo.Text = "Falta o retardo injustificado y sin goce de sueldo" Then
             Check_entrada.Visible = False
             Check_salida.Visible = False
@@ -280,6 +308,7 @@ SELECT  [Id_motivopermiso]
             'rbt_nocturno.Visible = False
             vpermiso = 3
             dtgvp.Visible = True
+            gbx_vacaciones.Visible = False
         ElseIf cbx_tipo.Text = "Permiso sin goce de sueldo" Then
             Check_entrada.Visible = False
             Check_salida.Visible = False
@@ -299,6 +328,7 @@ SELECT  [Id_motivopermiso]
             'rbt_nocturno.Visible = False
             vpermiso = 2
             dtgvp.Visible = True
+            gbx_vacaciones.Visible = False
         ElseIf cbx_tipo.Text = "Permiso con goce de sueldo" Then
             Check_entrada.Visible = False
             Check_salida.Visible = False
@@ -318,6 +348,7 @@ SELECT  [Id_motivopermiso]
             'rbt_nocturno.Visible = False
             vpermiso = 1
             dtgvp.Visible = True
+            gbx_vacaciones.Visible = False
         End If
 
 
@@ -380,6 +411,48 @@ SELECT  [Id_motivopermiso]
         End Try
 
     End Sub
+
+
+    Sub muestraetiquetavacaciones()
+        Cn.Close()
+        Cn.Open()
+        Try
+            Dim da As New SqlDataAdapter("Sp_InsertaServicioMultipleOp2", Cn)
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            da.SelectCommand.Parameters.AddWithValue("@clave", txt_clave.Text)
+            da.SelectCommand.Parameters.AddWithValue("@permiso", "Vacaciones")
+            da.SelectCommand.Parameters.AddWithValue("@desde", "01/01/1900")
+            da.SelectCommand.Parameters.AddWithValue("@hasta", "01/01/1900")
+            da.SelectCommand.Parameters.AddWithValue("@var", 1)
+
+
+
+            Dim ds As New DataSet
+            ds.Clear()
+
+            da.Fill(ds)
+
+            lbl_pendientes.Text = ds.Tables(0).Rows(0).Item(0)
+            lbl_tomados.Text = ds.Tables(0).Rows(0).Item(1)
+
+
+
+
+
+
+
+
+            Cn.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+            ' MessageBox.Show("El empleado que ha seleccionado no está activo o no corresponde a su departamento, verifique e intente de nuevo.", "¡Aviso!")
+        End Try
+
+
+
+    End Sub
+
 
     Private Sub lbl_turno_Click(sender As Object, e As EventArgs) Handles lbl_turno.TextChanged
         If lbl_turno.Text = "Matutino" Then
@@ -503,6 +576,7 @@ SELECT  [Id_motivopermiso]
             da.SelectCommand.Parameters.Add("@clave", SqlDbType.Int).Value = txt_clave.Text
             da.SelectCommand.Parameters.Add("@desde", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
             da.SelectCommand.Parameters.Add("@hasta", SqlDbType.Date).Value = dtp2.Value.ToShortDateString
+            da.SelectCommand.Parameters.Add("@var", SqlDbType.Int).Value = 0
 
 
             da.Fill(dt)
