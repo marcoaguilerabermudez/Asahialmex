@@ -8,6 +8,7 @@ Public Class FormatoSM
     Dim id As Integer
     Dim depto As String
     Dim permiso As Integer
+    Dim difvacaciones As Integer
 
 
     Sub New(id As Integer, depto As String, permiso As Integer)
@@ -536,18 +537,34 @@ SELECT  [Id_motivopermiso]
 
     Sub revisavacaciones()
 
-        If permiso = 3 Then
-            revisaincidencia()
-        Else
+        difvacaciones = DateDiff(DateInterval.Day, dtp1.Value, dtp2.Value) + 1
 
 
-            If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) And cbx_tipo.Text = "Vacaciones" Then
-                MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Else
+
+
+        If difvacaciones <= CInt(lbl_pendientes.Text) Then
+
+
+            If permiso = 3 Then
                 revisaincidencia()
+            Else
 
+
+                If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) And cbx_tipo.Text = "Vacaciones" Then
+
+
+                    MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    revisaincidencia()
+
+                End If
             End If
+
+        Else
+            MessageBox.Show("No puede tomar más días de los que tiene asignados, revise sus fechas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         End If
+
 
     End Sub
 
