@@ -68,15 +68,23 @@ Partial Class FormatoSM
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.txt_clave = New System.Windows.Forms.TextBox()
+        Me.gbx_vacaciones = New System.Windows.Forms.GroupBox()
+        Me.lbl_tomados = New System.Windows.Forms.Label()
+        Me.lbl_pendientes = New System.Windows.Forms.Label()
+        Me.label21 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.panel1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbx_tipo.SuspendLayout()
         Me.gb_aviso.SuspendLayout()
+        Me.gbx_vacaciones.SuspendLayout()
         Me.SuspendLayout()
         '
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.SystemColors.Control
+        Me.panel1.Controls.Add(Me.gbx_vacaciones)
         Me.panel1.Controls.Add(Me.btn_anteriores)
         Me.panel1.Controls.Add(Me.Panel3)
         Me.panel1.Controls.Add(Me.dtgvp)
@@ -155,7 +163,7 @@ Partial Class FormatoSM
         '
         Me.rbt_nocturno.AutoSize = True
         Me.rbt_nocturno.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.rbt_nocturno.Location = New System.Drawing.Point(809, 202)
+        Me.rbt_nocturno.Location = New System.Drawing.Point(751, 257)
         Me.rbt_nocturno.Name = "rbt_nocturno"
         Me.rbt_nocturno.Size = New System.Drawing.Size(82, 17)
         Me.rbt_nocturno.TabIndex = 177
@@ -495,10 +503,10 @@ Partial Class FormatoSM
         '
         'cbx_motivo
         '
-        Me.cbx_motivo.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.cbx_motivo.BackColor = System.Drawing.SystemColors.Control
         Me.cbx_motivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_motivo.Enabled = False
-        Me.cbx_motivo.ForeColor = System.Drawing.SystemColors.Menu
+        Me.cbx_motivo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_motivo.FormattingEnabled = True
         Me.cbx_motivo.Location = New System.Drawing.Point(102, 89)
         Me.cbx_motivo.Name = "cbx_motivo"
@@ -507,10 +515,10 @@ Partial Class FormatoSM
         '
         'cbx_tipo
         '
-        Me.cbx_tipo.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.cbx_tipo.BackColor = System.Drawing.SystemColors.Control
         Me.cbx_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_tipo.Enabled = False
-        Me.cbx_tipo.ForeColor = System.Drawing.SystemColors.Menu
+        Me.cbx_tipo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipo.FormattingEnabled = True
         Me.cbx_tipo.Items.AddRange(New Object() {"Permiso con goce de sueldo", "Permiso sin goce de sueldo", "Falta o retardo injustificado y sin goce de sueldo", "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)", "Vacaciones", "Registro en reloj checador"})
         Me.cbx_tipo.Location = New System.Drawing.Point(101, 57)
@@ -604,6 +612,67 @@ Partial Class FormatoSM
         Me.txt_clave.TabIndex = 140
         Me.txt_clave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
+        'gbx_vacaciones
+        '
+        Me.gbx_vacaciones.Controls.Add(Me.lbl_tomados)
+        Me.gbx_vacaciones.Controls.Add(Me.lbl_pendientes)
+        Me.gbx_vacaciones.Controls.Add(Me.label21)
+        Me.gbx_vacaciones.Controls.Add(Me.Label15)
+        Me.gbx_vacaciones.Controls.Add(Me.Label17)
+        Me.gbx_vacaciones.Location = New System.Drawing.Point(675, 184)
+        Me.gbx_vacaciones.Name = "gbx_vacaciones"
+        Me.gbx_vacaciones.Size = New System.Drawing.Size(216, 43)
+        Me.gbx_vacaciones.TabIndex = 264
+        Me.gbx_vacaciones.TabStop = False
+        Me.gbx_vacaciones.Visible = False
+        '
+        'lbl_tomados
+        '
+        Me.lbl_tomados.AutoSize = True
+        Me.lbl_tomados.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_tomados.Location = New System.Drawing.Point(156, 27)
+        Me.lbl_tomados.Name = "lbl_tomados"
+        Me.lbl_tomados.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tomados.TabIndex = 270
+        Me.lbl_tomados.Text = "0"
+        '
+        'lbl_pendientes
+        '
+        Me.lbl_pendientes.AutoSize = True
+        Me.lbl_pendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_pendientes.Location = New System.Drawing.Point(83, 28)
+        Me.lbl_pendientes.Name = "lbl_pendientes"
+        Me.lbl_pendientes.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_pendientes.TabIndex = 268
+        Me.lbl_pendientes.Text = "0"
+        '
+        'label21
+        '
+        Me.label21.AutoSize = True
+        Me.label21.Location = New System.Drawing.Point(140, 7)
+        Me.label21.Name = "label21"
+        Me.label21.Size = New System.Drawing.Size(51, 13)
+        Me.label21.TabIndex = 267
+        Me.label21.Text = "Tomados"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(65, 6)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(60, 13)
+        Me.Label15.TabIndex = 266
+        Me.Label15.Text = "Pendientes"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(5, 26)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(33, 13)
+        Me.Label17.TabIndex = 264
+        Me.Label17.Text = "Días:"
+        '
         'FormatoSM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -621,6 +690,8 @@ Partial Class FormatoSM
         Me.gbx_tipo.PerformLayout()
         Me.gb_aviso.ResumeLayout(False)
         Me.gb_aviso.PerformLayout()
+        Me.gbx_vacaciones.ResumeLayout(False)
+        Me.gbx_vacaciones.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -670,4 +741,10 @@ Partial Class FormatoSM
     Friend WithEvents dtgvp As DataGridView
     Private WithEvents Panel3 As Panel
     Friend WithEvents btn_anteriores As Button
+    Private WithEvents gbx_vacaciones As GroupBox
+    Private WithEvents lbl_tomados As Label
+    Private WithEvents lbl_pendientes As Label
+    Private WithEvents label21 As Label
+    Private WithEvents Label15 As Label
+    Private WithEvents Label17 As Label
 End Class
