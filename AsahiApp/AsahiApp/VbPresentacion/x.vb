@@ -542,36 +542,56 @@ SELECT  [Id_motivopermiso]
 
 
 
-        ' If difvacaciones <= CInt(lbl_pendientes.Text) Then
-
-
-
-
-
-
-
 
 
 
         If permiso = 3 Then
-                revisaincidencia()
-            Else
+            revisaincidencia()
+        Else
+
+            If cbx_tipo.Text = "Vacaciones" Then
+
+                If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) Then
 
 
-            If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) And cbx_tipo.Text = "Vacaciones" Then
+                    MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
+                ElseIf difvacaciones > CInt(lbl_pendientes.Text) Then
 
-                MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Else
-                revisaincidencia()
+                    MessageBox.Show("No puede tomar más días de los que tiene asignados, revise sus fechas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    revisaincidencia()
 
                 End If
+
+            Else
+
+                revisaincidencia()
             End If
 
-        '  Else
-        ' MessageBox.Show("No puede tomar más días de los que tiene asignados, revise sus fechas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
 
-        ' End If
+
+
+
+
+
+
+
+        'If permiso = 3 Then
+        '        revisaincidencia()
+        '    Else
+
+
+        '    If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) And cbx_tipo.Text = "Vacaciones" Then
+
+
+        '        MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Else
+        '        revisaincidencia()
+
+        '        End If
+        '    End If
 
 
     End Sub
