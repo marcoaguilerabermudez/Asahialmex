@@ -545,15 +545,23 @@ SELECT  [Id_motivopermiso]
         ' If difvacaciones <= CInt(lbl_pendientes.Text) Then
 
 
+
+
+
+
+
+
+
+
         If permiso = 3 Then
                 revisaincidencia()
             Else
 
 
-            If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) And cbx_tipo.Text = "Vacaciones" And difvacaciones <= CInt(lbl_pendientes.Text) Then
+            If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) And cbx_tipo.Text = "Vacaciones" Then
 
 
-                MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación o pedir días igual o menores a los que tiene disponibles.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 revisaincidencia()
 
