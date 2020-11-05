@@ -446,7 +446,7 @@ SELECT  [Id_motivopermiso]
             Cn.Close()
 
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            ' MessageBox.Show(ex.ToString)
             ' MessageBox.Show("El empleado que ha seleccionado no está activo o no corresponde a su departamento, verifique e intente de nuevo.", "¡Aviso!")
         End Try
 
@@ -542,28 +542,28 @@ SELECT  [Id_motivopermiso]
 
 
 
-        If difvacaciones <= CInt(lbl_pendientes.Text) Then
+        ' If difvacaciones <= CInt(lbl_pendientes.Text) Then
 
 
-            If permiso = 3 Then
+        If permiso = 3 Then
                 revisaincidencia()
             Else
 
 
-                If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) And cbx_tipo.Text = "Vacaciones" Then
+            If dtp1.Value.ToShortDateString < Today.Now.AddDays(2) And cbx_tipo.Text = "Vacaciones" And difvacaciones <= CInt(lbl_pendientes.Text) Then
 
 
-                    MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Else
-                    revisaincidencia()
+                MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación o pedir días igual o menores a los que tiene disponibles.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                revisaincidencia()
 
                 End If
             End If
 
-        Else
-            MessageBox.Show("No puede tomar más días de los que tiene asignados, revise sus fechas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '  Else
+        ' MessageBox.Show("No puede tomar más días de los que tiene asignados, revise sus fechas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-        End If
+        ' End If
 
 
     End Sub
