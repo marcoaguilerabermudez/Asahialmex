@@ -125,15 +125,22 @@ Public Class DEmpleado
         Dim emp As New Empleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT Usuario, Contraseña, Clave, tipoUsuario FROM AsahiSystem.dbo.Usuarios_saam where usuario = '" & us & "'", oCon)
+            Dim query As New SqlCommand(" SELECT Usuario, Contraseña, ams.Clave, tipoUsuario, departamento, rh_permisos FROM AsahiSystem.dbo.Usuarios_saam ams
+            join giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig
+on convert(int,vig.clave) = ams.clave
+join [AsahiSystem].[dbo].[Req_permisos] per
+on per.Clave = vig.Clave
+where usuario = '" & us & "'", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read)
                 emp.Usuario = dr("Usuario").ToString
                 emp.Contraseña = dr("Contraseña").ToString
+                emp.IdDepartamento = dr("departamento").ToString
                 emp.IdEmpleado = Convert.ToInt32(dr("Clave").ToString)
                 emp.TipoUsuario = Convert.ToInt32(dr("tipoUsuario").ToString)
+                emp.rh_permiso = Convert.ToInt32(dr("rh_permisos").ToString)
             End While
             If us = emp.Usuario Then
                 If pass = emp.Contraseña Then
