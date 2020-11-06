@@ -6,7 +6,7 @@ Imports Microsoft.Reporting.WinForms
 
 Public Class Frm_PolizasDiario
 #Region "Variables de clase"
-    Dim origen As Integer '1:Diario, 2:Egresos
+    Dim origen As Integer '1:Diario, 2:Egresos, 3:Diarios Ventas
     Dim conex As New conexion()
     Dim cadenaConex As String
     Dim cadConex As String
@@ -102,6 +102,8 @@ Public Class Frm_PolizasDiario
                     Dtp_Inicio.Value = DateAdd(DateInterval.Day, -7, Date.Now())
                     Dgv_Compras.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
                     Dgv_Prepolizas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
+                    RecuperarCompras()
+                    RecuperarProveedores()
                 ElseIf origen = 2 Then
                     Dgv_Egresos.Visible = True
                     Me.Text = "Proyecciones " & Me.subsid
@@ -113,6 +115,8 @@ Public Class Frm_PolizasDiario
                     Dgv_Compras.DefaultCellStyle.SelectionBackColor = Color.LimeGreen
                     Dgv_Egresos.AlternatingRowsDefaultCellStyle.BackColor = Color.Chartreuse
                     Dgv_Egresos.DefaultCellStyle.SelectionBackColor = Color.LimeGreen
+                    RecuperarCompras()
+                    RecuperarProveedores()
                 ElseIf origen = 3 Then
                     Dgv_Compras.Visible = False
                     Dgv_Ventas.Visible = True
@@ -124,12 +128,11 @@ Public Class Frm_PolizasDiario
                     'Dtp_Inicio.Value = DateAdd(DateInterval.Day, -7, Date.Now())
                     Dgv_Ventas.AlternatingRowsDefaultCellStyle.BackColor = Color.DarkOrange
                     Dgv_PolizasVentas.AlternatingRowsDefaultCellStyle.BackColor = Color.DarkOrange
+                    RecuperarVentas()
+                    RecuperarClientes()
                 End If
 
             End If
-            'Dgv_Compras.colu
-            RecuperarCompras()
-            RecuperarProveedores()
             rec = True
         End If
     End Sub
@@ -237,7 +240,8 @@ Public Class Frm_PolizasDiario
                         Me.Ocomp = Dgv_Ventas.Rows(fila).Cells("pedido").Value
                         Me.IdProvi = Dgv_Ventas.Rows(fila).Cells("IdPV").Value
                         'Me.fechaPago = Dgv_Ventas.Rows(fila).Cells("fechaPagoFactura").Value
-                        If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+                        RecuperarPolizasVentas(moneda, uuid, tc, Me.Ocomp)
+                        If Me.pasoPol = "Ok" Then Dgv_Ventas.Rows(fila).Cells("seleccionV").Value = 1
                     End If
                 Else
                     MsgBox("EL DOCUMENTO CONTABLE ESTA CREADO", MsgBoxStyle.Information)
@@ -260,6 +264,9 @@ Public Class Frm_PolizasDiario
             Dgv_Egresos.Rows.Clear()
         ElseIf Me.origen = 3 Then
             RecuperarVentas()
+            RecuperarClientes()
+            Dgv_PolizasVentas.DataSource = Nothing
+            Dgv_PolizasVentas.Rows.Clear()
         End If
     End Sub
     Private Sub Dtp_Fin_ValueChanged(sender As Object, e As EventArgs) Handles Dtp_Fin.ValueChanged
@@ -274,6 +281,10 @@ Public Class Frm_PolizasDiario
             Dgv_Egresos.DataSource = Nothing
             Dgv_Egresos.Rows.Clear()
         ElseIf Me.origen = 3 Then
+            RecuperarVentas()
+            RecuperarClientes()
+            Dgv_PolizasVentas.DataSource = Nothing
+            Dgv_PolizasVentas.Rows.Clear()
         End If
     End Sub
     Private Sub Btn_Txt_Click(sender As Object, e As EventArgs) Handles Btn_Txt.Click
@@ -281,9 +292,12 @@ Public Class Frm_PolizasDiario
         If Me.origen = 1 Then
             EscribirArchivoDiarios()
             InsertaBitacora(1)
-        Else
+        ElseIf Me.origen = 2 Then
             EscribirArchivoProyecciones()
             InsertaBitacora(2)
+        ElseIf Me.origen = 3 Then
+            EscribirArchivoDiariosVentas()
+            InsertaBitacora(3)
         End If
     End Sub
     Private Sub Txt_FiltroCompras_TextChanged(sender As Object, e As EventArgs) Handles Txt_FiltroCompras.TextChanged
@@ -480,7 +494,7 @@ Public Class Frm_PolizasDiario
                 Next
                 For fila = 0 To totalFilas - 1
                     With Dgv_Ventas.Rows(fila)
-                        folio = .Cells("factura").Value
+                        folio = .Cells("facturaV").Value
                         If Not (folio Like Txt_FiltroFactura.Text) And folio <> "" Then
                             .Visible = True
                         End If
@@ -546,7 +560,7 @@ Public Class Frm_PolizasDiario
                 Next
                 For fila = 0 To totalFilas - 1
                     With Dgv_Ventas.Rows(fila)
-                        folio = .Cells("cliente").Value
+                        folio = .Cells("clientePV").Value
                         If Not (folio Like Txt_FiltroProveedor.Text) And folio <> "" Then
                             .Visible = True
                         End If
@@ -567,8 +581,13 @@ Public Class Frm_PolizasDiario
     Private Sub Btn_Actualizar_Click(sender As Object, e As EventArgs) Handles Btn_Actualizar.Click
         LimpiarDgv()
         LimpiarFiltros()
-        RecuperarCompras()
-        RecuperarProveedores()
+        If Me.origen = 1 Or Me.origen = 2 Then
+            RecuperarCompras()
+            RecuperarProveedores()
+        ElseIf Me.origen = 3 Then
+            RecuperarVentas()
+            RecuperarClientes()
+        End If
     End Sub
     Private Sub Btn_Limpiar_Click(sender As Object, e As EventArgs) Handles Btn_Limpiar.Click
         LimpiarDgv()
@@ -633,6 +652,19 @@ Public Class Frm_PolizasDiario
         lstComp.Add(prov)
         For Each item In lstComp
             Txt_FiltroProveedor.AutoCompleteCustomSource.Add(item.Proveedor)
+        Next
+    End Sub
+    Private Sub RecuperarClientes()
+        Dim lstVent As New LVentas()
+        Dim NComp As New NCompras()
+        Dim clien As New Ventas()
+        Dim fi As Date = Format(Dtp_Inicio.Value, "dd/MM/yyyy"), ff As Date = Format(Dtp_Fin.Value, "dd/MM/yyyy")
+
+        lstVent = NComp.RecuperarListaClientes(Me.cadenaConex, fi, ff)
+        clien.Cliente = ""
+        lstVent.Add(clien)
+        For Each item In lstVent
+            Txt_FiltroProveedor.AutoCompleteCustomSource.Add(item.Cliente)
         Next
     End Sub
     Private Sub RecuperarPolizas(ByVal moneda As String, ByVal uuid As String, ByVal tc As Double, ByVal oc As Integer)
@@ -771,7 +803,7 @@ Public Class Frm_PolizasDiario
     Private Sub RellenarDgvVistaPolizas(ByVal lstComp As LCompras, ByVal oc As Integer)
         Dim fila As Integer = Dgv_Prepolizas.Rows.Count(), pfila As Integer = fila
         Dim sum As Double, sumCargo As Double, sumRet As Double, t As Double
-        Dim frm As New Frm_ConceptoPoliza("" & oc & "", lstComp)
+        Dim frm As New Frm_ConceptoPoliza("" & oc & "", lstComp, Me.origen)
 
         If frm.ShowDialog() = DialogResult.OK Then
             For Each item In lstComp
@@ -867,62 +899,63 @@ Public Class Frm_PolizasDiario
     End Sub
     Private Sub RellenarPolizaVenta(ByVal lstVent As LVentas, ByVal oc As Integer)
 
-        Dim fila As Integer = Dgv_Prepolizas.Rows.Count(), pfila As Integer = fila
-        Dim sum As Double, sumCargo As Double, sumRet As Double, t As Double
-        'Dim frm As New Frm_ConceptoPoliza("" & oc & "", lstComp)
+        Dim fila As Integer = Dgv_PolizasVentas.Rows.Count(), pfila As Integer = fila
+        Dim sum As Double, sumCargo As Double, sumRet As Double, t As Double ', total As Double
+        Dim frm As New Frm_ConceptoPoliza("" & lstVent.Item(0).Pedido & "", lstVent, Me.origen)
 
-        'If frm.ShowDialog() = DialogResult.OK Then
-        For Each item In lstVent
-            Dgv_PolizasVentas.Rows.Add()
-            'Dgv_Prepolizas.Columns("acum").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            If item.Pivot = 1 Or item.Pivot = 2 Then
-                sum = sum + Format(item.Total, "0.00")
-            ElseIf item.Pivot = 3 Then
-                sumRet = sumRet + Format(item.Total, "0.00")
-            ElseIf item.Pivot = 4 Or item.Pivot = 5 Then
-                sumCargo = sumCargo + Format(item.Total, "0.00")
-            End If
-            With Dgv_Prepolizas.Rows(fila)
-                .Cells("pivot").Value = item.Pivot
-                .Cells("ordenCompra").Value = pedido
-                .Cells("idCompra").Value = item.Venta
-                .Cells("serieF").Value = item.Serie
-                .Cells("idFactura").Value = item.Factura
-                .Cells("nombreProveedor").Value = item.Cliente
-                .Cells("rfcProveedor").Value = item.RFC
-                .Cells("totalFactura").Value = Format(item.TotalFactura, "$ #,###,##0.00")
-                .Cells("compraTotal").Value = Format(item.TotalVenta, "$ #,###,##0.00")
-                .Cells("fechaFact").Value = Format(item.FechaFact, "dd/MM/yyyy")
-                .Cells("fechaPagoFact").Value = Format(Me.fechaPago, "dd/MM/yyyy")
-                .Cells("monedaVP").Value = item.Moneda
-                .Cells("tc").Value = Format(Me.tCamb, "$ #,###,##0.0000")
-                .Cells("empresaVP").Value = item.Empresa
-                .Cells("rfcEmisor").Value = item.RfcEmisor
-                .Cells("nombreEmisor").Value = item.NombreEmisor
-                .Cells("uuidFactura").Value = item.UUID
-                .Cells("total").Value = Format(item.Total, "$ #,###,##0.00")
-                .Cells("area").Value = item.Area
-                .Cells("familia").Value = item.Familia
-                .Cells("cuenta").Value = item.Cuenta
-                .Cells("neto").Value = Format(item.Neto, "$ #,###,##0.00")
-                .Cells("cuentaIva").Value = item.CuentaIva
-                .Cells("ivaT").Value = Format(item.IvaT, "$ #,###,##0.00")
-                .Cells("cuentaP").Value = item.CuentaP
-                '.Cells("impuesto").Value = Format(item.Impuesto, "$ #,###,##0.00")
-                '.Cells("concepto").Value = frm.Concepto
-                .Cells("folioProvisionPol").Value = Me.IdProvi
-            End With
-            fila += 1
-        Next
-        Me.pasoPol = "Ok"
-            t = Format(sum, "0.00") - Format(sumCargo, "0.00")
-            If Dgv_Prepolizas.Rows(pfila).Cells("total").Value > 0 Then
-                Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format((Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t) + sumRet, "$ #,###,##0.00")
-            Else
-                pfila += 1
-                Dgv_Prepolizas.Rows(pfila).Cells("total").Value = Format((Dgv_Prepolizas.Rows(pfila).Cells("total").Value - t) + sumRet, "$ #,###,##0.00")
-            End If
-        'End If
+        If frm.ShowDialog() = DialogResult.OK Then
+            For Each item In lstVent
+                If (item.Pivot = 1 Or item.Pivot = 3 Or item.Pivot = 4) Or (item.Pivot = 2 And item.RFC <> "XEXX010101000") Then
+                    Dgv_PolizasVentas.Rows.Add()
+                    If item.Pivot = 1 Or item.Pivot = 2 Then
+                        sum = sum + Format(item.Total, "0.00")
+                    ElseIf item.Pivot = 3 Then
+                        sumRet = sumRet + Format(item.Total, "0.00")
+                    ElseIf item.Pivot = 4 Or item.Pivot = 5 Then
+                        sumCargo = sumCargo + Format(item.Total, "0.00")
+                    End If
+                    With Dgv_PolizasVentas.Rows(fila)
+                        .Cells("pivotPV").Value = item.Pivot
+                        .Cells("pedPV").Value = item.Pedido
+                        .Cells("ventaPV").Value = item.Venta
+                        .Cells("seriePV").Value = item.Serie
+                        .Cells("facturaPV").Value = item.Factura
+                        .Cells("clientePV").Value = item.Cliente
+                        .Cells("rfcPV").Value = item.RFC
+                        .Cells("totalFacturaPV").Value = Format(item.TotalFactura, "$ #,###,##0.00")
+                        .Cells("ventaTotalPV").Value = Format(item.TotalVenta, "$ #,###,##0.00")
+                        .Cells("fechaFacturaPV").Value = Format(item.FechaFact, "dd/MM/yyyy")
+                        .Cells("fechaPagoPV").Value = Format(Me.fechaPago, "dd/MM/yyyy")
+                        .Cells("monedaPV").Value = item.Moneda
+                        .Cells("tcPv").Value = Format(Me.tCamb, "$ #,###,##0.0000")
+                        .Cells("empresaPV").Value = item.Empresa
+                        .Cells("rfcEmisorPV").Value = item.RfcEmisor
+                        .Cells("emisorPV").Value = item.NombreEmisor
+                        .Cells("uuidPV").Value = item.UUID
+                        .Cells("totalPV").Value = Format(item.Total, "$ #,###,##0.00")
+                        .Cells("areaPV").Value = item.Area
+                        .Cells("familiaPV").Value = item.Familia
+                        .Cells("cuentaPV").Value = item.Cuenta
+                        .Cells("netoPV").Value = Format(item.Neto, "$ #,###,##0.00")
+                        .Cells("cuentaIvaPV").Value = item.CuentaIva
+                        .Cells("ivaPV").Value = Format(item.IvaT, "$ #,###,##0.00")
+                        .Cells("cuentaPPV").Value = item.CuentaP
+                        .Cells("impuestoPV").Value = item.Impuesto 'Format(, "$ #,###,##0.00")
+                        .Cells("conceptoPV").Value = frm.Concepto
+                        .Cells("folioProvisionPolPV").Value = Me.IdProvi
+                    End With
+                    fila += 1
+                End If
+            Next
+            Me.pasoPol = "Ok"
+            't = Format(sum, "0.00") - Format(sumCargo, "0.00")
+            'If Dgv_PolizasVentas.Rows(pfila).Cells("totalPV").Value > 0 Then
+            '    Dgv_PolizasVentas.Rows(pfila).Cells("totalPV").Value = Format((Dgv_PolizasVentas.Rows(pfila).Cells("totalPV").Value - t) + sumRet, "$ #,###,##0.00")
+            'Else
+            '    pfila += 1
+            '    Dgv_PolizasVentas.Rows(pfila).Cells("totalPV").Value = Format((Dgv_PolizasVentas.Rows(pfila).Cells("totalPV").Value - t) + sumRet, "$ #,###,##0.00")
+            'End If
+        End If
     End Sub
     Private Sub RellenarCmbBancos()
         Dim lstBancos As New LBancos()
@@ -952,6 +985,8 @@ Public Class Frm_PolizasDiario
             Me.archivo = "PolizasDiario" & Format(Date.Now(), "yyyyMMddHHmmss") & ".txt"
         ElseIf Me.origen = 2 Then
             Me.archivo = "Proyección" & Format(Date.Now(), "yyyyMMddHHmmss") & ".txt"
+        ElseIf Me.origen = 3 Then
+            Me.archivo = "PolizasDiarioVenta" & Format(Date.Now(), "yyyyMMddHHmmss") & ".txt"
         End If
         Dim fs As FileStream
 
@@ -1173,9 +1208,97 @@ Public Class Frm_PolizasDiario
             tx.Close()
         End Try
     End Sub
+    Private Sub EscribirArchivoDiariosVentas()
+        Dim tx As New StreamWriter(Me.ruta & Me.archivo)
+        Dim fila As Integer, pivot As Integer, idX As Integer = 0, e As Integer
+        Dim total As Double, tc As Double
+        Dim fecha As Date
+        Dim folio As String = "", uuid As String = "", sn As String, idFol As String = ""
+        Dim totalFilas As Integer = Dgv_PolizasVentas.Rows.Count
+        Dim NPol As New NPolizas(), pol As New Polizas()
+        Try
+            fecha = Dgv_PolizasVentas.Rows(0).Cells("fechaFacturaPV").Value
+            pol = NPol.RecuperarUltimoFolio(Me.cadenaConex, fecha, Me.subsid)
+            e = pol.FolioPoliza
+            For fila = 0 To totalFilas - 1
+                Dim cargo As Integer = 0
+                pivot = Dgv_PolizasVentas.Rows(fila).Cells("pivotPV").Value
+                With Dgv_PolizasVentas.Rows(fila)
+                    If pivot = 1 And uuid <> Dgv_PolizasVentas.Rows(fila).Cells("uuidPV").Value Then
+                        'Escribimos una linea en nuestro archivo TXT con el formato que este separado por coma (,)
+                        e += 1
+                        .Cells("folioPolizaPV").Value = e
+                        tx.Write("P  ")
+                        tx.Write(CDate(.Cells("fechaFacturaPV").Value).ToString("yyyyMMdd") & " ") 'ToString("yyyyMMdd", .Cells("fechaFact").Value))
+                        tx.Write("   3 ")
+                        tx.Write(String.Format("{0,9}", e) & " ")
+                        tx.Write("1 ")
+                        tx.Write("0          ")
+                        tx.Write(String.Format("{0,-100}", .Cells("conceptoPV").Value))
+                        tx.Write("11 ")
+                        tx.Write("0 ")
+                        tx.Write("0 ")
+                        tx.Write(String.Format("{0,-37}", ""))
+                        tx.WriteLine()
+                        uuid = Dgv_PolizasVentas.Rows(fila).Cells("uuidPV").Value
+                    End If
+                    If DatePart("m", .Cells("fechaFacturaPV").Value) = DatePart("m", .Cells("fechaFacturaPV").Value) And'''''''''''''''''''''''\
+                       DatePart("yyyy", .Cells("fechaFacturaPV").Value) = DatePart("yyyy", .Cells("fechaFacturaPV").Value) Then '''''''''''''''/
+                        If .Cells("monedaPV").Value = "MXN" Then folio = "F-" & .Cells("facturaPV").Value
+                        If .Cells("monedaPV").Value = "USD" Then
+                            idFol = .Cells("facturaPV").Value
+                            tc = .Cells("tcPV").Value
+                            If Len(idFol) > 6 Then idFol = Strings.Right(idFol, 6)
+                            folio = "F-" & idFol & " TC " & tc
+                        End If
+                    Else
+                        If .Cells("monedaPV").Value = "MXN" Then folio = "F/" & .Cells("facturaPV").Value
+                        If .Cells("monedaPV").Value = "USD" Then
+                            idFol = .Cells("facturaPV").Value
+                            tc = .Cells("tcPV").Value
+                            If Len(idFol) > 6 Then idFol = Strings.Right(idFol, 6)
+                            folio = "F/" & idFol & " TC " & tc
+                        End If
+                    End If
+                    If .Cells("familiaPV").Value = "Cargo" Or .Cells("familiaPV").Value = "ProveedorUSD" Or .Cells("familiaPV").Value = "ComplementariaUSD" Or .Cells("familiaPV").Value = "Retencion de IVA" Or
+                        .Cells("familiaPV").Value = "Traslado" Or .Cells("familiaPV").Value = "IVA" Then
+                        cargo = 1
+                    End If
+                    sn = 1 'idSegNeg(.Cells("areaPV").Value)
+                    total = .Cells("totalPV").Value
+                    tx.Write("M1 ")
+                    tx.Write(String.Format("{0,-30}", .Cells("cuentaPV").Value) & " ")
+                    tx.Write(String.Format("{0,-20}", folio) & " ")
+                    tx.Write(cargo & " ")
+                    tx.Write(String.Format("{0,-20}", total) & " ")
+                    tx.Write("0          ")
+                    tx.Write("0.0                  ")
+                    tx.Write(String.Format("{0,-101}", ""))
+                    tx.Write(String.Format("{0,4}", sn) & " ")
+                    tx.Write(String.Format("{0,-37}", ""))
+                    tx.WriteLine()
+                    tx.Write("AM ")
+                    tx.Write(String.Format("{0,-30}", .Cells("uuidPV").Value) & " ")
+                    tx.WriteLine()
+                    If (.Cells("pivotPV").Value = "4") Then
+                        tx.Write("AD ")
+                        tx.Write(String.Format("{0,-30}", .Cells("uuidPV").Value) & " ")
+                        tx.WriteLine()
+                    End If
+                    .Cells("folioPolizaPV").Value = e
+                End With
+            Next
+            MsgBox("Registro guardado correctamente", MsgBoxStyle.Information, "")
+            tx.Close()
+        Catch ex As Exception
+            MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "")
+            tx.Close()
+        End Try
+    End Sub
     Private Function idSegNeg(ByVal segneg As String) As String
         Select Case segneg
             Case "CONTABILIDAD" : Return "1"
+            Case "01.1 Contabilidad" : Return "1"
             Case "CALIDAD" : Return "2"
             Case "ASEGURAMIENTO DE CALIDAD" : Return "2"
             Case "ASEGURAMIENTO DE CALIDAD F1" : Return "2"
@@ -1189,6 +1312,9 @@ Public Class Frm_PolizasDiario
             Case "VENTAS/CPRODUCCIÓN" : Return "3"
             Case "INSPECCION PRODUCCION" : Return "3"
             Case "ATENCIÓN AL CLIENTE" : Return "3"
+            Case "4.1 Atención al cliente" : Return "3"
+            Case "04 Control de Producción" : Return "3"
+            Case "4.2 Control de Producción" : Return "3"
             Case "FUNDICION" : Return "4"
             Case "FUNDICIÓN" : Return "4"
             Case "FUNDICION 1" : Return "4"
@@ -1211,6 +1337,7 @@ Public Class Frm_PolizasDiario
             Case "SEGURIDAD E HIGIENE" : Return "7"
             Case "SEGURIDAD E HIGIENE." : Return "7"
             Case "SISTEMAS IT" : Return "7"
+            Case "2.3 Seguridad y 5S" : Return "7"
             Case "COMPRAS" : Return "8"
             Case "COMPRAS." : Return "8"
             Case "INGENIERIA" : Return "9"
@@ -1244,7 +1371,7 @@ Public Class Frm_PolizasDiario
         Me.codigoBanco = ""
     End Sub
     Private Sub LimpiarDgv()
-        Dim fila As Integer, totalFilas As Integer = Dgv_Compras.Rows.Count()
+        Dim fila As Integer
         Dim var
         If Me.origen = 1 Then
             Dgv_Prepolizas.DataSource = Nothing
@@ -1252,15 +1379,31 @@ Public Class Frm_PolizasDiario
         ElseIf Me.origen = 2 Then
             Dgv_Egresos.DataSource = Nothing
             Dgv_Egresos.Rows.Clear()
+        ElseIf Me.origen = 3 Then
+            Dgv_PolizasVentas.DataSource = Nothing
+            Dgv_PolizasVentas.Rows.Clear()
         End If
-        For fila = 0 To totalFilas - 1
-            With Dgv_Compras.Rows(fila)
-                var = .Cells("seleccion").Value
-                If .Cells("seleccion").Value = 1 Then
-                    .Cells("seleccion").Value = 0
-                End If
-            End With
-        Next
+        If Me.origen = 1 Or Me.origen = 2 Then
+            Dim totalFilas As Integer = Dgv_Compras.Rows.Count()
+            For fila = 0 To totalFilas - 1
+                With Dgv_Compras.Rows(fila)
+                    var = .Cells("seleccion").Value
+                    If .Cells("seleccion").Value = 1 Then
+                        .Cells("seleccion").Value = 0
+                    End If
+                End With
+            Next
+        ElseIf Me.origen = 3 Then
+            Dim totalFilas As Integer = Dgv_Ventas.Rows.Count()
+            For fila = 0 To totalFilas - 1
+                With Dgv_Ventas.Rows(fila)
+                    var = .Cells("seleccionV").Value
+                    If .Cells("seleccionV").Value = 1 Then
+                        .Cells("seleccionV").Value = 0
+                    End If
+                End With
+            Next
+        End If
     End Sub
     Private Function RegresoMonedaLetra(moneda As String) As String
         Select Case moneda
