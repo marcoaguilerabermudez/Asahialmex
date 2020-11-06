@@ -31,7 +31,7 @@ Partial Class Frm_ConceptoPoliza
         Me.Txt_Prov = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Txt_Familia = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Lbl_CteProveedor = New System.Windows.Forms.Label()
         Me.Txt_Proveedor = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Txt_SegNeg = New System.Windows.Forms.TextBox()
@@ -128,15 +128,15 @@ Partial Class Frm_ConceptoPoliza
         Me.Txt_Familia.Size = New System.Drawing.Size(265, 23)
         Me.Txt_Familia.TabIndex = 6
         '
-        'Label5
+        'Lbl_CteProveedor
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(12, 115)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(83, 15)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "PROVEEDOR"
+        Me.Lbl_CteProveedor.AutoSize = True
+        Me.Lbl_CteProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_CteProveedor.Location = New System.Drawing.Point(12, 115)
+        Me.Lbl_CteProveedor.Name = "Lbl_CteProveedor"
+        Me.Lbl_CteProveedor.Size = New System.Drawing.Size(83, 15)
+        Me.Lbl_CteProveedor.TabIndex = 9
+        Me.Lbl_CteProveedor.Text = "PROVEEDOR"
         '
         'Txt_Proveedor
         '
@@ -175,7 +175,7 @@ Partial Class Frm_ConceptoPoliza
         Me.ClientSize = New System.Drawing.Size(482, 177)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Txt_SegNeg)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Lbl_CteProveedor)
         Me.Controls.Add(Me.Txt_Proveedor)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Txt_Familia)
@@ -205,7 +205,7 @@ Partial Class Frm_ConceptoPoliza
     Friend WithEvents Txt_Prov As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Txt_Familia As TextBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents Lbl_CteProveedor As Label
     Friend WithEvents Txt_Proveedor As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Txt_SegNeg As TextBox

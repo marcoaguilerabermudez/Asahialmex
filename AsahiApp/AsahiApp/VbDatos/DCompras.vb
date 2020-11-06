@@ -119,7 +119,7 @@ Public Class DCompras
                 Dim vent As New Ventas()
                 vent.Pivot = Convert.ToInt32(dr("pivote").ToString)
                 vent.Pedido = Convert.ToInt32(dr("Pedido").ToString)
-                vent.Venta = Convert.ToInt32(dr("Venta").ToString)
+                vent.Venta = dr("Venta").ToString
                 vent.Serie = (dr("Serie").ToString)
                 vent.Factura = (dr("Factura").ToString)
                 vent.Cliente = (dr("Cliente").ToString)
@@ -133,14 +133,16 @@ Public Class DCompras
                 vent.NombreEmisor = (dr("NombreEmisor").ToString)
                 vent.UUID = (dr("UUID").ToString)
                 vent.Total = Convert.ToDouble(dr("Total").ToString)
+                If vent.Total < 0 Then vent.Total = vent.Total * -1
                 vent.Area = (dr("Area").ToString)
                 vent.Familia = (dr("Familia").ToString)
                 vent.Cuenta = (dr("Cuenta").ToString)
                 vent.Neto = Convert.ToDouble(dr("Neto").ToString)
+                If vent.Neto < 0 Then vent.Neto = vent.Neto * -1
                 vent.CuentaIva = (dr("Cuenta_iva").ToString)
                 vent.IvaT = Convert.ToDouble(dr("Iva_t").ToString)
                 vent.CuentaP = (dr("CuentaP").ToString)
-                'vent.Impuesto = Convert.ToDouble(dr("Impuesto").ToString)
+                vent.Impuesto = (dr("Impuesto").ToString)
                 lstVent.Add(vent)
             End While
         Catch ex As Exception
@@ -247,6 +249,30 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
+    Public Function RecuperarListaClientes(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LVentas
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstVtn As New LVentas()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT ISNULL(Cliente,'') Cliente FROM conta.Asahi.dbo.DocumentosContables where (FechaFactura between '" & fi & "' and '" & ff & "') AND StatusConta = 1 AND (Serie = 'A' or Serie = 'N') group by Cliente order by Cliente", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim vtn As New Ventas
+                vtn.Cliente = dr("Cliente").ToString
+                lstVtn.Add(vtn)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstVtn
+    End Function
     Public Function RecuperarListaFamilia(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstComp As New LCompras()
@@ -271,6 +297,30 @@ Public Class DCompras
         End Try
         Return lstComp
     End Function
+    Public Function RecuperarListaFamiliaVentas(ByVal cadenaConex As String, ByVal uuid As String) As LVentas
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstVent As New LVentas()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Select Clase FROM conta.[Asahi].[dbo].[VistaNetsuiteTransacciones] where UUID = '" & uuid & "' group by Clase", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim vent As New Ventas
+                vent.Familia = dr("Clase").ToString
+                lstVent.Add(vent)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstVent
+    End Function
     Public Function RecuperarListaSegNeg(ByVal cadenaConex As String, ByVal uuid As String) As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
         Dim lstComp As New LCompras()
@@ -294,6 +344,30 @@ Public Class DCompras
             oCon.Dispose()
         End Try
         Return lstComp
+    End Function
+    Public Function RecuperarListaSegNegVentas(ByVal cadenaConex As String, ByVal uuid As String) As LVentas
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim lstVent As New LVentas()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Select Area FROM conta.[Asahi].[dbo].[VistaNetsuiteTransacciones] where UUID = '" & uuid & "' group by Area", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                Dim vent As New Ventas
+                vent.Area = dr("Area").ToString
+                lstVent.Add(vent)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstVent
     End Function
     Public Function RecuperarLstPorProvisionar(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
         Dim oCon As New SqlConnection(cadenaConex)
