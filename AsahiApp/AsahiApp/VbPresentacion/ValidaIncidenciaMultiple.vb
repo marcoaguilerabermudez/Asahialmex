@@ -507,6 +507,7 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             da.SelectCommand.Parameters.Add("@clave", SqlDbType.Int).Value = lbl_clave.Text
             da.SelectCommand.Parameters.Add("@desde", SqlDbType.Date).Value = lbl_desde.Text
             da.SelectCommand.Parameters.Add("@hasta", SqlDbType.Date).Value = lbl_hasta.Text
+            da.SelectCommand.Parameters.Add("@var", SqlDbType.Int).Value = 0
 
 
             da.Fill(dt)
