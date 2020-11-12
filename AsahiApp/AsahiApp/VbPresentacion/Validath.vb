@@ -129,6 +129,7 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
         ContenedorReporteTeN.depto = id
         ContenedorReporteTeN.fecha = dtp1.Value.ToShortDateString
         ContenedorReporteTeN.Show()
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -138,4 +139,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         HistoricoChecadas.Show()
     End Sub
+
+
 End Class

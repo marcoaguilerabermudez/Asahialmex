@@ -138,11 +138,6 @@ where vigencia = 'VIGENTE'
         Finally
             Cn.Close()
         End Try
-
-
-
-
-
     End Sub
 
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
