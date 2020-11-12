@@ -384,6 +384,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
             cbx_textra.Items.Clear()
 
         Catch ex As Exception
+
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
             MessageBox.Show(ex.ToString)
             Cnn.Close()
@@ -447,6 +448,14 @@ delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where grupo = 0 and clave =
 delete from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where clave = @clave and Fecha = @fecha and PlanExtra = 0
 
 
+
+if not exists (select clave from giro.[asahi16].[dbo].[Rh_entradasalida2] where clave = @clave and grupo =    case
+  when @turnoe = 'Matutino' then 1
+  when @turnoe = 'Vespertino' then 2
+  when @turnoe = 'Nocturno' then 3
+  when @turnoe = 'Administrativo' then 4
+  end and fecha = @fecha)
+begin
  insert into giro.[asahi16].[dbo].[Rh_entradasalida2] (clave,fecha,turno,grupo) 
 values (RIGHT(CONCAT('00000', @clave), 5),@fecha,
   case
@@ -461,7 +470,16 @@ values (RIGHT(CONCAT('00000', @clave), 5),@fecha,
   when @turnoe = 'Nocturno' then 3
   when @turnoe = 'Administrativo' then 4
   end)
+  end
 
+
+  if not exists (select clave from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where clave = @clave and turnoe =    case
+  when @turnoe = 'Matutino' then 1
+  when @turnoe = 'Vespertino' then 2
+  when @turnoe = 'Nocturno' then 3
+  when @turnoe = 'Administrativo' then 4
+  end and fecha = @fecha)
+  begin
 insert into [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] (CLAVE, FECHA, ValSuper, ValRh,PlanExtra,TurnoA,TurnoE )
 select RIGHT(CONCAT('00000', @clave), 5), convert (date , @fecha),0,0,1,
 case
@@ -475,6 +493,7 @@ when @turnoe = 'Matutino' then 1
 when @turnoe = 'Vespertino' then 2
 when @turnoe = 'Nocturno' then 3
 when @turnoe = 'Administrativo' then 4
+end
 end
 ", Cnn)
 

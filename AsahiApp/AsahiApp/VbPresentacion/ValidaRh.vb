@@ -115,17 +115,18 @@ where vigencia = 'VIGENTE'
 
             For Each fila In dtgvp.Rows
 
+                If fila.Cells("x").Value = True Then
+                    command.Parameters.Clear()
 
-                command.Parameters.Clear()
-
-                command.Parameters.AddWithValue("@clave", (fila.Cells("Clave").Value))
-                command.Parameters.AddWithValue("@fecha", dtp1.Value.ToShortDateString)
-                command.Parameters.AddWithValue("@id", (fila.Cells("Id_RhIncidenciasprincipal").Value))
-                command.Parameters.AddWithValue("@te", (fila.Cells("TE").Value))
-                command.Parameters.AddWithValue("@incidencia", (fila.Cells("INC").Value))
+                    command.Parameters.AddWithValue("@clave", (fila.Cells("Clave").Value))
+                    command.Parameters.AddWithValue("@fecha", dtp1.Value.ToShortDateString)
+                    command.Parameters.AddWithValue("@id", (fila.Cells("Id_RhIncidenciasprincipal").Value))
+                    command.Parameters.AddWithValue("@te", (fila.Cells("TE").Value))
+                    command.Parameters.AddWithValue("@incidencia", (fila.Cells("INC").Value))
 
 
-                command.ExecuteNonQuery()
+                    command.ExecuteNonQuery()
+                End If
             Next
 
             MessageBox.Show("Correcto", "¡Carga exitosa!")
@@ -137,11 +138,6 @@ where vigencia = 'VIGENTE'
         Finally
             Cn.Close()
         End Try
-
-
-
-
-
     End Sub
 
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
