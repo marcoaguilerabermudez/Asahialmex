@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class ValidaIncidenciaMultiple
+Public Class x
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
     Dim motivo As Integer
     Dim incidencia As String
@@ -149,6 +149,7 @@ dateadd(year,100,convert(datetime,desdeh))
 dateadd(year,100,convert(datetime,HastaH))
   end
   ,dateadd(day,1,inc.DesdeF)
+  ,descripcion_puesto
   
 
 
@@ -184,6 +185,7 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
                 dtp1.Value = ds.Tables(0).Rows(0).Item(14)
             End If
             fechaagregada = ds.Tables(0).Rows(0).Item(15)
+            lbl_puesto.Text = ds.Tables(0).Rows(0).Item(16)
 
             Cn.Close()
             Btn_autorizar.Enabled = True
@@ -224,6 +226,9 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             dtgvi.Visible = True
             lbl_hora.Visible = False
             Label9.Visible = False
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
 
         ElseIf (motivo = 3 OrElse motivo = 4) And retardo = 0 Then
             lbl_hasta.Visible = True
@@ -239,6 +244,9 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             dtgvi.Visible = True
             lbl_hora.Visible = False
             Label9.Visible = False
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
 
         ElseIf (motivo = 3 OrElse motivo = 4) And retardo = 1 Then
             lbl_desde.Visible = True
@@ -252,6 +260,9 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             dtp1.Visible = False
             lbl_tipo.Text = "RETARDO"
             dtgvi.Visible = True
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
             ' muestrahoraretardo()
             'lbl_hora.Visible = True
             'Label9.Visible = True
@@ -269,6 +280,11 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             dtgvi.Visible = True
             lbl_hora.Visible = False
             Label9.Visible = False
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
+
+
         ElseIf motivo = 6 Then
 
             lbl_desde.Visible = True
@@ -284,6 +300,50 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             Label7.Visible = False
             lbl_hora.Visible = False
             Label9.Visible = False
+
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
+
+
+        ElseIf motivo = 7 Then
+
+            lbl_desde.Visible = True
+            Label5.Visible = False
+            lbl_ES.Visible = False
+            dtp1.Visible = False
+            Label2.Visible = False
+            Label6.Visible = False
+            txt_retardo.Visible = False
+            lbl_tipo.Visible = False
+            dtgvi.Visible = False
+            lbl_hasta.Visible = False
+            Label7.Visible = False
+            lbl_hora.Visible = False
+            Label9.Visible = False
+            Label10.Visible = False
+            Label12.Visible = True
+            lbl_pudep.Visible = True
+
+        ElseIf motivo = 8 Then
+
+            lbl_desde.Visible = True
+            Label5.Visible = False
+            lbl_ES.Visible = False
+            dtp1.Visible = False
+            Label2.Visible = False
+            Label6.Visible = False
+            txt_retardo.Visible = False
+            lbl_tipo.Visible = False
+            dtgvi.Visible = False
+            lbl_hasta.Visible = False
+            Label7.Visible = False
+            lbl_hora.Visible = False
+            Label9.Visible = False
+            Label10.Visible = True
+            Label12.Visible = False
+            lbl_pudep.Visible = True
+
 
 
 

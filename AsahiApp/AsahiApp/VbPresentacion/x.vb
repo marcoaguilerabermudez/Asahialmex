@@ -57,6 +57,67 @@ Public Class FormatoSM
     End Sub
 
 
+    Sub llenacombodepto()
+
+        Dim Dt As DataTable
+
+        Dim Da As New SqlDataAdapter
+        Dim Cmd As New SqlCommand
+        Dim parametro1 As String
+        parametro1 = cbx_tipo.Text
+
+        With Cmd
+            .CommandType = CommandType.Text
+            .CommandText = "	
+select descripcion,clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CENTRO_COSTO not in ('16')
+"
+            .Connection = Cn
+        End With
+        Da.SelectCommand = Cmd
+        Dt = New DataTable
+        Da.Fill(Dt)
+        With cbx_depto
+            .DataSource = Dt
+            .DisplayMember = "descripcion"
+            .ValueMember = "clave"
+        End With
+
+
+
+    End Sub
+
+
+    Sub llenacombopuesto()
+
+        Dim Dt As DataTable
+
+        Dim Da As New SqlDataAdapter
+        Dim Cmd As New SqlCommand
+        Dim parametro1 As String
+        parametro1 = cbx_tipo.Text
+
+        With Cmd
+            .CommandType = CommandType.Text
+            .CommandText = "	
+select descripcion,CLAVE from giro.[asahi16].[Supervisor_giro].[Puesto] where clave not in ('003','007','011','015','014','013','012','010')
+"
+            .Connection = Cn
+        End With
+        Da.SelectCommand = Cmd
+        Dt = New DataTable
+        Da.Fill(Dt)
+        With cbx_puesto
+            .DataSource = Dt
+            .DisplayMember = "descripcion"
+            .ValueMember = "clave"
+        End With
+
+
+
+    End Sub
+
+
+
     Sub muestraetiqueta()
         Try
             Dim lista As New List(Of String)
@@ -92,6 +153,7 @@ select CLAVE, RTRIM(LTRIM(NOMBREN)) + ' ' + RTRIM(LTRIM(NOMBREP)) + ' ' + RTRIM(
    when 9 then 'Descanso'
    else 'Error'
    end
+,descripcion_puesto
 from giro.asahi16.Supervisor_giro.VistaEmpleadosVigenciaYPuesto vig
 where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
 
@@ -104,6 +166,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
             lbl_empleado.Text = ds.Tables(0).Rows(0).Item(1)
             lbl_depto.Text = ds.Tables(0).Rows(0).Item(2)
             lbl_turno.Text = ds.Tables(0).Rows(0).Item(3)
+            lbl_puesto.Text = ds.Tables(0).Rows(0).Item(4)
 
             Cn.Close()
             btn_solicitar.Enabled = True
@@ -217,6 +280,11 @@ SELECT  [Id_motivopermiso]
             gbx_vacaciones.Visible = False
             lbl_pendientes.Text = "0"
             lbl_tomados.Text = "0"
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
+
 
 
         End If
@@ -249,6 +317,12 @@ SELECT  [Id_motivopermiso]
             vpermiso = 6
             dtgvp.Visible = False
             gbx_vacaciones.Visible = False
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
+
+
         ElseIf cbx_tipo.Text = "Vacaciones" Then
             Check_entrada.Visible = False
             Check_salida.Visible = False
@@ -272,6 +346,12 @@ SELECT  [Id_motivopermiso]
             dtp2.Value = Today.Now.AddDays(3)
             vpermiso = 5
             dtgvp.Visible = True
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
+
+
         ElseIf cbx_tipo.Text = "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)" Then
             Check_entrada.Visible = False
             Check_salida.Visible = False
@@ -291,6 +371,12 @@ SELECT  [Id_motivopermiso]
             vpermiso = 4
             dtgvp.Visible = True
             gbx_vacaciones.Visible = False
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
+
+
         ElseIf cbx_tipo.Text = "Falta o retardo injustificado y sin goce de sueldo" Then
             Check_entrada.Visible = False
             Check_salida.Visible = False
@@ -310,6 +396,12 @@ SELECT  [Id_motivopermiso]
             vpermiso = 3
             dtgvp.Visible = True
             gbx_vacaciones.Visible = False
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
+
+
         ElseIf cbx_tipo.Text = "Permiso sin goce de sueldo" Then
             Check_entrada.Visible = False
             Check_salida.Visible = False
@@ -330,6 +422,12 @@ SELECT  [Id_motivopermiso]
             vpermiso = 2
             dtgvp.Visible = True
             gbx_vacaciones.Visible = False
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
+
+
         ElseIf cbx_tipo.Text = "Permiso con goce de sueldo" Then
             Check_entrada.Visible = False
             Check_salida.Visible = False
@@ -350,6 +448,67 @@ SELECT  [Id_motivopermiso]
             vpermiso = 1
             dtgvp.Visible = True
             gbx_vacaciones.Visible = False
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
+
+        ElseIf cbx_tipo.Text = "Cambio de departamento" Then
+            Check_entrada.Visible = False
+            Check_salida.Visible = False
+            'rbt_nocturno.Visible = False
+
+            desde_h.Visible = True
+            hasta_h.Visible = True
+            Label9.Visible = True
+            Label8.Visible = True
+            dtp_checada.Visible = False
+            Label10.Visible = False
+            dtp_regreso.Visible = False
+            gb_aviso.Visible = False
+            Check_aviso.Checked = False
+            gbx_tipo.Visible = False
+            'rbt_nocturno.Visible = False
+            vpermiso = 7
+            dtgvp.Visible = True
+            gbx_vacaciones.Visible = False
+
+            lbl_ndepto.Visible = True
+            cbx_depto.Visible = True
+            Label6.Visible = False
+            dtp2.Visible = False
+
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
+
+        ElseIf cbx_tipo.Text = "Cambio de puesto" Then
+            Check_entrada.Visible = False
+            Check_salida.Visible = False
+            'rbt_nocturno.Visible = False
+
+            desde_h.Visible = True
+            hasta_h.Visible = True
+            Label9.Visible = True
+            Label8.Visible = True
+            dtp_checada.Visible = False
+            Label10.Visible = False
+            dtp_regreso.Visible = False
+            gb_aviso.Visible = False
+            Check_aviso.Checked = False
+            gbx_tipo.Visible = False
+            'rbt_nocturno.Visible = False
+            vpermiso = 8
+            dtgvp.Visible = True
+            gbx_vacaciones.Visible = False
+
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+            Label6.Visible = False
+            dtp2.Visible = False
+
+            lbl_npuesto.Visible = True
+            cbx_puesto.Visible = True
+
         End If
 
 
@@ -376,6 +535,8 @@ SELECT  [Id_motivopermiso]
     Private Sub FormatoSM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtp_regreso.Value = dtp2.Value.AddDays(1)
         txt_clave.Focus()
+        llenacombodepto()
+        llenacombopuesto()
     End Sub
 
     Private Sub dtp1_ValueChanged(sender As Object, e As EventArgs) Handles dtp1.ValueChanged
@@ -704,6 +865,8 @@ SELECT  [Id_motivopermiso]
             command.Parameters.AddWithValue("@cnocturno", rbt_nocturno.CheckState)
             command.Parameters.AddWithValue("@fechayhora", Result)
             command.Parameters.AddWithValue("@variable", VMOTIVO)
+            'command.Parameters.AddWithValue("@ndepto", cbx_depto.ValueMember)
+            'command.Parameters.AddWithValue("@npuesto", cbx_puesto.ValueMember)
 
 
 
@@ -737,6 +900,9 @@ SELECT  [Id_motivopermiso]
             btn_solicitar.Enabled = False
             txt_clave.Focus()
             dtgvp.Visible = False
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+
             generarreporte()
 
         Catch ex As Exception
@@ -758,6 +924,8 @@ SELECT  [Id_motivopermiso]
             rbt_nocturno.Checked = False
             btn_solicitar.Enabled = False
             dtgvp.Visible = False
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
         Finally
 
             Cn.Close()

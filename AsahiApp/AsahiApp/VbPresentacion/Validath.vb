@@ -44,7 +44,7 @@ Public Class Validath
         Cn.Close()
 
 
-            For Each row As DataGridViewRow In Me.dtgvp.Rows
+        For Each row As DataGridViewRow In Me.dtgvp.Rows
 
             If row.Cells(“ValSuper”).Value = 1 Then
                 row.DefaultCellStyle.BackColor = Color.LightBlue
@@ -53,6 +53,13 @@ Public Class Validath
             End If
 
         Next
+
+        Dim col As DataGridViewColumn =
+          Me.dtgvp.Columns("INC")
+
+        col.ReadOnly = True
+
+
     End Sub
 
     Private Sub Validath_Load(sender As Object, e As EventArgs) Handles MyBase.Load

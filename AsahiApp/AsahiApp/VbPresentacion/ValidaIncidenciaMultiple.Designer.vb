@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ValidaIncidenciaMultiple
+Partial Class x
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class ValidaIncidenciaMultiple
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ValidaIncidenciaMultiple))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(x))
         Me.panel1 = New System.Windows.Forms.Panel()
         Me.lbl_tipo = New System.Windows.Forms.Label()
         Me.txt_folio = New System.Windows.Forms.TextBox()
@@ -55,6 +55,11 @@ Partial Class ValidaIncidenciaMultiple
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dtgvi = New System.Windows.Forms.DataGridView()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.lbl_puesto = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lbl_pudep = New System.Windows.Forms.Label()
         Me.panel1.SuspendLayout()
         Me.Empleado.SuspendLayout()
         Me.gbx_inicidencia.SuspendLayout()
@@ -69,7 +74,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.panel1.Controls.Add(Me.Label1)
         Me.panel1.Location = New System.Drawing.Point(1, 0)
         Me.panel1.Name = "panel1"
-        Me.panel1.Size = New System.Drawing.Size(801, 48)
+        Me.panel1.Size = New System.Drawing.Size(801, 32)
         Me.panel1.TabIndex = 145
         '
         'lbl_tipo
@@ -122,7 +127,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.Label8.BackColor = System.Drawing.SystemColors.Control
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(29, 83)
+        Me.Label8.Location = New System.Drawing.Point(29, 73)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(86, 13)
         Me.Label8.TabIndex = 173
@@ -134,7 +139,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.lbl4.BackColor = System.Drawing.SystemColors.Control
         Me.lbl4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl4.ForeColor = System.Drawing.Color.Black
-        Me.lbl4.Location = New System.Drawing.Point(73, 61)
+        Me.lbl4.Location = New System.Drawing.Point(75, 52)
         Me.lbl4.Name = "lbl4"
         Me.lbl4.Size = New System.Drawing.Size(40, 13)
         Me.lbl4.TabIndex = 171
@@ -146,7 +151,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.lbl2.BackColor = System.Drawing.SystemColors.Control
         Me.lbl2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl2.ForeColor = System.Drawing.Color.Black
-        Me.lbl2.Location = New System.Drawing.Point(64, 38)
+        Me.lbl2.Location = New System.Drawing.Point(65, 31)
         Me.lbl2.Name = "lbl2"
         Me.lbl2.Size = New System.Drawing.Size(50, 13)
         Me.lbl2.TabIndex = 169
@@ -158,7 +163,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.lbl1.BackColor = System.Drawing.SystemColors.Control
         Me.lbl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl1.ForeColor = System.Drawing.Color.Black
-        Me.lbl1.Location = New System.Drawing.Point(73, 16)
+        Me.lbl1.Location = New System.Drawing.Point(75, 12)
         Me.lbl1.Name = "lbl1"
         Me.lbl1.Size = New System.Drawing.Size(39, 13)
         Me.lbl1.TabIndex = 168
@@ -169,7 +174,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.lbl_depto.AutoSize = True
         Me.lbl_depto.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_depto.ForeColor = System.Drawing.Color.Black
-        Me.lbl_depto.Location = New System.Drawing.Point(134, 83)
+        Me.lbl_depto.Location = New System.Drawing.Point(134, 73)
         Me.lbl_depto.Name = "lbl_depto"
         Me.lbl_depto.Size = New System.Drawing.Size(74, 13)
         Me.lbl_depto.TabIndex = 177
@@ -180,7 +185,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.lbl_turno.AutoSize = True
         Me.lbl_turno.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_turno.ForeColor = System.Drawing.Color.Black
-        Me.lbl_turno.Location = New System.Drawing.Point(134, 61)
+        Me.lbl_turno.Location = New System.Drawing.Point(134, 52)
         Me.lbl_turno.Name = "lbl_turno"
         Me.lbl_turno.Size = New System.Drawing.Size(35, 13)
         Me.lbl_turno.TabIndex = 176
@@ -191,7 +196,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.lbl_nombre.AutoSize = True
         Me.lbl_nombre.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_nombre.ForeColor = System.Drawing.Color.Black
-        Me.lbl_nombre.Location = New System.Drawing.Point(134, 38)
+        Me.lbl_nombre.Location = New System.Drawing.Point(134, 31)
         Me.lbl_nombre.Name = "lbl_nombre"
         Me.lbl_nombre.Size = New System.Drawing.Size(44, 13)
         Me.lbl_nombre.TabIndex = 175
@@ -202,7 +207,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.lbl_clave.AutoSize = True
         Me.lbl_clave.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_clave.ForeColor = System.Drawing.Color.Black
-        Me.lbl_clave.Location = New System.Drawing.Point(134, 16)
+        Me.lbl_clave.Location = New System.Drawing.Point(134, 12)
         Me.lbl_clave.Name = "lbl_clave"
         Me.lbl_clave.Size = New System.Drawing.Size(34, 13)
         Me.lbl_clave.TabIndex = 174
@@ -213,7 +218,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.lbl_tipop.AutoSize = True
         Me.lbl_tipop.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_tipop.ForeColor = System.Drawing.Color.Black
-        Me.lbl_tipop.Location = New System.Drawing.Point(134, 105)
+        Me.lbl_tipop.Location = New System.Drawing.Point(134, 115)
         Me.lbl_tipop.Name = "lbl_tipop"
         Me.lbl_tipop.Size = New System.Drawing.Size(74, 13)
         Me.lbl_tipop.TabIndex = 179
@@ -225,7 +230,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.Label3.BackColor = System.Drawing.SystemColors.Control
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(36, 105)
+        Me.Label3.Location = New System.Drawing.Point(36, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 13)
         Me.Label3.TabIndex = 178
@@ -236,7 +241,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.lbl_motivop.AutoSize = True
         Me.lbl_motivop.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_motivop.ForeColor = System.Drawing.Color.Black
-        Me.lbl_motivop.Location = New System.Drawing.Point(134, 129)
+        Me.lbl_motivop.Location = New System.Drawing.Point(134, 137)
         Me.lbl_motivop.Name = "lbl_motivop"
         Me.lbl_motivop.Size = New System.Drawing.Size(74, 13)
         Me.lbl_motivop.TabIndex = 181
@@ -248,7 +253,7 @@ Partial Class ValidaIncidenciaMultiple
         Me.Label4.BackColor = System.Drawing.SystemColors.Control
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(5, 129)
+        Me.Label4.Location = New System.Drawing.Point(5, 137)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(110, 13)
         Me.Label4.TabIndex = 180
@@ -256,6 +261,8 @@ Partial Class ValidaIncidenciaMultiple
         '
         'Empleado
         '
+        Me.Empleado.Controls.Add(Me.lbl_puesto)
+        Me.Empleado.Controls.Add(Me.Label11)
         Me.Empleado.Controls.Add(Me.lbl_depto)
         Me.Empleado.Controls.Add(Me.lbl_turno)
         Me.Empleado.Controls.Add(Me.lbl_nombre)
@@ -268,9 +275,9 @@ Partial Class ValidaIncidenciaMultiple
         Me.Empleado.Controls.Add(Me.lbl2)
         Me.Empleado.Controls.Add(Me.Label3)
         Me.Empleado.Controls.Add(Me.lbl1)
-        Me.Empleado.Location = New System.Drawing.Point(3, 48)
+        Me.Empleado.Location = New System.Drawing.Point(3, 35)
         Me.Empleado.Name = "Empleado"
-        Me.Empleado.Size = New System.Drawing.Size(689, 151)
+        Me.Empleado.Size = New System.Drawing.Size(689, 164)
         Me.Empleado.TabIndex = 182
         Me.Empleado.TabStop = False
         Me.Empleado.Text = "Empleado"
@@ -351,6 +358,9 @@ Partial Class ValidaIncidenciaMultiple
         '
         'gbx_inicidencia
         '
+        Me.gbx_inicidencia.Controls.Add(Me.lbl_pudep)
+        Me.gbx_inicidencia.Controls.Add(Me.Label12)
+        Me.gbx_inicidencia.Controls.Add(Me.Label10)
         Me.gbx_inicidencia.Controls.Add(Me.lbl_hora)
         Me.gbx_inicidencia.Controls.Add(Me.lbl_hasta)
         Me.gbx_inicidencia.Controls.Add(Me.lbl_desde)
@@ -443,7 +453,66 @@ Partial Class ValidaIncidenciaMultiple
         Me.Button3.Text = "Histórico Checadas"
         Me.Button3.UseVisualStyleBackColor = False
         '
-        'ValidaIncidenciaMultiple
+        'lbl_puesto
+        '
+        Me.lbl_puesto.AutoSize = True
+        Me.lbl_puesto.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_puesto.ForeColor = System.Drawing.Color.Black
+        Me.lbl_puesto.Location = New System.Drawing.Point(134, 95)
+        Me.lbl_puesto.Name = "lbl_puesto"
+        Me.lbl_puesto.Size = New System.Drawing.Size(40, 13)
+        Me.lbl_puesto.TabIndex = 183
+        Me.lbl_puesto.Text = "Puesto"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.SystemColors.Control
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(69, 95)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(46, 13)
+        Me.Label11.TabIndex = 182
+        Me.Label11.Text = "Puesto"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.SystemColors.Control
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(240, 62)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(77, 13)
+        Me.Label10.TabIndex = 198
+        Me.Label10.Text = "Nuevo puesto:"
+        Me.Label10.Visible = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.SystemColors.Control
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(244, 81)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(72, 13)
+        Me.Label12.TabIndex = 199
+        Me.Label12.Text = "Nuevo depto:"
+        Me.Label12.Visible = False
+        '
+        'lbl_pudep
+        '
+        Me.lbl_pudep.AutoSize = True
+        Me.lbl_pudep.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_pudep.ForeColor = System.Drawing.Color.Black
+        Me.lbl_pudep.Location = New System.Drawing.Point(325, 73)
+        Me.lbl_pudep.Name = "lbl_pudep"
+        Me.lbl_pudep.Size = New System.Drawing.Size(47, 13)
+        Me.lbl_pudep.TabIndex = 200
+        Me.lbl_pudep.Text = "Minutos."
+        Me.lbl_pudep.Visible = False
+        '
+        'x
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -454,8 +523,9 @@ Partial Class ValidaIncidenciaMultiple
         Me.Controls.Add(Me.Empleado)
         Me.Controls.Add(Me.Btn_autorizar)
         Me.Controls.Add(Me.panel1)
+        Me.ForeColor = System.Drawing.Color.DarkRed
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "ValidaIncidenciaMultiple"
+        Me.Name = "x"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Validación de Incidencia Múltiple"
         Me.panel1.ResumeLayout(False)
@@ -501,4 +571,9 @@ Partial Class ValidaIncidenciaMultiple
     Friend WithEvents lbl_desde As DateTimePicker
     Friend WithEvents lbl_hora As DateTimePicker
     Friend WithEvents Button3 As Button
+    Friend WithEvents lbl_puesto As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents lbl_pudep As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label10 As Label
 End Class
