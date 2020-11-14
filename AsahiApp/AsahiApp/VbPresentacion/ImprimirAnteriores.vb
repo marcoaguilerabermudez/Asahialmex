@@ -112,6 +112,20 @@ Public Class ImprimirAnteriores
             ContenedorReporteChecadas.retardo = 0
             ContenedorReporteChecadas.Show()
 
+        ElseIf vpermiso = 7 Then
+            ContenedorReporteDeptoN.id = folio
+            ContenedorReporteDeptoN.Tipo = 0
+            ContenedorReporteDeptoN.motivo = 0
+            ContenedorReporteDeptoN.retardo = 0
+            ContenedorReporteDeptoN.Show()
+
+
+        ElseIf vpermiso = 8 Then
+            ContenedorReporteNuevoPuesto.id = folio
+            ContenedorReporteNuevoPuesto.Tipo = 0
+            ContenedorReporteNuevoPuesto.motivo = 0
+            ContenedorReporteNuevoPuesto.retardo = 0
+            ContenedorReporteNuevoPuesto.Show()
 
         End If
     End Sub

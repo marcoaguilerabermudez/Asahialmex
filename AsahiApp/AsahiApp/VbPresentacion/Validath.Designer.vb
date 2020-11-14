@@ -24,6 +24,8 @@ Partial Class Validath
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Validath))
         Me.panel1 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -62,8 +64,6 @@ Partial Class Validath
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.pbx = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.panel1.SuspendLayout()
@@ -89,6 +89,27 @@ Partial Class Validath
         Me.panel1.Name = "panel1"
         Me.panel1.Size = New System.Drawing.Size(1229, 169)
         Me.panel1.TabIndex = 145
+        '
+        'Button3
+        '
+        Me.Button3.ForeColor = System.Drawing.Color.Aqua
+        Me.Button3.Location = New System.Drawing.Point(376, 46)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(78, 35)
+        Me.Button3.TabIndex = 178
+        Me.Button3.Text = "Histórico Checadas"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.Color.Aqua
+        Me.Button1.Location = New System.Drawing.Point(376, 107)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(78, 35)
+        Me.Button1.TabIndex = 177
+        Me.Button1.Text = "Acomodar Checadas"
+        Me.Button1.UseVisualStyleBackColor = False
+        Me.Button1.Visible = False
         '
         'GroupBox1
         '
@@ -498,27 +519,6 @@ Partial Class Validath
         Me.x.HeaderText = "x"
         Me.x.Name = "x"
         Me.x.Width = 18
-        '
-        'Button1
-        '
-        Me.Button1.ForeColor = System.Drawing.Color.Aqua
-        Me.Button1.Location = New System.Drawing.Point(376, 107)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(78, 35)
-        Me.Button1.TabIndex = 177
-        Me.Button1.Text = "Acomodar Checadas"
-        Me.Button1.UseVisualStyleBackColor = False
-        Me.Button1.Visible = False
-        '
-        'Button3
-        '
-        Me.Button3.ForeColor = System.Drawing.Color.Aqua
-        Me.Button3.Location = New System.Drawing.Point(376, 46)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(78, 35)
-        Me.Button3.TabIndex = 178
-        Me.Button3.Text = "Histórico Checadas"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'pbx
         '

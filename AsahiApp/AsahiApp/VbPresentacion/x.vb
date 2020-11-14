@@ -9,6 +9,8 @@ Public Class FormatoSM
     Dim depto As String
     Dim permiso As Integer
     Dim difvacaciones As Integer
+    Dim NPuesto As String
+    Dim NDepto As String
 
 
     Sub New(id As Integer, depto As String, permiso As Integer)
@@ -84,6 +86,7 @@ select descripcion,clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CEN
 
 
 
+
     End Sub
 
 
@@ -109,7 +112,7 @@ select descripcion,CLAVE from giro.[asahi16].[Supervisor_giro].[Puesto] where cl
         With cbx_puesto
             .DataSource = Dt
             .DisplayMember = "descripcion"
-            .ValueMember = "clave"
+            .ValueMember = "CLAVE"
         End With
 
 
@@ -666,6 +669,7 @@ SELECT  [Id_motivopermiso]
 
     Sub generarreporte()
 
+
         If vpermiso = 1 OrElse vpermiso = 2 Then
             F_reportePCSGoce.id = y
             F_reportePCSGoce.Tipo = 0
@@ -692,7 +696,29 @@ SELECT  [Id_motivopermiso]
             ContenedorReporteChecadas.Show()
 
 
+        ElseIf vpermiso = 7 Then
+            ContenedorReporteDeptoN.id = y
+            ContenedorReporteDeptoN.Tipo = 0
+            ContenedorReporteDeptoN.motivo = 0
+            ContenedorReporteDeptoN.retardo = 0
+            ContenedorReporteDeptoN.Show()
+
+
+        ElseIf vpermiso = 8 Then
+            ContenedorReporteNuevoPuesto.id = y
+            ContenedorReporteNuevoPuesto.Tipo = 0
+            ContenedorReporteNuevoPuesto.motivo = 0
+            ContenedorReporteNuevoPuesto.retardo = 0
+            ContenedorReporteNuevoPuesto.Show()
+
+
+
         End If
+
+
+
+
+
     End Sub
 
 
@@ -774,6 +800,7 @@ SELECT  [Id_motivopermiso]
 
 
             Dim da = New SqlDataAdapter(strSql, Cn)
+            Cn.Close()
             Cn.Open()
             da.SelectCommand.CommandType = CommandType.StoredProcedure
 
@@ -865,8 +892,8 @@ SELECT  [Id_motivopermiso]
             command.Parameters.AddWithValue("@cnocturno", rbt_nocturno.CheckState)
             command.Parameters.AddWithValue("@fechayhora", Result)
             command.Parameters.AddWithValue("@variable", VMOTIVO)
-            'command.Parameters.AddWithValue("@ndepto", cbx_depto.ValueMember)
-            'command.Parameters.AddWithValue("@npuesto", cbx_puesto.ValueMember)
+            command.Parameters.AddWithValue("@ndepto", cbx_depto.Text)
+            command.Parameters.AddWithValue("@npuesto", cbx_puesto.Text)
 
 
 
@@ -903,6 +930,9 @@ SELECT  [Id_motivopermiso]
             lbl_ndepto.Visible = False
             cbx_depto.Visible = False
 
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
+
             generarreporte()
 
         Catch ex As Exception
@@ -926,6 +956,9 @@ SELECT  [Id_motivopermiso]
             dtgvp.Visible = False
             lbl_ndepto.Visible = False
             cbx_depto.Visible = False
+
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
         Finally
 
             Cn.Close()

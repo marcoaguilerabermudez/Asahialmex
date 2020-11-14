@@ -41,6 +41,8 @@ Partial Class x
         Me.lbl_motivop = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Empleado = New System.Windows.Forms.GroupBox()
+        Me.lbl_puesto = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lbl_ES = New System.Windows.Forms.Label()
@@ -48,6 +50,9 @@ Partial Class x
         Me.txt_retardo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.gbx_inicidencia = New System.Windows.Forms.GroupBox()
+        Me.lbl_pudep = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.lbl_hora = New System.Windows.Forms.DateTimePicker()
         Me.lbl_hasta = New System.Windows.Forms.DateTimePicker()
         Me.lbl_desde = New System.Windows.Forms.DateTimePicker()
@@ -55,11 +60,6 @@ Partial Class x
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dtgvi = New System.Windows.Forms.DataGridView()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.lbl_puesto = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.lbl_pudep = New System.Windows.Forms.Label()
         Me.panel1.SuspendLayout()
         Me.Empleado.SuspendLayout()
         Me.gbx_inicidencia.SuspendLayout()
@@ -283,6 +283,29 @@ Partial Class x
         Me.Empleado.Text = "Empleado"
         Me.Empleado.Visible = False
         '
+        'lbl_puesto
+        '
+        Me.lbl_puesto.AutoSize = True
+        Me.lbl_puesto.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_puesto.ForeColor = System.Drawing.Color.Black
+        Me.lbl_puesto.Location = New System.Drawing.Point(134, 95)
+        Me.lbl_puesto.Name = "lbl_puesto"
+        Me.lbl_puesto.Size = New System.Drawing.Size(40, 13)
+        Me.lbl_puesto.TabIndex = 183
+        Me.lbl_puesto.Text = "Puesto"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.SystemColors.Control
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(69, 95)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(46, 13)
+        Me.Label11.TabIndex = 182
+        Me.Label11.Text = "Puesto"
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -380,6 +403,44 @@ Partial Class x
         Me.gbx_inicidencia.Text = "Incidencia"
         Me.gbx_inicidencia.Visible = False
         '
+        'lbl_pudep
+        '
+        Me.lbl_pudep.AutoSize = True
+        Me.lbl_pudep.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_pudep.ForeColor = System.Drawing.Color.Black
+        Me.lbl_pudep.Location = New System.Drawing.Point(318, 39)
+        Me.lbl_pudep.Name = "lbl_pudep"
+        Me.lbl_pudep.Size = New System.Drawing.Size(47, 13)
+        Me.lbl_pudep.TabIndex = 200
+        Me.lbl_pudep.Text = "Minutos."
+        Me.lbl_pudep.Visible = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.SystemColors.Control
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(228, 38)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(84, 13)
+        Me.Label12.TabIndex = 199
+        Me.Label12.Text = "Nuevo depto:"
+        Me.Label12.Visible = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.SystemColors.Control
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(228, 38)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.TabIndex = 198
+        Me.Label10.Text = "Nuevo puesto:"
+        Me.Label10.Visible = False
+        '
         'lbl_hora
         '
         Me.lbl_hora.CustomFormat = "HH:mm:ss"
@@ -452,65 +513,6 @@ Partial Class x
         Me.Button3.TabIndex = 193
         Me.Button3.Text = "Histórico Checadas"
         Me.Button3.UseVisualStyleBackColor = False
-        '
-        'lbl_puesto
-        '
-        Me.lbl_puesto.AutoSize = True
-        Me.lbl_puesto.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_puesto.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puesto.Location = New System.Drawing.Point(134, 95)
-        Me.lbl_puesto.Name = "lbl_puesto"
-        Me.lbl_puesto.Size = New System.Drawing.Size(40, 13)
-        Me.lbl_puesto.TabIndex = 183
-        Me.lbl_puesto.Text = "Puesto"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.SystemColors.Control
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(69, 95)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(46, 13)
-        Me.Label11.TabIndex = 182
-        Me.Label11.Text = "Puesto"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.SystemColors.Control
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(240, 62)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(77, 13)
-        Me.Label10.TabIndex = 198
-        Me.Label10.Text = "Nuevo puesto:"
-        Me.Label10.Visible = False
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.SystemColors.Control
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(244, 81)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(72, 13)
-        Me.Label12.TabIndex = 199
-        Me.Label12.Text = "Nuevo depto:"
-        Me.Label12.Visible = False
-        '
-        'lbl_pudep
-        '
-        Me.lbl_pudep.AutoSize = True
-        Me.lbl_pudep.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_pudep.ForeColor = System.Drawing.Color.Black
-        Me.lbl_pudep.Location = New System.Drawing.Point(325, 73)
-        Me.lbl_pudep.Name = "lbl_pudep"
-        Me.lbl_pudep.Size = New System.Drawing.Size(47, 13)
-        Me.lbl_pudep.TabIndex = 200
-        Me.lbl_pudep.Text = "Minutos."
-        Me.lbl_pudep.Visible = False
         '
         'x
         '
