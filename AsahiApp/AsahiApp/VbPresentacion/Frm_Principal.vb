@@ -464,7 +464,7 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub ValidaciónRHToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ValidaciónRHToolStripMenuItem.Click
-        ValidaIncidenciaMultiple.Show()
+        x.Show()
     End Sub
 
     Private Sub ValidaciónRHToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ValidaciónRHToolStripMenuItem1.Click

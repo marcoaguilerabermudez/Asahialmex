@@ -19,8 +19,9 @@ Public Class Validath
     Sub cargagrid()
 
 
+
         Cn.Close()
-            Cn.Open()
+        Cn.Open()
 
         Dim da As New SqlDataAdapter("Sp_validatiempoextra", Cn)
         da.SelectCommand.CommandType = CommandType.StoredProcedure
@@ -28,7 +29,6 @@ Public Class Validath
         da.SelectCommand.Parameters.AddWithValue("@depto", id)
         da.SelectCommand.Parameters.AddWithValue("@var", 0)
         da.SelectCommand.Parameters.AddWithValue("@departamento", " ")
-
 
 
         Dim dt As New DataTable
@@ -44,7 +44,7 @@ Public Class Validath
         Cn.Close()
 
 
-            For Each row As DataGridViewRow In Me.dtgvp.Rows
+        For Each row As DataGridViewRow In Me.dtgvp.Rows
 
             If row.Cells(“ValSuper”).Value = 1 Then
                 row.DefaultCellStyle.BackColor = Color.LightBlue
@@ -52,7 +52,33 @@ Public Class Validath
                 row.DefaultCellStyle.BackColor = Color.ForestGreen
             End If
 
+
+
+
+
         Next
+
+        Dim col As DataGridViewColumn =
+          Me.dtgvp.Columns("INC")
+
+        col.ReadOnly = True
+
+
+
+        For Each row As DataGridViewRow In Me.dtgvp.Rows
+            'If Not IsDBNull("Plan") And IsDBNull("TE") Then
+
+
+            If row.Cells("Plan").Value < row.Cells("TE").Value Then
+                    row.Cells("TE").ReadOnly = False
+                Else
+                    row.Cells("TE").ReadOnly = True
+                End If
+            'End If
+
+        Next
+
+
     End Sub
 
     Private Sub Validath_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -62,6 +88,53 @@ Public Class Validath
 
 
     Sub autorizar()
+
+        Cn.Close()
+        Cn.Open()
+
+        Dim auto As SqlCommand = New SqlCommand("
+update [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] set incidencia = @inci, ValSuper = 1 , timestampval = getdate()
+where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
+
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        Dim RI As String
+
+        Try
+
+            For Each fila In dtgvp.Rows
+                If fila.Cells("x").Value = True And fila.Cells("Plan").Value >= fila.Cells("TE").Value Then
+                    auto.Parameters.Clear()
+                    auto.Parameters.Add("@id", SqlDbType.Int).Value = (fila.Cells("Id_RhIncidenciasprincipal").Value)
+                    auto.Parameters.Add("@inci", SqlDbType.VarChar, 5).Value = (fila.Cells("INC").Value)
+                    'auto.Parameters.Add("@te", SqlDbType.Float).Value = (fila.Cells("TE").Value)
+
+
+
+                    auto.ExecuteNonQuery()
+
+                    RI = "¡Registro(s) Validados!"
+                    'Else
+                    '    RI = "¡Debe palomear mínimo una casilla para validar!"
+
+                End If
+
+            Next
+
+            MessageBox.Show(RI, "¡Aviso!")
+            cargagrid()
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error al actualizar registro, consulte al administrador")
+            MessageBox.Show(ex.ToString)
+            Cn.Close()
+        Finally
+            Cn.Close()
+
+        End Try
+    End Sub
+
+    Sub autorizardomingo()
 
         Cn.Close()
         Cn.Open()
@@ -108,8 +181,14 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
         End Try
     End Sub
 
+
+
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
-        autorizar()
+        If dtp1.Value.DayOfWeek = 7 Then
+            autorizardomingo()
+        Else
+            autorizar()
+        End If
     End Sub
 
     Private Sub btn_desma_Click(sender As Object, e As EventArgs) Handles btn_desma.Click
