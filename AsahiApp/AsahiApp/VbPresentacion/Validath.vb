@@ -64,20 +64,22 @@ Public Class Validath
         col.ReadOnly = True
 
 
+        Try
 
-        For Each row As DataGridViewRow In Me.dtgvp.Rows
-            'If Not IsDBNull("Plan") And IsDBNull("TE") Then
+            For Each row As DataGridViewRow In Me.dtgvp.Rows
+                'If Not IsDBNull("Plan") And IsDBNull("TE") Then
 
 
-            If row.Cells("Plan").Value < row.Cells("TE").Value Then
+                If row.Cells("Plan").Value < row.Cells("TE").Value Then
                     row.Cells("TE").ReadOnly = False
                 Else
                     row.Cells("TE").ReadOnly = True
                 End If
-            'End If
+                'End If
 
-        Next
-
+            Next
+        Catch
+        End Try
 
     End Sub
 
@@ -204,7 +206,7 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)
   join [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] pri
   on pri.Clave = solicitud.Clave and solicitud.TurnoE = pri.TurnoE and pri.Fecha = solicitud.Fecha
   where solicitud.Clave = @clave
-  -- and solicitud.Fecha = @fecha
+   and solicitud.Fecha = @fecha
   and PlanExtra = 1 and solicitud.TurnoE = pri.TurnoE and ValSuper = 1
 
 
@@ -221,6 +223,8 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)
                     auto.Parameters.Add("@id", SqlDbType.Int).Value = (fila.Cells("Id_RhIncidenciasprincipal").Value)
                     auto.Parameters.Add("@inci", SqlDbType.VarChar, 5).Value = (fila.Cells("INC").Value)
                     auto.Parameters.Add("@te", SqlDbType.Float).Value = (fila.Cells("TE").Value)
+                    auto.Parameters.Add("@clave", SqlDbType.Int).Value = (fila.Cells("clave").Value)
+                    auto.Parameters.Add("@fecha", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
 
 
 
