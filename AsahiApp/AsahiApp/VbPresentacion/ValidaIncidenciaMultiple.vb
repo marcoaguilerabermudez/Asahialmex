@@ -239,7 +239,7 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             gbx_inicidencia.Visible = True
 
         Catch ex As Exception
-            '  MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.ToString)
             MessageBox.Show("El folio de incidencia que eligió no es correcto o ya ha sido validado. Verifique e intente de nuevo.", "¡Aviso!")
             Btn_autorizar.Enabled = False
             Empleado.Visible = False

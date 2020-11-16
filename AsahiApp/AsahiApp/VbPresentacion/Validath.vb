@@ -80,8 +80,8 @@ Public Class Validath
             Next
         Catch
         End Try
-
     End Sub
+
 
     Private Sub Validath_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -147,10 +147,9 @@ when @te = 11.50 then 690
 when @te = 11.75 then 705
 else @te * 60
 end
-
 where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)
 
-		 update solicitud set Parcial = CASE
+	update solicitud set Parcial = CASE
 	  WHEN [TE] BETWEEN 60 AND 74 THEN 1
 	  WHEN [TE] BETWEEN 75 AND 89    THEN 1.25
 	  WHEN [TE] BETWEEN 90 AND 104  THEN 1.5
@@ -302,7 +301,9 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
 
 
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
-        If dtp1.Value.DayOfWeek = 7 Then
+
+
+        If dtp1.Value.DayOfWeek = 0 Then
             autorizardomingo()
         Else
             autorizar()
