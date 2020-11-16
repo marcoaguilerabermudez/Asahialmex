@@ -94,6 +94,58 @@ Public Class Validath
 
         Dim auto As SqlCommand = New SqlCommand("
 update [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] set incidencia = @inci, ValSuper = 1 , timestampval = getdate()
+,TE = 
+case
+when @te = 0.25 then 15
+when @te = 0.50 then 30
+when @te = 0.75 then 45
+when @te = 1 then 60
+when @te = 1.25 then 75
+when @te = 1.50 then 90
+when @te = 1.75 then 105
+when @te = 2.00 then 120
+when @te = 2.25 then 135
+when @te = 2.50 then 150
+when @te = 2.75 then 165
+when @te = 3.00 then 180
+when @te = 3.25 then 195
+when @te = 3.50 then 210
+when @te = 3.75 then 225
+when @te = 4 then 240
+when @te = 4.25 then 255
+when @te = 4.50 then 270
+when @te = 4.75 then 285
+when @te = 5 then 300
+when @te = 5.25 then 315
+when @te = 5.50 then 330
+when @te = 5.75 then 345
+when @te = 6 then 360
+when @te = 6.25 then 375
+when @te = 6.50 then 390
+when @te = 6.75 then 405
+when @te = 7 then 420
+when @te = 7.25 then 435
+when @te = 7.50 then 450
+when @te = 7.75 then 465
+when @te = 8 then 480
+when @te = 8.25 then 495
+when @te = 8.50 then 510
+when @te = 8.75 then 525
+when @te = 9 then 540
+when @te = 9.25 then 555
+when @te = 9.50 then 570
+when @te = 9.75 then 585
+when @te = 10 then 600
+when @te = 10.25 then 615
+when @te = 10.50 then 630
+when @te = 10.75 then 645
+when @te = 11 then 660
+when @te = 11.25 then 675
+when @te = 11.50 then 690
+when @te = 11.75 then 705
+else @te * 60
+end
+
 where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
 
         Dim fila As DataGridViewRow = New DataGridViewRow()
@@ -106,7 +158,7 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
                     auto.Parameters.Clear()
                     auto.Parameters.Add("@id", SqlDbType.Int).Value = (fila.Cells("Id_RhIncidenciasprincipal").Value)
                     auto.Parameters.Add("@inci", SqlDbType.VarChar, 5).Value = (fila.Cells("INC").Value)
-                    'auto.Parameters.Add("@te", SqlDbType.Float).Value = (fila.Cells("TE").Value)
+                    auto.Parameters.Add("@te", SqlDbType.Float).Value = (fila.Cells("TE").Value)
 
 
 
