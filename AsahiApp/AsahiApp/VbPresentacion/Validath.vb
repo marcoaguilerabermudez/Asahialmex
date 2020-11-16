@@ -203,7 +203,7 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)
   from [AsahiSystem].[dbo].[Rh_solicitudTE] solicitud
   join [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] pri
   on pri.Clave = solicitud.Clave and solicitud.TurnoE = pri.TurnoE and pri.Fecha = solicitud.Fecha
-  where solicitud.Clave = pri.Clave
+  where solicitud.Clave = @clave
   -- and solicitud.Fecha = @fecha
   and PlanExtra = 1 and solicitud.TurnoE = pri.TurnoE and ValSuper = 1
 
