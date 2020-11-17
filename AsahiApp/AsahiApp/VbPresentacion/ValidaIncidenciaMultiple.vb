@@ -8,6 +8,8 @@ Public Class x
     Dim fechaagregada As String
     Dim resultado As DateTime
     Dim extra As DateTime
+    Dim puesto As String
+    Dim puestosueldo As Integer
 
 
     Private Sub txtIdPaciente_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_folio.KeyPress
@@ -194,6 +196,8 @@ dateadd(year,100,convert(datetime,HastaH))
 	  ELSE
 	  Quien
 	  END AS 'Quien'
+  ,(select top 1 sdo1 from giro.[asahi16].[Supervisor_giro].[Empsdo] where clave = vig.clave order by fecha desc)
+  ,quien
   
   
 
@@ -232,11 +236,14 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             fechaagregada = ds.Tables(0).Rows(0).Item(15)
             lbl_puesto.Text = ds.Tables(0).Rows(0).Item(16)
             lbl_pudep.Text = ds.Tables(0).Rows(0).Item(17)
+            lbl_sueldoac.Text = ds.Tables(0).Rows(0).Item(18)
+            puesto = ds.Tables(0).Rows(0).Item(19)
 
             Cn.Close()
             Btn_autorizar.Enabled = True
             Empleado.Visible = True
             gbx_inicidencia.Visible = True
+
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -250,10 +257,30 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
         End Try
 
 
-
+        sueldoxpuesto()
 
 
     End Sub
+
+
+    Sub sueldoxpuesto()
+        If puesto = "001" Then
+            txt_sueldo.Text = 928.0
+        ElseIf puesto = "005" Then
+            txt_sueldo.Text = 278.0
+        ElseIf puesto = "006" Then
+            txt_sueldo.Text = 171.0
+        ElseIf puesto = "008" Then
+            txt_sueldo.Text = 328.0
+        ElseIf puesto = "009" Then
+            txt_sueldo.Text = 628.0
+        ElseIf puesto = "011" Then
+            txt_sueldo.Text = 628.0
+        ElseIf puesto = "016" Then
+            txt_sueldo.Text = 428.0
+        End If
+    End Sub
+
 
 
 
@@ -276,6 +303,10 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             Label12.Visible = False
             lbl_pudep.Visible = False
             Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
 
         ElseIf (motivo = 3 OrElse motivo = 4) And retardo = 0 Then
             lbl_hasta.Visible = True
@@ -295,6 +326,10 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             Label12.Visible = False
             lbl_pudep.Visible = False
             Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
 
         ElseIf (motivo = 3 OrElse motivo = 4) And retardo = 1 Then
             lbl_desde.Visible = True
@@ -312,6 +347,10 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             Label12.Visible = False
             lbl_pudep.Visible = False
             Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
             ' muestrahoraretardo()
             'lbl_hora.Visible = True
             'Label9.Visible = True
@@ -333,6 +372,10 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             Label12.Visible = False
             lbl_pudep.Visible = False
             Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
 
         ElseIf motivo = 6 Then
 
@@ -354,6 +397,10 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             Label12.Visible = False
             lbl_pudep.Visible = False
             Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
 
 
         ElseIf motivo = 7 Then
@@ -376,6 +423,11 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             lbl_pudep.Visible = True
             Label5.Text = "A partir de:"
 
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
+
         ElseIf motivo = 8 Then
 
             lbl_desde.Visible = True
@@ -395,6 +447,10 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             Label12.Visible = False
             lbl_pudep.Visible = True
             Label5.Text = "A partir de:"
+            lbl_sueldo.Visible = True
+            lbl_sueldoac.Visible = True
+            txt_sueldo.Visible = True
+            txt_sueldoac.Visible = True
 
 
 
@@ -673,6 +729,8 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             command.Parameters.AddWithValue("@retardo", retardo)
             command.Parameters.AddWithValue("@Cretardo", txt_retardo.Text)
             command.Parameters.AddWithValue("@fechayhora", Result)
+            command.Parameters.AddWithValue("@puestosueldo", puestosueldo)
+            command.Parameters.AddWithValue("@sdo", txt_sueldo.Text)
 
 
 
@@ -716,7 +774,26 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
     End Sub
 
     Private Sub Btn_autorizar_Click(sender As Object, e As EventArgs) Handles Btn_autorizar.Click
-        revisaincidencia()
+        puestosueldo = 0
+
+
+
+        If motivo = 8 Then
+            If CDbl(lbl_sueldoac.Text) >= CDbl(txt_sueldo.Text) Then
+                puestosueldo = 0
+                revisaincidencia()
+            ElseIf CDbl(lbl_sueldoac.Text) < CDbl(txt_sueldo.Text) Then
+
+                puestosueldo = 1
+                revisaincidencia()
+
+            End If
+
+        Else
+            revisaincidencia()
+
+        End If
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

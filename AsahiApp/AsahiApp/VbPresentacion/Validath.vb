@@ -18,8 +18,6 @@ Public Class Validath
 
     Sub cargagrid()
 
-
-
         Cn.Close()
         Cn.Open()
 
