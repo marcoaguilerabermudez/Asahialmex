@@ -246,7 +246,7 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
 
 
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            ''MessageBox.Show(ex.ToString)
             MessageBox.Show("El folio de incidencia que eligió no es correcto o ya ha sido validado. Verifique e intente de nuevo.", "¡Aviso!")
             Btn_autorizar.Enabled = False
             Empleado.Visible = False
@@ -800,5 +800,11 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
         HistoricoChecadas.Show()
     End Sub
 
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        txt_folio.Clear()
+        Empleado.Visible = False
+        gbx_inicidencia.Visible = False
+        dtgvi.Visible = False
+        gbx_inicidencia.Visible = False
+    End Sub
 End Class

@@ -64,6 +64,7 @@ Partial Class x
         Me.lbl_sueldo = New System.Windows.Forms.Label()
         Me.txt_sueldoac = New System.Windows.Forms.Label()
         Me.lbl_sueldoac = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.panel1.SuspendLayout()
         Me.Empleado.SuspendLayout()
         Me.gbx_inicidencia.SuspendLayout()
@@ -73,6 +74,7 @@ Partial Class x
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.panel1.Controls.Add(Me.Button1)
         Me.panel1.Controls.Add(Me.lbl_tipo)
         Me.panel1.Controls.Add(Me.txt_folio)
         Me.panel1.Controls.Add(Me.Label1)
@@ -571,6 +573,18 @@ Partial Class x
         Me.lbl_sueldoac.Text = "Retardo por:"
         Me.lbl_sueldoac.Visible = False
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.LightGray
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Button1.Location = New System.Drawing.Point(235, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(79, 25)
+        Me.Button1.TabIndex = 163
+        Me.Button1.Text = "Borrar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'x
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -639,4 +653,5 @@ Partial Class x
     Friend WithEvents txt_sueldoac As Label
     Friend WithEvents lbl_sueldo As Label
     Friend WithEvents txt_sueldo As TextBox
+    Friend WithEvents Button1 As Button
 End Class
