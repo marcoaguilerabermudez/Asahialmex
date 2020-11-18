@@ -726,12 +726,6 @@ SELECT  [Id_motivopermiso]
 
         difvacaciones = DateDiff(DateInterval.Day, dtp1.Value, dtp2.Value) + 1
 
-
-
-
-
-
-
         If permiso = 3 Then
             revisaincidencia()
         Else
@@ -829,6 +823,7 @@ SELECT  [Id_motivopermiso]
                 txt_quien.Clear()
                 rbt_nocturno.Checked = False
                 btn_solicitar.Enabled = False
+
 
 
             Else
@@ -929,6 +924,7 @@ SELECT  [Id_motivopermiso]
             dtgvp.Visible = False
             lbl_ndepto.Visible = False
             cbx_depto.Visible = False
+            gbx_tipo.Visible = False
 
             lbl_npuesto.Visible = False
             cbx_puesto.Visible = False
@@ -959,6 +955,7 @@ SELECT  [Id_motivopermiso]
 
             lbl_npuesto.Visible = False
             cbx_puesto.Visible = False
+            gbx_tipo.Visible = False
         Finally
 
             Cn.Close()

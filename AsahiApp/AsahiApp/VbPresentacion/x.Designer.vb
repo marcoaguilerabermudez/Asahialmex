@@ -201,13 +201,13 @@ Partial Class FormatoSM
         'btn_anteriores
         '
         Me.btn_anteriores.BackColor = System.Drawing.Color.Gainsboro
-        Me.btn_anteriores.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_anteriores.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_anteriores.ForeColor = System.Drawing.Color.SeaGreen
-        Me.btn_anteriores.Location = New System.Drawing.Point(771, 445)
+        Me.btn_anteriores.Location = New System.Drawing.Point(793, 473)
         Me.btn_anteriores.Name = "btn_anteriores"
-        Me.btn_anteriores.Size = New System.Drawing.Size(120, 35)
+        Me.btn_anteriores.Size = New System.Drawing.Size(83, 42)
         Me.btn_anteriores.TabIndex = 180
-        Me.btn_anteriores.Text = "Imprimir"
+        Me.btn_anteriores.Text = "Imprimir Anteriores"
         Me.btn_anteriores.UseVisualStyleBackColor = False
         '
         'Panel3
@@ -313,7 +313,7 @@ Partial Class FormatoSM
         Me.btn_solicitar.Enabled = False
         Me.btn_solicitar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_solicitar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btn_solicitar.Location = New System.Drawing.Point(771, 486)
+        Me.btn_solicitar.Location = New System.Drawing.Point(772, 425)
         Me.btn_solicitar.Name = "btn_solicitar"
         Me.btn_solicitar.Size = New System.Drawing.Size(120, 35)
         Me.btn_solicitar.TabIndex = 173
