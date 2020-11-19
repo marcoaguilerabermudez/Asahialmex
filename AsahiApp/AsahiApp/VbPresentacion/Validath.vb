@@ -62,6 +62,12 @@ Public Class Validath
         col.ReadOnly = True
 
 
+        Dim col2 As DataGridViewColumn =
+          Me.dtgvp.Columns("Plan")
+
+        col2.ReadOnly = True
+
+
         Try
 
             For Each row As DataGridViewRow In Me.dtgvp.Rows
