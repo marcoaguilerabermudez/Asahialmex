@@ -60,6 +60,11 @@ Partial Class x
         Me.Label9 = New System.Windows.Forms.Label()
         Me.dtgvi = New System.Windows.Forms.DataGridView()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.txt_sueldo = New System.Windows.Forms.TextBox()
+        Me.lbl_sueldo = New System.Windows.Forms.Label()
+        Me.txt_sueldoac = New System.Windows.Forms.Label()
+        Me.lbl_sueldoac = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.panel1.SuspendLayout()
         Me.Empleado.SuspendLayout()
         Me.gbx_inicidencia.SuspendLayout()
@@ -69,6 +74,7 @@ Partial Class x
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.panel1.Controls.Add(Me.Button1)
         Me.panel1.Controls.Add(Me.lbl_tipo)
         Me.panel1.Controls.Add(Me.txt_folio)
         Me.panel1.Controls.Add(Me.Label1)
@@ -381,6 +387,10 @@ Partial Class x
         '
         'gbx_inicidencia
         '
+        Me.gbx_inicidencia.Controls.Add(Me.lbl_sueldoac)
+        Me.gbx_inicidencia.Controls.Add(Me.txt_sueldoac)
+        Me.gbx_inicidencia.Controls.Add(Me.lbl_sueldo)
+        Me.gbx_inicidencia.Controls.Add(Me.txt_sueldo)
         Me.gbx_inicidencia.Controls.Add(Me.lbl_pudep)
         Me.gbx_inicidencia.Controls.Add(Me.Label12)
         Me.gbx_inicidencia.Controls.Add(Me.Label10)
@@ -514,6 +524,67 @@ Partial Class x
         Me.Button3.Text = "Histórico Checadas"
         Me.Button3.UseVisualStyleBackColor = False
         '
+        'txt_sueldo
+        '
+        Me.txt_sueldo.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_sueldo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txt_sueldo.Location = New System.Drawing.Point(487, 65)
+        Me.txt_sueldo.Name = "txt_sueldo"
+        Me.txt_sueldo.Size = New System.Drawing.Size(62, 20)
+        Me.txt_sueldo.TabIndex = 201
+        Me.txt_sueldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_sueldo.Visible = False
+        '
+        'lbl_sueldo
+        '
+        Me.lbl_sueldo.AutoSize = True
+        Me.lbl_sueldo.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_sueldo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_sueldo.ForeColor = System.Drawing.Color.Black
+        Me.lbl_sueldo.Location = New System.Drawing.Point(395, 68)
+        Me.lbl_sueldo.Name = "lbl_sueldo"
+        Me.lbl_sueldo.Size = New System.Drawing.Size(89, 13)
+        Me.lbl_sueldo.TabIndex = 202
+        Me.lbl_sueldo.Text = "Nuevo sueldo:"
+        Me.lbl_sueldo.Visible = False
+        '
+        'txt_sueldoac
+        '
+        Me.txt_sueldoac.AutoSize = True
+        Me.txt_sueldoac.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_sueldoac.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_sueldoac.ForeColor = System.Drawing.Color.Black
+        Me.txt_sueldoac.Location = New System.Drawing.Point(221, 69)
+        Me.txt_sueldoac.Name = "txt_sueldoac"
+        Me.txt_sueldoac.Size = New System.Drawing.Size(89, 13)
+        Me.txt_sueldoac.TabIndex = 203
+        Me.txt_sueldoac.Text = "Sueldo actual:"
+        Me.txt_sueldoac.Visible = False
+        '
+        'lbl_sueldoac
+        '
+        Me.lbl_sueldoac.AutoSize = True
+        Me.lbl_sueldoac.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_sueldoac.ForeColor = System.Drawing.Color.Black
+        Me.lbl_sueldoac.Location = New System.Drawing.Point(311, 69)
+        Me.lbl_sueldoac.Name = "lbl_sueldoac"
+        Me.lbl_sueldoac.Size = New System.Drawing.Size(66, 13)
+        Me.lbl_sueldoac.TabIndex = 204
+        Me.lbl_sueldoac.Text = "Retardo por:"
+        Me.lbl_sueldoac.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.LightGray
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Button1.Location = New System.Drawing.Point(235, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(79, 25)
+        Me.Button1.TabIndex = 163
+        Me.Button1.Text = "Borrar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'x
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -578,4 +649,9 @@ Partial Class x
     Friend WithEvents lbl_pudep As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents lbl_sueldoac As Label
+    Friend WithEvents txt_sueldoac As Label
+    Friend WithEvents lbl_sueldo As Label
+    Friend WithEvents txt_sueldo As TextBox
+    Friend WithEvents Button1 As Button
 End Class
