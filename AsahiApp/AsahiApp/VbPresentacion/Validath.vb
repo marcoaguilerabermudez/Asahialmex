@@ -327,6 +327,7 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
         Next
     End Sub
 
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         ContenedorReporteTeN.depto = id
         ContenedorReporteTeN.fecha = dtp1.Value.ToShortDateString
