@@ -29,7 +29,9 @@ Public Class x
 
             SSel = ("
 
-  declare @fecha as date
+
+
+ declare @fecha as date
   set @fecha = (SELECT DESDEF FROM [AsahiSystem].[dbo].[Rh_incidenciamultiple] WHERE Id_permisogoce = " & parametro1 & ")
 
  select INC.Id_permisogoce,  vig.CLAVE, RTRIM(LTRIM(NOMBREN)) + ' ' + RTRIM(LTRIM(NOMBREP)) + ' ' + RTRIM(LTRIM(NOMBREM)) AS Empleado
@@ -64,64 +66,68 @@ Public Class x
    when Motivo = 6 then 'Registro en reloj checador'
      when Motivo = 7 then 'Cambio de departamento'
    when Motivo = 8 then 'Cambio de puesto'
+   when Motivo = 9 then 'Suspensión'
    end
    ,case 
-   when Incidencia = '0' and retardo = 0 then 'Paternidad'
-   when Incidencia = '1' and retardo = 0 then 'Trámite de documento'
-   when Incidencia = '2' and retardo = 0 then 'Asunto escolar'
-   when Incidencia = '3' and retardo = 0 then 'Se quedó dormido'
-   when Incidencia = '4' and retardo = 0 then 'Defunción familiar'
-   when Incidencia = '5' and retardo = 0 then 'Salió de la ciudad'
-   when Incidencia = '6' and retardo = 0 then 'No tenía ganas de trabajar'
-   when Incidencia = '7' and retardo = 0 then 'Trámite de documento CG'
-   when Incidencia = '8' and retardo = 0 then 'IMSS Trámites'
-   when Incidencia = '9' and retardo = 0 then 'Asunto escolar'
-   when Incidencia = 'A' and retardo = 0 then 'Abandono de trabajo'
-   when Incidencia = 'B' and retardo = 0 then 'Prestación por matrimonio'
-   when Incidencia = 'C' and retardo = 0 then 'Cita IMSS'
-   when Incidencia = 'D' and retardo = 0 then 'Empleado vulnerable'
-   when Incidencia = 'E' and retardo = 0 then 'Enfermedad'
-   when Incidencia = 'F' and retardo = 0 then 'Falta injustificada'
-   when Incidencia = 'G' and retardo = 0 then 'Permiso con goce'
-   when Incidencia = 'H' and retardo = 0 then 'Home office'
-   when Incidencia = 'J' and retardo = 0 then 'Confirmado'
-   when Incidencia = 'K' and retardo = 0 then 'Consulta sospecha'
-   when Incidencia = 'L' and retardo = 0 then 'Enfermedad leve'
-   when Incidencia = 'M' and retardo = 0 then 'Enfermedad moderada'
-   when Incidencia = 'N' and retardo = 0 then 'Suspención'
-   when Incidencia = 'O' and retardo = 0 then 'Sospechoso enfermedad'
-   when Incidencia = 'P' and retardo = 0 then 'Permiso sin goce'
-   when Incidencia = 'R' and retardo = 0 then 'Familiar'
-   when Incidencia = 'S' and retardo = 0 then 'Asuntos personales'
-   when Incidencia = 'T' and retardo = 0 then 'Transporte'
-   when Incidencia = 'U' and retardo = 0 then 'Falta justificada'
-   when Incidencia = 'V' and retardo = 0 then 'Viaje'
-   when Incidencia = 'W' and retardo = 0 then 'Asunto Personal'
-   when Incidencia = 'X' and retardo = 0 then 'IMSS ENFERMEDAD'
-   when Incidencia = 'Y' and retardo = 0 then 'DEFUNCION'
-  when Incidencia = '1' and retardo = 1 then 'TRABAJAR TIEMPO EXTRA'
-  when Incidencia = '10' and retardo = 1 then 'DEFUNCION FAMILIAR'
-  when Incidencia = '11' and retardo = 1 then 'SALIO DE LA CIUDAD'
-  when Incidencia = '12' and retardo = 1 then 'NO TENÍA GANAS DE TRABAJAR'
-  when Incidencia = '13' and retardo = 1 then 'OTRO'
-  when Incidencia = '14' and retardo = 1 then 'TRAMITE DE DOCUMENTO'
-  when Incidencia = '15' and retardo = 1 then 'IMSS TRAMITES'
-  when Incidencia = '16' and retardo = 1 then 'ASUNTO ESCOLAR'
-  when Incidencia = '17' and retardo = 1 then 'ASUNTO PERSONAL'
-  when Incidencia = '18' and retardo = 1 then 'IMSS ENFERMEDAD'
-  when Incidencia = '19' and retardo = 1 then 'DEFUNCION'
-  when Incidencia = '2' and retardo = 1 then 'SALIR TEMPRANO'
-  when Incidencia = '20' and retardo = 1 then 'OTRO'
-  when Incidencia = '4' and retardo = 1 then 'RETARDO POR TRANSPORTE'
-  when Incidencia = '5' and retardo = 1 then 'LLEGAR TARDE'
-  when Incidencia = '6' and retardo = 1 then 'EXTRA PENDIENTE'
-  when Incidencia = '7' and retardo = 1 then 'SE QUEDO DORMIDO'
-  when Incidencia = '8' and retardo = 1 then 'FAMILIAR ENFERMO'
-  when Incidencia = '9' and retardo = 1 then 'ASUNTO PERSONAL'
+   when Incidencia = '0' and retardo = 0 and Motivo not in (9) then 'Paternidad'
+   when Incidencia = '1' and retardo = 0 and Motivo not in (9) then 'Trámite de documento'
+   when Incidencia = '2' and retardo = 0 and Motivo not in (9) then 'Asunto escolar'
+   when Incidencia = '3' and retardo = 0 and Motivo not in (9) then 'Se quedó dormido'
+   when Incidencia = '4' and retardo = 0 and Motivo not in (9) then 'Defunción familiar'
+   when Incidencia = '5' and retardo = 0 and Motivo not in (9) then 'Salió de la ciudad'
+   when Incidencia = '6' and retardo = 0 and Motivo not in (9) then 'No tenía ganas de trabajar'
+   when Incidencia = '7' and retardo = 0 and Motivo not in (9) then 'Trámite de documento CG'
+   when Incidencia = '8' and retardo = 0 and Motivo not in (9) then 'IMSS Trámites'
+   when Incidencia = '9' and retardo = 0 and Motivo not in (9) then 'Asunto escolar'
+   when Incidencia = 'A' and retardo = 0 and Motivo not in (9) then 'Abandono de trabajo'
+   when Incidencia = 'B' and retardo = 0 and Motivo not in (9) then 'Prestación por matrimonio'
+   when Incidencia = 'C' and retardo = 0 and Motivo not in (9) then 'Cita IMSS'
+   when Incidencia = 'D' and retardo = 0 and Motivo not in (9) then 'Empleado vulnerable'
+   when Incidencia = 'E' and retardo = 0 and Motivo not in (9) then 'Enfermedad'
+   when Incidencia = 'F' and retardo = 0 and Motivo not in (9) then 'Falta injustificada'
+   when Incidencia = 'G' and retardo = 0 and Motivo not in (9) then 'Permiso con goce'
+   when Incidencia = 'H' and retardo = 0 and Motivo not in (9) then 'Home office'
+   when Incidencia = 'J' and retardo = 0 and Motivo not in (9) then 'Confirmado'
+   when Incidencia = 'K' and retardo = 0 and Motivo not in (9) then 'Consulta sospecha'
+   when Incidencia = 'L' and retardo = 0 and Motivo not in (9) then 'Enfermedad leve'
+   when Incidencia = 'M' and retardo = 0 and Motivo not in (9) then 'Enfermedad moderada'
+   when Incidencia = 'N' and retardo = 0 and Motivo not in (9) then 'Suspención'
+   when Incidencia = 'O' and retardo = 0 and Motivo not in (9) then 'Sospechoso enfermedad'
+   when Incidencia = 'P' and retardo = 0 and Motivo not in (9) then 'Permiso sin goce'
+   when Incidencia = 'R' and retardo = 0 and Motivo not in (9) then 'Familiar'
+   when Incidencia = 'S' and retardo = 0 and Motivo not in (9) then 'Asuntos personales'
+   when Incidencia = 'T' and retardo = 0 and Motivo not in (9) then 'Transporte'
+   when Incidencia = 'U' and retardo = 0 and Motivo not in (9) then 'Falta justificada'
+   when Incidencia = 'V' and retardo = 0 and Motivo not in (9) then 'Viaje'
+   when Incidencia = 'W' and retardo = 0 and Motivo not in (9) then 'Asunto Personal'
+   when Incidencia = 'X' and retardo = 0 and Motivo not in (9) then 'IMSS ENFERMEDAD'
+   when Incidencia = 'Y' and retardo = 0 and Motivo not in (9) then 'DEFUNCION'
+  when Incidencia = '1' and retardo = 1 and Motivo not in (9) then 'TRABAJAR TIEMPO EXTRA'
+  when Incidencia = '10' and retardo = 1 and Motivo not in (9) then 'DEFUNCION FAMILIAR'
+  when Incidencia = '11' and retardo = 1 and Motivo not in (9) then 'SALIO DE LA CIUDAD'
+  when Incidencia = '12' and retardo = 1 and Motivo not in (9) then 'NO TENÍA GANAS DE TRABAJAR'
+  when Incidencia = '13' and retardo = 1 and Motivo not in (9) then 'OTRO'
+  when Incidencia = '14' and retardo = 1 and Motivo not in (9) then 'TRAMITE DE DOCUMENTO'
+  when Incidencia = '15' and retardo = 1 and Motivo not in (9) then 'IMSS TRAMITES'
+  when Incidencia = '16' and retardo = 1 and Motivo not in (9) then 'ASUNTO ESCOLAR'
+  when Incidencia = '17' and retardo = 1 and Motivo not in (9) then 'ASUNTO PERSONAL'
+  when Incidencia = '18' and retardo = 1 and Motivo not in (9) then 'IMSS ENFERMEDAD'
+  when Incidencia = '19' and retardo = 1 and Motivo not in (9) then 'DEFUNCION'
+  when Incidencia = '2' and retardo = 1 and Motivo not in (9) then 'SALIR TEMPRANO'
+  when Incidencia = '20' and retardo = 1 and Motivo not in (9) then 'OTRO'
+  when Incidencia = '4' and retardo = 1 and Motivo not in (9) then 'RETARDO POR TRANSPORTE'
+  when Incidencia = '5' and retardo = 1 and Motivo not in (9) then 'LLEGAR TARDE'
+  when Incidencia = '6' and retardo = 1 and Motivo not in (9) then 'EXTRA PENDIENTE'
+  when Incidencia = '7' and retardo = 1 and Motivo not in (9) then 'SE QUEDO DORMIDO'
+  when Incidencia = '8' and retardo = 1 and Motivo not in (9) then 'FAMILIAR ENFERMO'
+  when Incidencia = '9' and retardo = 1 and Motivo not in (9) then 'ASUNTO PERSONAL'
    when Motivo = 5 then 'Vacaciones'
    WHEN Motivo = 6 THEN 'Checadas'
      when Motivo = 7 then 'Cambio de departamento'
    when Motivo = 8 then 'Cambio de puesto'
+    when Motivo = 9 and Incidencia = 'O' then N'Otro'
+   when Motivo = 9 and Incidencia = 'F' then N'Faltas'
+   when Motivo = 9 and Incidencia = 'I' then N'Indisciplina'
    END
   ,motivo,
   case
@@ -206,7 +212,9 @@ dateadd(year,100,convert(datetime,HastaH))
 from giro.asahi16.Supervisor_giro.VistaEmpleadosVigenciaYPuesto vig
 join [AsahiSystem].[dbo].[Rh_incidenciamultiple] inc
 on inc.Clave = vig.clave
-where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and validado = 0")
+where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and validado = 0
+
+")
 
             Dim da As SqlDataAdapter
             Dim ds As New DataSet
@@ -452,7 +460,29 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             txt_sueldo.Visible = True
             txt_sueldoac.Visible = True
 
+        ElseIf motivo = 9 Then
 
+            lbl_hasta.Visible = True
+            lbl_desde.Visible = True
+            Label5.Visible = True
+            Label7.Visible = True
+            lbl_ES.Visible = False
+            dtp1.Visible = False
+            Label2.Visible = False
+            Label6.Visible = False
+            txt_retardo.Visible = False
+            lbl_tipo.Visible = False
+            dtgvi.Visible = True
+            lbl_hora.Visible = False
+            Label9.Visible = False
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
+            Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
 
 
 

@@ -548,7 +548,6 @@ end
   begin
   delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where clave = @clave and fecha = @fecha and grupo = case
 when @turnoe = 'Matutino' then 1
-when @turnoe = 'Vespertino' then 2
 when @turnoe = 'Nocturno' then 3
 when @turnoe = 'Administrativo' then 4
 end

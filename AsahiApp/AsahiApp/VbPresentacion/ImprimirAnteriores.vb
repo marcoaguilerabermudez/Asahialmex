@@ -127,7 +127,18 @@ Public Class ImprimirAnteriores
             ContenedorReporteNuevoPuesto.retardo = 0
             ContenedorReporteNuevoPuesto.Show()
 
+
+
+        ElseIf vpermiso = 9 Then
+            ContenedorReporteSuspension.id = folio
+            ContenedorReporteSuspension.Tipo = 0
+        ContenedorReporteSuspension.motivo = 0
+        ContenedorReporteSuspension.retardo = 0
+        ContenedorReporteSuspension.Show()
+
         End If
+
+
     End Sub
 
 
