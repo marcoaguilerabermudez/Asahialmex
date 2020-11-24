@@ -560,7 +560,7 @@ Public Class Frm_PolizasDiario
                 Next
                 For fila = 0 To totalFilas - 1
                     With Dgv_Ventas.Rows(fila)
-                        folio = .Cells("clientePV").Value
+                        folio = .Cells("cliente").Value
                         If Not (folio Like Txt_FiltroProveedor.Text) And folio <> "" Then
                             .Visible = True
                         End If
