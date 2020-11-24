@@ -24,6 +24,12 @@ Partial Class FormatoSM
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormatoSM))
         Me.panel1 = New System.Windows.Forms.Panel()
+        Me.gbx_vacaciones = New System.Windows.Forms.GroupBox()
+        Me.lbl_tomados = New System.Windows.Forms.Label()
+        Me.lbl_pendientes = New System.Windows.Forms.Label()
+        Me.label21 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.btn_anteriores = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
@@ -68,22 +74,28 @@ Partial Class FormatoSM
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.txt_clave = New System.Windows.Forms.TextBox()
-        Me.gbx_vacaciones = New System.Windows.Forms.GroupBox()
-        Me.lbl_tomados = New System.Windows.Forms.Label()
-        Me.lbl_pendientes = New System.Windows.Forms.Label()
-        Me.label21 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
+        Me.cbx_depto = New System.Windows.Forms.ComboBox()
+        Me.lbl_ndepto = New System.Windows.Forms.Label()
+        Me.lbl_puesto = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.lbl_npuesto = New System.Windows.Forms.Label()
+        Me.cbx_puesto = New System.Windows.Forms.ComboBox()
         Me.panel1.SuspendLayout()
+        Me.gbx_vacaciones.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbx_tipo.SuspendLayout()
         Me.gb_aviso.SuspendLayout()
-        Me.gbx_vacaciones.SuspendLayout()
         Me.SuspendLayout()
         '
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.SystemColors.Control
+        Me.panel1.Controls.Add(Me.lbl_npuesto)
+        Me.panel1.Controls.Add(Me.cbx_puesto)
+        Me.panel1.Controls.Add(Me.lbl_puesto)
+        Me.panel1.Controls.Add(Me.Label18)
+        Me.panel1.Controls.Add(Me.lbl_ndepto)
+        Me.panel1.Controls.Add(Me.cbx_depto)
         Me.panel1.Controls.Add(Me.gbx_vacaciones)
         Me.panel1.Controls.Add(Me.btn_anteriores)
         Me.panel1.Controls.Add(Me.Panel3)
@@ -125,16 +137,77 @@ Partial Class FormatoSM
         Me.panel1.Size = New System.Drawing.Size(903, 521)
         Me.panel1.TabIndex = 145
         '
+        'gbx_vacaciones
+        '
+        Me.gbx_vacaciones.Controls.Add(Me.lbl_tomados)
+        Me.gbx_vacaciones.Controls.Add(Me.lbl_pendientes)
+        Me.gbx_vacaciones.Controls.Add(Me.label21)
+        Me.gbx_vacaciones.Controls.Add(Me.Label15)
+        Me.gbx_vacaciones.Controls.Add(Me.Label17)
+        Me.gbx_vacaciones.Location = New System.Drawing.Point(675, 184)
+        Me.gbx_vacaciones.Name = "gbx_vacaciones"
+        Me.gbx_vacaciones.Size = New System.Drawing.Size(216, 43)
+        Me.gbx_vacaciones.TabIndex = 264
+        Me.gbx_vacaciones.TabStop = False
+        Me.gbx_vacaciones.Visible = False
+        '
+        'lbl_tomados
+        '
+        Me.lbl_tomados.AutoSize = True
+        Me.lbl_tomados.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_tomados.Location = New System.Drawing.Point(156, 27)
+        Me.lbl_tomados.Name = "lbl_tomados"
+        Me.lbl_tomados.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_tomados.TabIndex = 270
+        Me.lbl_tomados.Text = "0"
+        '
+        'lbl_pendientes
+        '
+        Me.lbl_pendientes.AutoSize = True
+        Me.lbl_pendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_pendientes.Location = New System.Drawing.Point(83, 28)
+        Me.lbl_pendientes.Name = "lbl_pendientes"
+        Me.lbl_pendientes.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_pendientes.TabIndex = 268
+        Me.lbl_pendientes.Text = "0"
+        '
+        'label21
+        '
+        Me.label21.AutoSize = True
+        Me.label21.Location = New System.Drawing.Point(140, 7)
+        Me.label21.Name = "label21"
+        Me.label21.Size = New System.Drawing.Size(51, 13)
+        Me.label21.TabIndex = 267
+        Me.label21.Text = "Tomados"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(65, 6)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(60, 13)
+        Me.Label15.TabIndex = 266
+        Me.Label15.Text = "Pendientes"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(5, 26)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(33, 13)
+        Me.Label17.TabIndex = 264
+        Me.Label17.Text = "Días:"
+        '
         'btn_anteriores
         '
         Me.btn_anteriores.BackColor = System.Drawing.Color.Gainsboro
-        Me.btn_anteriores.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_anteriores.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_anteriores.ForeColor = System.Drawing.Color.SeaGreen
-        Me.btn_anteriores.Location = New System.Drawing.Point(771, 445)
+        Me.btn_anteriores.Location = New System.Drawing.Point(793, 473)
         Me.btn_anteriores.Name = "btn_anteriores"
-        Me.btn_anteriores.Size = New System.Drawing.Size(120, 35)
+        Me.btn_anteriores.Size = New System.Drawing.Size(83, 42)
         Me.btn_anteriores.TabIndex = 180
-        Me.btn_anteriores.Text = "Imprimir"
+        Me.btn_anteriores.Text = "Imprimir Anteriores"
         Me.btn_anteriores.UseVisualStyleBackColor = False
         '
         'Panel3
@@ -240,7 +313,7 @@ Partial Class FormatoSM
         Me.btn_solicitar.Enabled = False
         Me.btn_solicitar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_solicitar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btn_solicitar.Location = New System.Drawing.Point(771, 486)
+        Me.btn_solicitar.Location = New System.Drawing.Point(772, 425)
         Me.btn_solicitar.Name = "btn_solicitar"
         Me.btn_solicitar.Size = New System.Drawing.Size(120, 35)
         Me.btn_solicitar.TabIndex = 173
@@ -375,7 +448,7 @@ Partial Class FormatoSM
         Me.lbl_turno.AutoSize = True
         Me.lbl_turno.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_turno.ForeColor = System.Drawing.Color.Black
-        Me.lbl_turno.Location = New System.Drawing.Point(635, 161)
+        Me.lbl_turno.Location = New System.Drawing.Point(635, 119)
         Me.lbl_turno.Name = "lbl_turno"
         Me.lbl_turno.Size = New System.Drawing.Size(35, 13)
         Me.lbl_turno.TabIndex = 165
@@ -387,7 +460,7 @@ Partial Class FormatoSM
         Me.Label11.BackColor = System.Drawing.SystemColors.Control
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(634, 137)
+        Me.Label11.Location = New System.Drawing.Point(634, 99)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(52, 16)
         Me.Label11.TabIndex = 164
@@ -520,7 +593,7 @@ Partial Class FormatoSM
         Me.cbx_tipo.Enabled = False
         Me.cbx_tipo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipo.FormattingEnabled = True
-        Me.cbx_tipo.Items.AddRange(New Object() {"Permiso con goce de sueldo", "Permiso sin goce de sueldo", "Falta o retardo injustificado y sin goce de sueldo", "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)", "Vacaciones", "Registro en reloj checador"})
+        Me.cbx_tipo.Items.AddRange(New Object() {"Permiso con goce de sueldo", "Permiso sin goce de sueldo", "Falta o retardo injustificado y sin goce de sueldo", "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)", "Vacaciones", "Registro en reloj checador", "Cambio de departamento", "Cambio de puesto"})
         Me.cbx_tipo.Location = New System.Drawing.Point(101, 57)
         Me.cbx_tipo.Name = "cbx_tipo"
         Me.cbx_tipo.Size = New System.Drawing.Size(437, 21)
@@ -551,7 +624,7 @@ Partial Class FormatoSM
         Me.lbl_depto.AutoSize = True
         Me.lbl_depto.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_depto.ForeColor = System.Drawing.Color.Black
-        Me.lbl_depto.Location = New System.Drawing.Point(634, 110)
+        Me.lbl_depto.Location = New System.Drawing.Point(634, 82)
         Me.lbl_depto.Name = "lbl_depto"
         Me.lbl_depto.Size = New System.Drawing.Size(74, 13)
         Me.lbl_depto.TabIndex = 145
@@ -563,7 +636,7 @@ Partial Class FormatoSM
         Me.Label3.BackColor = System.Drawing.SystemColors.Control
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(633, 86)
+        Me.Label3.Location = New System.Drawing.Point(633, 62)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(110, 16)
         Me.Label3.TabIndex = 144
@@ -574,7 +647,7 @@ Partial Class FormatoSM
         Me.lbl_empleado.AutoSize = True
         Me.lbl_empleado.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_empleado.ForeColor = System.Drawing.Color.Black
-        Me.lbl_empleado.Location = New System.Drawing.Point(632, 59)
+        Me.lbl_empleado.Location = New System.Drawing.Point(632, 44)
         Me.lbl_empleado.Name = "lbl_empleado"
         Me.lbl_empleado.Size = New System.Drawing.Size(54, 13)
         Me.lbl_empleado.TabIndex = 143
@@ -586,7 +659,7 @@ Partial Class FormatoSM
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(631, 35)
+        Me.Label1.Location = New System.Drawing.Point(631, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(106, 16)
         Me.Label1.TabIndex = 142
@@ -612,66 +685,76 @@ Partial Class FormatoSM
         Me.txt_clave.TabIndex = 140
         Me.txt_clave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'gbx_vacaciones
+        'cbx_depto
         '
-        Me.gbx_vacaciones.Controls.Add(Me.lbl_tomados)
-        Me.gbx_vacaciones.Controls.Add(Me.lbl_pendientes)
-        Me.gbx_vacaciones.Controls.Add(Me.label21)
-        Me.gbx_vacaciones.Controls.Add(Me.Label15)
-        Me.gbx_vacaciones.Controls.Add(Me.Label17)
-        Me.gbx_vacaciones.Location = New System.Drawing.Point(675, 184)
-        Me.gbx_vacaciones.Name = "gbx_vacaciones"
-        Me.gbx_vacaciones.Size = New System.Drawing.Size(216, 43)
-        Me.gbx_vacaciones.TabIndex = 264
-        Me.gbx_vacaciones.TabStop = False
-        Me.gbx_vacaciones.Visible = False
+        Me.cbx_depto.BackColor = System.Drawing.Color.White
+        Me.cbx_depto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_depto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cbx_depto.FormattingEnabled = True
+        Me.cbx_depto.Items.AddRange(New Object() {"CONTROL DE CLIENTES", "ASEGURAMIENTO DE CALIDAD F1", "ASEGURAMIENTO DE CALIDAD F2", "ASUNTOS GENERALES", "ATENCIÓN AL CLIENTE", "COMPRAS", "CONTABILIDAD", "CONTROL DE MANUFACTURA", "CONTROL DE PRODUCCION", "MOLDES", "PRESIDENCIA", "SEGURIDAD", "SISTEMAS IT", "INGENIERÍA-MAQUINADO", "INGENIERÍA-FUNDICIÓN", "INSPECCION PRODUCCION", "FUNDICION 1", "FUNDICION 2", "ACABADO 1", "ACABADO 2", "MANTENIMIENTO DE PLANTA", "MANTENIMIENTO FUNDICION", "MANTENIMIENTO MAQUINADO", "MAQUINADO F2", "INSPECCIÓN FUNDICION", "INSPECCIÓN MAQUINADO", "MAQUINADO F1", "FUSION F1", "FUSION F2"})
+        Me.cbx_depto.Location = New System.Drawing.Point(334, 199)
+        Me.cbx_depto.Name = "cbx_depto"
+        Me.cbx_depto.Size = New System.Drawing.Size(210, 21)
+        Me.cbx_depto.TabIndex = 407
+        Me.cbx_depto.Visible = False
         '
-        'lbl_tomados
+        'lbl_ndepto
         '
-        Me.lbl_tomados.AutoSize = True
-        Me.lbl_tomados.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_tomados.Location = New System.Drawing.Point(156, 27)
-        Me.lbl_tomados.Name = "lbl_tomados"
-        Me.lbl_tomados.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_tomados.TabIndex = 270
-        Me.lbl_tomados.Text = "0"
+        Me.lbl_ndepto.AutoSize = True
+        Me.lbl_ndepto.ForeColor = System.Drawing.Color.Black
+        Me.lbl_ndepto.Location = New System.Drawing.Point(258, 203)
+        Me.lbl_ndepto.Name = "lbl_ndepto"
+        Me.lbl_ndepto.Size = New System.Drawing.Size(72, 13)
+        Me.lbl_ndepto.TabIndex = 408
+        Me.lbl_ndepto.Text = "Nuevo depto:"
+        Me.lbl_ndepto.Visible = False
         '
-        'lbl_pendientes
+        'lbl_puesto
         '
-        Me.lbl_pendientes.AutoSize = True
-        Me.lbl_pendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_pendientes.Location = New System.Drawing.Point(83, 28)
-        Me.lbl_pendientes.Name = "lbl_pendientes"
-        Me.lbl_pendientes.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_pendientes.TabIndex = 268
-        Me.lbl_pendientes.Text = "0"
+        Me.lbl_puesto.AutoSize = True
+        Me.lbl_puesto.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_puesto.ForeColor = System.Drawing.Color.Black
+        Me.lbl_puesto.Location = New System.Drawing.Point(636, 157)
+        Me.lbl_puesto.Name = "lbl_puesto"
+        Me.lbl_puesto.Size = New System.Drawing.Size(40, 13)
+        Me.lbl_puesto.TabIndex = 410
+        Me.lbl_puesto.Text = "Puesto"
         '
-        'label21
+        'Label18
         '
-        Me.label21.AutoSize = True
-        Me.label21.Location = New System.Drawing.Point(140, 7)
-        Me.label21.Name = "label21"
-        Me.label21.Size = New System.Drawing.Size(51, 13)
-        Me.label21.TabIndex = 267
-        Me.label21.Text = "Tomados"
+        Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.SystemColors.Control
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.Black
+        Me.Label18.Location = New System.Drawing.Point(635, 137)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(60, 16)
+        Me.Label18.TabIndex = 409
+        Me.Label18.Text = "Puesto:"
         '
-        'Label15
+        'lbl_npuesto
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(65, 6)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(60, 13)
-        Me.Label15.TabIndex = 266
-        Me.Label15.Text = "Pendientes"
+        Me.lbl_npuesto.AutoSize = True
+        Me.lbl_npuesto.ForeColor = System.Drawing.Color.Black
+        Me.lbl_npuesto.Location = New System.Drawing.Point(254, 202)
+        Me.lbl_npuesto.Name = "lbl_npuesto"
+        Me.lbl_npuesto.Size = New System.Drawing.Size(77, 13)
+        Me.lbl_npuesto.TabIndex = 412
+        Me.lbl_npuesto.Text = "Nuevo puesto:"
+        Me.lbl_npuesto.Visible = False
         '
-        'Label17
+        'cbx_puesto
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(5, 26)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(33, 13)
-        Me.Label17.TabIndex = 264
-        Me.Label17.Text = "Días:"
+        Me.cbx_puesto.BackColor = System.Drawing.Color.White
+        Me.cbx_puesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_puesto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cbx_puesto.FormattingEnabled = True
+        Me.cbx_puesto.Items.AddRange(New Object() {"CONTROL DE CLIENTES", "ASEGURAMIENTO DE CALIDAD F1", "ASEGURAMIENTO DE CALIDAD F2", "ASUNTOS GENERALES", "ATENCIÓN AL CLIENTE", "COMPRAS", "CONTABILIDAD", "CONTROL DE MANUFACTURA", "CONTROL DE PRODUCCION", "MOLDES", "PRESIDENCIA", "SEGURIDAD", "SISTEMAS IT", "INGENIERÍA-MAQUINADO", "INGENIERÍA-FUNDICIÓN", "INSPECCION PRODUCCION", "FUNDICION 1", "FUNDICION 2", "ACABADO 1", "ACABADO 2", "MANTENIMIENTO DE PLANTA", "MANTENIMIENTO FUNDICION", "MANTENIMIENTO MAQUINADO", "MAQUINADO F2", "INSPECCIÓN FUNDICION", "INSPECCIÓN MAQUINADO", "MAQUINADO F1", "FUSION F1", "FUSION F2"})
+        Me.cbx_puesto.Location = New System.Drawing.Point(334, 198)
+        Me.cbx_puesto.Name = "cbx_puesto"
+        Me.cbx_puesto.Size = New System.Drawing.Size(210, 21)
+        Me.cbx_puesto.TabIndex = 411
+        Me.cbx_puesto.Visible = False
         '
         'FormatoSM
         '
@@ -685,13 +768,13 @@ Partial Class FormatoSM
         Me.Text = "Formato de Servicios Multiples"
         Me.panel1.ResumeLayout(False)
         Me.panel1.PerformLayout()
+        Me.gbx_vacaciones.ResumeLayout(False)
+        Me.gbx_vacaciones.PerformLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbx_tipo.ResumeLayout(False)
         Me.gbx_tipo.PerformLayout()
         Me.gb_aviso.ResumeLayout(False)
         Me.gb_aviso.PerformLayout()
-        Me.gbx_vacaciones.ResumeLayout(False)
-        Me.gbx_vacaciones.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -747,4 +830,10 @@ Partial Class FormatoSM
     Private WithEvents label21 As Label
     Private WithEvents Label15 As Label
     Private WithEvents Label17 As Label
+    Friend WithEvents lbl_ndepto As Label
+    Friend WithEvents cbx_depto As ComboBox
+    Friend WithEvents lbl_puesto As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents lbl_npuesto As Label
+    Friend WithEvents cbx_puesto As ComboBox
 End Class

@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class ValidaIncidenciaMultiple
+Public Class x
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
     Dim motivo As Integer
     Dim incidencia As String
@@ -8,6 +8,8 @@ Public Class ValidaIncidenciaMultiple
     Dim fechaagregada As String
     Dim resultado As DateTime
     Dim extra As DateTime
+    Dim puesto As String
+    Dim puestosueldo As Integer
 
 
     Private Sub txtIdPaciente_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_folio.KeyPress
@@ -60,6 +62,8 @@ Public Class ValidaIncidenciaMultiple
    when Motivo = 4 then 'Falta o retardo JUSTIFICADO y con goce de sueldo (No solicitado anticipadamente)'
    when Motivo = 5 then 'Vacaciones'
    when Motivo = 6 then 'Registro en reloj checador'
+     when Motivo = 7 then 'Cambio de departamento'
+   when Motivo = 8 then 'Cambio de puesto'
    end
    ,case 
    when Incidencia = '0' and retardo = 0 then 'Paternidad'
@@ -116,6 +120,8 @@ Public Class ValidaIncidenciaMultiple
   when Incidencia = '9' and retardo = 1 then 'ASUNTO PERSONAL'
    when Motivo = 5 then 'Vacaciones'
    WHEN Motivo = 6 THEN 'Checadas'
+     when Motivo = 7 then 'Cambio de departamento'
+   when Motivo = 8 then 'Cambio de puesto'
    END
   ,motivo,
   case
@@ -149,6 +155,50 @@ dateadd(year,100,convert(datetime,desdeh))
 dateadd(year,100,convert(datetime,HastaH))
   end
   ,dateadd(day,1,inc.DesdeF)
+  ,descripcion_puesto
+    ,
+	    case
+	  when Motivo = 7 and Quien = '03' then 'ASEGURAMIENTO DE CALIDAD F1'
+	  when Motivo = 7 and Quien = '04' then 'ASUNTOS GENERALES'
+	  when Motivo = 7 and Quien = '05' then 'ATENCIÓN AL CLIENTE'
+	  when Motivo = 7 and Quien = '06' then 'COMPRAS'
+	  when Motivo = 7 and Quien = '07' then 'CONTABILIDAD'
+	  when Motivo = 7 and Quien = '08' then 'CONTROL DE MANUFACTURA'
+	  when Motivo = 7 and Quien = '09' then 'CONTROL DE PRODUCCIÓN'
+	  when Motivo = 7 and Quien = '16' then 'MOLDES'
+	  when Motivo = 7 and Quien = '18' then 'SEGURIDAD'
+	  when Motivo = 7 and Quien = '19' then 'SISTEMAS IT'
+	  when Motivo = 7 and Quien = '27' then 'INGENIERÍA-MAQUINADO'
+	  when Motivo = 7 and Quien = '28' then 'INGENIERÍA-FUNDICIÓN'
+	  when Motivo = 7 and Quien = '31' then 'INSPECCION PRODUCCIÓN'
+	  when Motivo = 7 and Quien = '32' then 'FUNDICION 1'
+	  when Motivo = 7 and Quien = '33' then 'FUNDICION 2'
+	  when Motivo = 7 and Quien = '34' then 'ACABADO 1'
+	  when Motivo = 7 and Quien = '35' then 'ACABADO 2'
+	  when Motivo = 7 and Quien = '36' then 'CONTROL DE CLIENTES'
+	  when Motivo = 7 and Quien = '37' then 'MANTENIMIENTO PLANTA'
+	  when Motivo = 7 and Quien = '38' then 'MANTENIMIENTO FUNDICIÓN'
+	  when Motivo = 7 and Quien = '39' then 'MANTENIMIENTO MAQUINADO'
+	  when Motivo = 7 and Quien = '40' then 'MAQUINADO F2'
+	  when Motivo = 7 and Quien = '41' then 'INSPECCIÓN FUNDICIÓN'
+	  when Motivo = 7 and Quien = '42' then 'INSPECCIÓN MAQUINADO'
+	  when Motivo = 7 and Quien = '43' then 'MAQUINADO F1'
+	  when Motivo = 7 and Quien = '46' then 'ASEGURAMIENTO DE CALIDAD F2'
+	  when Motivo = 8 and Quien = '001' then 'ASISTENTE DE GERENTE'
+	  when Motivo = 8 and Quien = '002' then 'COORDINADOR'
+	  when Motivo = 8 and Quien = '004' then 'GERENTE'
+	  when Motivo = 8 and Quien = '005' then 'LÍDER'
+	  when Motivo = 8 and Quien = '006' then 'OPERADOR'
+	  when Motivo = 8 and Quien = '008' then 'STAFF'
+	  when Motivo = 8 and Quien = '009' then 'SUPERVISOR'
+	  when Motivo = 8 and Quien = '016' then 'LÍDER ADMON'
+	
+	  ELSE
+	  Quien
+	  END AS 'Quien'
+  ,(select top 1 sdo1 from giro.[asahi16].[Supervisor_giro].[Empsdo] where clave = vig.clave order by fecha desc)
+  ,quien
+  
   
 
 
@@ -184,14 +234,19 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
                 dtp1.Value = ds.Tables(0).Rows(0).Item(14)
             End If
             fechaagregada = ds.Tables(0).Rows(0).Item(15)
+            lbl_puesto.Text = ds.Tables(0).Rows(0).Item(16)
+            lbl_pudep.Text = ds.Tables(0).Rows(0).Item(17)
+            lbl_sueldoac.Text = ds.Tables(0).Rows(0).Item(18)
+            puesto = ds.Tables(0).Rows(0).Item(19)
 
             Cn.Close()
             Btn_autorizar.Enabled = True
             Empleado.Visible = True
             gbx_inicidencia.Visible = True
 
+
         Catch ex As Exception
-            ' MessageBox.Show(ex.ToString)
+            ''MessageBox.Show(ex.ToString)
             MessageBox.Show("El folio de incidencia que eligió no es correcto o ya ha sido validado. Verifique e intente de nuevo.", "¡Aviso!")
             Btn_autorizar.Enabled = False
             Empleado.Visible = False
@@ -202,10 +257,30 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
         End Try
 
 
-
+        sueldoxpuesto()
 
 
     End Sub
+
+
+    Sub sueldoxpuesto()
+        If puesto = "001" Then
+            txt_sueldo.Text = 928.0
+        ElseIf puesto = "005" Then
+            txt_sueldo.Text = 278.0
+        ElseIf puesto = "006" Then
+            txt_sueldo.Text = 171.0
+        ElseIf puesto = "008" Then
+            txt_sueldo.Text = 328.0
+        ElseIf puesto = "009" Then
+            txt_sueldo.Text = 628.0
+        ElseIf puesto = "011" Then
+            txt_sueldo.Text = 628.0
+        ElseIf puesto = "016" Then
+            txt_sueldo.Text = 428.0
+        End If
+    End Sub
+
 
 
 
@@ -224,6 +299,14 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             dtgvi.Visible = True
             lbl_hora.Visible = False
             Label9.Visible = False
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
+            Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
 
         ElseIf (motivo = 3 OrElse motivo = 4) And retardo = 0 Then
             lbl_hasta.Visible = True
@@ -239,6 +322,14 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             dtgvi.Visible = True
             lbl_hora.Visible = False
             Label9.Visible = False
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
+            Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
 
         ElseIf (motivo = 3 OrElse motivo = 4) And retardo = 1 Then
             lbl_desde.Visible = True
@@ -252,6 +343,14 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             dtp1.Visible = False
             lbl_tipo.Text = "RETARDO"
             dtgvi.Visible = True
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
+            Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
             ' muestrahoraretardo()
             'lbl_hora.Visible = True
             'Label9.Visible = True
@@ -269,6 +368,15 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             dtgvi.Visible = True
             lbl_hora.Visible = False
             Label9.Visible = False
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
+            Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
+
         ElseIf motivo = 6 Then
 
             lbl_desde.Visible = True
@@ -284,6 +392,66 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             Label7.Visible = False
             lbl_hora.Visible = False
             Label9.Visible = False
+
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
+            Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
+
+
+        ElseIf motivo = 7 Then
+
+            lbl_desde.Visible = True
+            Label5.Visible = True
+            lbl_ES.Visible = False
+            dtp1.Visible = False
+            Label2.Visible = False
+            Label6.Visible = False
+            txt_retardo.Visible = False
+            lbl_tipo.Visible = False
+            dtgvi.Visible = False
+            lbl_hasta.Visible = False
+            Label7.Visible = False
+            lbl_hora.Visible = False
+            Label9.Visible = False
+            Label10.Visible = False
+            Label12.Visible = True
+            lbl_pudep.Visible = True
+            Label5.Text = "A partir de:"
+
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
+
+        ElseIf motivo = 8 Then
+
+            lbl_desde.Visible = True
+            Label5.Visible = True
+            lbl_ES.Visible = False
+            dtp1.Visible = False
+            Label2.Visible = False
+            Label6.Visible = False
+            txt_retardo.Visible = False
+            lbl_tipo.Visible = False
+            dtgvi.Visible = False
+            lbl_hasta.Visible = False
+            Label7.Visible = False
+            lbl_hora.Visible = False
+            Label9.Visible = False
+            Label10.Visible = True
+            Label12.Visible = False
+            lbl_pudep.Visible = True
+            Label5.Text = "A partir de:"
+            lbl_sueldo.Visible = True
+            lbl_sueldoac.Visible = True
+            txt_sueldo.Visible = True
+            txt_sueldoac.Visible = True
+
 
 
 
@@ -499,6 +667,7 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
 
 
             Dim da = New SqlDataAdapter(strSql, Cn)
+            Cn.Close()
             Cn.Open()
             da.SelectCommand.CommandType = CommandType.StoredProcedure
 
@@ -560,6 +729,8 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             command.Parameters.AddWithValue("@retardo", retardo)
             command.Parameters.AddWithValue("@Cretardo", txt_retardo.Text)
             command.Parameters.AddWithValue("@fechayhora", Result)
+            command.Parameters.AddWithValue("@puestosueldo", puestosueldo)
+            command.Parameters.AddWithValue("@sdo", txt_sueldo.Text)
 
 
 
@@ -603,12 +774,37 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
     End Sub
 
     Private Sub Btn_autorizar_Click(sender As Object, e As EventArgs) Handles Btn_autorizar.Click
-        revisaincidencia()
+        puestosueldo = 0
+
+
+
+        If motivo = 8 Then
+            If CDbl(lbl_sueldoac.Text) >= CDbl(txt_sueldo.Text) Then
+                puestosueldo = 0
+                revisaincidencia()
+            ElseIf CDbl(lbl_sueldoac.Text) < CDbl(txt_sueldo.Text) Then
+
+                puestosueldo = 1
+                revisaincidencia()
+
+            End If
+
+        Else
+            revisaincidencia()
+
+        End If
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         HistoricoChecadas.Show()
     End Sub
 
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        txt_folio.Clear()
+        Empleado.Visible = False
+        gbx_inicidencia.Visible = False
+        dtgvi.Visible = False
+        gbx_inicidencia.Visible = False
+    End Sub
 End Class
