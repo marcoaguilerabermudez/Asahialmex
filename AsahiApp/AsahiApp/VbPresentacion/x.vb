@@ -263,6 +263,7 @@ SELECT  [Id_motivopermiso]
             lbl_empleado.Text = "Empleado"
             lbl_depto.Text = "Departamento"
             lbl_turno.Text = "Turno"
+            lbl_puesto.Text = "Puesto"
 
             cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
             cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
@@ -512,6 +513,32 @@ SELECT  [Id_motivopermiso]
             lbl_npuesto.Visible = True
             cbx_puesto.Visible = True
 
+
+        ElseIf cbx_tipo.Text = "Suspensión" Then
+            Check_entrada.Visible = False
+            Check_salida.Visible = False
+            'rbt_nocturno.Visible = False
+            Label6.Visible = True
+            dtp2.Visible = True
+            desde_h.Visible = True
+            hasta_h.Visible = True
+            Label9.Visible = True
+            Label8.Visible = True
+            dtp_checada.Visible = False
+            Label10.Visible = False
+            dtp_regreso.Visible = False
+            gb_aviso.Visible = False
+            gbx_tipo.Visible = False
+            'rbt_nocturno.Visible = False
+            vpermiso = 9
+            dtgvp.Visible = True
+            gbx_vacaciones.Visible = False
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+            lbl_npuesto.Visible = False
+            cbx_puesto.Visible = False
+
+
         End If
 
 
@@ -601,20 +628,12 @@ SELECT  [Id_motivopermiso]
             lbl_tomados.Text = ds.Tables(0).Rows(0).Item(1)
 
 
-
-
-
-
-
-
             Cn.Close()
 
         Catch ex As Exception
             ' MessageBox.Show(ex.ToString)
             ' MessageBox.Show("El empleado que ha seleccionado no está activo o no corresponde a su departamento, verifique e intente de nuevo.", "¡Aviso!")
         End Try
-
-
 
     End Sub
 
@@ -629,13 +648,11 @@ SELECT  [Id_motivopermiso]
         ElseIf lbl_turno.Text = "Nocturno" Then
             desde_h.Value = "01/01/2020 23:25:00"
             hasta_h.Value = "01/01/2020 06:55:00"
-
         ElseIf lbl_turno.Text = "Administrativo" Then
             desde_h.Value = "01/01/2020 08:00:00"
             hasta_h.Value = "01/01/2020 17:00:00"
-
-
         End If
+
     End Sub
 
     Private Sub Check_aviso_CheckedChanged(sender As Object, e As EventArgs) Handles Check_aviso.CheckedChanged
@@ -659,8 +676,6 @@ SELECT  [Id_motivopermiso]
     End Sub
 
     Private Sub btn_solicitar_Click(sender As Object, e As EventArgs) Handles btn_solicitar.Click
-
-
         revisavacaciones()
         'generarreporte()
     End Sub
@@ -668,7 +683,6 @@ SELECT  [Id_motivopermiso]
 
 
     Sub generarreporte()
-
 
         If vpermiso = 1 OrElse vpermiso = 2 Then
             F_reportePCSGoce.id = y
@@ -712,12 +726,14 @@ SELECT  [Id_motivopermiso]
             ContenedorReporteNuevoPuesto.Show()
 
 
+        ElseIf vpermiso = 9 Then
+            ContenedorReporteSuspension.id = y
+            ContenedorReporteSuspension.Tipo = 0
+            ContenedorReporteSuspension.motivo = 0
+            ContenedorReporteSuspension.retardo = 0
+            ContenedorReporteSuspension.Show()
 
         End If
-
-
-
-
 
     End Sub
 
@@ -818,6 +834,7 @@ SELECT  [Id_motivopermiso]
                 lbl_empleado.Text = "Empleado"
                 lbl_depto.Text = "Departamento"
                 lbl_turno.Text = "Turno"
+                lbl_puesto.Text = "Puesto"
                 Check_entrada.Checked = True
                 Check_aviso.Checked = False
                 txt_quien.Clear()
@@ -915,6 +932,7 @@ SELECT  [Id_motivopermiso]
             lbl_empleado.Text = "Empleado"
             lbl_depto.Text = "Departamento"
             lbl_turno.Text = "Turno"
+            lbl_puesto.Text = "Puesto"
             Check_entrada.Checked = True
             Check_aviso.Checked = False
             txt_quien.Clear()

@@ -24,6 +24,12 @@ Partial Class FormatoSM
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormatoSM))
         Me.panel1 = New System.Windows.Forms.Panel()
+        Me.lbl_npuesto = New System.Windows.Forms.Label()
+        Me.cbx_puesto = New System.Windows.Forms.ComboBox()
+        Me.lbl_puesto = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.lbl_ndepto = New System.Windows.Forms.Label()
+        Me.cbx_depto = New System.Windows.Forms.ComboBox()
         Me.gbx_vacaciones = New System.Windows.Forms.GroupBox()
         Me.lbl_tomados = New System.Windows.Forms.Label()
         Me.lbl_pendientes = New System.Windows.Forms.Label()
@@ -74,12 +80,6 @@ Partial Class FormatoSM
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.txt_clave = New System.Windows.Forms.TextBox()
-        Me.cbx_depto = New System.Windows.Forms.ComboBox()
-        Me.lbl_ndepto = New System.Windows.Forms.Label()
-        Me.lbl_puesto = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.lbl_npuesto = New System.Windows.Forms.Label()
-        Me.cbx_puesto = New System.Windows.Forms.ComboBox()
         Me.panel1.SuspendLayout()
         Me.gbx_vacaciones.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -136,6 +136,77 @@ Partial Class FormatoSM
         Me.panel1.Name = "panel1"
         Me.panel1.Size = New System.Drawing.Size(903, 521)
         Me.panel1.TabIndex = 145
+        '
+        'lbl_npuesto
+        '
+        Me.lbl_npuesto.AutoSize = True
+        Me.lbl_npuesto.ForeColor = System.Drawing.Color.Black
+        Me.lbl_npuesto.Location = New System.Drawing.Point(254, 202)
+        Me.lbl_npuesto.Name = "lbl_npuesto"
+        Me.lbl_npuesto.Size = New System.Drawing.Size(77, 13)
+        Me.lbl_npuesto.TabIndex = 412
+        Me.lbl_npuesto.Text = "Nuevo puesto:"
+        Me.lbl_npuesto.Visible = False
+        '
+        'cbx_puesto
+        '
+        Me.cbx_puesto.BackColor = System.Drawing.Color.White
+        Me.cbx_puesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_puesto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cbx_puesto.FormattingEnabled = True
+        Me.cbx_puesto.Items.AddRange(New Object() {"CONTROL DE CLIENTES", "ASEGURAMIENTO DE CALIDAD F1", "ASEGURAMIENTO DE CALIDAD F2", "ASUNTOS GENERALES", "ATENCIÓN AL CLIENTE", "COMPRAS", "CONTABILIDAD", "CONTROL DE MANUFACTURA", "CONTROL DE PRODUCCION", "MOLDES", "PRESIDENCIA", "SEGURIDAD", "SISTEMAS IT", "INGENIERÍA-MAQUINADO", "INGENIERÍA-FUNDICIÓN", "INSPECCION PRODUCCION", "FUNDICION 1", "FUNDICION 2", "ACABADO 1", "ACABADO 2", "MANTENIMIENTO DE PLANTA", "MANTENIMIENTO FUNDICION", "MANTENIMIENTO MAQUINADO", "MAQUINADO F2", "INSPECCIÓN FUNDICION", "INSPECCIÓN MAQUINADO", "MAQUINADO F1", "FUSION F1", "FUSION F2"})
+        Me.cbx_puesto.Location = New System.Drawing.Point(334, 198)
+        Me.cbx_puesto.Name = "cbx_puesto"
+        Me.cbx_puesto.Size = New System.Drawing.Size(210, 21)
+        Me.cbx_puesto.TabIndex = 411
+        Me.cbx_puesto.Visible = False
+        '
+        'lbl_puesto
+        '
+        Me.lbl_puesto.AutoSize = True
+        Me.lbl_puesto.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_puesto.ForeColor = System.Drawing.Color.Black
+        Me.lbl_puesto.Location = New System.Drawing.Point(636, 157)
+        Me.lbl_puesto.Name = "lbl_puesto"
+        Me.lbl_puesto.Size = New System.Drawing.Size(40, 13)
+        Me.lbl_puesto.TabIndex = 410
+        Me.lbl_puesto.Text = "Puesto"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.SystemColors.Control
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.Black
+        Me.Label18.Location = New System.Drawing.Point(635, 137)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(60, 16)
+        Me.Label18.TabIndex = 409
+        Me.Label18.Text = "Puesto:"
+        '
+        'lbl_ndepto
+        '
+        Me.lbl_ndepto.AutoSize = True
+        Me.lbl_ndepto.ForeColor = System.Drawing.Color.Black
+        Me.lbl_ndepto.Location = New System.Drawing.Point(258, 203)
+        Me.lbl_ndepto.Name = "lbl_ndepto"
+        Me.lbl_ndepto.Size = New System.Drawing.Size(72, 13)
+        Me.lbl_ndepto.TabIndex = 408
+        Me.lbl_ndepto.Text = "Nuevo depto:"
+        Me.lbl_ndepto.Visible = False
+        '
+        'cbx_depto
+        '
+        Me.cbx_depto.BackColor = System.Drawing.Color.White
+        Me.cbx_depto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_depto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cbx_depto.FormattingEnabled = True
+        Me.cbx_depto.Items.AddRange(New Object() {"CONTROL DE CLIENTES", "ASEGURAMIENTO DE CALIDAD F1", "ASEGURAMIENTO DE CALIDAD F2", "ASUNTOS GENERALES", "ATENCIÓN AL CLIENTE", "COMPRAS", "CONTABILIDAD", "CONTROL DE MANUFACTURA", "CONTROL DE PRODUCCION", "MOLDES", "PRESIDENCIA", "SEGURIDAD", "SISTEMAS IT", "INGENIERÍA-MAQUINADO", "INGENIERÍA-FUNDICIÓN", "INSPECCION PRODUCCION", "FUNDICION 1", "FUNDICION 2", "ACABADO 1", "ACABADO 2", "MANTENIMIENTO DE PLANTA", "MANTENIMIENTO FUNDICION", "MANTENIMIENTO MAQUINADO", "MAQUINADO F2", "INSPECCIÓN FUNDICION", "INSPECCIÓN MAQUINADO", "MAQUINADO F1", "FUSION F1", "FUSION F2"})
+        Me.cbx_depto.Location = New System.Drawing.Point(334, 199)
+        Me.cbx_depto.Name = "cbx_depto"
+        Me.cbx_depto.Size = New System.Drawing.Size(210, 21)
+        Me.cbx_depto.TabIndex = 407
+        Me.cbx_depto.Visible = False
         '
         'gbx_vacaciones
         '
@@ -593,7 +664,7 @@ Partial Class FormatoSM
         Me.cbx_tipo.Enabled = False
         Me.cbx_tipo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipo.FormattingEnabled = True
-        Me.cbx_tipo.Items.AddRange(New Object() {"Permiso con goce de sueldo", "Permiso sin goce de sueldo", "Falta o retardo injustificado y sin goce de sueldo", "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)", "Vacaciones", "Registro en reloj checador", "Cambio de departamento", "Cambio de puesto"})
+        Me.cbx_tipo.Items.AddRange(New Object() {"Permiso con goce de sueldo", "Permiso sin goce de sueldo", "Falta o retardo injustificado y sin goce de sueldo", "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)", "Vacaciones", "Registro en reloj checador", "Cambio de departamento", "Cambio de puesto", "Suspensión"})
         Me.cbx_tipo.Location = New System.Drawing.Point(101, 57)
         Me.cbx_tipo.Name = "cbx_tipo"
         Me.cbx_tipo.Size = New System.Drawing.Size(437, 21)
@@ -684,77 +755,6 @@ Partial Class FormatoSM
         Me.txt_clave.Size = New System.Drawing.Size(83, 20)
         Me.txt_clave.TabIndex = 140
         Me.txt_clave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'cbx_depto
-        '
-        Me.cbx_depto.BackColor = System.Drawing.Color.White
-        Me.cbx_depto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbx_depto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cbx_depto.FormattingEnabled = True
-        Me.cbx_depto.Items.AddRange(New Object() {"CONTROL DE CLIENTES", "ASEGURAMIENTO DE CALIDAD F1", "ASEGURAMIENTO DE CALIDAD F2", "ASUNTOS GENERALES", "ATENCIÓN AL CLIENTE", "COMPRAS", "CONTABILIDAD", "CONTROL DE MANUFACTURA", "CONTROL DE PRODUCCION", "MOLDES", "PRESIDENCIA", "SEGURIDAD", "SISTEMAS IT", "INGENIERÍA-MAQUINADO", "INGENIERÍA-FUNDICIÓN", "INSPECCION PRODUCCION", "FUNDICION 1", "FUNDICION 2", "ACABADO 1", "ACABADO 2", "MANTENIMIENTO DE PLANTA", "MANTENIMIENTO FUNDICION", "MANTENIMIENTO MAQUINADO", "MAQUINADO F2", "INSPECCIÓN FUNDICION", "INSPECCIÓN MAQUINADO", "MAQUINADO F1", "FUSION F1", "FUSION F2"})
-        Me.cbx_depto.Location = New System.Drawing.Point(334, 199)
-        Me.cbx_depto.Name = "cbx_depto"
-        Me.cbx_depto.Size = New System.Drawing.Size(210, 21)
-        Me.cbx_depto.TabIndex = 407
-        Me.cbx_depto.Visible = False
-        '
-        'lbl_ndepto
-        '
-        Me.lbl_ndepto.AutoSize = True
-        Me.lbl_ndepto.ForeColor = System.Drawing.Color.Black
-        Me.lbl_ndepto.Location = New System.Drawing.Point(258, 203)
-        Me.lbl_ndepto.Name = "lbl_ndepto"
-        Me.lbl_ndepto.Size = New System.Drawing.Size(72, 13)
-        Me.lbl_ndepto.TabIndex = 408
-        Me.lbl_ndepto.Text = "Nuevo depto:"
-        Me.lbl_ndepto.Visible = False
-        '
-        'lbl_puesto
-        '
-        Me.lbl_puesto.AutoSize = True
-        Me.lbl_puesto.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_puesto.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puesto.Location = New System.Drawing.Point(636, 157)
-        Me.lbl_puesto.Name = "lbl_puesto"
-        Me.lbl_puesto.Size = New System.Drawing.Size(40, 13)
-        Me.lbl_puesto.TabIndex = 410
-        Me.lbl_puesto.Text = "Puesto"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.BackColor = System.Drawing.SystemColors.Control
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.Black
-        Me.Label18.Location = New System.Drawing.Point(635, 137)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(60, 16)
-        Me.Label18.TabIndex = 409
-        Me.Label18.Text = "Puesto:"
-        '
-        'lbl_npuesto
-        '
-        Me.lbl_npuesto.AutoSize = True
-        Me.lbl_npuesto.ForeColor = System.Drawing.Color.Black
-        Me.lbl_npuesto.Location = New System.Drawing.Point(254, 202)
-        Me.lbl_npuesto.Name = "lbl_npuesto"
-        Me.lbl_npuesto.Size = New System.Drawing.Size(77, 13)
-        Me.lbl_npuesto.TabIndex = 412
-        Me.lbl_npuesto.Text = "Nuevo puesto:"
-        Me.lbl_npuesto.Visible = False
-        '
-        'cbx_puesto
-        '
-        Me.cbx_puesto.BackColor = System.Drawing.Color.White
-        Me.cbx_puesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbx_puesto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cbx_puesto.FormattingEnabled = True
-        Me.cbx_puesto.Items.AddRange(New Object() {"CONTROL DE CLIENTES", "ASEGURAMIENTO DE CALIDAD F1", "ASEGURAMIENTO DE CALIDAD F2", "ASUNTOS GENERALES", "ATENCIÓN AL CLIENTE", "COMPRAS", "CONTABILIDAD", "CONTROL DE MANUFACTURA", "CONTROL DE PRODUCCION", "MOLDES", "PRESIDENCIA", "SEGURIDAD", "SISTEMAS IT", "INGENIERÍA-MAQUINADO", "INGENIERÍA-FUNDICIÓN", "INSPECCION PRODUCCION", "FUNDICION 1", "FUNDICION 2", "ACABADO 1", "ACABADO 2", "MANTENIMIENTO DE PLANTA", "MANTENIMIENTO FUNDICION", "MANTENIMIENTO MAQUINADO", "MAQUINADO F2", "INSPECCIÓN FUNDICION", "INSPECCIÓN MAQUINADO", "MAQUINADO F1", "FUSION F1", "FUSION F2"})
-        Me.cbx_puesto.Location = New System.Drawing.Point(334, 198)
-        Me.cbx_puesto.Name = "cbx_puesto"
-        Me.cbx_puesto.Size = New System.Drawing.Size(210, 21)
-        Me.cbx_puesto.TabIndex = 411
-        Me.cbx_puesto.Visible = False
         '
         'FormatoSM
         '
