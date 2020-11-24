@@ -51,12 +51,15 @@ Public Class Frm_Principal
             SolicitudToolStripMenuItem.Enabled = True
             ValidaciónToolStripMenuItem.Enabled = True
             SolicitudToolStripMenuItem1.Enabled = True
+            'EvaluacionesToolStripMenuItem1.Enabled = False
+
         ElseIf Me.emp.rh_permiso = 3 Then
             SolicitudToolStripMenuItem.Enabled = True
             ValidaciónToolStripMenuItem.Enabled = True
             SolicitudToolStripMenuItem1.Enabled = True
             ValidaciónRHToolStripMenuItem.Enabled = True
             ValidaciónRHToolStripMenuItem1.Enabled = True
+            ' EvaluacionesToolStripMenuItem1.Enabled = True
 
         End If
 
@@ -484,6 +487,11 @@ Public Class Frm_Principal
     Private Sub PolizasDiarioVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PolizasDiarioVentasToolStripMenuItem.Click
         Dim frmPol As New Frm_PolizasDiario(Me.emp, 3)
         frmPol.Show()
+    End Sub
+
+    Private Sub PrincipalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrincipalToolStripMenuItem.Click
+        Dim Principaleva As New EvaluacionesPrincipal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        Principaleva.Show()
     End Sub
 #End Region
 End Class

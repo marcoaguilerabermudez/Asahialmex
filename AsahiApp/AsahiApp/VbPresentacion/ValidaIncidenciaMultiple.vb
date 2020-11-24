@@ -17,6 +17,8 @@ Public Class x
     End Sub
 
 
+
+
     Sub muestraetiqueta()
         Try
             Dim lista As New List(Of String)
@@ -716,9 +718,6 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
 
                 MessageBox.Show("Ya hay una Incidencia dentro de esta fecha, Favor de verificar.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-
-
-
             Else
 
                 cargaincidencia()
@@ -730,8 +729,6 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             MessageBox.Show("Acción no completada", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
         End If
-
-
     End Sub
 
 
@@ -762,14 +759,7 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             command.Parameters.AddWithValue("@puestosueldo", puestosueldo)
             command.Parameters.AddWithValue("@sdo", txt_sueldo.Text)
 
-
-
-
             command.ExecuteNonQuery()
-
-
-
-
 
             MessageBox.Show("Incidencia Cargada", "¡Correcto!")
             txt_folio.Clear()
@@ -806,8 +796,6 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
     Private Sub Btn_autorizar_Click(sender As Object, e As EventArgs) Handles Btn_autorizar.Click
         puestosueldo = 0
 
-
-
         If motivo = 8 Then
             If CDbl(lbl_sueldoac.Text) >= CDbl(txt_sueldo.Text) Then
                 puestosueldo = 0
@@ -837,4 +825,5 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
         dtgvi.Visible = False
         gbx_inicidencia.Visible = False
     End Sub
+
 End Class

@@ -19,8 +19,6 @@ Public Class ImprimirAnteriores
             da.SelectCommand.CommandType = CommandType.StoredProcedure
             da.SelectCommand.Parameters.AddWithValue("@fecha", dtp_cuando.Value.ToShortDateString)
 
-
-
             Dim dt As New DataTable
             da.Fill(dt)
             dtgvp.DataSource = dt
@@ -31,14 +29,11 @@ Public Class ImprimirAnteriores
         End Try
 
         For Each row As DataGridViewRow In Me.dtgvp.Rows
-
             If row.Cells(“Validado”).Value = 0 Then
                 row.DefaultCellStyle.BackColor = Color.LightBlue
             ElseIf row.Cells(“Validado”).Value = 1 Then
                 row.DefaultCellStyle.BackColor = Color.ForestGreen
-
             End If
-
         Next
 
     End Sub
@@ -132,10 +127,9 @@ Public Class ImprimirAnteriores
         ElseIf vpermiso = 9 Then
             ContenedorReporteSuspension.id = folio
             ContenedorReporteSuspension.Tipo = 0
-        ContenedorReporteSuspension.motivo = 0
-        ContenedorReporteSuspension.retardo = 0
-        ContenedorReporteSuspension.Show()
-
+            ContenedorReporteSuspension.motivo = 0
+            ContenedorReporteSuspension.retardo = 0
+            ContenedorReporteSuspension.Show()
         End If
 
 
