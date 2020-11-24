@@ -246,7 +246,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoe = 'Vespertino' then '01/01/1900 23:25:00'
   when @turnoe = 'Nocturno' then  '01/01/1900 06:55:00'
   when @turnoe = 'Administrativo' then  '01/01/1900 17:00:00'
-  end, 0, @depto,0)
+  end, 0, @depto,0,getdate())
 
 
 
@@ -338,7 +338,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoe = 'Vespertino' then '01/01/1900 23:25:00'
   when @turnoe = 'Nocturno' then  '01/01/1900 06:55:00'
   when @turnoe = 'Administrativo' then  '01/01/1900 17:00:00'
-  end, 0, @depto,1)
+  end, 0, @depto,1,getdate())
 
 
 
@@ -440,7 +440,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
     Sub autorizar()
         Cnn.Close()
         Cnn.Open()
-        Dim auto As SqlCommand = New SqlCommand("update [AsahiSystem].[dbo].[Rh_solicitudTE] set estado = 2
+        Dim auto As SqlCommand = New SqlCommand("update [AsahiSystem].[dbo].[Rh_solicitudTE] set estado = 2, timestampval = getdate()
  where Id_solicitudte = @ID
 
 delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where grupo = 0 and clave = @clave and fecha = @fecha
@@ -548,7 +548,6 @@ end
   begin
   delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where clave = @clave and fecha = @fecha and grupo = case
 when @turnoe = 'Matutino' then 1
-when @turnoe = 'Vespertino' then 2
 when @turnoe = 'Nocturno' then 3
 when @turnoe = 'Administrativo' then 4
 end
