@@ -53,7 +53,7 @@ Public Class DCompras
         Dim lstComp As New LCompras()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("Sp_vistaPrincipalPolizaPrueba", oCon)
+            Dim query As New SqlCommand("Sp_vistaPrincipalPoliza", oCon) '("Sp_vistaPrincipalPolizaPrueba", oCon)
             query.Parameters.AddWithValue("@variable", moneda)
             query.Parameters.AddWithValue("@uuid", idFac)
             query.Parameters.AddWithValue("@tc", tc)
@@ -67,7 +67,7 @@ Public Class DCompras
                 Dim comp As New Compras()
                 comp.Pivote = Convert.ToInt32(dr("Pivote").ToString)
                 comp.IdOrdenCompra = Convert.ToInt32(dr("OC").ToString)
-                comp.IdCompra = Convert.ToInt32(dr("Compra").ToString)
+                comp.IdCompra = (dr("Compra").ToString)
                 comp.Serie = (dr("Serie").ToString)
                 comp.Factura = (dr("Factura").ToString)
                 comp.Proveedor = (dr("Proveedor").ToString)
