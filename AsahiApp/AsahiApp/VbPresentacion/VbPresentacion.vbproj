@@ -71,10 +71,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>8F0AC060ED621CD105D120A177BDF3EF6F664A13</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>230604A582B3AE8E93C4021CEEA5E282FFAE00B1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_6_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -867,6 +867,8 @@
     <None Include="VbPresentacion_2_TemporaryKey.pfx" />
     <None Include="VbPresentacion_3_TemporaryKey.pfx" />
     <None Include="VbPresentacion_4_TemporaryKey.pfx" />
+    <None Include="VbPresentacion_5_TemporaryKey.pfx" />
+    <None Include="VbPresentacion_6_TemporaryKey.pfx" />
     <None Include="VbPresentacion_TemporaryKey.pfx" />
     <None Include="Views\Report\ReportViewer.cshtml" />
   </ItemGroup>
