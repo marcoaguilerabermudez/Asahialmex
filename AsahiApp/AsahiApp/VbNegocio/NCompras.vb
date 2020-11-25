@@ -38,6 +38,10 @@ Public Class NCompras
         Dim DComp As New DCompras()
         Return DComp.RecuperarListaSegNegVentas(cadenaConex, uuid)
     End Function
+    Public Function IdSegNeg(ByVal cadenaConex As String, ByVal segNeg As String) As String
+        Dim DComp As New DCompras()
+        Return DComp.IdSegNeg(cadenaConex, segNeg)
+    End Function
     Public Function RecuperarLstPorProvisionar(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
         Dim DComp As New DCompras()
         Return DComp.RecuperarLstPorProvisionar(cadenaConex, fi, ff)
