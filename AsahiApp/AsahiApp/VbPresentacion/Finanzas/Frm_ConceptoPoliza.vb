@@ -7,6 +7,7 @@ Public Class Frm_ConceptoPoliza
     Dim lstVent As New LVentas
     Dim conex As New conexion()
     Dim cadenaConex As String
+    Dim cadenaConexCont As String
     Dim ip As String = Strings.Left(Me.conex.getIp(), 6)
     Sub New()
 
@@ -49,8 +50,10 @@ Public Class Frm_ConceptoPoliza
         Dim proveedor() As String
         If Me.ip = "172.16" Then
             Me.cadenaConex = Me.conex.cadenaConexExpress
+            Me.cadenaConexCont = Me.conex.conexionCont
         Else
             Me.cadenaConex = Me.conex.cadenaConexExpressFor
+            Me.cadenaConexCont = Me.conex.conexionCont
         End If
         Try
             If Me.origen = 1 Then
@@ -229,7 +232,7 @@ Public Class Frm_ConceptoPoliza
                 If area = "" Or area <> item.Area Then
                     area = item.Area
                     If vuelta > 0 Then Txt_SegNeg.Text = Txt_SegNeg.Text & ","
-                    Txt_SegNeg.Text = Txt_SegNeg.Text & idSegNeg(item.Area)
+                    Txt_SegNeg.Text = Txt_SegNeg.Text & NComp.IdSegNeg(Me.cadenaConexCont, item.Area)
                     vuelta += 1
                 End If
             End If
@@ -261,7 +264,7 @@ Public Class Frm_ConceptoPoliza
                 If area = "" Or area <> item.Area Then
                     area = item.Area
                     If vuelta > 0 Then Txt_SegNeg.Text = Txt_SegNeg.Text & ","
-                    Txt_SegNeg.Text = Txt_SegNeg.Text & idSegNeg(item.Area)
+                    Txt_SegNeg.Text = Txt_SegNeg.Text & NComp.IdSegNeg(Me.cadenaConexCont, item.Area)
                     vuelta += 1
                 End If
             End If
