@@ -53,7 +53,7 @@ Public Class DCompras
         Dim lstComp As New LCompras()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("Sp_vistaPrincipalPoliza", oCon) '("Sp_vistaPrincipalPolizaPrueba", oCon)
+            Dim query As New SqlCommand("Sp_vistaPrincipalPolizaPrueba", oCon) '("Sp_vistaPrincipalPolizaPrueba", oCon)
             query.Parameters.AddWithValue("@variable", moneda)
             query.Parameters.AddWithValue("@uuid", idFac)
             query.Parameters.AddWithValue("@tc", tc)
