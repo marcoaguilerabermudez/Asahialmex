@@ -278,7 +278,7 @@ Public Class DCompras
         Dim lstComp As New LCompras()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("Select Familia FROM conta.[Asahi].[dbo].[VistaPolizaMx] where UUID = '" & uuid & "' group by Familia", oCon)
+            Dim query As New SqlCommand("Select Familia FROM conta.[Asahi].[dbo].[VistaPolizaNetsuite] where UUID = '" & uuid & "' group by Familia", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
