@@ -42,6 +42,9 @@ Partial Class EvaluacionesPrincipal
         Me.cbx_mes = New System.Windows.Forms.ComboBox()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,6 +52,9 @@ Partial Class EvaluacionesPrincipal
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel3.Controls.Add(Me.Panel5)
+        Me.Panel3.Controls.Add(Me.Label7)
+        Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.cbx_tipoeva)
         Me.Panel3.Controls.Add(Me.btn_solicitar)
@@ -66,7 +72,7 @@ Partial Class EvaluacionesPrincipal
         Me.Panel3.Controls.Add(Me.cbx_mes)
         Me.Panel3.Location = New System.Drawing.Point(4, 1)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(971, 64)
+        Me.Panel3.Size = New System.Drawing.Size(971, 82)
         Me.Panel3.TabIndex = 180
         '
         'Label5
@@ -85,7 +91,7 @@ Partial Class EvaluacionesPrincipal
         Me.cbx_tipoeva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_tipoeva.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipoeva.FormattingEnabled = True
-        Me.cbx_tipoeva.Items.AddRange(New Object() {"3 meses", "6 meses", "9 meses", "15 meses", "Anual"})
+        Me.cbx_tipoeva.Items.AddRange(New Object() {"--Todas--", "3 meses", "6 meses", "9 meses", "15 meses", "Anual"})
         Me.cbx_tipoeva.Location = New System.Drawing.Point(304, 6)
         Me.cbx_tipoeva.Name = "cbx_tipoeva"
         Me.cbx_tipoeva.Size = New System.Drawing.Size(135, 21)
@@ -140,14 +146,14 @@ Partial Class EvaluacionesPrincipal
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label3.Location = New System.Drawing.Point(871, 4)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(94, 12)
+        Me.Label3.Size = New System.Drawing.Size(46, 12)
         Me.Label3.TabIndex = 183
-        Me.Label3.Text = "Pendiente por evaluar"
+        Me.Label3.Text = "Pendiente"
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Green
-        Me.Panel2.Location = New System.Drawing.Point(837, 43)
+        Me.Panel2.BackColor = System.Drawing.Color.LightGreen
+        Me.Panel2.Location = New System.Drawing.Point(837, 64)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(32, 10)
         Me.Panel2.TabIndex = 182
@@ -157,7 +163,7 @@ Partial Class EvaluacionesPrincipal
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(871, 41)
+        Me.Label2.Location = New System.Drawing.Point(871, 62)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 12)
         Me.Label2.TabIndex = 181
@@ -166,7 +172,7 @@ Partial Class EvaluacionesPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.LightBlue
-        Me.Panel1.Location = New System.Drawing.Point(837, 24)
+        Me.Panel1.Location = New System.Drawing.Point(837, 45)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(33, 10)
         Me.Panel1.TabIndex = 180
@@ -176,7 +182,7 @@ Partial Class EvaluacionesPrincipal
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label6.Location = New System.Drawing.Point(871, 23)
+        Me.Label6.Location = New System.Drawing.Point(871, 44)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 12)
         Me.Label6.TabIndex = 179
@@ -231,6 +237,7 @@ Partial Class EvaluacionesPrincipal
         'dtgvp
         '
         Me.dtgvp.AllowUserToAddRows = False
+        Me.dtgvp.AllowUserToDeleteRows = False
         Me.dtgvp.AllowUserToOrderColumns = True
         Me.dtgvp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
@@ -246,15 +253,48 @@ Partial Class EvaluacionesPrincipal
         Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle1
         Me.dtgvp.Location = New System.Drawing.Point(5, 89)
         Me.dtgvp.Name = "dtgvp"
+        Me.dtgvp.ReadOnly = True
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(783, 440)
+        Me.dtgvp.Size = New System.Drawing.Size(748, 440)
         Me.dtgvp.TabIndex = 181
         '
         'x
         '
         Me.x.HeaderText = "x"
         Me.x.Name = "x"
+        Me.x.ReadOnly = True
         Me.x.Width = 18
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Button1.Location = New System.Drawing.Point(664, 13)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(120, 35)
+        Me.Button1.TabIndex = 190
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.Gold
+        Me.Panel5.Location = New System.Drawing.Point(837, 26)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(33, 10)
+        Me.Panel5.TabIndex = 192
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label7.Location = New System.Drawing.Point(871, 25)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(56, 12)
+        Me.Label7.TabIndex = 191
+        Me.Label7.Text = "Liberado RH"
         '
         'EvaluacionesPrincipal
         '
@@ -292,4 +332,7 @@ Partial Class EvaluacionesPrincipal
     Friend WithEvents btn_solicitar As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents cbx_tipoeva As ComboBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label7 As Label
 End Class

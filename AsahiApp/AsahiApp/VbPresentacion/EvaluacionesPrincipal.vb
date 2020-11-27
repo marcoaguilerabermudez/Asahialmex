@@ -20,14 +20,6 @@ Public Class EvaluacionesPrincipal
 
     Private Sub EvaluacionesPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If depto = "04" OrElse depto = "19" Then
-            Label1.Visible = True
-            cbx_depto.Visible = True
-            btn_solicitar.Visible = True
-
-        End If
-
-
 
         a = Today.Month
         Select Case a
@@ -79,12 +71,16 @@ Public Class EvaluacionesPrincipal
 
         llenacombodepto()
 
+        If depto = "04" OrElse depto = "19" Then
+            Label1.Visible = True
+            cbx_depto.Visible = True
+            btn_solicitar.Visible = True
 
+        End If
 
-        cbx_tipoeva.Text = "3 meses"
+        cbx_tipoeva.Text = "--Todas--"
         cbx_depto.DropDownStyle = ComboBoxStyle.DropDown
         cbx_depto.Text = "--Todos--"
-
 
 
 
@@ -132,6 +128,7 @@ Public Class EvaluacionesPrincipal
     Private Sub cbx_depto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_depto.SelectedIndexChanged
         cbx_depto.DropDownStyle = ComboBoxStyle.DropDownList
 
+
     End Sub
 
 
@@ -161,10 +158,55 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
 
 
         End With
+    End Sub
 
 
+    Sub Muestragrid()
 
+        Try
+            Cn.Close()
+            Cn.Open()
+
+            Dim da As New SqlDataAdapter("Sp_muestraEvaluaciones", Cn)
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            da.SelectCommand.Parameters.AddWithValue("@depto", depto)
+            da.SelectCommand.Parameters.AddWithValue("@descripcion_depto", cbx_depto.Text)
+            da.SelectCommand.Parameters.AddWithValue("@mes", mes)
+            da.SelectCommand.Parameters.AddWithValue("@año", cbx_año.Text)
+            da.SelectCommand.Parameters.AddWithValue("@tipoeva", cbx_tipoeva.Text)
+
+
+            Dim dt As New DataTable
+            da.Fill(dt)
+            dtgvp.DataSource = dt
+
+            Cn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+
+        dtgvp.Columns("Pues").Visible = False
+        dtgvp.Columns("Dep").Visible = False
+        dtgvp.Columns("Estado").Visible = False
+
+        For Each row As DataGridViewRow In Me.dtgvp.Rows
+
+            If row.Cells(“Estado”).Value = 0 Then
+                row.DefaultCellStyle.BackColor = Color.White
+            ElseIf row.Cells(“Estado”).Value = 1 Then
+                row.DefaultCellStyle.BackColor = Color.Gold
+            ElseIf row.Cells(“Estado”).Value = 2 Then
+                row.DefaultCellStyle.BackColor = Color.LightBlue
+            ElseIf row.Cells(“Estado”).Value = 3 Then
+                row.DefaultCellStyle.BackColor = Color.LightGreen
+            End If
+        Next
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Muestragrid()
+    End Sub
+
 
 End Class
