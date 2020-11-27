@@ -51,7 +51,7 @@ Public Class Frm_Principal
             SolicitudToolStripMenuItem.Enabled = True
             ValidaciónToolStripMenuItem.Enabled = True
             SolicitudToolStripMenuItem1.Enabled = True
-            '   EvaluacionesToolStripMenuItem1.Enabled = False
+            EvaluacionesToolStripMenuItem1.Enabled = False
 
         ElseIf Me.emp.rh_permiso = 3 Then
             SolicitudToolStripMenuItem.Enabled = True
