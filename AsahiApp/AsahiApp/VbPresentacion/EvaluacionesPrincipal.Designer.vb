@@ -45,6 +45,8 @@ Partial Class EvaluacionesPrincipal
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.cbx_perfil = New System.Windows.Forms.ComboBox()
         Me.Panel3.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,6 +54,8 @@ Partial Class EvaluacionesPrincipal
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.cbx_perfil)
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.Button1)
@@ -72,14 +76,14 @@ Partial Class EvaluacionesPrincipal
         Me.Panel3.Controls.Add(Me.cbx_mes)
         Me.Panel3.Location = New System.Drawing.Point(4, 1)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(971, 82)
+        Me.Panel3.Size = New System.Drawing.Size(971, 105)
         Me.Panel3.TabIndex = 180
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(199, 9)
+        Me.Label5.Location = New System.Drawing.Point(208, 38)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(98, 13)
         Me.Label5.TabIndex = 189
@@ -92,7 +96,7 @@ Partial Class EvaluacionesPrincipal
         Me.cbx_tipoeva.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipoeva.FormattingEnabled = True
         Me.cbx_tipoeva.Items.AddRange(New Object() {"--Todas--", "3 meses", "6 meses", "9 meses", "15 meses", "Anual"})
-        Me.cbx_tipoeva.Location = New System.Drawing.Point(304, 6)
+        Me.cbx_tipoeva.Location = New System.Drawing.Point(313, 35)
         Me.cbx_tipoeva.Name = "cbx_tipoeva"
         Me.cbx_tipoeva.Size = New System.Drawing.Size(135, 21)
         Me.cbx_tipoeva.TabIndex = 188
@@ -101,7 +105,7 @@ Partial Class EvaluacionesPrincipal
         '
         Me.btn_solicitar.BackColor = System.Drawing.Color.Gainsboro
         Me.btn_solicitar.ForeColor = System.Drawing.Color.Green
-        Me.btn_solicitar.Location = New System.Drawing.Point(529, 34)
+        Me.btn_solicitar.Location = New System.Drawing.Point(538, 65)
         Me.btn_solicitar.Name = "btn_solicitar"
         Me.btn_solicitar.Size = New System.Drawing.Size(64, 20)
         Me.btn_solicitar.TabIndex = 187
@@ -112,8 +116,9 @@ Partial Class EvaluacionesPrincipal
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.Enabled = False
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(11, 35)
+        Me.Label4.Location = New System.Drawing.Point(13, 51)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(26, 13)
         Me.Label4.TabIndex = 186
@@ -123,10 +128,11 @@ Partial Class EvaluacionesPrincipal
         '
         Me.cbx_año.BackColor = System.Drawing.SystemColors.Control
         Me.cbx_año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_año.Enabled = False
         Me.cbx_año.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_año.FormattingEnabled = True
         Me.cbx_año.Items.AddRange(New Object() {"2020", "2021", "2022", "2023"})
-        Me.cbx_año.Location = New System.Drawing.Point(43, 32)
+        Me.cbx_año.Location = New System.Drawing.Point(45, 48)
         Me.cbx_año.Name = "cbx_año"
         Me.cbx_año.Size = New System.Drawing.Size(77, 21)
         Me.cbx_año.TabIndex = 185
@@ -192,7 +198,7 @@ Partial Class EvaluacionesPrincipal
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(224, 36)
+        Me.Label1.Location = New System.Drawing.Point(233, 67)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(74, 13)
         Me.Label1.TabIndex = 154
@@ -206,7 +212,7 @@ Partial Class EvaluacionesPrincipal
         Me.cbx_depto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_depto.FormattingEnabled = True
         Me.cbx_depto.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.cbx_depto.Location = New System.Drawing.Point(304, 33)
+        Me.cbx_depto.Location = New System.Drawing.Point(313, 64)
         Me.cbx_depto.Name = "cbx_depto"
         Me.cbx_depto.Size = New System.Drawing.Size(210, 21)
         Me.cbx_depto.TabIndex = 153
@@ -215,8 +221,9 @@ Partial Class EvaluacionesPrincipal
         'Label32
         '
         Me.Label32.AutoSize = True
+        Me.Label32.Enabled = False
         Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label32.Location = New System.Drawing.Point(10, 8)
+        Me.Label32.Location = New System.Drawing.Point(12, 24)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(27, 13)
         Me.Label32.TabIndex = 152
@@ -226,10 +233,11 @@ Partial Class EvaluacionesPrincipal
         '
         Me.cbx_mes.BackColor = System.Drawing.SystemColors.Control
         Me.cbx_mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_mes.Enabled = False
         Me.cbx_mes.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_mes.FormattingEnabled = True
         Me.cbx_mes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.cbx_mes.Location = New System.Drawing.Point(42, 5)
+        Me.cbx_mes.Location = New System.Drawing.Point(44, 21)
         Me.cbx_mes.Name = "cbx_mes"
         Me.cbx_mes.Size = New System.Drawing.Size(135, 21)
         Me.cbx_mes.TabIndex = 150
@@ -251,18 +259,16 @@ Partial Class EvaluacionesPrincipal
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dtgvp.Location = New System.Drawing.Point(5, 89)
+        Me.dtgvp.Location = New System.Drawing.Point(5, 112)
         Me.dtgvp.Name = "dtgvp"
-        Me.dtgvp.ReadOnly = True
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(748, 440)
+        Me.dtgvp.Size = New System.Drawing.Size(748, 417)
         Me.dtgvp.TabIndex = 181
         '
         'x
         '
         Me.x.HeaderText = "x"
         Me.x.Name = "x"
-        Me.x.ReadOnly = True
         Me.x.Width = 18
         '
         'Button1
@@ -295,6 +301,28 @@ Partial Class EvaluacionesPrincipal
         Me.Label7.Size = New System.Drawing.Size(56, 12)
         Me.Label7.TabIndex = 191
         Me.Label7.Text = "Liberado RH"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(272, 10)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(30, 13)
+        Me.Label8.TabIndex = 194
+        Me.Label8.Text = "Perfil"
+        '
+        'cbx_perfil
+        '
+        Me.cbx_perfil.BackColor = System.Drawing.SystemColors.Control
+        Me.cbx_perfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_perfil.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.cbx_perfil.FormattingEnabled = True
+        Me.cbx_perfil.Items.AddRange(New Object() {"--Todos--", "Sindicalizados", "Confianza"})
+        Me.cbx_perfil.Location = New System.Drawing.Point(314, 7)
+        Me.cbx_perfil.Name = "cbx_perfil"
+        Me.cbx_perfil.Size = New System.Drawing.Size(135, 21)
+        Me.cbx_perfil.TabIndex = 193
         '
         'EvaluacionesPrincipal
         '
@@ -335,4 +363,6 @@ Partial Class EvaluacionesPrincipal
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents cbx_perfil As ComboBox
 End Class

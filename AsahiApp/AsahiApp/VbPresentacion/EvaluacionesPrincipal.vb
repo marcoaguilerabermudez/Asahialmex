@@ -62,11 +62,6 @@ Public Class EvaluacionesPrincipal
         End Select
 
 
-
-
-
-
-
         cbx_año.Text = Today.Year()
 
         llenacombodepto()
@@ -75,13 +70,17 @@ Public Class EvaluacionesPrincipal
             Label1.Visible = True
             cbx_depto.Visible = True
             btn_solicitar.Visible = True
-
+            cbx_mes.Enabled = True
+            cbx_año.Enabled = True
         End If
 
         cbx_tipoeva.Text = "--Todas--"
         cbx_depto.DropDownStyle = ComboBoxStyle.DropDown
         cbx_depto.Text = "--Todos--"
+        cbx_perfil.Text = "--Todos--"
 
+
+        Muestragrid()
 
 
 
@@ -202,7 +201,16 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
             End If
         Next
 
+
+        Me.dtgvp.Columns("Clave").ReadOnly = True
+        Me.dtgvp.Columns("Ingreso").ReadOnly = True
+        Me.dtgvp.Columns("Meses").ReadOnly = True
+        Me.dtgvp.Columns("Departamento").ReadOnly = True
+        Me.dtgvp.Columns("Empleado").ReadOnly = True
+        Me.dtgvp.Columns("Puesto").ReadOnly = True
+
     End Sub
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Muestragrid()
