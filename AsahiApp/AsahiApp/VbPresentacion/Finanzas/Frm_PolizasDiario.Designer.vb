@@ -26,6 +26,35 @@ Partial Class Frm_PolizasDiario
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Dgv_PolizasVentas = New System.Windows.Forms.DataGridView()
+        Me.pivotPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pedPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ventaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.seriePV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.facturaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clientePV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rfcPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalFacturaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ventaTotalPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFacturaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaPagoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.monedaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tcPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empresaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rfcEmisorPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.emisorPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.uuidPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.areaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.familiaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.netoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentaIvaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ivaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cuentaPPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.impuestoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.conceptoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioPolizaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.folioProvisionPolPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Dgv_Prepolizas = New System.Windows.Forms.DataGridView()
         Me.pivot = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ordenCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -143,35 +172,6 @@ Partial Class Frm_PolizasDiario
         Me.Btn_Txt = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.pivotPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pedPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ventaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.seriePV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.facturaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clientePV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rfcPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.totalFacturaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ventaTotalPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaFacturaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaPagoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.monedaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tcPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.empresaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rfcEmisorPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.emisorPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.uuidPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.totalPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.areaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.familiaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuentaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.netoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuentaIvaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ivaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cuentaPPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.impuestoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.conceptoPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.folioPolizaPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.folioProvisionPolPV = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.Dgv_PolizasVentas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -229,6 +229,201 @@ Partial Class Frm_PolizasDiario
         Me.Dgv_PolizasVentas.Size = New System.Drawing.Size(1240, 364)
         Me.Dgv_PolizasVentas.TabIndex = 7
         Me.Dgv_PolizasVentas.Visible = False
+        '
+        'pivotPV
+        '
+        Me.pivotPV.HeaderText = "Pivote"
+        Me.pivotPV.Name = "pivotPV"
+        Me.pivotPV.ReadOnly = True
+        Me.pivotPV.Width = 45
+        '
+        'pedPV
+        '
+        Me.pedPV.HeaderText = "PED"
+        Me.pedPV.Name = "pedPV"
+        Me.pedPV.ReadOnly = True
+        Me.pedPV.Width = 40
+        '
+        'ventaPV
+        '
+        Me.ventaPV.HeaderText = "Venta"
+        Me.ventaPV.Name = "ventaPV"
+        Me.ventaPV.ReadOnly = True
+        Me.ventaPV.Width = 50
+        '
+        'seriePV
+        '
+        Me.seriePV.HeaderText = "Serie"
+        Me.seriePV.Name = "seriePV"
+        Me.seriePV.ReadOnly = True
+        Me.seriePV.Width = 40
+        '
+        'facturaPV
+        '
+        Me.facturaPV.HeaderText = "Factura"
+        Me.facturaPV.Name = "facturaPV"
+        Me.facturaPV.ReadOnly = True
+        Me.facturaPV.Width = 50
+        '
+        'clientePV
+        '
+        Me.clientePV.HeaderText = "Cliente"
+        Me.clientePV.Name = "clientePV"
+        Me.clientePV.ReadOnly = True
+        Me.clientePV.Width = 170
+        '
+        'rfcPV
+        '
+        Me.rfcPV.HeaderText = "RFC"
+        Me.rfcPV.Name = "rfcPV"
+        Me.rfcPV.ReadOnly = True
+        '
+        'totalFacturaPV
+        '
+        Me.totalFacturaPV.HeaderText = "Total Factura"
+        Me.totalFacturaPV.Name = "totalFacturaPV"
+        Me.totalFacturaPV.ReadOnly = True
+        Me.totalFacturaPV.Width = 80
+        '
+        'ventaTotalPV
+        '
+        Me.ventaTotalPV.HeaderText = "Venta Total"
+        Me.ventaTotalPV.Name = "ventaTotalPV"
+        Me.ventaTotalPV.ReadOnly = True
+        Me.ventaTotalPV.Width = 80
+        '
+        'fechaFacturaPV
+        '
+        Me.fechaFacturaPV.HeaderText = "Fecha Factura"
+        Me.fechaFacturaPV.Name = "fechaFacturaPV"
+        Me.fechaFacturaPV.ReadOnly = True
+        Me.fechaFacturaPV.Width = 80
+        '
+        'fechaPagoPV
+        '
+        Me.fechaPagoPV.HeaderText = "Fecha Pago"
+        Me.fechaPagoPV.Name = "fechaPagoPV"
+        Me.fechaPagoPV.ReadOnly = True
+        '
+        'monedaPV
+        '
+        Me.monedaPV.HeaderText = "Moneda"
+        Me.monedaPV.Name = "monedaPV"
+        Me.monedaPV.ReadOnly = True
+        Me.monedaPV.Width = 55
+        '
+        'tcPV
+        '
+        Me.tcPV.HeaderText = "Tipo Cambio"
+        Me.tcPV.Name = "tcPV"
+        Me.tcPV.ReadOnly = True
+        '
+        'empresaPV
+        '
+        Me.empresaPV.HeaderText = "Empresa"
+        Me.empresaPV.Name = "empresaPV"
+        Me.empresaPV.ReadOnly = True
+        Me.empresaPV.Width = 55
+        '
+        'rfcEmisorPV
+        '
+        Me.rfcEmisorPV.HeaderText = "RFC Emisor"
+        Me.rfcEmisorPV.Name = "rfcEmisorPV"
+        Me.rfcEmisorPV.ReadOnly = True
+        '
+        'emisorPV
+        '
+        Me.emisorPV.HeaderText = "Emisor"
+        Me.emisorPV.Name = "emisorPV"
+        Me.emisorPV.ReadOnly = True
+        Me.emisorPV.Width = 170
+        '
+        'uuidPV
+        '
+        Me.uuidPV.HeaderText = "UUID"
+        Me.uuidPV.Name = "uuidPV"
+        Me.uuidPV.ReadOnly = True
+        Me.uuidPV.Width = 215
+        '
+        'totalPV
+        '
+        Me.totalPV.HeaderText = "Total"
+        Me.totalPV.Name = "totalPV"
+        Me.totalPV.ReadOnly = True
+        '
+        'areaPV
+        '
+        Me.areaPV.HeaderText = "Área"
+        Me.areaPV.Name = "areaPV"
+        Me.areaPV.ReadOnly = True
+        '
+        'familiaPV
+        '
+        Me.familiaPV.HeaderText = "Familia"
+        Me.familiaPV.Name = "familiaPV"
+        Me.familiaPV.ReadOnly = True
+        '
+        'cuentaPV
+        '
+        Me.cuentaPV.HeaderText = "Cuenta"
+        Me.cuentaPV.Name = "cuentaPV"
+        Me.cuentaPV.ReadOnly = True
+        Me.cuentaPV.Width = 70
+        '
+        'netoPV
+        '
+        Me.netoPV.HeaderText = "Neto"
+        Me.netoPV.Name = "netoPV"
+        Me.netoPV.ReadOnly = True
+        Me.netoPV.Width = 80
+        '
+        'cuentaIvaPV
+        '
+        Me.cuentaIvaPV.HeaderText = "Cuenta IVA"
+        Me.cuentaIvaPV.Name = "cuentaIvaPV"
+        Me.cuentaIvaPV.ReadOnly = True
+        Me.cuentaIvaPV.Width = 70
+        '
+        'ivaPV
+        '
+        Me.ivaPV.HeaderText = "IVA"
+        Me.ivaPV.Name = "ivaPV"
+        Me.ivaPV.ReadOnly = True
+        Me.ivaPV.Width = 80
+        '
+        'cuentaPPV
+        '
+        Me.cuentaPPV.HeaderText = "Cuenta P"
+        Me.cuentaPPV.Name = "cuentaPPV"
+        Me.cuentaPPV.ReadOnly = True
+        Me.cuentaPPV.Width = 70
+        '
+        'impuestoPV
+        '
+        Me.impuestoPV.HeaderText = "Impuesto"
+        Me.impuestoPV.Name = "impuestoPV"
+        Me.impuestoPV.ReadOnly = True
+        Me.impuestoPV.Width = 80
+        '
+        'conceptoPV
+        '
+        Me.conceptoPV.HeaderText = "Concepto"
+        Me.conceptoPV.Name = "conceptoPV"
+        Me.conceptoPV.ReadOnly = True
+        '
+        'folioPolizaPV
+        '
+        Me.folioPolizaPV.HeaderText = "FolioPoliza"
+        Me.folioPolizaPV.Name = "folioPolizaPV"
+        Me.folioPolizaPV.ReadOnly = True
+        Me.folioPolizaPV.Visible = False
+        '
+        'folioProvisionPolPV
+        '
+        Me.folioProvisionPolPV.HeaderText = "FolioProvisionPol"
+        Me.folioProvisionPolPV.Name = "folioProvisionPolPV"
+        Me.folioProvisionPolPV.ReadOnly = True
+        Me.folioProvisionPolPV.Visible = False
         '
         'Dgv_Prepolizas
         '
@@ -1012,7 +1207,7 @@ Partial Class Frm_PolizasDiario
         Me.Cmb_BancoMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cmb_BancoMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cmb_BancoMoneda.FormattingEnabled = True
-        Me.Cmb_BancoMoneda.Location = New System.Drawing.Point(420, 21)
+        Me.Cmb_BancoMoneda.Location = New System.Drawing.Point(430, 21)
         Me.Cmb_BancoMoneda.Name = "Cmb_BancoMoneda"
         Me.Cmb_BancoMoneda.Size = New System.Drawing.Size(176, 21)
         Me.Cmb_BancoMoneda.TabIndex = 18
@@ -1037,7 +1232,7 @@ Partial Class Frm_PolizasDiario
         Me.Lbl_BancoMoneda.AutoSize = True
         Me.Lbl_BancoMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_BancoMoneda.ForeColor = System.Drawing.Color.White
-        Me.Lbl_BancoMoneda.Location = New System.Drawing.Point(421, 4)
+        Me.Lbl_BancoMoneda.Location = New System.Drawing.Point(431, 4)
         Me.Lbl_BancoMoneda.Name = "Lbl_BancoMoneda"
         Me.Lbl_BancoMoneda.Size = New System.Drawing.Size(92, 13)
         Me.Lbl_BancoMoneda.TabIndex = 16
@@ -1120,9 +1315,10 @@ Partial Class Frm_PolizasDiario
         Me.Txt_FiltroProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.Txt_FiltroProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.Txt_FiltroProveedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.Txt_FiltroProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_FiltroProveedor.Location = New System.Drawing.Point(242, 22)
         Me.Txt_FiltroProveedor.Name = "Txt_FiltroProveedor"
-        Me.Txt_FiltroProveedor.Size = New System.Drawing.Size(172, 20)
+        Me.Txt_FiltroProveedor.Size = New System.Drawing.Size(182, 18)
         Me.Txt_FiltroProveedor.TabIndex = 7
         '
         'Txt_FiltroCompras
@@ -1168,201 +1364,6 @@ Partial Class Frm_PolizasDiario
         Me.Label1.Size = New System.Drawing.Size(80, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Fecha Inicial"
-        '
-        'pivotPV
-        '
-        Me.pivotPV.HeaderText = "Pivote"
-        Me.pivotPV.Name = "pivotPV"
-        Me.pivotPV.ReadOnly = True
-        Me.pivotPV.Width = 45
-        '
-        'pedPV
-        '
-        Me.pedPV.HeaderText = "PED"
-        Me.pedPV.Name = "pedPV"
-        Me.pedPV.ReadOnly = True
-        Me.pedPV.Width = 40
-        '
-        'ventaPV
-        '
-        Me.ventaPV.HeaderText = "Venta"
-        Me.ventaPV.Name = "ventaPV"
-        Me.ventaPV.ReadOnly = True
-        Me.ventaPV.Width = 50
-        '
-        'seriePV
-        '
-        Me.seriePV.HeaderText = "Serie"
-        Me.seriePV.Name = "seriePV"
-        Me.seriePV.ReadOnly = True
-        Me.seriePV.Width = 40
-        '
-        'facturaPV
-        '
-        Me.facturaPV.HeaderText = "Factura"
-        Me.facturaPV.Name = "facturaPV"
-        Me.facturaPV.ReadOnly = True
-        Me.facturaPV.Width = 50
-        '
-        'clientePV
-        '
-        Me.clientePV.HeaderText = "Cliente"
-        Me.clientePV.Name = "clientePV"
-        Me.clientePV.ReadOnly = True
-        Me.clientePV.Width = 170
-        '
-        'rfcPV
-        '
-        Me.rfcPV.HeaderText = "RFC"
-        Me.rfcPV.Name = "rfcPV"
-        Me.rfcPV.ReadOnly = True
-        '
-        'totalFacturaPV
-        '
-        Me.totalFacturaPV.HeaderText = "Total Factura"
-        Me.totalFacturaPV.Name = "totalFacturaPV"
-        Me.totalFacturaPV.ReadOnly = True
-        Me.totalFacturaPV.Width = 80
-        '
-        'ventaTotalPV
-        '
-        Me.ventaTotalPV.HeaderText = "Venta Total"
-        Me.ventaTotalPV.Name = "ventaTotalPV"
-        Me.ventaTotalPV.ReadOnly = True
-        Me.ventaTotalPV.Width = 80
-        '
-        'fechaFacturaPV
-        '
-        Me.fechaFacturaPV.HeaderText = "Fecha Factura"
-        Me.fechaFacturaPV.Name = "fechaFacturaPV"
-        Me.fechaFacturaPV.ReadOnly = True
-        Me.fechaFacturaPV.Width = 80
-        '
-        'fechaPagoPV
-        '
-        Me.fechaPagoPV.HeaderText = "Fecha Pago"
-        Me.fechaPagoPV.Name = "fechaPagoPV"
-        Me.fechaPagoPV.ReadOnly = True
-        '
-        'monedaPV
-        '
-        Me.monedaPV.HeaderText = "Moneda"
-        Me.monedaPV.Name = "monedaPV"
-        Me.monedaPV.ReadOnly = True
-        Me.monedaPV.Width = 55
-        '
-        'tcPV
-        '
-        Me.tcPV.HeaderText = "Tipo Cambio"
-        Me.tcPV.Name = "tcPV"
-        Me.tcPV.ReadOnly = True
-        '
-        'empresaPV
-        '
-        Me.empresaPV.HeaderText = "Empresa"
-        Me.empresaPV.Name = "empresaPV"
-        Me.empresaPV.ReadOnly = True
-        Me.empresaPV.Width = 55
-        '
-        'rfcEmisorPV
-        '
-        Me.rfcEmisorPV.HeaderText = "RFC Emisor"
-        Me.rfcEmisorPV.Name = "rfcEmisorPV"
-        Me.rfcEmisorPV.ReadOnly = True
-        '
-        'emisorPV
-        '
-        Me.emisorPV.HeaderText = "Emisor"
-        Me.emisorPV.Name = "emisorPV"
-        Me.emisorPV.ReadOnly = True
-        Me.emisorPV.Width = 170
-        '
-        'uuidPV
-        '
-        Me.uuidPV.HeaderText = "UUID"
-        Me.uuidPV.Name = "uuidPV"
-        Me.uuidPV.ReadOnly = True
-        Me.uuidPV.Width = 215
-        '
-        'totalPV
-        '
-        Me.totalPV.HeaderText = "Total"
-        Me.totalPV.Name = "totalPV"
-        Me.totalPV.ReadOnly = True
-        '
-        'areaPV
-        '
-        Me.areaPV.HeaderText = "Área"
-        Me.areaPV.Name = "areaPV"
-        Me.areaPV.ReadOnly = True
-        '
-        'familiaPV
-        '
-        Me.familiaPV.HeaderText = "Familia"
-        Me.familiaPV.Name = "familiaPV"
-        Me.familiaPV.ReadOnly = True
-        '
-        'cuentaPV
-        '
-        Me.cuentaPV.HeaderText = "Cuenta"
-        Me.cuentaPV.Name = "cuentaPV"
-        Me.cuentaPV.ReadOnly = True
-        Me.cuentaPV.Width = 70
-        '
-        'netoPV
-        '
-        Me.netoPV.HeaderText = "Neto"
-        Me.netoPV.Name = "netoPV"
-        Me.netoPV.ReadOnly = True
-        Me.netoPV.Width = 80
-        '
-        'cuentaIvaPV
-        '
-        Me.cuentaIvaPV.HeaderText = "Cuenta IVA"
-        Me.cuentaIvaPV.Name = "cuentaIvaPV"
-        Me.cuentaIvaPV.ReadOnly = True
-        Me.cuentaIvaPV.Width = 70
-        '
-        'ivaPV
-        '
-        Me.ivaPV.HeaderText = "IVA"
-        Me.ivaPV.Name = "ivaPV"
-        Me.ivaPV.ReadOnly = True
-        Me.ivaPV.Width = 80
-        '
-        'cuentaPPV
-        '
-        Me.cuentaPPV.HeaderText = "Cuenta P"
-        Me.cuentaPPV.Name = "cuentaPPV"
-        Me.cuentaPPV.ReadOnly = True
-        Me.cuentaPPV.Width = 70
-        '
-        'impuestoPV
-        '
-        Me.impuestoPV.HeaderText = "Impuesto"
-        Me.impuestoPV.Name = "impuestoPV"
-        Me.impuestoPV.ReadOnly = True
-        Me.impuestoPV.Width = 80
-        '
-        'conceptoPV
-        '
-        Me.conceptoPV.HeaderText = "Concepto"
-        Me.conceptoPV.Name = "conceptoPV"
-        Me.conceptoPV.ReadOnly = True
-        '
-        'folioPolizaPV
-        '
-        Me.folioPolizaPV.HeaderText = "FolioPoliza"
-        Me.folioPolizaPV.Name = "folioPolizaPV"
-        Me.folioPolizaPV.ReadOnly = True
-        Me.folioPolizaPV.Visible = False
-        '
-        'folioProvisionPolPV
-        '
-        Me.folioProvisionPolPV.HeaderText = "FolioProvisionPol"
-        Me.folioProvisionPolPV.Name = "folioProvisionPolPV"
-        Me.folioProvisionPolPV.ReadOnly = True
-        Me.folioProvisionPolPV.Visible = False
         '
         'Frm_PolizasDiario
         '
@@ -1419,7 +1420,6 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents Txt_FiltroOC As TextBox
     Friend WithEvents Txt_FiltroCompras As TextBox
     Friend WithEvents Lbl_BancoMoneda As Label
-    Friend WithEvents Txt_FiltroProveedor As TextBox
     Friend WithEvents Btn_LimpiarFiltros As Button
     Friend WithEvents Btn_Limpiar As Button
     Friend WithEvents Btn_Actualizar As Button
@@ -1541,4 +1541,5 @@ Partial Class Frm_PolizasDiario
     Friend WithEvents conceptoPV As DataGridViewTextBoxColumn
     Friend WithEvents folioPolizaPV As DataGridViewTextBoxColumn
     Friend WithEvents folioProvisionPolPV As DataGridViewTextBoxColumn
+    Friend WithEvents Txt_FiltroProveedor As TextBox
 End Class

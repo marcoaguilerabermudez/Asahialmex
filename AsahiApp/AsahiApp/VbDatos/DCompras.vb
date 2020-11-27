@@ -53,7 +53,7 @@ Public Class DCompras
         Dim lstComp As New LCompras()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("Sp_vistaPrincipalPolizaPrueba", oCon)
+            Dim query As New SqlCommand("Sp_vistaPrincipalPoliza", oCon) '("Sp_vistaPrincipalPolizaPrueba", oCon)
             query.Parameters.AddWithValue("@variable", moneda)
             query.Parameters.AddWithValue("@uuid", idFac)
             query.Parameters.AddWithValue("@tc", tc)
@@ -67,7 +67,7 @@ Public Class DCompras
                 Dim comp As New Compras()
                 comp.Pivote = Convert.ToInt32(dr("Pivote").ToString)
                 comp.IdOrdenCompra = Convert.ToInt32(dr("OC").ToString)
-                comp.IdCompra = Convert.ToInt32(dr("Compra").ToString)
+                comp.IdCompra = (dr("Compra").ToString)
                 comp.Serie = (dr("Serie").ToString)
                 comp.Factura = (dr("Factura").ToString)
                 comp.Proveedor = (dr("Proveedor").ToString)
@@ -326,7 +326,7 @@ Public Class DCompras
         Dim lstComp As New LCompras()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("Select Área FROM conta.[Asahi].[dbo].[VistaPolizaMx] where UUID = '" & uuid & "' group by Área", oCon)
+            Dim query As New SqlCommand("Select Área FROM conta.[Asahi].[dbo].[VistaPolizaNetsuite] where UUID = '" & uuid & "' group by Área", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -368,6 +368,28 @@ Public Class DCompras
             oCon.Dispose()
         End Try
         Return lstVent
+    End Function
+    Public Function IdSegNeg(ByVal cadenaConex As String, ByVal segNeg As String) As String
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim idSNeg As String = "1"
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Select Segmento from Asahi.dbo.Netsuite_SegmentosNegocio Where Descripcion = '" & segNeg & "'", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read())
+                idSNeg = dr("Segmento").ToString
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return idSNeg
     End Function
     Public Function RecuperarLstPorProvisionar(ByVal cadenaConex As String, ByVal fi As Date, ByVal ff As Date) As LCompras
         Dim oCon As New SqlConnection(cadenaConex)

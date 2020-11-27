@@ -560,7 +560,7 @@ Public Class Frm_PolizasDiario
                 Next
                 For fila = 0 To totalFilas - 1
                     With Dgv_Ventas.Rows(fila)
-                        folio = .Cells("clientePV").Value
+                        folio = .Cells("cliente").Value
                         If Not (folio Like Txt_FiltroProveedor.Text) And folio <> "" Then
                             .Visible = True
                         End If
@@ -867,7 +867,7 @@ Public Class Frm_PolizasDiario
             For Each item In lstComp
                 Dgv_Egresos.Rows.Add()
                 Dim sNeg As String = ""
-                If item.Pivote = 2 Then sNeg = NComp.RecuperaSubCategorias(Me.cadenaConex, lstComp, item.Cuenta, idSegNeg(item.Area))
+                If item.Pivote = 2 Then sNeg = NComp.RecuperaSubCategorias(Me.cadenaConex, lstComp, item.Cuenta, NComp.IdSegNeg(Me.cadConexCont, item.Area))
 
                 With Dgv_Egresos.Rows(fila)
                     .Cells("pivote").Value = item.Pivote
@@ -1021,6 +1021,7 @@ Public Class Frm_PolizasDiario
         Dim folio As String = "", uuid As String = "", sn As String, idFol As String = ""
         Dim totalFilas As Integer = Dgv_Prepolizas.Rows.Count
         Dim NPol As New NPolizas(), pol As New Polizas()
+        Dim NComp As New NCompras()
         Try
             fecha = Dgv_Prepolizas.Rows(0).Cells("fechaFact").Value
             pol = NPol.RecuperarUltimoFolio(Me.cadenaConex, fecha, Me.subsid)
@@ -1069,7 +1070,7 @@ Public Class Frm_PolizasDiario
                         .Cells("familia").Value = "Traslado" Then
                         cargo = 1
                     End If
-                    sn = idSegNeg(.Cells("area").Value)
+                    sn = NComp.IdSegNeg(Me.cadConexCont, .Cells("area").Value)
                     total = .Cells("total").Value
                     tx.Write("M1 ")
                     tx.Write(String.Format("{0,-30}", .Cells("cuenta").Value) & " ")
