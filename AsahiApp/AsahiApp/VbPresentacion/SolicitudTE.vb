@@ -94,7 +94,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
             Cnn.Close()
 
         Catch ex As Exception
-            '   MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.ToString)
             MessageBox.Show("El empleado que ha seleccionado no está activo o no corresponde a su departamento, verifique e intente de nuevo.", "¡Aviso!")
         End Try
 
