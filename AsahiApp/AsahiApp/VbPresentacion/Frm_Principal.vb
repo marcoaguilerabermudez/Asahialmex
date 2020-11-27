@@ -60,7 +60,7 @@ Public Class Frm_Principal
             ValidaciónRHToolStripMenuItem.Enabled = True
             ValidaciónRHToolStripMenuItem1.Enabled = True
             '  EvaluacionesToolStripMenuItem1.Enabled = True
-
+        
         End If
 
     End Sub
