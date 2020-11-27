@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>220</ApplicationRevision>
+    <ApplicationRevision>221</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -71,10 +71,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3A2441EF19B0516375EEFDE4C74E5F3F542C1C07</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2A0CC2451AC1DD89AD1B448ADE2D845551170F42</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_7_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_8_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -905,6 +905,7 @@
     <None Include="VbPresentacion_5_TemporaryKey.pfx" />
     <None Include="VbPresentacion_6_TemporaryKey.pfx" />
     <None Include="VbPresentacion_7_TemporaryKey.pfx" />
+    <None Include="VbPresentacion_8_TemporaryKey.pfx" />
     <None Include="VbPresentacion_TemporaryKey.pfx" />
     <None Include="Views\Report\ReportViewer.cshtml" />
   </ItemGroup>
