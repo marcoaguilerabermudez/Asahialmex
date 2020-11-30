@@ -7,7 +7,7 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Presentacion.exe.manifest" size="72233">
+    <dependentAssembly dependencyType="install" codebase="Presentacion.exe.manifest" size="75921">
       <assemblyIdentity name="Presentacion.exe" version="1.0.0.220" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
