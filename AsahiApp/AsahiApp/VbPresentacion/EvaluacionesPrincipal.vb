@@ -72,6 +72,7 @@ Public Class EvaluacionesPrincipal
             btn_solicitar.Visible = True
             cbx_mes.Enabled = True
             cbx_año.Enabled = True
+            btn_liberar.Visible = True
         End If
 
         cbx_tipoeva.Text = "--Todas--"
@@ -81,10 +82,6 @@ Public Class EvaluacionesPrincipal
 
 
         Muestragrid()
-
-
-
-
     End Sub
 
     Private Sub cbx_mes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_mes.SelectedIndexChanged
@@ -187,6 +184,10 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
         dtgvp.Columns("Pues").Visible = False
         dtgvp.Columns("Dep").Visible = False
         dtgvp.Columns("Estado").Visible = False
+        dtgvp.Columns("id").Visible = False
+        dtgvp.Columns("liberacion").Visible = False
+        dtgvp.Columns("aprobacion").Visible = False
+        dtgvp.Columns("evaluacion").Visible = False
 
         For Each row As DataGridViewRow In Me.dtgvp.Rows
 
@@ -204,7 +205,7 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
 
         Me.dtgvp.Columns("Clave").ReadOnly = True
         Me.dtgvp.Columns("Ingreso").ReadOnly = True
-        Me.dtgvp.Columns("Meses").ReadOnly = True
+        Me.dtgvp.Columns("Tiempo").ReadOnly = True
         Me.dtgvp.Columns("Departamento").ReadOnly = True
         Me.dtgvp.Columns("Empleado").ReadOnly = True
         Me.dtgvp.Columns("Puesto").ReadOnly = True
@@ -217,4 +218,79 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
     End Sub
 
 
+
+    Sub autorizar()
+
+        Cn.Close()
+        Cn.Open()
+        Dim auto As SqlCommand = New SqlCommand("
+update [AsahiSystem].[dbo].[Eva_evaluaciones] set estado = 1, Fecha_liberacion = getdate()
+where id_evaluaciones = @ID and estado = 0
+
+", Cn)
+
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        Dim RI As String
+
+        Try
+
+            For Each fila In dtgvp.Rows
+                If fila.Cells("x").Value = True Then
+                    auto.Parameters.Clear()
+                    auto.Parameters.Add("@ID", SqlDbType.Int).Value = (fila.Cells("id").Value)
+
+
+                    auto.ExecuteNonQuery()
+
+                    RI = "¡Registro(s) Liberado(s)!"
+
+
+                End If
+            Next
+
+            MessageBox.Show(RI, "¡Aviso!")
+            Muestragrid()
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error al actualizar registro, consulte al administrador")
+            MessageBox.Show(ex.ToString)
+            Cn.Close()
+        Finally
+            Cn.Close()
+
+        End Try
+
+
+    End Sub
+
+    Private Sub dtgmuestra_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellContentClick
+        Try
+            lbl_autorizacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("aprobacion").Value.ToString()
+            lbl_evaluacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("evaluacion").Value.ToString()
+            lbl_liberacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("liberacion").Value.ToString()
+            'lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
+
+        Catch
+        End Try
+
+    End Sub
+
+
+    Private Sub dtgmuestra_CellContentClick1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.RowEnter
+        Try
+            lbl_autorizacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("aprobacion").Value.ToString()
+            lbl_evaluacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("evaluacion").Value.ToString()
+            lbl_liberacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("liberacion").Value.ToString()
+            'lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
+        Catch
+        End Try
+
+    End Sub
+
+
+
+    Private Sub btn_liberar_Click(sender As Object, e As EventArgs) Handles btn_liberar.Click
+        autorizar()
+    End Sub
 End Class
