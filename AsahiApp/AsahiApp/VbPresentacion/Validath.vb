@@ -68,6 +68,7 @@ Public Class Validath
         col2.ReadOnly = True
 
 
+        Me.dtgvp.Columns("Clave").ReadOnly = True
         Try
 
             For Each row As DataGridViewRow In Me.dtgvp.Rows
@@ -343,5 +344,11 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
         HistoricoChecadas.Show()
     End Sub
 
+    Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
+        ContenedorReporteExcedenteTe.clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
+        ContenedorReporteExcedenteTe.fecha = dtp1.Value.ToShortDateString
+        ContenedorReporteExcedenteTe.Turno = Me.dtgvp.Rows(e.RowIndex).Cells("TurnoE").Value.ToString()
+        ContenedorReporteExcedenteTe.Show()
 
+    End Sub
 End Class
