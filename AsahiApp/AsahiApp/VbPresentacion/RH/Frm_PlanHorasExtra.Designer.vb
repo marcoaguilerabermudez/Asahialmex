@@ -611,7 +611,6 @@ Partial Class Frm_PlanHorasExtra
         Me.totalDobles.HeaderText = "Total Dobles"
         Me.totalDobles.Name = "totalDobles"
         Me.totalDobles.ReadOnly = True
-        Me.totalDobles.Visible = False
         Me.totalDobles.Width = 65
         '
         'totalTriples
@@ -619,7 +618,6 @@ Partial Class Frm_PlanHorasExtra
         Me.totalTriples.HeaderText = "Total Triples"
         Me.totalTriples.Name = "totalTriples"
         Me.totalTriples.ReadOnly = True
-        Me.totalTriples.Visible = False
         Me.totalTriples.Width = 65
         '
         'totalDescLaborado
@@ -627,7 +625,6 @@ Partial Class Frm_PlanHorasExtra
         Me.totalDescLaborado.HeaderText = "Total Desc Laborado"
         Me.totalDescLaborado.Name = "totalDescLaborado"
         Me.totalDescLaborado.ReadOnly = True
-        Me.totalDescLaborado.Visible = False
         Me.totalDescLaborado.Width = 65
         '
         'totalBruto
@@ -635,7 +632,6 @@ Partial Class Frm_PlanHorasExtra
         Me.totalBruto.HeaderText = "Bruto"
         Me.totalBruto.Name = "totalBruto"
         Me.totalBruto.ReadOnly = True
-        Me.totalBruto.Visible = False
         Me.totalBruto.Width = 65
         '
         'TotalNeto
@@ -643,7 +639,6 @@ Partial Class Frm_PlanHorasExtra
         Me.TotalNeto.HeaderText = "Neto"
         Me.TotalNeto.Name = "TotalNeto"
         Me.TotalNeto.ReadOnly = True
-        Me.TotalNeto.Visible = False
         Me.TotalNeto.Width = 65
         '
         'Frm_PlanHorasExtra

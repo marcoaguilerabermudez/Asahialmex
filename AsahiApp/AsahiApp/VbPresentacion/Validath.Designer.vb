@@ -26,6 +26,8 @@ Partial Class Validath
         Me.panel1 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.pbx = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -64,12 +66,10 @@ Partial Class Validath
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.pbx = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.panel1.SuspendLayout()
+        CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panel1
@@ -110,6 +110,26 @@ Partial Class Validath
         Me.Button1.Text = "Acomodar Checadas"
         Me.Button1.UseVisualStyleBackColor = False
         Me.Button1.Visible = False
+        '
+        'pbx
+        '
+        Me.pbx.ErrorImage = CType(resources.GetObject("pbx.ErrorImage"), System.Drawing.Image)
+        Me.pbx.Location = New System.Drawing.Point(906, 10)
+        Me.pbx.Name = "pbx"
+        Me.pbx.Size = New System.Drawing.Size(132, 138)
+        Me.pbx.TabIndex = 176
+        Me.pbx.TabStop = False
+        '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(32, 71)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(63, 80)
+        Me.Button2.TabIndex = 149
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
@@ -520,26 +540,6 @@ Partial Class Validath
         Me.x.Name = "x"
         Me.x.Width = 18
         '
-        'pbx
-        '
-        Me.pbx.ErrorImage = CType(resources.GetObject("pbx.ErrorImage"), System.Drawing.Image)
-        Me.pbx.Location = New System.Drawing.Point(906, 10)
-        Me.pbx.Name = "pbx"
-        Me.pbx.Size = New System.Drawing.Size(132, 138)
-        Me.pbx.TabIndex = 176
-        Me.pbx.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(32, 71)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(63, 80)
-        Me.Button2.TabIndex = 149
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'Validath
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -553,10 +553,10 @@ Partial Class Validath
         Me.Text = "Validación de Incidencias y Tiempo Extra"
         Me.panel1.ResumeLayout(False)
         Me.panel1.PerformLayout()
+        CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

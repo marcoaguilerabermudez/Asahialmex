@@ -487,7 +487,6 @@ Partial Class Frm_Principal
         'EvaluacionesToolStripMenuItem1
         '
         Me.EvaluacionesToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrincipalToolStripMenuItem})
-        Me.EvaluacionesToolStripMenuItem1.Enabled = False
         Me.EvaluacionesToolStripMenuItem1.Name = "EvaluacionesToolStripMenuItem1"
         Me.EvaluacionesToolStripMenuItem1.Size = New System.Drawing.Size(236, 22)
         Me.EvaluacionesToolStripMenuItem1.Text = "Evaluaciones"

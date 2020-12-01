@@ -51,7 +51,7 @@ Public Class Frm_Principal
             SolicitudToolStripMenuItem.Enabled = True
             ValidaciónToolStripMenuItem.Enabled = True
             SolicitudToolStripMenuItem1.Enabled = True
-            'EvaluacionesToolStripMenuItem1.Enabled = False
+            '  EvaluacionesToolStripMenuItem1.Enabled = False
 
         ElseIf Me.emp.rh_permiso = 3 Then
             SolicitudToolStripMenuItem.Enabled = True
@@ -59,7 +59,7 @@ Public Class Frm_Principal
             SolicitudToolStripMenuItem1.Enabled = True
             ValidaciónRHToolStripMenuItem.Enabled = True
             ValidaciónRHToolStripMenuItem1.Enabled = True
-            ' EvaluacionesToolStripMenuItem1.Enabled = True
+            '  EvaluacionesToolStripMenuItem1.Enabled = True
 
         End If
 
@@ -224,6 +224,8 @@ Public Class Frm_Principal
         Retardos.lbl_var.Text = Var
         Retardos.Show()
     End Sub
+
+
     'Private Sub DescansoLaboradoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescansoLaboradoToolStripMenuItem.Click
     '    'Ejecuta reporte de Descanso Laborado de RH
     '    Dim Descanso As New Frm_Parametros_rep_prenomina()
@@ -238,6 +240,8 @@ Public Class Frm_Principal
     '    Retardos.lbl_var.Text = Var
     '    Retardos.ShowDialog()
     'End Sub
+
+
     Private Sub PlanHorasExtraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanHorasExtraToolStripMenuItem.Click
         Dim hrsEx As New Frm_PlanHorasExtra()
         hrsEx.Show()

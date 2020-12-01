@@ -25,6 +25,11 @@ Partial Class EvaluacionesPrincipal
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EvaluacionesPrincipal))
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.cbx_perfil = New System.Windows.Forms.ComboBox()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cbx_tipoeva = New System.Windows.Forms.ComboBox()
         Me.btn_solicitar = New System.Windows.Forms.Button()
@@ -42,13 +47,30 @@ Partial Class EvaluacionesPrincipal
         Me.cbx_mes = New System.Windows.Forms.ComboBox()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.btn_liberar = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lbl_autorizacion = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lbl_evaluacion = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lbl_liberacion = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.lbl_totalpuntos = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.cbx_perfil)
+        Me.Panel3.Controls.Add(Me.Panel5)
+        Me.Panel3.Controls.Add(Me.Label7)
+        Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.cbx_tipoeva)
         Me.Panel3.Controls.Add(Me.btn_solicitar)
@@ -66,14 +88,67 @@ Partial Class EvaluacionesPrincipal
         Me.Panel3.Controls.Add(Me.cbx_mes)
         Me.Panel3.Location = New System.Drawing.Point(4, 1)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(971, 64)
+        Me.Panel3.Size = New System.Drawing.Size(1019, 105)
         Me.Panel3.TabIndex = 180
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(272, 10)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(30, 13)
+        Me.Label8.TabIndex = 194
+        Me.Label8.Text = "Perfil"
+        '
+        'cbx_perfil
+        '
+        Me.cbx_perfil.BackColor = System.Drawing.SystemColors.Control
+        Me.cbx_perfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_perfil.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.cbx_perfil.FormattingEnabled = True
+        Me.cbx_perfil.Items.AddRange(New Object() {"--Todos--", "Sindicalizados", "Confianza"})
+        Me.cbx_perfil.Location = New System.Drawing.Point(314, 7)
+        Me.cbx_perfil.Name = "cbx_perfil"
+        Me.cbx_perfil.Size = New System.Drawing.Size(135, 21)
+        Me.cbx_perfil.TabIndex = 193
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.Gold
+        Me.Panel5.Location = New System.Drawing.Point(906, 26)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(33, 10)
+        Me.Panel5.TabIndex = 192
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label7.Location = New System.Drawing.Point(940, 25)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(56, 12)
+        Me.Label7.TabIndex = 191
+        Me.Label7.Text = "Liberado RH"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Button1.Location = New System.Drawing.Point(664, 13)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(120, 35)
+        Me.Button1.TabIndex = 190
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(199, 9)
+        Me.Label5.Location = New System.Drawing.Point(208, 38)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(98, 13)
         Me.Label5.TabIndex = 189
@@ -85,8 +160,8 @@ Partial Class EvaluacionesPrincipal
         Me.cbx_tipoeva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_tipoeva.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipoeva.FormattingEnabled = True
-        Me.cbx_tipoeva.Items.AddRange(New Object() {"3 meses", "6 meses", "9 meses", "15 meses", "Anual"})
-        Me.cbx_tipoeva.Location = New System.Drawing.Point(304, 6)
+        Me.cbx_tipoeva.Items.AddRange(New Object() {"--Todas--", "3 meses", "9 meses", "15 meses", "2 años", "Más de 2 años"})
+        Me.cbx_tipoeva.Location = New System.Drawing.Point(313, 35)
         Me.cbx_tipoeva.Name = "cbx_tipoeva"
         Me.cbx_tipoeva.Size = New System.Drawing.Size(135, 21)
         Me.cbx_tipoeva.TabIndex = 188
@@ -95,7 +170,7 @@ Partial Class EvaluacionesPrincipal
         '
         Me.btn_solicitar.BackColor = System.Drawing.Color.Gainsboro
         Me.btn_solicitar.ForeColor = System.Drawing.Color.Green
-        Me.btn_solicitar.Location = New System.Drawing.Point(529, 34)
+        Me.btn_solicitar.Location = New System.Drawing.Point(538, 65)
         Me.btn_solicitar.Name = "btn_solicitar"
         Me.btn_solicitar.Size = New System.Drawing.Size(64, 20)
         Me.btn_solicitar.TabIndex = 187
@@ -106,8 +181,9 @@ Partial Class EvaluacionesPrincipal
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.Enabled = False
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(11, 35)
+        Me.Label4.Location = New System.Drawing.Point(13, 51)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(26, 13)
         Me.Label4.TabIndex = 186
@@ -117,10 +193,11 @@ Partial Class EvaluacionesPrincipal
         '
         Me.cbx_año.BackColor = System.Drawing.SystemColors.Control
         Me.cbx_año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_año.Enabled = False
         Me.cbx_año.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_año.FormattingEnabled = True
         Me.cbx_año.Items.AddRange(New Object() {"2020", "2021", "2022", "2023"})
-        Me.cbx_año.Location = New System.Drawing.Point(43, 32)
+        Me.cbx_año.Location = New System.Drawing.Point(45, 48)
         Me.cbx_año.Name = "cbx_año"
         Me.cbx_año.Size = New System.Drawing.Size(77, 21)
         Me.cbx_año.TabIndex = 185
@@ -128,7 +205,7 @@ Partial Class EvaluacionesPrincipal
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.Linen
-        Me.Panel4.Location = New System.Drawing.Point(837, 5)
+        Me.Panel4.Location = New System.Drawing.Point(906, 5)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(33, 10)
         Me.Panel4.TabIndex = 184
@@ -138,16 +215,16 @@ Partial Class EvaluacionesPrincipal
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label3.Location = New System.Drawing.Point(871, 4)
+        Me.Label3.Location = New System.Drawing.Point(940, 4)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(94, 12)
+        Me.Label3.Size = New System.Drawing.Size(46, 12)
         Me.Label3.TabIndex = 183
-        Me.Label3.Text = "Pendiente por evaluar"
+        Me.Label3.Text = "Pendiente"
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Green
-        Me.Panel2.Location = New System.Drawing.Point(837, 43)
+        Me.Panel2.BackColor = System.Drawing.Color.LightGreen
+        Me.Panel2.Location = New System.Drawing.Point(906, 64)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(32, 10)
         Me.Panel2.TabIndex = 182
@@ -157,7 +234,7 @@ Partial Class EvaluacionesPrincipal
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(871, 41)
+        Me.Label2.Location = New System.Drawing.Point(940, 62)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 12)
         Me.Label2.TabIndex = 181
@@ -166,7 +243,7 @@ Partial Class EvaluacionesPrincipal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.LightBlue
-        Me.Panel1.Location = New System.Drawing.Point(837, 24)
+        Me.Panel1.Location = New System.Drawing.Point(906, 45)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(33, 10)
         Me.Panel1.TabIndex = 180
@@ -176,7 +253,7 @@ Partial Class EvaluacionesPrincipal
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label6.Location = New System.Drawing.Point(871, 23)
+        Me.Label6.Location = New System.Drawing.Point(940, 44)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 12)
         Me.Label6.TabIndex = 179
@@ -186,7 +263,7 @@ Partial Class EvaluacionesPrincipal
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(224, 36)
+        Me.Label1.Location = New System.Drawing.Point(233, 67)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(74, 13)
         Me.Label1.TabIndex = 154
@@ -200,7 +277,7 @@ Partial Class EvaluacionesPrincipal
         Me.cbx_depto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_depto.FormattingEnabled = True
         Me.cbx_depto.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.cbx_depto.Location = New System.Drawing.Point(304, 33)
+        Me.cbx_depto.Location = New System.Drawing.Point(313, 64)
         Me.cbx_depto.Name = "cbx_depto"
         Me.cbx_depto.Size = New System.Drawing.Size(210, 21)
         Me.cbx_depto.TabIndex = 153
@@ -209,8 +286,9 @@ Partial Class EvaluacionesPrincipal
         'Label32
         '
         Me.Label32.AutoSize = True
+        Me.Label32.Enabled = False
         Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label32.Location = New System.Drawing.Point(10, 8)
+        Me.Label32.Location = New System.Drawing.Point(12, 24)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(27, 13)
         Me.Label32.TabIndex = 152
@@ -220,10 +298,11 @@ Partial Class EvaluacionesPrincipal
         '
         Me.cbx_mes.BackColor = System.Drawing.SystemColors.Control
         Me.cbx_mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_mes.Enabled = False
         Me.cbx_mes.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_mes.FormattingEnabled = True
         Me.cbx_mes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.cbx_mes.Location = New System.Drawing.Point(42, 5)
+        Me.cbx_mes.Location = New System.Drawing.Point(44, 21)
         Me.cbx_mes.Name = "cbx_mes"
         Me.cbx_mes.Size = New System.Drawing.Size(135, 21)
         Me.cbx_mes.TabIndex = 150
@@ -231,6 +310,7 @@ Partial Class EvaluacionesPrincipal
         'dtgvp
         '
         Me.dtgvp.AllowUserToAddRows = False
+        Me.dtgvp.AllowUserToDeleteRows = False
         Me.dtgvp.AllowUserToOrderColumns = True
         Me.dtgvp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
@@ -244,10 +324,10 @@ Partial Class EvaluacionesPrincipal
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dtgvp.Location = New System.Drawing.Point(5, 89)
+        Me.dtgvp.Location = New System.Drawing.Point(5, 112)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(783, 440)
+        Me.dtgvp.Size = New System.Drawing.Size(748, 417)
         Me.dtgvp.TabIndex = 181
         '
         'x
@@ -256,11 +336,143 @@ Partial Class EvaluacionesPrincipal
         Me.x.Name = "x"
         Me.x.Width = 18
         '
+        'btn_liberar
+        '
+        Me.btn_liberar.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.btn_liberar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_liberar.ForeColor = System.Drawing.Color.Gold
+        Me.btn_liberar.Location = New System.Drawing.Point(846, 494)
+        Me.btn_liberar.Name = "btn_liberar"
+        Me.btn_liberar.Size = New System.Drawing.Size(120, 35)
+        Me.btn_liberar.TabIndex = 191
+        Me.btn_liberar.Text = "Liberar"
+        Me.btn_liberar.UseVisualStyleBackColor = False
+        Me.btn_liberar.Visible = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.lbl_autorizacion)
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Controls.Add(Me.lbl_evaluacion)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Controls.Add(Me.lbl_liberacion)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.lbl_totalpuntos)
+        Me.GroupBox1.Controls.Add(Me.Label14)
+        Me.GroupBox1.Location = New System.Drawing.Point(763, 114)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(260, 356)
+        Me.GroupBox1.TabIndex = 192
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Selección"
+        '
+        'lbl_autorizacion
+        '
+        Me.lbl_autorizacion.AutoSize = True
+        Me.lbl_autorizacion.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_autorizacion.ForeColor = System.Drawing.Color.Black
+        Me.lbl_autorizacion.Location = New System.Drawing.Point(122, 99)
+        Me.lbl_autorizacion.Name = "lbl_autorizacion"
+        Me.lbl_autorizacion.Size = New System.Drawing.Size(65, 13)
+        Me.lbl_autorizacion.TabIndex = 181
+        Me.lbl_autorizacion.Text = "Sin autorizar"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.SystemColors.Control
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(7, 99)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(112, 13)
+        Me.Label15.TabIndex = 180
+        Me.Label15.Text = "Fecha de autorización"
+        '
+        'lbl_evaluacion
+        '
+        Me.lbl_evaluacion.AutoSize = True
+        Me.lbl_evaluacion.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_evaluacion.ForeColor = System.Drawing.Color.Black
+        Me.lbl_evaluacion.Location = New System.Drawing.Point(122, 70)
+        Me.lbl_evaluacion.Name = "lbl_evaluacion"
+        Me.lbl_evaluacion.Size = New System.Drawing.Size(60, 13)
+        Me.lbl_evaluacion.TabIndex = 179
+        Me.lbl_evaluacion.Text = "Sin evaluar"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.SystemColors.Control
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(11, 70)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(107, 13)
+        Me.Label12.TabIndex = 178
+        Me.Label12.Text = "Fecha de evaluación"
+        '
+        'lbl_liberacion
+        '
+        Me.lbl_liberacion.AutoSize = True
+        Me.lbl_liberacion.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_liberacion.ForeColor = System.Drawing.Color.Black
+        Me.lbl_liberacion.Location = New System.Drawing.Point(122, 44)
+        Me.lbl_liberacion.Name = "lbl_liberacion"
+        Me.lbl_liberacion.Size = New System.Drawing.Size(53, 13)
+        Me.lbl_liberacion.TabIndex = 177
+        Me.lbl_liberacion.Text = "Sin liberar"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.SystemColors.Control
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(16, 44)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(100, 13)
+        Me.Label10.TabIndex = 176
+        Me.Label10.Text = "Fecha de liberación"
+        '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(102, 279)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(68, 71)
+        Me.Button2.TabIndex = 175
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'lbl_totalpuntos
+        '
+        Me.lbl_totalpuntos.AutoSize = True
+        Me.lbl_totalpuntos.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_totalpuntos.ForeColor = System.Drawing.Color.Black
+        Me.lbl_totalpuntos.Location = New System.Drawing.Point(122, 20)
+        Me.lbl_totalpuntos.Name = "lbl_totalpuntos"
+        Me.lbl_totalpuntos.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_totalpuntos.TabIndex = 174
+        Me.lbl_totalpuntos.Text = "0"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.SystemColors.Control
+        Me.Label14.ForeColor = System.Drawing.Color.Black
+        Me.Label14.Location = New System.Drawing.Point(33, 20)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(82, 13)
+        Me.Label14.TabIndex = 173
+        Me.Label14.Text = "Total de Puntos"
+        '
         'EvaluacionesPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(978, 541)
+        Me.ClientSize = New System.Drawing.Size(1024, 541)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.btn_liberar)
         Me.Controls.Add(Me.dtgvp)
         Me.Controls.Add(Me.Panel3)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -270,6 +482,8 @@ Partial Class EvaluacionesPrincipal
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -292,4 +506,20 @@ Partial Class EvaluacionesPrincipal
     Friend WithEvents btn_solicitar As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents cbx_tipoeva As ComboBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents cbx_perfil As ComboBox
+    Friend WithEvents btn_liberar As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents lbl_totalpuntos As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents lbl_autorizacion As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents lbl_evaluacion As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents lbl_liberacion As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Button2 As Button
 End Class
