@@ -109,6 +109,7 @@ Partial Class Frm_Principal
         Me.MensualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SemanalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -494,7 +495,7 @@ Partial Class Frm_Principal
         'PrincipalToolStripMenuItem
         '
         Me.PrincipalToolStripMenuItem.Name = "PrincipalToolStripMenuItem"
-        Me.PrincipalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PrincipalToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
         Me.PrincipalToolStripMenuItem.Text = "Principal"
         '
         'ControlDePruducciónToolStripMenuItem
@@ -664,6 +665,15 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GeneralToolStripMenuItem.Text = "General"
         '
+        'Lbl_Version
+        '
+        Me.Lbl_Version.AutoSize = True
+        Me.Lbl_Version.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Lbl_Version.Location = New System.Drawing.Point(751, 30)
+        Me.Lbl_Version.Name = "Lbl_Version"
+        Me.Lbl_Version.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_Version.TabIndex = 3
+        '
         'Frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -671,6 +681,7 @@ Partial Class Frm_Principal
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(751, 450)
+        Me.Controls.Add(Me.Lbl_Version)
         Me.Controls.Add(Me.Men_Principal)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -681,6 +692,7 @@ Partial Class Frm_Principal
         Me.Men_Principal.ResumeLayout(False)
         Me.Men_Principal.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Men_Principal As MenuStrip
@@ -769,4 +781,5 @@ Partial Class Frm_Principal
     Friend WithEvents PolizasDiarioVentasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EvaluacionesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PrincipalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Lbl_Version As Label
 End Class

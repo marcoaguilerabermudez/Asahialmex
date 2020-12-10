@@ -14,8 +14,6 @@ Public Class Frm_Principal
     'Variable para generar reportes de prenómina
     Public Var As Int64
     Dim empleado As New Empleado
-
-
 #Region "Constructores"
     Sub New()
 
@@ -38,6 +36,7 @@ Public Class Frm_Principal
     End Sub
 #End Region
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Lbl_Version.Text = My.Application.Info.Version.ToString
         If Me.emp.TipoUsuario = 0 Then
             Dim lstPer As New LPermisos(), NEmp As New NEmpleado()
             BloquearPestañas()
