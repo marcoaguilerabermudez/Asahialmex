@@ -186,6 +186,12 @@
     <Compile Include="ContenedorReporteDeptoN.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReporteDeptoPuesto.Designer.vb">
+      <DependentUpon>ContenedorReporteDeptoPuesto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteDeptoPuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteExcedenteTe.Designer.vb">
       <DependentUpon>ContenedorReporteExcedenteTe.vb</DependentUpon>
     </Compile>
@@ -230,6 +236,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet4.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetReporteSuspencion.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -301,6 +312,12 @@
       <DependentUpon>EvaluacionesPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="EvaluacionesPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluacionPersonal.Designer.vb">
+      <DependentUpon>EvaluacionPersonal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionPersonal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Finanzas\Frm_ConceptoEgreso.Designer.vb">
@@ -385,6 +402,12 @@
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>
     </Compile>
     <Compile Include="MuestradatosOEE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuestraKardexEva.Designer.vb">
+      <DependentUpon>MuestraKardexEva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MuestraKardexEva.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MuestraOeeCompleto.Designer.vb">
@@ -583,6 +606,9 @@
     <EmbeddedResource Include="ContenedorReporteDeptoN.resx">
       <DependentUpon>ContenedorReporteDeptoN.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteDeptoPuesto.resx">
+      <DependentUpon>ContenedorReporteDeptoPuesto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteExcedenteTe.resx">
       <DependentUpon>ContenedorReporteExcedenteTe.vb</DependentUpon>
     </EmbeddedResource>
@@ -606,6 +632,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EvaluacionesPrincipal.resx">
       <DependentUpon>EvaluacionesPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluacionPersonal.resx">
+      <DependentUpon>EvaluacionPersonal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Finanzas\Frm_ConceptoEgreso.resx">
       <DependentUpon>Frm_ConceptoEgreso.vb</DependentUpon>
@@ -649,6 +678,9 @@
     <EmbeddedResource Include="MuestradatosOEE.resx">
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MuestraKardexEva.resx">
+      <DependentUpon>MuestraKardexEva.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MuestraOeeCompleto.resx">
       <DependentUpon>MuestraOeeCompleto.vb</DependentUpon>
     </EmbeddedResource>
@@ -661,6 +693,7 @@
     <EmbeddedResource Include="ReporteFaltaJusInj.rdlc" />
     <EmbeddedResource Include="ReporteNuevoDepto.rdlc" />
     <EmbeddedResource Include="ReportePermisoCSGoce.rdlc" />
+    <EmbeddedResource Include="ReportePuestoDepartamento.rdlc" />
     <EmbeddedResource Include="ReporteSuspension.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />
@@ -778,6 +811,17 @@
     </None>
     <None Include="DataSet3.xss">
       <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet4.xsc">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet4.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet4.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet4.xss">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
     </None>
     <None Include="DataSetReporteSuspencion.xsc">
       <DependentUpon>DataSetReporteSuspencion.xsd</DependentUpon>

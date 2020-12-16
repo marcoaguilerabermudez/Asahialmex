@@ -102,7 +102,7 @@ select descripcion,clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CEN
         With Cmd
             .CommandType = CommandType.Text
             .CommandText = "	
-select descripcion,CLAVE from giro.[asahi16].[Supervisor_giro].[Puesto] where clave not in ('003','007','011','015','014','013','012','010')
+select descripcion,CLAVE from giro.[asahi16].[Supervisor_giro].[Puesto] where clave not in ('003','011','015','014','013','012','010')
 "
             .Connection = Cn
         End With
@@ -461,6 +461,8 @@ SELECT  [Id_motivopermiso]
             Check_entrada.Visible = False
             Check_salida.Visible = False
             'rbt_nocturno.Visible = False
+            lbl_ndepto.Location = New Point(258, 203)
+            cbx_depto.Location = New Point(334, 199)
 
             desde_h.Visible = True
             hasta_h.Visible = True
@@ -514,6 +516,7 @@ SELECT  [Id_motivopermiso]
             cbx_puesto.Visible = True
 
 
+
         ElseIf cbx_tipo.Text = "Suspensión" Then
             Check_entrada.Visible = False
             Check_salida.Visible = False
@@ -551,6 +554,30 @@ SELECT  [Id_motivopermiso]
         If cbx_motivo.Text = "Otro" Then
             Label7.Visible = True
             txt_motivo.Visible = True
+        ElseIf cbx_motivo.Text = "Cambio de puesto y departamento" Then
+
+            lbl_ndepto.Visible = True
+            cbx_depto.Visible = True
+
+            lbl_ndepto.Location = New Point(550, 203)
+            cbx_depto.Location = New Point(630, 199)
+            Label7.Visible = False
+            txt_motivo.Visible = False
+            Check_aviso.Checked = False
+            txt_quien.Clear()
+
+        ElseIf cbx_motivo.Text = "Cambio de puesto" Then
+
+            lbl_ndepto.Visible = False
+            cbx_depto.Visible = False
+
+            Label7.Visible = False
+            txt_motivo.Visible = False
+            Check_aviso.Checked = False
+            txt_quien.Clear()
+
+
+
         Else
             Label7.Visible = False
             txt_motivo.Visible = False
@@ -718,12 +745,19 @@ SELECT  [Id_motivopermiso]
             ContenedorReporteDeptoN.Show()
 
 
-        ElseIf vpermiso = 8 Then
+        ElseIf vpermiso = 8 And cbx_motivo.Text = "Cambio de puesto" Then
             ContenedorReporteNuevoPuesto.id = y
             ContenedorReporteNuevoPuesto.Tipo = 0
             ContenedorReporteNuevoPuesto.motivo = 0
             ContenedorReporteNuevoPuesto.retardo = 0
             ContenedorReporteNuevoPuesto.Show()
+
+        ElseIf vpermiso = 8 And cbx_motivo.Text = "Cambio de puesto y departamento" Then
+            ContenedorReporteDeptoPuesto.id = y
+            ContenedorReporteDeptoPuesto.Tipo = 0
+            ContenedorReporteDeptoPuesto.motivo = 0
+            ContenedorReporteDeptoPuesto.retardo = 0
+            ContenedorReporteDeptoPuesto.Show()
 
 
         ElseIf vpermiso = 9 Then
@@ -910,7 +944,6 @@ SELECT  [Id_motivopermiso]
 
 
             command.ExecuteNonQuery()
-
 
 
 
