@@ -246,7 +246,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoe = 'Vespertino' then '01/01/1900 23:25:00'
   when @turnoe = 'Nocturno' then  '01/01/1900 06:55:00'
   when @turnoe = 'Administrativo' then  '01/01/1900 17:00:00'
-  end, 0, @depto,0,getdate())
+  end, 0, @depto,0,'01/01/1900')
 
 
 

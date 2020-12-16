@@ -141,7 +141,7 @@ Partial Class FormatoSM
         '
         Me.lbl_npuesto.AutoSize = True
         Me.lbl_npuesto.ForeColor = System.Drawing.Color.Black
-        Me.lbl_npuesto.Location = New System.Drawing.Point(254, 202)
+        Me.lbl_npuesto.Location = New System.Drawing.Point(255, 202)
         Me.lbl_npuesto.Name = "lbl_npuesto"
         Me.lbl_npuesto.Size = New System.Drawing.Size(77, 13)
         Me.lbl_npuesto.TabIndex = 412
