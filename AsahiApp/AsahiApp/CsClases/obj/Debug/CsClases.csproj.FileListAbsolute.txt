@@ -20,3 +20,9 @@ C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\De
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.dll
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.pdb
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csprojAssemblyReference.cache
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.pdb
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csprojAssemblyReference.cache
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csproj.CoreCompileInputs.cache
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.pdb

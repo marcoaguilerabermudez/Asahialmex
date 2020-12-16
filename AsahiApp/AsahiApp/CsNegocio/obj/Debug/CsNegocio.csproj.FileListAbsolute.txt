@@ -42,3 +42,14 @@ C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\D
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.pdb
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.pdb
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsClases.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsClases.pdb
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.pdb
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csprojAssemblyReference.cache
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CoreCompileInputs.cache
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.pdb

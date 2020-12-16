@@ -66,3 +66,20 @@ C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\De
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.dll
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.xml
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.pdb
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.pdb
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\Clases.xml
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsClases.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsDatos.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsNegocio.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsClases.pdb
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsDatos.pdb
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsNegocio.pdb
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbprojAssemblyReference.cache
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.Resources.resources
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.GenerateResource.cache
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CoreCompileInputs.cache
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CopyComplete
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.dll
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.xml
+C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.pdb
