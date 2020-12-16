@@ -795,6 +795,18 @@ SELECT  [Id_motivopermiso]
 
                 End If
 
+
+            ElseIf permiso = 2 Then
+
+                If dtp1.Value.ToShortDateString <= Today.Now Then
+
+
+                    MessageBox.Show("Debe pedir el permiso con 1 día de anticipación", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    revisaincidencia()
+
+                End If
+
             Else
 
                 revisaincidencia()
