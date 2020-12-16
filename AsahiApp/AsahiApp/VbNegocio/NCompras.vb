@@ -94,9 +94,9 @@ Public Class NCompras
     End Function
     Public Function RecuperaSubCategorias(ByVal cadenaConex As String, ByVal lstCompras As LCompras, ByVal cta As String, ByVal segneg As String) As String
         Dim DComp As New DCompras()
-        Select Case segneg
-            Case 11 : segneg = 4
-        End Select
+        'Select Case segneg
+        '    Case 11 : segneg = 4
+        'End Select
         Return DComp.RecuperaSubCategorias(cadenaConex, lstCompras, cta, segneg)
     End Function
     Public Sub AgregarBitacora(ByVal cadenaConex As String, ByVal lstComp As LCompras)

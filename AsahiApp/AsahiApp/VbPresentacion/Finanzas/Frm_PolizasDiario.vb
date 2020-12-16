@@ -179,32 +179,32 @@ Public Class Frm_PolizasDiario
                         End If
                     Else
                         MsgBox("EL DOCUMENTO CONTABLE ESTA CREADO", MsgBoxStyle.Information)
-                    End If
-                Else
-                        MsgBox("ESTA PROVICION YA ESTA PREPARADA PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
+                End If
+            Else
+                MsgBox("ESTA PROVICION YA ESTA PREPARADA PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
                 End If
             ElseIf Me.origen = 2 Then
                 If Dgv_Compras.Rows(fila).Cells("seleccion").Value = 0 Then
-                    'If Comp.DocContableCrea = False Then
-                    If Comp.TxtCreado = True Then
+                    If Comp.DocContableCrea = False Then
+                        If Comp.TxtCreado = True Then
                             respuesta = MsgBox("El Txt ya fue creado. Desea continuar?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Txt Creado")
                         Else
                             respuesta = "6"
                         End If
                         If respuesta = "6" Then
-                            Me.pasoPol = ""
-                            uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
-                            moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
-                            Me.Ocomp = Dgv_Compras.Rows(fila).Cells("oc").Value
-                            Me.IdProvi = Dgv_Compras.Rows(fila).Cells("provision").Value
-                            RecuperarEgreso(moneda, uuid, Me.Ocomp)
-                            If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
-                        End If
-                        'Else
-                        '    MsgBox("EL DOCUMENTO CONTABLE ESTA CREADO", MsgBoxStyle.Information)
-                        'End If
-                    Else
-                    MsgBox("ESTE EGRESO YA ESTA PREPARADO PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
+                        Me.pasoPol = ""
+                        uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
+                        moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
+                        Me.Ocomp = Dgv_Compras.Rows(fila).Cells("oc").Value
+                        Me.IdProvi = Dgv_Compras.Rows(fila).Cells("provision").Value
+                        RecuperarEgreso(moneda, uuid, Me.Ocomp)
+                        If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+                    End If
+                Else
+                    MsgBox("EL DOCUMENTO CONTABLE ESTA CREADO", MsgBoxStyle.Information)
+                End If
+            Else
+                MsgBox("ESTE EGRESO YA ESTA PREPARADO PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
                 End If
             End If
         Else
@@ -860,14 +860,25 @@ Public Class Frm_PolizasDiario
     End Sub
     Private Sub RellenaDGVPolizasEgresos(ByVal lstComp As LCompras)
         Dim fila As Integer = Dgv_Egresos.Rows.Count(), pfila As Integer = fila
-        'Dim sum As Double, sumCargo As Double, sumRet As Double, t As Double
         Dim frm As New Frm_ConceptoEgreso(lstComp), NComp As New NCompras()
+        Dim totalP As Double, totMovP As Double, totMA As Double, filaMA As Integer, res As Double = 0
+        Dim op As String = ""
 
         If frm.ShowDialog() = DialogResult.OK Then
             For Each item In lstComp
                 Dgv_Egresos.Rows.Add()
                 Dim sNeg As String = ""
-                If item.Pivote = 2 Then sNeg = NComp.RecuperaSubCategorias(Me.cadenaConex, lstComp, item.Cuenta, NComp.IdSegNeg(Me.cadConexCont, item.Area))
+
+                If item.Pivote = 1 Then
+                    totalP = Format(item.TotalFactura, "0.00")
+                ElseIf item.Pivote = 2 Then
+                    sNeg = NComp.RecuperaSubCategorias(Me.cadenaConex, lstComp, item.Cuenta, NComp.IdSegNeg(Me.cadConexCont, item.Area))
+                    totMovP = Format(totMovP + item.TotalFactura, "0.00")
+                    If item.TotalFactura > totMA Then
+                        totMA = Format(item.TotalFactura, "0.00")
+                        filaMA = fila
+                    End If
+                End If
 
                 With Dgv_Egresos.Rows(fila)
                     .Cells("pivote").Value = item.Pivote
@@ -895,6 +906,23 @@ Public Class Frm_PolizasDiario
                 fila += 1
             Next
             Me.pasoPol = "Ok"
+            If totalP > totMovP Then
+                res = Format(totalP - totMovP, "0.00")
+                op = "s"
+            ElseIf totMovP > totalP Then
+                res = Format(totMovP - totalP, "0.00")
+                op = "r"
+            End If
+
+            If res <> 0 And op = "s" Then
+                With Dgv_Egresos.Rows(filaMA)
+                    .Cells("total2").Value = Format(.Cells("total2").Value + res, "0.00")
+                End With
+            ElseIf res <> 0 And op = "r" Then
+                With Dgv_Egresos.Rows(filaMA)
+                    .Cells("total2").Value = Format(.Cells("total2").Value - res, "0.00")
+                End With
+            End If
         End If
     End Sub
     Private Sub RellenarPolizaVenta(ByVal lstVent As LVentas, ByVal oc As Integer)
