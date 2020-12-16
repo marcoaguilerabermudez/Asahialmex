@@ -677,7 +677,12 @@ end
     End Sub
 
     Private Sub btn_solicitar_Click(sender As Object, e As EventArgs) Handles btn_solicitar.Click
-        validarsolicitud()
+        If txt_motivo.Text = "" Then
+            MessageBox.Show("Debe poner un motivo que justifique su tiempo extra", "¡Aviso!")
+        Else
+            validarsolicitud()
+        End If
+
     End Sub
 
     Private Sub dtp1_ValueChanged(sender As Object, e As EventArgs) Handles dtp1.ValueChanged
