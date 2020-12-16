@@ -860,9 +860,8 @@ Public Class Frm_PolizasDiario
     End Sub
     Private Sub RellenaDGVPolizasEgresos(ByVal lstComp As LCompras)
         Dim fila As Integer = Dgv_Egresos.Rows.Count(), pfila As Integer = fila
-        'Dim sum As Double, sumCargo As Double, sumRet As Double, t As Double
         Dim frm As New Frm_ConceptoEgreso(lstComp), NComp As New NCompras()
-        Dim totalP As Double, totMovP As Double, totMA As Double, filaMA As Integer, res As Double = 0 'totalD As Double, totMovD As Double,tc As Double,
+        Dim totalP As Double, totMovP As Double, totMA As Double, filaMA As Integer, res As Double = 0
         Dim op As String = ""
 
         If frm.ShowDialog() = DialogResult.OK Then
@@ -872,16 +871,9 @@ Public Class Frm_PolizasDiario
 
                 If item.Pivote = 1 Then
                     totalP = Format(item.TotalFactura, "0.00")
-                    'tc = item.TazaCambio
-                    'If item.Moneda = "2" Or item.Moneda = "3" Then
-                    '    totalP = Format(totalD * tc, "0.00")
-                    'ElseIf item.Moneda = "1" Then
-                    '    totalP = Format(totalD, "0.00")
-                    'End If
                 ElseIf item.Pivote = 2 Then
                     sNeg = NComp.RecuperaSubCategorias(Me.cadenaConex, lstComp, item.Cuenta, NComp.IdSegNeg(Me.cadConexCont, item.Area))
                     totMovP = Format(totMovP + item.TotalFactura, "0.00")
-                    'totMovD = Format(totMovD + (item.TotalFactura / tc), "0.00")
                     If item.TotalFactura > totMA Then
                         totMA = Format(item.TotalFactura, "0.00")
                         filaMA = fila
