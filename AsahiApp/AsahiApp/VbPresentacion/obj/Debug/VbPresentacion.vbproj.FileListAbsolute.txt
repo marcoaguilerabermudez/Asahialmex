@@ -821,3 +821,4 @@ C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ContenedorReporteDeptoPuesto.resources
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.EvaluacionPersonal.resources
 C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.MuestraKardexEva.resources
+C:\Users\Efrain Urbina\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ContenedorReporteTestEvaluacion.resources

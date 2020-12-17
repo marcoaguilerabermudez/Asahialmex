@@ -3,8 +3,8 @@
 Public Class MuestraKardexEva
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
     Private Sub MuestraKardexEva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbl_clave.Text = EvaluacionPersonal.lbl_clave.Text
-        lbl_nombre.Text = EvaluacionPersonal.lbl_nombre.Text
+        lbl_clave.Text = Modulo_evaluaciones.e_clave
+        lbl_nombre.Text = Modulo_evaluaciones.e_nombre
 
         muestragrid()
     End Sub
@@ -19,8 +19,7 @@ Public Class MuestraKardexEva
             Dim da As New SqlDataAdapter("Sp_muestraincidencias", Cn)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
             da.SelectCommand.Parameters.AddWithValue("@tipo", "")
-
-            da.SelectCommand.Parameters.AddWithValue("@clave", EvaluacionPersonal.lbl_clave.Text)
+            da.SelectCommand.Parameters.AddWithValue("@clave", lbl_clave.Text)
 
 
             Dim dt As New DataTable

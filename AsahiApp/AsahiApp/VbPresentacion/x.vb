@@ -796,7 +796,7 @@ SELECT  [Id_motivopermiso]
                 End If
 
 
-            ElseIf permiso = 2 Then
+            ElseIf vpermiso = 2 Then
 
                 If dtp1.Value.ToShortDateString <= Today.Now Then
 
