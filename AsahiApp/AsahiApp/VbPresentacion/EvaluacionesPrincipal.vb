@@ -374,6 +374,7 @@ where id_evaluaciones = @ID and estado = 0
             ContenedorReporteTestEvaluacion.id_evaluaciones = id_eval
             ContenedorReporteTestEvaluacion.teval = tipo
             ContenedorReporteTestEvaluacion.Show()
+
         End If
 
     End Sub

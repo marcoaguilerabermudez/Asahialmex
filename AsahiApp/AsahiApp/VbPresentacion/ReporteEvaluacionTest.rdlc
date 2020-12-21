@@ -25,7 +25,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.7232cm</Top>
-            <Left>1.99384cm</Left>
+            <Left>0.3175cm</Left>
             <Height>0.53799cm</Height>
             <Width>7.23942cm</Width>
             <Style>
@@ -97,7 +97,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>2.25778cm</Top>
-            <Left>1.99384cm</Left>
+            <Left>0.3175cm</Left>
             <Height>0.53799cm</Height>
             <Width>7.23942cm</Width>
             <ZIndex>2</ZIndex>
@@ -184,10 +184,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.09702cm</Top>
-            <Left>10.92228cm</Left>
+            <Left>7.82974cm</Left>
             <Height>0.61736cm</Height>
-            <Width>4.66641cm</Width>
+            <Width>4.22706cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -220,10 +219,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.78493cm</Top>
-            <Left>12.40395cm</Left>
+            <Top>0.68791cm</Top>
+            <Left>7.82974cm</Left>
             <Height>0.53799cm</Height>
-            <Width>7.23942cm</Width>
+            <Width>4.22707cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -271,10 +270,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.46403cm</Top>
-            <Left>10.92228cm</Left>
+            <Top>1.36701cm</Top>
+            <Left>7.82974cm</Left>
             <Height>0.61736cm</Height>
-            <Width>4.66641cm</Width>
+            <Width>4.22706cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -307,10 +306,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>2.18723cm</Top>
-            <Left>12.40395cm</Left>
+            <Top>2.05493cm</Top>
+            <Left>7.82974cm</Left>
             <Height>0.53799cm</Height>
-            <Width>7.23942cm</Width>
+            <Width>4.22706cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -358,10 +357,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>3.09563cm</Top>
-            <Left>11.02676cm</Left>
+            <Top>2.99861cm</Top>
+            <Left>7.82974cm</Left>
             <Height>0.61736cm</Height>
-            <Width>4.66641cm</Width>
+            <Width>4.12258cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -394,10 +393,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>3.81883cm</Top>
-            <Left>12.50843cm</Left>
+            <Top>3.72181cm</Top>
+            <Left>7.82974cm</Left>
             <Height>0.53799cm</Height>
-            <Width>7.23942cm</Width>
+            <Width>4.22706cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -431,7 +430,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>3.72181cm</Top>
-            <Left>1.99384cm</Left>
+            <Left>0.3175cm</Left>
             <Height>0.53799cm</Height>
             <Width>7.23942cm</Width>
             <ZIndex>10</ZIndex>
@@ -540,7 +539,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>5.02948cm</Top>
-            <Left>1.99384cm</Left>
+            <Left>0.3175cm</Left>
             <Height>0.53799cm</Height>
             <Width>7.23942cm</Width>
             <ZIndex>13</ZIndex>
@@ -549,6 +548,297 @@
                 <Style>None</Style>
               </Border>
               <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Image Name="Image1">
+            <Source>External</Source>
+            <Value>="//172.16.6.51/v/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" &amp; First(Fields!Clave.Value, "DataSet1") &amp; ".jpg"</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.19086cm</Top>
+            <Left>12.28246cm</Left>
+            <Height>4.4129cm</Height>
+            <Width>3.7392cm</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Textbox Name="Textbox29">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>FI.....................1 </Value>
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value xml:space="preserve">  </Value>
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>FJ....................3   </Value>
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>PCG.................0</Value>
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>PSG.................0</Value>
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>SUS.................0</Value>
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>RET..................0 </Value>
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>MS UI Gothic</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.19086cm</Top>
+            <Left>16.72722cm</Left>
+            <Height>4.86269cm</Height>
+            <Width>2.99429cm</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Top</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -1061,7 +1351,7 @@
         <Top>8.0161cm</Top>
         <Left>0.6664cm</Left>
         <Height>1.09417cm</Height>
-        <Width>19.68534cm</Width>
+        <Width>19.68535cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>

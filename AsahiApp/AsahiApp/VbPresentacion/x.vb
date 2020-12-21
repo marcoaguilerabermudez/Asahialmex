@@ -887,8 +887,6 @@ SELECT  [Id_motivopermiso]
                 rbt_nocturno.Checked = False
                 btn_solicitar.Enabled = False
 
-
-
             Else
 
                 CargaIncidencia()
