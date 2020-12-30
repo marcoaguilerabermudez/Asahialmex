@@ -2,6 +2,9 @@
 
 Public Class EvaluacionesPrincipal
     Dim id As Integer
+    Dim id_eval As Integer
+    Dim tipo As String
+    Dim estado As Integer
     Dim depto As String
     Dim permiso As Integer
     Dim a As String
@@ -18,7 +21,7 @@ Public Class EvaluacionesPrincipal
 
     End Sub
 
-    Private Sub EvaluacionesPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub EvaluacionesPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
         a = Today.Month
@@ -163,7 +166,7 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
     End Sub
 
 
-    Sub Muestragrid()
+    Friend Sub Muestragrid()
 
         Try
             Cn.Close()
@@ -195,6 +198,7 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
         dtgvp.Columns("aprobacion").Visible = False
         dtgvp.Columns("evaluacion").Visible = False
         dtgvp.Columns("fecha").Visible = False
+        dtgvp.Columns("total_eval").Visible = False
 
         For Each row As DataGridViewRow In Me.dtgvp.Rows
 
@@ -221,7 +225,7 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
     End Sub
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+    Public Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         Muestragrid()
     End Sub
 
@@ -277,7 +281,10 @@ where id_evaluaciones = @ID and estado = 0
             lbl_autorizacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("aprobacion").Value.ToString()
             lbl_evaluacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("evaluacion").Value.ToString()
             lbl_liberacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("liberacion").Value.ToString()
-            'lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
+            lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
+            id_eval = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
+            tipo = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
+            estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
 
         Catch
         End Try
@@ -299,10 +306,16 @@ where id_evaluaciones = @ID and estado = 0
                 Modulo_evaluaciones.e_fecha = Me.dtgvp.Rows(e.RowIndex).Cells("fecha").Value.ToString()
                 Modulo_evaluaciones.e_nombre = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
                 Modulo_evaluaciones.e_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Puesto").Value.ToString()
+                Modulo_evaluaciones.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
+                Modulo_evaluaciones.e_estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
+                Modulo_evaluaciones.e_idemp = id
 
-                EvaluacionPersonal.Close()
+
+                Dim segundoForm As New EvaluacionPersonal
+
                 MuestraKardexEva.Dispose()
-                EvaluacionPersonal.Show()
+
+                segundoForm.Show(Me)
 
 
             Catch
@@ -319,8 +332,10 @@ where id_evaluaciones = @ID and estado = 0
             lbl_autorizacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("aprobacion").Value.ToString()
             lbl_evaluacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("evaluacion").Value.ToString()
             lbl_liberacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("liberacion").Value.ToString()
-            'lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
-
+            lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
+            id_eval = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
+            tipo = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
+            estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
         Catch
         End Try
 
@@ -345,11 +360,31 @@ where id_evaluaciones = @ID and estado = 0
         Next
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        generarreporte()
 
+
+    End Sub
+
+
+    Sub generarreporte()
+        If estado < 2 Then
+            MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            ContenedorReporteTestEvaluacion.id_evaluaciones = id_eval
+            ContenedorReporteTestEvaluacion.teval = tipo
+            ContenedorReporteTestEvaluacion.Show()
+
+        End If
+
+    End Sub
 End Class
 
 Module Modulo_evaluaciones
     Public e_clave As Integer
+    Public e_id As Integer
+    Public e_idemp As Integer
+    Public e_estado As Integer
     Public e_nombre As String
     Public e_depto As String
     Public e_puesto As String

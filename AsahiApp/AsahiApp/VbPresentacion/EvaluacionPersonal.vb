@@ -3,13 +3,19 @@
 Public Class EvaluacionPersonal
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
     Dim faltas As Integer
-
+    Dim id As Integer
+    Dim estado As Integer
+    Dim puntajemax As Double
+    Dim idemp As Integer
 
     Private Sub EvaluacionPersonal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
         lbl_nombre.Text = Modulo_evaluaciones.e_nombre
         lbl_clave.Text = Modulo_evaluaciones.e_clave
+        id = Modulo_evaluaciones.e_id
+        idemp = Modulo_evaluaciones.e_idemp
+        estado = Modulo_evaluaciones.e_estado
         lbl_depto.Text = Modulo_evaluaciones.e_depto
         lbl_puesto.Text = Modulo_evaluaciones.e_puesto
         lbl_evaluacion.Text = Modulo_evaluaciones.e_evaluacion
@@ -20,6 +26,24 @@ Public Class EvaluacionPersonal
         pbx.SizeMode = PictureBoxSizeMode.StretchImage
 
 
+
+
+        sumarpuntaje()
+
+
+    End Sub
+
+
+    Sub sumarpuntaje()
+        Dim Total As Double
+        Dim TotalM As Double
+
+        For Each row As DataGridViewRow In Me.dtgvp.Rows
+            Total += Val(row.Cells("Puntaje").Value)
+            TotalM += Val(row.Cells("Puntos Máximos").Value)
+        Next
+        Me.lbl_puntajetotal.Text = Total.ToString
+        Me.lbl_puntajm.Text = TotalM.ToString
     End Sub
 
 
@@ -35,6 +59,7 @@ Public Class EvaluacionPersonal
             da.SelectCommand.Parameters.AddWithValue("@clave", lbl_clave.Text)
             da.SelectCommand.Parameters.AddWithValue("@fecha", Modulo_evaluaciones.e_fecha)
             da.SelectCommand.Parameters.AddWithValue("@tipo", Modulo_evaluaciones.e_evaluacion)
+
 
             Dim ds As New DataSet
             ds.Clear()
@@ -108,11 +133,13 @@ Public Class EvaluacionPersonal
             da.SelectCommand.Parameters.AddWithValue("@tipo", lbl_evaluacion.Text)
             da.SelectCommand.Parameters.AddWithValue("@puntaje", lbl_puntosd.Text)
             da.SelectCommand.Parameters.AddWithValue("@faltas", faltas)
-
+            da.SelectCommand.Parameters.AddWithValue("@estado", estado)
+            da.SelectCommand.Parameters.AddWithValue("@id_eval", id)
 
             Dim dt As New DataTable
             da.Fill(dt)
             dtgvp.DataSource = dt
+
 
             Cn.Close()
         Catch ex As Exception
@@ -122,6 +149,7 @@ Public Class EvaluacionPersonal
         dtgvp.Columns("id_tipo").Visible = False
         dtgvp.Columns("id_evacrit").Visible = False
         dtgvp.Columns("Puntos Mínimos").Visible = False
+        dtgvp.Columns("nota").Visible = False
 
 
 
@@ -248,6 +276,13 @@ Public Class EvaluacionPersonal
             Next
         Catch
         End Try
+
+        Cargaevaluacion()
+
+
+
+
+
     End Sub
 
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellClick
@@ -266,6 +301,7 @@ Public Class EvaluacionPersonal
             Next
         Catch
         End Try
+        txt_observaciones.Text = Me.dtgvp.Rows(e.RowIndex).Cells("nota").Value.ToString()
     End Sub
 
 
@@ -283,7 +319,7 @@ Public Class EvaluacionPersonal
 
         Catch
         End Try
-
+        txt_observaciones.Text = Me.dtgvp.Rows(e.RowIndex).Cells("nota").Value.ToString()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -296,5 +332,70 @@ Public Class EvaluacionPersonal
         MuestraKardexEva.Dispose()
 
     End Sub
+
+
+    Sub Cargaevaluacion()
+        sumarpuntaje()
+
+
+
+        Dim Pregunta As Integer
+
+
+        Pregunta = MsgBox("Puntaje máximo posible = " & lbl_puntajm.Text & " " + vbCrLf + " Puntaje obtenido = " & lbl_puntajetotal.Text & " " + vbCrLf + " ¿Es correcta su evaluación?", vbYesNo + vbExclamation + vbDefaultButton2, "Evaluación")
+
+
+        If Pregunta = vbYes Then
+
+            Cn.Close()
+
+
+            Dim command As New SqlCommand("Sp_EvaluaEvaluacion", Cn)
+            Cn.Open()
+            Dim fila As DataGridViewRow = New DataGridViewRow()
+            command.CommandType = CommandType.StoredProcedure
+
+            Try
+
+                For Each fila In dtgvp.Rows
+
+
+                    command.Parameters.Clear()
+
+                    command.Parameters.AddWithValue("@id_eva", id)
+                    command.Parameters.AddWithValue("@user", idemp)
+                    command.Parameters.AddWithValue("@id_evacrit", (fila.Cells("id_evacrit").Value))
+                    command.Parameters.AddWithValue("@puntmax", (fila.Cells("Puntos Máximos").Value))
+                    command.Parameters.AddWithValue("@descripcion", lbl_evaluacion.Text)
+                    command.Parameters.AddWithValue("@puntaje", (fila.Cells("Puntaje").Value))
+                    command.Parameters.AddWithValue("@punttotal", lbl_puntajetotal.Text)
+                    command.Parameters.AddWithValue("@nota", txt_observaciones.Text)
+                    command.Parameters.AddWithValue("@estado", estado)
+                    command.Parameters.AddWithValue("@movimiento", (fila.Cells("id_tipo").Value))
+                    command.ExecuteNonQuery()
+
+                Next
+
+                MessageBox.Show("El empleado ha sido evaluado correctamente", "¡Carga exitosa!")
+                Dim ownerForm As EvaluacionesPrincipal = Me.Owner
+                ownerForm.Muestragrid()
+                btn_evaluar.Enabled = False
+
+
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+
+            Finally
+                Cn.Close()
+            End Try
+
+        ElseIf Pregunta = vbNo Then
+
+            MessageBox.Show("Acción no completada", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        End If
+    End Sub
+
 
 End Class

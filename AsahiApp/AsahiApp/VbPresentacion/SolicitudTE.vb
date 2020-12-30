@@ -17,6 +17,7 @@ Public Class SolicitudTE
         Me.id = id
         Me.depto = depto
         Me.permiso = permiso
+
     End Sub
 
 
@@ -29,6 +30,7 @@ Public Class SolicitudTE
         End If
 
         Muestragrid()
+
         muestraetiquetaplan()
 
     End Sub
@@ -103,8 +105,10 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
 
 
     Sub muestraetiquetaplan()
+
         Cnn.Close()
         Cnn.Open()
+
         Try
             Dim da As New SqlDataAdapter("Sp_RhetiquetaplanTE", Cnn)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
@@ -200,7 +204,6 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
                     End If
                 Catch
                 End Try
-
             Else
                 MessageBox.Show("Las horas solicitadas deben tener un valor mayor a 0.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -247,13 +250,6 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoe = 'Nocturno' then  '01/01/1900 06:55:00'
   when @turnoe = 'Administrativo' then  '01/01/1900 17:00:00'
   end, 0, @depto,0,'01/01/1900')
-
-
-
-
-
-
-
 ", Cnn)
 
         Dim RI As String
@@ -338,14 +334,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoe = 'Vespertino' then '01/01/1900 23:25:00'
   when @turnoe = 'Nocturno' then  '01/01/1900 06:55:00'
   when @turnoe = 'Administrativo' then  '01/01/1900 17:00:00'
-  end, 0, @depto,1,getdate())
-
-
-
-
-
-
-
+  end, 0, @depto,1,'01/01/1900')
 ", Cnn)
 
         Dim RI As String
@@ -447,8 +436,6 @@ delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where grupo = 0 and clave =
 
 delete from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where clave = @clave and Fecha = @fecha and PlanExtra = 0
 
-
-
 if not exists (select clave from giro.[asahi16].[dbo].[Rh_entradasalida2] where clave = @clave and grupo =    case
   when @turnoe = 'Matutino' then 1
   when @turnoe = 'Vespertino' then 2
@@ -473,13 +460,13 @@ values (RIGHT(CONCAT('00000', @clave), 5),@fecha,
   end
 
 
-  if not exists (select clave from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where clave = @clave and turnoe =    case
-  when @turnoe = 'Matutino' then 1
-  when @turnoe = 'Vespertino' then 2
-  when @turnoe = 'Nocturno' then 3
-  when @turnoe = 'Administrativo' then 4
-  end and fecha = @fecha)
-  begin
+ if not exists (select clave from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where clave = @clave and turnoe =    case
+ when @turnoe = 'Matutino' then 1
+ when @turnoe = 'Vespertino' then 2
+ when @turnoe = 'Nocturno' then 3
+when @turnoe = 'Administrativo' then 4
+end and fecha = @fecha)
+begin
 insert into [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] (CLAVE, FECHA, ValSuper, ValRh,PlanExtra,TurnoA,TurnoE )
 select RIGHT(CONCAT('00000', @clave), 5), convert (date , @fecha),0,0,1,
 case
@@ -515,8 +502,8 @@ end
 
                     RI = "¡Registro Autorizado!"
 
-
                 End If
+
             Next
 
             MessageBox.Show(RI, "¡Aviso!")
@@ -542,33 +529,29 @@ end
         Dim eliminar As SqlCommand = New SqlCommand("delete from [AsahiSystem].[dbo].[Rh_solicitudTE]
  where Id_solicitudte = @ID
 
-  if
-  (select count(clave) from giro.[asahi16].[dbo].[Rh_entradasalida2]
-  where clave = @clave and fecha = @fecha) > 1
-  begin
-  delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where clave = @clave and fecha = @fecha and grupo = case
+if
+(select count(clave) from giro.[asahi16].[dbo].[Rh_entradasalida2]
+where clave = @clave and fecha = @fecha) > 1
+begin
+delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where clave = @clave and fecha = @fecha and grupo = case
 when @turnoe = 'Matutino' then 1
 when @turnoe = 'Nocturno' then 3
 when @turnoe = 'Administrativo' then 4
 end
-  delete from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where Clave = @clave and Fecha = @fecha and PlanExtra = 1 and TurnoE = case
+delete from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where Clave = @clave and Fecha = @fecha and PlanExtra = 1 and TurnoE = case
 when @turnoe = 'Matutino' then 1
 when @turnoe = 'Vespertino' then 2
 when @turnoe = 'Nocturno' then 3
 when @turnoe = 'Administrativo' then 4
 end
-  end
+end
 
   else if (select count(clave) from giro.[asahi16].[dbo].[Rh_entradasalida2]
   where clave = @clave and fecha = @fecha) = 1
   begin 
   update giro.[asahi16].[dbo].[Rh_entradasalida2] set grupo = 0 where clave = @clave and fecha = @fecha
   update [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] set TurnoE = 0, PlanExtra = 0 where clave = @clave and fecha = @fecha
-  end 
-  
-
-
-", Cnn)
+  end ", Cnn)
 
         Dim fila As DataGridViewRow = New DataGridViewRow()
         Dim RI As String
@@ -586,14 +569,11 @@ end
                     eliminar.ExecuteNonQuery()
 
                     RI = "¡Registro Eliminado!"
-
-
                 End If
             Next
 
             MessageBox.Show(RI, "¡Aviso!")
             Muestragrid()
-
 
         Catch ex As Exception
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
@@ -601,9 +581,10 @@ end
             Cnn.Close()
         Finally
             Cnn.Close()
-
         End Try
+
         muestraetiquetaplan()
+
     End Sub
 
 
@@ -612,51 +593,62 @@ end
             muestraetiqueta()
 
 
-            If txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2) Then
-                cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
-            ElseIf txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 6 OrElse dtp1.Value.DayOfWeek = 0) Then
-                cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Administrativo")
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
+            If dtp1.Value.ToShortDateString < "24/12/2020" Then
+
+                If txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2) Then
+                    cbx_textra.Items.Clear()
+                    cbx_textra.Items.Add("Nocturno")
+                    cbx_textra.Items.Add("Vespertino")
+                ElseIf txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 6 OrElse dtp1.Value.DayOfWeek = 0) Then
+                    cbx_textra.Items.Clear()
+                    cbx_textra.Items.Add("Administrativo")
+                    cbx_textra.Items.Add("Matutino")
+                    cbx_textra.Items.Add("Nocturno")
+                    cbx_textra.Items.Add("Vespertino")
 
 
-            ElseIf txt_turno.Text = "Matutino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
-                cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
-            ElseIf txt_turno.Text = "Matutino" And (dtp1.Value.DayOfWeek = 0) Then
-                cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Administrativo")
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
+                ElseIf txt_turno.Text = "Matutino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
+
+                    cbx_textra.Items.Clear()
+                    cbx_textra.Items.Add("Nocturno")
+                    cbx_textra.Items.Add("Vespertino")
+
+                ElseIf txt_turno.Text = "Matutino" And (dtp1.Value.DayOfWeek = 0) Then
+
+                    cbx_textra.Items.Clear()
+                    cbx_textra.Items.Add("Administrativo")
+                    cbx_textra.Items.Add("Matutino")
+                    cbx_textra.Items.Add("Nocturno")
+                    cbx_textra.Items.Add("Vespertino")
+
+                ElseIf txt_turno.Text = "Vespertino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
+                    cbx_textra.Items.Clear()
+                    cbx_textra.Items.Add("Matutino")
+                    cbx_textra.Items.Add("Nocturno")
+
+                ElseIf txt_turno.Text = "Vespertino" And (dtp1.Value.DayOfWeek = 0) Then
+
+                    cbx_textra.Items.Clear()
+                    cbx_textra.Items.Add("Administrativo")
+                    cbx_textra.Items.Add("Matutino")
+                    cbx_textra.Items.Add("Nocturno")
+                    cbx_textra.Items.Add("Vespertino")
 
 
 
+                ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
+                    cbx_textra.Items.Clear()
+                    cbx_textra.Items.Add("Matutino")
+                    cbx_textra.Items.Add("Vespertino")
+                ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 0) Then
+                    cbx_textra.Items.Clear()
+                    cbx_textra.Items.Add("Administrativo")
+                    cbx_textra.Items.Add("Matutino")
+                    cbx_textra.Items.Add("Nocturno")
+                    cbx_textra.Items.Add("Vespertino")
+                End If
 
-
-            ElseIf txt_turno.Text = "Vespertino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
-                cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
-            ElseIf txt_turno.Text = "Vespertino" And (dtp1.Value.DayOfWeek = 0) Then
-                cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Administrativo")
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
-
-
-
-            ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
-                cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Vespertino")
-            ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 0) Then
+            Else
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")
                 cbx_textra.Items.Add("Matutino")
@@ -664,8 +656,9 @@ end
                 cbx_textra.Items.Add("Vespertino")
             End If
 
+
         ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then
-            txt_clave.Clear()
+                txt_clave.Clear()
             txt_nombre.Clear()
             txt_turno.Clear()
             txt_depto.Clear()
@@ -677,7 +670,11 @@ end
     End Sub
 
     Private Sub btn_solicitar_Click(sender As Object, e As EventArgs) Handles btn_solicitar.Click
-        validarsolicitud()
+        If txt_motivo.Text = "" Then
+            MessageBox.Show("Debe poner un motivo que justifique su tiempo extra", "¡Aviso!")
+        Else
+            validarsolicitud()
+        End If
     End Sub
 
     Private Sub dtp1_ValueChanged(sender As Object, e As EventArgs) Handles dtp1.ValueChanged

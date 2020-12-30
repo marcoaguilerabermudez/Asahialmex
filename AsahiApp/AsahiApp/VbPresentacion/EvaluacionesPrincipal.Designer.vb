@@ -55,11 +55,11 @@ Partial Class EvaluacionesPrincipal
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lbl_liberacion = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.lbl_totalpuntos = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btn_desma = New System.Windows.Forms.Button()
         Me.btn_selec = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -183,7 +183,6 @@ Partial Class EvaluacionesPrincipal
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Enabled = False
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(13, 51)
         Me.Label4.Name = "Label4"
@@ -288,7 +287,6 @@ Partial Class EvaluacionesPrincipal
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Enabled = False
         Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label32.Location = New System.Drawing.Point(12, 24)
         Me.Label32.Name = "Label32"
@@ -435,17 +433,6 @@ Partial Class EvaluacionesPrincipal
         Me.Label10.TabIndex = 176
         Me.Label10.Text = "Fecha de liberación"
         '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(94, 199)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(68, 71)
-        Me.Button2.TabIndex = 175
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'lbl_totalpuntos
         '
         Me.lbl_totalpuntos.AutoSize = True
@@ -489,6 +476,17 @@ Partial Class EvaluacionesPrincipal
         Me.btn_selec.Text = "Seleccionar"
         Me.btn_selec.UseVisualStyleBackColor = False
         Me.btn_selec.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(94, 199)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(68, 71)
+        Me.Button2.TabIndex = 175
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'EvaluacionesPrincipal
         '
