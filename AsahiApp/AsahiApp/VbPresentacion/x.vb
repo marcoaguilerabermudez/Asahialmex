@@ -556,49 +556,62 @@ SELECT  [Id_motivopermiso]
             Muestragrid()
 
 
-        Catch
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+
+
         End Try
 
     End Sub
 
     Private Sub cbx_motivo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_motivo.SelectedIndexChanged
 
-        If cbx_motivo.Text = "Otro" Then
-            Label7.Visible = True
-            txt_motivo.Visible = True
-        ElseIf cbx_motivo.Text = "Cambio de puesto y departamento" Then
+        Try
 
-            lbl_ndepto.Visible = True
-            cbx_depto.Visible = True
+            If cbx_motivo.Text = "Otro" Then
+                Label7.Visible = True
+                txt_motivo.Visible = True
+            ElseIf cbx_motivo.Text = "Cambio de puesto y departamento" Then
 
-            lbl_ndepto.Location = New Point(550, 203)
-            cbx_depto.Location = New Point(630, 199)
-            Label7.Visible = False
-            txt_motivo.Visible = False
-            Check_aviso.Checked = False
-            txt_quien.Clear()
+                lbl_ndepto.Visible = True
+                cbx_depto.Visible = True
 
-        ElseIf cbx_motivo.Text = "Cambio de puesto" Then
+                lbl_ndepto.Location = New Point(550, 203)
+                cbx_depto.Location = New Point(630, 199)
+                Label7.Visible = False
+                txt_motivo.Visible = False
+                Check_aviso.Checked = False
+                txt_quien.Clear()
 
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
+            ElseIf cbx_motivo.Text = "Cambio de puesto" Then
 
-            Label7.Visible = False
-            txt_motivo.Visible = False
-            Check_aviso.Checked = False
-            txt_quien.Clear()
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+
+                Label7.Visible = False
+                txt_motivo.Visible = False
+                Check_aviso.Checked = False
+                txt_quien.Clear()
 
 
 
-        Else
-            Label7.Visible = False
-            txt_motivo.Visible = False
-            Check_aviso.Checked = False
-            txt_quien.Clear()
+            Else
+                Label7.Visible = False
+                txt_motivo.Visible = False
+                Check_aviso.Checked = False
+                txt_quien.Clear()
 
-        End If
+            End If
 
-        variables()
+            variables()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+
+
+        End Try
+
+
+
     End Sub
 
     Private Sub FormatoSM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
