@@ -240,59 +240,64 @@ SELECT  [Id_motivopermiso]
 
 
     Private Sub txt_clave_TextChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_clave.KeyPress
-        If AscW(e.KeyChar) = CInt(Keys.Enter) Then
-            muestraetiqueta()
-            muestraetiquetavacaciones()
+
+        Try
+
+            If AscW(e.KeyChar) = CInt(Keys.Enter) Then
+                muestraetiqueta()
+                muestraetiquetavacaciones()
 
 
-            cbx_tipo.Enabled = True
-            cbx_motivo.Enabled = True
-
-
-
-            cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
-            cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
-            cbx_tipo.Text = "---Seleccionar---"
-            cbx_motivo.Text = "---Seleccionar---"
+                cbx_tipo.Enabled = True
+                cbx_motivo.Enabled = True
 
 
 
-
-        ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then
-            txt_clave.Clear()
-            lbl_empleado.Text = "Empleado"
-            lbl_depto.Text = "Departamento"
-            lbl_turno.Text = "Turno"
-            lbl_puesto.Text = "Puesto"
-
-            cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
-            cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
-            cbx_tipo.Text = ""
-            cbx_motivo.Text = ""
-
-            cbx_tipo.Enabled = False
-            cbx_motivo.Enabled = False
-
-            rbt_falta.Checked = True
-            txt_motivo.Clear()
-            Check_entrada.Checked = True
-            rbt_nocturno.Checked = False
-            Check_aviso.Checked = False
-            txt_quien.Clear()
-            btn_solicitar.Enabled = False
-            dtgvp.Visible = False
-            gbx_vacaciones.Visible = False
-            lbl_pendientes.Text = "0"
-            lbl_tomados.Text = "0"
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
-            lbl_npuesto.Visible = False
-            cbx_puesto.Visible = False
+                cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
+                cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
+                cbx_tipo.Text = "---Seleccionar---"
+                cbx_motivo.Text = "---Seleccionar---"
 
 
 
-        End If
 
+            ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then
+                txt_clave.Clear()
+                lbl_empleado.Text = "Empleado"
+                lbl_depto.Text = "Departamento"
+                lbl_turno.Text = "Turno"
+                lbl_puesto.Text = "Puesto"
+
+                cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
+                cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
+                cbx_tipo.Text = ""
+                cbx_motivo.Text = ""
+
+                cbx_tipo.Enabled = False
+                cbx_motivo.Enabled = False
+
+                rbt_falta.Checked = True
+                txt_motivo.Clear()
+                Check_entrada.Checked = True
+                rbt_nocturno.Checked = False
+                Check_aviso.Checked = False
+                txt_quien.Clear()
+                btn_solicitar.Enabled = False
+                dtgvp.Visible = False
+                gbx_vacaciones.Visible = False
+                lbl_pendientes.Text = "0"
+                lbl_tomados.Text = "0"
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
+
+
+
+            End If
+
+        Catch
+        End Try
     End Sub
 
 

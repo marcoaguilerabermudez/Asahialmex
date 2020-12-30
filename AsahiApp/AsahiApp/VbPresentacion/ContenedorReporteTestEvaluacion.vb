@@ -5,13 +5,18 @@
 
 
     Private Sub ContenedorReporteTestEvaluacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Me.Sp_reporteTestEvaluacionTableAdapter.Fill(Me.DataSet5.Sp_reporteTestEvaluacion, teval, id_evaluaciones)
-        ReportViewer1.LocalReport.EnableExternalImages = True
-        Me.ReportViewer1.RefreshReport()
+        Try
+            Me.Sp_reporteTestEvaluacionTableAdapter.Fill(Me.DataSet5.Sp_reporteTestEvaluacion, teval, id_evaluaciones)
+            ReportViewer1.LocalReport.EnableExternalImages = True
+            Me.ReportViewer1.RefreshReport()
+        Catch
+        End Try
     End Sub
+
 
     Private Sub ReportViewer1_Load(sender As Object, e As EventArgs) Handles ReportViewer1.Load
 
     End Sub
+
+
 End Class

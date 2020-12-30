@@ -25,13 +25,23 @@ Partial Class ContenedorReporteDeptoPuesto
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ContenedorReporteDeptoPuesto))
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet4 = New Presentacion.DataSet4()
         Me.Sp_reporteincidenciaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet4 = New Presentacion.DataSet4()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Sp_reporteincidenciaTableAdapter = New Presentacion.DataSet4TableAdapters.Sp_reporteincidenciaTableAdapter()
-        CType(Me.DataSet4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Sp_reporteincidenciaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Sp_reporteincidenciaBindingSource
+        '
+        Me.Sp_reporteincidenciaBindingSource.DataMember = "Sp_reporteincidencia"
+        Me.Sp_reporteincidenciaBindingSource.DataSource = Me.DataSet4
+        '
+        'DataSet4
+        '
+        Me.DataSet4.DataSetName = "DataSet4"
+        Me.DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -45,16 +55,6 @@ Partial Class ContenedorReporteDeptoPuesto
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'DataSet4
-        '
-        Me.DataSet4.DataSetName = "DataSet4"
-        Me.DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Sp_reporteincidenciaBindingSource
-        '
-        Me.Sp_reporteincidenciaBindingSource.DataMember = "Sp_reporteincidencia"
-        Me.Sp_reporteincidenciaBindingSource.DataSource = Me.DataSet4
         '
         'Sp_reporteincidenciaTableAdapter
         '
@@ -70,8 +70,8 @@ Partial Class ContenedorReporteDeptoPuesto
         Me.Name = "ContenedorReporteDeptoPuesto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ContenedorReporteDeptoPuesto"
-        CType(Me.DataSet4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Sp_reporteincidenciaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

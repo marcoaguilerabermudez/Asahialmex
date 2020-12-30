@@ -17,6 +17,7 @@ Public Class SolicitudTE
         Me.id = id
         Me.depto = depto
         Me.permiso = permiso
+
     End Sub
 
 
@@ -29,6 +30,7 @@ Public Class SolicitudTE
         End If
 
         Muestragrid()
+
         muestraetiquetaplan()
 
     End Sub
@@ -103,8 +105,10 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
 
 
     Sub muestraetiquetaplan()
+
         Cnn.Close()
         Cnn.Open()
+
         Try
             Dim da As New SqlDataAdapter("Sp_RhetiquetaplanTE", Cnn)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
@@ -200,7 +204,6 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
                     End If
                 Catch
                 End Try
-
             Else
                 MessageBox.Show("Las horas solicitadas deben tener un valor mayor a 0.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -247,13 +250,6 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoe = 'Nocturno' then  '01/01/1900 06:55:00'
   when @turnoe = 'Administrativo' then  '01/01/1900 17:00:00'
   end, 0, @depto,0,'01/01/1900')
-
-
-
-
-
-
-
 ", Cnn)
 
         Dim RI As String
@@ -338,14 +334,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoe = 'Vespertino' then '01/01/1900 23:25:00'
   when @turnoe = 'Nocturno' then  '01/01/1900 06:55:00'
   when @turnoe = 'Administrativo' then  '01/01/1900 17:00:00'
-  end, 0, @depto,1,getdate())
-
-
-
-
-
-
-
+  end, 0, @depto,1,'01/01/1900')
 ", Cnn)
 
         Dim RI As String
@@ -447,8 +436,6 @@ delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where grupo = 0 and clave =
 
 delete from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where clave = @clave and Fecha = @fecha and PlanExtra = 0
 
-
-
 if not exists (select clave from giro.[asahi16].[dbo].[Rh_entradasalida2] where clave = @clave and grupo =    case
   when @turnoe = 'Matutino' then 1
   when @turnoe = 'Vespertino' then 2
@@ -473,13 +460,13 @@ values (RIGHT(CONCAT('00000', @clave), 5),@fecha,
   end
 
 
-  if not exists (select clave from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where clave = @clave and turnoe =    case
-  when @turnoe = 'Matutino' then 1
-  when @turnoe = 'Vespertino' then 2
-  when @turnoe = 'Nocturno' then 3
-  when @turnoe = 'Administrativo' then 4
-  end and fecha = @fecha)
-  begin
+ if not exists (select clave from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where clave = @clave and turnoe =    case
+ when @turnoe = 'Matutino' then 1
+ when @turnoe = 'Vespertino' then 2
+ when @turnoe = 'Nocturno' then 3
+when @turnoe = 'Administrativo' then 4
+end and fecha = @fecha)
+begin
 insert into [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] (CLAVE, FECHA, ValSuper, ValRh,PlanExtra,TurnoA,TurnoE )
 select RIGHT(CONCAT('00000', @clave), 5), convert (date , @fecha),0,0,1,
 case
@@ -515,8 +502,8 @@ end
 
                     RI = "¡Registro Autorizado!"
 
-
                 End If
+
             Next
 
             MessageBox.Show(RI, "¡Aviso!")
@@ -564,11 +551,7 @@ end
   begin 
   update giro.[asahi16].[dbo].[Rh_entradasalida2] set grupo = 0 where clave = @clave and fecha = @fecha
   update [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] set TurnoE = 0, PlanExtra = 0 where clave = @clave and fecha = @fecha
-  end 
-  
-
-
-", Cnn)
+  end ", Cnn)
 
         Dim fila As DataGridViewRow = New DataGridViewRow()
         Dim RI As String
@@ -586,14 +569,11 @@ end
                     eliminar.ExecuteNonQuery()
 
                     RI = "¡Registro Eliminado!"
-
-
                 End If
             Next
 
             MessageBox.Show(RI, "¡Aviso!")
             Muestragrid()
-
 
         Catch ex As Exception
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
@@ -601,9 +581,10 @@ end
             Cnn.Close()
         Finally
             Cnn.Close()
-
         End Try
+
         muestraetiquetaplan()
+
     End Sub
 
 
@@ -639,10 +620,6 @@ end
                     cbx_textra.Items.Add("Matutino")
                     cbx_textra.Items.Add("Nocturno")
                     cbx_textra.Items.Add("Vespertino")
-
-
-
-
 
                 ElseIf txt_turno.Text = "Vespertino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
                     cbx_textra.Items.Clear()
