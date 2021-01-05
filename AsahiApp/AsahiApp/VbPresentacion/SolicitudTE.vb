@@ -593,9 +593,9 @@ end
             muestraetiqueta()
 
 
-            If dtp1.Value.ToShortDateString < "24/12/2020" Then
 
-                If txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2) Then
+
+            If txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2) Then
                     cbx_textra.Items.Clear()
                     cbx_textra.Items.Add("Nocturno")
                     cbx_textra.Items.Add("Vespertino")
@@ -648,16 +648,9 @@ end
                     cbx_textra.Items.Add("Vespertino")
                 End If
 
-            Else
-                cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Administrativo")
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
-            End If
 
 
-        ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then
+            ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then
                 txt_clave.Clear()
             txt_nombre.Clear()
             txt_turno.Clear()
