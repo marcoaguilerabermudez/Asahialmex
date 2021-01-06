@@ -1008,7 +1008,7 @@ Public Class Frm_PolizasDiario
 #Region "Otros"
     Private Sub CrearTxt()
         Me.userName = Environment.UserName
-        Me.ruta = "C:\Users\" & Me.userName & "\Desktop\Polizas\"
+        Me.ruta = "C:\Temp\Polizas\"
         If Me.origen = 1 Then
             Me.archivo = "PolizasDiario" & Format(Date.Now(), "yyyyMMddHHmmss") & ".txt"
         ElseIf Me.origen = 2 Then
