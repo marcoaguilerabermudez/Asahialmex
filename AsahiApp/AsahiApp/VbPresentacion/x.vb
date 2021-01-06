@@ -102,7 +102,7 @@ select descripcion,clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CEN
         With Cmd
             .CommandType = CommandType.Text
             .CommandText = "	
-select descripcion,CLAVE from giro.[asahi16].[Supervisor_giro].[Puesto] where clave not in ('003','007','011','015','014','013','012','010')
+select descripcion,CLAVE from giro.[asahi16].[Supervisor_giro].[Puesto] where clave not in ('003','011','015','014','013','012','010')
 "
             .Connection = Cn
         End With
@@ -240,326 +240,378 @@ SELECT  [Id_motivopermiso]
 
 
     Private Sub txt_clave_TextChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_clave.KeyPress
-        If AscW(e.KeyChar) = CInt(Keys.Enter) Then
-            muestraetiqueta()
-            muestraetiquetavacaciones()
+
+        Try
+
+            If AscW(e.KeyChar) = CInt(Keys.Enter) Then
+                muestraetiqueta()
+                muestraetiquetavacaciones()
 
 
-            cbx_tipo.Enabled = True
-            cbx_motivo.Enabled = True
-
-
-
-            cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
-            cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
-            cbx_tipo.Text = "---Seleccionar---"
-            cbx_motivo.Text = "---Seleccionar---"
+                cbx_tipo.Enabled = True
+                cbx_motivo.Enabled = True
 
 
 
-
-        ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then
-            txt_clave.Clear()
-            lbl_empleado.Text = "Empleado"
-            lbl_depto.Text = "Departamento"
-            lbl_turno.Text = "Turno"
-            lbl_puesto.Text = "Puesto"
-
-            cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
-            cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
-            cbx_tipo.Text = ""
-            cbx_motivo.Text = ""
-
-            cbx_tipo.Enabled = False
-            cbx_motivo.Enabled = False
-
-            rbt_falta.Checked = True
-            txt_motivo.Clear()
-            Check_entrada.Checked = True
-            rbt_nocturno.Checked = False
-            Check_aviso.Checked = False
-            txt_quien.Clear()
-            btn_solicitar.Enabled = False
-            dtgvp.Visible = False
-            gbx_vacaciones.Visible = False
-            lbl_pendientes.Text = "0"
-            lbl_tomados.Text = "0"
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
-            lbl_npuesto.Visible = False
-            cbx_puesto.Visible = False
+                cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
+                cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
+                cbx_tipo.Text = "---Seleccionar---"
+                cbx_motivo.Text = "---Seleccionar---"
 
 
 
-        End If
 
+            ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then
+                txt_clave.Clear()
+                lbl_empleado.Text = "Empleado"
+                lbl_depto.Text = "Departamento"
+                lbl_turno.Text = "Turno"
+                lbl_puesto.Text = "Puesto"
+
+                cbx_motivo.DropDownStyle = ComboBoxStyle.DropDown
+                cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
+                cbx_tipo.Text = ""
+                cbx_motivo.Text = ""
+
+                cbx_tipo.Enabled = False
+                cbx_motivo.Enabled = False
+
+                rbt_falta.Checked = True
+                txt_motivo.Clear()
+                Check_entrada.Checked = True
+                rbt_nocturno.Checked = False
+                Check_aviso.Checked = False
+                txt_quien.Clear()
+                btn_solicitar.Enabled = False
+                dtgvp.Visible = False
+                gbx_vacaciones.Visible = False
+                lbl_pendientes.Text = "0"
+                lbl_tomados.Text = "0"
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
+
+
+
+            End If
+
+        Catch
+        End Try
     End Sub
 
 
 
 
     Private Sub cbx_tipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_tipo.SelectedIndexChanged
-        cbx_motivo.DropDownStyle = ComboBoxStyle.DropDownList
-        cbx_tipo.DropDownStyle = ComboBoxStyle.DropDownList
-        llenacombomotivo()
-        If cbx_tipo.Text = "Registro en reloj checador" Then
-            Check_entrada.Visible = True
-            Check_salida.Visible = True
-            'rbt_nocturno.Visible = True
-            Label6.Visible = False
-            dtp2.Visible = False
-            Label9.Visible = False
-            Label8.Visible = False
-            desde_h.Visible = False
-            hasta_h.Visible = False
-            dtp_checada.Visible = True
-            Label10.Visible = False
-            dtp_regreso.Visible = False
-            gb_aviso.Visible = False
-            Check_aviso.Checked = False
-            'rbt_nocturno.Visible = True
-            vpermiso = 6
-            dtgvp.Visible = False
-            gbx_vacaciones.Visible = False
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
-            lbl_npuesto.Visible = False
-            cbx_puesto.Visible = False
+
+        Try
+
+            cbx_motivo.DropDownStyle = ComboBoxStyle.DropDownList
+            cbx_tipo.DropDownStyle = ComboBoxStyle.DropDownList
+            llenacombomotivo()
+            If cbx_tipo.Text = "Registro en reloj checador" Then
+                Check_entrada.Visible = True
+                Check_salida.Visible = True
+                'rbt_nocturno.Visible = True
+                Label6.Visible = False
+                dtp2.Visible = False
+                Label9.Visible = False
+                Label8.Visible = False
+                desde_h.Visible = False
+                hasta_h.Visible = False
+                dtp_checada.Visible = True
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = False
+                Check_aviso.Checked = False
+                'rbt_nocturno.Visible = True
+                vpermiso = 6
+                dtgvp.Visible = False
+                gbx_vacaciones.Visible = False
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
 
 
-        ElseIf cbx_tipo.Text = "Vacaciones" Then
-            Check_entrada.Visible = False
-            Check_salida.Visible = False
-            'rbt_nocturno.Visible = False
-            Label6.Visible = True
-            dtp2.Visible = True
-            Label9.Visible = False
-            Label8.Visible = False
-            desde_h.Visible = False
-            hasta_h.Visible = False
-            dtp_checada.Visible = False
-            Label10.Visible = True
-            dtp_regreso.Visible = True
-            gb_aviso.Visible = False
-            Check_aviso.Checked = False
-            gbx_tipo.Visible = False
-            gbx_vacaciones.Visible = True
-            'rbt_nocturno.Visible = False
-            muestraetiquetavacaciones()
-            dtp1.Value = Today.Now.AddDays(3)
-            dtp2.Value = Today.Now.AddDays(3)
-            vpermiso = 5
-            dtgvp.Visible = True
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
-            lbl_npuesto.Visible = False
-            cbx_puesto.Visible = False
+            ElseIf cbx_tipo.Text = "Vacaciones" Then
+                Check_entrada.Visible = False
+                Check_salida.Visible = False
+                'rbt_nocturno.Visible = False
+                Label6.Visible = True
+                dtp2.Visible = True
+                Label9.Visible = False
+                Label8.Visible = False
+                desde_h.Visible = False
+                hasta_h.Visible = False
+                dtp_checada.Visible = False
+                Label10.Visible = True
+                dtp_regreso.Visible = True
+                gb_aviso.Visible = False
+                Check_aviso.Checked = False
+                gbx_tipo.Visible = False
+                gbx_vacaciones.Visible = True
+                'rbt_nocturno.Visible = False
+                muestraetiquetavacaciones()
+                dtp1.Value = Today.Now.AddDays(3)
+                dtp2.Value = Today.Now.AddDays(3)
+                vpermiso = 5
+                dtgvp.Visible = True
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
 
 
-        ElseIf cbx_tipo.Text = "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)" Then
-            Check_entrada.Visible = False
-            Check_salida.Visible = False
-            'rbt_nocturno.Visible = False
-            Label6.Visible = True
-            dtp2.Visible = True
-            desde_h.Visible = True
-            hasta_h.Visible = True
-            Label9.Visible = True
-            Label8.Visible = True
-            dtp_checada.Visible = False
-            Label10.Visible = False
-            dtp_regreso.Visible = False
-            gb_aviso.Visible = True
-            gbx_tipo.Visible = True
-            'rbt_nocturno.Visible = False
-            vpermiso = 4
-            dtgvp.Visible = True
-            gbx_vacaciones.Visible = False
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
-            lbl_npuesto.Visible = False
-            cbx_puesto.Visible = False
+            ElseIf cbx_tipo.Text = "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)" Then
+                Check_entrada.Visible = False
+                Check_salida.Visible = False
+                'rbt_nocturno.Visible = False
+                Label6.Visible = True
+                dtp2.Visible = True
+                desde_h.Visible = True
+                hasta_h.Visible = True
+                Label9.Visible = True
+                Label8.Visible = True
+                dtp_checada.Visible = False
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = True
+                gbx_tipo.Visible = True
+                'rbt_nocturno.Visible = False
+                vpermiso = 4
+                dtgvp.Visible = True
+                gbx_vacaciones.Visible = False
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
 
 
-        ElseIf cbx_tipo.Text = "Falta o retardo injustificado y sin goce de sueldo" Then
-            Check_entrada.Visible = False
-            Check_salida.Visible = False
-            'rbt_nocturno.Visible = False
-            Label6.Visible = True
-            dtp2.Visible = True
-            desde_h.Visible = True
-            hasta_h.Visible = True
-            Label9.Visible = True
-            Label8.Visible = True
-            dtp_checada.Visible = False
-            Label10.Visible = False
-            dtp_regreso.Visible = False
-            gb_aviso.Visible = True
-            gbx_tipo.Visible = True
-            'rbt_nocturno.Visible = False
-            vpermiso = 3
-            dtgvp.Visible = True
-            gbx_vacaciones.Visible = False
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
-            lbl_npuesto.Visible = False
-            cbx_puesto.Visible = False
+            ElseIf cbx_tipo.Text = "Falta o retardo injustificado y sin goce de sueldo" Then
+                Check_entrada.Visible = False
+                Check_salida.Visible = False
+                'rbt_nocturno.Visible = False
+                Label6.Visible = True
+                dtp2.Visible = True
+                desde_h.Visible = True
+                hasta_h.Visible = True
+                Label9.Visible = True
+                Label8.Visible = True
+                dtp_checada.Visible = False
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = True
+                gbx_tipo.Visible = True
+                'rbt_nocturno.Visible = False
+                vpermiso = 3
+                dtgvp.Visible = True
+                gbx_vacaciones.Visible = False
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
 
 
-        ElseIf cbx_tipo.Text = "Permiso sin goce de sueldo" Then
-            Check_entrada.Visible = False
-            Check_salida.Visible = False
-            'rbt_nocturno.Visible = False
-            Label6.Visible = True
-            dtp2.Visible = True
-            desde_h.Visible = True
-            hasta_h.Visible = True
-            Label9.Visible = True
-            Label8.Visible = True
-            dtp_checada.Visible = False
-            Label10.Visible = False
-            dtp_regreso.Visible = False
-            gb_aviso.Visible = False
-            Check_aviso.Checked = False
-            gbx_tipo.Visible = False
-            'rbt_nocturno.Visible = False
-            vpermiso = 2
-            dtgvp.Visible = True
-            gbx_vacaciones.Visible = False
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
-            lbl_npuesto.Visible = False
-            cbx_puesto.Visible = False
+            ElseIf cbx_tipo.Text = "Permiso sin goce de sueldo" Then
+                Check_entrada.Visible = False
+                Check_salida.Visible = False
+                'rbt_nocturno.Visible = False
+                Label6.Visible = True
+                dtp2.Visible = True
+                desde_h.Visible = True
+                hasta_h.Visible = True
+                Label9.Visible = True
+                Label8.Visible = True
+                dtp_checada.Visible = False
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = False
+                Check_aviso.Checked = False
+                gbx_tipo.Visible = False
+                'rbt_nocturno.Visible = False
+                vpermiso = 2
+                dtgvp.Visible = True
+                gbx_vacaciones.Visible = False
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
 
 
-        ElseIf cbx_tipo.Text = "Permiso con goce de sueldo" Then
-            Check_entrada.Visible = False
-            Check_salida.Visible = False
-            'rbt_nocturno.Visible = False
-            Label6.Visible = True
-            dtp2.Visible = True
-            desde_h.Visible = True
-            hasta_h.Visible = True
-            Label9.Visible = True
-            Label8.Visible = True
-            dtp_checada.Visible = False
-            Label10.Visible = False
-            dtp_regreso.Visible = False
-            gb_aviso.Visible = False
-            Check_aviso.Checked = False
-            gbx_tipo.Visible = False
-            'rbt_nocturno.Visible = False
-            vpermiso = 1
-            dtgvp.Visible = True
-            gbx_vacaciones.Visible = False
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
-            lbl_npuesto.Visible = False
-            cbx_puesto.Visible = False
+            ElseIf cbx_tipo.Text = "Permiso con goce de sueldo" Then
+                Check_entrada.Visible = False
+                Check_salida.Visible = False
+                'rbt_nocturno.Visible = False
+                Label6.Visible = True
+                dtp2.Visible = True
+                desde_h.Visible = True
+                hasta_h.Visible = True
+                Label9.Visible = True
+                Label8.Visible = True
+                dtp_checada.Visible = False
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = False
+                Check_aviso.Checked = False
+                gbx_tipo.Visible = False
+                'rbt_nocturno.Visible = False
+                vpermiso = 1
+                dtgvp.Visible = True
+                gbx_vacaciones.Visible = False
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
 
-        ElseIf cbx_tipo.Text = "Cambio de departamento" Then
-            Check_entrada.Visible = False
-            Check_salida.Visible = False
-            'rbt_nocturno.Visible = False
+            ElseIf cbx_tipo.Text = "Cambio de departamento" Then
+                Check_entrada.Visible = False
+                Check_salida.Visible = False
+                'rbt_nocturno.Visible = False
+                lbl_ndepto.Location = New Point(258, 203)
+                cbx_depto.Location = New Point(334, 199)
 
-            desde_h.Visible = True
-            hasta_h.Visible = True
-            Label9.Visible = True
-            Label8.Visible = True
-            dtp_checada.Visible = False
-            Label10.Visible = False
-            dtp_regreso.Visible = False
-            gb_aviso.Visible = False
-            Check_aviso.Checked = False
-            gbx_tipo.Visible = False
-            'rbt_nocturno.Visible = False
-            vpermiso = 7
-            dtgvp.Visible = True
-            gbx_vacaciones.Visible = False
+                desde_h.Visible = True
+                hasta_h.Visible = True
+                Label9.Visible = True
+                Label8.Visible = True
+                dtp_checada.Visible = False
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = False
+                Check_aviso.Checked = False
+                gbx_tipo.Visible = False
+                'rbt_nocturno.Visible = False
+                vpermiso = 7
+                dtgvp.Visible = True
+                gbx_vacaciones.Visible = False
 
-            lbl_ndepto.Visible = True
-            cbx_depto.Visible = True
-            Label6.Visible = False
-            dtp2.Visible = False
+                lbl_ndepto.Visible = True
+                cbx_depto.Visible = True
+                Label6.Visible = False
+                dtp2.Visible = False
 
-            lbl_npuesto.Visible = False
-            cbx_puesto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
 
-        ElseIf cbx_tipo.Text = "Cambio de puesto" Then
-            Check_entrada.Visible = False
-            Check_salida.Visible = False
-            'rbt_nocturno.Visible = False
+            ElseIf cbx_tipo.Text = "Cambio de puesto" Then
+                Check_entrada.Visible = False
+                Check_salida.Visible = False
+                'rbt_nocturno.Visible = False
 
-            desde_h.Visible = True
-            hasta_h.Visible = True
-            Label9.Visible = True
-            Label8.Visible = True
-            dtp_checada.Visible = False
-            Label10.Visible = False
-            dtp_regreso.Visible = False
-            gb_aviso.Visible = False
-            Check_aviso.Checked = False
-            gbx_tipo.Visible = False
-            'rbt_nocturno.Visible = False
-            vpermiso = 8
-            dtgvp.Visible = True
-            gbx_vacaciones.Visible = False
+                desde_h.Visible = True
+                hasta_h.Visible = True
+                Label9.Visible = True
+                Label8.Visible = True
+                dtp_checada.Visible = False
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = False
+                Check_aviso.Checked = False
+                gbx_tipo.Visible = False
+                'rbt_nocturno.Visible = False
+                vpermiso = 8
+                dtgvp.Visible = True
+                gbx_vacaciones.Visible = False
 
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
-            Label6.Visible = False
-            dtp2.Visible = False
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                Label6.Visible = False
+                dtp2.Visible = False
 
-            lbl_npuesto.Visible = True
-            cbx_puesto.Visible = True
-
-
-        ElseIf cbx_tipo.Text = "Suspensión" Then
-            Check_entrada.Visible = False
-            Check_salida.Visible = False
-            'rbt_nocturno.Visible = False
-            Label6.Visible = True
-            dtp2.Visible = True
-            desde_h.Visible = True
-            hasta_h.Visible = True
-            Label9.Visible = True
-            Label8.Visible = True
-            dtp_checada.Visible = False
-            Label10.Visible = False
-            dtp_regreso.Visible = False
-            gb_aviso.Visible = False
-            gbx_tipo.Visible = False
-            'rbt_nocturno.Visible = False
-            vpermiso = 9
-            dtgvp.Visible = True
-            gbx_vacaciones.Visible = False
-            lbl_ndepto.Visible = False
-            cbx_depto.Visible = False
-            lbl_npuesto.Visible = False
-            cbx_puesto.Visible = False
+                lbl_npuesto.Visible = True
+                cbx_puesto.Visible = True
 
 
-        End If
+
+            ElseIf cbx_tipo.Text = "Suspensión" Then
+                Check_entrada.Visible = False
+                Check_salida.Visible = False
+                'rbt_nocturno.Visible = False
+                Label6.Visible = True
+                dtp2.Visible = True
+                desde_h.Visible = True
+                hasta_h.Visible = True
+                Label9.Visible = True
+                Label8.Visible = True
+                dtp_checada.Visible = False
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = False
+                gbx_tipo.Visible = False
+                'rbt_nocturno.Visible = False
+                vpermiso = 9
+                dtgvp.Visible = True
+                gbx_vacaciones.Visible = False
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
 
 
-        Muestragrid()
+            End If
+
+
+            Muestragrid()
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+
+
+        End Try
 
     End Sub
 
     Private Sub cbx_motivo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_motivo.SelectedIndexChanged
 
-        If cbx_motivo.Text = "Otro" Then
-            Label7.Visible = True
-            txt_motivo.Visible = True
-        Else
-            Label7.Visible = False
-            txt_motivo.Visible = False
-            Check_aviso.Checked = False
-            txt_quien.Clear()
+        Try
 
-        End If
+            If cbx_motivo.Text = "Otro" Then
+                Label7.Visible = True
+                txt_motivo.Visible = True
+            ElseIf cbx_motivo.Text = "Cambio de puesto y departamento" Then
 
-        variables()
+                lbl_ndepto.Visible = True
+                cbx_depto.Visible = True
+
+                lbl_ndepto.Location = New Point(550, 203)
+                cbx_depto.Location = New Point(630, 199)
+                Label7.Visible = False
+                txt_motivo.Visible = False
+                Check_aviso.Checked = False
+                txt_quien.Clear()
+
+            ElseIf cbx_motivo.Text = "Cambio de puesto" Then
+
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+
+                Label7.Visible = False
+                txt_motivo.Visible = False
+                Check_aviso.Checked = False
+                txt_quien.Clear()
+
+
+
+            Else
+                Label7.Visible = False
+                txt_motivo.Visible = False
+                Check_aviso.Checked = False
+                txt_quien.Clear()
+
+            End If
+
+            variables()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+
+
+        End Try
+
+
+
     End Sub
 
     Private Sub FormatoSM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -718,12 +770,19 @@ SELECT  [Id_motivopermiso]
             ContenedorReporteDeptoN.Show()
 
 
-        ElseIf vpermiso = 8 Then
+        ElseIf vpermiso = 8 And cbx_motivo.Text = "Cambio de puesto" Then
             ContenedorReporteNuevoPuesto.id = y
             ContenedorReporteNuevoPuesto.Tipo = 0
             ContenedorReporteNuevoPuesto.motivo = 0
             ContenedorReporteNuevoPuesto.retardo = 0
             ContenedorReporteNuevoPuesto.Show()
+
+        ElseIf vpermiso = 8 And cbx_motivo.Text = "Cambio de puesto y departamento" Then
+            ContenedorReporteDeptoPuesto.id = y
+            ContenedorReporteDeptoPuesto.Tipo = 0
+            ContenedorReporteDeptoPuesto.motivo = 0
+            ContenedorReporteDeptoPuesto.retardo = 0
+            ContenedorReporteDeptoPuesto.Show()
 
 
         ElseIf vpermiso = 9 Then
@@ -756,6 +815,18 @@ SELECT  [Id_motivopermiso]
                 ElseIf difvacaciones > CInt(lbl_pendientes.Text) Then
 
                     MessageBox.Show("No puede tomar más días de los que tiene asignados, revise sus fechas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    revisaincidencia()
+
+                End If
+
+
+            ElseIf vpermiso = 2 Then
+
+                If dtp1.Value.ToShortDateString <= Today.Now Then
+
+
+                    MessageBox.Show("Debe pedir el permiso con 1 día de anticipación", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     revisaincidencia()
 
@@ -841,8 +912,6 @@ SELECT  [Id_motivopermiso]
                 rbt_nocturno.Checked = False
                 btn_solicitar.Enabled = False
 
-
-
             Else
 
                 CargaIncidencia()
@@ -910,7 +979,6 @@ SELECT  [Id_motivopermiso]
 
 
             command.ExecuteNonQuery()
-
 
 
 

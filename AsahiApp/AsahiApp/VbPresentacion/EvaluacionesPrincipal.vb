@@ -2,6 +2,9 @@
 
 Public Class EvaluacionesPrincipal
     Dim id As Integer
+    Dim id_eval As Integer
+    Dim tipo As String
+    Dim estado As Integer
     Dim depto As String
     Dim permiso As Integer
     Dim a As String
@@ -18,7 +21,7 @@ Public Class EvaluacionesPrincipal
 
     End Sub
 
-    Private Sub EvaluacionesPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub EvaluacionesPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
         a = Today.Month
@@ -69,10 +72,13 @@ Public Class EvaluacionesPrincipal
         If depto = "04" OrElse depto = "19" Then
             Label1.Visible = True
             cbx_depto.Visible = True
-            btn_solicitar.Visible = True
+            '   btn_solicitar.Visible = True
             cbx_mes.Enabled = True
             cbx_año.Enabled = True
             btn_liberar.Visible = True
+            btn_desma.Visible = True
+            btn_selec.Visible = True
+
         End If
 
         cbx_tipoeva.Text = "--Todas--"
@@ -141,6 +147,9 @@ Public Class EvaluacionesPrincipal
         With Cmd
             .CommandType = CommandType.Text
             .CommandText = "	
+
+select '--Todos--' as 'descripcion', '--Todos--' as 'clave'
+union
 select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CENTRO_COSTO not in ('16')
 "
             .Connection = Cn
@@ -157,7 +166,7 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
     End Sub
 
 
-    Sub Muestragrid()
+    Friend Sub Muestragrid()
 
         Try
             Cn.Close()
@@ -188,6 +197,8 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
         dtgvp.Columns("liberacion").Visible = False
         dtgvp.Columns("aprobacion").Visible = False
         dtgvp.Columns("evaluacion").Visible = False
+        dtgvp.Columns("fecha").Visible = False
+        dtgvp.Columns("total_eval").Visible = False
 
         For Each row As DataGridViewRow In Me.dtgvp.Rows
 
@@ -209,11 +220,12 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
         Me.dtgvp.Columns("Departamento").ReadOnly = True
         Me.dtgvp.Columns("Empleado").ReadOnly = True
         Me.dtgvp.Columns("Puesto").ReadOnly = True
+        Me.dtgvp.Columns("fecha").ReadOnly = True
 
     End Sub
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Public Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         Muestragrid()
     End Sub
 
@@ -269,10 +281,48 @@ where id_evaluaciones = @ID and estado = 0
             lbl_autorizacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("aprobacion").Value.ToString()
             lbl_evaluacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("evaluacion").Value.ToString()
             lbl_liberacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("liberacion").Value.ToString()
-            'lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
+            lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
+            id_eval = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
+            tipo = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
+            estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
 
         Catch
         End Try
+
+    End Sub
+
+    Private Sub dtgmuestra_CellContentClick2(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
+
+        If Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString() = 0 Then
+
+            MessageBox.Show("La evaluación no ha sido liberada por RH", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Else
+
+            Try
+                Modulo_evaluaciones.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
+                Modulo_evaluaciones.e_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Departamento").Value.ToString()
+                Modulo_evaluaciones.e_evaluacion = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
+                Modulo_evaluaciones.e_fecha = Me.dtgvp.Rows(e.RowIndex).Cells("fecha").Value.ToString()
+                Modulo_evaluaciones.e_nombre = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
+                Modulo_evaluaciones.e_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Puesto").Value.ToString()
+                Modulo_evaluaciones.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
+                Modulo_evaluaciones.e_estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
+                Modulo_evaluaciones.e_idemp = id
+
+
+                Dim segundoForm As New EvaluacionPersonal
+
+                MuestraKardexEva.Dispose()
+
+                segundoForm.Show(Me)
+
+
+            Catch
+            End Try
+
+
+        End If
 
     End Sub
 
@@ -282,7 +332,10 @@ where id_evaluaciones = @ID and estado = 0
             lbl_autorizacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("aprobacion").Value.ToString()
             lbl_evaluacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("evaluacion").Value.ToString()
             lbl_liberacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("liberacion").Value.ToString()
-            'lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
+            lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
+            id_eval = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
+            tipo = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
+            estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
         Catch
         End Try
 
@@ -293,4 +346,49 @@ where id_evaluaciones = @ID and estado = 0
     Private Sub btn_liberar_Click(sender As Object, e As EventArgs) Handles btn_liberar.Click
         autorizar()
     End Sub
+
+    Private Sub btn_desma_Click(sender As Object, e As EventArgs) Handles btn_desma.Click
+        For Each fila As DataGridViewRow In dtgvp.Rows
+            fila.Cells("x").Value = False
+        Next
+    End Sub
+
+
+    Private Sub btn_selec_Click(sender As Object, e As EventArgs) Handles btn_selec.Click
+        For Each fila As DataGridViewRow In dtgvp.Rows
+            fila.Cells("x").Value = True
+        Next
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        generarreporte()
+
+
+    End Sub
+
+
+    Sub generarreporte()
+        If estado < 2 Then
+            MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            ContenedorReporteTestEvaluacion.id_evaluaciones = id_eval
+            ContenedorReporteTestEvaluacion.teval = tipo
+            ContenedorReporteTestEvaluacion.Show()
+
+        End If
+
+    End Sub
 End Class
+
+Module Modulo_evaluaciones
+    Public e_clave As Integer
+    Public e_id As Integer
+    Public e_idemp As Integer
+    Public e_estado As Integer
+    Public e_nombre As String
+    Public e_depto As String
+    Public e_puesto As String
+    Public e_evaluacion As String
+    Public e_fecha As Date
+
+End Module

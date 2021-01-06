@@ -16,6 +16,8 @@ Public Class Validath
         cargagrid()
     End Sub
 
+
+
     Sub cargagrid()
 
         Cn.Close()
@@ -308,11 +310,29 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
 
 
-        If dtp1.Value.DayOfWeek = 0 Then
-            autorizardomingo()
-        Else
-            autorizar()
+
+
+
+        If (Today.Date.DayOfWeek = 2 OrElse Today.Date.DayOfWeek = 3 OrElse Today.Date.DayOfWeek = 4 OrElse Today.Date.DayOfWeek = 5 OrElse Today.Date.DayOfWeek = 6 OrElse Today.Date.DayOfWeek = 0) And Date.Now.ToString("HH:mm:ss") < "10:30:00" Then
+            MessageBox.Show("La validación es a partir de las 10:30 a.m.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf (Today.Date.DayOfWeek = 2 OrElse Today.Date.DayOfWeek = 3 OrElse Today.Date.DayOfWeek = 4 OrElse Today.Date.DayOfWeek = 5 OrElse Today.Date.DayOfWeek = 6 OrElse Today.Date.DayOfWeek = 0) And Date.Now.ToString("HH:mm:ss") > "10:30:00" Then
+            If dtp1.Value.DayOfWeek = 0 Then
+                autorizardomingo()
+            Else
+                autorizar()
+            End If
+        ElseIf (Today.Date.DayOfWeek = 1) And Date.Now.ToString("HH:mm:ss") < "09:30:00" Then
+            MessageBox.Show("La validación es a partir de las 09:30 a.m.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf (Today.Date.DayOfWeek = 1) And Date.Now.ToString("HH:mm:ss") > "09:30:00" Then
+            If dtp1.Value.DayOfWeek = 0 Then
+                autorizardomingo()
+            Else
+                autorizar()
+            End If
         End If
+
+
+
     End Sub
 
     Private Sub btn_desma_Click(sender As Object, e As EventArgs) Handles btn_desma.Click
@@ -344,6 +364,8 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
         HistoricoChecadas.Show()
     End Sub
 
+
+
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
         ContenedorReporteExcedenteTe.clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
         ContenedorReporteExcedenteTe.fecha = dtp1.Value.ToShortDateString
@@ -351,4 +373,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
         ContenedorReporteExcedenteTe.Show()
 
     End Sub
+
+
 End Class

@@ -29,7 +29,7 @@ Partial Class EvaluacionesPrincipal
         Me.cbx_perfil = New System.Windows.Forms.ComboBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_buscar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cbx_tipoeva = New System.Windows.Forms.ComboBox()
         Me.btn_solicitar = New System.Windows.Forms.Button()
@@ -55,9 +55,11 @@ Partial Class EvaluacionesPrincipal
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lbl_liberacion = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.lbl_totalpuntos = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.btn_desma = New System.Windows.Forms.Button()
+        Me.btn_selec = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -70,7 +72,7 @@ Partial Class EvaluacionesPrincipal
         Me.Panel3.Controls.Add(Me.cbx_perfil)
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Controls.Add(Me.btn_buscar)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.cbx_tipoeva)
         Me.Panel3.Controls.Add(Me.btn_solicitar)
@@ -132,17 +134,17 @@ Partial Class EvaluacionesPrincipal
         Me.Label7.TabIndex = 191
         Me.Label7.Text = "Liberado RH"
         '
-        'Button1
+        'btn_buscar
         '
-        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Button1.Location = New System.Drawing.Point(664, 13)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(120, 35)
-        Me.Button1.TabIndex = 190
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btn_buscar.BackColor = System.Drawing.Color.Gainsboro
+        Me.btn_buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_buscar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btn_buscar.Location = New System.Drawing.Point(608, 30)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(120, 35)
+        Me.btn_buscar.TabIndex = 190
+        Me.btn_buscar.Text = "Buscar"
+        Me.btn_buscar.UseVisualStyleBackColor = False
         '
         'Label5
         '
@@ -181,7 +183,6 @@ Partial Class EvaluacionesPrincipal
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Enabled = False
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(13, 51)
         Me.Label4.Name = "Label4"
@@ -236,9 +237,9 @@ Partial Class EvaluacionesPrincipal
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label2.Location = New System.Drawing.Point(940, 62)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 12)
+        Me.Label2.Size = New System.Drawing.Size(61, 12)
         Me.Label2.TabIndex = 181
-        Me.Label2.Text = "Autorizado RH"
+        Me.Label2.Text = "Aprobado RH"
         '
         'Panel1
         '
@@ -286,7 +287,6 @@ Partial Class EvaluacionesPrincipal
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Enabled = False
         Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label32.Location = New System.Drawing.Point(12, 24)
         Me.Label32.Name = "Label32"
@@ -341,7 +341,7 @@ Partial Class EvaluacionesPrincipal
         Me.btn_liberar.BackColor = System.Drawing.SystemColors.HotTrack
         Me.btn_liberar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_liberar.ForeColor = System.Drawing.Color.Gold
-        Me.btn_liberar.Location = New System.Drawing.Point(846, 494)
+        Me.btn_liberar.Location = New System.Drawing.Point(856, 494)
         Me.btn_liberar.Name = "btn_liberar"
         Me.btn_liberar.Size = New System.Drawing.Size(120, 35)
         Me.btn_liberar.TabIndex = 191
@@ -362,7 +362,7 @@ Partial Class EvaluacionesPrincipal
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Location = New System.Drawing.Point(763, 114)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(260, 356)
+        Me.GroupBox1.Size = New System.Drawing.Size(260, 295)
         Me.GroupBox1.TabIndex = 192
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Selección"
@@ -374,9 +374,9 @@ Partial Class EvaluacionesPrincipal
         Me.lbl_autorizacion.ForeColor = System.Drawing.Color.Black
         Me.lbl_autorizacion.Location = New System.Drawing.Point(122, 99)
         Me.lbl_autorizacion.Name = "lbl_autorizacion"
-        Me.lbl_autorizacion.Size = New System.Drawing.Size(65, 13)
+        Me.lbl_autorizacion.Size = New System.Drawing.Size(61, 13)
         Me.lbl_autorizacion.TabIndex = 181
-        Me.lbl_autorizacion.Text = "Sin autorizar"
+        Me.lbl_autorizacion.Text = "Sin aprobar"
         '
         'Label15
         '
@@ -385,9 +385,9 @@ Partial Class EvaluacionesPrincipal
         Me.Label15.ForeColor = System.Drawing.Color.Black
         Me.Label15.Location = New System.Drawing.Point(7, 99)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(112, 13)
+        Me.Label15.Size = New System.Drawing.Size(108, 13)
         Me.Label15.TabIndex = 180
-        Me.Label15.Text = "Fecha de autorización"
+        Me.Label15.Text = "Fecha de aprobación"
         '
         'lbl_evaluacion
         '
@@ -433,17 +433,6 @@ Partial Class EvaluacionesPrincipal
         Me.Label10.TabIndex = 176
         Me.Label10.Text = "Fecha de liberación"
         '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(102, 279)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(68, 71)
-        Me.Button2.TabIndex = 175
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'lbl_totalpuntos
         '
         Me.lbl_totalpuntos.AutoSize = True
@@ -466,11 +455,46 @@ Partial Class EvaluacionesPrincipal
         Me.Label14.TabIndex = 173
         Me.Label14.Text = "Total de Puntos"
         '
+        'btn_desma
+        '
+        Me.btn_desma.ForeColor = System.Drawing.Color.Black
+        Me.btn_desma.Location = New System.Drawing.Point(922, 440)
+        Me.btn_desma.Name = "btn_desma"
+        Me.btn_desma.Size = New System.Drawing.Size(78, 35)
+        Me.btn_desma.TabIndex = 194
+        Me.btn_desma.Text = "Desmarcar"
+        Me.btn_desma.UseVisualStyleBackColor = False
+        Me.btn_desma.Visible = False
+        '
+        'btn_selec
+        '
+        Me.btn_selec.ForeColor = System.Drawing.Color.Black
+        Me.btn_selec.Location = New System.Drawing.Point(819, 439)
+        Me.btn_selec.Name = "btn_selec"
+        Me.btn_selec.Size = New System.Drawing.Size(74, 35)
+        Me.btn_selec.TabIndex = 193
+        Me.btn_selec.Text = "Seleccionar"
+        Me.btn_selec.UseVisualStyleBackColor = False
+        Me.btn_selec.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(94, 199)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(68, 71)
+        Me.Button2.TabIndex = 175
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'EvaluacionesPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 541)
+        Me.Controls.Add(Me.btn_desma)
+        Me.Controls.Add(Me.btn_selec)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btn_liberar)
         Me.Controls.Add(Me.dtgvp)
@@ -506,7 +530,7 @@ Partial Class EvaluacionesPrincipal
     Friend WithEvents btn_solicitar As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents cbx_tipoeva As ComboBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_buscar As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
@@ -522,4 +546,6 @@ Partial Class EvaluacionesPrincipal
     Friend WithEvents lbl_liberacion As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents btn_desma As Button
+    Friend WithEvents btn_selec As Button
 End Class
