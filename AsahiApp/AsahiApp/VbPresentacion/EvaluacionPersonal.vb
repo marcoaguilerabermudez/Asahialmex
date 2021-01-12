@@ -31,6 +31,11 @@ Public Class EvaluacionPersonal
         sumarpuntaje()
 
 
+        If estado > 1 Then
+            btn_evaluar.Enabled = False
+        End If
+
+
     End Sub
 
 
