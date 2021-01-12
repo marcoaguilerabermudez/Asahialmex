@@ -27,7 +27,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>231</ApplicationRevision>
+    <ApplicationRevision>233</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -236,6 +236,12 @@
     <Compile Include="ContenedorReporteVacacionesRH.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorREvaluacionSin.Designer.vb">
+      <DependentUpon>ContenedorREvaluacionSin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorREvaluacionSin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -260,6 +266,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet6.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet6.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetReporteSuspencion.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -647,6 +658,9 @@
     <EmbeddedResource Include="ContenedorReporteVacacionesRH.resx">
       <DependentUpon>ContenedorReporteVacacionesRH.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorREvaluacionSin.resx">
+      <DependentUpon>ContenedorREvaluacionSin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DefectoM.resx">
       <DependentUpon>DefectoM.vb</DependentUpon>
     </EmbeddedResource>
@@ -712,6 +726,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteCambioPuesto.rdlc" />
     <EmbeddedResource Include="ReporteChecadasRh.rdlc" />
+    <EmbeddedResource Include="ReporteEvaluacionSin1.rdlc" />
     <EmbeddedResource Include="ReporteEvaluacionTest.rdlc" />
     <EmbeddedResource Include="ReporteExcedidoTE.rdlc" />
     <EmbeddedResource Include="ReporteFaltaJusInj.rdlc" />
@@ -858,6 +873,17 @@
     </None>
     <None Include="DataSet5.xss">
       <DependentUpon>DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet6.xsc">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet6.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet6.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet6.xss">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
     </None>
     <None Include="DataSetReporteSuspencion.xsc">
       <DependentUpon>DataSetReporteSuspencion.xsd</DependentUpon>

@@ -310,9 +310,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
 
 
-
-
-
         If (Today.Date.DayOfWeek = 2 OrElse Today.Date.DayOfWeek = 3 OrElse Today.Date.DayOfWeek = 4 OrElse Today.Date.DayOfWeek = 5 OrElse Today.Date.DayOfWeek = 6 OrElse Today.Date.DayOfWeek = 0) And Date.Now.ToString("HH:mm:ss") < "10:30:00" Then
             MessageBox.Show("La validación es a partir de las 10:30 a.m.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf (Today.Date.DayOfWeek = 2 OrElse Today.Date.DayOfWeek = 3 OrElse Today.Date.DayOfWeek = 4 OrElse Today.Date.DayOfWeek = 5 OrElse Today.Date.DayOfWeek = 6 OrElse Today.Date.DayOfWeek = 0) And Date.Now.ToString("HH:mm:ss") > "10:30:00" Then

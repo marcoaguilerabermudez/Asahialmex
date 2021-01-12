@@ -125,7 +125,7 @@ Public Class DEmpleado
         Dim emp As New Empleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand(" SELECT Usuario, Contraseña, ams.Clave, tipoUsuario, departamento, rh_permisos FROM AsahiSystem.dbo.Usuarios_saam ams
+            Dim query As New SqlCommand(" SELECT Usuario, Contraseña, ams.Clave, tipoUsuario, departamento, rh_permisos, evaluaciones_permisos FROM AsahiSystem.dbo.Usuarios_saam ams
             join giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig
 on convert(int,vig.clave) = ams.clave
 join [AsahiSystem].[dbo].[Req_permisos] per
@@ -141,6 +141,7 @@ where usuario = '" & us & "'", oCon)
                 emp.IdEmpleado = Convert.ToInt32(dr("Clave").ToString)
                 emp.TipoUsuario = Convert.ToInt32(dr("tipoUsuario").ToString)
                 emp.rh_permiso = Convert.ToInt32(dr("rh_permisos").ToString)
+                emp.rh_evaluacion = Convert.ToInt32(dr("evaluaciones_permisos").ToString)
             End While
             If us = emp.Usuario Then
                 If pass = emp.Contraseña Then
