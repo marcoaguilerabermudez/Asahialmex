@@ -188,7 +188,7 @@ Public Class EvaluacionPersonal
         Me.dtgvp.Columns("Puntaje").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
         Me.dtgvp.Columns("PME").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
 
-        dtgvp.Rows(9).ReadOnly = True
+        ''dtgvp.Rows(9).ReadOnly = True
         dtgvp.Rows(13).ReadOnly = True
         dtgvp.Rows(5).ReadOnly = True
 
