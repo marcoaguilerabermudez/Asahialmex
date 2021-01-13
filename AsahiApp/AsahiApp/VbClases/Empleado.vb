@@ -20,6 +20,17 @@
     End Property
 
 
+    Private rh_evaluacion_ As Integer
+    Public Property rh_evaluacion() As Integer
+        Get
+            Return rh_evaluacion_
+        End Get
+        Set(ByVal value As Integer)
+            rh_evaluacion_ = value
+        End Set
+    End Property
+
+
     Private usuario_ As String
     Public Property Usuario() As String
         Get

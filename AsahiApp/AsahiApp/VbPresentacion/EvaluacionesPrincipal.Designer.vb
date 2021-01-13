@@ -55,11 +55,11 @@ Partial Class EvaluacionesPrincipal
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lbl_liberacion = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.lbl_totalpuntos = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btn_desma = New System.Windows.Forms.Button()
         Me.btn_selec = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -162,7 +162,7 @@ Partial Class EvaluacionesPrincipal
         Me.cbx_tipoeva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_tipoeva.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipoeva.FormattingEnabled = True
-        Me.cbx_tipoeva.Items.AddRange(New Object() {"--Todas--", "3 meses", "9 meses", "15 meses", "2 años", "Más de 2 años"})
+        Me.cbx_tipoeva.Items.AddRange(New Object() {"--Todas--", "3 meses", "Semestral", "Anual"})
         Me.cbx_tipoeva.Location = New System.Drawing.Point(313, 35)
         Me.cbx_tipoeva.Name = "cbx_tipoeva"
         Me.cbx_tipoeva.Size = New System.Drawing.Size(135, 21)
@@ -433,6 +433,17 @@ Partial Class EvaluacionesPrincipal
         Me.Label10.TabIndex = 176
         Me.Label10.Text = "Fecha de liberación"
         '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(94, 199)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(68, 71)
+        Me.Button2.TabIndex = 175
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'lbl_totalpuntos
         '
         Me.lbl_totalpuntos.AutoSize = True
@@ -476,17 +487,6 @@ Partial Class EvaluacionesPrincipal
         Me.btn_selec.Text = "Seleccionar"
         Me.btn_selec.UseVisualStyleBackColor = False
         Me.btn_selec.Visible = False
-        '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(94, 199)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(68, 71)
-        Me.Button2.TabIndex = 175
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'EvaluacionesPrincipal
         '

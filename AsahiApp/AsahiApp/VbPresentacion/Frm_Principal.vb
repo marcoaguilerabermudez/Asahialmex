@@ -51,7 +51,7 @@ Public Class Frm_Principal
             SolicitudToolStripMenuItem.Enabled = True
             ValidaciónToolStripMenuItem.Enabled = True
             SolicitudToolStripMenuItem1.Enabled = True
-            EvaluacionesToolStripMenuItem1.Enabled = False
+            '   EvaluacionesToolStripMenuItem1.Enabled = False
 
         ElseIf Me.emp.rh_permiso = 3 Then
             SolicitudToolStripMenuItem.Enabled = True
@@ -59,7 +59,15 @@ Public Class Frm_Principal
             SolicitudToolStripMenuItem1.Enabled = True
             ValidaciónRHToolStripMenuItem.Enabled = True
             ValidaciónRHToolStripMenuItem1.Enabled = True
+            ' EvaluacionesToolStripMenuItem1.Enabled = True
+
+        ElseIf Me.emp.rh_evaluacion = 1 Then
             EvaluacionesToolStripMenuItem1.Enabled = True
+
+        ElseIf Me.emp.rh_evaluacion = 0 Then
+            EvaluacionesToolStripMenuItem1.Enabled = False
+
+
 
         End If
 

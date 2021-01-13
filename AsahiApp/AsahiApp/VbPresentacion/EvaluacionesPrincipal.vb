@@ -28,7 +28,7 @@ Public Class EvaluacionesPrincipal
         Select Case a
             Case 1
                 cbx_mes.Text = "Enero"
-                mes = 1
+                mes = 12
             Case 2
                 cbx_mes.Text = "Febrero"
                 mes = 2
@@ -65,7 +65,7 @@ Public Class EvaluacionesPrincipal
         End Select
 
 
-        cbx_año.Text = Today.Year()
+        cbx_año.Text = Today.Year() - 1
 
         llenacombodepto()
 
@@ -94,7 +94,7 @@ Public Class EvaluacionesPrincipal
         a = cbx_mes.Text
         Select Case a
             Case "Enero"
-                mes = 1
+                mes = 12
             Case "Febrero"
                 mes = 2
             Case "Marzo"
@@ -371,9 +371,10 @@ where id_evaluaciones = @ID and estado = 0
         If estado < 2 Then
             MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            ContenedorReporteTestEvaluacion.id_evaluaciones = id_eval
-            ContenedorReporteTestEvaluacion.teval = tipo
-            ContenedorReporteTestEvaluacion.Show()
+            ContenedorREvaluacionSin.id_evaluaciones = id_eval
+            ContenedorREvaluacionSin.teval = tipo
+            ContenedorREvaluacionSin.fecha = "01/12/2020"
+            ContenedorREvaluacionSin.Show()
 
         End If
 
