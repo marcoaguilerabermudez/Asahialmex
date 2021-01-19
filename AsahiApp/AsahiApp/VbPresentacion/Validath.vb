@@ -16,11 +16,10 @@ Public Class Validath
         cargagrid()
     End Sub
 
-
-
     Sub cargagrid()
 
         Cn.Close()
+
         Cn.Open()
 
         Dim da As New SqlDataAdapter("Sp_validatiempoextra", Cn)
@@ -52,10 +51,6 @@ Public Class Validath
                 row.DefaultCellStyle.BackColor = Color.ForestGreen
             End If
 
-
-
-
-
         Next
 
         Dim col As DataGridViewColumn =
@@ -71,6 +66,7 @@ Public Class Validath
 
 
         Me.dtgvp.Columns("Clave").ReadOnly = True
+
         Try
 
             For Each row As DataGridViewRow In Me.dtgvp.Rows
@@ -87,6 +83,8 @@ Public Class Validath
             Next
         Catch
         End Try
+
+
     End Sub
 
 
@@ -254,7 +252,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)
             Cn.Close()
         Finally
             Cn.Close()
-
         End Try
     End Sub
 
@@ -327,9 +324,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
                 autorizar()
             End If
         End If
-
-
-
     End Sub
 
     Private Sub btn_desma_Click(sender As Object, e As EventArgs) Handles btn_desma.Click
@@ -368,7 +362,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
         ContenedorReporteExcedenteTe.fecha = dtp1.Value.ToShortDateString
         ContenedorReporteExcedenteTe.Turno = Me.dtgvp.Rows(e.RowIndex).Cells("TurnoE").Value.ToString()
         ContenedorReporteExcedenteTe.Show()
-
     End Sub
 
 

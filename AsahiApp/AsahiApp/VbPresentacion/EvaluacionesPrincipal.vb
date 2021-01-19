@@ -347,6 +347,7 @@ where id_evaluaciones = @ID and estado = 0
         autorizar()
     End Sub
 
+
     Private Sub btn_desma_Click(sender As Object, e As EventArgs) Handles btn_desma.Click
         For Each fila As DataGridViewRow In dtgvp.Rows
             fila.Cells("x").Value = False
@@ -359,6 +360,7 @@ where id_evaluaciones = @ID and estado = 0
             fila.Cells("x").Value = True
         Next
     End Sub
+
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         generarreporte()
@@ -379,9 +381,12 @@ where id_evaluaciones = @ID and estado = 0
         End If
 
     End Sub
+
+
 End Class
 
 Module Modulo_evaluaciones
+
     Public e_clave As Integer
     Public e_id As Integer
     Public e_idemp As Integer

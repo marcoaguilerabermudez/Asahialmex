@@ -264,6 +264,7 @@ Partial Class SolicitudTE
         'txt_depto
         '
         Me.txt_depto.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_depto.Enabled = False
         Me.txt_depto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txt_depto.Location = New System.Drawing.Point(89, 112)
         Me.txt_depto.Name = "txt_depto"
@@ -284,6 +285,7 @@ Partial Class SolicitudTE
         'txt_turno
         '
         Me.txt_turno.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_turno.Enabled = False
         Me.txt_turno.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txt_turno.Location = New System.Drawing.Point(89, 79)
         Me.txt_turno.Name = "txt_turno"
@@ -315,6 +317,7 @@ Partial Class SolicitudTE
         'txt_nombre
         '
         Me.txt_nombre.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_nombre.Enabled = False
         Me.txt_nombre.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txt_nombre.Location = New System.Drawing.Point(89, 50)
         Me.txt_nombre.Name = "txt_nombre"
