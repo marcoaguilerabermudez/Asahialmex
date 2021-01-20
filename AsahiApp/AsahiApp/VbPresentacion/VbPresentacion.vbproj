@@ -27,7 +27,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>236</ApplicationRevision>
+    <ApplicationRevision>238</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -342,6 +342,12 @@
       <DependentUpon>EvaluacionesPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="EvaluacionesPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluacionIndirecto.Designer.vb">
+      <DependentUpon>EvaluacionIndirecto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionIndirecto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EvaluacionPersonal.Designer.vb">
@@ -669,6 +675,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EvaluacionesPrincipal.resx">
       <DependentUpon>EvaluacionesPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluacionIndirecto.resx">
+      <DependentUpon>EvaluacionIndirecto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EvaluacionPersonal.resx">
       <DependentUpon>EvaluacionPersonal.vb</DependentUpon>
