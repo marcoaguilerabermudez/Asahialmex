@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AsahiApp",
+    "\\AsahiApp\\AsahiApp",
+    "\\AsahiApp\\AsahiApp\\Asahi_CSharp"
   ],
   "PreviewInSolutionExplorer": true
 }
