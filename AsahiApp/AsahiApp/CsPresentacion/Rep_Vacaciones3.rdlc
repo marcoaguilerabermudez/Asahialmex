@@ -9,10 +9,10 @@
               <Width>1.28945cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.56367cm</Width>
+              <Width>6.10052cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.97951cm</Width>
+              <Width>4.87441cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.15154cm</Width>
@@ -25,9 +25,6 @@
             </TablixColumn>
             <TablixColumn>
               <Width>1.07874cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.43175cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -273,48 +270,12 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="PRIMA_VACACIONAL">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!PRIMA_VACACIONAL.Value</Value>
-                              <Style>
-                                <FontSize>7pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>PRIMA_VACACIONAL</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <VerticalAlign>Middle</VerticalAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
-            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -332,7 +293,6 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DS_Vacaciones</DataSetName>
-        <Top>0cm</Top>
         <Left>0.47939cm</Left>
         <Height>0.5cm</Height>
         <Width>20.26629cm</Width>
@@ -811,7 +771,7 @@
           <Top>2.19293cm</Top>
           <Left>1.76884cm</Left>
           <Height>0.46179cm</Height>
-          <Width>5.56367cm</Width>
+          <Width>6.10052cm</Width>
           <ZIndex>9</ZIndex>
           <Style>
             <Border>
@@ -844,9 +804,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox39</rd:DefaultName>
           <Top>2.19293cm</Top>
-          <Left>7.33251cm</Left>
+          <Left>7.86936cm</Left>
           <Height>0.46179cm</Height>
-          <Width>3.97951cm</Width>
+          <Width>4.87441cm</Width>
           <ZIndex>10</ZIndex>
           <Style>
             <Border>
@@ -879,7 +839,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox39</rd:DefaultName>
           <Top>2.19293cm</Top>
-          <Left>11.31202cm</Left>
+          <Left>12.74377cm</Left>
           <Height>0.46179cm</Height>
           <Width>3.15154cm</Width>
           <ZIndex>11</ZIndex>
@@ -916,7 +876,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox39</rd:DefaultName>
           <Top>2.19293cm</Top>
-          <Left>14.46356cm</Left>
+          <Left>15.89531cm</Left>
           <Height>0.46179cm</Height>
           <Width>1.88154cm</Width>
           <ZIndex>12</ZIndex>
@@ -953,7 +913,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox39</rd:DefaultName>
           <Top>2.19293cm</Top>
-          <Left>16.3451cm</Left>
+          <Left>17.77685cm</Left>
           <Height>0.46179cm</Height>
           <Width>1.89009cm</Width>
           <ZIndex>13</ZIndex>
@@ -990,45 +950,10 @@
           </Paragraphs>
           <rd:DefaultName>Textbox39</rd:DefaultName>
           <Top>2.19293cm</Top>
-          <Left>18.23519cm</Left>
+          <Left>19.66694cm</Left>
           <Height>0.46179cm</Height>
           <Width>1.07874cm</Width>
           <ZIndex>14</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <BackgroundColor>Silver</BackgroundColor>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox46">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>PRIMA</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>White</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox39</rd:DefaultName>
-          <Top>2.19293cm</Top>
-          <Left>19.31393cm</Left>
-          <Height>0.46179cm</Height>
-          <Width>1.43175cm</Width>
-          <ZIndex>15</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
