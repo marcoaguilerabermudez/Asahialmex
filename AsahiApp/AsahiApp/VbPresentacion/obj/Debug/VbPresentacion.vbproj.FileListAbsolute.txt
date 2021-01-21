@@ -1009,3 +1009,6 @@ C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.EvaluacionPersonal.resources
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.MuestraKardexEva.resources
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ContenedorREvaluacionSin.resources
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.EvaluacionIndirecto.resources
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.EligeEvaluación.resources
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.EvaluacionPrincipalIndirecto.resources

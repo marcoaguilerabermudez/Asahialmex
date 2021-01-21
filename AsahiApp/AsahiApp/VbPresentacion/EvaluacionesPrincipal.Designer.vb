@@ -55,11 +55,11 @@ Partial Class EvaluacionesPrincipal
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lbl_liberacion = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.lbl_totalpuntos = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btn_desma = New System.Windows.Forms.Button()
         Me.btn_selec = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -433,17 +433,6 @@ Partial Class EvaluacionesPrincipal
         Me.Label10.TabIndex = 176
         Me.Label10.Text = "Fecha de liberación"
         '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(94, 199)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(68, 71)
-        Me.Button2.TabIndex = 175
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'lbl_totalpuntos
         '
         Me.lbl_totalpuntos.AutoSize = True
@@ -488,6 +477,17 @@ Partial Class EvaluacionesPrincipal
         Me.btn_selec.UseVisualStyleBackColor = False
         Me.btn_selec.Visible = False
         '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(94, 199)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(68, 71)
+        Me.Button2.TabIndex = 175
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'EvaluacionesPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -500,6 +500,7 @@ Partial Class EvaluacionesPrincipal
         Me.Controls.Add(Me.dtgvp)
         Me.Controls.Add(Me.Panel3)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "EvaluacionesPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Evaluaciones"

@@ -502,8 +502,13 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub PrincipalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrincipalToolStripMenuItem.Click
-        Dim Principaleva As New EvaluacionesPrincipal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
-        Principaleva.Show()
+        '    Dim Principaleva As New EvaluacionesPrincipal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        '    Principaleva.Show()
+
+
+        Dim EligeEva As New EligeEvaluación(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        EligeEva.Show()
+
     End Sub
 #End Region
 End Class
