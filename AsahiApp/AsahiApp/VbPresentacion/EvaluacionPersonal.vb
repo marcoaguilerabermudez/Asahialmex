@@ -26,8 +26,6 @@ Public Class EvaluacionPersonal
         pbx.SizeMode = PictureBoxSizeMode.StretchImage
 
 
-
-
         sumarpuntaje()
 
 
