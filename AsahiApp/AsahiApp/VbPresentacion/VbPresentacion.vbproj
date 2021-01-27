@@ -447,6 +447,12 @@
     <Compile Include="ReporteTest.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RH\Frm_DescripcionPuestos.Designer.vb">
+      <DependentUpon>Frm_DescripcionPuestos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_DescripcionPuestos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </Compile>
@@ -729,6 +735,9 @@
       <DependentUpon>ReporteTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteVacionesRH.rdlc" />
+    <EmbeddedResource Include="RH\Frm_DescripcionPuestos.resx">
+      <DependentUpon>Frm_DescripcionPuestos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RH\Frm_PlanHorasExtra.resx">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </EmbeddedResource>

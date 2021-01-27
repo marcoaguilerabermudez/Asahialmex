@@ -92,6 +92,7 @@
     <Compile Include="NImpuestos.vb" />
     <Compile Include="NPolizas.vb" />
     <Compile Include="NPrenomina.vb" />
+    <Compile Include="NPuestos.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

@@ -497,5 +497,10 @@ Public Class Frm_Principal
         Dim Principaleva As New EvaluacionesPrincipal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
         Principaleva.Show()
     End Sub
+
+    Private Sub DpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DpToolStripMenuItem.Click
+        Dim frmDp As New Frm_DescripcionPuestos()
+        frmDp.Show()
+    End Sub
 #End Region
 End Class

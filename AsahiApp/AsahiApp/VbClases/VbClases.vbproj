@@ -97,6 +97,7 @@
     <Compile Include="Listas Heredadas\LIncidencias.vb" />
     <Compile Include="Listas Heredadas\LPermisos.vb" />
     <Compile Include="Listas Heredadas\LPolizas.vb" />
+    <Compile Include="Listas Heredadas\LPuestos.vb" />
     <Compile Include="Listas Heredadas\LTxtNominas.vb" />
     <Compile Include="Listas Heredadas\LVacaciones.vb" />
     <Compile Include="Listas Heredadas\LVentas.vb" />
@@ -117,6 +118,7 @@
     </Compile>
     <Compile Include="Permisos.vb" />
     <Compile Include="Polizas.vb" />
+    <Compile Include="Puestos.vb" />
     <Compile Include="TxtNominas.vb" />
     <Compile Include="Vacaciones.vb" />
     <Compile Include="Ventas.vb" />

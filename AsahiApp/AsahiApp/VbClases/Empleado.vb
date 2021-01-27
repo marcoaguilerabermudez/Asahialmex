@@ -101,6 +101,33 @@
             departamento_ = value
         End Set
     End Property
+    Private idArea_ As Integer
+    Public Property IdArea() As Integer
+        Get
+            Return idArea_
+        End Get
+        Set(ByVal value As Integer)
+            idArea_ = value
+        End Set
+    End Property
+    Private area_ As String
+    Public Property Area() As String
+        Get
+            Return area_
+        End Get
+        Set(ByVal value As String)
+            area_ = value
+        End Set
+    End Property
+    Private idPuesto_ As Integer
+    Public Property IdPuesto() As Integer
+        Get
+            Return idPuesto_
+        End Get
+        Set(ByVal value As Integer)
+            idPuesto_ = value
+        End Set
+    End Property
     Private puesto_ As String
     Public Property Puesto() As String
         Get

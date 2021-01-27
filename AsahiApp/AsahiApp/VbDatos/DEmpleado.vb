@@ -433,4 +433,79 @@ where usuario = '" & us & "'", oCon)
         End Try
         Return per.RangoPermiso
     End Function
+    Public Function RecuperarPuestos(ByVal cadenaConex As String) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim LstEmp As New LEmpleado
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT CLAVE, DESCRIPCION FROM asahi16.Supervisor_giro.Puesto", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.idPuesto = Convert.ToInt32(dr("CLAVE").ToString)
+                emp.Puesto = dr("DESCRIPCION").ToString
+                LstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return LstEmp
+    End Function
+    Public Function RecuperarDepto(ByVal cadenaConex As String) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim LstEmp As New LEmpleado
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT RTRIM(CLAVE) CLAVE, RTRIM(DESCRIPCION) DESCRIPCION FROM asahi16.Supervisor_giro.DEPTO WHERE CENTRO_COSTO <> 16", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.IdDepartamento = Convert.ToInt32(dr("CLAVE").ToString)
+                emp.Departamento = dr("DESCRIPCION").ToString
+                LstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return LstEmp
+    End Function
+    Public Function RecuperarArea(ByVal cadenaConex As String) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim LstEmp As New LEmpleado
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT RTRIM(CLAVE) CLAVE, RTRIM(DESCRIPCION) DESCRIPCION FROM asahi16.Supervisor_giro.CENTROC WHERE CLAVE <> 16", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.IdArea = Convert.ToInt32(dr("CLAVE").ToString)
+                emp.Area = dr("DESCRIPCION").ToString
+                LstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return LstEmp
+    End Function
 End Class
