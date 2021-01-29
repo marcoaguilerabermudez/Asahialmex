@@ -197,7 +197,7 @@ namespace CsPresentacion
             txt_v_duracion.Enabled = false;
             lbl_x_pagar.Text = "";
             lbl_x_disfrutar.Text = "";
-            lbl_prima.Text = "";
+            //lbl_prima.Text = "";
             lbl_v_id.Text = "0";
             lbl_v_id.Visible = false;
             lbl_v_inicia.Text = "0";
@@ -2019,9 +2019,9 @@ namespace CsPresentacion
         private void calcula_prima()
         {
                 Duracion = double.Parse(lbl_x_pagar.Text);
-                Prima = double.Parse("0.35");
+                Prima = double.Parse("0.25");
                 Resultado = Duracion * Prima;
-                lbl_prima.Text = Resultado.ToString();
+               // lbl_prima.Text = Resultado.ToString();
         }
         private void Diseño_Grid_Vacaciones(DataGridView dgv)
         {
@@ -2306,7 +2306,7 @@ namespace CsPresentacion
                 dtm_v_termina.Text = Final.ToString();
 
                 Duracion = double.Parse(txt_v_duracion.Text);
-                Prima = double.Parse("0.35");
+                Prima = double.Parse("0.25");
                 Resultado = Duracion * Prima;
                 txt_v_prima.Text = Resultado.ToString();
             }
