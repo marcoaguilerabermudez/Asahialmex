@@ -628,8 +628,6 @@ SELECT  [Id_motivopermiso]
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
-
-
     End Sub
 
 
@@ -644,8 +642,6 @@ SELECT  [Id_motivopermiso]
             da.SelectCommand.Parameters.AddWithValue("@clave", txt_clave.Text)
             da.SelectCommand.Parameters.AddWithValue("@motivo", vpermiso)
             da.SelectCommand.Parameters.AddWithValue("@retardo", rbt_retardo.Checked)
-
-
             Dim dt As New DataTable
             da.Fill(dt)
             dtgvp.DataSource = dt
