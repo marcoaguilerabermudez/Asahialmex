@@ -193,7 +193,7 @@ Public Class EvaluacionPersonal
     End Sub
 
 
-    Private Sub cellTextBox_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
+    Public Sub cellTextBox_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
 
         '
         Dim tb As TextBox = TryCast(sender, TextBox)
@@ -388,10 +388,6 @@ Public Class EvaluacionPersonal
             sumarpuntaje()
 
 
-
-
-
-
             Dim Pregunta As Integer
 
 
@@ -425,6 +421,7 @@ Public Class EvaluacionPersonal
                         command.Parameters.AddWithValue("@nota", txt_observaciones.Text)
                         command.Parameters.AddWithValue("@estado", estado)
                         command.Parameters.AddWithValue("@movimiento", (fila.Cells("id_tipo").Value))
+                        command.Parameters.AddWithValue("@puesto", lbl_puesto.Text)
                         command.ExecuteNonQuery()
 
                     Next
