@@ -510,5 +510,9 @@ Public Class Frm_Principal
         EligeEva.Show()
 
     End Sub
+
+    Private Sub BajasPorMesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajasPorMesToolStripMenuItem.Click
+        Frm_Bajas_mes.Show()
+    End Sub
 #End Region
 End Class
