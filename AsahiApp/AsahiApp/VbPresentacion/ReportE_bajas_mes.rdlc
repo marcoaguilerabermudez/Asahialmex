@@ -114,6 +114,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -150,6 +151,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -186,6 +188,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -222,6 +225,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -258,6 +262,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -294,6 +299,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -330,6 +336,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -366,6 +373,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -402,6 +410,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -438,6 +447,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -474,6 +484,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -510,6 +521,7 @@
                         <Border>
                           <Style>Double</Style>
                         </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -552,6 +564,7 @@
                         <RightBorder>
                           <Width>1pt</Width>
                         </RightBorder>
+                        <BackgroundColor>PaleTurquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1320,9 +1333,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Diciembre_H.Value + Fields!Noviembre_H.Value + Fields!Octubre_H.Value 
++ Fields!Enero_H.Value  + Fields!Febrero_H.Value  + Fields!Marzo_H.Value  +
+Fields!Abril_H.Value  + Fields!Mayo_H.Value  + Fields!Junio_H.Value +  
+Fields!Julio_H.Value  + Fields!Agosto_H.Value  + Fields!Septiembre_H.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1340,6 +1357,7 @@
                         <RightBorder>
                           <Width>1pt</Width>
                         </RightBorder>
+                        <BackgroundColor>PaleTurquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1357,9 +1375,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Diciembre_M.Value + Fields!Noviembre_M.Value + Fields!Octubre_M.Value 
++ Fields!Enero_M.Value  + Fields!Febrero_M.Value  + Fields!Marzo_M.Value  +
+Fields!Abril_M.Value  + Fields!Mayo_M.Value  + Fields!Junio_M.Value +  
+Fields!Julio_M.Value  + Fields!Agosto_M.Value  + Fields!Septiembre_M.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1377,6 +1399,7 @@
                         <RightBorder>
                           <Width>1pt</Width>
                         </RightBorder>
+                        <BackgroundColor>PaleTurquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2009,6 +2032,7 @@ Fields!Julio_H.Value + Fields!Julio_M.Value + Fields!Agosto_H.Value + Fields!Ago
                           <Style>Double</Style>
                           <Width>1pt</Width>
                         </RightBorder>
+                        <BackgroundColor>PaleTurquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2825,9 +2849,13 @@ Fields!Julio_H.Value + Fields!Julio_M.Value + Fields!Agosto_H.Value + Fields!Ago
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Diciembre_H.Value + Fields!Noviembre_H.Value + Fields!Octubre_H.Value 
++ Fields!Enero_H.Value  + Fields!Febrero_H.Value  + Fields!Marzo_H.Value  +
+Fields!Abril_H.Value  + Fields!Mayo_H.Value  + Fields!Junio_H.Value +  
+Fields!Julio_H.Value  + Fields!Agosto_H.Value  + Fields!Septiembre_H.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2847,6 +2875,7 @@ Fields!Julio_H.Value + Fields!Julio_M.Value + Fields!Agosto_H.Value + Fields!Ago
                         <RightBorder>
                           <Width>1pt</Width>
                         </RightBorder>
+                        <BackgroundColor>PaleTurquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2864,9 +2893,13 @@ Fields!Julio_H.Value + Fields!Julio_M.Value + Fields!Agosto_H.Value + Fields!Ago
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!Diciembre_M.Value + Fields!Noviembre_M.Value + Fields!Octubre_M.Value 
++ Fields!Enero_M.Value  + Fields!Febrero_M.Value  + Fields!Marzo_M.Value  +
+Fields!Abril_M.Value  + Fields!Mayo_M.Value  + Fields!Junio_M.Value +  
+Fields!Julio_M.Value  + Fields!Agosto_M.Value  + Fields!Septiembre_M.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2886,6 +2919,7 @@ Fields!Julio_H.Value + Fields!Julio_M.Value + Fields!Agosto_H.Value + Fields!Ago
                         <RightBorder>
                           <Width>1pt</Width>
                         </RightBorder>
+                        <BackgroundColor>PaleTurquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2996,9 +3030,9 @@ Fields!Julio_H.Value + Fields!Julio_M.Value + Fields!Agosto_H.Value + Fields!Ago
                             <Width>1pt</Width>
                           </BottomBorder>
                           <LeftBorder>
-                            <Style>Double</Style>
                             <Width>1pt</Width>
                           </LeftBorder>
+                          <BackgroundColor>Yellow</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -3086,8 +3120,10 @@ Fields!Julio_H.Value + Fields!Julio_M.Value + Fields!Agosto_H.Value + Fields!Ago
                         <rd:DefaultName>Concepto1</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Style>Solid</Style>
+                            <Style>Double</Style>
+                            <Width>1.15pt</Width>
                           </Border>
+                          <BackgroundColor>Yellow</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -3119,7 +3155,7 @@ Fields!Julio_H.Value + Fields!Julio_M.Value + Fields!Agosto_H.Value + Fields!Ago
         <Top>2.80141cm</Top>
         <Left>0.29598cm</Left>
         <Height>2.4cm</Height>
-        <Width>27.28333cm</Width>
+        <Width>27.28335cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3149,9 +3185,9 @@ Fields!Julio_H.Value + Fields!Julio_M.Value + Fields!Agosto_H.Value + Fields!Ago
         <Value>LogoPequeñoGrises</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.33877cm</Top>
-        <Left>0.61348cm</Left>
-        <Height>1.65805cm</Height>
-        <Width>1.47285cm</Width>
+        <Left>1.24848cm</Left>
+        <Height>1.97555cm</Height>
+        <Width>1.90541cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -3159,18 +3195,118 @@ Fields!Julio_H.Value + Fields!Julio_M.Value + Fields!Agosto_H.Value + Fields!Ago
           </Border>
         </Style>
       </Image>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Reporte de Altas y Bajas</Value>
+                <Style>
+                  <FontFamily>MS UI Gothic</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Año.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.33877cm</Top>
+        <Left>3.33028cm</Left>
+        <Height>1.97555cm</Height>
+        <Width>20.75023cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox8">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Fecha y hora de impresión:  </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Globals!ExecutionTime</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>5.6569cm</Top>
+        <Left>14.18011cm</Left>
+        <Height>0.65263cm</Height>
+        <Width>13.25525cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2.77369in</Height>
+    <Height>2.61744in</Height>
     <Style>
       <Border>
         <Style>None</Style>
         <Width>1.15pt</Width>
       </Border>
       <BottomBorder>
-        <Style>Double</Style>
+        <Style>None</Style>
       </BottomBorder>
       <LeftBorder>
-        <Style>Double</Style>
+        <Style>None</Style>
       </LeftBorder>
     </Style>
   </Body>
