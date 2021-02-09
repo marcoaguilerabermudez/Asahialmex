@@ -42,15 +42,17 @@ Public Class DPuestos
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT Id_Escolaridad, Id_Idioma, Nivel FROM Dp_Info_Gral g LEFT JOIN Dp_Relacion_Dp_Escolaridad e ON g.Id = e.Id_Dp LEFT JOIN Dp_Relacion_Dp_Idioma i ON g.Id = i.Id_Dp WHERE g.Id = " & idDp & "", oCon)
+            Dim query As New SqlCommand("SELECT e.Id IdE, Id_Escolaridad, Activo, Id_Idioma, Nivel FROM Dp_Info_Gral g LEFT JOIN Dp_Relacion_Dp_Escolaridad e ON g.Id = e.Id_Dp LEFT JOIN Dp_Relacion_Dp_Idioma i ON g.Id = i.Id_Dp WHERE g.Id = " & idDp & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read)
                 Dim pues As New Puestos
+                pues.IdRelacionEstudios = Convert.ToInt32(dr("IdE").ToString)
                 pues.IdEstudios = Convert.ToInt32(dr("Id_Escolaridad").ToString)
                 pues.IdIdioma = Convert.ToInt32(dr("Id_Idioma").ToString)
                 pues.Nivel = Convert.ToInt32(dr("Nivel").ToString)
+                pues.EdoEscolaridad = Convert.ToBoolean(dr("Activo").ToString)
                 lstPues.Add(pues)
             End While
         Catch ex As Exception
@@ -68,12 +70,13 @@ Public Class DPuestos
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT Cantidad,Id_Puesto,Funcion FROM Dp_Autoridad WHERE Id_Dp = " & idDp & "", oCon)
+            Dim query As New SqlCommand("SELECT Id, Cantidad,Id_Puesto,Funcion FROM Dp_Autoridad WHERE Id_Dp = " & idDp & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read)
                 Dim pues As New Puestos
+                pues.IdAutoridad = Convert.ToInt32(dr("Id").ToString)
                 pues.PC_NOcup = Convert.ToInt32(dr("Cantidad").ToString)
                 pues.PC_PuesRep = Convert.ToInt32(dr("Id_Puesto").ToString)
                 pues.PC_FuncPrinc = dr("Funcion").ToString
@@ -89,12 +92,12 @@ Public Class DPuestos
         End Try
         Return lstPues
     End Function
-    Public Function obtenerLstResponsabilidades(ByVal cadenaconex As String, ByVal idDp As Integer, ByVal idPuesto As Integer, ByVal idDpto As Integer) As LPuestos
+    Public Function ObtenerLstResponsabilidades(ByVal cadenaconex As String, ByVal idDp As Integer, ByVal idPuesto As Integer, ByVal idDpto As Integer) As LPuestos
         Dim lstPues As New LPuestos()
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT r.Id_Catalogo_Resp, rcr.Frecuencia, r.Id_Entregable FROM Dp_Responsabilidades r INNER JOIN Dp_Catalogo_Responsabilidad cr ON r.Id = cr.Id INNER JOIN Dp_Relacion_Catalogo_Resp rcr ON cr.Id = rcr.Id_Catalogo_Resp WHERE Id_Dp = " & idDp & " and rcr.Id_Puesto = " & idPuesto & " and Id_Depto = " & idDpto & "", oCon)
+            Dim query As New SqlCommand("SELECT rcr.Id_Catalogo_Resp, rcr.Frecuencia, r.Id_Entregable FROM Dp_Responsabilidades r INNER JOIN Dp_Relacion_Catalogo_Resp rcr ON r.Id_Rel_Resp  = rcr.Id WHERE Id_Dp = " & idDp & " and rcr.Id_Puesto = " & idPuesto & " and Id_Depto = " & idDpto & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -115,7 +118,7 @@ Public Class DPuestos
         End Try
         Return lstPues
     End Function
-    Public Function obtenerLstIndicadores(ByVal cadenaconex As String, ByVal idDp As Integer, ByVal idPuesto As Integer, ByVal idDpto As Integer) As LPuestos
+    Public Function ObtenerLstIndicadores(ByVal cadenaconex As String, ByVal idDp As Integer, ByVal idPuesto As Integer, ByVal idDpto As Integer) As LPuestos
         Dim lstPues As New LPuestos()
         Dim oCon As New SqlConnection(cadenaconex)
         Try
@@ -143,7 +146,7 @@ Public Class DPuestos
         End Try
         Return lstPues
     End Function
-    Public Function obtenerLstCompetencias(ByVal cadenaconex As String, ByVal idDp As Integer) As LPuestos
+    Public Function ObtenerLstCompetencias(ByVal cadenaconex As String, ByVal idDp As Integer) As LPuestos
         Dim lstPues As New LPuestos()
         Dim oCon As New SqlConnection(cadenaconex)
         Try
@@ -169,21 +172,49 @@ Public Class DPuestos
         End Try
         Return lstPues
     End Function
-    Public Function obtenerLstRelaciones(ByVal cadenaconex As String, ByVal idDp As Integer) As LPuestos
+    Public Function ObtenerLstRelaciones(ByVal cadenaconex As String, ByVal idDp As Integer) As LPuestos
         Dim lstPues As New LPuestos()
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT ISNULL(Id_Puesto,0) Id_Puesto, ISNULL(Contacto,'') Contacto, Tipo, Motivos FROM Dp_Relaciones_Puesto WHERE Id_Dp = " & idDp & "", oCon)
+            Dim query As New SqlCommand("SELECT Id, ISNULL(Id_Puesto,0) Id_Puesto, ISNULL(Contacto,'') Contacto, Tipo, Motivos FROM Dp_Relaciones_Puesto WHERE Id_Dp = " & idDp & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
             While (dr.Read)
                 Dim pues As New Puestos
+                pues.IdRelacionPuesto = Convert.ToInt32(dr("Id").ToString)
                 pues.IdPuesto = Convert.ToInt32(dr("Id_Puesto").ToString)
                 pues.Contacto = dr("Contacto").ToString
                 pues.TipoRelacion = Convert.ToInt32(dr("Tipo").ToString)
                 pues.MotivoRelacion = dr("Motivos").ToString
+                lstPues.Add(pues)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return lstPues
+    End Function
+    Public Function ObtenerLstPuestosExp(ByVal cadenaconex As String, ByVal idDp As Integer) As LPuestos
+        Dim lstPues As New LPuestos()
+        Dim oCon As New SqlConnection(cadenaconex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT Id, Puesto, cantidadTiempo, tipoTiempo FROM Dp_Puestos_Experiencia WHERE Id_Dp = " & idDp & "", oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim pues As New Puestos
+                pues.IdPuestoExp = Convert.ToInt32(dr("Id").ToString)
+                pues.PuestoExp = dr("Puesto").ToString
+                pues.CantidadTiempo = Convert.ToInt32(dr("cantidadTiempo").ToString)
+                pues.TipoTiempo = dr("tipoTiempo").ToString
                 lstPues.Add(pues)
             End While
         Catch ex As Exception
@@ -221,7 +252,7 @@ Public Class DPuestos
         End Try
         Return lstPuesto
     End Function
-    Public Function obtenerCatIndicadores(ByVal cadenaconex As String)
+    Public Function ObtenerCatIndicadores(ByVal cadenaconex As String)
         Dim lstPuesto As New LPuestos()
         Dim oCon As New SqlConnection(cadenaconex)
         Try
@@ -271,7 +302,7 @@ Public Class DPuestos
         End Try
         Return lstPuesto
     End Function
-    Public Function obtenerEntregables(ByVal cadenaconex As String) As LPuestos
+    Public Function ObtenerEntregables(ByVal cadenaconex As String) As LPuestos
         Dim lstPuesto As New LPuestos()
         Dim oCon As New SqlConnection(cadenaconex)
         Try
@@ -296,7 +327,7 @@ Public Class DPuestos
         End Try
         Return lstPuesto
     End Function
-    Public Function obtenerCompetenciasTecnicas(ByVal cadenaconex As String) As LPuestos
+    Public Function ObtenerCompetenciasTecnicas(ByVal cadenaconex As String) As LPuestos
         Dim lstPuesto As New LPuestos()
         Dim oCon As New SqlConnection(cadenaconex)
         Try
@@ -321,7 +352,7 @@ Public Class DPuestos
         End Try
         Return lstPuesto
     End Function
-    Public Function obtenerCompetenciasGrl(ByVal cadenaconex As String) As LPuestos
+    Public Function ObtenerCompetenciasGrl(ByVal cadenaconex As String) As LPuestos
         Dim lstPuesto As New LPuestos()
         Dim oCon As New SqlConnection(cadenaconex)
         Try
@@ -346,7 +377,7 @@ Public Class DPuestos
         End Try
         Return lstPuesto
     End Function
-    Public Function obtenerCompetenciasMando(ByVal cadenaconex As String) As LPuestos
+    Public Function ObtenerCompetenciasMando(ByVal cadenaconex As String) As LPuestos
         Dim lstPuesto As New LPuestos()
         Dim oCon As New SqlConnection(cadenaconex)
         Try
@@ -370,5 +401,147 @@ Public Class DPuestos
             oCon.Dispose()
         End Try
         Return lstPuesto
+    End Function
+    Public Function ObtenerArea(ByVal cadenaConex As String) As LPuestos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim LstPues As New LPuestos
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT Id, Area FROM Dp_Areas", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim pues As New Puestos()
+                pues.IdArea = Convert.ToInt32(dr("Id").ToString)
+                pues.Area = dr("Area").ToString
+                LstPues.Add(pues)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return LstPues
+    End Function
+    Public Function InsertModifDP(ByVal cadenaConex As String, ByVal puest As Puestos) As Puestos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Dp_InsertaModificaInfoGrl", oCon)
+            query.Parameters.AddWithValue("@xml", puest.Xml)
+            query.CommandType = CommandType.StoredProcedure
+
+            'Ejecuto la consulta y obtengo el valor devuelto por la misma
+            puest.IdDP = query.ExecuteScalar()
+            MsgBox("DP " & puest.IdDP & "afectado correctamente")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return puest
+    End Function
+    Public Function InsertModifEscolaridad(ByVal cadenaConex As String, ByVal puest As Puestos) As Puestos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Dp_InsertaModificaEscolaridad", oCon)
+            query.Parameters.AddWithValue("@xml", puest.Xml)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return puest
+    End Function
+    Public Function InsertModifPuestoExp(ByVal cadenaConex As String, ByVal puest As Puestos) As Puestos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Dp_InsertaModificaPuestosExp", oCon)
+            query.Parameters.AddWithValue("@xml", puest.Xml)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return puest
+    End Function
+    Public Function InsertModifObjetivo(ByVal cadenaConex As String, ByVal puest As Puestos) As Puestos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Dp_InsertaModificaObjetivoPuesto", oCon)
+            query.Parameters.AddWithValue("@IdDp", puest.IdDP)
+            query.Parameters.AddWithValue("@Objetivo", puest.ObjetivoPuestoGrl)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return puest
+    End Function
+    Public Function InsertModifAutoridad(ByVal cadenaConex As String, ByVal puest As Puestos) As Puestos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Dp_InsertaModificaAutoridad", oCon)
+            query.Parameters.AddWithValue("@xml", puest.Xml)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return puest
+    End Function
+    Public Function InsertModifRelacionesPuesto(ByVal cadenaConex As String, ByVal puest As Puestos) As Puestos
+        Dim oCon As New SqlConnection(cadenaConex)
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("Dp_InsertaModificaRelacionPuesto", oCon)
+            query.Parameters.AddWithValue("@xml", puest.Xml)
+            query.CommandType = CommandType.StoredProcedure
+            query.ExecuteScalar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return puest
     End Function
 End Class

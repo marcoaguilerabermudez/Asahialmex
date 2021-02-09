@@ -12,7 +12,7 @@ Public Class Frm_DescripcionPuestos
     Dim userName As String
     Dim ip As String = Strings.Left(Me.conex.getIp(), 6)
     Dim emp As New Empleado()
-    Dim idDp As Integer, idPue As Integer, idDep As Integer, idArea As Integer
+    Dim idDp As Integer = 0, idPue As Integer, idDep As Integer, idArea As Integer
 #End Region
 #Region "Constructores"
     Sub New()
@@ -44,10 +44,13 @@ Public Class Frm_DescripcionPuestos
             Me.cadConex = Me.conex.conexion2008For
             Me.cadConexCont = Me.conex.conexionContFor
         End If
+        Dgv_PuestosCargo.Columns("funcion").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        Dgv_RelacionInter.Columns("motivos").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        Dgv_RelacionExter.Columns("motivosExt").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        CmbAreaRellenar()
+        CmbDptoRellenar()
         CmbPuestoRellenar()
         CmbPuestoReportaRellenar()
-        CmbDptoRellenar()
-        CmbAreaRellenar()
         CmbPuestoDgv()
         CmbPuestoDgvRelaciones()
         CmbResponsabilidadDgv()
@@ -112,11 +115,21 @@ Public Class Frm_DescripcionPuestos
     Private Sub Rdb_ExpLabSi_CheckedChanged(sender As Object, e As EventArgs) Handles Rdb_ExpLabSi.CheckedChanged
         If Rdb_ExpLabSi.Checked = True Then
             Gpb_ExpLab.Enabled = True
+            RellenaPuestosExp()
         End If
     End Sub
     Private Sub Rdb_ExpLabNo_CheckedChanged(sender As Object, e As EventArgs) Handles Rdb_ExpLabNo.CheckedChanged
         If Rdb_ExpLabNo.Checked = True Then
             Gpb_ExpLab.Enabled = False
+            Txt_PuestoE1.Text = ""
+            Txt_Cantidad1.Text = ""
+            Txt_Tipo1.Text = ""
+            Txt_PuestoE2.Text = ""
+            Txt_Cantidad2.Text = ""
+            Txt_Tipo2.Text = ""
+            Txt_PuestoE3.Text = ""
+            Txt_Cantidad3.Text = ""
+            Txt_Tipo3.Text = ""
         End If
     End Sub
     Private Sub Rdb_ReqViajeSi_CheckedChanged(sender As Object, e As EventArgs) Handles Rdb_ReqViajeSi.CheckedChanged
@@ -130,6 +143,9 @@ Public Class Frm_DescripcionPuestos
             Gpb_TipoViaje.Enabled = False
             Gpb_Justifica.Enabled = False
         End If
+    End Sub
+    Private Sub Btn_GuardarModificar_Click(sender As Object, e As EventArgs) Handles Btn_GuardarModificar.Click
+        InsertaModifica()
     End Sub
 #End Region
 #Region "Rellena Formulario"
@@ -167,11 +183,31 @@ Public Class Frm_DescripcionPuestos
         lstPues = NPues.ObtenerListas(Me.cadenaConex, Me.idDp)
         For Each item In lstPues
             Select Case item.IdEstudios
-                Case 2 : Chk_Secu.Checked = True
-                Case 3 : Chk_Prepa.Checked = True
-                Case 4 : Chk_Universidad.Checked = True
-                Case 6 : Chk_TSU.Checked = True
-                Case 7 : Chk_EduOtro.Checked = True
+                Case 2
+                    If item.EdoEscolaridad = True Then
+                        Chk_Secu.Checked = True
+                    End If
+                    Chk_Secu.Tag = item.IdRelacionEstudios
+                Case 3
+                    If item.EdoEscolaridad = True Then
+                        Chk_Prepa.Checked = True
+                    End If
+                    Chk_Prepa.Tag = item.IdRelacionEstudios
+                Case 4
+                    If item.EdoEscolaridad = True Then
+                        Chk_Universidad.Checked = True
+                    End If
+                    Chk_Universidad.Tag = item.IdRelacionEstudios
+                Case 6
+                    If item.EdoEscolaridad = True Then
+                        Chk_TSU.Checked = True
+                    End If
+                    Chk_TSU.Tag = item.IdRelacionEstudios
+                Case 7
+                    If item.EdoEscolaridad = True Then
+                        Chk_EduOtro.Checked = True
+                    End If
+                    Chk_EduOtro.Tag = item.IdRelacionEstudios
                 Case Else : MsgBox("Falta agregar Nivel de Estudios")
             End Select
             Select Case item.IdIdioma
@@ -192,6 +228,35 @@ Public Class Frm_DescripcionPuestos
         lstPues = NPues.ObtenerAutoridades(Me.cadenaConex, Me.idDp)
         RellenarAutoridades(lstPues)
     End Sub
+    Private Sub RellenaPuestosExp()
+        Dim lstPues As New LPuestos
+        Dim NPues As New NPuestos
+        Dim v As Integer = 1
+
+        lstPues = NPues.obtenerLstPuestosExp(Me.cadenaConex, Me.idDp)
+
+        For Each item In lstPues
+            If v = 1 Then
+                Txt_PuestoE1.Tag = item.IdPuestoExp
+                Txt_PuestoE1.Text = item.PuestoExp
+                Txt_Cantidad1.Text = item.CantidadTiempo
+                Txt_Tipo1.Text = item.TipoTiempo
+            End If
+            If v = 2 Then
+                Txt_PuestoE2.Tag = item.IdPuestoExp
+                Txt_PuestoE2.Text = item.PuestoExp
+                Txt_Cantidad2.Text = item.CantidadTiempo
+                Txt_Tipo2.Text = item.TipoTiempo
+            End If
+            If v = 3 Then
+                Txt_PuestoE3.Tag = item.IdPuestoExp
+                Txt_PuestoE3.Text = item.PuestoExp
+                Txt_Cantidad3.Text = item.CantidadTiempo
+                Txt_Tipo3.Text = item.TipoTiempo
+            End If
+            v += 1
+        Next
+    End Sub
     Private Sub RellenarAutoridades(ByVal lstPuesto As LPuestos)
         Dim fila As Integer = 0
         Dim NPues As New NPuestos()
@@ -201,6 +266,7 @@ Public Class Frm_DescripcionPuestos
         For Each item In lstPuesto
             Dgv_PuestosCargo.Rows.Add()
             With Dgv_PuestosCargo.Rows(fila)
+                .Cells("IdAutoridad").Value = item.IdAutoridad
                 .Cells("ocupantes").Value = item.PC_NOcup
                 .Cells("puestosReportan").Value = item.PC_PuesRep
                 .Cells("funcion").Value = item.PC_FuncPrinc
@@ -222,6 +288,7 @@ Public Class Frm_DescripcionPuestos
             If item.TipoRelacion = 1 Then
                 Dgv_RelacionInter.Rows.Add()
                 With Dgv_RelacionInter.Rows(fila)
+                    .Cells("idRpI").Value = item.IdRelacionPuesto
                     .Cells("puestosArea").Value = item.IdPuesto
                     .Cells("motivos").Value = item.MotivoRelacion
                 End With
@@ -230,6 +297,7 @@ Public Class Frm_DescripcionPuestos
             If item.TipoRelacion = 2 Then
                 Dgv_RelacionExter.Rows.Add()
                 With Dgv_RelacionExter.Rows(filaExt)
+                    .Cells("idRpE").Value = item.IdRelacionPuesto
                     .Cells("contactoEmpresa").Value = item.Contacto
                     .Cells("motivosExt").Value = item.MotivoRelacion
                 End With
@@ -361,16 +429,16 @@ Public Class Frm_DescripcionPuestos
         End With
     End Sub
     Private Sub CmbAreaRellenar()
-        Dim lstEmp As New LEmpleado()
-        Dim Emp As New Empleado()
-        lstEmp = AreaRecuperar()
+        Dim lstPues As New LPuestos()
+        Dim Pues As New Puestos()
+        lstPues = AreaRecuperar()
 
         Emp.IdArea = 0
         Emp.Area = ""
-        lstEmp.Add(Emp)
+        lstPues.Add(Pues)
 
         With Cmb_Area
-            .DataSource = lstEmp
+            .DataSource = lstPues
             .DisplayMember = "Area"
             .ValueMember = "IdArea"
             .SelectedValue = 0
@@ -394,8 +462,8 @@ Public Class Frm_DescripcionPuestos
             .DisplayMember = "Puesto"
             .ValueMember = "IdPuesto"
         End With
-        Dgv_PuestosCargo.Columns.RemoveAt(1)
-        Dgv_PuestosCargo.Columns.Insert(1, CCmbDGV)
+        Dgv_PuestosCargo.Columns.RemoveAt(2)
+        Dgv_PuestosCargo.Columns.Insert(2, CCmbDGV)
     End Sub
     Private Sub CmbResponsabilidadDgv()
         Dim lstPues As New LPuestos()
@@ -583,9 +651,206 @@ Public Class Frm_DescripcionPuestos
             .DisplayMember = "Puesto"
             .ValueMember = "IdPuesto"
         End With
-        Dgv_RelacionInter.Columns.RemoveAt(0)
-        Dgv_RelacionInter.Columns.Insert(0, CCmbDGV)
+        Dgv_RelacionInter.Columns.RemoveAt(1)
+        Dgv_RelacionInter.Columns.Insert(1, CCmbDGV)
     End Sub
+#End Region
+#Region "Rellena Objeto"
+    Private Function RellenaObjPuestos() As Puestos
+        Dim puest As New Puestos()
+        puest.IdDP = Me.idDp
+        puest.IdPuesto = Cmb_Puesto.SelectedValue
+        puest.Puesto = Cmb_Puesto.Text
+        puest.IdDepto = Cmb_Dpto.SelectedValue
+        puest.IdArea = Cmb_Area.SelectedValue
+        puest.IdPuestoReporta = Cmb_PuestoRep.SelectedValue
+        If Rdb_Admin.Checked = True Then
+            puest.TipoPuesto = 1
+        ElseIf Rdb_Operativo.Checked = True Then
+            puest.TipoPuesto = 2
+        End If
+        If Rdb_Hombre.Checked = True Then
+            puest.Sexo = 1
+        ElseIf Rdb_Mujer.Checked = True Then
+            puest.Sexo = 2
+        ElseIf Rdb_Indist.Checked = True Then
+            puest.Sexo = 3
+        End If
+        puest.EdadMin = Txt_EdadMin.Text
+        puest.EdadMax = Txt_EdadMax.Text
+        If Rdb_ExpLabSi.Checked = True Then
+            puest.ReqExp = 1
+        ElseIf Rdb_ExpLabNo.Checked = True Then
+            puest.ReqExp = 0
+        End If
+        If Rdb_ReqViajeSi.Checked = True Then
+            puest.DispViajar = 1
+        ElseIf Rdb_ReqViajeNo.Checked = True Then
+            puest.DispViajar = 0
+        End If
+        If Rdb_TipoViajNac.Checked = True Then
+            puest.TipoViaje = 1
+        ElseIf Rdb_TipoViajInt.Checked = True Then
+            puest.TipoViaje = 2
+        End If
+        puest.Justificacion = Txt_Justifica.Text
+
+        Return puest
+    End Function
+    Private Function RellenaLstEstudios() As LPuestos
+        Dim i As Integer
+        Dim lstPues As New LPuestos()
+
+        For i = 1 To 5
+            Dim puest As New Puestos()
+            Select Case i
+                Case 1
+                    If Chk_Universidad.Checked = True Or Chk_Universidad.Tag <> 0 Then
+                        puest.IdRelacionEstudios = Chk_Universidad.Tag
+                        puest.IdDP = Me.idDp
+                        puest.IdEstudios = 4
+                        If Chk_Universidad.Checked = True Then
+                            puest.EdoEscolaridad = 1
+                        Else
+                            puest.EdoEscolaridad = 0
+                        End If
+                        lstPues.Add(puest)
+                    End If
+                Case 2
+                    If Chk_TSU.Checked = True Or Chk_TSU.Tag <> 0 Then
+                        puest.IdRelacionEstudios = Chk_TSU.Tag
+                        puest.IdDP = Me.idDp
+                        puest.IdEstudios = 6
+                        If Chk_TSU.Checked = True Then
+                            puest.EdoEscolaridad = 1
+                        Else
+                            puest.EdoEscolaridad = 0
+                        End If
+                        lstPues.Add(puest)
+                    End If
+                Case 3
+                    If Chk_Prepa.Checked = True Or Chk_Prepa.Tag <> 0 Then
+                        puest.IdRelacionEstudios = Chk_Prepa.Tag
+                        puest.IdDP = Me.idDp
+                        puest.IdEstudios = 3
+                        If Chk_Prepa.Checked = True Then
+                            puest.EdoEscolaridad = 1
+                        Else
+                            puest.EdoEscolaridad = 0
+                        End If
+                        lstPues.Add(puest)
+                    End If
+                Case 4
+                    If Chk_Secu.Checked = True Or Chk_Secu.Tag <> 0 Then
+                        puest.IdRelacionEstudios = Chk_Secu.Tag
+                        puest.IdDP = Me.idDp
+                        puest.IdEstudios = 2
+                        If Chk_Secu.Checked = True Then
+                            puest.EdoEscolaridad = 1
+                        Else
+                            puest.EdoEscolaridad = 0
+                        End If
+                        lstPues.Add(puest)
+                    End If
+                Case 5
+                    If Chk_EduOtro.Checked = True Or Chk_EduOtro.Tag <> 0 Then
+                        puest.IdRelacionEstudios = Chk_EduOtro.Tag
+                        puest.IdDP = Me.idDp
+                        puest.IdEstudios = 7
+                        If Chk_EduOtro.Checked = True Then
+                            puest.EdoEscolaridad = 1
+                        Else
+                            puest.EdoEscolaridad = 0
+                        End If
+                        lstPues.Add(puest)
+                    End If
+            End Select
+        Next
+
+        Return lstPues
+    End Function
+    Private Function RellenaLstPuestosExp() As LPuestos
+        Dim i As Integer
+        Dim lstPues As New LPuestos()
+
+        For i = 1 To 3
+            Dim puest As New Puestos()
+            Select Case i
+                Case 1
+                    If Txt_PuestoE1.Text <> "" Or Txt_PuestoE1.Tag <> 0 Then
+                        puest.IdPuestoExp = Txt_PuestoE1.Tag
+                        puest.IdDP = Me.idDp
+                        puest.PuestoExp = Txt_PuestoE1.Text
+                        puest.CantidadTiempo = Txt_Cantidad1.Text
+                        puest.TipoTiempo = Txt_Tipo1.Text
+                        lstPues.Add(puest)
+                    End If
+                Case 2
+                    If Txt_PuestoE2.Text <> "" Or Txt_PuestoE2.Tag <> 0 Then
+                        puest.IdPuestoExp = Txt_PuestoE2.Tag
+                        puest.IdDP = Me.idDp
+                        puest.PuestoExp = Txt_PuestoE2.Text
+                        puest.CantidadTiempo = Txt_Cantidad2.Text
+                        puest.TipoTiempo = Txt_Tipo2.Text
+                        lstPues.Add(puest)
+                    End If
+                Case 3
+                    If Txt_PuestoE3.Text <> "" Or Txt_PuestoE3.Tag <> 0 Then
+                        puest.IdPuestoExp = Txt_PuestoE3.Tag
+                        puest.IdDP = Me.idDp
+                        puest.PuestoExp = Txt_PuestoE3.Text
+                        puest.CantidadTiempo = Txt_Cantidad3.Text
+                        puest.TipoTiempo = Txt_Tipo3.Text
+                        lstPues.Add(puest)
+                    End If
+            End Select
+        Next
+        Return lstPues
+    End Function
+    Private Function RellenaLstAutoridad() As LPuestos
+        Dim lstPues As New LPuestos()
+        Dim fila As Integer, totalfilas As Integer = Dgv_PuestosCargo.Rows.Count()
+        For fila = 0 To totalfilas - 2
+            With Dgv_PuestosCargo.Rows(fila)
+                Dim objPuesto As New Puestos()
+                objPuesto.IdAutoridad = .Cells("IdAutoridad").Value
+                objPuesto.IdDP = Me.idDp
+                objPuesto.PC_NOcup = .Cells("ocupantes").Value
+                objPuesto.PC_PuesRep = .Cells("puestosReportan").Value
+                objPuesto.PC_FuncPrinc = .Cells("funcion").Value
+                lstPues.Add(objPuesto)
+            End With
+        Next
+        Return lstPues
+    End Function
+    Private Function RellenaLstRelacionesPuesto() As LPuestos
+        Dim lstPues As New LPuestos()
+        Dim filaI As Integer, totalfilasI As Integer = Dgv_RelacionInter.Rows.Count()
+        For filaI = 0 To totalfilasI - 2
+            With Dgv_RelacionInter.Rows(filaI)
+                Dim objPuesto As New Puestos()
+                objPuesto.IdRelacionPuesto = .Cells("idRpI").Value
+                objPuesto.IdDP = Me.idDp
+                objPuesto.IdPuesto = .Cells("puestosArea").Value
+                objPuesto.TipoRelacion = 1
+                objPuesto.MotivoRelacion = .Cells("motivos").Value
+                lstPues.Add(objPuesto)
+            End With
+        Next
+        Dim filaE As Integer, totalfilasE As Integer = Dgv_RelacionExter.Rows.Count()
+        For filaE = 0 To totalfilasE - 2
+            With Dgv_RelacionExter.Rows(filaE)
+                Dim objPuesto As New Puestos()
+                objPuesto.IdRelacionPuesto = .Cells("idRpE").Value
+                objPuesto.IdDP = Me.idDp
+                objPuesto.Contacto = .Cells("contactoEmpresa").Value
+                objPuesto.TipoRelacion = 2
+                objPuesto.MotivoRelacion = .Cells("motivosExt").Value
+                lstPues.Add(objPuesto)
+            End With
+        Next
+        Return lstPues
+    End Function
 #End Region
 #Region "Recuperar Datos"
     Private Function PuestoRecuperar() As LEmpleado
@@ -598,10 +863,10 @@ Public Class Frm_DescripcionPuestos
 
         Return NEmp.RecuperarDepto(Me.cadConex)
     End Function
-    Private Function AreaRecuperar() As LEmpleado
-        Dim NEmp As New NEmpleado()
+    Private Function AreaRecuperar() As LPuestos
+        Dim NPues As New NPuestos()
 
-        Return NEmp.RecuperarArea(Me.cadConex)
+        Return NPues.ObtenerArea(Me.cadenaConex)
     End Function
     Private Function CatRespRecuperar() As LPuestos
         Dim NPues As New NPuestos()
@@ -638,5 +903,33 @@ Public Class Frm_DescripcionPuestos
 
         Return NPues.obtenerCompetenciasMando(Me.cadenaConex)
     End Function
+#End Region
+#Region "Inserts, Modificaciones y Limpieza"
+    Private Sub InsertaModifica()
+        Dim puest As New Puestos()
+        Dim lstPues As New LPuestos()
+        Dim NPuest As New NPuestos()
+        puest = RellenaObjPuestos()
+        puest = NPuest.InsertModifDP(Me.cadenaConex, puest)
+        Me.idDp = puest.IdDP
+        lstPues = RellenaLstEstudios()
+        NPuest.InsertModifEscolaridad(Me.cadenaConex, lstPues)
+        lstPues = RellenaLstPuestosExp()
+        NPuest.InsertModifPuestoExp(Me.cadenaConex, lstPues)
+        puest.IdDP = Me.idDp
+        puest.ObjetivoPuestoGrl = Txt_ObjGrl.Text
+        NPuest.InsertModifObjetivo(Me.cadenaConex, puest)
+        lstPues = RellenaLstAutoridad()
+        NPuest.InsertModifAutoridad(Me.cadenaConex, lstPues)
+        lstPues = RellenaLstRelacionesPuesto()
+        NPuest.InsertModifRelacionesPuesto(Me.cadenaConex, lstPues)
+
+        puest.IdPuesto = Me.idPue
+        puest.IdDepto = Me.idDep
+        puest.IdArea = Me.idArea
+        puest = NPuest.ObtenerDpInfoGral(Me.cadenaConex, puest)
+        Me.idDp = puest.IdDP
+        RellenaInfoGral(puest)
+    End Sub
 #End Region
 End Class

@@ -17,6 +17,15 @@
             idPuesto_ = value
         End Set
     End Property
+    Private puesto_ As String
+    Public Property Puesto() As String
+        Get
+            Return puesto_
+        End Get
+        Set(ByVal value As String)
+            puesto_ = value
+        End Set
+    End Property
     Private idDepto_ As Integer
     Public Property IdDepto() As Integer
         Get
@@ -33,6 +42,15 @@
         End Get
         Set(ByVal value As Integer)
             idArea_ = value
+        End Set
+    End Property
+    Private area_ As String
+    Public Property Area() As String
+        Get
+            Return area_
+        End Get
+        Set(ByVal value As String)
+            area_ = value
         End Set
     End Property
     Private idPuestoReporta_ As Integer
@@ -80,6 +98,15 @@
             edadMax_ = value
         End Set
     End Property
+    Private idRelacionEstudios_ As Integer
+    Public Property IdRelacionEstudios() As Integer
+        Get
+            Return idRelacionEstudios_
+        End Get
+        Set(ByVal value As Integer)
+            idRelacionEstudios_ = value
+        End Set
+    End Property
     Private idEstudios_ As Integer
     Public Property IdEstudios() As Integer
         Get
@@ -87,6 +114,15 @@
         End Get
         Set(ByVal value As Integer)
             idEstudios_ = value
+        End Set
+    End Property
+    Private edoEscolaridad_ As Boolean
+    Public Property EdoEscolaridad() As Boolean
+        Get
+            Return edoEscolaridad_
+        End Get
+        Set(ByVal value As Boolean)
+            edoEscolaridad_ = value
         End Set
     End Property
     Private reqExp_ As Integer
@@ -150,6 +186,15 @@
         End Get
         Set(ByVal value As String)
             objetivoPuestoGrl_ = value
+        End Set
+    End Property
+    Private idAutoridad_ As Integer
+    Public Property IdAutoridad() As Integer
+        Get
+            Return idAutoridad_
+        End Get
+        Set(ByVal value As Integer)
+            idAutoridad_ = value
         End Set
     End Property
     Private puestCargo_NOcup_ As Integer
@@ -332,6 +377,15 @@
             compePersoMando_ = value
         End Set
     End Property
+    Private idRelacionpuesto_ As Integer
+    Public Property IdRelacionPuesto() As Integer
+        Get
+            Return idRelacionpuesto_
+        End Get
+        Set(ByVal value As Integer)
+            idRelacionpuesto_ = value
+        End Set
+    End Property
     Private contacto_ As String
     Public Property Contacto() As String
         Get
@@ -357,6 +411,51 @@
         End Get
         Set(ByVal value As String)
             motivoRelacion_ = value
+        End Set
+    End Property
+    Private idPuestoExp_ As Integer
+    Public Property IdPuestoExp() As Integer
+        Get
+            Return idPuestoExp_
+        End Get
+        Set(ByVal value As Integer)
+            idPuestoExp_ = value
+        End Set
+    End Property
+    Private puestoExp_ As String
+    Public Property PuestoExp() As String
+        Get
+            Return puestoExp_
+        End Get
+        Set(ByVal value As String)
+            puestoExp_ = value
+        End Set
+    End Property
+    Private cantidadTiempo_ As Integer
+    Public Property CantidadTiempo() As Integer
+        Get
+            Return cantidadTiempo_
+        End Get
+        Set(ByVal value As Integer)
+            cantidadTiempo_ = value
+        End Set
+    End Property
+    Private tipoTiempo_ As String
+    Public Property TipoTiempo() As String
+        Get
+            Return tipoTiempo_
+        End Get
+        Set(ByVal value As String)
+            tipoTiempo_ = value
+        End Set
+    End Property
+    Private xml_ As String
+    Public Property Xml() As String
+        Get
+            Return xml_
+        End Get
+        Set(ByVal value As String)
+            xml_ = value
         End Set
     End Property
 End Class

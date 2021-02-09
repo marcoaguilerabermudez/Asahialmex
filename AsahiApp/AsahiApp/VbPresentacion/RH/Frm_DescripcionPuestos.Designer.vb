@@ -24,7 +24,7 @@ Partial Class Frm_DescripcionPuestos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_DescripcionPuestos))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Btn_GuardarModificar = New System.Windows.Forms.Button()
         Me.Cmb_Area = New System.Windows.Forms.ComboBox()
         Me.Cmb_Dpto = New System.Windows.Forms.ComboBox()
         Me.Cmb_Puesto = New System.Windows.Forms.ComboBox()
@@ -105,16 +105,11 @@ Partial Class Frm_DescripcionPuestos
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Dgv_PuestosCargo = New System.Windows.Forms.DataGridView()
-        Me.ocupantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.puestosReportan = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.funcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Tbp_RelacionesPuestos = New System.Windows.Forms.TabPage()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Dgv_RelacionExter = New System.Windows.Forms.DataGridView()
-        Me.contactoEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.motivosExt = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
@@ -142,8 +137,16 @@ Partial Class Frm_DescripcionPuestos
         Me.compeTecnicas = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.compeGenerales = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.compeMando = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.IdAutoridad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ocupantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.puestosReportan = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.funcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idRpI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.puestosArea = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.motivos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idRpE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.contactoEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.motivosExt = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Tbc_Origen.SuspendLayout()
@@ -186,7 +189,7 @@ Partial Class Frm_DescripcionPuestos
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.Btn_GuardarModificar)
         Me.Panel1.Controls.Add(Me.Cmb_Area)
         Me.Panel1.Controls.Add(Me.Cmb_Dpto)
         Me.Panel1.Controls.Add(Me.Cmb_Puesto)
@@ -196,17 +199,17 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(746, 60)
+        Me.Panel1.Size = New System.Drawing.Size(791, 60)
         Me.Panel1.TabIndex = 0
         '
-        'Button1
+        'Btn_GuardarModificar
         '
-        Me.Button1.Image = Global.Presentacion.My.Resources.Resources.save
-        Me.Button1.Location = New System.Drawing.Point(660, 8)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(55, 41)
-        Me.Button1.TabIndex = 2
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Btn_GuardarModificar.Image = Global.Presentacion.My.Resources.Resources.save
+        Me.Btn_GuardarModificar.Location = New System.Drawing.Point(660, 8)
+        Me.Btn_GuardarModificar.Name = "Btn_GuardarModificar"
+        Me.Btn_GuardarModificar.Size = New System.Drawing.Size(55, 41)
+        Me.Btn_GuardarModificar.TabIndex = 2
+        Me.Btn_GuardarModificar.UseVisualStyleBackColor = True
         '
         'Cmb_Area
         '
@@ -275,7 +278,7 @@ Partial Class Frm_DescripcionPuestos
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 60)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(746, 5)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(791, 5)
         Me.FlowLayoutPanel1.TabIndex = 1
         '
         'Panel2
@@ -283,7 +286,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 379)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(746, 5)
+        Me.Panel2.Size = New System.Drawing.Size(791, 5)
         Me.Panel2.TabIndex = 2
         '
         'Panel3
@@ -297,7 +300,7 @@ Partial Class Frm_DescripcionPuestos
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel4.Location = New System.Drawing.Point(741, 65)
+        Me.Panel4.Location = New System.Drawing.Point(786, 65)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(5, 314)
         Me.Panel4.TabIndex = 4
@@ -308,7 +311,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(5, 65)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(736, 314)
+        Me.Panel5.Size = New System.Drawing.Size(781, 314)
         Me.Panel5.TabIndex = 5
         '
         'Tbc_Origen
@@ -325,7 +328,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Tbc_Origen.Location = New System.Drawing.Point(0, 0)
         Me.Tbc_Origen.Name = "Tbc_Origen"
         Me.Tbc_Origen.SelectedIndex = 0
-        Me.Tbc_Origen.Size = New System.Drawing.Size(736, 314)
+        Me.Tbc_Origen.Size = New System.Drawing.Size(781, 314)
         Me.Tbc_Origen.TabIndex = 0
         '
         'Tbp_Gral
@@ -347,7 +350,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Tbp_Gral.Location = New System.Drawing.Point(4, 22)
         Me.Tbp_Gral.Name = "Tbp_Gral"
         Me.Tbp_Gral.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tbp_Gral.Size = New System.Drawing.Size(728, 288)
+        Me.Tbp_Gral.Size = New System.Drawing.Size(773, 288)
         Me.Tbp_Gral.TabIndex = 0
         Me.Tbp_Gral.Text = "Requisitos Grals."
         Me.Tbp_Gral.UseVisualStyleBackColor = True
@@ -357,7 +360,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Gpb_Justifica.Controls.Add(Me.Txt_Justifica)
         Me.Gpb_Justifica.Controls.Add(Me.Label11)
         Me.Gpb_Justifica.Enabled = False
-        Me.Gpb_Justifica.Location = New System.Drawing.Point(532, 178)
+        Me.Gpb_Justifica.Location = New System.Drawing.Point(555, 178)
         Me.Gpb_Justifica.Name = "Gpb_Justifica"
         Me.Gpb_Justifica.Size = New System.Drawing.Size(189, 100)
         Me.Gpb_Justifica.TabIndex = 10
@@ -390,7 +393,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Gpb_NivelIngles.Controls.Add(Me.Rdb_NivelAvIng)
         Me.Gpb_NivelIngles.Controls.Add(Me.Rdb_NivelIntIng)
         Me.Gpb_NivelIngles.Enabled = False
-        Me.Gpb_NivelIngles.Location = New System.Drawing.Point(103, 228)
+        Me.Gpb_NivelIngles.Location = New System.Drawing.Point(126, 228)
         Me.Gpb_NivelIngles.Name = "Gpb_NivelIngles"
         Me.Gpb_NivelIngles.Size = New System.Drawing.Size(183, 50)
         Me.Gpb_NivelIngles.TabIndex = 10
@@ -435,7 +438,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Gpb_NivelJapon.Controls.Add(Me.Rdb_NivelAvJap)
         Me.Gpb_NivelJapon.Controls.Add(Me.Rdb_NivelIntJap)
         Me.Gpb_NivelJapon.Enabled = False
-        Me.Gpb_NivelJapon.Location = New System.Drawing.Point(103, 178)
+        Me.Gpb_NivelJapon.Location = New System.Drawing.Point(126, 178)
         Me.Gpb_NivelJapon.Name = "Gpb_NivelJapon"
         Me.Gpb_NivelJapon.Size = New System.Drawing.Size(183, 50)
         Me.Gpb_NivelJapon.TabIndex = 10
@@ -479,7 +482,7 @@ Partial Class Frm_DescripcionPuestos
         Me.GroupBox8.Controls.Add(Me.Chk_Japo)
         Me.GroupBox8.Controls.Add(Me.Label8)
         Me.GroupBox8.Controls.Add(Me.Chk_Ingles)
-        Me.GroupBox8.Location = New System.Drawing.Point(6, 179)
+        Me.GroupBox8.Location = New System.Drawing.Point(29, 179)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(93, 100)
         Me.GroupBox8.TabIndex = 10
@@ -521,7 +524,7 @@ Partial Class Frm_DescripcionPuestos
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Rdb_Operativo)
         Me.GroupBox2.Controls.Add(Me.Rdb_Admin)
-        Me.GroupBox2.Location = New System.Drawing.Point(173, 4)
+        Me.GroupBox2.Location = New System.Drawing.Point(196, 4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(178, 80)
         Me.GroupBox2.TabIndex = 10
@@ -573,7 +576,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Gpb_ExpLab.Controls.Add(Me.Txt_PuestoE1)
         Me.Gpb_ExpLab.Controls.Add(Me.Label18)
         Me.Gpb_ExpLab.Enabled = False
-        Me.Gpb_ExpLab.Location = New System.Drawing.Point(375, 86)
+        Me.Gpb_ExpLab.Location = New System.Drawing.Point(398, 86)
         Me.Gpb_ExpLab.Name = "Gpb_ExpLab"
         Me.Gpb_ExpLab.Size = New System.Drawing.Size(346, 90)
         Me.Gpb_ExpLab.TabIndex = 9
@@ -659,7 +662,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Gpb_TipoViaje.Controls.Add(Me.Rdb_TipoViajNac)
         Me.Gpb_TipoViaje.Controls.Add(Me.Label12)
         Me.Gpb_TipoViaje.Enabled = False
-        Me.Gpb_TipoViaje.Location = New System.Drawing.Point(422, 178)
+        Me.Gpb_TipoViaje.Location = New System.Drawing.Point(445, 178)
         Me.Gpb_TipoViaje.Name = "Gpb_TipoViaje"
         Me.Gpb_TipoViaje.Size = New System.Drawing.Size(105, 100)
         Me.Gpb_TipoViaje.TabIndex = 9
@@ -703,7 +706,7 @@ Partial Class Frm_DescripcionPuestos
         Me.GroupBox10.Controls.Add(Me.Rdb_ReqViajeNo)
         Me.GroupBox10.Controls.Add(Me.Rdb_ReqViajeSi)
         Me.GroupBox10.Controls.Add(Me.Label10)
-        Me.GroupBox10.Location = New System.Drawing.Point(291, 178)
+        Me.GroupBox10.Location = New System.Drawing.Point(314, 178)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(126, 100)
         Me.GroupBox10.TabIndex = 9
@@ -747,7 +750,7 @@ Partial Class Frm_DescripcionPuestos
         Me.GroupBox6.Controls.Add(Me.Label17)
         Me.GroupBox6.Controls.Add(Me.Rdb_ExpLabNo)
         Me.GroupBox6.Controls.Add(Me.Rdb_ExpLabSi)
-        Me.GroupBox6.Location = New System.Drawing.Point(222, 86)
+        Me.GroupBox6.Location = New System.Drawing.Point(245, 86)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(147, 90)
         Me.GroupBox6.TabIndex = 9
@@ -794,7 +797,7 @@ Partial Class Frm_DescripcionPuestos
         Me.GroupBox5.Controls.Add(Me.Chk_TSU)
         Me.GroupBox5.Controls.Add(Me.Chk_Universidad)
         Me.GroupBox5.Controls.Add(Me.Label14)
-        Me.GroupBox5.Location = New System.Drawing.Point(5, 86)
+        Me.GroupBox5.Location = New System.Drawing.Point(28, 86)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(213, 90)
         Me.GroupBox5.TabIndex = 9
@@ -867,7 +870,7 @@ Partial Class Frm_DescripcionPuestos
         Me.GroupBox4.Controls.Add(Me.Txt_EdadMin)
         Me.GroupBox4.Controls.Add(Me.Label16)
         Me.GroupBox4.Controls.Add(Me.Label7)
-        Me.GroupBox4.Location = New System.Drawing.Point(562, 4)
+        Me.GroupBox4.Location = New System.Drawing.Point(585, 4)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(159, 80)
         Me.GroupBox4.TabIndex = 9
@@ -918,7 +921,7 @@ Partial Class Frm_DescripcionPuestos
         Me.GroupBox3.Controls.Add(Me.Rdb_Hombre)
         Me.GroupBox3.Controls.Add(Me.Rdb_Mujer)
         Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Location = New System.Drawing.Point(355, 4)
+        Me.GroupBox3.Location = New System.Drawing.Point(378, 4)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(203, 80)
         Me.GroupBox3.TabIndex = 9
@@ -972,7 +975,7 @@ Partial Class Frm_DescripcionPuestos
         '
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Cmb_PuestoRep)
-        Me.GroupBox1.Location = New System.Drawing.Point(5, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(28, 4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(164, 80)
         Me.GroupBox1.TabIndex = 9
@@ -1004,18 +1007,19 @@ Partial Class Frm_DescripcionPuestos
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(728, 288)
+        Me.TabPage2.Size = New System.Drawing.Size(773, 288)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Objetivo Gral."
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'Txt_ObjGrl
         '
+        Me.Txt_ObjGrl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Txt_ObjGrl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_ObjGrl.Location = New System.Drawing.Point(6, 5)
+        Me.Txt_ObjGrl.Location = New System.Drawing.Point(3, 3)
         Me.Txt_ObjGrl.Multiline = True
         Me.Txt_ObjGrl.Name = "Txt_ObjGrl"
-        Me.Txt_ObjGrl.Size = New System.Drawing.Size(716, 279)
+        Me.Txt_ObjGrl.Size = New System.Drawing.Size(767, 282)
         Me.Txt_ObjGrl.TabIndex = 0
         '
         'TabPage1
@@ -1025,7 +1029,7 @@ Partial Class Frm_DescripcionPuestos
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(728, 288)
+        Me.TabPage1.Size = New System.Drawing.Size(773, 288)
         Me.TabPage1.TabIndex = 2
         Me.TabPage1.Text = "Nivel Autoridad"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -1036,40 +1040,21 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(3, 25)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(722, 260)
+        Me.Panel7.Size = New System.Drawing.Size(767, 260)
         Me.Panel7.TabIndex = 4
         '
         'Dgv_PuestosCargo
         '
         Me.Dgv_PuestosCargo.BackgroundColor = System.Drawing.Color.White
         Me.Dgv_PuestosCargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_PuestosCargo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ocupantes, Me.puestosReportan, Me.funcion})
+        Me.Dgv_PuestosCargo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdAutoridad, Me.ocupantes, Me.puestosReportan, Me.funcion})
         Me.Dgv_PuestosCargo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_PuestosCargo.Location = New System.Drawing.Point(0, 0)
         Me.Dgv_PuestosCargo.Name = "Dgv_PuestosCargo"
         Me.Dgv_PuestosCargo.RowHeadersVisible = False
         Me.Dgv_PuestosCargo.RowTemplate.Height = 30
-        Me.Dgv_PuestosCargo.Size = New System.Drawing.Size(722, 260)
+        Me.Dgv_PuestosCargo.Size = New System.Drawing.Size(767, 260)
         Me.Dgv_PuestosCargo.TabIndex = 0
-        '
-        'ocupantes
-        '
-        Me.ocupantes.HeaderText = "No. de Ocupantes 人数"
-        Me.ocupantes.Name = "ocupantes"
-        '
-        'puestosReportan
-        '
-        Me.puestosReportan.HeaderText = "Puestos que le reportan 直属部下の役職"
-        Me.puestosReportan.Name = "puestosReportan"
-        Me.puestosReportan.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.puestosReportan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.puestosReportan.Width = 135
-        '
-        'funcion
-        '
-        Me.funcion.HeaderText = "Función principal 業務内容"
-        Me.funcion.Name = "funcion"
-        Me.funcion.Width = 480
         '
         'Panel6
         '
@@ -1077,7 +1062,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel6.Location = New System.Drawing.Point(3, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(722, 22)
+        Me.Panel6.Size = New System.Drawing.Size(767, 22)
         Me.Panel6.TabIndex = 3
         '
         'Label13
@@ -1100,7 +1085,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Tbp_RelacionesPuestos.Location = New System.Drawing.Point(4, 22)
         Me.Tbp_RelacionesPuestos.Name = "Tbp_RelacionesPuestos"
         Me.Tbp_RelacionesPuestos.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tbp_RelacionesPuestos.Size = New System.Drawing.Size(728, 288)
+        Me.Tbp_RelacionesPuestos.Size = New System.Drawing.Size(773, 288)
         Me.Tbp_RelacionesPuestos.TabIndex = 3
         Me.Tbp_RelacionesPuestos.Text = "Relaciones del Puesto"
         Me.Tbp_RelacionesPuestos.UseVisualStyleBackColor = True
@@ -1110,35 +1095,24 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel10.Controls.Add(Me.Dgv_RelacionExter)
         Me.Panel10.Controls.Add(Me.Panel12)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel10.Location = New System.Drawing.Point(365, 24)
+        Me.Panel10.Location = New System.Drawing.Point(389, 24)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(360, 261)
+        Me.Panel10.Size = New System.Drawing.Size(381, 261)
         Me.Panel10.TabIndex = 2
         '
         'Dgv_RelacionExter
         '
+        Me.Dgv_RelacionExter.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
         Me.Dgv_RelacionExter.BackgroundColor = System.Drawing.Color.White
         Me.Dgv_RelacionExter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_RelacionExter.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.contactoEmpresa, Me.motivosExt})
+        Me.Dgv_RelacionExter.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idRpE, Me.contactoEmpresa, Me.motivosExt})
         Me.Dgv_RelacionExter.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_RelacionExter.Location = New System.Drawing.Point(0, 19)
         Me.Dgv_RelacionExter.Name = "Dgv_RelacionExter"
         Me.Dgv_RelacionExter.RowHeadersVisible = False
         Me.Dgv_RelacionExter.RowTemplate.Height = 30
-        Me.Dgv_RelacionExter.Size = New System.Drawing.Size(360, 242)
+        Me.Dgv_RelacionExter.Size = New System.Drawing.Size(381, 242)
         Me.Dgv_RelacionExter.TabIndex = 1
-        '
-        'contactoEmpresa
-        '
-        Me.contactoEmpresa.HeaderText = "Contacto o empresa 会社名/部署/役職"
-        Me.contactoEmpresa.Name = "contactoEmpresa"
-        Me.contactoEmpresa.Width = 140
-        '
-        'motivosExt
-        '
-        Me.motivosExt.HeaderText = "Motivos 何のために"
-        Me.motivosExt.Name = "motivosExt"
-        Me.motivosExt.Width = 215
         '
         'Panel12
         '
@@ -1146,7 +1120,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel12.Location = New System.Drawing.Point(0, 0)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(360, 19)
+        Me.Panel12.Size = New System.Drawing.Size(381, 19)
         Me.Panel12.TabIndex = 0
         '
         'Label21
@@ -1168,20 +1142,21 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel9.Location = New System.Drawing.Point(3, 24)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(360, 261)
+        Me.Panel9.Size = New System.Drawing.Size(380, 261)
         Me.Panel9.TabIndex = 1
         '
         'Dgv_RelacionInter
         '
+        Me.Dgv_RelacionInter.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders
         Me.Dgv_RelacionInter.BackgroundColor = System.Drawing.Color.White
         Me.Dgv_RelacionInter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_RelacionInter.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.puestosArea, Me.motivos})
+        Me.Dgv_RelacionInter.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idRpI, Me.puestosArea, Me.motivos})
         Me.Dgv_RelacionInter.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_RelacionInter.Location = New System.Drawing.Point(0, 19)
         Me.Dgv_RelacionInter.Name = "Dgv_RelacionInter"
         Me.Dgv_RelacionInter.RowHeadersVisible = False
         Me.Dgv_RelacionInter.RowTemplate.Height = 30
-        Me.Dgv_RelacionInter.Size = New System.Drawing.Size(360, 242)
+        Me.Dgv_RelacionInter.Size = New System.Drawing.Size(380, 242)
         Me.Dgv_RelacionInter.TabIndex = 1
         '
         'Panel11
@@ -1190,7 +1165,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(360, 19)
+        Me.Panel11.Size = New System.Drawing.Size(380, 19)
         Me.Panel11.TabIndex = 0
         '
         'Label20
@@ -1211,7 +1186,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(3, 3)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(722, 21)
+        Me.Panel8.Size = New System.Drawing.Size(767, 21)
         Me.Panel8.TabIndex = 0
         '
         'Label19
@@ -1232,7 +1207,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Tbp_PResponsabilidades.Location = New System.Drawing.Point(4, 22)
         Me.Tbp_PResponsabilidades.Name = "Tbp_PResponsabilidades"
         Me.Tbp_PResponsabilidades.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tbp_PResponsabilidades.Size = New System.Drawing.Size(728, 288)
+        Me.Tbp_PResponsabilidades.Size = New System.Drawing.Size(773, 288)
         Me.Tbp_PResponsabilidades.TabIndex = 4
         Me.Tbp_PResponsabilidades.Text = "Principales Reponsabilidades"
         Me.Tbp_PResponsabilidades.UseVisualStyleBackColor = True
@@ -1243,7 +1218,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel13.Location = New System.Drawing.Point(3, 3)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(722, 282)
+        Me.Panel13.Size = New System.Drawing.Size(767, 282)
         Me.Panel13.TabIndex = 0
         '
         'Dgv_Responsabilidades
@@ -1256,7 +1231,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Dgv_Responsabilidades.Name = "Dgv_Responsabilidades"
         Me.Dgv_Responsabilidades.RowHeadersVisible = False
         Me.Dgv_Responsabilidades.RowTemplate.Height = 20
-        Me.Dgv_Responsabilidades.Size = New System.Drawing.Size(722, 282)
+        Me.Dgv_Responsabilidades.Size = New System.Drawing.Size(767, 282)
         Me.Dgv_Responsabilidades.TabIndex = 1
         '
         'numero
@@ -1295,7 +1270,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Tbp_IndicadoresArea.Location = New System.Drawing.Point(4, 22)
         Me.Tbp_IndicadoresArea.Name = "Tbp_IndicadoresArea"
         Me.Tbp_IndicadoresArea.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tbp_IndicadoresArea.Size = New System.Drawing.Size(728, 288)
+        Me.Tbp_IndicadoresArea.Size = New System.Drawing.Size(773, 288)
         Me.Tbp_IndicadoresArea.TabIndex = 5
         Me.Tbp_IndicadoresArea.Text = "Indicadores de Área"
         Me.Tbp_IndicadoresArea.UseVisualStyleBackColor = True
@@ -1310,7 +1285,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Dgv_Indicadores.Name = "Dgv_Indicadores"
         Me.Dgv_Indicadores.RowHeadersVisible = False
         Me.Dgv_Indicadores.RowTemplate.Height = 20
-        Me.Dgv_Indicadores.Size = New System.Drawing.Size(722, 282)
+        Me.Dgv_Indicadores.Size = New System.Drawing.Size(767, 282)
         Me.Dgv_Indicadores.TabIndex = 2
         '
         'nombreIndicador
@@ -1351,7 +1326,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Tbp_Competencias.Location = New System.Drawing.Point(4, 22)
         Me.Tbp_Competencias.Name = "Tbp_Competencias"
         Me.Tbp_Competencias.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tbp_Competencias.Size = New System.Drawing.Size(728, 288)
+        Me.Tbp_Competencias.Size = New System.Drawing.Size(773, 288)
         Me.Tbp_Competencias.TabIndex = 6
         Me.Tbp_Competencias.Text = "Competencias"
         Me.Tbp_Competencias.UseVisualStyleBackColor = True
@@ -1366,7 +1341,7 @@ Partial Class Frm_DescripcionPuestos
         Me.Dgv_Competencias.Name = "Dgv_Competencias"
         Me.Dgv_Competencias.RowHeadersVisible = False
         Me.Dgv_Competencias.RowTemplate.Height = 20
-        Me.Dgv_Competencias.Size = New System.Drawing.Size(722, 282)
+        Me.Dgv_Competencias.Size = New System.Drawing.Size(767, 282)
         Me.Dgv_Competencias.TabIndex = 2
         '
         'compeTecnicas
@@ -1393,25 +1368,77 @@ Partial Class Frm_DescripcionPuestos
         Me.compeMando.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.compeMando.Width = 235
         '
+        'IdAutoridad
+        '
+        Me.IdAutoridad.HeaderText = "IdAutoridad"
+        Me.IdAutoridad.Name = "IdAutoridad"
+        Me.IdAutoridad.ReadOnly = True
+        Me.IdAutoridad.Visible = False
+        '
+        'ocupantes
+        '
+        Me.ocupantes.HeaderText = "No. de Ocupantes 人数"
+        Me.ocupantes.Name = "ocupantes"
+        '
+        'puestosReportan
+        '
+        Me.puestosReportan.HeaderText = "Puestos que le reportan 直属部下の役職"
+        Me.puestosReportan.Name = "puestosReportan"
+        Me.puestosReportan.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.puestosReportan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.puestosReportan.Width = 135
+        '
+        'funcion
+        '
+        Me.funcion.HeaderText = "Función principal 業務内容"
+        Me.funcion.Name = "funcion"
+        Me.funcion.Width = 480
+        '
+        'idRpI
+        '
+        Me.idRpI.HeaderText = "IdRpI"
+        Me.idRpI.Name = "idRpI"
+        Me.idRpI.ReadOnly = True
+        Me.idRpI.Visible = False
+        '
         'puestosArea
         '
         Me.puestosArea.HeaderText = "Puestos o Área 役職・エリア"
         Me.puestosArea.Name = "puestosArea"
         Me.puestosArea.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.puestosArea.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.puestosArea.Width = 140
+        Me.puestosArea.Width = 125
         '
         'motivos
         '
         Me.motivos.HeaderText = "Motivos  何のために"
         Me.motivos.Name = "motivos"
-        Me.motivos.Width = 215
+        Me.motivos.Width = 230
+        '
+        'idRpE
+        '
+        Me.idRpE.HeaderText = "IdRpE"
+        Me.idRpE.Name = "idRpE"
+        Me.idRpE.ReadOnly = True
+        Me.idRpE.Visible = False
+        '
+        'contactoEmpresa
+        '
+        Me.contactoEmpresa.HeaderText = "Contacto o empresa 会社名/部署/役職"
+        Me.contactoEmpresa.Name = "contactoEmpresa"
+        Me.contactoEmpresa.Width = 125
+        '
+        'motivosExt
+        '
+        Me.motivosExt.HeaderText = "Motivos 何のために"
+        Me.motivosExt.Name = "motivosExt"
+        Me.motivosExt.Width = 230
         '
         'Frm_DescripcionPuestos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(746, 384)
+        Me.ClientSize = New System.Drawing.Size(791, 384)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
@@ -1490,7 +1517,6 @@ Partial Class Frm_DescripcionPuestos
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Tbc_Origen As TabControl
-    Friend WithEvents Tbp_Gral As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Cmb_Area As ComboBox
     Friend WithEvents Cmb_Dpto As ComboBox
@@ -1498,81 +1524,19 @@ Partial Class Frm_DescripcionPuestos
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Rdb_Operativo As RadioButton
-    Friend WithEvents Rdb_Admin As RadioButton
-    Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents Label14 As Label
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents Txt_EdadMin As TextBox
-    Friend WithEvents Label16 As Label
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Rdb_Indist As RadioButton
-    Friend WithEvents Rdb_Hombre As RadioButton
-    Friend WithEvents Rdb_Mujer As RadioButton
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Cmb_PuestoRep As ComboBox
-    Friend WithEvents Chk_EduOtro As CheckBox
-    Friend WithEvents Chk_Secu As CheckBox
-    Friend WithEvents Chk_Prepa As CheckBox
-    Friend WithEvents Chk_TSU As CheckBox
-    Friend WithEvents Chk_Universidad As CheckBox
-    Friend WithEvents Gpb_ExpLab As GroupBox
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Rdb_ExpLabNo As RadioButton
-    Friend WithEvents Rdb_ExpLabSi As RadioButton
-    Friend WithEvents GroupBox8 As GroupBox
-    Friend WithEvents Txt_Tipo3 As TextBox
-    Friend WithEvents Txt_Tipo2 As TextBox
-    Friend WithEvents Txt_Tipo1 As TextBox
-    Friend WithEvents Txt_Cantidad3 As TextBox
-    Friend WithEvents Txt_PuestoE3 As TextBox
-    Friend WithEvents Txt_Cantidad2 As TextBox
-    Friend WithEvents Txt_PuestoE2 As TextBox
-    Friend WithEvents Txt_Cantidad1 As TextBox
-    Friend WithEvents Txt_PuestoE1 As TextBox
-    Friend WithEvents Gpb_Justifica As GroupBox
-    Friend WithEvents Txt_Justifica As TextBox
-    Friend WithEvents Gpb_NivelJapon As GroupBox
-    Friend WithEvents Rdb_NivelAvJap As RadioButton
-    Friend WithEvents Rdb_NivelIntJap As RadioButton
-    Friend WithEvents Chk_Japo As CheckBox
-    Friend WithEvents Chk_Ingles As CheckBox
-    Friend WithEvents Gpb_TipoViaje As GroupBox
-    Friend WithEvents Rdb_TipoViajInt As RadioButton
-    Friend WithEvents Rdb_TipoViajNac As RadioButton
-    Friend WithEvents GroupBox10 As GroupBox
-    Friend WithEvents Rdb_ReqViajeNo As RadioButton
-    Friend WithEvents Rdb_ReqViajeSi As RadioButton
     Friend WithEvents Txt_ObjGrl As TextBox
-    Friend WithEvents Gpb_NivelIngles As GroupBox
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Rdb_NivelIntIng As RadioButton
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Dgv_PuestosCargo As DataGridView
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label13 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Btn_GuardarModificar As Button
     Friend WithEvents Tbp_RelacionesPuestos As TabPage
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label19 As Label
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Dgv_RelacionExter As DataGridView
-    Friend WithEvents contactoEmpresa As DataGridViewTextBoxColumn
-    Friend WithEvents motivosExt As DataGridViewTextBoxColumn
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Label21 As Label
     Friend WithEvents Dgv_RelacionInter As DataGridView
@@ -1585,11 +1549,6 @@ Partial Class Frm_DescripcionPuestos
     Friend WithEvents Dgv_Indicadores As DataGridView
     Friend WithEvents Tbp_Competencias As TabPage
     Friend WithEvents Dgv_Competencias As DataGridView
-    Friend WithEvents Rdb_NivelAvIng As RadioButton
-    Friend WithEvents Txt_EdadMax As TextBox
-    Friend WithEvents ocupantes As DataGridViewTextBoxColumn
-    Friend WithEvents puestosReportan As DataGridViewComboBoxColumn
-    Friend WithEvents funcion As DataGridViewTextBoxColumn
     Friend WithEvents numero As DataGridViewTextBoxColumn
     Friend WithEvents actividades As DataGridViewComboBoxColumn
     Friend WithEvents frecuencia As DataGridViewComboBoxColumn
@@ -1602,6 +1561,77 @@ Partial Class Frm_DescripcionPuestos
     Friend WithEvents compeTecnicas As DataGridViewComboBoxColumn
     Friend WithEvents compeGenerales As DataGridViewComboBoxColumn
     Friend WithEvents compeMando As DataGridViewComboBoxColumn
+    Friend WithEvents Tbp_Gral As TabPage
+    Friend WithEvents Gpb_Justifica As GroupBox
+    Friend WithEvents Txt_Justifica As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Gpb_NivelIngles As GroupBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Rdb_NivelAvIng As RadioButton
+    Friend WithEvents Rdb_NivelIntIng As RadioButton
+    Friend WithEvents Gpb_NivelJapon As GroupBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Rdb_NivelAvJap As RadioButton
+    Friend WithEvents Rdb_NivelIntJap As RadioButton
+    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents Chk_Japo As CheckBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Chk_Ingles As CheckBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Rdb_Operativo As RadioButton
+    Friend WithEvents Rdb_Admin As RadioButton
+    Friend WithEvents Gpb_ExpLab As GroupBox
+    Friend WithEvents Txt_Tipo3 As TextBox
+    Friend WithEvents Txt_Tipo2 As TextBox
+    Friend WithEvents Txt_Tipo1 As TextBox
+    Friend WithEvents Txt_Cantidad3 As TextBox
+    Friend WithEvents Txt_PuestoE3 As TextBox
+    Friend WithEvents Txt_Cantidad2 As TextBox
+    Friend WithEvents Txt_PuestoE2 As TextBox
+    Friend WithEvents Txt_Cantidad1 As TextBox
+    Friend WithEvents Txt_PuestoE1 As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Gpb_TipoViaje As GroupBox
+    Friend WithEvents Rdb_TipoViajInt As RadioButton
+    Friend WithEvents Rdb_TipoViajNac As RadioButton
+    Friend WithEvents Label12 As Label
+    Friend WithEvents GroupBox10 As GroupBox
+    Friend WithEvents Rdb_ReqViajeNo As RadioButton
+    Friend WithEvents Rdb_ReqViajeSi As RadioButton
+    Friend WithEvents Label10 As Label
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Rdb_ExpLabNo As RadioButton
+    Friend WithEvents Rdb_ExpLabSi As RadioButton
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Chk_EduOtro As CheckBox
+    Friend WithEvents Chk_Secu As CheckBox
+    Friend WithEvents Chk_Prepa As CheckBox
+    Friend WithEvents Chk_TSU As CheckBox
+    Friend WithEvents Chk_Universidad As CheckBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents Txt_EdadMax As TextBox
+    Friend WithEvents Txt_EdadMin As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Rdb_Indist As RadioButton
+    Friend WithEvents Rdb_Hombre As RadioButton
+    Friend WithEvents Rdb_Mujer As RadioButton
+    Friend WithEvents Label6 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Cmb_PuestoRep As ComboBox
+    Friend WithEvents IdAutoridad As DataGridViewTextBoxColumn
+    Friend WithEvents ocupantes As DataGridViewTextBoxColumn
+    Friend WithEvents puestosReportan As DataGridViewComboBoxColumn
+    Friend WithEvents funcion As DataGridViewTextBoxColumn
+    Friend WithEvents idRpE As DataGridViewTextBoxColumn
+    Friend WithEvents contactoEmpresa As DataGridViewTextBoxColumn
+    Friend WithEvents motivosExt As DataGridViewTextBoxColumn
+    Friend WithEvents idRpI As DataGridViewTextBoxColumn
     Friend WithEvents puestosArea As DataGridViewComboBoxColumn
     Friend WithEvents motivos As DataGridViewTextBoxColumn
 End Class

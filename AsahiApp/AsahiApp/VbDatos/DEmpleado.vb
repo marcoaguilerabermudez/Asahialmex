@@ -438,7 +438,7 @@ where usuario = '" & us & "'", oCon)
         Dim LstEmp As New LEmpleado
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT CLAVE, DESCRIPCION FROM asahi16.Supervisor_giro.Puesto", oCon)
+            Dim query As New SqlCommand("SELECT RTRIM(CLAVE) CLAVE, RTRIM(DESCRIPCION) DESCRIPCION FROM asahi16.Supervisor_giro.Puesto", oCon)
             query.CommandTimeout = 120
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
