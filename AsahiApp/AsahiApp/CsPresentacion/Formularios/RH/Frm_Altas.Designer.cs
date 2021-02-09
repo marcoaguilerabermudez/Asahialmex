@@ -952,7 +952,6 @@
             // 
             // cmb_estado
             // 
-            this.cmb_estado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_estado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_estado.FormattingEnabled = true;
             this.cmb_estado.Items.AddRange(new object[] {
@@ -1014,7 +1013,6 @@
             this.cmb_genero.AutoCompleteCustomSource.AddRange(new string[] {
             "M",
             "F"});
-            this.cmb_genero.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_genero.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_genero.FormattingEnabled = true;
             this.cmb_genero.Items.AddRange(new object[] {

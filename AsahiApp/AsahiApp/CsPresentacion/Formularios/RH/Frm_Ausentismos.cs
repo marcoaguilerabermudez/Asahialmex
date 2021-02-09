@@ -64,7 +64,10 @@ namespace CsPresentacion
         SqlCommand cmd;
         SqlDataReader dr;
         Empleado claseEmp;
+
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
+        SqlConnection con2 = new SqlConnection("data Source=GIRO\\SQLEXPRESS;initial catalog=AsahiSystem;user id=sa;password=Pa55word");
+
 
         private void Ausentismo_retardos_Load(object sender, EventArgs e)
         {
@@ -1967,8 +1970,8 @@ namespace CsPresentacion
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[Sp_Captura_Vacaciones]", con);
+                con2.Open();
+                SqlCommand cmd = new SqlCommand("[Sp_Captura_Vacaciones_aam]", con2);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@VAR", "1");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
@@ -1979,7 +1982,7 @@ namespace CsPresentacion
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
-                con.Close();
+                con2.Close();
                 adapter.Fill(dt);
                 dgv_vacaciones.DataSource = dt;
                Diseño_Grid_Vacaciones(dgv_vacaciones);
@@ -1995,9 +1998,9 @@ namespace CsPresentacion
         {
             DataTable dt = new DataTable();
             String strSql;
-            strSql = "[dbo].[Sp_Captura_Vacaciones]";
-            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-            con.Open();
+            strSql = "[dbo].[Sp_Captura_Vacaciones_aam]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con2);
+            con2.Open();
 
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "2";
@@ -2014,7 +2017,7 @@ namespace CsPresentacion
                 lbl_x_pagar.Text = dt.Rows[0]["DIAS"].ToString();
                 lbl_x_disfrutar.Text = dt.Rows[0]["DIAS"].ToString();
             }
-            con.Close();
+            con2.Close();
         }
         private void calcula_prima()
         {
@@ -2048,9 +2051,9 @@ namespace CsPresentacion
         {
             DataTable dt = new DataTable();
             String strSql;
-            strSql = "[dbo].[Sp_Captura_Vacaciones]";
-            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-            con.Open();
+            strSql = "[dbo].[Sp_Captura_Vacaciones_aam]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con2);
+            con2.Open();
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "3";
             da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
@@ -2060,7 +2063,7 @@ namespace CsPresentacion
             da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
 
             da.Fill(dt);
-            con.Close();
+            con2.Close();
 
             if (dt.Rows.Count > 0)
             {
@@ -2076,9 +2079,9 @@ namespace CsPresentacion
         {
             DataTable dt = new DataTable();
             String strSql;
-            strSql = "[dbo].[Sp_Captura_Vacaciones]";
-            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-            con.Open();
+            strSql = "[dbo].[Sp_Captura_Vacaciones_aam]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con2);
+            con2.Open();
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "4";
             da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
@@ -2087,7 +2090,7 @@ namespace CsPresentacion
             da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
             da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
             da.Fill(dt);
-            con.Close();
+            con2.Close();
 
             if (dt.Rows.Count > 0)
             {
@@ -2103,9 +2106,9 @@ namespace CsPresentacion
         {
             DataTable dt = new DataTable();
             String strSql;
-            strSql = "[dbo].[Sp_Captura_Vacaciones]";
-            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-            con.Open();
+            strSql = "[dbo].[Sp_Captura_Vacaciones_aam]";
+            SqlDataAdapter da = new SqlDataAdapter(strSql, con2);
+            con2.Open();
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "5";
             da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
@@ -2114,7 +2117,7 @@ namespace CsPresentacion
             da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
             da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
             da.Fill(dt);
-            con.Close();
+            con2.Close();
 
             if (dt.Rows.Count > 0)
             {
@@ -2159,9 +2162,9 @@ namespace CsPresentacion
             {
                 DataTable dt = new DataTable();
                 String strSql;
-                strSql = "[dbo].[Sp_Captura_Vacaciones]";
-                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-                con.Open();
+                strSql = "[dbo].[Sp_Captura_Vacaciones_aam]";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con2);
+                con2.Open();
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "7";
                 da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
@@ -2170,7 +2173,7 @@ namespace CsPresentacion
                 da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
                 da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
                 da.Fill(dt);
-                con.Close();
+                con2.Close();
             }
             catch
             {
@@ -2183,9 +2186,9 @@ namespace CsPresentacion
             {
                 DataTable dt = new DataTable();
                 String strSql;
-                strSql = "[dbo].[Sp_Captura_Vacaciones]";
-                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-                con.Open();
+                strSql = "[dbo].[Sp_Captura_Vacaciones_aam]";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con2);
+                con2.Open();
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "6";
                 da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
@@ -2194,7 +2197,7 @@ namespace CsPresentacion
                 da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
                 da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
                 da.Fill(dt);
-                con.Close();
+                con2.Close();
             }
             catch
             {
@@ -2207,9 +2210,9 @@ namespace CsPresentacion
             {
                 DataTable dt = new DataTable();
                 String strSql;
-                strSql = "[dbo].[Sp_Captura_Vacaciones]";
-                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-                con.Open();
+                strSql = "[dbo].[Sp_Captura_Vacaciones_aam]";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con2);
+                con2.Open();
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "8";
                 da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
@@ -2218,7 +2221,7 @@ namespace CsPresentacion
                 da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
                 da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
                 da.Fill(dt);
-                con.Close();
+                con2.Close();
             }
             catch
             {
@@ -2231,9 +2234,9 @@ namespace CsPresentacion
             {
                 DataTable dt = new DataTable();
                 String strSql;
-                strSql = "[dbo].[Sp_Captura_Vacaciones]";
-                SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-                con.Open();
+                strSql = "[dbo].[Sp_Captura_Vacaciones_aam]";
+                SqlDataAdapter da = new SqlDataAdapter(strSql, con2);
+                con2.Open();
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.Add("@VAR", SqlDbType.VarChar, 100).Value = "9";
                 da.SelectCommand.Parameters.Add("@CLAVE", SqlDbType.VarChar, 100).Value = txt_clave.Text;
@@ -2242,7 +2245,7 @@ namespace CsPresentacion
                 da.SelectCommand.Parameters.Add("@DURACION", SqlDbType.VarChar, 100).Value = txt_v_duracion.Text;
                 da.SelectCommand.Parameters.Add("@USUARIO", SqlDbType.VarChar, 100).Value = claseEmp.IdEmpleado;
                 da.Fill(dt);
-                con.Close();
+                con2.Close();
             }
             catch
             {
