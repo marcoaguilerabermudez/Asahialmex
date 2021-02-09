@@ -145,7 +145,8 @@ Public Class EvaluacionesPrincipal
 
 
 
-        With Cmd|            .CommandType = CommandType.Text
+        With Cmd
+            .CommandType = CommandType.Text
             .CommandText = "	
 
 select '--Todos--' as 'descripcion', '--Todos--' as 'clave'
