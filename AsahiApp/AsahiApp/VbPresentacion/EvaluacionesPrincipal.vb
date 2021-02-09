@@ -25,6 +25,7 @@ Public Class EvaluacionesPrincipal
 
 
         a = Today.Month
+
         Select Case a
             Case 1
                 cbx_mes.Text = "Enero"
@@ -65,7 +66,7 @@ Public Class EvaluacionesPrincipal
         End Select
 
 
-        cbx_año.Text = Today.Year() - 1
+        cbx_año.Text = Today.Year()
 
         llenacombodepto()
 
@@ -144,8 +145,7 @@ Public Class EvaluacionesPrincipal
 
 
 
-        With Cmd
-            .CommandType = CommandType.Text
+        With Cmd|            .CommandType = CommandType.Text
             .CommandText = "	
 
 select '--Todos--' as 'descripcion', '--Todos--' as 'clave'
@@ -186,6 +186,7 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
             dtgvp.DataSource = dt
 
             Cn.Close()
+
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try

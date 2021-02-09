@@ -48,7 +48,7 @@ Partial Class Frm_Bajas_mes
         Me.btn_anteriores.Name = "btn_anteriores"
         Me.btn_anteriores.Size = New System.Drawing.Size(83, 42)
         Me.btn_anteriores.TabIndex = 413
-        Me.btn_anteriores.Text = "Imprimir Anteriores"
+        Me.btn_anteriores.Text = "Imprimir"
         Me.btn_anteriores.UseVisualStyleBackColor = False
         '
         'Frm_Bajas_mes
