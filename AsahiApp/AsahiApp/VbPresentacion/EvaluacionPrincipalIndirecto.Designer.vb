@@ -100,13 +100,13 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.Panel3.Controls.Add(Me.cbx_mes)
         Me.Panel3.Location = New System.Drawing.Point(3, 1)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1019, 105)
+        Me.Panel3.Size = New System.Drawing.Size(1054, 105)
         Me.Panel3.TabIndex = 181
         '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Pink
-        Me.Panel6.Location = New System.Drawing.Point(906, 44)
+        Me.Panel6.Location = New System.Drawing.Point(945, 44)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(33, 10)
         Me.Panel6.TabIndex = 196
@@ -116,7 +116,7 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label9.Location = New System.Drawing.Point(940, 43)
+        Me.Label9.Location = New System.Drawing.Point(979, 43)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(64, 12)
         Me.Label9.TabIndex = 195
@@ -125,7 +125,7 @@ Partial Class EvaluacionPrincipalIndirecto
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.Gold
-        Me.Panel5.Location = New System.Drawing.Point(906, 26)
+        Me.Panel5.Location = New System.Drawing.Point(945, 26)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(33, 10)
         Me.Panel5.TabIndex = 192
@@ -135,7 +135,7 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label7.Location = New System.Drawing.Point(940, 25)
+        Me.Label7.Location = New System.Drawing.Point(979, 25)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(56, 12)
         Me.Label7.TabIndex = 191
@@ -213,7 +213,7 @@ Partial Class EvaluacionPrincipalIndirecto
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.Linen
-        Me.Panel4.Location = New System.Drawing.Point(906, 5)
+        Me.Panel4.Location = New System.Drawing.Point(945, 5)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(33, 10)
         Me.Panel4.TabIndex = 184
@@ -223,7 +223,7 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label3.Location = New System.Drawing.Point(940, 4)
+        Me.Label3.Location = New System.Drawing.Point(979, 4)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(46, 12)
         Me.Label3.TabIndex = 183
@@ -232,7 +232,7 @@ Partial Class EvaluacionPrincipalIndirecto
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightGreen
-        Me.Panel2.Location = New System.Drawing.Point(906, 79)
+        Me.Panel2.Location = New System.Drawing.Point(945, 79)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(32, 10)
         Me.Panel2.TabIndex = 182
@@ -242,7 +242,7 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(940, 77)
+        Me.Label2.Location = New System.Drawing.Point(979, 77)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(61, 12)
         Me.Label2.TabIndex = 181
@@ -251,7 +251,7 @@ Partial Class EvaluacionPrincipalIndirecto
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.LightBlue
-        Me.Panel1.Location = New System.Drawing.Point(906, 61)
+        Me.Panel1.Location = New System.Drawing.Point(945, 61)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(33, 10)
         Me.Panel1.TabIndex = 180
@@ -261,7 +261,7 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label6.Location = New System.Drawing.Point(940, 60)
+        Me.Label6.Location = New System.Drawing.Point(979, 60)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 12)
         Me.Label6.TabIndex = 179
@@ -315,7 +315,7 @@ Partial Class EvaluacionPrincipalIndirecto
         'btn_desma
         '
         Me.btn_desma.ForeColor = System.Drawing.Color.Black
-        Me.btn_desma.Location = New System.Drawing.Point(920, 442)
+        Me.btn_desma.Location = New System.Drawing.Point(954, 442)
         Me.btn_desma.Name = "btn_desma"
         Me.btn_desma.Size = New System.Drawing.Size(78, 35)
         Me.btn_desma.TabIndex = 199
@@ -326,7 +326,7 @@ Partial Class EvaluacionPrincipalIndirecto
         'btn_selec
         '
         Me.btn_selec.ForeColor = System.Drawing.Color.Black
-        Me.btn_selec.Location = New System.Drawing.Point(817, 441)
+        Me.btn_selec.Location = New System.Drawing.Point(851, 441)
         Me.btn_selec.Name = "btn_selec"
         Me.btn_selec.Size = New System.Drawing.Size(74, 35)
         Me.btn_selec.TabIndex = 198
@@ -355,7 +355,7 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.lbl_totalpuntos)
         Me.GroupBox1.Controls.Add(Me.Label14)
-        Me.GroupBox1.Location = New System.Drawing.Point(761, 116)
+        Me.GroupBox1.Location = New System.Drawing.Point(790, 116)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(260, 319)
         Me.GroupBox1.TabIndex = 197
@@ -578,7 +578,7 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.btn_liberar.BackColor = System.Drawing.SystemColors.HotTrack
         Me.btn_liberar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_liberar.ForeColor = System.Drawing.Color.Gold
-        Me.btn_liberar.Location = New System.Drawing.Point(854, 496)
+        Me.btn_liberar.Location = New System.Drawing.Point(888, 496)
         Me.btn_liberar.Name = "btn_liberar"
         Me.btn_liberar.Size = New System.Drawing.Size(120, 35)
         Me.btn_liberar.TabIndex = 196
@@ -606,7 +606,7 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.dtgvp.Location = New System.Drawing.Point(3, 114)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(748, 417)
+        Me.dtgvp.Size = New System.Drawing.Size(785, 417)
         Me.dtgvp.TabIndex = 195
         '
         'x
@@ -619,7 +619,7 @@ Partial Class EvaluacionPrincipalIndirecto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1024, 541)
+        Me.ClientSize = New System.Drawing.Size(1053, 541)
         Me.Controls.Add(Me.btn_desma)
         Me.Controls.Add(Me.btn_selec)
         Me.Controls.Add(Me.GroupBox1)

@@ -27,7 +27,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>242</ApplicationRevision>
+    <ApplicationRevision>247</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -75,10 +75,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F154397A8B12FB3A8F0F33AC397FD815B427586C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2AFDB1314C8FA85DD62E0DC4C13C40308E9B3413</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_11_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_12_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -182,6 +182,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="conexion.vb" />
+    <Compile Include="ContenedorReporteBajasMes.Designer.vb">
+      <DependentUpon>ContenedorReporteBajasMes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteBajasMes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteChecadas.Designer.vb">
       <DependentUpon>ContenedorReporteChecadas.vb</DependentUpon>
     </Compile>
@@ -271,6 +277,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet7.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet8.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet8.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetReporteSuspencion.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -396,6 +412,12 @@
       <DependentUpon>Frm_Gastos.vb</DependentUpon>
     </Compile>
     <Compile Include="Finanzas\Frm_Gastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Bajas_mes.Designer.vb">
+      <DependentUpon>Frm_Bajas_mes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Bajas_mes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_cargaplanpersonal.Designer.vb">
@@ -649,6 +671,9 @@
     <EmbeddedResource Include="Compras\Frm_ValidarConta.resx">
       <DependentUpon>Frm_ValidarConta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteBajasMes.resx">
+      <DependentUpon>ContenedorReporteBajasMes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteChecadas.resx">
       <DependentUpon>ContenedorReporteChecadas.vb</DependentUpon>
     </EmbeddedResource>
@@ -718,6 +743,9 @@
     <EmbeddedResource Include="Finanzas\Frm_Gastos.resx">
       <DependentUpon>Frm_Gastos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Bajas_mes.resx">
+      <DependentUpon>Frm_Bajas_mes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_cargaplanpersonal.resx">
       <DependentUpon>Frm_cargaplanpersonal.vb</DependentUpon>
     </EmbeddedResource>
@@ -771,6 +799,7 @@
       <DependentUpon>ReporteTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteVacionesRH.rdlc" />
+    <EmbeddedResource Include="ReportE_bajas_mes.rdlc" />
     <EmbeddedResource Include="RH\Frm_PlanHorasExtra.resx">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </EmbeddedResource>
@@ -912,6 +941,28 @@
     <None Include="DataSet6.xss">
       <DependentUpon>DataSet6.xsd</DependentUpon>
     </None>
+    <None Include="DataSet7.xsc">
+      <DependentUpon>DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet7.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet7.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet7.xss">
+      <DependentUpon>DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet8.xsc">
+      <DependentUpon>DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet8.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet8.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet8.xss">
+      <DependentUpon>DataSet8.xsd</DependentUpon>
+    </None>
     <None Include="DataSetReporteSuspencion.xsc">
       <DependentUpon>DataSetReporteSuspencion.xsd</DependentUpon>
     </None>
@@ -1034,6 +1085,7 @@
     </None>
     <None Include="VbPresentacion_10_TemporaryKey.pfx" />
     <None Include="VbPresentacion_11_TemporaryKey.pfx" />
+    <None Include="VbPresentacion_12_TemporaryKey.pfx" />
     <None Include="VbPresentacion_1_TemporaryKey.pfx" />
     <None Include="VbPresentacion_2_TemporaryKey.pfx" />
     <None Include="VbPresentacion_3_TemporaryKey.pfx" />
@@ -1151,7 +1203,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

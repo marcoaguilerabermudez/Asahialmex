@@ -2,6 +2,7 @@
 
 Public Class MuestraKardexEva
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
+
     Private Sub MuestraKardexEva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbl_clave.Text = Modulo_evaluaciones.e_clave
         lbl_nombre.Text = Modulo_evaluaciones.e_nombre
@@ -10,7 +11,6 @@ Public Class MuestraKardexEva
     End Sub
 
     Sub muestragrid()
-
 
         Try
             Cn.Close()

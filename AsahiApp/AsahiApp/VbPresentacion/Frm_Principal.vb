@@ -510,5 +510,21 @@ Public Class Frm_Principal
         EligeEva.Show()
 
     End Sub
+
+    Private Sub BajasPorMesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajasPorMesToolStripMenuItem.Click
+        Frm_Bajas_mes.Show()
+    End Sub
+
+
+    Private Sub Salir()
+        Application.Exit()
+    End Sub
+
+
+    Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyClass.FormClosing
+        Salir()
+    End Sub
+
+
 #End Region
 End Class

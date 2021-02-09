@@ -91,7 +91,7 @@ Public Class EvaluacionPrincipalIndirecto
 
 
 
-        ' Muestragrid()
+        Muestragrid()
     End Sub
 
 
@@ -171,7 +171,7 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
             Cn.Close()
             Cn.Open()
 
-            Dim da As New SqlDataAdapter("Sp_muestraEvaluaciones", Cn)
+            Dim da As New SqlDataAdapter("Sp_muestraevaluacionesIndirecto", Cn)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
             da.SelectCommand.Parameters.AddWithValue("@depto", depto)
             da.SelectCommand.Parameters.AddWithValue("@descripcion_depto", cbx_depto.Text)
@@ -195,9 +195,13 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
         dtgvp.Columns("id").Visible = False
         dtgvp.Columns("liberacion").Visible = False
         dtgvp.Columns("aprobacion").Visible = False
-        dtgvp.Columns("evaluacion").Visible = False
+        dtgvp.Columns("evaluacion").Visible = True
         dtgvp.Columns("fecha").Visible = False
         dtgvp.Columns("total_eval").Visible = False
+        dtgvp.Columns("Total_Autoeval").Visible = False
+        dtgvp.Columns("Total_Objetivos").Visible = False
+        dtgvp.Columns("Total_Mejora").Visible = False
+        dtgvp.Columns("autoeval").Visible = False
 
         For Each row As DataGridViewRow In Me.dtgvp.Rows
 
@@ -205,9 +209,15 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
                 row.DefaultCellStyle.BackColor = Color.White
             ElseIf row.Cells(“Estado”).Value = 1 Then
                 row.DefaultCellStyle.BackColor = Color.Gold
-            ElseIf row.Cells(“Estado”).Value = 2 Then
+            ElseIf row.Cells(“Estado”).Value = 10 Then
+                row.DefaultCellStyle.BackColor = Color.Pink
+            ElseIf row.Cells(“Estado”).Value = 11 Then
+                row.DefaultCellStyle.BackColor = Color.Pink
+            ElseIf row.Cells(“Estado”).Value = 12 Then
+                row.DefaultCellStyle.BackColor = Color.Pink
+            ElseIf row.Cells(“Estado”).Value = 13 Then
                 row.DefaultCellStyle.BackColor = Color.LightBlue
-            ElseIf row.Cells(“Estado”).Value = 3 Then
+            ElseIf row.Cells(“Estado”).Value = 14 Then
                 row.DefaultCellStyle.BackColor = Color.LightGreen
             End If
         Next
@@ -225,7 +235,7 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
 
 
     Public Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        '' Muestragrid()
+        Muestragrid()
     End Sub
 
 
@@ -260,7 +270,7 @@ where id_evaluaciones = @ID and estado = 0
             Next
 
             MessageBox.Show(RI, "¡Aviso!")
-            '' Muestragrid()
+            Muestragrid()
 
 
         Catch ex As Exception
@@ -280,7 +290,15 @@ where id_evaluaciones = @ID and estado = 0
             lbl_autorizacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("aprobacion").Value.ToString()
             lbl_evaluacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("evaluacion").Value.ToString()
             lbl_liberacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("liberacion").Value.ToString()
-            lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
+            lbl_autoeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("autoeval").Value.ToString()
+
+            lbl_puntajeeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
+            lbl_puntajeautoeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Autoeval").Value.ToString()
+            lbl_puntajemejora.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Mejora").Value.ToString()
+            lbl_puntajeobj.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Objetivos").Value.ToString()
+            lbl_totalpuntos.Text = CDbl((CInt(lbl_puntajeeva.Text) + CInt(lbl_puntajeautoeva.Text)) / 2) + CInt(lbl_puntajemejora.Text) + CInt(lbl_puntajeobj.Text)
+
+
             id_eval = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
             tipo = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
             estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
@@ -310,7 +328,7 @@ where id_evaluaciones = @ID and estado = 0
                 Modulo_evaluaciones.e_idemp = id
 
 
-                Dim segundoForm As New EvaluacionPersonal
+                Dim segundoForm As New EvaluacionIndirecto
 
                 MuestraKardexEva.Dispose()
 
@@ -331,10 +349,20 @@ where id_evaluaciones = @ID and estado = 0
             lbl_autorizacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("aprobacion").Value.ToString()
             lbl_evaluacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("evaluacion").Value.ToString()
             lbl_liberacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("liberacion").Value.ToString()
-            lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
+            lbl_autoeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("autoeval").Value.ToString()
+            '' lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
+            lbl_puntajeeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
+            lbl_puntajeautoeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Autoeval").Value.ToString()
+            lbl_puntajemejora.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Mejora").Value.ToString()
+            lbl_puntajeobj.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Objetivos").Value.ToString()
+            lbl_totalpuntos.Text = CDbl((CInt(lbl_puntajeeva.Text) + CInt(lbl_puntajeautoeva.Text)) / 2) + CInt(lbl_puntajemejora.Text) + CInt(lbl_puntajeobj.Text)
+
+
+
             id_eval = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
             tipo = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
             estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
+
         Catch
         End Try
 

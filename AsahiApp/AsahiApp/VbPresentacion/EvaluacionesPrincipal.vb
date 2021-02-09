@@ -25,6 +25,7 @@ Public Class EvaluacionesPrincipal
 
 
         a = Today.Month
+
         Select Case a
             Case 1
                 cbx_mes.Text = "Enero"
@@ -65,7 +66,7 @@ Public Class EvaluacionesPrincipal
         End Select
 
 
-        cbx_año.Text = Today.Year() - 1
+        cbx_año.Text = Today.Year()
 
         llenacombodepto()
 
@@ -186,6 +187,7 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
             dtgvp.DataSource = dt
 
             Cn.Close()
+
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
@@ -261,12 +263,16 @@ where id_evaluaciones = @ID and estado = 0
             Next
 
             MessageBox.Show(RI, "¡Aviso!")
+
             Muestragrid()
 
 
         Catch ex As Exception
+
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
+
             MessageBox.Show(ex.ToString)
+
             Cn.Close()
         Finally
             Cn.Close()

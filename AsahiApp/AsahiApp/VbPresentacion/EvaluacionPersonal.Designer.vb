@@ -36,14 +36,16 @@ Partial Class EvaluacionPersonal
         Me.lbl_evaluacion = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.gpx_incidencias = New System.Windows.Forms.GroupBox()
+        Me.lbl_amonestaciones = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.lbl_mejora = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.lbl_meses = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.lbl_puntosd = New System.Windows.Forms.Label()
         Me.lbl_r = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lbl_v = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lbl_n = New System.Windows.Forms.Label()
@@ -56,6 +58,8 @@ Partial Class EvaluacionPersonal
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lbl_u = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbl_puntosd = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.btn_evaluar = New System.Windows.Forms.Button()
         Me.pbx = New System.Windows.Forms.PictureBox()
@@ -72,10 +76,6 @@ Partial Class EvaluacionPersonal
         Me.lbl_puntajm = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.pbx_eva = New System.Windows.Forms.PictureBox()
-        Me.lbl_mejora = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.lbl_amonestaciones = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.gpx_incidencias.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -231,6 +231,52 @@ Partial Class EvaluacionPersonal
         Me.gpx_incidencias.TabStop = False
         Me.gpx_incidencias.Text = "Kárdex de incidencias"
         '
+        'lbl_amonestaciones
+        '
+        Me.lbl_amonestaciones.AutoSize = True
+        Me.lbl_amonestaciones.BackColor = System.Drawing.Color.SteelBlue
+        Me.lbl_amonestaciones.ForeColor = System.Drawing.Color.White
+        Me.lbl_amonestaciones.Location = New System.Drawing.Point(137, 129)
+        Me.lbl_amonestaciones.Name = "lbl_amonestaciones"
+        Me.lbl_amonestaciones.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_amonestaciones.TabIndex = 252
+        Me.lbl_amonestaciones.Text = "0"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.White
+        Me.Label17.Location = New System.Drawing.Point(15, 129)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(99, 13)
+        Me.Label17.TabIndex = 251
+        Me.Label17.Text = "Amonestaciones"
+        '
+        'lbl_mejora
+        '
+        Me.lbl_mejora.AutoSize = True
+        Me.lbl_mejora.BackColor = System.Drawing.Color.SteelBlue
+        Me.lbl_mejora.ForeColor = System.Drawing.Color.White
+        Me.lbl_mejora.Location = New System.Drawing.Point(137, 107)
+        Me.lbl_mejora.Name = "lbl_mejora"
+        Me.lbl_mejora.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_mejora.TabIndex = 250
+        Me.lbl_mejora.Text = "0"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Location = New System.Drawing.Point(15, 107)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(99, 13)
+        Me.Label14.TabIndex = 249
+        Me.Label14.Text = "Mejora Continua"
+        '
         'lbl_meses
         '
         Me.lbl_meses.AutoSize = True
@@ -266,18 +312,6 @@ Partial Class EvaluacionPersonal
         Me.Button1.Text = "Revisión"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'lbl_puntosd
-        '
-        Me.lbl_puntosd.AutoSize = True
-        Me.lbl_puntosd.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_puntosd.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puntosd.Location = New System.Drawing.Point(467, 20)
-        Me.lbl_puntosd.Name = "lbl_puntosd"
-        Me.lbl_puntosd.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_puntosd.TabIndex = 205
-        Me.lbl_puntosd.Text = "0"
-        Me.lbl_puntosd.Visible = False
-        '
         'lbl_r
         '
         Me.lbl_r.AutoSize = True
@@ -311,19 +345,6 @@ Partial Class EvaluacionPersonal
         Me.lbl_v.Size = New System.Drawing.Size(13, 13)
         Me.lbl_v.TabIndex = 201
         Me.lbl_v.Text = "0"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.BackColor = System.Drawing.SystemColors.Control
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.ForeColor = System.Drawing.Color.Black
-        Me.Label44.Location = New System.Drawing.Point(353, 20)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(108, 13)
-        Me.Label44.TabIndex = 204
-        Me.Label44.Text = "Puntos incidencia"
-        Me.Label44.Visible = False
         '
         'Label16
         '
@@ -463,6 +484,31 @@ Partial Class EvaluacionPersonal
         Me.Label3.TabIndex = 189
         Me.Label3.Text = "Falta Justificada"
         '
+        'lbl_puntosd
+        '
+        Me.lbl_puntosd.AutoSize = True
+        Me.lbl_puntosd.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_puntosd.ForeColor = System.Drawing.Color.Black
+        Me.lbl_puntosd.Location = New System.Drawing.Point(467, 20)
+        Me.lbl_puntosd.Name = "lbl_puntosd"
+        Me.lbl_puntosd.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_puntosd.TabIndex = 205
+        Me.lbl_puntosd.Text = "0"
+        Me.lbl_puntosd.Visible = False
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.BackColor = System.Drawing.SystemColors.Control
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.ForeColor = System.Drawing.Color.Black
+        Me.Label44.Location = New System.Drawing.Point(353, 20)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(108, 13)
+        Me.Label44.TabIndex = 204
+        Me.Label44.Text = "Puntos incidencia"
+        Me.Label44.Visible = False
+        '
         'dtgvp
         '
         Me.dtgvp.AllowUserToAddRows = False
@@ -521,7 +567,7 @@ Partial Class EvaluacionPersonal
         Me.lbl_puntajetotal.AutoSize = True
         Me.lbl_puntajetotal.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_puntajetotal.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puntajetotal.Location = New System.Drawing.Point(853, 542)
+        Me.lbl_puntajetotal.Location = New System.Drawing.Point(655, 542)
         Me.lbl_puntajetotal.Name = "lbl_puntajetotal"
         Me.lbl_puntajetotal.Size = New System.Drawing.Size(13, 13)
         Me.lbl_puntajetotal.TabIndex = 247
@@ -533,7 +579,7 @@ Partial Class EvaluacionPersonal
         Me.Label45.BackColor = System.Drawing.SystemColors.Control
         Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label45.ForeColor = System.Drawing.Color.Black
-        Me.Label45.Location = New System.Drawing.Point(741, 542)
+        Me.Label45.Location = New System.Drawing.Point(543, 542)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(83, 13)
         Me.Label45.TabIndex = 246
@@ -645,7 +691,7 @@ Partial Class EvaluacionPersonal
         Me.lbl_puntajm.AutoSize = True
         Me.lbl_puntajm.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_puntajm.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puntajm.Location = New System.Drawing.Point(853, 515)
+        Me.lbl_puntajm.Location = New System.Drawing.Point(655, 515)
         Me.lbl_puntajm.Name = "lbl_puntajm"
         Me.lbl_puntajm.Size = New System.Drawing.Size(13, 13)
         Me.lbl_puntajm.TabIndex = 252
@@ -657,7 +703,7 @@ Partial Class EvaluacionPersonal
         Me.Label9.BackColor = System.Drawing.SystemColors.Control
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(732, 515)
+        Me.Label9.Location = New System.Drawing.Point(534, 515)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(96, 13)
         Me.Label9.TabIndex = 251
@@ -671,52 +717,6 @@ Partial Class EvaluacionPersonal
         Me.pbx_eva.Size = New System.Drawing.Size(531, 338)
         Me.pbx_eva.TabIndex = 253
         Me.pbx_eva.TabStop = False
-        '
-        'lbl_mejora
-        '
-        Me.lbl_mejora.AutoSize = True
-        Me.lbl_mejora.BackColor = System.Drawing.Color.SteelBlue
-        Me.lbl_mejora.ForeColor = System.Drawing.Color.White
-        Me.lbl_mejora.Location = New System.Drawing.Point(137, 107)
-        Me.lbl_mejora.Name = "lbl_mejora"
-        Me.lbl_mejora.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_mejora.TabIndex = 250
-        Me.lbl_mejora.Text = "0"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.SteelBlue
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(15, 107)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(99, 13)
-        Me.Label14.TabIndex = 249
-        Me.Label14.Text = "Mejora Continua"
-        '
-        'lbl_amonestaciones
-        '
-        Me.lbl_amonestaciones.AutoSize = True
-        Me.lbl_amonestaciones.BackColor = System.Drawing.Color.SteelBlue
-        Me.lbl_amonestaciones.ForeColor = System.Drawing.Color.White
-        Me.lbl_amonestaciones.Location = New System.Drawing.Point(137, 129)
-        Me.lbl_amonestaciones.Name = "lbl_amonestaciones"
-        Me.lbl_amonestaciones.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_amonestaciones.TabIndex = 252
-        Me.lbl_amonestaciones.Text = "0"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.Color.SteelBlue
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(15, 129)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(99, 13)
-        Me.Label17.TabIndex = 251
-        Me.Label17.Text = "Amonestaciones"
         '
         'EvaluacionPersonal
         '
