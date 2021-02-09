@@ -263,12 +263,16 @@ where id_evaluaciones = @ID and estado = 0
             Next
 
             MessageBox.Show(RI, "¡Aviso!")
+
             Muestragrid()
 
 
         Catch ex As Exception
+
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
+
             MessageBox.Show(ex.ToString)
+
             Cn.Close()
         Finally
             Cn.Close()
