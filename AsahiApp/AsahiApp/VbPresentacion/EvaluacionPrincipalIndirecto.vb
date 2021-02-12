@@ -73,7 +73,7 @@ Public Class EvaluacionPrincipalIndirecto
 
         llenacombodepto()
 
-        If depto = "04" OrElse depto = "19" Then
+        If depto = "04" OrElse depto = "19" OrElse depto = "07" Then
             Label1.Visible = True
             cbx_depto.Visible = True
             '   btn_solicitar.Visible = True
@@ -203,6 +203,11 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
         dtgvp.Columns("Total_Mejora").Visible = False
         dtgvp.Columns("autoeval").Visible = False
 
+
+        dtgvp.Columns("evaluacion").Visible = False
+        dtgvp.Columns("id_depto").Visible = False
+        dtgvp.Columns("id_puesto").Visible = False
+
         For Each row As DataGridViewRow In Me.dtgvp.Rows
 
             If row.Cells(“Estado”).Value = 0 Then
@@ -317,15 +322,18 @@ where id_evaluaciones = @ID and estado = 0
         Else
 
             Try
-                Modulo_evaluaciones.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
-                Modulo_evaluaciones.e_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Departamento").Value.ToString()
-                Modulo_evaluaciones.e_evaluacion = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
-                Modulo_evaluaciones.e_fecha = Me.dtgvp.Rows(e.RowIndex).Cells("fecha").Value.ToString()
-                Modulo_evaluaciones.e_nombre = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
-                Modulo_evaluaciones.e_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Puesto").Value.ToString()
-                Modulo_evaluaciones.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
-                Modulo_evaluaciones.e_estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
-                Modulo_evaluaciones.e_idemp = id
+                Modulo_evaluacionesindi.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
+                Modulo_evaluacionesindi.e_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Departamento").Value.ToString()
+                Modulo_evaluacionesindi.e_evaluacion = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
+                Modulo_evaluacionesindi.e_fecha = Me.dtgvp.Rows(e.RowIndex).Cells("fecha").Value.ToString()
+                Modulo_evaluacionesindi.e_nombre = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
+                Modulo_evaluacionesindi.e_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Puesto").Value.ToString()
+                Modulo_evaluacionesindi.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
+                Modulo_evaluacionesindi.e_estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
+
+                Modulo_evaluacionesindi.id_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Id_depto").Value.ToString()
+                Modulo_evaluacionesindi.id_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Id_puesto").Value.ToString()
+                Modulo_evaluacionesindi.e_idemp = id
 
 
                 Dim segundoForm As New EvaluacionIndirecto
@@ -421,6 +429,9 @@ Module Modulo_evaluacionesindi
     Public e_puesto As String
     Public e_evaluacion As String
     Public e_fecha As Date
+
+    Public id_puesto As Integer
+    Public id_depto As Integer
 
 End Module
 
