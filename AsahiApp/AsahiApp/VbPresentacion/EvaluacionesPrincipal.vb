@@ -14,6 +14,7 @@ Public Class EvaluacionesPrincipal
 
 
     Sub New(id As Integer, depto As String, permiso As Integer)
+
         InitializeComponent()
         Me.id = id
         Me.depto = depto
@@ -70,7 +71,7 @@ Public Class EvaluacionesPrincipal
 
         llenacombodepto()
 
-        If depto = "04" OrElse depto = "19" Then
+        If depto = "04" OrElse depto = "19" OrElse depto = "07" Then
             Label1.Visible = True
             cbx_depto.Visible = True
             '   btn_solicitar.Visible = True
@@ -89,6 +90,7 @@ Public Class EvaluacionesPrincipal
 
 
         Muestragrid()
+
     End Sub
 
     Private Sub cbx_mes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_mes.SelectedIndexChanged
@@ -323,11 +325,8 @@ where id_evaluaciones = @ID and estado = 0
 
                 segundoForm.Show(Me)
 
-
             Catch
             End Try
-
-
         End If
 
     End Sub
