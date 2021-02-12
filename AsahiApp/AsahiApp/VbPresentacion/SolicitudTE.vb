@@ -430,7 +430,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
         Cnn.Close()
         Cnn.Open()
         Dim auto As SqlCommand = New SqlCommand("update [AsahiSystem].[dbo].[Rh_solicitudTE] set estado = 2, timestampval = getdate()
- where Id_solicitudte = @ID
+ where Id_solicitudte = @ID and estado = 0
 
 delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where grupo = 0 and clave = @clave and fecha = @fecha
 

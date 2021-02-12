@@ -301,7 +301,7 @@ where id_evaluaciones = @ID and estado = 0
             lbl_puntajeautoeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Autoeval").Value.ToString()
             lbl_puntajemejora.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Mejora").Value.ToString()
             lbl_puntajeobj.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Objetivos").Value.ToString()
-            lbl_totalpuntos.Text = CDbl((CInt(lbl_puntajeeva.Text) + CInt(lbl_puntajeautoeva.Text)) / 2) + CInt(lbl_puntajemejora.Text) + CInt(lbl_puntajeobj.Text)
+            lbl_totalpuntos.Text = CDbl((CDbl(lbl_puntajeeva.Text) + CDbl(lbl_puntajeautoeva.Text)) / 2) + CDbl(lbl_puntajemejora.Text) + CDbl(lbl_puntajeobj.Text)
 
 
             id_eval = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()

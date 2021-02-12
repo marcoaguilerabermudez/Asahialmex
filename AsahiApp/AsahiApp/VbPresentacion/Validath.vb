@@ -14,6 +14,7 @@ Public Class Validath
 
     Private Sub dtp_cuando_ValueChanged(sender As Object, e As EventArgs) Handles dtp1.ValueChanged
         cargagrid()
+
     End Sub
 
     Sub cargagrid()

@@ -805,7 +805,6 @@ Partial Class EvaluacionIndirecto
         '
         Me.dtgvp.AllowUserToAddRows = False
         Me.dtgvp.AllowUserToDeleteRows = False
-        Me.dtgvp.AllowUserToOrderColumns = True
         Me.dtgvp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -850,7 +849,7 @@ Partial Class EvaluacionIndirecto
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(1272, 399)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Evaluación de objetivos"
+        Me.TabPage2.Text = "Evaluación de indicadores"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'lbl_puntajem4
@@ -858,7 +857,7 @@ Partial Class EvaluacionIndirecto
         Me.lbl_puntajem4.AutoSize = True
         Me.lbl_puntajem4.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_puntajem4.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puntajem4.Location = New System.Drawing.Point(1155, 349)
+        Me.lbl_puntajem4.Location = New System.Drawing.Point(1149, 349)
         Me.lbl_puntajem4.Name = "lbl_puntajem4"
         Me.lbl_puntajem4.Size = New System.Drawing.Size(19, 13)
         Me.lbl_puntajem4.TabIndex = 268
@@ -870,7 +869,7 @@ Partial Class EvaluacionIndirecto
         Me.Label21.BackColor = System.Drawing.SystemColors.Control
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Black
-        Me.Label21.Location = New System.Drawing.Point(972, 349)
+        Me.Label21.Location = New System.Drawing.Point(970, 349)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(179, 12)
         Me.Label21.TabIndex = 267
@@ -881,7 +880,7 @@ Partial Class EvaluacionIndirecto
         Me.lbl_puntajetotal4.AutoSize = True
         Me.lbl_puntajetotal4.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_puntajetotal4.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puntajetotal4.Location = New System.Drawing.Point(1155, 376)
+        Me.lbl_puntajetotal4.Location = New System.Drawing.Point(1149, 376)
         Me.lbl_puntajetotal4.Name = "lbl_puntajetotal4"
         Me.lbl_puntajetotal4.Size = New System.Drawing.Size(13, 13)
         Me.lbl_puntajetotal4.TabIndex = 266
@@ -893,7 +892,7 @@ Partial Class EvaluacionIndirecto
         Me.Label24.BackColor = System.Drawing.SystemColors.Control
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.Black
-        Me.Label24.Location = New System.Drawing.Point(1062, 375)
+        Me.Label24.Location = New System.Drawing.Point(1060, 375)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(87, 12)
         Me.Label24.TabIndex = 265
@@ -904,7 +903,7 @@ Partial Class EvaluacionIndirecto
         Me.lbl_puntajm3.AutoSize = True
         Me.lbl_puntajm3.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_puntajm3.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puntajm3.Location = New System.Drawing.Point(942, 348)
+        Me.lbl_puntajm3.Location = New System.Drawing.Point(935, 348)
         Me.lbl_puntajm3.Name = "lbl_puntajm3"
         Me.lbl_puntajm3.Size = New System.Drawing.Size(19, 13)
         Me.lbl_puntajm3.TabIndex = 264
@@ -927,7 +926,7 @@ Partial Class EvaluacionIndirecto
         Me.lbl_puntajetotal3.AutoSize = True
         Me.lbl_puntajetotal3.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_puntajetotal3.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puntajetotal3.Location = New System.Drawing.Point(942, 375)
+        Me.lbl_puntajetotal3.Location = New System.Drawing.Point(935, 375)
         Me.lbl_puntajetotal3.Name = "lbl_puntajetotal3"
         Me.lbl_puntajetotal3.Size = New System.Drawing.Size(13, 13)
         Me.lbl_puntajetotal3.TabIndex = 262
@@ -985,7 +984,7 @@ Partial Class EvaluacionIndirecto
         Me.btn_evaluar2.Enabled = False
         Me.btn_evaluar2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_evaluar2.ForeColor = System.Drawing.Color.SeaGreen
-        Me.btn_evaluar2.Location = New System.Drawing.Point(1183, 348)
+        Me.btn_evaluar2.Location = New System.Drawing.Point(1187, 348)
         Me.btn_evaluar2.Name = "btn_evaluar2"
         Me.btn_evaluar2.Size = New System.Drawing.Size(83, 42)
         Me.btn_evaluar2.TabIndex = 256
@@ -1000,7 +999,7 @@ Partial Class EvaluacionIndirecto
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage3.Size = New System.Drawing.Size(1272, 399)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Evaluación de mejora personal"
+        Me.TabPage3.Text = "Evaluación de objetivos"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'btn_evaluar3
