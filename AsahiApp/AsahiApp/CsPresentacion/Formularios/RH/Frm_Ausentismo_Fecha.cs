@@ -260,12 +260,12 @@ namespace CsPresentacion
 
         private void Dtm_termina_ValueChanged(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
-            timer1.Start();
-            Var = 2;
-            Llenar_dgv();
-            Calcula_Total();
-            lbl_rep.Text = "";
+            //Cursor = Cursors.WaitCursor;
+            //timer1.Start();
+            //Var = 2;
+            //Llenar_dgv();
+            //Calcula_Total();
+            //lbl_rep.Text = "";
         }
 
         private void Dgv_ausentismo_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -296,18 +296,28 @@ namespace CsPresentacion
         }
         private void Dtm_inicia_ValueChanged(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
-            timer1.Start();
-            Var = 2;
-            Llenar_dgv();
-            Calcula_Total();
-            lbl_rep.Text = "";
+            //Cursor = Cursors.WaitCursor;
+            //timer1.Start();
+            //Var = 2;
+            //Llenar_dgv();
+            //Calcula_Total();
+            //lbl_rep.Text = "";
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
             timer1.Start();
             Cursor = Cursors.Default;
+        }
+
+        private void btn_filtrar_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            timer1.Start();
+            Var = 2;
+            Llenar_dgv();
+            Calcula_Total();
+            lbl_rep.Text = "";
         }
     }
 }

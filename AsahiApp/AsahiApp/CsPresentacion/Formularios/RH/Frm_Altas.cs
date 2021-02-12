@@ -426,6 +426,13 @@ namespace CsPresentacion
                 MessageBox.Show("Es necesario capturar información de la dirección completa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_numero.Focus();
             }
+
+            else if (string.IsNullOrEmpty(cmb_genero.Text))
+            {
+                MessageBox.Show("Es necesario capturar información del genero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmb_genero.Focus();
+            }
+
             else if (string.IsNullOrEmpty(txt_cp.Text))
             {
                 MessageBox.Show("Es necesario capturar información del Código Postal", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);

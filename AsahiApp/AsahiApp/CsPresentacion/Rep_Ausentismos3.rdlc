@@ -346,7 +346,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Total Ausentismos: </Value>
+                <Value>Personas: </Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
