@@ -30,31 +30,42 @@ Public Class EvaluacionIndirecto
         Me.pbx.BorderStyle = BorderStyle.Fixed3D
         pbx.SizeMode = PictureBoxSizeMode.StretchImage
 
+
+
+
+
         If estado = 1 Then
             Me.dtgvp.Columns("PES").ReadOnly = True
+            Me.dtgvp.Columns("PAE").DefaultCellStyle.BackColor = Color.LightBlue
         ElseIf estado = 10 Then
             Me.dtgvp.Columns("PES").ReadOnly = False
             Me.dtgvp.Columns("PAE").ReadOnly = True
+            '   Me.dtgvp.Columns("PES").DefaultCellStyle.BackColor = Color.LightBlue
+
             'ElseIf estado > 10 Then
             '    Me.dtgvp.Columns("PES").ReadOnly = False
             '    Me.dtgvp.Columns("PAE").ReadOnly = False
             '    btn_evaluar.Enabled = False
         ElseIf estado = 11 Then
-            Me.dtgvp.Columns("PES").ReadOnly = False
-            Me.dtgvp.Columns("PAE").ReadOnly = False
+            Me.dtgvp.Columns("PES").ReadOnly = True
+            Me.dtgvp.Columns("PAE").ReadOnly = True
+            Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.BackColor = Color.LightBlue
             btn_evaluar.Enabled = False
             btn_evaluar2.Enabled = True
             btn_evaluar3.Enabled = False
         ElseIf estado = 12 Then
-            Me.dtgvp.Columns("PES").ReadOnly = False
-            Me.dtgvp.Columns("PAE").ReadOnly = False
+            Me.dtgvp.Columns("PES").ReadOnly = True
+            Me.dtgvp.Columns("PAE").ReadOnly = True
+            Me.dtgvIndicadores.Columns("Logro %").ReadOnly = True
             btn_evaluar.Enabled = False
             btn_evaluar2.Enabled = False
             btn_evaluar3.Enabled = True
 
+
         End If
 
         sumarpuntaje()
+
     End Sub
 
 
@@ -192,7 +203,7 @@ Public Class EvaluacionIndirecto
             da.SelectCommand.Parameters.AddWithValue("@depto", iddepto)
             da.SelectCommand.Parameters.AddWithValue("@puesto", idpuesto)
             da.SelectCommand.Parameters.AddWithValue("@estado", estado)
-
+            da.SelectCommand.Parameters.AddWithValue("@id", id)
 
             Dim dt As New DataTable
             da.Fill(dt)
@@ -226,14 +237,16 @@ Public Class EvaluacionIndirecto
 
 
 
-        'Me.dtgvp.Columns("PMP").ReadOnly = True
-        'Me.dtgvp.Columns("Criterio").ReadOnly = True
-        'Me.dtgvp.Columns("PME").ReadOnly = True
+        Me.dtgvIndicadores.Columns("Nombre").ReadOnly = True
+        Me.dtgvIndicadores.Columns("Estándar %").ReadOnly = True
+        Me.dtgvIndicadores.Columns("Resultado %").ReadOnly = True
+        Me.dtgvIndicadores.Columns("Puntaje").ReadOnly = True
 
-        'Me.dtgvp.Columns("PMP").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-        'Me.dtgvp.Columns("PAE").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-        'Me.dtgvp.Columns("PES").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-        'Me.dtgvp.Columns("PME").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+
+        Me.dtgvIndicadores.Columns("Estándar %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+        Me.dtgvIndicadores.Columns("Resultado %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+        Me.dtgvIndicadores.Columns("Puntaje").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+        Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
 
 
 
@@ -402,25 +415,36 @@ Public Class EvaluacionIndirecto
 
     Private Sub dtgvp_CellContentClick2(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvIndicadores.CellClick
 
-        Try
+        If estado = 11 Then
 
-            For Each row2 As DataGridViewRow In Me.dtgvIndicadores.Rows
-                If row2.Cells("Estándar %").Value < row2.Cells("Resultado %").Value OrElse IsDBNull(row2.Cells("Resultado %").Value) Then
-                    ''  row.Cells("Puntaje").Value = 0
-                    row2.DefaultCellStyle.BackColor = Color.LightSalmon
-                    row2.Cells("Logro %").Value = 0.0
-                    row2.Cells("Puntaje").Value = 0.0
-                Else
-                    row2.DefaultCellStyle.BackColor = Color.White
-                    row2.Cells("Logro %").Value = CDbl(row2.Cells("Resultado %").Value) / CDbl(row2.Cells("Estándar %").Value) * 100
-                    'Pendiente row2.Cells("Puntaje").Value = 0.0
+            Try
 
-                End If
+                For Each row2 As DataGridViewRow In Me.dtgvIndicadores.Rows
+                    If row2.Cells("Logro %").Value > 100 OrElse IsDBNull(row2.Cells("Logro %").Value) Then
+                        ''  row.Cells("Puntaje").Value = 0
+                        row2.DefaultCellStyle.BackColor = Color.LightSalmon
+                        row2.Cells("Resultado %").Value = 0.0
+                        row2.Cells("Puntaje").Value = 0.0
+                    Else
+                        If row2.Cells("Logro %").Value = 0 OrElse IsDBNull(row2.Cells("Logro %").Value) Then
+                            row2.DefaultCellStyle.BackColor = Color.White
+                        Else
+                            row2.DefaultCellStyle.BackColor = Color.White
 
-            Next
+                            row2.Cells("Resultado %").Value = (CDbl(row2.Cells("Estándar %").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+                            row2.Cells("Puntaje").Value = (CDbl(row2.Cells("Puntos_Max").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+                            ' Pendiente row2.Cells("Puntaje").Value = 0.0
 
-        Catch
-        End Try
+                        End If
+
+                    End If
+
+                Next
+
+            Catch
+            End Try
+        Else
+        End If
 
     End Sub
 
@@ -479,32 +503,36 @@ Public Class EvaluacionIndirecto
 
     Private Sub dtgmuestra_CellContentClick12(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvIndicadores.RowEnter
 
+        If estado = 11 Then
 
-        Try
+            Try
 
-            For Each row2 As DataGridViewRow In Me.dtgvIndicadores.Rows
-                If row2.Cells("Estándar %").Value < row2.Cells("Resultado %").Value OrElse IsDBNull(row2.Cells("Resultado %").Value) Then
-                    ''  row.Cells("Puntaje").Value = 0
-                    row2.DefaultCellStyle.BackColor = Color.LightSalmon
-                    row2.Cells("Logro %").Value = 0.0
-                    row2.Cells("Puntaje").Value = 0.0
-                Else
-                    If row2.Cells("Resultado %").Value = 0 OrElse IsDBNull(row2.Cells("Resultado %").Value) Then
-                        row2.DefaultCellStyle.BackColor = Color.White
+                For Each row2 As DataGridViewRow In Me.dtgvIndicadores.Rows
+                    If row2.Cells("Logro %").Value > 100 OrElse IsDBNull(row2.Cells("Logro %").Value) Then
+                        ''  row.Cells("Puntaje").Value = 0
+                        row2.DefaultCellStyle.BackColor = Color.LightSalmon
+                        row2.Cells("Resultado %").Value = 0.0
+                        row2.Cells("Puntaje").Value = 0.0
                     Else
-                        row2.DefaultCellStyle.BackColor = Color.White
+                        If row2.Cells("Logro %").Value = 0 OrElse IsDBNull(row2.Cells("Logro %").Value) Then
+                            row2.DefaultCellStyle.BackColor = Color.White
+                        Else
+                            row2.DefaultCellStyle.BackColor = Color.White
 
-                        row2.Cells("Logro %").Value = CDbl(row2.Cells("Resultado %").Value) / CDbl(row2.Cells("Estándar %").Value) * 100
-                        ' Pendiente row2.Cells("Puntaje").Value = 0.0
+                            row2.Cells("Resultado %").Value = (CDbl(row2.Cells("Estándar %").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+                            row2.Cells("Puntaje").Value = (CDbl(row2.Cells("Puntos_Max").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+                            ' Pendiente row2.Cells("Puntaje").Value = 0.0
+
+                        End If
 
                     End If
 
-                End If
+                Next
 
-            Next
-
-        Catch
-        End Try
+            Catch
+            End Try
+        Else
+        End If
 
     End Sub
 
@@ -628,8 +656,8 @@ Public Class EvaluacionIndirecto
                             command.Parameters.AddWithValue("@id_res_obj", (fila.Cells("Id").Value))
                             command.Parameters.AddWithValue("@tot_porcentaje", (fila.Cells("Resultado %").Value))
                             command.Parameters.AddWithValue("@porcemax", (fila.Cells("Estándar %").Value))
-                            command.Parameters.AddWithValue("@tot_puntos", (fila.Cells("Resultado %").Value))
-                            command.Parameters.AddWithValue("@puntmax", (fila.Cells("Puntaje").Value))
+                            command.Parameters.AddWithValue("@tot_puntos", (fila.Cells("Puntaje").Value))
+                            command.Parameters.AddWithValue("@puntmax", (fila.Cells("Puntos_Max").Value))
                             command.Parameters.AddWithValue("@user", idemp)
                             command.Parameters.AddWithValue("@punttotal", lbl_puntajetotal3.Text)
                             command.Parameters.AddWithValue("@nota", "")
@@ -658,6 +686,8 @@ Public Class EvaluacionIndirecto
                         Dim ownerForm As EvaluacionPrincipalIndirecto = Me.Owner
                         ownerForm.Muestragrid()
                         btn_evaluar2.Enabled = False
+                        estado = 12
+                        btn_evaluar3.Enabled = True
 
 
 
@@ -684,7 +714,7 @@ Public Class EvaluacionIndirecto
         End Try
     End Sub
 
-    Private Sub btn_evaluar_Click(sender As Object, e As EventArgs) Handles btn_evaluar.Click
+    Private Sub btn_evaluar_Click(sender As Object, e As EventArgs) Handles btn_evaluar.Click, btn_evaluar2.Click
 
         If estado = 1 Then
             Try
@@ -703,7 +733,9 @@ Public Class EvaluacionIndirecto
                 Next
             Catch
             End Try
-        Else
+
+
+        ElseIf estado = 10 Then
 
             Try
                 For Each row As DataGridViewRow In Me.dtgvp.Rows
@@ -721,6 +753,26 @@ Public Class EvaluacionIndirecto
                 Next
             Catch
             End Try
+
+        ElseIf estado = 11 Then
+
+            Try
+                For Each row As DataGridViewRow In Me.dtgvIndicadores.Rows
+
+
+
+                    If (row.Cells("Logro %").Value > 100 OrElse IsDBNull(row.Cells("Logro %").Value)) Then
+                        row.Cells("Logro %").Value = 0
+                        row.DefaultCellStyle.BackColor = Color.LightSalmon
+                    End If
+
+
+                    row.DefaultCellStyle.BackColor = Color.White
+
+                Next
+            Catch
+            End Try
+
 
 
         End If
@@ -778,8 +830,9 @@ Public Class EvaluacionIndirecto
                 Total3 += Val(row3.Cells("Puntaje").Value)
                 TotalM3 += Val(row3.Cells("Puntos_Max").Value)
             Next
-            Me.lbl_puntajetotal3.Text = Total3.ToString
-            Me.lbl_puntajm3.Text = TotalM3.ToString
+            Me.lbl_puntajetotal3.Text = Math.Round(Total3, 2)
+            Me.lbl_puntajm3.Text = Math.Round(TotalM3, 2)
+
 
 
             Dim Total4 As Double
@@ -789,8 +842,9 @@ Public Class EvaluacionIndirecto
                 Total4 += Val(row4.Cells("Resultado %").Value)
                 TotalM4 += Val(row4.Cells("Estándar %").Value)
             Next
-            Me.lbl_puntajetotal4.Text = Total4.ToString
-            Me.lbl_puntajem4.Text = TotalM4.ToString
+            Me.lbl_puntajetotal4.Text = Math.Round(Total4, 2)
+            Me.lbl_puntajem4.Text = Math.Round(TotalM4, 2)
+
 
 
 
@@ -804,4 +858,6 @@ Public Class EvaluacionIndirecto
 
 
     End Sub
+
+
 End Class
