@@ -24,6 +24,7 @@ Partial Class Frm_DescripcionPuestos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_DescripcionPuestos))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Btn_Reporte = New System.Windows.Forms.Button()
         Me.Btn_GuardarModificar = New System.Windows.Forms.Button()
         Me.Cmb_Area = New System.Windows.Forms.ComboBox()
         Me.Cmb_Dpto = New System.Windows.Forms.ComboBox()
@@ -105,15 +106,25 @@ Partial Class Frm_DescripcionPuestos
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Dgv_PuestosCargo = New System.Windows.Forms.DataGridView()
+        Me.IdAutoridad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ocupantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.puestosReportan = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.funcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Tbp_RelacionesPuestos = New System.Windows.Forms.TabPage()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Dgv_RelacionExter = New System.Windows.Forms.DataGridView()
+        Me.idRpE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.contactoEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.motivosExt = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Dgv_RelacionInter = New System.Windows.Forms.DataGridView()
+        Me.idRpI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.puestosArea = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.motivos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
@@ -137,16 +148,6 @@ Partial Class Frm_DescripcionPuestos
         Me.compeTecnicas = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.compeGenerales = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.compeMando = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.IdAutoridad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ocupantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.puestosReportan = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.funcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idRpI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.puestosArea = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.motivos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idRpE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.contactoEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.motivosExt = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Tbc_Origen.SuspendLayout()
@@ -189,6 +190,7 @@ Partial Class Frm_DescripcionPuestos
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Btn_Reporte)
         Me.Panel1.Controls.Add(Me.Btn_GuardarModificar)
         Me.Panel1.Controls.Add(Me.Cmb_Area)
         Me.Panel1.Controls.Add(Me.Cmb_Dpto)
@@ -202,12 +204,21 @@ Partial Class Frm_DescripcionPuestos
         Me.Panel1.Size = New System.Drawing.Size(791, 60)
         Me.Panel1.TabIndex = 0
         '
+        'Btn_Reporte
+        '
+        Me.Btn_Reporte.Image = Global.Presentacion.My.Resources.Resources.reportes
+        Me.Btn_Reporte.Location = New System.Drawing.Point(724, 8)
+        Me.Btn_Reporte.Name = "Btn_Reporte"
+        Me.Btn_Reporte.Size = New System.Drawing.Size(40, 41)
+        Me.Btn_Reporte.TabIndex = 2
+        Me.Btn_Reporte.UseVisualStyleBackColor = True
+        '
         'Btn_GuardarModificar
         '
         Me.Btn_GuardarModificar.Image = Global.Presentacion.My.Resources.Resources.save
         Me.Btn_GuardarModificar.Location = New System.Drawing.Point(660, 8)
         Me.Btn_GuardarModificar.Name = "Btn_GuardarModificar"
-        Me.Btn_GuardarModificar.Size = New System.Drawing.Size(55, 41)
+        Me.Btn_GuardarModificar.Size = New System.Drawing.Size(40, 41)
         Me.Btn_GuardarModificar.TabIndex = 2
         Me.Btn_GuardarModificar.UseVisualStyleBackColor = True
         '
@@ -1056,6 +1067,32 @@ Partial Class Frm_DescripcionPuestos
         Me.Dgv_PuestosCargo.Size = New System.Drawing.Size(767, 260)
         Me.Dgv_PuestosCargo.TabIndex = 0
         '
+        'IdAutoridad
+        '
+        Me.IdAutoridad.HeaderText = "IdAutoridad"
+        Me.IdAutoridad.Name = "IdAutoridad"
+        Me.IdAutoridad.ReadOnly = True
+        Me.IdAutoridad.Visible = False
+        '
+        'ocupantes
+        '
+        Me.ocupantes.HeaderText = "No. de Ocupantes 人数"
+        Me.ocupantes.Name = "ocupantes"
+        '
+        'puestosReportan
+        '
+        Me.puestosReportan.HeaderText = "Puestos que le reportan 直属部下の役職"
+        Me.puestosReportan.Name = "puestosReportan"
+        Me.puestosReportan.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.puestosReportan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.puestosReportan.Width = 135
+        '
+        'funcion
+        '
+        Me.funcion.HeaderText = "Función principal 業務内容"
+        Me.funcion.Name = "funcion"
+        Me.funcion.Width = 480
+        '
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.Label13)
@@ -1114,6 +1151,25 @@ Partial Class Frm_DescripcionPuestos
         Me.Dgv_RelacionExter.Size = New System.Drawing.Size(381, 242)
         Me.Dgv_RelacionExter.TabIndex = 1
         '
+        'idRpE
+        '
+        Me.idRpE.HeaderText = "IdRpE"
+        Me.idRpE.Name = "idRpE"
+        Me.idRpE.ReadOnly = True
+        Me.idRpE.Visible = False
+        '
+        'contactoEmpresa
+        '
+        Me.contactoEmpresa.HeaderText = "Contacto o empresa 会社名/部署/役職"
+        Me.contactoEmpresa.Name = "contactoEmpresa"
+        Me.contactoEmpresa.Width = 125
+        '
+        'motivosExt
+        '
+        Me.motivosExt.HeaderText = "Motivos 何のために"
+        Me.motivosExt.Name = "motivosExt"
+        Me.motivosExt.Width = 230
+        '
         'Panel12
         '
         Me.Panel12.Controls.Add(Me.Label21)
@@ -1158,6 +1214,27 @@ Partial Class Frm_DescripcionPuestos
         Me.Dgv_RelacionInter.RowTemplate.Height = 30
         Me.Dgv_RelacionInter.Size = New System.Drawing.Size(380, 242)
         Me.Dgv_RelacionInter.TabIndex = 1
+        '
+        'idRpI
+        '
+        Me.idRpI.HeaderText = "IdRpI"
+        Me.idRpI.Name = "idRpI"
+        Me.idRpI.ReadOnly = True
+        Me.idRpI.Visible = False
+        '
+        'puestosArea
+        '
+        Me.puestosArea.HeaderText = "Puestos o Área 役職・エリア"
+        Me.puestosArea.Name = "puestosArea"
+        Me.puestosArea.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.puestosArea.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.puestosArea.Width = 125
+        '
+        'motivos
+        '
+        Me.motivos.HeaderText = "Motivos  何のために"
+        Me.motivos.Name = "motivos"
+        Me.motivos.Width = 230
         '
         'Panel11
         '
@@ -1368,72 +1445,6 @@ Partial Class Frm_DescripcionPuestos
         Me.compeMando.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.compeMando.Width = 235
         '
-        'IdAutoridad
-        '
-        Me.IdAutoridad.HeaderText = "IdAutoridad"
-        Me.IdAutoridad.Name = "IdAutoridad"
-        Me.IdAutoridad.ReadOnly = True
-        Me.IdAutoridad.Visible = False
-        '
-        'ocupantes
-        '
-        Me.ocupantes.HeaderText = "No. de Ocupantes 人数"
-        Me.ocupantes.Name = "ocupantes"
-        '
-        'puestosReportan
-        '
-        Me.puestosReportan.HeaderText = "Puestos que le reportan 直属部下の役職"
-        Me.puestosReportan.Name = "puestosReportan"
-        Me.puestosReportan.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.puestosReportan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.puestosReportan.Width = 135
-        '
-        'funcion
-        '
-        Me.funcion.HeaderText = "Función principal 業務内容"
-        Me.funcion.Name = "funcion"
-        Me.funcion.Width = 480
-        '
-        'idRpI
-        '
-        Me.idRpI.HeaderText = "IdRpI"
-        Me.idRpI.Name = "idRpI"
-        Me.idRpI.ReadOnly = True
-        Me.idRpI.Visible = False
-        '
-        'puestosArea
-        '
-        Me.puestosArea.HeaderText = "Puestos o Área 役職・エリア"
-        Me.puestosArea.Name = "puestosArea"
-        Me.puestosArea.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.puestosArea.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.puestosArea.Width = 125
-        '
-        'motivos
-        '
-        Me.motivos.HeaderText = "Motivos  何のために"
-        Me.motivos.Name = "motivos"
-        Me.motivos.Width = 230
-        '
-        'idRpE
-        '
-        Me.idRpE.HeaderText = "IdRpE"
-        Me.idRpE.Name = "idRpE"
-        Me.idRpE.ReadOnly = True
-        Me.idRpE.Visible = False
-        '
-        'contactoEmpresa
-        '
-        Me.contactoEmpresa.HeaderText = "Contacto o empresa 会社名/部署/役職"
-        Me.contactoEmpresa.Name = "contactoEmpresa"
-        Me.contactoEmpresa.Width = 125
-        '
-        'motivosExt
-        '
-        Me.motivosExt.HeaderText = "Motivos 何のために"
-        Me.motivosExt.Name = "motivosExt"
-        Me.motivosExt.Width = 230
-        '
         'Frm_DescripcionPuestos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1634,4 +1645,5 @@ Partial Class Frm_DescripcionPuestos
     Friend WithEvents idRpI As DataGridViewTextBoxColumn
     Friend WithEvents puestosArea As DataGridViewComboBoxColumn
     Friend WithEvents motivos As DataGridViewTextBoxColumn
+    Friend WithEvents Btn_Reporte As Button
 End Class

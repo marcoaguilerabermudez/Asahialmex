@@ -42,7 +42,7 @@ Public Class DPuestos
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT e.Id IdE, Id_Escolaridad, Activo, Id_Idioma, Nivel FROM Dp_Info_Gral g LEFT JOIN Dp_Relacion_Dp_Escolaridad e ON g.Id = e.Id_Dp LEFT JOIN Dp_Relacion_Dp_Idioma i ON g.Id = i.Id_Dp WHERE g.Id = " & idDp & "", oCon)
+            Dim query As New SqlCommand("SELECT e.Id IdE, e.Id_Escolaridad, Activo, Id_Idioma, Nivel FROM Dp_Info_Gral g LEFT JOIN Dp_Relacion_Dp_Escolaridad e ON g.Id = e.Id_Dp LEFT JOIN Dp_Relacion_Dp_Idioma i ON g.Id = i.Id_Dp WHERE g.Id = " & idDp & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader

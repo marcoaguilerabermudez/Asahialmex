@@ -144,9 +144,9 @@ Public Class Frm_DescripcionPuestos
             Gpb_Justifica.Enabled = False
         End If
     End Sub
-    Private Sub Btn_GuardarModificar_Click(sender As Object, e As EventArgs) Handles Btn_GuardarModificar.Click
-        InsertaModifica()
-    End Sub
+    'Private Sub Btn_GuardarModificar_Click(sender As Object, e As EventArgs) Handles Btn_GuardarModificar.Click, Btn_Reporte.Click
+    '    InsertaModifica()
+    'End Sub
 #End Region
 #Region "Rellena Formulario"
     Private Sub RellenaInfoGral(ByVal Puesto As Puestos)
@@ -893,10 +893,16 @@ Public Class Frm_DescripcionPuestos
 
         Return NPues.obtenerCompetenciasTecnicas(Me.cadenaConex)
     End Function
+    Private Sub Btn_Reporte_Click(sender As Object, e As EventArgs) Handles Btn_Reporte.Click
+        Frm_ReporteDP.Show()
+    End Sub
+    Private Sub Btn_GuardarModificar_Click(sender As Object, e As EventArgs) Handles Btn_GuardarModificar.Click
+        InsertaModifica()
+    End Sub
     Private Function CatCompeGrlRecuperar() As LPuestos
         Dim NPues As New NPuestos()
 
-        Return NPues.obtenerCompetenciasGrl(Me.cadenaConex)
+        Return NPues.ObtenerCompetenciasGrl(Me.cadenaConex)
     End Function
     Private Function CatCompeMandoRecuperar() As LPuestos
         Dim NPues As New NPuestos()
