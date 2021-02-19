@@ -506,7 +506,7 @@ Public Class Frm_Principal
         '    Principaleva.Show()
 
 
-        Dim EligeEva As New EligeEvaluación(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        Dim EligeEva As New EligeEvaluación(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.Id_puesto)
         EligeEva.Show()
 
     End Sub

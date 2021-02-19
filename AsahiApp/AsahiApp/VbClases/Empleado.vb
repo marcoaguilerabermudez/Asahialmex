@@ -1016,4 +1016,16 @@
             comenBonoExt_ = value
         End Set
     End Property
+
+    Private Id_puesto1 As String
+    Public Property Id_puesto() As String
+        Get
+            Return Id_puesto1
+        End Get
+        Set(ByVal value As String)
+            Id_puesto1 = value
+        End Set
+    End Property
+
+
 End Class

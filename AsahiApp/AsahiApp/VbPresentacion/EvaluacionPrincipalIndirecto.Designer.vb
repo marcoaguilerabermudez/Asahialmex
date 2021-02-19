@@ -302,7 +302,6 @@ Partial Class EvaluacionPrincipalIndirecto
         'cbx_mes
         '
         Me.cbx_mes.BackColor = System.Drawing.SystemColors.Control
-        Me.cbx_mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_mes.Enabled = False
         Me.cbx_mes.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_mes.FormattingEnabled = True
@@ -378,11 +377,11 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.Label18.AutoSize = True
         Me.Label18.BackColor = System.Drawing.SystemColors.Control
         Me.Label18.ForeColor = System.Drawing.Color.Black
-        Me.Label18.Location = New System.Drawing.Point(13, 183)
+        Me.Label18.Location = New System.Drawing.Point(44, 183)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(122, 13)
+        Me.Label18.Size = New System.Drawing.Size(90, 13)
         Me.Label18.TabIndex = 190
-        Me.Label18.Text = "Puntaje Mejora Personal"
+        Me.Label18.Text = "Puntaje Objetivos"
         '
         'lbl_puntajeobj
         '
@@ -400,11 +399,11 @@ Partial Class EvaluacionPrincipalIndirecto
         Me.Label20.AutoSize = True
         Me.Label20.BackColor = System.Drawing.SystemColors.Control
         Me.Label20.ForeColor = System.Drawing.Color.Black
-        Me.Label20.Location = New System.Drawing.Point(45, 160)
+        Me.Label20.Location = New System.Drawing.Point(33, 160)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(90, 13)
+        Me.Label20.Size = New System.Drawing.Size(101, 13)
         Me.Label20.TabIndex = 188
-        Me.Label20.Text = "Puntaje Objetivos"
+        Me.Label20.Text = "Puntaje Indicadores"
         '
         'lbl_puntajeeva
         '

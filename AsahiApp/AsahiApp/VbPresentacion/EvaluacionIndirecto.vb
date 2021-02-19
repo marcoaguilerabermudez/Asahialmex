@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System
 
 Public Class EvaluacionIndirecto
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
@@ -10,10 +11,36 @@ Public Class EvaluacionIndirecto
 
     Dim idpuesto As Integer
     Dim iddepto As Integer
+    Dim puntajeincidencias As Double
+
 
 
 
     Private Sub EvaluacionIndirecto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        '  TabControl1.TabPages(2).Controls.Add(dtgvobj)
+
+        'Dim tab As TabControl = TabControl1
+        'tab.Contains(dtgvp)
+
+
+
+        'tab.TabPages(0).dtgvp.Columns("PAE").DefaultCellStyle.BackColor = Color.LightBlue
+
+
+
+        Dim style As New DataGridViewCellStyle
+        style.Font = New Font(dtgvp.Font, FontStyle.Bold)
+
+
+        Dim style2 As New DataGridViewCellStyle
+        style2.Font = New Font(dtgvIndicadores.Font, FontStyle.Bold)
+
+
+        Dim style3 As New DataGridViewCellStyle
+        style3.Font = New Font(dtgvobj.Font, FontStyle.Bold)
+
         lbl_nombre.Text = Modulo_evaluacionesindi.e_nombre
         lbl_clave.Text = Modulo_evaluacionesindi.e_clave
         id = Modulo_evaluacionesindi.e_id
@@ -31,35 +58,68 @@ Public Class EvaluacionIndirecto
         pbx.SizeMode = PictureBoxSizeMode.StretchImage
 
 
-
+        '  Muestragrid()
 
 
         If estado = 1 Then
             Me.dtgvp.Columns("PES").ReadOnly = True
-            Me.dtgvp.Columns("PAE").DefaultCellStyle.BackColor = Color.LightBlue
+            dtgvp.Columns("PAE").DefaultCellStyle = style
+            Me.dtgvp.Columns("PAE").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+
+
+            txt_observaciones.Enabled = False
+
         ElseIf estado = 10 Then
             Me.dtgvp.Columns("PES").ReadOnly = False
             Me.dtgvp.Columns("PAE").ReadOnly = True
-            '   Me.dtgvp.Columns("PES").DefaultCellStyle.BackColor = Color.LightBlue
+            dtgvp.Columns("PES").DefaultCellStyle = style
+            Me.dtgvp.Columns("PES").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
 
-            'ElseIf estado > 10 Then
-            '    Me.dtgvp.Columns("PES").ReadOnly = False
-            '    Me.dtgvp.Columns("PAE").ReadOnly = False
-            '    btn_evaluar.Enabled = False
         ElseIf estado = 11 Then
             Me.dtgvp.Columns("PES").ReadOnly = True
             Me.dtgvp.Columns("PAE").ReadOnly = True
-            Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.BackColor = Color.LightBlue
+
             btn_evaluar.Enabled = False
-            btn_evaluar2.Enabled = True
+            '  btn_evaluar2.Enabled = True
+            btn_evaluar2.Enabled = False
             btn_evaluar3.Enabled = False
+            dtgvIndicadores.Columns("Logro %").DefaultCellStyle = style2
+            Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+
         ElseIf estado = 12 Then
             Me.dtgvp.Columns("PES").ReadOnly = True
             Me.dtgvp.Columns("PAE").ReadOnly = True
             Me.dtgvIndicadores.Columns("Logro %").ReadOnly = True
+            dtgvobj.Columns("Logro %").DefaultCellStyle = style3
+            Me.dtgvobj.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
             btn_evaluar.Enabled = False
             btn_evaluar2.Enabled = False
             btn_evaluar3.Enabled = True
+            dtgvobj.Rows(2).Cells(6).ReadOnly = True
+            dtgvobj.Rows(3).Cells(6).ReadOnly = True
+
+
+
+
+        ElseIf estado = 13 OrElse estado = 14 Then
+            Me.dtgvp.Columns("PES").ReadOnly = True
+            Me.dtgvp.Columns("PAE").ReadOnly = True
+
+
+            Me.dtgvIndicadores.Columns("Logro %").ReadOnly = True
+
+
+            Me.dtgvobj.Columns("Logro %").ReadOnly = True
+
+
+
+            btn_evaluar.Enabled = False
+            btn_evaluar2.Enabled = False
+            btn_evaluar3.Enabled = False
+
+
+            dtgvobj.Rows(2).Cells(6).ReadOnly = True
+            dtgvobj.Rows(3).Cells(6).ReadOnly = True
 
 
         End If
@@ -67,6 +127,8 @@ Public Class EvaluacionIndirecto
         sumarpuntaje()
 
     End Sub
+
+
 
 
     Sub MuestraEtiquetasKardex()
@@ -88,16 +150,33 @@ Public Class EvaluacionIndirecto
             da.Fill(ds)
 
             lbl_n.Text = ds.Tables(0).Rows(0).Item(0)
+            lbl_suspension.Text = ds.Tables(0).Rows(0).Item(0)
+
             lbl_f.Text = ds.Tables(0).Rows(0).Item(1)
+            lbl_puntajeFI.Text = ds.Tables(0).Rows(0).Item(1)
+
+
             lbl_p.Text = ds.Tables(0).Rows(0).Item(2)
+            lbl_puntajePSG.Text = (ds.Tables(0).Rows(0).Item(2) / 2)
+
+
             lbl_u.Text = ds.Tables(0).Rows(0).Item(3)
-            lbl_g.Text = ds.Tables(0).Rows(0).Item(4)
+            lbl_puntajeFJ.Text = (ds.Tables(0).Rows(0).Item(3) / 2)
+
+
+            lbl_g.Text = ds.Tables(0).Rows(0).Item(4) / 2
             lbl_v.Text = ds.Tables(0).Rows(0).Item(5)
+
+
             lbl_r.Text = ds.Tables(0).Rows(0).Item(6)
+            lbl_puntajeRetardo.Text = (ds.Tables(0).Rows(0).Item(6) / 2)
+
             lbl_meses.Text = ds.Tables(0).Rows(0).Item(7)
             lbl_mejora.Text = ds.Tables(0).Rows(0).Item(8)
             lbl_amonestaciones.Text = ds.Tables(0).Rows(0).Item(9)
             faltas = CInt(lbl_f.Text) + CInt(lbl_n.Text) + CInt(lbl_p.Text)
+
+            puntajeincidencias = CDbl(lbl_suspension.Text) + CDbl(lbl_puntajeFI.Text) + CDbl(lbl_puntajePSG.Text) + CDbl(lbl_puntajeFJ.Text) + CDbl(lbl_puntajeRetardo.Text)
 
 
             Cn.Close()
@@ -107,11 +186,17 @@ Public Class EvaluacionIndirecto
             ' MessageBox.Show("El empleado que ha seleccionado no está activo o no corresponde a su departamento, verifique e intente de nuevo.", "¡Aviso!")
         End Try
 
-        'Muestrapuntos()
+
         Muestragrid()
         If estado > 10 Then
             MuestragridIndicador()
         End If
+
+        If estado > 11 Then
+            MuestragridObjetivos()
+        End If
+
+
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MuestraKardexEva.Show()
@@ -187,7 +272,12 @@ Public Class EvaluacionIndirecto
         'dtgvp.Rows(13).ReadOnly = True
         'dtgvp.Rows(5).ReadOnly = True
 
+
+
     End Sub
+
+
+
 
 
 
@@ -249,6 +339,76 @@ Public Class EvaluacionIndirecto
         Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
 
 
+
+
+
+    End Sub
+
+
+
+    Sub MuestragridObjetivos()
+
+        Try
+            Cn.Close()
+            Cn.Open()
+
+            Dim da As New SqlDataAdapter("Sp_muestraevaluacionesObjetivos", Cn)
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            da.SelectCommand.Parameters.AddWithValue("@clave", lbl_clave.Text)
+            da.SelectCommand.Parameters.AddWithValue("@depto", iddepto)
+            da.SelectCommand.Parameters.AddWithValue("@puesto", idpuesto)
+            da.SelectCommand.Parameters.AddWithValue("@estado", estado)
+            da.SelectCommand.Parameters.AddWithValue("@id", id)
+            da.SelectCommand.Parameters.AddWithValue("@incidencias", puntajeincidencias)
+            da.SelectCommand.Parameters.AddWithValue("@mejoras", lbl_mejora.Text)
+
+            Dim dt As New DataTable
+            da.Fill(dt)
+            dtgvobj.DataSource = dt
+
+
+            Cn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+
+
+        'dtgvobj.Columns("Descripción").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+
+        'dtgvobj.Columns("Descripción").Width = 350
+        'dtgvobj.Columns("Estándar %").Width = 80
+        'dtgvobj.Columns("Resultado %").Width = 85
+        'dtgvobj.Columns("Logro %").Width = 80
+        'dtgvobj.Columns("Puntaje").Width = 70
+
+
+
+        dtgvobj.Columns("Id").Visible = False
+        dtgvobj.Columns("Id_Puesto").Visible = False
+        dtgvobj.Columns("Id_Depto").Visible = False
+        dtgvobj.Columns("Puntos_Max").Visible = False
+
+
+
+
+
+
+
+        Me.dtgvobj.Columns("Descripción").ReadOnly = True
+        Me.dtgvobj.Columns("Estándar %").ReadOnly = True
+        Me.dtgvobj.Columns("Resultado %").ReadOnly = True
+        Me.dtgvobj.Columns("Puntaje").ReadOnly = True
+
+
+        Me.dtgvobj.Columns("Estándar %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+        Me.dtgvobj.Columns("Resultado %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+        Me.dtgvobj.Columns("Puntaje").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+        Me.dtgvobj.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+
+
+        dtgvobj.Rows(2).Cells(6).ReadOnly = True
+        'dtgvobj.Rows(2).ReadOnly = True
+        'dtgvobj.Rows(3).ReadOnly = True
 
 
 
@@ -338,25 +498,28 @@ Public Class EvaluacionIndirecto
 
     End Sub
 
-    Private Sub Malla_EditingControlShowing(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtgvp.EditingControlShowing
+    Private Sub Malla_EditingControlShowing(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtgvp.EditingControlShowing, dtgvIndicadores.EditingControlShowing, dtgvobj.EditingControlShowing
+
+        '
         Dim ValidarNro As TextBox = e.Control
         RemoveHandler ValidarNro.KeyPress, AddressOf cellTextBox_KeyPress
         AddHandler ValidarNro.KeyPress, AddressOf cellTextBox_KeyPress
 
     End Sub
 
-    Private Sub Malla_EditingControlShowing2(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtgvIndicadores.EditingControlShowing
-        Dim ValidarNro As TextBox = e.Control
-        RemoveHandler ValidarNro.KeyPress, AddressOf cellTextBox_KeyPress
-        AddHandler ValidarNro.KeyPress, AddressOf cellTextBox_KeyPress
+    'Private Sub Malla_EditingControlShowing2(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dtgvIndicadores.EditingControlShowing
+    '    Dim ValidarNro As TextBox = e.Control
+    '    RemoveHandler ValidarNro.KeyPress, AddressOf cellTextBox_KeyPress
+    '    AddHandler ValidarNro.KeyPress, AddressOf cellTextBox_KeyPress
 
-    End Sub
+    'End Sub
 
 
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellClick
         Try
 
             If estado = 1 Then
+
 
                 For Each row As DataGridViewRow In Me.dtgvp.Rows
 
@@ -413,7 +576,7 @@ Public Class EvaluacionIndirecto
 
 
 
-    Private Sub dtgvp_CellContentClick2(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvIndicadores.CellClick
+    Private Sub dtgvp_CellContentClick2(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvIndicadores.CellClick, dtgvobj.CellClick
 
         If estado = 11 Then
 
@@ -446,7 +609,22 @@ Public Class EvaluacionIndirecto
         Else
         End If
 
+
+
+
+
+
+
+
+
     End Sub
+
+
+
+
+
+
+
 
 
     Private Sub dtgmuestra_CellContentClick11(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.RowEnter
@@ -534,10 +712,172 @@ Public Class EvaluacionIndirecto
         Else
         End If
 
+        'dtgvobj.Rows(2).Cells(6).ReadOnly = True
+        'dtgvobj.Rows(3).Cells(6).ReadOnly = True
+
     End Sub
 
+
+
+
+    Private Sub dtgvp_CellContentClick5(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvobj.CellClick
+
+
+        If estado = 12 Then
+
+
+
+            'Try
+
+            '    For Each row2 As DataGridViewRow In Me.dtgvobj.Rows
+
+
+            '        If row2.Cells("Logro %").Value > 100 OrElse IsDBNull(row2.Cells("Logro %").Value) Then
+            '            ''  row.Cells("Puntaje").Value = 0
+            '            row2.DefaultCellStyle.BackColor = Color.LightSalmon
+            '            row2.Cells("Resultado %").Value = 0.0
+            '            row2.Cells("Puntaje").Value = 0.0
+            '        Else
+            '            If row2.Cells("Logro %").Value = 0 OrElse IsDBNull(row2.Cells("Logro %").Value) Then
+            '                row2.DefaultCellStyle.BackColor = Color.White
+            '            Else
+            '                row2.DefaultCellStyle.BackColor = Color.White
+
+            '                row2.Cells("Resultado %").Value = (CDbl(row2.Cells("Estándar %").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+            '                row2.Cells("Puntaje").Value = (CDbl(row2.Cells("Puntos_Max").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+            '                ' Pendiente row2.Cells("Puntaje").Value = 0.0
+
+            '            End If
+
+            '        End If
+
+
+
+            '    Next
+
+            'Catch
+            'End Try
+
+
+
+            Try
+
+
+
+
+                For Each row2 As DataGridViewRow In Me.dtgvobj.Rows
+
+
+                    If row2.Cells("Logro %").Value > 100 OrElse IsDBNull(row2.Cells("Logro %").Value) Then
+                        ''  row.Cells("Puntaje").Value = 0
+                        row2.DefaultCellStyle.BackColor = Color.LightSalmon
+                        row2.Cells("Resultado %").Value = 0.0
+                        row2.Cells("Puntaje").Value = 0.0
+                    Else
+                        If row2.Cells("Logro %").Value = 0 OrElse IsDBNull(row2.Cells("Logro %").Value) Then
+                            row2.DefaultCellStyle.BackColor = Color.White
+                        Else
+                            row2.DefaultCellStyle.BackColor = Color.White
+
+                            row2.Cells("Resultado %").Value = (CDbl(row2.Cells("Estándar %").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+                            row2.Cells("Puntaje").Value = (CDbl(row2.Cells("Puntos_Max").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+                            ' Pendiente row2.Cells("Puntaje").Value = 0.0
+
+                        End If
+
+                    End If
+
+
+
+
+
+
+                Next
+
+            Catch
+            End Try
+            dtgvobj.Rows(2).Cells(6).ReadOnly = True
+            dtgvobj.Rows(3).Cells(6).ReadOnly = True
+        End If
+
+
+    End Sub
+
+    Private Sub dtgmuestra_CellContentClick13(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvobj.RowEnter
+
+
+
+
+        If estado = 12 Then
+
+
+
+
+
+            Try
+
+                For Each row2 As DataGridViewRow In Me.dtgvobj.Rows
+                    If row2.Cells("Logro %").Value > 100 Then
+                        ''  row.Cells("Puntaje").Value = 0
+                        row2.DefaultCellStyle.BackColor = Color.LightSalmon
+                        row2.Cells("Resultado %").Value = 0.0
+                        row2.Cells("Puntaje").Value = 0.0
+                    Else
+
+
+
+
+
+                        row2.DefaultCellStyle.BackColor = Color.White
+                        '   row2.Cells("Resultado %").Value = (CDbl(row2.Cells("Estándar %").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+                        '  row2.Cells("Puntaje").Value = (CDbl(row2.Cells("Puntos_Max").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+
+
+
+                    End If
+
+                Next
+
+                'dtgvobj(1, "Logro %",).ReadOnly = False
+                'dtgvobj(2, "Logro %",).ReadOnly = False
+
+                '  MessageBox.Show(dtgvobj.Rows(2).ToString)
+
+                '  dtgvobj.Rows(2).Cells(0).ReadOnly = True
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+            End Try
+        Else
+        End If
+
+
+
+    End Sub
+
+
+
+
+
     Sub Cargaevaluacion()
+
+
+        Dim style As New DataGridViewCellStyle
+        style.Font = New Font(dtgvp.Font, FontStyle.Bold)
+
+
+        Dim style2 As New DataGridViewCellStyle
+        style2.Font = New Font(dtgvIndicadores.Font, FontStyle.Bold)
+
+
+        Dim style3 As New DataGridViewCellStyle
+        style3.Font = New Font(dtgvobj.Font, FontStyle.Bold)
+
+
         Try
+
+
+
             sumarpuntaje()
 
 
@@ -600,6 +940,9 @@ Public Class EvaluacionIndirecto
                             command.Parameters.AddWithValue("@tot_puntos", 0)
                             command.Parameters.AddWithValue("@porcemax", 0)
                             command.Parameters.AddWithValue("@id_res_obj", 0)
+                            command.Parameters.AddWithValue("@id_depto", id_depto)
+                            command.Parameters.AddWithValue("@id_puesto", id_puesto)
+
                             command.ExecuteNonQuery()
 
                         Next
@@ -608,7 +951,21 @@ Public Class EvaluacionIndirecto
 
                         Dim ownerForm As EvaluacionPrincipalIndirecto = Me.Owner
                         ownerForm.Muestragrid()
+
                         btn_evaluar.Enabled = False
+
+                        If estado = 10 Then
+
+                            estado = 11
+                            ' btn_evaluar2.Enabled = True
+                            btn_evaluar2.Enabled = False
+
+
+
+                            MuestragridIndicador()
+                            dtgvIndicadores.Columns("Logro %").DefaultCellStyle = style2
+                            Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+                        End If
 
 
 
@@ -664,6 +1021,8 @@ Public Class EvaluacionIndirecto
                             command.Parameters.AddWithValue("@estado", estado)
                             command.Parameters.AddWithValue("@movimiento", 0)
                             command.Parameters.AddWithValue("@puesto", lbl_puesto.Text)
+                            command.Parameters.AddWithValue("@id_depto", id_depto)
+                            command.Parameters.AddWithValue("@id_puesto", id_puesto)
 
 
                             command.Parameters.AddWithValue("@id_evacrit", 0)
@@ -688,6 +1047,91 @@ Public Class EvaluacionIndirecto
                         btn_evaluar2.Enabled = False
                         estado = 12
                         btn_evaluar3.Enabled = True
+                        MuestragridObjetivos()
+                        dtgvobj.Columns("Logro %").DefaultCellStyle = style2
+                        Me.dtgvobj.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+                        dtgvobj.Rows(2).Cells(6).ReadOnly = True
+                        dtgvobj.Rows(3).Cells(6).ReadOnly = True
+
+
+                    Catch ex As Exception
+                        MessageBox.Show(ex.ToString)
+
+                    Finally
+                        Cn.Close()
+                    End Try
+
+                ElseIf Pregunta = vbNo Then
+
+                    MessageBox.Show("Acción no completada", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                End If
+
+
+            ElseIf estado = 12 Then
+
+
+
+                Pregunta = MsgBox("Puntaje máximo posible = " & lbl_puntajm5.Text & " " + vbCrLf + " Puntaje obtenido = " & lbl_puntajetotal5.Text & " " + vbCrLf + " ¿Es correcta su evaluación de Objetivos?", vbYesNo + vbExclamation + vbDefaultButton2, "Objetivos")
+
+
+
+
+                If Pregunta = vbYes Then
+
+                    Cn.Close()
+
+
+                    Dim command As New SqlCommand("Sp_EvaluaEvaluacion", Cn)
+                    Cn.Open()
+                    Dim fila As DataGridViewRow = New DataGridViewRow()
+                    command.CommandType = CommandType.StoredProcedure
+
+                    Try
+
+                        For Each fila In dtgvobj.Rows
+
+
+                            command.Parameters.Clear()
+
+                            command.Parameters.AddWithValue("@id_eva", id)
+                            command.Parameters.AddWithValue("@id_res_obj", (fila.Cells("Id").Value))
+                            command.Parameters.AddWithValue("@tot_porcentaje", (fila.Cells("Resultado %").Value))
+                            command.Parameters.AddWithValue("@porcemax", (fila.Cells("Estándar %").Value))
+                            command.Parameters.AddWithValue("@tot_puntos", (fila.Cells("Puntaje").Value))
+                            command.Parameters.AddWithValue("@puntmax", (fila.Cells("Puntos_Max").Value))
+                            command.Parameters.AddWithValue("@user", idemp)
+                            command.Parameters.AddWithValue("@punttotal", lbl_puntajetotal5.Text)
+                            command.Parameters.AddWithValue("@nota", "")
+                            command.Parameters.AddWithValue("@estado", estado)
+                            command.Parameters.AddWithValue("@movimiento", 0)
+                            command.Parameters.AddWithValue("@puesto", lbl_puesto.Text)
+                            command.Parameters.AddWithValue("@id_depto", id_depto)
+                            command.Parameters.AddWithValue("@id_puesto", id_puesto)
+
+
+                            command.Parameters.AddWithValue("@id_evacrit", 0)
+
+                            command.Parameters.AddWithValue("@descripcion", lbl_evaluacion.Text)
+
+                            command.Parameters.AddWithValue("@puntaje", 0)
+
+
+
+
+
+
+                            command.ExecuteNonQuery()
+
+                        Next
+
+                        MessageBox.Show("El empleado ha sido evaluado correctamente", "¡Carga exitosa!")
+
+                        Dim ownerForm As EvaluacionPrincipalIndirecto = Me.Owner
+                        ownerForm.Muestragrid()
+                        btn_evaluar3.Enabled = False
+                        estado = 13
+
 
 
 
@@ -705,6 +1149,7 @@ Public Class EvaluacionIndirecto
                 End If
 
 
+
             End If
 
 
@@ -714,7 +1159,7 @@ Public Class EvaluacionIndirecto
         End Try
     End Sub
 
-    Private Sub btn_evaluar_Click(sender As Object, e As EventArgs) Handles btn_evaluar.Click, btn_evaluar2.Click
+    Private Sub btn_evaluar_Click(sender As Object, e As EventArgs) Handles btn_evaluar.Click, btn_evaluar2.Click, btn_evaluar3.Click
 
         If estado = 1 Then
             Try
@@ -758,6 +1203,31 @@ Public Class EvaluacionIndirecto
 
             Try
                 For Each row As DataGridViewRow In Me.dtgvIndicadores.Rows
+
+
+
+                    If (row.Cells("Logro %").Value > 100 OrElse IsDBNull(row.Cells("Logro %").Value)) Then
+                        row.Cells("Logro %").Value = 0
+                        row.DefaultCellStyle.BackColor = Color.LightSalmon
+                    End If
+
+
+                    row.DefaultCellStyle.BackColor = Color.White
+
+                Next
+            Catch
+            End Try
+
+
+        ElseIf estado = 12 Then
+
+            For Each row2 As DataGridViewRow In Me.dtgvobj.Rows
+                row2.Cells("Resultado %").Value = (CDbl(row2.Cells("Estándar %").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+                row2.Cells("Puntaje").Value = (CDbl(row2.Cells("Puntos_Max").Value) * CDbl(row2.Cells("Logro %").Value)) / 100
+            Next
+
+            Try
+                For Each row As DataGridViewRow In Me.dtgvobj.Rows
 
 
 
@@ -851,6 +1321,45 @@ Public Class EvaluacionIndirecto
         Catch ex As Exception
 
         End Try
+
+
+
+
+        If estado > 11 Then
+
+            Try
+                Dim Total5 As Double
+                Dim TotalM5 As Double
+
+                For Each row5 As DataGridViewRow In Me.dtgvobj.Rows
+                    Total5 += Val(row5.Cells("Puntaje").Value)
+                    TotalM5 += Val(row5.Cells("Puntos_Max").Value)
+                Next
+                Me.lbl_puntajetotal5.Text = Math.Round(Total5, 2)
+                Me.lbl_puntajm5.Text = Math.Round(TotalM5, 2)
+
+
+
+
+
+                Dim Total6 As Double
+                Dim TotalM6 As Double
+
+                For Each row4 As DataGridViewRow In Me.dtgvobj.Rows
+                    Total6 += Val(row4.Cells("Resultado %").Value)
+                    TotalM6 += Val(row4.Cells("Estándar %").Value)
+                Next
+                Me.lbl_puntajetotal6.Text = Math.Round(Total6, 2)
+                Me.lbl_puntajm6.Text = Math.Round(TotalM6, 2)
+
+
+
+                dtgvobj.Columns("Id").Visible = False
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+
+            End Try
+        End If
 
 
 
