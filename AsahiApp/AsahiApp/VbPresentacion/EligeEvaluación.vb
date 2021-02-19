@@ -10,13 +10,15 @@ Public Class EligeEvaluación
     Dim permiso As Integer
     Dim a As String
     Dim mes As Integer
+    Dim id_puesto As Integer
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
 
-    Sub New(id As Integer, depto As String, permiso As Integer)
+    Sub New(id As Integer, depto As String, permiso As Integer, id_puesto As Integer)
         InitializeComponent()
         Me.id = id
         Me.depto = depto
         Me.permiso = permiso
+        Me.id_puesto = id_puesto
 
     End Sub
 
@@ -29,7 +31,7 @@ Public Class EligeEvaluación
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim Principalevaindi As New EvaluacionPrincipalIndirecto(id, depto, permiso)
+        Dim Principalevaindi As New EvaluacionPrincipalIndirecto(id, depto, permiso, id_puesto)
         Principalevaindi.Show()
         Me.Dispose()
         Me.Close()

@@ -10,75 +10,79 @@ Public Class EvaluacionPrincipalIndirecto
     Dim permiso As Integer
     Dim a As String
     Dim mes As Integer
+    Dim id_puesto As Integer
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
 
 
 
-    Sub New(id As Integer, depto As String, permiso As Integer)
+    Sub New(id As Integer, depto As String, permiso As Integer, id_puesto As Integer)
+
         InitializeComponent()
         Me.id = id
         Me.depto = depto
         Me.permiso = permiso
+        Me.id_puesto = id_puesto
 
     End Sub
-
-
 
 
     Public Sub EvaluacionesPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
-        a = Today.Month
-        Select Case a
-            Case 1
-                cbx_mes.Text = "Enero"
-                mes = 12
-            Case 2
-                cbx_mes.Text = "Febrero"
-                mes = 2
-            Case 3
-                cbx_mes.Text = "Marzo"
-                mes = 3
-            Case 4
-                cbx_mes.Text = "Abril"
-                mes = 4
-            Case 5
-                cbx_mes.Text = "Mayo"
-                mes = 5
-            Case 6
-                cbx_mes.Text = "Junio"
-                mes = 6
-            Case 7
-                cbx_mes.Text = "Julio"
-                mes = 7
-            Case 8
-                cbx_mes.Text = "Agosto"
-                mes = 8
-            Case 9
-                cbx_mes.Text = "Septiembre"
-                mes = 9
-            Case 10
-                cbx_mes.Text = "Octubre"
-                mes = 10
-            Case 11
-                cbx_mes.Text = "Noviembre"
-                mes = 11
-            Case 12
-                cbx_mes.Text = "Diciembre"
-                mes = 12
-        End Select
+        'a = Today.Month
+        'Select Case a
+        '    Case 1
+        '        cbx_mes.Text = "Enero"
+        '        mes = 1
+        '    Case 2
+        '        cbx_mes.Text = "Febrero"
+        '        mes = 2
+        '    Case 3
+        '        cbx_mes.Text = "Marzo"
+        '        mes = 3
+        '    Case 4
+        '        cbx_mes.Text = "Abril"
+        '        mes = 4
+        '    Case 5
+        '        cbx_mes.Text = "Mayo"
+        '        mes = 5
+        '    Case 6
+        '        cbx_mes.Text = "Junio"
+        '        mes = 6
+        '    Case 7
+        '        cbx_mes.Text = "Julio"
+        '        mes = 7
+        '    Case 8
+        '        cbx_mes.Text = "Agosto"
+        '        mes = 8
+        '    Case 9
+        '        cbx_mes.Text = "Septiembre"
+        '        mes = 9
+        '    Case 10
+        '        cbx_mes.Text = "Octubre"
+        '        mes = 10
+        '    Case 11
+        '        cbx_mes.Text = "Noviembre"
+        '        mes = 11
+        '    Case 12
+        '        cbx_mes.Text = "Diciembre"
+        '        mes = 12
+        'End Select
 
-
+        cbx_mes.Text = "Diciembre"
+        mes = 12
         cbx_año.Text = Today.Year() - 1
 
         llenacombodepto()
 
         If depto = "04" OrElse depto = "19" OrElse depto = "07" Then
             Label1.Visible = True
-            cbx_depto.Visible = True
-            '   btn_solicitar.Visible = True
-            cbx_mes.Enabled = True
-            cbx_año.Enabled = True
+
+            '  cbx_depto.Visible = True
+            '  btn_solicitar.Visible = True
+            '  cbx_mes.Enabled = True
+            '  cbx_año.Enabled = True
+
             btn_liberar.Visible = True
             btn_desma.Visible = True
             btn_selec.Visible = True
@@ -86,8 +90,8 @@ Public Class EvaluacionPrincipalIndirecto
         End If
 
         cbx_tipoeva.Text = "--Todas--"
-        cbx_depto.DropDownStyle = ComboBoxStyle.DropDown
-        cbx_depto.Text = "--Todos--"
+        'cbx_depto.DropDownStyle = ComboBoxStyle.DropDown
+        'cbx_depto.Text = "--Todos--"
 
 
 
@@ -99,7 +103,7 @@ Public Class EvaluacionPrincipalIndirecto
         a = cbx_mes.Text
         Select Case a
             Case "Enero"
-                mes = 12
+                mes = 1
             Case "Febrero"
                 mes = 2
             Case "Marzo"
@@ -137,35 +141,35 @@ Public Class EvaluacionPrincipalIndirecto
 
     Sub llenacombodepto()
 
-        Dim Dt As DataTable
+        Try
+            Cn.Close()
+            Cn.Open()
 
-        Dim Da As New SqlDataAdapter
-        Dim Cmd As New SqlCommand
+            Dim cmd As New SqlCommand("Sp_muetradepartamentosEvaluacionesIndirecto", Cn)
+            cmd.CommandType = CommandType.StoredProcedure
 
+            Dim da As New SqlDataAdapter(cmd)
 
+            da.SelectCommand.Parameters.AddWithValue("@depto", depto)
+            da.SelectCommand.Parameters.AddWithValue("@clave", id)
 
-        With Cmd
-            .CommandType = CommandType.Text
-            .CommandText = "	
+            Dim dt As New DataTable
 
-select '--Todos--' as 'descripcion', '--Todos--' as 'clave'
-union
-select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CENTRO_COSTO not in ('16')
-"
-            .Connection = Cn
-        End With
-        Da.SelectCommand = Cmd
-        Dt = New DataTable
-        Da.Fill(Dt)
-        With cbx_depto
-            .DataSource = Dt
-            .DisplayMember = "descripcion"
+                da.Fill(dt)
 
-
-        End With
+            cbx_depto.ValueMember = "descripcion"
+            'cbx_depto.DisplayMember = "NOMBRE_ESPECIALIDAD"
+            cbx_depto.DataSource = dt
+            Cn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Friend Sub Muestragrid()
+
+
+
 
         Try
             Cn.Close()
@@ -178,6 +182,8 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
             da.SelectCommand.Parameters.AddWithValue("@mes", mes)
             da.SelectCommand.Parameters.AddWithValue("@año", cbx_año.Text)
             da.SelectCommand.Parameters.AddWithValue("@tipoeva", cbx_tipoeva.Text)
+            da.SelectCommand.Parameters.AddWithValue("@puesto", id_puesto)
+            da.SelectCommand.Parameters.AddWithValue("@clave", id)
 
 
             Dim dt As New DataTable
@@ -352,6 +358,7 @@ where id_evaluaciones = @ID and estado = 0
     End Sub
 
 
+
     Private Sub dtgmuestra_CellContentClick1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.RowEnter
         Try
             lbl_autorizacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("aprobacion").Value.ToString()
@@ -403,15 +410,16 @@ where id_evaluaciones = @ID and estado = 0
 
 
     Sub generarreporte()
-        If estado < 2 Then
+        If estado < 13 Then
             MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            ContenedorREvaluacionSin.id_evaluaciones = id_eval
-            ContenedorREvaluacionSin.teval = tipo
-            ContenedorREvaluacionSin.fecha = "01/12/2020"
-            ContenedorREvaluacionSin.Show()
+            ContenedorReporteIndirecto.id_evaluacion = id_eval
+
+            ContenedorReporteIndirecto.fecha = "01/12/2020"
+            ContenedorReporteIndirecto.Show()
 
         End If
+
 
     End Sub
 
@@ -429,7 +437,6 @@ Module Modulo_evaluacionesindi
     Public e_puesto As String
     Public e_evaluacion As String
     Public e_fecha As Date
-
     Public id_puesto As Integer
     Public id_depto As Integer
 

@@ -27,7 +27,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>251</ApplicationRevision>
+    <ApplicationRevision>252</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -212,6 +212,12 @@
     <Compile Include="ContenedorReporteExcedenteTe.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReporteIndirecto.Designer.vb">
+      <DependentUpon>ContenedorReporteIndirecto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteIndirecto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteNuevoPuesto.Designer.vb">
       <DependentUpon>ContenedorReporteNuevoPuesto.vb</DependentUpon>
     </Compile>
@@ -253,6 +259,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet10.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet10.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -287,6 +298,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet9.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet9.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetReporteSuspencion.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -686,6 +702,9 @@
     <EmbeddedResource Include="ContenedorReporteExcedenteTe.resx">
       <DependentUpon>ContenedorReporteExcedenteTe.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteIndirecto.resx">
+      <DependentUpon>ContenedorReporteIndirecto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteNuevoPuesto.resx">
       <DependentUpon>ContenedorReporteNuevoPuesto.vb</DependentUpon>
     </EmbeddedResource>
@@ -781,8 +800,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteCambioPuesto.rdlc" />
     <EmbeddedResource Include="ReporteChecadasRh.rdlc" />
+    <EmbeddedResource Include="ReporteEvaIndirectoTest.rdlc" />
     <EmbeddedResource Include="ReporteEvaluacionSin1.rdlc" />
-    <EmbeddedResource Include="ReporteEvaluacionTest.rdlc" />
     <EmbeddedResource Include="ReporteExcedidoTE.rdlc" />
     <EmbeddedResource Include="ReporteFaltaJusInj.rdlc" />
     <EmbeddedResource Include="ReporteNuevoDepto.rdlc" />
@@ -886,6 +905,17 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="DataSet10.xsc">
+      <DependentUpon>DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet10.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet10.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet10.xss">
+      <DependentUpon>DataSet10.xsd</DependentUpon>
+    </None>
     <None Include="DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
@@ -962,6 +992,17 @@
     </None>
     <None Include="DataSet8.xss">
       <DependentUpon>DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet9.xsc">
+      <DependentUpon>DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet9.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet9.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet9.xss">
+      <DependentUpon>DataSet9.xsd</DependentUpon>
     </None>
     <None Include="DataSetReporteSuspencion.xsc">
       <DependentUpon>DataSetReporteSuspencion.xsd</DependentUpon>

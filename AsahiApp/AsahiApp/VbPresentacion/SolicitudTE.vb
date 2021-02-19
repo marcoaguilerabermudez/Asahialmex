@@ -526,6 +526,7 @@ end
 
         Cnn.Close()
         Cnn.Open()
+
         Dim eliminar As SqlCommand = New SqlCommand("delete from [AsahiSystem].[dbo].[Rh_solicitudTE]
  where Id_solicitudte = @ID
 
