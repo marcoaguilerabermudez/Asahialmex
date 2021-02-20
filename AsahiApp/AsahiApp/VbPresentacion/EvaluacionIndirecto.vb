@@ -959,6 +959,7 @@ Public Class EvaluacionIndirecto
                             estado = 11
                             'btn_evaluar2.Enabled = True
                             btn_evaluar2.Enabled = False
+                            'zxxx
 
 
 
