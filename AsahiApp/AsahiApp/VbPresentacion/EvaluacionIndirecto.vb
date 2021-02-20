@@ -80,7 +80,7 @@ Public Class EvaluacionIndirecto
             Me.dtgvp.Columns("PAE").ReadOnly = True
 
             btn_evaluar.Enabled = False
-            '  btn_evaluar2.Enabled = True
+            'btn_evaluar2.Enabled = True
             btn_evaluar2.Enabled = False
             btn_evaluar3.Enabled = False
             dtgvIndicadores.Columns("Logro %").DefaultCellStyle = style2
@@ -957,8 +957,9 @@ Public Class EvaluacionIndirecto
                         If estado = 10 Then
 
                             estado = 11
-                            ' btn_evaluar2.Enabled = True
+                            'btn_evaluar2.Enabled = True
                             btn_evaluar2.Enabled = False
+                            'zxxx
 
 
 
