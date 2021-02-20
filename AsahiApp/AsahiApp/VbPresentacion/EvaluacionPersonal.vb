@@ -422,6 +422,17 @@ Public Class EvaluacionPersonal
                         command.Parameters.AddWithValue("@estado", estado)
                         command.Parameters.AddWithValue("@movimiento", (fila.Cells("id_tipo").Value))
                         command.Parameters.AddWithValue("@puesto", lbl_puesto.Text)
+
+
+                        command.Parameters.AddWithValue("@id_res_obj", 0)
+                        command.Parameters.AddWithValue("@tot_porcentaje", 0)
+                        command.Parameters.AddWithValue("@tot_puntos", 0)
+                        command.Parameters.AddWithValue("@porcemax", 0)
+                        command.Parameters.AddWithValue("@id_puesto", 0)
+                        command.Parameters.AddWithValue("@id_depto", 0)
+
+
+
                         command.ExecuteNonQuery()
 
                     Next
