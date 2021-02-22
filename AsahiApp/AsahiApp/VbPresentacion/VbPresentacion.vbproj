@@ -343,6 +343,47 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DtstReporteTest.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RH\DataSet\Dts_DpAutoridad_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpAutoridad_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpAutoridad_Rpt.vb">
+      <DependentUpon>Dts_DpAutoridad_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpCompetencias_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpCompetencias_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpEstudios_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpEstudios_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpEstudios_Rpt.vb">
+      <DependentUpon>Dts_DpEstudios_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpExpLab_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpExpLab_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpIdiomas_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpIdiomas_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpIndicadores_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpIndicadores_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DPInfoGrl_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DPInfoGrl_Rpt.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EvaluacionesPrincipal.Designer.vb">
       <DependentUpon>EvaluacionesPrincipal.vb</DependentUpon>
     </Compile>
@@ -463,6 +504,21 @@
     <Compile Include="ReporteTest.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RH\DataSet\Dts_DpRelPuestExt_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpRelPuestExt_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpRelPuestInt_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpRelPuestInt_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpReponsabilidades_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpReponsabilidades_Rpt.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RH\Frm_DescripcionPuestos.Designer.vb">
       <DependentUpon>Frm_DescripcionPuestos.vb</DependentUpon>
     </Compile>
@@ -544,46 +600,46 @@
     <Compile Include="RH\Frm_ListaPrenomina.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_ReporteBono.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReporteBono.Designer.vb">
       <DependentUpon>Frm_ReporteBono.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_ReporteBono.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReporteBono.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_ReporteDP.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReporteDP.Designer.vb">
       <DependentUpon>Frm_ReporteDP.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_ReporteDP.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReporteDP.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_ReportePrenominaGlobal.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportePrenominaGlobal.Designer.vb">
       <DependentUpon>Frm_ReportePrenominaGlobal.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_ReportePrenominaGlobal.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportePrenominaGlobal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_ReportePrenominaLista.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportePrenominaLista.Designer.vb">
       <DependentUpon>Frm_ReportePrenominaLista.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_ReportePrenominaLista.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportePrenominaLista.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_ReportesPlanHorasExtra.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportesPlanHorasExtra.Designer.vb">
       <DependentUpon>Frm_ReportesPlanHorasExtra.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_ReportesPlanHorasExtra.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportesPlanHorasExtra.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_RepPlanHrsExtra4.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_RepPlanHrsExtra4.Designer.vb">
       <DependentUpon>Frm_RepPlanHrsExtra4.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_RepPlanHrsExtra4.vb">
+    <Compile Include="RH\FrmReportes\Frm_RepPlanHrsExtra4.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_RepPlanHrsExtra5.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_RepPlanHrsExtra5.Designer.vb">
       <DependentUpon>Frm_RepPlanHrsExtra5.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_RepPlanHrsExtra5.vb">
+    <Compile Include="RH\FrmReportes\Frm_RepPlanHrsExtra5.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SolicitudTE.Designer.vb">
@@ -795,25 +851,25 @@
     <EmbeddedResource Include="RH\Frm_ListaPrenomina.resx">
       <DependentUpon>Frm_ListaPrenomina.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_ReporteBono.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_ReporteBono.resx">
       <DependentUpon>Frm_ReporteBono.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_ReporteDP.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_ReporteDP.resx">
       <DependentUpon>Frm_ReporteDP.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_ReportePrenominaGlobal.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_ReportePrenominaGlobal.resx">
       <DependentUpon>Frm_ReportePrenominaGlobal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_ReportePrenominaLista.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_ReportePrenominaLista.resx">
       <DependentUpon>Frm_ReportePrenominaLista.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_ReportesPlanHorasExtra.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_ReportesPlanHorasExtra.resx">
       <DependentUpon>Frm_ReportesPlanHorasExtra.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_RepPlanHrsExtra4.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_RepPlanHrsExtra4.resx">
       <DependentUpon>Frm_RepPlanHrsExtra4.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_RepPlanHrsExtra5.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_RepPlanHrsExtra5.resx">
       <DependentUpon>Frm_RepPlanHrsExtra5.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RH\Reports\Rpt_DescripcionPuestos.rdlc" />
@@ -993,6 +1049,83 @@
     <None Include="DtstReporteTest.xss">
       <DependentUpon>DtstReporteTest.xsd</DependentUpon>
     </None>
+    <None Include="RH\DataSet\Dts_DpAutoridad_Rpt.xsc">
+      <DependentUpon>Dts_DpAutoridad_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpAutoridad_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpAutoridad_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpAutoridad_Rpt.xss">
+      <DependentUpon>Dts_DpAutoridad_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpCompetencias_Rpt.xsc">
+      <DependentUpon>Dts_DpCompetencias_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpCompetencias_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpCompetencias_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpCompetencias_Rpt.xss">
+      <DependentUpon>Dts_DpCompetencias_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpEstudios_Rpt.xsc">
+      <DependentUpon>Dts_DpEstudios_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpEstudios_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpEstudios_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpEstudios_Rpt.xss">
+      <DependentUpon>Dts_DpEstudios_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpExpLab_Rpt.xsc">
+      <DependentUpon>Dts_DpExpLab_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpExpLab_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpExpLab_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpExpLab_Rpt.xss">
+      <DependentUpon>Dts_DpExpLab_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIdiomas_Rpt.xsc">
+      <DependentUpon>Dts_DpIdiomas_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIdiomas_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpIdiomas_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIdiomas_Rpt.xss">
+      <DependentUpon>Dts_DpIdiomas_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIndicadores_Rpt.xsc">
+      <DependentUpon>Dts_DpIndicadores_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIndicadores_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpIndicadores_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIndicadores_Rpt.xss">
+      <DependentUpon>Dts_DpIndicadores_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DPInfoGrl_Rpt.xsc">
+      <DependentUpon>Dts_DPInfoGrl_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DPInfoGrl_Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DPInfoGrl_Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RH\DataSet\Dts_DPInfoGrl_Rpt.xss">
+      <DependentUpon>Dts_DPInfoGrl_Rpt.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -1013,6 +1146,39 @@
     </None>
     <None Include="Reportes\dtsEjemplo.xss">
       <DependentUpon>dtsEjemplo.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestExt_Rpt.xsc">
+      <DependentUpon>Dts_DpRelPuestExt_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestExt_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpRelPuestExt_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestExt_Rpt.xss">
+      <DependentUpon>Dts_DpRelPuestExt_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestInt_Rpt.xsc">
+      <DependentUpon>Dts_DpRelPuestInt_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestInt_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpRelPuestInt_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestInt_Rpt.xss">
+      <DependentUpon>Dts_DpRelPuestInt_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpReponsabilidades_Rpt.xsc">
+      <DependentUpon>Dts_DpReponsabilidades_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpReponsabilidades_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpReponsabilidades_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpReponsabilidades_Rpt.xss">
+      <DependentUpon>Dts_DpReponsabilidades_Rpt.xsd</DependentUpon>
     </None>
     <None Include="VbPresentacion_1_TemporaryKey.pfx" />
     <None Include="VbPresentacion_2_TemporaryKey.pfx" />

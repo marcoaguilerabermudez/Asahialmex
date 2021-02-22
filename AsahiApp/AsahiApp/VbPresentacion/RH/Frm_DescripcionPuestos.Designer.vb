@@ -70,8 +70,8 @@ Partial Class Frm_DescripcionPuestos
         Me.Txt_PuestoE1 = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Gpb_TipoViaje = New System.Windows.Forms.GroupBox()
-        Me.Rdb_TipoViajInt = New System.Windows.Forms.RadioButton()
-        Me.Rdb_TipoViajNac = New System.Windows.Forms.RadioButton()
+        Me.Chk_Internacional = New System.Windows.Forms.CheckBox()
+        Me.Chk_Nacional = New System.Windows.Forms.CheckBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.Rdb_ReqViajeNo = New System.Windows.Forms.RadioButton()
@@ -206,7 +206,7 @@ Partial Class Frm_DescripcionPuestos
         '
         'Btn_Reporte
         '
-        Me.Btn_Reporte.Image = Global.Presentacion.My.Resources.Resources.reportes
+        Me.Btn_Reporte.Image = CType(resources.GetObject("Btn_Reporte.Image"), System.Drawing.Image)
         Me.Btn_Reporte.Location = New System.Drawing.Point(724, 8)
         Me.Btn_Reporte.Name = "Btn_Reporte"
         Me.Btn_Reporte.Size = New System.Drawing.Size(40, 41)
@@ -215,7 +215,7 @@ Partial Class Frm_DescripcionPuestos
         '
         'Btn_GuardarModificar
         '
-        Me.Btn_GuardarModificar.Image = Global.Presentacion.My.Resources.Resources.save
+        Me.Btn_GuardarModificar.Image = CType(resources.GetObject("Btn_GuardarModificar.Image"), System.Drawing.Image)
         Me.Btn_GuardarModificar.Location = New System.Drawing.Point(660, 8)
         Me.Btn_GuardarModificar.Name = "Btn_GuardarModificar"
         Me.Btn_GuardarModificar.Size = New System.Drawing.Size(40, 41)
@@ -669,8 +669,8 @@ Partial Class Frm_DescripcionPuestos
         '
         'Gpb_TipoViaje
         '
-        Me.Gpb_TipoViaje.Controls.Add(Me.Rdb_TipoViajInt)
-        Me.Gpb_TipoViaje.Controls.Add(Me.Rdb_TipoViajNac)
+        Me.Gpb_TipoViaje.Controls.Add(Me.Chk_Internacional)
+        Me.Gpb_TipoViaje.Controls.Add(Me.Chk_Nacional)
         Me.Gpb_TipoViaje.Controls.Add(Me.Label12)
         Me.Gpb_TipoViaje.Enabled = False
         Me.Gpb_TipoViaje.Location = New System.Drawing.Point(445, 178)
@@ -679,27 +679,25 @@ Partial Class Frm_DescripcionPuestos
         Me.Gpb_TipoViaje.TabIndex = 9
         Me.Gpb_TipoViaje.TabStop = False
         '
-        'Rdb_TipoViajInt
+        'Chk_Internacional
         '
-        Me.Rdb_TipoViajInt.AutoSize = True
-        Me.Rdb_TipoViajInt.Location = New System.Drawing.Point(12, 70)
-        Me.Rdb_TipoViajInt.Name = "Rdb_TipoViajInt"
-        Me.Rdb_TipoViajInt.Size = New System.Drawing.Size(86, 17)
-        Me.Rdb_TipoViajInt.TabIndex = 8
-        Me.Rdb_TipoViajInt.TabStop = True
-        Me.Rdb_TipoViajInt.Text = "Internacional"
-        Me.Rdb_TipoViajInt.UseVisualStyleBackColor = True
+        Me.Chk_Internacional.AutoSize = True
+        Me.Chk_Internacional.Location = New System.Drawing.Point(12, 70)
+        Me.Chk_Internacional.Name = "Chk_Internacional"
+        Me.Chk_Internacional.Size = New System.Drawing.Size(87, 17)
+        Me.Chk_Internacional.TabIndex = 9
+        Me.Chk_Internacional.Text = "Internacional"
+        Me.Chk_Internacional.UseVisualStyleBackColor = True
         '
-        'Rdb_TipoViajNac
+        'Chk_Nacional
         '
-        Me.Rdb_TipoViajNac.AutoSize = True
-        Me.Rdb_TipoViajNac.Location = New System.Drawing.Point(12, 52)
-        Me.Rdb_TipoViajNac.Name = "Rdb_TipoViajNac"
-        Me.Rdb_TipoViajNac.Size = New System.Drawing.Size(67, 17)
-        Me.Rdb_TipoViajNac.TabIndex = 8
-        Me.Rdb_TipoViajNac.TabStop = True
-        Me.Rdb_TipoViajNac.Text = "Nacional"
-        Me.Rdb_TipoViajNac.UseVisualStyleBackColor = True
+        Me.Chk_Nacional.AutoSize = True
+        Me.Chk_Nacional.Location = New System.Drawing.Point(12, 53)
+        Me.Chk_Nacional.Name = "Chk_Nacional"
+        Me.Chk_Nacional.Size = New System.Drawing.Size(68, 17)
+        Me.Chk_Nacional.TabIndex = 9
+        Me.Chk_Nacional.Text = "Nacional"
+        Me.Chk_Nacional.UseVisualStyleBackColor = True
         '
         'Label12
         '
@@ -1604,8 +1602,6 @@ Partial Class Frm_DescripcionPuestos
     Friend WithEvents Txt_PuestoE1 As TextBox
     Friend WithEvents Label18 As Label
     Friend WithEvents Gpb_TipoViaje As GroupBox
-    Friend WithEvents Rdb_TipoViajInt As RadioButton
-    Friend WithEvents Rdb_TipoViajNac As RadioButton
     Friend WithEvents Label12 As Label
     Friend WithEvents GroupBox10 As GroupBox
     Friend WithEvents Rdb_ReqViajeNo As RadioButton
@@ -1646,4 +1642,6 @@ Partial Class Frm_DescripcionPuestos
     Friend WithEvents puestosArea As DataGridViewComboBoxColumn
     Friend WithEvents motivos As DataGridViewTextBoxColumn
     Friend WithEvents Btn_Reporte As Button
+    Friend WithEvents Chk_Internacional As CheckBox
+    Friend WithEvents Chk_Nacional As CheckBox
 End Class

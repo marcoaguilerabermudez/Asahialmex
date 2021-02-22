@@ -47,6 +47,7 @@ Public Class Frm_DescripcionPuestos
         Dgv_PuestosCargo.Columns("funcion").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
         Dgv_RelacionInter.Columns("motivos").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
         Dgv_RelacionExter.Columns("motivosExt").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+
         CmbAreaRellenar()
         CmbDptoRellenar()
         CmbPuestoRellenar()
@@ -172,9 +173,12 @@ Public Class Frm_DescripcionPuestos
         If Puesto.DispViajar = True Then
             Rdb_ReqViajeSi.Checked = True
             If Puesto.TipoViaje = 1 Then
-                Rdb_TipoViajNac.Checked = True
+                Chk_Nacional.Checked = True
             ElseIf Puesto.TipoViaje = 2 Then
-                Rdb_TipoViajInt.Checked = True
+                Chk_Internacional.Checked = True
+            ElseIf Puesto.TipoViaje = 3 Then
+                Chk_Nacional.Checked = True
+                Chk_Internacional.Checked = True
             End If
             Txt_Justifica.Text = Puesto.Justificacion
         End If
@@ -688,10 +692,12 @@ Public Class Frm_DescripcionPuestos
         ElseIf Rdb_ReqViajeNo.Checked = True Then
             puest.DispViajar = 0
         End If
-        If Rdb_TipoViajNac.Checked = True Then
+        If Chk_Nacional.Checked = True And Chk_Internacional.Checked = False Then
             puest.TipoViaje = 1
-        ElseIf Rdb_TipoViajInt.Checked = True Then
+        ElseIf Chk_Internacional.Checked = True And Chk_Nacional.Checked = False Then
             puest.TipoViaje = 2
+        ElseIf Chk_Nacional.Checked = True And Chk_Internacional.Checked = True Then
+            puest.TipoViaje = 3
         End If
         puest.Justificacion = Txt_Justifica.Text
 
@@ -894,7 +900,8 @@ Public Class Frm_DescripcionPuestos
         Return NPues.obtenerCompetenciasTecnicas(Me.cadenaConex)
     End Function
     Private Sub Btn_Reporte_Click(sender As Object, e As EventArgs) Handles Btn_Reporte.Click
-        Frm_ReporteDP.Show()
+        Dim RepGrl As New Frm_ReporteDP(Me.idDp)
+        RepGrl.Show()
     End Sub
     Private Sub Btn_GuardarModificar_Click(sender As Object, e As EventArgs) Handles Btn_GuardarModificar.Click
         InsertaModifica()
