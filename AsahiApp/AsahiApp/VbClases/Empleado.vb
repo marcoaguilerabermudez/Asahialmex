@@ -20,6 +20,17 @@
     End Property
 
 
+    Private rh_evaluacion_ As Integer
+    Public Property rh_evaluacion() As Integer
+        Get
+            Return rh_evaluacion_
+        End Get
+        Set(ByVal value As Integer)
+            rh_evaluacion_ = value
+        End Set
+    End Property
+
+
     Private usuario_ As String
     Public Property Usuario() As String
         Get
@@ -1032,4 +1043,16 @@
             comenBonoExt_ = value
         End Set
     End Property
+
+    Private Id_puesto1 As String
+    Public Property Id_puesto() As String
+        Get
+            Return Id_puesto1
+        End Get
+        Set(ByVal value As String)
+            Id_puesto1 = value
+        End Set
+    End Property
+
+
 End Class

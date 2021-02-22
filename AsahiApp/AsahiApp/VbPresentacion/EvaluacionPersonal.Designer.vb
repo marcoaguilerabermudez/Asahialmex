@@ -36,6 +36,12 @@ Partial Class EvaluacionPersonal
         Me.lbl_evaluacion = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.gpx_incidencias = New System.Windows.Forms.GroupBox()
+        Me.lbl_amonestaciones = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.lbl_mejora = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.lbl_meses = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.lbl_r = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -62,12 +68,19 @@ Partial Class EvaluacionPersonal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_observaciones = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.p_psg = New System.Windows.Forms.Label()
+        Me.p_faltaj = New System.Windows.Forms.Label()
+        Me.p_faltai = New System.Windows.Forms.Label()
+        Me.p_ret = New System.Windows.Forms.Label()
+        Me.p_sus = New System.Windows.Forms.Label()
         Me.lbl_puntajm = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.pbx_eva = New System.Windows.Forms.PictureBox()
         Me.gpx_incidencias.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.pbx_eva, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_puesto
@@ -187,6 +200,12 @@ Partial Class EvaluacionPersonal
         '
         'gpx_incidencias
         '
+        Me.gpx_incidencias.Controls.Add(Me.lbl_amonestaciones)
+        Me.gpx_incidencias.Controls.Add(Me.Label17)
+        Me.gpx_incidencias.Controls.Add(Me.lbl_mejora)
+        Me.gpx_incidencias.Controls.Add(Me.Label14)
+        Me.gpx_incidencias.Controls.Add(Me.lbl_meses)
+        Me.gpx_incidencias.Controls.Add(Me.Label12)
         Me.gpx_incidencias.Controls.Add(Me.Button1)
         Me.gpx_incidencias.Controls.Add(Me.lbl_r)
         Me.gpx_incidencias.Controls.Add(Me.Label4)
@@ -205,12 +224,81 @@ Partial Class EvaluacionPersonal
         Me.gpx_incidencias.Controls.Add(Me.Label3)
         Me.gpx_incidencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.gpx_incidencias.ForeColor = System.Drawing.SystemColors.Control
-        Me.gpx_incidencias.Location = New System.Drawing.Point(398, 4)
+        Me.gpx_incidencias.Location = New System.Drawing.Point(513, 4)
         Me.gpx_incidencias.Name = "gpx_incidencias"
         Me.gpx_incidencias.Size = New System.Drawing.Size(334, 152)
         Me.gpx_incidencias.TabIndex = 197
         Me.gpx_incidencias.TabStop = False
         Me.gpx_incidencias.Text = "Kárdex de incidencias"
+        '
+        'lbl_amonestaciones
+        '
+        Me.lbl_amonestaciones.AutoSize = True
+        Me.lbl_amonestaciones.BackColor = System.Drawing.Color.SteelBlue
+        Me.lbl_amonestaciones.ForeColor = System.Drawing.Color.White
+        Me.lbl_amonestaciones.Location = New System.Drawing.Point(137, 129)
+        Me.lbl_amonestaciones.Name = "lbl_amonestaciones"
+        Me.lbl_amonestaciones.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_amonestaciones.TabIndex = 252
+        Me.lbl_amonestaciones.Text = "0"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.White
+        Me.Label17.Location = New System.Drawing.Point(15, 129)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(99, 13)
+        Me.Label17.TabIndex = 251
+        Me.Label17.Text = "Amonestaciones"
+        '
+        'lbl_mejora
+        '
+        Me.lbl_mejora.AutoSize = True
+        Me.lbl_mejora.BackColor = System.Drawing.Color.SteelBlue
+        Me.lbl_mejora.ForeColor = System.Drawing.Color.White
+        Me.lbl_mejora.Location = New System.Drawing.Point(137, 107)
+        Me.lbl_mejora.Name = "lbl_mejora"
+        Me.lbl_mejora.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_mejora.TabIndex = 250
+        Me.lbl_mejora.Text = "0"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Location = New System.Drawing.Point(15, 107)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(99, 13)
+        Me.Label14.TabIndex = 249
+        Me.Label14.Text = "Mejora Continua"
+        '
+        'lbl_meses
+        '
+        Me.lbl_meses.AutoSize = True
+        Me.lbl_meses.BackColor = System.Drawing.Color.SteelBlue
+        Me.lbl_meses.ForeColor = System.Drawing.Color.White
+        Me.lbl_meses.Location = New System.Drawing.Point(305, 88)
+        Me.lbl_meses.Name = "lbl_meses"
+        Me.lbl_meses.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_meses.TabIndex = 248
+        Me.lbl_meses.Text = "0"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(169, 88)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(115, 13)
+        Me.Label12.TabIndex = 247
+        Me.Label12.Text = "Antiguedad(Meses)"
         '
         'Button1
         '
@@ -252,7 +340,7 @@ Partial Class EvaluacionPersonal
         Me.lbl_v.AutoSize = True
         Me.lbl_v.BackColor = System.Drawing.Color.SteelBlue
         Me.lbl_v.ForeColor = System.Drawing.Color.White
-        Me.lbl_v.Location = New System.Drawing.Point(137, 92)
+        Me.lbl_v.Location = New System.Drawing.Point(137, 84)
         Me.lbl_v.Name = "lbl_v"
         Me.lbl_v.Size = New System.Drawing.Size(13, 13)
         Me.lbl_v.TabIndex = 201
@@ -264,7 +352,7 @@ Partial Class EvaluacionPersonal
         Me.Label16.BackColor = System.Drawing.Color.SteelBlue
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(43, 92)
+        Me.Label16.Location = New System.Drawing.Point(43, 84)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(73, 13)
         Me.Label16.TabIndex = 200
@@ -286,7 +374,7 @@ Partial Class EvaluacionPersonal
         Me.lbl_n.AutoSize = True
         Me.lbl_n.BackColor = System.Drawing.Color.SteelBlue
         Me.lbl_n.ForeColor = System.Drawing.Color.White
-        Me.lbl_n.Location = New System.Drawing.Point(137, 67)
+        Me.lbl_n.Location = New System.Drawing.Point(137, 62)
         Me.lbl_n.Name = "lbl_n"
         Me.lbl_n.Size = New System.Drawing.Size(13, 13)
         Me.lbl_n.TabIndex = 198
@@ -298,7 +386,7 @@ Partial Class EvaluacionPersonal
         Me.Label15.BackColor = System.Drawing.Color.SteelBlue
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(43, 67)
+        Me.Label15.Location = New System.Drawing.Point(43, 62)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(72, 13)
         Me.Label15.TabIndex = 197
@@ -355,7 +443,7 @@ Partial Class EvaluacionPersonal
         Me.lbl_f.AutoSize = True
         Me.lbl_f.BackColor = System.Drawing.Color.SteelBlue
         Me.lbl_f.ForeColor = System.Drawing.Color.White
-        Me.lbl_f.Location = New System.Drawing.Point(137, 44)
+        Me.lbl_f.Location = New System.Drawing.Point(137, 39)
         Me.lbl_f.Name = "lbl_f"
         Me.lbl_f.Size = New System.Drawing.Size(13, 13)
         Me.lbl_f.TabIndex = 192
@@ -367,7 +455,7 @@ Partial Class EvaluacionPersonal
         Me.Label5.BackColor = System.Drawing.Color.SteelBlue
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(7, 44)
+        Me.Label5.Location = New System.Drawing.Point(7, 39)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 13)
         Me.Label5.TabIndex = 191
@@ -378,7 +466,7 @@ Partial Class EvaluacionPersonal
         Me.lbl_u.AutoSize = True
         Me.lbl_u.BackColor = System.Drawing.Color.SteelBlue
         Me.lbl_u.ForeColor = System.Drawing.Color.White
-        Me.lbl_u.Location = New System.Drawing.Point(137, 20)
+        Me.lbl_u.Location = New System.Drawing.Point(137, 15)
         Me.lbl_u.Name = "lbl_u"
         Me.lbl_u.Size = New System.Drawing.Size(13, 13)
         Me.lbl_u.TabIndex = 190
@@ -390,7 +478,7 @@ Partial Class EvaluacionPersonal
         Me.Label3.BackColor = System.Drawing.Color.SteelBlue
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(15, 20)
+        Me.Label3.Location = New System.Drawing.Point(15, 15)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(100, 13)
         Me.Label3.TabIndex = 189
@@ -401,7 +489,7 @@ Partial Class EvaluacionPersonal
         Me.lbl_puntosd.AutoSize = True
         Me.lbl_puntosd.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_puntosd.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puntosd.Location = New System.Drawing.Point(229, 137)
+        Me.lbl_puntosd.Location = New System.Drawing.Point(467, 20)
         Me.lbl_puntosd.Name = "lbl_puntosd"
         Me.lbl_puntosd.Size = New System.Drawing.Size(13, 13)
         Me.lbl_puntosd.TabIndex = 205
@@ -414,11 +502,11 @@ Partial Class EvaluacionPersonal
         Me.Label44.BackColor = System.Drawing.SystemColors.Control
         Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label44.ForeColor = System.Drawing.Color.Black
-        Me.Label44.Location = New System.Drawing.Point(149, 137)
+        Me.Label44.Location = New System.Drawing.Point(353, 20)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(57, 13)
+        Me.Label44.Size = New System.Drawing.Size(108, 13)
         Me.Label44.TabIndex = 204
-        Me.Label44.Text = "Puntos d"
+        Me.Label44.Text = "Puntos incidencia"
         Me.Label44.Visible = False
         '
         'dtgvp
@@ -441,6 +529,8 @@ Partial Class EvaluacionPersonal
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.Format = "0.00"
+        DataGridViewCellStyle2.NullValue = Nothing
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -448,7 +538,7 @@ Partial Class EvaluacionPersonal
         Me.dtgvp.Location = New System.Drawing.Point(4, 170)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(456, 332)
+        Me.dtgvp.Size = New System.Drawing.Size(458, 332)
         Me.dtgvp.TabIndex = 244
         '
         'btn_evaluar
@@ -456,7 +546,7 @@ Partial Class EvaluacionPersonal
         Me.btn_evaluar.BackColor = System.Drawing.Color.Gainsboro
         Me.btn_evaluar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_evaluar.ForeColor = System.Drawing.Color.SeaGreen
-        Me.btn_evaluar.Location = New System.Drawing.Point(775, 514)
+        Me.btn_evaluar.Location = New System.Drawing.Point(901, 515)
         Me.btn_evaluar.Name = "btn_evaluar"
         Me.btn_evaluar.Size = New System.Drawing.Size(83, 42)
         Me.btn_evaluar.TabIndex = 245
@@ -466,7 +556,7 @@ Partial Class EvaluacionPersonal
         'pbx
         '
         Me.pbx.ErrorImage = CType(resources.GetObject("pbx.ErrorImage"), System.Drawing.Image)
-        Me.pbx.Location = New System.Drawing.Point(739, 11)
+        Me.pbx.Location = New System.Drawing.Point(854, 11)
         Me.pbx.Name = "pbx"
         Me.pbx.Size = New System.Drawing.Size(132, 138)
         Me.pbx.TabIndex = 194
@@ -477,7 +567,7 @@ Partial Class EvaluacionPersonal
         Me.lbl_puntajetotal.AutoSize = True
         Me.lbl_puntajetotal.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_puntajetotal.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puntajetotal.Location = New System.Drawing.Point(727, 541)
+        Me.lbl_puntajetotal.Location = New System.Drawing.Point(655, 542)
         Me.lbl_puntajetotal.Name = "lbl_puntajetotal"
         Me.lbl_puntajetotal.Size = New System.Drawing.Size(13, 13)
         Me.lbl_puntajetotal.TabIndex = 247
@@ -489,7 +579,7 @@ Partial Class EvaluacionPersonal
         Me.Label45.BackColor = System.Drawing.SystemColors.Control
         Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label45.ForeColor = System.Drawing.Color.Black
-        Me.Label45.Location = New System.Drawing.Point(615, 541)
+        Me.Label45.Location = New System.Drawing.Point(543, 542)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(83, 13)
         Me.Label45.TabIndex = 246
@@ -521,11 +611,16 @@ Partial Class EvaluacionPersonal
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.lbl_depto)
+        Me.Panel1.Controls.Add(Me.p_psg)
+        Me.Panel1.Controls.Add(Me.p_faltaj)
+        Me.Panel1.Controls.Add(Me.p_faltai)
         Me.Panel1.Controls.Add(Me.lbl_puntosd)
+        Me.Panel1.Controls.Add(Me.p_ret)
+        Me.Panel1.Controls.Add(Me.p_sus)
+        Me.Panel1.Controls.Add(Me.lbl_depto)
         Me.Panel1.Controls.Add(Me.lbl_nombre)
-        Me.Panel1.Controls.Add(Me.lbl_clave)
         Me.Panel1.Controls.Add(Me.Label44)
+        Me.Panel1.Controls.Add(Me.lbl_clave)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.lbl2)
         Me.Panel1.Controls.Add(Me.lbl1)
@@ -533,15 +628,70 @@ Partial Class EvaluacionPersonal
         Me.Panel1.Controls.Add(Me.pbx)
         Me.Panel1.Location = New System.Drawing.Point(1, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(882, 161)
+        Me.Panel1.Size = New System.Drawing.Size(992, 161)
         Me.Panel1.TabIndex = 250
+        '
+        'p_psg
+        '
+        Me.p_psg.AutoSize = True
+        Me.p_psg.BackColor = System.Drawing.SystemColors.Control
+        Me.p_psg.ForeColor = System.Drawing.Color.Black
+        Me.p_psg.Location = New System.Drawing.Point(204, 137)
+        Me.p_psg.Name = "p_psg"
+        Me.p_psg.Size = New System.Drawing.Size(13, 13)
+        Me.p_psg.TabIndex = 210
+        Me.p_psg.Text = "0"
+        '
+        'p_faltaj
+        '
+        Me.p_faltaj.AutoSize = True
+        Me.p_faltaj.BackColor = System.Drawing.SystemColors.Control
+        Me.p_faltaj.ForeColor = System.Drawing.Color.Black
+        Me.p_faltaj.Location = New System.Drawing.Point(175, 137)
+        Me.p_faltaj.Name = "p_faltaj"
+        Me.p_faltaj.Size = New System.Drawing.Size(13, 13)
+        Me.p_faltaj.TabIndex = 209
+        Me.p_faltaj.Text = "0"
+        '
+        'p_faltai
+        '
+        Me.p_faltai.AutoSize = True
+        Me.p_faltai.BackColor = System.Drawing.SystemColors.Control
+        Me.p_faltai.ForeColor = System.Drawing.Color.Black
+        Me.p_faltai.Location = New System.Drawing.Point(145, 137)
+        Me.p_faltai.Name = "p_faltai"
+        Me.p_faltai.Size = New System.Drawing.Size(13, 13)
+        Me.p_faltai.TabIndex = 208
+        Me.p_faltai.Text = "0"
+        '
+        'p_ret
+        '
+        Me.p_ret.AutoSize = True
+        Me.p_ret.BackColor = System.Drawing.SystemColors.Control
+        Me.p_ret.ForeColor = System.Drawing.Color.Black
+        Me.p_ret.Location = New System.Drawing.Point(114, 137)
+        Me.p_ret.Name = "p_ret"
+        Me.p_ret.Size = New System.Drawing.Size(13, 13)
+        Me.p_ret.TabIndex = 207
+        Me.p_ret.Text = "0"
+        '
+        'p_sus
+        '
+        Me.p_sus.AutoSize = True
+        Me.p_sus.BackColor = System.Drawing.SystemColors.Control
+        Me.p_sus.ForeColor = System.Drawing.Color.Black
+        Me.p_sus.Location = New System.Drawing.Point(82, 137)
+        Me.p_sus.Name = "p_sus"
+        Me.p_sus.Size = New System.Drawing.Size(13, 13)
+        Me.p_sus.TabIndex = 206
+        Me.p_sus.Text = "0"
         '
         'lbl_puntajm
         '
         Me.lbl_puntajm.AutoSize = True
         Me.lbl_puntajm.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_puntajm.ForeColor = System.Drawing.Color.Black
-        Me.lbl_puntajm.Location = New System.Drawing.Point(727, 514)
+        Me.lbl_puntajm.Location = New System.Drawing.Point(655, 515)
         Me.lbl_puntajm.Name = "lbl_puntajm"
         Me.lbl_puntajm.Size = New System.Drawing.Size(13, 13)
         Me.lbl_puntajm.TabIndex = 252
@@ -553,17 +703,27 @@ Partial Class EvaluacionPersonal
         Me.Label9.BackColor = System.Drawing.SystemColors.Control
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(606, 514)
+        Me.Label9.Location = New System.Drawing.Point(534, 515)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(96, 13)
         Me.Label9.TabIndex = 251
         Me.Label9.Text = "Puntaje Máximo"
         '
+        'pbx_eva
+        '
+        Me.pbx_eva.ErrorImage = CType(resources.GetObject("pbx_eva.ErrorImage"), System.Drawing.Image)
+        Me.pbx_eva.Location = New System.Drawing.Point(462, 164)
+        Me.pbx_eva.Name = "pbx_eva"
+        Me.pbx_eva.Size = New System.Drawing.Size(531, 338)
+        Me.pbx_eva.TabIndex = 253
+        Me.pbx_eva.TabStop = False
+        '
         'EvaluacionPersonal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(881, 561)
+        Me.ClientSize = New System.Drawing.Size(996, 561)
+        Me.Controls.Add(Me.pbx_eva)
         Me.Controls.Add(Me.lbl_puntajm)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label1)
@@ -587,6 +747,7 @@ Partial Class EvaluacionPersonal
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.pbx_eva, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -631,4 +792,16 @@ Partial Class EvaluacionPersonal
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lbl_puntajm As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents pbx_eva As PictureBox
+    Friend WithEvents p_psg As Label
+    Friend WithEvents p_faltaj As Label
+    Friend WithEvents p_faltai As Label
+    Friend WithEvents p_ret As Label
+    Friend WithEvents p_sus As Label
+    Friend WithEvents lbl_meses As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents lbl_mejora As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents lbl_amonestaciones As Label
+    Friend WithEvents Label17 As Label
 End Class

@@ -14,6 +14,7 @@ Public Class EvaluacionesPrincipal
 
 
     Sub New(id As Integer, depto As String, permiso As Integer)
+
         InitializeComponent()
         Me.id = id
         Me.depto = depto
@@ -25,10 +26,11 @@ Public Class EvaluacionesPrincipal
 
 
         a = Today.Month
+
         Select Case a
             Case 1
                 cbx_mes.Text = "Enero"
-                mes = 1
+                mes = 12
             Case 2
                 cbx_mes.Text = "Febrero"
                 mes = 2
@@ -69,7 +71,7 @@ Public Class EvaluacionesPrincipal
 
         llenacombodepto()
 
-        If depto = "04" OrElse depto = "19" Then
+        If depto = "04" OrElse depto = "19" OrElse depto = "07" Then
             Label1.Visible = True
             cbx_depto.Visible = True
             '   btn_solicitar.Visible = True
@@ -88,13 +90,14 @@ Public Class EvaluacionesPrincipal
 
 
         Muestragrid()
+
     End Sub
 
     Private Sub cbx_mes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_mes.SelectedIndexChanged
         a = cbx_mes.Text
         Select Case a
             Case "Enero"
-                mes = 1
+                mes = 12
             Case "Febrero"
                 mes = 2
             Case "Marzo"
@@ -186,6 +189,7 @@ select descripcion, clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CE
             dtgvp.DataSource = dt
 
             Cn.Close()
+
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
@@ -261,12 +265,16 @@ where id_evaluaciones = @ID and estado = 0
             Next
 
             MessageBox.Show(RI, "¡Aviso!")
+
             Muestragrid()
 
 
         Catch ex As Exception
+
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
+
             MessageBox.Show(ex.ToString)
+
             Cn.Close()
         Finally
             Cn.Close()
@@ -317,11 +325,8 @@ where id_evaluaciones = @ID and estado = 0
 
                 segundoForm.Show(Me)
 
-
             Catch
             End Try
-
-
         End If
 
     End Sub
@@ -347,6 +352,7 @@ where id_evaluaciones = @ID and estado = 0
         autorizar()
     End Sub
 
+
     Private Sub btn_desma_Click(sender As Object, e As EventArgs) Handles btn_desma.Click
         For Each fila As DataGridViewRow In dtgvp.Rows
             fila.Cells("x").Value = False
@@ -360,10 +366,9 @@ where id_evaluaciones = @ID and estado = 0
         Next
     End Sub
 
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         generarreporte()
-
-
     End Sub
 
 
@@ -371,16 +376,20 @@ where id_evaluaciones = @ID and estado = 0
         If estado < 2 Then
             MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            ContenedorReporteTestEvaluacion.id_evaluaciones = id_eval
-            ContenedorReporteTestEvaluacion.teval = tipo
-            ContenedorReporteTestEvaluacion.Show()
+            ContenedorREvaluacionSin.id_evaluaciones = id_eval
+            ContenedorREvaluacionSin.teval = tipo
+            ContenedorREvaluacionSin.fecha = "01/12/2020"
+            ContenedorREvaluacionSin.Show()
 
         End If
 
     End Sub
+
+
 End Class
 
 Module Modulo_evaluaciones
+
     Public e_clave As Integer
     Public e_id As Integer
     Public e_idemp As Integer

@@ -14,13 +14,13 @@ Public Class Validath
 
     Private Sub dtp_cuando_ValueChanged(sender As Object, e As EventArgs) Handles dtp1.ValueChanged
         cargagrid()
+
     End Sub
-
-
 
     Sub cargagrid()
 
         Cn.Close()
+
         Cn.Open()
 
         Dim da As New SqlDataAdapter("Sp_validatiempoextra", Cn)
@@ -52,10 +52,6 @@ Public Class Validath
                 row.DefaultCellStyle.BackColor = Color.ForestGreen
             End If
 
-
-
-
-
         Next
 
         Dim col As DataGridViewColumn =
@@ -71,6 +67,7 @@ Public Class Validath
 
 
         Me.dtgvp.Columns("Clave").ReadOnly = True
+
         Try
 
             For Each row As DataGridViewRow In Me.dtgvp.Rows
@@ -87,6 +84,8 @@ Public Class Validath
             Next
         Catch
         End Try
+
+
     End Sub
 
 
@@ -254,7 +253,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)
             Cn.Close()
         Finally
             Cn.Close()
-
         End Try
     End Sub
 
@@ -310,9 +308,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
 
 
-
-
-
         If (Today.Date.DayOfWeek = 2 OrElse Today.Date.DayOfWeek = 3 OrElse Today.Date.DayOfWeek = 4 OrElse Today.Date.DayOfWeek = 5 OrElse Today.Date.DayOfWeek = 6 OrElse Today.Date.DayOfWeek = 0) And Date.Now.ToString("HH:mm:ss") < "10:30:00" Then
             MessageBox.Show("La validación es a partir de las 10:30 a.m.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf (Today.Date.DayOfWeek = 2 OrElse Today.Date.DayOfWeek = 3 OrElse Today.Date.DayOfWeek = 4 OrElse Today.Date.DayOfWeek = 5 OrElse Today.Date.DayOfWeek = 6 OrElse Today.Date.DayOfWeek = 0) And Date.Now.ToString("HH:mm:ss") > "10:30:00" Then
@@ -330,9 +325,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
                 autorizar()
             End If
         End If
-
-
-
     End Sub
 
     Private Sub btn_desma_Click(sender As Object, e As EventArgs) Handles btn_desma.Click
@@ -371,7 +363,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
         ContenedorReporteExcedenteTe.fecha = dtp1.Value.ToShortDateString
         ContenedorReporteExcedenteTe.Turno = Me.dtgvp.Rows(e.RowIndex).Cells("TurnoE").Value.ToString()
         ContenedorReporteExcedenteTe.Show()
-
     End Sub
 
 

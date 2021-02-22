@@ -63,6 +63,7 @@ Partial Class Frm_Principal
         Me.HistóricoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RotaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AusentismoGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BajasPorMesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlanHorasExtraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MejoraContinuaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -327,7 +328,7 @@ Partial Class Frm_Principal
         '
         'ListadosToolStripMenuItem
         '
-        Me.ListadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActivosToolStripMenuItem, Me.BajaEmpleadosToolStripMenuItem, Me.BajaEmpleadosToolStripMenuItem1, Me.HistóricoToolStripMenuItem, Me.RotaciónToolStripMenuItem, Me.AusentismoGeneralToolStripMenuItem})
+        Me.ListadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActivosToolStripMenuItem, Me.BajaEmpleadosToolStripMenuItem, Me.BajaEmpleadosToolStripMenuItem1, Me.HistóricoToolStripMenuItem, Me.RotaciónToolStripMenuItem, Me.AusentismoGeneralToolStripMenuItem, Me.BajasPorMesToolStripMenuItem})
         Me.ListadosToolStripMenuItem.Name = "ListadosToolStripMenuItem"
         Me.ListadosToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.ListadosToolStripMenuItem.Text = "Listados"
@@ -367,6 +368,12 @@ Partial Class Frm_Principal
         Me.AusentismoGeneralToolStripMenuItem.Name = "AusentismoGeneralToolStripMenuItem"
         Me.AusentismoGeneralToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
         Me.AusentismoGeneralToolStripMenuItem.Text = "Ausentismo General"
+        '
+        'BajasPorMesToolStripMenuItem
+        '
+        Me.BajasPorMesToolStripMenuItem.Name = "BajasPorMesToolStripMenuItem"
+        Me.BajasPorMesToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.BajasPorMesToolStripMenuItem.Text = "Bajas por Mes"
         '
         'PlanHorasExtraToolStripMenuItem
         '
@@ -789,5 +796,6 @@ Partial Class Frm_Principal
     Friend WithEvents EvaluacionesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PrincipalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Lbl_Version As Label
+    Friend WithEvents BajasPorMesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DpToolStripMenuItem As ToolStripMenuItem
 End Class

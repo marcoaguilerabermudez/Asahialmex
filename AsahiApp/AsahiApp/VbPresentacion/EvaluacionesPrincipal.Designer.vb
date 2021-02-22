@@ -162,7 +162,7 @@ Partial Class EvaluacionesPrincipal
         Me.cbx_tipoeva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_tipoeva.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipoeva.FormattingEnabled = True
-        Me.cbx_tipoeva.Items.AddRange(New Object() {"--Todas--", "3 meses", "9 meses", "15 meses", "2 años", "Más de 2 años"})
+        Me.cbx_tipoeva.Items.AddRange(New Object() {"--Todas--", "3 meses", "Semestral", "Anual"})
         Me.cbx_tipoeva.Location = New System.Drawing.Point(313, 35)
         Me.cbx_tipoeva.Name = "cbx_tipoeva"
         Me.cbx_tipoeva.Size = New System.Drawing.Size(135, 21)
@@ -500,6 +500,7 @@ Partial Class EvaluacionesPrincipal
         Me.Controls.Add(Me.dtgvp)
         Me.Controls.Add(Me.Panel3)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "EvaluacionesPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Evaluaciones"
