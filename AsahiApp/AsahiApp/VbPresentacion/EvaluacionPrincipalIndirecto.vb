@@ -73,7 +73,7 @@ Public Class EvaluacionPrincipalIndirecto
         mes = 12
         cbx_año.Text = Today.Year() - 1
 
-        llenacombodepto()
+
 
         If depto = "04" OrElse depto = "19" OrElse depto = "07" Then
             Label1.Visible = True
@@ -96,7 +96,13 @@ Public Class EvaluacionPrincipalIndirecto
 
 
         Muestragrid()
+        llenacombodepto()
     End Sub
+
+
+
+
+    ''Datagridview
 
 
     Private Sub cbx_mes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_mes.SelectedIndexChanged
@@ -423,7 +429,10 @@ where id_evaluaciones = @ID and estado = 0
 
     End Sub
 
+    Private Sub cbx_tipoeva_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_tipoeva.SelectedIndexChanged, cbx_depto.SelectedIndexChanged
+        Muestragrid()
 
+    End Sub
 End Class
 
 Module Modulo_evaluacionesindi
