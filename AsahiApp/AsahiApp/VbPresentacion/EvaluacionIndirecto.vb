@@ -1210,6 +1210,7 @@ Public Class EvaluacionIndirecto
 
                     If (row.Cells("Logro %").Value > 100 OrElse IsDBNull(row.Cells("Logro %").Value)) Then
                         row.Cells("Logro %").Value = 0
+                        row.Cells("Puntaje").Value = 0
                         row.DefaultCellStyle.BackColor = Color.LightSalmon
                     End If
 
@@ -1239,6 +1240,7 @@ Public Class EvaluacionIndirecto
 
                     If (row.Cells("Logro %").Value > 100 OrElse IsDBNull(row.Cells("Logro %").Value)) Then
                         row.Cells("Logro %").Value = 0
+                        row.Cells("Puntaje").Value = 0
                         row.DefaultCellStyle.BackColor = Color.LightSalmon
                     End If
 
