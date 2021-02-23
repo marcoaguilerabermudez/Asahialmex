@@ -80,8 +80,8 @@ Public Class EvaluacionIndirecto
             Me.dtgvp.Columns("PAE").ReadOnly = True
 
             btn_evaluar.Enabled = False
-            'btn_evaluar2.Enabled = True
-            btn_evaluar2.Enabled = False
+            btn_evaluar2.Enabled = True
+            'btn_evaluar2.Enabled = False
             btn_evaluar3.Enabled = False
             dtgvIndicadores.Columns("Logro %").DefaultCellStyle = style2
             Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
@@ -95,8 +95,8 @@ Public Class EvaluacionIndirecto
             btn_evaluar.Enabled = False
             btn_evaluar2.Enabled = False
             btn_evaluar3.Enabled = True
+            dtgvobj.Rows(1).Cells(6).ReadOnly = True
             dtgvobj.Rows(2).Cells(6).ReadOnly = True
-            dtgvobj.Rows(3).Cells(6).ReadOnly = True
 
 
 
@@ -118,8 +118,8 @@ Public Class EvaluacionIndirecto
             btn_evaluar3.Enabled = False
 
 
+            dtgvobj.Rows(1).Cells(6).ReadOnly = True
             dtgvobj.Rows(2).Cells(6).ReadOnly = True
-            dtgvobj.Rows(3).Cells(6).ReadOnly = True
 
 
         End If
@@ -796,8 +796,8 @@ Public Class EvaluacionIndirecto
 
             Catch
             End Try
+            dtgvobj.Rows(1).Cells(6).ReadOnly = True
             dtgvobj.Rows(2).Cells(6).ReadOnly = True
-            dtgvobj.Rows(3).Cells(6).ReadOnly = True
         End If
 
 
@@ -957,8 +957,8 @@ Public Class EvaluacionIndirecto
                         If estado = 10 Then
 
                             estado = 11
-                            'btn_evaluar2.Enabled = True
-                            btn_evaluar2.Enabled = False
+                            btn_evaluar2.Enabled = True
+                            'btn_evaluar2.Enabled = False
                             'zxxx
 
 
@@ -1051,8 +1051,8 @@ Public Class EvaluacionIndirecto
                         MuestragridObjetivos()
                         dtgvobj.Columns("Logro %").DefaultCellStyle = style2
                         Me.dtgvobj.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+                        dtgvobj.Rows(1).Cells(6).ReadOnly = True
                         dtgvobj.Rows(2).Cells(6).ReadOnly = True
-                        dtgvobj.Rows(3).Cells(6).ReadOnly = True
 
 
                     Catch ex As Exception
