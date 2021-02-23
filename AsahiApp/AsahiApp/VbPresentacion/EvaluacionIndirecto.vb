@@ -301,45 +301,45 @@ Public Class EvaluacionIndirecto
 
 
             Cn.Close()
+
+
+            dtgvIndicadores.Columns("Nombre").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+
+            dtgvIndicadores.Columns("Nombre").Width = 400
+            dtgvIndicadores.Columns("Estándar %").Width = 80
+            dtgvIndicadores.Columns("Resultado %").Width = 85
+            dtgvIndicadores.Columns("Logro %").Width = 80
+            dtgvIndicadores.Columns("Puntaje").Width = 70
+
+
+
+            dtgvIndicadores.Columns("Id").Visible = False
+            dtgvIndicadores.Columns("Id_Puesto").Visible = False
+            dtgvIndicadores.Columns("Id_Dpto").Visible = False
+            dtgvIndicadores.Columns("Puntos_Max").Visible = False
+
+
+
+
+
+
+
+            Me.dtgvIndicadores.Columns("Nombre").ReadOnly = True
+            Me.dtgvIndicadores.Columns("Estándar %").ReadOnly = True
+            Me.dtgvIndicadores.Columns("Resultado %").ReadOnly = True
+            Me.dtgvIndicadores.Columns("Puntaje").ReadOnly = True
+
+
+            Me.dtgvIndicadores.Columns("Estándar %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+            Me.dtgvIndicadores.Columns("Resultado %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+            Me.dtgvIndicadores.Columns("Puntaje").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+            Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+
+
+
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
-
-
-        dtgvIndicadores.Columns("Nombre").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
-
-        dtgvIndicadores.Columns("Nombre").Width = 400
-        dtgvIndicadores.Columns("Estándar %").Width = 80
-        dtgvIndicadores.Columns("Resultado %").Width = 85
-        dtgvIndicadores.Columns("Logro %").Width = 80
-        dtgvIndicadores.Columns("Puntaje").Width = 70
-
-
-
-        dtgvIndicadores.Columns("Id").Visible = False
-        dtgvIndicadores.Columns("Id_Puesto").Visible = False
-        dtgvIndicadores.Columns("Id_Dpto").Visible = False
-        dtgvIndicadores.Columns("Puntos_Max").Visible = False
-
-
-
-
-
-
-
-        Me.dtgvIndicadores.Columns("Nombre").ReadOnly = True
-        Me.dtgvIndicadores.Columns("Estándar %").ReadOnly = True
-        Me.dtgvIndicadores.Columns("Resultado %").ReadOnly = True
-        Me.dtgvIndicadores.Columns("Puntaje").ReadOnly = True
-
-
-        Me.dtgvIndicadores.Columns("Estándar %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-        Me.dtgvIndicadores.Columns("Resultado %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-        Me.dtgvIndicadores.Columns("Puntaje").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-        Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-
-
-
 
 
     End Sub
@@ -368,48 +368,48 @@ Public Class EvaluacionIndirecto
 
 
             Cn.Close()
+
+
+            'dtgvobj.Columns("Descripción").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+
+            'dtgvobj.Columns("Descripción").Width = 350
+            'dtgvobj.Columns("Estándar %").Width = 80
+            'dtgvobj.Columns("Resultado %").Width = 85
+            'dtgvobj.Columns("Logro %").Width = 80
+            'dtgvobj.Columns("Puntaje").Width = 70
+
+
+
+            dtgvobj.Columns("Id").Visible = False
+            dtgvobj.Columns("Id_Puesto").Visible = False
+            dtgvobj.Columns("Id_Depto").Visible = False
+            dtgvobj.Columns("Puntos_Max").Visible = False
+
+
+
+
+
+
+
+            Me.dtgvobj.Columns("Descripción").ReadOnly = True
+            Me.dtgvobj.Columns("Estándar %").ReadOnly = True
+            Me.dtgvobj.Columns("Resultado %").ReadOnly = True
+            Me.dtgvobj.Columns("Puntaje").ReadOnly = True
+
+
+            Me.dtgvobj.Columns("Estándar %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+            Me.dtgvobj.Columns("Resultado %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+            Me.dtgvobj.Columns("Puntaje").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+            Me.dtgvobj.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+
+
+            dtgvobj.Rows(2).Cells(6).ReadOnly = True
+            'dtgvobj.Rows(2).ReadOnly = True
+            'dtgvobj.Rows(3).ReadOnly = True
+
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
-
-
-        'dtgvobj.Columns("Descripción").DataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True
-
-        'dtgvobj.Columns("Descripción").Width = 350
-        'dtgvobj.Columns("Estándar %").Width = 80
-        'dtgvobj.Columns("Resultado %").Width = 85
-        'dtgvobj.Columns("Logro %").Width = 80
-        'dtgvobj.Columns("Puntaje").Width = 70
-
-
-
-        dtgvobj.Columns("Id").Visible = False
-        dtgvobj.Columns("Id_Puesto").Visible = False
-        dtgvobj.Columns("Id_Depto").Visible = False
-        dtgvobj.Columns("Puntos_Max").Visible = False
-
-
-
-
-
-
-
-        Me.dtgvobj.Columns("Descripción").ReadOnly = True
-        Me.dtgvobj.Columns("Estándar %").ReadOnly = True
-        Me.dtgvobj.Columns("Resultado %").ReadOnly = True
-        Me.dtgvobj.Columns("Puntaje").ReadOnly = True
-
-
-        Me.dtgvobj.Columns("Estándar %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-        Me.dtgvobj.Columns("Resultado %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-        Me.dtgvobj.Columns("Puntaje").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-        Me.dtgvobj.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
-
-
-        dtgvobj.Rows(2).Cells(6).ReadOnly = True
-        'dtgvobj.Rows(2).ReadOnly = True
-        'dtgvobj.Rows(3).ReadOnly = True
-
 
 
     End Sub
@@ -1204,7 +1204,8 @@ Public Class EvaluacionIndirecto
 
             Try
                 For Each row As DataGridViewRow In Me.dtgvIndicadores.Rows
-
+                    row.Cells("Resultado %").Value = (CDbl(row.Cells("Estándar %").Value) * CDbl(row.Cells("Logro %").Value)) / 100
+                    row.Cells("Puntaje").Value = (CDbl(row.Cells("Puntos_Max").Value) * CDbl(row.Cells("Logro %").Value)) / 100
 
 
                     If (row.Cells("Logro %").Value > 100 OrElse IsDBNull(row.Cells("Logro %").Value)) Then
@@ -1214,8 +1215,12 @@ Public Class EvaluacionIndirecto
 
 
                     row.DefaultCellStyle.BackColor = Color.White
-
                 Next
+
+
+
+
+
             Catch
             End Try
 
