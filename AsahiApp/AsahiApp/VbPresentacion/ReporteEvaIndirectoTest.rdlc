@@ -2304,7 +2304,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>D 722.10  RH/A</Value>
+                <Value>D 722.10  RH/B</Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                   <FontWeight>Bold</FontWeight>
