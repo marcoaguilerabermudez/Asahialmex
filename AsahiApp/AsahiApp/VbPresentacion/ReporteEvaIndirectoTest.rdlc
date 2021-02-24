@@ -2068,8 +2068,8 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>14.21738cm</Top>
-        <Left>14.46894cm</Left>
+        <Top>12.04595cm</Top>
+        <Left>0.56133cm</Left>
         <Height>0.54865cm</Height>
         <Width>4.42829cm</Width>
         <ZIndex>9</ZIndex>
@@ -2103,7 +2103,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>16.01654cm</Top>
+        <Top>13.79404cm</Top>
         <Left>0.53293cm</Left>
         <Height>0.54865cm</Height>
         <Width>3.91905cm</Width>
@@ -2151,7 +2151,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>16.01654cm</Top>
+        <Top>13.79404cm</Top>
         <Left>14.31183cm</Left>
         <Height>0.54865cm</Height>
         <Width>5.52923cm</Width>
@@ -2168,8 +2168,8 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
         </Style>
       </Textbox>
       <Line Name="Line7">
-        <Top>14.1821cm</Top>
-        <Left>14.46894cm</Left>
+        <Top>12.01067cm</Top>
+        <Left>0.56133cm</Left>
         <Height>0cm</Height>
         <Width>4.89722cm</Width>
         <ZIndex>12</ZIndex>
@@ -2180,7 +2180,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
         </Style>
       </Line>
       <Line Name="Line8">
-        <Top>15.62849cm</Top>
+        <Top>13.72349cm</Top>
         <Left>0.53293cm</Left>
         <Height>0cm</Height>
         <Width>3.3891cm</Width>
@@ -2192,7 +2192,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
         </Style>
       </Line>
       <Line Name="Line9">
-        <Top>15.62849cm</Top>
+        <Top>13.72349cm</Top>
         <Left>14.31183cm</Left>
         <Height>0cm</Height>
         <Width>5.52923cm</Width>
@@ -2222,7 +2222,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>16.01654cm</Top>
+        <Top>13.79404cm</Top>
         <Left>5.2714cm</Left>
         <Height>0.54865cm</Height>
         <Width>3.18232cm</Width>
@@ -2239,7 +2239,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
         </Style>
       </Textbox>
       <Line Name="Line10">
-        <Top>15.62849cm</Top>
+        <Top>13.72349cm</Top>
         <Left>8.78862cm</Left>
         <Height>0cm</Height>
         <Width>-3.51722cm</Width>
@@ -2269,7 +2269,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>16.01654cm</Top>
+        <Top>13.79404cm</Top>
         <Left>9.85478cm</Left>
         <Height>0.54865cm</Height>
         <Width>3.02599cm</Width>
@@ -2286,7 +2286,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
         </Style>
       </Textbox>
       <Line Name="Line11">
-        <Top>15.62849cm</Top>
+        <Top>13.72349cm</Top>
         <Left>13.372cm</Left>
         <Height>0cm</Height>
         <Width>-3.51722cm</Width>
@@ -2317,7 +2317,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>16.67102cm</Top>
+        <Top>14.37797cm</Top>
         <Left>16.83047cm</Left>
         <Height>0.54865cm</Height>
         <Width>3.01059cm</Width>
@@ -2334,7 +2334,7 @@ First(Fields!Resultado_final.Value, "DataSet1") &lt; 65 , "Insuficiente")</Value
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>6.83148in</Height>
+    <Height>5.89398in</Height>
     <Style />
   </Body>
   <Width>8.02126in</Width>
