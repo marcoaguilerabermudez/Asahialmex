@@ -86,6 +86,9 @@ Public Class EvaluacionIndirecto
             dtgvIndicadores.Columns("Logro %").DefaultCellStyle = style2
             Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
 
+
+
+
         ElseIf estado = 12 Then
             Me.dtgvp.Columns("PES").ReadOnly = True
             Me.dtgvp.Columns("PAE").ReadOnly = True

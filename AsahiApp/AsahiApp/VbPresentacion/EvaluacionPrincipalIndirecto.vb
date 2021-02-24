@@ -106,6 +106,7 @@ Public Class EvaluacionPrincipalIndirecto
 
 
     Private Sub cbx_mes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_mes.SelectedIndexChanged
+
         a = cbx_mes.Text
         Select Case a
             Case "Enero"
@@ -308,10 +309,10 @@ where id_evaluaciones = @ID and estado = 0
             lbl_liberacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("liberacion").Value.ToString()
             lbl_autoeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("autoeval").Value.ToString()
 
-            lbl_puntajeeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
-            lbl_puntajeautoeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Autoeval").Value.ToString()
-            lbl_puntajemejora.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Mejora").Value.ToString()
-            lbl_puntajeobj.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Objetivos").Value.ToString()
+            lbl_puntajeeva.Text = CDbl(Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString())
+            lbl_puntajeautoeva.Text = CDbl(Me.dtgvp.Rows(e.RowIndex).Cells("Total_Autoeval").Value.ToString())
+            lbl_puntajemejora.Text = CDbl(Me.dtgvp.Rows(e.RowIndex).Cells("Total_Mejora").Value.ToString())
+            lbl_puntajeobj.Text = CDbl(Me.dtgvp.Rows(e.RowIndex).Cells("Total_Objetivos").Value.ToString())
             lbl_totalpuntos.Text = CDbl((CDbl(lbl_puntajeeva.Text) + CDbl(lbl_puntajeautoeva.Text)) / 2) + CDbl(lbl_puntajemejora.Text) + CDbl(lbl_puntajeobj.Text)
 
 
@@ -371,11 +372,11 @@ where id_evaluaciones = @ID and estado = 0
             lbl_liberacion.Text = Me.dtgvp.Rows(e.RowIndex).Cells("liberacion").Value.ToString()
             lbl_autoeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("autoeval").Value.ToString()
             '' lbl_totalpuntos.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
-            lbl_puntajeeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString()
-            lbl_puntajeautoeva.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Autoeval").Value.ToString()
-            lbl_puntajemejora.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Mejora").Value.ToString()
-            lbl_puntajeobj.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Total_Objetivos").Value.ToString()
-            lbl_totalpuntos.Text = CDbl((CInt(lbl_puntajeeva.Text) + CInt(lbl_puntajeautoeva.Text)) / 2) + CInt(lbl_puntajemejora.Text) + CInt(lbl_puntajeobj.Text)
+            lbl_puntajeeva.Text = CDbl(Me.dtgvp.Rows(e.RowIndex).Cells("total_eval").Value.ToString())
+            lbl_puntajeautoeva.Text = CDbl(Me.dtgvp.Rows(e.RowIndex).Cells("Total_Autoeval").Value.ToString())
+            lbl_puntajemejora.Text = CDbl(Me.dtgvp.Rows(e.RowIndex).Cells("Total_Mejora").Value.ToString())
+            lbl_puntajeobj.Text = CDbl(Me.dtgvp.Rows(e.RowIndex).Cells("Total_Objetivos").Value.ToString())
+            lbl_totalpuntos.Text = CDbl((CDbl(lbl_puntajeeva.Text) + CDbl(lbl_puntajeautoeva.Text)) / 2) + CDbl(lbl_puntajemejora.Text) + CDbl(lbl_puntajeobj.Text)
 
 
 
