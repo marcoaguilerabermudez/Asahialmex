@@ -167,7 +167,7 @@ Public Class EvaluacionIndirecto
             lbl_puntajeFJ.Text = (ds.Tables(0).Rows(0).Item(3) / 2)
 
 
-            lbl_g.Text = ds.Tables(0).Rows(0).Item(4) / 2
+            lbl_g.Text = ds.Tables(0).Rows(0).Item(4)
             lbl_v.Text = ds.Tables(0).Rows(0).Item(5)
 
 
