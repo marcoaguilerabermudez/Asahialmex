@@ -2689,7 +2689,6 @@ ASAHI ALUMINIUM MÉXICO
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>Dts_DpRelPuestInt_Rpt</DataSetName>
-            <Top>0cm</Top>
             <Left>4.93987cm</Left>
             <Height>1.08647cm</Height>
             <Width>13.67236cm</Width>
@@ -3818,8 +3817,7 @@ ASAHI ALUMINIUM MÉXICO
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>Dts_DpIndicadores_Rpt</DataSetName>
-            <Left>0cm</Left>
-            <Height>1.13037cm</Height>
+            <Height>1.13038cm</Height>
             <Width>18.61223cm</Width>
             <Style>
               <Border>
@@ -3831,7 +3829,7 @@ ASAHI ALUMINIUM MÉXICO
         <KeepTogether>true</KeepTogether>
         <Top>20.07528cm</Top>
         <Left>0.22589cm</Left>
-        <Height>1.13037cm</Height>
+        <Height>1.13038cm</Height>
         <Width>18.61223cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
@@ -4056,8 +4054,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Value>=Fields!IdMando.Value</Value>
               </SortExpression>
             </SortExpressions>
-            <Left>0cm</Left>
-            <Height>1.17679cm</Height>
+            <Height>1.1768cm</Height>
             <Width>6.20408cm</Width>
             <Style>
               <Border>
@@ -4842,7 +4839,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>24.65229cm</Top>
+        <Top>24.33479cm</Top>
         <Left>0.19062cm</Left>
         <Height>0.6cm</Height>
         <Width>18.68315cm</Width>
