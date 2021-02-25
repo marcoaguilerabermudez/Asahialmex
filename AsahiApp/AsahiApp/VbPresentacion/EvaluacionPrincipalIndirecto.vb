@@ -172,10 +172,9 @@ Public Class EvaluacionPrincipalIndirecto
         End Try
     End Sub
 
+
+
     Friend Sub Muestragrid()
-
-
-
 
         Try
             Cn.Close()
