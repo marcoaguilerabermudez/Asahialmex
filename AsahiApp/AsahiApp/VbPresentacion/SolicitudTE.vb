@@ -4,7 +4,7 @@ Public Class SolicitudTE
 
     Public cadenaConex As String
     Public cadenaCExpress As String
-    Public cn As SqlConnection
+    Public cnn As SqlConnection
 
 
     Dim id As Integer
@@ -30,11 +30,11 @@ Public Class SolicitudTE
         Dim conexion As New conexion()
         If Strings.Left(conexion.getIp(), 6) = "172.16" Then
             Me.cadenaConex = conexion.cadenaConex
-            Me.cn = conexion.cadenaConexExpress1
+            Me.cnn = conexion.cadenaConexExpress1
             Me.cadenaCExpress = conexion.cadenaConexExpress
         Else
             Me.cadenaConex = conexion.cadenaConexFor
-            Me.cn = conexion.conexionExpressFor
+            Me.cnn = conexion.conexionExpressFor
             Me.cadenaCExpress = conexion.cadenaConexExpressFor
         End If
 
