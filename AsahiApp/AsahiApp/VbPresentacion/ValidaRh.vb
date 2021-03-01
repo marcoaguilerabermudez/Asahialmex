@@ -1,9 +1,22 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ValidaRh
-    Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
+    Public cadenaConex As String
+    Public cadenaCExpress As String
+    Public cn As SqlConnection
+
 
     Private Sub ValidaRh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim conexion As New conexion()
+        If Strings.Left(conexion.getIp(), 6) = "172.16" Then
+            Me.cadenaConex = conexion.cadenaConex
+            Me.cn = conexion.cadenaConexExpress1
+            Me.cadenaCExpress = conexion.cadenaConexExpress
+        Else
+            Me.cadenaConex = conexion.cadenaConexFor
+            Me.cn = conexion.conexionExpressFor
+            Me.cadenaCExpress = conexion.cadenaConexExpressFor
+        End If
         llenacombodepto()
     End Sub
 

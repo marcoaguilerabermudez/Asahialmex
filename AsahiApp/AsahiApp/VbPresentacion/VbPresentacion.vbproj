@@ -27,7 +27,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>261</ApplicationRevision>
+    <ApplicationRevision>262</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1293,6 +1293,8 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="System\Management\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

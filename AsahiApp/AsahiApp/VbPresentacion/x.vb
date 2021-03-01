@@ -1,7 +1,11 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class FormatoSM
-    Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
+
+
+
+
+
     Dim vpermiso As Integer
     Dim VMOTIVO As String
     Dim y As Integer
@@ -11,7 +15,31 @@ Public Class FormatoSM
     Dim difvacaciones As Integer
     Dim NPuesto As String
     Dim NDepto As String
+    Public cadenaConex As String
+    Public cadenaCExpress As String
+    Public cn As SqlConnection
 
+
+    Private Sub FormatoSM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim conexion As New conexion()
+        If Strings.Left(conexion.getIp(), 6) = "172.16" Then
+            Me.cadenaConex = conexion.cadenaConex
+            Me.cn = conexion.cadenaConexExpress1
+            Me.cadenaCExpress = conexion.cadenaConexExpress
+        Else
+            Me.cadenaConex = conexion.cadenaConexFor
+            Me.cn = conexion.conexionExpressFor
+            Me.cadenaCExpress = conexion.cadenaConexExpressFor
+        End If
+
+
+
+        dtp_regreso.Value = dtp2.Value.AddDays(1)
+        txt_clave.Focus()
+        llenacombodepto()
+        llenacombopuesto()
+    End Sub
 
     Sub New(id As Integer, depto As String, permiso As Integer)
         InitializeComponent()
@@ -28,38 +56,42 @@ Public Class FormatoSM
 
     Sub llenacombomotivo()
 
+
+
         Dim Dt As DataTable
 
-            Dim Da As New SqlDataAdapter
-            Dim Cmd As New SqlCommand
-            Dim parametro1 As String
-            parametro1 = cbx_tipo.Text
+        Dim Da As New SqlDataAdapter
+        Dim Cmd As New SqlCommand
+        Dim parametro1 As String
+        parametro1 = cbx_tipo.Text
 
-            With Cmd
-                .CommandType = CommandType.Text
-                .CommandText = "	
+        With Cmd
+            .CommandType = CommandType.Text
+            .CommandText = "	
  select Motivo
   FROM [AsahiSystem].[dbo].[Rh_motivopermiso] mot
   join [AsahiSystem].[dbo].[Rh_tipospermiso] tip
   on mot.Id_tipopermiso = tip.Id_tipopermiso
   where tip.Permiso = '" & parametro1 & "'
 "
-                .Connection = Cn
-            End With
-            Da.SelectCommand = Cmd
-            Dt = New DataTable
-            Da.Fill(Dt)
-            With cbx_motivo
-                .DataSource = Dt
-                .DisplayMember = "Motivo"
-                '.ValueMember = "id"
-            End With
+            .Connection = Cn
+        End With
+        Da.SelectCommand = Cmd
+        Dt = New DataTable
+        Da.Fill(Dt)
+        With cbx_motivo
+            .DataSource = Dt
+            .DisplayMember = "Motivo"
+            '.ValueMember = "id"
+        End With
 
 
     End Sub
 
 
     Sub llenacombodepto()
+
+
 
         Dim Dt As DataTable
 
@@ -92,6 +124,8 @@ select descripcion,clave from giro.[asahi16].[Supervisor_giro].[DEPTO] where CEN
 
     Sub llenacombopuesto()
 
+
+
         Dim Dt As DataTable
 
         Dim Da As New SqlDataAdapter
@@ -122,7 +156,13 @@ select descripcion,CLAVE from giro.[asahi16].[Supervisor_giro].[Puesto] where cl
 
 
     Sub muestraetiqueta()
+
+
+
         Try
+
+
+
             Dim lista As New List(Of String)
             Cn.Close()
             Cn.Open()
@@ -614,12 +654,7 @@ SELECT  [Id_motivopermiso]
 
     End Sub
 
-    Private Sub FormatoSM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dtp_regreso.Value = dtp2.Value.AddDays(1)
-        txt_clave.Focus()
-        llenacombodepto()
-        llenacombopuesto()
-    End Sub
+
 
     Private Sub dtp1_ValueChanged(sender As Object, e As EventArgs) Handles dtp1.ValueChanged
         Try

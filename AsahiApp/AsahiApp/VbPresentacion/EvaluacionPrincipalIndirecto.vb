@@ -345,6 +345,7 @@ where id_evaluaciones = @ID and estado = 0
 
                 Modulo_evaluacionesindi.id_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Id_depto").Value.ToString()
                 Modulo_evaluacionesindi.id_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Id_puesto").Value.ToString()
+
                 Modulo_evaluacionesindi.e_idemp = id
 
 

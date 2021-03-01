@@ -12,6 +12,9 @@ Public Class EvaluacionIndirecto
     Dim idpuesto As Integer
     Dim iddepto As Integer
     Dim puntajeincidencias As Double
+    Dim rdbinidicadores As Integer
+    Dim rdbobjetivos As Integer
+    Dim estadoedita As Integer
 
 
 
@@ -128,6 +131,7 @@ Public Class EvaluacionIndirecto
         End If
 
         sumarpuntaje()
+        rdbinidicadores = 0
 
     End Sub
 
@@ -579,9 +583,9 @@ Public Class EvaluacionIndirecto
 
 
 
-    Private Sub dtgvp_CellContentClick2(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvIndicadores.CellClick, dtgvobj.CellClick
+    Private Sub dtgvp_CellContentClick2(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvIndicadores.CellClick
 
-        If estado = 11 Then
+        If estado = 11 Or estado = 13 Then
 
             Try
 
@@ -1163,6 +1167,9 @@ Public Class EvaluacionIndirecto
         End Try
     End Sub
 
+
+
+
     Private Sub btn_evaluar_Click(sender As Object, e As EventArgs) Handles btn_evaluar.Click, btn_evaluar2.Click, btn_evaluar3.Click
 
         If estado = 1 Then
@@ -1261,6 +1268,9 @@ Public Class EvaluacionIndirecto
 
         Cargaevaluacion()
     End Sub
+
+
+
 
 
     Sub sumarpuntaje()
@@ -1378,6 +1388,239 @@ Public Class EvaluacionIndirecto
 
 
     End Sub
+
+    Private Sub rdb_indicadores_CheckedChanged(sender As Object, e As EventArgs) Handles rdb_indicadores.CheckedChanged
+        If rdb_indicadores.Checked = True Then
+            rdbinidicadores = 1
+            btn_editaindicadores.Enabled = True
+            Dim style2 As New DataGridViewCellStyle
+            style2.Font = New Font(dtgvIndicadores.Font, FontStyle.Bold)
+            dtgvIndicadores.Columns("Logro %").DefaultCellStyle = style2
+            Me.dtgvIndicadores.Columns("Logro %").ReadOnly = False
+            Me.dtgvIndicadores.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+        Else
+            rdbinidicadores = 0
+            btn_editaindicadores.Enabled = False
+            Me.dtgvIndicadores.Columns("Logro %").ReadOnly = True
+        End If
+    End Sub
+
+    Private Sub rdb_objetivos_CheckedChanged(sender As Object, e As EventArgs) Handles rdb_objetivos.CheckedChanged
+        If rdb_objetivos.Checked = True Then
+            rdbobjetivos = 1
+            btn_editaobjetivos.Enabled = True
+            Dim style2 As New DataGridViewCellStyle
+            style2.Font = New Font(dtgvIndicadores.Font, FontStyle.Bold)
+            dtgvobj.Columns("Logro %").DefaultCellStyle = style2
+            Me.dtgvobj.Columns("Logro %").ReadOnly = False
+            Me.dtgvobj.Columns("Logro %").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
+            dtgvobj.Rows(1).Cells(6).ReadOnly = True
+            dtgvobj.Rows(2).Cells(6).ReadOnly = True
+        Else
+            rdbobjetivos = 0
+            btn_editaobjetivos.Enabled = False
+            Me.dtgvobj.Columns("Logro %").ReadOnly = True
+        End If
+    End Sub
+
+
+
+    Private Sub btn_editaindicadores_Click(sender As Object, e As EventArgs) Handles btn_editaindicadores.Click
+        Try
+            For Each row As DataGridViewRow In Me.dtgvIndicadores.Rows
+
+
+
+                If (row.Cells("Logro %").Value > 100) Then
+                    row.Cells("Logro %").Value = 0
+                    row.Cells("Puntaje").Value = 0
+                    'row.Cells("Resutado %").Value = 0
+                    'row.Cells("Resutado %").Value = 0
+
+
+                    '  row.DefaultCellStyle.BackColor = Color.LightSalmon
+                    '   Else
+
+
+                End If
+
+                row.Cells("Puntaje").Value = (CDbl(row.Cells("Puntos_Max").Value) * CDbl(row.Cells("Logro %").Value)) / 100
+                row.Cells("Resultado %").Value = (CDbl(row.Cells("Puntos_Max").Value) * CDbl(row.Cells("Logro %").Value)) / 100
+
+                row.DefaultCellStyle.BackColor = Color.White
+
+
+
+            Next
+        Catch
+        End Try
+        estadoedita = 1
+        Edita()
+    End Sub
+
+
+
+    Private Sub btn_objetivos_Click(sender As Object, e As EventArgs) Handles btn_editaobjetivos.Click
+        Try
+            For Each row As DataGridViewRow In Me.dtgvobj.Rows
+
+
+
+                If (row.Cells("Logro %").Value > 100) Then
+                    row.Cells("Logro %").Value = 0
+                    row.Cells("Puntaje").Value = 0
+                    'row.Cells("Resutado %").Value = 0
+                    'row.Cells("Resutado %").Value = 0
+
+
+                    '  row.DefaultCellStyle.BackColor = Color.LightSalmon
+                    '   Else
+
+
+                End If
+
+                row.Cells("Puntaje").Value = (CDbl(row.Cells("Puntos_Max").Value) * CDbl(row.Cells("Logro %").Value)) / 100
+                row.Cells("Resultado %").Value = (CDbl(row.Cells("Puntos_Max").Value) * CDbl(row.Cells("Logro %").Value)) / 100
+
+                row.DefaultCellStyle.BackColor = Color.White
+
+
+
+            Next
+        Catch
+        End Try
+        estadoedita = 2
+        Edita()
+
+    End Sub
+
+
+    Sub Edita()
+        Dim Pregunta As Integer
+        sumarpuntaje()
+
+        If estadoedita = 1 Then
+
+
+
+            Pregunta = MsgBox("Puntaje máximo posible = " & lbl_puntajm3.Text & " " + vbCrLf + " Puntaje obtenido = " & lbl_puntajetotal3.Text & " " + vbCrLf + " ¿Es correcta su resultado con la modificación de indicadores?", vbYesNo + vbExclamation + vbDefaultButton2, "Indicadores")
+
+
+
+
+            If Pregunta = vbYes Then
+
+                Cn.Close()
+
+
+                Dim command As New SqlCommand("Sp_editaIndicadoresObjetivos", Cn)
+                Cn.Open()
+                Dim fila As DataGridViewRow = New DataGridViewRow()
+                command.CommandType = CommandType.StoredProcedure
+
+                Try
+
+                    For Each fila In dtgvIndicadores.Rows
+
+
+                        command.Parameters.Clear()
+
+                        command.Parameters.AddWithValue("@puntaje", (fila.Cells("Puntaje").Value))
+                        command.Parameters.AddWithValue("@PuntajeTotal", lbl_puntajetotal3.Text)
+                        command.Parameters.AddWithValue("@id", (fila.Cells("Id").Value))
+                        command.Parameters.AddWithValue("@clave", lbl_clave.Text)
+                        command.Parameters.AddWithValue("@estado", 1)
+
+                        command.ExecuteNonQuery()
+
+                    Next
+
+                    MessageBox.Show("El puntaje de los indicadores ha sido modificado correctamente", "¡Carga exitosa!")
+
+                    Dim ownerForm As EvaluacionPrincipalIndirecto = Me.Owner
+                    ownerForm.Muestragrid()
+
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString)
+
+                Finally
+                    Cn.Close()
+                End Try
+
+            ElseIf Pregunta = vbNo Then
+
+                MessageBox.Show("Acción no completada", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            End If
+
+
+        ElseIf estadoedita = 2 Then
+
+
+
+            Pregunta = MsgBox("Puntaje máximo posible = " & lbl_puntajm5.Text & " " + vbCrLf + " Puntaje obtenido = " & lbl_puntajetotal5.Text & " " + vbCrLf + " ¿Es correcta su resultado con la modificación de objetivos?", vbYesNo + vbExclamation + vbDefaultButton2, "Objetivos")
+
+
+
+
+            If Pregunta = vbYes Then
+
+                    Cn.Close()
+
+
+                    Dim command As New SqlCommand("Sp_editaIndicadoresObjetivos", Cn)
+                    Cn.Open()
+                    Dim fila As DataGridViewRow = New DataGridViewRow()
+                    command.CommandType = CommandType.StoredProcedure
+
+                    Try
+
+                        For Each fila In dtgvobj.Rows
+
+
+                            command.Parameters.Clear()
+
+                            command.Parameters.AddWithValue("@puntaje", (fila.Cells("Puntaje").Value))
+                        command.Parameters.AddWithValue("@PuntajeTotal", lbl_puntajetotal5.Text)
+                        command.Parameters.AddWithValue("@id", (fila.Cells("Id").Value))
+                            command.Parameters.AddWithValue("@clave", lbl_clave.Text)
+                            command.Parameters.AddWithValue("@estado", 2)
+
+                            command.ExecuteNonQuery()
+
+                        Next
+
+                        MessageBox.Show("El puntaje de los objetivos ha sido modificado correctamente", "¡Carga exitosa!")
+
+                        Dim ownerForm As EvaluacionPrincipalIndirecto = Me.Owner
+                        ownerForm.Muestragrid()
+
+
+                Catch ex As Exception
+                        MessageBox.Show(ex.ToString)
+
+                    Finally
+                        Cn.Close()
+                    End Try
+
+                ElseIf Pregunta = vbNo Then
+
+                    MessageBox.Show("Acción no completada", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                End If
+
+
+
+            End If
+
+
+    End Sub
+
+
+
+
+
 
 
 End Class

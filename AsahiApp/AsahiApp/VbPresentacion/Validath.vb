@@ -4,7 +4,10 @@ Public Class Validath
 
     Dim id As Integer
     Dim depto As String
-    Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
+    Public cadenaConex As String
+    Public cadenaCExpress As String
+    Public cn As SqlConnection
+
 
     Sub New(id As Integer, depto As String)
         InitializeComponent()
@@ -90,6 +93,16 @@ Public Class Validath
 
 
     Private Sub Validath_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim conexion As New conexion()
+        If Strings.Left(conexion.getIp(), 6) = "172.16" Then
+            Me.cadenaConex = conexion.cadenaConex
+            Me.Cn = conexion.cadenaConexExpress1
+            Me.cadenaCExpress = conexion.cadenaConexExpress
+        Else
+            Me.cadenaConex = conexion.cadenaConexFor
+            Me.Cn = conexion.conexionExpressFor
+            Me.cadenaCExpress = conexion.cadenaConexExpressFor
+        End If
 
     End Sub
 
