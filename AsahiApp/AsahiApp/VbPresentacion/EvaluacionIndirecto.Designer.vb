@@ -114,6 +114,10 @@ Partial Class EvaluacionIndirecto
         Me.dtgvIndicadores = New System.Windows.Forms.DataGridView()
         Me.btn_evaluar2 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.gbx_objetivos = New System.Windows.Forms.GroupBox()
+        Me.rdb_objetivos2 = New System.Windows.Forms.RadioButton()
+        Me.rdb_objetivos = New System.Windows.Forms.RadioButton()
+        Me.btn_editaobjetivos = New System.Windows.Forms.Button()
         Me.dtgvobj = New System.Windows.Forms.DataGridView()
         Me.lbl_puntajm6 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -125,10 +129,6 @@ Partial Class EvaluacionIndirecto
         Me.Label35 = New System.Windows.Forms.Label()
         Me.btn_evaluar3 = New System.Windows.Forms.Button()
         Me.dtgvtest = New System.Windows.Forms.DataGridView()
-        Me.gbx_objetivos = New System.Windows.Forms.GroupBox()
-        Me.rdb_objetivos2 = New System.Windows.Forms.RadioButton()
-        Me.rdb_objetivos = New System.Windows.Forms.RadioButton()
-        Me.btn_editaobjetivos = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.gpx_incidencias.SuspendLayout()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,9 +140,9 @@ Partial Class EvaluacionIndirecto
         Me.gbx_indicadores.SuspendLayout()
         CType(Me.dtgvIndicadores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
+        Me.gbx_objetivos.SuspendLayout()
         CType(Me.dtgvobj, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgvtest, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbx_objetivos.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -1016,6 +1016,7 @@ Partial Class EvaluacionIndirecto
         Me.gbx_indicadores.Controls.Add(Me.rdb_indicadores2)
         Me.gbx_indicadores.Controls.Add(Me.rdb_indicadores)
         Me.gbx_indicadores.Controls.Add(Me.btn_editaindicadores)
+        Me.gbx_indicadores.Enabled = False
         Me.gbx_indicadores.Location = New System.Drawing.Point(876, 80)
         Me.gbx_indicadores.Name = "gbx_indicadores"
         Me.gbx_indicadores.Size = New System.Drawing.Size(315, 112)
@@ -1218,6 +1219,54 @@ Partial Class EvaluacionIndirecto
         Me.TabPage3.Text = "Evaluación de objetivos"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'gbx_objetivos
+        '
+        Me.gbx_objetivos.Controls.Add(Me.rdb_objetivos2)
+        Me.gbx_objetivos.Controls.Add(Me.rdb_objetivos)
+        Me.gbx_objetivos.Controls.Add(Me.btn_editaobjetivos)
+        Me.gbx_objetivos.Enabled = False
+        Me.gbx_objetivos.Location = New System.Drawing.Point(852, 100)
+        Me.gbx_objetivos.Name = "gbx_objetivos"
+        Me.gbx_objetivos.Size = New System.Drawing.Size(315, 112)
+        Me.gbx_objetivos.TabIndex = 278
+        Me.gbx_objetivos.TabStop = False
+        Me.gbx_objetivos.Text = "Editar Objetivos"
+        '
+        'rdb_objetivos2
+        '
+        Me.rdb_objetivos2.AutoSize = True
+        Me.rdb_objetivos2.Location = New System.Drawing.Point(33, 70)
+        Me.rdb_objetivos2.Name = "rdb_objetivos2"
+        Me.rdb_objetivos2.Size = New System.Drawing.Size(129, 17)
+        Me.rdb_objetivos2.TabIndex = 259
+        Me.rdb_objetivos2.TabStop = True
+        Me.rdb_objetivos2.Text = "Deshablitar Contenido"
+        Me.rdb_objetivos2.UseVisualStyleBackColor = True
+        '
+        'rdb_objetivos
+        '
+        Me.rdb_objetivos.AutoSize = True
+        Me.rdb_objetivos.Location = New System.Drawing.Point(33, 34)
+        Me.rdb_objetivos.Name = "rdb_objetivos"
+        Me.rdb_objetivos.Size = New System.Drawing.Size(111, 17)
+        Me.rdb_objetivos.TabIndex = 258
+        Me.rdb_objetivos.TabStop = True
+        Me.rdb_objetivos.Text = "Habiliar Contenido"
+        Me.rdb_objetivos.UseVisualStyleBackColor = True
+        '
+        'btn_editaobjetivos
+        '
+        Me.btn_editaobjetivos.BackColor = System.Drawing.Color.Gainsboro
+        Me.btn_editaobjetivos.Enabled = False
+        Me.btn_editaobjetivos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_editaobjetivos.ForeColor = System.Drawing.Color.SeaGreen
+        Me.btn_editaobjetivos.Location = New System.Drawing.Point(203, 34)
+        Me.btn_editaobjetivos.Name = "btn_editaobjetivos"
+        Me.btn_editaobjetivos.Size = New System.Drawing.Size(83, 42)
+        Me.btn_editaobjetivos.TabIndex = 257
+        Me.btn_editaobjetivos.Text = "Editar"
+        Me.btn_editaobjetivos.UseVisualStyleBackColor = False
+        '
         'dtgvobj
         '
         Me.dtgvobj.AllowUserToAddRows = False
@@ -1386,53 +1435,6 @@ Partial Class EvaluacionIndirecto
         Me.dtgvtest.Size = New System.Drawing.Size(408, 332)
         Me.dtgvtest.TabIndex = 255
         '
-        'gbx_objetivos
-        '
-        Me.gbx_objetivos.Controls.Add(Me.rdb_objetivos2)
-        Me.gbx_objetivos.Controls.Add(Me.rdb_objetivos)
-        Me.gbx_objetivos.Controls.Add(Me.btn_editaobjetivos)
-        Me.gbx_objetivos.Location = New System.Drawing.Point(852, 100)
-        Me.gbx_objetivos.Name = "gbx_objetivos"
-        Me.gbx_objetivos.Size = New System.Drawing.Size(315, 112)
-        Me.gbx_objetivos.TabIndex = 278
-        Me.gbx_objetivos.TabStop = False
-        Me.gbx_objetivos.Text = "Editar Objetivos"
-        '
-        'rdb_objetivos2
-        '
-        Me.rdb_objetivos2.AutoSize = True
-        Me.rdb_objetivos2.Location = New System.Drawing.Point(33, 70)
-        Me.rdb_objetivos2.Name = "rdb_objetivos2"
-        Me.rdb_objetivos2.Size = New System.Drawing.Size(129, 17)
-        Me.rdb_objetivos2.TabIndex = 259
-        Me.rdb_objetivos2.TabStop = True
-        Me.rdb_objetivos2.Text = "Deshablitar Contenido"
-        Me.rdb_objetivos2.UseVisualStyleBackColor = True
-        '
-        'rdb_objetivos
-        '
-        Me.rdb_objetivos.AutoSize = True
-        Me.rdb_objetivos.Location = New System.Drawing.Point(33, 34)
-        Me.rdb_objetivos.Name = "rdb_objetivos"
-        Me.rdb_objetivos.Size = New System.Drawing.Size(111, 17)
-        Me.rdb_objetivos.TabIndex = 258
-        Me.rdb_objetivos.TabStop = True
-        Me.rdb_objetivos.Text = "Habiliar Contenido"
-        Me.rdb_objetivos.UseVisualStyleBackColor = True
-        '
-        'btn_editaobjetivos
-        '
-        Me.btn_editaobjetivos.BackColor = System.Drawing.Color.Gainsboro
-        Me.btn_editaobjetivos.Enabled = False
-        Me.btn_editaobjetivos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_editaobjetivos.ForeColor = System.Drawing.Color.SeaGreen
-        Me.btn_editaobjetivos.Location = New System.Drawing.Point(203, 34)
-        Me.btn_editaobjetivos.Name = "btn_editaobjetivos"
-        Me.btn_editaobjetivos.Size = New System.Drawing.Size(83, 42)
-        Me.btn_editaobjetivos.TabIndex = 257
-        Me.btn_editaobjetivos.Text = "Editar"
-        Me.btn_editaobjetivos.UseVisualStyleBackColor = False
-        '
         'EvaluacionIndirecto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1463,10 +1465,10 @@ Partial Class EvaluacionIndirecto
         CType(Me.dtgvIndicadores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
-        CType(Me.dtgvobj, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtgvtest, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbx_objetivos.ResumeLayout(False)
         Me.gbx_objetivos.PerformLayout()
+        CType(Me.dtgvobj, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgvtest, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

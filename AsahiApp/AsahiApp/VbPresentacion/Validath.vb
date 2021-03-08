@@ -109,11 +109,24 @@ Public Class Validath
 
 
     Sub autorizar()
+        Dim Pregunta As Integer
+        Dim Pregunta2 As Integer
 
-        Cn.Close()
-        Cn.Open()
+        Pregunta = MsgBox("¿Desea completar la solicitud? Por favor, revise que lo que está validando es correcto, recuerde que al autorizar los registros, usted está aceptando que el registro es válido.", vbYesNo + vbExclamation + vbDefaultButton2, "¡Aviso!")
 
-        Dim auto As SqlCommand = New SqlCommand("
+
+
+
+
+        If Pregunta = vbYes Then
+
+
+
+
+            cn.Close()
+                cn.Open()
+
+                Dim auto As SqlCommand = New SqlCommand("
 update [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] set incidencia = @inci, ValSuper = 1 , timestampval = getdate()
 ,TE = 
 case
@@ -228,45 +241,56 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)
   and PlanExtra = 1 and solicitud.TurnoE = pri.TurnoE and ValSuper = 1
 
 
-", Cn)
+", cn)
 
-        Dim fila As DataGridViewRow = New DataGridViewRow()
-        Dim RI As String
+                Dim fila As DataGridViewRow = New DataGridViewRow()
+                Dim RI As String
 
-        Try
+                Try
 
-            For Each fila In dtgvp.Rows
-                If fila.Cells("x").Value = True And fila.Cells("Plan").Value >= fila.Cells("TE").Value Then
-                    auto.Parameters.Clear()
-                    auto.Parameters.Add("@id", SqlDbType.Int).Value = (fila.Cells("Id_RhIncidenciasprincipal").Value)
-                    auto.Parameters.Add("@inci", SqlDbType.VarChar, 5).Value = (fila.Cells("INC").Value)
-                    auto.Parameters.Add("@te", SqlDbType.Float).Value = (fila.Cells("TE").Value)
-                    auto.Parameters.Add("@clave", SqlDbType.Int).Value = (fila.Cells("clave").Value)
-                    auto.Parameters.Add("@fecha", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
-
-
-
-                    auto.ExecuteNonQuery()
-
-                    RI = "¡Registro(s) Validados!"
-                    'Else
-                    '    RI = "¡Debe palomear mínimo una casilla para validar!"
-
-                End If
-
-            Next
-
-            MessageBox.Show(RI, "¡Aviso!")
-            cargagrid()
+                    For Each fila In dtgvp.Rows
+                        If fila.Cells("x").Value = True And fila.Cells("Plan").Value >= fila.Cells("TE").Value Then
+                            auto.Parameters.Clear()
+                            auto.Parameters.Add("@id", SqlDbType.Int).Value = (fila.Cells("Id_RhIncidenciasprincipal").Value)
+                            auto.Parameters.Add("@inci", SqlDbType.VarChar, 5).Value = (fila.Cells("INC").Value)
+                            auto.Parameters.Add("@te", SqlDbType.Float).Value = (fila.Cells("TE").Value)
+                            auto.Parameters.Add("@clave", SqlDbType.Int).Value = (fila.Cells("clave").Value)
+                            auto.Parameters.Add("@fecha", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
 
 
-        Catch ex As Exception
-            MessageBox.Show("Error al actualizar registro, consulte al administrador")
-            MessageBox.Show(ex.ToString)
-            Cn.Close()
-        Finally
-            Cn.Close()
-        End Try
+
+                            auto.ExecuteNonQuery()
+
+                            RI = "¡Registro(s) Validados!"
+                            'Else
+                            '    RI = "¡Debe palomear mínimo una casilla para validar!"
+
+                        End If
+
+                    Next
+
+                    MessageBox.Show(RI, "¡Aviso!")
+                    cargagrid()
+
+
+                Catch ex As Exception
+                    MessageBox.Show("Error al actualizar registro, consulte al administrador")
+                    MessageBox.Show(ex.ToString)
+                    cn.Close()
+                Finally
+                    cn.Close()
+                End Try
+            Else
+                MessageBox.Show("Acción no completada", "¡Aviso!")
+
+
+
+
+
+            cn.Close()
+        End If
+
+
     End Sub
 
     Sub autorizardomingo()
@@ -329,9 +353,9 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
             Else
                 autorizar()
             End If
-        ElseIf (Today.Date.DayOfWeek = 1) And Date.Now.ToString("HH:mm:ss") < "09:30:00" Then
-            MessageBox.Show("La validación es a partir de las 09:30 a.m.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        ElseIf (Today.Date.DayOfWeek = 1) And Date.Now.ToString("HH:mm:ss") > "09:30:00" Then
+        ElseIf (Today.Date.DayOfWeek = 1) And Date.Now.ToString("HH:mm:ss") < "10:30:00" Then
+            MessageBox.Show("La validación es a partir de las 10:30 a.m.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf (Today.Date.DayOfWeek = 1) And Date.Now.ToString("HH:mm:ss") > "10:30:00" Then
             If dtp1.Value.DayOfWeek = 0 Then
                 autorizardomingo()
             Else
@@ -339,6 +363,8 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
             End If
         End If
     End Sub
+
+
 
     Private Sub btn_desma_Click(sender As Object, e As EventArgs) Handles btn_desma.Click
         For Each fila As DataGridViewRow In dtgvp.Rows

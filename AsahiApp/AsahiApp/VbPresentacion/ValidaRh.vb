@@ -7,6 +7,7 @@ Public Class ValidaRh
 
 
     Private Sub ValidaRh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim conexion As New conexion()
         If Strings.Left(conexion.getIp(), 6) = "172.16" Then
             Me.cadenaConex = conexion.cadenaConex
@@ -18,6 +19,7 @@ Public Class ValidaRh
             Me.cadenaCExpress = conexion.cadenaConexExpressFor
         End If
         llenacombodepto()
+
     End Sub
 
 
@@ -45,16 +47,22 @@ Public Class ValidaRh
         parametro1 = cbx_depto.Text
 
         With Cmd
+
             .CommandType = CommandType.Text
             .CommandText = "	
 Select distinct descripcion_depto from  giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig
 where vigencia = 'VIGENTE'
 "
-            .Connection = Cn
+            .Connection = cn
+
         End With
+
         Da.SelectCommand = Cmd
+
         Dt = New DataTable
+
         Da.Fill(Dt)
+
         With cbx_depto
             .DataSource = Dt
             .DisplayMember = "descripcion_depto"
@@ -80,8 +88,11 @@ where vigencia = 'VIGENTE'
 
 
         Dim dt As New DataTable
+
         da.Fill(dt)
+
         dtgvp.DataSource = dt
+
         dtgvp.Columns("Id_RhIncidenciasprincipal").Visible = False
         dtgvp.Columns("ValSuper").Visible = False
         dtgvp.Columns("ValRh").Visible = False
@@ -100,8 +111,9 @@ where vigencia = 'VIGENTE'
             ElseIf row.Cells(“excedido”).Value = 1 Then
                 row.DefaultCellStyle.BackColor = Color.LightCoral
             End If
-
         Next
+
+
     End Sub
 
     Private Sub dtp1_ValueChanged(sender As Object, e As EventArgs) Handles dtp1.ValueChanged
@@ -151,9 +163,12 @@ where vigencia = 'VIGENTE'
         Finally
             Cn.Close()
         End Try
+
     End Sub
 
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
         cargaIncidenciaGiro()
     End Sub
+
+
 End Class
