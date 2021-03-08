@@ -84,6 +84,7 @@ Public Class x
    when Incidencia = '8' and retardo = 0 and Motivo not in (9) then 'IMSS Trámites'
    when Incidencia = '9' and retardo = 0 and Motivo not in (9) then 'Asunto escolar'
    when Incidencia = 'A' and retardo = 0 and Motivo not in (9) then 'Abandono de trabajo'
+  when Incidencia = 'Z' and retardo = 0 and Motivo in (1) then 'Defunción'
    when Incidencia = 'B' and retardo = 0 and Motivo not in (9) then 'Prestación por matrimonio'
    when Incidencia = 'C' and retardo = 0 and Motivo not in (9) then 'Cita IMSS'
    when Incidencia = 'D' and retardo = 0 and Motivo not in (9) then 'Empleado vulnerable'
