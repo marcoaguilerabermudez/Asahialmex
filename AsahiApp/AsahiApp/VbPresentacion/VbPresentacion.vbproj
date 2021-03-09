@@ -218,6 +218,12 @@
     <Compile Include="ContenedorReporteIndirecto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReporteKardexIncidencias.Designer.vb">
+      <DependentUpon>ContenedorReporteKardexIncidencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteKardexIncidencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteNuevoPuesto.Designer.vb">
       <DependentUpon>ContenedorReporteNuevoPuesto.vb</DependentUpon>
     </Compile>
@@ -263,6 +269,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet11.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -482,6 +493,12 @@
       <DependentUpon>Frm_Subsidiaria.vb</DependentUpon>
     </Compile>
     <Compile Include="Finanzas\Frm_Subsidiaria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KardexEmpleado.Designer.vb">
+      <DependentUpon>KardexEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KardexEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MuestradatosOEE.Designer.vb">
@@ -705,6 +722,9 @@
     <EmbeddedResource Include="ContenedorReporteIndirecto.resx">
       <DependentUpon>ContenedorReporteIndirecto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteKardexIncidencias.resx">
+      <DependentUpon>ContenedorReporteKardexIncidencias.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteNuevoPuesto.resx">
       <DependentUpon>ContenedorReporteNuevoPuesto.vb</DependentUpon>
     </EmbeddedResource>
@@ -786,6 +806,9 @@
     <EmbeddedResource Include="ImprimirAnteriores.resx">
       <DependentUpon>ImprimirAnteriores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KardexEmpleado.resx">
+      <DependentUpon>KardexEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MuestradatosOEE.resx">
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>
     </EmbeddedResource>
@@ -804,6 +827,7 @@
     <EmbeddedResource Include="ReporteEvaluacionSin1.rdlc" />
     <EmbeddedResource Include="ReporteExcedidoTE.rdlc" />
     <EmbeddedResource Include="ReporteFaltaJusInj.rdlc" />
+    <EmbeddedResource Include="ReporteKardexIncidencias.rdlc" />
     <EmbeddedResource Include="ReporteNuevoDepto.rdlc" />
     <EmbeddedResource Include="ReportePermisoCSGoce.rdlc" />
     <EmbeddedResource Include="ReportePuestoDepartamento.rdlc" />
@@ -915,6 +939,17 @@
     </None>
     <None Include="DataSet10.xss">
       <DependentUpon>DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet11.xsc">
+      <DependentUpon>DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet11.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet11.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet11.xss">
+      <DependentUpon>DataSet11.xsd</DependentUpon>
     </None>
     <None Include="DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>
