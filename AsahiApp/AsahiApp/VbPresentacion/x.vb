@@ -56,8 +56,6 @@ Public Class FormatoSM
 
     Sub llenacombomotivo()
 
-
-
         Dim Dt As DataTable
 
         Dim Da As New SqlDataAdapter
@@ -332,10 +330,7 @@ SELECT  [Id_motivopermiso]
                 lbl_npuesto.Visible = False
                 cbx_puesto.Visible = False
 
-
-
             End If
-
         Catch
         End Try
     End Sub
@@ -590,6 +585,32 @@ SELECT  [Id_motivopermiso]
                 cbx_puesto.Visible = False
 
 
+            ElseIf cbx_tipo.Text = "Entrada o salida en tiempo extra" Then
+                Check_entrada.Visible = True
+                Check_salida.Visible = True
+                'rbt_nocturno.Visible = False
+                Label6.Visible = False
+                dtp2.Visible = False
+                desde_h.Visible = True
+                hasta_h.Visible = False
+                Label9.Visible = True
+                Label8.Visible = False
+                dtp_checada.Visible = False
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = False
+                gbx_tipo.Visible = False
+                'rbt_nocturno.Visible = False
+                vpermiso = 10
+                dtgvp.Visible = True
+                gbx_vacaciones.Visible = False
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
+
+
+
             End If
 
 
@@ -647,11 +668,7 @@ SELECT  [Id_motivopermiso]
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
 
-
         End Try
-
-
-
     End Sub
 
 
@@ -822,6 +839,13 @@ SELECT  [Id_motivopermiso]
             ContenedorReporteSuspension.motivo = 0
             ContenedorReporteSuspension.retardo = 0
             ContenedorReporteSuspension.Show()
+
+        ElseIf vpermiso = 10 Then
+            ContenedorReporteEntradaSalidaTE.id = y
+            ContenedorReporteEntradaSalidaTE.Tipo = 0
+            ContenedorReporteEntradaSalidaTE.motivo = 0
+            ContenedorReporteEntradaSalidaTE.retardo = 0
+            ContenedorReporteEntradaSalidaTE.Show()
 
         End If
 

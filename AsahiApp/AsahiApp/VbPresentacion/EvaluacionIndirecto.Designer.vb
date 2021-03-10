@@ -22,7 +22,6 @@ Partial Class EvaluacionIndirecto
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EvaluacionIndirecto))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -31,6 +30,7 @@ Partial Class EvaluacionIndirecto
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EvaluacionIndirecto))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lbl_evaluacion = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -82,7 +82,6 @@ Partial Class EvaluacionIndirecto
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lbl_u = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.pbx = New System.Windows.Forms.PictureBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.lbl_puntajm2 = New System.Windows.Forms.Label()
@@ -90,7 +89,6 @@ Partial Class EvaluacionIndirecto
         Me.lbl_puntajetotal2 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.pbx_eva = New System.Windows.Forms.PictureBox()
         Me.lbl_puntajm = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txt_observaciones = New System.Windows.Forms.TextBox()
@@ -129,12 +127,12 @@ Partial Class EvaluacionIndirecto
         Me.Label35 = New System.Windows.Forms.Label()
         Me.btn_evaluar3 = New System.Windows.Forms.Button()
         Me.dtgvtest = New System.Windows.Forms.DataGridView()
+        Me.pbx_eva = New System.Windows.Forms.PictureBox()
+        Me.pbx = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.gpx_incidencias.SuspendLayout()
-        CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.pbx_eva, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.gbx_indicadores.SuspendLayout()
@@ -143,6 +141,8 @@ Partial Class EvaluacionIndirecto
         Me.gbx_objetivos.SuspendLayout()
         CType(Me.dtgvobj, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgvtest, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx_eva, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -778,15 +778,6 @@ Partial Class EvaluacionIndirecto
         Me.Label3.TabIndex = 189
         Me.Label3.Text = "Falta Justificada"
         '
-        'pbx
-        '
-        Me.pbx.ErrorImage = CType(resources.GetObject("pbx.ErrorImage"), System.Drawing.Image)
-        Me.pbx.Location = New System.Drawing.Point(1138, 10)
-        Me.pbx.Name = "pbx"
-        Me.pbx.Size = New System.Drawing.Size(132, 138)
-        Me.pbx.TabIndex = 194
-        Me.pbx.TabStop = False
-        '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
@@ -879,15 +870,6 @@ Partial Class EvaluacionIndirecto
         Me.Label1.Size = New System.Drawing.Size(91, 13)
         Me.Label1.TabIndex = 262
         Me.Label1.Text = "Observaciones"
-        '
-        'pbx_eva
-        '
-        Me.pbx_eva.ErrorImage = CType(resources.GetObject("pbx_eva.ErrorImage"), System.Drawing.Image)
-        Me.pbx_eva.Location = New System.Drawing.Point(573, 3)
-        Me.pbx_eva.Name = "pbx_eva"
-        Me.pbx_eva.Size = New System.Drawing.Size(670, 338)
-        Me.pbx_eva.TabIndex = 261
-        Me.pbx_eva.TabStop = False
         '
         'lbl_puntajm
         '
@@ -1435,6 +1417,24 @@ Partial Class EvaluacionIndirecto
         Me.dtgvtest.Size = New System.Drawing.Size(408, 332)
         Me.dtgvtest.TabIndex = 255
         '
+        'pbx_eva
+        '
+        Me.pbx_eva.ErrorImage = CType(resources.GetObject("pbx_eva.ErrorImage"), System.Drawing.Image)
+        Me.pbx_eva.Location = New System.Drawing.Point(573, 3)
+        Me.pbx_eva.Name = "pbx_eva"
+        Me.pbx_eva.Size = New System.Drawing.Size(670, 338)
+        Me.pbx_eva.TabIndex = 261
+        Me.pbx_eva.TabStop = False
+        '
+        'pbx
+        '
+        Me.pbx.ErrorImage = CType(resources.GetObject("pbx.ErrorImage"), System.Drawing.Image)
+        Me.pbx.Location = New System.Drawing.Point(1138, 10)
+        Me.pbx.Name = "pbx"
+        Me.pbx.Size = New System.Drawing.Size(132, 138)
+        Me.pbx.TabIndex = 194
+        Me.pbx.TabStop = False
+        '
         'EvaluacionIndirecto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1452,11 +1452,9 @@ Partial Class EvaluacionIndirecto
         Me.Panel1.PerformLayout()
         Me.gpx_incidencias.ResumeLayout(False)
         Me.gpx_incidencias.PerformLayout()
-        CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.pbx_eva, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
@@ -1469,6 +1467,8 @@ Partial Class EvaluacionIndirecto
         Me.gbx_objetivos.PerformLayout()
         CType(Me.dtgvobj, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgvtest, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx_eva, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
