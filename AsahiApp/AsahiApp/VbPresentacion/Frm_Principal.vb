@@ -525,6 +525,10 @@ Public Class Frm_Principal
         Salir()
     End Sub
 
+    Private Sub KárdexDeEmpleadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KárdexDeEmpleadoToolStripMenuItem.Click
+        KardexEmpleado.Show()
+    End Sub
+
 
 #End Region
 End Class

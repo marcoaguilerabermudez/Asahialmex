@@ -2,7 +2,10 @@
 
 Public Class SolicitudTE
 
-    Dim Cnn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
+    Public cadenaConex As String
+    Public cadenaCExpress As String
+    Public cnn As SqlConnection
+
 
     Dim id As Integer
     Dim permiso As Integer
@@ -23,6 +26,18 @@ Public Class SolicitudTE
 
 
     Private Sub SolicitudTE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim conexion As New conexion()
+        If Strings.Left(conexion.getIp(), 6) = "172.16" Then
+            Me.cadenaConex = conexion.cadenaConex
+            Me.cnn = conexion.cadenaConexExpress1
+            Me.cadenaCExpress = conexion.cadenaConexExpress
+        Else
+            Me.cadenaConex = conexion.cadenaConexFor
+            Me.cnn = conexion.conexionExpressFor
+            Me.cadenaCExpress = conexion.cadenaConexExpressFor
+        End If
+
         If permiso = 2 OrElse permiso = 3 Then
             Btn_autorizar.Visible = True
         Else

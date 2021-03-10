@@ -1176,3 +1176,6 @@ C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentac
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ContenedorReporteBajasMes.resources
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_Bajas_mes.resources
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ContenedorReporteIndirecto.resources
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.KardexEmpleado.resources
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ContenedorReporteKardexIncidencias.resources
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ContenedorReporteEntradaSalidaTE.resources
