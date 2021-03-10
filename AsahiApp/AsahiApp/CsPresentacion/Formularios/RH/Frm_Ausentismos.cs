@@ -2021,10 +2021,10 @@ namespace CsPresentacion
         }
         private void calcula_prima()
         {
-                Duracion = double.Parse(lbl_x_pagar.Text);
-                Prima = double.Parse("0.25");
-                Resultado = Duracion * Prima;
-               // lbl_prima.Text = Resultado.ToString();
+               // Duracion = double.Parse(lbl_x_pagar.Text);
+               // Prima = double.Parse("0.25");
+               // Resultado = Duracion * Prima;
+               //// lbl_prima.Text = Resultado.ToString();
         }
         private void Diseño_Grid_Vacaciones(DataGridView dgv)
         {

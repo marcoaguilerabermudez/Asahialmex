@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace CsPresentacion
 {
     public partial class Frm_Fecha_Baja : Form
@@ -10,9 +11,14 @@ namespace CsPresentacion
         public Frm_Fecha_Baja()
         {
             InitializeComponent();
+
         }
 
+     
+
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
+
+
 
         private void Frm_Fecha_Baja_Load(object sender, EventArgs e)
         {
@@ -110,6 +116,10 @@ namespace CsPresentacion
             else if (cmb_motivo.Text == "PENSION")
             {
                 lbl_motivo.Text = "10";
+            }
+            else if (cmb_motivo.Text == "ANTIDOPING")
+            {
+                lbl_motivo.Text = "11";
             }
         }
 
