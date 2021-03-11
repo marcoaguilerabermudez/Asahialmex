@@ -61,7 +61,6 @@ Partial Class Frm_Principal
         Me.BajaEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaEmpleadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.HistóricoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RotaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AusentismoGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajasPorMesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlanHorasExtraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -328,7 +327,7 @@ Partial Class Frm_Principal
         '
         'ListadosToolStripMenuItem
         '
-        Me.ListadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActivosToolStripMenuItem, Me.BajaEmpleadosToolStripMenuItem, Me.BajaEmpleadosToolStripMenuItem1, Me.HistóricoToolStripMenuItem, Me.RotaciónToolStripMenuItem, Me.AusentismoGeneralToolStripMenuItem, Me.BajasPorMesToolStripMenuItem})
+        Me.ListadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActivosToolStripMenuItem, Me.BajaEmpleadosToolStripMenuItem, Me.BajaEmpleadosToolStripMenuItem1, Me.HistóricoToolStripMenuItem, Me.AusentismoGeneralToolStripMenuItem, Me.BajasPorMesToolStripMenuItem})
         Me.ListadosToolStripMenuItem.Name = "ListadosToolStripMenuItem"
         Me.ListadosToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.ListadosToolStripMenuItem.Text = "Listados"
@@ -356,12 +355,6 @@ Partial Class Frm_Principal
         Me.HistóricoToolStripMenuItem.Name = "HistóricoToolStripMenuItem"
         Me.HistóricoToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
         Me.HistóricoToolStripMenuItem.Text = "Histórico Departamento"
-        '
-        'RotaciónToolStripMenuItem
-        '
-        Me.RotaciónToolStripMenuItem.Name = "RotaciónToolStripMenuItem"
-        Me.RotaciónToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
-        Me.RotaciónToolStripMenuItem.Text = "Rotación"
         '
         'AusentismoGeneralToolStripMenuItem
         '
@@ -765,7 +758,6 @@ Partial Class Frm_Principal
     Friend WithEvents BajaEmpleadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BajaEmpleadosToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents HistóricoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RotaciónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PermisosYAutorizacionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Incapacidades_RetardosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AusentismosGlobalToolStripMenuItem As ToolStripMenuItem
