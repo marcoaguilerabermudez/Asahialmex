@@ -2019,6 +2019,8 @@ namespace CsPresentacion
             }
             con2.Close();
         }
+
+
         private void calcula_prima()
         {
                // Duracion = double.Parse(lbl_x_pagar.Text);
@@ -2026,6 +2028,8 @@ namespace CsPresentacion
                // Resultado = Duracion * Prima;
                //// lbl_prima.Text = Resultado.ToString();
         }
+
+
         private void Diseño_Grid_Vacaciones(DataGridView dgv)
         {
             dgv.Columns[0].Width = 60;//Clave

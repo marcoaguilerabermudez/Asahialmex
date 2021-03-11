@@ -130,6 +130,15 @@ Public Class ImprimirAnteriores
             ContenedorReporteSuspension.motivo = 0
             ContenedorReporteSuspension.retardo = 0
             ContenedorReporteSuspension.Show()
+
+
+        ElseIf vpermiso = 10 Then
+            ContenedorReporteEntradaSalidaTE.id = folio
+            ContenedorReporteEntradaSalidaTE.Tipo = 0
+            ContenedorReporteEntradaSalidaTE.motivo = 0
+            ContenedorReporteEntradaSalidaTE.retardo = 0
+            ContenedorReporteEntradaSalidaTE.Show()
+
         End If
 
 

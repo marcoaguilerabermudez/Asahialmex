@@ -1,8 +1,12 @@
 Imports System.Data
 Imports System.Data.SqlClient
+Imports System.Net
 Imports System.Windows.Forms
 Imports Clases
 Imports Negocio
+Imports System.ComponentModel
+Imports System.Data.OleDb
+Imports System.IO
 
 Public Class Frm_Login
     Public cadenaConex As String
@@ -10,6 +14,7 @@ Public Class Frm_Login
     Public cadConex As SqlConnection
     Dim count As Integer = 0
     Public uss As String
+
 
     ' TODO: inserte el código para realizar autenticación personalizada usando el nombre de usuario y la contraseña proporcionada 
     ' (Consulte https://go.microsoft.com/fwlink/?LinkId=35339).  
@@ -30,6 +35,8 @@ Public Class Frm_Login
             Me.cadenaCExpress = conexion.cadenaConexExpressFor
         End If
     End Sub
+
+
     Private Sub BtnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Aceptar.Click
         Dim NEmple As New NEmpleado()
         Dim emp As New Empleado()
@@ -73,4 +80,9 @@ Public Class Frm_Login
     Private Sub Btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
         Me.Close()
     End Sub
+
+
+
+
+
 End Class

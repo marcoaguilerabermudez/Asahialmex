@@ -506,7 +506,7 @@ Public Class Frm_Principal
         '    Principaleva.Show()
 
 
-        Dim EligeEva As New EligeEvaluación(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        Dim EligeEva As New EligeEvaluación(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.Id_puesto)
         EligeEva.Show()
 
     End Sub
@@ -523,6 +523,10 @@ Public Class Frm_Principal
 
     Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyClass.FormClosing
         Salir()
+    End Sub
+
+    Private Sub KárdexDeEmpleadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KárdexDeEmpleadoToolStripMenuItem.Click
+        KardexEmpleado.Show()
     End Sub
 
 

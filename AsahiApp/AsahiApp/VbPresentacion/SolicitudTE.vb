@@ -2,7 +2,10 @@
 
 Public Class SolicitudTE
 
-    Dim Cnn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
+    Public cadenaConex As String
+    Public cadenaCExpress As String
+    Public cnn As SqlConnection
+
 
     Dim id As Integer
     Dim permiso As Integer
@@ -23,6 +26,18 @@ Public Class SolicitudTE
 
 
     Private Sub SolicitudTE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim conexion As New conexion()
+        If Strings.Left(conexion.getIp(), 6) = "172.16" Then
+            Me.cadenaConex = conexion.cadenaConex
+            Me.cnn = conexion.cadenaConexExpress1
+            Me.cadenaCExpress = conexion.cadenaConexExpress
+        Else
+            Me.cadenaConex = conexion.cadenaConexFor
+            Me.cnn = conexion.conexionExpressFor
+            Me.cadenaCExpress = conexion.cadenaConexExpressFor
+        End If
+
         If permiso = 2 OrElse permiso = 3 Then
             Btn_autorizar.Visible = True
         Else
@@ -430,7 +445,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
         Cnn.Close()
         Cnn.Open()
         Dim auto As SqlCommand = New SqlCommand("update [AsahiSystem].[dbo].[Rh_solicitudTE] set estado = 2, timestampval = getdate()
- where Id_solicitudte = @ID
+ where Id_solicitudte = @ID and estado = 0
 
 delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where grupo = 0 and clave = @clave and fecha = @fecha
 
@@ -526,6 +541,7 @@ end
 
         Cnn.Close()
         Cnn.Open()
+
         Dim eliminar As SqlCommand = New SqlCommand("delete from [AsahiSystem].[dbo].[Rh_solicitudTE]
  where Id_solicitudte = @ID
 
