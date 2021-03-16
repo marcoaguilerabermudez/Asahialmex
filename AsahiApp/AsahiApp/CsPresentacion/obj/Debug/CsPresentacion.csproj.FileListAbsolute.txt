@@ -1150,3 +1150,12 @@ C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPres
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csproj.CopyComplete
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.dll
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.pdb
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\CsClases.dll.config
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\CsDatos.dll.config
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\CsNegocio.dll.config
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\Clases.dll.config
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\Datos.dll.config
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\Negocio.dll.config
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\RdlCompile.cache
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\RdlCompile.compiled

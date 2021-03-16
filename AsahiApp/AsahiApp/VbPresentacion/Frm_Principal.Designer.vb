@@ -83,6 +83,7 @@ Partial Class Frm_Principal
         Me.ValidaciónRHToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EvaluacionesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDePruducciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDeProducciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CapturaOEEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -148,7 +149,7 @@ Partial Class Frm_Principal
         '
         'RecursosHumanosToolStripMenuItem
         '
-        Me.RecursosHumanosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem, Me.EmpleadosToolStripMenuItem, Me.PlanHorasExtraToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.PlanDePersonalToolStripMenuItem, Me.IncidenciasToolStripMenuItem, Me.FormatoDeServiciosMúltiplesToolStripMenuItem, Me.EvaluacionesToolStripMenuItem1})
+        Me.RecursosHumanosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem, Me.EmpleadosToolStripMenuItem, Me.PlanHorasExtraToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.PlanDePersonalToolStripMenuItem, Me.IncidenciasToolStripMenuItem, Me.FormatoDeServiciosMúltiplesToolStripMenuItem, Me.EvaluacionesToolStripMenuItem1, Me.DpToolStripMenuItem})
         Me.RecursosHumanosToolStripMenuItem.Name = "RecursosHumanosToolStripMenuItem"
         Me.RecursosHumanosToolStripMenuItem.Size = New System.Drawing.Size(121, 26)
         Me.RecursosHumanosToolStripMenuItem.Text = "Recursos Humanos"
@@ -499,6 +500,12 @@ Partial Class Frm_Principal
         Me.PrincipalToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
         Me.PrincipalToolStripMenuItem.Text = "Principal"
         '
+        'DpToolStripMenuItem
+        '
+        Me.DpToolStripMenuItem.Name = "DpToolStripMenuItem"
+        Me.DpToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.DpToolStripMenuItem.Text = "Descripción de Puestos"
+        '
         'ControlDePruducciónToolStripMenuItem
         '
         Me.ControlDePruducciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ControlDeProducciónToolStripMenuItem})
@@ -790,4 +797,5 @@ Partial Class Frm_Principal
     Friend WithEvents Lbl_Version As Label
     Friend WithEvents BajasPorMesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents KárdexDeEmpleadoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DpToolStripMenuItem As ToolStripMenuItem
 End Class
