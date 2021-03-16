@@ -61,3 +61,4 @@ C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDato
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.csproj.CopyComplete
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.dll
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\obj\Debug\CsDatos.pdb
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsDatos\bin\Debug\CsClases.dll.config

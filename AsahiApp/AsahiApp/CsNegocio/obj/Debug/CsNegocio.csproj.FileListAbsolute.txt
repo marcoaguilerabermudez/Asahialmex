@@ -75,3 +75,5 @@ C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNego
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.pdb
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsClases.dll.config
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.dll.config
