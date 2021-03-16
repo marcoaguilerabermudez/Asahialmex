@@ -41,4 +41,20 @@ Public Class NEmpleado
         Dim DEmp As New DEmpleado()
         Return DEmp.RevisarRangoPermisos(cadenaConex, idEmp, nModulo)
     End Function
+    Public Function RecuperarPuestos(ByVal cadenaConex As String) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RecuperarPuestos(cadenaConex)
+    End Function
+    Public Function RecuperarPuestosRelaciones(ByVal cadenaConex As String) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RecuperarPuestosRelaciones(cadenaConex)
+    End Function
+    Public Function RecuperarDepto(ByVal cadenaConex As String) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RecuperarDepto(cadenaConex)
+    End Function
+    Public Function RecuperarArea(ByVal cadenaConex As String) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RecuperarArea(cadenaConex)
+    End Function
 End Class

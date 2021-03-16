@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,6 +14,8 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>V:\Sistemas\SAAM\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>271</ApplicationRevision>
+    <ApplicationRevision>273</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -75,10 +78,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>6C9B6D3F776FEAF331839D3921C85F984AD4F6A1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CE24D9C0A2D81B74362EEE9E0694EBAF5CAE2373</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_15_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_16_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -94,18 +97,30 @@
     <Reference Include="AlanJuden.MvcReportViewer.NetCore, Version=1.0.0.10, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AlanJuden.MvcReportViewer.NetCore.1.0.10\lib\netstandard1.6\AlanJuden.MvcReportViewer.NetCore.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
@@ -113,6 +128,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -392,6 +408,50 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DtstReporteTest.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RH\DataSet\Dts_DpAutoridad_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpAutoridad_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpAutoridad_Rpt.vb">
+      <DependentUpon>Dts_DpAutoridad_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpCompetencias_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpCompetencias_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpEstudios_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpEstudios_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpEstudios_Rpt.vb">
+      <DependentUpon>Dts_DpEstudios_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpExpLab_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpExpLab_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpIdiomas_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpIdiomas_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpIndicadores_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpIndicadores_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpIndicadores_Rpt.vb">
+      <DependentUpon>Dts_DpIndicadores_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DPInfoGrl_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DPInfoGrl_Rpt.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EligeEvaluación.Designer.vb">
       <DependentUpon>EligeEvaluación.vb</DependentUpon>
     </Compile>
@@ -542,6 +602,27 @@
     <Compile Include="ReporteTest.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RH\DataSet\Dts_DpRelPuestExt_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpRelPuestExt_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpRelPuestInt_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpRelPuestInt_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpReponsabilidades_Rpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dts_DpReponsabilidades_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_DescripcionPuestos.Designer.vb">
+      <DependentUpon>Frm_DescripcionPuestos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_DescripcionPuestos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </Compile>
@@ -617,40 +698,46 @@
     <Compile Include="RH\Frm_ListaPrenomina.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_ReporteBono.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReporteBono.Designer.vb">
       <DependentUpon>Frm_ReporteBono.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_ReporteBono.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReporteBono.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_ReportePrenominaGlobal.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReporteDP.Designer.vb">
+      <DependentUpon>Frm_ReporteDP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\FrmReportes\Frm_ReporteDP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RH\FrmReportes\Frm_ReportePrenominaGlobal.Designer.vb">
       <DependentUpon>Frm_ReportePrenominaGlobal.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_ReportePrenominaGlobal.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportePrenominaGlobal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_ReportePrenominaLista.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportePrenominaLista.Designer.vb">
       <DependentUpon>Frm_ReportePrenominaLista.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_ReportePrenominaLista.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportePrenominaLista.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_ReportesPlanHorasExtra.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportesPlanHorasExtra.Designer.vb">
       <DependentUpon>Frm_ReportesPlanHorasExtra.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_ReportesPlanHorasExtra.vb">
+    <Compile Include="RH\FrmReportes\Frm_ReportesPlanHorasExtra.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_RepPlanHrsExtra4.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_RepPlanHrsExtra4.Designer.vb">
       <DependentUpon>Frm_RepPlanHrsExtra4.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_RepPlanHrsExtra4.vb">
+    <Compile Include="RH\FrmReportes\Frm_RepPlanHrsExtra4.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RH\Frm_RepPlanHrsExtra5.Designer.vb">
+    <Compile Include="RH\FrmReportes\Frm_RepPlanHrsExtra5.Designer.vb">
       <DependentUpon>Frm_RepPlanHrsExtra5.vb</DependentUpon>
     </Compile>
-    <Compile Include="RH\Frm_RepPlanHrsExtra5.vb">
+    <Compile Include="RH\FrmReportes\Frm_RepPlanHrsExtra5.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SolicitudTE.Designer.vb">
@@ -857,6 +944,9 @@
       <DependentUpon>ReporteTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteVacionesRH.rdlc" />
+    <EmbeddedResource Include="RH\Frm_DescripcionPuestos.resx">
+      <DependentUpon>Frm_DescripcionPuestos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportE_bajas_mes.rdlc" />
     <EmbeddedResource Include="RH\Frm_PlanHorasExtra.resx">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
@@ -893,24 +983,28 @@
     <EmbeddedResource Include="RH\Frm_ListaPrenomina.resx">
       <DependentUpon>Frm_ListaPrenomina.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_ReporteBono.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_ReporteBono.resx">
       <DependentUpon>Frm_ReporteBono.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_ReportePrenominaGlobal.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_ReporteDP.resx">
+      <DependentUpon>Frm_ReporteDP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RH\FrmReportes\Frm_ReportePrenominaGlobal.resx">
       <DependentUpon>Frm_ReportePrenominaGlobal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_ReportePrenominaLista.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_ReportePrenominaLista.resx">
       <DependentUpon>Frm_ReportePrenominaLista.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_ReportesPlanHorasExtra.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_ReportesPlanHorasExtra.resx">
       <DependentUpon>Frm_ReportesPlanHorasExtra.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_RepPlanHrsExtra4.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_RepPlanHrsExtra4.resx">
       <DependentUpon>Frm_RepPlanHrsExtra4.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RH\Frm_RepPlanHrsExtra5.resx">
+    <EmbeddedResource Include="RH\FrmReportes\Frm_RepPlanHrsExtra5.resx">
       <DependentUpon>Frm_RepPlanHrsExtra5.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RH\Reports\Rpt_DescripcionPuestos.rdlc" />
     <EmbeddedResource Include="SolicitudTE.resx">
       <DependentUpon>SolicitudTE.vb</DependentUpon>
     </EmbeddedResource>
@@ -1164,6 +1258,83 @@
     <None Include="DtstReporteTest.xss">
       <DependentUpon>DtstReporteTest.xsd</DependentUpon>
     </None>
+    <None Include="RH\DataSet\Dts_DpAutoridad_Rpt.xsc">
+      <DependentUpon>Dts_DpAutoridad_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpAutoridad_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpAutoridad_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpAutoridad_Rpt.xss">
+      <DependentUpon>Dts_DpAutoridad_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpCompetencias_Rpt.xsc">
+      <DependentUpon>Dts_DpCompetencias_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpCompetencias_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpCompetencias_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpCompetencias_Rpt.xss">
+      <DependentUpon>Dts_DpCompetencias_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpEstudios_Rpt.xsc">
+      <DependentUpon>Dts_DpEstudios_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpEstudios_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpEstudios_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpEstudios_Rpt.xss">
+      <DependentUpon>Dts_DpEstudios_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpExpLab_Rpt.xsc">
+      <DependentUpon>Dts_DpExpLab_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpExpLab_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpExpLab_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpExpLab_Rpt.xss">
+      <DependentUpon>Dts_DpExpLab_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIdiomas_Rpt.xsc">
+      <DependentUpon>Dts_DpIdiomas_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIdiomas_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpIdiomas_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIdiomas_Rpt.xss">
+      <DependentUpon>Dts_DpIdiomas_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIndicadores_Rpt.xsc">
+      <DependentUpon>Dts_DpIndicadores_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIndicadores_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpIndicadores_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpIndicadores_Rpt.xss">
+      <DependentUpon>Dts_DpIndicadores_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DPInfoGrl_Rpt.xsc">
+      <DependentUpon>Dts_DPInfoGrl_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DPInfoGrl_Rpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DPInfoGrl_Rpt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RH\DataSet\Dts_DPInfoGrl_Rpt.xss">
+      <DependentUpon>Dts_DPInfoGrl_Rpt.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -1185,12 +1356,46 @@
     <None Include="Reportes\dtsEjemplo.xss">
       <DependentUpon>dtsEjemplo.xsd</DependentUpon>
     </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestExt_Rpt.xsc">
+      <DependentUpon>Dts_DpRelPuestExt_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestExt_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpRelPuestExt_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestExt_Rpt.xss">
+      <DependentUpon>Dts_DpRelPuestExt_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestInt_Rpt.xsc">
+      <DependentUpon>Dts_DpRelPuestInt_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestInt_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpRelPuestInt_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpRelPuestInt_Rpt.xss">
+      <DependentUpon>Dts_DpRelPuestInt_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpReponsabilidades_Rpt.xsc">
+      <DependentUpon>Dts_DpReponsabilidades_Rpt.xsd</DependentUpon>
+    </None>
+    <None Include="RH\DataSet\Dts_DpReponsabilidades_Rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dts_DpReponsabilidades_Rpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RH\DataSet\Dts_DpReponsabilidades_Rpt.xss">
+      <DependentUpon>Dts_DpReponsabilidades_Rpt.xsd</DependentUpon>
+    </None>
     <None Include="VbPresentacion_10_TemporaryKey.pfx" />
     <None Include="VbPresentacion_11_TemporaryKey.pfx" />
     <None Include="VbPresentacion_12_TemporaryKey.pfx" />
     <None Include="VbPresentacion_13_TemporaryKey.pfx" />
     <None Include="VbPresentacion_14_TemporaryKey.pfx" />
     <None Include="VbPresentacion_15_TemporaryKey.pfx" />
+    <None Include="VbPresentacion_16_TemporaryKey.pfx" />
     <None Include="VbPresentacion_1_TemporaryKey.pfx" />
     <None Include="VbPresentacion_2_TemporaryKey.pfx" />
     <None Include="VbPresentacion_3_TemporaryKey.pfx" />
@@ -1318,6 +1523,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxRDPCOMAPILib">
+      <Guid>{CC802D05-AE07-4C15-B496-DB9D22AA0A84}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
@@ -1345,6 +1558,15 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="RDPCOMAPILib">
+      <Guid>{CC802D05-AE07-4C15-B496-DB9D22AA0A84}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>5</VersionMajor>
@@ -1359,4 +1581,12 @@
     <Folder Include="System\Management\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>
