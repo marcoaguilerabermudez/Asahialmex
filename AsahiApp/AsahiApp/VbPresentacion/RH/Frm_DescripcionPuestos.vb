@@ -814,6 +814,7 @@ Public Class Frm_DescripcionPuestos
             Dim obj As New Puestos()
             obj.IdDP = Me.idDp
             obj.IdIdioma = 3
+            obj.IdRelacionIdioma = Chk_Ingles.Tag
             If Rdb_NivelIntIng.Checked = True Then obj.Nivel = 1
             If Rdb_NivelAvIng.Checked = True Then obj.Nivel = 2
             lstPues.Add(obj)
@@ -823,6 +824,7 @@ Public Class Frm_DescripcionPuestos
             Dim obj As New Puestos()
             obj.IdDP = Me.idDp
             obj.IdIdioma = 2
+            obj.IdRelacionIdioma = Chk_Japo.Tag
             If Rdb_NivelIntJap.Checked = True Then obj.Nivel = 1
             If Rdb_NivelAvJap.Checked = True Then obj.Nivel = 2
             lstPues.Add(obj)
