@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace CsPresentacion
 {
     public partial class Frm_bajas : Form
@@ -30,6 +31,8 @@ namespace CsPresentacion
         }
 
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
+       
+      //  SqlConnection con = new SqlConnection("Data Source=148.244.76.149,64330\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
 
 
         private void cargar_informacion()

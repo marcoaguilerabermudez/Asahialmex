@@ -10,12 +10,15 @@ Public Class conexion
     Public conexion As SqlConnection = New SqlConnection("Data Source=GIRO\SQLEX2014;Initial Catalog=SistemaAAM;Uid=sa; Pwd=Pa55word;")
     Public conexionContpaq As SqlConnection = New SqlConnection("Data Source=SERV-CONTA\SQLEX2014;Initial Catalog=ctAsahi_Aluminium;Uid=sa; Pwd=Me*1can;")
     Public cadenaConexExpress As String = "Data Source=GIRO\SQLEXPRESS;Initial Catalog=AsahiSystem;Uid=sa; Pwd=Pa55word;"
+    Public cadenaConexExpress1 As SqlConnection = New SqlConnection("Data Source=GIRO\SQLEXPRESS;Initial Catalog=AsahiSystem;Uid=sa; Pwd=Pa55word;")
+
     Public cadenaConex As String = "Data Source=GIRO\SQLEX2014;Initial Catalog=SistemaAAM;Uid=sa; Pwd=Pa55word;"
     Public conexion2008 As String = "Data Source=GIRO\SQL2008;Initial Catalog=asahi16;Uid=sa; Pwd=Pa55word;"
     Public conexionCont As String = "Data Source=SERV-CONTA\SQLEX2014;Initial Catalog=ctAsahi_Aluminium;Uid=sa; Pwd=Me*1can;"
 
     Public conexionFor As SqlConnection = New SqlConnection("Data Source=148.244.76.149,64332\SQLEX2014;Initial Catalog=SistemaAAM;Uid=sa; Pwd=Pa55word;")
     Public conexionContpaqFor As SqlConnection = New SqlConnection("Data Source=148.244.76.149,65332\SQLEX2014;Initial Catalog=ctAsahi_Aluminium;Uid=sa; Pwd=Me*1can;")
+    Public conexionExpressFor As SqlConnection = New SqlConnection("Data Source=148.244.76.149,64333\SQLEXPRESS;Initial Catalog=AsahiSystem;Uid=sa; Pwd=Pa55word;")
     Public conexion2008For As String = "Data Source=148.244.76.149,64330\SQL2008;Initial Catalog=asahi16;Uid=sa; Pwd=Pa55word;"
     Public cadenaConexFor As String = "Data Source=148.244.76.149,64332\SQLEX2014;Initial Catalog=SistemaAAM;Uid=sa; Pwd=Pa55word;"
     Public cadenaConexExpressFor As String = "Data Source=148.244.76.149,64333\SQLEXPRESS;Initial Catalog=AsahiSystem;Uid=sa; Pwd=Pa55word" 'Usuario; Pwd=Rey_S01_*20;"

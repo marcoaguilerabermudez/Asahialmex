@@ -664,7 +664,7 @@ Partial Class FormatoSM
         Me.cbx_tipo.Enabled = False
         Me.cbx_tipo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipo.FormattingEnabled = True
-        Me.cbx_tipo.Items.AddRange(New Object() {"Permiso con goce de sueldo", "Permiso sin goce de sueldo", "Falta o retardo injustificado y sin goce de sueldo", "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)", "Vacaciones", "Registro en reloj checador", "Cambio de departamento", "Cambio de puesto", "Suspensión"})
+        Me.cbx_tipo.Items.AddRange(New Object() {"Permiso con goce de sueldo", "Permiso sin goce de sueldo", "Falta o retardo injustificado y sin goce de sueldo", "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)", "Vacaciones", "Registro en reloj checador", "Cambio de departamento", "Cambio de puesto", "Suspensión", "Entrada o salida en tiempo extra"})
         Me.cbx_tipo.Location = New System.Drawing.Point(101, 57)
         Me.cbx_tipo.Name = "cbx_tipo"
         Me.cbx_tipo.Size = New System.Drawing.Size(437, 21)

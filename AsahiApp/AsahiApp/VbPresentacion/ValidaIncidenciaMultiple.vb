@@ -1,7 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class x
-    Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
+    Public cadenaConex As String
+    Public cadenaCExpress As String
+    Public cn As SqlConnection
     Dim motivo As Integer
     Dim incidencia As String
     Dim retardo As Integer
@@ -82,7 +84,8 @@ Public Class x
    when Incidencia = '8' and retardo = 0 and Motivo not in (9) then 'IMSS Trámites'
    when Incidencia = '9' and retardo = 0 and Motivo not in (9) then 'Asunto escolar'
    when Incidencia = 'A' and retardo = 0 and Motivo not in (9) then 'Abandono de trabajo'
-   when Incidencia = 'B' and retardo = 0 and Motivo not in (9) then 'Prestación por matrimonio'
+   when Incidencia = 'Z' and retardo = 0 and Motivo in (1) then 'Defunción'
+    when Incidencia = 'B' and retardo = 0 and Motivo not in (9) then 'Prestación por matrimonio'
    when Incidencia = 'C' and retardo = 0 and Motivo not in (9) then 'Cita IMSS'
    when Incidencia = 'D' and retardo = 0 and Motivo not in (9) then 'Empleado vulnerable'
    when Incidencia = 'E' and retardo = 0 and Motivo not in (9) then 'Enfermedad'
@@ -826,4 +829,16 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
         gbx_inicidencia.Visible = False
     End Sub
 
+    Private Sub x_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim conexion As New conexion()
+        If Strings.Left(conexion.getIp(), 6) = "172.16" Then
+            Me.cadenaConex = conexion.cadenaConex
+            Me.cn = conexion.cadenaConexExpress1
+            Me.cadenaCExpress = conexion.cadenaConexExpress
+        Else
+            Me.cadenaConex = conexion.cadenaConexFor
+            Me.cn = conexion.conexionExpressFor
+            Me.cadenaCExpress = conexion.cadenaConexExpressFor
+        End If
+    End Sub
 End Class

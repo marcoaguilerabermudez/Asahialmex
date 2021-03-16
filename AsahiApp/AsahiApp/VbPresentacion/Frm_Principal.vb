@@ -371,7 +371,7 @@ Public Class Frm_Principal
         Dim H As New Frm_Historico()
         H.Show()
     End Sub
-    Private Sub RotaciónToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RotaciónToolStripMenuItem.Click
+    Private Sub RotaciónToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         'Módulo  de rotación
         Dim H As New Frm_Rotacion()
         H.Show()
@@ -524,5 +524,11 @@ Public Class Frm_Principal
         Dim frmDp As New Frm_DescripcionPuestos()
         frmDp.Show()
     End Sub
+
+    Private Sub KárdexDeEmpleadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KárdexDeEmpleadoToolStripMenuItem.Click
+        KardexEmpleado.Show()
+    End Sub
+
+
 #End Region
 End Class
