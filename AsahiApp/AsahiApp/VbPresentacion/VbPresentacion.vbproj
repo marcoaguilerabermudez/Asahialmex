@@ -422,6 +422,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dts_DpIndicadores_Rpt.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RH\DataSet\Dts_DpIndicadores_Rpt.vb">
+      <DependentUpon>Dts_DpIndicadores_Rpt.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RH\DataSet\Dts_DPInfoGrl_Rpt.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

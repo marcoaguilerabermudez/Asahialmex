@@ -460,6 +460,32 @@ where usuario = '" & us & "'", oCon)
         End Try
         Return LstEmp
     End Function
+    Public Function RecuperarPuestosRelaciones(ByVal cadenaConex As String) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim LstEmp As New LEmpleado
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT RTRIM(CLAVE) CLAVE, RTRIM(DESCRIPCION) DESCRIPCION, 'a' DIST FROM asahi16.Supervisor_giro.Puesto union SELECT RTRIM(CLAVE) CLAVE, RTRIM(DESCRIPCION) DESCRIPCION,'b' FROM asahi16.Supervisor_giro.Depto Where centro_costo <> 16", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.IdPuesto = Convert.ToInt32(dr("CLAVE").ToString)
+                emp.Puesto = dr("DESCRIPCION").ToString
+                emp.ConcatPuesto = dr("DIST").ToString + Convert.ToString(emp.IdPuesto)
+                LstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return LstEmp
+    End Function
     Public Function RecuperarDepto(ByVal cadenaConex As String) As LEmpleado
         Dim oCon As New SqlConnection(cadenaConex)
         Dim LstEmp As New LEmpleado

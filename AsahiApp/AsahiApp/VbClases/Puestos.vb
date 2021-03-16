@@ -323,6 +323,24 @@
             fuente_ = value
         End Set
     End Property
+    Private idCatalogoCompe_ As Integer
+    Public Property IdCatalogoCompe() As Integer
+        Get
+            Return idCatalogoCompe_
+        End Get
+        Set(ByVal value As Integer)
+            idCatalogoCompe_ = value
+        End Set
+    End Property
+    Private idCompetencia_ As Integer
+    Public Property IdCompetencia() As Integer
+        Get
+            Return idCompetencia_
+        End Get
+        Set(ByVal value As Integer)
+            idCompetencia_ = value
+        End Set
+    End Property
     Private idCompeTecnicas_ As Integer
     Public Property IdCompeTecnicas() As Integer
         Get
@@ -404,6 +422,15 @@
             tipoRelacion_ = value
         End Set
     End Property
+    Private tipoIndica_ As Boolean
+    Public Property TipoIndica() As Boolean
+        Get
+            Return tipoIndica_
+        End Get
+        Set(ByVal value As Boolean)
+            tipoIndica_ = value
+        End Set
+    End Property
     Private motivoRelacion_ As String
     Public Property MotivoRelacion() As String
         Get
@@ -447,6 +474,105 @@
         End Get
         Set(ByVal value As String)
             tipoTiempo_ = value
+        End Set
+    End Property
+    Private idRcr_ As Integer
+    Public Property IdRcr() As Integer
+        Get
+            Return idRcr_
+        End Get
+        Set(ByVal value As Integer)
+            idRcr_ = value
+        End Set
+    End Property
+    Private idCatalogoResp_ As Integer
+    Public Property IdCatalogoResp() As Integer
+        Get
+            Return idCatalogoResp_
+        End Get
+        Set(ByVal value As Integer)
+            idCatalogoResp_ = value
+        End Set
+    End Property
+    Private idRci_ As Integer
+    Public Property IdRci() As Integer
+        Get
+            Return idRci_
+        End Get
+        Set(ByVal value As Integer)
+            idRci_ = value
+        End Set
+    End Property
+    Private idCatalogoIndica_ As Integer
+    Public Property IdCatalogoIndica() As Integer
+        Get
+            Return idCatalogoIndica_
+        End Get
+        Set(ByVal value As Integer)
+            idCatalogoIndica_ = value
+        End Set
+    End Property
+    Private puntMin_ As Double
+    Public Property PuntMin() As Double
+        Get
+            Return puntMin_
+        End Get
+        Set(ByVal value As Double)
+            puntMin_ = value
+        End Set
+    End Property
+    Private puntMax_ As Double
+    Public Property PuntMax() As Double
+        Get
+            Return puntMax_
+        End Get
+        Set(ByVal value As Double)
+            puntMax_ = value
+        End Set
+    End Property
+    Private porceMin_ As Double
+    Public Property PorceMin() As Double
+        Get
+            Return porceMin_
+        End Get
+        Set(ByVal value As Double)
+            porceMin_ = value
+        End Set
+    End Property
+    Private porceMax_ As Double
+    Public Property PorceMax() As Double
+        Get
+            Return porceMax_
+        End Get
+        Set(ByVal value As Double)
+            porceMax_ = value
+        End Set
+    End Property
+    Private idRelacionRespo_ As Integer
+    Public Property IdRelacionRespo() As Integer
+        Get
+            Return idRelacionRespo_
+        End Get
+        Set(ByVal value As Integer)
+            idRelacionRespo_ = value
+        End Set
+    End Property
+    Private idRelacionIndica_ As Integer
+    Public Property IdRelacionIndica() As Integer
+        Get
+            Return idRelacionIndica_
+        End Get
+        Set(ByVal value As Integer)
+            idRelacionIndica_ = value
+        End Set
+    End Property
+    Private idRelacionIdioma_ As Integer
+    Public Property IdRelacionIdioma() As Integer
+        Get
+            Return idRelacionIdioma_
+        End Get
+        Set(ByVal value As Integer)
+            idRelacionIdioma_ = value
         End Set
     End Property
     Private xml_ As String

@@ -94,6 +94,13 @@ Public Class NPuestos
         pues = XmlEscolaridad(lstPuest)
         Return DPues.InsertModifEscolaridad(cadenaConex, pues)
     End Function
+    Public Function InsertModifIdioma(ByVal cadenaConex As String, ByVal lstPuest As LPuestos) As Puestos
+        Dim pues As New Puestos()
+        Dim DPues As New DPuestos()
+
+        pues = XmlIdiomas(lstPuest)
+        Return DPues.InsertModifIdioma(cadenaConex, pues)
+    End Function
     Public Function InsertModifPuestoExp(ByVal cadenaConex As String, ByVal lstPuest As LPuestos) As Puestos
         Dim pues As New Puestos()
         Dim DPues As New DPuestos()
@@ -119,6 +126,41 @@ Public Class NPuestos
 
         pues = XmlRelacionespuesto(lstPuest)
         Return DPues.InsertModifRelacionesPuesto(cadenaConex, pues)
+    End Function
+    Public Function InsertModifRelacionResponsaDp(ByVal cadenaConex As String, ByVal lstPuest As LPuestos) As LPuestos
+        Dim pues As New Puestos()
+        Dim DPues As New DPuestos()
+
+        pues = XmlRelacionCatalogoResp(lstPuest)
+        Return DPues.InsertModifRelacionResponsaDp(cadenaConex, pues)
+    End Function
+    Public Function InsertModifResponsabilidades(ByVal cadenaConex As String, ByVal lstPuest As LPuestos) As Puestos
+        Dim pues As New Puestos()
+        Dim DPues As New DPuestos()
+
+        pues = XmlResponsabilidad(lstPuest)
+        Return DPues.InsertModifResponsabilidades(cadenaConex, pues)
+    End Function
+    Public Function InsertModifRelacionIndicadores(ByVal cadenaConex As String, ByVal lstPuest As LPuestos) As LPuestos
+        Dim pues As New Puestos()
+        Dim DPues As New DPuestos()
+
+        pues = XmlRelacionCatalogoIndic(lstPuest)
+        Return DPues.InsertModifRelacionIndicadores(cadenaConex, pues)
+    End Function
+    Public Function InsertModifIndicadores(ByVal cadenaConex As String, ByVal lstPuest As LPuestos) As Puestos
+        Dim pues As New Puestos()
+        Dim DPues As New DPuestos()
+
+        pues = XmlIndicadores(lstPuest)
+        Return DPues.InsertModifIndicadores(cadenaConex, pues)
+    End Function
+    Public Function InsertModifCompetencias(ByVal cadenaConex As String, ByVal lstPuest As LPuestos) As Puestos
+        Dim pues As New Puestos()
+        Dim DPues As New DPuestos()
+
+        pues = XmlCompetencias(lstPuest)
+        Return DPues.InsertModifCompetencias(cadenaConex, pues)
     End Function
 #Region "XML's"
     Private Function XmlInfoGrl(ByVal Pues As Puestos) As Puestos
@@ -147,6 +189,20 @@ Public Class NPuestos
 
         pues.Xml = "<Escolaridad>" & pues.Xml & "</Escolaridad>"
         Return Pues
+    End Function
+    Private Function XmlIdiomas(ByVal lstPues As LPuestos) As Puestos
+        Dim pues As New Puestos()
+        Dim i As Integer
+        Dim str As String
+
+        For i = 0 To lstPues.Count - 1
+            str = "<Info><id_l>" & lstPues.Item(i).IdRelacionIdioma & "</id_l><id_Dp>" & lstPues.Item(i).IdDP & "</id_Dp><id_Cl>" & lstPues.Item(i).IdIdioma &
+                "</id_Cl><nivel>" & lstPues.Item(i).Nivel & "</nivel></Info>"
+            pues.Xml = pues.Xml & str
+        Next
+
+        pues.Xml = "<Idioma>" & pues.Xml & "</Idioma>"
+        Return pues
     End Function
     Private Function XmlPuestoExp(ByVal lstPues As LPuestos) As Puestos
         Dim pues As New Puestos()
@@ -183,12 +239,92 @@ Public Class NPuestos
 
         For i = 0 To lstPues.Count - 1
             str = "<Info><id_Rp>" & lstPues.Item(i).IdRelacionPuesto & "</id_Rp><id_Dp>" & lstPues.Item(i).IdDP & "</id_Dp><id_Puesto>" & lstPues.Item(i).IdPuesto &
-                "</id_Puesto><motivos>" & lstPues.Item(i).MotivoRelacion & "</motivos><tipo_Rel>" & lstPues.Item(i).TipoRelacion & "</tipo_Rel><contacto>" & lstPues.Item(i).Contacto &
-                "</contacto></Info>"
+                "</id_Puesto><id_Dpto>" & lstPues.Item(i).IdDepto & "</id_Dpto><motivos>" & lstPues.Item(i).MotivoRelacion & "</motivos><tipo_Rel>" & lstPues.Item(i).TipoRelacion &
+                "</tipo_Rel><contacto>" & lstPues.Item(i).Contacto & "</contacto></Info>"
             pues.Xml = pues.Xml & str
         Next
 
         pues.Xml = "<RelacionP>" & pues.Xml & "</RelacionP>"
+        Return pues
+    End Function
+    Private Function XmlRelacionCatalogoResp(ByVal lstPues As LPuestos) As Puestos
+        Dim pues As New Puestos()
+        Dim i As Integer
+        Dim str As String
+        Dim fecha As Date = Format(Date.Today, "dd/MM/yyyy")
+        Dim hora As Date = Format(DateTime.Now, "HH:mm:ss")
+
+        For i = 0 To lstPues.Count - 1
+            str = "<Info><id_Rcr>" & lstPues.Item(i).IdRcr & "</id_Rcr><id_Cr>" & lstPues.Item(i).IdCatalogoResp & "</id_Cr><id_Puesto>" & lstPues.Item(i).IdPuesto &
+                "</id_Puesto><id_Dpto>" & lstPues.Item(i).IdDepto & "</id_Dpto><tipo>" & lstPues.Item(i).TipoRelacion & "</tipo><frecuencia>" & lstPues.Item(i).IdFrecuencia &
+                "</frecuencia><punt_Min>" & lstPues.Item(i).PuntMin & "</punt_Min><punt_Max>" & lstPues.Item(i).PuntMax & "</punt_Max><porce_Min>" & lstPues.Item(i).PorceMin &
+                "</porce_Min><porce_Max>" & lstPues.Item(i).PorceMax & "</porce_Max><fecha_Crea>" & Format(fecha, "dd/MM/yyyy") & "</fecha_Crea><hora_Crea>" & Format(hora, "HH:mm:ss") &
+                "</hora_Crea></Info>"
+            pues.Xml = pues.Xml & str
+        Next
+
+        pues.Xml = "<Rcr>" & pues.Xml & "</Rcr>"
+        Return pues
+    End Function
+    Private Function XmlResponsabilidad(ByVal lstPues As LPuestos) As Puestos
+        Dim pues As New Puestos()
+        Dim i As Integer
+        Dim str As String
+
+        For i = 0 To lstPues.Count - 1
+            str = "<Info><id_R>" & lstPues.Item(i).IdResponsabilidades & "</id_R><id_Dp>" & lstPues.Item(i).IdDP & "</id_Dp><id_Rcr>" & lstPues.Item(i).IdRelacionRespo &
+                "</id_Rcr><frecuencia>" & lstPues.Item(i).IdFrecuencia & "</frecuencia><Id_Entregable>" & lstPues.Item(i).IdEntregable & "</Id_Entregable></Info>"
+            pues.Xml = pues.Xml & str
+        Next
+
+        pues.Xml = "<Responsabilidades>" & pues.Xml & "</Responsabilidades>"
+        Return pues
+    End Function
+    Private Function XmlRelacionCatalogoIndic(ByVal lstPues As LPuestos) As Puestos
+        Dim pues As New Puestos()
+        Dim i As Integer
+        Dim str As String
+        Dim fecha As Date = Format(Date.Today, "dd/MM/yyyy")
+        Dim hora As Date = Format(Date.Today, "HH:mm:ss")
+
+        For i = 0 To lstPues.Count - 1
+            str = "<Info><id_Rci>" & lstPues.Item(i).IdRci & "</id_Rci><id_Ci>" & lstPues.Item(i).IdCatalogoIndica & "</id_Ci><id_Puesto>" & lstPues.Item(i).IdPuesto &
+                "</id_Puesto><id_Dpto>" & lstPues.Item(i).IdDepto & "</id_Dpto><estandar>" & lstPues.Item(i).Estandar & "</estandar><formula>" & lstPues.Item(i).Formula &
+                "</formula><frecuencia>" & lstPues.Item(i).IdFrecuencia & "</frecuencia><fuente>" & lstPues.Item(i).Fuente & "</fuente><punt_Min>" & lstPues.Item(i).PuntMin &
+                "</punt_Min><punt_Max>" & lstPues.Item(i).PuntMax & "</punt_Max><porce_Min>" & lstPues.Item(i).PorceMin & "</porce_Min><porce_Max>" & lstPues.Item(i).PorceMax &
+                "</porce_Max><tipo>" & lstPues.Item(i).TipoIndica & "</tipo></Info>"
+            pues.Xml = pues.Xml & str
+        Next
+
+        pues.Xml = "<Rci>" & pues.Xml & "</Rci>"
+        Return pues
+    End Function
+    Private Function XmlIndicadores(ByVal lstPues As LPuestos) As Puestos
+        Dim pues As New Puestos()
+        Dim i As Integer
+        Dim str As String
+
+        For i = 0 To lstPues.Count - 1
+            str = "<Info><id_I>" & lstPues.Item(i).IdIndicadores & "</id_I><id_Dp>" & lstPues.Item(i).IdDP & "</id_Dp><id_Rci>" & lstPues.Item(i).IdRelacionIndica &
+                "</id_Rci><estandar>" & lstPues.Item(i).Estandar & "</estandar><formula>" & lstPues.Item(i).Formula & "</formula><frecuencia>" & lstPues.Item(i).IdFrecuencia &
+                "</frecuencia></Info>"
+            pues.Xml = pues.Xml & str
+        Next
+
+        pues.Xml = "<Indicadores>" & pues.Xml & "</Indicadores>"
+        Return pues
+    End Function
+    Private Function XmlCompetencias(ByVal lstPues As LPuestos) As Puestos
+        Dim pues As New Puestos()
+        Dim i As Integer
+        Dim str As String
+
+        For i = 0 To lstPues.Count - 1
+            str = "<Info><id_C>" & lstPues.Item(i).IdCompetencia & "</id_C><id_Cc>" & lstPues.Item(i).IdCatalogoCompe & "</id_Cc><id_Dp>" & lstPues.Item(i).IdDP & "</id_Dp></Info>"
+            pues.Xml = pues.Xml & str
+        Next
+
+        pues.Xml = "<Competencias>" & pues.Xml & "</Competencias>"
         Return pues
     End Function
 #End Region

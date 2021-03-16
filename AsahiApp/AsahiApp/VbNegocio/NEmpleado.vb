@@ -45,6 +45,10 @@ Public Class NEmpleado
         Dim DEmp As New DEmpleado()
         Return DEmp.RecuperarPuestos(cadenaConex)
     End Function
+    Public Function RecuperarPuestosRelaciones(ByVal cadenaConex As String) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RecuperarPuestosRelaciones(cadenaConex)
+    End Function
     Public Function RecuperarDepto(ByVal cadenaConex As String) As LEmpleado
         Dim DEmp As New DEmpleado()
         Return DEmp.RecuperarDepto(cadenaConex)

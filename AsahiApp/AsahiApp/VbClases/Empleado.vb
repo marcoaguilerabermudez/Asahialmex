@@ -1053,6 +1053,14 @@
             Id_puesto1 = value
         End Set
     End Property
-
+    Private concatPuesto_ As String
+    Public Property ConcatPuesto() As String
+        Get
+            Return concatPuesto_
+        End Get
+        Set(ByVal value As String)
+            concatPuesto_ = value
+        End Set
+    End Property
 
 End Class

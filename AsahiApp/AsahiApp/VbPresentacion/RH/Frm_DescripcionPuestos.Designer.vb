@@ -136,6 +136,9 @@ Partial Class Frm_DescripcionPuestos
         Me.actividades = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.frecuencia = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.entregable = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.evaluable = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.idResp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idRelaCatResp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tbp_IndicadoresArea = New System.Windows.Forms.TabPage()
         Me.Dgv_Indicadores = New System.Windows.Forms.DataGridView()
         Me.nombreIndicador = New System.Windows.Forms.DataGridViewComboBoxColumn()
@@ -143,11 +146,17 @@ Partial Class Frm_DescripcionPuestos
         Me.formula = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.frecuenciaIndica = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.fuenteInfo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idIndicador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idRelaIndica = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.evaluableIn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Tbp_Competencias = New System.Windows.Forms.TabPage()
         Me.Dgv_Competencias = New System.Windows.Forms.DataGridView()
         Me.compeTecnicas = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.compeGenerales = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.compeMando = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.idCompeA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idCompeB = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idCompeC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Tbc_Origen.SuspendLayout()
@@ -206,6 +215,7 @@ Partial Class Frm_DescripcionPuestos
         '
         'Btn_Reporte
         '
+        Me.Btn_Reporte.Enabled = False
         Me.Btn_Reporte.Image = CType(resources.GetObject("Btn_Reporte.Image"), System.Drawing.Image)
         Me.Btn_Reporte.Location = New System.Drawing.Point(724, 8)
         Me.Btn_Reporte.Name = "Btn_Reporte"
@@ -215,6 +225,7 @@ Partial Class Frm_DescripcionPuestos
         '
         'Btn_GuardarModificar
         '
+        Me.Btn_GuardarModificar.Enabled = False
         Me.Btn_GuardarModificar.Image = CType(resources.GetObject("Btn_GuardarModificar.Image"), System.Drawing.Image)
         Me.Btn_GuardarModificar.Location = New System.Drawing.Point(660, 8)
         Me.Btn_GuardarModificar.Name = "Btn_GuardarModificar"
@@ -535,7 +546,7 @@ Partial Class Frm_DescripcionPuestos
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Rdb_Operativo)
         Me.GroupBox2.Controls.Add(Me.Rdb_Admin)
-        Me.GroupBox2.Location = New System.Drawing.Point(196, 4)
+        Me.GroupBox2.Location = New System.Drawing.Point(196, 5)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(178, 80)
         Me.GroupBox2.TabIndex = 10
@@ -1300,7 +1311,7 @@ Partial Class Frm_DescripcionPuestos
         '
         Me.Dgv_Responsabilidades.BackgroundColor = System.Drawing.Color.White
         Me.Dgv_Responsabilidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Responsabilidades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.numero, Me.actividades, Me.frecuencia, Me.entregable})
+        Me.Dgv_Responsabilidades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.numero, Me.actividades, Me.frecuencia, Me.entregable, Me.evaluable, Me.idResp, Me.idRelaCatResp})
         Me.Dgv_Responsabilidades.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Responsabilidades.Location = New System.Drawing.Point(0, 0)
         Me.Dgv_Responsabilidades.Name = "Dgv_Responsabilidades"
@@ -1321,7 +1332,7 @@ Partial Class Frm_DescripcionPuestos
         Me.actividades.Name = "actividades"
         Me.actividades.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.actividades.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.actividades.Width = 400
+        Me.actividades.Width = 360
         '
         'frecuencia
         '
@@ -1339,6 +1350,28 @@ Partial Class Frm_DescripcionPuestos
         Me.entregable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.entregable.Width = 150
         '
+        'evaluable
+        '
+        Me.evaluable.HeaderText = "Eval."
+        Me.evaluable.Name = "evaluable"
+        Me.evaluable.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.evaluable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.evaluable.Width = 35
+        '
+        'idResp
+        '
+        Me.idResp.HeaderText = "IdResp"
+        Me.idResp.Name = "idResp"
+        Me.idResp.ReadOnly = True
+        Me.idResp.Visible = False
+        '
+        'idRelaCatResp
+        '
+        Me.idRelaCatResp.HeaderText = "IdRelaCatResp"
+        Me.idRelaCatResp.Name = "idRelaCatResp"
+        Me.idRelaCatResp.ReadOnly = True
+        Me.idRelaCatResp.Visible = False
+        '
         'Tbp_IndicadoresArea
         '
         Me.Tbp_IndicadoresArea.Controls.Add(Me.Dgv_Indicadores)
@@ -1354,7 +1387,7 @@ Partial Class Frm_DescripcionPuestos
         '
         Me.Dgv_Indicadores.BackgroundColor = System.Drawing.Color.White
         Me.Dgv_Indicadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Indicadores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombreIndicador, Me.estandar, Me.formula, Me.frecuenciaIndica, Me.fuenteInfo})
+        Me.Dgv_Indicadores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombreIndicador, Me.estandar, Me.formula, Me.frecuenciaIndica, Me.fuenteInfo, Me.idIndicador, Me.idRelaIndica, Me.evaluableIn})
         Me.Dgv_Indicadores.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Indicadores.Location = New System.Drawing.Point(3, 3)
         Me.Dgv_Indicadores.Name = "Dgv_Indicadores"
@@ -1395,6 +1428,26 @@ Partial Class Frm_DescripcionPuestos
         Me.fuenteInfo.Name = "fuenteInfo"
         Me.fuenteInfo.Width = 170
         '
+        'idIndicador
+        '
+        Me.idIndicador.HeaderText = "Id_Indicador"
+        Me.idIndicador.Name = "idIndicador"
+        Me.idIndicador.ReadOnly = True
+        Me.idIndicador.Visible = False
+        '
+        'idRelaIndica
+        '
+        Me.idRelaIndica.HeaderText = "Id_Rela_Indica"
+        Me.idRelaIndica.Name = "idRelaIndica"
+        Me.idRelaIndica.ReadOnly = True
+        Me.idRelaIndica.Visible = False
+        '
+        'evaluableIn
+        '
+        Me.evaluableIn.HeaderText = "Eva"
+        Me.evaluableIn.Name = "evaluableIn"
+        Me.evaluableIn.Width = 40
+        '
         'Tbp_Competencias
         '
         Me.Tbp_Competencias.Controls.Add(Me.Dgv_Competencias)
@@ -1410,7 +1463,7 @@ Partial Class Frm_DescripcionPuestos
         '
         Me.Dgv_Competencias.BackgroundColor = System.Drawing.Color.White
         Me.Dgv_Competencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Competencias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.compeTecnicas, Me.compeGenerales, Me.compeMando})
+        Me.Dgv_Competencias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.compeTecnicas, Me.compeGenerales, Me.compeMando, Me.idCompeA, Me.idCompeB, Me.idCompeC})
         Me.Dgv_Competencias.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_Competencias.Location = New System.Drawing.Point(3, 3)
         Me.Dgv_Competencias.Name = "Dgv_Competencias"
@@ -1442,6 +1495,27 @@ Partial Class Frm_DescripcionPuestos
         Me.compeMando.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.compeMando.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.compeMando.Width = 235
+        '
+        'idCompeA
+        '
+        Me.idCompeA.HeaderText = "IdCompeA"
+        Me.idCompeA.Name = "idCompeA"
+        Me.idCompeA.ReadOnly = True
+        Me.idCompeA.Visible = False
+        '
+        'idCompeB
+        '
+        Me.idCompeB.HeaderText = "IdCompeB"
+        Me.idCompeB.Name = "idCompeB"
+        Me.idCompeB.ReadOnly = True
+        Me.idCompeB.Visible = False
+        '
+        'idCompeC
+        '
+        Me.idCompeC.HeaderText = "IdCompeC"
+        Me.idCompeC.Name = "idCompeC"
+        Me.idCompeC.ReadOnly = True
+        Me.idCompeC.Visible = False
         '
         'Frm_DescripcionPuestos
         '
@@ -1558,18 +1632,6 @@ Partial Class Frm_DescripcionPuestos
     Friend WithEvents Dgv_Indicadores As DataGridView
     Friend WithEvents Tbp_Competencias As TabPage
     Friend WithEvents Dgv_Competencias As DataGridView
-    Friend WithEvents numero As DataGridViewTextBoxColumn
-    Friend WithEvents actividades As DataGridViewComboBoxColumn
-    Friend WithEvents frecuencia As DataGridViewComboBoxColumn
-    Friend WithEvents entregable As DataGridViewComboBoxColumn
-    Friend WithEvents nombreIndicador As DataGridViewComboBoxColumn
-    Friend WithEvents estandar As DataGridViewTextBoxColumn
-    Friend WithEvents formula As DataGridViewTextBoxColumn
-    Friend WithEvents frecuenciaIndica As DataGridViewComboBoxColumn
-    Friend WithEvents fuenteInfo As DataGridViewTextBoxColumn
-    Friend WithEvents compeTecnicas As DataGridViewComboBoxColumn
-    Friend WithEvents compeGenerales As DataGridViewComboBoxColumn
-    Friend WithEvents compeMando As DataGridViewComboBoxColumn
     Friend WithEvents Tbp_Gral As TabPage
     Friend WithEvents Gpb_Justifica As GroupBox
     Friend WithEvents Txt_Justifica As TextBox
@@ -1644,4 +1706,25 @@ Partial Class Frm_DescripcionPuestos
     Friend WithEvents Btn_Reporte As Button
     Friend WithEvents Chk_Internacional As CheckBox
     Friend WithEvents Chk_Nacional As CheckBox
+    Friend WithEvents numero As DataGridViewTextBoxColumn
+    Friend WithEvents actividades As DataGridViewComboBoxColumn
+    Friend WithEvents frecuencia As DataGridViewComboBoxColumn
+    Friend WithEvents entregable As DataGridViewComboBoxColumn
+    Friend WithEvents evaluable As DataGridViewCheckBoxColumn
+    Friend WithEvents idResp As DataGridViewTextBoxColumn
+    Friend WithEvents idRelaCatResp As DataGridViewTextBoxColumn
+    Friend WithEvents nombreIndicador As DataGridViewComboBoxColumn
+    Friend WithEvents estandar As DataGridViewTextBoxColumn
+    Friend WithEvents formula As DataGridViewTextBoxColumn
+    Friend WithEvents frecuenciaIndica As DataGridViewComboBoxColumn
+    Friend WithEvents fuenteInfo As DataGridViewTextBoxColumn
+    Friend WithEvents idIndicador As DataGridViewTextBoxColumn
+    Friend WithEvents idRelaIndica As DataGridViewTextBoxColumn
+    Friend WithEvents evaluableIn As DataGridViewCheckBoxColumn
+    Friend WithEvents compeTecnicas As DataGridViewComboBoxColumn
+    Friend WithEvents compeGenerales As DataGridViewComboBoxColumn
+    Friend WithEvents compeMando As DataGridViewComboBoxColumn
+    Friend WithEvents idCompeA As DataGridViewTextBoxColumn
+    Friend WithEvents idCompeB As DataGridViewTextBoxColumn
+    Friend WithEvents idCompeC As DataGridViewTextBoxColumn
 End Class
