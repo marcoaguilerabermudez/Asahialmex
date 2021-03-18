@@ -98,3 +98,4 @@ C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csproj.CopyComplete
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csprojAssemblyReference.cache
