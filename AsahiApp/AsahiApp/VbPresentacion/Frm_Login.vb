@@ -51,8 +51,8 @@ Public Class Frm_Login
 
 
             If Txt_NombreUsuario.Text <> "x" Then
-                Dim context As New PrincipalContext(ContextType.Domain)
                 Try
+                    Dim context As New PrincipalContext(ContextType.Domain)
                     If Not IsNothing(context.ConnectedServer) Or context.ConnectedServer = "Servidor.asahialmex.local" Then
                         Dim grupos As New List(Of String)
                         Dim auth As Boolean = context.ValidateCredentials(Txt_NombreUsuario.Text, Txt_Contraseña.Text) '"user name", "password")
@@ -89,7 +89,9 @@ Public Class Frm_Login
                 Catch ex As Exception
                     Dim err As String
                     err = ex.Message
-                    If err = "El dominio especificado no existe o no se pudo poner en contacto con él." & vbCrLf Then
+                    'MsgBox(err)
+                    If err = "El dominio especificado no existe o no se pudo poner en contacto con él." & vbCrLf Or
+                        err = "No fue posible ponerse en contacto con el servidor." Then
                         emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
                         If emp.Respuesta = 2 Then
                             Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
