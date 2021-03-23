@@ -26,7 +26,6 @@ Partial Class Validath
         Me.panel1 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.pbx = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -66,8 +65,9 @@ Partial Class Validath
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.panel1.SuspendLayout()
-        CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -77,7 +77,6 @@ Partial Class Validath
         Me.panel1.BackColor = System.Drawing.Color.SteelBlue
         Me.panel1.Controls.Add(Me.Button3)
         Me.panel1.Controls.Add(Me.Button1)
-        Me.panel1.Controls.Add(Me.pbx)
         Me.panel1.Controls.Add(Me.Button2)
         Me.panel1.Controls.Add(Me.GroupBox1)
         Me.panel1.Controls.Add(Me.btn_desma)
@@ -111,15 +110,6 @@ Partial Class Validath
         Me.Button1.UseVisualStyleBackColor = False
         Me.Button1.Visible = False
         '
-        'pbx
-        '
-        Me.pbx.ErrorImage = CType(resources.GetObject("pbx.ErrorImage"), System.Drawing.Image)
-        Me.pbx.Location = New System.Drawing.Point(906, 10)
-        Me.pbx.Name = "pbx"
-        Me.pbx.Size = New System.Drawing.Size(132, 138)
-        Me.pbx.TabIndex = 176
-        Me.pbx.TabStop = False
-        '
         'Button2
         '
         Me.Button2.ForeColor = System.Drawing.Color.Black
@@ -133,6 +123,8 @@ Partial Class Validath
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Panel4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Panel3)
@@ -166,7 +158,7 @@ Partial Class Validath
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.GroupBox1.Location = New System.Drawing.Point(484, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(408, 163)
+        Me.GroupBox1.Size = New System.Drawing.Size(564, 163)
         Me.GroupBox1.TabIndex = 175
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nomenclatura"
@@ -174,7 +166,7 @@ Partial Class Validath
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Green
-        Me.Panel2.Location = New System.Drawing.Point(242, 135)
+        Me.Panel2.Location = New System.Drawing.Point(236, 135)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(32, 22)
         Me.Panel2.TabIndex = 178
@@ -183,7 +175,7 @@ Partial Class Validath
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(275, 140)
+        Me.Label2.Location = New System.Drawing.Point(269, 140)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(106, 13)
         Me.Label2.TabIndex = 177
@@ -211,7 +203,7 @@ Partial Class Validath
         '
         Me.Label20.AutoSize = True
         Me.Label20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label20.Location = New System.Drawing.Point(208, 26)
+        Me.Label20.Location = New System.Drawing.Point(338, 31)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(15, 13)
         Me.Label20.TabIndex = 174
@@ -221,7 +213,7 @@ Partial Class Validath
         '
         Me.Label26.AutoSize = True
         Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label26.Location = New System.Drawing.Point(241, 112)
+        Me.Label26.Location = New System.Drawing.Point(371, 117)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(63, 13)
         Me.Label26.TabIndex = 162
@@ -231,7 +223,7 @@ Partial Class Validath
         '
         Me.Label33.AutoSize = True
         Me.Label33.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label33.Location = New System.Drawing.Point(239, 91)
+        Me.Label33.Location = New System.Drawing.Point(369, 96)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(89, 13)
         Me.Label33.TabIndex = 173
@@ -241,7 +233,7 @@ Partial Class Validath
         '
         Me.Label14.AutoSize = True
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(205, 112)
+        Me.Label14.Location = New System.Drawing.Point(335, 117)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(28, 13)
         Me.Label14.TabIndex = 161
@@ -251,7 +243,7 @@ Partial Class Validath
         '
         Me.Label34.AutoSize = True
         Me.Label34.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label34.Location = New System.Drawing.Point(206, 91)
+        Me.Label34.Location = New System.Drawing.Point(336, 96)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(21, 13)
         Me.Label34.TabIndex = 172
@@ -261,7 +253,7 @@ Partial Class Validath
         '
         Me.Label21.AutoSize = True
         Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label21.Location = New System.Drawing.Point(239, 75)
+        Me.Label21.Location = New System.Drawing.Point(369, 80)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(62, 13)
         Me.Label21.TabIndex = 171
@@ -271,7 +263,7 @@ Partial Class Validath
         '
         Me.Label22.AutoSize = True
         Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(238, 59)
+        Me.Label22.Location = New System.Drawing.Point(368, 64)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(106, 13)
         Me.Label22.TabIndex = 170
@@ -281,7 +273,7 @@ Partial Class Validath
         '
         Me.Label23.AutoSize = True
         Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label23.Location = New System.Drawing.Point(238, 41)
+        Me.Label23.Location = New System.Drawing.Point(368, 46)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(129, 13)
         Me.Label23.TabIndex = 169
@@ -291,7 +283,7 @@ Partial Class Validath
         '
         Me.Label24.AutoSize = True
         Me.Label24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label24.Location = New System.Drawing.Point(238, 25)
+        Me.Label24.Location = New System.Drawing.Point(368, 30)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(48, 13)
         Me.Label24.TabIndex = 168
@@ -301,7 +293,7 @@ Partial Class Validath
         '
         Me.Label25.AutoSize = True
         Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label25.Location = New System.Drawing.Point(238, 11)
+        Me.Label25.Location = New System.Drawing.Point(368, 16)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(63, 13)
         Me.Label25.TabIndex = 167
@@ -311,7 +303,7 @@ Partial Class Validath
         '
         Me.Label17.AutoSize = True
         Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label17.Location = New System.Drawing.Point(206, 75)
+        Me.Label17.Location = New System.Drawing.Point(336, 80)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(21, 13)
         Me.Label17.TabIndex = 166
@@ -321,7 +313,7 @@ Partial Class Validath
         '
         Me.Label18.AutoSize = True
         Me.Label18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label18.Location = New System.Drawing.Point(205, 59)
+        Me.Label18.Location = New System.Drawing.Point(335, 64)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(22, 13)
         Me.Label18.TabIndex = 165
@@ -331,7 +323,7 @@ Partial Class Validath
         '
         Me.Label19.AutoSize = True
         Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(205, 41)
+        Me.Label19.Location = New System.Drawing.Point(335, 46)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(21, 13)
         Me.Label19.TabIndex = 164
@@ -341,7 +333,7 @@ Partial Class Validath
         '
         Me.Label13.AutoSize = True
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(205, 11)
+        Me.Label13.Location = New System.Drawing.Point(335, 16)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(29, 13)
         Me.Label13.TabIndex = 163
@@ -540,6 +532,24 @@ Partial Class Validath
         Me.x.Name = "x"
         Me.x.Width = 18
         '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.LightCoral
+        Me.Panel4.Location = New System.Drawing.Point(399, 135)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(32, 22)
+        Me.Panel4.TabIndex = 180
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label3.Location = New System.Drawing.Point(432, 140)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(119, 13)
+        Me.Label3.TabIndex = 179
+        Me.Label3.Text = "REVISAR,POR FAVOR"
+        '
         'Validath
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -553,7 +563,6 @@ Partial Class Validath
         Me.Text = "Validación de Incidencias y Tiempo Extra"
         Me.panel1.ResumeLayout(False)
         Me.panel1.PerformLayout()
-        CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
@@ -567,7 +576,6 @@ Partial Class Validath
     Friend WithEvents btn_selec As Button
     Friend WithEvents btn_guardar As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents pbx As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label20 As Label
     Friend WithEvents Label26 As Label
@@ -604,4 +612,6 @@ Partial Class Validath
     Friend WithEvents x As DataGridViewCheckBoxColumn
     Friend WithEvents Button1 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label3 As Label
 End Class

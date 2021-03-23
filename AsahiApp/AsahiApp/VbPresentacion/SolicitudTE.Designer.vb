@@ -47,8 +47,6 @@ Partial Class SolicitudTE
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.txt_clave = New System.Windows.Forms.TextBox()
-        Me.dtgvp = New System.Windows.Forms.DataGridView()
-        Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.Btn_autorizar = New System.Windows.Forms.Button()
         Me.btn_preautorizar = New System.Windows.Forms.Button()
@@ -72,6 +70,8 @@ Partial Class SolicitudTE
         Me.di3 = New System.Windows.Forms.Label()
         Me.di2 = New System.Windows.Forms.Label()
         Me.di1 = New System.Windows.Forms.Label()
+        Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -333,34 +333,6 @@ Partial Class SolicitudTE
         Me.txt_clave.Size = New System.Drawing.Size(98, 20)
         Me.txt_clave.TabIndex = 124
         '
-        'dtgvp
-        '
-        Me.dtgvp.AllowUserToAddRows = False
-        Me.dtgvp.AllowUserToOrderColumns = True
-        Me.dtgvp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dtgvp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.x})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dtgvp.Location = New System.Drawing.Point(7, 264)
-        Me.dtgvp.Name = "dtgvp"
-        Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(913, 276)
-        Me.dtgvp.TabIndex = 159
-        '
-        'x
-        '
-        Me.x.HeaderText = "x"
-        Me.x.Name = "x"
-        Me.x.Width = 18
-        '
         'btn_eliminar
         '
         Me.btn_eliminar.BackColor = System.Drawing.Color.LightGray
@@ -602,6 +574,34 @@ Partial Class SolicitudTE
         Me.di1.Size = New System.Drawing.Size(0, 13)
         Me.di1.TabIndex = 178
         '
+        'x
+        '
+        Me.x.HeaderText = "x"
+        Me.x.Name = "x"
+        Me.x.Width = 18
+        '
+        'dtgvp
+        '
+        Me.dtgvp.AllowUserToAddRows = False
+        Me.dtgvp.AllowUserToOrderColumns = True
+        Me.dtgvp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dtgvp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.x})
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle1
+        Me.dtgvp.Location = New System.Drawing.Point(7, 260)
+        Me.dtgvp.Name = "dtgvp"
+        Me.dtgvp.RowHeadersVisible = False
+        Me.dtgvp.Size = New System.Drawing.Size(913, 276)
+        Me.dtgvp.TabIndex = 159
+        '
         'SolicitudTE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -668,11 +668,9 @@ Partial Class SolicitudTE
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label6 As Label
-    Friend WithEvents dtgvp As DataGridView
     Friend WithEvents btn_eliminar As Button
     Friend WithEvents Btn_autorizar As Button
     Friend WithEvents btn_preautorizar As Button
-    Friend WithEvents x As DataGridViewCheckBoxColumn
     Friend WithEvents Label3 As Label
     Friend WithEvents txt_horas As TextBox
     Friend WithEvents lbl_depto1 As Label
@@ -695,4 +693,6 @@ Partial Class SolicitudTE
     Friend WithEvents di3 As Label
     Friend WithEvents di2 As Label
     Friend WithEvents di1 As Label
+    Friend WithEvents x As DataGridViewCheckBoxColumn
+    Friend WithEvents dtgvp As DataGridView
 End Class
