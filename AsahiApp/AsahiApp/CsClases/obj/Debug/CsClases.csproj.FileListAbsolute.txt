@@ -25,12 +25,6 @@ C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csproj.CoreCompileInputs.cache
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.dll
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.pdb
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.dll
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.pdb
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csprojAssemblyReference.cache
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csproj.CoreCompileInputs.cache
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.dll
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.pdb
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.dll
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.pdb
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csprojAssemblyReference.cache
@@ -245,4 +239,10 @@ C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bi
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\ja\Microsoft.VisualStudio.Data.Services.resources.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\ja\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csproj.CoreCompileInputs.cache
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csproj.CopyComplete
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.dll
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.pdb
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.dll.config
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.dll
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\CsClases.pdb
