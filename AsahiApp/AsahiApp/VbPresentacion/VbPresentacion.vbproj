@@ -27,7 +27,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>268</ApplicationRevision>
+    <ApplicationRevision>269</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -148,6 +148,30 @@
       <DependentUpon>AcomodaHoras.vb</DependentUpon>
     </Compile>
     <Compile Include="AcomodaHoras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizaTe.Designer.vb">
+      <DependentUpon>ActualizaTe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizaTe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizaTurnoSolicitud.Designer.vb">
+      <DependentUpon>ActualizaTurnoSolicitud.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizaTurnoSolicitud.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnomaliaDetalle.Designer.vb">
+      <DependentUpon>AnomaliaDetalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AnomaliaDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnomaliaPrincipal.Designer.vb">
+      <DependentUpon>AnomaliaPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AnomaliaPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
@@ -440,6 +464,12 @@
     <Compile Include="Finanzas\Frm_PolizasDiario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frmwait.Designer.vb">
+      <DependentUpon>Frmwait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frmwait.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Acerca.Designer.vb">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>
     </Compile>
@@ -700,6 +730,18 @@
     <EmbeddedResource Include="AcomodaHoras.resx">
       <DependentUpon>AcomodaHoras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ActualizaTe.resx">
+      <DependentUpon>ActualizaTe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizaTurnoSolicitud.resx">
+      <DependentUpon>ActualizaTurnoSolicitud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnomaliaDetalle.resx">
+      <DependentUpon>AnomaliaDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnomaliaPrincipal.resx">
+      <DependentUpon>AnomaliaPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapturaOEE.resx">
       <DependentUpon>CapturaOEE.vb</DependentUpon>
     </EmbeddedResource>
@@ -789,6 +831,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finanzas\Frm_PolizasDiario.resx">
       <DependentUpon>Frm_PolizasDiario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmwait.resx">
+      <DependentUpon>Frmwait.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Acerca.resx">
       <DependentUpon>Frm_Acerca.vb</DependentUpon>

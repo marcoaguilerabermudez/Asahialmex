@@ -49,7 +49,9 @@ Public Class Validath
 
         For Each row As DataGridViewRow In Me.dtgvp.Rows
 
-            If row.Cells(“ValSuper”).Value = 1 Then
+            If row.Cells(“ValSuper”).Value = 0 And row.Cells(“TE”).Value = 0 And row.Cells(“Plan”).Value > 0 Then
+                row.DefaultCellStyle.BackColor = Color.LightCoral
+            ElseIf row.Cells(“ValSuper”).Value = 1 Then
                 row.DefaultCellStyle.BackColor = Color.LightBlue
             ElseIf row.Cells(“ValSuper”).Value = 2 Then
                 row.DefaultCellStyle.BackColor = Color.ForestGreen
@@ -283,10 +285,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)
             Else
                 MessageBox.Show("Acción no completada", "¡Aviso!")
 
-
-
-
-
             cn.Close()
         End If
 
@@ -295,12 +293,12 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)
 
     Sub autorizardomingo()
 
-        Cn.Close()
-        Cn.Open()
+        cn.Close()
+        cn.Open()
 
         Dim auto As SqlCommand = New SqlCommand("
 update [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] set incidencia = @inci, ValSuper = 1 , timestampval = getdate()
-where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
+where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", cn)
 
         Dim fila As DataGridViewRow = New DataGridViewRow()
         Dim RI As String
@@ -333,9 +331,9 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", Cn)
         Catch ex As Exception
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
             MessageBox.Show(ex.ToString)
-            Cn.Close()
+            cn.Close()
         Finally
-            Cn.Close()
+            cn.Close()
 
         End Try
     End Sub
