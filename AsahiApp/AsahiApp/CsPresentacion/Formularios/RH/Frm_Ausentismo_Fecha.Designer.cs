@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_ausentismo = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_filtrar = new System.Windows.Forms.Button();
             this.dtm_termina = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dtm_inicia = new System.Windows.Forms.DateTimePicker();
@@ -58,7 +59,6 @@
             this.btn_reporte = new System.Windows.Forms.Button();
             this.btn_exportar_ant2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btn_filtrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ausentismo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,17 +75,17 @@
             this.dgv_ausentismo.Location = new System.Drawing.Point(12, 70);
             this.dgv_ausentismo.MultiSelect = false;
             this.dgv_ausentismo.Name = "dgv_ausentismo";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ausentismo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ausentismo.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ausentismo.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgv_ausentismo.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.dgv_ausentismo.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ausentismo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ausentismo.ShowCellErrors = false;
             this.dgv_ausentismo.Size = new System.Drawing.Size(1027, 603);
@@ -108,6 +108,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1160, 69);
             this.panel1.TabIndex = 144;
+            // 
+            // btn_filtrar
+            // 
+            this.btn_filtrar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_filtrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_filtrar.FlatAppearance.BorderSize = 0;
+            this.btn_filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_filtrar.Image = global::CsPresentacion.Properties.Resources.Filtro;
+            this.btn_filtrar.Location = new System.Drawing.Point(298, 40);
+            this.btn_filtrar.Name = "btn_filtrar";
+            this.btn_filtrar.Size = new System.Drawing.Size(27, 27);
+            this.btn_filtrar.TabIndex = 31;
+            this.btn_filtrar.UseVisualStyleBackColor = false;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // dtm_termina
             // 
@@ -358,20 +372,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // btn_filtrar
-            // 
-            this.btn_filtrar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_filtrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_filtrar.FlatAppearance.BorderSize = 0;
-            this.btn_filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_filtrar.Image = global::CsPresentacion.Properties.Resources.Filtro;
-            this.btn_filtrar.Location = new System.Drawing.Point(298, 40);
-            this.btn_filtrar.Name = "btn_filtrar";
-            this.btn_filtrar.Size = new System.Drawing.Size(27, 27);
-            this.btn_filtrar.TabIndex = 31;
-            this.btn_filtrar.UseVisualStyleBackColor = false;
-            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // Frm_Ausentismo_Fecha
             // 

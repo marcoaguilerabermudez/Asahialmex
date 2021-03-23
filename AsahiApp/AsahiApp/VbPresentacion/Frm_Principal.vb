@@ -152,10 +152,6 @@ Public Class Frm_Principal
         Next
     End Sub
 #End Region
-
-
-
-
 #Region "Botónes"
 
     Private Sub PreNominaListadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreNominaListadoToolStripMenuItem.Click
@@ -410,7 +406,7 @@ Public Class Frm_Principal
         Dim H As New Frm_Historico()
         H.Show()
     End Sub
-    Private Sub RotaciónToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RotaciónToolStripMenuItem.Click
+    Private Sub RotaciónToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         'Módulo  de rotación
         Dim H As New Frm_Rotacion()
         H.Show()
@@ -567,6 +563,10 @@ Public Class Frm_Principal
 
     Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyClass.FormClosing
         Salir()
+    End Sub
+    Private Sub DpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DpToolStripMenuItem.Click
+        Dim frmDp As New Frm_DescripcionPuestos()
+        frmDp.Show()
     End Sub
 
     Private Sub KárdexDeEmpleadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KárdexDeEmpleadoToolStripMenuItem.Click

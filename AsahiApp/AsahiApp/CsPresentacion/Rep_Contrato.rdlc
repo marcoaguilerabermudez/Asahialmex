@@ -4789,7 +4789,26 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value> se obliga a prestar a “LA EMPRESA” sus servicios personales, en forma subordinada, bajo la dirección de los jefes designados al efecto en el puesto de: OPERADOR. Aceptando al mismo tiempo ejecutar aquellas labores similares y conexas, así como las que se deriven de los usos así como las señaladas en las disposiciones relativas en los procedimientos de trabajo, servicio y administración del personal que “LA EMPRESA” tiene establecido o establezca.</Value>
+                <Value> se obliga a prestar a “LA EMPRESA” sus servicios personales, en forma subordinada, bajo la dirección de los jefes designados al efecto en el puesto de: </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!PUESTO.Value</Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>. Aceptando al mismo tiempo ejecutar aquellas labores similares y conexas, así como las que se deriven de los usos así como las señaladas en las disposiciones relativas en los procedimientos de trabajo, servicio y administración del personal que “LA EMPRESA” tiene establecido o establezca.</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calibri</FontFamily>
