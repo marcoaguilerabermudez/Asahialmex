@@ -91,4 +91,12 @@ Public Class ActualizaTurnoSolicitud
     End Sub
 
 
+
+    Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyClass.FormClosing
+        Dim solte As New SolicitudTE(id_id, id_depa, id_permiso)
+        solte.Show()
+        Me.Dispose()
+        Me.Close()
+    End Sub
+
 End Class
