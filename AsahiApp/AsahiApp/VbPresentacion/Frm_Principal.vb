@@ -582,6 +582,10 @@ Public Class Frm_Principal
         ActualizaTe.Show()
     End Sub
 
+    Private Sub SalidaDeEquipoDeCómputoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaDeEquipoDeCómputoToolStripMenuItem.Click
+        SalidaEquipoComputo.Show()
+    End Sub
+
 
 #End Region
 End Class

@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>278</ApplicationRevision>
+    <ApplicationRevision>279</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -276,6 +276,12 @@
     <Compile Include="ContenedorReporteNuevoPuesto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReporteSalidaComputo.Designer.vb">
+      <DependentUpon>ContenedorReporteSalidaComputo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteSalidaComputo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteSuspension.Designer.vb">
       <DependentUpon>ContenedorReporteSuspension.vb</DependentUpon>
     </Compile>
@@ -326,6 +332,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet12.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet13.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet13.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -365,6 +376,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetEquipoComputo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetEquipoComputo.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetReporteSuspencion.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -770,6 +786,12 @@
     <Compile Include="RH\FrmReportes\Frm_RepPlanHrsExtra5.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SalidaEquipoComputo.Designer.vb">
+      <DependentUpon>SalidaEquipoComputo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SalidaEquipoComputo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SolicitudTE.Designer.vb">
       <DependentUpon>SolicitudTE.vb</DependentUpon>
     </Compile>
@@ -870,6 +892,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteNuevoPuesto.resx">
       <DependentUpon>ContenedorReporteNuevoPuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteSalidaComputo.resx">
+      <DependentUpon>ContenedorReporteSalidaComputo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteSuspension.resx">
       <DependentUpon>ContenedorReporteSuspension.vb</DependentUpon>
@@ -978,6 +1003,7 @@
     <EmbeddedResource Include="ReporteNuevoDepto.rdlc" />
     <EmbeddedResource Include="ReportePermisoCSGoce.rdlc" />
     <EmbeddedResource Include="ReportePuestoDepartamento.rdlc" />
+    <EmbeddedResource Include="ReporteSalidaEquipoComputo.rdlc" />
     <EmbeddedResource Include="ReporteSuspension.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />
@@ -1050,6 +1076,9 @@
       <DependentUpon>Frm_RepPlanHrsExtra5.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RH\Reports\Rpt_DescripcionPuestos.rdlc" />
+    <EmbeddedResource Include="SalidaEquipoComputo.resx">
+      <DependentUpon>SalidaEquipoComputo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SolicitudTE.resx">
       <DependentUpon>SolicitudTE.vb</DependentUpon>
     </EmbeddedResource>
@@ -1115,6 +1144,17 @@
     </None>
     <None Include="DataSet12.xss">
       <DependentUpon>DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet13.xsc">
+      <DependentUpon>DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet13.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet13.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet13.xss">
+      <DependentUpon>DataSet13.xsd</DependentUpon>
     </None>
     <None Include="DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>
@@ -1203,6 +1243,17 @@
     </None>
     <None Include="DataSet9.xss">
       <DependentUpon>DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetEquipoComputo.xsc">
+      <DependentUpon>DatasetEquipoComputo.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetEquipoComputo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetEquipoComputo.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DatasetEquipoComputo.xss">
+      <DependentUpon>DatasetEquipoComputo.xsd</DependentUpon>
     </None>
     <None Include="DataSetReporteSuspencion.xsc">
       <DependentUpon>DataSetReporteSuspencion.xsd</DependentUpon>

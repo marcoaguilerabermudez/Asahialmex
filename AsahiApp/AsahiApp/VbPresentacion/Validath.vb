@@ -126,9 +126,9 @@ Public Class Validath
 
 
             cn.Close()
-                cn.Open()
+            cn.Open()
 
-                Dim auto As SqlCommand = New SqlCommand("
+            Dim auto As SqlCommand = New SqlCommand("
 update [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] set incidencia = @inci, ValSuper = 1 , timestampval = getdate()
 ,TE = 
 case
