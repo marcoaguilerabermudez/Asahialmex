@@ -125,11 +125,9 @@ Public Class DEmpleado
         Dim emp As New Empleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand(" SELECT Usuario, Contraseña, ams.Clave, tipoUsuario, departamento, rh_permisos, evaluaciones_permisos, puesto FROM AsahiSystem.dbo.Usuarios_saam ams
-            join giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig
-on convert(int,vig.clave) = ams.clave
-join [AsahiSystem].[dbo].[Req_permisos] per
-on per.Clave = vig.Clave
+            Dim query As New SqlCommand("SELECT Usuario, Contraseña, ams.Clave, tipoUsuario, departamento, rh_permisos, evaluaciones_permisos, puesto FROM AsahiSystem.dbo.Usuarios_saam ams
+join giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig on convert(int,vig.clave) = ams.clave
+join [AsahiSystem].[dbo].[Req_permisos] per on per.Clave = vig.Clave
 where usuario = '" & us & "'", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
@@ -153,6 +151,37 @@ where usuario = '" & us & "'", oCon)
             Else
                 emp.Respuesta = 0
             End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return emp
+    End Function
+    Public Function EmpleadoLoginDominio(ByVal cadConex As String, ByVal noEmp As Integer, ByVal nomb As String) As Empleado
+        Dim oCon As New SqlConnection(cadConex)
+        Dim emp As New Empleado()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT (vig.Clave*1)Clave, tipoUsuario = CASE vig.DEPARTAMENTO WHEN 19 THEN 1 ELSE 0 END, departamento, rh_permisos, evaluaciones_permisos, puesto 
+FROM  giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig
+inner join [AsahiSystem].[dbo].[Req_permisos] per on per.Clave = vig.Clave
+where vig.Clave = " & noEmp, oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                emp.NombreCompleto = nomb
+                emp.IdDepartamento = dr("departamento").ToString
+                emp.IdEmpleado = Convert.ToInt32(dr("Clave").ToString)
+                emp.TipoUsuario = Convert.ToInt32(dr("tipoUsuario").ToString)
+                emp.rh_permiso = Convert.ToInt32(dr("rh_permisos").ToString)
+                emp.rh_evaluacion = Convert.ToInt32(dr("evaluaciones_permisos").ToString)
+                emp.Id_puesto = Convert.ToInt32(dr("puesto").ToString)
+            End While
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -267,7 +296,7 @@ where usuario = '" & us & "'", oCon)
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("select idEmpleado, ms.nombreModulo, rangoPermiso from Permisos_saam ps left join Modulos_saam ms on  ps.idModulo = ms.idModulo where ps.idEmpleado = " & emp.IdEmpleado & "", oCon)
+            Dim query As New SqlCommand("Select idEmpleado, ms.nombreModulo, rangoPermiso from Permisos_saam ps left join Modulos_saam ms on ps.idModulo = ms.idModulo where ps.idEmpleado = " & emp.IdEmpleado & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader

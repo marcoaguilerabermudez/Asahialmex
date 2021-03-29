@@ -40,7 +40,26 @@ Public Class Frm_Login
             Btn_Aceptar.Select()
         End If
     End Sub
+    Private _path As String
+    Private _filterAttribute As String
+    Private _descripcion As Integer
+    Public Sub New()
 
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+    End Sub
+    Public Sub New(ByVal path As String)
+        _path = path
+    End Sub
+
+    Public ReadOnly Property isDisplayName() As Integer
+        Get
+            Return _descripcion
+        End Get
+    End Property
 
     Private Sub BtnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Aceptar.Click
         Dim NEmple As New NEmpleado()
@@ -53,10 +72,12 @@ Public Class Frm_Login
             If Txt_NombreUsuario.Text <> "x" Then
                 Try
                     Dim context As New PrincipalContext(ContextType.Domain)
+                    'ComprobarUsuario() --------------Para prueba-------------
                     If Not IsNothing(context.ConnectedServer) Or context.ConnectedServer = "Servidor.asahialmex.local" Then
                         Dim grupos As New List(Of String)
                         Dim auth As Boolean = context.ValidateCredentials(Txt_NombreUsuario.Text, Txt_Contraseña.Text) '"user name", "password")
                         Dim user As UserPrincipal = UserPrincipal.FindByIdentity(context, Txt_NombreUsuario.Text) '"user name")
+                        Dim idE = Devuelve_Propiedad("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text, "EmployeeId")
                         Dim d As String = ""
                         If Not IsNothing(user) And auth Then
                             Dim userGroups As PrincipalSearchResult(Of Principal) = user.GetAuthorizationGroups()
@@ -66,7 +87,7 @@ Public Class Frm_Login
                             'MessageBox.Show("Listo!!!, usuario valido")
                         End If
 
-                        emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
+                        emp = NEmple.EmpleadoLoginDominio(cadenaCExpress, idE, Convert.ToString(user))
                         If Not IsNothing(user) And auth Then 'emp.Respuesta = 2 Then
                             Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
 
@@ -94,6 +115,7 @@ Public Class Frm_Login
                         err = "No fue posible ponerse en contacto con el servidor." Then
                         emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
                         If emp.Respuesta = 2 Then
+                            emp.NombreCompleto = Txt_NombreUsuario.Text
                             Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
 
                             principal.Show()
@@ -118,6 +140,7 @@ Public Class Frm_Login
             Else
                 emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
                 If emp.Respuesta = 2 Then
+                    emp.NombreCompleto = Txt_NombreUsuario.Text
                     Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
 
                     principal.Show()
@@ -145,7 +168,25 @@ Public Class Frm_Login
             Me.Close()
         End If
     End Sub
+    Public Function Devuelve_Propiedad(ByVal Domain As String, ByVal username As String, ByVal pwd As String, ByVal Propiedad As String) As Integer
+        Dim domainAndUsername As String = (Domain & "\") + username
+        Dim entry As New DirectoryEntry(_path, domainAndUsername, pwd)
 
+        Try
+            Dim search As New DirectorySearcher(entry)
+            search.Filter = "(&(objectClass=user)(anr=" + username + "))"
+            Dim resEnt As SearchResult = search.FindOne()
+            Dim de As DirectoryEntry = resEnt.GetDirectoryEntry()
+
+            _descripcion = de.Properties(Propiedad).Value.ToString
+
+            entry.Close()
+        Catch ex As Exception
+            Return "Error al traer la informacion"
+        End Try
+
+        Return _descripcion
+    End Function
     Private Sub Btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
         Me.Close()
     End Sub

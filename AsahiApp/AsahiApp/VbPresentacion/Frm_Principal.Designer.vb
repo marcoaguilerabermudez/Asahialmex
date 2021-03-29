@@ -63,6 +63,7 @@ Partial Class Frm_Principal
         Me.HistóricoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AusentismoGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajasPorMesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KárdexDeEmpleadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlanHorasExtraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MejoraContinuaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -111,7 +112,7 @@ Partial Class Frm_Principal
         Me.SemanalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Lbl_Version = New System.Windows.Forms.Label()
-        Me.KárdexDeEmpleadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Lbl_NombreUser = New System.Windows.Forms.Label()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -369,6 +370,12 @@ Partial Class Frm_Principal
         Me.BajasPorMesToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
         Me.BajasPorMesToolStripMenuItem.Text = "Bajas por Mes"
         '
+        'KárdexDeEmpleadoToolStripMenuItem
+        '
+        Me.KárdexDeEmpleadoToolStripMenuItem.Name = "KárdexDeEmpleadoToolStripMenuItem"
+        Me.KárdexDeEmpleadoToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.KárdexDeEmpleadoToolStripMenuItem.Text = "Kárdex de Empleado"
+        '
         'PlanHorasExtraToolStripMenuItem
         '
         Me.PlanHorasExtraToolStripMenuItem.Name = "PlanHorasExtraToolStripMenuItem"
@@ -385,14 +392,14 @@ Partial Class Frm_Principal
         'MejoraContinuaToolStripMenuItem
         '
         Me.MejoraContinuaToolStripMenuItem.Name = "MejoraContinuaToolStripMenuItem"
-        Me.MejoraContinuaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MejoraContinuaToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.MejoraContinuaToolStripMenuItem.Text = "Mejora Continua"
         '
         'ReporteMejorasToolStripMenuItem
         '
         Me.ReporteMejorasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EspañolToolStripMenuItem, Me.JaponésToolStripMenuItem})
         Me.ReporteMejorasToolStripMenuItem.Name = "ReporteMejorasToolStripMenuItem"
-        Me.ReporteMejorasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReporteMejorasToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.ReporteMejorasToolStripMenuItem.Text = "Mejoras Anual"
         '
         'EspañolToolStripMenuItem
@@ -411,7 +418,7 @@ Partial Class Frm_Principal
         '
         Me.PlanTiempoExtraToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MensualToolStripMenuItem1, Me.SemanalToolStripMenuItem1, Me.GeneralToolStripMenuItem1})
         Me.PlanTiempoExtraToolStripMenuItem.Name = "PlanTiempoExtraToolStripMenuItem"
-        Me.PlanTiempoExtraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PlanTiempoExtraToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.PlanTiempoExtraToolStripMenuItem.Text = "Plan Tiempo Extra"
         '
         'MensualToolStripMenuItem1
@@ -682,11 +689,14 @@ Partial Class Frm_Principal
         Me.Lbl_Version.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Version.TabIndex = 3
         '
-        'KárdexDeEmpleadoToolStripMenuItem
+        'Lbl_NombreUser
         '
-        Me.KárdexDeEmpleadoToolStripMenuItem.Name = "KárdexDeEmpleadoToolStripMenuItem"
-        Me.KárdexDeEmpleadoToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
-        Me.KárdexDeEmpleadoToolStripMenuItem.Text = "Kárdex de Empleado"
+        Me.Lbl_NombreUser.AutoSize = True
+        Me.Lbl_NombreUser.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Lbl_NombreUser.Location = New System.Drawing.Point(751, 30)
+        Me.Lbl_NombreUser.Name = "Lbl_NombreUser"
+        Me.Lbl_NombreUser.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_NombreUser.TabIndex = 4
         '
         'Frm_Principal
         '
@@ -695,6 +705,7 @@ Partial Class Frm_Principal
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(751, 450)
+        Me.Controls.Add(Me.Lbl_NombreUser)
         Me.Controls.Add(Me.Lbl_Version)
         Me.Controls.Add(Me.Men_Principal)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
@@ -798,4 +809,5 @@ Partial Class Frm_Principal
     Friend WithEvents BajasPorMesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents KárdexDeEmpleadoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Lbl_NombreUser As Label
 End Class
