@@ -78,10 +78,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2D77E0AB727C470B6754A3FBB5E5B7D6634E9AAF</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B6996942B9723F900311AE43AC02798EE0F45BD2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_17_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_18_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -1494,6 +1494,7 @@
     <None Include="VbPresentacion_15_TemporaryKey.pfx" />
     <None Include="VbPresentacion_16_TemporaryKey.pfx" />
     <None Include="VbPresentacion_17_TemporaryKey.pfx" />
+    <None Include="VbPresentacion_18_TemporaryKey.pfx" />
     <None Include="VbPresentacion_1_TemporaryKey.pfx" />
     <None Include="VbPresentacion_2_TemporaryKey.pfx" />
     <None Include="VbPresentacion_3_TemporaryKey.pfx" />
@@ -1611,7 +1612,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
