@@ -37,6 +37,7 @@ Public Class Frm_Principal
 #End Region
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Lbl_Version.Text = My.Application.Info.Version.ToString
+        Lbl_NombreUser.Text = emp.NombreCompleto
         If Me.emp.TipoUsuario = 0 Then
             Dim lstPer As New LPermisos(), NEmp As New NEmpleado()
 

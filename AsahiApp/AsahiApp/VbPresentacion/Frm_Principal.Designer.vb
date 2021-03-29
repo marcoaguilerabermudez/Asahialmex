@@ -115,6 +115,7 @@ Partial Class Frm_Principal
         Me.SemanalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Lbl_Version = New System.Windows.Forms.Label()
+        Me.Lbl_NombreUser = New System.Windows.Forms.Label()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -710,6 +711,15 @@ Partial Class Frm_Principal
         Me.Lbl_Version.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_Version.TabIndex = 3
         '
+        'Lbl_NombreUser
+        '
+        Me.Lbl_NombreUser.AutoSize = True
+        Me.Lbl_NombreUser.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Lbl_NombreUser.Location = New System.Drawing.Point(751, 30)
+        Me.Lbl_NombreUser.Name = "Lbl_NombreUser"
+        Me.Lbl_NombreUser.Size = New System.Drawing.Size(0, 13)
+        Me.Lbl_NombreUser.TabIndex = 4
+        '
         'Frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -717,6 +727,7 @@ Partial Class Frm_Principal
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(751, 450)
+        Me.Controls.Add(Me.Lbl_NombreUser)
         Me.Controls.Add(Me.Lbl_Version)
         Me.Controls.Add(Me.Men_Principal)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
@@ -823,4 +834,5 @@ Partial Class Frm_Principal
     Friend WithEvents ActualizaRegistrosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalidaDeEquipoDeCómputoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Lbl_NombreUser As Label
 End Class

@@ -5,6 +5,10 @@ Public Class NEmpleado
         Dim DEmp As New DEmpleado()
         Return DEmp.EmpleadoLogin(cadConex, us, pass)
     End Function
+    Public Function EmpleadoLoginDominio(ByVal cadConex As String, ByVal noEmp As Integer, ByVal nomb As String) As Empleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.EmpleadoLoginDominio(cadConex, noEmp, nomb)
+    End Function
     Public Function RecuperarDepartamentos(ByVal cadenaConex As String, ByVal idioma As Integer) As LEmpleado
         Dim DEmp As New DEmpleado()
         If idioma = 1 Then
