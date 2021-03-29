@@ -1,17 +1,35 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ActualizaTurnoSolicitud
-    Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
+    '  Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
     Dim variable As Integer
     Dim fecha As String
     Dim claveprincipal As Integer
 
+    Public cadenaConex As String
+    Public cadenaCExpress As String
+    Public cn As SqlConnection
 
     Dim id_depa As Integer
     Dim id_id As Integer
     Dim id_permiso As Integer
 
+
+
     Private Sub ActualizaTurnoSolicitud_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim conexion As New conexion()
+        If Strings.Left(conexion.getIp(), 6) = "172.16" Then
+            Me.cadenaConex = conexion.cadenaConex
+            Me.cn = conexion.cadenaConexExpress1
+            Me.cadenaCExpress = conexion.cadenaConexExpress
+        Else
+            Me.cadenaConex = conexion.cadenaConexFor
+            Me.cn = conexion.conexionExpressFor
+            Me.cadenaCExpress = conexion.cadenaConexExpressFor
+        End If
+
+
         lbl_clave.Text = Modulo_sollicitudte.e_clave
         lbl_nombre.Text = Modulo_sollicitudte.e_empleado
         lbl_turno.Text = Modulo_sollicitudte.e_turno
@@ -27,19 +45,18 @@ Public Class ActualizaTurnoSolicitud
     End Sub
 
 
+
+
     Sub actualizar()
         Dim Pregunta As Integer = MsgBox("¿Desea modificar el turno extra a laborar?", vbYesNo + vbExclamation + vbDefaultButton2, "¡Aviso!")
 
-
-
-
         If Pregunta = vbYes Then
 
-            Cn.Close()
+            cn.Close()
 
 
-            Dim command As New SqlCommand("Sp_actualizaentradaysalidaRh", Cn)
-            Cn.Open()
+            Dim command As New SqlCommand("Sp_actualizaentradaysalidaRh", cn)
+            cn.Open()
 
             command.CommandType = CommandType.StoredProcedure
 
@@ -62,19 +79,15 @@ Public Class ActualizaTurnoSolicitud
                 MessageBox.Show("Los cambios se realizaron correctamente", "¡Se ha modificado el turno a laborar!")
 
 
-
-
-
-
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
 
             Finally
-                Cn.Close()
+                cn.Close()
             End Try
 
         Else
-            Cn.Close()
+            cn.Close()
         End If
     End Sub
 
@@ -89,6 +102,17 @@ Public Class ActualizaTurnoSolicitud
         Me.Dispose()
         Me.Close()
     End Sub
+
+
+
+    Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyClass.FormClosing
+        Dim solte As New SolicitudTE(id_id, id_depa, id_permiso)
+        solte.Show()
+        Me.Dispose()
+        Me.Close()
+    End Sub
+
+
 
 
 End Class
