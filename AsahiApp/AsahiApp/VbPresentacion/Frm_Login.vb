@@ -42,7 +42,8 @@ Public Class Frm_Login
     End Sub
     Private _path As String
     Private _filterAttribute As String
-    Private _descripcion As Integer
+    Private _descripcionInt As Integer
+    Private _descripcion As String
     Public Sub New()
 
         ' Esta llamada es exigida por el diseñador.
@@ -77,7 +78,7 @@ Public Class Frm_Login
                         Dim grupos As New List(Of String)
                         Dim auth As Boolean = context.ValidateCredentials(Txt_NombreUsuario.Text, Txt_Contraseña.Text) '"user name", "password")
                         Dim user As UserPrincipal = UserPrincipal.FindByIdentity(context, Txt_NombreUsuario.Text) '"user name")
-                        Dim idE = Devuelve_Propiedad("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text, "EmployeeId")
+                        Dim idE = Devuelve_Id("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text, "EmployeeId")
                         Dim d As String = ""
                         If Not IsNothing(user) And auth Then
                             Dim userGroups As PrincipalSearchResult(Of Principal) = user.GetAuthorizationGroups()
@@ -134,27 +135,13 @@ Public Class Frm_Login
                             Me.count += 1
                         End If
                     Else
-                        If IsAuthenticated("Asahi", Txt_NombreUsuario.Text, Txt_Contraseña.Text) Then
-                            'Dim idE = Devuelve_Propiedad("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text, "EmployeeId")
-                            'emp = NEmple.EmpleadoLoginDominio(cadenaCExpress, idE, Convert.ToString(user))
-                            'If Not IsNothing(user) And auth Then 'emp.Respuesta = 2 Then
-                            '    Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
-
-                            '    principal.Show()
-
-                            '    Me.Close()
-                            'ElseIf IsNothing(user) Then 'emp.Respuesta = 0 Then
-                            '    MsgBox("Usuario Erroneo")
-                            '    Txt_NombreUsuario.Text = ""
-                            '    Txt_Contraseña.Text = ""
-                            '    Txt_NombreUsuario.Select()
-                            '    Me.count += 1
-                            'ElseIf Not IsNothing(user) And auth = False Then 'emp.Respuesta = 1 Then
-                            '    MsgBox("Contraseña Erronea")
-                            '    Txt_Contraseña.Text = ""
-                            '    Txt_Contraseña.Select()
-                            '    Me.count += 1
-                            'End If
+                        If IsAuthenticated("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text) Then
+                            Dim user As String = Devuelve_Propiedad("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text, "Name")
+                            Dim idE = Devuelve_Id("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text, "EmployeeId")
+                            emp = NEmple.EmpleadoLoginDominio(cadenaCExpress, idE, Convert.ToString(user))
+                            Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
+                            principal.Show()
+                            Me.Close()
                         Else
                             MsgBox(ex.Message)
                         End If
@@ -191,7 +178,27 @@ Public Class Frm_Login
             Me.Close()
         End If
     End Sub
-    Public Function Devuelve_Propiedad(ByVal Domain As String, ByVal username As String, ByVal pwd As String, ByVal Propiedad As String) As Integer
+    Public Function Devuelve_Id(ByVal Domain As String, ByVal username As String, ByVal pwd As String, ByVal Propiedad As String) As Integer
+        Dim domainAndUsername As String = (Domain & "\") + username
+        Dim entry As New DirectoryEntry(_path, domainAndUsername, pwd)
+
+        Try
+            Dim search As New DirectorySearcher(entry)
+            search.Filter = "(&(objectClass=user)(anr= " + username + "))"
+            Dim resEnt As SearchResult = search.FindOne()
+            Dim de As DirectoryEntry = resEnt.GetDirectoryEntry()
+
+            _descripcionInt = de.Properties(Propiedad).Value.ToString
+
+            entry.Close()
+        Catch ex As Exception
+            MsgBox("Error al traer la Información" & ex.Message)
+            Return 0
+        End Try
+
+        Return _descripcionInt
+    End Function
+    Public Function Devuelve_Propiedad(ByVal Domain As String, ByVal username As String, ByVal pwd As String, ByVal Propiedad As String) As String
         Dim domainAndUsername As String = (Domain & "\") + username
         Dim entry As New DirectoryEntry(_path, domainAndUsername, pwd)
 
@@ -206,7 +213,7 @@ Public Class Frm_Login
             entry.Close()
         Catch ex As Exception
             MsgBox("Error al traer la Información" & ex.Message)
-            Return 0
+            Return ""
         End Try
 
         Return _descripcion
@@ -221,7 +228,7 @@ Public Class Frm_Login
             Dim resEnt As SearchResult = search.FindOne()
             Dim de As DirectoryEntry = resEnt.GetDirectoryEntry()
 
-            _descripcion = de.Properties(Propiedad).Value.ToString
+            _descripcionInt = de.Properties(Propiedad).Value.ToString
 
             entry.Close()
         Catch ex As Exception
@@ -229,7 +236,7 @@ Public Class Frm_Login
             Return 0
         End Try
 
-        Return _descripcion
+        Return _descripcionInt
     End Function
     Public Function IsAuthenticated(ByVal Domain As String, ByVal username As String, ByVal pwd As String) As Boolean
         Dim Success As Boolean = False

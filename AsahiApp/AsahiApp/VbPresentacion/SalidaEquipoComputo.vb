@@ -239,7 +239,14 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
 
         Dim comando As SqlCommand = New SqlCommand
-        comando.CommandText = " select top 1 estado FROM [AsahiSystem].[dbo].[Rh_SalidaEquipoComputo] where clave = " & txt_clave.Text & " order by Id_solicitud desc"
+        comando.CommandText = "if exists(select top 1 estado FROM [AsahiSystem].[dbo].[Rh_SalidaEquipoComputo] where clave = " & txt_clave.Text & " order by Id_solicitud desc)
+  begin
+  select top 1 estado FROM [AsahiSystem].[dbo].[Rh_SalidaEquipoComputo] where clave = " & txt_clave.Text & " order by Id_solicitud desc
+  end
+  else
+  begin
+  select 1
+  end"
         comando.Connection = cnn
         cnn.Close()
         cnn.Open()
