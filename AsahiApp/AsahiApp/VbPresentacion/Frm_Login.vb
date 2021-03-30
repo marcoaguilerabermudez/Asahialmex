@@ -69,7 +69,7 @@ Public Class Frm_Login
         If Txt_NombreUsuario.Text <> "" And Txt_Contraseña.Text <> "" Then
 
 
-            If Txt_NombreUsuario.Text <> "x" Then
+            If Txt_NombreUsuario.Text <> "x" And Txt_NombreUsuario.Text <> "yoshimura.naoyuki" Then
                 Try
                     Dim context As New PrincipalContext(ContextType.Domain)
                     'ComprobarUsuario() --------------Para prueba-------------
@@ -134,7 +134,30 @@ Public Class Frm_Login
                             Me.count += 1
                         End If
                     Else
-                        MsgBox(ex.Message)
+                        If IsAuthenticated("Asahi", Txt_NombreUsuario.Text, Txt_Contraseña.Text) Then
+                            'Dim idE = Devuelve_Propiedad("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text, "EmployeeId")
+                            'emp = NEmple.EmpleadoLoginDominio(cadenaCExpress, idE, Convert.ToString(user))
+                            'If Not IsNothing(user) And auth Then 'emp.Respuesta = 2 Then
+                            '    Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
+
+                            '    principal.Show()
+
+                            '    Me.Close()
+                            'ElseIf IsNothing(user) Then 'emp.Respuesta = 0 Then
+                            '    MsgBox("Usuario Erroneo")
+                            '    Txt_NombreUsuario.Text = ""
+                            '    Txt_Contraseña.Text = ""
+                            '    Txt_NombreUsuario.Select()
+                            '    Me.count += 1
+                            'ElseIf Not IsNothing(user) And auth = False Then 'emp.Respuesta = 1 Then
+                            '    MsgBox("Contraseña Erronea")
+                            '    Txt_Contraseña.Text = ""
+                            '    Txt_Contraseña.Select()
+                            '    Me.count += 1
+                            'End If
+                        Else
+                            MsgBox(ex.Message)
+                        End If
                     End If
                 End Try
             Else
@@ -174,7 +197,7 @@ Public Class Frm_Login
 
         Try
             Dim search As New DirectorySearcher(entry)
-            search.Filter = "(&(objectClass=user)(anr=" + username + "))"
+            search.Filter = "(&(objectClass=user)(anr= " + username + "))"
             Dim resEnt As SearchResult = search.FindOne()
             Dim de As DirectoryEntry = resEnt.GetDirectoryEntry()
 
@@ -182,10 +205,44 @@ Public Class Frm_Login
 
             entry.Close()
         Catch ex As Exception
-            Return "Error al traer la informacion"
+            MsgBox("Error al traer la Información" & ex.Message)
+            Return 0
         End Try
 
         Return _descripcion
+    End Function
+    Public Function Devuelve_Propiedad_Seguridad(ByVal Domain As String, ByVal username As String, ByVal pwd As String, ByVal Propiedad As String, ByVal Propiedad2 As String) As Integer
+        Dim domainAndUsername As String = (Domain & "\") + username
+        Dim entry As New DirectoryEntry(_path, domainAndUsername, pwd)
+
+        Try
+            Dim search As New DirectorySearcher(entry)
+            search.Filter = "(&(objectClass=user)(anr= " + username + "))"
+            Dim resEnt As SearchResult = search.FindOne()
+            Dim de As DirectoryEntry = resEnt.GetDirectoryEntry()
+
+            _descripcion = de.Properties(Propiedad).Value.ToString
+
+            entry.Close()
+        Catch ex As Exception
+            MsgBox("Error al traer la Información" & ex.Message)
+            Return 0
+        End Try
+
+        Return _descripcion
+    End Function
+    Public Function IsAuthenticated(ByVal Domain As String, ByVal username As String, ByVal pwd As String) As Boolean
+        Dim Success As Boolean = False
+        Dim Entry As New System.DirectoryServices.DirectoryEntry("LDAP://" & Domain, username, pwd)
+        Dim Searcher As New System.DirectoryServices.DirectorySearcher(Entry)
+        Searcher.SearchScope = DirectoryServices.SearchScope.OneLevel
+        Try
+            Dim Results As System.DirectoryServices.SearchResult = Searcher.FindOne
+            Success = Not (Results Is Nothing)
+        Catch
+            Success = False
+        End Try
+        Return Success
     End Function
     Private Sub Btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
         Me.Close()
