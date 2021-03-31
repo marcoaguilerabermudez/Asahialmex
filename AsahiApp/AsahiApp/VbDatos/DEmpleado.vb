@@ -166,7 +166,7 @@ where usuario = '" & us & "'", oCon)
         Dim emp As New Empleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT (vig.Clave*1)Clave, tipoUsuario = CASE vig.DEPARTAMENTO WHEN 19 THEN 1 ELSE 0 END, departamento, rh_permisos, evaluaciones_permisos, puesto 
+            Dim query As New SqlCommand("SELECT (vig.Clave*1)Clave, tipoUsuario = CASE WHEN vig.DEPARTAMENTO = 19 THEN 1 WHEN vig.Clave = 5141 THEN 1 ELSE 0 END, departamento, rh_permisos, evaluaciones_permisos, puesto 
 FROM  giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig
 inner join [AsahiSystem].[dbo].[Req_permisos] per on per.Clave = vig.Clave
 where vig.Clave = " & noEmp, oCon)
@@ -564,5 +564,23 @@ where vig.Clave = " & noEmp, oCon)
             oCon.Dispose()
         End Try
         Return LstEmp
+    End Function
+    Public Function AccesoJapo(ByVal cadenaConex As String, ByVal nombre As String) As Boolean
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim Resp As Boolean
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("If exists(Select Acceso from AAMS_Acceso_Jap where Nombre like '" & nombre & "%') begin Select 1 as Acceso end Else begin Select 0 as Acceso end", oCon)
+            query.CommandTimeout = 120
+            Resp = query.ExecuteScalar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return Resp
     End Function
 End Class

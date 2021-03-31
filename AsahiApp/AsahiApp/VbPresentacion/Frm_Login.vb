@@ -68,17 +68,18 @@ Public Class Frm_Login
 
 
         If Txt_NombreUsuario.Text <> "" And Txt_Contraseña.Text <> "" Then
+            Dim resp As Boolean = NEmple.AccesoJapo(cadenaCExpress, Txt_NombreUsuario.Text.Replace(" ", ""))
 
 
-            If Txt_NombreUsuario.Text <> "x" And Txt_NombreUsuario.Text <> "yoshimura.naoyuki" Then
+            If Txt_NombreUsuario.Text <> "x" And resp = False Then
                 Try
                     Dim context As New PrincipalContext(ContextType.Domain)
                     'ComprobarUsuario() --------------Para prueba-------------
                     If Not IsNothing(context.ConnectedServer) Or context.ConnectedServer = "Servidor.asahialmex.local" Then
                         Dim grupos As New List(Of String)
-                        Dim auth As Boolean = context.ValidateCredentials(Txt_NombreUsuario.Text, Txt_Contraseña.Text) '"user name", "password")
-                        Dim user As UserPrincipal = UserPrincipal.FindByIdentity(context, Txt_NombreUsuario.Text) '"user name")
-                        Dim idE = Devuelve_Id("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text, "EmployeeId")
+                        Dim auth As Boolean = context.ValidateCredentials(Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contraseña.Text.Replace(" ", "")) '"user name", "password")
+                        Dim user As UserPrincipal = UserPrincipal.FindByIdentity(context, Txt_NombreUsuario.Text.Replace(" ", "")) '"user name")
+                        Dim idE = Devuelve_Id("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contraseña.Text.Replace(" ", ""), "EmployeeId")
                         Dim d As String = ""
                         If Not IsNothing(user) And auth Then
                             Dim userGroups As PrincipalSearchResult(Of Principal) = user.GetAuthorizationGroups()
@@ -114,9 +115,9 @@ Public Class Frm_Login
                     'MsgBox(err)
                     If err = "El dominio especificado no existe o no se pudo poner en contacto con él." & vbCrLf Or
                         err = "No fue posible ponerse en contacto con el servidor." Then
-                        emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
+                        emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contraseña.Text.Replace(" ", ""))
                         If emp.Respuesta = 2 Then
-                            emp.NombreCompleto = Txt_NombreUsuario.Text
+                            emp.NombreCompleto = Txt_NombreUsuario.Text.Replace(" ", "")
                             Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
 
                             principal.Show()
@@ -135,9 +136,9 @@ Public Class Frm_Login
                             Me.count += 1
                         End If
                     Else
-                        If IsAuthenticated("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text) Then
-                            Dim user As String = Devuelve_Propiedad("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text, "Name")
-                            Dim idE = Devuelve_Id("ASAHI", Txt_NombreUsuario.Text, Txt_Contraseña.Text, "EmployeeId")
+                        If IsAuthenticated("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contraseña.Text.Replace(" ", "")) Then
+                            Dim user As String = Devuelve_Propiedad("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contraseña.Text.Replace(" ", ""), "Name")
+                            Dim idE = Devuelve_Id("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contraseña.Text.Replace(" ", ""), "EmployeeId")
                             emp = NEmple.EmpleadoLoginDominio(cadenaCExpress, idE, Convert.ToString(user))
                             Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
                             principal.Show()
@@ -148,9 +149,9 @@ Public Class Frm_Login
                     End If
                 End Try
             Else
-                emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text, Txt_Contraseña.Text)
+                emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contraseña.Text.Replace(" ", ""))
                 If emp.Respuesta = 2 Then
-                    emp.NombreCompleto = Txt_NombreUsuario.Text
+                    emp.NombreCompleto = Txt_NombreUsuario.Text.Replace(" ", "")
                     Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
 
                     principal.Show()
