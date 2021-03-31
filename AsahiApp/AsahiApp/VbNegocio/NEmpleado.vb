@@ -61,4 +61,8 @@ Public Class NEmpleado
         Dim DEmp As New DEmpleado()
         Return DEmp.RecuperarArea(cadenaConex)
     End Function
+    Public Function AccesoJapo(ByVal cadenaConex As String, ByVal nombre As String) As Boolean
+        Dim DEmp As New DEmpleado()
+        Return DEmp.AccesoJapo(cadenaConex, nombre)
+    End Function
 End Class
