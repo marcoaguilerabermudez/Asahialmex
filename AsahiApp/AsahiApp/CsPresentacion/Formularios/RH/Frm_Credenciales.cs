@@ -229,7 +229,7 @@ namespace CsPresentacion
             {
                 cargar_informacion();
                 comprueba_existencia();
-                pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
+                pictureBox1.ImageLocation = "V:/2. RECURSOS HUMANOS/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
                 txt_vigencia.Visible = true;
                 lbl_estado.Visible = true;
                 if (txt_vigencia.Text == "VIGENTE")
