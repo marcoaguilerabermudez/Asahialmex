@@ -16,6 +16,7 @@ Public Class Validath
     End Sub
 
     Private Sub dtp_cuando_ValueChanged(sender As Object, e As EventArgs) Handles dtp1.ValueChanged
+        'MessageBox.Show(dtp1.Value.DayOfWeek)
         cargagrid()
 
     End Sub
