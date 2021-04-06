@@ -347,7 +347,7 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", cn)
         If (Today.Date.DayOfWeek = 2 OrElse Today.Date.DayOfWeek = 3 OrElse Today.Date.DayOfWeek = 4 OrElse Today.Date.DayOfWeek = 5 OrElse Today.Date.DayOfWeek = 6 OrElse Today.Date.DayOfWeek = 0) And Date.Now.ToString("HH:mm:ss") < "10:30:00" Then
             MessageBox.Show("La validación es a partir de las 10:30 a.m.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf (Today.Date.DayOfWeek = 2 OrElse Today.Date.DayOfWeek = 3 OrElse Today.Date.DayOfWeek = 4 OrElse Today.Date.DayOfWeek = 5 OrElse Today.Date.DayOfWeek = 6 OrElse Today.Date.DayOfWeek = 0) And Date.Now.ToString("HH:mm:ss") > "10:30:00" Then
-            If dtp1.Value.DayOfWeek = 0 OrElse dtp1.Value.DayOfWeek = 6 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 Then
+            If dtp1.Value.DayOfWeek = 0 Then
                 autorizardomingo()
             Else
                 autorizar()
@@ -355,7 +355,7 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", cn)
         ElseIf (Today.Date.DayOfWeek = 1) And Date.Now.ToString("HH:mm:ss") < "10:30:00" Then
             MessageBox.Show("La validación es a partir de las 10:30 a.m.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf (Today.Date.DayOfWeek = 1) And Date.Now.ToString("HH:mm:ss") > "10:30:00" Then
-            If dtp1.Value.DayOfWeek = 0 OrElse dtp1.Value.DayOfWeek = 6 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 Then
+            If dtp1.Value.DayOfWeek = 0 Then
                 autorizardomingo()
             Else
                 autorizar()
