@@ -834,7 +834,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Empleado Solicita 申請社員</Value>
+                <Value>Empleado Solicita</Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                 </Style>
@@ -860,9 +860,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>11.36216cm</Top>
-        <Left>1.02435cm</Left>
+        <Left>0.70685cm</Left>
         <Height>0.54865cm</Height>
-        <Width>4.42829cm</Width>
+        <Width>3.42697cm</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
@@ -882,7 +882,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Supervisor Autoriza 上司承認</Value>
+                <Value>Supervisor Autoriza</Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                 </Style>
@@ -895,9 +895,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>11.36216cm</Top>
-        <Left>8.12724cm</Left>
+        <Left>5.58724cm</Left>
         <Height>0.54865cm</Height>
-        <Width>4.82516cm</Width>
+        <Width>3.66099cm</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
@@ -917,7 +917,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Recursos Humanos VoBo 人事承認</Value>
+                <Value>Recursos Humanos</Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                 </Style>
@@ -943,9 +943,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>11.36216cm</Top>
-        <Left>15.16659cm</Left>
+        <Left>16.11909cm</Left>
         <Height>0.54865cm</Height>
-        <Width>5.52923cm</Width>
+        <Width>4.31215cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
@@ -960,9 +960,9 @@
       </Textbox>
       <Line Name="Line4">
         <Top>11.32688cm</Top>
-        <Left>0.7894cm</Left>
+        <Left>0.4719cm</Left>
         <Height>0cm</Height>
-        <Width>4.89722cm</Width>
+        <Width>3.66192cm</Width>
         <ZIndex>22</ZIndex>
         <Style>
           <Border>
@@ -972,9 +972,9 @@
       </Line>
       <Line Name="Line5">
         <Top>11.29161cm</Top>
-        <Left>8.05519cm</Left>
+        <Left>5.51519cm</Left>
         <Height>0cm</Height>
-        <Width>4.89722cm</Width>
+        <Width>3.73304cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -984,9 +984,9 @@
       </Line>
       <Line Name="Line6">
         <Top>11.29161cm</Top>
-        <Left>15.16659cm</Left>
+        <Left>16.11909cm</Left>
         <Height>0cm</Height>
-        <Width>5.52923cm</Width>
+        <Width>4.31215cm</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
@@ -1809,27 +1809,14 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox36">
+      <Textbox Name="Textbox39">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Empleado Solicita 申請社員</Value>
-                <Style>
-                  <FontFamily>MS UI Gothic</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
+                <Value>Nuevo Departamento</Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                 </Style>
@@ -1841,10 +1828,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>24.01987cm</Top>
-        <Left>1.02435cm</Left>
+        <Top>11.36216cm</Top>
+        <Left>10.69574cm</Left>
         <Height>0.54865cm</Height>
-        <Width>4.42829cm</Width>
+        <Width>3.66099cm</Width>
         <ZIndex>43</ZIndex>
         <Style>
           <Border>
@@ -1857,49 +1844,26 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox37">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Supervisor Autoriza 上司承認</Value>
-                <Style>
-                  <FontFamily>MS UI Gothic</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>24.01987cm</Top>
-        <Left>8.12724cm</Left>
-        <Height>0.54865cm</Height>
-        <Width>4.82516cm</Width>
+      <Line Name="Line10">
+        <Top>11.29161cm</Top>
+        <Left>10.62369cm</Left>
+        <Height>0cm</Height>
+        <Width>3.73304cm</Width>
         <ZIndex>44</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Textbox>
-      <Textbox Name="Textbox38">
+      </Line>
+      <Textbox Name="Textbox40">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Recursos Humanos VoBo 人事承認</Value>
+                <Value>Empleado Solicita</Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                 </Style>
@@ -1924,10 +1888,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>24.01987cm</Top>
-        <Left>15.16659cm</Left>
+        <Top>23.54178cm</Top>
+        <Left>0.74138cm</Left>
         <Height>0.54865cm</Height>
-        <Width>5.52923cm</Width>
+        <Width>3.42697cm</Width>
         <ZIndex>45</ZIndex>
         <Style>
           <Border>
@@ -1940,36 +1904,166 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Line Name="Line7">
-        <Top>23.98459cm</Top>
-        <Left>0.7894cm</Left>
-        <Height>0cm</Height>
-        <Width>4.89722cm</Width>
+      <Textbox Name="Textbox41">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Supervisor Autoriza</Value>
+                <Style>
+                  <FontFamily>MS UI Gothic</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>23.54178cm</Top>
+        <Left>5.62177cm</Left>
+        <Height>0.54865cm</Height>
+        <Width>3.66099cm</Width>
         <ZIndex>46</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Line>
-      <Line Name="Line8">
-        <Top>23.94932cm</Top>
-        <Left>8.05519cm</Left>
-        <Height>0cm</Height>
-        <Width>4.89722cm</Width>
+      </Textbox>
+      <Textbox Name="Textbox42">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Recursos Humanos</Value>
+                <Style>
+                  <FontFamily>MS UI Gothic</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>MS UI Gothic</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>23.54178cm</Top>
+        <Left>16.15362cm</Left>
+        <Height>0.54865cm</Height>
+        <Width>4.31215cm</Width>
         <ZIndex>47</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line11">
+        <Top>23.5065cm</Top>
+        <Left>0.50643cm</Left>
+        <Height>0cm</Height>
+        <Width>3.66192cm</Width>
+        <ZIndex>48</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
         </Style>
       </Line>
-      <Line Name="Line9">
-        <Top>23.94932cm</Top>
-        <Left>15.16659cm</Left>
+      <Line Name="Line12">
+        <Top>23.47123cm</Top>
+        <Left>5.54972cm</Left>
         <Height>0cm</Height>
-        <Width>5.52923cm</Width>
-        <ZIndex>48</ZIndex>
+        <Width>3.73304cm</Width>
+        <ZIndex>49</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line13">
+        <Top>23.47123cm</Top>
+        <Left>16.15362cm</Left>
+        <Height>0cm</Height>
+        <Width>4.31215cm</Width>
+        <ZIndex>50</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox43">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Nuevo Departamento</Value>
+                <Style>
+                  <FontFamily>MS UI Gothic</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>23.54178cm</Top>
+        <Left>10.73027cm</Left>
+        <Height>0.54865cm</Height>
+        <Width>3.66099cm</Width>
+        <ZIndex>51</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line14">
+        <Top>23.47123cm</Top>
+        <Left>10.65822cm</Left>
+        <Height>0cm</Height>
+        <Width>3.73304cm</Width>
+        <ZIndex>52</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>

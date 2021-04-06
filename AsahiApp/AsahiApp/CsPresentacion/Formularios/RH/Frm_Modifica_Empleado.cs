@@ -802,7 +802,7 @@ namespace CsPresentacion
                 mostrar_dgv_puesto();
                 mostrar_dgv_sueldo();
 
-                pictureBox1.ImageLocation = "V:/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
+                pictureBox1.ImageLocation = "V:/2. RECURSOS HUMANOS/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
                 btn_mod_fam.Enabled = true;
                 btn_mod_general.Enabled = true;
 
