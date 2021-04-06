@@ -165,7 +165,6 @@ C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\b
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\Microsoft.VisualStudio.Debugger.Interop.11.0.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\Newtonsoft.Json.dll
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\System.Threading.Tasks.Dataflow.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\Microsoft.MSXML.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\Microsoft.Build.Utilities.Core.dll
@@ -215,9 +214,7 @@ C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\b
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\es\Microsoft.VisualStudio.Data.Services.resources.dll
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\ja\Microsoft.VisualStudio.Data.Services.resources.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\ja\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csprojAssemblyReference.cache
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
@@ -227,5 +224,3 @@ C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\b
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.pdb
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.pdb
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.dll.config
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.dll.CodeAnalysisLog.xml
-C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsNegocio.dll.lastcodeanalysissucceeded
