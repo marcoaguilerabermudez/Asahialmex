@@ -225,6 +225,8 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
 
 
 
+
+
     Sub variables()
         Try
 

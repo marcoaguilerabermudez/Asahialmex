@@ -10,6 +10,7 @@ Public Class SalidaEquipoComputo
     Dim x As Integer
 
     Private Sub SalidaEquipoComputo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim conexion As New conexion()
         If Strings.Left(conexion.getIp(), 6) = "172.16" Then
             Me.cadenaConex = conexion.cadenaConex
@@ -20,6 +21,7 @@ Public Class SalidaEquipoComputo
             Me.cnn = conexion.conexionExpressFor
             Me.cadenaCExpress = conexion.cadenaConexExpressFor
         End If
+
     End Sub
 
     Sub muestraetiqueta()
@@ -37,9 +39,8 @@ Public Class SalidaEquipoComputo
             'Dim parametro2 As String
             'parametro2 = dtp1.Value.ToShortDateString
 
-            SSel = ("
-
-
+            SSel =
+                ("
 select vig.CLAVE, RTRIM(LTRIM(NOMBREN)) + ' ' + RTRIM(LTRIM(NOMBREP)) + ' ' + RTRIM(LTRIM(NOMBREM)) AS Empleado
 ,Turno = CASE (select TOP 1 ETT.CATALOGO  from GIRO.[asahi16].[Supervisor_giro].[Empturno] ETT
   where ett.clave = vig.CLAVE and ett.FECHA_ENTRADA <= getdate()
@@ -87,7 +88,7 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
             gbx_historial.Visible = True
             muestragird()
         Catch ex As Exception
-            ' MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.ToString)
             MessageBox.Show("El empleado que ha seleccionado no está activo o no tiene equipo de cómputo asignado, verifique e intente de nuevo.", "¡Aviso!")
             cnn.Close()
             btn_guardar.Enabled = False
@@ -228,6 +229,7 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
             '    End If
             'Next
             '  End Using
+
             cnn.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -239,7 +241,17 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
 
         Dim comando As SqlCommand = New SqlCommand
-        comando.CommandText = " select top 1 estado FROM [AsahiSystem].[dbo].[Rh_SalidaEquipoComputo] where clave = " & txt_clave.Text & " order by Id_solicitud desc"
+        comando.CommandText = " 
+  if exists(select top 1 estado FROM [AsahiSystem].[dbo].[Rh_SalidaEquipoComputo] where clave = " & txt_clave.Text & " order by Id_solicitud desc)
+  begin
+  select top 1 estado FROM [AsahiSystem].[dbo].[Rh_SalidaEquipoComputo] where clave = " & txt_clave.Text & " order by Id_solicitud desc
+  end
+  else
+  begin
+  select 1
+  end
+
+"
         comando.Connection = cnn
         cnn.Close()
         cnn.Open()

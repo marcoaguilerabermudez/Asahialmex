@@ -63,13 +63,13 @@ Partial Class SalidaEquipoComputo
         Me.panel1.Controls.Add(Me.Label1)
         Me.panel1.Location = New System.Drawing.Point(4, 1)
         Me.panel1.Name = "panel1"
-        Me.panel1.Size = New System.Drawing.Size(837, 63)
+        Me.panel1.Size = New System.Drawing.Size(759, 63)
         Me.panel1.TabIndex = 145
         '
         'dtp1
         '
         Me.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp1.Location = New System.Drawing.Point(328, 22)
+        Me.dtp1.Location = New System.Drawing.Point(328, 13)
         Me.dtp1.Name = "dtp1"
         Me.dtp1.Size = New System.Drawing.Size(100, 20)
         Me.dtp1.TabIndex = 137
@@ -79,7 +79,7 @@ Partial Class SalidaEquipoComputo
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label1.Location = New System.Drawing.Point(11, 22)
+        Me.Label1.Location = New System.Drawing.Point(11, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(311, 20)
         Me.Label1.TabIndex = 136
