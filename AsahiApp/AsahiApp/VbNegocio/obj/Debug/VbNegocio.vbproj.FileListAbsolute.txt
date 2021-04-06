@@ -301,3 +301,5 @@ C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\b
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Datos.pdb
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Datos.xml
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Datos.dll.config
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.dll.CodeAnalysisLog.xml
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Negocio.dll.lastcodeanalysissucceeded
