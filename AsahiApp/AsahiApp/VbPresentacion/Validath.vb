@@ -48,7 +48,6 @@ Public Class Validath
 
 
         For Each row As DataGridViewRow In Me.dtgvp.Rows
-
             If row.Cells(“ValSuper”).Value = 0 And row.Cells(“TE”).Value = 0 And row.Cells(“Plan”).Value > 0 Then
                 row.DefaultCellStyle.BackColor = Color.LightCoral
             ElseIf row.Cells(“ValSuper”).Value = 1 Then
@@ -56,7 +55,6 @@ Public Class Validath
             ElseIf row.Cells(“ValSuper”).Value = 2 Then
                 row.DefaultCellStyle.BackColor = Color.ForestGreen
             End If
-
         Next
 
         Dim col As DataGridViewColumn =
