@@ -24,7 +24,6 @@ Partial Class Frm_cargaplanpersonal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cargaplanpersonal))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.l3 = New System.Windows.Forms.Label()
         Me.txt_tra = New System.Windows.Forms.TextBox()
@@ -75,15 +74,37 @@ Partial Class Frm_cargaplanpersonal
         Me.Label20 = New System.Windows.Forms.Label()
         Me.txt_gerente2 = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.txt_traS = New System.Windows.Forms.TextBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.txt_corS = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.txt_opeS = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.txt_LiderAS = New System.Windows.Forms.TextBox()
+        Me.txt_supS = New System.Windows.Forms.TextBox()
+        Me.txt_lidS = New System.Windows.Forms.TextBox()
+        Me.txt_asiS = New System.Windows.Forms.TextBox()
+        Me.txt_StaffS = New System.Windows.Forms.TextBox()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.txt_gerenteS = New System.Windows.Forms.TextBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Label22)
         Me.Panel1.Controls.Add(Me.l3)
         Me.Panel1.Controls.Add(Me.txt_tra)
@@ -112,35 +133,23 @@ Partial Class Frm_cargaplanpersonal
         Me.Panel1.Size = New System.Drawing.Size(377, 246)
         Me.Panel1.TabIndex = 457
         '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.DarkViolet
-        Me.Button2.Location = New System.Drawing.Point(213, 204)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(133, 35)
-        Me.Button2.TabIndex = 419
-        Me.Button2.Text = "Autorizar"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label22.Location = New System.Drawing.Point(102, 8)
+        Me.Label22.Location = New System.Drawing.Point(164, 8)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(170, 25)
+        Me.Label22.Size = New System.Drawing.Size(59, 25)
         Me.Label22.TabIndex = 418
-        Me.Label22.Text = "Presupuestado"
+        Me.Label22.Text = "Plan"
         '
         'l3
         '
         Me.l3.AutoSize = True
         Me.l3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.l3.ForeColor = System.Drawing.SystemColors.Control
-        Me.l3.Location = New System.Drawing.Point(171, 215)
+        Me.l3.Location = New System.Drawing.Point(7, 215)
         Me.l3.Name = "l3"
         Me.l3.Size = New System.Drawing.Size(10, 13)
         Me.l3.TabIndex = 417
@@ -191,7 +200,7 @@ Partial Class Frm_cargaplanpersonal
         'btn_modificar
         '
         Me.btn_modificar.ForeColor = System.Drawing.Color.Black
-        Me.btn_modificar.Location = New System.Drawing.Point(9, 204)
+        Me.btn_modificar.Location = New System.Drawing.Point(120, 204)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(133, 35)
         Me.btn_modificar.TabIndex = 412
@@ -348,6 +357,7 @@ Partial Class Frm_cargaplanpersonal
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.SteelBlue
+        Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.cbx_año)
@@ -358,7 +368,7 @@ Partial Class Frm_cargaplanpersonal
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(770, 114)
+        Me.GroupBox1.Size = New System.Drawing.Size(1194, 114)
         Me.GroupBox1.TabIndex = 458
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filtros"
@@ -389,6 +399,7 @@ Partial Class Frm_cargaplanpersonal
         Me.cbx_año.BackColor = System.Drawing.Color.White
         Me.cbx_año.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.cbx_año.FormattingEnabled = True
+        Me.cbx_año.Items.AddRange(New Object() {"2019", "2020", "2021", "2022", "2023", "2024", "2025"})
         Me.cbx_año.Location = New System.Drawing.Point(81, 84)
         Me.cbx_año.Name = "cbx_año"
         Me.cbx_año.Size = New System.Drawing.Size(59, 21)
@@ -398,6 +409,7 @@ Partial Class Frm_cargaplanpersonal
         'cbx_mes
         '
         Me.cbx_mes.BackColor = System.Drawing.Color.White
+        Me.cbx_mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_mes.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_mes.FormattingEnabled = True
         Me.cbx_mes.Items.AddRange(New Object() {"ENERO      1 月", "FEBRERO    2 月", "MARZO      3 月", "ABRIL      4 月", "MAYO       5 月", "JUNIO      6 月", "JULIO      7 月", "AGOSTO     8 月", "SEPTIEMBRE 9 月", "OCTUBRE   10 月", "NOVIEMBRE 11 月", "DICIEMBRE 12 月"})
@@ -463,9 +475,8 @@ Partial Class Frm_cargaplanpersonal
         Me.Panel2.Controls.Add(Me.Label20)
         Me.Panel2.Controls.Add(Me.txt_gerente2)
         Me.Panel2.Controls.Add(Me.Label21)
-        Me.Panel2.Enabled = False
         Me.Panel2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Panel2.Location = New System.Drawing.Point(396, 124)
+        Me.Panel2.Location = New System.Drawing.Point(405, 124)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(377, 246)
         Me.Panel2.TabIndex = 459
@@ -475,11 +486,11 @@ Partial Class Frm_cargaplanpersonal
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label23.Location = New System.Drawing.Point(126, 8)
+        Me.Label23.Location = New System.Drawing.Point(162, 8)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(125, 25)
+        Me.Label23.Size = New System.Drawing.Size(60, 25)
         Me.Label23.TabIndex = 419
-        Me.Label23.Text = "Autorizado"
+        Me.Label23.Text = "Real"
         '
         'Label12
         '
@@ -495,6 +506,7 @@ Partial Class Frm_cargaplanpersonal
         'txt_tra2
         '
         Me.txt_tra2.BackColor = System.Drawing.Color.White
+        Me.txt_tra2.Enabled = False
         Me.txt_tra2.ForeColor = System.Drawing.Color.Black
         Me.txt_tra2.Location = New System.Drawing.Point(271, 67)
         Me.txt_tra2.Name = "txt_tra2"
@@ -516,6 +528,7 @@ Partial Class Frm_cargaplanpersonal
         'txt_cor2
         '
         Me.txt_cor2.BackColor = System.Drawing.Color.White
+        Me.txt_cor2.Enabled = False
         Me.txt_cor2.ForeColor = System.Drawing.Color.Black
         Me.txt_cor2.Location = New System.Drawing.Point(147, 67)
         Me.txt_cor2.Name = "txt_cor2"
@@ -537,6 +550,7 @@ Partial Class Frm_cargaplanpersonal
         'txt_operador2
         '
         Me.txt_operador2.BackColor = System.Drawing.Color.White
+        Me.txt_operador2.Enabled = False
         Me.txt_operador2.ForeColor = System.Drawing.Color.Black
         Me.txt_operador2.Location = New System.Drawing.Point(270, 173)
         Me.txt_operador2.Name = "txt_operador2"
@@ -591,6 +605,7 @@ Partial Class Frm_cargaplanpersonal
         'txt_lad2
         '
         Me.txt_lad2.BackColor = System.Drawing.Color.White
+        Me.txt_lad2.Enabled = False
         Me.txt_lad2.ForeColor = System.Drawing.Color.Black
         Me.txt_lad2.Location = New System.Drawing.Point(270, 119)
         Me.txt_lad2.Name = "txt_lad2"
@@ -601,6 +616,7 @@ Partial Class Frm_cargaplanpersonal
         'txt_supervisor2
         '
         Me.txt_supervisor2.BackColor = System.Drawing.Color.White
+        Me.txt_supervisor2.Enabled = False
         Me.txt_supervisor2.ForeColor = System.Drawing.Color.Black
         Me.txt_supervisor2.Location = New System.Drawing.Point(144, 119)
         Me.txt_supervisor2.Name = "txt_supervisor2"
@@ -611,6 +627,7 @@ Partial Class Frm_cargaplanpersonal
         'txt_lid2
         '
         Me.txt_lid2.BackColor = System.Drawing.Color.White
+        Me.txt_lid2.Enabled = False
         Me.txt_lid2.ForeColor = System.Drawing.Color.Black
         Me.txt_lid2.Location = New System.Drawing.Point(144, 173)
         Me.txt_lid2.Name = "txt_lid2"
@@ -621,6 +638,7 @@ Partial Class Frm_cargaplanpersonal
         'txt_asistente2
         '
         Me.txt_asistente2.BackColor = System.Drawing.Color.White
+        Me.txt_asistente2.Enabled = False
         Me.txt_asistente2.ForeColor = System.Drawing.Color.Black
         Me.txt_asistente2.Location = New System.Drawing.Point(14, 119)
         Me.txt_asistente2.Name = "txt_asistente2"
@@ -631,6 +649,7 @@ Partial Class Frm_cargaplanpersonal
         'txt_staff2
         '
         Me.txt_staff2.BackColor = System.Drawing.Color.White
+        Me.txt_staff2.Enabled = False
         Me.txt_staff2.ForeColor = System.Drawing.Color.Black
         Me.txt_staff2.Location = New System.Drawing.Point(14, 173)
         Me.txt_staff2.Name = "txt_staff2"
@@ -663,6 +682,7 @@ Partial Class Frm_cargaplanpersonal
         'txt_gerente2
         '
         Me.txt_gerente2.BackColor = System.Drawing.Color.White
+        Me.txt_gerente2.Enabled = False
         Me.txt_gerente2.ForeColor = System.Drawing.Color.Black
         Me.txt_gerente2.Location = New System.Drawing.Point(16, 67)
         Me.txt_gerente2.Name = "txt_gerente2"
@@ -681,15 +701,277 @@ Partial Class Frm_cargaplanpersonal
         Me.Label21.TabIndex = 228
         Me.Label21.Text = "Gerente"
         '
+        'Panel3
+        '
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Label24)
+        Me.Panel3.Controls.Add(Me.Label25)
+        Me.Panel3.Controls.Add(Me.txt_traS)
+        Me.Panel3.Controls.Add(Me.Label26)
+        Me.Panel3.Controls.Add(Me.txt_corS)
+        Me.Panel3.Controls.Add(Me.Label27)
+        Me.Panel3.Controls.Add(Me.txt_opeS)
+        Me.Panel3.Controls.Add(Me.Label28)
+        Me.Panel3.Controls.Add(Me.Label29)
+        Me.Panel3.Controls.Add(Me.Label30)
+        Me.Panel3.Controls.Add(Me.Label31)
+        Me.Panel3.Controls.Add(Me.txt_LiderAS)
+        Me.Panel3.Controls.Add(Me.txt_supS)
+        Me.Panel3.Controls.Add(Me.txt_lidS)
+        Me.Panel3.Controls.Add(Me.txt_asiS)
+        Me.Panel3.Controls.Add(Me.txt_StaffS)
+        Me.Panel3.Controls.Add(Me.Label32)
+        Me.Panel3.Controls.Add(Me.Label33)
+        Me.Panel3.Controls.Add(Me.txt_gerenteS)
+        Me.Panel3.Controls.Add(Me.Label34)
+        Me.Panel3.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel3.Location = New System.Drawing.Point(806, 124)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(377, 246)
+        Me.Panel3.TabIndex = 460
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Label24.Location = New System.Drawing.Point(139, 8)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(110, 25)
+        Me.Label24.TabIndex = 419
+        Me.Label24.Text = "Vacantes"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label25.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label25.Location = New System.Drawing.Point(6, 226)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(10, 13)
+        Me.Label25.TabIndex = 417
+        Me.Label25.Text = "."
+        '
+        'txt_traS
+        '
+        Me.txt_traS.BackColor = System.Drawing.Color.White
+        Me.txt_traS.Enabled = False
+        Me.txt_traS.ForeColor = System.Drawing.Color.Black
+        Me.txt_traS.Location = New System.Drawing.Point(271, 67)
+        Me.txt_traS.Name = "txt_traS"
+        Me.txt_traS.Size = New System.Drawing.Size(91, 20)
+        Me.txt_traS.TabIndex = 416
+        Me.txt_traS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label26.ForeColor = System.Drawing.Color.Black
+        Me.Label26.Location = New System.Drawing.Point(289, 50)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(53, 13)
+        Me.Label26.TabIndex = 415
+        Me.Label26.Text = "Traductor"
+        '
+        'txt_corS
+        '
+        Me.txt_corS.BackColor = System.Drawing.Color.White
+        Me.txt_corS.Enabled = False
+        Me.txt_corS.ForeColor = System.Drawing.Color.Black
+        Me.txt_corS.Location = New System.Drawing.Point(147, 67)
+        Me.txt_corS.Name = "txt_corS"
+        Me.txt_corS.Size = New System.Drawing.Size(91, 20)
+        Me.txt_corS.TabIndex = 414
+        Me.txt_corS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label27.ForeColor = System.Drawing.Color.Black
+        Me.Label27.Location = New System.Drawing.Point(160, 50)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(64, 13)
+        Me.Label27.TabIndex = 413
+        Me.Label27.Text = "Coordinador"
+        '
+        'txt_opeS
+        '
+        Me.txt_opeS.BackColor = System.Drawing.Color.White
+        Me.txt_opeS.Enabled = False
+        Me.txt_opeS.ForeColor = System.Drawing.Color.Black
+        Me.txt_opeS.Location = New System.Drawing.Point(270, 173)
+        Me.txt_opeS.Name = "txt_opeS"
+        Me.txt_opeS.Size = New System.Drawing.Size(91, 20)
+        Me.txt_opeS.TabIndex = 243
+        Me.txt_opeS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label28.ForeColor = System.Drawing.Color.Black
+        Me.Label28.Location = New System.Drawing.Point(289, 155)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(51, 13)
+        Me.Label28.TabIndex = 242
+        Me.Label28.Text = "Operador"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label29.ForeColor = System.Drawing.Color.Black
+        Me.Label29.Location = New System.Drawing.Point(282, 102)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(64, 13)
+        Me.Label29.TabIndex = 241
+        Me.Label29.Text = "Líder Admin"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label30.ForeColor = System.Drawing.Color.Black
+        Me.Label30.Location = New System.Drawing.Point(160, 102)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(57, 13)
+        Me.Label30.TabIndex = 240
+        Me.Label30.Text = "Supervisor"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label31.ForeColor = System.Drawing.Color.Black
+        Me.Label31.Location = New System.Drawing.Point(6, 102)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(106, 13)
+        Me.Label31.TabIndex = 239
+        Me.Label31.Text = "Asistente de Gerente"
+        '
+        'txt_LiderAS
+        '
+        Me.txt_LiderAS.BackColor = System.Drawing.Color.White
+        Me.txt_LiderAS.Enabled = False
+        Me.txt_LiderAS.ForeColor = System.Drawing.Color.Black
+        Me.txt_LiderAS.Location = New System.Drawing.Point(270, 119)
+        Me.txt_LiderAS.Name = "txt_LiderAS"
+        Me.txt_LiderAS.Size = New System.Drawing.Size(91, 20)
+        Me.txt_LiderAS.TabIndex = 237
+        Me.txt_LiderAS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_supS
+        '
+        Me.txt_supS.BackColor = System.Drawing.Color.White
+        Me.txt_supS.Enabled = False
+        Me.txt_supS.ForeColor = System.Drawing.Color.Black
+        Me.txt_supS.Location = New System.Drawing.Point(144, 119)
+        Me.txt_supS.Name = "txt_supS"
+        Me.txt_supS.Size = New System.Drawing.Size(91, 20)
+        Me.txt_supS.TabIndex = 235
+        Me.txt_supS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_lidS
+        '
+        Me.txt_lidS.BackColor = System.Drawing.Color.White
+        Me.txt_lidS.Enabled = False
+        Me.txt_lidS.ForeColor = System.Drawing.Color.Black
+        Me.txt_lidS.Location = New System.Drawing.Point(144, 173)
+        Me.txt_lidS.Name = "txt_lidS"
+        Me.txt_lidS.Size = New System.Drawing.Size(91, 20)
+        Me.txt_lidS.TabIndex = 234
+        Me.txt_lidS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_asiS
+        '
+        Me.txt_asiS.BackColor = System.Drawing.Color.White
+        Me.txt_asiS.Enabled = False
+        Me.txt_asiS.ForeColor = System.Drawing.Color.Black
+        Me.txt_asiS.Location = New System.Drawing.Point(14, 119)
+        Me.txt_asiS.Name = "txt_asiS"
+        Me.txt_asiS.Size = New System.Drawing.Size(91, 20)
+        Me.txt_asiS.TabIndex = 233
+        Me.txt_asiS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_StaffS
+        '
+        Me.txt_StaffS.BackColor = System.Drawing.Color.White
+        Me.txt_StaffS.Enabled = False
+        Me.txt_StaffS.ForeColor = System.Drawing.Color.Black
+        Me.txt_StaffS.Location = New System.Drawing.Point(14, 173)
+        Me.txt_StaffS.Name = "txt_StaffS"
+        Me.txt_StaffS.Size = New System.Drawing.Size(91, 20)
+        Me.txt_StaffS.TabIndex = 232
+        Me.txt_StaffS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label32.ForeColor = System.Drawing.Color.Black
+        Me.Label32.Location = New System.Drawing.Point(171, 157)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(32, 13)
+        Me.Label32.TabIndex = 231
+        Me.Label32.Text = "Líder"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label33.ForeColor = System.Drawing.Color.Black
+        Me.Label33.Location = New System.Drawing.Point(40, 157)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(29, 13)
+        Me.Label33.TabIndex = 230
+        Me.Label33.Text = "Staff"
+        '
+        'txt_gerenteS
+        '
+        Me.txt_gerenteS.BackColor = System.Drawing.Color.White
+        Me.txt_gerenteS.Enabled = False
+        Me.txt_gerenteS.ForeColor = System.Drawing.Color.Black
+        Me.txt_gerenteS.Location = New System.Drawing.Point(16, 67)
+        Me.txt_gerenteS.Name = "txt_gerenteS"
+        Me.txt_gerenteS.Size = New System.Drawing.Size(91, 20)
+        Me.txt_gerenteS.TabIndex = 229
+        Me.txt_gerenteS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label34.ForeColor = System.Drawing.Color.Black
+        Me.Label34.Location = New System.Drawing.Point(40, 50)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(45, 13)
+        Me.Label34.TabIndex = 228
+        Me.Label34.Text = "Gerente"
+        '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(1112, 19)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(68, 71)
+        Me.Button2.TabIndex = 455
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Frm_cargaplanpersonal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(778, 373)
+        Me.ClientSize = New System.Drawing.Size(1196, 373)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Frm_cargaplanpersonal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Captura de Plan de Personal"
@@ -699,6 +981,8 @@ Partial Class Frm_cargaplanpersonal
         Me.GroupBox1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -754,5 +1038,26 @@ Partial Class Frm_cargaplanpersonal
     Friend WithEvents Label20 As Label
     Friend WithEvents txt_gerente2 As TextBox
     Friend WithEvents Label21 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents txt_traS As TextBox
+    Friend WithEvents Label26 As Label
+    Friend WithEvents txt_corS As TextBox
+    Friend WithEvents Label27 As Label
+    Friend WithEvents txt_opeS As TextBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label31 As Label
+    Friend WithEvents txt_LiderAS As TextBox
+    Friend WithEvents txt_supS As TextBox
+    Friend WithEvents txt_lidS As TextBox
+    Friend WithEvents txt_asiS As TextBox
+    Friend WithEvents txt_StaffS As TextBox
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Label33 As Label
+    Friend WithEvents txt_gerenteS As TextBox
+    Friend WithEvents Label34 As Label
     Friend WithEvents Button2 As Button
 End Class
