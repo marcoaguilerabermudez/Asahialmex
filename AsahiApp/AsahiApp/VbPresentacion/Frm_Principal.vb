@@ -587,6 +587,10 @@ Public Class Frm_Principal
         SalidaEquipoComputo.Show()
     End Sub
 
+    Private Sub CartaCompromisoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CartaCompromisoToolStripMenuItem.Click
+        CartaCompromiso.Show()
+    End Sub
+
 
 #End Region
 End Class
