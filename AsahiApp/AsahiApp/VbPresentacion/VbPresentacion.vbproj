@@ -235,6 +235,12 @@
     <Compile Include="ContenedorReporteBajasMes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReporteCartaCompromiso.Designer.vb">
+      <DependentUpon>ContenedorReporteCartaCompromiso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteCartaCompromiso.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteChecadas.Designer.vb">
       <DependentUpon>ContenedorReporteChecadas.vb</DependentUpon>
     </Compile>
@@ -275,6 +281,12 @@
       <DependentUpon>ContenedorReporteKardexIncidencias.vb</DependentUpon>
     </Compile>
     <Compile Include="ContenedorReporteKardexIncidencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContenedorReporteMedidaDisciplinaria.Designer.vb">
+      <DependentUpon>ContenedorReporteMedidaDisciplinaria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteMedidaDisciplinaria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ContenedorReporteNuevoPuesto.Designer.vb">
@@ -360,6 +372,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet15.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet16.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet17.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet17.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -476,6 +503,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DtstReporteTest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MedidasDisciplinarias.Designer.vb">
+      <DependentUpon>MedidasDisciplinarias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MedidasDisciplinarias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReimprimeMedida.Designer.vb">
+      <DependentUpon>ReimprimeMedida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReimprimeMedida.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\DataSet\Dts_DpAutoridad_Rpt.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -901,6 +940,9 @@
     <EmbeddedResource Include="ContenedorReporteBajasMes.resx">
       <DependentUpon>ContenedorReporteBajasMes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteCartaCompromiso.resx">
+      <DependentUpon>ContenedorReporteCartaCompromiso.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteChecadas.resx">
       <DependentUpon>ContenedorReporteChecadas.vb</DependentUpon>
     </EmbeddedResource>
@@ -921,6 +963,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteKardexIncidencias.resx">
       <DependentUpon>ContenedorReporteKardexIncidencias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteMedidaDisciplinaria.resx">
+      <DependentUpon>ContenedorReporteMedidaDisciplinaria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteNuevoPuesto.resx">
       <DependentUpon>ContenedorReporteNuevoPuesto.vb</DependentUpon>
@@ -1018,6 +1063,9 @@
     <EmbeddedResource Include="KardexEmpleado.resx">
       <DependentUpon>KardexEmpleado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MedidasDisciplinarias.resx">
+      <DependentUpon>MedidasDisciplinarias.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MuestradatosOEE.resx">
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>
     </EmbeddedResource>
@@ -1030,7 +1078,11 @@
     <EmbeddedResource Include="NuevoMuestraOEE.resx">
       <DependentUpon>NuevoMuestraOEE.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReimprimeMedida.resx">
+      <DependentUpon>ReimprimeMedida.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteCambioPuesto.rdlc" />
+    <EmbeddedResource Include="ReporteCartaCompromiso.rdlc" />
     <EmbeddedResource Include="ReporteChecadasRh.rdlc" />
     <EmbeddedResource Include="ReporteEntradaSalidaTE.rdlc" />
     <EmbeddedResource Include="ReporteEvaIndirectoTest.rdlc" />
@@ -1038,6 +1090,7 @@
     <EmbeddedResource Include="ReporteExcedidoTE.rdlc" />
     <EmbeddedResource Include="ReporteFaltaJusInj.rdlc" />
     <EmbeddedResource Include="ReporteKardexIncidencias.rdlc" />
+    <EmbeddedResource Include="ReporteMedidaDisciplinaria.rdlc" />
     <EmbeddedResource Include="ReporteNuevoDepto.rdlc" />
     <EmbeddedResource Include="ReportePermisoCSGoce.rdlc" />
     <EmbeddedResource Include="ReportePersonalSemanal.rdlc" />
@@ -1206,6 +1259,39 @@
     </None>
     <None Include="DataSet14.xss">
       <DependentUpon>DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet15.xsc">
+      <DependentUpon>DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet15.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet15.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet15.xss">
+      <DependentUpon>DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet16.xsc">
+      <DependentUpon>DataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet16.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet16.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet16.xss">
+      <DependentUpon>DataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet17.xsc">
+      <DependentUpon>DataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet17.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet17.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet17.xss">
+      <DependentUpon>DataSet17.xsd</DependentUpon>
     </None>
     <None Include="DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>

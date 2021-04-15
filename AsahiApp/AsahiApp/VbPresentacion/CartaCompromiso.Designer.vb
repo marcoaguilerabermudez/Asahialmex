@@ -27,7 +27,6 @@ Partial Class CartaCompromiso
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.pbx = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.lbl2 = New System.Windows.Forms.Label()
@@ -43,16 +42,17 @@ Partial Class CartaCompromiso
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_motivo = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txt_fechainjustificada = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbx_motivo = New System.Windows.Forms.ComboBox()
         Me.btn_anteriores = New System.Windows.Forms.Button()
         Me.btn_solicitar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txt_fechainjustificada = New System.Windows.Forms.DateTimePicker()
+        Me.pbx = New System.Windows.Forms.PictureBox()
         Me.panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panel1
@@ -67,7 +67,6 @@ Partial Class CartaCompromiso
         '
         'dtp1
         '
-        Me.dtp1.Enabled = False
         Me.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp1.Location = New System.Drawing.Point(736, 13)
         Me.dtp1.Name = "dtp1"
@@ -109,15 +108,6 @@ Partial Class CartaCompromiso
         Me.GroupBox1.TabIndex = 153
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Empleado"
-        '
-        'pbx
-        '
-        Me.pbx.ErrorImage = CType(resources.GetObject("pbx.ErrorImage"), System.Drawing.Image)
-        Me.pbx.Location = New System.Drawing.Point(599, 37)
-        Me.pbx.Name = "pbx"
-        Me.pbx.Size = New System.Drawing.Size(132, 138)
-        Me.pbx.TabIndex = 196
-        Me.pbx.TabStop = False
         '
         'Label3
         '
@@ -279,6 +269,7 @@ Partial Class CartaCompromiso
         Me.txt_motivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_motivo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.txt_motivo.Location = New System.Drawing.Point(13, 156)
+        Me.txt_motivo.MaxLength = 100
         Me.txt_motivo.Multiline = True
         Me.txt_motivo.Name = "txt_motivo"
         Me.txt_motivo.Size = New System.Drawing.Size(281, 52)
@@ -297,21 +288,10 @@ Partial Class CartaCompromiso
         Me.Label4.TabIndex = 155
         Me.Label4.Text = "Fecha de Falta Injustificada"
         '
-        'txt_fechainjustificada
-        '
-        Me.txt_fechainjustificada.BackColor = System.Drawing.SystemColors.Control
-        Me.txt_fechainjustificada.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_fechainjustificada.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_fechainjustificada.Location = New System.Drawing.Point(15, 31)
-        Me.txt_fechainjustificada.Name = "txt_fechainjustificada"
-        Me.txt_fechainjustificada.Size = New System.Drawing.Size(221, 20)
-        Me.txt_fechainjustificada.TabIndex = 154
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.SystemColors.Control
-        Me.Label6.Enabled = False
         Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(13, 136)
         Me.Label6.Name = "Label6"
@@ -349,7 +329,7 @@ Partial Class CartaCompromiso
         Me.btn_solicitar.Enabled = False
         Me.btn_solicitar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_solicitar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btn_solicitar.Location = New System.Drawing.Point(559, 347)
+        Me.btn_solicitar.Location = New System.Drawing.Point(611, 366)
         Me.btn_solicitar.Name = "btn_solicitar"
         Me.btn_solicitar.Size = New System.Drawing.Size(133, 54)
         Me.btn_solicitar.TabIndex = 181
@@ -358,9 +338,9 @@ Partial Class CartaCompromiso
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txt_fechainjustificada)
         Me.GroupBox2.Controls.Add(Me.cbx_motivo)
         Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.txt_fechainjustificada)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.txt_motivo)
         Me.GroupBox2.Controls.Add(Me.Label6)
@@ -370,6 +350,23 @@ Partial Class CartaCompromiso
         Me.GroupBox2.Size = New System.Drawing.Size(496, 212)
         Me.GroupBox2.TabIndex = 183
         Me.GroupBox2.TabStop = False
+        '
+        'txt_fechainjustificada
+        '
+        Me.txt_fechainjustificada.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.txt_fechainjustificada.Location = New System.Drawing.Point(16, 35)
+        Me.txt_fechainjustificada.Name = "txt_fechainjustificada"
+        Me.txt_fechainjustificada.Size = New System.Drawing.Size(100, 20)
+        Me.txt_fechainjustificada.TabIndex = 158
+        '
+        'pbx
+        '
+        Me.pbx.ErrorImage = CType(resources.GetObject("pbx.ErrorImage"), System.Drawing.Image)
+        Me.pbx.Location = New System.Drawing.Point(599, 37)
+        Me.pbx.Name = "pbx"
+        Me.pbx.Size = New System.Drawing.Size(132, 138)
+        Me.pbx.TabIndex = 196
+        Me.pbx.TabStop = False
         '
         'CartaCompromiso
         '
@@ -389,9 +386,9 @@ Partial Class CartaCompromiso
         Me.panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -416,10 +413,10 @@ Partial Class CartaCompromiso
     Friend WithEvents txt_motivo As TextBox
     Friend WithEvents pbx As PictureBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txt_fechainjustificada As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents cbx_motivo As ComboBox
     Friend WithEvents btn_anteriores As Button
     Friend WithEvents btn_solicitar As Button
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents txt_fechainjustificada As DateTimePicker
 End Class
