@@ -80,13 +80,13 @@ Partial Class MedidasDisciplinarias
         Me.panel1.Controls.Add(Me.Label1)
         Me.panel1.Location = New System.Drawing.Point(0, 1)
         Me.panel1.Name = "panel1"
-        Me.panel1.Size = New System.Drawing.Size(1106, 50)
+        Me.panel1.Size = New System.Drawing.Size(1106, 35)
         Me.panel1.TabIndex = 146
         '
         'dtp1
         '
         Me.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp1.Location = New System.Drawing.Point(1000, 13)
+        Me.dtp1.Location = New System.Drawing.Point(1000, 6)
         Me.dtp1.Name = "dtp1"
         Me.dtp1.Size = New System.Drawing.Size(100, 20)
         Me.dtp1.TabIndex = 135
@@ -96,7 +96,7 @@ Partial Class MedidasDisciplinarias
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label1.Location = New System.Drawing.Point(831, 13)
+        Me.Label1.Location = New System.Drawing.Point(831, 6)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(163, 20)
         Me.Label1.TabIndex = 134
@@ -120,9 +120,9 @@ Partial Class MedidasDisciplinarias
         Me.GroupBox1.Controls.Add(Me.lbl4)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 57)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 34)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(608, 189)
+        Me.GroupBox1.Size = New System.Drawing.Size(608, 179)
         Me.GroupBox1.TabIndex = 154
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Empleado"
@@ -285,7 +285,7 @@ Partial Class MedidasDisciplinarias
         Me.Label4.BackColor = System.Drawing.SystemColors.Control
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(236, 255)
+        Me.Label4.Location = New System.Drawing.Point(236, 217)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(127, 13)
         Me.Label4.TabIndex = 156
@@ -297,7 +297,7 @@ Partial Class MedidasDisciplinarias
         Me.txt_articulo.BackColor = System.Drawing.SystemColors.Control
         Me.txt_articulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_articulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_articulo.Location = New System.Drawing.Point(249, 275)
+        Me.txt_articulo.Location = New System.Drawing.Point(249, 237)
         Me.txt_articulo.Name = "txt_articulo"
         Me.txt_articulo.Size = New System.Drawing.Size(98, 20)
         Me.txt_articulo.TabIndex = 155
@@ -312,7 +312,7 @@ Partial Class MedidasDisciplinarias
         Me.cbx_tipo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipo.FormattingEnabled = True
         Me.cbx_tipo.Items.AddRange(New Object() {"--Seleccionar--", "Obligaciones", "Prohibiciones"})
-        Me.cbx_tipo.Location = New System.Drawing.Point(27, 275)
+        Me.cbx_tipo.Location = New System.Drawing.Point(27, 237)
         Me.cbx_tipo.Name = "cbx_tipo"
         Me.cbx_tipo.Size = New System.Drawing.Size(136, 21)
         Me.cbx_tipo.TabIndex = 159
@@ -324,7 +324,7 @@ Partial Class MedidasDisciplinarias
         Me.Label5.BackColor = System.Drawing.SystemColors.Control
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(70, 255)
+        Me.Label5.Location = New System.Drawing.Point(70, 217)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(36, 13)
         Me.Label5.TabIndex = 158
@@ -337,7 +337,7 @@ Partial Class MedidasDisciplinarias
         Me.txt_articuloinfracionado.Enabled = False
         Me.txt_articuloinfracionado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_articuloinfracionado.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_articuloinfracionado.Location = New System.Drawing.Point(3, 303)
+        Me.txt_articuloinfracionado.Location = New System.Drawing.Point(3, 263)
         Me.txt_articuloinfracionado.Multiline = True
         Me.txt_articuloinfracionado.Name = "txt_articuloinfracionado"
         Me.txt_articuloinfracionado.Size = New System.Drawing.Size(608, 80)
@@ -350,7 +350,7 @@ Partial Class MedidasDisciplinarias
         Me.Label6.BackColor = System.Drawing.SystemColors.Control
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(8, 392)
+        Me.Label6.Location = New System.Drawing.Point(8, 352)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 13)
         Me.Label6.TabIndex = 161
@@ -362,7 +362,7 @@ Partial Class MedidasDisciplinarias
         Me.txt_faltacometida.BackColor = System.Drawing.SystemColors.Control
         Me.txt_faltacometida.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_faltacometida.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_faltacometida.Location = New System.Drawing.Point(3, 410)
+        Me.txt_faltacometida.Location = New System.Drawing.Point(3, 370)
         Me.txt_faltacometida.MaxLength = 200
         Me.txt_faltacometida.Multiline = True
         Me.txt_faltacometida.Name = "txt_faltacometida"
@@ -375,7 +375,7 @@ Partial Class MedidasDisciplinarias
         Me.txt_antecedente.BackColor = System.Drawing.SystemColors.Control
         Me.txt_antecedente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_antecedente.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_antecedente.Location = New System.Drawing.Point(3, 493)
+        Me.txt_antecedente.Location = New System.Drawing.Point(3, 445)
         Me.txt_antecedente.MaxLength = 200
         Me.txt_antecedente.Multiline = True
         Me.txt_antecedente.Name = "txt_antecedente"
@@ -389,7 +389,7 @@ Partial Class MedidasDisciplinarias
         Me.Label7.BackColor = System.Drawing.SystemColors.Control
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(8, 475)
+        Me.Label7.Location = New System.Drawing.Point(8, 427)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(85, 13)
         Me.Label7.TabIndex = 163
@@ -402,7 +402,7 @@ Partial Class MedidasDisciplinarias
         Me.Label9.BackColor = System.Drawing.SystemColors.Control
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(8, 555)
+        Me.Label9.Location = New System.Drawing.Point(8, 499)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(133, 13)
         Me.Label9.TabIndex = 165
@@ -415,7 +415,7 @@ Partial Class MedidasDisciplinarias
         Me.Panel2.Controls.Add(Me.rbt_suspensión)
         Me.Panel2.Controls.Add(Me.rbt_verbal)
         Me.Panel2.Controls.Add(Me.rbt_escrita)
-        Me.Panel2.Location = New System.Drawing.Point(3, 571)
+        Me.Panel2.Location = New System.Drawing.Point(3, 515)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(608, 36)
         Me.Panel2.TabIndex = 166
@@ -493,7 +493,7 @@ Partial Class MedidasDisciplinarias
         Me.btn_solicitar.Enabled = False
         Me.btn_solicitar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_solicitar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btn_solicitar.Location = New System.Drawing.Point(460, 681)
+        Me.btn_solicitar.Location = New System.Drawing.Point(475, 624)
         Me.btn_solicitar.Name = "btn_solicitar"
         Me.btn_solicitar.Size = New System.Drawing.Size(133, 54)
         Me.btn_solicitar.TabIndex = 182
@@ -509,10 +509,10 @@ Partial Class MedidasDisciplinarias
         Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtgvp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgvp.Location = New System.Drawing.Point(617, 57)
+        Me.dtgvp.Location = New System.Drawing.Point(617, 43)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(483, 740)
+        Me.dtgvp.Size = New System.Drawing.Size(483, 737)
         Me.dtgvp.TabIndex = 183
         '
         'btn_guardar
@@ -554,7 +554,7 @@ Partial Class MedidasDisciplinarias
         Me.Panel3.Controls.Add(Me.dtgv_fechas)
         Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Controls.Add(Me.btn_guardar)
-        Me.Panel3.Location = New System.Drawing.Point(4, 610)
+        Me.Panel3.Location = New System.Drawing.Point(4, 553)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(450, 190)
         Me.Panel3.TabIndex = 186
@@ -574,7 +574,8 @@ Partial Class MedidasDisciplinarias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1108, 802)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1124, 744)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.dtgvp)
         Me.Controls.Add(Me.btn_solicitar)
@@ -592,6 +593,7 @@ Partial Class MedidasDisciplinarias
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "MedidasDisciplinarias"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Aplicación de Medidas Disciplinarias"
