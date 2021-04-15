@@ -61,6 +61,7 @@ Public Class Frm_Principal
             ValidaciónRHToolStripMenuItem.Enabled = True
             ValidaciónRHToolStripMenuItem1.Enabled = True
             ActualizaRegistrosToolStripMenuItem.Enabled = True
+            MedidasDisciplinariasToolStripMenuItem.Enabled = True
             ' EvaluacionesToolStripMenuItem1.Enabled = True
 
         ElseIf Me.emp.rh_evaluacion = 1 Then
@@ -589,6 +590,10 @@ Public Class Frm_Principal
 
     Private Sub CartaCompromisoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CartaCompromisoToolStripMenuItem.Click
         CartaCompromiso.Show()
+    End Sub
+
+    Private Sub AplicaciónDeMedidaDisciplinariaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AplicaciónDeMedidaDisciplinariaToolStripMenuItem.Click
+        MedidasDisciplinarias.Show()
     End Sub
 
 
