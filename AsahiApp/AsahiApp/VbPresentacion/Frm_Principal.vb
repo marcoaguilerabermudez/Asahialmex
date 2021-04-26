@@ -61,6 +61,7 @@ Public Class Frm_Principal
             ValidaciónRHToolStripMenuItem.Enabled = True
             ValidaciónRHToolStripMenuItem1.Enabled = True
             ActualizaRegistrosToolStripMenuItem.Enabled = True
+            MedidasDisciplinariasToolStripMenuItem.Enabled = True
             ' EvaluacionesToolStripMenuItem1.Enabled = True
 
         ElseIf Me.emp.rh_evaluacion = 1 Then
@@ -372,9 +373,7 @@ Public Class Frm_Principal
         Dim C As New Credencial_visitantes_param()
         C.Show()
     End Sub
-    Private Sub PlanDePersonalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDePersonalToolStripMenuItem.Click
-        Frm_cargaplanpersonal.Show()
-    End Sub
+
     Private Sub HisToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -594,5 +593,19 @@ Public Class Frm_Principal
         Dim dc As New Frm_DiseñadorCuestionarios()
         dc.Show()
     End Sub
+
+    Private Sub CartaCompromisoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CartaCompromisoToolStripMenuItem.Click
+        CartaCompromiso.Show()
+    End Sub
+
+    Private Sub AplicaciónDeMedidaDisciplinariaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AplicaciónDeMedidaDisciplinariaToolStripMenuItem.Click
+        MedidasDisciplinarias.Show()
+    End Sub
+
+    Private Sub PlanDePersonalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDePersonalToolStripMenuItem.Click
+        Dim PlanPersonal As New Frm_cargaplanpersonal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        PlanPersonal.Show()
+    End Sub
+
 #End Region
 End Class

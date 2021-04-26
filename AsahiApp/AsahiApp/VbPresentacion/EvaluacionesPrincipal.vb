@@ -341,6 +341,7 @@ where id_evaluaciones = @ID and estado = 0
             id_eval = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
             tipo = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
             estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
+
         Catch
         End Try
 
