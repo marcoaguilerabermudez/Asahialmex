@@ -478,12 +478,12 @@
     <Compile Include="DataSet\Dts_BonoMensual.vb">
       <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\Dts_PlanHrsExt4.Designer.vb">
+    <Compile Include="RH\DataSet\Dts_PlanHrsExt4.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\Dts_PlanHrsExt5.Designer.vb">
+    <Compile Include="RH\DataSet\Dts_PlanHrsExt5.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
@@ -1521,26 +1521,26 @@
     <None Include="DataSet\Dts_BonoMensual.xss">
       <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt4.xsc">
+    <None Include="RH\DataSet\Dts_PlanHrsExt4.xsc">
       <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt4.xsd">
+    <None Include="RH\DataSet\Dts_PlanHrsExt4.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Dts_PlanHrsExt4.Designer.vb</LastGenOutput>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt4.xss">
+    <None Include="RH\DataSet\Dts_PlanHrsExt4.xss">
       <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt5.xsc">
+    <None Include="RH\DataSet\Dts_PlanHrsExt5.xsc">
       <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt5.xsd">
+    <None Include="RH\DataSet\Dts_PlanHrsExt5.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Dts_PlanHrsExt5.Designer.vb</LastGenOutput>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt5.xss">
+    <None Include="RH\DataSet\Dts_PlanHrsExt5.xss">
       <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
     </None>
     <None Include="DataSet\Dts_PrenominaGlobal.xsc">
