@@ -10,12 +10,28 @@ Public Class Frm_cargaplanpersonal
     Dim semana As Integer
     Dim inicio As String
     Dim fin As String
+    Dim variable As Integer
 
 
     Public cadenaConex As String
     Public cadenaCExpress As String
     Public cnn As SqlConnection
     Public cnn2 As SqlConnection
+
+    Dim depto As String
+    Dim permiso As Integer
+    Dim id As Integer
+
+
+    Sub New(id As Integer, depto As String, permiso As Integer)
+
+        InitializeComponent()
+        Me.id = id
+        Me.depto = depto
+        Me.permiso = permiso
+
+    End Sub
+
 
     Private Sub Frm_cargaplanpersonal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -67,10 +83,17 @@ Public Class Frm_cargaplanpersonal
         cbx_mes.Text = b
         llenacombodepto()
 
+
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Panel1.Enabled = True
+        If permiso <> 3 Then
+            Panel4.Enabled = False
+        Else
+            Panel4.Enabled = True
+        End If
         a = cbx_mes.Text
         Select Case a
             Case "ENERO      1 月"
@@ -105,9 +128,16 @@ Public Class Frm_cargaplanpersonal
         Frmespera.BringToFront()
         Frmespera.WindowState = FormWindowState.Normal
         etiquetas()
+        etiquetasmaster()
         etiquetas2()
         etiquetas3()
         Frmespera.Close()
+
+        lbl_area.Text = cbx_depto.Text
+        lbl_año.Text = cbx_año.Text
+        lbl_mes.Text = cbx_mes.Text
+        btn_horas.Enabled = True
+
 
     End Sub
 
@@ -249,6 +279,54 @@ order by rh.id_puesto")
             MessageBox.Show("Debe seleccionar un departamento válido.", "¡Aviso!")
             MessageBox.Show(ex.ToString)
             Panel1.Enabled = False
+            Panel4.Enabled = False
+            cnn2.Close()
+        End Try
+    End Sub
+
+
+    Sub etiquetasmaster()
+        Try
+            ''  Dim Cnn As New SqlConnection("data source =GIRO\SQL2008 ;initial catalog=asahi16 ;user id=sa;password=Pa55word")
+            cnn2.Close()
+            cnn2.Open()
+            Dim SSel As String
+            Dim parametro1 As String
+            parametro1 = cbx_depto.Text
+            Dim parametro2 As Integer
+            parametro2 = cbx_año.Text
+            Dim parametro3 As Integer
+            parametro3 = b
+            SSel = (" 
+
+
+
+select  rh.id_puesto , rh.masterplan , de.DESCRIPCION
+     FROM [asahi16].[dbo].[Rh_totalpuestos] rh
+	 join [asahi16].[Supervisor_giro].[DEPTO] de
+	 on de.CLAVE = rh.Id_area
+	 where de.DESCRIPCION = '" & parametro1 & "' and mes = " & parametro3 & " and año = " & parametro2 & " and id_tipo = 0
+order by rh.id_puesto")
+            Dim da As SqlDataAdapter
+            Dim ds As New DataSet
+            ds.Clear()
+            da = New SqlDataAdapter(SSel, cnn2)
+            da.Fill(ds)
+            tm_gerente.Text = ds.Tables(0).Rows(0).Item(1)
+            tm_asistente.Text = ds.Tables(0).Rows(1).Item(1)
+            tm_super.Text = ds.Tables(0).Rows(2).Item(1)
+            tm_lda.Text = ds.Tables(0).Rows(3).Item(1)
+            tm_staff.Text = ds.Tables(0).Rows(4).Item(1)
+            tm_lider.Text = ds.Tables(0).Rows(5).Item(1)
+            tm_operador.Text = ds.Tables(0).Rows(6).Item(1)
+            tm_coordinador.Text = ds.Tables(0).Rows(7).Item(1)
+            tm_traductor.Text = ds.Tables(0).Rows(8).Item(1)
+            cnn2.Close()
+        Catch ex As Exception
+            MessageBox.Show("Debe seleccionar un departamento válido.", "¡Aviso!")
+            MessageBox.Show(ex.ToString)
+            Panel1.Enabled = False
+            Panel4.Enabled = False
             cnn2.Close()
         End Try
     End Sub
@@ -272,15 +350,15 @@ set @depto = " & y & "
 
 
 select
- (select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 4 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0) and VIGENCIA = 'VIGENTE') as 'M'
-,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 1 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0) and VIGENCIA = 'VIGENTE') as 'M'
-,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 9 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0) and VIGENCIA = 'VIGENTE') as 'M'
-,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 16 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0) and VIGENCIA = 'VIGENTE') as 'M'
-,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 8 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0) and VIGENCIA = 'VIGENTE') as 'M'
-,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 5 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0) and VIGENCIA = 'VIGENTE') as 'M'
-,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 6 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0) and VIGENCIA = 'VIGENTE') as 'M'
-,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 2 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0) and VIGENCIA = 'VIGENTE') as 'M'
-,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 11 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0) and VIGENCIA = 'VIGENTE') as 'M'
+ (select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 4 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0 ) and VIGENCIA = 'VIGENTE') as 'M'
+,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 1 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0 ) and VIGENCIA = 'VIGENTE') as 'M'
+,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 9 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0 ) and VIGENCIA = 'VIGENTE') as 'M'
+,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 16 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0 ) and VIGENCIA = 'VIGENTE') as 'M'
+,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 8 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0 ) and VIGENCIA = 'VIGENTE') as 'M'
+,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 5 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0 ) and VIGENCIA = 'VIGENTE') as 'M'
+,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 6 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0 ) and VIGENCIA = 'VIGENTE') as 'M'
+,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 2 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0 ) and VIGENCIA = 'VIGENTE') as 'M'
+,(select count(clave) from  [asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] where PUESTO = 11 AND departamento = @depto and vigencia = 'VIGENTE' AND (AVISO IS NULL OR AVISO = 0 ) and VIGENCIA = 'VIGENTE') as 'M'
 ")
             Dim da As SqlDataAdapter
             Dim ds As New DataSet
@@ -446,464 +524,117 @@ select
     End Sub
 
 
-    Sub cargar()
-        '  Dim conexion As SqlConnection = New SqlConnection("data source =GIRO\SQL2008 ;initial catalog=asahi16 ;user id=sa;password=Pa55word")
-        Dim cmd As New SqlCommand("update [asahi16].[dbo].[Rh_totalpuestos] set cantidad = @cantidad1 where
-Id_area = 
-case 
-when @catalogodepartamento = 'ATENCIÓN AL CLIENTE' then '05'
-when @catalogodepartamento = 'MOLDES' then '16'
-when @catalogodepartamento = 'CONTROL DE MANUFACTURA'then '08'
-when @catalogodepartamento = 'GERENCIA' then '11'
-when @catalogodepartamento = 'FUNDICIÓN' then '10'
-when @catalogodepartamento = 'ALMACÉN' then '02'
-when @catalogodepartamento = 'COMPRAS' then '06'
-when @catalogodepartamento = 'SISTEMAS IT' then '19'
-when @catalogodepartamento = 'AAJ-CALIDAD' then '23'
-when @catalogodepartamento = 'CONTABILIDAD' then '07'
-when @catalogodepartamento = 'SEGURIDAD' then '18'
-when @catalogodepartamento = 'AAJ-FUNDICIÓN' then '02'
-when @catalogodepartamento = 'CONTROL DE PRODUCCION' then '09'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F1' then '03'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F2' then '46'
-when @catalogodepartamento = 'MANTENIMIENTO' then '14'
-when @catalogodepartamento = 'MAQUINADO' then '15'
-when @catalogodepartamento = 'INGENIERÍA-MAQUINADO' then '27'
-when @catalogodepartamento = 'ASUNTOS GENERALES' then '04'
-when @catalogodepartamento = 'ADMINISTRACIÓN' then '01'
-when @catalogodepartamento = 'PRESIDENCIA' then '17'
-when @catalogodepartamento = 'INGENIERÍA-FUNDICIÓN' then '28'
-when @catalogodepartamento = 'INSPECCION PRODUCCION' then '31'
-when @catalogodepartamento = 'FUNDICION 1' then '32'
-when @catalogodepartamento = 'FUNDICION 2' then '33'
-when @catalogodepartamento = 'ACABADO 1' then '34'
-when @catalogodepartamento = 'ACABADO 2' then '35'
-when @catalogodepartamento = 'CONTROL DE CLIENTES' then '36'
-when @catalogodepartamento = 'MANTENIMIENTO DE PLANTA' then '37'
-when @catalogodepartamento = 'MANTENIMIENTO FUNDICION' then '38'
-when @catalogodepartamento = 'MANTENIMIENTO MAQUINADO' then '39'
-when @catalogodepartamento = 'MAQUINADO F2' then '40'
-when @catalogodepartamento = 'INSPECCIÓN FUNDICION' then '41'
-when @catalogodepartamento = 'INSPECCIÓN MAQUINADO' then '42'
-when @catalogodepartamento = 'MAQUINADO F1' then '43'
-when @catalogodepartamento = 'FUSION F1' then '44'
-when @catalogodepartamento = 'FUSION F2' then '45'
-end
-and mes = @mes and año = @año and Id_puesto = 1 and id_tipo = 0
 
 
-update [asahi16].[dbo].[Rh_totalpuestos] set cantidad = @cantidad2 where
-Id_area = 
-case 
-when @catalogodepartamento = 'ATENCIÓN AL CLIENTE' then '05'
-when @catalogodepartamento = 'MOLDES' then '16'
-when @catalogodepartamento = 'CONTROL DE MANUFACTURA'then '08'
-when @catalogodepartamento = 'GERENCIA' then '11'
-when @catalogodepartamento = 'FUNDICIÓN' then '10'
-when @catalogodepartamento = 'ALMACÉN' then '02'
-when @catalogodepartamento = 'COMPRAS' then '06'
-when @catalogodepartamento = 'SISTEMAS IT' then '19'
-when @catalogodepartamento = 'AAJ-CALIDAD' then '23'
-when @catalogodepartamento = 'CONTABILIDAD' then '07'
-when @catalogodepartamento = 'SEGURIDAD' then '18'
-when @catalogodepartamento = 'AAJ-FUNDICIÓN' then '02'
-when @catalogodepartamento = 'CONTROL DE PRODUCCION' then '09'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F1' then '03'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F2' then '46'
-when @catalogodepartamento = 'MANTENIMIENTO' then '14'
-when @catalogodepartamento = 'MAQUINADO' then '15'
-when @catalogodepartamento = 'INGENIERÍA-MAQUINADO' then '27'
-when @catalogodepartamento = 'ASUNTOS GENERALES' then '04'
-when @catalogodepartamento = 'ADMINISTRACIÓN' then '01'
-when @catalogodepartamento = 'PRESIDENCIA' then '17'
-when @catalogodepartamento = 'INGENIERÍA-FUNDICIÓN' then '28'
-when @catalogodepartamento = 'INSPECCION PRODUCCION' then '31'
-when @catalogodepartamento = 'FUNDICION 1' then '32'
-when @catalogodepartamento = 'FUNDICION 2' then '33'
-when @catalogodepartamento = 'ACABADO 1' then '34'
-when @catalogodepartamento = 'ACABADO 2' then '35'
-when @catalogodepartamento = 'CONTROL DE CLIENTES' then '36'
-when @catalogodepartamento = 'MANTENIMIENTO DE PLANTA' then '37'
-when @catalogodepartamento = 'MANTENIMIENTO FUNDICION' then '38'
-when @catalogodepartamento = 'MANTENIMIENTO MAQUINADO' then '39'
-when @catalogodepartamento = 'MAQUINADO F2' then '40'
-when @catalogodepartamento = 'INSPECCIÓN FUNDICION' then '41'
-when @catalogodepartamento = 'INSPECCIÓN MAQUINADO' then '42'
-when @catalogodepartamento = 'MAQUINADO F1' then '43'
-when @catalogodepartamento = 'FUSION F1' then '44'
-when @catalogodepartamento = 'FUSION F2' then '45'
-end
-and mes = @mes and año = @año and Id_puesto = 2 and id_tipo = 0
-
-
-update [asahi16].[dbo].[Rh_totalpuestos] set cantidad = @cantidad3 where
-Id_area = 
-case 
-when @catalogodepartamento = 'ATENCIÓN AL CLIENTE' then '05'
-when @catalogodepartamento = 'MOLDES' then '16'
-when @catalogodepartamento = 'CONTROL DE MANUFACTURA'then '08'
-when @catalogodepartamento = 'GERENCIA' then '11'
-when @catalogodepartamento = 'FUNDICIÓN' then '10'
-when @catalogodepartamento = 'ALMACÉN' then '02'
-when @catalogodepartamento = 'COMPRAS' then '06'
-when @catalogodepartamento = 'SISTEMAS IT' then '19'
-when @catalogodepartamento = 'AAJ-CALIDAD' then '23'
-when @catalogodepartamento = 'CONTABILIDAD' then '07'
-when @catalogodepartamento = 'SEGURIDAD' then '18'
-when @catalogodepartamento = 'AAJ-FUNDICIÓN' then '02'
-when @catalogodepartamento = 'CONTROL DE PRODUCCION' then '09'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F1' then '03'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F2' then '46'
-when @catalogodepartamento = 'MANTENIMIENTO' then '14'
-when @catalogodepartamento = 'MAQUINADO' then '15'
-when @catalogodepartamento = 'INGENIERÍA-MAQUINADO' then '27'
-when @catalogodepartamento = 'ASUNTOS GENERALES' then '04'
-when @catalogodepartamento = 'ADMINISTRACIÓN' then '01'
-when @catalogodepartamento = 'PRESIDENCIA' then '17'
-when @catalogodepartamento = 'INGENIERÍA-FUNDICIÓN' then '28'
-when @catalogodepartamento = 'INSPECCION PRODUCCION' then '31'
-when @catalogodepartamento = 'FUNDICION 1' then '32'
-when @catalogodepartamento = 'FUNDICION 2' then '33'
-when @catalogodepartamento = 'ACABADO 1' then '34'
-when @catalogodepartamento = 'ACABADO 2' then '35'
-when @catalogodepartamento = 'CONTROL DE CLIENTES' then '36'
-when @catalogodepartamento = 'MANTENIMIENTO DE PLANTA' then '37'
-when @catalogodepartamento = 'MANTENIMIENTO FUNDICION' then '38'
-when @catalogodepartamento = 'MANTENIMIENTO MAQUINADO' then '39'
-when @catalogodepartamento = 'MAQUINADO F2' then '40'
-when @catalogodepartamento = 'INSPECCIÓN FUNDICION' then '41'
-when @catalogodepartamento = 'INSPECCIÓN MAQUINADO' then '42'
-when @catalogodepartamento = 'MAQUINADO F1' then '43'
-when @catalogodepartamento = 'FUSION F1' then '44'
-when @catalogodepartamento = 'FUSION F2' then '45'
-end
-and mes = @mes and año = @año and Id_puesto = 3 and id_tipo = 0
-
-update [asahi16].[dbo].[Rh_totalpuestos] set cantidad = @cantidad4 where
-Id_area = 
-case 
-when @catalogodepartamento = 'ATENCIÓN AL CLIENTE' then '05'
-when @catalogodepartamento = 'MOLDES' then '16'
-when @catalogodepartamento = 'CONTROL DE MANUFACTURA'then '08'
-when @catalogodepartamento = 'GERENCIA' then '11'
-when @catalogodepartamento = 'FUNDICIÓN' then '10'
-when @catalogodepartamento = 'ALMACÉN' then '02'
-when @catalogodepartamento = 'COMPRAS' then '06'
-when @catalogodepartamento = 'SISTEMAS IT' then '19'
-when @catalogodepartamento = 'AAJ-CALIDAD' then '23'
-when @catalogodepartamento = 'CONTABILIDAD' then '07'
-when @catalogodepartamento = 'SEGURIDAD' then '18'
-when @catalogodepartamento = 'AAJ-FUNDICIÓN' then '02'
-when @catalogodepartamento = 'CONTROL DE PRODUCCION' then '09'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F1' then '03'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F2' then '46'
-when @catalogodepartamento = 'MANTENIMIENTO' then '14'
-when @catalogodepartamento = 'MAQUINADO' then '15'
-when @catalogodepartamento = 'INGENIERÍA-MAQUINADO' then '27'
-when @catalogodepartamento = 'ASUNTOS GENERALES' then '04'
-when @catalogodepartamento = 'ADMINISTRACIÓN' then '01'
-when @catalogodepartamento = 'PRESIDENCIA' then '17'
-when @catalogodepartamento = 'INGENIERÍA-FUNDICIÓN' then '28'
-when @catalogodepartamento = 'INSPECCION PRODUCCION' then '31'
-when @catalogodepartamento = 'FUNDICION 1' then '32'
-when @catalogodepartamento = 'FUNDICION 2' then '33'
-when @catalogodepartamento = 'ACABADO 1' then '34'
-when @catalogodepartamento = 'ACABADO 2' then '35'
-when @catalogodepartamento = 'CONTROL DE CLIENTES' then '36'
-when @catalogodepartamento = 'MANTENIMIENTO DE PLANTA' then '37'
-when @catalogodepartamento = 'MANTENIMIENTO FUNDICION' then '38'
-when @catalogodepartamento = 'MANTENIMIENTO MAQUINADO' then '39'
-when @catalogodepartamento = 'MAQUINADO F2' then '40'
-when @catalogodepartamento = 'INSPECCIÓN FUNDICION' then '41'
-when @catalogodepartamento = 'INSPECCIÓN MAQUINADO' then '42'
-when @catalogodepartamento = 'MAQUINADO F1' then '43'
-when @catalogodepartamento = 'FUSION F1' then '44'
-when @catalogodepartamento = 'FUSION F2' then '45'
-end
-and mes = @mes and año = @año and Id_puesto = 4 and id_tipo = 0
-
-update [asahi16].[dbo].[Rh_totalpuestos] set cantidad = @cantidad5 where
-Id_area = 
-case 
-when @catalogodepartamento = 'ATENCIÓN AL CLIENTE' then '05'
-when @catalogodepartamento = 'MOLDES' then '16'
-when @catalogodepartamento = 'CONTROL DE MANUFACTURA'then '08'
-when @catalogodepartamento = 'GERENCIA' then '11'
-when @catalogodepartamento = 'FUNDICIÓN' then '10'
-when @catalogodepartamento = 'ALMACÉN' then '02'
-when @catalogodepartamento = 'COMPRAS' then '06'
-when @catalogodepartamento = 'SISTEMAS IT' then '19'
-when @catalogodepartamento = 'AAJ-CALIDAD' then '23'
-when @catalogodepartamento = 'CONTABILIDAD' then '07'
-when @catalogodepartamento = 'SEGURIDAD' then '18'
-when @catalogodepartamento = 'AAJ-FUNDICIÓN' then '02'
-when @catalogodepartamento = 'CONTROL DE PRODUCCION' then '09'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F1' then '03'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F2' then '46'
-when @catalogodepartamento = 'MANTENIMIENTO' then '14'
-when @catalogodepartamento = 'MAQUINADO' then '15'
-when @catalogodepartamento = 'INGENIERÍA-MAQUINADO' then '27'
-when @catalogodepartamento = 'ASUNTOS GENERALES' then '04'
-when @catalogodepartamento = 'ADMINISTRACIÓN' then '01'
-when @catalogodepartamento = 'PRESIDENCIA' then '17'
-when @catalogodepartamento = 'INGENIERÍA-FUNDICIÓN' then '28'
-when @catalogodepartamento = 'INSPECCION PRODUCCION' then '31'
-when @catalogodepartamento = 'FUNDICION 1' then '32'
-when @catalogodepartamento = 'FUNDICION 2' then '33'
-when @catalogodepartamento = 'ACABADO 1' then '34'
-when @catalogodepartamento = 'ACABADO 2' then '35'
-when @catalogodepartamento = 'CONTROL DE CLIENTES' then '36'
-when @catalogodepartamento = 'MANTENIMIENTO DE PLANTA' then '37'
-when @catalogodepartamento = 'MANTENIMIENTO FUNDICION' then '38'
-when @catalogodepartamento = 'MANTENIMIENTO MAQUINADO' then '39'
-when @catalogodepartamento = 'MAQUINADO F2' then '40'
-when @catalogodepartamento = 'INSPECCIÓN FUNDICION' then '41'
-when @catalogodepartamento = 'INSPECCIÓN MAQUINADO' then '42'
-when @catalogodepartamento = 'MAQUINADO F1' then '43'
-when @catalogodepartamento = 'FUSION F1' then '44'
-when @catalogodepartamento = 'FUSION F2' then '45'
-end
-and mes = @mes and año = @año and Id_puesto = 5 and id_tipo = 0
-
-update [asahi16].[dbo].[Rh_totalpuestos] set cantidad = @cantidad6 where
-Id_area = 
-case 
-when @catalogodepartamento = 'ATENCIÓN AL CLIENTE' then '05'
-when @catalogodepartamento = 'MOLDES' then '16'
-when @catalogodepartamento = 'CONTROL DE MANUFACTURA'then '08'
-when @catalogodepartamento = 'GERENCIA' then '11'
-when @catalogodepartamento = 'FUNDICIÓN' then '10'
-when @catalogodepartamento = 'ALMACÉN' then '02'
-when @catalogodepartamento = 'COMPRAS' then '06'
-when @catalogodepartamento = 'SISTEMAS IT' then '19'
-when @catalogodepartamento = 'AAJ-CALIDAD' then '23'
-when @catalogodepartamento = 'CONTABILIDAD' then '07'
-when @catalogodepartamento = 'SEGURIDAD' then '18'
-when @catalogodepartamento = 'AAJ-FUNDICIÓN' then '02'
-when @catalogodepartamento = 'CONTROL DE PRODUCCION' then '09'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F1' then '03'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F2' then '46'
-when @catalogodepartamento = 'MANTENIMIENTO' then '14'
-when @catalogodepartamento = 'MAQUINADO' then '15'
-when @catalogodepartamento = 'INGENIERÍA-MAQUINADO' then '27'
-when @catalogodepartamento = 'ASUNTOS GENERALES' then '04'
-when @catalogodepartamento = 'ADMINISTRACIÓN' then '01'
-when @catalogodepartamento = 'PRESIDENCIA' then '17'
-when @catalogodepartamento = 'INGENIERÍA-FUNDICIÓN' then '28'
-when @catalogodepartamento = 'INSPECCION PRODUCCION' then '31'
-when @catalogodepartamento = 'FUNDICION 1' then '32'
-when @catalogodepartamento = 'FUNDICION 2' then '33'
-when @catalogodepartamento = 'ACABADO 1' then '34'
-when @catalogodepartamento = 'ACABADO 2' then '35'
-when @catalogodepartamento = 'CONTROL DE CLIENTES' then '36'
-when @catalogodepartamento = 'MANTENIMIENTO DE PLANTA' then '37'
-when @catalogodepartamento = 'MANTENIMIENTO FUNDICION' then '38'
-when @catalogodepartamento = 'MANTENIMIENTO MAQUINADO' then '39'
-when @catalogodepartamento = 'MAQUINADO F2' then '40'
-when @catalogodepartamento = 'INSPECCIÓN FUNDICION' then '41'
-when @catalogodepartamento = 'INSPECCIÓN MAQUINADO' then '42'
-when @catalogodepartamento = 'MAQUINADO F1' then '43'
-when @catalogodepartamento = 'FUSION F1' then '44'
-when @catalogodepartamento = 'FUSION F2' then '45'
-end
-and mes = @mes and año = @año and Id_puesto = 6 and id_tipo = 0
-
-
-update [asahi16].[dbo].[Rh_totalpuestos] set cantidad = @cantidad7 where
-Id_area = 
-case 
-when @catalogodepartamento = 'ATENCIÓN AL CLIENTE' then '05'
-when @catalogodepartamento = 'MOLDES' then '16'
-when @catalogodepartamento = 'CONTROL DE MANUFACTURA'then '08'
-when @catalogodepartamento = 'GERENCIA' then '11'
-when @catalogodepartamento = 'FUNDICIÓN' then '10'
-when @catalogodepartamento = 'ALMACÉN' then '02'
-when @catalogodepartamento = 'COMPRAS' then '06'
-when @catalogodepartamento = 'SISTEMAS IT' then '19'
-when @catalogodepartamento = 'AAJ-CALIDAD' then '23'
-when @catalogodepartamento = 'CONTABILIDAD' then '07'
-when @catalogodepartamento = 'SEGURIDAD' then '18'
-when @catalogodepartamento = 'AAJ-FUNDICIÓN' then '02'
-when @catalogodepartamento = 'CONTROL DE PRODUCCION' then '09'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F1' then '03'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F2' then '46'
-when @catalogodepartamento = 'MANTENIMIENTO' then '14'
-when @catalogodepartamento = 'MAQUINADO' then '15'
-when @catalogodepartamento = 'INGENIERÍA-MAQUINADO' then '27'
-when @catalogodepartamento = 'ASUNTOS GENERALES' then '04'
-when @catalogodepartamento = 'ADMINISTRACIÓN' then '01'
-when @catalogodepartamento = 'PRESIDENCIA' then '17'
-when @catalogodepartamento = 'INGENIERÍA-FUNDICIÓN' then '28'
-when @catalogodepartamento = 'INSPECCION PRODUCCION' then '31'
-when @catalogodepartamento = 'FUNDICION 1' then '32'
-when @catalogodepartamento = 'FUNDICION 2' then '33'
-when @catalogodepartamento = 'ACABADO 1' then '34'
-when @catalogodepartamento = 'ACABADO 2' then '35'
-when @catalogodepartamento = 'CONTROL DE CLIENTES' then '36'
-when @catalogodepartamento = 'MANTENIMIENTO DE PLANTA' then '37'
-when @catalogodepartamento = 'MANTENIMIENTO FUNDICION' then '38'
-when @catalogodepartamento = 'MANTENIMIENTO MAQUINADO' then '39'
-when @catalogodepartamento = 'MAQUINADO F2' then '40'
-when @catalogodepartamento = 'INSPECCIÓN FUNDICION' then '41'
-when @catalogodepartamento = 'INSPECCIÓN MAQUINADO' then '42'
-when @catalogodepartamento = 'MAQUINADO F1' then '43'
-when @catalogodepartamento = 'FUSION F1' then '44'
-when @catalogodepartamento = 'FUSION F2' then '45'
-end 
-and mes = @mes and año = @año and Id_puesto = 7 and id_tipo = 0
-
-
-
-update [asahi16].[dbo].[Rh_totalpuestos] set cantidad = @cantidad8 where
-Id_area = 
-case 
-when @catalogodepartamento = 'ATENCIÓN AL CLIENTE' then '05'
-when @catalogodepartamento = 'MOLDES' then '16'
-when @catalogodepartamento = 'CONTROL DE MANUFACTURA'then '08'
-when @catalogodepartamento = 'GERENCIA' then '11'
-when @catalogodepartamento = 'FUNDICIÓN' then '10'
-when @catalogodepartamento = 'ALMACÉN' then '02'
-when @catalogodepartamento = 'COMPRAS' then '06'
-when @catalogodepartamento = 'SISTEMAS IT' then '19'
-when @catalogodepartamento = 'AAJ-CALIDAD' then '23'
-when @catalogodepartamento = 'CONTABILIDAD' then '07'
-when @catalogodepartamento = 'SEGURIDAD' then '18'
-when @catalogodepartamento = 'AAJ-FUNDICIÓN' then '02'
-when @catalogodepartamento = 'CONTROL DE PRODUCCION' then '09'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F1' then '03'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F2' then '46'
-when @catalogodepartamento = 'MANTENIMIENTO' then '14'
-when @catalogodepartamento = 'MAQUINADO' then '15'
-when @catalogodepartamento = 'INGENIERÍA-MAQUINADO' then '27'
-when @catalogodepartamento = 'ASUNTOS GENERALES' then '04'
-when @catalogodepartamento = 'ADMINISTRACIÓN' then '01'
-when @catalogodepartamento = 'PRESIDENCIA' then '17'
-when @catalogodepartamento = 'INGENIERÍA-FUNDICIÓN' then '28'
-when @catalogodepartamento = 'INSPECCION PRODUCCION' then '31'
-when @catalogodepartamento = 'FUNDICION 1' then '32'
-when @catalogodepartamento = 'FUNDICION 2' then '33'
-when @catalogodepartamento = 'ACABADO 1' then '34'
-when @catalogodepartamento = 'ACABADO 2' then '35'
-when @catalogodepartamento = 'CONTROL DE CLIENTES' then '36'
-when @catalogodepartamento = 'MANTENIMIENTO DE PLANTA' then '37'
-when @catalogodepartamento = 'MANTENIMIENTO FUNDICION' then '38'
-when @catalogodepartamento = 'MANTENIMIENTO MAQUINADO' then '39'
-when @catalogodepartamento = 'MAQUINADO F2' then '40'
-when @catalogodepartamento = 'INSPECCIÓN FUNDICION' then '41'
-when @catalogodepartamento = 'INSPECCIÓN MAQUINADO' then '42'
-when @catalogodepartamento = 'MAQUINADO F1' then '43'
-when @catalogodepartamento = 'FUSION F1' then '44'
-when @catalogodepartamento = 'FUSION F2' then '45'
-end
-and mes = @mes and año = @año and Id_puesto = 8 and id_tipo = 0
-
-
-update [asahi16].[dbo].[Rh_totalpuestos] set cantidad = @cantidad9 where
-Id_area = 
-case 
-when @catalogodepartamento = 'ATENCIÓN AL CLIENTE' then '05'
-when @catalogodepartamento = 'MOLDES' then '16'
-when @catalogodepartamento = 'CONTROL DE MANUFACTURA'then '08'
-when @catalogodepartamento = 'GERENCIA' then '11'
-when @catalogodepartamento = 'FUNDICIÓN' then '10'
-when @catalogodepartamento = 'ALMACÉN' then '02'
-when @catalogodepartamento = 'COMPRAS' then '06'
-when @catalogodepartamento = 'SISTEMAS IT' then '19'
-when @catalogodepartamento = 'AAJ-CALIDAD' then '23'
-when @catalogodepartamento = 'CONTABILIDAD' then '07'
-when @catalogodepartamento = 'SEGURIDAD' then '18'
-when @catalogodepartamento = 'AAJ-FUNDICIÓN' then '02'
-when @catalogodepartamento = 'CONTROL DE PRODUCCION' then '09'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F1' then '03'
-when @catalogodepartamento = 'ASEGURAMIENTO DE CALIDAD F2' then '46'
-when @catalogodepartamento = 'MANTENIMIENTO' then '14'
-when @catalogodepartamento = 'MAQUINADO' then '15'
-when @catalogodepartamento = 'INGENIERÍA-MAQUINADO' then '27'
-when @catalogodepartamento = 'ASUNTOS GENERALES' then '04'
-when @catalogodepartamento = 'ADMINISTRACIÓN' then '01'
-when @catalogodepartamento = 'PRESIDENCIA' then '17'
-when @catalogodepartamento = 'INGENIERÍA-FUNDICIÓN' then '28'
-when @catalogodepartamento = 'INSPECCION PRODUCCION' then '31'
-when @catalogodepartamento = 'FUNDICION 1' then '32'
-when @catalogodepartamento = 'FUNDICION 2' then '33'
-when @catalogodepartamento = 'ACABADO 1' then '34'
-when @catalogodepartamento = 'ACABADO 2' then '35'
-when @catalogodepartamento = 'CONTROL DE CLIENTES' then '36'
-when @catalogodepartamento = 'MANTENIMIENTO DE PLANTA' then '37'
-when @catalogodepartamento = 'MANTENIMIENTO FUNDICION' then '38'
-when @catalogodepartamento = 'MANTENIMIENTO MAQUINADO' then '39'
-when @catalogodepartamento = 'MAQUINADO F2' then '40'
-when @catalogodepartamento = 'INSPECCIÓN FUNDICION' then '41'
-when @catalogodepartamento = 'INSPECCIÓN MAQUINADO' then '42'
-when @catalogodepartamento = 'MAQUINADO F1' then '43'
-when @catalogodepartamento = 'FUSION F1' then '44'
-when @catalogodepartamento = 'FUSION F2' then '45'
-end
-and mes = @mes and año = @año and Id_puesto = 9 and id_tipo = 0
-", cnn2)
-
-        cnn2.Close()
-
-        cnn2.Open()
-
+    Sub carga()
         Dim Pregunta As Integer
 
-
-
-        Pregunta = MsgBox("¿Desea guardar los cambios?.", vbYesNo + vbExclamation + vbDefaultButton2, "¡Va a guardar cambios!")
+        If variable = 1 Then
+            Pregunta = MsgBox("¿Desea guardar cambios en el Plan de Personal?", vbYesNo + vbExclamation + vbDefaultButton2, "Plan de Personal")
+        ElseIf variable = 0 Then
+            Pregunta = MsgBox("¿Desea guardar cambios en el Master Plan?", vbYesNo + vbExclamation + vbDefaultButton2, "Master Plan")
+        End If
 
         If Pregunta = vbYes Then
+
+
+            cnn2.Close()
+
+
+            Dim command As New SqlCommand("Sp_actualizaplandepersonal", cnn2)
+            cnn2.Open()
+
+            command.CommandType = CommandType.StoredProcedure
+
             Try
 
-                cmd.Parameters.Clear()
 
-                cmd.Parameters.AddWithValue("@cantidad1", txt_gerente.Text)
-                cmd.Parameters.AddWithValue("@cantidad2", txt_asistente.Text)
-                cmd.Parameters.AddWithValue("@cantidad3", txt_supervisor.Text)
-                cmd.Parameters.AddWithValue("@cantidad4", txt_lad.Text)
-                cmd.Parameters.AddWithValue("@cantidad5", txt_staff.Text)
-                cmd.Parameters.AddWithValue("@cantidad6", txt_lid.Text)
-                cmd.Parameters.AddWithValue("@cantidad7", txt_operador.Text)
-                cmd.Parameters.AddWithValue("@cantidad8", txt_cor.Text)
-                cmd.Parameters.AddWithValue("@cantidad9", txt_tra.Text)
-                cmd.Parameters.AddWithValue("@año", cbx_año.Text)
-                cmd.Parameters.AddWithValue("@mes", l3.Text)
-                cmd.Parameters.AddWithValue("@catalogodepartamento", cbx_depto.Text)
+                command.Parameters.Clear()
+
+                If variable = 1 Then
 
 
-                cmd.ExecuteNonQuery()
+                    command.Parameters.AddWithValue("@cantidad1", txt_gerente.Text)
+                    command.Parameters.AddWithValue("@cantidad2", txt_asistente.Text)
+                    command.Parameters.AddWithValue("@cantidad3", txt_supervisor.Text)
+                    command.Parameters.AddWithValue("@cantidad4", txt_lad.Text)
+                    command.Parameters.AddWithValue("@cantidad5", txt_staff.Text)
+                    command.Parameters.AddWithValue("@cantidad6", txt_lid.Text)
+                    command.Parameters.AddWithValue("@cantidad7", txt_operador.Text)
+                    command.Parameters.AddWithValue("@cantidad8", txt_cor.Text)
+                    command.Parameters.AddWithValue("@cantidad9", txt_tra.Text)
+                    command.Parameters.AddWithValue("@año", lbl_año.Text)
+                    command.Parameters.AddWithValue("@mes", l3.Text)
+                    command.Parameters.AddWithValue("@catalogodepartamento", lbl_area.Text)
+                    command.Parameters.AddWithValue("@variable", 1)
+
+                ElseIf variable = 0 Then
+
+                    command.Parameters.AddWithValue("@cantidad1", tm_gerente.Text)
+                    command.Parameters.AddWithValue("@cantidad2", tm_asistente.Text)
+                    command.Parameters.AddWithValue("@cantidad3", tm_super.Text)
+                    command.Parameters.AddWithValue("@cantidad4", tm_lda.Text)
+                    command.Parameters.AddWithValue("@cantidad5", tm_staff.Text)
+                    command.Parameters.AddWithValue("@cantidad6", tm_lider.Text)
+                    command.Parameters.AddWithValue("@cantidad7", tm_operador.Text)
+                    command.Parameters.AddWithValue("@cantidad8", tm_coordinador.Text)
+                    command.Parameters.AddWithValue("@cantidad9", tm_traductor.Text)
+                    command.Parameters.AddWithValue("@año", lbl_año.Text)
+                    command.Parameters.AddWithValue("@mes", l3.Text)
+                    command.Parameters.AddWithValue("@catalogodepartamento", lbl_area.Text)
+                    command.Parameters.AddWithValue("@variable", 0)
+
+
+                End If
+
+
+                command.ExecuteNonQuery()
+
+
+
+
 
                 Dim Frmespera As New Frmwait
                 Frmespera.Show()
                 Frmespera.BringToFront()
                 Frmespera.WindowState = FormWindowState.Normal
-                etiquetas()
+
+                ' etiquetas()
+                'etiquetasmaster()
                 etiquetas2()
                 etiquetas3()
                 Frmespera.Close()
 
                 MsgBox("¡Cambios Guardados!", vbInformation, "¡Correcto!")
                 cnn2.Close()
-            Catch ex As Exception
-                MessageBox.Show("Error en el sistema, cierre la ventana e intente de nuevo")
-                MessageBox.Show(ex.ToString)
-                cnn2.Close()
 
+
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                MessageBox.Show("Registro no guardado, contacte al área de Sistemas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
                 cnn2.Close()
             End Try
-        Else
-            cnn2.Close()
+
+
+
+        ElseIf Pregunta = vbNo Then
+
+            MessageBox.Show("Acción no completada", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         End If
 
     End Sub
 
 
+
+
     Private Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
+        variable = 1
 
 
-
-        cargar()
+        carga()
 
 
     End Sub
@@ -913,12 +644,45 @@ and mes = @mes and año = @año and Id_puesto = 9 and id_tipo = 0
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        ContenedorReportePersonal2.semana = semana
-        ContenedorReportePersonal2.año = Today.Year
-        ContenedorReportePersonal2.variable = 0
-        ContenedorReportePersonal2.inicio = inicio
-        ContenedorReportePersonal2.fin = fin
-        ContenedorReportePersonal2.mes = Today.Month
-        ContenedorReportePersonal2.Show()
+        'ContenedorReportePersonal2.semana = semana
+        'ContenedorReportePersonal2.año = Today.Year
+        'ContenedorReportePersonal2.variable = 0
+        'ContenedorReportePersonal2.inicio = inicio
+        'ContenedorReportePersonal2.fin = fin
+        'ContenedorReportePersonal2.mes = Today.Month
+        'ContenedorReportePersonal2.Show()
+
+        ContenedorReportePlanPersonalTe.año = lbl_año.Text
+        ContenedorReportePlanPersonalTe.mes = b
+        ContenedorReportePlanPersonalTe.depto = lbl_area.Text
+        ContenedorReportePlanPersonalTe.Show()
+
     End Sub
+
+    Private Sub btn_modmaster_Click(sender As Object, e As EventArgs) Handles btn_modmaster.Click
+        variable = 0
+        carga()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btn_horas.Click
+        Modulo_plante.mes = lbl_mes.Text
+        Modulo_plante.año = lbl_año.Text
+        Modulo_plante.departamento = lbl_area.Text
+
+        Dim segundoForm As New PlanTE
+
+        segundoForm.Show(Me)
+
+    End Sub
+
 End Class
+
+
+
+Module Modulo_plante
+
+    Public mes As String
+    Public año As Integer
+    Public departamento As String
+
+End Module

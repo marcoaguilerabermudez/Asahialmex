@@ -373,9 +373,7 @@ Public Class Frm_Principal
         Dim C As New Credencial_visitantes_param()
         C.Show()
     End Sub
-    Private Sub PlanDePersonalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDePersonalToolStripMenuItem.Click
-        Frm_cargaplanpersonal.Show()
-    End Sub
+
     Private Sub HisToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -596,6 +594,10 @@ Public Class Frm_Principal
         MedidasDisciplinarias.Show()
     End Sub
 
+    Private Sub PlanDePersonalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDePersonalToolStripMenuItem.Click
+        Dim PlanPersonal As New Frm_cargaplanpersonal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        PlanPersonal.Show()
+    End Sub
 
 #End Region
 End Class

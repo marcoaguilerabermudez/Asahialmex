@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>292</ApplicationRevision>
+    <ApplicationRevision>293</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -247,6 +247,12 @@
     <Compile Include="ContenedorReporteChecadas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReporteComision.Designer.vb">
+      <DependentUpon>ContenedorReporteComision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteComision.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteDeptoN.Designer.vb">
       <DependentUpon>ContenedorReporteDeptoN.vb</DependentUpon>
     </Compile>
@@ -299,6 +305,12 @@
       <DependentUpon>ContenedorReportePersonal2.vb</DependentUpon>
     </Compile>
     <Compile Include="ContenedorReportePersonal2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContenedorReportePlanPersonalTe.Designer.vb">
+      <DependentUpon>ContenedorReportePlanPersonalTe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReportePlanPersonalTe.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ContenedorReporteSalidaComputo.Designer.vb">
@@ -387,6 +399,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet18.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet19.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet19.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -508,6 +530,12 @@
       <DependentUpon>MedidasDisciplinarias.vb</DependentUpon>
     </Compile>
     <Compile Include="MedidasDisciplinarias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanTE.Designer.vb">
+      <DependentUpon>PlanTE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanTE.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReimprimeMedida.Designer.vb">
@@ -946,6 +974,9 @@
     <EmbeddedResource Include="ContenedorReporteChecadas.resx">
       <DependentUpon>ContenedorReporteChecadas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteComision.resx">
+      <DependentUpon>ContenedorReporteComision.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteDeptoN.resx">
       <DependentUpon>ContenedorReporteDeptoN.vb</DependentUpon>
     </EmbeddedResource>
@@ -972,6 +1003,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReportePersonal2.resx">
       <DependentUpon>ContenedorReportePersonal2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReportePlanPersonalTe.resx">
+      <DependentUpon>ContenedorReportePlanPersonalTe.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteSalidaComputo.resx">
       <DependentUpon>ContenedorReporteSalidaComputo.vb</DependentUpon>
@@ -1078,12 +1112,16 @@
     <EmbeddedResource Include="NuevoMuestraOEE.resx">
       <DependentUpon>NuevoMuestraOEE.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlanTE.resx">
+      <DependentUpon>PlanTE.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReimprimeMedida.resx">
       <DependentUpon>ReimprimeMedida.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteCambioPuesto.rdlc" />
     <EmbeddedResource Include="ReporteCartaCompromiso.rdlc" />
     <EmbeddedResource Include="ReporteChecadasRh.rdlc" />
+    <EmbeddedResource Include="ReporteComision.rdlc" />
     <EmbeddedResource Include="ReporteEntradaSalidaTE.rdlc" />
     <EmbeddedResource Include="ReporteEvaIndirectoTest.rdlc" />
     <EmbeddedResource Include="ReporteEvaluacionSin1.rdlc" />
@@ -1095,6 +1133,7 @@
     <EmbeddedResource Include="ReportePermisoCSGoce.rdlc" />
     <EmbeddedResource Include="ReportePersonalSemanal.rdlc" />
     <EmbeddedResource Include="ReportePersonalSemanal2.rdlc" />
+    <EmbeddedResource Include="ReportePlanPersonalTE.rdlc" />
     <EmbeddedResource Include="ReportePuestoDepartamento.rdlc" />
     <EmbeddedResource Include="ReporteSalidaEquipoComputo.rdlc" />
     <EmbeddedResource Include="ReporteSuspension.rdlc" />
@@ -1292,6 +1331,28 @@
     </None>
     <None Include="DataSet17.xss">
       <DependentUpon>DataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet18.xsc">
+      <DependentUpon>DataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet18.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet18.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet18.xss">
+      <DependentUpon>DataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet19.xsc">
+      <DependentUpon>DataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet19.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet19.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet19.xss">
+      <DependentUpon>DataSet19.xsd</DependentUpon>
     </None>
     <None Include="DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>
