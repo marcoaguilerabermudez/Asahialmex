@@ -192,19 +192,19 @@ Public Class Frm_PolizasDiario
                             respuesta = "6"
                         End If
                         If respuesta = "6" Then
-                        Me.pasoPol = ""
-                        uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
-                        moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
-                        Me.Ocomp = Dgv_Compras.Rows(fila).Cells("oc").Value
-                        Me.IdProvi = Dgv_Compras.Rows(fila).Cells("provision").Value
-                        RecuperarEgreso(moneda, uuid, Me.Ocomp)
-                        If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+                            Me.pasoPol = ""
+                            uuid = Dgv_Compras.Rows(fila).Cells("uuid").Value
+                            moneda = Dgv_Compras.Rows(fila).Cells("moneda").Value
+                            Me.Ocomp = Dgv_Compras.Rows(fila).Cells("oc").Value
+                            Me.IdProvi = Dgv_Compras.Rows(fila).Cells("provision").Value
+                            RecuperarEgreso(moneda, uuid, Me.Ocomp)
+                            If Me.pasoPol = "Ok" Then Dgv_Compras.Rows(fila).Cells("seleccion").Value = 1
+                        End If
+                    Else
+                        MsgBox("EL DOCUMENTO CONTABLE ESTA CREADO", MsgBoxStyle.Information)
                     End If
                 Else
-                    MsgBox("EL DOCUMENTO CONTABLE ESTA CREADO", MsgBoxStyle.Information)
-                End If
-            Else
-                MsgBox("ESTE EGRESO YA ESTA PREPARADO PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
+                    MsgBox("ESTE EGRESO YA ESTA PREPARADO PARA CONVERSIÓN A TXT", MsgBoxStyle.Exclamation, "")
                 End If
             End If
         Else

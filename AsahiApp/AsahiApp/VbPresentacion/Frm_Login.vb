@@ -1,4 +1,4 @@
-Imports System.Data
+ÔªøImports System.Data
 Imports System.Data.SqlClient
 Imports System.Text
 Imports System.Net
@@ -33,10 +33,10 @@ Public Class Frm_Login
         Dim up As String = UserPrincipal.Current.SamAccountName
         If up <> "" And up <> "luis.limon" And up <> "francisco.mojica" And up <> "erik.urbina" And up <> "marco.aguilera" Then
             Txt_NombreUsuario.Text = up
-            Txt_ContraseÒa.Select()
+            Txt_Contrase√±a.Select()
         ElseIf up = "luis.limon" Or up = "francisco.mojica" Or up = "erik.urbina" Or up = "marco.aguilera" Then
             Txt_NombreUsuario.Text = "x"
-            Txt_ContraseÒa.Text = "sxs"
+            Txt_Contrase√±a.Text = "sxs"
             Btn_Aceptar.Select()
         End If
     End Sub
@@ -46,10 +46,10 @@ Public Class Frm_Login
     Private _descripcion As String
     Public Sub New()
 
-        ' Esta llamada es exigida por el diseÒador.
+        ' Esta llamada es exigida por el dise√±ador.
         InitializeComponent()
 
-        ' Agregue cualquier inicializaciÛn despuÈs de la llamada a InitializeComponent().
+        ' Agregue cualquier inicializaci√≥n despu√©s de la llamada a InitializeComponent().
 
     End Sub
     Public Sub New(ByVal path As String)
@@ -67,7 +67,7 @@ Public Class Frm_Login
         Dim emp As New Empleado()
 
 
-        If Txt_NombreUsuario.Text <> "" And Txt_ContraseÒa.Text <> "" Then
+        If Txt_NombreUsuario.Text <> "" And Txt_Contrase√±a.Text <> "" Then
             Dim resp As Boolean = NEmple.AccesoJapo(cadenaCExpress, Txt_NombreUsuario.Text.Replace(" ", ""))
 
 
@@ -77,9 +77,9 @@ Public Class Frm_Login
                     'ComprobarUsuario() --------------Para prueba-------------
                     If Not IsNothing(context.ConnectedServer) Or context.ConnectedServer = "Servidor.asahialmex.local" Then
                         Dim grupos As New List(Of String)
-                        Dim auth As Boolean = context.ValidateCredentials(Txt_NombreUsuario.Text.Replace(" ", ""), Txt_ContraseÒa.Text.Replace(" ", "")) '"user name", "password")
+                        Dim auth As Boolean = context.ValidateCredentials(Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contrase√±a.Text.Replace(" ", "")) '"user name", "password")
                         Dim user As UserPrincipal = UserPrincipal.FindByIdentity(context, Txt_NombreUsuario.Text.Replace(" ", "")) '"user name")
-                        Dim idE = Devuelve_Id("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_ContraseÒa.Text.Replace(" ", ""), "EmployeeId")
+                        Dim idE = Devuelve_Id("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contrase√±a.Text.Replace(" ", ""), "EmployeeId")
                         Dim d As String = ""
                         If Not IsNothing(user) And auth Then
                             Dim userGroups As PrincipalSearchResult(Of Principal) = user.GetAuthorizationGroups()
@@ -99,13 +99,13 @@ Public Class Frm_Login
                         ElseIf IsNothing(user) Then 'emp.Respuesta = 0 Then
                             MsgBox("Usuario Erroneo")
                             Txt_NombreUsuario.Text = ""
-                            Txt_ContraseÒa.Text = ""
+                            Txt_Contrase√±a.Text = ""
                             Txt_NombreUsuario.Select()
                             Me.count += 1
                         ElseIf Not IsNothing(user) And auth = False Then 'emp.Respuesta = 1 Then
-                            MsgBox("ContraseÒa Erronea")
-                            Txt_ContraseÒa.Text = ""
-                            Txt_ContraseÒa.Select()
+                            MsgBox("Contrase√±a Erronea")
+                            Txt_Contrase√±a.Text = ""
+                            Txt_Contrase√±a.Select()
                             Me.count += 1
                         End If
                     End If
@@ -113,9 +113,10 @@ Public Class Frm_Login
                     Dim err As String
                     err = ex.Message
                     'MsgBox(err)
-                    If err = "El dominio especificado no existe o no se pudo poner en contacto con Èl." & vbCrLf Or
-                        err = "No fue posible ponerse en contacto con el servidor." Then
-                        emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text.Replace(" ", ""), Txt_ContraseÒa.Text.Replace(" ", ""))
+                    If err = "El dominio especificado no existe o no se pudo poner en contacto con √©l." & vbCrLf Or
+                        err = "No fue posible ponerse en contacto con el servidor." Or
+                        err = "„Çµ„Éº„Éê„Éº„Å´Êé•Á∂ö„Åß„Åç„Åæ„Åõ„Çì„Åß„Åó„Åü„ÄÇ" Then
+                        emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contrase√±a.Text.Replace(" ", ""))
                         If emp.Respuesta = 2 Then
                             emp.NombreCompleto = Txt_NombreUsuario.Text.Replace(" ", "")
                             Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
@@ -126,19 +127,19 @@ Public Class Frm_Login
                         ElseIf emp.Respuesta = 0 Then
                             MsgBox("Usuario Erroneo")
                             Txt_NombreUsuario.Text = ""
-                            Txt_ContraseÒa.Text = ""
+                            Txt_Contrase√±a.Text = ""
                             Txt_NombreUsuario.Select()
                             Me.count += 1
                         ElseIf emp.Respuesta = 1 Then
-                            MsgBox("ContraseÒa Erronea")
-                            Txt_ContraseÒa.Text = ""
-                            Txt_ContraseÒa.Select()
+                            MsgBox("Contrase√±a Erronea")
+                            Txt_Contrase√±a.Text = ""
+                            Txt_Contrase√±a.Select()
                             Me.count += 1
                         End If
                     Else
-                        If IsAuthenticated("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_ContraseÒa.Text.Replace(" ", "")) Then
-                            Dim user As String = Devuelve_Propiedad("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_ContraseÒa.Text.Replace(" ", ""), "Name")
-                            Dim idE = Devuelve_Id("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_ContraseÒa.Text.Replace(" ", ""), "EmployeeId")
+                        If IsAuthenticated("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contrase√±a.Text.Replace(" ", "")) Then
+                            Dim user As String = Devuelve_Propiedad("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contrase√±a.Text.Replace(" ", ""), "Name")
+                            Dim idE = Devuelve_Id("ASAHI", Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contrase√±a.Text.Replace(" ", ""), "EmployeeId")
                             emp = NEmple.EmpleadoLoginDominio(cadenaCExpress, idE, Convert.ToString(user))
                             Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
                             principal.Show()
@@ -149,7 +150,7 @@ Public Class Frm_Login
                     End If
                 End Try
             Else
-                emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text.Replace(" ", ""), Txt_ContraseÒa.Text.Replace(" ", ""))
+                emp = NEmple.EmpleadoLogin(cadenaCExpress, Txt_NombreUsuario.Text.Replace(" ", ""), Txt_Contrase√±a.Text.Replace(" ", ""))
                 If emp.Respuesta = 2 Then
                     emp.NombreCompleto = Txt_NombreUsuario.Text.Replace(" ", "")
                     Dim principal As New Frm_Principal(cadConex, cadenaConex, Me.cadenaCExpress, emp)
@@ -160,19 +161,19 @@ Public Class Frm_Login
                 ElseIf emp.Respuesta = 0 Then
                     MsgBox("Usuario Erroneo")
                     Txt_NombreUsuario.Text = ""
-                    Txt_ContraseÒa.Text = ""
+                    Txt_Contrase√±a.Text = ""
                     Txt_NombreUsuario.Select()
                     Me.count += 1
                 ElseIf emp.Respuesta = 1 Then
-                    MsgBox("ContraseÒa Erronea")
-                    Txt_ContraseÒa.Text = ""
-                    Txt_ContraseÒa.Select()
+                    MsgBox("Contrase√±a Erronea")
+                    Txt_Contrase√±a.Text = ""
+                    Txt_Contrase√±a.Select()
                     Me.count += 1
                 End If
             End If
 
         Else
-            MsgBox("Tienes que ingresar usuario y contraseÒa")
+            MsgBox("Tienes que ingresar usuario y contrase√±a")
         End If
         If Me.count = 4 Then
 
@@ -193,7 +194,7 @@ Public Class Frm_Login
 
             entry.Close()
         Catch ex As Exception
-            MsgBox("Error al traer la InformaciÛn" & ex.Message)
+            MsgBox("Error al traer la Informaci√≥n" & ex.Message)
             Return 0
         End Try
 
@@ -213,7 +214,7 @@ Public Class Frm_Login
 
             entry.Close()
         Catch ex As Exception
-            MsgBox("Error al traer la InformaciÛn" & ex.Message)
+            MsgBox("Error al traer la Informaci√≥n" & ex.Message)
             Return ""
         End Try
 
@@ -233,7 +234,7 @@ Public Class Frm_Login
 
             entry.Close()
         Catch ex As Exception
-            MsgBox("Error al traer la InformaciÛn" & ex.Message)
+            MsgBox("Error al traer la Informaci√≥n" & ex.Message)
             Return 0
         End Try
 

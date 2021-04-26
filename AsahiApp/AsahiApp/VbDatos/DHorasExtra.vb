@@ -6,7 +6,7 @@ Public Class DHorasExtra
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT numeroperiodo FROM ctAsahi_Aluminium.dbo.nom10002 where ejercicio = " & año & "", oCon)
+            Dim query As New SqlCommand("SELECT numeroperiodo FROM ctAsahi_Aluminium.dbo.nom10002 where ejercicio = " & año & "  and idtipoperiodo = 2", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -30,7 +30,7 @@ Public Class DHorasExtra
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT fechainicio, fechafin, mes FROM ctAsahi_Aluminium.dbo.nom10002 WHERE ejercicio = " & año & "and numeroperiodo = " & semana & "", oCon)
+            Dim query As New SqlCommand("SELECT fechainicio, fechafin, mes FROM ctAsahi_Aluminium.dbo.nom10002 WHERE ejercicio = " & año & " and numeroperiodo = " & semana & " and idtipoperiodo = 2", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -98,7 +98,7 @@ Public Class DHorasExtra
         Dim oCon As New SqlConnection(cadConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("select count(mes) as mes from periodos where mes = " & mes & " and ejercicio = " & año & "", oCon)
+            Dim query As New SqlCommand("select count(mes) as mes from ctAsahi_Aluminium.dbo.nom10002 where mes = " & mes & " and ejercicio = " & año & "  and idtipoperiodo = 2", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
