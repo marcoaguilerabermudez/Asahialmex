@@ -139,6 +139,13 @@ Public Class ImprimirAnteriores
             ContenedorReporteEntradaSalidaTE.retardo = 0
             ContenedorReporteEntradaSalidaTE.Show()
 
+        ElseIf vpermiso = 11 Then
+            ContenedorReporteComision.id = folio
+            ContenedorReporteComision.Tipo = 0
+            ContenedorReporteComision.motivo = 0
+            ContenedorReporteComision.retardo = 0
+            ContenedorReporteComision.Show()
+
         End If
 
 

@@ -51,7 +51,9 @@ Public Class FormatoSM
 
 
     Private Sub txtIdPaciente_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_clave.KeyPress
+
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+
     End Sub
 
     Sub llenacombomotivo()
@@ -147,8 +149,6 @@ select descripcion,CLAVE from giro.[asahi16].[Supervisor_giro].[Puesto] where cl
             .ValueMember = "CLAVE"
         End With
 
-
-
     End Sub
 
 
@@ -218,9 +218,6 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
         End Try
 
 
-
-
-
     End Sub
 
 
@@ -261,18 +258,10 @@ SELECT  [Id_motivopermiso]
             VMOTIVO = ds.Tables(0).Rows(0).Item("id_giro")
 
 
-            Cn.Close()
-
-
+            cn.Close()
         Catch ex As Exception
             '  MessageBox.Show(ex.ToString)
-
-
         End Try
-
-
-
-
 
     End Sub
 
@@ -368,6 +357,8 @@ SELECT  [Id_motivopermiso]
                 cbx_depto.Visible = False
                 lbl_npuesto.Visible = False
                 cbx_puesto.Visible = False
+                Label16.Visible = False
+                txt_destino.Visible = False
 
 
             ElseIf cbx_tipo.Text = "Vacaciones" Then
@@ -397,6 +388,8 @@ SELECT  [Id_motivopermiso]
                 cbx_depto.Visible = False
                 lbl_npuesto.Visible = False
                 cbx_puesto.Visible = False
+                Label16.Visible = False
+                txt_destino.Visible = False
 
 
             ElseIf cbx_tipo.Text = "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)" Then
@@ -422,6 +415,8 @@ SELECT  [Id_motivopermiso]
                 cbx_depto.Visible = False
                 lbl_npuesto.Visible = False
                 cbx_puesto.Visible = False
+                Label16.Visible = False
+                txt_destino.Visible = False
 
 
             ElseIf cbx_tipo.Text = "Falta o retardo injustificado y sin goce de sueldo" Then
@@ -447,6 +442,8 @@ SELECT  [Id_motivopermiso]
                 cbx_depto.Visible = False
                 lbl_npuesto.Visible = False
                 cbx_puesto.Visible = False
+                Label16.Visible = False
+                txt_destino.Visible = False
 
 
             ElseIf cbx_tipo.Text = "Permiso sin goce de sueldo" Then
@@ -473,6 +470,8 @@ SELECT  [Id_motivopermiso]
                 cbx_depto.Visible = False
                 lbl_npuesto.Visible = False
                 cbx_puesto.Visible = False
+                Label16.Visible = False
+                txt_destino.Visible = False
 
 
             ElseIf cbx_tipo.Text = "Permiso con goce de sueldo" Then
@@ -499,6 +498,8 @@ SELECT  [Id_motivopermiso]
                 cbx_depto.Visible = False
                 lbl_npuesto.Visible = False
                 cbx_puesto.Visible = False
+                Label16.Visible = False
+                txt_destino.Visible = False
 
             ElseIf cbx_tipo.Text = "Cambio de departamento" Then
                 Check_entrada.Visible = False
@@ -529,6 +530,8 @@ SELECT  [Id_motivopermiso]
 
                 lbl_npuesto.Visible = False
                 cbx_puesto.Visible = False
+                Label16.Visible = False
+                txt_destino.Visible = False
 
             ElseIf cbx_tipo.Text = "Cambio de puesto" Then
                 Check_entrada.Visible = False
@@ -557,6 +560,8 @@ SELECT  [Id_motivopermiso]
 
                 lbl_npuesto.Visible = True
                 cbx_puesto.Visible = True
+                Label16.Visible = False
+                txt_destino.Visible = False
 
 
 
@@ -583,6 +588,8 @@ SELECT  [Id_motivopermiso]
                 cbx_depto.Visible = False
                 lbl_npuesto.Visible = False
                 cbx_puesto.Visible = False
+                Label16.Visible = False
+                txt_destino.Visible = False
 
 
             ElseIf cbx_tipo.Text = "Entrada o salida en tiempo extra" Then
@@ -608,6 +615,35 @@ SELECT  [Id_motivopermiso]
                 cbx_depto.Visible = False
                 lbl_npuesto.Visible = False
                 cbx_puesto.Visible = False
+                Label16.Visible = False
+                txt_destino.Visible = False
+
+            ElseIf cbx_tipo.Text = "Comisión" Then
+                ' Check_entrada.Visible = True
+                'Check_salida.Visible = True
+                'rbt_nocturno.Visible = False
+                Label6.Visible = False
+                dtp2.Visible = False
+                desde_h.Visible = True
+                hasta_h.Visible = False
+                Label9.Visible = True
+                Label8.Visible = False
+                dtp_checada.Visible = False
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = False
+                gbx_tipo.Visible = False
+                'rbt_nocturno.Visible = False
+                vpermiso = 11
+                dtgvp.Visible = True
+                gbx_vacaciones.Visible = False
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
+                Label16.Visible = True
+                txt_destino.Visible = True
+
 
 
 
@@ -847,6 +883,13 @@ SELECT  [Id_motivopermiso]
             ContenedorReporteEntradaSalidaTE.retardo = 0
             ContenedorReporteEntradaSalidaTE.Show()
 
+        ElseIf vpermiso = 11 Then
+            ContenedorReporteComision.id = y
+            ContenedorReporteComision.Tipo = 0
+            ContenedorReporteComision.motivo = 0
+            ContenedorReporteComision.retardo = 0
+            ContenedorReporteComision.Show()
+
         End If
 
     End Sub
@@ -1018,7 +1061,12 @@ SELECT  [Id_motivopermiso]
             command.Parameters.AddWithValue("@falta", rbt_falta.Checked)
             command.Parameters.AddWithValue("@retardo", rbt_retardo.Checked)
             command.Parameters.AddWithValue("@comunico", Check_aviso.CheckState)
-            command.Parameters.AddWithValue("@quien", txt_quien.Text)
+            If vpermiso = 11 Then
+                command.Parameters.AddWithValue("@quien", txt_destino.Text)
+            Else
+                command.Parameters.AddWithValue("@quien", txt_quien.Text)
+            End If
+
             command.Parameters.AddWithValue("@cuando", dtp_cuando.Value.ToShortDateString)
             command.Parameters.AddWithValue("@hora", dtp_hora.Value.ToOADate)
             command.Parameters.AddWithValue("@checada", dtp_checada.Value.ToOADate)
