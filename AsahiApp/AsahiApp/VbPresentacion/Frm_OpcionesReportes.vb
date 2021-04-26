@@ -7,6 +7,7 @@ Public Class Frm_OpcionesReportes
     Dim idDepto As Integer, mes As Integer, año As Integer, semana As Integer, origen As Integer
     'El origen es de que formulario viene, esto es por que se puede reutilizar el mismo formulario
     Dim cadConex As String
+    Dim conexConta As String
 #End Region
     Sub New()
 
@@ -31,6 +32,7 @@ Public Class Frm_OpcionesReportes
     Private Sub Frm_OpcionesReportes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim conex As New conexion
         Me.cadConex = conex.conexion2008
+        Me.conexConta = conex.conexionCont
         If Me.origen = 1 Then
             Lbl_Titulo.Text = "REPORTES PLAN TIEMPO EXTRA"
             Btn_RepMensual.Visible = True
@@ -42,7 +44,7 @@ Public Class Frm_OpcionesReportes
         Dim tSemanas As Integer
         Dim NHrsEx As New NHorasExtra()
 
-        tSemanas = NHrsEx.RecuperarTotalSemanas(Me.cadConex, mes, año)
+        tSemanas = NHrsEx.RecuperarTotalSemanas(Me.conexConta, mes, año)
         If tSemanas = 4 Then
             Dim Rep4 As New Frm_RepPlanHrsExtra4(mes, idDepto, año)
             Rep4.Show()

@@ -20,7 +20,7 @@ Public Class DPuestos
                 Puesto.Sexo = Convert.ToInt32(dr("Sexo").ToString)
                 Puesto.EdadMin = Convert.ToInt32(dr("Edad_Min").ToString)
                 Puesto.EdadMax = Convert.ToInt32(dr("Edad_Max").ToString)
-                Puesto.IdEstudios = Convert.ToInt32(dr("Id_Estudios").ToString)
+                'Puesto.IdEstudios = Convert.ToInt32(dr("Id_Estudios").ToString)
                 Puesto.ReqExp = Convert.ToBoolean(dr("Requiere_Exp").ToString)
                 Puesto.DispViajar = Convert.ToBoolean(dr("Disp_Viajar").ToString)
                 Puesto.TipoViaje = Convert.ToInt32(dr("Tipo_Viaje").ToString)
@@ -42,7 +42,7 @@ Public Class DPuestos
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT e.Id IdE, e.Id_Escolaridad, Activo, i.Id IdI, Id_Idioma, Nivel FROM Dp_Info_Gral g LEFT JOIN Dp_Relacion_Dp_Escolaridad e ON g.Id = e.Id_Dp LEFT JOIN Dp_Relacion_Dp_Idioma i ON g.Id = i.Id_Dp WHERE g.Id = " & idDp & "", oCon)
+            Dim query As New SqlCommand("SELECT e.Id IdE, e.Id_Escolaridad, Activo, ISNULL(i.Id,0) IdI, ISNULL(Id_Idioma,0) Id_Idioma, ISNULL(Nivel,0) Nivel FROM Dp_Info_Gral g LEFT JOIN Dp_Relacion_Dp_Escolaridad e ON g.Id = e.Id_Dp LEFT JOIN Dp_Relacion_Dp_Idioma i ON g.Id = i.Id_Dp WHERE g.Id = " & idDp & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
