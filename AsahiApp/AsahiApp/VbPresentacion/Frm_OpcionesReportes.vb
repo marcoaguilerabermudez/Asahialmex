@@ -36,7 +36,7 @@ Public Class Frm_OpcionesReportes
         If Me.origen = 1 Then
             Lbl_Titulo.Text = "REPORTES PLAN TIEMPO EXTRA"
             Btn_RepMensual.Visible = True
-            Btn_RepSemanal.Visible = True
+            Btn_RepSemanal.Visible = False
             Btn_RepSemanal.Enabled = False
         End If
     End Sub

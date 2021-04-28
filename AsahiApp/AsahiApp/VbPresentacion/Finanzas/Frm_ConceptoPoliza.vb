@@ -58,11 +58,15 @@ Public Class Frm_ConceptoPoliza
         Try
             If Me.origen = 1 Then
                 proveedor = Me.lstComp.Item(0).Proveedor.Split(New Char() {" "c})
-                Txt_Proveedor.Text = proveedor(0) & " " & proveedor(1)
+                If proveedor.Count() > 1 Then
+                    Txt_Proveedor.Text = proveedor(0) & " " & proveedor(1)
+                Else
+                    Txt_Proveedor.Text = proveedor(0)
+                End If
                 RellenarTxtFamilia(lstComp)
                 RellenarTxtSegNeg(lstComp)
-            ElseIf Me.origen = 3 Then
-                Lbl_CteProveedor.Text = "CLIENTE"
+                ElseIf Me.origen = 3 Then
+                    Lbl_CteProveedor.Text = "CLIENTE"
                 Txt_Prov.Text = "VENTA"
                 proveedor = Me.lstVent.Item(0).Cliente.Split(New Char() {" "c})
                 Txt_Proveedor.Text = proveedor(0) '& " " & proveedor(1)

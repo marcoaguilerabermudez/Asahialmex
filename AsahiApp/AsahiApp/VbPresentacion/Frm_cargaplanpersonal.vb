@@ -194,6 +194,8 @@ Public Class Frm_cargaplanpersonal
                 y = 42
             Case "MAQUINADO F1"
                 y = 43
+            Case "FUSION F1"
+                y = 44
 
         End Select
 
@@ -218,7 +220,7 @@ SELECT
       convert(varchar,[DESCRIPCION]) as 'DESCRIPCION'
     
   FROM [asahi16].[Supervisor_giro].[DEPTO]
-  where CENTRO_COSTO not in (16) AND clave not in (17,44,46,47)
+  where CENTRO_COSTO not in (16) AND clave not in (17,46,47)
 
   union
 
