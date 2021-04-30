@@ -277,6 +277,9 @@ order by rh.id_puesto")
             txt_cor.Text = ds.Tables(0).Rows(7).Item(1)
             txt_tra.Text = ds.Tables(0).Rows(8).Item(1)
             cnn2.Close()
+
+            c_p.Text = CInt(txt_gerente.Text) + CInt(txt_asistente.Text) + CInt(txt_supervisor.Text) + CInt(txt_lad.Text) + CInt(txt_staff.Text) + CInt(txt_lid.Text) + CInt(txt_operador.Text) + CInt(txt_cor.Text) + CInt(txt_tra.Text)
+
         Catch ex As Exception
             MessageBox.Show("Debe seleccionar un departamento válido.", "¡Aviso!")
             MessageBox.Show(ex.ToString)
@@ -324,6 +327,9 @@ order by rh.id_puesto")
             tm_coordinador.Text = ds.Tables(0).Rows(7).Item(1)
             tm_traductor.Text = ds.Tables(0).Rows(8).Item(1)
             cnn2.Close()
+
+            c_m.Text = CInt(tm_gerente.Text) + CInt(tm_asistente.Text) + CInt(tm_super.Text) + CInt(tm_lda.Text) + CInt(tm_staff.Text) + CInt(tm_lider.Text) + CInt(tm_operador.Text) + CInt(tm_coordinador.Text) + CInt(tm_traductor.Text)
+
         Catch ex As Exception
             MessageBox.Show("Debe seleccionar un departamento válido.", "¡Aviso!")
             MessageBox.Show(ex.ToString)
@@ -379,7 +385,7 @@ select
             txt_tra2.Text = ds.Tables(0).Rows(0).Item(8)
 
             cnn2.Close()
-
+            cr.Text = CInt(txt_gerente2.Text) + CInt(txt_asistente2.Text) + CInt(txt_supervisor2.Text) + CInt(txt_lad2.Text) + CInt(txt_staff2.Text) + CInt(txt_lid2.Text) + CInt(txt_operador2.Text) + CInt(txt_cor2.Text) + CInt(txt_tra2.Text)
         Catch ex As Exception
             MessageBox.Show("Debe seleccionar un departamento válido.", "¡Aviso!")
             cnn2.Close()
@@ -399,6 +405,8 @@ select
         txt_LiderAS.Text = Math.Abs(CInt(txt_lad.Text - txt_lad2.Text))
         txt_lidS.Text = Math.Abs(CInt(txt_lid.Text - txt_lid2.Text))
         txt_opeS.Text = Math.Abs(CInt(txt_operador.Text - txt_operador2.Text))
+
+
 
 
         If txt_asistente.Text - txt_asistente2.Text > 0 Then
