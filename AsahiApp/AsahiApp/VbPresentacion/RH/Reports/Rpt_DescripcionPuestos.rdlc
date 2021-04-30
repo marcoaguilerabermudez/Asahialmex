@@ -71,19 +71,12 @@ ASAHI ALUMINIUM MÉXICO
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>DEPARTAMENTO</Value>
+                    <Value>DEPARTAMENTO </Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
                   <TextRun>
                     <Value>部</Value>
                     <Style>
@@ -99,10 +92,10 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.14993cm</Top>
-            <Left>10.25322cm</Left>
+            <Top>0.28222cm</Top>
+            <Left>8.2834cm</Left>
             <Height>0.5559cm</Height>
-            <Width>2.10853cm</Width>
+            <Width>9.79019cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -129,10 +122,10 @@ ASAHI ALUMINIUM MÉXICO
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>0.14993cm</Top>
-            <Left>2.61218cm</Left>
+            <Top>0.97923cm</Top>
+            <Left>0.36253cm</Left>
             <Height>0.5559cm</Height>
-            <Width>7.08611cm</Width>
+            <Width>7.47347cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -181,7 +174,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>1.61452cm</Top>
+            <Top>3.01681cm</Top>
             <Left>2.621cm</Left>
             <Height>0.58236cm</Height>
             <Width>5.84257cm</Width>
@@ -226,7 +219,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>SEXO</Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -252,9 +245,9 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.61452cm</Top>
+            <Top>3.01681cm</Top>
             <Left>8.701cm</Left>
-            <Height>0.58236cm</Height>
+            <Height>0.8734cm</Height>
             <Width>0.99728cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
@@ -283,7 +276,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>1.61452cm</Top>
+            <Top>3.01681cm</Top>
             <Left>9.87467cm</Left>
             <Height>0.58236cm</Height>
             <Width>3.26388cm</Width>
@@ -328,7 +321,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>EDAD</Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -354,9 +347,9 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.61452cm</Top>
+            <Top>3.01681cm</Top>
             <Left>13.63244cm</Left>
-            <Height>0.58236cm</Height>
+            <Height>0.8734cm</Height>
             <Width>0.99729cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
@@ -385,7 +378,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>1.61452cm</Top>
+            <Top>3.01681cm</Top>
             <Left>14.80612cm</Left>
             <Height>0.58236cm</Height>
             <Width>3.26747cm</Width>
@@ -430,21 +423,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>EXPERIENCIA LABORAL</Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -470,10 +449,10 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>2.37327cm</Top>
-            <Left>9.87467cm</Left>
-            <Height>1.42049cm</Height>
-            <Width>1.64042cm</Width>
+            <Top>4.39291cm</Top>
+            <Left>9.3166cm</Left>
+            <Height>1.15591cm</Height>
+            <Width>2.19849cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -494,7 +473,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>NIVEL </Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -508,21 +487,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>EDUCATIVO</Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -548,9 +513,9 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>2.37327cm</Top>
+            <Top>4.39291cm</Top>
             <Left>0.36253cm</Left>
-            <Height>1.42049cm</Height>
+            <Height>1.15591cm</Height>
             <Width>1.87041cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
@@ -572,7 +537,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>REQUIERE </Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -586,7 +551,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>VIAJAR</Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -600,7 +565,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value />
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -615,7 +580,7 @@ ASAHI ALUMINIUM MÉXICO
                     <Value>旅行は必要ですか</Value>
                     <Style>
                       <FontFamily>ms pGothic</FontFamily>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                     </Style>
                   </TextRun>
@@ -626,9 +591,9 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>3.97014cm</Top>
+            <Top>5.68993cm</Top>
             <Left>9.25401cm</Left>
-            <Height>1.19063cm</Height>
+            <Height>1.50813cm</Height>
             <Width>2.69266cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
@@ -650,14 +615,14 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>=First(Fields!Viaje.Value, "Dts_DpInfoGrl_Rpt")</Value>
                     <Style>
-                      <FontSize>7pt</FontSize>
+                      <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>3.97014cm</Top>
+            <Top>5.68993cm</Top>
             <Left>12.12306cm</Left>
             <Height>0.57355cm</Height>
             <Width>5.10784cm</Width>
@@ -700,9 +665,9 @@ ASAHI ALUMINIUM MÉXICO
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>iDIOMA Y </Value>
+                    <Value>IDIOMA Y </Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -716,21 +681,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>NIVEL</Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -756,9 +707,9 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>3.97015cm</Top>
+            <Top>5.68994cm</Top>
             <Left>0.36253cm</Left>
-            <Height>1.1727cm</Height>
+            <Height>1.19062cm</Height>
             <Width>1.87041cm</Width>
             <ZIndex>11</ZIndex>
             <Style>
@@ -780,14 +731,14 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>=First(Fields!Justificacion.Value, "Dts_DpInfoGrl_Rpt")</Value>
                     <Style>
-                      <FontSize>7pt</FontSize>
+                      <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>4.61424cm</Top>
+            <Top>6.33403cm</Top>
             <Left>12.12306cm</Left>
             <Height>1.12917cm</Height>
             <Width>5.95053cm</Width>
@@ -839,7 +790,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>0.88223cm</Top>
+            <Top>1.64952cm</Top>
             <Left>4.57891cm</Left>
             <Height>0.5559cm</Height>
             <Width>7.40429cm</Width>
@@ -891,10 +842,10 @@ ASAHI ALUMINIUM MÉXICO
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>0.14993cm</Top>
-            <Left>12.53814cm</Left>
+            <Top>0.97923cm</Top>
+            <Left>8.2834cm</Left>
             <Height>0.5559cm</Height>
-            <Width>5.53545cm</Width>
+            <Width>9.79019cm</Width>
             <ZIndex>14</ZIndex>
             <Style>
               <Border>
@@ -935,19 +886,12 @@ ASAHI ALUMINIUM MÉXICO
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>TÍTULO DEL PUESTO</Value>
+                    <Value>TÍTULO DEL PUESTO </Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
                   <TextRun>
                     <Value>役職名</Value>
                     <Style>
@@ -963,10 +907,10 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.14993cm</Top>
+            <Top>0.28222cm</Top>
             <Left>0.36253cm</Left>
             <Height>0.5559cm</Height>
-            <Width>2.10853cm</Width>
+            <Width>7.47347cm</Width>
             <ZIndex>15</ZIndex>
             <Style>
               <Border>
@@ -987,7 +931,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>NOMBRE DEL PUESTO A QUE REPORTA</Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1013,9 +957,9 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.88223cm</Top>
+            <Top>1.64952cm</Top>
             <Left>0.36253cm</Left>
-            <Height>0.5559cm</Height>
+            <Height>1.1909cm</Height>
             <Width>4.04cm</Width>
             <ZIndex>16</ZIndex>
             <Style>
@@ -1044,7 +988,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>0.88223cm</Top>
+            <Top>1.64952cm</Top>
             <Left>13.63244cm</Left>
             <Height>0.5559cm</Height>
             <Width>4.44115cm</Width>
@@ -1089,7 +1033,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>TIPO DE PUESTO</Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1115,9 +1059,9 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.61452cm</Top>
+            <Top>3.01681cm</Top>
             <Left>0.36253cm</Left>
-            <Height>0.58236cm</Height>
+            <Height>1.21736cm</Height>
             <Width>2.08208cm</Width>
             <ZIndex>18</ZIndex>
             <Style>
@@ -1139,7 +1083,7 @@ ASAHI ALUMINIUM MÉXICO
                   <TextRun>
                     <Value>ÁREA</Value>
                     <Style>
-                      <FontSize>5pt</FontSize>
+                      <FontSize>8.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1165,10 +1109,10 @@ ASAHI ALUMINIUM MÉXICO
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.88223cm</Top>
-            <Left>12.53814cm</Left>
-            <Height>0.5559cm</Height>
-            <Width>0.91791cm</Width>
+            <Top>1.64952cm</Top>
+            <Left>12.40815cm</Left>
+            <Height>0.8734cm</Height>
+            <Width>1.0479cm</Width>
             <ZIndex>19</ZIndex>
             <Style>
               <Border>
@@ -1189,7 +1133,7 @@ ASAHI ALUMINIUM MÉXICO
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.28691cm</Height>
+                  <Height>0.55149cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1202,7 +1146,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Escolaridad</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1239,7 +1183,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Escolaridad.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1280,9 +1224,9 @@ ASAHI ALUMINIUM MÉXICO
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>Dts_DpEstudios_Rpt</DataSetName>
-            <Top>2.37327cm</Top>
+            <Top>4.39291cm</Top>
             <Left>2.621cm</Left>
-            <Height>0.60028cm</Height>
+            <Height>0.86486cm</Height>
             <Width>5.80729cm</Width>
             <ZIndex>20</ZIndex>
             <Style>
@@ -1340,7 +1284,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Puesto.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1372,7 +1316,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!cantidadTiempo.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1404,7 +1348,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!tipoTiempo.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1444,7 +1388,7 @@ ASAHI ALUMINIUM MÉXICO
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>Dts_DpExpLab_Rpt</DataSetName>
-            <Top>2.33799cm</Top>
+            <Top>4.35763cm</Top>
             <Left>11.69148cm</Left>
             <Height>0.32219cm</Height>
             <Width>6.38211cm</Width>
@@ -1488,7 +1432,7 @@ ASAHI ALUMINIUM MÉXICO
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.24681cm</Height>
+                  <Height>0.51139cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1501,7 +1445,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Idioma</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1536,7 +1480,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Nivel</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1596,7 +1540,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Idioma.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1648,7 +1592,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Nivel.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1710,9 +1654,9 @@ ASAHI ALUMINIUM MÉXICO
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>Dts_DpIdiomas_Rpt</DataSetName>
-            <Top>3.97015cm</Top>
+            <Top>6.00744cm</Top>
             <Left>2.61218cm</Left>
-            <Height>0.57354cm</Height>
+            <Height>0.83812cm</Height>
             <Width>5.81611cm</Width>
             <ZIndex>22</ZIndex>
             <Style>
@@ -1744,9 +1688,9 @@ ASAHI ALUMINIUM MÉXICO
           </Tablix>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>3.32176cm</Top>
+        <Top>3.82447cm</Top>
         <Left>0.22589cm</Left>
-        <Height>5.9548cm</Height>
+        <Height>7.4632cm</Height>
         <Width>18.61223cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -1780,7 +1724,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.61592cm</Top>
+        <Top>3.04808cm</Top>
         <Left>0.26141cm</Left>
         <Height>0.6cm</Height>
         <Width>10.87034cm</Width>
@@ -1819,8 +1763,8 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>9.45295cm</Top>
-        <Left>0.26129cm</Left>
+        <Top>12.02822cm</Top>
+        <Left>0.27218cm</Left>
         <Height>0.6cm</Height>
         <Width>8.66368cm</Width>
         <ZIndex>4</ZIndex>
@@ -1849,7 +1793,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox56</rd:DefaultName>
-        <Top>10.58211cm</Top>
+        <Top>12.80461cm</Top>
         <Left>0.26154cm</Left>
         <Height>1.41835cm</Height>
         <Width>18.61223cm</Width>
@@ -1889,8 +1833,8 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>12.24927cm</Top>
-        <Left>0.26129cm</Left>
+        <Top>14.97448cm</Top>
+        <Left>0.30758cm</Left>
         <Height>0.6cm</Height>
         <Width>9.91796cm</Width>
         <ZIndex>6</ZIndex>
@@ -1934,7 +1878,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>No. de Ocupantes </Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1947,7 +1891,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>人数</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2000,7 +1944,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Puestos que le reportan </Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2013,7 +1957,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>直属部下の役職</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2066,7 +2010,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Función principal </Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2079,7 +2023,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>業務内容</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2137,7 +2081,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Cantidad.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2189,7 +2133,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Puesto.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2241,7 +2185,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Funcion.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2314,8 +2258,8 @@ ASAHI ALUMINIUM MÉXICO
           </Tablix>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>13.34315cm</Top>
-        <Left>0.22589cm</Left>
+        <Top>15.75086cm</Top>
+        <Left>0.27218cm</Left>
         <Height>1.06721cm</Height>
         <Width>18.61223cm</Width>
         <ZIndex>7</ZIndex>
@@ -2350,8 +2294,8 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>14.58675cm</Top>
-        <Left>0.26142cm</Left>
+        <Top>17.55533cm</Top>
+        <Left>0.22927cm</Left>
         <Height>0.6cm</Height>
         <Width>9.23818cm</Width>
         <ZIndex>8</ZIndex>
@@ -2702,8 +2646,8 @@ ASAHI ALUMINIUM MÉXICO
           </Tablix>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>15.70769cm</Top>
-        <Left>0.22589cm</Left>
+        <Top>18.35877cm</Top>
+        <Left>0.19374cm</Left>
         <Height>1.08647cm</Height>
         <Width>18.61223cm</Width>
         <ZIndex>9</ZIndex>
@@ -2744,7 +2688,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Detalle de actividades</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2757,7 +2701,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>主要目的</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2810,7 +2754,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Frecuencia</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2823,7 +2767,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>報告頻度</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2876,7 +2820,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Entregable</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2889,7 +2833,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>成果物</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2947,7 +2891,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Detalle.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -2999,7 +2943,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Frecuencia.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3051,7 +2995,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Entregable.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3123,9 +3067,9 @@ ASAHI ALUMINIUM MÉXICO
             </Style>
           </Tablix>
         </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Top>19.45588cm</Top>
-        <Left>0.22589cm</Left>
+        <OmitBorderOnPageBreak>true</OmitBorderOnPageBreak>
+        <Top>22.10171cm</Top>
+        <Left>0.25804cm</Left>
         <Height>1.12694cm</Height>
         <Width>18.61223cm</Width>
         <ZIndex>10</ZIndex>
@@ -3160,8 +3104,8 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>18.36199cm</Top>
-        <Left>0.19062cm</Left>
+        <Top>21.32532cm</Top>
+        <Left>0.22277cm</Left>
         <Height>0.6cm</Height>
         <Width>8.46356cm</Width>
         <ZIndex>11</ZIndex>
@@ -3211,7 +3155,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Nombre de indicador</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3224,7 +3168,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>指数</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3276,7 +3220,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Estándar</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3284,14 +3228,14 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value xml:space="preserve">
 </Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                                 <TextRun>
                                   <Value>標準</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3343,7 +3287,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Fórmula</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3351,14 +3295,14 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value xml:space="preserve">
 </Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                                 <TextRun>
                                   <Value>方策</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3410,7 +3354,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Frecuencia</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3423,7 +3367,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>測定頻度</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3475,7 +3419,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Fuente de información</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3488,7 +3432,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>情報源</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3545,7 +3489,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Nombre.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3597,7 +3541,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Estandar.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3649,7 +3593,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Formula.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3701,7 +3645,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Frecuencia.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3753,7 +3697,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!Fuente.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -3828,9 +3772,9 @@ ASAHI ALUMINIUM MÉXICO
           </Tablix>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>21.98028cm</Top>
+        <Top>24.52028cm</Top>
         <Left>0.22589cm</Left>
-        <Height>1.13038cm</Height>
+        <Height>1.39496cm</Height>
         <Width>18.61223cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
@@ -3864,7 +3808,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>20.88639cm</Top>
+        <Top>23.74389cm</Top>
         <Left>0.19062cm</Left>
         <Height>0.6cm</Height>
         <Width>6.26671cm</Width>
@@ -3903,7 +3847,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Competencias técnicas</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3916,7 +3860,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>テクニカル労働力</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3974,7 +3918,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!CompeTecnica.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -4085,7 +4029,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Competencias Generales</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -4098,7 +4042,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>一般的な労働力</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -4156,7 +4100,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!CompeGrl.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -4258,7 +4202,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>Competencias CON personal a mando</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -4271,7 +4215,7 @@ ASAHI ALUMINIUM MÉXICO
                                   <Value>指揮官、労働力</Value>
                                   <Style>
                                     <FontFamily>ms pgothic</FontFamily>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -4329,7 +4273,7 @@ ASAHI ALUMINIUM MÉXICO
                                 <TextRun>
                                   <Value>=Fields!CompeMando.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -4411,7 +4355,7 @@ ASAHI ALUMINIUM MÉXICO
           </Tablix>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>24.38093cm</Top>
+        <Top>27.50302cm</Top>
         <Left>0.22589cm</Left>
         <Height>1.1768cm</Height>
         <Width>18.61223cm</Width>
@@ -4447,7 +4391,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>23.28704cm</Top>
+        <Top>26.72663cm</Top>
         <Left>0.22589cm</Left>
         <Height>0.6cm</Height>
         <Width>7.40606cm</Width>
@@ -4792,12 +4736,9 @@ ASAHI ALUMINIUM MÉXICO
             </Style>
           </Tablix>
         </ReportItems>
-        <PageBreak>
-          <BreakLocation>End</BreakLocation>
-        </PageBreak>
         <KeepTogether>true</KeepTogether>
-        <Top>16.82944cm</Top>
-        <Left>0.22589cm</Left>
+        <Top>19.48052cm</Top>
+        <Left>0.19374cm</Left>
         <Height>1.08647cm</Height>
         <Width>18.61223cm</Width>
         <ZIndex>16</ZIndex>
@@ -4841,7 +4782,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>25.92229cm</Top>
+        <Top>30.04979cm</Top>
         <Left>0.15497cm</Left>
         <Height>0.6cm</Height>
         <Width>18.68315cm</Width>
@@ -4887,7 +4828,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>26.66683cm</Top>
+        <Top>30.79433cm</Top>
         <Left>0.78869cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05899cm</Width>
@@ -4953,7 +4894,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>26.66683cm</Top>
+        <Top>30.79433cm</Top>
         <Left>5.1658cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05893cm</Width>
@@ -5021,7 +4962,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>26.66683cm</Top>
+        <Top>30.79433cm</Top>
         <Left>9.54249cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05885cm</Width>
@@ -5087,7 +5028,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>27.26683cm</Top>
+        <Top>31.39433cm</Top>
         <Left>0.78867cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05899cm</Width>
@@ -5153,7 +5094,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>27.26683cm</Top>
+        <Top>31.39433cm</Top>
         <Left>5.16578cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05893cm</Width>
@@ -5219,7 +5160,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>27.26683cm</Top>
+        <Top>31.39433cm</Top>
         <Left>9.54248cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05885cm</Width>
@@ -5262,7 +5203,9 @@ ASAHI ALUMINIUM MÉXICO
             <TextRuns>
               <TextRun>
                 <Value />
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -5273,7 +5216,9 @@ ASAHI ALUMINIUM MÉXICO
             <TextRuns>
               <TextRun>
                 <Value />
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -5284,7 +5229,9 @@ ASAHI ALUMINIUM MÉXICO
             <TextRuns>
               <TextRun>
                 <Value />
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -5298,7 +5245,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>7pt</FontSize>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextDecoration>None</TextDecoration>
                 </Style>
@@ -5308,7 +5255,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>MS Gothic</FontFamily>
-                  <FontSize>7pt</FontSize>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextDecoration>None</TextDecoration>
                 </Style>
@@ -5320,7 +5267,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>27.86683cm</Top>
+        <Top>31.99433cm</Top>
         <Left>0.78867cm</Left>
         <Height>1.70677cm</Height>
         <Width>4.05899cm</Width>
@@ -5342,7 +5289,9 @@ ASAHI ALUMINIUM MÉXICO
             <TextRuns>
               <TextRun>
                 <Value />
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -5351,7 +5300,9 @@ ASAHI ALUMINIUM MÉXICO
             <TextRuns>
               <TextRun>
                 <Value />
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -5360,7 +5311,9 @@ ASAHI ALUMINIUM MÉXICO
             <TextRuns>
               <TextRun>
                 <Value />
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -5372,7 +5325,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>7pt</FontSize>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextDecoration>None</TextDecoration>
                 </Style>
@@ -5382,7 +5335,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>MS Gothic</FontFamily>
-                  <FontSize>7pt</FontSize>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextDecoration>None</TextDecoration>
                 </Style>
@@ -5394,7 +5347,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>27.86683cm</Top>
+        <Top>31.99433cm</Top>
         <Left>5.16578cm</Left>
         <Height>1.70677cm</Height>
         <Width>4.05893cm</Width>
@@ -5437,7 +5390,9 @@ ASAHI ALUMINIUM MÉXICO
             <TextRuns>
               <TextRun>
                 <Value />
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -5446,7 +5401,9 @@ ASAHI ALUMINIUM MÉXICO
             <TextRuns>
               <TextRun>
                 <Value />
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -5455,7 +5412,9 @@ ASAHI ALUMINIUM MÉXICO
             <TextRuns>
               <TextRun>
                 <Value />
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -5467,7 +5426,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>7pt</FontSize>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextDecoration>None</TextDecoration>
                 </Style>
@@ -5477,7 +5436,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>MS Gothic</FontFamily>
-                  <FontSize>7pt</FontSize>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextDecoration>None</TextDecoration>
                 </Style>
@@ -5489,7 +5448,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>27.86683cm</Top>
+        <Top>31.99433cm</Top>
         <Left>9.54247cm</Left>
         <Height>1.70677cm</Height>
         <Width>4.05885cm</Width>
@@ -5555,7 +5514,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>29.5736cm</Top>
+        <Top>33.7011cm</Top>
         <Left>0.78869cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05899cm</Width>
@@ -5621,7 +5580,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>29.5736cm</Top>
+        <Top>33.7011cm</Top>
         <Left>5.1658cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05893cm</Width>
@@ -5687,7 +5646,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>29.5736cm</Top>
+        <Top>33.7011cm</Top>
         <Left>9.54249cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05885cm</Width>
@@ -5763,7 +5722,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>30.1736cm</Top>
+        <Top>34.3011cm</Top>
         <Left>0.78867cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05899cm</Width>
@@ -5839,7 +5798,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>30.1736cm</Top>
+        <Top>34.3011cm</Top>
         <Left>5.16576cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05893cm</Width>
@@ -5915,7 +5874,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>30.1736cm</Top>
+        <Top>34.3011cm</Top>
         <Left>9.54245cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05885cm</Width>
@@ -5983,7 +5942,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>26.66683cm</Top>
+        <Top>30.79433cm</Top>
         <Left>13.96414cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05885cm</Width>
@@ -6049,7 +6008,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>27.26683cm</Top>
+        <Top>31.39433cm</Top>
         <Left>13.96413cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05885cm</Width>
@@ -6122,7 +6081,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>7pt</FontSize>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextDecoration>None</TextDecoration>
                 </Style>
@@ -6132,7 +6091,7 @@ ASAHI ALUMINIUM MÉXICO
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>MS Gothic</FontFamily>
-                  <FontSize>7pt</FontSize>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextDecoration>None</TextDecoration>
                 </Style>
@@ -6144,7 +6103,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>27.86683cm</Top>
+        <Top>31.99433cm</Top>
         <Left>13.96412cm</Left>
         <Height>1.70677cm</Height>
         <Width>4.05885cm</Width>
@@ -6210,7 +6169,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>29.5736cm</Top>
+        <Top>33.7011cm</Top>
         <Left>13.96414cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05885cm</Width>
@@ -6286,7 +6245,7 @@ ASAHI ALUMINIUM MÉXICO
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>30.1736cm</Top>
+        <Top>34.3011cm</Top>
         <Left>13.9641cm</Left>
         <Height>0.6cm</Height>
         <Width>4.05885cm</Width>
@@ -6322,7 +6281,7 @@ ASAHI ALUMINIUM MÉXICO
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>12.22021in</Height>
+    <Height>14.30354in</Height>
     <Style>
       <Border>
         <Style>None</Style>
@@ -6336,7 +6295,7 @@ ASAHI ALUMINIUM MÉXICO
     <LeftMargin>1cm</LeftMargin>
     <RightMargin>0cm</RightMargin>
     <TopMargin>1.5cm</TopMargin>
-    <BottomMargin>0cm</BottomMargin>
+    <BottomMargin>0.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
