@@ -478,6 +478,9 @@
     <Compile Include="DataSet\Dts_BonoMensual.vb">
       <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RH\DataSet\Dts_DPInfoGrl_Rpt.vb">
+      <DependentUpon>Dts_DPInfoGrl_Rpt.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RH\DataSet\Dts_PlanHrsExt4.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
