@@ -78,10 +78,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F41B590EC4E81092BAF22B6FF972AB194DA5A0A6</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>8B49B07B1622CF9872D5FA28B1AB6E8898188BE4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_19_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_20_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -233,6 +233,12 @@
       <DependentUpon>ContenedorReporteBajasMes.vb</DependentUpon>
     </Compile>
     <Compile Include="ContenedorReporteBajasMes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContenedorReporteCambioPuestoxMes.Designer.vb">
+      <DependentUpon>ContenedorReporteCambioPuestoxMes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteCambioPuestoxMes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ContenedorReporteCartaCompromiso.Designer.vb">
@@ -415,6 +421,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet20.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet21.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet21.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet3.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -477,6 +493,12 @@
     </Compile>
     <Compile Include="DataSet\Dts_BonoMensual.vb">
       <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cambiodepxmes.Designer.vb">
+      <DependentUpon>frm_cambiodepxmes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_cambiodepxmes.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\DataSet\Dts_PlanHrsExt4.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -980,6 +1002,9 @@
     <EmbeddedResource Include="ContenedorReporteBajasMes.resx">
       <DependentUpon>ContenedorReporteBajasMes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteCambioPuestoxMes.resx">
+      <DependentUpon>ContenedorReporteCambioPuestoxMes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteCartaCompromiso.resx">
       <DependentUpon>ContenedorReporteCartaCompromiso.vb</DependentUpon>
     </EmbeddedResource>
@@ -1085,6 +1110,9 @@
     <EmbeddedResource Include="Frm_Bajas_mes.resx">
       <DependentUpon>Frm_Bajas_mes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_cambiodepxmes.resx">
+      <DependentUpon>frm_cambiodepxmes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_cargaplanpersonal.resx">
       <DependentUpon>Frm_cargaplanpersonal.vb</DependentUpon>
     </EmbeddedResource>
@@ -1150,6 +1178,7 @@
     <EmbeddedResource Include="ReporteSalidaEquipoComputo.rdlc" />
     <EmbeddedResource Include="ReporteSuspension.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
+    <EmbeddedResource Include="ReporteXmesCambioDePuesto.rdlc" />
     <EmbeddedResource Include="RH\Reports\Rpt_PlanHorasExtra4.rdlc" />
     <EmbeddedResource Include="RH\Reports\Rpt_PlanHorasExtra5.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PrenominaGlobal.rdlc" />
@@ -1388,6 +1417,28 @@
     </None>
     <None Include="DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet20.xsc">
+      <DependentUpon>DataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet20.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet20.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet20.xss">
+      <DependentUpon>DataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet21.xsc">
+      <DependentUpon>DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet21.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet21.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet21.xss">
+      <DependentUpon>DataSet21.xsd</DependentUpon>
     </None>
     <None Include="DataSet3.xsc">
       <DependentUpon>DataSet3.xsd</DependentUpon>
@@ -1729,6 +1780,7 @@
     <None Include="VbPresentacion_18_TemporaryKey.pfx" />
     <None Include="VbPresentacion_19_TemporaryKey.pfx" />
     <None Include="VbPresentacion_1_TemporaryKey.pfx" />
+    <None Include="VbPresentacion_20_TemporaryKey.pfx" />
     <None Include="VbPresentacion_2_TemporaryKey.pfx" />
     <None Include="VbPresentacion_3_TemporaryKey.pfx" />
     <None Include="VbPresentacion_4_TemporaryKey.pfx" />
