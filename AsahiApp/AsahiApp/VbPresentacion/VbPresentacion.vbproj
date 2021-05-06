@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>294</ApplicationRevision>
+    <ApplicationRevision>301</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -78,10 +78,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B70C37BBD441C0CFF7413709B220AB9E44ABDCDE</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F41B590EC4E81092BAF22B6FF972AB194DA5A0A6</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_19_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -478,12 +478,12 @@
     <Compile Include="DataSet\Dts_BonoMensual.vb">
       <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\Dts_PlanHrsExt4.Designer.vb">
+    <Compile Include="RH\DataSet\Dts_PlanHrsExt4.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\Dts_PlanHrsExt5.Designer.vb">
+    <Compile Include="RH\DataSet\Dts_PlanHrsExt5.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
@@ -759,10 +759,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dts_DpReponsabilidades_Rpt.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RH\Frm_CuestionariosPreguntas.Designer.vb">
+      <DependentUpon>Frm_CuestionariosPreguntas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_CuestionariosPreguntas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_DescripcionPuestos.Designer.vb">
       <DependentUpon>Frm_DescripcionPuestos.vb</DependentUpon>
     </Compile>
     <Compile Include="RH\Frm_DescripcionPuestos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RH\Frm_DiseñadorCuestionarios.Designer.vb">
+      <DependentUpon>Frm_DiseñadorCuestionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_DiseñadorCuestionarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\Frm_PlanHorasExtra.Designer.vb">
@@ -1138,8 +1150,8 @@
     <EmbeddedResource Include="ReporteSalidaEquipoComputo.rdlc" />
     <EmbeddedResource Include="ReporteSuspension.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
-    <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra4.rdlc" />
-    <EmbeddedResource Include="Reportes\Rpt_PlanHorasExtra5.rdlc" />
+    <EmbeddedResource Include="RH\Reports\Rpt_PlanHorasExtra4.rdlc" />
+    <EmbeddedResource Include="RH\Reports\Rpt_PlanHorasExtra5.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PrenominaGlobal.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PrenominaListado.rdlc" />
     <EmbeddedResource Include="ReporteTEN.rdlc" />
@@ -1147,10 +1159,22 @@
       <DependentUpon>ReporteTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteVacionesRH.rdlc" />
+    <EmbeddedResource Include="RH\Frm_CuestionariosPreguntas.es-HN.resx">
+      <DependentUpon>Frm_CuestionariosPreguntas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_CuestionariosPreguntas.es-MX.resx">
+      <DependentUpon>Frm_CuestionariosPreguntas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RH\Frm_CuestionariosPreguntas.resx">
+      <DependentUpon>Frm_CuestionariosPreguntas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RH\Frm_DescripcionPuestos.resx">
       <DependentUpon>Frm_DescripcionPuestos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportE_bajas_mes.rdlc" />
+    <EmbeddedResource Include="RH\Frm_DiseñadorCuestionarios.resx">
+      <DependentUpon>Frm_DiseñadorCuestionarios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RH\Frm_PlanHorasExtra.resx">
       <DependentUpon>Frm_PlanHorasExtra.vb</DependentUpon>
     </EmbeddedResource>
@@ -1497,26 +1521,26 @@
     <None Include="DataSet\Dts_BonoMensual.xss">
       <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt4.xsc">
+    <None Include="RH\DataSet\Dts_PlanHrsExt4.xsc">
       <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt4.xsd">
+    <None Include="RH\DataSet\Dts_PlanHrsExt4.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Dts_PlanHrsExt4.Designer.vb</LastGenOutput>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt4.xss">
+    <None Include="RH\DataSet\Dts_PlanHrsExt4.xss">
       <DependentUpon>Dts_PlanHrsExt4.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt5.xsc">
+    <None Include="RH\DataSet\Dts_PlanHrsExt5.xsc">
       <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt5.xsd">
+    <None Include="RH\DataSet\Dts_PlanHrsExt5.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Dts_PlanHrsExt5.Designer.vb</LastGenOutput>
     </None>
-    <None Include="DataSet\Dts_PlanHrsExt5.xss">
+    <None Include="RH\DataSet\Dts_PlanHrsExt5.xss">
       <DependentUpon>Dts_PlanHrsExt5.xsd</DependentUpon>
     </None>
     <None Include="DataSet\Dts_PrenominaGlobal.xsc">
@@ -1703,6 +1727,7 @@
     <None Include="VbPresentacion_16_TemporaryKey.pfx" />
     <None Include="VbPresentacion_17_TemporaryKey.pfx" />
     <None Include="VbPresentacion_18_TemporaryKey.pfx" />
+    <None Include="VbPresentacion_19_TemporaryKey.pfx" />
     <None Include="VbPresentacion_1_TemporaryKey.pfx" />
     <None Include="VbPresentacion_2_TemporaryKey.pfx" />
     <None Include="VbPresentacion_3_TemporaryKey.pfx" />
@@ -1798,6 +1823,8 @@
     <None Include="Resources\mexican-republic1.png" />
     <None Include="Resources\mexico.png" />
     <None Include="Resources\customer.png" />
+    <None Include="Resources\prueba-de-educacion.png" />
+    <None Include="Resources\delete.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

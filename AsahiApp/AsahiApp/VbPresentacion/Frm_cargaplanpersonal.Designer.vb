@@ -46,6 +46,11 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_gerente = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btn_horas = New System.Windows.Forms.Button()
+        Me.lbl_año = New System.Windows.Forms.Label()
+        Me.lbl_area = New System.Windows.Forms.Label()
+        Me.lbl_mes = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.cbx_año = New System.Windows.Forms.ComboBox()
@@ -117,11 +122,9 @@ Partial Class Frm_cargaplanpersonal
         Me.Label44 = New System.Windows.Forms.Label()
         Me.tm_gerente = New System.Windows.Forms.TextBox()
         Me.Label45 = New System.Windows.Forms.Label()
-        Me.lbl_mes = New System.Windows.Forms.Label()
-        Me.lbl_area = New System.Windows.Forms.Label()
-        Me.lbl_año = New System.Windows.Forms.Label()
-        Me.btn_horas = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.c_m = New System.Windows.Forms.Label()
+        Me.cr = New System.Windows.Forms.Label()
+        Me.c_p = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -133,6 +136,7 @@ Partial Class Frm_cargaplanpersonal
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Label22)
+        Me.Panel1.Controls.Add(Me.c_p)
         Me.Panel1.Controls.Add(Me.l3)
         Me.Panel1.Controls.Add(Me.txt_tra)
         Me.Panel1.Controls.Add(Me.Label11)
@@ -227,7 +231,7 @@ Partial Class Frm_cargaplanpersonal
         'btn_modificar
         '
         Me.btn_modificar.ForeColor = System.Drawing.Color.Black
-        Me.btn_modificar.Location = New System.Drawing.Point(55, 204)
+        Me.btn_modificar.Location = New System.Drawing.Point(19, 206)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(133, 35)
         Me.btn_modificar.TabIndex = 412
@@ -404,6 +408,63 @@ Partial Class Frm_cargaplanpersonal
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filtros"
         '
+        'btn_horas
+        '
+        Me.btn_horas.Enabled = False
+        Me.btn_horas.ForeColor = System.Drawing.Color.Black
+        Me.btn_horas.Image = Global.Presentacion.My.Resources.Resources._1486504328_bullet_list_menu_lines_points_items_options_81334
+        Me.btn_horas.Location = New System.Drawing.Point(833, 27)
+        Me.btn_horas.Name = "btn_horas"
+        Me.btn_horas.Size = New System.Drawing.Size(63, 56)
+        Me.btn_horas.TabIndex = 459
+        Me.btn_horas.Text = "HORAS"
+        Me.btn_horas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_horas.UseVisualStyleBackColor = True
+        '
+        'lbl_año
+        '
+        Me.lbl_año.AutoSize = True
+        Me.lbl_año.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.lbl_año.ForeColor = System.Drawing.Color.White
+        Me.lbl_año.Location = New System.Drawing.Point(419, 82)
+        Me.lbl_año.Name = "lbl_año"
+        Me.lbl_año.Size = New System.Drawing.Size(38, 20)
+        Me.lbl_año.TabIndex = 458
+        Me.lbl_año.Text = "Año"
+        '
+        'lbl_area
+        '
+        Me.lbl_area.AutoSize = True
+        Me.lbl_area.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.lbl_area.ForeColor = System.Drawing.Color.White
+        Me.lbl_area.Location = New System.Drawing.Point(415, 15)
+        Me.lbl_area.Name = "lbl_area"
+        Me.lbl_area.Size = New System.Drawing.Size(44, 20)
+        Me.lbl_area.TabIndex = 457
+        Me.lbl_area.Text = "Área"
+        '
+        'lbl_mes
+        '
+        Me.lbl_mes.AutoSize = True
+        Me.lbl_mes.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.lbl_mes.ForeColor = System.Drawing.Color.White
+        Me.lbl_mes.Location = New System.Drawing.Point(416, 47)
+        Me.lbl_mes.Name = "lbl_mes"
+        Me.lbl_mes.Size = New System.Drawing.Size(41, 20)
+        Me.lbl_mes.TabIndex = 456
+        Me.lbl_mes.Text = "Mes"
+        '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(1070, 19)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(68, 71)
+        Me.Button2.TabIndex = 455
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -486,6 +547,7 @@ Partial Class Frm_cargaplanpersonal
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.cr)
         Me.Panel2.Controls.Add(Me.Label23)
         Me.Panel2.Controls.Add(Me.Label12)
         Me.Panel2.Controls.Add(Me.txt_tra2)
@@ -984,6 +1046,7 @@ Partial Class Frm_cargaplanpersonal
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.c_m)
         Me.Panel4.Controls.Add(Me.Label35)
         Me.Panel4.Controls.Add(Me.Label36)
         Me.Panel4.Controls.Add(Me.tm_traductor)
@@ -1079,7 +1142,7 @@ Partial Class Frm_cargaplanpersonal
         'btn_modmaster
         '
         Me.btn_modmaster.ForeColor = System.Drawing.Color.Black
-        Me.btn_modmaster.Location = New System.Drawing.Point(55, 204)
+        Me.btn_modmaster.Location = New System.Drawing.Point(3, 204)
         Me.btn_modmaster.Name = "btn_modmaster"
         Me.btn_modmaster.Size = New System.Drawing.Size(133, 35)
         Me.btn_modmaster.TabIndex = 412
@@ -1233,62 +1296,38 @@ Partial Class Frm_cargaplanpersonal
         Me.Label45.TabIndex = 228
         Me.Label45.Text = "Gerente"
         '
-        'lbl_mes
+        'c_m
         '
-        Me.lbl_mes.AutoSize = True
-        Me.lbl_mes.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
-        Me.lbl_mes.ForeColor = System.Drawing.Color.White
-        Me.lbl_mes.Location = New System.Drawing.Point(416, 47)
-        Me.lbl_mes.Name = "lbl_mes"
-        Me.lbl_mes.Size = New System.Drawing.Size(41, 20)
-        Me.lbl_mes.TabIndex = 456
-        Me.lbl_mes.Text = "Mes"
+        Me.c_m.AutoSize = True
+        Me.c_m.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.c_m.ForeColor = System.Drawing.Color.Black
+        Me.c_m.Location = New System.Drawing.Point(176, 211)
+        Me.c_m.Name = "c_m"
+        Me.c_m.Size = New System.Drawing.Size(18, 20)
+        Me.c_m.TabIndex = 460
+        Me.c_m.Text = "0"
         '
-        'lbl_area
+        'cr
         '
-        Me.lbl_area.AutoSize = True
-        Me.lbl_area.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
-        Me.lbl_area.ForeColor = System.Drawing.Color.White
-        Me.lbl_area.Location = New System.Drawing.Point(415, 15)
-        Me.lbl_area.Name = "lbl_area"
-        Me.lbl_area.Size = New System.Drawing.Size(44, 20)
-        Me.lbl_area.TabIndex = 457
-        Me.lbl_area.Text = "Área"
+        Me.cr.AutoSize = True
+        Me.cr.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.cr.ForeColor = System.Drawing.Color.Black
+        Me.cr.Location = New System.Drawing.Point(120, 212)
+        Me.cr.Name = "cr"
+        Me.cr.Size = New System.Drawing.Size(18, 20)
+        Me.cr.TabIndex = 461
+        Me.cr.Text = "0"
         '
-        'lbl_año
+        'c_p
         '
-        Me.lbl_año.AutoSize = True
-        Me.lbl_año.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
-        Me.lbl_año.ForeColor = System.Drawing.Color.White
-        Me.lbl_año.Location = New System.Drawing.Point(419, 82)
-        Me.lbl_año.Name = "lbl_año"
-        Me.lbl_año.Size = New System.Drawing.Size(38, 20)
-        Me.lbl_año.TabIndex = 458
-        Me.lbl_año.Text = "Año"
-        '
-        'btn_horas
-        '
-        Me.btn_horas.Enabled = False
-        Me.btn_horas.ForeColor = System.Drawing.Color.Black
-        Me.btn_horas.Image = Global.Presentacion.My.Resources.Resources._1486504328_bullet_list_menu_lines_points_items_options_81334
-        Me.btn_horas.Location = New System.Drawing.Point(833, 27)
-        Me.btn_horas.Name = "btn_horas"
-        Me.btn_horas.Size = New System.Drawing.Size(63, 56)
-        Me.btn_horas.TabIndex = 459
-        Me.btn_horas.Text = "HORAS"
-        Me.btn_horas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_horas.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(1070, 19)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(68, 71)
-        Me.Button2.TabIndex = 455
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.c_p.AutoSize = True
+        Me.c_p.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.c_p.ForeColor = System.Drawing.Color.Black
+        Me.c_p.Location = New System.Drawing.Point(193, 213)
+        Me.c_p.Name = "c_p"
+        Me.c_p.Size = New System.Drawing.Size(18, 20)
+        Me.c_p.TabIndex = 462
+        Me.c_p.Text = "0"
         '
         'Frm_cargaplanpersonal
         '
@@ -1418,4 +1457,7 @@ Partial Class Frm_cargaplanpersonal
     Friend WithEvents lbl_area As Label
     Friend WithEvents lbl_mes As Label
     Friend WithEvents btn_horas As Button
+    Friend WithEvents c_p As Label
+    Friend WithEvents cr As Label
+    Friend WithEvents c_m As Label
 End Class

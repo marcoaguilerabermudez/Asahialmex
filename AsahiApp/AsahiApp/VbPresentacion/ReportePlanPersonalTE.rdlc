@@ -60,7 +60,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value xml:space="preserve">        </Value>
+                <Value xml:space="preserve">    </Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                   <FontSize>14pt</FontSize>
@@ -662,8 +662,8 @@
                             <TextRun>
                               <Value>=Switch( (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Abril" ,8 * 23 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Abril" ,8 * 20 * Fields!Plan.Value,
-(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Mayo" ,8 * 24 * Fields!Plan.Value,
-(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Mayo" ,8 * 20 * Fields!Plan.Value,
+(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Mayo-Junio-Julio" ,8 * 24 * Fields!Plan.Value,
+(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Mayo-Junio-Julio" ,8 * 20 * Fields!Plan.Value,
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Junio" ,8 * 26 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Junio" ,8 * 22 * Fields!Plan.Value,
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Julio" ,8 * 27 * Fields!Plan.Value,
@@ -972,8 +972,8 @@
                             <TextRun>
                               <Value>=Sum(Switch( (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Abril" ,8 * 23 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Abril" ,8 * 20 * Fields!Plan.Value,
-(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Mayo" ,8 * 24 * Fields!Plan.Value,
-(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Mayo" ,8 * 20 * Fields!Plan.Value,
+(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Mayo-Junio-Julio" ,8 * 24 * Fields!Plan.Value,
+(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Mayo-Junio-Julio" ,8 * 20 * Fields!Plan.Value,
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Junio" ,8 * 26 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Junio" ,8 * 22 * Fields!Plan.Value,
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Julio" ,8 * 27 * Fields!Plan.Value,
@@ -1138,7 +1138,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>6.69078cm</Top>
+        <Top>6.05578cm</Top>
         <Left>0.53529cm</Left>
         <Height>3.07cm</Height>
         <Width>19.76548cm</Width>
@@ -1366,7 +1366,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>14.89875cm</Top>
+        <Top>13.94625cm</Top>
         <Left>0.73734cm</Left>
         <Height>0.54865cm</Height>
         <Width>3.42697cm</Width>
@@ -1401,7 +1401,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>14.93404cm</Top>
+        <Top>13.98154cm</Top>
         <Left>9.29598cm</Left>
         <Height>0.54865cm</Height>
         <Width>2.60266cm</Width>
@@ -1449,7 +1449,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>14.86348cm</Top>
+        <Top>13.91098cm</Top>
         <Left>16.78458cm</Left>
         <Height>0.54865cm</Height>
         <Width>4.31215cm</Width>
@@ -1466,7 +1466,7 @@
         </Style>
       </Textbox>
       <Line Name="Line4">
-        <Top>14.86347cm</Top>
+        <Top>13.91097cm</Top>
         <Left>0.81989cm</Left>
         <Height>0cm</Height>
         <Width>3.66192cm</Width>
@@ -1478,7 +1478,7 @@
         </Style>
       </Line>
       <Line Name="Line5">
-        <Top>14.8282cm</Top>
+        <Top>13.8757cm</Top>
         <Left>8.4561cm</Left>
         <Height>0cm</Height>
         <Width>3.73304cm</Width>
@@ -1490,7 +1490,7 @@
         </Style>
       </Line>
       <Line Name="Line6">
-        <Top>14.8282cm</Top>
+        <Top>13.8757cm</Top>
         <Left>16.46708cm</Left>
         <Height>0cm</Height>
         <Width>4.31215cm</Width>
@@ -1521,7 +1521,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>15.65908cm</Top>
+        <Top>14.70658cm</Top>
         <Left>13.19923cm</Left>
         <Height>0.6cm</Height>
         <Width>7.8975cm</Width>
@@ -1556,7 +1556,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>15.65908cm</Top>
+        <Top>14.70658cm</Top>
         <Left>6.11397cm</Left>
         <Height>0.6cm</Height>
         <Width>7.10375cm</Width>
@@ -1577,14 +1577,6 @@
         <Paragraphs>
           <Paragraph>
             <TextRuns>
-              <TextRun>
-                <Value xml:space="preserve"> </Value>
-                <Style>
-                  <FontFamily>MS UI Gothic</FontFamily>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
               <TextRun>
                 <Value>=First(Fields!mes.Value, "DataSet1")</Value>
                 <Style>
@@ -1617,7 +1609,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>6.75286in</Height>
+    <Height>6.40911in</Height>
     <Style />
   </Body>
   <Width>8.64942in</Width>
