@@ -86,6 +86,8 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
             btn_guardar.Enabled = True
             gbx_historial.Visible = True
             muestragird()
+
+
         Catch ex As Exception
             ' MessageBox.Show(ex.ToString)
             MessageBox.Show("El empleado que ha seleccionado no está activo o no tiene equipo de cómputo asignado, verifique e intente de nuevo.", "¡Aviso!")
@@ -96,14 +98,12 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
 
     End Sub
 
-
+    ''5248
 
     Private Sub txt_clave_TextChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_clave.KeyPress
         If AscW(e.KeyChar) = CInt(Keys.Enter) Then
             muestraetiqueta()
             txt_motivo.Focus()
-
-
 
 
         ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then

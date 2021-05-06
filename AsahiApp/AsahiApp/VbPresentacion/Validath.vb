@@ -361,10 +361,6 @@ where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)", cn)
                 autorizar()
             End If
         End If
-
-
-
-
     End Sub
 
 

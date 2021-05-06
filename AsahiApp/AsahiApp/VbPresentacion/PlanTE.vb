@@ -83,6 +83,7 @@ Public Class PlanTE
             parametro2 = lbl_año.Text
             Dim parametro3 As Integer
             parametro3 = b
+
             SSel = (" 
 select  rh.id_puesto , rh.dobles, rh.triples, rh.descanso
      FROM [asahi16].[dbo].[Rh_totalpuestos] rh
