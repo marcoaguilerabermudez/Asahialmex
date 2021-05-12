@@ -481,6 +481,12 @@
     <Compile Include="RH\DataSet\Dts_DPInfoGrl_Rpt.vb">
       <DependentUpon>Dts_DPInfoGrl_Rpt.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RH\DataSet\Dts_DpRelPuestExt_Rpt.vb">
+      <DependentUpon>Dts_DpRelPuestExt_Rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RH\DataSet\Dts_DpRelPuestInt_Rpt.vb">
+      <DependentUpon>Dts_DpRelPuestInt_Rpt.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RH\DataSet\Dts_PlanHrsExt4.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

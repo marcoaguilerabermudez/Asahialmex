@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Presentacion.exe" version="1.0.0.301" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Presentacion.exe" version="1.0.0.302" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Presentacion" version="1.0.0.301" language="neutral" processorArchitecture="msil" />
@@ -846,14 +846,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="7864768">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="7878592">
       <assemblyIdentity name="Presentacion" version="1.0.0.301" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YFSVKmjWk4RO0/yyPfypIS/YKhFPoysyL3ws1qyk2ec=</dsig:DigestValue>
+        <dsig:DigestValue>AJW5pPMN0Q9JHLtT3lcUOw0g4VHiLVPsfA5w9f89chc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -865,7 +865,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ca8cLkEDIjwVVbpaF9CE+RDfCHn01TacBBRsvtLeLPs=</dsig:DigestValue>
+        <dsig:DigestValue>/fL/7d4mW4CMD2olEoFah1KSnTUimv/qrTSpb1P5NyA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -877,7 +877,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>R+jh7yPAAPgMZn8nhztp62DUuYKFRbIpSfrYkVKA+V4=</dsig:DigestValue>
+        <dsig:DigestValue>OuFYvQToRrMZdMFONAE/MXHD+r33oXqBY4ZYMy9lZ5c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
