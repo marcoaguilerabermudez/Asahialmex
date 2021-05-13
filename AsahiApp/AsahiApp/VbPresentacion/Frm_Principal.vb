@@ -607,5 +607,12 @@ Public Class Frm_Principal
         PlanPersonal.Show()
     End Sub
 
+    Private Sub CambiosDeDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambiosDeDepartamentoToolStripMenuItem.Click
+
+        frm_cambiodepxmes.Show()
+
+
+    End Sub
+
 #End Region
 End Class
