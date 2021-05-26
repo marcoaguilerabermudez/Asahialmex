@@ -522,14 +522,14 @@ Partial Class Frm_Principal
         '
         Me.SolicitudToolStripMenuItem1.Enabled = False
         Me.SolicitudToolStripMenuItem1.Name = "SolicitudToolStripMenuItem1"
-        Me.SolicitudToolStripMenuItem1.Size = New System.Drawing.Size(147, 22)
+        Me.SolicitudToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.SolicitudToolStripMenuItem1.Text = "Solicitud"
         '
         'ValidaciónRHToolStripMenuItem
         '
         Me.ValidaciónRHToolStripMenuItem.Enabled = False
         Me.ValidaciónRHToolStripMenuItem.Name = "ValidaciónRHToolStripMenuItem"
-        Me.ValidaciónRHToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.ValidaciónRHToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ValidaciónRHToolStripMenuItem.Text = "Validación RH"
         '
         'EvaluacionesToolStripMenuItem1
