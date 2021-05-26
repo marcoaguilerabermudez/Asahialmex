@@ -556,7 +556,7 @@
           </Textbox>
           <Image Name="Image1">
             <Source>External</Source>
-            <Value>="//172.16.6.2/v/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" &amp; First(Fields!Clave.Value, "DataSet1") &amp; ".jpg"</Value>
+            <Value>="//172.16.6.2/v/2. Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" &amp; First(Fields!Clave.Value, "DataSet1") &amp; ".jpg"</Value>
             <Sizing>FitProportional</Sizing>
             <Top>0.19086cm</Top>
             <Left>12.28246cm</Left>
