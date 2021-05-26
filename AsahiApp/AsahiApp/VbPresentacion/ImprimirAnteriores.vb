@@ -115,12 +115,22 @@ Public Class ImprimirAnteriores
             ContenedorReporteDeptoN.Show()
 
 
-        ElseIf vpermiso = 8 Then
+        ElseIf vpermiso = 8 And Convert.ToString(dtgvp.CurrentRow.Cells("Tipo de incidencia").Value) = "Cambio de puesto" Then
             ContenedorReporteNuevoPuesto.id = folio
             ContenedorReporteNuevoPuesto.Tipo = 0
             ContenedorReporteNuevoPuesto.motivo = 0
             ContenedorReporteNuevoPuesto.retardo = 0
             ContenedorReporteNuevoPuesto.Show()
+
+
+        ElseIf vpermiso = 8 And Convert.ToString(dtgvp.CurrentRow.Cells("Tipo de incidencia").Value) = "Cambio de puesto y departamento" Then
+            ContenedorReporteDeptoPuesto.id = folio
+            ContenedorReporteDeptoPuesto.Tipo = 0
+            ContenedorReporteDeptoPuesto.motivo = 0
+            ContenedorReporteDeptoPuesto.retardo = 0
+            ContenedorReporteDeptoPuesto.Show()
+
+
 
 
 

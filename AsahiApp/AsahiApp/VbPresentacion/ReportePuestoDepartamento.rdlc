@@ -608,6 +608,14 @@
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
+              <TextRun>
+                <Value>            Incremento de salario    SÍ        NO</Value>
+                <Style>
+                  <FontFamily>MS UI Gothic</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
             </TextRuns>
             <Style>
               <TextAlign>Left</TextAlign>
@@ -615,7 +623,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>4.78102cm</Top>
+        <Top>4.74574cm</Top>
         <Left>0.50643cm</Left>
         <Height>0.88194cm</Height>
         <Width>20.44304cm</Width>
@@ -1672,6 +1680,14 @@
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
+              <TextRun>
+                <Value>            Incremento de salario    SÍ        NO</Value>
+                <Style>
+                  <FontFamily>MS UI Gothic</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
             </TextRuns>
             <Style>
               <TextAlign>Left</TextAlign>
@@ -2030,7 +2046,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=First(Fields!Quien.Value, "DataSet1")</Value>
+                              <Value>=First(Fields!Otro.Value, "DataSet1")</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2062,7 +2078,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=First(Fields!Otro.Value, "DataSet1")</Value>
+                              <Value>=First(Fields!Quien.Value, "DataSet1")</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
