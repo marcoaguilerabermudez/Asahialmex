@@ -170,11 +170,11 @@ Public Class Frm_cargaplanpersonal
                 y = 28
             Case "INSPECCION PRODUCCION"
                 y = 31
-            Case "FUNDICION 1"
+            Case "FUNDICION"
                 y = 32
             Case "FUNDICION 2"
                 y = 33
-            Case "ACABADO 1"
+            Case "ACABADO"
                 y = 34
             Case "ACABADO 2"
                 y = 35
@@ -194,7 +194,7 @@ Public Class Frm_cargaplanpersonal
                 y = 42
             Case "MAQUINADO F1"
                 y = 43
-            Case "FUSION F1"
+            Case "FUSION"
                 y = 44
 
         End Select
