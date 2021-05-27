@@ -194,7 +194,7 @@ Public Class Frm_cargaplanpersonal
                 y = 42
             Case "MAQUINADO F1"
                 y = 43
-            Case "FUSION F1"
+            Case "FUSION"
                 y = 44
 
         End Select
