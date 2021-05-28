@@ -170,7 +170,7 @@ Public Class Frm_cargaplanpersonal
                 y = 28
             Case "INSPECCION PRODUCCION"
                 y = 31
-            Case "FUNDICION"
+            Case "FUNDICION 1"
                 y = 32
             Case "FUNDICION 2"
                 y = 33
@@ -563,7 +563,6 @@ select
 
                 If variable = 1 Then
 
-
                     command.Parameters.AddWithValue("@cantidad1", txt_gerente.Text)
                     command.Parameters.AddWithValue("@cantidad2", txt_asistente.Text)
                     command.Parameters.AddWithValue("@cantidad3", txt_supervisor.Text)
@@ -646,7 +645,7 @@ select
 
         carga()
 
-
+        c_p.Text = CInt(txt_gerente.Text) + CInt(txt_asistente.Text) + CInt(txt_supervisor.Text) + CInt(txt_lad.Text) + CInt(txt_staff.Text) + CInt(txt_lid.Text) + CInt(txt_operador.Text) + CInt(txt_cor.Text) + CInt(txt_tra.Text)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
