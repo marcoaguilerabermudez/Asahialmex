@@ -341,7 +341,7 @@ order by rh.id_puesto")
 
 
     Sub etiquetas2()
-        MessageBox.Show(y)
+        '' MessageBox.Show(y)
         Try
             '' Dim Cnn As New SqlConnection("data source =GIRO\SQL2008 ;initial catalog=asahi16 ;user id=sa;password=Pa55word")
             cnn2.Close()
