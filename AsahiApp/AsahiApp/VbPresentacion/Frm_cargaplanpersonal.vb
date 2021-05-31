@@ -164,9 +164,9 @@ Public Class Frm_cargaplanpersonal
                 y = 18
             Case "SISTEMAS IT"
                 y = 19
-            Case "INGENIERÍA-MAQUINADO"
+            Case "INGENIERÍA MAQUINADO"
                 y = 27
-            Case "INGENIERÍA-FUNDICIÓN"
+            Case "INGENIERÍA FUNDICIÓN"
                 y = 28
             Case "INSPECCION PRODUCCION"
                 y = 31
@@ -340,7 +340,7 @@ order by rh.id_puesto")
 
 
     Sub etiquetas2()
-        MessageBox.Show(y)
+        '' MessageBox.Show(y)
         Try
             '' Dim Cnn As New SqlConnection("data source =GIRO\SQL2008 ;initial catalog=asahi16 ;user id=sa;password=Pa55word")
             cnn2.Close()
@@ -562,7 +562,6 @@ select
 
                 If variable = 1 Then
 
-
                     command.Parameters.AddWithValue("@cantidad1", txt_gerente.Text)
                     command.Parameters.AddWithValue("@cantidad2", txt_asistente.Text)
                     command.Parameters.AddWithValue("@cantidad3", txt_supervisor.Text)
@@ -645,7 +644,7 @@ select
 
         carga()
 
-
+        c_p.Text = CInt(txt_gerente.Text) + CInt(txt_asistente.Text) + CInt(txt_supervisor.Text) + CInt(txt_lad.Text) + CInt(txt_staff.Text) + CInt(txt_lid.Text) + CInt(txt_operador.Text) + CInt(txt_cor.Text) + CInt(txt_tra.Text)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)

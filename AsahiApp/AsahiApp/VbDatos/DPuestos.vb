@@ -291,7 +291,7 @@ Public Class DPuestos
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("Select Id, Nombre from Dp_Frecuencia", oCon)
+            Dim query As New SqlCommand("Select Id, Nombre from Dp_Frecuencia Order by Nombre", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -316,7 +316,7 @@ Public Class DPuestos
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("Select Id, Descripcion from Dp_Catalogo_Entregables", oCon)
+            Dim query As New SqlCommand("Select Id, Descripcion from Dp_Catalogo_Entregables Order by Descripcion", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -341,7 +341,7 @@ Public Class DPuestos
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT Id, Descripcion FROM Dp_Catalogo_Competencias WHERE Tipo = 1", oCon)
+            Dim query As New SqlCommand("SELECT Id, Descripcion FROM Dp_Catalogo_Competencias WHERE Tipo = 1 Order by Descripcion", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -366,7 +366,7 @@ Public Class DPuestos
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT Id, Descripcion FROM Dp_Catalogo_Competencias WHERE Tipo = 2", oCon)
+            Dim query As New SqlCommand("SELECT Id, Descripcion FROM Dp_Catalogo_Competencias WHERE Tipo = 2 Order by Descripcion", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -391,7 +391,7 @@ Public Class DPuestos
         Dim oCon As New SqlConnection(cadenaconex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT Id, Descripcion FROM Dp_Catalogo_Competencias WHERE Tipo = 3", oCon)
+            Dim query As New SqlCommand("SELECT Id, Descripcion FROM Dp_Catalogo_Competencias WHERE Tipo = 3 Order by Descripcion", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
