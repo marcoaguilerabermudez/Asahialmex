@@ -108,6 +108,7 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
 
         ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then
             txt_clave.Clear()
+
             txt_nombre.Clear()
             txt_turno.Clear()
             txt_depto.Clear()

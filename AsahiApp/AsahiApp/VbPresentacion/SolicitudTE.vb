@@ -109,16 +109,22 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
             da.Fill(ds)
 
             txt_nombre.Text = ds.Tables(0).Rows(0).Item(1)
+
             txt_turno.Text = ds.Tables(0).Rows(0).Item(2)
+
             txt_depto.Text = ds.Tables(0).Rows(0).Item(3)
+
             dp = ds.Tables(0).Rows(0).Item(4)
+
             tconsumido = ds.Tables(0).Rows(0).Item(5)
 
             Cnn.Close()
 
         Catch ex As Exception
+
             MessageBox.Show(ex.ToString)
             MessageBox.Show("El empleado que ha seleccionado no está activo o no corresponde a su departamento, verifique e intente de nuevo.", "¡Aviso!")
+
         End Try
 
     End Sub
@@ -433,6 +439,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
             Next
 
             MessageBox.Show(RI, "¡Aviso!")
+
             Muestragrid()
 
 

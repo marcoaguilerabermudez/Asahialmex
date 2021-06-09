@@ -614,5 +614,10 @@ Public Class Frm_Principal
 
     End Sub
 
+    Private Sub AumentoDeSueldoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AumentoDeSueldoToolStripMenuItem.Click
+        Dim AumentoSOperador As New AumentoSueldoOperador(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        AumentoSOperador.Show()
+    End Sub
+
 #End Region
 End Class

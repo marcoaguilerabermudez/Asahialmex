@@ -170,7 +170,7 @@ Public Class Frm_cargaplanpersonal
                 y = 28
             Case "INSPECCION PRODUCCION"
                 y = 31
-            Case "FUNDICION 1"
+            Case "FUNDICION"
                 y = 32
             Case "FUNDICION 2"
                 y = 33
@@ -304,14 +304,13 @@ order by rh.id_puesto")
             parametro3 = b
             SSel = (" 
 
-
-
 select  rh.id_puesto , rh.masterplan , de.DESCRIPCION
      FROM [asahi16].[dbo].[Rh_totalpuestos] rh
 	 join [asahi16].[Supervisor_giro].[DEPTO] de
 	 on de.CLAVE = rh.Id_area
 	 where de.DESCRIPCION = '" & parametro1 & "' and mes = " & parametro3 & " and año = " & parametro2 & " and id_tipo = 0
 order by rh.id_puesto")
+
             Dim da As SqlDataAdapter
             Dim ds As New DataSet
             ds.Clear()

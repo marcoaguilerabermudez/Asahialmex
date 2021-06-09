@@ -25,6 +25,7 @@ Partial Class Frm_cargaplanpersonal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cargaplanpersonal))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label22 = New System.Windows.Forms.Label()
+        Me.c_p = New System.Windows.Forms.Label()
         Me.l3 = New System.Windows.Forms.Label()
         Me.txt_tra = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -59,6 +60,7 @@ Partial Class Frm_cargaplanpersonal
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cbx_depto = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.cr = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txt_tra2 = New System.Windows.Forms.TextBox()
@@ -101,6 +103,7 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_gerenteS = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.c_m = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.tm_traductor = New System.Windows.Forms.TextBox()
@@ -122,9 +125,6 @@ Partial Class Frm_cargaplanpersonal
         Me.Label44 = New System.Windows.Forms.Label()
         Me.tm_gerente = New System.Windows.Forms.TextBox()
         Me.Label45 = New System.Windows.Forms.Label()
-        Me.c_m = New System.Windows.Forms.Label()
-        Me.cr = New System.Windows.Forms.Label()
-        Me.c_p = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -174,6 +174,17 @@ Partial Class Frm_cargaplanpersonal
         Me.Label22.Size = New System.Drawing.Size(59, 25)
         Me.Label22.TabIndex = 418
         Me.Label22.Text = "Plan"
+        '
+        'c_p
+        '
+        Me.c_p.AutoSize = True
+        Me.c_p.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.c_p.ForeColor = System.Drawing.Color.Black
+        Me.c_p.Location = New System.Drawing.Point(193, 213)
+        Me.c_p.Name = "c_p"
+        Me.c_p.Size = New System.Drawing.Size(18, 20)
+        Me.c_p.TabIndex = 462
+        Me.c_p.Text = "0"
         '
         'l3
         '
@@ -401,9 +412,9 @@ Partial Class Frm_cargaplanpersonal
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.cbx_depto)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1150, 114)
+        Me.GroupBox1.Size = New System.Drawing.Size(1150, 117)
         Me.GroupBox1.TabIndex = 458
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filtros"
@@ -573,6 +584,17 @@ Partial Class Frm_cargaplanpersonal
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(251, 246)
         Me.Panel2.TabIndex = 459
+        '
+        'cr
+        '
+        Me.cr.AutoSize = True
+        Me.cr.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.cr.ForeColor = System.Drawing.Color.Black
+        Me.cr.Location = New System.Drawing.Point(120, 212)
+        Me.cr.Name = "cr"
+        Me.cr.Size = New System.Drawing.Size(18, 20)
+        Me.cr.TabIndex = 461
+        Me.cr.Text = "0"
         '
         'Label23
         '
@@ -1075,6 +1097,17 @@ Partial Class Frm_cargaplanpersonal
         Me.Panel4.Size = New System.Drawing.Size(245, 246)
         Me.Panel4.TabIndex = 461
         '
+        'c_m
+        '
+        Me.c_m.AutoSize = True
+        Me.c_m.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.c_m.ForeColor = System.Drawing.Color.Black
+        Me.c_m.Location = New System.Drawing.Point(176, 211)
+        Me.c_m.Name = "c_m"
+        Me.c_m.Size = New System.Drawing.Size(18, 20)
+        Me.c_m.TabIndex = 460
+        Me.c_m.Text = "0"
+        '
         'Label35
         '
         Me.Label35.AutoSize = True
@@ -1295,39 +1328,6 @@ Partial Class Frm_cargaplanpersonal
         Me.Label45.Size = New System.Drawing.Size(45, 13)
         Me.Label45.TabIndex = 228
         Me.Label45.Text = "Gerente"
-        '
-        'c_m
-        '
-        Me.c_m.AutoSize = True
-        Me.c_m.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
-        Me.c_m.ForeColor = System.Drawing.Color.Black
-        Me.c_m.Location = New System.Drawing.Point(176, 211)
-        Me.c_m.Name = "c_m"
-        Me.c_m.Size = New System.Drawing.Size(18, 20)
-        Me.c_m.TabIndex = 460
-        Me.c_m.Text = "0"
-        '
-        'cr
-        '
-        Me.cr.AutoSize = True
-        Me.cr.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
-        Me.cr.ForeColor = System.Drawing.Color.Black
-        Me.cr.Location = New System.Drawing.Point(120, 212)
-        Me.cr.Name = "cr"
-        Me.cr.Size = New System.Drawing.Size(18, 20)
-        Me.cr.TabIndex = 461
-        Me.cr.Text = "0"
-        '
-        'c_p
-        '
-        Me.c_p.AutoSize = True
-        Me.c_p.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
-        Me.c_p.ForeColor = System.Drawing.Color.Black
-        Me.c_p.Location = New System.Drawing.Point(193, 213)
-        Me.c_p.Name = "c_p"
-        Me.c_p.Size = New System.Drawing.Size(18, 20)
-        Me.c_p.TabIndex = 462
-        Me.c_p.Text = "0"
         '
         'Frm_cargaplanpersonal
         '
