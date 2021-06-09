@@ -192,6 +192,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="AumentoSueldoOperador.Designer.vb">
+      <DependentUpon>AumentoSueldoOperador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AumentoSueldoOperador.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CapturaOEE.Designer.vb">
       <DependentUpon>CapturaOEE.vb</DependentUpon>
     </Compile>
@@ -229,6 +235,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="conexion.vb" />
+    <Compile Include="ContenedorReporteAumentoSueldoOperador.Designer.vb">
+      <DependentUpon>ContenedorReporteAumentoSueldoOperador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteAumentoSueldoOperador.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteBajasMes.Designer.vb">
       <DependentUpon>ContenedorReporteBajasMes.vb</DependentUpon>
     </Compile>
@@ -430,6 +442,31 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet22.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet23.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet23.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet24.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet25.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet25.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet26.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet26.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet3.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -990,6 +1027,9 @@
     <EmbeddedResource Include="AnomaliaPrincipal.resx">
       <DependentUpon>AnomaliaPrincipal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AumentoSueldoOperador.resx">
+      <DependentUpon>AumentoSueldoOperador.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapturaOEE.resx">
       <DependentUpon>CapturaOEE.vb</DependentUpon>
     </EmbeddedResource>
@@ -1007,6 +1047,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\Frm_ValidarConta.resx">
       <DependentUpon>Frm_ValidarConta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteAumentoSueldoOperador.resx">
+      <DependentUpon>ContenedorReporteAumentoSueldoOperador.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteBajasMes.resx">
       <DependentUpon>ContenedorReporteBajasMes.vb</DependentUpon>
@@ -1167,6 +1210,7 @@
     <EmbeddedResource Include="ReimprimeMedida.resx">
       <DependentUpon>ReimprimeMedida.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAumentoSueldoOperador.rdlc" />
     <EmbeddedResource Include="ReporteCambioPuesto.rdlc" />
     <EmbeddedResource Include="ReporteCartaCompromiso.rdlc" />
     <EmbeddedResource Include="ReporteChecadasRh.rdlc" />
@@ -1448,6 +1492,61 @@
     </None>
     <None Include="DataSet21.xss">
       <DependentUpon>DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet22.xsc">
+      <DependentUpon>DataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet22.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet22.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet22.xss">
+      <DependentUpon>DataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet23.xsc">
+      <DependentUpon>DataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet23.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet23.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet23.xss">
+      <DependentUpon>DataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet24.xsc">
+      <DependentUpon>DataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet24.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet24.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet24.xss">
+      <DependentUpon>DataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet25.xsc">
+      <DependentUpon>DataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet25.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet25.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet25.xss">
+      <DependentUpon>DataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet26.xsc">
+      <DependentUpon>DataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet26.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet26.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet26.xss">
+      <DependentUpon>DataSet26.xsd</DependentUpon>
     </None>
     <None Include="DataSet3.xsc">
       <DependentUpon>DataSet3.xsd</DependentUpon>
