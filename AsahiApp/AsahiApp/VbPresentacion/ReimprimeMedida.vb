@@ -113,17 +113,12 @@ order by id_medida desc")
             txt_faltacometida.Text = ds.Tables(0).Rows(0).Item(9)
             txt_antecedente.Text = ds.Tables(0).Rows(0).Item(13)
 
-
-
             cnn.Close()
-
 
         Catch ex As Exception
             '  MessageBox.Show(ex.ToString)
 
         End Try
-
-
     End Sub
 
 
@@ -140,7 +135,15 @@ where Id_medida = @id
 
 else if @variable = 1
 update [AsahiSystem].[dbo].[Rh_MedidasDisciplinarias] set Aplica = 2
-where Id_medida = @id ", cnn)
+where Id_medida = @id
+
+else if @variable = 2
+
+update [AsahiSystem].[dbo].[Rh_MedidasDisciplinarias] set antecedentes = @antecedentes
+where Id_medida = @id
+
+
+", cnn)
 
 
 
@@ -150,12 +153,16 @@ where Id_medida = @id ", cnn)
             procesa.Parameters.Clear()
             procesa.Parameters.Add("@id", SqlDbType.Int).Value = txt_folio.Text
             procesa.Parameters.Add("@variable", SqlDbType.Int).Value = variableaccion
+            procesa.Parameters.Add("@antecedentes", SqlDbType.Text).Value = txt_antecedente.Text
             procesa.ExecuteNonQuery()
 
             If variableaccion = 0 Then
                 MessageBox.Show("Correcto, Medida Disciplinaria aplicada", "¡Aviso!")
-            Else
+            ElseIf variableaccion = 1 Then
                 MessageBox.Show("Correcto, Medida Disciplinaria eliminada", "¡Aviso!")
+            ElseIf variableaccion = 2 Then
+                MessageBox.Show("Correcto, Medida Disciplinaria editada", "¡Aviso!")
+
             End If
 
             Dim ownerForm As MedidasDisciplinarias = Me.Owner
@@ -188,5 +195,13 @@ where Id_medida = @id ", cnn)
         ContenedorReporteMedidaDisciplinaria.id = txt_folio.Text
         ContenedorReporteMedidaDisciplinaria.Show()
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        variableaccion = 2
+        procesa()
+    End Sub
+
+
+
 
 End Class
