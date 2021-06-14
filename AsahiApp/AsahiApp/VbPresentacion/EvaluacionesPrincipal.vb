@@ -395,7 +395,7 @@ where id_evaluaciones = @ID and estado = 0
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         generarreporte()
-        MessageBox.Show(fecha)
+        ' MessageBox.Show(fecha)
     End Sub
 
 
