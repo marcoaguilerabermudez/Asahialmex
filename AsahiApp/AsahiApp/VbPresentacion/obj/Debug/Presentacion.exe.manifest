@@ -786,14 +786,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="5641192">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="5644264">
       <assemblyIdentity name="Presentacion" version="1.0.0.269" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Lp0itfYTJesic4tPeKjtXgm5TmLjo5tsDjML8M7/C/o=</dsig:DigestValue>
+        <dsig:DigestValue>8yop+Krlcb61FXGMvBskbAhjmUgTlMKNdXMP1Ozq8dI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

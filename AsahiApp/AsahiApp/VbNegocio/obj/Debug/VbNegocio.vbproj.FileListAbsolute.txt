@@ -145,3 +145,5 @@ C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNego
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.dll
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.xml
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.pdb
+C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Clases.dll.config
+C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Datos.dll.config
