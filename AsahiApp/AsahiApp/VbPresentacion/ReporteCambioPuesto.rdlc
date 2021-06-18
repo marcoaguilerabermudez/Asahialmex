@@ -619,6 +619,14 @@
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
+              <TextRun>
+                <Value>     Incremento de salario    SÍ        NO</Value>
+                <Style>
+                  <FontFamily>MS UI Gothic</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
             </TextRuns>
             <Style>
               <TextAlign>Left</TextAlign>
@@ -1595,6 +1603,14 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!MotivoD.Value, "DataSet1")</Value>
+                <Style>
+                  <FontFamily>MS UI Gothic</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>    Incremento de salario    SÍ        NO</Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                   <FontSize>16pt</FontSize>

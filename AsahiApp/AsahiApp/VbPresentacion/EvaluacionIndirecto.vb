@@ -55,7 +55,7 @@ Public Class EvaluacionIndirecto
         idpuesto = Modulo_evaluacionesindi.id_puesto
         iddepto = Modulo_evaluacionesindi.id_depto
         MuestraEtiquetasKardex()
-        pbx.ImageLocation = ("V:\Recursos Humanos\CARPETA 2018\RH. FOTOGRAFIAS DEL PERSONAL\" & lbl_clave.Text & ".jpg")
+        pbx.ImageLocation = ("V:\2. RECURSOS HUMANOS\CARPETA 2018\RH. FOTOGRAFIAS DEL PERSONAL\" & lbl_clave.Text & ".jpg")
         Me.pbx.SizeMode = PictureBoxSizeMode.CenterImage
         Me.pbx.BorderStyle = BorderStyle.Fixed3D
         pbx.SizeMode = PictureBoxSizeMode.StretchImage

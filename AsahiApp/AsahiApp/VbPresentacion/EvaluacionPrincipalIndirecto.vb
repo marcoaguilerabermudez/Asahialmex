@@ -162,7 +162,7 @@ Public Class EvaluacionPrincipalIndirecto
 
             Dim dt As New DataTable
 
-                da.Fill(dt)
+            da.Fill(dt)
 
             cbx_depto.ValueMember = "descripcion"
             'cbx_depto.DisplayMember = "NOMBRE_ESPECIALIDAD"

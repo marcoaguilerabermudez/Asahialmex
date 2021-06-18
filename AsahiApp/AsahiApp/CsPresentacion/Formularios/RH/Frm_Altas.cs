@@ -443,6 +443,13 @@ namespace CsPresentacion
                 MessageBox.Show("Es necesario capturar información de la colonia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_colonia.Focus();
             }
+
+            else if (string.IsNullOrEmpty(txt_hijos.Text))
+            {
+                MessageBox.Show("Es necesario capturar información de cantidad de Hijos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_hijos.Focus();
+            }
+
             else
             {
                 panel_final.Visible = true;

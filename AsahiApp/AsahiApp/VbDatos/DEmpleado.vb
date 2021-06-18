@@ -125,11 +125,9 @@ Public Class DEmpleado
         Dim emp As New Empleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand(" SELECT Usuario, Contraseña, ams.Clave, tipoUsuario, departamento, rh_permisos, evaluaciones_permisos, puesto FROM AsahiSystem.dbo.Usuarios_saam ams
-            join giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig
-on convert(int,vig.clave) = ams.clave
-join [AsahiSystem].[dbo].[Req_permisos] per
-on per.Clave = vig.Clave
+            Dim query As New SqlCommand("SELECT Usuario, Contraseña, ams.Clave, tipoUsuario, departamento, rh_permisos, evaluaciones_permisos, puesto FROM AsahiSystem.dbo.Usuarios_saam ams
+join giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig on convert(int,vig.clave) = ams.clave
+join [AsahiSystem].[dbo].[Req_permisos] per on per.Clave = vig.Clave
 where usuario = '" & us & "'", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
@@ -153,6 +151,37 @@ where usuario = '" & us & "'", oCon)
             Else
                 emp.Respuesta = 0
             End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return emp
+    End Function
+    Public Function EmpleadoLoginDominio(ByVal cadConex As String, ByVal noEmp As Integer, ByVal nomb As String) As Empleado
+        Dim oCon As New SqlConnection(cadConex)
+        Dim emp As New Empleado()
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT (vig.Clave*1)Clave, tipoUsuario = CASE WHEN vig.DEPARTAMENTO = 19 THEN 1 WHEN vig.Clave = 5141 THEN 1 ELSE 0 END, departamento, rh_permisos, evaluaciones_permisos, puesto 
+FROM  giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig
+inner join [AsahiSystem].[dbo].[Req_permisos] per on per.Clave = vig.Clave
+where vig.Clave = " & noEmp, oCon)
+            query.CommandTimeout = 60
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                emp.NombreCompleto = nomb
+                emp.IdDepartamento = dr("departamento").ToString
+                emp.IdEmpleado = Convert.ToInt32(dr("Clave").ToString)
+                emp.TipoUsuario = Convert.ToInt32(dr("tipoUsuario").ToString)
+                emp.rh_permiso = Convert.ToInt32(dr("rh_permisos").ToString)
+                emp.rh_evaluacion = Convert.ToInt32(dr("evaluaciones_permisos").ToString)
+                emp.Id_puesto = Convert.ToInt32(dr("puesto").ToString)
+            End While
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -267,7 +296,7 @@ where usuario = '" & us & "'", oCon)
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("select idEmpleado, ms.nombreModulo, rangoPermiso from Permisos_saam ps left join Modulos_saam ms on  ps.idModulo = ms.idModulo where ps.idEmpleado = " & emp.IdEmpleado & "", oCon)
+            Dim query As New SqlCommand("Select idEmpleado, ms.nombreModulo, rangoPermiso from Permisos_saam ps left join Modulos_saam ms on ps.idModulo = ms.idModulo where ps.idEmpleado = " & emp.IdEmpleado & "", oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
             dr = query.ExecuteReader
@@ -434,5 +463,124 @@ where usuario = '" & us & "'", oCon)
             oCon.Dispose()
         End Try
         Return per.RangoPermiso
+    End Function
+    Public Function RecuperarPuestos(ByVal cadenaConex As String) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim LstEmp As New LEmpleado
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT RTRIM(CLAVE) CLAVE, RTRIM(DESCRIPCION) DESCRIPCION FROM asahi16.Supervisor_giro.Puesto", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.idPuesto = Convert.ToInt32(dr("CLAVE").ToString)
+                emp.Puesto = dr("DESCRIPCION").ToString
+                LstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return LstEmp
+    End Function
+    Public Function RecuperarPuestosRelaciones(ByVal cadenaConex As String) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim LstEmp As New LEmpleado
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT RTRIM(CLAVE) CLAVE, RTRIM(DESCRIPCION) DESCRIPCION, 'a' DIST FROM asahi16.Supervisor_giro.Puesto union SELECT RTRIM(CLAVE) CLAVE, RTRIM(DESCRIPCION) DESCRIPCION,'b' FROM asahi16.Supervisor_giro.Depto Where centro_costo <> 16", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.IdPuesto = Convert.ToInt32(dr("CLAVE").ToString)
+                emp.Puesto = dr("DESCRIPCION").ToString
+                emp.ConcatPuesto = dr("DIST").ToString + Convert.ToString(emp.IdPuesto)
+                LstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return LstEmp
+    End Function
+    Public Function RecuperarDepto(ByVal cadenaConex As String) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim LstEmp As New LEmpleado
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT RTRIM(CLAVE) CLAVE, RTRIM(DESCRIPCION) DESCRIPCION FROM asahi16.Supervisor_giro.DEPTO WHERE CENTRO_COSTO <> 16", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.IdDepartamento = Convert.ToInt32(dr("CLAVE").ToString)
+                emp.Departamento = dr("DESCRIPCION").ToString
+                LstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return LstEmp
+    End Function
+    Public Function RecuperarArea(ByVal cadenaConex As String) As LEmpleado
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim LstEmp As New LEmpleado
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("SELECT RTRIM(CLAVE) CLAVE, RTRIM(DESCRIPCION) DESCRIPCION FROM asahi16.Supervisor_giro.CENTROC WHERE CLAVE <> 16", oCon)
+            query.CommandTimeout = 120
+            Dim dr As SqlDataReader
+            dr = query.ExecuteReader
+            While (dr.Read)
+                Dim emp As New Empleado()
+                emp.IdArea = Convert.ToInt32(dr("CLAVE").ToString)
+                emp.Area = dr("DESCRIPCION").ToString
+                LstEmp.Add(emp)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return LstEmp
+    End Function
+    Public Function AccesoJapo(ByVal cadenaConex As String, ByVal nombre As String) As Boolean
+        Dim oCon As New SqlConnection(cadenaConex)
+        Dim Resp As Boolean
+        Try
+            oCon.Open()
+            Dim query As New SqlCommand("If exists(Select Acceso from AAMS_Acceso_Jap where Nombre like '" & nombre & "%') begin Select 1 as Acceso end Else begin Select 0 as Acceso end", oCon)
+            query.CommandTimeout = 120
+            Resp = query.ExecuteScalar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If (oCon.State = ConnectionState.Open) Then
+                oCon.Close()
+            End If
+            oCon.Dispose()
+        End Try
+        Return Resp
     End Function
 End Class

@@ -358,6 +358,10 @@ Public Class Frm_PlanGastos
             End Select
         End If
     End Function
+
+    Private Sub Dgv_Principal_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Principal.CellContentClick
+
+    End Sub
     'Private Sub Traducir()
     '    If Me.idioma = 1 Then
     '        Me.Text = "Gastos"

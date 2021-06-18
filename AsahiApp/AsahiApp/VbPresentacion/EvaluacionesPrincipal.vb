@@ -9,6 +9,7 @@ Public Class EvaluacionesPrincipal
     Dim permiso As Integer
     Dim a As String
     Dim mes As Integer
+    Dim fecha As String
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
 
 
@@ -31,39 +32,51 @@ Public Class EvaluacionesPrincipal
             Case 1
                 cbx_mes.Text = "Enero"
                 mes = 12
+                fecha = "01/01/" & cbx_año.Text & " "
             Case 2
                 cbx_mes.Text = "Febrero"
                 mes = 2
+                fecha = "01/02/" & cbx_año.Text & " "
             Case 3
                 cbx_mes.Text = "Marzo"
                 mes = 3
+                fecha = "01/03/" & cbx_año.Text & " "
             Case 4
                 cbx_mes.Text = "Abril"
                 mes = 4
+                fecha = "01/04/" & cbx_año.Text & " "
             Case 5
                 cbx_mes.Text = "Mayo"
                 mes = 5
+                fecha = "01/05/" & cbx_año.Text & " "
             Case 6
                 cbx_mes.Text = "Junio"
                 mes = 6
+                fecha = "01/06/" & cbx_año.Text & " "
             Case 7
                 cbx_mes.Text = "Julio"
                 mes = 7
+                fecha = "01/07/" & cbx_año.Text & " "
             Case 8
                 cbx_mes.Text = "Agosto"
                 mes = 8
+                fecha = "01/08/" & cbx_año.Text & " "
             Case 9
                 cbx_mes.Text = "Septiembre"
                 mes = 9
+                fecha = "01/09/" & cbx_año.Text & " "
             Case 10
                 cbx_mes.Text = "Octubre"
                 mes = 10
+                fecha = "01/10/" & cbx_año.Text & " "
             Case 11
                 cbx_mes.Text = "Noviembre"
                 mes = 11
+                fecha = "01/11/" & cbx_año.Text & " "
             Case 12
                 cbx_mes.Text = "Diciembre"
                 mes = 12
+                fecha = "01/12/" & cbx_año.Text & " "
         End Select
 
 
@@ -98,28 +111,40 @@ Public Class EvaluacionesPrincipal
         Select Case a
             Case "Enero"
                 mes = 12
+                fecha = "01/01/" & cbx_año.Text & " "
             Case "Febrero"
                 mes = 2
+                fecha = "01/02/" & cbx_año.Text & " "
             Case "Marzo"
                 mes = 3
+                fecha = "01/03/" & cbx_año.Text & " "
             Case "Abril"
                 mes = 4
+                fecha = "01/04/" & cbx_año.Text & " "
             Case "Mayo"
                 mes = 5
+                fecha = "01/05/" & cbx_año.Text & " "
             Case "Junio"
                 mes = 6
+                fecha = "01/06/" & cbx_año.Text & " "
             Case "Julio"
                 mes = 7
+                fecha = "01/07/" & cbx_año.Text & " "
             Case "Agosto"
                 mes = 8
+                fecha = "01/08/" & cbx_año.Text & " "
             Case "Septiembre"
                 mes = 9
+                fecha = "01/09/" & cbx_año.Text & " "
             Case "Octubre"
                 mes = 10
+                fecha = "01/10/" & cbx_año.Text & " "
             Case "Noviembre"
                 mes = 11
+                fecha = "01/11/" & cbx_año.Text & " "
             Case "Diciembre"
                 mes = 12
+                fecha = "01/12/" & cbx_año.Text & " "
         End Select
 
     End Sub
@@ -341,6 +366,7 @@ where id_evaluaciones = @ID and estado = 0
             id_eval = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
             tipo = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
             estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
+
         Catch
         End Try
 
@@ -369,16 +395,18 @@ where id_evaluaciones = @ID and estado = 0
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         generarreporte()
+        ' MessageBox.Show(fecha)
     End Sub
 
 
     Sub generarreporte()
+
         If estado < 2 Then
             MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             ContenedorREvaluacionSin.id_evaluaciones = id_eval
             ContenedorREvaluacionSin.teval = tipo
-            ContenedorREvaluacionSin.fecha = "01/12/2020"
+            ContenedorREvaluacionSin.fecha = fecha
             ContenedorREvaluacionSin.Show()
 
         End If

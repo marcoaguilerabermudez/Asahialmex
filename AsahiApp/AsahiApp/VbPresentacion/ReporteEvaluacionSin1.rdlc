@@ -219,7 +219,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.68791cm</Top>
+            <Top>0.65264cm</Top>
             <Left>7.82974cm</Left>
             <Height>0.53799cm</Height>
             <Width>4.22707cm</Width>
@@ -556,7 +556,7 @@
           </Textbox>
           <Image Name="Image1">
             <Source>External</Source>
-            <Value>="//172.16.6.2/v/Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" &amp; First(Fields!Clave.Value, "DataSet1") &amp; ".jpg"</Value>
+            <Value>="//172.16.6.2/v/2. Recursos Humanos/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" &amp; First(Fields!Clave.Value, "DataSet1") &amp; ".jpg"</Value>
             <Sizing>FitProportional</Sizing>
             <Top>0.19086cm</Top>
             <Left>12.28246cm</Left>
@@ -825,9 +825,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.19086cm</Top>
-            <Left>16.72722cm</Left>
-            <Height>4.86269cm</Height>
+            <Top>0.7232cm</Top>
+            <Left>16.55082cm</Left>
+            <Height>3.88373cm</Height>
             <Width>2.99429cm</Width>
             <ZIndex>15</ZIndex>
             <Style>

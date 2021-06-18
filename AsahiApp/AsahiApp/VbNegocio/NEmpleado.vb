@@ -5,6 +5,10 @@ Public Class NEmpleado
         Dim DEmp As New DEmpleado()
         Return DEmp.EmpleadoLogin(cadConex, us, pass)
     End Function
+    Public Function EmpleadoLoginDominio(ByVal cadConex As String, ByVal noEmp As Integer, ByVal nomb As String) As Empleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.EmpleadoLoginDominio(cadConex, noEmp, nomb)
+    End Function
     Public Function RecuperarDepartamentos(ByVal cadenaConex As String, ByVal idioma As Integer) As LEmpleado
         Dim DEmp As New DEmpleado()
         If idioma = 1 Then
@@ -40,5 +44,25 @@ Public Class NEmpleado
     Public Function RevisarRangoPermisos(ByVal cadenaConex As String, ByVal idEmp As Integer, ByVal nModulo As String) As Integer
         Dim DEmp As New DEmpleado()
         Return DEmp.RevisarRangoPermisos(cadenaConex, idEmp, nModulo)
+    End Function
+    Public Function RecuperarPuestos(ByVal cadenaConex As String) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RecuperarPuestos(cadenaConex)
+    End Function
+    Public Function RecuperarPuestosRelaciones(ByVal cadenaConex As String) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RecuperarPuestosRelaciones(cadenaConex)
+    End Function
+    Public Function RecuperarDepto(ByVal cadenaConex As String) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RecuperarDepto(cadenaConex)
+    End Function
+    Public Function RecuperarArea(ByVal cadenaConex As String) As LEmpleado
+        Dim DEmp As New DEmpleado()
+        Return DEmp.RecuperarArea(cadenaConex)
+    End Function
+    Public Function AccesoJapo(ByVal cadenaConex As String, ByVal nombre As String) As Boolean
+        Dim DEmp As New DEmpleado()
+        Return DEmp.AccesoJapo(cadenaConex, nombre)
     End Function
 End Class
