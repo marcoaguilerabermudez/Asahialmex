@@ -109,7 +109,7 @@ Public Class Frm_Principal
         ProvicionesToolStripMenuItem.Enabled = False
         HistorialToolStripMenuItem.Enabled = False
         ChecadasToolStripMenuItem.Enabled = False
-
+        ModificaSueldoToolStripMenuItem.Enabled = False
 
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
@@ -149,12 +149,11 @@ Public Class Frm_Principal
                 Case "Incapacidades_RetardosToolStripMenuItem" : Incapacidades_RetardosToolStripMenuItem.Enabled = True
                 Case "ProvicionesToolStripMenuItem" : ProvicionesToolStripMenuItem.Enabled = True
                 Case "HistorialToolStripMenuItem" : HistorialToolStripMenuItem.Enabled = True
+                Case "ModificaSueldoToolStripMenuItem" : HistorialToolStripMenuItem.Enabled = True
             End Select
         Next
     End Sub
 #End Region
-
-
 
 
 #Region "Botónes"
@@ -527,6 +526,11 @@ Public Class Frm_Principal
 
     Private Sub KárdexDeEmpleadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KárdexDeEmpleadoToolStripMenuItem.Click
         KardexEmpleado.Show()
+    End Sub
+
+    Private Sub ModificaSueldoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificaSueldoToolStripMenuItem.Click
+        Dim frm2 As New CsPresentacion.Formularios.RH.Frm_Modifica_Sueldo
+        frm2.Show()
     End Sub
 
 

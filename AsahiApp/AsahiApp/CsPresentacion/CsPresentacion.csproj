@@ -134,6 +134,12 @@
     <Compile Include="Formularios\RH\Frm_Checadas.Designer.cs">
       <DependentUpon>Frm_Checadas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\RH\Frm_Modifica_Sueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RH\Frm_Modifica_Sueldo.Designer.cs">
+      <DependentUpon>Frm_Modifica_Sueldo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\RH\Bajas_Contabilidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -561,6 +567,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\RH\Frm_Checadas.resx">
       <DependentUpon>Frm_Checadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\Frm_Modifica_Sueldo.resx">
+      <DependentUpon>Frm_Modifica_Sueldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Ausentismos3.rdlc" />
     <EmbeddedResource Include="Rep_Contrato.rdlc" />
