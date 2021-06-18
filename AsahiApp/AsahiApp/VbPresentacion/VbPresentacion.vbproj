@@ -90,6 +90,9 @@
     <ApplicationIcon>
     </ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AlanJuden.MvcReportViewer.NetCore, Version=1.0.0.10, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AlanJuden.MvcReportViewer.NetCore.1.0.10\lib\netstandard1.6\AlanJuden.MvcReportViewer.NetCore.dll</HintPath>
