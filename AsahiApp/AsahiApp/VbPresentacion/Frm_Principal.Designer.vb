@@ -65,6 +65,9 @@ Partial Class Frm_Principal
         Me.AusentismoGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajasPorMesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KárdexDeEmpleadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MedidasDisciplinariasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CartaCompromisoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MedidasDisciplinariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlanHorasExtraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MejoraContinuaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -275,7 +278,7 @@ Partial Class Frm_Principal
         '
         'EmpleadosToolStripMenuItem
         '
-        Me.EmpleadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem, Me.BajaToolStripMenuItem, Me.InformaciónToolStripMenuItem, Me.ModificaSueldoToolStripMenuItem, Me.HistorialToolStripMenuItem, Me.ContratoToolStripMenuItem, Me.CredencialesToolStripMenuItem, Me.ListadosToolStripMenuItem, Me.KárdexDeEmpleadoToolStripMenuItem})
+        Me.EmpleadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem, Me.BajaToolStripMenuItem, Me.InformaciónToolStripMenuItem, Me.ModificaSueldoToolStripMenuItem, Me.HistorialToolStripMenuItem, Me.ContratoToolStripMenuItem, Me.CredencialesToolStripMenuItem, Me.ListadosToolStripMenuItem, Me.KárdexDeEmpleadoToolStripMenuItem, Me.MedidasDisciplinariasToolStripMenuItem1})
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
         Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.EmpleadosToolStripMenuItem.Text = "Empleados"
@@ -395,6 +398,26 @@ Partial Class Frm_Principal
         Me.KárdexDeEmpleadoToolStripMenuItem.Name = "KárdexDeEmpleadoToolStripMenuItem"
         Me.KárdexDeEmpleadoToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
         Me.KárdexDeEmpleadoToolStripMenuItem.Text = "Kárdex de Empleado"
+        '
+        'MedidasDisciplinariasToolStripMenuItem1
+        '
+        Me.MedidasDisciplinariasToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CartaCompromisoToolStripMenuItem1, Me.MedidasDisciplinariaToolStripMenuItem})
+        Me.MedidasDisciplinariasToolStripMenuItem1.Name = "MedidasDisciplinariasToolStripMenuItem1"
+        Me.MedidasDisciplinariasToolStripMenuItem1.ShowShortcutKeys = False
+        Me.MedidasDisciplinariasToolStripMenuItem1.Size = New System.Drawing.Size(209, 22)
+        Me.MedidasDisciplinariasToolStripMenuItem1.Text = "Medidas Disciplinarias"
+        '
+        'CartaCompromisoToolStripMenuItem1
+        '
+        Me.CartaCompromisoToolStripMenuItem1.Name = "CartaCompromisoToolStripMenuItem1"
+        Me.CartaCompromisoToolStripMenuItem1.Size = New System.Drawing.Size(186, 22)
+        Me.CartaCompromisoToolStripMenuItem1.Text = "Carta Compromiso"
+        '
+        'MedidasDisciplinariaToolStripMenuItem
+        '
+        Me.MedidasDisciplinariaToolStripMenuItem.Name = "MedidasDisciplinariaToolStripMenuItem"
+        Me.MedidasDisciplinariaToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.MedidasDisciplinariaToolStripMenuItem.Text = "Medidas Disciplinaria"
         '
         'PlanHorasExtraToolStripMenuItem
         '
@@ -926,4 +949,7 @@ Partial Class Frm_Principal
     Friend WithEvents CambiosDeDepartamentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AumentoDeSueldoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ModificaSueldoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MedidasDisciplinariasToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CartaCompromisoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents MedidasDisciplinariaToolStripMenuItem As ToolStripMenuItem
 End Class
