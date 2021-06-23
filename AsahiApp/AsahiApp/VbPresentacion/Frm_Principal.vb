@@ -150,7 +150,7 @@ Public Class Frm_Principal
                 Case "Incapacidades_RetardosToolStripMenuItem" : Incapacidades_RetardosToolStripMenuItem.Enabled = True
                 Case "ProvicionesToolStripMenuItem" : ProvicionesToolStripMenuItem.Enabled = True
                 Case "HistorialToolStripMenuItem" : HistorialToolStripMenuItem.Enabled = True
-                Case "ModificaSueldoToolStripMenuItem" : HistorialToolStripMenuItem.Enabled = True
+                Case "ModificaSueldoToolStripMenuItem" : ModificaSueldoToolStripMenuItem.Enabled = True
             End Select
         Next
     End Sub
