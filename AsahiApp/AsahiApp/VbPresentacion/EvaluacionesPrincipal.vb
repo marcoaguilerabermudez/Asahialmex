@@ -158,7 +158,7 @@ Public Class EvaluacionesPrincipal
     Private Sub cbx_depto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_depto.SelectedIndexChanged
         cbx_depto.DropDownStyle = ComboBoxStyle.DropDownList
 
-
+        '' Muestragrid()
     End Sub
 
 
@@ -333,22 +333,27 @@ where id_evaluaciones = @ID and estado = 0
         Else
 
             Try
+
+
+
+
                 Modulo_evaluaciones.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
-                Modulo_evaluaciones.e_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Departamento").Value.ToString()
-                Modulo_evaluaciones.e_evaluacion = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
-                Modulo_evaluaciones.e_fecha = Me.dtgvp.Rows(e.RowIndex).Cells("fecha").Value.ToString()
-                Modulo_evaluaciones.e_nombre = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
-                Modulo_evaluaciones.e_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Puesto").Value.ToString()
-                Modulo_evaluaciones.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
-                Modulo_evaluaciones.e_estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
-                Modulo_evaluaciones.e_idemp = id
+                    Modulo_evaluaciones.e_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Departamento").Value.ToString()
+                    Modulo_evaluaciones.e_evaluacion = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
+                    Modulo_evaluaciones.e_fecha = Me.dtgvp.Rows(e.RowIndex).Cells("fecha").Value.ToString()
+                    Modulo_evaluaciones.e_nombre = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
+                    Modulo_evaluaciones.e_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Puesto").Value.ToString()
+                    Modulo_evaluaciones.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
+                    Modulo_evaluaciones.e_estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
+                    Modulo_evaluaciones.e_idemp = id
 
 
-                Dim segundoForm As New EvaluacionPersonal
+                    Dim segundoForm As New EvaluacionPersonal
 
-                MuestraKardexEva.Dispose()
+                    MuestraKardexEva.Dispose()
 
-                segundoForm.Show(Me)
+                    segundoForm.Show(Me)
+
 
             Catch
             End Try
