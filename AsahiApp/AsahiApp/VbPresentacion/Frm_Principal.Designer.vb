@@ -127,6 +127,9 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
+        Me.MedidasDisciplinariasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CartaCompromisoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MedidasDisciplinariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -275,7 +278,7 @@ Partial Class Frm_Principal
         '
         'EmpleadosToolStripMenuItem
         '
-        Me.EmpleadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem, Me.BajaToolStripMenuItem, Me.InformaciónToolStripMenuItem, Me.ModificaSueldoToolStripMenuItem, Me.HistorialToolStripMenuItem, Me.ContratoToolStripMenuItem, Me.CredencialesToolStripMenuItem, Me.ListadosToolStripMenuItem, Me.KárdexDeEmpleadoToolStripMenuItem})
+        Me.EmpleadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem, Me.BajaToolStripMenuItem, Me.InformaciónToolStripMenuItem, Me.ModificaSueldoToolStripMenuItem, Me.HistorialToolStripMenuItem, Me.ContratoToolStripMenuItem, Me.CredencialesToolStripMenuItem, Me.ListadosToolStripMenuItem, Me.KárdexDeEmpleadoToolStripMenuItem, Me.MedidasDisciplinariasToolStripMenuItem1})
         Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
         Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.EmpleadosToolStripMenuItem.Text = "Empleados"
@@ -800,6 +803,26 @@ Partial Class Frm_Principal
         Me.Lbl_NombreUser.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_NombreUser.TabIndex = 4
         '
+        'MedidasDisciplinariasToolStripMenuItem1
+        '
+        Me.MedidasDisciplinariasToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CartaCompromisoToolStripMenuItem1, Me.MedidasDisciplinariaToolStripMenuItem})
+        Me.MedidasDisciplinariasToolStripMenuItem1.Name = "MedidasDisciplinariasToolStripMenuItem1"
+        Me.MedidasDisciplinariasToolStripMenuItem1.ShowShortcutKeys = False
+        Me.MedidasDisciplinariasToolStripMenuItem1.Size = New System.Drawing.Size(209, 22)
+        Me.MedidasDisciplinariasToolStripMenuItem1.Text = "Medidas Disciplinarias"
+        '
+        'CartaCompromisoToolStripMenuItem1
+        '
+        Me.CartaCompromisoToolStripMenuItem1.Name = "CartaCompromisoToolStripMenuItem1"
+        Me.CartaCompromisoToolStripMenuItem1.Size = New System.Drawing.Size(186, 22)
+        Me.CartaCompromisoToolStripMenuItem1.Text = "Carta Compromiso"
+        '
+        'MedidasDisciplinariaToolStripMenuItem
+        '
+        Me.MedidasDisciplinariaToolStripMenuItem.Name = "MedidasDisciplinariaToolStripMenuItem"
+        Me.MedidasDisciplinariaToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.MedidasDisciplinariaToolStripMenuItem.Text = "Medidas Disciplinaria"
+        '
         'Frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -926,4 +949,7 @@ Partial Class Frm_Principal
     Friend WithEvents CambiosDeDepartamentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AumentoDeSueldoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ModificaSueldoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MedidasDisciplinariasToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CartaCompromisoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents MedidasDisciplinariaToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -669,5 +669,13 @@ Public Class Frm_Principal
         AumentoSOperador.Show()
     End Sub
 
+    Private Sub CartaCompromisoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CartaCompromisoToolStripMenuItem1.Click
+        CartaCompromiso.Show()
+    End Sub
+
+    Private Sub MedidasDisciplinariaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MedidasDisciplinariaToolStripMenuItem.Click
+        MedidasDisciplinarias.Show()
+    End Sub
+
 #End Region
 End Class
