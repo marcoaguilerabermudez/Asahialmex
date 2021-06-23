@@ -110,7 +110,7 @@ Public Class Frm_Principal
         ProvicionesToolStripMenuItem.Enabled = False
         HistorialToolStripMenuItem.Enabled = False
         ChecadasToolStripMenuItem.Enabled = False
-
+        ModificaSueldoToolStripMenuItem.Enabled = False
 
     End Sub
     Private Sub DesbloquearPestañas(ByVal lstPer As LPermisos)
@@ -150,6 +150,7 @@ Public Class Frm_Principal
                 Case "Incapacidades_RetardosToolStripMenuItem" : Incapacidades_RetardosToolStripMenuItem.Enabled = True
                 Case "ProvicionesToolStripMenuItem" : ProvicionesToolStripMenuItem.Enabled = True
                 Case "HistorialToolStripMenuItem" : HistorialToolStripMenuItem.Enabled = True
+                Case "ModificaSueldoToolStripMenuItem" : HistorialToolStripMenuItem.Enabled = True
             End Select
         Next
     End Sub
@@ -573,6 +574,55 @@ Public Class Frm_Principal
         KardexEmpleado.Show()
     End Sub
 
+    'Private Sub TratamientoDeAnomalíasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TratamientoDeAnomalíasToolStripMenuItem.Click
+    '    Dim Anomalia As New AnomaliaPrincipal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.Id_puesto)
+    '    Anomalia.Show()
+    'End Sub
+
+    'Private Sub ActualizaRegistrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActualizaRegistrosToolStripMenuItem.Click
+    '    ActualizaTe.Show()
+    'End Sub
+
+    'Private Sub SalidaDeEquipoDeCómputoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaDeEquipoDeCómputoToolStripMenuItem.Click
+    '    SalidaEquipoComputo.Show()
+    'End Sub
+    'Private Sub CuestionariosPreguntasYRespuestasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuestionariosPreguntasYRespuestasToolStripMenuItem.Click
+    '    Dim crp As New Frm_CuestionariosPreguntas(Me.emp)
+    '    crp.Show()
+    'End Sub
+    'Private Sub DiseñarCuestionariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DiseñarCuestionariosToolStripMenuItem.Click
+    '    Dim dc As New Frm_DiseñadorCuestionarios()
+    '    dc.Show()
+    'End Sub
+
+    'Private Sub CartaCompromisoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CartaCompromisoToolStripMenuItem.Click
+    '    CartaCompromiso.Show()
+    'End Sub
+
+    'Private Sub AplicaciónDeMedidaDisciplinariaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AplicaciónDeMedidaDisciplinariaToolStripMenuItem.Click
+    '    MedidasDisciplinarias.Show()
+    'End Sub
+
+    'Private Sub PlanDePersonalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDePersonalToolStripMenuItem.Click
+    '    Dim PlanPersonal As New Frm_cargaplanpersonal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+    '    PlanPersonal.Show()
+    'End Sub
+
+    'Private Sub CambiosDeDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambiosDeDepartamentoToolStripMenuItem.Click
+
+    '    frm_cambiodepxmes.Show()
+
+
+    'End Sub
+
+    'Private Sub AumentoDeSueldoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AumentoDeSueldoToolStripMenuItem.Click
+    '    Dim AumentoSOperador As New AumentoSueldoOperador(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+    '    AumentoSOperador.Show()
+    'End Sub
+    Private Sub ModificaSueldoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificaSueldoToolStripMenuItem.Click
+        Dim frm2 As New CsPresentacion.Formularios.RH.Frm_Modifica_Sueldo
+        frm2.Show()
+    End Sub
     Private Sub TratamientoDeAnomalíasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TratamientoDeAnomalíasToolStripMenuItem.Click
         Dim Anomalia As New AnomaliaPrincipal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.Id_puesto)
         Anomalia.Show()

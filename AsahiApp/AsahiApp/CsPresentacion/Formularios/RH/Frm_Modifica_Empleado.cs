@@ -25,6 +25,8 @@ namespace CsPresentacion
         }
 
         SqlConnection con = new SqlConnection("Data Source=GIRO\\SQL2008;Initial Catalog=asahi16;Persist Security Info=True;User ID=sa;Password=Pa55word");
+      
+
         double Sueldo;
         double Factor;
         double Resultado;
@@ -380,31 +382,31 @@ namespace CsPresentacion
                 MessageBox.Show("Error al eliminar, contacte al administrador");
             }
         }
-        private void mostrar_dgv_sueldo()// Método para llenar DatagridView de sueldo
-        {
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_sueldo_fm]", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@VAR", "1");
-                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
-                cmd.Parameters.AddWithValue("@FECHA", dtm_sueldo.Text);
-                cmd.Parameters.AddWithValue("@SD01", txt_SDO1_2.Text);
-                cmd.Parameters.AddWithValue("@SD02", txt_SDO3_2.Text);
-                cmd.Parameters.AddWithValue("@Motivo", lbl_motivo.Text);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgv_sueldo.DataSource = dt;
-                con.Close();
-                Diseño_dgv_sueldo(dgv_sueldo);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+        //private void mostrar_dgv_sueldo()// Método para llenar DatagridView de sueldo
+        //{
+        //    try
+        //    {
+        //        con.Open();
+        //        SqlCommand cmd = new SqlCommand("[dbo].[Modifica_sueldo_fm]", con);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue("@VAR", "1");
+        //        cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+        //     //   cmd.Parameters.AddWithValue("@FECHA", dtm_sueldo.Text);
+        //       // cmd.Parameters.AddWithValue("@SD01", txt_SDO1_2.Text);
+        //        //cmd.Parameters.AddWithValue("@SD02", txt_SDO3_2.Text);
+        //        //cmd.Parameters.AddWithValue("@Motivo", lbl_motivo.Text);
+        //        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        //        DataTable dt = new DataTable();
+        //        adapter.Fill(dt);
+        //      //  dgv_sueldo.DataSource = dt;
+        //        con.Close();
+        //       // Diseño_dgv_sueldo(dgv_sueldo);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.ToString());
+        //    }
+        //}
         private void Diseño_dgv_sueldo(DataGridView dgv)
         {
             dgv.Columns[0].Width = 60;//No. Empleado
@@ -424,46 +426,46 @@ namespace CsPresentacion
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@VAR", "3");
                 cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
-                cmd.Parameters.AddWithValue("@FECHA", dtm_sueldo.Text);
-                cmd.Parameters.AddWithValue("@SD01", txt_SDO1_2.Text);
-                cmd.Parameters.AddWithValue("@SD02", txt_SDO3_2.Text);
-                cmd.Parameters.AddWithValue("@Motivo", lbl_motivo.Text);
+                //cmd.Parameters.AddWithValue("@FECHA", dtm_sueldo.Text);
+                //cmd.Parameters.AddWithValue("@SD01", txt_SDO1_2.Text);
+                //cmd.Parameters.AddWithValue("@SD02", txt_SDO3_2.Text);
+                //cmd.Parameters.AddWithValue("@Motivo", lbl_motivo.Text);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 con.Close();
-                cmb_motivo_sueldo.Text = "";
-                dtm_sueldo.Text = "";
-                txt_SDO1_2.Focus();
+                //cmb_motivo_sueldo.Text = "";
+                //dtm_sueldo.Text = "";
+                //txt_SDO1_2.Focus();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
-        private void inserta_sueldo()// Método para eliminar información
-        {
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("[dbo].[Modifica_sueldo_fm]", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@VAR", "2");
-                cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
-                cmd.Parameters.AddWithValue("@FECHA", dtm_sueldo.Text);
-                cmd.Parameters.AddWithValue("@SD01", txt_SDO1_2.Text);
-                cmd.Parameters.AddWithValue("@SD02", txt_SDO3_2.Text);
-                cmd.Parameters.AddWithValue("@Motivo", lbl_motivo.Text);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+        //private void inserta_sueldo()// Método para eliminar información
+        //{
+        //    try
+        //    {
+        //        con.Open();
+        //        SqlCommand cmd = new SqlCommand("[dbo].[Modifica_sueldo_fm]", con);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue("@VAR", "2");
+        //        cmd.Parameters.AddWithValue("@CLAVE", txt_clave.Text);
+        //        //cmd.Parameters.AddWithValue("@FECHA", dtm_sueldo.Text);
+        //        //cmd.Parameters.AddWithValue("@SD01", txt_SDO1_2.Text);
+        //        //cmd.Parameters.AddWithValue("@SD02", txt_SDO3_2.Text);
+        //        //cmd.Parameters.AddWithValue("@Motivo", lbl_motivo.Text);
+        //        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        //        DataTable dt = new DataTable();
+        //        adapter.Fill(dt);
+        //        con.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.ToString());
+        //    }
+        //}
         private void cargar_informacion()
         {
             DataTable dt = new DataTable();
@@ -514,16 +516,17 @@ namespace CsPresentacion
                 txt_compara2.Text = dt.Rows[0]["SUELDO"].ToString();
                 txt_compara1.Text = dt.Rows[0]["SUELDO"].ToString();
                 txt_sueldo_departamento.Text = dt.Rows[0]["SUELDO"].ToString();
+
                 txt_SDO2.Text = dt.Rows[0]["SD2"].ToString();
                 txt_SDO3.Text = dt.Rows[0]["SD3"].ToString();
                 txt_SDO4.Text = dt.Rows[0]["SD4"].ToString();
                 txt_SDO5.Text = dt.Rows[0]["SD5"].ToString();
-                txt_SDO1_2.Text = dt.Rows[0]["SUELDO"].ToString();
-                lbl_comprueba_sueldo.Text = dt.Rows[0]["SUELDO"].ToString();
-                txt_SDO2_2.Text = dt.Rows[0]["SD2"].ToString();
-                txt_SDO3_2.Text = dt.Rows[0]["SD3"].ToString();
-                txt_SDO4_2.Text = dt.Rows[0]["SD4"].ToString();
-                txt_SDO5_2.Text = dt.Rows[0]["SD5"].ToString();
+                //txt_SDO1_2.Text = dt.Rows[0]["SUELDO"].ToString();
+                //lbl_comprueba_sueldo.Text = dt.Rows[0]["SUELDO"].ToString();
+                //txt_SDO2_2.Text = dt.Rows[0]["SD2"].ToString();
+                //txt_SDO3_2.Text = dt.Rows[0]["SD3"].ToString();
+                //txt_SDO4_2.Text = dt.Rows[0]["SD4"].ToString();
+                //txt_SDO5_2.Text = dt.Rows[0]["SD5"].ToString();
                 cmb_ruta.Text = dt.Rows[0]["RUTA"].ToString();
                 cmb_turno.Text = dt.Rows[0]["TURNO"].ToString();
                 lbl_escolaridad.Text = dt.Rows[0]["ESCOLARIDAD_NUM"].ToString();
@@ -540,6 +543,9 @@ namespace CsPresentacion
             }
             con.Close();
         }
+
+       
+
         public void cargar_puesto(ComboBox inte)//Cargar puesto CMB
         {
             try
@@ -578,6 +584,10 @@ namespace CsPresentacion
                 MessageBox.Show("No se llenó información de campo departamento" + Error.ToString());
             }
         }
+
+     
+
+
         private void selecciona_sueldo()
         {
             try
@@ -703,26 +713,26 @@ namespace CsPresentacion
             dtm_puesto.Enabled = false;
             lbl_id_puesto.Visible = false;
             lbl_id_puesto.Text = "";
-            btn_mod_sueldo.Enabled = false;
-            txt_SDO1_2.Enabled = false;
-            txt_SDO2_2.Enabled = false;
-           txt_SDO3_2.Enabled = false;
-            txt_SDO4_2.Enabled = false;
-            txt_SDO5_2.Enabled = false;
-            txt_SDO1_2.Text = "0.00";
-            txt_SDO2_2.Text = "0.00";
-            txt_SDO3_2.Text = "0.00";
-            txt_SDO4_2.Text = "0.00";
-            txt_SDO5_2.Text = "0.00";
-            cmb_motivo_sueldo.Text = "";
-            cmb_motivo_sueldo.Enabled = false;
-            dtm_sueldo.Text = "";
-            btn_eliminar_sueldo.Enabled = false;
-            lbl_comprueba_sueldo.Text = "";
-            lbl_comprueba_sueldo.Visible = false;
-            dtm_sueldo.Enabled = false;
-            lbl_motivo.Text = "";
-            lbl_motivo.Visible = false;
+           // btn_mod_sueldo.Enabled = false;
+           // txt_SDO1_2.Enabled = false;
+           // txt_SDO2_2.Enabled = false;
+           //txt_SDO3_2.Enabled = false;
+           // txt_SDO4_2.Enabled = false;
+           // txt_SDO5_2.Enabled = false;
+           // txt_SDO1_2.Text = "0.00";
+           // txt_SDO2_2.Text = "0.00";
+           // txt_SDO3_2.Text = "0.00";
+           // txt_SDO4_2.Text = "0.00";
+           // txt_SDO5_2.Text = "0.00";
+           // cmb_motivo_sueldo.Text = "";
+           // cmb_motivo_sueldo.Enabled = false;
+           // dtm_sueldo.Text = "";
+           // btn_eliminar_sueldo.Enabled = false;
+           // lbl_comprueba_sueldo.Text = "";
+           // lbl_comprueba_sueldo.Visible = false;
+           // dtm_sueldo.Enabled = false;
+            //lbl_motivo.Text = "";
+            //lbl_motivo.Visible = false;
             txt_factor_sueldo.Visible = false;
             txt_factor_sueldo.Text = "1.07808";
             cmb_ruta.Enabled = false;
@@ -746,7 +756,7 @@ namespace CsPresentacion
             mostrar_dgv_turno();
             mostrar_dgv_ruta();
             mostrar_dgv_puesto();
-            mostrar_dgv_sueldo();  
+           // mostrar_dgv_sueldo();  
         }
         private void Cmb_genero_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -800,7 +810,12 @@ namespace CsPresentacion
                 mostrar_dgv_turno();
                 mostrar_dgv_ruta();
                 mostrar_dgv_puesto();
-                mostrar_dgv_sueldo();
+              
+
+
+
+                //mostrar_dgv_sueldo();
+
 
                 pictureBox1.ImageLocation = "V:/2. RECURSOS HUMANOS/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" + txt_clave.Text + ".JPG";
                 btn_mod_fam.Enabled = true;
@@ -813,8 +828,8 @@ namespace CsPresentacion
                     txt_vigencia.BackColor = Color.Green;
                     cmb_puesto.Enabled = true;
                     btn_mod_turno.Visible = true;
-                    txt_SDO1_2.Enabled = true;
-                    cmb_motivo_sueldo.Enabled = true;
+                    //txt_SDO1_2.Enabled = true;
+                    //cmb_motivo_sueldo.Enabled = true;
                     cmb_ruta.Enabled = true;
                     cmb_turno.Enabled = true;
                     cmb_departamento.Enabled = true;
@@ -827,8 +842,8 @@ namespace CsPresentacion
                     lbl_estado.Visible = true;
                     txt_vigencia.BackColor = Color.Red;
                     btn_mod_turno.Visible = false;
-                    txt_SDO1_2.Enabled = false;
-                    cmb_motivo_sueldo.Enabled = false;
+                    //txt_SDO1_2.Enabled = false;
+                    //cmb_motivo_sueldo.Enabled = false;
                     cmb_ruta.Enabled = false;
                     cmb_turno.Enabled = false;
                     cmb_departamento.Enabled = false;
@@ -1483,23 +1498,23 @@ namespace CsPresentacion
         }
         private void Btn_mod_sueldo_Click_1(object sender, EventArgs e)
         {
-            sd1 = double.Parse(txt_SDO1_2.Text);
-            sd2 = double.Parse(lbl_comprueba_sueldo.Text);
+            //sd1 = double.Parse(txt_SDO1_2.Text);
+            //sd2 = double.Parse(lbl_comprueba_sueldo.Text);
 
             if (sd1 < sd2)
             {
                 MessageBox.Show("Debe ser un sueldo mayor, al sueldo actual", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_SDO1_2.Focus();
+               // txt_SDO1_2.Focus();
             }
             else if (sd1 == sd2)
             {
                 MessageBox.Show("Debe ser un sueldo mayor, al sueldo actual", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_SDO1_2.Focus();
+                //txt_SDO1_2.Focus();
             }
             else
             {
-                inserta_sueldo();
-                mostrar_dgv_sueldo();
+                //inserta_sueldo();
+                //mostrar_dgv_sueldo();
             }
         }
         private void Btn_mod_puesto_Click(object sender, EventArgs e)
@@ -1513,7 +1528,7 @@ namespace CsPresentacion
             {
                 Inserta_puesto();
                 mostrar_dgv_puesto();
-                mostrar_dgv_sueldo();
+              //  mostrar_dgv_sueldo();
                 cargar_informacion();
                 cmb_puesto.Text = "";
                 dtm_puesto.Text = "";
@@ -1761,7 +1776,7 @@ namespace CsPresentacion
         {
             Elimina_puesto();
             mostrar_dgv_puesto();
-            mostrar_dgv_sueldo();
+            //mostrar_dgv_sueldo();
             cargar_informacion();
             cmb_puesto.Text = "";
             dtm_puesto.Text = "";
@@ -1776,14 +1791,14 @@ namespace CsPresentacion
         }
         private void Cmb_cambio_sueldo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmb_motivo_sueldo.Text == "MODIFICACION DE SALARIO") { lbl_motivo.Text = "01"; }
-           else if (cmb_motivo_sueldo.Text == "PROMOCION") { lbl_motivo.Text = "02"; }
-            else if (cmb_motivo_sueldo.Text == "ANTIGUEDAD") { lbl_motivo.Text = "03"; }
-            else if (cmb_motivo_sueldo.Text == "EVALUACION 3 MESES") { lbl_motivo.Text = "04"; }
-            else if (cmb_motivo_sueldo.Text == "EVALUACION ANUAL") { lbl_motivo.Text = "05"; }
-            dtm_sueldo.Text = "";
-            dtm_sueldo.Enabled = true;
-            btn_mod_sueldo.Enabled = true;
+           // if (cmb_motivo_sueldo.Text == "MODIFICACION DE SALARIO") { lbl_motivo.Text = "01"; }
+           //else if (cmb_motivo_sueldo.Text == "PROMOCION") { lbl_motivo.Text = "02"; }
+           // else if (cmb_motivo_sueldo.Text == "ANTIGUEDAD") { lbl_motivo.Text = "03"; }
+           // else if (cmb_motivo_sueldo.Text == "EVALUACION 3 MESES") { lbl_motivo.Text = "04"; }
+           // else if (cmb_motivo_sueldo.Text == "EVALUACION ANUAL") { lbl_motivo.Text = "05"; }
+           // dtm_sueldo.Text = "";
+           // dtm_sueldo.Enabled = true;
+           // btn_mod_sueldo.Enabled = true;
         }
         public static void Solo_numeros(object sender, KeyPressEventArgs e, char cSymbol)
         {
@@ -1805,17 +1820,17 @@ namespace CsPresentacion
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dgv_sueldo.Rows[e.RowIndex];
-                dtm_sueldo.Text = row.Cells["FECHA"].Value.ToString();
-                cmb_motivo_sueldo.Text = row.Cells["MOTIVO"].Value.ToString();
+                //DataGridViewRow row = this.dgv_sueldo.Rows[e.RowIndex];
+                //dtm_sueldo.Text = row.Cells["FECHA"].Value.ToString();
+                //cmb_motivo_sueldo.Text = row.Cells["MOTIVO"].Value.ToString();
 
                 if (txt_vigencia.Text == "VIGENTE")
                 {
-                    btn_eliminar_sueldo.Enabled = true;
+                    //btn_eliminar_sueldo.Enabled = true;
                 }
                 else if (txt_vigencia.Text == "BAJA")
                 {
-                    btn_eliminar_sueldo.Enabled = false;
+                    //btn_eliminar_sueldo.Enabled = false;
                 }
             }
         }
@@ -1828,7 +1843,7 @@ namespace CsPresentacion
         private void Btn_eliminar_sueldo_Click(object sender, EventArgs e)
         {
             elimina_sueldo();
-            mostrar_dgv_sueldo();
+            //mostrar_dgv_sueldo();
             cargar_informacion();
         }
         private void Txt_SDO1_Leave_1(object sender, EventArgs e)
@@ -1841,18 +1856,15 @@ namespace CsPresentacion
             txt_SDO3.Text = Re.ToString();
             txt_SDO5.Text = Re.ToString();
         }
-        private void Cmb_motivo_sueldo_Leave(object sender, EventArgs e)
-        {      
-        }
         private void Txt_SDO1_2_Leave(object sender, EventArgs e)
         {
-            double f, sd, Re;
+            //double f, sd, Re;
 
-            f = double.Parse(txt_factor_sueldo.Text);
-            sd = double.Parse(txt_SDO1_2.Text);
-            Re = f * sd;
-            txt_SDO3_2.Text = Re.ToString();
-            txt_SDO5_2.Text = Re.ToString();
+            //f = double.Parse(txt_factor_sueldo.Text);
+            //sd = double.Parse(txt_SDO1_2.Text);
+            //Re = f * sd;
+            //txt_SDO3_2.Text = Re.ToString();
+            //txt_SDO5_2.Text = Re.ToString();
         }
         private void Cmb_parentesco_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1902,12 +1914,12 @@ namespace CsPresentacion
         }
         private void Dgv_ruta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.dgv_ruta.Rows[e.RowIndex];
-                cmb_ruta.Text = row.Cells["RUTA"].Value.ToString();
-                btn_eliminar_turno.Enabled = true;
-            }
+            //if (e.RowIndex >= 0)
+            //{
+            //    DataGridViewRow row = this.dgv_ruta.Rows[e.RowIndex];
+            //    cmb_ruta.Text = row.Cells["RUTA"].Value.ToString();
+            //    btn_eliminar_turno.Enabled = true;
+            //}
         }
         private void Dgv_turno_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -1943,6 +1955,21 @@ namespace CsPresentacion
             //{
             //    MessageBox.Show("Correo Erroneo, Favor de verificar.", "Aviso!");
             //}
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void Cmb_motivo_sueldo_Leave(object sender, EventArgs e)
+        {
+
         }
     }
 }
