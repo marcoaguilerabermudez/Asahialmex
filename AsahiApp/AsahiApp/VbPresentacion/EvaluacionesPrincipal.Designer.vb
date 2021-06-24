@@ -55,11 +55,11 @@ Partial Class EvaluacionesPrincipal
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lbl_liberacion = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.lbl_totalpuntos = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btn_desma = New System.Windows.Forms.Button()
         Me.btn_selec = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -339,7 +339,7 @@ Partial Class EvaluacionesPrincipal
         Me.btn_liberar.BackColor = System.Drawing.SystemColors.HotTrack
         Me.btn_liberar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_liberar.ForeColor = System.Drawing.Color.Gold
-        Me.btn_liberar.Location = New System.Drawing.Point(856, 494)
+        Me.btn_liberar.Location = New System.Drawing.Point(856, 495)
         Me.btn_liberar.Name = "btn_liberar"
         Me.btn_liberar.Size = New System.Drawing.Size(120, 35)
         Me.btn_liberar.TabIndex = 191
@@ -431,6 +431,17 @@ Partial Class EvaluacionesPrincipal
         Me.Label10.TabIndex = 176
         Me.Label10.Text = "Fecha de liberación"
         '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(94, 199)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(68, 71)
+        Me.Button2.TabIndex = 175
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'lbl_totalpuntos
         '
         Me.lbl_totalpuntos.AutoSize = True
@@ -456,7 +467,7 @@ Partial Class EvaluacionesPrincipal
         'btn_desma
         '
         Me.btn_desma.ForeColor = System.Drawing.Color.Black
-        Me.btn_desma.Location = New System.Drawing.Point(922, 440)
+        Me.btn_desma.Location = New System.Drawing.Point(922, 441)
         Me.btn_desma.Name = "btn_desma"
         Me.btn_desma.Size = New System.Drawing.Size(78, 35)
         Me.btn_desma.TabIndex = 194
@@ -467,24 +478,13 @@ Partial Class EvaluacionesPrincipal
         'btn_selec
         '
         Me.btn_selec.ForeColor = System.Drawing.Color.Black
-        Me.btn_selec.Location = New System.Drawing.Point(819, 439)
+        Me.btn_selec.Location = New System.Drawing.Point(819, 440)
         Me.btn_selec.Name = "btn_selec"
         Me.btn_selec.Size = New System.Drawing.Size(74, 35)
         Me.btn_selec.TabIndex = 193
         Me.btn_selec.Text = "Seleccionar"
         Me.btn_selec.UseVisualStyleBackColor = False
         Me.btn_selec.Visible = False
-        '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(94, 199)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(68, 71)
-        Me.Button2.TabIndex = 175
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'EvaluacionesPrincipal
         '
