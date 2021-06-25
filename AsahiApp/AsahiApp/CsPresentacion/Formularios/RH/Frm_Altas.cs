@@ -159,7 +159,8 @@ namespace CsPresentacion
 
                 txt_SDO2.Text = "0.00";
                 txt_SDO4.Text = "0.00";
-                lbl_factor.Text = "1.07808";
+                //lbl_factor.Text = "1.07808";
+                lbl_factor.Text = "1.0452";
 
                 Sueldo = double.Parse(txt_SDO1.Text);
                 Factor = double.Parse(lbl_factor.Text);

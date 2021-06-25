@@ -40,14 +40,14 @@ Public Class EvaluacionPersonal
     Sub sumarpuntaje()
 
         Dim Total As Double
-            Dim TotalM As Double
+        Dim TotalM As Double
 
-            For Each row As DataGridViewRow In Me.dtgvp.Rows
-                Total += Val(row.Cells("Puntaje").Value)
-                TotalM += Val(row.Cells("PMP").Value)
-            Next
-            Me.lbl_puntajetotal.Text = Total.ToString
-            Me.lbl_puntajm.Text = TotalM.ToString
+        For Each row As DataGridViewRow In Me.dtgvp.Rows
+            Total += Val(row.Cells("Puntaje").Value)
+            TotalM += Val(row.Cells("PMP").Value)
+        Next
+        Me.lbl_puntajetotal.Text = Total.ToString
+        Me.lbl_puntajm.Text = TotalM.ToString
 
 
 
@@ -186,9 +186,10 @@ Public Class EvaluacionPersonal
         Me.dtgvp.Columns("Puntaje").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
         Me.dtgvp.Columns("PME").DefaultCellStyle.Alignment = ContentAlignment.MiddleRight
 
-        ''dtgvp.Rows(9).ReadOnly = True
+
         dtgvp.Rows(13).ReadOnly = True
         dtgvp.Rows(5).ReadOnly = True
+        dtgvp.Rows(9).ReadOnly = True
 
     End Sub
 
@@ -439,15 +440,25 @@ Public Class EvaluacionPersonal
 
                     MessageBox.Show("El empleado ha sido evaluado correctamente", "¡Carga exitosa!")
 
-                    Dim ownerForm As EvaluacionesPrincipal = Me.Owner
-                    ownerForm.Muestragrid()
-                    btn_evaluar.Enabled = False
+
+                    If lbl_evaluacion.Text <> "3 meses" Then
+
+                        Dim ownerForm As EvaluacionesPrincipal = Me.Owner
+                        ownerForm.Muestragrid()
+
+                        btn_evaluar.Enabled = False
+                    Else
+                        Dim ownerForm As EvaluacionPrincipalIndirecto = Me.Owner
+                        ownerForm.Muestragrid()
+                        btn_evaluar.Enabled = False
+                    End If
+
 
 
 
                 Catch ex As Exception
                     MessageBox.Show(ex.ToString)
-
+                    btn_evaluar.Enabled = False
                 Finally
                     Cn.Close()
                 End Try

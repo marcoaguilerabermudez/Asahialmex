@@ -10,6 +10,7 @@ Public Class EvaluacionPrincipalIndirecto
     Dim permiso As Integer
     Dim a As String
     Dim mes As Integer
+    Dim fecha As String
     Dim id_puesto As Integer
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
 
@@ -28,50 +29,62 @@ Public Class EvaluacionPrincipalIndirecto
 
     Public Sub EvaluacionesPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        cbx_año.Text = Today.Year()
 
-        'a = Today.Month
-        'Select Case a
-        '    Case 1
-        '        cbx_mes.Text = "Enero"
-        '        mes = 1
-        '    Case 2
-        '        cbx_mes.Text = "Febrero"
-        '        mes = 2
-        '    Case 3
-        '        cbx_mes.Text = "Marzo"
-        '        mes = 3
-        '    Case 4
-        '        cbx_mes.Text = "Abril"
-        '        mes = 4
-        '    Case 5
-        '        cbx_mes.Text = "Mayo"
-        '        mes = 5
-        '    Case 6
-        '        cbx_mes.Text = "Junio"
-        '        mes = 6
-        '    Case 7
-        '        cbx_mes.Text = "Julio"
-        '        mes = 7
-        '    Case 8
-        '        cbx_mes.Text = "Agosto"
-        '        mes = 8
-        '    Case 9
-        '        cbx_mes.Text = "Septiembre"
-        '        mes = 9
-        '    Case 10
-        '        cbx_mes.Text = "Octubre"
-        '        mes = 10
-        '    Case 11
-        '        cbx_mes.Text = "Noviembre"
-        '        mes = 11
-        '    Case 12
-        '        cbx_mes.Text = "Diciembre"
-        '        mes = 12
-        'End Select
+        a = Today.Month
 
-        cbx_mes.Text = "Diciembre"
-        mes = 12
-        cbx_año.Text = Today.Year() - 1
+        Select Case a
+            Case 1
+                cbx_mes.Text = "Enero"
+                mes = 12
+                fecha = "01/01/" & cbx_año.Text & " "
+            Case 2
+                cbx_mes.Text = "Febrero"
+                mes = 2
+                fecha = "01/02/" & cbx_año.Text & " "
+            Case 3
+                cbx_mes.Text = "Marzo"
+                mes = 3
+                fecha = "01/03/" & cbx_año.Text & " "
+            Case 4
+                cbx_mes.Text = "Abril"
+                mes = 4
+                fecha = "01/04/" & cbx_año.Text & " "
+            Case 5
+                cbx_mes.Text = "Mayo"
+                mes = 5
+                fecha = "01/05/" & cbx_año.Text & " "
+            Case 6
+                cbx_mes.Text = "Junio"
+                mes = 6
+                fecha = "01/06/" & cbx_año.Text & " "
+            Case 7
+                cbx_mes.Text = "Julio"
+                mes = 7
+                fecha = "01/07/" & cbx_año.Text & " "
+            Case 8
+                cbx_mes.Text = "Agosto"
+                mes = 8
+                fecha = "01/08/" & cbx_año.Text & " "
+            Case 9
+                cbx_mes.Text = "Septiembre"
+                mes = 9
+                fecha = "01/09/" & cbx_año.Text & " "
+            Case 10
+                cbx_mes.Text = "Octubre"
+                mes = 10
+                fecha = "01/10/" & cbx_año.Text & " "
+            Case 11
+                cbx_mes.Text = "Noviembre"
+                mes = 11
+                fecha = "01/11/" & cbx_año.Text & " "
+            Case 12
+                cbx_mes.Text = "Diciembre"
+                mes = 12
+                fecha = "01/12/" & cbx_año.Text & " "
+        End Select
+
+
 
 
 
@@ -110,29 +123,41 @@ Public Class EvaluacionPrincipalIndirecto
         a = cbx_mes.Text
         Select Case a
             Case "Enero"
-                mes = 1
+                mes = 12
+                fecha = "01/01/" & cbx_año.Text & " "
             Case "Febrero"
                 mes = 2
+                fecha = "01/02/" & cbx_año.Text & " "
             Case "Marzo"
                 mes = 3
+                fecha = "01/03/" & cbx_año.Text & " "
             Case "Abril"
                 mes = 4
+                fecha = "01/04/" & cbx_año.Text & " "
             Case "Mayo"
                 mes = 5
+                fecha = "01/05/" & cbx_año.Text & " "
             Case "Junio"
                 mes = 6
+                fecha = "01/06/" & cbx_año.Text & " "
             Case "Julio"
                 mes = 7
+                fecha = "01/07/" & cbx_año.Text & " "
             Case "Agosto"
                 mes = 8
+                fecha = "01/08/" & cbx_año.Text & " "
             Case "Septiembre"
                 mes = 9
+                fecha = "01/09/" & cbx_año.Text & " "
             Case "Octubre"
                 mes = 10
+                fecha = "01/10/" & cbx_año.Text & " "
             Case "Noviembre"
                 mes = 11
+                fecha = "01/11/" & cbx_año.Text & " "
             Case "Diciembre"
                 mes = 12
+                fecha = "01/12/" & cbx_año.Text & " "
         End Select
 
     End Sub
@@ -176,6 +201,7 @@ Public Class EvaluacionPrincipalIndirecto
 
 
     Friend Sub Muestragrid()
+
 
         Try
             Cn.Close()
@@ -226,8 +252,10 @@ Public Class EvaluacionPrincipalIndirecto
                 row.DefaultCellStyle.BackColor = Color.White
             ElseIf row.Cells(“Estado”).Value = 1 Then
                 row.DefaultCellStyle.BackColor = Color.Gold
-            ElseIf row.Cells(“Estado”).Value = 10 Then
+            ElseIf row.Cells(“Estado”).Value = 10 And row.Cells(“Tiempo”).Value <> "3 meses" Then
                 row.DefaultCellStyle.BackColor = Color.Pink
+            ElseIf row.Cells(“Estado”).Value = 10 And row.Cells(“Tiempo”).Value = "3 meses" Then
+                row.DefaultCellStyle.BackColor = Color.LightBlue
             ElseIf row.Cells(“Estado”).Value = 11 Then
                 row.DefaultCellStyle.BackColor = Color.Pink
             ElseIf row.Cells(“Estado”).Value = 12 Then
@@ -334,27 +362,50 @@ where id_evaluaciones = @ID and estado = 0
         Else
 
             Try
-                Modulo_evaluacionesindi.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
-                Modulo_evaluacionesindi.e_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Departamento").Value.ToString()
-                Modulo_evaluacionesindi.e_evaluacion = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
-                Modulo_evaluacionesindi.e_fecha = Me.dtgvp.Rows(e.RowIndex).Cells("fecha").Value.ToString()
-                Modulo_evaluacionesindi.e_nombre = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
-                Modulo_evaluacionesindi.e_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Puesto").Value.ToString()
-                Modulo_evaluacionesindi.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
-                Modulo_evaluacionesindi.e_estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
 
-                Modulo_evaluacionesindi.id_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Id_depto").Value.ToString()
-                Modulo_evaluacionesindi.id_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Id_puesto").Value.ToString()
+                If Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString() <> "3 meses" Then
 
-                Modulo_evaluacionesindi.e_idemp = id
+                    Modulo_evaluacionesindi.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
+                    Modulo_evaluacionesindi.e_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Departamento").Value.ToString()
+                    Modulo_evaluacionesindi.e_evaluacion = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
+                    Modulo_evaluacionesindi.e_fecha = Me.dtgvp.Rows(e.RowIndex).Cells("fecha").Value.ToString()
+                    Modulo_evaluacionesindi.e_nombre = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
+                    Modulo_evaluacionesindi.e_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Puesto").Value.ToString()
+                    Modulo_evaluacionesindi.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
+                    Modulo_evaluacionesindi.e_estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
+
+                    Modulo_evaluacionesindi.id_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Id_depto").Value.ToString()
+                    Modulo_evaluacionesindi.id_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Id_puesto").Value.ToString()
+
+                    Modulo_evaluacionesindi.e_idemp = id
 
 
-                Dim segundoForm As New EvaluacionIndirecto
+                    Dim segundoForm As New EvaluacionIndirecto
 
-                MuestraKardexEva.Dispose()
+                    MuestraKardexEva.Dispose()
 
-                segundoForm.Show(Me)
+                    segundoForm.Show(Me)
 
+                Else
+
+                    Modulo_evaluaciones.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
+                    Modulo_evaluaciones.e_depto = Me.dtgvp.Rows(e.RowIndex).Cells("Departamento").Value.ToString()
+                    Modulo_evaluaciones.e_evaluacion = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
+                    Modulo_evaluaciones.e_fecha = Me.dtgvp.Rows(e.RowIndex).Cells("fecha").Value.ToString()
+                    Modulo_evaluaciones.e_nombre = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
+                    Modulo_evaluaciones.e_puesto = Me.dtgvp.Rows(e.RowIndex).Cells("Puesto").Value.ToString()
+                    Modulo_evaluaciones.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
+                    Modulo_evaluaciones.e_estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
+                    Modulo_evaluaciones.e_idemp = id
+
+
+                    Dim segundoForm2 As New EvaluacionPersonal
+
+                    MuestraKardexEva.Dispose()
+
+                    segundoForm2.Show(Me)
+
+                End If
 
             Catch
             End Try
@@ -417,13 +468,31 @@ where id_evaluaciones = @ID and estado = 0
 
 
     Sub generarreporte()
-        If estado < 13 Then
-            MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Else
-            ContenedorReporteIndirecto.id_evaluacion = id_eval
 
-            ContenedorReporteIndirecto.fecha = "01/12/2020"
-            ContenedorReporteIndirecto.Show()
+        ' MessageBox.Show(fecha)
+
+        If tipo <> "3 meses" Then
+            If estado < 13 Then
+                MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                ContenedorReporteIndirecto.id_evaluacion = id_eval
+
+                ContenedorReporteIndirecto.fecha = fecha
+                ContenedorReporteIndirecto.Show()
+
+            End If
+
+        Else
+
+            If estado < 10 Then
+                MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                ContenedorREvaluacionSin.id_evaluaciones = id_eval
+                ContenedorREvaluacionSin.teval = tipo
+                ContenedorREvaluacionSin.fecha = fecha
+                ContenedorREvaluacionSin.Show()
+
+            End If
 
         End If
 
@@ -433,6 +502,48 @@ where id_evaluaciones = @ID and estado = 0
     Private Sub cbx_tipoeva_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_tipoeva.SelectedIndexChanged, cbx_depto.SelectedIndexChanged
         Muestragrid()
 
+    End Sub
+
+    Private Sub cbx_año_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_año.SelectedIndexChanged
+        a = cbx_mes.Text
+        Select Case a
+            Case "Enero"
+                mes = 12
+                fecha = "01/01/" & cbx_año.Text & " "
+            Case "Febrero"
+                mes = 2
+                fecha = "01/02/" & cbx_año.Text & " "
+            Case "Marzo"
+                mes = 3
+                fecha = "01/03/" & cbx_año.Text & " "
+            Case "Abril"
+                mes = 4
+                fecha = "01/04/" & cbx_año.Text & " "
+            Case "Mayo"
+                mes = 5
+                fecha = "01/05/" & cbx_año.Text & " "
+            Case "Junio"
+                mes = 6
+                fecha = "01/06/" & cbx_año.Text & " "
+            Case "Julio"
+                mes = 7
+                fecha = "01/07/" & cbx_año.Text & " "
+            Case "Agosto"
+                mes = 8
+                fecha = "01/08/" & cbx_año.Text & " "
+            Case "Septiembre"
+                mes = 9
+                fecha = "01/09/" & cbx_año.Text & " "
+            Case "Octubre"
+                mes = 10
+                fecha = "01/10/" & cbx_año.Text & " "
+            Case "Noviembre"
+                mes = 11
+                fecha = "01/11/" & cbx_año.Text & " "
+            Case "Diciembre"
+                mes = 12
+                fecha = "01/12/" & cbx_año.Text & " "
+        End Select
     End Sub
 End Class
 
