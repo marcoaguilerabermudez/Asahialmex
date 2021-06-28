@@ -202,10 +202,9 @@ Partial Class EvaluacionPrincipalIndirecto
         '
         Me.cbx_año.BackColor = System.Drawing.SystemColors.Control
         Me.cbx_año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbx_año.Enabled = False
         Me.cbx_año.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_año.FormattingEnabled = True
-        Me.cbx_año.Items.AddRange(New Object() {"2020", "2021", "2022", "2023"})
+        Me.cbx_año.Items.AddRange(New Object() {"2020", "2021", "2022", "2023", "2024"})
         Me.cbx_año.Location = New System.Drawing.Point(45, 48)
         Me.cbx_año.Name = "cbx_año"
         Me.cbx_año.Size = New System.Drawing.Size(77, 21)
@@ -303,7 +302,6 @@ Partial Class EvaluacionPrincipalIndirecto
         'cbx_mes
         '
         Me.cbx_mes.BackColor = System.Drawing.SystemColors.Control
-        Me.cbx_mes.Enabled = False
         Me.cbx_mes.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_mes.FormattingEnabled = True
         Me.cbx_mes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})

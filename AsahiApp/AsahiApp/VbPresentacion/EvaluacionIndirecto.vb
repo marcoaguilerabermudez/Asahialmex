@@ -8,7 +8,7 @@ Public Class EvaluacionIndirecto
     Dim estado As Integer
     Dim puntajemax As Double
     Dim idemp As Integer
-
+    Dim fecha As String
     Dim idpuesto As Integer
     Dim iddepto As Integer
     Dim puntajeincidencias As Double
@@ -132,6 +132,10 @@ Public Class EvaluacionIndirecto
 
         sumarpuntaje()
         rdbinidicadores = 0
+
+
+
+
 
     End Sub
 

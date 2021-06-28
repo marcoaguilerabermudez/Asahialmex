@@ -136,28 +136,6 @@
             this.txt_factor = new System.Windows.Forms.TextBox();
             this.cmb_puesto = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.lbl_motivo = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.lbl_comprueba_sueldo = new System.Windows.Forms.Label();
-            this.dtm_sueldo = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btn_eliminar_sueldo = new System.Windows.Forms.Button();
-            this.cmb_motivo_sueldo = new System.Windows.Forms.ComboBox();
-            this.dgv_sueldo = new System.Windows.Forms.DataGridView();
-            this.btn_mod_sueldo = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_SDO1_2 = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.txt_SDO2_2 = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.txt_SDO3_2 = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.txt_SDO4_2 = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.txt_SDO5_2 = new System.Windows.Forms.TextBox();
-            this.txt_factor_sueldo = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.label43 = new System.Windows.Forms.Label();
             this.dgv_turno = new System.Windows.Forms.DataGridView();
@@ -176,6 +154,7 @@
             this.btn_mod_ruta = new System.Windows.Forms.Button();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.txt_factor_sueldo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.nacimiento.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -187,9 +166,6 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_puesto)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_sueldo)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_turno)).BeginInit();
             this.tabPage7.SuspendLayout();
@@ -663,14 +639,14 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 49);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 48);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(604, 574);
             this.tabControl1.TabIndex = 234;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -1192,6 +1168,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.txt_factor_sueldo);
             this.tabPage4.Controls.Add(this.lbl_id_puesto);
             this.tabPage4.Controls.Add(this.lbl_valida_puesto);
             this.tabPage4.Controls.Add(this.btn_eliminar_puesto);
@@ -1441,244 +1418,6 @@
             this.label26.TabIndex = 237;
             this.label26.Text = "PUESTO:";
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.lbl_motivo);
-            this.tabPage5.Controls.Add(this.label32);
-            this.tabPage5.Controls.Add(this.lbl_comprueba_sueldo);
-            this.tabPage5.Controls.Add(this.dtm_sueldo);
-            this.tabPage5.Controls.Add(this.label15);
-            this.tabPage5.Controls.Add(this.btn_eliminar_sueldo);
-            this.tabPage5.Controls.Add(this.cmb_motivo_sueldo);
-            this.tabPage5.Controls.Add(this.dgv_sueldo);
-            this.tabPage5.Controls.Add(this.btn_mod_sueldo);
-            this.tabPage5.Controls.Add(this.groupBox3);
-            this.tabPage5.Controls.Add(this.txt_factor_sueldo);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(596, 548);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Sueldo";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // lbl_motivo
-            // 
-            this.lbl_motivo.AutoSize = true;
-            this.lbl_motivo.Location = new System.Drawing.Point(151, 410);
-            this.lbl_motivo.Name = "lbl_motivo";
-            this.lbl_motivo.Size = new System.Drawing.Size(50, 13);
-            this.lbl_motivo.TabIndex = 257;
-            this.lbl_motivo.Text = "@Motivo";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(24, 136);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(129, 13);
-            this.label32.TabIndex = 256;
-            this.label32.Text = "FECHA DE APLICACION:";
-            // 
-            // lbl_comprueba_sueldo
-            // 
-            this.lbl_comprueba_sueldo.AutoSize = true;
-            this.lbl_comprueba_sueldo.Location = new System.Drawing.Point(15, 410);
-            this.lbl_comprueba_sueldo.Name = "lbl_comprueba_sueldo";
-            this.lbl_comprueba_sueldo.Size = new System.Drawing.Size(111, 13);
-            this.lbl_comprueba_sueldo.TabIndex = 255;
-            this.lbl_comprueba_sueldo.Text = "@Comprueba_Sueldo";
-            // 
-            // dtm_sueldo
-            // 
-            this.dtm_sueldo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtm_sueldo.Location = new System.Drawing.Point(24, 153);
-            this.dtm_sueldo.Name = "dtm_sueldo";
-            this.dtm_sueldo.Size = new System.Drawing.Size(188, 20);
-            this.dtm_sueldo.TabIndex = 13;
-            this.dtm_sueldo.ValueChanged += new System.EventHandler(this.Dtm_sueldo_ValueChanged);
-            this.dtm_sueldo.Validating += new System.ComponentModel.CancelEventHandler(this.Dtm_sueldo_Validating);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(24, 92);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 13);
-            this.label15.TabIndex = 24;
-            this.label15.Text = "MOTIVO:";
-            // 
-            // btn_eliminar_sueldo
-            // 
-            this.btn_eliminar_sueldo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_eliminar_sueldo.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_eliminar_sueldo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
-            this.btn_eliminar_sueldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminar_sueldo.Location = new System.Drawing.Point(515, 399);
-            this.btn_eliminar_sueldo.Name = "btn_eliminar_sueldo";
-            this.btn_eliminar_sueldo.Size = new System.Drawing.Size(61, 31);
-            this.btn_eliminar_sueldo.TabIndex = 15;
-            this.btn_eliminar_sueldo.Text = "&Eliminar";
-            this.btn_eliminar_sueldo.UseVisualStyleBackColor = true;
-            this.btn_eliminar_sueldo.Click += new System.EventHandler(this.Btn_eliminar_sueldo_Click);
-            // 
-            // cmb_motivo_sueldo
-            // 
-            this.cmb_motivo_sueldo.FormattingEnabled = true;
-            this.cmb_motivo_sueldo.Items.AddRange(new object[] {
-            "MODIFICACION DE SALARIO",
-            "PROMOCION",
-            "ANTIGUEDAD",
-            "EVALUACION 3 MESES",
-            "EVALUACION ANUAL"});
-            this.cmb_motivo_sueldo.Location = new System.Drawing.Point(24, 109);
-            this.cmb_motivo_sueldo.Name = "cmb_motivo_sueldo";
-            this.cmb_motivo_sueldo.Size = new System.Drawing.Size(188, 21);
-            this.cmb_motivo_sueldo.TabIndex = 12;
-            this.cmb_motivo_sueldo.SelectedIndexChanged += new System.EventHandler(this.Cmb_cambio_sueldo_SelectedIndexChanged);
-            this.cmb_motivo_sueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_cambio_sueldo_KeyPress);
-            this.cmb_motivo_sueldo.Leave += new System.EventHandler(this.Cmb_motivo_sueldo_Leave);
-            // 
-            // dgv_sueldo
-            // 
-            this.dgv_sueldo.AllowUserToAddRows = false;
-            this.dgv_sueldo.AllowUserToDeleteRows = false;
-            this.dgv_sueldo.AllowUserToResizeColumns = false;
-            this.dgv_sueldo.AllowUserToResizeRows = false;
-            this.dgv_sueldo.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_sueldo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sueldo.Location = new System.Drawing.Point(18, 184);
-            this.dgv_sueldo.Name = "dgv_sueldo";
-            this.dgv_sueldo.RowHeadersVisible = false;
-            this.dgv_sueldo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_sueldo.Size = new System.Drawing.Size(558, 209);
-            this.dgv_sueldo.TabIndex = 251;
-            this.dgv_sueldo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_sueldo_CellContentClick);
-            this.dgv_sueldo.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_sueldo_RowEnter);
-            // 
-            // btn_mod_sueldo
-            // 
-            this.btn_mod_sueldo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_mod_sueldo.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_mod_sueldo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
-            this.btn_mod_sueldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mod_sueldo.Location = new System.Drawing.Point(228, 145);
-            this.btn_mod_sueldo.Name = "btn_mod_sueldo";
-            this.btn_mod_sueldo.Size = new System.Drawing.Size(61, 31);
-            this.btn_mod_sueldo.TabIndex = 14;
-            this.btn_mod_sueldo.Text = "&Aplicar";
-            this.btn_mod_sueldo.UseVisualStyleBackColor = true;
-            this.btn_mod_sueldo.Click += new System.EventHandler(this.Btn_mod_sueldo_Click_1);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.txt_SDO1_2);
-            this.groupBox3.Controls.Add(this.label37);
-            this.groupBox3.Controls.Add(this.txt_SDO2_2);
-            this.groupBox3.Controls.Add(this.label38);
-            this.groupBox3.Controls.Add(this.txt_SDO3_2);
-            this.groupBox3.Controls.Add(this.label39);
-            this.groupBox3.Controls.Add(this.txt_SDO4_2);
-            this.groupBox3.Controls.Add(this.label40);
-            this.groupBox3.Controls.Add(this.txt_SDO5_2);
-            this.groupBox3.Location = new System.Drawing.Point(18, 25);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(561, 62);
-            this.groupBox3.TabIndex = 246;
-            this.groupBox3.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "SUELDO DIARIO:";
-            // 
-            // txt_SDO1_2
-            // 
-            this.txt_SDO1_2.Location = new System.Drawing.Point(6, 33);
-            this.txt_SDO1_2.MaxLength = 10;
-            this.txt_SDO1_2.Name = "txt_SDO1_2";
-            this.txt_SDO1_2.Size = new System.Drawing.Size(89, 20);
-            this.txt_SDO1_2.TabIndex = 11;
-            this.txt_SDO1_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_SDO1_2_KeyPress);
-            this.txt_SDO1_2.Leave += new System.EventHandler(this.Txt_SDO1_2_Leave);
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(113, 16);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(66, 13);
-            this.label37.TabIndex = 16;
-            this.label37.Text = "VAR. IMMS:";
-            // 
-            // txt_SDO2_2
-            // 
-            this.txt_SDO2_2.Location = new System.Drawing.Point(114, 33);
-            this.txt_SDO2_2.Name = "txt_SDO2_2";
-            this.txt_SDO2_2.Size = new System.Drawing.Size(89, 20);
-            this.txt_SDO2_2.TabIndex = 17;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(221, 16);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(66, 13);
-            this.label38.TabIndex = 18;
-            this.label38.Text = "VAR. IMMS:";
-            // 
-            // txt_SDO3_2
-            // 
-            this.txt_SDO3_2.Location = new System.Drawing.Point(222, 33);
-            this.txt_SDO3_2.Name = "txt_SDO3_2";
-            this.txt_SDO3_2.Size = new System.Drawing.Size(89, 20);
-            this.txt_SDO3_2.TabIndex = 19;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(334, 16);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(95, 13);
-            this.label39.TabIndex = 20;
-            this.label39.Text = "VAR. INFONAVIT:";
-            // 
-            // txt_SDO4_2
-            // 
-            this.txt_SDO4_2.Location = new System.Drawing.Point(336, 33);
-            this.txt_SDO4_2.Name = "txt_SDO4_2";
-            this.txt_SDO4_2.Size = new System.Drawing.Size(89, 20);
-            this.txt_SDO4_2.TabIndex = 21;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(446, 16);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(95, 13);
-            this.label40.TabIndex = 22;
-            this.label40.Text = "VAR. INFONAVIT:";
-            // 
-            // txt_SDO5_2
-            // 
-            this.txt_SDO5_2.Location = new System.Drawing.Point(448, 33);
-            this.txt_SDO5_2.Name = "txt_SDO5_2";
-            this.txt_SDO5_2.Size = new System.Drawing.Size(89, 20);
-            this.txt_SDO5_2.TabIndex = 23;
-            // 
-            // txt_factor_sueldo
-            // 
-            this.txt_factor_sueldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_factor_sueldo.Location = new System.Drawing.Point(18, 454);
-            this.txt_factor_sueldo.Name = "txt_factor_sueldo";
-            this.txt_factor_sueldo.Size = new System.Drawing.Size(65, 20);
-            this.txt_factor_sueldo.TabIndex = 247;
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.label43);
@@ -1911,6 +1650,14 @@
             this.label19.TabIndex = 240;
             this.label19.Text = "RUTA:";
             // 
+            // txt_factor_sueldo
+            // 
+            this.txt_factor_sueldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_factor_sueldo.Location = new System.Drawing.Point(13, 517);
+            this.txt_factor_sueldo.Name = "txt_factor_sueldo";
+            this.txt_factor_sueldo.Size = new System.Drawing.Size(65, 20);
+            this.txt_factor_sueldo.TabIndex = 252;
+            // 
             // Frm_Modificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1946,11 +1693,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_puesto)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_sueldo)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_turno)).EndInit();
@@ -2006,7 +1748,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_mod_general;
         private System.Windows.Forms.TextBox txt_paterno;
@@ -2056,19 +1797,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox txt_SDO5;
         private System.Windows.Forms.TextBox txt_factor;
-        private System.Windows.Forms.Button btn_mod_sueldo;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_SDO1_2;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox txt_SDO2_2;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox txt_SDO3_2;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox txt_SDO4_2;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox txt_SDO5_2;
-        private System.Windows.Forms.TextBox txt_factor_sueldo;
         private System.Windows.Forms.DataGridView dgv_depto;
         private System.Windows.Forms.Label lbl_Comprueba_depto;
         private System.Windows.Forms.Button btn_mod_fam;
@@ -2093,14 +1821,6 @@
         private System.Windows.Forms.DateTimePicker dtm_puesto;
         private System.Windows.Forms.Label lbl_valida_puesto;
         private System.Windows.Forms.Label lbl_id_puesto;
-        private System.Windows.Forms.ComboBox cmb_motivo_sueldo;
-        private System.Windows.Forms.DataGridView dgv_sueldo;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btn_eliminar_sueldo;
-        private System.Windows.Forms.DateTimePicker dtm_sueldo;
-        private System.Windows.Forms.Label lbl_comprueba_sueldo;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label lbl_motivo;
         private System.Windows.Forms.MaskedTextBox txt_tel_contacto;
         private System.Windows.Forms.MaskedTextBox txt_telefono;
         private System.Windows.Forms.MaskedTextBox txt_curp;
@@ -2110,5 +1830,6 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.DateTimePicker dtm_nacimiento;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txt_factor_sueldo;
     }
 }

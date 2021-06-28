@@ -109,16 +109,22 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
             da.Fill(ds)
 
             txt_nombre.Text = ds.Tables(0).Rows(0).Item(1)
+
             txt_turno.Text = ds.Tables(0).Rows(0).Item(2)
+
             txt_depto.Text = ds.Tables(0).Rows(0).Item(3)
+
             dp = ds.Tables(0).Rows(0).Item(4)
+
             tconsumido = ds.Tables(0).Rows(0).Item(5)
 
             Cnn.Close()
 
         Catch ex As Exception
+
             MessageBox.Show(ex.ToString)
             MessageBox.Show("El empleado que ha seleccionado no está activo o no corresponde a su departamento, verifique e intente de nuevo.", "¡Aviso!")
+
         End Try
 
     End Sub
@@ -131,8 +137,10 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
         Cnn.Open()
 
         Try
-            Dim da As New SqlDataAdapter("Sp_RhetiquetaplanTE", Cnn)
+            Dim da As New SqlDataAdapter("Sp_RhetiquetaplanTE", cnn)
+
             da.SelectCommand.CommandType = CommandType.StoredProcedure
+
             da.SelectCommand.Parameters.AddWithValue("@clave", id)
 
 
@@ -171,8 +179,11 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
 
         Try
             di1.Text = CDbl(hs1.Text - hd1.Text)
+
             di2.Text = CDbl(hs2.Text - hd2.Text)
+
             di3.Text = CDbl(hs3.Text - hd3.Text)
+
             di4.Text = CDbl(hs4.Text - hd4.Text)
 
 
@@ -433,6 +444,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
             Next
 
             MessageBox.Show(RI, "¡Aviso!")
+
             Muestragrid()
 
 
@@ -448,8 +460,9 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
     End Sub
 
     Sub autorizar()
-        Cnn.Close()
-        Cnn.Open()
+
+        cnn.Close()
+        cnn.Open()
         Dim auto As SqlCommand = New SqlCommand("update [AsahiSystem].[dbo].[Rh_solicitudTE] set estado = 2, timestampval = getdate()
  where Id_solicitudte = @ID and estado = 0
 
@@ -503,7 +516,7 @@ when @turnoe = 'Nocturno' then 3
 when @turnoe = 'Administrativo' then 4
 end
 end
-", Cnn)
+", cnn)
 
         Dim fila As DataGridViewRow = New DataGridViewRow()
         Dim RI As String
@@ -534,9 +547,9 @@ end
         Catch ex As Exception
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
             MessageBox.Show(ex.ToString)
-            Cnn.Close()
+            cnn.Close()
         Finally
-            Cnn.Close()
+            cnn.Close()
 
         End Try
 

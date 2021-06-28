@@ -775,6 +775,7 @@ SELECT  [Id_motivopermiso]
 
 
     Private Sub lbl_turno_Click(sender As Object, e As EventArgs) Handles lbl_turno.TextChanged
+
         If lbl_turno.Text = "Matutino" Then
             desde_h.Value = "01/01/2020 06:55:00"
             hasta_h.Value = "01/01/2020 15:25:00"
@@ -810,6 +811,7 @@ SELECT  [Id_motivopermiso]
 
         End If
     End Sub
+
 
     Private Sub btn_solicitar_Click(sender As Object, e As EventArgs) Handles btn_solicitar.Click
         revisavacaciones()

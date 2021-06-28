@@ -641,6 +641,7 @@ Partial Class EvaluacionPersonal
         Me.p_psg.Size = New System.Drawing.Size(13, 13)
         Me.p_psg.TabIndex = 210
         Me.p_psg.Text = "0"
+        Me.p_psg.Visible = False
         '
         'p_faltaj
         '
@@ -652,6 +653,7 @@ Partial Class EvaluacionPersonal
         Me.p_faltaj.Size = New System.Drawing.Size(13, 13)
         Me.p_faltaj.TabIndex = 209
         Me.p_faltaj.Text = "0"
+        Me.p_faltaj.Visible = False
         '
         'p_faltai
         '
@@ -663,6 +665,7 @@ Partial Class EvaluacionPersonal
         Me.p_faltai.Size = New System.Drawing.Size(13, 13)
         Me.p_faltai.TabIndex = 208
         Me.p_faltai.Text = "0"
+        Me.p_faltai.Visible = False
         '
         'p_ret
         '
@@ -674,6 +677,7 @@ Partial Class EvaluacionPersonal
         Me.p_ret.Size = New System.Drawing.Size(13, 13)
         Me.p_ret.TabIndex = 207
         Me.p_ret.Text = "0"
+        Me.p_ret.Visible = False
         '
         'p_sus
         '
@@ -685,6 +689,7 @@ Partial Class EvaluacionPersonal
         Me.p_sus.Size = New System.Drawing.Size(13, 13)
         Me.p_sus.TabIndex = 206
         Me.p_sus.Text = "0"
+        Me.p_sus.Visible = False
         '
         'lbl_puntajm
         '
