@@ -48,7 +48,6 @@ C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debu
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.dll
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsClases.pdb
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\bin\Debug\CsDatos.pdb
-C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csprojAssemblyReference.cache
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CoreCompileInputs.cache
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
@@ -224,3 +223,4 @@ C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\o
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.CopyComplete
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.pdb
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsNegocio\obj\Debug\CsNegocio.csproj.AssemblyReference.cache

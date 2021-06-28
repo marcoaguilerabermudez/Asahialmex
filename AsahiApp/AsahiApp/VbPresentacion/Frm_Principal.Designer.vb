@@ -67,6 +67,7 @@ Partial Class Frm_Principal
         Me.MedidasDisciplinariasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CartaCompromisoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AplicaciónDeMedidaDisciplinariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CambiosDeDepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlanHorasExtraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MejoraContinuaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -124,7 +125,6 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
-        Me.CambiosDeDepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -408,6 +408,12 @@ Partial Class Frm_Principal
         Me.AplicaciónDeMedidaDisciplinariaToolStripMenuItem.Size = New System.Drawing.Size(256, 22)
         Me.AplicaciónDeMedidaDisciplinariaToolStripMenuItem.Text = "Aplicación de Medida Disciplinaria"
         '
+        'CambiosDeDepartamentoToolStripMenuItem
+        '
+        Me.CambiosDeDepartamentoToolStripMenuItem.Name = "CambiosDeDepartamentoToolStripMenuItem"
+        Me.CambiosDeDepartamentoToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.CambiosDeDepartamentoToolStripMenuItem.Text = "Cambios de departamento"
+        '
         'PlanHorasExtraToolStripMenuItem
         '
         Me.PlanHorasExtraToolStripMenuItem.Name = "PlanHorasExtraToolStripMenuItem"
@@ -424,14 +430,14 @@ Partial Class Frm_Principal
         'MejoraContinuaToolStripMenuItem
         '
         Me.MejoraContinuaToolStripMenuItem.Name = "MejoraContinuaToolStripMenuItem"
-        Me.MejoraContinuaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MejoraContinuaToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.MejoraContinuaToolStripMenuItem.Text = "Mejora Continua"
         '
         'ReporteMejorasToolStripMenuItem
         '
         Me.ReporteMejorasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EspañolToolStripMenuItem, Me.JaponésToolStripMenuItem})
         Me.ReporteMejorasToolStripMenuItem.Name = "ReporteMejorasToolStripMenuItem"
-        Me.ReporteMejorasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReporteMejorasToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.ReporteMejorasToolStripMenuItem.Text = "Mejoras Anual"
         '
         'EspañolToolStripMenuItem
@@ -450,7 +456,7 @@ Partial Class Frm_Principal
         '
         Me.PlanTiempoExtraToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MensualToolStripMenuItem1, Me.SemanalToolStripMenuItem1, Me.GeneralToolStripMenuItem1})
         Me.PlanTiempoExtraToolStripMenuItem.Name = "PlanTiempoExtraToolStripMenuItem"
-        Me.PlanTiempoExtraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PlanTiempoExtraToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.PlanTiempoExtraToolStripMenuItem.Text = "Plan Tiempo Extra"
         '
         'MensualToolStripMenuItem1
@@ -523,14 +529,14 @@ Partial Class Frm_Principal
         '
         Me.SolicitudToolStripMenuItem1.Enabled = False
         Me.SolicitudToolStripMenuItem1.Name = "SolicitudToolStripMenuItem1"
-        Me.SolicitudToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.SolicitudToolStripMenuItem1.Size = New System.Drawing.Size(147, 22)
         Me.SolicitudToolStripMenuItem1.Text = "Solicitud"
         '
         'ValidaciónRHToolStripMenuItem
         '
         Me.ValidaciónRHToolStripMenuItem.Enabled = False
         Me.ValidaciónRHToolStripMenuItem.Name = "ValidaciónRHToolStripMenuItem"
-        Me.ValidaciónRHToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ValidaciónRHToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.ValidaciónRHToolStripMenuItem.Text = "Validación RH"
         '
         'EvaluacionesToolStripMenuItem1
@@ -779,12 +785,6 @@ Partial Class Frm_Principal
         Me.Lbl_NombreUser.Name = "Lbl_NombreUser"
         Me.Lbl_NombreUser.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_NombreUser.TabIndex = 4
-        '
-        'CambiosDeDepartamentoToolStripMenuItem
-        '
-        Me.CambiosDeDepartamentoToolStripMenuItem.Name = "CambiosDeDepartamentoToolStripMenuItem"
-        Me.CambiosDeDepartamentoToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
-        Me.CambiosDeDepartamentoToolStripMenuItem.Text = "Cambios de departamento"
         '
         'Frm_Principal
         '

@@ -152,7 +152,6 @@ C:\Users\Admin\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\ru\M
 C:\Users\Admin\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Admin\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Admin\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csproj.CopyComplete
-C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csprojAssemblyReference.cache
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -245,3 +244,4 @@ C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\ob
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csproj.CopyComplete
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.dll
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.pdb
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsClases\obj\Debug\CsClases.csproj.AssemblyReference.cache

@@ -2421,7 +2421,7 @@ Public Class Frm_ListaPrenomina
                     shXL.Cells(f, 15).Value = item.EdoSindical '"Sindicalizado"
                     shXL.Cells(f, 16).Value = "S"
                     shXL.Cells(f, 17).Value = "'03"
-                    shXL.Cells(f, 18).Value = "Matutino"
+                    shXL.Cells(f, 18).Value = item.Turno '"Matutino"
                     shXL.Cells(f, 19).Value = "B"
                     shXL.Cells(f, 20).Value = ""
                     shXL.Cells(f, 21).Value = ""
@@ -2644,6 +2644,11 @@ Public Class Frm_ListaPrenomina
                 Return valor = 0
         End Select
     End Function
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+    End Sub
+
     Private Function RecuperarDatoInc(ByVal dato As String) As String
         Select Case dato
             Case "FALTA" : Return "F"
