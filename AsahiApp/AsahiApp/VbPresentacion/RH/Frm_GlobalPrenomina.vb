@@ -274,7 +274,6 @@ Public Class Frm_GlobalPrenomina
             cadConex = conex.conexion2008For
         End If
 
-
         fechaI = Lbl_SemaI.Text '(Lbl_Dia1.Text & "/" & Lbl_año.Text)
         fechaF = Format(DateAdd(DateInterval.Day, 6, fechaI), "dd/MM/yyyy")
 
@@ -1140,41 +1139,65 @@ Public Class Frm_GlobalPrenomina
                     id = Dgv_Lista.Rows(fila).Cells("idEmp").Value
                     If id = e Then
                         With Dgv_Lista.Rows(fila)
-                            objInci.IdEmpleado = id
-                            objInci.Semana = sema
-                            objInci.Año = Lbl_año.Text
-                            inc = .Cells("inc").Value
+                            If .Cells("fecha").Value >= "01/07/2021" Then
+                                objInci.IdEmpleado = id
+                                objInci.Semana = sema
+                                objInci.Año = Lbl_año.Text
+                                inc = .Cells("inc").Value
 
-                            If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Or inc = "DT" Or inc = "PCV" Then
-                                Select Case inc
-                                    Case "HE"
-                                        V = .Cells("hrsAprobadas").Value
-                                        H = V + H
-                                        If V <= 540 Then
-                                            If H <= 540 Then
-                                                HE2 = HE2 + V
-                                                VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
+                                If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Or inc = "DT" Or inc = "PCV" Then
+                                    Select Case inc
+                                        Case "HE"
+                                            V = .Cells("hrsAprobadas").Value
+                                            H = V + H
+                                            If V <= 540 Then
+                                                If H <= 540 Then
+                                                    HE2 = HE2 + V
+                                                    VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
 
-                                                objInci.Incidencia = 2
-                                                objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                objInci.Valor = VV
-                                                objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-
-                                            ElseIf H >= 540 Then
-                                                If HE2 >= 540 Then
-                                                    HE3 = HE3 + V
-                                                    Dim V3 = Format((Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))), "0.00")
-
-                                                    objInci.Incidencia = 3
+                                                    objInci.Incidencia = 2
                                                     objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                    objInci.Valor = V3
+                                                    objInci.Valor = VV
                                                     objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                Else
-                                                    V2 = 540 - HE2
-                                                    HE3 = H - 540
-                                                    HE2 = 540
-                                                    Dim vh2 = Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "0.00")
-                                                    Dim vh3 = Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "0.00")
+
+                                                ElseIf H >= 540 Then
+                                                    If HE2 >= 540 Then
+                                                        HE3 = HE3 + V
+                                                        Dim V3 = Format((Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))), "0.00")
+
+                                                        objInci.Incidencia = 3
+                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                        objInci.Valor = V3
+                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                    Else
+                                                        V2 = 540 - HE2
+                                                        HE3 = H - 540
+                                                        HE2 = 540
+                                                        Dim vh2 = Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "0.00")
+                                                        Dim vh3 = Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "0.00")
+                                                        Dim objInci2 As New Incidencias
+                                                        objInci2.IdEmpleado = id
+                                                        objInci2.Semana = sema
+                                                        objInci2.Año = Lbl_año.Text
+                                                        objInci2.Incidencia = 2
+                                                        objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                        objInci2.Valor = vh2
+                                                        objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                        lstInc.Add(objInci2)
+                                                        '--------------------------------------
+                                                        objInci.Incidencia = 3
+                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                        objInci.Valor = vh3
+                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                    End If
+                                                End If
+                                            Else
+                                                V2 = 540 - HE2
+                                                HE3 = H - 540
+                                                HE2 = 540
+                                                Dim vh2 = Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "0.00")
+                                                Dim vh3 = Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "0.00")
+                                                If V2 > 0 Then
                                                     Dim objInci2 As New Incidencias
                                                     objInci2.IdEmpleado = id
                                                     objInci2.Semana = sema
@@ -1184,80 +1207,58 @@ Public Class Frm_GlobalPrenomina
                                                     objInci2.Valor = vh2
                                                     objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
                                                     lstInc.Add(objInci2)
-                                                    '--------------------------------------
-                                                    objInci.Incidencia = 3
-                                                    objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                    objInci.Valor = vh3
-                                                    objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
                                                 End If
+                                                objInci.Incidencia = 3
+                                                objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                objInci.Valor = vh3
+                                                objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
                                             End If
-                                        Else
-                                            V2 = 540 - HE2
-                                            HE3 = H - 540
-                                            HE2 = 540
-                                            Dim vh2 = Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "0.00")
-                                            Dim vh3 = Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "0.00")
-                                            If V2 > 0 Then
-                                                Dim objInci2 As New Incidencias
-                                                objInci2.IdEmpleado = id
-                                                objInci2.Semana = sema
-                                                objInci2.Año = Lbl_año.Text
-                                                objInci2.Incidencia = 2
-                                                objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                objInci2.Valor = vh2
-                                                objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                lstInc.Add(objInci2)
-                                            End If
-                                            objInci.Incidencia = 3
+                                        Case "R"
+                                            val = .Cells("tiempo").Value
+                                            Dim Vr = Format((Int(val / 60) + (((val / 60 - Int(val / 60)) / 1.666))), "0.00")
+                                            objInci.Incidencia = 17
                                             objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                            objInci.Valor = vh3
+                                            objInci.Valor = Vr
                                             objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                        End If
-                                    Case "R"
-                                        val = .Cells("tiempo").Value
-                                        Dim Vr = Format((Int(val / 60) + (((val / 60 - Int(val / 60)) / 1.666))), "0.00")
-                                        objInci.Incidencia = 17
-                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                        objInci.Valor = Vr
-                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                    Case "F", "FJ"
-                                        val = 1
-                                        objInci.Incidencia = 15
-                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                        objInci.Valor = val
-                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                    Case "PCS"
-                                        val = 1
-                                        objInci.Incidencia = 7
-                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                        objInci.Valor = val
-                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                    Case "PSS"
-                                        val = 1
-                                        objInci.Incidencia = 8
-                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                        objInci.Valor = val
-                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                    Case "SUS"
-                                        val = 1
-                                        objInci.Incidencia = 16
-                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                        objInci.Valor = val
-                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                    Case "DF", "DT"
-                                        val = 1
-                                        objInci.Incidencia = 19
-                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                        objInci.Valor = val
-                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                    Case "PCV"
-                                        val = 1
-                                        objInci.Incidencia = 22
-                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                        objInci.Valor = val
-                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                End Select
-                                lstInc.Add(objInci)
+                                        Case "F", "FJ"
+                                            val = 1
+                                            objInci.Incidencia = 15
+                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            objInci.Valor = val
+                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                        Case "PCS"
+                                            val = 1
+                                            objInci.Incidencia = 7
+                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            objInci.Valor = val
+                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                        Case "PSS"
+                                            val = 1
+                                            objInci.Incidencia = 8
+                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            objInci.Valor = val
+                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                        Case "SUS"
+                                            val = 1
+                                            objInci.Incidencia = 16
+                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            objInci.Valor = val
+                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                        Case "DF", "DT"
+                                            val = 1
+                                            objInci.Incidencia = 19
+                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            objInci.Valor = val
+                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                        Case "PCV"
+                                            val = 1
+                                            objInci.Incidencia = 22
+                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            objInci.Valor = val
+                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                    End Select
+                                    lstInc.Add(objInci)
+                                End If
                             End If
                         End With
                     End If
