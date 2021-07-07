@@ -2469,7 +2469,7 @@ Public Class Frm_ListaPrenomina
                     shXL.Cells(f, 63).Value = "'" & item.Extras '"Campo extra numérico 5"
                     shXL.Cells(f, 64).Value = "'" & Format(item.Fecha1, "dd/MM/yyyy") '"Fecha salario mixto"
                     shXL.Cells(f, 65).Value = "'0"
-                    shXL.Cells(f, 66).Value = "B5715267106"
+                    shXL.Cells(f, 66).Value = "B5717519108"
                     shXL.Cells(f, 67).Value = "'0"
                     shXL.Cells(f, 68).Value = item.EMail '"Correo electrónico"
                     shXL.Cells(f, 69).Value = "'02"

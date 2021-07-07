@@ -95,7 +95,6 @@ C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debu
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Clases.xml
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Datos.pdb
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\Datos.xml
-C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbprojAssemblyReference.cache
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\Negocio.Resources.resources
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbproj.GenerateResource.cache
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbproj.CoreCompileInputs.cache
@@ -362,3 +361,4 @@ C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNego
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbNegocio\obj\Debug\VbNegocio.vbproj.AssemblyReference.cache
