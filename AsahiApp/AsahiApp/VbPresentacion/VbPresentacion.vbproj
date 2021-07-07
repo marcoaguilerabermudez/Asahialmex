@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>319</ApplicationRevision>
+    <ApplicationRevision>322</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -78,10 +78,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>7B135CEEC4F9809A021743F75AA1F42DD5070854</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2564982D7AB2A7AD0CFA6A7E8792FE329CD18A4F</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -538,6 +538,12 @@
       <DependentUpon>Frm_CapturaMejora.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_CapturaMejora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RH\Frm_CreadorCuestionarios.Designer.vb">
+      <DependentUpon>Frm_CreadorCuestionarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RH\Frm_CreadorCuestionarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\DataSet\Dts_DPInfoGrl_Rpt.vb">
@@ -1244,6 +1250,9 @@
     <EmbeddedResource Include="ReporteSuspension.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="ReporteXmesCambioDePuesto.rdlc" />
+    <EmbeddedResource Include="RH\Frm_CreadorCuestionarios.resx">
+      <DependentUpon>Frm_CreadorCuestionarios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RH\Reports\Rpt_PlanHorasExtra4.rdlc" />
     <EmbeddedResource Include="RH\Reports\Rpt_PlanHorasExtra5.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_PrenominaGlobal.rdlc" />
@@ -1889,14 +1898,7 @@
     <None Include="RH\DataSet\Dts_DpReponsabilidades_Rpt.xss">
       <DependentUpon>Dts_DpReponsabilidades_Rpt.xsd</DependentUpon>
     </None>
-    <None Include="VbPresentacion_16_TemporaryKey.pfx" />
-    <None Include="VbPresentacion_18_TemporaryKey.pfx" />
-    <None Include="VbPresentacion_19_TemporaryKey.pfx" />
     <None Include="VbPresentacion_1_TemporaryKey.pfx" />
-    <None Include="VbPresentacion_3_TemporaryKey.pfx" />
-    <None Include="VbPresentacion_4_TemporaryKey.pfx" />
-    <None Include="VbPresentacion_5_TemporaryKey.pfx" />
-    <None Include="VbPresentacion_9_TemporaryKey.pfx" />
     <None Include="VbPresentacion_TemporaryKey.pfx" />
     <None Include="Views\Report\ReportViewer.cshtml" />
   </ItemGroup>
@@ -1985,6 +1987,7 @@
     <None Include="Resources\customer.png" />
     <None Include="Resources\prueba-de-educacion.png" />
     <None Include="Resources\delete.png" />
+    <None Include="Resources\adjuntar %281%29.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

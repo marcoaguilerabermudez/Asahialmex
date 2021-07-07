@@ -22,7 +22,9 @@ Partial Class Frm_ListaPrenomina
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Dgv_ListaPrenomina = New System.Windows.Forms.DataGridView()
         Me.idEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -101,6 +103,8 @@ Partial Class Frm_ListaPrenomina
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Cmb_FiltroComen = New System.Windows.Forms.ComboBox()
         Me.Txt_FiltroDpto = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -109,8 +113,7 @@ Partial Class Frm_ListaPrenomina
         Me.Txt_FiltroNombre = New System.Windows.Forms.TextBox()
         Me.Lbl_FiltroId = New System.Windows.Forms.Label()
         Me.Txt_FiltroId = New System.Windows.Forms.TextBox()
-        Me.Cmb_FiltroComen = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.Dgv_ListaPrenomina, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -122,16 +125,24 @@ Partial Class Frm_ListaPrenomina
         '
         'Dgv_ListaPrenomina
         '
-        Me.Dgv_ListaPrenomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.ingreso, Me.E, Me.S, Me.entrada1, Me.salida1, Me.manual1, Me.b1, Me.mnl1, Me.entrada2, Me.salida2, Me.manual2, Me.b2, Me.mnl2, Me.entrada3, Me.salida3, Me.manual3, Me.b3, Me.mnl3, Me.entrada4, Me.salida4, Me.manual4, Me.b4, Me.mnl4, Me.entrada5, Me.salida5, Me.manual5, Me.b5, Me.mnl5, Me.entrada6, Me.salida6, Me.manual6, Me.b6, Me.mnl6, Me.entrada7, Me.salida7, Me.manual7, Me.b7, Me.mnl7, Me.comentarios, Me.comentariosExt, Me.aplicaBono, Me.modificaBono, Me.idModificaBono, Me.idTurno, Me.nacional, Me.puesto, Me.manual})
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Dgv_ListaPrenomina.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.Dgv_ListaPrenomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv_ListaPrenomina.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.horarioEmpleado, Me.departamentoEmpleado, Me.ingreso, Me.E, Me.S, Me.entrada1, Me.salida1, Me.manual1, Me.b1, Me.mnl1, Me.entrada2, Me.salida2, Me.manual2, Me.b2, Me.mnl2, Me.entrada3, Me.salida3, Me.manual3, Me.b3, Me.mnl3, Me.entrada4, Me.salida4, Me.manual4, Me.b4, Me.mnl4, Me.entrada5, Me.salida5, Me.manual5, Me.b5, Me.mnl5, Me.entrada6, Me.salida6, Me.manual6, Me.b6, Me.mnl6, Me.entrada7, Me.salida7, Me.manual7, Me.b7, Me.mnl7, Me.comentarios, Me.comentariosExt, Me.aplicaBono, Me.modificaBono, Me.idModificaBono, Me.idTurno, Me.nacional, Me.puesto, Me.manual})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_ListaPrenomina.DefaultCellStyle = DataGridViewCellStyle2
         Me.Dgv_ListaPrenomina.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Dgv_ListaPrenomina.Enabled = False
         Me.Dgv_ListaPrenomina.Location = New System.Drawing.Point(0, 0)
@@ -750,6 +761,27 @@ Partial Class Frm_ListaPrenomina
         Me.Panel3.Size = New System.Drawing.Size(1197, 43)
         Me.Panel3.TabIndex = 11
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(1130, 12)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(64, 26)
+        Me.Label6.TabIndex = 34
+        Me.Label6.Text = "Filtro comentarios"
+        '
+        'Cmb_FiltroComen
+        '
+        Me.Cmb_FiltroComen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_FiltroComen.Enabled = False
+        Me.Cmb_FiltroComen.FormattingEnabled = True
+        Me.Cmb_FiltroComen.Items.AddRange(New Object() {"FALTA", "CHECADA", "PERMISO SIN GOCE", "SALIDA ANTICIPADA", "INCAPACIDAD", "RETARDO", "SUSPENSIÓN", "JAPONÉS", "BAJA", "OTROS", "VACIO", " "})
+        Me.Cmb_FiltroComen.Location = New System.Drawing.Point(974, 16)
+        Me.Cmb_FiltroComen.Name = "Cmb_FiltroComen"
+        Me.Cmb_FiltroComen.Size = New System.Drawing.Size(145, 21)
+        Me.Cmb_FiltroComen.TabIndex = 33
+        '
         'Txt_FiltroDpto
         '
         Me.Txt_FiltroDpto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
@@ -832,26 +864,8 @@ Partial Class Frm_ListaPrenomina
         Me.Txt_FiltroId.Size = New System.Drawing.Size(40, 18)
         Me.Txt_FiltroId.TabIndex = 11
         '
-        'Cmb_FiltroComen
+        'Timer1
         '
-        Me.Cmb_FiltroComen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Cmb_FiltroComen.Enabled = False
-        Me.Cmb_FiltroComen.FormattingEnabled = True
-        Me.Cmb_FiltroComen.Items.AddRange(New Object() {"FALTA", "CHECADA", "PERMISO SIN GOCE", "SALIDA ANTICIPADA", "INCAPACIDAD", "RETARDO", "SUSPENSIÓN", "JAPONÉS", "BAJA", "OTROS", "VACIO", " "})
-        Me.Cmb_FiltroComen.Location = New System.Drawing.Point(974, 16)
-        Me.Cmb_FiltroComen.Name = "Cmb_FiltroComen"
-        Me.Cmb_FiltroComen.Size = New System.Drawing.Size(145, 21)
-        Me.Cmb_FiltroComen.TabIndex = 33
-        '
-        'Label6
-        '
-        Me.Label6.BackColor = System.Drawing.Color.White
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(1130, 12)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(64, 26)
-        Me.Label6.TabIndex = 34
-        Me.Label6.Text = "Filtro comentarios"
         '
         'Frm_ListaPrenomina
         '
@@ -970,4 +984,5 @@ Partial Class Frm_ListaPrenomina
     Friend WithEvents manual As DataGridViewTextBoxColumn
     Friend WithEvents Label6 As Label
     Friend WithEvents Cmb_FiltroComen As ComboBox
+    Friend WithEvents Timer1 As Timer
 End Class
