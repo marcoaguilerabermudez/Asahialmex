@@ -1331,3 +1331,5 @@ C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ContenedorReporteAumentoSueldoOperador.resources
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_CapturaMejora.resources
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_CreadorCuestionarios.resources
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\RdlCompile.cache
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\RdlCompile.compiled
