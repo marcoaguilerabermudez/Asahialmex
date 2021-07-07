@@ -118,7 +118,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>  ASAHI ALUMINIUM MÉXICO SERVICIOS. S.A. DE REPRESENTANTE LEGAL Y/ O APODERADO LEGAL</Value>
+                <Value>  ASAHI ALUMINIUM MÉXICO. S.A. DE REPRESENTANTE LEGAL Y/ O APODERADO LEGAL</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>calibri</FontFamily>
@@ -3886,7 +3886,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>ASAHI ALUMINIUM MÉXICO SERVICIOS, S.A. DE C.V.,</Value>
+                <Value>ASAHI ALUMINIUM MÉXICO, S.A. DE C.V.,</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calibri</FontFamily>
@@ -6912,7 +6912,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Now()</Value>
+                              <Value>=Fields!INGRESO.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -7071,7 +7071,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Recibí por parte de la empresa Asahi Aluminium México Servicios; </Value>
+                <Value>Recibí por parte de la empresa Asahi Aluminium México; </Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Arial Narrow</FontFamily>
@@ -11138,7 +11138,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>Asahi Aluminium México Servicios SA de CV</Value>
+                <Value>Asahi Aluminium México SA de CV</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>CAlibri</FontFamily>
