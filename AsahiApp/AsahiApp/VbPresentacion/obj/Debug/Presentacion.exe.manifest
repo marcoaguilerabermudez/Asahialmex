@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity name="Presentacion.exe" version="1.0.0.322" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Presentacion" version="1.0.0.321" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Presentacion" version="1.0.0.322" language="neutral" processorArchitecture="msil" />
     <commandLine file="Presentacion.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -847,37 +847,37 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="8537024">
-      <assemblyIdentity name="Presentacion" version="1.0.0.321" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Presentacion" version="1.0.0.322" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4kXHvDzf2FGzeJ4uggG5UTfJMKGD2oWSmyvad2WGN1k=</dsig:DigestValue>
+        <dsig:DigestValue>FJZhHtERiFkrs7gXhqW83iRVvLOBmj2nOeYHp5jhdo4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="es-HN\Presentacion.resources.dll" size="238592">
-      <assemblyIdentity name="Presentacion.resources" version="1.0.0.321" language="es-HN" processorArchitecture="msil" />
+      <assemblyIdentity name="Presentacion.resources" version="1.0.0.322" language="es-HN" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+jb7EKXIZDGbgEcxJNH/JG5izHcTzAddc1nr5afD4J4=</dsig:DigestValue>
+        <dsig:DigestValue>5bXF/mNJE+r4Ndoqn2DkcQmo0cjPPTQuXENHNu/moiA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="es-MX\Presentacion.resources.dll" size="240128">
-      <assemblyIdentity name="Presentacion.resources" version="1.0.0.321" language="es-MX" processorArchitecture="msil" />
+      <assemblyIdentity name="Presentacion.resources" version="1.0.0.322" language="es-MX" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TQsBn6cNEf91Zc4gNUIsdinipYu2PUEArtl9BQ3X3Fg=</dsig:DigestValue>
+        <dsig:DigestValue>N11CYsl7qyzcN54Rm373Kaz4I7LOTAnxUcZAgNN5b2E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
