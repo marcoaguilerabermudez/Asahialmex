@@ -795,6 +795,7 @@ Partial Class Frm_GlobalPrenomina
         Me.Dgv_Lista.Name = "Dgv_Lista"
         Me.Dgv_Lista.Size = New System.Drawing.Size(327, 310)
         Me.Dgv_Lista.TabIndex = 24
+        Me.Dgv_Lista.Visible = False
         '
         'idEmp
         '
@@ -866,8 +867,8 @@ Partial Class Frm_GlobalPrenomina
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.Dgv_Lista)
         Me.Panel4.Controls.Add(Me.Dgv_Prenomina_Global)
+        Me.Panel4.Controls.Add(Me.Dgv_Lista)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(0, 46)
         Me.Panel4.Name = "Panel4"
