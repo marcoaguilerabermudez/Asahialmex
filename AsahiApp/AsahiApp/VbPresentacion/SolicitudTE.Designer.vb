@@ -338,7 +338,7 @@ Partial Class SolicitudTE
         Me.btn_eliminar.BackColor = System.Drawing.Color.LightGray
         Me.btn_eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_eliminar.ForeColor = System.Drawing.Color.OrangeRed
-        Me.btn_eliminar.Location = New System.Drawing.Point(926, 429)
+        Me.btn_eliminar.Location = New System.Drawing.Point(926, 442)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(77, 35)
         Me.btn_eliminar.TabIndex = 162
@@ -366,9 +366,8 @@ Partial Class SolicitudTE
         Me.btn_preautorizar.Name = "btn_preautorizar"
         Me.btn_preautorizar.Size = New System.Drawing.Size(79, 35)
         Me.btn_preautorizar.TabIndex = 160
-        Me.btn_preautorizar.Text = "Preautorizar"
+        Me.btn_preautorizar.Text = "Imprimir"
         Me.btn_preautorizar.UseVisualStyleBackColor = False
-        Me.btn_preautorizar.Visible = False
         '
         'lbl_depto1
         '

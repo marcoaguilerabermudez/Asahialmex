@@ -27,7 +27,7 @@ Public Class EvaluacionesPrincipal
 
 
         a = Today.Month
-
+        cbx_año.Text = Today.Year()
         Select Case a
             Case 1
                 cbx_mes.Text = "Enero"
@@ -36,6 +36,7 @@ Public Class EvaluacionesPrincipal
             Case 2
                 cbx_mes.Text = "Febrero"
                 mes = 2
+
                 fecha = "01/02/" & cbx_año.Text & " "
             Case 3
                 cbx_mes.Text = "Marzo"
@@ -80,7 +81,7 @@ Public Class EvaluacionesPrincipal
         End Select
 
 
-        cbx_año.Text = Today.Year()
+
 
         llenacombodepto()
 
@@ -318,10 +319,8 @@ where id_evaluaciones = @ID and estado = 0
             id_eval = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
             tipo = Me.dtgvp.Rows(e.RowIndex).Cells("Tiempo").Value.ToString()
             estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
-
         Catch
         End Try
-
     End Sub
 
     Private Sub dtgmuestra_CellContentClick2(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
