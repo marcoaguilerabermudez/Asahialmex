@@ -746,8 +746,15 @@ end
         autorizar()
     End Sub
 
+    Sub generareporte()
+        ContenedorReporteSolicitudTe.depto = id
+        ContenedorReporteSolicitudTe.fecha = dtp1.Value.ToShortDateString
+        ContenedorReporteSolicitudTe.Show()
+    End Sub
+
+
     Private Sub btn_preautorizar_Click(sender As Object, e As EventArgs) Handles btn_preautorizar.Click
-        preautorizar()
+        generareporte()
     End Sub
 
     Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click

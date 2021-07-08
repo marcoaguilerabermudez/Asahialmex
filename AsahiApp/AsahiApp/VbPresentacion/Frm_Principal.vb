@@ -677,5 +677,9 @@ Public Class Frm_Principal
         MedidasDisciplinarias.Show()
     End Sub
 
+    Private Sub ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem.Click
+        frm_cambiodepxmes.Show()
+    End Sub
+
 #End Region
 End Class

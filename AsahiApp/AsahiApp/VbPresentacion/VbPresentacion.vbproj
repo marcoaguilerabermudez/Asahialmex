@@ -346,6 +346,12 @@
     <Compile Include="ContenedorReporteSemanalPersonal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReporteSolicitudTe.Designer.vb">
+      <DependentUpon>ContenedorReporteSolicitudTe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteSolicitudTe.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteSuspension.Designer.vb">
       <DependentUpon>ContenedorReporteSuspension.vb</DependentUpon>
     </Compile>
@@ -471,6 +477,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet26.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet27.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet27.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet3.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -538,6 +549,12 @@
       <DependentUpon>Frm_CapturaMejora.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_CapturaMejora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_valesprincipal.Designer.vb">
+      <DependentUpon>Frm_valesprincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_valesprincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\DataSet\Dts_DPInfoGrl_Rpt.vb">
@@ -1111,6 +1128,9 @@
     <EmbeddedResource Include="ContenedorReporteSemanalPersonal.resx">
       <DependentUpon>ContenedorReporteSemanalPersonal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteSolicitudTe.resx">
+      <DependentUpon>ContenedorReporteSolicitudTe.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteSuspension.resx">
       <DependentUpon>ContenedorReporteSuspension.vb</DependentUpon>
     </EmbeddedResource>
@@ -1186,6 +1206,9 @@
     <EmbeddedResource Include="Finanzas\Frm_Subsidiaria.resx">
       <DependentUpon>Frm_Subsidiaria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_valesprincipal.resx">
+      <DependentUpon>Frm_valesprincipal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fr_reportefaltajusinj.resx">
       <DependentUpon>Fr_reportefaltajusinj.vb</DependentUpon>
     </EmbeddedResource>
@@ -1241,6 +1264,7 @@
     <EmbeddedResource Include="ReportePlanPersonalTE.rdlc" />
     <EmbeddedResource Include="ReportePuestoDepartamento.rdlc" />
     <EmbeddedResource Include="ReporteSalidaEquipoComputo.rdlc" />
+    <EmbeddedResource Include="ReporteSolicitudTe.rdlc" />
     <EmbeddedResource Include="ReporteSuspension.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="ReporteXmesCambioDePuesto.rdlc" />
@@ -1559,6 +1583,17 @@
     </None>
     <None Include="DataSet26.xss">
       <DependentUpon>DataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet27.xsc">
+      <DependentUpon>DataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet27.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet27.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet27.xss">
+      <DependentUpon>DataSet27.xsd</DependentUpon>
     </None>
     <None Include="DataSet3.xsc">
       <DependentUpon>DataSet3.xsd</DependentUpon>
