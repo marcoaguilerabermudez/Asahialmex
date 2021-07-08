@@ -340,6 +340,7 @@ where vig.Clave = " & noEmp, oCon)
                 emp.SueldoBase = Convert.ToDouble(dr("SBC").ToString)
                 emp.Departamento = dr("DEPARTAMENTO").ToString
                 emp.EdoSindical = dr("SINDICALIZADO").ToString
+                emp.Turno = dr("TURNO").ToString
                 emp.Nss = dr("NSS").ToString
                 emp.Rfc = dr("RFC").ToString
                 emp.Curp = dr("Curp").ToString

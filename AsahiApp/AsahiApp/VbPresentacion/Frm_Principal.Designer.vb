@@ -68,6 +68,8 @@ Partial Class Frm_Principal
         Me.MedidasDisciplinariasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CartaCompromisoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MedidasDisciplinariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AplicaciónDeMedidaDisciplinariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CambiosDeDepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlanHorasExtraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -419,6 +421,12 @@ Partial Class Frm_Principal
         Me.MedidasDisciplinariaToolStripMenuItem.Name = "MedidasDisciplinariaToolStripMenuItem"
         Me.MedidasDisciplinariaToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.MedidasDisciplinariaToolStripMenuItem.Text = "Medidas Disciplinaria"
+        '
+        'CambiosDeDepartamentoToolStripMenuItem
+        '
+        Me.CambiosDeDepartamentoToolStripMenuItem.Name = "CambiosDeDepartamentoToolStripMenuItem"
+        Me.CambiosDeDepartamentoToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.CambiosDeDepartamentoToolStripMenuItem.Text = "Cambios de departamento"
         '
         'ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem
         '

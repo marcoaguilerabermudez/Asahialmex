@@ -605,7 +605,7 @@ Public Class DPrenomina
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("INSERT INTO Asahi.dbo.Bitacora_InsertInciBono (PERIODO,EJERCICIO,CODIGOEMPLEADO,FECHA,TIPO) VALUES (" & sem & "," & año & "," & cod & ",'" & Format(fecha, "dd/MM/yyyy HH:mm:ss") & "'," & tip & ")", oCon)
+            Dim query As New SqlCommand("INSERT INTO Asahi.dbo.Bitacora_InsertInciBono (PERIODO,EJERCICIO,CODIGOEMPLEADO,FECHA,TIPO,EMPRESA) VALUES (" & sem & "," & año & "," & cod & ",'" & Format(fecha, "dd/MM/yyyy HH:mm:ss") & "'," & tip & ", 1)", oCon)
             query.ExecuteScalar()
 
         Catch ex As Exception
@@ -622,14 +622,25 @@ Public Class DPrenomina
         Dim lstInc As New LIncidencias()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT TIPO FROM Asahi.dbo.Bitacora_InsertInciBono WHERE PERIODO = " & sem & " and EJERCICIO = " & año & "", oCon)
-            Dim dr As SqlDataReader
-            dr = query.ExecuteReader
-            While (dr.Read)
-                Dim inc As New Incidencias()
-                inc.Tipo = Convert.ToInt32(dr("TIPO").ToString)
-                lstInc.Add(inc)
-            End While
+            If sem >= 27 And año >= 2021 And Date.Now().ToString("dd/MM/yyyy") > "01/07/2021" Then
+                Dim query As New SqlCommand("SELECT TIPO FROM Asahi.dbo.Bitacora_InsertInciBono WHERE PERIODO = " & sem & " AND EJERCICIO = " & año & " AND EMPRESA = 1", oCon)
+                Dim dr As SqlDataReader
+                dr = query.ExecuteReader
+                While (dr.Read)
+                    Dim inc As New Incidencias()
+                    inc.Tipo = Convert.ToInt32(dr("TIPO").ToString)
+                    lstInc.Add(inc)
+                End While
+            Else
+                Dim query As New SqlCommand("SELECT TIPO FROM Asahi.dbo.Bitacora_InsertInciBono WHERE PERIODO = " & sem & " AND EJERCICIO = " & año & "", oCon)
+                Dim dr As SqlDataReader
+                dr = query.ExecuteReader
+                While (dr.Read)
+                    Dim inc As New Incidencias()
+                    inc.Tipo = Convert.ToInt32(dr("TIPO").ToString)
+                    lstInc.Add(inc)
+                End While
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
