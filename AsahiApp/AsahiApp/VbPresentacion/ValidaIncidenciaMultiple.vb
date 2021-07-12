@@ -219,7 +219,10 @@ dateadd(year,100,convert(datetime,HastaH))
 from giro.asahi16.Supervisor_giro.VistaEmpleadosVigenciaYPuesto vig
 join [AsahiSystem].[dbo].[Rh_incidenciamultiple] inc
 on inc.Clave = vig.clave
-where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and validado = 0
+where 
+ vig.vigencia = 'VIGENTE' 
+  AND
+  INC.Id_permisogoce = " & parametro1 & " and validado = 0
 
 ")
 
@@ -248,6 +251,7 @@ where vig.vigencia = 'VIGENTE' AND INC.Id_permisogoce = " & parametro1 & " and v
             ElseIf incidencia = "Salida" Then
                 dtp1.Value = ds.Tables(0).Rows(0).Item(14)
             End If
+
             fechaagregada = ds.Tables(0).Rows(0).Item(15)
             lbl_puesto.Text = ds.Tables(0).Rows(0).Item(16)
             lbl_pudep.Text = ds.Tables(0).Rows(0).Item(17)

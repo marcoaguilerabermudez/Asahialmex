@@ -41,6 +41,7 @@ Public Class EvaluacionIndirecto
         style2.Font = New Font(dtgvIndicadores.Font, FontStyle.Bold)
 
 
+
         Dim style3 As New DataGridViewCellStyle
         style3.Font = New Font(dtgvobj.Font, FontStyle.Bold)
 
@@ -619,22 +620,7 @@ Public Class EvaluacionIndirecto
             End Try
         Else
         End If
-
-
-
-
-
-
-
-
-
     End Sub
-
-
-
-
-
-
 
 
 
