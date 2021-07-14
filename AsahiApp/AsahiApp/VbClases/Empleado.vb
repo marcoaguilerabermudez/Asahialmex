@@ -49,6 +49,8 @@
             contraseña_ = value
         End Set
     End Property
+
+
     Private nombreCompleto_ As String
     Public Property NombreCompleto() As String
         Get
@@ -58,6 +60,21 @@
             nombreCompleto_ = value
         End Set
     End Property
+
+
+    Private nombregiro_ As String
+    Public Property NombreCompletoGiro() As String
+        Get
+            Return nombregiro_
+        End Get
+        Set(ByVal value As String)
+            nombregiro_ = value
+        End Set
+    End Property
+
+
+
+
     Private nombres_ As String
     Public Property Nombres() As String
         Get
@@ -139,6 +156,20 @@
             idPuesto_ = value
         End Set
     End Property
+
+
+    Private idPermisoVale_ As Integer
+    Public Property IdPermisoV() As Integer
+        Get
+            Return idPermisoVale_
+        End Get
+        Set(ByVal value As Integer)
+            idPermisoVale_ = value
+        End Set
+    End Property
+
+
+
     Private puesto_ As String
     Public Property Puesto() As String
         Get

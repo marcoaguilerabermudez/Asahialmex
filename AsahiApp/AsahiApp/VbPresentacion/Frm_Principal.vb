@@ -677,5 +677,16 @@ Public Class Frm_Principal
         MedidasDisciplinarias.Show()
     End Sub
 
+    Private Sub ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem.Click
+        frm_cambiodepxmes.Show()
+    End Sub
+
+    Private Sub ValesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ValesToolStripMenuItem.Click
+
+        Dim Vales_Principal As New Frm_valesprincipal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, Me.emp.IdPermisoV)
+        Vales_Principal.Show()
+
+    End Sub
+
 #End Region
 End Class

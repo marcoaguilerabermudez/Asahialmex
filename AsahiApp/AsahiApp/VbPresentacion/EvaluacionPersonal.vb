@@ -21,6 +21,7 @@ Public Class EvaluacionPersonal
         lbl_evaluacion.Text = Modulo_evaluaciones.e_evaluacion
         MuestraEtiquetasKardex()
         pbx.ImageLocation = ("V:\Recursos Humanos\CARPETA 2018\RH. FOTOGRAFIAS DEL PERSONAL\" & lbl_clave.Text & ".jpg")
+
         Me.pbx.SizeMode = PictureBoxSizeMode.CenterImage
         Me.pbx.BorderStyle = BorderStyle.Fixed3D
         pbx.SizeMode = PictureBoxSizeMode.StretchImage

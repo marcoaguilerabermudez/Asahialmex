@@ -107,7 +107,6 @@ Public Class EvaluacionPrincipalIndirecto
         'cbx_depto.Text = "--Todos--"
 
 
-
         Muestragrid()
         llenacombodepto()
     End Sub
@@ -123,7 +122,7 @@ Public Class EvaluacionPrincipalIndirecto
         a = cbx_mes.Text
         Select Case a
             Case "Enero"
-                mes = 12
+                mes = 121
                 fecha = "01/01/" & cbx_año.Text & " "
             Case "Febrero"
                 mes = 2
@@ -201,8 +200,14 @@ Public Class EvaluacionPrincipalIndirecto
 
 
     Friend Sub Muestragrid()
+        MessageBox.Show(depto)
 
-
+        MessageBox.Show(cbx_depto.Text)
+        MessageBox.Show(mes)
+        MessageBox.Show(cbx_año.Text)
+        MessageBox.Show(cbx_tipoeva.Text)
+        MessageBox.Show(id_puesto)
+        MessageBox.Show(id)
         Try
             Cn.Close()
             Cn.Open()
