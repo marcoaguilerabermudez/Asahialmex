@@ -110,6 +110,7 @@ Partial Class Frm_GlobalPrenomina
         Me.inc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tiempo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.hrsAprobadas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.turno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Lbl_FiltroId = New System.Windows.Forms.Label()
         Me.Txt_FiltroId = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -790,10 +791,10 @@ Partial Class Frm_GlobalPrenomina
         'Dgv_Lista
         '
         Me.Dgv_Lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Lista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmp, Me.idExt, Me.fecha, Me.inc, Me.tiempo, Me.hrsAprobadas})
+        Me.Dgv_Lista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmp, Me.idExt, Me.fecha, Me.inc, Me.tiempo, Me.hrsAprobadas, Me.turno})
         Me.Dgv_Lista.Location = New System.Drawing.Point(44, 61)
         Me.Dgv_Lista.Name = "Dgv_Lista"
-        Me.Dgv_Lista.Size = New System.Drawing.Size(327, 310)
+        Me.Dgv_Lista.Size = New System.Drawing.Size(427, 310)
         Me.Dgv_Lista.TabIndex = 24
         Me.Dgv_Lista.Visible = False
         '
@@ -837,6 +838,13 @@ Partial Class Frm_GlobalPrenomina
         Me.hrsAprobadas.Name = "hrsAprobadas"
         Me.hrsAprobadas.ReadOnly = True
         Me.hrsAprobadas.Width = 45
+        '
+        'turno
+        '
+        Me.turno.HeaderText = "Turno"
+        Me.turno.Name = "turno"
+        Me.turno.ReadOnly = True
+        Me.turno.Width = 70
         '
         'Lbl_FiltroId
         '
@@ -944,12 +952,6 @@ Partial Class Frm_GlobalPrenomina
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Btn_Reporte As Button
     Friend WithEvents Btn_PDO As Button
-    Friend WithEvents idEmp As DataGridViewTextBoxColumn
-    Friend WithEvents idExt As DataGridViewTextBoxColumn
-    Friend WithEvents fecha As DataGridViewTextBoxColumn
-    Friend WithEvents inc As DataGridViewTextBoxColumn
-    Friend WithEvents tiempo As DataGridViewTextBoxColumn
-    Friend WithEvents hrsAprobadas As DataGridViewTextBoxColumn
     Friend WithEvents Lbl_PDO As Label
     Friend WithEvents Lbl_Inc As Label
     Friend WithEvents idEmpleado As DataGridViewTextBoxColumn
@@ -1008,4 +1010,11 @@ Partial Class Frm_GlobalPrenomina
     Friend WithEvents diferencia As DataGridViewTextBoxColumn
     Friend WithEvents grupo As DataGridViewTextBoxColumn
     Friend WithEvents bono As DataGridViewTextBoxColumn
+    Friend WithEvents idEmp As DataGridViewTextBoxColumn
+    Friend WithEvents idExt As DataGridViewTextBoxColumn
+    Friend WithEvents fecha As DataGridViewTextBoxColumn
+    Friend WithEvents inc As DataGridViewTextBoxColumn
+    Friend WithEvents tiempo As DataGridViewTextBoxColumn
+    Friend WithEvents hrsAprobadas As DataGridViewTextBoxColumn
+    Friend WithEvents turno As DataGridViewTextBoxColumn
 End Class

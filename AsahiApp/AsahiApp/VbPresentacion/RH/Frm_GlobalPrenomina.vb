@@ -112,7 +112,7 @@ Public Class Frm_GlobalPrenomina
             If lst.Count > 0 Then
                 For Each item In lst
                     If item.Tipo = 1 Then
-                        Btn_Incidencias.Enabled = False
+                        'Btn_Incidencias.Enabled = False
                         If lst.Count = 1 Then Btn_PDO.Enabled = True
                     ElseIf item.Tipo = 2 Then
                         Btn_PDO.Enabled = False
@@ -184,7 +184,7 @@ Public Class Frm_GlobalPrenomina
 
         If res = vbYes Then
             ProcesoInsertaIncidenciasNomina()
-            Btn_Incidencias.Enabled = False
+            'Btn_Incidencias.Enabled = False
         End If
         'CrearArchivo()
         'EscribirArchivo()
@@ -1025,6 +1025,7 @@ Public Class Frm_GlobalPrenomina
                     .Cells("idExt").Value = idExt
                     .Cells("tiempo").Value = hr
                     .Cells("fecha").Value = fechaI
+                    .Cells("turno").Value = item.Turno
 
                     If tp = "H" Or tp = "H " Or tp = " H" Then
                         te = hr + te
@@ -1057,6 +1058,7 @@ Public Class Frm_GlobalPrenomina
                         .Cells("idEmp").Value = idEmp
                         .Cells("idExt").Value = idExt
                         .Cells("fecha").Value = fechaI
+                        .Cells("turno").Value = item.Turno
                         If (fechaF >= fecF And fechaI <= fecF) Or (fechaF <= fecF And fechaF >= fecI) Then
                             tip = item.Tipo
                             Select Case tip
@@ -1121,7 +1123,7 @@ Public Class Frm_GlobalPrenomina
         Dim cadenaConex As String
         Dim fila As Integer, e As Integer, id As Integer, idX As Integer = 0, sema As Integer = Cmb_Semanas.Text
         Dim inc As String, val As String
-        Dim VV As Double
+        Dim VV As Double, VV3 As Double, HH As Double
         Dim totalFilas As Integer = Dgv_Lista.Rows.Count
 
         If Me.ip = "172.16" Then
@@ -1132,7 +1134,7 @@ Public Class Frm_GlobalPrenomina
 
         Try
             For e = 1 To 7000
-                Dim V = 0, V2 = 0, H = 0, HE = 0, HE2 = 0, HE3 = 0
+                Dim V = 0, V2 = 0, H = 0, H2 = 0, H3 = 0, HE = 0, HS = 0, turno, dia
                 'Dim objInci As New Incidencias
                 For fila = 0 To totalFilas - 2
                     Dim objInci As New Incidencias
@@ -1149,70 +1151,209 @@ Public Class Frm_GlobalPrenomina
                                     Select Case inc
                                         Case "HE"
                                             V = .Cells("hrsAprobadas").Value
-                                            H = V + H
-                                            If V <= 540 Then
-                                                If H <= 540 Then
-                                                    HE2 = HE2 + V
+                                            dia = Convert.ToDateTime(.Cells("fecha").Value).DayOfWeek
+                                            turno = .Cells("turno").Value
+                                            If dia <> 6 And dia <> 0 Or (dia = 6 And turno <> 4) Then
+                                                If V > 180 Then
+                                                    H2 = 180
+                                                    H3 = V - 180
+                                                    If (H + H2) > 540 Then
+                                                        If H >= 540 Then
+                                                            VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
+
+                                                            objInci.Incidencia = 3
+                                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                            objInci.Valor = VV
+                                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                        ElseIf H < 540 Then
+                                                            HH = 540 - H
+                                                            HS = H2 - HH
+                                                            H3 = H3 + HS
+                                                            H2 = HH
+                                                            VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+                                                            VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+                                                            Dim objInci2 As New Incidencias
+
+                                                            objInci2.IdEmpleado = id
+                                                            objInci2.Semana = sema
+                                                            objInci2.Año = Lbl_año.Text
+                                                            objInci2.Incidencia = 2
+                                                            objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                            objInci2.Valor = VV
+                                                            objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                            lstInc.Add(objInci2)
+
+                                                            objInci.Incidencia = 3
+                                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                            objInci.Valor = VV3
+                                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                        End If
+                                                    ElseIf (H + H2) <= 540 Then
+                                                        VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+                                                        VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+                                                        Dim objInci2 As New Incidencias
+
+                                                        objInci2.IdEmpleado = id
+                                                        objInci2.Semana = sema
+                                                        objInci2.Año = Lbl_año.Text
+                                                        objInci2.Incidencia = 2
+                                                        objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                        objInci2.Valor = VV
+                                                        objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                        lstInc.Add(objInci2)
+
+                                                        objInci.Incidencia = 3
+                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                        objInci.Valor = VV3
+                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                    End If
+                                                ElseIf V <= 180 Then
+                                                    H2 = V
+                                                    If (H + H2) > 540 Then
+                                                        If H >= 540 Then
+                                                            VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
+
+                                                            objInci.Incidencia = 3
+                                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                            objInci.Valor = VV
+                                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                        ElseIf H < 540 Then
+                                                            HH = 540 - H
+                                                            H2 = HH
+                                                            H3 = V - HH
+                                                            VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+                                                            VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+                                                            Dim objInci2 As New Incidencias
+
+                                                            objInci2.IdEmpleado = id
+                                                            objInci2.Semana = sema
+                                                            objInci2.Año = Lbl_año.Text
+                                                            objInci2.Incidencia = 2
+                                                            objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                            objInci2.Valor = VV
+                                                            objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                            lstInc.Add(objInci2)
+
+                                                            objInci.Incidencia = 3
+                                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                            objInci.Valor = VV3
+                                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                        End If
+                                                    ElseIf (H + H2) <= 540 Then
+                                                        VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
+
+                                                        objInci.Incidencia = 2
+                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                        objInci.Valor = VV
+                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                    End If
+                                                End If
+                                                H = H2 + H
+                                            ElseIf dia = 6 Or dia = 0 Then
+                                                If dia = 6 And turno = 4 Then
+                                                    If V > 540 Then
+                                                        H2 = 540
+                                                        H3 = V - 540
+                                                        VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+                                                        VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+                                                        Dim objInci2 As New Incidencias
+
+                                                        objInci2.IdEmpleado = id
+                                                        objInci2.Semana = sema
+                                                        objInci2.Año = Lbl_año.Text
+                                                        objInci2.Incidencia = 2
+                                                        objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                        objInci2.Valor = VV
+                                                        objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                        lstInc.Add(objInci2)
+
+                                                        objInci.Incidencia = 3
+                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                        objInci.Valor = VV3
+                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                    ElseIf V <= 540 Then
+                                                        H2 = V
+                                                        VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+
+                                                        objInci.Incidencia = 2
+                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                        objInci.Valor = VV
+                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                    End If
+                                                ElseIf dia = 0 Then
                                                     VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
 
                                                     objInci.Incidencia = 2
                                                     objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
                                                     objInci.Valor = VV
                                                     objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-
-                                                ElseIf H >= 540 Then
-                                                    If HE2 >= 540 Then
-                                                        HE3 = HE3 + V
-                                                        Dim V3 = Format((Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))), "0.00")
-
-                                                        objInci.Incidencia = 3
-                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                        objInci.Valor = V3
-                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                    Else
-                                                        V2 = 540 - HE2
-                                                        HE3 = H - 540
-                                                        HE2 = 540
-                                                        Dim vh2 = Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "0.00")
-                                                        Dim vh3 = Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "0.00")
-                                                        Dim objInci2 As New Incidencias
-                                                        objInci2.IdEmpleado = id
-                                                        objInci2.Semana = sema
-                                                        objInci2.Año = Lbl_año.Text
-                                                        objInci2.Incidencia = 2
-                                                        objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                        objInci2.Valor = vh2
-                                                        objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                        lstInc.Add(objInci2)
-                                                        '--------------------------------------
-                                                        objInci.Incidencia = 3
-                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                        objInci.Valor = vh3
-                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                    End If
                                                 End If
-                                            Else
-                                                V2 = 540 - HE2
-                                                HE3 = H - 540
-                                                HE2 = 540
-                                                Dim vh2 = Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "0.00")
-                                                Dim vh3 = Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "0.00")
-                                                If V2 > 0 Then
-                                                    Dim objInci2 As New Incidencias
-                                                    objInci2.IdEmpleado = id
-                                                    objInci2.Semana = sema
-                                                    objInci2.Año = Lbl_año.Text
-                                                    objInci2.Incidencia = 2
-                                                    objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                    objInci2.Valor = vh2
-                                                    objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                    lstInc.Add(objInci2)
-                                                End If
-                                                objInci.Incidencia = 3
-                                                objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                objInci.Valor = vh3
-                                                objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
                                             End If
+#Region "Coment"
+                                            'If V <= 540 Then
+                                            '    If H <= 540 Then
+                                            '        HE2 = HE2 + V
+                                            '        VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
+
+                                            '        objInci.Incidencia = 2
+                                            '        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            '        objInci.Valor = VV
+                                            '        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+
+                                            '    ElseIf H >= 540 Then
+                                            '        If HE2 >= 540 Then
+                                            '            HE3 = HE3 + V
+                                            '            Dim V3 = Format((Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))), "0.00")
+
+                                            '            objInci.Incidencia = 3
+                                            '            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            '            objInci.Valor = V3
+                                            '            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                            '        Else
+                                            '            V2 = 540 - HE2
+                                            '            HE3 = H - 540
+                                            '            HE2 = 540
+                                            '            Dim vh2 = Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "0.00")
+                                            '            Dim vh3 = Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "0.00")
+                                            '            Dim objInci2 As New Incidencias
+                                            '            objInci2.IdEmpleado = id
+                                            '            objInci2.Semana = sema
+                                            '            objInci2.Año = Lbl_año.Text
+                                            '            objInci2.Incidencia = 2
+                                            '            objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            '            objInci2.Valor = vh2
+                                            '            objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                            '            lstInc.Add(objInci2)
+                                            '            '--------------------------------------
+                                            '            objInci.Incidencia = 3
+                                            '            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            '            objInci.Valor = vh3
+                                            '            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                            '        End If
+                                            '    End If
+                                            'Else
+                                            '    V2 = 540 - HE2
+                                            '    HE3 = H - 540
+                                            '    HE2 = 540
+                                            '    Dim vh2 = Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "0.00")
+                                            '    Dim vh3 = Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "0.00")
+                                            '    If V2 > 0 Then
+                                            '        Dim objInci2 As New Incidencias
+                                            '        objInci2.IdEmpleado = id
+                                            '        objInci2.Semana = sema
+                                            '        objInci2.Año = Lbl_año.Text
+                                            '        objInci2.Incidencia = 2
+                                            '        objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            '        objInci2.Valor = vh2
+                                            '        objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                            '        lstInc.Add(objInci2)
+                                            '    End If
+                                            '    objInci.Incidencia = 3
+                                            '    objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            '    objInci.Valor = vh3
+                                            '    objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                            'End If
+#End Region
                                         Case "R"
                                             val = .Cells("tiempo").Value
                                             Dim Vr = Format((Int(val / 60) + (((val / 60 - Int(val / 60)) / 1.666))), "0.00")
@@ -1350,11 +1491,11 @@ Public Class Frm_GlobalPrenomina
         Dim tx As New StreamWriter(Me.ruta & Me.archivo)
         Dim fila As Integer, e As Integer, id As Integer, idX As Integer = 0, semana As Integer = Cmb_Semanas.Text
         Dim inc As String, texto As String, val As String
-        Dim VV As Double, fgg As Double
+        Dim VV As Double, fgg As Double, VV3 As Double, HH As Double
         Dim totalFilas As Integer = Dgv_Lista.Rows.Count
         Try
             For e = 1 To 7000
-                Dim V = 0, V2 = 0, H = 0, HE = 0, HE2 = 0, HE3 = 0
+                Dim V = 0, V2 = 0, V3 = 0, H = 0, H2 = 0, H3 = 0, HE = 0, HS = 0, turno, dia
 
                 For fila = 0 To totalFilas - 2
                     id = Dgv_Lista.Rows(fila).Cells("idEmp").Value
@@ -1367,17 +1508,225 @@ Public Class Frm_GlobalPrenomina
                                 tx.Write("                                                                                           ")
                                 tx.WriteLine()
                             End If
-
+                            'If id = 135 Then
+                            '    MsgBox("Aquí es")
+                            'End If
                             inc = .Cells("inc").Value
                             If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Then
                                 Select Case inc
                                     Case "HE"
                                         V = .Cells("hrsAprobadas").Value
-                                        H = V + H
-                                        If V <= 540 Then
-                                            If H <= 540 Then
-                                                HE2 = HE2 + V
-                                                VV = Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))
+                                        dia = Convert.ToDateTime(.Cells("fecha").Value).DayOfWeek
+                                        turno = .Cells("turno").Value
+                                        If dia <> 6 And dia <> 0 Or (dia = 6 And turno <> 4) Then
+                                            If V > 180 Then
+                                                H2 = 180
+                                                H3 = V - 180
+                                                If (H + H2) > 540 Then
+                                                    If H >= 540 Then
+                                                        VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
+
+                                                        tx.Write("D")
+                                                        tx.Write(" Semanal")
+                                                        tx.Write("                 ")
+                                                        tx.Write(String.Format("{0:00}", semana))
+                                                        tx.Write(" 2                   ")
+                                                        tx.Write("Horas extras 3                               ")
+                                                        tx.Write(Format(VV, "#0.00"))
+                                                        tx.Write(" ")
+                                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                        tx.Write(",00:0 ")
+                                                        tx.Write(Lbl_año.Text)
+                                                        tx.Write("                            ")
+                                                    ElseIf H < 540 Then
+                                                        HH = 540 - H
+                                                        HS = H2 - HH
+                                                        H3 = H3 + HS
+                                                        H2 = HH
+                                                        VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+                                                        VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+
+                                                        tx.Write("D")
+                                                        tx.Write(" Semanal")
+                                                        tx.Write("                 ")
+                                                        tx.Write(String.Format("{0:00}", semana))
+                                                        tx.Write(" 2                   ")
+                                                        tx.Write("Horas extras 2                               ")
+                                                        tx.Write(Format(VV, "#0.00"))
+                                                        tx.Write(" ")
+                                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                        tx.Write(",00:0 ")
+                                                        tx.Write(Lbl_año.Text)
+                                                        tx.Write("                            ")
+                                                        tx.WriteLine()
+
+                                                        tx.Write("D")
+                                                        tx.Write(" Semanal")
+                                                        tx.Write("                 ")
+                                                        tx.Write(String.Format("{0:00}", semana))
+                                                        tx.Write(" 2                   ")
+                                                        tx.Write("Horas extras 3                               ")
+                                                        tx.Write(Format(VV3, "#0.00"))
+                                                        tx.Write(" ")
+                                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                        tx.Write(",00:0 ")
+                                                        tx.Write(Lbl_año.Text)
+                                                        tx.Write("                            ")
+                                                    End If
+                                                ElseIf (H + H2) <= 540 Then
+                                                    VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+                                                    VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+
+                                                    tx.Write("D")
+                                                    tx.Write(" Semanal")
+                                                    tx.Write("                 ")
+                                                    tx.Write(String.Format("{0:00}", semana))
+                                                    tx.Write(" 2                   ")
+                                                    tx.Write("Horas extras 2                               ")
+                                                    tx.Write(Format(VV, "#0.00"))
+                                                    tx.Write(" ")
+                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                    tx.Write(",00:0 ")
+                                                    tx.Write(Lbl_año.Text)
+                                                    tx.Write("                            ")
+                                                    tx.WriteLine()
+
+                                                    tx.Write("D")
+                                                    tx.Write(" Semanal")
+                                                    tx.Write("                 ")
+                                                    tx.Write(String.Format("{0:00}", semana))
+                                                    tx.Write(" 2                   ")
+                                                    tx.Write("Horas extras 3                               ")
+                                                    tx.Write(Format(VV3, "#0.00"))
+                                                    tx.Write(" ")
+                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                    tx.Write(",00:0 ")
+                                                    tx.Write(Lbl_año.Text)
+                                                    tx.Write("                            ")
+                                                End If
+                                            ElseIf V <= 180 Then
+                                                H2 = V
+                                                If (H + H2) > 540 Then
+                                                    If H >= 540 Then
+                                                        VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
+
+                                                        tx.Write("D")
+                                                        tx.Write(" Semanal")
+                                                        tx.Write("                 ")
+                                                        tx.Write(String.Format("{0:00}", semana))
+                                                        tx.Write(" 2                   ")
+                                                        tx.Write("Horas extras 3                               ")
+                                                        tx.Write(Format(VV, "#0.00"))
+                                                        tx.Write(" ")
+                                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                        tx.Write(",00:0 ")
+                                                        tx.Write(Lbl_año.Text)
+                                                        tx.Write("                            ")
+                                                    ElseIf H < 540 Then
+                                                        HH = 540 - H
+                                                        H2 = HH
+                                                        H3 = V - HH
+                                                        VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+                                                        VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+
+                                                        tx.Write("D")
+                                                        tx.Write(" Semanal")
+                                                        tx.Write("                 ")
+                                                        tx.Write(String.Format("{0:00}", semana))
+                                                        tx.Write(" 2                   ")
+                                                        tx.Write("Horas extras 2                               ")
+                                                        tx.Write(Format(VV, "#0.00"))
+                                                        tx.Write(" ")
+                                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                        tx.Write(",00:0 ")
+                                                        tx.Write(Lbl_año.Text)
+                                                        tx.Write("                            ")
+                                                        tx.WriteLine()
+
+                                                        tx.Write("D")
+                                                        tx.Write(" Semanal")
+                                                        tx.Write("                 ")
+                                                        tx.Write(String.Format("{0:00}", semana))
+                                                        tx.Write(" 2                   ")
+                                                        tx.Write("Horas extras 3                               ")
+                                                        tx.Write(Format(VV3, "#0.00"))
+                                                        tx.Write(" ")
+                                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                        tx.Write(",00:0 ")
+                                                        tx.Write(Lbl_año.Text)
+                                                        tx.Write("                            ")
+                                                    End If
+                                                ElseIf (H + H2) <= 540 Then
+                                                    VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
+
+                                                    tx.Write("D")
+                                                    tx.Write(" Semanal")
+                                                    tx.Write("                 ")
+                                                    tx.Write(String.Format("{0:00}", semana))
+                                                    tx.Write(" 2                   ")
+                                                    tx.Write("Horas extras 2                               ")
+                                                    tx.Write(Format(VV, "#0.00"))
+                                                    tx.Write(" ")
+                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                    tx.Write(",00:0 ")
+                                                    tx.Write(Lbl_año.Text)
+                                                    tx.Write("                            ")
+                                                End If
+                                            End If
+                                            H = H2 + H
+                                        ElseIf dia = 6 Or dia = 0 Then
+                                            If dia = 6 And turno = 4 Then
+                                                If V > 540 Then
+                                                    H2 = 540
+                                                    H3 = V - 540
+                                                    VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+                                                    VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+
+                                                    tx.Write("D")
+                                                    tx.Write(" Semanal")
+                                                    tx.Write("                 ")
+                                                    tx.Write(String.Format("{0:00}", semana))
+                                                    tx.Write(" 2                   ")
+                                                    tx.Write("Horas extras 2                               ")
+                                                    tx.Write(Format(VV, "#0.00"))
+                                                    tx.Write(" ")
+                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                    tx.Write(",00:0 ")
+                                                    tx.Write(Lbl_año.Text)
+                                                    tx.Write("                            ")
+                                                    tx.WriteLine()
+
+                                                    tx.Write("D")
+                                                    tx.Write(" Semanal")
+                                                    tx.Write("                 ")
+                                                    tx.Write(String.Format("{0:00}", semana))
+                                                    tx.Write(" 2                   ")
+                                                    tx.Write("Horas extras 3                               ")
+                                                    tx.Write(Format(VV3, "#0.00"))
+                                                    tx.Write(" ")
+                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                    tx.Write(",00:0 ")
+                                                    tx.Write(Lbl_año.Text)
+                                                    tx.Write("                            ")
+                                                ElseIf V <= 540 Then
+                                                    H2 = V
+                                                    VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+
+                                                    tx.Write("D")
+                                                    tx.Write(" Semanal")
+                                                    tx.Write("                 ")
+                                                    tx.Write(String.Format("{0:00}", semana))
+                                                    tx.Write(" 2                   ")
+                                                    tx.Write("Horas extras 2                               ")
+                                                    tx.Write(Format(VV, "#0.00"))
+                                                    tx.Write(" ")
+                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                                    tx.Write(",00:0 ")
+                                                    tx.Write(Lbl_año.Text)
+                                                    tx.Write("                            ")
+                                                End If
+                                            ElseIf dia = 0 Then
+                                                VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
 
                                                 tx.Write("D")
                                                 tx.Write(" Semanal")
@@ -1391,97 +1740,7 @@ Public Class Frm_GlobalPrenomina
                                                 tx.Write(",00:0 ")
                                                 tx.Write(Lbl_año.Text)
                                                 tx.Write("                            ")
-
-                                            ElseIf H >= 540 Then
-                                                If HE2 >= 540 Then
-                                                    HE3 = HE3 + V
-                                                    tx.Write("D")
-                                                    tx.Write(" Semanal")
-                                                    tx.Write("                 ")
-                                                    tx.Write(String.Format("{0:00}", semana))
-                                                    tx.Write(" 2                   ")
-                                                    tx.Write("Horas extras 3                              ")
-                                                    If (Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))) < 10 Then
-                                                        tx.Write(" ")
-                                                    End If
-                                                    tx.Write(Format((Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))), "#0.00"))
-                                                    tx.Write(" ")
-                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
-                                                    tx.Write(",00:0 ")
-                                                    tx.Write(Lbl_año.Text)
-                                                    tx.Write("                            ")
-                                                Else
-                                                    V2 = 540 - HE2
-                                                    HE3 = H - 540
-                                                    HE2 = 540
-
-                                                    tx.Write("D")
-                                                    tx.Write(" Semanal")
-                                                    tx.Write("                 ")
-                                                    tx.Write(String.Format("{0:00}", semana))
-                                                    tx.Write(" 2                   ")
-                                                    tx.Write("Horas extras 2                               ")
-                                                    tx.Write(Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "#0.00"))
-                                                    tx.Write(" ")
-                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
-                                                    tx.Write(",00:0 ")
-                                                    tx.Write(Lbl_año.Text)
-                                                    tx.Write("                            ")
-                                                    '--------------------------------------
-                                                    tx.WriteLine()
-                                                    tx.Write("D")
-                                                    tx.Write(" Semanal")
-                                                    tx.Write("                 ")
-                                                    tx.Write(String.Format("{0:00}", semana))
-                                                    tx.Write(" 2                   ")
-                                                    tx.Write("Horas extras 3                              ")
-                                                    If (Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666))) < 10 Then
-                                                        tx.Write(" ")
-                                                    End If
-                                                    tx.Write(Format((Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666))), "#0.00"))
-                                                    tx.Write(" ")
-                                                    tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
-                                                    tx.Write(",00:0 ")
-                                                    tx.Write(Lbl_año.Text)
-                                                    tx.Write("                            ")
-                                                End If
                                             End If
-                                        Else
-                                            V2 = 540 - HE2
-                                            HE3 = H - 540
-                                            HE2 = 540
-                                            If V2 > 0 Then
-                                                tx.Write("D")
-                                                tx.Write(" Semanal")
-                                                tx.Write("                 ")
-                                                tx.Write(String.Format("{0:00}", semana))
-                                                tx.Write(" 2                   ")
-                                                tx.Write("Horas extras 2                               ")
-                                                tx.Write(Format((Int(V2 / 60) + (((V2 / 60 - Int(V2 / 60)) / 1.666))), "#0.00"))
-                                                tx.Write(" ")
-                                                tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
-                                                tx.Write(",00:0 ")
-                                                tx.Write(Lbl_año.Text)
-                                                tx.Write("                            ")
-                                                tx.WriteLine()
-                                            End If
-                                            tx.Write("D")
-                                            tx.Write(" Semanal")
-                                            tx.Write("                 ")
-                                            tx.Write(String.Format("{0:00}", semana))
-                                            tx.Write(" 2                   ")
-                                            fgg = (Int(HE3 / 60) + (((HE3 / 60 - Int(HE3 / 60)) / 1.666)))
-                                            If fgg >= 10 Then
-                                                tx.Write("Horas extras 3                              ")
-                                            Else
-                                                tx.Write("Horas extras 3                               ")
-                                            End If
-                                            tx.Write(Format(fgg, "#0.00"))
-                                            tx.Write(" ")
-                                            tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
-                                            tx.Write(",00:0 ")
-                                            tx.Write(Lbl_año.Text)
-                                            tx.Write("                            ")
                                         End If
                                     Case "R"
                                         tx.Write("D")
