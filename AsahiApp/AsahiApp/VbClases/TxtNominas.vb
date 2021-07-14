@@ -80,6 +80,15 @@
             fechaF_ = value
         End Set
     End Property
+    Private turno_ As Integer
+    Public Property Turno() As Integer
+        Get
+            Return turno_
+        End Get
+        Set(ByVal value As Integer)
+            turno_ = value
+        End Set
+    End Property
     Private tabla_ As Integer
     Public Property Tabla() As Integer
         Get
