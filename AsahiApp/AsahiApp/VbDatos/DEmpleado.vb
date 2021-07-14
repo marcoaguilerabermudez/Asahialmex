@@ -166,9 +166,12 @@ where usuario = '" & us & "'", oCon)
         Dim emp As New Empleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT (vig.Clave*1)Clave, tipoUsuario = CASE WHEN vig.DEPARTAMENTO = 19 THEN 1 WHEN vig.Clave = 5141 THEN 1 ELSE 0 END, departamento, rh_permisos, evaluaciones_permisos, puesto 
+            Dim query As New SqlCommand("SELECT top 1 (vig.Clave*1)Clave, tipoUsuario = CASE WHEN vig.DEPARTAMENTO = 19 THEN 1 WHEN vig.Clave = 5141 THEN 1 ELSE 0 END, departamento, rh_permisos, evaluaciones_permisos, puesto,
+ Empleado = RTRIM(LTRIM(vig.NOMBREN)) + ' ' + RTRIM(LTRIM(vig.NOMBREP)) + ' ' + RTRIM(LTRIM(vig.NOMBREM)) , t_vales = u.Permiso_vales 
 FROM  giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig
 inner join [AsahiSystem].[dbo].[Req_permisos] per on per.Clave = vig.Clave
+join [AsahiSystem].[dbo].[Usuarios_saam] u
+on u.clave = vig.clave
 where vig.Clave = " & noEmp, oCon)
             query.CommandTimeout = 60
             Dim dr As SqlDataReader
@@ -181,6 +184,8 @@ where vig.Clave = " & noEmp, oCon)
                 emp.rh_permiso = Convert.ToInt32(dr("rh_permisos").ToString)
                 emp.rh_evaluacion = Convert.ToInt32(dr("evaluaciones_permisos").ToString)
                 emp.Id_puesto = Convert.ToInt32(dr("puesto").ToString)
+                emp.NombreCompletoGiro = dr("Empleado").ToString
+                emp.IdPermisoV = Convert.ToInt32(dr("t_vales").ToString)
             End While
         Catch ex As Exception
             MsgBox(ex.Message)

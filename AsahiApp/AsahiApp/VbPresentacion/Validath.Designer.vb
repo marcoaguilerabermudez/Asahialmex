@@ -28,6 +28,8 @@ Partial Class Validath
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -65,8 +67,6 @@ Partial Class Validath
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,7 +86,7 @@ Partial Class Validath
         Me.panel1.Controls.Add(Me.dtp1)
         Me.panel1.Location = New System.Drawing.Point(1, 1)
         Me.panel1.Name = "panel1"
-        Me.panel1.Size = New System.Drawing.Size(1229, 169)
+        Me.panel1.Size = New System.Drawing.Size(1053, 169)
         Me.panel1.TabIndex = 145
         '
         'Button3
@@ -162,6 +162,24 @@ Partial Class Validath
         Me.GroupBox1.TabIndex = 175
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nomenclatura"
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.LightCoral
+        Me.Panel4.Location = New System.Drawing.Point(399, 135)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(32, 22)
+        Me.Panel4.TabIndex = 180
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label3.Location = New System.Drawing.Point(432, 140)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(119, 13)
+        Me.Label3.TabIndex = 179
+        Me.Label3.Text = "REVISAR,POR FAVOR"
         '
         'Panel2
         '
@@ -531,24 +549,6 @@ Partial Class Validath
         Me.x.HeaderText = "x"
         Me.x.Name = "x"
         Me.x.Width = 18
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.LightCoral
-        Me.Panel4.Location = New System.Drawing.Point(399, 135)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(32, 22)
-        Me.Panel4.TabIndex = 180
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label3.Location = New System.Drawing.Point(432, 140)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(119, 13)
-        Me.Label3.TabIndex = 179
-        Me.Label3.Text = "REVISAR,POR FAVOR"
         '
         'Validath
         '

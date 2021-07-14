@@ -957,7 +957,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Gerente/Asistente de Gerente</Value>
+                <Value>Asistente de Gerente/Gerente/Director</Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                 </Style>
@@ -967,25 +967,12 @@
               <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontFamily>MS UI Gothic</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>7.14723cm</Top>
+        <Top>7.11196cm</Top>
         <Left>7.86177cm</Left>
         <Height>0.83969cm</Height>
-        <Width>5.30142cm</Width>
+        <Width>11.92806cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -998,119 +985,24 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox21">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Director</Value>
-                <Style>
-                  <FontFamily>MS UI Gothic</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>7.18251cm</Top>
-        <Left>14.96466cm</Left>
-        <Height>0.54865cm</Height>
-        <Width>4.82516cm</Width>
+      <Line Name="Line5">
+        <Top>7.11196cm</Top>
+        <Left>7.86177cm</Left>
+        <Height>0cm</Height>
+        <Width>11.92806cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Textbox>
-      <Line Name="Line4">
-        <Top>7.14723cm</Top>
-        <Left>8.26182cm</Left>
+      </Line>
+      <Line Name="Line11">
+        <Top>7.11196cm</Top>
+        <Left>20.76186cm</Left>
         <Height>0cm</Height>
         <Width>4.89722cm</Width>
         <ZIndex>9</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Line Name="Line5">
-        <Top>7.11196cm</Top>
-        <Left>14.89261cm</Left>
-        <Height>0cm</Height>
-        <Width>4.89722cm</Width>
-        <ZIndex>10</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Textbox Name="Textbox37">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Asuntos Generales</Value>
-                <Style>
-                  <FontFamily>MS UI Gothic</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontFamily>MS UI Gothic</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>7.18251cm</Top>
-        <Left>21.81702cm</Left>
-        <Height>0.54865cm</Height>
-        <Width>4.42829cm</Width>
-        <ZIndex>11</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Line Name="Line11">
-        <Top>7.06785cm</Top>
-        <Left>21.58207cm</Left>
-        <Height>0cm</Height>
-        <Width>4.89722cm</Width>
-        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1140,7 +1032,7 @@
         <Left>2.00591cm</Left>
         <Height>0.54865cm</Height>
         <Width>4.82516cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1157,13 +1049,48 @@
         <Left>1.93386cm</Left>
         <Height>0cm</Height>
         <Width>4.89722cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
         </Style>
       </Line>
+      <Textbox Name="Textbox23">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Recursos Humanos</Value>
+                <Style>
+                  <FontFamily>MS UI Gothic</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>7.21779cm</Top>
+        <Left>20.76186cm</Left>
+        <Height>0.54865cm</Height>
+        <Width>4.82516cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>3.55208in</Height>
     <Style />
