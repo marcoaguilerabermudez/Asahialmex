@@ -121,6 +121,8 @@ Partial Class Frm_Principal
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ACercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlmacénToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ValesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AplicaciónDeMedidaDisciplinariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CambiosDeDepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MedidasDisciplinariasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -131,8 +133,6 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
-        Me.AlmacénToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ValesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -764,6 +764,19 @@ Partial Class Frm_Principal
         Me.AcercaDeToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
         Me.AcercaDeToolStripMenuItem1.Text = "Acerca de"
         '
+        'AlmacénToolStripMenuItem
+        '
+        Me.AlmacénToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ValesToolStripMenuItem})
+        Me.AlmacénToolStripMenuItem.Name = "AlmacénToolStripMenuItem"
+        Me.AlmacénToolStripMenuItem.Size = New System.Drawing.Size(66, 26)
+        Me.AlmacénToolStripMenuItem.Text = "Almacén"
+        '
+        'ValesToolStripMenuItem
+        '
+        Me.ValesToolStripMenuItem.Name = "ValesToolStripMenuItem"
+        Me.ValesToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.ValesToolStripMenuItem.Text = "Vales"
+        '
         'AplicaciónDeMedidaDisciplinariaToolStripMenuItem
         '
         Me.AplicaciónDeMedidaDisciplinariaToolStripMenuItem.Name = "AplicaciónDeMedidaDisciplinariaToolStripMenuItem"
@@ -831,19 +844,6 @@ Partial Class Frm_Principal
         Me.Lbl_NombreUser.Name = "Lbl_NombreUser"
         Me.Lbl_NombreUser.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_NombreUser.TabIndex = 4
-        '
-        'AlmacénToolStripMenuItem
-        '
-        Me.AlmacénToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ValesToolStripMenuItem})
-        Me.AlmacénToolStripMenuItem.Name = "AlmacénToolStripMenuItem"
-        Me.AlmacénToolStripMenuItem.Size = New System.Drawing.Size(66, 26)
-        Me.AlmacénToolStripMenuItem.Text = "Almacén"
-        '
-        'ValesToolStripMenuItem
-        '
-        Me.ValesToolStripMenuItem.Name = "ValesToolStripMenuItem"
-        Me.ValesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ValesToolStripMenuItem.Text = "Vales"
         '
         'Frm_Principal
         '

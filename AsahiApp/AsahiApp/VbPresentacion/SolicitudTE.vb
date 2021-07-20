@@ -581,7 +581,7 @@ when @turnoe = 'Administrativo' then 4
 end
 end
 
-  else if (select count(clave) from giro.[asahi16].[dbo].[Rh_entradasalida2]
+  else if (select count(clave) from giro.[asahi16].[dbo].[Rh_entradasalida2] 
   where clave = @clave and fecha = @fecha) = 1
   begin 
   update giro.[asahi16].[dbo].[Rh_entradasalida2] set grupo = 0 where clave = @clave and fecha = @fecha
@@ -678,9 +678,12 @@ end
 
 
             ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
+
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Vespertino")
+
+
             ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 0) Then
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")

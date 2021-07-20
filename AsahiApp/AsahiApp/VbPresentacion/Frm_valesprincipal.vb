@@ -15,9 +15,12 @@ Public Class Frm_valesprincipal
     Public cadenaCExpress As String
     Public cnn As SqlConnection
     Dim ColumnaAgregar As New DataGridViewButtonColumn
+    Dim Cantidad_Requerida As Double
 
     Dim Repetido As Boolean
     Dim Codigo, Medida As String
+    Dim Stock_1 As Double
+
     Sub New(id As Integer, depto As String, permiso As Integer, nombre As String, p_vales As Integer)
 
         InitializeComponent()
@@ -31,6 +34,8 @@ Public Class Frm_valesprincipal
 
     Private Sub Frm_valesprincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+        txt_nombre.Focus()
         Dim conexion As New conexion()
         If Strings.Left(conexion.getIp(), 6) = "172.16" Then
             Me.cadenaConex = conexion.cadenaConex
@@ -46,6 +51,7 @@ Public Class Frm_valesprincipal
 
         lbl_usuario.Text = nombre
         ' cargagridmuestraproducto()
+        txt_nombre.Focus()
 
 
 
@@ -62,6 +68,8 @@ Public Class Frm_valesprincipal
         End If
     End Sub
 
+
+
     Private Sub txt_nombre_TextChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_nombre.KeyPress
         If AscW(e.KeyChar) = CInt(Keys.Enter) Then
             cargagridmuestraproducto()
@@ -75,6 +83,25 @@ Public Class Frm_valesprincipal
 
 
     End Sub
+
+    Private Sub ValidarCantidadRequerida(Objeto As Object, e As DataGridViewCellEventArgs) Handles dtgv_2.CellEndEdit
+        If e.ColumnIndex = 2 Then
+            Try
+                Cantidad_Requerida = CDbl(dtgv_2.Rows(e.RowIndex).Cells("C_3").Value)
+                If Cantidad_Requerida > dtgv_2.Rows(e.RowIndex).Cells("stock").Value Then
+                    MessageBox.Show("La cantidad que requerie supera a la que se encuentra en stock", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    dtgv_2.Rows(e.RowIndex).Cells("C_3").Value = 1
+                End If
+            Catch ex As Exception
+                ' MessageBox.Show(ex.ToString)
+                MessageBox.Show("La cantidad que introdujo no es valida", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                dtgv_2.Rows(e.RowIndex).Cells("C_3").Value = 1
+            End Try
+
+        End If
+    End Sub
+
+
 
     Sub cargagridmuestraproducto()
 
@@ -119,7 +146,12 @@ Public Class Frm_valesprincipal
 
     End Sub
 
-    Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellContentClick
+    Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellClick
+
+        pbx.ImageLocation = ("V:\Eva_F\" & Me.dtgvp.Rows(e.RowIndex).Cells("Codigo").Value.ToString() & ".jpg")
+        pbx.SizeMode = PictureBoxSizeMode.CenterImage
+        pbx.BorderStyle = BorderStyle.Fixed3D
+        pbx.SizeMode = PictureBoxSizeMode.StretchImage
 
 
         If dtgv_2.RowCount < 8 Then
@@ -164,6 +196,7 @@ Public Class Frm_valesprincipal
                     Repetido = False
                     Codigo = dtgvp.Rows(e.RowIndex).Cells("Codigo").Value
                     nombre = dtgvp.Rows(e.RowIndex).Cells("Nombre").Value
+                    Stock_1 = dtgvp.Rows(e.RowIndex).Cells("Stock").Value
                     ''  Medida = dtgvp.Rows(e.RowIndex).Cells(2).Value
 
                     ''  If dtgv_2.RowCount > 0 Then
@@ -177,9 +210,8 @@ Public Class Frm_valesprincipal
                     '' End If
 
                     If Repetido = False Then
-                        dtgv_2.Rows.Add(Codigo, nombre, 1, "No")
-                        ''  Dgv_Cantidades.Rows.Add(UsoStockSeguridad, StockSeguridad, Codigo, nombre, Medida)
-                        ''Dgv_Cantidades.Rows((Dgv_Cantidades.RowCount - 1)).Cells(8).Value = "Nuevo"
+                        dtgv_2.Rows.Add(Codigo, nombre, 1, Stock_1, "No")
+                        gbx_terminar.Visible = True
                     Else
                         MessageBox.Show("El producto ya está agregado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If
@@ -202,4 +234,39 @@ Public Class Frm_valesprincipal
 
 
     End Sub
+
+
+    Private Sub dtgvp_CellContentClick2(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.RowEnter
+
+        pbx.ImageLocation = ("V:\Eva_F\" & Me.dtgvp.Rows(e.RowIndex).Cells("Codigo").Value.ToString() & ".jpg")
+        pbx.SizeMode = PictureBoxSizeMode.CenterImage
+        pbx.BorderStyle = BorderStyle.Fixed3D
+        pbx.SizeMode = PictureBoxSizeMode.StretchImage
+
+    End Sub
+
+    Private Sub btn_selec_Click_1(sender As Object, e As EventArgs) Handles btn_selec.Click
+        If dtgv_2.RowCount > 0 And lbl_persona.Text <> "" Then
+
+            MessageBox.Show("Terminado")
+
+        ElseIf dtgv_2.RowCount < 1 And lbl_persona.Text <> "" Then
+            MessageBox.Show("¡Debe agregar productos para terminar su vale!", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        ElseIf dtgv_2.RowCount > 0 And lbl_persona.Text = "" Then
+            MessageBox.Show("Empleado inexistente, verifique que sus datos sean correctos.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        ElseIf dtgv_2.RowCount < 1 And lbl_persona.Text = "" Then
+            MessageBox.Show("Complete su información, por favor.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
+    End Sub
+
+
+
+    Sub habilitar()
+        Me.Enabled = True
+    End Sub
+
+
 End Class
