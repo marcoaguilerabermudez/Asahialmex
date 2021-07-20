@@ -75,7 +75,6 @@ C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsClases.pdb
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsDatos.pdb
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\CsNegocio.pdb
-C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbprojAssemblyReference.cache
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\Clases.Resources.resources
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.GenerateResource.cache
 C:\Users\luis.limon\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.CoreCompileInputs.cache
@@ -331,3 +330,4 @@ C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClas
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbClases\obj\Debug\VbClases.vbproj.AssemblyReference.cache
