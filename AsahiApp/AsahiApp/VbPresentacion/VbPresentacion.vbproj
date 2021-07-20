@@ -551,6 +551,12 @@
     <Compile Include="Frm_CapturaMejora.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_terminavale.Designer.vb">
+      <DependentUpon>Frm_terminavale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_terminavale.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RH\Frm_CreadorCuestionarios.Designer.vb">
       <DependentUpon>Frm_CreadorCuestionarios.vb</DependentUpon>
     </Compile>
@@ -1211,6 +1217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finanzas\Frm_Subsidiaria.resx">
       <DependentUpon>Frm_Subsidiaria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_terminavale.resx">
+      <DependentUpon>Frm_terminavale.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_valesprincipal.resx">
       <DependentUpon>Frm_valesprincipal.vb</DependentUpon>
