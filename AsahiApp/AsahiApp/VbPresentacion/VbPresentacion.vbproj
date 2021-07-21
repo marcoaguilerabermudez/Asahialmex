@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>326</ApplicationRevision>
+    <ApplicationRevision>327</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -78,10 +78,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5484A71DF69CB5C74FFC638FA7D1D1B9CE315641</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F04776826A001EFAF21C46AFCFE08ED07D550C78</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_6_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -549,6 +549,12 @@
       <DependentUpon>Frm_CapturaMejora.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_CapturaMejora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_terminavale.Designer.vb">
+      <DependentUpon>Frm_terminavale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_terminavale.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\Frm_CreadorCuestionarios.Designer.vb">
@@ -1211,6 +1217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finanzas\Frm_Subsidiaria.resx">
       <DependentUpon>Frm_Subsidiaria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_terminavale.resx">
+      <DependentUpon>Frm_terminavale.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_valesprincipal.resx">
       <DependentUpon>Frm_valesprincipal.vb</DependentUpon>
@@ -1936,6 +1945,7 @@
     <None Include="VbPresentacion_1_TemporaryKey.pfx" />
     <None Include="VbPresentacion_2_TemporaryKey.pfx" />
     <None Include="VbPresentacion_3_TemporaryKey.pfx" />
+    <None Include="VbPresentacion_6_TemporaryKey.pfx" />
     <None Include="VbPresentacion_TemporaryKey.pfx" />
     <None Include="Views\Report\ReportViewer.cshtml" />
   </ItemGroup>
