@@ -184,7 +184,7 @@ Public Class Frm_GlobalPrenomina
 
         If res = vbYes Then
             ProcesoInsertaIncidenciasNomina()
-            'Btn_Incidencias.Enabled = False
+            Btn_Incidencias.Enabled = False
         End If
         'CrearArchivo()
         'EscribirArchivo()
