@@ -55,7 +55,7 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.Sp_Genera_ContratoBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Contrato.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CsPresentacion.Rep_Contrato_.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
