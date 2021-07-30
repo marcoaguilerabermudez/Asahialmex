@@ -59,7 +59,7 @@ Public Class x
    ,case
    when inc.HastaF is null then '01/01/1900'
    else
-   inc.HastaF
+   inc.HastaF6
    end as 'Hasta'
    ,case
    when Motivo = 1 then 'Permiso con goce de sueldo'
@@ -86,7 +86,7 @@ Public Class x
    when Incidencia = '9' and retardo = 0 and Motivo not in (9) then 'Asunto escolar'
    when Incidencia = 'A' and retardo = 0 and Motivo not in (9) then 'Abandono de trabajo'
    when Incidencia = 'Z' and retardo = 0 and Motivo in (1) then 'Defunción'
-    when Incidencia = 'B' and retardo = 0 and Motivo not in (9) then 'Prestación por matrimonio'
+   when Incidencia = 'B' and retardo = 0 and Motivo not in (9) then 'Prestación por matrimonio'
    when Incidencia = 'C' and retardo = 0 and Motivo not in (9) then 'Cita IMSS'
    when Incidencia = 'D' and retardo = 0 and Motivo not in (9) then 'Empleado vulnerable'
    when Incidencia = 'E' and retardo = 0 and Motivo not in (9) then 'Enfermedad'
@@ -271,13 +271,10 @@ where
             Empleado.Visible = False
             gbx_inicidencia.Visible = False
 
-
-
         End Try
 
 
         sueldoxpuesto()
-
 
     End Sub
 

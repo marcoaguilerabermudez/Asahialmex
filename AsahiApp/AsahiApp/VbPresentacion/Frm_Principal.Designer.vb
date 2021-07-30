@@ -123,6 +123,8 @@ Partial Class Frm_Principal
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlmacénToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ValesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ValidarValesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AjustarInventarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AplicaciónDeMedidaDisciplinariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CambiosDeDepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MedidasDisciplinariasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -133,6 +135,7 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
+        Me.ReimprimirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -766,7 +769,7 @@ Partial Class Frm_Principal
         '
         'AlmacénToolStripMenuItem
         '
-        Me.AlmacénToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ValesToolStripMenuItem})
+        Me.AlmacénToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ValesToolStripMenuItem, Me.ReimprimirToolStripMenuItem, Me.ValidarValesToolStripMenuItem, Me.AjustarInventarioToolStripMenuItem})
         Me.AlmacénToolStripMenuItem.Name = "AlmacénToolStripMenuItem"
         Me.AlmacénToolStripMenuItem.Size = New System.Drawing.Size(66, 26)
         Me.AlmacénToolStripMenuItem.Text = "Almacén"
@@ -774,8 +777,20 @@ Partial Class Frm_Principal
         'ValesToolStripMenuItem
         '
         Me.ValesToolStripMenuItem.Name = "ValesToolStripMenuItem"
-        Me.ValesToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.ValesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ValesToolStripMenuItem.Text = "Vales"
+        '
+        'ValidarValesToolStripMenuItem
+        '
+        Me.ValidarValesToolStripMenuItem.Name = "ValidarValesToolStripMenuItem"
+        Me.ValidarValesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ValidarValesToolStripMenuItem.Text = "Validar Vales"
+        '
+        'AjustarInventarioToolStripMenuItem
+        '
+        Me.AjustarInventarioToolStripMenuItem.Name = "AjustarInventarioToolStripMenuItem"
+        Me.AjustarInventarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AjustarInventarioToolStripMenuItem.Text = "Ajustar Inventario"
         '
         'AplicaciónDeMedidaDisciplinariaToolStripMenuItem
         '
@@ -844,6 +859,12 @@ Partial Class Frm_Principal
         Me.Lbl_NombreUser.Name = "Lbl_NombreUser"
         Me.Lbl_NombreUser.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_NombreUser.TabIndex = 4
+        '
+        'ReimprimirToolStripMenuItem
+        '
+        Me.ReimprimirToolStripMenuItem.Name = "ReimprimirToolStripMenuItem"
+        Me.ReimprimirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReimprimirToolStripMenuItem.Text = "Reimprimir"
         '
         'Frm_Principal
         '
@@ -977,4 +998,7 @@ Partial Class Frm_Principal
     Friend WithEvents ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AlmacénToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ValesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ValidarValesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AjustarInventarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReimprimirToolStripMenuItem As ToolStripMenuItem
 End Class

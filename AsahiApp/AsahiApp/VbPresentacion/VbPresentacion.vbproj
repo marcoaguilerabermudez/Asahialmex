@@ -45,6 +45,7 @@
     <DocumentationFile>Presentacion.xml</DocumentationFile>
     <DefineConstants>_MYFORMS=True</DefineConstants>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -180,6 +181,12 @@
       <DependentUpon>ActualizaTurnoSolicitud.vb</DependentUpon>
     </Compile>
     <Compile Include="ActualizaTurnoSolicitud.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjustarInventario.Designer.vb">
+      <DependentUpon>AjustarInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AjustarInventario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AnomaliaDetalle.Designer.vb">
@@ -376,6 +383,12 @@
     <Compile Include="ContenedorReporteVacacionesRH.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReporteVale1.Designer.vb">
+      <DependentUpon>ContenedorReporteVale1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteVale1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorREvaluacionSin.Designer.vb">
       <DependentUpon>ContenedorREvaluacionSin.vb</DependentUpon>
     </Compile>
@@ -482,6 +495,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet27.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet28.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet28.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet3.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -555,6 +573,12 @@
       <DependentUpon>Frm_terminavale.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_terminavale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReimprimeVale.Designer.vb">
+      <DependentUpon>ReimprimeVale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReimprimeVale.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\Frm_CreadorCuestionarios.Designer.vb">
@@ -1036,6 +1060,12 @@
     <Compile Include="ValidaRh.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ValidarVale.Designer.vb">
+      <DependentUpon>ValidarVale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ValidarVale.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Validath.Designer.vb">
       <DependentUpon>Validath.vb</DependentUpon>
     </Compile>
@@ -1058,6 +1088,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ActualizaTurnoSolicitud.resx">
       <DependentUpon>ActualizaTurnoSolicitud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjustarInventario.resx">
+      <DependentUpon>AjustarInventario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AnomaliaDetalle.resx">
       <DependentUpon>AnomaliaDetalle.vb</DependentUpon>
@@ -1154,6 +1187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteVacacionesRH.resx">
       <DependentUpon>ContenedorReporteVacacionesRH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteVale1.resx">
+      <DependentUpon>ContenedorReporteVale1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorREvaluacionSin.resx">
       <DependentUpon>ContenedorREvaluacionSin.vb</DependentUpon>
@@ -1260,6 +1296,9 @@
     <EmbeddedResource Include="ReimprimeMedida.resx">
       <DependentUpon>ReimprimeMedida.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReimprimeVale.resx">
+      <DependentUpon>ReimprimeVale.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteAumentoSueldoOperador.rdlc" />
     <EmbeddedResource Include="ReporteCambioPuesto.rdlc" />
     <EmbeddedResource Include="ReporteCartaCompromiso.rdlc" />
@@ -1282,6 +1321,7 @@
     <EmbeddedResource Include="ReporteSolicitudTe.rdlc" />
     <EmbeddedResource Include="ReporteSuspension.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
+    <EmbeddedResource Include="ReporteVales1.rdlc" />
     <EmbeddedResource Include="ReporteXmesCambioDePuesto.rdlc" />
     <EmbeddedResource Include="RH\Frm_CreadorCuestionarios.resx">
       <DependentUpon>Frm_CreadorCuestionarios.vb</DependentUpon>
@@ -1382,6 +1422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ValidaRh.resx">
       <DependentUpon>ValidaRh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidarVale.resx">
+      <DependentUpon>ValidarVale.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Validath.resx">
       <DependentUpon>Validath.vb</DependentUpon>
@@ -1612,6 +1655,17 @@
     </None>
     <None Include="DataSet27.xss">
       <DependentUpon>DataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet28.xsc">
+      <DependentUpon>DataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet28.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet28.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet28.xss">
+      <DependentUpon>DataSet28.xsd</DependentUpon>
     </None>
     <None Include="DataSet3.xsc">
       <DependentUpon>DataSet3.xsd</DependentUpon>

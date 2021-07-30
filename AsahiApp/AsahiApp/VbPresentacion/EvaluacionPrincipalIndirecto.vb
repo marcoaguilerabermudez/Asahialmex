@@ -200,14 +200,14 @@ Public Class EvaluacionPrincipalIndirecto
 
 
     Friend Sub Muestragrid()
-        MessageBox.Show(depto)
+        'MessageBox.Show(depto)
 
-        MessageBox.Show(cbx_depto.Text)
-        MessageBox.Show(mes)
-        MessageBox.Show(cbx_año.Text)
-        MessageBox.Show(cbx_tipoeva.Text)
-        MessageBox.Show(id_puesto)
-        MessageBox.Show(id)
+        'MessageBox.Show(cbx_depto.Text)
+        'MessageBox.Show(mes)
+        'MessageBox.Show(cbx_año.Text)
+        'MessageBox.Show(cbx_tipoeva.Text)
+        'MessageBox.Show(id_puesto)
+        'MessageBox.Show(id)
         Try
             Cn.Close()
             Cn.Open()

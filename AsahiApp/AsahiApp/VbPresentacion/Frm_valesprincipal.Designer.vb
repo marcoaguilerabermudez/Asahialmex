@@ -32,6 +32,14 @@ Partial Class Frm_valesprincipal
         Me.lbl_usuario = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.gbx_terminar = New System.Windows.Forms.GroupBox()
+        Me.btn_historial = New System.Windows.Forms.Button()
+        Me.lbl_persona = New System.Windows.Forms.Label()
+        Me.lbl_empleado = New System.Windows.Forms.Label()
+        Me.txt_empleado = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txt_comentario = New System.Windows.Forms.TextBox()
+        Me.btn_selec = New System.Windows.Forms.Button()
         Me.dtgv_2 = New System.Windows.Forms.DataGridView()
         Me.c_1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.N_2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,20 +51,13 @@ Partial Class Frm_valesprincipal
         Me.lbl2 = New System.Windows.Forms.Label()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.pbx = New System.Windows.Forms.PictureBox()
-        Me.gbx_terminar = New System.Windows.Forms.GroupBox()
-        Me.lbl_persona = New System.Windows.Forms.Label()
-        Me.lbl_empleado = New System.Windows.Forms.Label()
-        Me.txt_empleado = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txt_comentario = New System.Windows.Forms.TextBox()
-        Me.btn_selec = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.gbx_terminar.SuspendLayout()
         CType(Me.dtgv_2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbx_terminar.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel3
@@ -114,6 +115,97 @@ Partial Class Frm_valesprincipal
         Me.GroupBox3.TabIndex = 184
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Cantidades"
+        '
+        'gbx_terminar
+        '
+        Me.gbx_terminar.Controls.Add(Me.btn_historial)
+        Me.gbx_terminar.Controls.Add(Me.lbl_persona)
+        Me.gbx_terminar.Controls.Add(Me.lbl_empleado)
+        Me.gbx_terminar.Controls.Add(Me.txt_empleado)
+        Me.gbx_terminar.Controls.Add(Me.Label5)
+        Me.gbx_terminar.Controls.Add(Me.txt_comentario)
+        Me.gbx_terminar.Controls.Add(Me.btn_selec)
+        Me.gbx_terminar.Location = New System.Drawing.Point(785, 12)
+        Me.gbx_terminar.Name = "gbx_terminar"
+        Me.gbx_terminar.Size = New System.Drawing.Size(253, 260)
+        Me.gbx_terminar.TabIndex = 259
+        Me.gbx_terminar.TabStop = False
+        Me.gbx_terminar.Text = "Terminar"
+        Me.gbx_terminar.Visible = False
+        '
+        'btn_historial
+        '
+        Me.btn_historial.ForeColor = System.Drawing.Color.Black
+        Me.btn_historial.Location = New System.Drawing.Point(104, 127)
+        Me.btn_historial.Name = "btn_historial"
+        Me.btn_historial.Size = New System.Drawing.Size(127, 20)
+        Me.btn_historial.TabIndex = 206
+        Me.btn_historial.Text = "Historial"
+        Me.btn_historial.UseVisualStyleBackColor = False
+        Me.btn_historial.Visible = False
+        '
+        'lbl_persona
+        '
+        Me.lbl_persona.AutoSize = True
+        Me.lbl_persona.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_persona.ForeColor = System.Drawing.Color.Black
+        Me.lbl_persona.Location = New System.Drawing.Point(18, 158)
+        Me.lbl_persona.Name = "lbl_persona"
+        Me.lbl_persona.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_persona.TabIndex = 205
+        '
+        'lbl_empleado
+        '
+        Me.lbl_empleado.AutoSize = True
+        Me.lbl_empleado.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_empleado.ForeColor = System.Drawing.Color.Black
+        Me.lbl_empleado.Location = New System.Drawing.Point(18, 112)
+        Me.lbl_empleado.Name = "lbl_empleado"
+        Me.lbl_empleado.Size = New System.Drawing.Size(57, 13)
+        Me.lbl_empleado.TabIndex = 204
+        Me.lbl_empleado.Text = "Supervisor"
+        '
+        'txt_empleado
+        '
+        Me.txt_empleado.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_empleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_empleado.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txt_empleado.Location = New System.Drawing.Point(16, 128)
+        Me.txt_empleado.Name = "txt_empleado"
+        Me.txt_empleado.Size = New System.Drawing.Size(79, 18)
+        Me.txt_empleado.TabIndex = 203
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.SystemColors.Control
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(9, 19)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(60, 13)
+        Me.Label5.TabIndex = 202
+        Me.Label5.Text = "Comentario"
+        '
+        'txt_comentario
+        '
+        Me.txt_comentario.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_comentario.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_comentario.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txt_comentario.Location = New System.Drawing.Point(9, 35)
+        Me.txt_comentario.Multiline = True
+        Me.txt_comentario.Name = "txt_comentario"
+        Me.txt_comentario.Size = New System.Drawing.Size(232, 52)
+        Me.txt_comentario.TabIndex = 201
+        '
+        'btn_selec
+        '
+        Me.btn_selec.ForeColor = System.Drawing.Color.Black
+        Me.btn_selec.Location = New System.Drawing.Point(94, 211)
+        Me.btn_selec.Name = "btn_selec"
+        Me.btn_selec.Size = New System.Drawing.Size(74, 35)
+        Me.btn_selec.TabIndex = 200
+        Me.btn_selec.Text = "Terminar Vale"
+        Me.btn_selec.UseVisualStyleBackColor = False
         '
         'dtgv_2
         '
@@ -236,96 +328,17 @@ Partial Class Frm_valesprincipal
         Me.dtgvp.Location = New System.Drawing.Point(8, 108)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(740, 264)
+        Me.dtgvp.Size = New System.Drawing.Size(821, 264)
         Me.dtgvp.TabIndex = 258
         '
         'pbx
         '
         Me.pbx.ErrorImage = Global.Presentacion.My.Resources.Resources.Logo
-        Me.pbx.Location = New System.Drawing.Point(835, 146)
+        Me.pbx.Location = New System.Drawing.Point(857, 146)
         Me.pbx.Name = "pbx"
         Me.pbx.Size = New System.Drawing.Size(174, 172)
         Me.pbx.TabIndex = 195
         Me.pbx.TabStop = False
-        '
-        'gbx_terminar
-        '
-        Me.gbx_terminar.Controls.Add(Me.lbl_persona)
-        Me.gbx_terminar.Controls.Add(Me.lbl_empleado)
-        Me.gbx_terminar.Controls.Add(Me.txt_empleado)
-        Me.gbx_terminar.Controls.Add(Me.Label5)
-        Me.gbx_terminar.Controls.Add(Me.txt_comentario)
-        Me.gbx_terminar.Controls.Add(Me.btn_selec)
-        Me.gbx_terminar.Location = New System.Drawing.Point(785, 12)
-        Me.gbx_terminar.Name = "gbx_terminar"
-        Me.gbx_terminar.Size = New System.Drawing.Size(253, 260)
-        Me.gbx_terminar.TabIndex = 259
-        Me.gbx_terminar.TabStop = False
-        Me.gbx_terminar.Text = "Terminar"
-        Me.gbx_terminar.Visible = False
-        '
-        'lbl_persona
-        '
-        Me.lbl_persona.AutoSize = True
-        Me.lbl_persona.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_persona.ForeColor = System.Drawing.Color.Black
-        Me.lbl_persona.Location = New System.Drawing.Point(18, 158)
-        Me.lbl_persona.Name = "lbl_persona"
-        Me.lbl_persona.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_persona.TabIndex = 205
-        '
-        'lbl_empleado
-        '
-        Me.lbl_empleado.AutoSize = True
-        Me.lbl_empleado.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_empleado.ForeColor = System.Drawing.Color.Black
-        Me.lbl_empleado.Location = New System.Drawing.Point(18, 112)
-        Me.lbl_empleado.Name = "lbl_empleado"
-        Me.lbl_empleado.Size = New System.Drawing.Size(57, 13)
-        Me.lbl_empleado.TabIndex = 204
-        Me.lbl_empleado.Text = "Supervisor"
-        '
-        'txt_empleado
-        '
-        Me.txt_empleado.BackColor = System.Drawing.SystemColors.Control
-        Me.txt_empleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_empleado.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_empleado.Location = New System.Drawing.Point(16, 128)
-        Me.txt_empleado.Name = "txt_empleado"
-        Me.txt_empleado.Size = New System.Drawing.Size(79, 18)
-        Me.txt_empleado.TabIndex = 203
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.SystemColors.Control
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(9, 19)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(60, 13)
-        Me.Label5.TabIndex = 202
-        Me.Label5.Text = "Comentario"
-        '
-        'txt_comentario
-        '
-        Me.txt_comentario.BackColor = System.Drawing.SystemColors.Control
-        Me.txt_comentario.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_comentario.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_comentario.Location = New System.Drawing.Point(9, 35)
-        Me.txt_comentario.Multiline = True
-        Me.txt_comentario.Name = "txt_comentario"
-        Me.txt_comentario.Size = New System.Drawing.Size(232, 52)
-        Me.txt_comentario.TabIndex = 201
-        '
-        'btn_selec
-        '
-        Me.btn_selec.ForeColor = System.Drawing.Color.Black
-        Me.btn_selec.Location = New System.Drawing.Point(94, 211)
-        Me.btn_selec.Name = "btn_selec"
-        Me.btn_selec.Size = New System.Drawing.Size(74, 35)
-        Me.btn_selec.TabIndex = 200
-        Me.btn_selec.Text = "Terminar Vale"
-        Me.btn_selec.UseVisualStyleBackColor = False
         '
         'Frm_valesprincipal
         '
@@ -348,11 +361,11 @@ Partial Class Frm_valesprincipal
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
+        Me.gbx_terminar.ResumeLayout(False)
+        Me.gbx_terminar.PerformLayout()
         CType(Me.dtgv_2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gbx_terminar.ResumeLayout(False)
-        Me.gbx_terminar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -380,5 +393,6 @@ Partial Class Frm_valesprincipal
     Friend WithEvents txt_empleado As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txt_comentario As TextBox
+    Friend WithEvents btn_historial As Button
     Friend WithEvents btn_selec As Button
 End Class
