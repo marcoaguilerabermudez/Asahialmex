@@ -911,7 +911,6 @@ C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPres
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csprojAssemblyReference.cache
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\Interop.MSXML2.dll
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\Interop.VSTOEE100.dll
 C:\Users\francisco.mojica.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csproj.ResolveComReference.cache
@@ -1173,3 +1172,4 @@ C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPres
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Formularios.RH.Frm_Modifica_Sueldo.resources
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csproj.AssemblyReference.cache
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.Formularios.RH.Frm_Modifica_Sueldo.resources
+C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\CsPresentacion\obj\Debug\CsPresentacion.csproj.AssemblyReference.cache

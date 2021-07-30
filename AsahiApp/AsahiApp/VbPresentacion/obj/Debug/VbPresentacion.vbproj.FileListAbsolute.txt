@@ -909,7 +909,6 @@ C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPres
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\VbPresentacion.vbprojAssemblyReference.cache
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\VbPresentacion.vbproj.ResolveComReference.cache
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.AcomodaHoras.resources
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.CapturaOEE.resources
@@ -1331,3 +1330,5 @@ C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ContenedorReporteAumentoSueldoOperador.resources
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_CapturaMejora.resources
 C:\Users\luis.limon\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_CreadorCuestionarios.resources
+C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\VbPresentacion.vbproj.AssemblyReference.cache
+C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_CreadorCuestionarios.resources
