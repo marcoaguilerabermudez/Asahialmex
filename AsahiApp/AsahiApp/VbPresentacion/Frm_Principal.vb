@@ -688,5 +688,20 @@ Public Class Frm_Principal
 
     End Sub
 
+    Private Sub ValidarValesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ValidarValesToolStripMenuItem.Click
+        Dim Vales_validar As New ValidarVale(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, Me.emp.IdPermisoV)
+        Vales_validar.Show()
+    End Sub
+
+    Private Sub AjustarInventarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AjustarInventarioToolStripMenuItem.Click
+        Dim Ajustar_i As New AjustarInventario(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, Me.emp.IdPermisoV)
+        Ajustar_i.Show()
+    End Sub
+
+    Private Sub ReimprimirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReimprimirToolStripMenuItem.Click
+        Dim Reimprime_v As New ReimprimeVale(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, Me.emp.IdPermisoV)
+        Reimprime_v.Show()
+    End Sub
+
 #End Region
 End Class

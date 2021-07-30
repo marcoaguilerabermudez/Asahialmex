@@ -422,7 +422,6 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
     End Sub
 
 
-
     Sub preautorizar()
         Cnn.Close()
         Cnn.Open()
@@ -768,7 +767,6 @@ end
 
         Try
 
-
             Using cnn As New SqlConnection("data source = GIRO\SQLEXPRESS ;initial catalog=Asahisystem;user id=sa;password=Pa55word")
                 Dim da As New SqlDataAdapter("Sp_muestralistate", cnn)
                 da.SelectCommand.CommandType = CommandType.StoredProcedure
@@ -799,21 +797,23 @@ end
 
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
 
-        Modulo_sollicitudte.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
-        Modulo_sollicitudte.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("Id").Value.ToString()
-        Modulo_sollicitudte.e_empleado = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
-        Modulo_sollicitudte.e_turno = Me.dtgvp.Rows(e.RowIndex).Cells("TurnoE").Value.ToString()
+        'Modulo_sollicitudte.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
+        'Modulo_sollicitudte.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("Id").Value.ToString()
+        'Modulo_sollicitudte.e_empleado = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
+        'Modulo_sollicitudte.e_turno = Me.dtgvp.Rows(e.RowIndex).Cells("TurnoE").Value.ToString()
 
-        Modulo_sollicitudte.id_permiso = permiso
-        Modulo_sollicitudte.id_depa = depto
-        Modulo_sollicitudte.id_id = id
+        'Modulo_sollicitudte.id_permiso = permiso
+        'Modulo_sollicitudte.id_depa = depto
+        'Modulo_sollicitudte.id_id = id
 
-        ActualizaTurnoSolicitud.Show()
-        Me.Dispose()
-        Me.Close()
+        'ActualizaTurnoSolicitud.Show()
+        'Me.Dispose()
+        'Me.Close()
     End Sub
 
+    'Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellContentClick
 
+    'End Sub
 End Class
 
 
