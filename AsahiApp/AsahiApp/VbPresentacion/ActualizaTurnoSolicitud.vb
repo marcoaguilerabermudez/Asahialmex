@@ -65,7 +65,7 @@ Public Class ActualizaTurnoSolicitud
 
                 command.Parameters.Clear()
 
-                command.Parameters.AddWithValue("@Fecha", "01/01/2000")
+                command.Parameters.AddWithValue("@Fecha", fecha)
                 command.Parameters.AddWithValue("@clave", lbl_clave.Text)
                 command.Parameters.AddWithValue("@TurnoE", cbx_textra.Text)
                 command.Parameters.AddWithValue("@variable", 3)

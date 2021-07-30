@@ -422,7 +422,6 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
     End Sub
 
 
-
     Sub preautorizar()
         Cnn.Close()
         Cnn.Open()
@@ -581,7 +580,7 @@ when @turnoe = 'Administrativo' then 4
 end
 end
 
-  else if (select count(clave) from giro.[asahi16].[dbo].[Rh_entradasalida2]
+  else if (select count(clave) from giro.[asahi16].[dbo].[Rh_entradasalida2] 
   where clave = @clave and fecha = @fecha) = 1
   begin 
   update giro.[asahi16].[dbo].[Rh_entradasalida2] set grupo = 0 where clave = @clave and fecha = @fecha
@@ -678,9 +677,12 @@ end
 
 
             ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
+
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Vespertino")
+
+
             ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 0) Then
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")
@@ -746,8 +748,15 @@ end
         autorizar()
     End Sub
 
+    Sub generareporte()
+        ContenedorReporteSolicitudTe.depto = id
+        ContenedorReporteSolicitudTe.fecha = dtp1.Value.ToShortDateString
+        ContenedorReporteSolicitudTe.Show()
+    End Sub
+
+
     Private Sub btn_preautorizar_Click(sender As Object, e As EventArgs) Handles btn_preautorizar.Click
-        preautorizar()
+        generareporte()
     End Sub
 
     Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
@@ -757,7 +766,6 @@ end
     Sub Muestragrid()
 
         Try
-
 
             Using cnn As New SqlConnection("data source = GIRO\SQLEXPRESS ;initial catalog=Asahisystem;user id=sa;password=Pa55word")
                 Dim da As New SqlDataAdapter("Sp_muestralistate", cnn)
@@ -789,21 +797,23 @@ end
 
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
 
-        Modulo_sollicitudte.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
-        Modulo_sollicitudte.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("Id").Value.ToString()
-        Modulo_sollicitudte.e_empleado = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
-        Modulo_sollicitudte.e_turno = Me.dtgvp.Rows(e.RowIndex).Cells("TurnoE").Value.ToString()
+        'Modulo_sollicitudte.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
+        'Modulo_sollicitudte.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("Id").Value.ToString()
+        'Modulo_sollicitudte.e_empleado = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
+        'Modulo_sollicitudte.e_turno = Me.dtgvp.Rows(e.RowIndex).Cells("TurnoE").Value.ToString()
 
-        Modulo_sollicitudte.id_permiso = permiso
-        Modulo_sollicitudte.id_depa = depto
-        Modulo_sollicitudte.id_id = id
+        'Modulo_sollicitudte.id_permiso = permiso
+        'Modulo_sollicitudte.id_depa = depto
+        'Modulo_sollicitudte.id_id = id
 
-        ActualizaTurnoSolicitud.Show()
-        Me.Dispose()
-        Me.Close()
+        'ActualizaTurnoSolicitud.Show()
+        'Me.Dispose()
+        'Me.Close()
     End Sub
 
+    'Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellContentClick
 
+    'End Sub
 End Class
 
 

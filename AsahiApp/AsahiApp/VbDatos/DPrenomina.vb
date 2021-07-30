@@ -259,6 +259,7 @@ Public Class DPrenomina
                 txtNom.Duracion = Convert.ToInt32(dr("DURACION").ToString)
                 'txtNom.FechaI = Convert.ToDateTime(dr("FECHAI").ToString)
                 txtNom.FechaF = Convert.ToDateTime(dr("FECHAF").ToString)
+                txtNom.Turno = Convert.ToInt16(dr("TURNO").ToString)
                 txtNom.Tabla = Convert.ToInt32(dr("T").ToString)
                 lstTxtNom.Add(txtNom)
             End While
@@ -605,7 +606,7 @@ Public Class DPrenomina
         Dim oCon As New SqlConnection(cadenaConex)
         Try
             oCon.Open()
-            Dim query As New SqlCommand("INSERT INTO Asahi.dbo.Bitacora_InsertInciBono (PERIODO,EJERCICIO,CODIGOEMPLEADO,FECHA,TIPO,EMPRESA) VALUES (" & sem & "," & año & "," & cod & ",'" & Format(fecha, "dd/MM/yyyy HH:mm:ss") & "'," & tip & ", 1)", oCon)
+            Dim query As New SqlCommand("INSERT INTO Asahi.dbo.Bitacora_InsertInciBono (PERIODO,EJERCICIO,CODIGOEMPLEADO,FECHA,TIPO,EMPRESA) VALUES (" & sem & "," & año & "," & cod & ",'" & Format(fecha, "dd/MM/yyyy HH:mm:ss") & "'," & tip & ", 0)", oCon)
             query.ExecuteScalar()
 
         Catch ex As Exception
