@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Presentacion.exe" version="1.0.0.329" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
+  <asmv1:assemblyIdentity name="Presentacion.exe" version="1.0.0.330" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Presentacion" version="1.0.0.329" language="neutral" processorArchitecture="amd64" />
@@ -834,14 +834,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="8776680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Presentacion.exe" size="8776168">
       <assemblyIdentity name="Presentacion" version="1.0.0.329" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>333Wqb81y/msgaVPgUVu8k7k+jamajXshejukPUetsc=</dsig:DigestValue>
+        <dsig:DigestValue>MjoCwm8dhj2OAl9Hatm4KhvLXOGK7e8YPOAJcjNMAgQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -853,7 +853,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>e4KL9fVlCCtzqwYcOcjpjNNO4VlzC6rfZwXdj4A0y0I=</dsig:DigestValue>
+        <dsig:DigestValue>s1M5qvth4kriLlcq0UGlB+76rgrdHR2lRf/+pttGLOw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -865,7 +865,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/xuXin6nZx0ORt+QOP1sXPCXa/uD6fZzaWA8teZ0Sss=</dsig:DigestValue>
+        <dsig:DigestValue>Y0yxGS+Gw9aR/u3D0E4OswnXUWatqHw36ySmqGP4nfo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
