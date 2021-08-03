@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>329</ApplicationRevision>
+    <ApplicationRevision>330</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -79,10 +79,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>AB32D6955E9A5775322D961F65AA597D1141497C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>447C9BFF059DFB1AD4D3610641BC46522CA5D48E</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VbPresentacion_8_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VbPresentacion_7_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -2001,6 +2001,7 @@
     <None Include="VbPresentacion_3_TemporaryKey.pfx" />
     <None Include="VbPresentacion_4_TemporaryKey.pfx" />
     <None Include="VbPresentacion_6_TemporaryKey.pfx" />
+    <None Include="VbPresentacion_7_TemporaryKey.pfx" />
     <None Include="VbPresentacion_8_TemporaryKey.pfx" />
     <None Include="VbPresentacion_TemporaryKey.pfx" />
     <None Include="Views\Report\ReportViewer.cshtml" />

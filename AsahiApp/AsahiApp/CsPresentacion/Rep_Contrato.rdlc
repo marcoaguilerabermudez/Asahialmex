@@ -35,7 +35,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>144.42434cm</Top>
+        <Top>144.10684cm</Top>
         <Left>3.72307cm</Left>
         <Height>0.6cm</Height>
         <Width>3.74354cm</Width>
@@ -72,7 +72,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>144.42434cm</Top>
+        <Top>144.10684cm</Top>
         <Left>14.14765cm</Left>
         <Height>0.6cm</Height>
         <Width>3.2673cm</Width>
@@ -88,7 +88,7 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>146.02182cm</Top>
+        <Top>145.70432cm</Top>
         <Left>2.84995cm</Left>
         <Height>0cm</Height>
         <Width>5.14583cm</Width>
@@ -100,7 +100,7 @@
         </Style>
       </Line>
       <Line Name="Line2">
-        <Top>146.02182cm</Top>
+        <Top>145.70432cm</Top>
         <Left>13.3175cm</Left>
         <Height>0cm</Height>
         <Width>5.01354cm</Width>
@@ -134,7 +134,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>146.42661cm</Top>
+        <Top>146.10911cm</Top>
         <Left>10.89423cm</Left>
         <Height>0.95368cm</Height>
         <Width>8.94197cm</Width>
@@ -210,7 +210,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>146.42661cm</Top>
+        <Top>146.10911cm</Top>
         <Left>1.56704cm</Left>
         <Height>0.95368cm</Height>
         <Width>7.92395cm</Width>
@@ -12915,7 +12915,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.49958cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -13067,7 +13067,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Formato de referencias </Value>
+                              <Value>Formato de referencias  y/o  Cartas de Recomendación</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Calibri</FontFamily>
@@ -13077,7 +13077,39 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>フォーマット参照</Value>
+                              <Value>フォーマット参照 </Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>Yu Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>及び</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>Yu Gothic</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                                <Color>#000000</Color>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value xml:space="preserve"> </Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>22pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                                <Color>#002060</Color>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>推薦書</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Yu Gothic</FontFamily>
@@ -13109,7 +13141,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.62646cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -13251,7 +13283,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cartas de Recomendación</Value>
+                              <Value>Código de ética </Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Calibri</FontFamily>
@@ -13261,17 +13293,7 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value xml:space="preserve">　</Value>
-                              <Style>
-                                <FontStyle>Normal</FontStyle>
-                                <FontFamily>SimSun</FontFamily>
-                                <FontSize>11pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
-                                <TextDecoration>None</TextDecoration>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value>推薦書</Value>
+                              <Value>倫理規定</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Yu Gothic</FontFamily>
@@ -13439,7 +13461,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Código de ética </Value>
+                              <Value>Solicitud de Transporte</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Calibri</FontFamily>
@@ -13449,7 +13471,16 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>倫理規定</Value>
+                              <Value xml:space="preserve"> </Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>会社交通申請書</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Yu Gothic</FontFamily>
@@ -13481,7 +13512,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.75875cm</Height>
+              <Height>0.67938cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -13617,7 +13648,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Solicitud de Transporte</Value>
+                              <Value>Recibo DPT</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Calibri</FontFamily>
@@ -13627,19 +13658,10 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value xml:space="preserve"> </Value>
+                              <Value>　　DPTの受け取り証明</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
-                                <FontSize>11pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
-                                <TextDecoration>None</TextDecoration>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value>会社交通申請書</Value>
-                              <Style>
-                                <FontStyle>Normal</FontStyle>
-                                <FontFamily>Yu Gothic</FontFamily>
+                                <FontFamily>yu Gothic</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
@@ -13668,7 +13690,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.65292cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -13820,17 +13842,17 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Recibo DPT</Value>
+                              <Value>Registro de Inducción</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
-                                <FontFamily>Calibri</FontFamily>
+                                <FontFamily>calibri</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>　　DPTの受け取り証明</Value>
+                              <Value>　入社登録</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>yu Gothic</FontFamily>
@@ -14004,17 +14026,17 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Registro de Inducción</Value>
+                              <Value>Contrato</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
-                                <FontFamily>calibri</FontFamily>
+                                <FontFamily>Calibri</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>　入社登録</Value>
+                              <Value>　連絡先</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>yu Gothic</FontFamily>
@@ -14217,7 +14239,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Contrato</Value>
+                              <Value>Alta </Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Calibri</FontFamily>
@@ -14227,13 +14249,14 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>　連絡先</Value>
+                              <Value>登録</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
-                                <FontFamily>yu Gothic</FontFamily>
+                                <FontFamily>Yu Gothic</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
+                                <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -14476,7 +14499,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>205.02912cm</Top>
         <Left>0.64041cm</Left>
-        <Height>8.9727cm</Height>
+        <Height>9.87229cm</Height>
         <Width>19.58515cm</Width>
         <ZIndex>100</ZIndex>
         <Style>
@@ -14493,7 +14516,7 @@
       </Border>
     </Style>
   </Body>
-  <Width>8.94576in</Width>
+  <Width>8.14368in</Width>
   <Page>
     <PageHeader>
       <Height>1.53458cm</Height>

@@ -64,7 +64,7 @@ Public Class x
    ,case
    when inc.HastaF is null then '01/01/1900'
    else
-   inc.HastaF6
+   inc.HastaF
    end as 'Hasta'
    ,case
    when Motivo = 1 then 'Permiso con goce de sueldo'
