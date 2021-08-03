@@ -15,17 +15,22 @@ Public Class x
 
 
     Private Sub txtIdPaciente_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_folio.KeyPress
+
         e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+
     End Sub
 
 
 
 
     Sub muestraetiqueta()
+
         Try
             Dim lista As New List(Of String)
-            Cn.Close()
-            Cn.Open()
+
+            cn.Close()
+            cn.Open()
+
             Dim SSel As String
 
             Dim parametro1 As Integer
@@ -107,7 +112,7 @@ Public Class x
    when Incidencia = 'V' and retardo = 0 and Motivo not in (9) then 'Viaje'
    when Incidencia = 'W' and retardo = 0 and Motivo not in (9) then 'Asunto Personal'
    when Incidencia = 'X' and retardo = 0 and Motivo not in (9) then 'IMSS ENFERMEDAD'
-   when Incidencia = 'Y' and retardo = 0 and Motivo not in (9) then 'DEFUNCION'
+  when Incidencia = 'Y' and retardo = 0 and Motivo not in (9) then 'DEFUNCION'
   when Incidencia = '1' and retardo = 1 and Motivo not in (9) then 'TRABAJAR TIEMPO EXTRA'
   when Incidencia = '10' and retardo = 1 and Motivo not in (9) then 'DEFUNCION FAMILIAR'
   when Incidencia = '11' and retardo = 1 and Motivo not in (9) then 'SALIO DE LA CIUDAD'
@@ -212,10 +217,6 @@ dateadd(year,100,convert(datetime,HastaH))
   ,(select top 1 sdo1 from giro.[asahi16].[Supervisor_giro].[Empsdo] where clave = vig.clave order by fecha desc)
   ,quien
   
-  
-
-
-   
 from giro.asahi16.Supervisor_giro.VistaEmpleadosVigenciaYPuesto vig
 join [AsahiSystem].[dbo].[Rh_incidenciamultiple] inc
 on inc.Clave = vig.clave
@@ -229,7 +230,7 @@ where
             Dim da As SqlDataAdapter
             Dim ds As New DataSet
             ds.Clear()
-            da = New SqlDataAdapter(SSel, Cn)
+            da = New SqlDataAdapter(SSel, cn)
             da.Fill(ds)
 
             lbl_clave.Text = ds.Tables(0).Rows(0).Item(1)
@@ -258,7 +259,7 @@ where
             lbl_sueldoac.Text = ds.Tables(0).Rows(0).Item(18)
             puesto = ds.Tables(0).Rows(0).Item(19)
 
-            Cn.Close()
+            cn.Close()
             Btn_autorizar.Enabled = True
             Empleado.Visible = True
             gbx_inicidencia.Visible = True

@@ -31,6 +31,8 @@ Public Class ReimprimeVale
 
     End Sub
 
-
-
+    Private Sub btn_solicitar_Click(sender As Object, e As EventArgs) Handles btn_solicitar.Click
+        ContenedorReporteVale1.folio = txt_clave.Text
+        ContenedorReporteVale1.Show()
+    End Sub
 End Class
