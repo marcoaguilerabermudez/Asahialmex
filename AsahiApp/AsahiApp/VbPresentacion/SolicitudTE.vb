@@ -58,10 +58,11 @@ Public Class SolicitudTE
 
 
     Sub muestraetiqueta()
+
         Try
             Dim lista As New List(Of String)
-            Cnn.Close()
-            Cnn.Open()
+            cnn.Close()
+            cnn.Open()
             Dim SSel As String
 
             Dim parametro1 As Integer
@@ -105,7 +106,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
             Dim da As SqlDataAdapter
             Dim ds As New DataSet
             ds.Clear()
-            da = New SqlDataAdapter(SSel, Cnn)
+            da = New SqlDataAdapter(SSel, cnn)
             da.Fill(ds)
 
             txt_nombre.Text = ds.Tables(0).Rows(0).Item(1)
@@ -118,7 +119,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
 
             tconsumido = ds.Tables(0).Rows(0).Item(5)
 
-            Cnn.Close()
+            cnn.Close()
 
         Catch ex As Exception
 
@@ -749,6 +750,7 @@ end
     End Sub
 
     Sub generareporte()
+
         ContenedorReporteSolicitudTe.depto = id
         ContenedorReporteSolicitudTe.fecha = dtp1.Value.ToShortDateString
         ContenedorReporteSolicitudTe.Show()
@@ -793,6 +795,7 @@ end
             MessageBox.Show(ex.Message)
             Cnn.Close()
         End Try
+
     End Sub
 
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick

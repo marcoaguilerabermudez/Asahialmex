@@ -1,5 +1,5 @@
 ﻿Public Class ContenedorReporteVale1
-    Public folio
+    Public folio As Integer
     Private Sub ContenedorReporteVale1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSet28.Sp_muestravale' Puede moverla o quitarla según sea necesario.
         DataSet28.EnforceConstraints = False
