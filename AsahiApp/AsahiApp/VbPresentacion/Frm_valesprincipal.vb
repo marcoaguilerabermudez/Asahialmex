@@ -399,6 +399,7 @@ delete from [Asahi].[dbo].[Vales_Almacen_Temp] where [TimeStampSalida] < @Tiempo
     End Sub
 
     Private Sub btn_historial_Click(sender As Object, e As EventArgs) Handles btn_historial.Click
+        Modulo_vales.e_clave = txt_empleado.Text
         Frm_terminavale.Show()
     End Sub
 
@@ -561,3 +562,11 @@ insert into Asahi.dbo.Vales_Almacen values
     End Sub
 
 End Class
+
+
+Module Modulo_vales
+
+    Public e_clave As Integer
+
+
+End Module

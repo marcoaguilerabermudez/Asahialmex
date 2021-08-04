@@ -703,5 +703,10 @@ Public Class Frm_Principal
         Reimprime_v.Show()
     End Sub
 
+    Private Sub CancelarValesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CancelarValesToolStripMenuItem.Click
+        Dim Cancela_v As New Frm_cancelavale(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, Me.emp.IdPermisoV)
+        Cancela_v.Show()
+    End Sub
+
 #End Region
 End Class

@@ -563,6 +563,12 @@
     <Compile Include="DataSet\Dts_BonoMensual.vb">
       <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Frm_cancelavale.Designer.vb">
+      <DependentUpon>Frm_cancelavale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_cancelavale.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_CapturaMejora.Designer.vb">
       <DependentUpon>Frm_CapturaMejora.vb</DependentUpon>
     </Compile>
@@ -1241,6 +1247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_cambiodepxmes.resx">
       <DependentUpon>frm_cambiodepxmes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_cancelavale.resx">
+      <DependentUpon>Frm_cancelavale.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_CapturaMejora.resx">
       <DependentUpon>Frm_CapturaMejora.vb</DependentUpon>
