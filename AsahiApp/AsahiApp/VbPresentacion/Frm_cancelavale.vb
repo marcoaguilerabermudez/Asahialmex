@@ -25,6 +25,7 @@ Public Class Frm_cancelavale
     Private Sub Frm_cancelavale_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         txt_folio.Focus()
+
         Dim conexion As New conexion()
         If Strings.Left(conexion.getIp(), 6) = "172.16" Then
 
@@ -124,8 +125,6 @@ where folio_vale = @folio
 delete from [Asahi].[dbo].[Vales_Almacen_Temp]
 where folio_vale = @folio
 
-
-
 ", cnn)
 
 
@@ -138,6 +137,12 @@ where folio_vale = @folio
             agrega.Parameters.Add("@entrega", SqlDbType.Int).Value = id
 
             agrega.ExecuteNonQuery()
+
+            MessageBox.Show("El registro(s) ha(n) sido cancelado(s) correctamente", "Advertencia", MessageBoxButtons.OK)
+            txt_folio.Clear()
+
+            dtgvp.Visible = False
+            Btn_cancelar.Enabled = False
 
         Catch ex As Exception
             MessageBox.Show("Error al cancelar el vale, consulte al administrador")
@@ -154,4 +159,6 @@ where folio_vale = @folio
     Private Sub Btn_cancelar_Click(sender As Object, e As EventArgs) Handles Btn_cancelar.Click
         CancelaRegistroVale()
     End Sub
+
+
 End Class
