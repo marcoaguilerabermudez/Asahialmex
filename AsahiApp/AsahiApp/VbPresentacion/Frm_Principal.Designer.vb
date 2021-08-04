@@ -123,6 +123,7 @@ Partial Class Frm_Principal
         Me.AcercaDeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlmacénToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ValesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReimprimirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ValidarValesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AjustarInventarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AplicaciónDeMedidaDisciplinariaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -135,7 +136,7 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
-        Me.ReimprimirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CancelarValesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -769,7 +770,7 @@ Partial Class Frm_Principal
         '
         'AlmacénToolStripMenuItem
         '
-        Me.AlmacénToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ValesToolStripMenuItem, Me.ReimprimirToolStripMenuItem, Me.ValidarValesToolStripMenuItem, Me.AjustarInventarioToolStripMenuItem})
+        Me.AlmacénToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ValesToolStripMenuItem, Me.ReimprimirToolStripMenuItem, Me.ValidarValesToolStripMenuItem, Me.AjustarInventarioToolStripMenuItem, Me.CancelarValesToolStripMenuItem})
         Me.AlmacénToolStripMenuItem.Name = "AlmacénToolStripMenuItem"
         Me.AlmacénToolStripMenuItem.Size = New System.Drawing.Size(66, 26)
         Me.AlmacénToolStripMenuItem.Text = "Almacén"
@@ -779,6 +780,12 @@ Partial Class Frm_Principal
         Me.ValesToolStripMenuItem.Name = "ValesToolStripMenuItem"
         Me.ValesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ValesToolStripMenuItem.Text = "Vales"
+        '
+        'ReimprimirToolStripMenuItem
+        '
+        Me.ReimprimirToolStripMenuItem.Name = "ReimprimirToolStripMenuItem"
+        Me.ReimprimirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ReimprimirToolStripMenuItem.Text = "Reimprimir"
         '
         'ValidarValesToolStripMenuItem
         '
@@ -860,11 +867,11 @@ Partial Class Frm_Principal
         Me.Lbl_NombreUser.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_NombreUser.TabIndex = 4
         '
-        'ReimprimirToolStripMenuItem
+        'CancelarValesToolStripMenuItem
         '
-        Me.ReimprimirToolStripMenuItem.Name = "ReimprimirToolStripMenuItem"
-        Me.ReimprimirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ReimprimirToolStripMenuItem.Text = "Reimprimir"
+        Me.CancelarValesToolStripMenuItem.Name = "CancelarValesToolStripMenuItem"
+        Me.CancelarValesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CancelarValesToolStripMenuItem.Text = "Cancelar Vales"
         '
         'Frm_Principal
         '
@@ -1001,4 +1008,5 @@ Partial Class Frm_Principal
     Friend WithEvents ValidarValesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AjustarInventarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReimprimirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CancelarValesToolStripMenuItem As ToolStripMenuItem
 End Class

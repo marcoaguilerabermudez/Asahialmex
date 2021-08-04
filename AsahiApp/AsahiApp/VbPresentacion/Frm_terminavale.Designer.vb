@@ -40,7 +40,7 @@ Partial Class Frm_terminavale
         Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -51,7 +51,6 @@ Partial Class Frm_terminavale
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.Format = "0.00"
         DataGridViewCellStyle2.NullValue = Nothing
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -59,6 +58,7 @@ Partial Class Frm_terminavale
         Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle2
         Me.dtgvp.Location = New System.Drawing.Point(11, 12)
         Me.dtgvp.Name = "dtgvp"
+        Me.dtgvp.ReadOnly = True
         Me.dtgvp.RowHeadersVisible = False
         Me.dtgvp.Size = New System.Drawing.Size(821, 431)
         Me.dtgvp.TabIndex = 259
@@ -71,7 +71,7 @@ Partial Class Frm_terminavale
         Me.Controls.Add(Me.dtgvp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MinimizeBox = False
+        Me.MaximizeBox = False
         Me.Name = "Frm_terminavale"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Historial"
