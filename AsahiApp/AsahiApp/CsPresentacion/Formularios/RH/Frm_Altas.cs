@@ -545,14 +545,14 @@ namespace CsPresentacion
         {
             selecciona_sueldo();
 
-            if (cmb_puesto.Text == "DIRECTOR" || cmb_puesto.Text == "GERENTE" || cmb_puesto.Text == "COORDINADOR" || cmb_puesto.Text == "PRESIDENTE")
+            if (cmb_puesto.Text == "DIRECTOR" || cmb_puesto.Text == "GERENTE" || cmb_puesto.Text == "COORDINADOR" || cmb_puesto.Text == "PRESIDENTE" )
             {
                 txt_SDO1.Enabled = true;
                 txt_SDO1.Text = "";
                 txt_SDO3.Text = "";
                 txt_SDO5.Text = "";
             }
-            else if (cmb_puesto.Text == "ASISTENTE DE GERENTE" || cmb_puesto.Text == "SUPERVISOR" || cmb_puesto.Text == "SUPERVISOR ISO" || cmb_puesto.Text == "STAFF" || cmb_puesto.Text == "TRADUCTOR" || cmb_puesto.Text == "LIDER ADMON")
+            else if (cmb_puesto.Text == "ASISTENTE DE GERENTE" || cmb_puesto.Text == "SUPERVISOR" || cmb_puesto.Text == "SUPERVISOR ISO" || cmb_puesto.Text == "TRADUCTOR" || cmb_puesto.Text == "LIDER ADMON" || cmb_puesto.Text == "STAFF")
             {
                 txt_SDO1.Enabled = true;
             }
