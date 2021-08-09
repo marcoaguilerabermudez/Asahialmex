@@ -16,6 +16,7 @@ Public Class SolicitudTE
     Dim nombtre_etiqueta As String
     Dim turno_etiqueta As Integer
     Dim id_etiqueta As Integer
+    Dim claves() As Integer
 
 
 
@@ -751,13 +752,62 @@ end
 
     Sub generareporte()
 
-        ContenedorReporteSolicitudTe.depto = id
-        ContenedorReporteSolicitudTe.fecha = dtp1.Value.ToShortDateString
-        ContenedorReporteSolicitudTe.Show()
+
+        ContenedorReporteSolicitudTeSel.fecha = dtp1.Value.ToShortDateString
+        ContenedorReporteSolicitudTeSel.Show()
     End Sub
 
 
     Private Sub btn_preautorizar_Click(sender As Object, e As EventArgs) Handles btn_preautorizar.Click
+        '  
+
+
+        cnn.Close()
+        cnn.Open()
+        Dim auto As SqlCommand = New SqlCommand("
+
+insert into [AsahiSystem].[dbo].[Temporal_solicitud] values (@clave)
+
+", cnn)
+
+
+        Dim auto2 As SqlCommand = New SqlCommand("
+
+delete from [AsahiSystem].[dbo].[Temporal_solicitud]
+
+", cnn)
+
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        Dim RI As String
+
+        Try
+            auto2.ExecuteNonQuery()
+
+            For Each fila In dtgvp.Rows
+                If fila.Cells("x").Value = True Then
+                    auto.Parameters.Clear()
+
+                    auto.Parameters.Add("@clave", SqlDbType.Int).Value = (fila.Cells("Clave").Value)
+
+                    auto.ExecuteNonQuery()
+
+
+                End If
+
+            Next
+
+
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error al actualizar registro, consulte al administrador")
+            MessageBox.Show(ex.ToString)
+            cnn.Close()
+        Finally
+            cnn.Close()
+
+        End Try
+
         generareporte()
     End Sub
 
