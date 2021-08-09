@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>333</ApplicationRevision>
+    <ApplicationRevision>334</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -359,6 +359,12 @@
     <Compile Include="ContenedorReporteSolicitudTe.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReporteSolicitudTeSel.Designer.vb">
+      <DependentUpon>ContenedorReporteSolicitudTeSel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteSolicitudTeSel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteSuspension.Designer.vb">
       <DependentUpon>ContenedorReporteSuspension.vb</DependentUpon>
     </Compile>
@@ -499,6 +505,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet28.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet29.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet29.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet3.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1182,6 +1193,9 @@
     <EmbeddedResource Include="ContenedorReporteSolicitudTe.resx">
       <DependentUpon>ContenedorReporteSolicitudTe.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteSolicitudTeSel.resx">
+      <DependentUpon>ContenedorReporteSolicitudTeSel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteSuspension.resx">
       <DependentUpon>ContenedorReporteSuspension.vb</DependentUpon>
     </EmbeddedResource>
@@ -1328,6 +1342,7 @@
     <EmbeddedResource Include="ReportePuestoDepartamento.rdlc" />
     <EmbeddedResource Include="ReporteSalidaEquipoComputo.rdlc" />
     <EmbeddedResource Include="ReporteSolicitudTe.rdlc" />
+    <EmbeddedResource Include="ReporteSolicitudTeSelec.rdlc" />
     <EmbeddedResource Include="ReporteSuspension.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="ReporteVales1.rdlc" />
@@ -1675,6 +1690,17 @@
     </None>
     <None Include="DataSet28.xss">
       <DependentUpon>DataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet29.xsc">
+      <DependentUpon>DataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet29.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet29.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet29.xss">
+      <DependentUpon>DataSet29.xsd</DependentUpon>
     </None>
     <None Include="DataSet3.xsc">
       <DependentUpon>DataSet3.xsd</DependentUpon>

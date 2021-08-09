@@ -633,6 +633,7 @@ Partial Class SolicitudTE
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "SolicitudTE"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Solicitud de Tiempo Extra"

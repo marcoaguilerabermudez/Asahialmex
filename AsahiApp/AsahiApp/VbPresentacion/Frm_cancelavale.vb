@@ -22,6 +22,7 @@ Public Class Frm_cancelavale
         Me.p_vales = p_vales
 
     End Sub
+
     Private Sub Frm_cancelavale_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         txt_folio.Focus()
@@ -42,6 +43,7 @@ Public Class Frm_cancelavale
             Me.cadenaCExpress = conexion.cadenaConexExpressFor
 
         End If
+
     End Sub
 
 
@@ -54,7 +56,9 @@ Public Class Frm_cancelavale
         Try
 
             Dim da As New SqlDataAdapter("Sp_MuestraValidaVale", cnn)
+
             da.SelectCommand.CommandType = CommandType.StoredProcedure
+
             da.SelectCommand.Parameters.AddWithValue("@folio", txt_folio.Text)
 
             Dim dt As New DataTable
@@ -134,6 +138,7 @@ where folio_vale = @folio
 
 
             agrega.Parameters.Add("@folio", SqlDbType.Int).Value = txt_folio.Text
+
             agrega.Parameters.Add("@entrega", SqlDbType.Int).Value = id
 
             agrega.ExecuteNonQuery()
