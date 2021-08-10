@@ -32,24 +32,27 @@ Public Class ValidarVale
         txt_folio.Focus()
 
         Dim conexion As New conexion()
+
         If Strings.Left(conexion.getIp(), 6) = "172.16" Then
+
             Me.cadenaConex = conexion.conexionCont
             Me.cnn = conexion.conexionContpaq2
             Me.cnn2 = conexion.cadenaConexExpress1
             Me.cadenaCExpress = conexion.cadenaConexExpress
+
         Else
+
             Me.cadenaConex = conexion.cadenaConexFor
             Me.cnn = conexion.conexionContpaqFor2
             Me.cnn2 = conexion.conexionExpressFor
             Me.cadenaCExpress = conexion.cadenaConexExpressFor
+
         End If
 
     End Sub
 
 
     Sub muestravale()
-
-
 
 
         cnn.Close()
@@ -208,6 +211,7 @@ where Folio_vale = @folio
             txt_folio.Clear()
 
             dtgvp.Visible = False
+
             Btn_autorizar.Enabled = False
 
 
@@ -218,9 +222,6 @@ where Folio_vale = @folio
             ' MessageBox.Show("Ocurrió un problema, contacte al área de sistemas.", "Aviso")
             cnn.Close()
         End Try
-
-
-
     End Sub
 
 
