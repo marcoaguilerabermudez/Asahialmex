@@ -1395,7 +1395,8 @@
             "LEÓN-PRODUCCIÓN 2",
             "LEÓN-ADMINISTRATIVO",
             "GUANAJUATO-ADMINISTRATIVO",
-            "IRAPUATO-ADMINISTRATIVO"});
+            "IRAPUATO-ADMINISTRATIVO",
+            "IRAPUATO-PRODUCCIÓN"});
             this.cmb_ruta.Location = new System.Drawing.Point(20, 330);
             this.cmb_ruta.Name = "cmb_ruta";
             this.cmb_ruta.Size = new System.Drawing.Size(166, 21);

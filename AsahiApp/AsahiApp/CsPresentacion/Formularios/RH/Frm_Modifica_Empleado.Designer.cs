@@ -113,6 +113,7 @@
             this.cmb_departamento = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txt_factor_sueldo = new System.Windows.Forms.TextBox();
             this.lbl_id_puesto = new System.Windows.Forms.Label();
             this.lbl_valida_puesto = new System.Windows.Forms.Label();
             this.btn_eliminar_puesto = new System.Windows.Forms.Button();
@@ -154,7 +155,6 @@
             this.btn_mod_ruta = new System.Windows.Forms.Button();
             this.cmb_ruta = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txt_factor_sueldo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.nacimiento.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1190,6 +1190,14 @@
             this.tabPage4.Text = "Puesto";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // txt_factor_sueldo
+            // 
+            this.txt_factor_sueldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_factor_sueldo.Location = new System.Drawing.Point(13, 517);
+            this.txt_factor_sueldo.Name = "txt_factor_sueldo";
+            this.txt_factor_sueldo.Size = new System.Drawing.Size(65, 20);
+            this.txt_factor_sueldo.TabIndex = 252;
+            // 
             // lbl_id_puesto
             // 
             this.lbl_id_puesto.AutoSize = true;
@@ -1634,7 +1642,8 @@
             "LEÓN-PRODUCCIÓN 2",
             "LEÓN-ADMINISTRATIVO",
             "GUANAJUATO-ADMINISTRATIVO",
-            "IRAPUATO-ADMINISTRATIVO"});
+            "IRAPUATO-ADMINISTRATIVO",
+            "IRAPUATO-PRODUCCIÓN"});
             this.cmb_ruta.Location = new System.Drawing.Point(24, 34);
             this.cmb_ruta.Name = "cmb_ruta";
             this.cmb_ruta.Size = new System.Drawing.Size(181, 21);
@@ -1649,14 +1658,6 @@
             this.label19.Size = new System.Drawing.Size(40, 13);
             this.label19.TabIndex = 240;
             this.label19.Text = "RUTA:";
-            // 
-            // txt_factor_sueldo
-            // 
-            this.txt_factor_sueldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_factor_sueldo.Location = new System.Drawing.Point(13, 517);
-            this.txt_factor_sueldo.Name = "txt_factor_sueldo";
-            this.txt_factor_sueldo.Size = new System.Drawing.Size(65, 20);
-            this.txt_factor_sueldo.TabIndex = 252;
             // 
             // Frm_Modificaciones
             // 

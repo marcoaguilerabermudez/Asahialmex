@@ -159,8 +159,6 @@ select descripcion,CLAVE from giro.[asahi16].[Supervisor_giro].[Puesto] where cl
 
         Try
 
-
-
             Dim lista As New List(Of String)
             Cn.Close()
             Cn.Open()
@@ -284,9 +282,6 @@ SELECT  [Id_motivopermiso]
                 cbx_tipo.DropDownStyle = ComboBoxStyle.DropDown
                 cbx_tipo.Text = "---Seleccionar---"
                 cbx_motivo.Text = "---Seleccionar---"
-
-
-
 
             ElseIf AscW(e.KeyChar) = CInt(Keys.Back) Then
                 txt_clave.Clear()
