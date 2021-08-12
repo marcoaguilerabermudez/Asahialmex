@@ -85,14 +85,14 @@ else
 (SELECT TOP 1 fechai from [asahi16].[Supervisor_giro].[Empaus] where clave = @clave and DATEPART(YEAR,FECHAI) = @año and TIPO = 'F'  AND VIG.INGRESO < FECHAI)
 end
 ,CASE
-WHEN  (SELECT TOP 1 id_empleado from SQLEX.[AsahiSystem].[dbo].[Rh_MedidasDisciplinarias] where id_empleado = @clave and DATEPART(YEAR,Fecha_Aplicacion) = @año   AND Clave_disciplinaria = 15) IS NULL THEN 0
+WHEN  (SELECT TOP 1 id_empleado from SQLEX.[AsahiSystem].[dbo].[Rh_MedidasDisciplinarias] where id_empleado = @clave and DATEPART(YEAR,Fecha_Aplicacion) = @año   AND Clave_disciplinaria = 15 AND APLICA <> 2) IS NULL THEN 0
 else
 1
 end
 ,CASE
-WHEN  (SELECT TOP 1 id_empleado from SQLEX.[AsahiSystem].[dbo].[Rh_MedidasDisciplinarias] where id_empleado = @clave and DATEPART(YEAR,Fecha_Aplicacion) = @año   AND Clave_disciplinaria = 15) IS NULL THEN '01/01/1900'
+WHEN  (SELECT TOP 1 id_empleado from SQLEX.[AsahiSystem].[dbo].[Rh_MedidasDisciplinarias] where id_empleado = @clave and DATEPART(YEAR,Fecha_Aplicacion) = @año   AND Clave_disciplinaria = 15 AND APLICA <> 2) IS NULL THEN '01/01/1900'
 else
-(SELECT TOP 1 Fecha_Aplicacion from SQLEX.[AsahiSystem].[dbo].[Rh_MedidasDisciplinarias] where id_empleado = @clave and DATEPART(YEAR,Fecha_Aplicacion) = @año   AND Clave_disciplinaria = 15)
+(SELECT TOP 1 Fecha_Aplicacion from SQLEX.[AsahiSystem].[dbo].[Rh_MedidasDisciplinarias] where id_empleado = @clave and DATEPART(YEAR,Fecha_Aplicacion) = @año   AND Clave_disciplinaria = 15 AND APLICA <> 2)
 end
 
 from asahi16.Supervisor_giro.VistaEmpleadosVigenciaYPuesto vig
