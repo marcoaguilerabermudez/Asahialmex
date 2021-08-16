@@ -130,7 +130,7 @@ order by id_medida desc")
 
         Dim procesa As SqlCommand = New SqlCommand("
 if @variable = 0
-update [AsahiSystem].[dbo].[Rh_MedidasDisciplinarias] set Aplica = 1
+update [AsahiSystem].[dbo].[Rh_MedidasDisciplinarias] set Aplica = 1 , fecha_aplicacion = getdate()
 where Id_medida = @id
 
 else if @variable = 1

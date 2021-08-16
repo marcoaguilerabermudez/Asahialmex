@@ -708,5 +708,9 @@ Public Class Frm_Principal
         Cancela_v.Show()
     End Sub
 
+    Private Sub ReportesToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem2.Click
+        ReporteMedidas.Show()
+    End Sub
+
 #End Region
 End Class
