@@ -137,7 +137,7 @@ Public Class x
      when Motivo = 7 then 'Cambio de departamento'
    when Motivo = 8 then 'Cambio de puesto'
     when Motivo = 9 and Incidencia = 'O' then N'Otro'
-   when Motivo = 9 and Incidencia = 'F' then N'Faltas'
+   when Motivo = 9 and Incidencia in ('F', 'X') then N'Faltas'
    when Motivo = 9 and Incidencia = 'I' then N'Indisciplina'
    END
   ,motivo,

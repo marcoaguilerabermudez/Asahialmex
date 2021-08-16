@@ -137,6 +137,7 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
+        Me.ReportesToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -408,7 +409,7 @@ Partial Class Frm_Principal
         '
         'MedidasDisciplinariasToolStripMenuItem1
         '
-        Me.MedidasDisciplinariasToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CartaCompromisoToolStripMenuItem1, Me.MedidasDisciplinariaToolStripMenuItem})
+        Me.MedidasDisciplinariasToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CartaCompromisoToolStripMenuItem1, Me.MedidasDisciplinariaToolStripMenuItem, Me.ReportesToolStripMenuItem2})
         Me.MedidasDisciplinariasToolStripMenuItem1.Name = "MedidasDisciplinariasToolStripMenuItem1"
         Me.MedidasDisciplinariasToolStripMenuItem1.ShowShortcutKeys = False
         Me.MedidasDisciplinariasToolStripMenuItem1.Size = New System.Drawing.Size(331, 22)
@@ -873,6 +874,12 @@ Partial Class Frm_Principal
         Me.Lbl_NombreUser.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_NombreUser.TabIndex = 4
         '
+        'ReportesToolStripMenuItem2
+        '
+        Me.ReportesToolStripMenuItem2.Name = "ReportesToolStripMenuItem2"
+        Me.ReportesToolStripMenuItem2.Size = New System.Drawing.Size(186, 22)
+        Me.ReportesToolStripMenuItem2.Text = "Reportes"
+        '
         'Frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1009,4 +1016,5 @@ Partial Class Frm_Principal
     Friend WithEvents AjustarInventarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReimprimirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CancelarValesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem2 As ToolStripMenuItem
 End Class

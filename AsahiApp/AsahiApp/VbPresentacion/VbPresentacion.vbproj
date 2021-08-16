@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>338</ApplicationRevision>
+    <ApplicationRevision>339</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -516,6 +516,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet30.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet30.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet4.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -596,6 +601,12 @@
       <DependentUpon>ReimprimeVale.vb</DependentUpon>
     </Compile>
     <Compile Include="ReimprimeVale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteMedidas.Designer.vb">
+      <DependentUpon>ReporteMedidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMedidas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\Frm_CreadorCuestionarios.Designer.vb">
@@ -1334,6 +1345,9 @@
     <EmbeddedResource Include="ReporteFaltaJusInj.rdlc" />
     <EmbeddedResource Include="ReporteKardexIncidencias.rdlc" />
     <EmbeddedResource Include="ReporteMedidaDisciplinaria.rdlc" />
+    <EmbeddedResource Include="ReporteMedidas.resx">
+      <DependentUpon>ReporteMedidas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteNuevoDepto.rdlc" />
     <EmbeddedResource Include="ReportePermisoCSGoce.rdlc" />
     <EmbeddedResource Include="ReportePersonalSemanal.rdlc" />
@@ -1712,6 +1726,17 @@
     </None>
     <None Include="DataSet3.xss">
       <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet30.xsc">
+      <DependentUpon>DataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet30.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet30.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet30.xss">
+      <DependentUpon>DataSet30.xsd</DependentUpon>
     </None>
     <None Include="DataSet4.xsc">
       <DependentUpon>DataSet4.xsd</DependentUpon>

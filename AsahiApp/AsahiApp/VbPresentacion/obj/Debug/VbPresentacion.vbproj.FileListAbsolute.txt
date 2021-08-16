@@ -1354,3 +1354,4 @@ C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPres
 C:\Users\francisco.mojica.ASAHI\source\repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ValidarVale.resources
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Frm_cancelavale.resources
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ContenedorReporteSolicitudTeSel.resources
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.ReporteMedidas.resources

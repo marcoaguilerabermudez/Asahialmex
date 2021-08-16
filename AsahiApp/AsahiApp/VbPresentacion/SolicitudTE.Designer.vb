@@ -27,8 +27,6 @@ Partial Class SolicitudTE
         Me.panel1 = New System.Windows.Forms.Panel()
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -72,6 +70,8 @@ Partial Class SolicitudTE
         Me.di1 = New System.Windows.Forms.Label()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.dtp2 = New System.Windows.Forms.DateTimePicker()
         Me.panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,10 +80,10 @@ Partial Class SolicitudTE
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.panel1.Controls.Add(Me.dtp2)
+        Me.panel1.Controls.Add(Me.Label2)
         Me.panel1.Controls.Add(Me.dtp1)
         Me.panel1.Controls.Add(Me.Label1)
-        Me.panel1.Controls.Add(Me.Panel2)
-        Me.panel1.Controls.Add(Me.Label2)
         Me.panel1.Controls.Add(Me.Panel3)
         Me.panel1.Controls.Add(Me.Label6)
         Me.panel1.Location = New System.Drawing.Point(1, 0)
@@ -109,26 +109,6 @@ Partial Class SolicitudTE
         Me.Label1.Size = New System.Drawing.Size(281, 20)
         Me.Label1.TabIndex = 134
         Me.Label1.Text = "Solicitud de tiempo extra para el día:"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.LightBlue
-        Me.Panel2.Location = New System.Drawing.Point(737, 9)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(32, 22)
-        Me.Panel2.TabIndex = 156
-        Me.Panel2.Visible = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(770, 13)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 13)
-        Me.Label2.TabIndex = 155
-        Me.Label2.Text = "Preautorizado"
-        Me.Label2.Visible = False
         '
         'Panel3
         '
@@ -601,6 +581,25 @@ Partial Class SolicitudTE
         Me.dtgvp.Size = New System.Drawing.Size(913, 276)
         Me.dtgvp.TabIndex = 159
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label2.Location = New System.Drawing.Point(412, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 20)
+        Me.Label2.TabIndex = 155
+        Me.Label2.Text = "Hasta:"
+        '
+        'dtp2
+        '
+        Me.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp2.Location = New System.Drawing.Point(477, 10)
+        Me.dtp2.Name = "dtp2"
+        Me.dtp2.Size = New System.Drawing.Size(100, 20)
+        Me.dtp2.TabIndex = 156
+        '
         'SolicitudTE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -664,8 +663,6 @@ Partial Class SolicitudTE
     Friend WithEvents lbl1 As Label
     Friend WithEvents txt_nombre As TextBox
     Friend WithEvents txt_clave As TextBox
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents btn_eliminar As Button
@@ -695,4 +692,6 @@ Partial Class SolicitudTE
     Friend WithEvents di1 As Label
     Friend WithEvents x As DataGridViewCheckBoxColumn
     Friend WithEvents dtgvp As DataGridView
+    Friend WithEvents dtp2 As DateTimePicker
+    Friend WithEvents Label2 As Label
 End Class
