@@ -406,58 +406,80 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoe = 'Nocturno' then  '01/01/1900 06:55:00'
   when @turnoe = 'Administrativo' then  '01/01/1900 17:00:00'
   end, 0, @depto,1,'01/01/1900')
-", Cnn)
+", cnn)
+
+        Dim Fecha As Date = dtp1.Value.ToShortDateString
 
         Dim RI As String
-        Try
 
-            agrega.Parameters.Clear()
-            agrega.Parameters.Add("@clave", SqlDbType.Int).Value = txt_clave.Text
-            agrega.Parameters.Add("@fecha", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
-            agrega.Parameters.Add("@turnoa", SqlDbType.VarChar, (20)).Value = txt_turno.Text
-            agrega.Parameters.Add("@turnoe", SqlDbType.VarChar, (20)).Value = cbx_textra.Text
-            agrega.Parameters.Add("@parcial", SqlDbType.Float).Value = txt_horas.Text
-            agrega.Parameters.Add("@motivo", SqlDbType.Text).Value = txt_motivo.Text
-            agrega.Parameters.Add("@entrada", SqlDbType.VarChar, (20)).Value = cbx_textra.Text
-            agrega.Parameters.Add("@salida", SqlDbType.VarChar, (20)).Value = cbx_textra.Text
-            agrega.Parameters.Add("@depto", SqlDbType.VarChar, (5)).Value = dp
+        Dim Pregunta As Integer
 
+        Pregunta = MsgBox("¿Desea cargar la solicitud para " & dias & " día(s)?", vbYesNo + vbExclamation + vbDefaultButton2, "Solicitud de Tiempo extra")
 
+        If Pregunta = vbYes Then
 
-            agrega.ExecuteNonQuery()
+            Try
 
-            '' RI = "Correcto, ha solicidato el tiempo extra."
-            ContenedorReporteExcedenteTe.clave = txt_clave.Text
-            ContenedorReporteExcedenteTe.fecha = dtp1.Value.ToShortDateString
-            ContenedorReporteExcedenteTe.Turno = cbx_textra.Text
-            ContenedorReporteExcedenteTe.Show()
+                For index As Integer = 1 To dias
 
-            Muestragrid()
+                    agrega.Parameters.Clear()
+                    agrega.Parameters.Add("@clave", SqlDbType.Int).Value = txt_clave.Text
+                    agrega.Parameters.Add("@fecha", SqlDbType.Date).Value = Fecha
+                    agrega.Parameters.Add("@turnoa", SqlDbType.VarChar, (20)).Value = txt_turno.Text
+                    agrega.Parameters.Add("@turnoe", SqlDbType.VarChar, (20)).Value = cbx_textra.Text
+                    agrega.Parameters.Add("@parcial", SqlDbType.Float).Value = txt_horas.Text
+                    agrega.Parameters.Add("@motivo", SqlDbType.Text).Value = txt_motivo.Text
+                    agrega.Parameters.Add("@entrada", SqlDbType.VarChar, (20)).Value = cbx_textra.Text
+                    agrega.Parameters.Add("@salida", SqlDbType.VarChar, (20)).Value = cbx_textra.Text
+                    agrega.Parameters.Add("@depto", SqlDbType.VarChar, (5)).Value = dp
 
 
-            ''MessageBox.Show(RI, "¡Aviso!")
-            txt_clave.Clear()
-            txt_nombre.Clear()
-            txt_turno.Clear()
-            txt_depto.Clear()
-            txt_horas.Clear()
-            cbx_textra.Items.Clear()
 
-        Catch ex As Exception
+                    agrega.ExecuteNonQuery()
 
-            MessageBox.Show("Error al actualizar registro, consulte al administrador")
-            MessageBox.Show(ex.ToString)
-            Cnn.Close()
+                    Fecha = DateAdd(DateInterval.Day, 1, Fecha)
 
-            'cargagrid()
-        Finally
-            Cnn.Close()
-        End Try
-        'Else
-        '    MessageBox.Show("La hora límite para hacer la solicitud de tiempo extra es a las 16:55 del día en curso.", "¡Aviso!")
+                Next
 
-        'End If
-        muestraetiquetaplan()
+
+                'RI = "Correcto, ha solicidato el tiempo extra."
+                'ContenedorReporteExcedenteTe.clave = txt_clave.Text
+                'ContenedorReporteExcedenteTe.fecha = dtp1.Value.ToShortDateString
+                'ContenedorReporteExcedenteTe.Turno = cbx_textra.Text
+                'ContenedorReporteExcedenteTe.Show()
+
+                Muestragrid()
+
+
+                'MessageBox.Show(RI, "¡Aviso!")
+                txt_clave.Clear()
+                txt_nombre.Clear()
+                txt_turno.Clear()
+                txt_depto.Clear()
+                txt_horas.Clear()
+                cbx_textra.Items.Clear()
+
+            Catch ex As Exception
+
+                MessageBox.Show("Error al actualizar registro, consulte al administrador")
+                MessageBox.Show(ex.ToString)
+                Cnn.Close()
+
+                'cargagrid()
+            Finally
+                Cnn.Close()
+            End Try
+            'Else
+            '    MessageBox.Show("La hora límite para hacer la solicitud de tiempo extra es a las 16:55 del día en curso.", "¡Aviso!")
+
+            'End If
+            muestraetiquetaplan()
+        Else
+
+            MessageBox.Show("Acción no completada", "¡Aviso!")
+
+        End If
+
     End Sub
 
 
