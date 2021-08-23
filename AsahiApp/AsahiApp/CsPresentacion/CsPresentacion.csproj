@@ -578,7 +578,6 @@
       <DependentUpon>Frm_Modifica_Sueldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rep_Ausentismos3.rdlc" />
-    <EmbeddedResource Include="Rep_Contrato.rdlc" />
     <EmbeddedResource Include="Rep_Contrato_.rdlc" />
     <EmbeddedResource Include="Rep_Descanso_Laborado2.rdlc" />
     <EmbeddedResource Include="Rep_Historial_empleado.rdlc" />
