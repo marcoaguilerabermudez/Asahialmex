@@ -109,9 +109,6 @@ Public Class AumentoSueldoOperador
                 b = 12
         End Select
         mes = b
-
-
-
     End Sub
 
 
@@ -151,6 +148,8 @@ Public Class AumentoSueldoOperador
             Next
             ' End Using
             cnn2.Close()
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             cnn2.Close()
