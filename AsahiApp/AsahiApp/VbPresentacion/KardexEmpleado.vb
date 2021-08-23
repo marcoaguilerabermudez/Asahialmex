@@ -9,7 +9,7 @@
         If AscW(e.KeyChar) = CInt(Keys.Enter) Then
 
 
-            pbx.ImageLocation = ("V:\Recursos Humanos\CARPETA 2018\RH. FOTOGRAFIAS DEL PERSONAL\" & txt_clave.Text & ".jpg")
+            pbx.ImageLocation = ("V:/2. RECURSOS HUMANOS/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" & txt_clave.Text & ".jpg")
             Me.pbx.SizeMode = PictureBoxSizeMode.CenterImage
             Me.pbx.BorderStyle = BorderStyle.Fixed3D
             pbx.SizeMode = PictureBoxSizeMode.StretchImage
@@ -19,7 +19,7 @@
             txt_clave.Clear()
             btn_evaluar.Enabled = False
 
-            pbx.ImageLocation = ("V:\Recursos Humanos\CARPETA 2018\RH. FOTOGRAFIAS DEL PERSONAL\x.jpg")
+            pbx.ImageLocation = ("V:/2. RECURSOS HUMANOS/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/x.jpg")
         End If
 
 
