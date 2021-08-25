@@ -46,7 +46,7 @@ Public Class Frm_Principal
             lstPer = NEmp.RecuperarPermisosUsuario(Me.cadenaConesExp, Me.emp)
             DesbloquearPestañas(lstPer)
         ElseIf Me.emp.TipoUsuario = 1 Then
-            MessageBox.Show("Usuario", "dfdf")
+            '' MessageBox.Show("Usuario", "dfdf")
 
 
         End If

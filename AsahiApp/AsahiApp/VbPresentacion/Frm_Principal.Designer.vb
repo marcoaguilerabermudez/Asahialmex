@@ -442,6 +442,7 @@ Partial Class Frm_Principal
         '
         'ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem
         '
+        Me.ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem.Enabled = False
         Me.ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem.Name = "ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem"
         Me.ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem.Size = New System.Drawing.Size(331, 22)
         Me.ReporteDeCambioDePuestoYoDepartamentoToolStripMenuItem.Text = "Reporte de Cambio de puesto y/o Departamento"
@@ -462,14 +463,14 @@ Partial Class Frm_Principal
         'MejoraContinuaToolStripMenuItem
         '
         Me.MejoraContinuaToolStripMenuItem.Name = "MejoraContinuaToolStripMenuItem"
-        Me.MejoraContinuaToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.MejoraContinuaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MejoraContinuaToolStripMenuItem.Text = "Mejora Continua"
         '
         'ReporteMejorasToolStripMenuItem
         '
         Me.ReporteMejorasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EspañolToolStripMenuItem, Me.JaponésToolStripMenuItem})
         Me.ReporteMejorasToolStripMenuItem.Name = "ReporteMejorasToolStripMenuItem"
-        Me.ReporteMejorasToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.ReporteMejorasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ReporteMejorasToolStripMenuItem.Text = "Mejoras Anual"
         '
         'EspañolToolStripMenuItem
@@ -488,7 +489,7 @@ Partial Class Frm_Principal
         '
         Me.PlanTiempoExtraToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MensualToolStripMenuItem1, Me.SemanalToolStripMenuItem1, Me.GeneralToolStripMenuItem1})
         Me.PlanTiempoExtraToolStripMenuItem.Name = "PlanTiempoExtraToolStripMenuItem"
-        Me.PlanTiempoExtraToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.PlanTiempoExtraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PlanTiempoExtraToolStripMenuItem.Text = "Plan Tiempo Extra"
         '
         'MensualToolStripMenuItem1
