@@ -23,8 +23,11 @@ Partial Class AumentoSueldoOperador
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AumentoSueldoOperador))
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -38,8 +41,6 @@ Partial Class AumentoSueldoOperador
         Me.btn_desma = New System.Windows.Forms.Button()
         Me.btn_selec = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -60,6 +61,24 @@ Partial Class AumentoSueldoOperador
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1187, 91)
         Me.Panel3.TabIndex = 180
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Azure
+        Me.Panel1.Location = New System.Drawing.Point(1015, 13)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(32, 22)
+        Me.Panel1.TabIndex = 459
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label1.Location = New System.Drawing.Point(1048, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(104, 13)
+        Me.Label1.TabIndex = 458
+        Me.Label1.Text = "Pendiente por liberar"
         '
         'Panel2
         '
@@ -140,7 +159,7 @@ Partial Class AumentoSueldoOperador
         Me.btn_liberar.BackColor = System.Drawing.SystemColors.HotTrack
         Me.btn_liberar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_liberar.ForeColor = System.Drawing.Color.Gold
-        Me.btn_liberar.Location = New System.Drawing.Point(1110, 517)
+        Me.btn_liberar.Location = New System.Drawing.Point(1112, 517)
         Me.btn_liberar.Name = "btn_liberar"
         Me.btn_liberar.Size = New System.Drawing.Size(78, 35)
         Me.btn_liberar.TabIndex = 192
@@ -154,33 +173,41 @@ Partial Class AumentoSueldoOperador
         Me.dtgvp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dtgvp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgvp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dtgvp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle2
         Me.dtgvp.Location = New System.Drawing.Point(9, 96)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(1085, 535)
+        Me.dtgvp.Size = New System.Drawing.Size(1103, 535)
         Me.dtgvp.TabIndex = 194
         '
         'Column1
         '
         Me.Column1.HeaderText = "x"
         Me.Column1.Name = "Column1"
-        Me.Column1.Width = 18
+        Me.Column1.Width = 19
         '
         'btn_desma
         '
         Me.btn_desma.ForeColor = System.Drawing.Color.Black
-        Me.btn_desma.Location = New System.Drawing.Point(1110, 452)
+        Me.btn_desma.Location = New System.Drawing.Point(1113, 452)
         Me.btn_desma.Name = "btn_desma"
-        Me.btn_desma.Size = New System.Drawing.Size(78, 35)
+        Me.btn_desma.Size = New System.Drawing.Size(75, 35)
         Me.btn_desma.TabIndex = 196
         Me.btn_desma.Text = "Desmarcar"
         Me.btn_desma.UseVisualStyleBackColor = False
@@ -188,7 +215,7 @@ Partial Class AumentoSueldoOperador
         'btn_selec
         '
         Me.btn_selec.ForeColor = System.Drawing.Color.Black
-        Me.btn_selec.Location = New System.Drawing.Point(1111, 411)
+        Me.btn_selec.Location = New System.Drawing.Point(1112, 411)
         Me.btn_selec.Name = "btn_selec"
         Me.btn_selec.Size = New System.Drawing.Size(74, 35)
         Me.btn_selec.TabIndex = 195
@@ -199,30 +226,12 @@ Partial Class AumentoSueldoOperador
         '
         Me.Button2.ForeColor = System.Drawing.Color.Black
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(1111, 201)
+        Me.Button2.Location = New System.Drawing.Point(1113, 201)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(68, 71)
         Me.Button2.TabIndex = 193
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Azure
-        Me.Panel1.Location = New System.Drawing.Point(1015, 13)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(32, 22)
-        Me.Panel1.TabIndex = 459
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label1.Location = New System.Drawing.Point(1048, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(104, 13)
-        Me.Label1.TabIndex = 458
-        Me.Label1.Text = "Pendiente por liberar"
         '
         'AumentoSueldoOperador
         '
