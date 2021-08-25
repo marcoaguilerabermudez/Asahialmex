@@ -45,8 +45,16 @@ Public Class Frm_Principal
 
             lstPer = NEmp.RecuperarPermisosUsuario(Me.cadenaConesExp, Me.emp)
             DesbloquearPestañas(lstPer)
-            ''ElseIf Me.emp.TipoUsuario = 1 Then
+        ElseIf Me.emp.TipoUsuario = 1 Then
+            MessageBox.Show("Usuario", "dfdf")
+
+
         End If
+
+
+
+
+
 
         If Me.emp.rh_permiso = 1 OrElse Me.emp.rh_permiso = 2 Then
             SolicitudToolStripMenuItem.Enabled = True
@@ -664,7 +672,7 @@ Public Class Frm_Principal
 
     End Sub
 
-    Private Sub AumentoDeSueldoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AumentoDeSueldoToolStripMenuItem.Click
+    Private Sub AumentoDeSueldoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncrementosDeSueldoToolStripMenuItem.Click
         Dim AumentoSOperador As New AumentoSueldoOperador(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
         AumentoSOperador.Show()
     End Sub
@@ -711,6 +719,8 @@ Public Class Frm_Principal
     Private Sub ReportesToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem2.Click
         ReporteMedidas.Show()
     End Sub
+
+
 
 #End Region
 End Class

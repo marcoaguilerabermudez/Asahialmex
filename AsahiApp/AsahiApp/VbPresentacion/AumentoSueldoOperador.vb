@@ -133,7 +133,8 @@ Public Class AumentoSueldoOperador
             dtgvp.Columns("estatus").Visible = False
             dtgvp.Columns("id_AumentoOperador").Visible = False
             dtgvp.Columns("Puesto").Visible = False
-            dtgvp.Columns("Clave").Width = 80
+            dtgvp.Columns("Tipo").Visible = False
+            dtgvp.Columns("Clave").Width = 40
             dtgvp.Columns("Clave").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             dtgvp.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             dtgvp.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
@@ -219,8 +220,8 @@ where Id_AumentoOperador = @id
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        ContenedorReporteAumentoSueldoOperador.mes = mes
-        ContenedorReporteAumentoSueldoOperador.año = cbx_año.Text
-        ContenedorReporteAumentoSueldoOperador.Show()
+        ContenedorReporteTriOp.mes = mes
+        ContenedorReporteTriOp.año = cbx_año.Text
+        ContenedorReporteTriOp.Show()
     End Sub
 End Class

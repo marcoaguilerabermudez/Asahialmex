@@ -166,7 +166,9 @@ where usuario = '" & us & "'", oCon)
         Dim emp As New Empleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT top 1 (vig.Clave*1)Clave, tipoUsuario = CASE WHEN vig.DEPARTAMENTO = 19 THEN 1 WHEN vig.Clave = 5141 THEN 1 ELSE 0 END, departamento, rh_permisos, evaluaciones_permisos, puesto,
+            Dim query As New SqlCommand("SELECT top 1 (vig.Clave*1)Clave,
+u.tipoUsuario
+, departamento, rh_permisos, evaluaciones_permisos, puesto,
  Empleado = RTRIM(LTRIM(vig.NOMBREN)) + ' ' + RTRIM(LTRIM(vig.NOMBREP)) + ' ' + RTRIM(LTRIM(vig.NOMBREM)) , t_vales = u.Permiso_vales 
 FROM  giro.[asahi16].[Supervisor_giro].[VistaEmpleadosVigenciaYPuesto] vig
 inner join [AsahiSystem].[dbo].[Req_permisos] per on per.Clave = vig.Clave

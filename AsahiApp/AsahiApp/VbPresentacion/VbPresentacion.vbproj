@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>343</ApplicationRevision>
+    <ApplicationRevision>344</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -383,6 +383,12 @@
     <Compile Include="ContenedorReporteTestEvaluacion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReporteTriOp.Designer.vb">
+      <DependentUpon>ContenedorReporteTriOp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteTriOp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteVacacionesRH.Designer.vb">
       <DependentUpon>ContenedorReporteVacacionesRH.vb</DependentUpon>
     </Compile>
@@ -520,6 +526,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet30.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet31.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet32.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet32.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet33.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet33.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet4.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1216,6 +1237,9 @@
     <EmbeddedResource Include="ContenedorReporteTestEvaluacion.resx">
       <DependentUpon>ContenedorReporteTestEvaluacion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteTriOp.resx">
+      <DependentUpon>ContenedorReporteTriOp.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteVacacionesRH.resx">
       <DependentUpon>ContenedorReporteVacacionesRH.vb</DependentUpon>
     </EmbeddedResource>
@@ -1334,6 +1358,7 @@
       <DependentUpon>ReimprimeVale.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteAumentoSueldoOperador.rdlc" />
+    <EmbeddedResource Include="ReporteAumentoTriOp.rdlc" />
     <EmbeddedResource Include="ReporteCambioPuesto.rdlc" />
     <EmbeddedResource Include="ReporteCartaCompromiso.rdlc" />
     <EmbeddedResource Include="ReporteChecadasRh.rdlc" />
@@ -1737,6 +1762,39 @@
     </None>
     <None Include="DataSet30.xss">
       <DependentUpon>DataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet31.xsc">
+      <DependentUpon>DataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet31.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet31.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet31.xss">
+      <DependentUpon>DataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet32.xsc">
+      <DependentUpon>DataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet32.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet32.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet32.xss">
+      <DependentUpon>DataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet33.xsc">
+      <DependentUpon>DataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet33.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet33.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet33.xss">
+      <DependentUpon>DataSet33.xsd</DependentUpon>
     </None>
     <None Include="DataSet4.xsc">
       <DependentUpon>DataSet4.xsd</DependentUpon>
