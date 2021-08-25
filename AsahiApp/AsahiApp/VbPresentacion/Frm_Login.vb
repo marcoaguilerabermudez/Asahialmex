@@ -182,11 +182,13 @@ Public Class Frm_Login
     End Sub
     Public Function Devuelve_Id(ByVal Domain As String, ByVal username As String, ByVal pwd As String, ByVal Propiedad As String) As Integer
         Dim domainAndUsername As String = (Domain & "\") + username
+
         Dim entry As New DirectoryEntry(_path, domainAndUsername, pwd)
 
         Try
             Dim search As New DirectorySearcher(entry)
             search.Filter = "(&(objectClass=user)(anr= " + username + "))"
+
             Dim resEnt As SearchResult = search.FindOne()
             Dim de As DirectoryEntry = resEnt.GetDirectoryEntry()
 
