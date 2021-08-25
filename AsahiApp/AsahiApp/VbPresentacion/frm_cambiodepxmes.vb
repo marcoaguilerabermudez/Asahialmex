@@ -55,7 +55,7 @@
         ContenedorReporteCambioPuestoxMes.año = cbx_año.Text
         ContenedorReporteCambioPuestoxMes.Show()
     End Sub
-
+    'test
     Private Sub cbx_mes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_mes.SelectedIndexChanged
 
         a = cbx_mes.Text
