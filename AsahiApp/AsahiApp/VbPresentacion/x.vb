@@ -747,7 +747,7 @@ SELECT  [Id_motivopermiso]
             da.SelectCommand.Parameters.AddWithValue("@desde", "01/01/1900")
             da.SelectCommand.Parameters.AddWithValue("@hasta", "01/01/1900")
             da.SelectCommand.Parameters.AddWithValue("@var", 1)
-
+            da.SelectCommand.Parameters.AddWithValue("@id", 0)
 
 
             Dim ds As New DataSet
@@ -765,6 +765,10 @@ SELECT  [Id_motivopermiso]
             ' MessageBox.Show(ex.ToString)
             ' MessageBox.Show("El empleado que ha seleccionado no está activo o no corresponde a su departamento, verifique e intente de nuevo.", "¡Aviso!")
         End Try
+
+
+
+
 
     End Sub
 
@@ -907,13 +911,22 @@ SELECT  [Id_motivopermiso]
 
                     MessageBox.Show("Debe pedir las vacaciones con 3 días de anticipación.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
+
                 ElseIf difvacaciones > CInt(lbl_pendientes.Text) Then
 
                     MessageBox.Show("No puede tomar más días de los que tiene asignados, revise sus fechas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+
                 Else
                     revisaincidencia()
 
                 End If
+
+
+                'If lbl_pendientes.Text = 0 Then
+                '    btn_solicitar.Enabled = False
+
+                'End If
 
 
             ElseIf vpermiso = 2 Then
@@ -944,7 +957,6 @@ SELECT  [Id_motivopermiso]
             End If
 
         End If
-
 
 
 
@@ -991,12 +1003,13 @@ SELECT  [Id_motivopermiso]
             Cn.Open()
             da.SelectCommand.CommandType = CommandType.StoredProcedure
 
-            da.SelectCommand.Parameters.Add("@permiso", SqlDbType.VarChar, 300).Value = cbx_tipo.Text
-
+            da.SelectCommand.Parameters.Add("@permiso", SqlDbType.VarChar, 300).Value = vpermiso
             da.SelectCommand.Parameters.Add("@clave", SqlDbType.Int).Value = txt_clave.Text
             da.SelectCommand.Parameters.Add("@desde", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
             da.SelectCommand.Parameters.Add("@hasta", SqlDbType.Date).Value = dtp2.Value.ToShortDateString
             da.SelectCommand.Parameters.Add("@var", SqlDbType.Int).Value = 0
+
+            da.SelectCommand.Parameters.Add("@id", SqlDbType.Int).Value = 0
 
 
             da.Fill(dt)
