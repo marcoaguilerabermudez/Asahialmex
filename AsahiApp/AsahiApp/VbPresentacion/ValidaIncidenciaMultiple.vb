@@ -710,8 +710,9 @@ where
             Cn.Open()
             da.SelectCommand.CommandType = CommandType.StoredProcedure
 
-            da.SelectCommand.Parameters.Add("@permiso", SqlDbType.VarChar, 300).Value = lbl_tipop.Text
+            da.SelectCommand.Parameters.Add("@id", SqlDbType.Int).Value = txt_folio.Text
 
+            da.SelectCommand.Parameters.Add("@permiso", SqlDbType.VarChar, 300).Value = lbl_tipop.Text
             da.SelectCommand.Parameters.Add("@clave", SqlDbType.Int).Value = lbl_clave.Text
             da.SelectCommand.Parameters.Add("@desde", SqlDbType.Date).Value = lbl_desde.Text
             da.SelectCommand.Parameters.Add("@hasta", SqlDbType.Date).Value = lbl_hasta.Text
@@ -736,6 +737,8 @@ where
             MessageBox.Show("Acción no completada", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
         End If
+
+
     End Sub
 
 
