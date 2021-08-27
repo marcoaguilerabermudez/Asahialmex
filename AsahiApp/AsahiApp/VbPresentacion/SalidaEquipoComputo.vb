@@ -9,6 +9,19 @@ Public Class SalidaEquipoComputo
     Dim y As Integer
     Dim x As Integer
 
+    Dim depto As String
+    Dim permiso As Integer
+    Dim id As Integer
+
+    Sub New(id As Integer, depto As String, permiso As Integer)
+
+        InitializeComponent()
+        Me.id = id
+        Me.depto = depto
+        Me.permiso = permiso
+
+    End Sub
+
     Private Sub SalidaEquipoComputo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim conexion As New conexion()
         If Strings.Left(conexion.getIp(), 6) = "172.16" Then
@@ -20,6 +33,8 @@ Public Class SalidaEquipoComputo
             Me.cnn = conexion.conexionExpressFor
             Me.cadenaCExpress = conexion.cadenaConexExpressFor
         End If
+
+        ' MessageBox.Show(permiso)
     End Sub
 
     Sub muestraetiqueta()
@@ -196,6 +211,8 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
             MessageBox.Show("Acción no completada", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
         End If
+
+
     End Sub
 
 
@@ -275,13 +292,81 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
 
 
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
+        MessageBox.Show(Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value.ToString())
+
+        Dim Pregunta As Integer
+
+
+        Pregunta = MsgBox("Presiones 'Sí' para liberar registro o 'No' para imprimir el vale", vbYesNo + vbExclamation + vbDefaultButton2, "Salida de equipo de cómputo")
+
+
+        If permiso = 3 Then
+
+            If Pregunta = vbYes Then
+
+                Dim dt = New DataTable()
+                Dim strSql As String
+                strSql = "Sp_insertamuestraSalidaComputo"
+
+
+                Dim da = New SqlDataAdapter(strSql, cnn)
+                cnn.Close()
+                cnn.Open()
+                da.SelectCommand.CommandType = CommandType.StoredProcedure
+
+
+                da.SelectCommand.Parameters.AddWithValue("@fecha", dtp1.Value.ToShortDateString)
+                da.SelectCommand.Parameters.AddWithValue("@clave", txt_clave.Text)
+                da.SelectCommand.Parameters.AddWithValue("@id_equipo", Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value.ToString())
+                da.SelectCommand.Parameters.AddWithValue("@variable", 1)
+                da.SelectCommand.Parameters.AddWithValue("@observaciones", txt_motivo.Text)
+
+
+                da.Fill(dt)
+                cnn.Close()
 
 
 
-        ContenedorReporteSalidaComputo.id_solicitud = Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value.ToString()
-        ContenedorReporteSalidaComputo.Show()
+                MessageBox.Show("¡Registro liberado con éxito!", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+                muestragird()
+
+
+            Else
+                ContenedorReporteSalidaComputo.id_solicitud = Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value.ToString()
+                ContenedorReporteSalidaComputo.Show()
+
+            End If
+
+        Else
+
+
+
+                ContenedorReporteSalidaComputo.id_solicitud = Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value.ToString()
+            ContenedorReporteSalidaComputo.Show()
+        End If
+
+
+
 
     End Sub
+
+
+    'Private Sub dtgvp_CellContentClick1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellMouseDoubleClick
+
+
+
+    '    If permiso = 3 Then
+
+
+
+
+    '    End If
+
+
+
+
+
+    'End Sub
 
 
 End Class
