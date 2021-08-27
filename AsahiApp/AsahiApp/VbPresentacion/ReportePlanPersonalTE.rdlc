@@ -669,7 +669,9 @@
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Julio-Agosto-Septiembre" ,8 * 27 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Julio-Agosto-Septiembre" ,8 * 22 * Fields!Plan.Value,
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Agosto-Septiembre-Octubre" ,8 * 26 * Fields!Plan.Value,
-(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Agosto-Septiembre-Octubre" ,8 * 22 * Fields!Plan.Value)</Value>
+(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Agosto-Septiembre-Octubre" ,8 * 22 * Fields!Plan.Value,
+(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 25 * Fields!Plan.Value,
+(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 21 * Fields!Plan.Value)</Value>
                               <Style>
                                 <Format>0;(0)</Format>
                               </Style>
@@ -979,7 +981,9 @@
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Junio-Julio-Agosto" ,8 * 26 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Junio-Julio-Agosto" ,8 * 22 * Fields!Plan.Value,
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Julio-Agosto-Septiembre" ,8 * 27 * Fields!Plan.Value,
-(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Julio-Agosto-Septiembre" ,8 * 22 * Fields!Plan.Value))</Value>
+(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Julio-Agosto-Septiembre" ,8 * 22 * Fields!Plan.Value,
+(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 25 * Fields!Plan.Value,
+(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 21 * Fields!Plan.Value))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>

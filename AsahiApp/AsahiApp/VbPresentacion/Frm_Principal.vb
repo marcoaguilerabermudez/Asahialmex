@@ -641,7 +641,11 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub SalidaDeEquipoDeCómputoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaDeEquipoDeCómputoToolStripMenuItem.Click
-        SalidaEquipoComputo.Show()
+
+        Dim SalidaEquipo As New SalidaEquipoComputo(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        SalidaEquipo.Show()
+
+
     End Sub
     Private Sub CuestionariosPreguntasYRespuestasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuestionariosPreguntasYRespuestasToolStripMenuItem.Click
         Dim crp As New Frm_CuestionariosPreguntas(Me.emp)
