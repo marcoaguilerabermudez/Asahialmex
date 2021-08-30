@@ -856,8 +856,6 @@ delete from [AsahiSystem].[dbo].[Temporal_solicitud]
             Next
 
 
-
-
         Catch ex As Exception
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
             MessageBox.Show(ex.ToString)
@@ -909,18 +907,23 @@ delete from [AsahiSystem].[dbo].[Temporal_solicitud]
 
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
 
-        'Modulo_sollicitudte.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
-        'Modulo_sollicitudte.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("Id").Value.ToString()
-        'Modulo_sollicitudte.e_empleado = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
-        'Modulo_sollicitudte.e_turno = Me.dtgvp.Rows(e.RowIndex).Cells("TurnoE").Value.ToString()
+        Modulo_sollicitudte.e_clave = Me.dtgvp.Rows(e.RowIndex).Cells("Clave").Value.ToString()
+        Modulo_sollicitudte.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("Id").Value.ToString()
+        Modulo_sollicitudte.e_empleado = Me.dtgvp.Rows(e.RowIndex).Cells("Empleado").Value.ToString()
+        Modulo_sollicitudte.e_turno = Me.dtgvp.Rows(e.RowIndex).Cells("TurnoE").Value.ToString()
 
-        'Modulo_sollicitudte.id_permiso = permiso
-        'Modulo_sollicitudte.id_depa = depto
-        'Modulo_sollicitudte.id_id = id
+        Modulo_sollicitudte.id_permiso = permiso
+        Modulo_sollicitudte.e_fecha = dtp1.Value.ToShortDateString
 
-        'ActualizaTurnoSolicitud.Show()
-        'Me.Dispose()
-        'Me.Close()
+        Modulo_sollicitudte.id_depa = depto
+        Modulo_sollicitudte.id_id = id
+
+        ActualizaTurnoSolicitud.Show()
+        Me.Dispose()
+        Me.Close()
+
+
+
     End Sub
 
     Private Sub dtp2_ValueChanged(sender As Object, e As EventArgs) Handles dtp2.ValueChanged
@@ -950,14 +953,21 @@ End Class
 Module Modulo_sollicitudte
 
     Public e_clave As Integer
+
     Public e_id As Integer
+
     Public e_empleado As String
+
     Public e_turno As String
+
     Public e_fecha As String
+
     Public e_claveprincipal As Integer
 
     Public id_permiso As Integer
+
     Public id_depa As Integer
+
     Public id_id As Integer
 
 

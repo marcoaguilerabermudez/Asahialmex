@@ -47,6 +47,7 @@ Public Class AumentoSueldoOperador
         cbx_año.Text = Today.Year.ToString()
         mes = Today.Month.ToString()
         a = mes
+
         Select Case a
             Case "1"
                 b = "ENERO      1 月"
@@ -83,6 +84,7 @@ Public Class AumentoSueldoOperador
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         a = cbx_mes.Text
+
         Select Case a
             Case "ENERO      1 月"
                 b = 1
@@ -109,7 +111,9 @@ Public Class AumentoSueldoOperador
             Case "DICIEMBRE 12 月"
                 b = 12
         End Select
+
         mes = b
+
     End Sub
 
 
@@ -156,10 +160,15 @@ Public Class AumentoSueldoOperador
             MessageBox.Show(ex.Message)
             cnn2.Close()
         End Try
+
     End Sub
 
 
+
+
     Sub liberar()
+
+
         Try
             cnn2.Close()
             cnn2.Open()
@@ -225,4 +234,5 @@ where Id_AumentoOperador = @id
         ContenedorReporteTriOp.año = cbx_año.Text
         ContenedorReporteTriOp.Show()
     End Sub
+
 End Class
