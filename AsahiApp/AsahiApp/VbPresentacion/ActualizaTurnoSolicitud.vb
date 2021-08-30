@@ -48,6 +48,7 @@ Public Class ActualizaTurnoSolicitud
 
 
     Sub actualizar()
+
         Dim Pregunta As Integer = MsgBox("¿Desea modificar el turno extra a laborar?", vbYesNo + vbExclamation + vbDefaultButton2, "¡Aviso!")
 
         If Pregunta = vbYes Then

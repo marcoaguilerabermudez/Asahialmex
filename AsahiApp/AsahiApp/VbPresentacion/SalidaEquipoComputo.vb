@@ -233,7 +233,7 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
 
                 Dim dt As New DataTable
                 da.Fill(dt)
-                dtgvp.DataSource = dt
+            dtgvp.DataSource = dt
             dtgvp.Columns("id_solicitud").Visible = False
 
 
@@ -292,43 +292,54 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
 
 
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
-        MessageBox.Show(Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value.ToString())
-
-        Dim Pregunta As Integer
+        ' MessageBox.Show(Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value)
 
 
-        Pregunta = MsgBox("Presiones 'Sí' para liberar registro o 'No' para imprimir el vale", vbYesNo + vbExclamation + vbDefaultButton2, "Salida de equipo de cómputo")
 
 
         If permiso = 3 Then
 
+            Dim Pregunta As Integer
+
+
+            Pregunta = MsgBox("Presiones 'Sí' para liberar registro o 'No' para imprimir el vale", vbYesNo + vbExclamation + vbDefaultButton2, "Salida de equipo de cómputo")
+
+
             If Pregunta = vbYes Then
 
-                Dim dt = New DataTable()
-                Dim strSql As String
-                strSql = "Sp_insertamuestraSalidaComputo"
+                Try
+                    cnn.Close()
+                    cnn.Open()
 
-
-                Dim da = New SqlDataAdapter(strSql, cnn)
-                cnn.Close()
-                cnn.Open()
-                da.SelectCommand.CommandType = CommandType.StoredProcedure
-
-
-                da.SelectCommand.Parameters.AddWithValue("@fecha", dtp1.Value.ToShortDateString)
-                da.SelectCommand.Parameters.AddWithValue("@clave", txt_clave.Text)
-                da.SelectCommand.Parameters.AddWithValue("@id_equipo", Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value.ToString())
-                da.SelectCommand.Parameters.AddWithValue("@variable", 1)
-                da.SelectCommand.Parameters.AddWithValue("@observaciones", txt_motivo.Text)
-
-
-                da.Fill(dt)
-                cnn.Close()
+                    Dim auto As SqlCommand = New SqlCommand(" update [AsahiSystem].[dbo].[Rh_SalidaEquipoComputo] set Estado = 1
+	where Id_solicitud = @id
+                            ", cnn)
 
 
 
-                MessageBox.Show("¡Registro liberado con éxito!", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-                muestragird()
+
+
+                    auto.Parameters.Clear()
+                    auto.Parameters.Add("@id", SqlDbType.Int).Value = Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value.ToString()
+
+
+                    auto.ExecuteNonQuery()
+
+
+                    MessageBox.Show("¡Registro liberado con éxito!", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+                    muestragird()
+
+
+
+                Catch ex As Exception
+                    MessageBox.Show("Error al liberar registro, consulte al administrador")
+                    MessageBox.Show(ex.ToString)
+                    cnn.Close()
+                Finally
+                    cnn.Close()
+
+                End Try
+
 
 
             Else
@@ -341,8 +352,9 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
 
 
 
-                ContenedorReporteSalidaComputo.id_solicitud = Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value.ToString()
+            ContenedorReporteSalidaComputo.id_solicitud = Me.dtgvp.Rows(e.RowIndex).Cells("id_solicitud").Value.ToString()
             ContenedorReporteSalidaComputo.Show()
+
         End If
 
 
