@@ -272,7 +272,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoe = 'Vespertino' then 2
   when @turnoe = 'Nocturno' then 3
   when @turnoe = 'Administrativo' then 4
-  end,k
+  end,
   @parcial, @motivo, 
    case
   when @turnoe = 'Matutino' then '01/01/1900 06:55:00'
