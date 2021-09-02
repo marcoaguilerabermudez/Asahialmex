@@ -724,6 +724,11 @@ Public Class Frm_Principal
         ReporteMedidas.Show()
     End Sub
 
+    Private Sub CambioDeTurnoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambioDeTurnoToolStripMenuItem.Click
+        Dim CambioTurno As New Frm_cambiodeturno(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso)
+        CambioTurno.Show()
+    End Sub
+
 
 
 #End Region

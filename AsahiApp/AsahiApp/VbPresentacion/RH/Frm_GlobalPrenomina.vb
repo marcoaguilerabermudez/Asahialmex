@@ -186,9 +186,9 @@ Public Class Frm_GlobalPrenomina
             ProcesoInsertaIncidenciasNomina()
             Btn_Incidencias.Enabled = False
         End If
-        'CrearArchivo()
-        'EscribirArchivo()
-        'LeerArchivo()
+        CrearArchivo()
+        EscribirArchivo()
+        LeerArchivo()
     End Sub
     Private Sub Btn_Excel_Click(sender As Object, e As EventArgs) Handles Btn_Excel.Click
         GridAExcel(Dgv_Prenomina_Global)
@@ -2365,8 +2365,8 @@ Public Class Frm_GlobalPrenomina
 
         RecuperarIncidencias(0)
         lstInci = RellenaObjetoIncidencias()
-        NPren.InsertarIncidenciasNomina(cadenaConex, lstInci)
-        NPren.BitacoraInsertar(cadenaConex, Cmb_Semanas.Text, Lbl_año.Text, Me.emp.IdEmpleado, Date.Now(), 1)
+        '    NPren.InsertarIncidenciasNomina(cadenaConex, lstInci)
+        '    NPren.BitacoraInsertar(cadenaConex, Cmb_Semanas.Text, Lbl_año.Text, Me.emp.IdEmpleado, Date.Now(), 1)
     End Sub
     Private Sub ProcesoInsertaBonoNomina()
         Dim lstBono As New LBono(), NPren As New NPrenomina(), conex As New conexion()

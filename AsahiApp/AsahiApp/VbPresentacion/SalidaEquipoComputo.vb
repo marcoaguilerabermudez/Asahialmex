@@ -363,6 +363,8 @@ where vig.vigencia = 'VIGENTE' and vig.clave = " & parametro1 & "")
     End Sub
 
 
+
+
     'Private Sub dtgvp_CellContentClick1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellMouseDoubleClick
 
 
