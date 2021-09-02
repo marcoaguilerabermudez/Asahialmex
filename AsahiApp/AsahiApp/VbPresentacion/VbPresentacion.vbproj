@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>348</ApplicationRevision>
+    <ApplicationRevision>349</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -600,6 +600,12 @@
     <Compile Include="DataSet\Dts_BonoMensual.vb">
       <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Frm_cambiodeturno.Designer.vb">
+      <DependentUpon>Frm_cambiodeturno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_cambiodeturno.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_cancelavale.Designer.vb">
       <DependentUpon>Frm_cancelavale.vb</DependentUpon>
     </Compile>
@@ -616,6 +622,12 @@
       <DependentUpon>Frm_terminavale.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_terminavale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificacion_de_Turno.Designer.vb">
+      <DependentUpon>Modificacion_de_Turno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificacion_de_Turno.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReimprimeVale.Designer.vb">
@@ -1297,6 +1309,9 @@
     <EmbeddedResource Include="frm_cambiodepxmes.resx">
       <DependentUpon>frm_cambiodepxmes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_cambiodeturno.resx">
+      <DependentUpon>Frm_cambiodeturno.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_cancelavale.resx">
       <DependentUpon>Frm_cancelavale.vb</DependentUpon>
     </EmbeddedResource>
@@ -1335,6 +1350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MedidasDisciplinarias.resx">
       <DependentUpon>MedidasDisciplinarias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificacion_de_Turno.resx">
+      <DependentUpon>Modificacion_de_Turno.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MuestradatosOEE.resx">
       <DependentUpon>MuestradatosOEE.vb</DependentUpon>

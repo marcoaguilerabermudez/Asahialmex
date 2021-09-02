@@ -139,6 +139,7 @@ Partial Class Frm_Principal
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
+        Me.CambioDeTurnoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -176,7 +177,7 @@ Partial Class Frm_Principal
         '
         'RecursosHumanosToolStripMenuItem
         '
-        Me.RecursosHumanosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem, Me.EmpleadosToolStripMenuItem, Me.PlanHorasExtraToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.PlanDePersonalToolStripMenuItem, Me.IncidenciasToolStripMenuItem, Me.FormatoDeServiciosMúltiplesToolStripMenuItem, Me.EvaluacionesToolStripMenuItem1, Me.DpToolStripMenuItem, Me.SalidaDeEquipoDeCómputoToolStripMenuItem, Me.CuestionariosToolStripMenuItem})
+        Me.RecursosHumanosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PreNominaToolStripMenuItem, Me.EmpleadosToolStripMenuItem, Me.PlanHorasExtraToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.PlanDePersonalToolStripMenuItem, Me.CambioDeTurnoToolStripMenuItem, Me.IncidenciasToolStripMenuItem, Me.FormatoDeServiciosMúltiplesToolStripMenuItem, Me.EvaluacionesToolStripMenuItem1, Me.DpToolStripMenuItem, Me.SalidaDeEquipoDeCómputoToolStripMenuItem, Me.CuestionariosToolStripMenuItem})
         Me.RecursosHumanosToolStripMenuItem.Name = "RecursosHumanosToolStripMenuItem"
         Me.RecursosHumanosToolStripMenuItem.Size = New System.Drawing.Size(121, 26)
         Me.RecursosHumanosToolStripMenuItem.Text = "Recursos Humanos"
@@ -888,6 +889,12 @@ Partial Class Frm_Principal
         Me.Lbl_NombreUser.Size = New System.Drawing.Size(0, 13)
         Me.Lbl_NombreUser.TabIndex = 4
         '
+        'CambioDeTurnoToolStripMenuItem
+        '
+        Me.CambioDeTurnoToolStripMenuItem.Name = "CambioDeTurnoToolStripMenuItem"
+        Me.CambioDeTurnoToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.CambioDeTurnoToolStripMenuItem.Text = "Cambio de Turno"
+        '
         'Frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1026,4 +1033,5 @@ Partial Class Frm_Principal
     Friend WithEvents CancelarValesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents IncrementosDeSueldoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CambioDeTurnoToolStripMenuItem As ToolStripMenuItem
 End Class
