@@ -38,6 +38,7 @@ Partial Class Frm_cambiodeturno
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.dtgv_2 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btn_cambiain = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -51,13 +52,14 @@ Partial Class Frm_cambiodeturno
         Me.lbl_clave = New System.Windows.Forms.Label()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.dtgv_2 = New System.Windows.Forms.DataGridView()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cbx_filtro = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         CType(Me.dtgv_2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -73,6 +75,8 @@ Partial Class Frm_cambiodeturno
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.Controls.Add(Me.Label6)
+        Me.TabPage1.Controls.Add(Me.cbx_filtro)
         Me.TabPage1.Controls.Add(Me.btn_cambiarturno)
         Me.TabPage1.Controls.Add(Me.btn_desma)
         Me.TabPage1.Controls.Add(Me.btn_selec)
@@ -104,7 +108,7 @@ Partial Class Frm_cambiodeturno
         '
         Me.btn_desma.BackColor = System.Drawing.SystemColors.Control
         Me.btn_desma.ForeColor = System.Drawing.Color.Black
-        Me.btn_desma.Location = New System.Drawing.Point(533, 19)
+        Me.btn_desma.Location = New System.Drawing.Point(752, 18)
         Me.btn_desma.Name = "btn_desma"
         Me.btn_desma.Size = New System.Drawing.Size(78, 35)
         Me.btn_desma.TabIndex = 166
@@ -115,7 +119,7 @@ Partial Class Frm_cambiodeturno
         '
         Me.btn_selec.BackColor = System.Drawing.SystemColors.Control
         Me.btn_selec.ForeColor = System.Drawing.Color.Black
-        Me.btn_selec.Location = New System.Drawing.Point(430, 18)
+        Me.btn_selec.Location = New System.Drawing.Point(649, 17)
         Me.btn_selec.Name = "btn_selec"
         Me.btn_selec.Size = New System.Drawing.Size(74, 35)
         Me.btn_selec.TabIndex = 165
@@ -127,7 +131,7 @@ Partial Class Frm_cambiodeturno
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(220, 15)
+        Me.Label1.Location = New System.Drawing.Point(469, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(70, 13)
         Me.Label1.TabIndex = 164
@@ -138,7 +142,7 @@ Partial Class Frm_cambiodeturno
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.SystemColors.Control
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(34, 12)
+        Me.Label4.Location = New System.Drawing.Point(283, 13)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 13)
         Me.Label4.TabIndex = 163
@@ -151,7 +155,7 @@ Partial Class Frm_cambiodeturno
         Me.cbx_turno.ForeColor = System.Drawing.SystemColors.Menu
         Me.cbx_turno.FormattingEnabled = True
         Me.cbx_turno.Items.AddRange(New Object() {"Matutino", "Vespertino", "Nocturno", "Administrativo"})
-        Me.cbx_turno.Location = New System.Drawing.Point(186, 32)
+        Me.cbx_turno.Location = New System.Drawing.Point(435, 33)
         Me.cbx_turno.Name = "cbx_turno"
         Me.cbx_turno.Size = New System.Drawing.Size(142, 21)
         Me.cbx_turno.TabIndex = 162
@@ -159,7 +163,7 @@ Partial Class Frm_cambiodeturno
         'dtp1
         '
         Me.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp1.Location = New System.Drawing.Point(28, 31)
+        Me.dtp1.Location = New System.Drawing.Point(277, 32)
         Me.dtp1.Name = "dtp1"
         Me.dtp1.Size = New System.Drawing.Size(100, 20)
         Me.dtp1.TabIndex = 161
@@ -203,6 +207,30 @@ Partial Class Frm_cambiodeturno
         Me.TabPage2.Size = New System.Drawing.Size(1079, 643)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Individual"
+        '
+        'dtgv_2
+        '
+        Me.dtgv_2.AllowUserToAddRows = False
+        Me.dtgv_2.AllowUserToDeleteRows = False
+        Me.dtgv_2.AllowUserToOrderColumns = True
+        Me.dtgv_2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dtgv_2.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dtgv_2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgv_2.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dtgv_2.Location = New System.Drawing.Point(429, 23)
+        Me.dtgv_2.Name = "dtgv_2"
+        Me.dtgv_2.ReadOnly = True
+        Me.dtgv_2.RowHeadersVisible = False
+        Me.dtgv_2.Size = New System.Drawing.Size(454, 568)
+        Me.dtgv_2.TabIndex = 195
+        Me.dtgv_2.Visible = False
         '
         'GroupBox1
         '
@@ -347,29 +375,28 @@ Partial Class Frm_cambiodeturno
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'dtgv_2
+        'Label6
         '
-        Me.dtgv_2.AllowUserToAddRows = False
-        Me.dtgv_2.AllowUserToDeleteRows = False
-        Me.dtgv_2.AllowUserToOrderColumns = True
-        Me.dtgv_2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dtgv_2.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dtgv_2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtgv_2.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dtgv_2.Location = New System.Drawing.Point(429, 23)
-        Me.dtgv_2.Name = "dtgv_2"
-        Me.dtgv_2.ReadOnly = True
-        Me.dtgv_2.RowHeadersVisible = False
-        Me.dtgv_2.Size = New System.Drawing.Size(454, 568)
-        Me.dtgv_2.TabIndex = 195
-        Me.dtgv_2.Visible = False
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.SystemColors.Control
+        Me.Label6.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label6.Location = New System.Drawing.Point(51, 15)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(63, 13)
+        Me.Label6.TabIndex = 169
+        Me.Label6.Text = "Filtrar Turno"
+        '
+        'cbx_filtro
+        '
+        Me.cbx_filtro.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.cbx_filtro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_filtro.ForeColor = System.Drawing.SystemColors.Menu
+        Me.cbx_filtro.FormattingEnabled = True
+        Me.cbx_filtro.Items.AddRange(New Object() {"Matutino", "Vespertino", "Nocturno", "Administrativo"})
+        Me.cbx_filtro.Location = New System.Drawing.Point(17, 32)
+        Me.cbx_filtro.Name = "cbx_filtro"
+        Me.cbx_filtro.Size = New System.Drawing.Size(142, 21)
+        Me.cbx_filtro.TabIndex = 168
         '
         'Frm_cambiodeturno
         '
@@ -387,9 +414,9 @@ Partial Class Frm_cambiodeturno
         Me.TabPage1.PerformLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
+        CType(Me.dtgv_2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.dtgv_2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -420,4 +447,6 @@ Partial Class Frm_cambiodeturno
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btn_cambiain As Button
     Friend WithEvents dtgv_2 As DataGridView
+    Friend WithEvents Label6 As Label
+    Friend WithEvents cbx_filtro As ComboBox
 End Class

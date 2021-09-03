@@ -77,6 +77,7 @@ Public Class x
    when Motivo = 8 and Incidencia = 'CP' then 'Cambio de puesto'
    when Motivo = 8 and Incidencia = 'C2' then 'Cambio de puesto y departamento'
    when Motivo = 9 then 'Suspensión'
+  when Motivo = 12 then 'Shutdown'
    end
    ,case 
    when Incidencia = '0' and retardo = 0 and Motivo not in (9) then 'Paternidad'
@@ -106,7 +107,7 @@ Public Class x
    when Incidencia = 'O' and retardo = 0 and Motivo not in (9) then 'Sospechoso enfermedad'
    when Incidencia = 'P' and retardo = 0 and Motivo not in (9) then 'Permiso sin goce'
    when Incidencia = 'R' and retardo = 0 and Motivo not in (9) then 'Familiar'
-   when Incidencia = 'S' and retardo = 0 and Motivo not in (9) then 'Asuntos personales'
+   when Incidencia = 'S' and retardo = 0 and Motivo not in (9,12) then 'Asuntos personales'
    when Incidencia = 'T' and retardo = 0 and Motivo not in (9) then 'Transporte'
    when Incidencia = 'U' and retardo = 0 and Motivo not in (9) then 'Falta justificada'
    when Incidencia = 'V' and retardo = 0 and Motivo not in (9) then 'Viaje'
@@ -139,6 +140,7 @@ Public Class x
     when Motivo = 9 and Incidencia = 'O' then N'Otro'
    when Motivo = 9 and Incidencia in ('F', 'X') then N'Faltas'
    when Motivo = 9 and Incidencia = 'I' then N'Indisciplina'
+  when Motivo = 12  then N'Permiso con goce 55%'
    END
   ,motivo,
   case
@@ -470,6 +472,30 @@ where
             txt_sueldoac.Visible = True
 
         ElseIf motivo = 9 Then
+
+            lbl_hasta.Visible = True
+            lbl_desde.Visible = True
+            Label5.Visible = True
+            Label7.Visible = True
+            lbl_ES.Visible = False
+            dtp1.Visible = False
+            Label2.Visible = False
+            Label6.Visible = False
+            txt_retardo.Visible = False
+            lbl_tipo.Visible = False
+            dtgvi.Visible = True
+            lbl_hora.Visible = False
+            Label9.Visible = False
+            Label10.Visible = False
+            Label12.Visible = False
+            lbl_pudep.Visible = False
+            Label5.Text = "Fecha del:"
+            lbl_sueldo.Visible = False
+            lbl_sueldoac.Visible = False
+            txt_sueldo.Visible = False
+            txt_sueldoac.Visible = False
+
+        ElseIf motivo = 12 Then
 
             lbl_hasta.Visible = True
             lbl_desde.Visible = True

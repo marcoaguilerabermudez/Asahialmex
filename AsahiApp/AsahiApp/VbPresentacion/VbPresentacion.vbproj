@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>349</ApplicationRevision>
+    <ApplicationRevision>351</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -351,6 +351,12 @@
       <DependentUpon>ContenedorReporteSemanalPersonal.vb</DependentUpon>
     </Compile>
     <Compile Include="ContenedorReporteSemanalPersonal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContenedorReporteShutdown.Designer.vb">
+      <DependentUpon>ContenedorReporteShutdown.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteShutdown.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ContenedorReporteSolicitudTe.Designer.vb">
@@ -1234,6 +1240,9 @@
     <EmbeddedResource Include="ContenedorReporteSemanalPersonal.resx">
       <DependentUpon>ContenedorReporteSemanalPersonal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteShutdown.resx">
+      <DependentUpon>ContenedorReporteShutdown.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteSolicitudTe.resx">
       <DependentUpon>ContenedorReporteSolicitudTe.vb</DependentUpon>
     </EmbeddedResource>
@@ -1398,6 +1407,7 @@
     <EmbeddedResource Include="ReportePlanPersonalTE.rdlc" />
     <EmbeddedResource Include="ReportePuestoDepartamento.rdlc" />
     <EmbeddedResource Include="ReporteSalidaEquipoComputo.rdlc" />
+    <EmbeddedResource Include="ReporteShutdown.rdlc" />
     <EmbeddedResource Include="ReporteSolicitudTe.rdlc" />
     <EmbeddedResource Include="ReporteSolicitudTeSelec.rdlc" />
     <EmbeddedResource Include="ReporteSuspension.rdlc" />
