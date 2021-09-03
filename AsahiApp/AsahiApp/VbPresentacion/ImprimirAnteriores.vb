@@ -156,6 +156,13 @@ Public Class ImprimirAnteriores
             ContenedorReporteComision.retardo = 0
             ContenedorReporteComision.Show()
 
+        ElseIf vpermiso = 12 Then
+            ContenedorReporteShutdown.id = folio
+            ContenedorReporteShutdown.Tipo = 0
+            ContenedorReporteShutdown.motivo = 0
+            ContenedorReporteShutdown.retardo = 0
+            ContenedorReporteShutdown.Show()
+
         End If
 
 
