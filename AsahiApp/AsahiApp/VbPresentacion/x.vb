@@ -261,6 +261,8 @@ SELECT  [Id_motivopermiso]
             '  MessageBox.Show(ex.ToString)
         End Try
 
+
+
     End Sub
 
 
@@ -640,12 +642,39 @@ SELECT  [Id_motivopermiso]
                 txt_destino.Visible = True
 
 
+            ElseIf cbx_tipo.Text = "Shutdown" Then
+                Check_entrada.Visible = False
+                Check_salida.Visible = False
+                'rbt_nocturno.Visible = False
+                Label6.Visible = True
+                dtp2.Visible = True
+                desde_h.Visible = True
+                hasta_h.Visible = True
+                Label9.Visible = True
+                Label8.Visible = True
+                dtp_checada.Visible = False
+                Label10.Visible = False
+                dtp_regreso.Visible = False
+                gb_aviso.Visible = False
+                gbx_tipo.Visible = False
+                'rbt_nocturno.Visible = False
+                vpermiso = 12
+                dtgvp.Visible = True
+                gbx_vacaciones.Visible = False
+                lbl_ndepto.Visible = False
+                cbx_depto.Visible = False
+                lbl_npuesto.Visible = False
+                cbx_puesto.Visible = False
+                Label16.Visible = False
+                txt_destino.Visible = False
+
+
 
 
             End If
 
 
-            Muestragrid()
+            ' Muestragrid()
 
 
         Catch ex As Exception
@@ -890,6 +919,13 @@ SELECT  [Id_motivopermiso]
             ContenedorReporteComision.motivo = 0
             ContenedorReporteComision.retardo = 0
             ContenedorReporteComision.Show()
+
+        ElseIf vpermiso = 12 Then
+            ContenedorReporteShutdown.id = y
+            ContenedorReporteShutdown.Tipo = 0
+            ContenedorReporteShutdown.motivo = 0
+            ContenedorReporteShutdown.retardo = 0
+            ContenedorReporteShutdown.Show()
 
         End If
 
@@ -1190,11 +1226,11 @@ SELECT  [Id_motivopermiso]
     End Sub
 
     Private Sub rbt_retardo_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_retardo.CheckedChanged
-        Muestragrid()
+        '  Muestragrid()
     End Sub
 
     Private Sub rbt_falta_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_falta.CheckedChanged
-        Muestragrid()
+        ' Muestragrid()
     End Sub
 
     Private Sub btn_anteriores_Click(sender As Object, e As EventArgs) Handles btn_anteriores.Click

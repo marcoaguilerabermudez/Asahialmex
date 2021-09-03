@@ -24,6 +24,8 @@ Partial Class FormatoSM
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormatoSM))
         Me.panel1 = New System.Windows.Forms.Panel()
+        Me.txt_destino = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.lbl_npuesto = New System.Windows.Forms.Label()
         Me.cbx_puesto = New System.Windows.Forms.ComboBox()
         Me.lbl_puesto = New System.Windows.Forms.Label()
@@ -80,8 +82,6 @@ Partial Class FormatoSM
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.txt_clave = New System.Windows.Forms.TextBox()
-        Me.txt_destino = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.panel1.SuspendLayout()
         Me.gbx_vacaciones.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,6 +140,29 @@ Partial Class FormatoSM
         Me.panel1.Name = "panel1"
         Me.panel1.Size = New System.Drawing.Size(903, 521)
         Me.panel1.TabIndex = 145
+        '
+        'txt_destino
+        '
+        Me.txt_destino.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_destino.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_destino.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txt_destino.Location = New System.Drawing.Point(249, 253)
+        Me.txt_destino.MaxLength = 100
+        Me.txt_destino.Name = "txt_destino"
+        Me.txt_destino.Size = New System.Drawing.Size(459, 18)
+        Me.txt_destino.TabIndex = 414
+        Me.txt_destino.Visible = False
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.ForeColor = System.Drawing.Color.Black
+        Me.Label16.Location = New System.Drawing.Point(186, 255)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(46, 13)
+        Me.Label16.TabIndex = 413
+        Me.Label16.Text = "Destino:"
+        Me.Label16.Visible = False
         '
         'lbl_npuesto
         '
@@ -668,7 +691,7 @@ Partial Class FormatoSM
         Me.cbx_tipo.Enabled = False
         Me.cbx_tipo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_tipo.FormattingEnabled = True
-        Me.cbx_tipo.Items.AddRange(New Object() {"Permiso con goce de sueldo", "Permiso sin goce de sueldo", "Falta o retardo injustificado y sin goce de sueldo", "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)", "Vacaciones", "Registro en reloj checador", "Cambio de departamento", "Cambio de puesto", "Suspensión", "Entrada o salida en tiempo extra", "Comisión"})
+        Me.cbx_tipo.Items.AddRange(New Object() {"Permiso con goce de sueldo", "Permiso sin goce de sueldo", "Falta o retardo injustificado y sin goce de sueldo", "Falta o retardo JUSTIFICADO y sin goce de sueldo (No solicitado anticipadamente)", "Vacaciones", "Registro en reloj checador", "Cambio de departamento", "Cambio de puesto", "Suspensión", "Entrada o salida en tiempo extra", "Comisión", "Shutdown"})
         Me.cbx_tipo.Location = New System.Drawing.Point(101, 57)
         Me.cbx_tipo.Name = "cbx_tipo"
         Me.cbx_tipo.Size = New System.Drawing.Size(437, 21)
@@ -759,29 +782,6 @@ Partial Class FormatoSM
         Me.txt_clave.Size = New System.Drawing.Size(83, 20)
         Me.txt_clave.TabIndex = 140
         Me.txt_clave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txt_destino
-        '
-        Me.txt_destino.BackColor = System.Drawing.SystemColors.Control
-        Me.txt_destino.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_destino.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_destino.Location = New System.Drawing.Point(249, 253)
-        Me.txt_destino.MaxLength = 100
-        Me.txt_destino.Name = "txt_destino"
-        Me.txt_destino.Size = New System.Drawing.Size(459, 18)
-        Me.txt_destino.TabIndex = 414
-        Me.txt_destino.Visible = False
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.ForeColor = System.Drawing.Color.Black
-        Me.Label16.Location = New System.Drawing.Point(186, 255)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(46, 13)
-        Me.Label16.TabIndex = 413
-        Me.Label16.Text = "Destino:"
-        Me.Label16.Visible = False
         '
         'FormatoSM
         '

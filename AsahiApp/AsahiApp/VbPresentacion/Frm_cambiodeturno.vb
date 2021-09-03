@@ -5,7 +5,7 @@ Public Class Frm_cambiodeturno
     Public cadenaConex As String
     Public cadenaCExpress As String
     Public cnn As SqlConnection
-
+    Dim filtar As New BindingSource
 
 
     Dim id As Integer
@@ -163,6 +163,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
             Dim dt As New DataTable
             da.Fill(dt)
             dtgvp.DataSource = dt
+
             '   dtgvp.Columns("id").Visible = False
             ' dtgvp.Columns("Estado").Visible = False
 
@@ -173,8 +174,44 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
             MessageBox.Show(ex.Message)
             cnn.Close()
         End Try
-
+        ' dtgvp.DataSource = filtar
     End Sub
+
+
+    Sub Muestragridindividual()
+
+        Try
+
+            cnn.Close()
+            cnn.Open()
+            Dim da As New SqlDataAdapter("Sp_muestragridCambioTurno", cnn)
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            da.SelectCommand.Parameters.AddWithValue("@fecha", dtp1.Value.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@clave", id)
+
+
+            Dim dt As New DataTable
+            da.Fill(dt)
+            dtgvp.DataSource = dt.AsEnumerable() _
+            .Where(Function(r) r.Field(Of String)("Turno_Actual") = cbx_filtro.Text) _
+            .CopyToDataTable()
+
+            '   dtgvp.Columns("id").Visible = False
+            ' dtgvp.Columns("Estado").Visible = False
+
+
+            cnn.Close()
+
+        Catch ex As Exception
+            'MessageBox.Show(ex.Message)
+            MessageBox.Show("No tiene personal en el turno " & cbx_filtro.Text & " ", "Aviso")
+            cnn.Close()
+        End Try
+        ' dtgvp.DataSource = filtar
+    End Sub
+
+
+
 
 
     Sub Muestragridturno()
@@ -584,6 +621,10 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
 
     End Sub
 
+    Private Sub cbx_filtro_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_filtro.SelectedIndexChanged
+        Muestragridindividual()
+
+    End Sub
 End Class
 
 Module Modulo_Turno
