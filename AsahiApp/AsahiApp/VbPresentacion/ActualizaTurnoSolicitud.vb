@@ -71,6 +71,7 @@ Public Class ActualizaTurnoSolicitud
                 command.Parameters.AddWithValue("@TurnoE", cbx_textra.Text)
                 command.Parameters.AddWithValue("@variable", 3)
                 command.Parameters.AddWithValue("@id_solicitud", variable)
+                command.Parameters.AddWithValue("@parcial", txt_horas.Text)
 
 
                 command.ExecuteNonQuery()
@@ -95,7 +96,7 @@ Public Class ActualizaTurnoSolicitud
 
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_actualiza.Click
         actualizar()
 
         Dim solte As New SolicitudTE(id_id, id_depa, id_permiso)
@@ -113,7 +114,22 @@ Public Class ActualizaTurnoSolicitud
         Me.Close()
     End Sub
 
+    Private Sub cbx_textra_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_textra.SelectedIndexChanged
 
+        txt_horas.Enabled = True
 
+        If cbx_textra.Text = "Administrativo" Then
+            txt_horas.Text = 9
+        ElseIf cbx_textra.Text = "Matutino" Then
+            txt_horas.Text = 8.5
+        ElseIf cbx_textra.Text = "Vespertino" Then
+            txt_horas.Text = 8
+        ElseIf cbx_textra.Text = "Nocturno" Then
+            txt_horas.Text = 7.5
 
+        End If
+
+        btn_actualiza.Enabled = True
+
+    End Sub
 End Class

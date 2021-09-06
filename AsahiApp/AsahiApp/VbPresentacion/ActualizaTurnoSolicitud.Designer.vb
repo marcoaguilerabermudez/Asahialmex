@@ -31,7 +31,9 @@ Partial Class ActualizaTurnoSolicitud
         Me.lbl_clave = New System.Windows.Forms.Label()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.lbl_turno = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_actualiza = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txt_horas = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'lbl4
@@ -127,24 +129,50 @@ Partial Class ActualizaTurnoSolicitud
         Me.lbl_turno.TabIndex = 156
         Me.lbl_turno.Text = "Nuevo Turno"
         '
-        'Button1
+        'btn_actualiza
         '
-        Me.Button1.BackColor = System.Drawing.Color.LightGray
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Green
-        Me.Button1.Location = New System.Drawing.Point(140, 173)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(169, 35)
-        Me.Button1.TabIndex = 166
-        Me.Button1.Text = "Actualizar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btn_actualiza.BackColor = System.Drawing.Color.LightGray
+        Me.btn_actualiza.Enabled = False
+        Me.btn_actualiza.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_actualiza.ForeColor = System.Drawing.Color.Green
+        Me.btn_actualiza.Location = New System.Drawing.Point(146, 201)
+        Me.btn_actualiza.Name = "btn_actualiza"
+        Me.btn_actualiza.Size = New System.Drawing.Size(169, 35)
+        Me.btn_actualiza.TabIndex = 166
+        Me.btn_actualiza.Text = "Actualizar"
+        Me.btn_actualiza.UseVisualStyleBackColor = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.SystemColors.Control
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(51, 159)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(50, 16)
+        Me.Label3.TabIndex = 167
+        Me.Label3.Text = "Horas"
+        '
+        'txt_horas
+        '
+        Me.txt_horas.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_horas.Enabled = False
+        Me.txt_horas.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txt_horas.Location = New System.Drawing.Point(117, 158)
+        Me.txt_horas.Name = "txt_horas"
+        Me.txt_horas.Size = New System.Drawing.Size(62, 20)
+        Me.txt_horas.TabIndex = 168
+        Me.txt_horas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ActualizaTurnoSolicitud
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(453, 221)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(453, 248)
+        Me.Controls.Add(Me.txt_horas)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.btn_actualiza)
         Me.Controls.Add(Me.lbl_turno)
         Me.Controls.Add(Me.lbl_nombre)
         Me.Controls.Add(Me.lbl_clave)
@@ -170,5 +198,7 @@ Partial Class ActualizaTurnoSolicitud
     Friend WithEvents lbl_clave As Label
     Friend WithEvents lbl_nombre As Label
     Friend WithEvents lbl_turno As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_actualiza As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txt_horas As TextBox
 End Class

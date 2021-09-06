@@ -821,7 +821,9 @@ SELECT  [Id_motivopermiso]
     End Sub
 
     Private Sub Check_aviso_CheckedChanged(sender As Object, e As EventArgs) Handles Check_aviso.CheckedChanged
+
         If Check_aviso.Checked = True Then
+
             dtp_hora.Visible = True
             dtp_cuando.Visible = True
             txt_quien.Visible = True
@@ -830,6 +832,7 @@ SELECT  [Id_motivopermiso]
             Label14.Visible = True
 
         Else
+
             dtp_hora.Visible = False
             dtp_cuando.Visible = False
             txt_quien.Visible = False
@@ -838,6 +841,7 @@ SELECT  [Id_motivopermiso]
             Label14.Visible = False
 
         End If
+
     End Sub
 
 
@@ -856,18 +860,21 @@ SELECT  [Id_motivopermiso]
             F_reportePCSGoce.motivo = 0
             F_reportePCSGoce.retardo = 0
             F_reportePCSGoce.Show()
+
         ElseIf vpermiso = 3 OrElse vpermiso = 4 Then
             Fr_reportefaltajusinj.id = y
             Fr_reportefaltajusinj.Tipo = 0
             Fr_reportefaltajusinj.motivo = 0
             Fr_reportefaltajusinj.retardo = 0
             Fr_reportefaltajusinj.Show()
+
         ElseIf vpermiso = 5 Then
             ContenedorReporteVacacionesRH.id = y
             ContenedorReporteVacacionesRH.Tipo = 0
             ContenedorReporteVacacionesRH.motivo = 0
             ContenedorReporteVacacionesRH.retardo = 0
             ContenedorReporteVacacionesRH.Show()
+
         ElseIf vpermiso = 6 Then
             ContenedorReporteChecadas.id = y
             ContenedorReporteChecadas.Tipo = 0
