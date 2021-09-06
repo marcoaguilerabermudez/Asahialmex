@@ -240,6 +240,9 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
                     End If
                 Catch
                 End Try
+
+
+
             Else
                 MessageBox.Show("Las horas solicitadas deben tener un valor mayor a 0.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -247,6 +250,49 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
         Catch ex As Exception
             MessageBox.Show("Debe seleccionar un empleado válido.")
         End Try
+    End Sub
+
+
+
+
+    Sub revisarduplicados()
+
+        Dim dt = New DataTable()
+        Dim strSql As String
+        strSql = "  select clave
+  from [AsahiSystem].[dbo].[Rh_solicitudTE]
+  where Clave = @clave and Fecha = @fecha and TurnoE = case
+  when @turnoe = 'Matutino' then 1
+  when @turnoe = 'Vespertino' then 2
+  when @turnoe = 'Nocturno' then 3
+  when @turnoe = 'Administrativo' then 4
+  end"
+
+
+        Dim da = New SqlDataAdapter(strSql, cnn)
+        cnn.Close()
+        cnn.Open()
+        da.SelectCommand.CommandType = CommandType.Text
+
+        da.SelectCommand.Parameters.Add("@clave", SqlDbType.Int).Value = txt_clave.Text
+        da.SelectCommand.Parameters.Add("@fecha", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
+        da.SelectCommand.Parameters.Add("@turnoe", SqlDbType.VarChar, 30).Value = cbx_textra.Text
+
+
+        da.Fill(dt)
+        cnn.Close()
+
+        If dt.Rows.Count > 0 Then
+
+            MessageBox.Show("Ya hay una solicitud con ese número de empleado y ese turno, por favor, revise sus datos.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+
+        Else
+
+            validarsolicitud()
+        End If
+
+
     End Sub
 
 
@@ -777,7 +823,7 @@ end
         If txt_motivo.Text = "" Then
             MessageBox.Show("Debe poner un motivo que justifique su tiempo extra", "¡Aviso!")
         Else
-            validarsolicitud()
+            revisarduplicados()
         End If
     End Sub
 

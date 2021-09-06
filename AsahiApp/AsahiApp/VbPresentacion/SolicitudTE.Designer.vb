@@ -25,6 +25,8 @@ Partial Class SolicitudTE
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SolicitudTE))
         Me.panel1 = New System.Windows.Forms.Panel()
+        Me.dtp2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -70,8 +72,6 @@ Partial Class SolicitudTE
         Me.di1 = New System.Windows.Forms.Label()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.dtgvp = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.dtp2 = New System.Windows.Forms.DateTimePicker()
         Me.panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +90,25 @@ Partial Class SolicitudTE
         Me.panel1.Name = "panel1"
         Me.panel1.Size = New System.Drawing.Size(1013, 41)
         Me.panel1.TabIndex = 144
+        '
+        'dtp2
+        '
+        Me.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp2.Location = New System.Drawing.Point(477, 10)
+        Me.dtp2.Name = "dtp2"
+        Me.dtp2.Size = New System.Drawing.Size(100, 20)
+        Me.dtp2.TabIndex = 156
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label2.Location = New System.Drawing.Point(412, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 20)
+        Me.Label2.TabIndex = 155
+        Me.Label2.Text = "Hasta:"
         '
         'dtp1
         '
@@ -324,6 +343,7 @@ Partial Class SolicitudTE
         Me.btn_eliminar.TabIndex = 162
         Me.btn_eliminar.Text = "Eliminar"
         Me.btn_eliminar.UseVisualStyleBackColor = False
+        Me.btn_eliminar.Visible = False
         '
         'Btn_autorizar
         '
@@ -580,25 +600,6 @@ Partial Class SolicitudTE
         Me.dtgvp.RowHeadersVisible = False
         Me.dtgvp.Size = New System.Drawing.Size(913, 276)
         Me.dtgvp.TabIndex = 159
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!)
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Location = New System.Drawing.Point(412, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 20)
-        Me.Label2.TabIndex = 155
-        Me.Label2.Text = "Hasta:"
-        '
-        'dtp2
-        '
-        Me.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp2.Location = New System.Drawing.Point(477, 10)
-        Me.dtp2.Name = "dtp2"
-        Me.dtp2.Size = New System.Drawing.Size(100, 20)
-        Me.dtp2.TabIndex = 156
         '
         'SolicitudTE
         '

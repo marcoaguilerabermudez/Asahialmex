@@ -150,6 +150,7 @@ Public Class ImprimirAnteriores
             ContenedorReporteEntradaSalidaTE.Show()
 
         ElseIf vpermiso = 11 Then
+
             ContenedorReporteComision.id = folio
             ContenedorReporteComision.Tipo = 0
             ContenedorReporteComision.motivo = 0
@@ -157,6 +158,7 @@ Public Class ImprimirAnteriores
             ContenedorReporteComision.Show()
 
         ElseIf vpermiso = 12 Then
+
             ContenedorReporteShutdown.id = folio
             ContenedorReporteShutdown.Tipo = 0
             ContenedorReporteShutdown.motivo = 0
