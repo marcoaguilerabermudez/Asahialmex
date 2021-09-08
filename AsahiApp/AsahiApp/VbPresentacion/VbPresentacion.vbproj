@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>353</ApplicationRevision>
+    <ApplicationRevision>355</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -218,6 +218,12 @@
       <DependentUpon>CapturaOee2.vb</DependentUpon>
     </Compile>
     <Compile Include="CapturaOee2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargaPrecios.Designer.vb">
+      <DependentUpon>CargaPrecios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CargaPrecios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CartaCompromiso.Designer.vb">
@@ -1173,6 +1179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapturaOee2.resx">
       <DependentUpon>CapturaOee2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargaPrecios.resx">
+      <DependentUpon>CargaPrecios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CartaCompromiso.resx">
       <DependentUpon>CartaCompromiso.vb</DependentUpon>

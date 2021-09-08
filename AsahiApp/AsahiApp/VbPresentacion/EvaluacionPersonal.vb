@@ -7,6 +7,8 @@ Public Class EvaluacionPersonal
     Dim estado As Integer
     Dim puntajemax As Double
     Dim idemp As Integer
+    Dim maestro As Integer
+    Dim puestoid As Integer
 
     Private Sub EvaluacionPersonal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -19,6 +21,8 @@ Public Class EvaluacionPersonal
         lbl_depto.Text = Modulo_evaluaciones.e_depto
         lbl_puesto.Text = Modulo_evaluaciones.e_puesto
         lbl_evaluacion.Text = Modulo_evaluaciones.e_evaluacion
+        maestro = Modulo_evaluaciones.e_permiso
+
         MuestraEtiquetasKardex()
         pbx.ImageLocation = ("V:/2. RECURSOS HUMANOS/CARPETA 2018/RH. FOTOGRAFIAS DEL PERSONAL/" & lbl_clave.Text & ".jpg")
 
@@ -34,6 +38,18 @@ Public Class EvaluacionPersonal
             btn_evaluar.Enabled = False
         End If
 
+        If maestro = 3 Then
+            btn_reestablecer.Visible = True
+        End If
+
+        Dim a As String
+        a = lbl_puesto.Text
+
+        If Replace(a, " ", "") = "OPERADOR" Or Replace(a, " ", "") = "LÍDER" Then
+            puestoid = 0
+        Else
+            puestoid = 1
+        End If
 
     End Sub
 
@@ -191,6 +207,9 @@ Public Class EvaluacionPersonal
         dtgvp.Rows(13).ReadOnly = True
         dtgvp.Rows(5).ReadOnly = True
         dtgvp.Rows(9).ReadOnly = True
+
+
+
 
     End Sub
 
@@ -386,6 +405,9 @@ Public Class EvaluacionPersonal
 
 
     Sub Cargaevaluacion()
+        'MessageBox.Show(lbl_puesto.Text)
+        'MessageBox.Show(lbl_evaluacion.Text)
+
         Try
             sumarpuntaje()
 
@@ -442,17 +464,35 @@ Public Class EvaluacionPersonal
                     MessageBox.Show("El empleado ha sido evaluado correctamente", "¡Carga exitosa!")
 
 
-                    If lbl_evaluacion.Text <> "3 meses" Then
+
+
+                    'If (lbl_puesto.Text = "OPERADOR" Or lbl_puesto.Text = "LÍDER") Then
+
+                    '    Dim ownerForm As EvaluacionesPrincipal = Me.Owner
+                    '    ownerForm.Muestragrid()
+
+                    '    btn_evaluar.Enabled = False
+
+
+                    'Else
+                    If puestoid = 1 Then
+                        Dim ownerForm As EvaluacionPrincipalIndirecto = Me.Owner
+                        ownerForm.Muestragrid()
+
+                        btn_evaluar.Enabled = False
+                        Me.Dispose()
+
+                    Else
 
                         Dim ownerForm As EvaluacionesPrincipal = Me.Owner
                         ownerForm.Muestragrid()
 
                         btn_evaluar.Enabled = False
-                    Else
-                        Dim ownerForm As EvaluacionPrincipalIndirecto = Me.Owner
-                        ownerForm.Muestragrid()
-                        btn_evaluar.Enabled = False
+                        Me.Dispose()
+
+
                     End If
+
 
 
 
@@ -475,4 +515,103 @@ Public Class EvaluacionPersonal
     End Sub
 
 
+    Sub reestablecer()
+        'MessageBox.Show(lbl_puesto.Text)
+        'MessageBox.Show(lbl_evaluacion.Text)
+
+
+
+        Try
+
+
+
+            Dim Pregunta As Integer
+
+
+            Pregunta = MsgBox("¿Desea reestablecer la evaluación de este empleado?", vbYesNo + vbExclamation + vbDefaultButton2, "Evaluación")
+
+
+            If Pregunta = vbYes Then
+
+                Cn.Close()
+
+
+                Dim command As New SqlCommand("Sp_reestableceEvaluacion", Cn)
+                Cn.Open()
+                Dim fila As DataGridViewRow = New DataGridViewRow()
+                command.CommandType = CommandType.StoredProcedure
+
+                Try
+
+
+
+
+                    command.Parameters.Clear()
+
+                    command.Parameters.AddWithValue("@id", id)
+                    command.Parameters.AddWithValue("@tipo", 0)
+
+
+
+
+                    command.ExecuteNonQuery()
+
+
+
+                    MessageBox.Show("La evaluación se ha reestablecido correctamente", "¡Aviso!")
+
+
+                    'If (lbl_puesto.Text = "OPERADOR" Or lbl_puesto.Text = "LÍDER") Then
+
+                    '    Dim ownerForm As EvaluacionesPrincipal = Me.Owner
+                    '    ownerForm.Muestragrid()
+
+                    '    btn_evaluar.Enabled = False
+
+
+                    'Else
+                    If puestoid = 1 Then
+                        Dim ownerForm As EvaluacionPrincipalIndirecto = Me.Owner
+                        ownerForm.Muestragrid()
+
+                        btn_evaluar.Enabled = False
+                        Me.Dispose()
+
+                    Else
+
+                        Dim ownerForm As EvaluacionesPrincipal = Me.Owner
+                        ownerForm.Muestragrid()
+
+                        btn_evaluar.Enabled = False
+                        Me.Dispose()
+
+
+                    End If
+
+
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+                    btn_evaluar.Enabled = False
+                Finally
+                    Cn.Close()
+                End Try
+
+            ElseIf Pregunta = vbNo Then
+
+                MessageBox.Show("Acción no completada", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            End If
+        Catch
+            MessageBox.Show("Error al reestablecer evaluación, contacte al administrador", "Aviso")
+        End Try
+
+
+    End Sub
+
+    Private Sub btn_reestablecer_Click(sender As Object, e As EventArgs) Handles btn_reestablecer.Click
+        reestablecer()
+    End Sub
 End Class

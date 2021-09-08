@@ -402,6 +402,7 @@ where id_evaluaciones = @ID and estado = 0
                     Modulo_evaluaciones.e_id = Me.dtgvp.Rows(e.RowIndex).Cells("id").Value.ToString()
                     Modulo_evaluaciones.e_estado = Me.dtgvp.Rows(e.RowIndex).Cells("Estado").Value.ToString()
                     Modulo_evaluaciones.e_idemp = id
+                    Modulo_evaluaciones.e_permiso = permiso
 
 
                     Dim segundoForm2 As New EvaluacionPersonal
@@ -565,6 +566,7 @@ Module Modulo_evaluacionesindi
     Public e_fecha As Date
     Public id_puesto As Integer
     Public id_depto As Integer
+    Public id_permiso As Integer
 
 End Module
 

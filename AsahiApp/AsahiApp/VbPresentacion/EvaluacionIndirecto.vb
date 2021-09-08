@@ -278,6 +278,13 @@ Public Class EvaluacionIndirecto
 
 
 
+        'MessageBox.Show(lbl_evaluacion.Text)
+        'MessageBox.Show(estado)
+        'MessageBox.Show(id)
+        'MessageBox.Show(Modulo_evaluacionesindi.e_puesto)
+
+
+
 
 
         'dtgvp.Rows(9).ReadOnly = True
