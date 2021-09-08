@@ -186,9 +186,9 @@ Public Class Frm_GlobalPrenomina
             ProcesoInsertaIncidenciasNomina()
             Btn_Incidencias.Enabled = False
         End If
-        CrearArchivo()
-        EscribirArchivo()
-        LeerArchivo()
+        'CrearArchivo()
+        'EscribirArchivo()
+        'LeerArchivo()
     End Sub
     Private Sub Btn_Excel_Click(sender As Object, e As EventArgs) Handles Btn_Excel.Click
         GridAExcel(Dgv_Prenomina_Global)
@@ -351,6 +351,7 @@ Public Class Frm_GlobalPrenomina
                 .Cells("permisoMaternidad").Value = 0
                 .Cells("incapacidad").Value = 0
                 .Cells("vacaciones").Value = 0
+                .Cells("shutdown").Value = 0
                 .Cells("ujap").Value = 0
                 .Cells("dJap").Value = 0
                 .Cells("umex").Value = 0
@@ -869,6 +870,11 @@ Public Class Frm_GlobalPrenomina
                         inc = "CF"
                         cb = Color.GreenYellow
                         cf = Color.Red
+                    Case "Z", "Z "
+                        yy = "shutdown"
+                        inc = "SHU"
+                        cb = Color.Yellow
+                        cf = Color.Black
                     Case Else
                         yy = ""
                         inc = "FF"
@@ -1084,6 +1090,8 @@ Public Class Frm_GlobalPrenomina
                                     inc = "PCV"
                                 Case "J", "J "
                                     inc = "PCV"
+                                Case "Z", "Z "
+                                    inc = "SHU"
                                 Case Else
                                     inc = "xx"
                             End Select
@@ -1147,7 +1155,7 @@ Public Class Frm_GlobalPrenomina
                                 objInci.Año = Lbl_año.Text
                                 inc = .Cells("inc").Value
 
-                                If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Or inc = "DT" Or inc = "PCV" Then
+                                If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Or inc = "DT" Or inc = "PCV" Or inc = "SHU" Then
                                     Select Case inc
                                         Case "HE"
                                             V = .Cells("hrsAprobadas").Value
@@ -1387,7 +1395,7 @@ Public Class Frm_GlobalPrenomina
                                             val = .Cells("tiempo").Value
                                             Dim Vr = Format((Int(val / 60) + (((val / 60 - Int(val / 60)) / 1.666))), "0.00")
                                             objInci.Incidencia = 17
-                                            'objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")27/0
+                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy") '27/0
                                             objInci.Valor = Vr
                                             objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
                                         Case "F", "FJ"
@@ -1423,6 +1431,12 @@ Public Class Frm_GlobalPrenomina
                                         Case "PCV"
                                             val = 1
                                             objInci.Incidencia = 22
+                                            objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                            objInci.Valor = val
+                                            objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                        Case "SHU"
+                                            val = 1
+                                            objInci.Incidencia = 27
                                             objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
                                             objInci.Valor = val
                                             objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
@@ -1541,7 +1555,7 @@ Public Class Frm_GlobalPrenomina
                             '    MsgBox("Aquí es")
                             'End If
                             inc = .Cells("inc").Value
-                            If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Then
+                            If inc = "HE" Or inc = "R" Or inc = "F" Or inc = "PCS" Or inc = "PSS" Or inc = "SUS" Or inc = "FJ" Or inc = "DF" Or inc = "SHU" Then
                                 Select Case inc
                                     Case "HE"
                                         V = .Cells("hrsAprobadas").Value
@@ -1882,6 +1896,21 @@ Public Class Frm_GlobalPrenomina
                                         tx.Write(",00:0 ")
                                         tx.Write(Lbl_año.Text)
                                         tx.Write("                            ")
+                                    Case "SHU"
+                                        tx.Write("D")
+                                        tx.Write(" Semanal")
+                                        tx.Write("                 ")
+                                        tx.Write(String.Format("{0:00}", semana))
+                                        tx.Write(" 2                   ")
+                                        texto = "Paro Tecnico (Shutdown)                      "
+                                        val = 1
+                                        tx.Write(texto)
+                                        tx.Write("1.00")
+                                        tx.Write(" ")
+                                        tx.Write(Format(.Cells("fecha").Value), "dd/MM/yyyy")
+                                        tx.Write(",00:0 ")
+                                        tx.Write(Lbl_año.Text)
+                                        tx.Write("                            ")
                                 End Select
                                 tx.WriteLine()
                             End If
@@ -2010,6 +2039,7 @@ Public Class Frm_GlobalPrenomina
                     dtw("PM") = Dgv_Prenomina_Global.Rows(i).Cells("permisoMaternidad").Value
                     dtw("INC") = Dgv_Prenomina_Global.Rows(i).Cells("incapacidad").Value
                     dtw("VAC") = Dgv_Prenomina_Global.Rows(i).Cells("vacaciones").Value
+                    dtw("SHU") = Dgv_Prenomina_Global.Rows(i).Cells("shutdown").Value
                     dtw("Jp") = Dgv_Prenomina_Global.Rows(i).Cells("ujap").Value
                     dtw("DJ") = Dgv_Prenomina_Global.Rows(i).Cells("dJap").Value
                     dtw("Mx") = Dgv_Prenomina_Global.Rows(i).Cells("umex").Value
@@ -2365,8 +2395,8 @@ Public Class Frm_GlobalPrenomina
 
         RecuperarIncidencias(0)
         lstInci = RellenaObjetoIncidencias()
-        '    NPren.InsertarIncidenciasNomina(cadenaConex, lstInci)
-        '    NPren.BitacoraInsertar(cadenaConex, Cmb_Semanas.Text, Lbl_año.Text, Me.emp.IdEmpleado, Date.Now(), 1)
+        NPren.InsertarIncidenciasNomina(cadenaConex, lstInci)
+        NPren.BitacoraInsertar(cadenaConex, Cmb_Semanas.Text, Lbl_año.Text, Me.emp.IdEmpleado, Date.Now(), 1)
     End Sub
     Private Sub ProcesoInsertaBonoNomina()
         Dim lstBono As New LBono(), NPren As New NPrenomina(), conex As New conexion()

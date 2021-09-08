@@ -729,6 +729,10 @@ Public Class Frm_Principal
         CambioTurno.Show()
     End Sub
 
+    Private Sub CargarPreciosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargarPreciosToolStripMenuItem.Click
+
+    End Sub
+
 
 
 #End Region
