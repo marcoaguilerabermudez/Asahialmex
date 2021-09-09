@@ -33,7 +33,9 @@ Public Class AjustarInventario
     End Sub
 
     Private Sub AjustarInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim conexion As New conexion()
+
         If Strings.Left(conexion.getIp(), 6) = "172.16" Then
             Me.cadenaConex = conexion.conexionCont
             Me.cnn = conexion.conexionContpaq2
@@ -47,6 +49,7 @@ Public Class AjustarInventario
         End If
 
         AddHandler VentanaArchivo.FileOk, AddressOf ObtenerArchivo
+
     End Sub
 
     Private Sub btn_archivo_Click(sender As Object, e As EventArgs) Handles btn_archivo.Click
@@ -177,6 +180,7 @@ insert into Asahi.dbo.Vales_Almacen values
 
                 command.Parameters.AddWithValue("@Codigo", (fila.Cells(0).Value))
                 command.Parameters.AddWithValue("@Cantidad", (fila.Cells(1).Value))
+                command.Parameters.AddWithValue("@variable", 0)
 
 
 

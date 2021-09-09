@@ -730,7 +730,8 @@ Public Class Frm_Principal
     End Sub
 
     Private Sub CargarPreciosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargarPreciosToolStripMenuItem.Click
-
+        Dim Ajustar_p As New CargaPrecios(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, Me.emp.IdPermisoV)
+        Ajustar_p.Show()
     End Sub
 
 
