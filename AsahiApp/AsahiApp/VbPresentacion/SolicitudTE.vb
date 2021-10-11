@@ -741,61 +741,62 @@ end
 
 
 
-
-            If txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2) Then
-                cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
-            ElseIf txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 6 OrElse dtp1.Value.DayOfWeek = 0) Then
+            If txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 6 OrElse dtp1.Value.DayOfWeek = 0 OrElse dtp1.Value.Date = "16/09/2021") Then
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("Vespertino")
+            ElseIf txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2) Then
+                cbx_textra.Items.Clear()
+                cbx_textra.Items.Add("Nocturno")
+                cbx_textra.Items.Add("Vespertino")
 
 
+
+            ElseIf txt_turno.Text = "Matutino" And (dtp1.Value.DayOfWeek = 0 OrElse dtp1.Value.Date = "16/09/2021") Then
+
+                cbx_textra.Items.Clear()
+                cbx_textra.Items.Add("Administrativo")
+                cbx_textra.Items.Add("Matutino")
+                cbx_textra.Items.Add("Nocturno")
+                cbx_textra.Items.Add("Vespertino")
             ElseIf txt_turno.Text = "Matutino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
 
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("Vespertino")
 
-            ElseIf txt_turno.Text = "Matutino" And (dtp1.Value.DayOfWeek = 0) Then
+
+
+            ElseIf txt_turno.Text = "Vespertino" And (dtp1.Value.DayOfWeek = 0 OrElse dtp1.Value.Date = "16/09/2021") Then
 
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("Vespertino")
-
             ElseIf txt_turno.Text = "Vespertino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Nocturno")
 
-            ElseIf txt_turno.Text = "Vespertino" And (dtp1.Value.DayOfWeek = 0) Then
 
+
+
+
+            ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 0 OrElse dtp1.Value.Date = "16/09/2021") Then
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("Vespertino")
-
-
-
             ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
 
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Vespertino")
 
-
-            ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 0) Then
-                cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Administrativo")
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
             End If
 
 
@@ -973,6 +974,7 @@ delete from [AsahiSystem].[dbo].[Temporal_solicitud]
     End Sub
 
     Private Sub dtp2_ValueChanged(sender As Object, e As EventArgs) Handles dtp2.ValueChanged
+
         If dtp2.Value < dtp1.Value Then
             dtp2.Value = dtp1.Value
             dias = 1
@@ -986,13 +988,8 @@ delete from [AsahiSystem].[dbo].[Temporal_solicitud]
             End If
         End If
 
-
-
     End Sub
 
-    'Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellContentClick
-
-    'End Sub
 End Class
 
 

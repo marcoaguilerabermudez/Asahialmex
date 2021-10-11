@@ -647,9 +647,6 @@ select
         c_p.Text = CInt(txt_gerente.Text) + CInt(txt_asistente.Text) + CInt(txt_supervisor.Text) + CInt(txt_lad.Text) + CInt(txt_staff.Text) + CInt(txt_lid.Text) + CInt(txt_operador.Text) + CInt(txt_cor.Text) + CInt(txt_tra.Text)
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         'ContenedorReportePersonal2.semana = semana
@@ -670,6 +667,7 @@ select
     Private Sub btn_modmaster_Click(sender As Object, e As EventArgs) Handles btn_modmaster.Click
         variable = 0
         carga()
+        c_m.Text = CInt(tm_gerente.Text) + CInt(tm_asistente.Text) + CInt(tm_super.Text) + CInt(tm_lda.Text) + CInt(tm_staff.Text) + CInt(tm_lider.Text) + CInt(tm_operador.Text) + CInt(tm_coordinador.Text) + CInt(tm_traductor.Text)
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btn_horas.Click
