@@ -36,7 +36,7 @@ Public Class Frm_Principal
     End Sub
 #End Region
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Lbl_Version.Text = My.Application.Info.Version.ToString
+        Lbl_Version.Text = "Ver: " & My.Application.Info.Version.ToString & ", mayor: " & My.Application.Info.Version.Major.ToString & ", menor: " & My.Application.Info.Version.Minor.ToString & ", Build: " & My.Application.Info.Version.Build.ToString & ", Review: " & My.Application.Info.Version.Revision.ToString & ", CV: " & Application.ProductVersion.ToString
         Lbl_NombreUser.Text = emp.NombreCompleto
         If Me.emp.TipoUsuario = 0 Then
             Dim lstPer As New LPermisos(), NEmp As New NEmpleado()
@@ -50,9 +50,6 @@ Public Class Frm_Principal
 
 
         End If
-
-
-
 
 
 
@@ -733,6 +730,39 @@ Public Class Frm_Principal
         Dim Ajustar_p As New CargaPrecios(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, Me.emp.IdPermisoV)
         Ajustar_p.Show()
     End Sub
+
+    Private Sub ListaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ListaToolStripMenuItem1.Click
+        Dim Lista_pro As New ListaProductos(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, Me.emp.IdPermisoV)
+        Lista_pro.Show()
+    End Sub
+
+    Private Sub AltaToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem2.Click
+        Dim Alta_pro As New Alta_productos(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, 0)
+        Alta_pro.Show()
+    End Sub
+
+    Private Sub AltaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AltaToolStripMenuItem1.Click
+        Dim Alta_pre As New Alta_proveedores(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, 0)
+        Alta_pre.Show()
+    End Sub
+
+    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+        Dim Req_cre As New Requerimientos_crear(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, 0)
+        Req_cre.Show()
+    End Sub
+
+    Private Sub MisRequerimientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MisRequerimientosToolStripMenuItem.Click
+        Dim Req_pri As New Requerimientos_principal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, 0)
+        Req_pri.Show()
+    End Sub
+
+    Private Sub CotizaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CotizaciónToolStripMenuItem.Click
+        Dim Req_pri As New Requerimientos_principal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, 1)
+        Req_pri.Show()
+    End Sub
+
+
+
 
 
 

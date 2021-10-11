@@ -30,8 +30,8 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>356</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -187,6 +187,18 @@
       <DependentUpon>AjustarInventario.vb</DependentUpon>
     </Compile>
     <Compile Include="AjustarInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alta_productos.Designer.vb">
+      <DependentUpon>Alta_productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta_productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alta_proveedores.Designer.vb">
+      <DependentUpon>Alta_proveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Alta_proveedores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AnomaliaDetalle.Designer.vb">
@@ -419,6 +431,12 @@
     <Compile Include="ContenedorREvaluacionSin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Crear_familia.Designer.vb">
+      <DependentUpon>Crear_familia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Crear_familia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -636,6 +654,18 @@
     <Compile Include="Frm_terminavale.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ListaProductos.Designer.vb">
+      <DependentUpon>ListaProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListaProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaProveedores.Designer.vb">
+      <DependentUpon>ListaProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListaProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modificacion_de_Turno.Designer.vb">
       <DependentUpon>Modificacion_de_Turno.vb</DependentUpon>
     </Compile>
@@ -652,6 +682,30 @@
       <DependentUpon>ReporteMedidas.vb</DependentUpon>
     </Compile>
     <Compile Include="ReporteMedidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requerimientos_Comentarios.Designer.vb">
+      <DependentUpon>Requerimientos_Comentarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_Comentarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requerimientos_crear.Designer.vb">
+      <DependentUpon>Requerimientos_crear.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_crear.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requerimientos_movimientos.Designer.vb">
+      <DependentUpon>Requerimientos_movimientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_movimientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requerimientos_principal.Designer.vb">
+      <DependentUpon>Requerimientos_principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_principal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\Frm_CreadorCuestionarios.Designer.vb">
@@ -1165,6 +1219,12 @@
     <EmbeddedResource Include="AjustarInventario.resx">
       <DependentUpon>AjustarInventario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Alta_productos.resx">
+      <DependentUpon>Alta_productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alta_proveedores.resx">
+      <DependentUpon>Alta_proveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AnomaliaDetalle.resx">
       <DependentUpon>AnomaliaDetalle.vb</DependentUpon>
     </EmbeddedResource>
@@ -1279,6 +1339,9 @@
     <EmbeddedResource Include="ContenedorREvaluacionSin.resx">
       <DependentUpon>ContenedorREvaluacionSin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Crear_familia.resx">
+      <DependentUpon>Crear_familia.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DefectoM.resx">
       <DependentUpon>DefectoM.vb</DependentUpon>
     </EmbeddedResource>
@@ -1366,6 +1429,12 @@
     <EmbeddedResource Include="KardexEmpleado.resx">
       <DependentUpon>KardexEmpleado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListaProductos.resx">
+      <DependentUpon>ListaProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaProveedores.resx">
+      <DependentUpon>ListaProveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MedidasDisciplinarias.resx">
       <DependentUpon>MedidasDisciplinarias.vb</DependentUpon>
     </EmbeddedResource>
@@ -1423,6 +1492,18 @@
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="ReporteVales1.rdlc" />
     <EmbeddedResource Include="ReporteXmesCambioDePuesto.rdlc" />
+    <EmbeddedResource Include="Requerimientos_Comentarios.resx">
+      <DependentUpon>Requerimientos_Comentarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_crear.resx">
+      <DependentUpon>Requerimientos_crear.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_movimientos.resx">
+      <DependentUpon>Requerimientos_movimientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_principal.resx">
+      <DependentUpon>Requerimientos_principal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RH\Frm_CreadorCuestionarios.resx">
       <DependentUpon>Frm_CreadorCuestionarios.vb</DependentUpon>
     </EmbeddedResource>

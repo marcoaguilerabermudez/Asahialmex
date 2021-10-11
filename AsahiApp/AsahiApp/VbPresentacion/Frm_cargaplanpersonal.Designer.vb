@@ -204,7 +204,7 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_tra.Location = New System.Drawing.Point(164, 67)
         Me.txt_tra.Name = "txt_tra"
         Me.txt_tra.Size = New System.Drawing.Size(61, 20)
-        Me.txt_tra.TabIndex = 416
+        Me.txt_tra.TabIndex = 16
         Me.txt_tra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label11
@@ -225,7 +225,7 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_cor.Location = New System.Drawing.Point(91, 67)
         Me.txt_cor.Name = "txt_cor"
         Me.txt_cor.Size = New System.Drawing.Size(61, 20)
-        Me.txt_cor.TabIndex = 414
+        Me.txt_cor.TabIndex = 15
         Me.txt_cor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
@@ -245,7 +245,7 @@ Partial Class Frm_cargaplanpersonal
         Me.btn_modificar.Location = New System.Drawing.Point(19, 206)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(133, 35)
-        Me.btn_modificar.TabIndex = 412
+        Me.btn_modificar.TabIndex = 23
         Me.btn_modificar.Text = "Guardar"
         Me.btn_modificar.UseVisualStyleBackColor = False
         '
@@ -256,7 +256,7 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_operador.Location = New System.Drawing.Point(163, 173)
         Me.txt_operador.Name = "txt_operador"
         Me.txt_operador.Size = New System.Drawing.Size(61, 20)
-        Me.txt_operador.TabIndex = 243
+        Me.txt_operador.TabIndex = 22
         Me.txt_operador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbl_operador
@@ -310,7 +310,7 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_lad.Location = New System.Drawing.Point(163, 119)
         Me.txt_lad.Name = "txt_lad"
         Me.txt_lad.Size = New System.Drawing.Size(61, 20)
-        Me.txt_lad.TabIndex = 237
+        Me.txt_lad.TabIndex = 19
         Me.txt_lad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_supervisor
@@ -320,7 +320,7 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_supervisor.Location = New System.Drawing.Point(88, 119)
         Me.txt_supervisor.Name = "txt_supervisor"
         Me.txt_supervisor.Size = New System.Drawing.Size(61, 20)
-        Me.txt_supervisor.TabIndex = 235
+        Me.txt_supervisor.TabIndex = 18
         Me.txt_supervisor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_lid
@@ -330,7 +330,7 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_lid.Location = New System.Drawing.Point(88, 173)
         Me.txt_lid.Name = "txt_lid"
         Me.txt_lid.Size = New System.Drawing.Size(61, 20)
-        Me.txt_lid.TabIndex = 234
+        Me.txt_lid.TabIndex = 21
         Me.txt_lid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_asistente
@@ -340,7 +340,7 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_asistente.Location = New System.Drawing.Point(14, 119)
         Me.txt_asistente.Name = "txt_asistente"
         Me.txt_asistente.Size = New System.Drawing.Size(61, 20)
-        Me.txt_asistente.TabIndex = 233
+        Me.txt_asistente.TabIndex = 17
         Me.txt_asistente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_staff
@@ -350,7 +350,7 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_staff.Location = New System.Drawing.Point(14, 173)
         Me.txt_staff.Name = "txt_staff"
         Me.txt_staff.Size = New System.Drawing.Size(61, 20)
-        Me.txt_staff.TabIndex = 232
+        Me.txt_staff.TabIndex = 20
         Me.txt_staff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label4
@@ -382,7 +382,7 @@ Partial Class Frm_cargaplanpersonal
         Me.txt_gerente.Location = New System.Drawing.Point(16, 67)
         Me.txt_gerente.Name = "txt_gerente"
         Me.txt_gerente.Size = New System.Drawing.Size(61, 20)
-        Me.txt_gerente.TabIndex = 229
+        Me.txt_gerente.TabIndex = 14
         Me.txt_gerente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
@@ -427,7 +427,7 @@ Partial Class Frm_cargaplanpersonal
         Me.btn_horas.Location = New System.Drawing.Point(833, 27)
         Me.btn_horas.Name = "btn_horas"
         Me.btn_horas.Size = New System.Drawing.Size(63, 56)
-        Me.btn_horas.TabIndex = 459
+        Me.btn_horas.TabIndex = 24
         Me.btn_horas.Text = "HORAS"
         Me.btn_horas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_horas.UseVisualStyleBackColor = True
@@ -472,7 +472,7 @@ Partial Class Frm_cargaplanpersonal
         Me.Button2.Location = New System.Drawing.Point(1070, 19)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(68, 71)
-        Me.Button2.TabIndex = 455
+        Me.Button2.TabIndex = 25
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -506,7 +506,7 @@ Partial Class Frm_cargaplanpersonal
         Me.cbx_año.Location = New System.Drawing.Point(81, 84)
         Me.cbx_año.Name = "cbx_año"
         Me.cbx_año.Size = New System.Drawing.Size(59, 21)
-        Me.cbx_año.TabIndex = 451
+        Me.cbx_año.TabIndex = 3
         Me.cbx_año.Text = "2018"
         '
         'cbx_mes
@@ -519,7 +519,7 @@ Partial Class Frm_cargaplanpersonal
         Me.cbx_mes.Location = New System.Drawing.Point(251, 37)
         Me.cbx_mes.Name = "cbx_mes"
         Me.cbx_mes.Size = New System.Drawing.Size(148, 21)
-        Me.cbx_mes.TabIndex = 449
+        Me.cbx_mes.TabIndex = 2
         '
         'Label8
         '
@@ -553,7 +553,7 @@ Partial Class Frm_cargaplanpersonal
         Me.cbx_depto.Location = New System.Drawing.Point(6, 34)
         Me.cbx_depto.Name = "cbx_depto"
         Me.cbx_depto.Size = New System.Drawing.Size(210, 21)
-        Me.cbx_depto.TabIndex = 406
+        Me.cbx_depto.TabIndex = 1
         '
         'Panel2
         '
@@ -1137,7 +1137,7 @@ Partial Class Frm_cargaplanpersonal
         Me.tm_traductor.Location = New System.Drawing.Point(164, 67)
         Me.tm_traductor.Name = "tm_traductor"
         Me.tm_traductor.Size = New System.Drawing.Size(61, 20)
-        Me.tm_traductor.TabIndex = 416
+        Me.tm_traductor.TabIndex = 6
         Me.tm_traductor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label37
@@ -1158,7 +1158,7 @@ Partial Class Frm_cargaplanpersonal
         Me.tm_coordinador.Location = New System.Drawing.Point(91, 67)
         Me.tm_coordinador.Name = "tm_coordinador"
         Me.tm_coordinador.Size = New System.Drawing.Size(61, 20)
-        Me.tm_coordinador.TabIndex = 414
+        Me.tm_coordinador.TabIndex = 5
         Me.tm_coordinador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label38
@@ -1178,7 +1178,7 @@ Partial Class Frm_cargaplanpersonal
         Me.btn_modmaster.Location = New System.Drawing.Point(3, 204)
         Me.btn_modmaster.Name = "btn_modmaster"
         Me.btn_modmaster.Size = New System.Drawing.Size(133, 35)
-        Me.btn_modmaster.TabIndex = 412
+        Me.btn_modmaster.TabIndex = 13
         Me.btn_modmaster.Text = "Guardar"
         Me.btn_modmaster.UseVisualStyleBackColor = False
         '
@@ -1189,7 +1189,7 @@ Partial Class Frm_cargaplanpersonal
         Me.tm_operador.Location = New System.Drawing.Point(163, 173)
         Me.tm_operador.Name = "tm_operador"
         Me.tm_operador.Size = New System.Drawing.Size(61, 20)
-        Me.tm_operador.TabIndex = 243
+        Me.tm_operador.TabIndex = 12
         Me.tm_operador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label39
@@ -1243,7 +1243,7 @@ Partial Class Frm_cargaplanpersonal
         Me.tm_lda.Location = New System.Drawing.Point(163, 119)
         Me.tm_lda.Name = "tm_lda"
         Me.tm_lda.Size = New System.Drawing.Size(61, 20)
-        Me.tm_lda.TabIndex = 237
+        Me.tm_lda.TabIndex = 9
         Me.tm_lda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'tm_super
@@ -1253,7 +1253,7 @@ Partial Class Frm_cargaplanpersonal
         Me.tm_super.Location = New System.Drawing.Point(88, 119)
         Me.tm_super.Name = "tm_super"
         Me.tm_super.Size = New System.Drawing.Size(61, 20)
-        Me.tm_super.TabIndex = 235
+        Me.tm_super.TabIndex = 8
         Me.tm_super.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'tm_lider
@@ -1263,7 +1263,7 @@ Partial Class Frm_cargaplanpersonal
         Me.tm_lider.Location = New System.Drawing.Point(88, 173)
         Me.tm_lider.Name = "tm_lider"
         Me.tm_lider.Size = New System.Drawing.Size(61, 20)
-        Me.tm_lider.TabIndex = 234
+        Me.tm_lider.TabIndex = 11
         Me.tm_lider.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'tm_asistente
@@ -1273,7 +1273,7 @@ Partial Class Frm_cargaplanpersonal
         Me.tm_asistente.Location = New System.Drawing.Point(14, 119)
         Me.tm_asistente.Name = "tm_asistente"
         Me.tm_asistente.Size = New System.Drawing.Size(61, 20)
-        Me.tm_asistente.TabIndex = 233
+        Me.tm_asistente.TabIndex = 7
         Me.tm_asistente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'tm_staff
@@ -1283,7 +1283,7 @@ Partial Class Frm_cargaplanpersonal
         Me.tm_staff.Location = New System.Drawing.Point(14, 173)
         Me.tm_staff.Name = "tm_staff"
         Me.tm_staff.Size = New System.Drawing.Size(61, 20)
-        Me.tm_staff.TabIndex = 232
+        Me.tm_staff.TabIndex = 10
         Me.tm_staff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label43
@@ -1315,7 +1315,7 @@ Partial Class Frm_cargaplanpersonal
         Me.tm_gerente.Location = New System.Drawing.Point(16, 67)
         Me.tm_gerente.Name = "tm_gerente"
         Me.tm_gerente.Size = New System.Drawing.Size(61, 20)
-        Me.tm_gerente.TabIndex = 229
+        Me.tm_gerente.TabIndex = 4
         Me.tm_gerente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label45

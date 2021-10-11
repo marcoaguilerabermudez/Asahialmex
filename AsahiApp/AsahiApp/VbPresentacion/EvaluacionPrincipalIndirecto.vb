@@ -253,6 +253,7 @@ Public Class EvaluacionPrincipalIndirecto
 
         For Each row As DataGridViewRow In Me.dtgvp.Rows
 
+
             If row.Cells(“Estado”).Value = 0 Then
                 row.DefaultCellStyle.BackColor = Color.White
             ElseIf row.Cells(“Estado”).Value = 1 Then
@@ -270,6 +271,7 @@ Public Class EvaluacionPrincipalIndirecto
             ElseIf row.Cells(“Estado”).Value = 14 Then
                 row.DefaultCellStyle.BackColor = Color.LightGreen
             End If
+
         Next
 
 
@@ -286,6 +288,7 @@ Public Class EvaluacionPrincipalIndirecto
 
     Public Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         Muestragrid()
+
     End Sub
 
 
@@ -446,8 +449,6 @@ where id_evaluaciones = @ID and estado = 0
         End Try
 
     End Sub
-
-
 
     Private Sub btn_liberar_Click(sender As Object, e As EventArgs) Handles btn_liberar.Click
         autorizar()

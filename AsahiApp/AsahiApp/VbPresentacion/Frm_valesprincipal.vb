@@ -303,6 +303,7 @@ delete from [Asahi].[dbo].[Vales_Almacen_Temp] where [TimeStampSalida] < @Tiempo
 
 
         If dtgv_2.RowCount < 8 Then
+
             Try
                 Existencia = dtgvp.Rows(e.RowIndex).Cells("Disponible").Value
 
@@ -318,6 +319,7 @@ delete from [Asahi].[dbo].[Vales_Almacen_Temp] where [TimeStampSalida] < @Tiempo
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
                 StockSeguridad = 0
+
             End Try
 
 
@@ -421,6 +423,8 @@ delete from [Asahi].[dbo].[Vales_Almacen_Temp] where [TimeStampSalida] < @Tiempo
             MessageBox.Show("Complete su información, por favor.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
         End If
+
+
     End Sub
 
 

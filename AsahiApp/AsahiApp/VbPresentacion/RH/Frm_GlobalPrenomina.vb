@@ -1276,16 +1276,16 @@ Public Class Frm_GlobalPrenomina
 
                                                         VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
                                                         ' VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
-                                                        Dim objInci2 As New Incidencias
+                                                        '  Dim objInci2 As New Incidencias
 
-                                                        objInci2.IdEmpleado = id
-                                                        objInci2.Semana = sema
-                                                        objInci2.Año = Lbl_año.Text
-                                                        objInci2.Incidencia = 2
-                                                        objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                        objInci2.Valor = VV
-                                                        objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                        lstInc.Add(objInci2)
+                                                        'objInci2.IdEmpleado = id
+                                                        'objInci2.Semana = sema
+                                                        'objInci2.Año = Lbl_año.Text
+                                                        objInci.Incidencia = 2
+                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                        objInci.Valor = VV
+                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                        'lstInc.Add(objInci2)
 
                                                         'objInci.Incidencia = 3
                                                         'objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")

@@ -58,6 +58,7 @@ Public Class CargaPrecios
     End Sub
 
     Public Sub ExportarExcelADGV(Lista As DataGridView, ArchivoExcel As String)
+
         Dim ConexionExcel As OleDbConnection
         Dim AdaptadorExcel As OleDbDataAdapter
         Dim ds As DataSet
@@ -82,12 +83,10 @@ Public Class CargaPrecios
             btn_ajustar.Enabled = False
         End Try
 
-
-
-
     End Sub
 
     Private Sub ObtenerArchivo(sender As Object, e As System.ComponentModel.CancelEventArgs)
+
         DireccionArchivo = VentanaArchivo.FileName
         txt_ruta.Text = DireccionArchivo
         ExportarExcelADGV(dtgvp, DireccionArchivo)
@@ -141,11 +140,14 @@ Public Class CargaPrecios
             dtgvp.Visible = False
             btn_ajustar.Enabled = False
             txt_ruta.Clear()
+
         Catch ex As Exception
+
             MessageBox.Show(ex.ToString)
             dtgvp.Visible = False
             btn_ajustar.Enabled = False
             txt_ruta.Clear()
+
         Finally
             ' MessageBox.Show("Ocurrió un problema, contacte al área de sistemas.", "Aviso")
             cnn.Close()

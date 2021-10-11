@@ -77,7 +77,6 @@
             this.cmb_turno = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_nuevo2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Clave = new System.Windows.Forms.TextBox();
             this.Panel_secundario = new System.Windows.Forms.Panel();
@@ -150,6 +149,7 @@
             this.label49 = new System.Windows.Forms.Label();
             this.cmb_escolaridad = new System.Windows.Forms.ComboBox();
             this.btn_fin_anterior = new System.Windows.Forms.Button();
+            this.btn_nuevo2 = new System.Windows.Forms.Button();
             this.Panel_principal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -230,7 +230,7 @@
             this.txt_factor.Name = "txt_factor";
             this.txt_factor.Size = new System.Drawing.Size(73, 20);
             this.txt_factor.TabIndex = 44;
-            this.txt_factor.Text = "1.07808";
+            this.txt_factor.Text = "1.04520";
             // 
             // lbl_var
             // 
@@ -676,19 +676,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(595, 50);
             this.panel1.TabIndex = 1;
-            // 
-            // btn_nuevo2
-            // 
-            this.btn_nuevo2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_nuevo2.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_nuevo2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo2.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo2.Location = new System.Drawing.Point(113, 24);
-            this.btn_nuevo2.Name = "btn_nuevo2";
-            this.btn_nuevo2.Size = new System.Drawing.Size(26, 23);
-            this.btn_nuevo2.TabIndex = 2;
-            this.btn_nuevo2.UseVisualStyleBackColor = true;
-            this.btn_nuevo2.Click += new System.EventHandler(this.Btn_nuevo2_Click);
             // 
             // label3
             // 
@@ -1538,6 +1525,19 @@
             this.btn_fin_anterior.Text = "<&Anterior";
             this.btn_fin_anterior.UseVisualStyleBackColor = true;
             this.btn_fin_anterior.Click += new System.EventHandler(this.Btn_fin_anterior_Click);
+            // 
+            // btn_nuevo2
+            // 
+            this.btn_nuevo2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_nuevo2.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btn_nuevo2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo2.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
+            this.btn_nuevo2.Location = new System.Drawing.Point(113, 24);
+            this.btn_nuevo2.Name = "btn_nuevo2";
+            this.btn_nuevo2.Size = new System.Drawing.Size(26, 23);
+            this.btn_nuevo2.TabIndex = 2;
+            this.btn_nuevo2.UseVisualStyleBackColor = true;
+            this.btn_nuevo2.Click += new System.EventHandler(this.Btn_nuevo2_Click);
             // 
             // Frm_Altas
             // 
