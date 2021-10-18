@@ -107,6 +107,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>asahi16DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\RH\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\RH\Frm_Licencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -577,6 +582,7 @@
     <EmbeddedResource Include="Formularios\RH\Frm_Modifica_Sueldo.resx">
       <DependentUpon>Frm_Modifica_Sueldo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RH\ReporteRequerimientoCompra.rdlc" />
     <EmbeddedResource Include="Rep_Ausentismos3.rdlc" />
     <EmbeddedResource Include="Rep_Contrato.rdlc" />
     <EmbeddedResource Include="Rep_Contrato_.rdlc" />
@@ -976,6 +982,17 @@
     </None>
     <None Include="DS_Vacaciones2.xss">
       <DependentUpon>DS_Vacaciones2.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\RH\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\RH\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formularios\RH\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

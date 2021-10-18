@@ -1095,6 +1095,9 @@ Public Class Frm_DescripcionPuestos
             Next
         Next
     End Sub
+
+
+
     Private Sub RellenarIdRelacionIndicadores(ByVal lstPues As LPuestos)
         For Each item In lstPues
             Dim fila As Integer = 0, totalfilas As Integer = Dgv_Indicadores.Rows.Count()

@@ -185,11 +185,13 @@ select CLAVE, RTRIM(LTRIM(NOMBREN)) + ' ' + RTRIM(LTRIM(NOMBREP)) + ' ' + RTRIM(
    when 2 then 'Vespertino'
    when 3 then 'Nocturno'
    when 4 then 'Administrativo'
+when 10 then 'Administrativo'
    when 5 then 'Mazda día'
    when 6 then 'Mazda noche'
    when 7 then '12 M'
    when 8 then '12 N'
    when 9 then 'Descanso'
+when 10 then 'Administrativo'
    else 'Error'
    end
 ,descripcion_puesto
@@ -814,8 +816,14 @@ SELECT  [Id_motivopermiso]
             desde_h.Value = "01/01/2020 23:25:00"
             hasta_h.Value = "01/01/2020 06:55:00"
         ElseIf lbl_turno.Text = "Administrativo" Then
-            desde_h.Value = "01/01/2020 08:00:00"
-            hasta_h.Value = "01/01/2020 17:00:00"
+            desde_h.Value = "01/01/2020 07:00:00"
+            hasta_h.Value = "01/01/2020 16:00:00"
+        ElseIf lbl_turno.Text = "12 M" Then
+            desde_h.Value = "01/01/2020 07:00:00"
+            hasta_h.Value = "01/01/2020 19:15:00"
+        ElseIf lbl_turno.Text = "12 N" Then
+            desde_h.Value = "01/01/2020 19:00:00"
+            hasta_h.Value = "01/01/2020 07:15:00"
         End If
 
     End Sub

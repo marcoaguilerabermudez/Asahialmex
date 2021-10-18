@@ -28,6 +28,8 @@ Partial Class Frm_cambiodeturno
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cambiodeturno))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cbx_filtro = New System.Windows.Forms.ComboBox()
         Me.btn_cambiarturno = New System.Windows.Forms.Button()
         Me.btn_desma = New System.Windows.Forms.Button()
         Me.btn_selec = New System.Windows.Forms.Button()
@@ -52,8 +54,7 @@ Partial Class Frm_cambiodeturno
         Me.lbl_clave = New System.Windows.Forms.Label()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.cbx_filtro = New System.Windows.Forms.ComboBox()
+        Me.btn_preautorizar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +76,7 @@ Partial Class Frm_cambiodeturno
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.Controls.Add(Me.btn_preautorizar)
         Me.TabPage1.Controls.Add(Me.Label6)
         Me.TabPage1.Controls.Add(Me.cbx_filtro)
         Me.TabPage1.Controls.Add(Me.btn_cambiarturno)
@@ -92,12 +94,35 @@ Partial Class Frm_cambiodeturno
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Departamento Completo"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.SystemColors.Control
+        Me.Label6.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label6.Location = New System.Drawing.Point(51, 15)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(63, 13)
+        Me.Label6.TabIndex = 169
+        Me.Label6.Text = "Filtrar Turno"
+        '
+        'cbx_filtro
+        '
+        Me.cbx_filtro.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.cbx_filtro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_filtro.ForeColor = System.Drawing.SystemColors.Menu
+        Me.cbx_filtro.FormattingEnabled = True
+        Me.cbx_filtro.Items.AddRange(New Object() {"Matutino", "Vespertino", "Nocturno", "Administrativo"})
+        Me.cbx_filtro.Location = New System.Drawing.Point(17, 32)
+        Me.cbx_filtro.Name = "cbx_filtro"
+        Me.cbx_filtro.Size = New System.Drawing.Size(142, 21)
+        Me.cbx_filtro.TabIndex = 168
+        '
         'btn_cambiarturno
         '
         Me.btn_cambiarturno.BackColor = System.Drawing.SystemColors.Control
         Me.btn_cambiarturno.Enabled = False
         Me.btn_cambiarturno.ForeColor = System.Drawing.Color.DarkGreen
-        Me.btn_cambiarturno.Location = New System.Drawing.Point(882, 19)
+        Me.btn_cambiarturno.Location = New System.Drawing.Point(858, 19)
         Me.btn_cambiarturno.Name = "btn_cambiarturno"
         Me.btn_cambiarturno.Size = New System.Drawing.Size(100, 35)
         Me.btn_cambiarturno.TabIndex = 167
@@ -375,28 +400,17 @@ Partial Class Frm_cambiodeturno
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'Label6
+        'btn_preautorizar
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.SystemColors.Control
-        Me.Label6.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Label6.Location = New System.Drawing.Point(51, 15)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(63, 13)
-        Me.Label6.TabIndex = 169
-        Me.Label6.Text = "Filtrar Turno"
-        '
-        'cbx_filtro
-        '
-        Me.cbx_filtro.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.cbx_filtro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbx_filtro.ForeColor = System.Drawing.SystemColors.Menu
-        Me.cbx_filtro.FormattingEnabled = True
-        Me.cbx_filtro.Items.AddRange(New Object() {"Matutino", "Vespertino", "Nocturno", "Administrativo"})
-        Me.cbx_filtro.Location = New System.Drawing.Point(17, 32)
-        Me.cbx_filtro.Name = "cbx_filtro"
-        Me.cbx_filtro.Size = New System.Drawing.Size(142, 21)
-        Me.cbx_filtro.TabIndex = 168
+        Me.btn_preautorizar.BackColor = System.Drawing.Color.LightGray
+        Me.btn_preautorizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_preautorizar.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.btn_preautorizar.Location = New System.Drawing.Point(981, 20)
+        Me.btn_preautorizar.Name = "btn_preautorizar"
+        Me.btn_preautorizar.Size = New System.Drawing.Size(79, 35)
+        Me.btn_preautorizar.TabIndex = 170
+        Me.btn_preautorizar.Text = "Imprimir"
+        Me.btn_preautorizar.UseVisualStyleBackColor = False
         '
         'Frm_cambiodeturno
         '
@@ -449,4 +463,5 @@ Partial Class Frm_cambiodeturno
     Friend WithEvents dtgv_2 As DataGridView
     Friend WithEvents Label6 As Label
     Friend WithEvents cbx_filtro As ComboBox
+    Friend WithEvents btn_preautorizar As Button
 End Class

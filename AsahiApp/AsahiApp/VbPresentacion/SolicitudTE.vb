@@ -85,11 +85,11 @@ select CLAVE, RTRIM(LTRIM(NOMBREN)) + ' ' + RTRIM(LTRIM(NOMBREP)) + ' ' + RTRIM(
    when 1 then 'Matutino'
    when 2 then 'Vespertino'
    when 3 then 'Nocturno'
-   when 4 then 'Administrativo'
    when 5 then 'Mazda día'
    when 6 then 'Mazda noche'
-   when 7 then '12 M'
-   when 8 then '12 N'
+   when 7 then '12 Matutino'
+   when 8 then '12 Nocturno'
+    when 10 then 'Administrativo'
    when 9 then 'Descanso'
    else 'Error'
    end
@@ -265,7 +265,11 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoe = 'Matutino' then 1
   when @turnoe = 'Vespertino' then 2
   when @turnoe = 'Nocturno' then 3
-  when @turnoe = 'Administrativo' then 4
+
+  when @turnoe = '12 Matutino' then 7
+  when @turnoe = '12 Nocturno' then 8
+  when @turnoe = 'Administrativo' then 10
+ 
   end"
 
 
@@ -311,26 +315,35 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoa = 'Matutino' then 1
   when @turnoa = 'Vespertino' then 2
   when @turnoa = 'Nocturno' then 3
-  when @turnoa = 'Administrativo' then 4
+  when @turnoa = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
+
   end,
    case
   when @turnoe = 'Matutino' then 1
   when @turnoe = 'Vespertino' then 2
   when @turnoe = 'Nocturno' then 3
-  when @turnoe = 'Administrativo' then 4
+  when @turnoe = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
   end,
   @parcial, @motivo, 
    case
   when @turnoe = 'Matutino' then '01/01/1900 06:55:00'
   when @turnoe = 'Vespertino' then '01/01/1900 15:25:00'
   when @turnoe = 'Nocturno' then  '01/01/1900 23:25:00'
-  when @turnoe = 'Administrativo' then  '01/01/1900 08:00:00'
+  when @turnoe = 'Administrativo' then  '01/01/1900 07:00:00'
+  when @turnoe = '12 Matutino' then  '01/01/1900 07:00:00'
+  when @turnoe = '12 Nocturno' then  '01/01/1900 19:00:00'
   end,
   case
   when @turnoe = 'Matutino' then '01/01/1900 15:25:00'
   when @turnoe = 'Vespertino' then '01/01/1900 23:25:00'
   when @turnoe = 'Nocturno' then  '01/01/1900 06:55:00'
-  when @turnoe = 'Administrativo' then  '01/01/1900 17:00:00'
+  when @turnoe = 'Administrativo' then  '01/01/1900 16:00:00'
+  when @turnoe = '12 Matutino' then  '01/01/1900 19:15:00'
+  when @turnoe = '12 Nocturno' then  '01/01/1900 07:15:00'
   end, 0, @depto,0,'01/01/1900')
 ", cnn)
 
@@ -431,26 +444,34 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoa = 'Matutino' then 1
   when @turnoa = 'Vespertino' then 2
   when @turnoa = 'Nocturno' then 3
-  when @turnoa = 'Administrativo' then 4
+  when @turnoa = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
   end,
    case
   when @turnoe = 'Matutino' then 1
   when @turnoe = 'Vespertino' then 2
   when @turnoe = 'Nocturno' then 3
-  when @turnoe = 'Administrativo' then 4
+  when @turnoe = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
   end,
   @parcial, @motivo, 
    case
   when @turnoe = 'Matutino' then '01/01/1900 06:55:00'
   when @turnoe = 'Vespertino' then '01/01/1900 15:25:00'
   when @turnoe = 'Nocturno' then  '01/01/1900 23:25:00'
-  when @turnoe = 'Administrativo' then  '01/01/1900 08:00:00'
+  when @turnoe = 'Administrativo' then  '01/01/1900 07:00:00'
+  when @turnoe = '12 Matutino' then  '01/01/1900 07:00:00'
+  when @turnoe = '12 Nocturno' then  '01/01/1900 19:00:00'
   end,
   case
   when @turnoe = 'Matutino' then '01/01/1900 15:25:00'
   when @turnoe = 'Vespertino' then '01/01/1900 23:25:00'
   when @turnoe = 'Nocturno' then  '01/01/1900 06:55:00'
-  when @turnoe = 'Administrativo' then  '01/01/1900 17:00:00'
+  when @turnoe = 'Administrativo' then  '01/01/1900 16:00:00'
+  when @turnoe = '12 Matutino' then  '01/01/1900 19:15:00'
+  when @turnoe = '12 Nocturno' then  '01/01/1900 07:15:00'
   end, 0, @depto,1,'01/01/1900')
 ", cnn)
 
@@ -580,7 +601,9 @@ if not exists (select clave from giro.[asahi16].[dbo].[Rh_entradasalida2] where 
   when @turnoe = 'Matutino' then 1
   when @turnoe = 'Vespertino' then 2
   when @turnoe = 'Nocturno' then 3
-  when @turnoe = 'Administrativo' then 4
+  when @turnoe = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
   end and fecha = @fecha)
 begin
  insert into giro.[asahi16].[dbo].[Rh_entradasalida2] (clave,fecha,turno,grupo) 
@@ -589,13 +612,17 @@ values (RIGHT(CONCAT('00000', @clave), 5),@fecha,
   when @turnoa = 'Matutino' then 1
   when @turnoa = 'Vespertino' then 2
   when @turnoa = 'Nocturno' then 3
-  when @turnoa = 'Administrativo' then 4
+  when @turnoa = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
   end,
    case
   when @turnoe = 'Matutino' then 1
   when @turnoe = 'Vespertino' then 2
   when @turnoe = 'Nocturno' then 3
-  when @turnoe = 'Administrativo' then 4
+  when @turnoe = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
   end)
   end
 
@@ -604,7 +631,9 @@ values (RIGHT(CONCAT('00000', @clave), 5),@fecha,
  when @turnoe = 'Matutino' then 1
  when @turnoe = 'Vespertino' then 2
  when @turnoe = 'Nocturno' then 3
-when @turnoe = 'Administrativo' then 4
+when @turnoe = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
 end and fecha = @fecha)
 begin
 insert into [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] (CLAVE, FECHA, ValSuper, ValRh,PlanExtra,TurnoA,TurnoE )
@@ -613,13 +642,17 @@ case
 when @turnoa = 'Matutino' then 1
 when @turnoa = 'Vespertino' then 2
 when @turnoa = 'Nocturno' then 3
-when @turnoa = 'Administrativo' then 4
+when @turnoa = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
 end,
 case
 when @turnoe = 'Matutino' then 1
 when @turnoe = 'Vespertino' then 2
 when @turnoe = 'Nocturno' then 3
-when @turnoe = 'Administrativo' then 4
+when @turnoe = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
 end
 end
 ", cnn)
@@ -677,13 +710,17 @@ begin
 delete from giro.[asahi16].[dbo].[Rh_entradasalida2] where clave = @clave and fecha = @fecha and grupo = case
 when @turnoe = 'Matutino' then 1
 when @turnoe = 'Nocturno' then 3
-when @turnoe = 'Administrativo' then 4
+when @turnoe = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
 end
 delete from [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] where Clave = @clave and Fecha = @fecha and PlanExtra = 1 and TurnoE = case
 when @turnoe = 'Matutino' then 1
 when @turnoe = 'Vespertino' then 2
 when @turnoe = 'Nocturno' then 3
-when @turnoe = 'Administrativo' then 4
+when @turnoe = 'Administrativo' then 10
+ when @turnoa = '12 Matutino' then 7
+ when @turnoa = '12 Nocturno' then 8
 end
 end
 
@@ -747,11 +784,17 @@ end
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("Vespertino")
+
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
+
+
             ElseIf txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2) Then
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("Vespertino")
-
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
 
 
             ElseIf txt_turno.Text = "Matutino" And (dtp1.Value.DayOfWeek = 0 OrElse dtp1.Value.Date = "16/09/2021") Then
@@ -761,11 +804,15 @@ end
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("Vespertino")
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
             ElseIf txt_turno.Text = "Matutino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
 
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("Vespertino")
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
 
 
 
@@ -776,26 +823,50 @@ end
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("Vespertino")
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
+
             ElseIf txt_turno.Text = "Vespertino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Nocturno")
-
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
 
 
 
 
             ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 0 OrElse dtp1.Value.Date = "16/09/2021") Then
+
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("Vespertino")
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
+
             ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
 
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Matutino")
                 cbx_textra.Items.Add("Vespertino")
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
+
+            ElseIf txt_turno.Text = "12 Matutino" Then
+
+                cbx_textra.Items.Clear()
+
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
+
+            ElseIf txt_turno.Text = "12 Nocturno" Then
+
+                cbx_textra.Items.Clear()
+
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
 
             End If
 
@@ -849,6 +920,10 @@ end
             txt_horas.Text = 7.5
         ElseIf cbx_textra.Text = "Administrativo" Then
             txt_horas.Text = 9
+        ElseIf cbx_textra.Text = "12 Matutino" Then
+            txt_horas.Text = 12
+        ElseIf cbx_textra.Text = "12 Nocturno" Then
+            txt_horas.Text = 12
         End If
     End Sub
 
@@ -989,6 +1064,7 @@ delete from [AsahiSystem].[dbo].[Temporal_solicitud]
         End If
 
     End Sub
+
 
 End Class
 

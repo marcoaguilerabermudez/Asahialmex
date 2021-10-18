@@ -243,7 +243,7 @@ Public Class Requerimientos_crear
                 btn_doc.Visible = True
                 btn_selec.Visible = True
                 txt_comentarios.Visible = True
-
+                Label12.Visible = True
             End If
 
 
@@ -257,6 +257,7 @@ Public Class Requerimientos_crear
             btn_doc.Visible = False
             btn_selec.Visible = False
             txt_comentarios.Visible = False
+            Label12.Visible = False
             ''  cargagridmuestraproducto()
 
         End If
@@ -353,7 +354,7 @@ end"
 
                 If Repetido = False Then
                     dtgv_2.Rows.Add(Codigo_p, Codigo_p + " " + nombre_p, cantidad_p, precio_p, proveedor_p, a, dtp1.Value.ToShortDateString, txt_descr.Text)
-
+                    txt_cantidad.Text = 0
                 Else
 
                     MessageBox.Show("El producto ya está agregado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -548,7 +549,7 @@ insert into [Asahi].[dbo].[Com_RequerimientoPrincipal] values
             btn_selec.Visible = False
             txt_comentarios.Clear()
             txt_comentarios.Visible = False
-
+            Label12.Visible = False
 
             MessageBox.Show("Requerimiento creado con el folio: " & y & "", "¡Correcto!", MessageBoxButtons.OK)
 

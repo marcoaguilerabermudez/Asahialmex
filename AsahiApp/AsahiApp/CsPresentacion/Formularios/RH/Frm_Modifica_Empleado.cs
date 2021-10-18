@@ -476,6 +476,10 @@ namespace CsPresentacion
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
             da.SelectCommand.Parameters.Add("@Emp", SqlDbType.VarChar, 100).Value = txt_clave.Text;
             da.Fill(dt);
+            DateTime alta;
+            DateTime baja;
+
+
 
             if (dt.Rows.Count > 0)
             {
@@ -501,7 +505,19 @@ namespace CsPresentacion
                 txt_sector.Text = dt.Rows[0]["SECTOR"].ToString();
                 cmb_Civil.Text = dt.Rows[0]["E_CIVIL"].ToString();
                 cmb_genero.Text = dt.Rows[0]["GEN"].ToString();
-               
+
+                 alta = Convert.ToDateTime(dt.Rows[0]["IngresoE"]);
+
+                lbl_alta.Text = alta.ToString("dd/MM/yyyy");
+
+                try
+                {
+                    baja = Convert.ToDateTime(dt.Rows[0]["Baja"]);
+                    lbl_baja.Text = baja.ToString("dd/MM/yyyy");
+                }
+                catch
+                { lbl_baja.Text = "N/A"; }
+
                 txt_nss.Text = dt.Rows[0]["AFILIACION"].ToString();
                 txt_contacto.Text = dt.Rows[0]["CONTACTO"].ToString();
                 cmb_parentesco.Text = dt.Rows[0]["PARENTESCO"].ToString();
@@ -531,7 +547,7 @@ namespace CsPresentacion
                 cmb_turno.Text = dt.Rows[0]["TURNO"].ToString();
                 lbl_escolaridad.Text = dt.Rows[0]["ESCOLARIDAD_NUM"].ToString();
                 lbl_civil.Text = dt.Rows[0]["ESTADO_CIVIL"].ToString();
-               lbl_id_turno.Text = dt.Rows[0]["CATALOGO"].ToString();
+                lbl_id_turno.Text = dt.Rows[0]["CATALOGO"].ToString();
                 txt_factor_sueldo.Text = dt.Rows[0]["FACTOR"].ToString();
 
                 dtm_nacimiento.Text = dt.Rows[0]["NACIMIENTO"].ToString();
@@ -659,7 +675,9 @@ namespace CsPresentacion
             txt_sector.Text = "";
             cmb_Civil.Text = "";
             cmb_genero.Text = "";
-          
+            lbl_alta.Text = "";
+            lbl_baja.Text = "";
+
             txt_lugar_nac.Text = "";
             cmb_escolaridad.Text = "";
             txt_email.Text = "";

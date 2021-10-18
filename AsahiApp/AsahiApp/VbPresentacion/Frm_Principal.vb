@@ -761,6 +761,21 @@ Public Class Frm_Principal
         Req_pri.Show()
     End Sub
 
+    Private Sub OrdenDeCompraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdenDeCompraToolStripMenuItem.Click
+        Dim Req_PO As New Requerimientos_PO(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, 1)
+        Req_PO.Show()
+    End Sub
+
+    Private Sub MisPOToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub RevisarPOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RevisarPOToolStripMenuItem.Click
+        Modulo_verpo.tipo = 1
+        Dim Req_misPo As New MisPOPrincipal(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, 1)
+        Req_misPo.Show()
+    End Sub
+
 
 
 

@@ -52,6 +52,7 @@ Public Class x
    when 2 then 'Vespertino'
    when 3 then 'Nocturno'
    when 4 then 'Administrativo'
+  when 10 then 'Administrativo'
    when 5 then 'Mazda día'
    when 6 then 'Mazda noche'
    when 7 then '12 M'
@@ -160,6 +161,9 @@ Public Class x
    when 2 then datediff(minute,desdeh, hastah)
    when 3 then datediff(minute,desdeh, hastah)
    when 4 then datediff(minute,desdeh, hastah)
+     when 10 then datediff(minute,desdeh, hastah)
+   when 7 then datediff(minute,desdeh, hastah)
+   when 8 then datediff(minute,desdeh, hastah)
    else 'Error'
    end
    end

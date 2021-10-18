@@ -592,6 +592,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
 
                 Catch
                 End Try
+
                 Me.Dispose()
 
             End If
@@ -625,6 +626,62 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
         Muestragridindividual()
 
     End Sub
+
+    Private Sub btn_preautorizar_Click(sender As Object, e As EventArgs) Handles btn_preautorizar.Click
+        cnn.Close()
+        cnn.Open()
+        Dim auto As SqlCommand = New SqlCommand("
+
+insert into [AsahiSystem].[dbo].[Temporal_turno] values (@clave)
+
+", cnn)
+
+
+        Dim auto2 As SqlCommand = New SqlCommand("
+
+delete from [AsahiSystem].[dbo].[Temporal_turno]
+
+", cnn)
+
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        Dim RI As String
+
+        Try
+            auto2.ExecuteNonQuery()
+
+            For Each fila In dtgvp.Rows
+                If fila.Cells("x").Value = True Then
+                    auto.Parameters.Clear()
+
+                    auto.Parameters.Add("@clave", SqlDbType.Int).Value = (fila.Cells("Clave").Value)
+
+                    auto.ExecuteNonQuery()
+
+
+                End If
+
+            Next
+            generar_reporte()
+
+        Catch ex As Exception
+            MessageBox.Show("Error al actualizar registro, consulte al administrador")
+            MessageBox.Show(ex.ToString)
+            cnn.Close()
+        Finally
+            cnn.Close()
+
+        End Try
+
+
+    End Sub
+
+
+    Sub generar_reporte()
+        ContenedorCambioTurno.Show()
+    End Sub
+
+
+
 End Class
 
 Module Modulo_Turno
