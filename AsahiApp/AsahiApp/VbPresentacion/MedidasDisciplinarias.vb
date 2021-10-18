@@ -68,6 +68,7 @@ select CLAVE, RTRIM(LTRIM(NOMBREN)) + ' ' + RTRIM(LTRIM(NOMBREP)) + ' ' + RTRIM(
    when 2 then 'Vespertino'
    when 3 then 'Nocturno'
    when 4 then 'Administrativo'
+when 10 then 'Administrativo'
    when 5 then 'Mazda día'
    when 6 then 'Mazda noche'
    when 7 then '12 M'

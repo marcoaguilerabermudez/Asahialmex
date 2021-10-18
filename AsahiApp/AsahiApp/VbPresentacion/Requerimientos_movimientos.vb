@@ -18,7 +18,7 @@ Public Class Requerimientos_movimientos
     Dim id_mov As Integer
     Dim a As Integer
     Dim tipo As Integer
-
+    Dim var_fila As Integer
 
     Dim usuario_c As Integer
     Dim z As String
@@ -71,11 +71,16 @@ Public Class Requerimientos_movimientos
 
         If p_vales = 0 Then
 
-            Me.Text = "Movimientos" +
+            Me.Text = "Movimientos"
             dtp_fecharecep.Visible = False
             lbl_fecharecep.Visible = True
             btn_solicitar.Text = "Guardar"
             lbl_moneda.Enabled = False
+            btn_autoriza.Visible = False
+            btn_pdf.Visible = False
+            btn_desma.Visible = False
+            btn_selec.Visible = False
+
 
         ElseIf p_vales = 1 Then
 
@@ -86,8 +91,10 @@ Public Class Requerimientos_movimientos
 
             dtp1.Enabled = False
             txt_comen.Enabled = False
-
-
+            btn_autoriza.Visible = True
+            btn_pdf.Visible = True
+            btn_desma.Visible = True
+            btn_selec.Visible = True
 
 
         End If
@@ -178,11 +185,18 @@ Public Class Requerimientos_movimientos
                     row.DefaultCellStyle.BackColor = Color.White
                 ElseIf row.Cells(“Estado_mov”).Value = 1 Then
                     row.DefaultCellStyle.BackColor = Color.LightBlue
+                ElseIf row.Cells(“Estado_mov”).Value = 4 Then
+                    row.DefaultCellStyle.BackColor = Color.LightGreen
+                ElseIf row.Cells(“Estado_mov”).Value = 5 Then
+                    row.DefaultCellStyle.BackColor = Color.Thistle
 
                 End If
             Next
         Catch
         End Try
+
+
+
 
     End Sub
 
@@ -200,17 +214,21 @@ Public Class Requerimientos_movimientos
         lbl_fecharecep.Text = Me.dtgvp.Rows(e.RowIndex).Cells(10).Value.ToString()
         lbl_moneda.Text = Me.dtgvp.Rows(e.RowIndex).Cells(11).Value.ToString()
         txt_comen.Text = Me.dtgvp.Rows(e.RowIndex).Cells(12).Value.ToString()
-        lbl_subtotal.Text = Me.dtgvp.Rows(e.RowIndex).Cells(13).Value.ToString()
-        lbl_impuestos.Text = Me.dtgvp.Rows(e.RowIndex).Cells(14).Value.ToString()
-        lbl_retenciones.Text = Me.dtgvp.Rows(e.RowIndex).Cells(15).Value.ToString()
-        lbl_descuento.Text = Me.dtgvp.Rows(e.RowIndex).Cells(16).Value.ToString()
-        lbl_total.Text = Me.dtgvp.Rows(e.RowIndex).Cells(17).Value.ToString()
+        lbl_subtotal.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(13).Value.ToString(), Decimal), "#,##0.00")
+        lbl_impuestos.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(14).Value.ToString(), Decimal), "#,##0.00")
+        lbl_retenciones.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(15).Value.ToString(), Decimal), "#,##0.00")
+        lbl_descuento.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(16).Value.ToString(), Decimal), "#,##0.00")
+        lbl_total.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(17).Value.ToString(), Decimal), "#,##0.00")
         lbl_oc.Text = Me.dtgvp.Rows(e.RowIndex).Cells(18).Value.ToString()
         id_mov = Me.dtgvp.Rows(e.RowIndex).Cells(19).Value.ToString()
         estado_mov = Me.dtgvp.Rows(e.RowIndex).Cells(20).Value.ToString()
 
 
         usuario_c = Me.dtgvp.Rows(e.RowIndex).Cells(22).Value.ToString()
+        Try
+            var_fila = dtgvp.CurrentRow.Index
+        Catch
+        End Try
 
 
         If p_vales = 0 Then
@@ -246,6 +264,16 @@ Public Class Requerimientos_movimientos
             dtp1.Enabled = False
             btn_solicitar.Enabled = True
             btn_eliminar.Enabled = True
+
+
+            If estado_mov = 0 Then
+                btn_autoriza.Enabled = False
+
+            Else
+                btn_autoriza.Enabled = True
+
+            End If
+
 
         End If
 
@@ -267,17 +295,21 @@ Public Class Requerimientos_movimientos
         lbl_fecharecep.Text = Me.dtgvp.Rows(e.RowIndex).Cells(10).Value.ToString()
         lbl_moneda.Text = Me.dtgvp.Rows(e.RowIndex).Cells(11).Value.ToString()
         txt_comen.Text = Me.dtgvp.Rows(e.RowIndex).Cells(12).Value.ToString()
-        lbl_subtotal.Text = Me.dtgvp.Rows(e.RowIndex).Cells(13).Value.ToString()
-        lbl_impuestos.Text = Me.dtgvp.Rows(e.RowIndex).Cells(14).Value.ToString()
-        lbl_retenciones.Text = Me.dtgvp.Rows(e.RowIndex).Cells(15).Value.ToString()
-        lbl_descuento.Text = Me.dtgvp.Rows(e.RowIndex).Cells(16).Value.ToString()
-        lbl_total.Text = Me.dtgvp.Rows(e.RowIndex).Cells(17).Value.ToString()
+        lbl_subtotal.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(13).Value.ToString(), Decimal), "#,##0.00")
+        lbl_impuestos.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(14).Value.ToString(), Decimal), "#,##0.00")
+        lbl_retenciones.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(15).Value.ToString(), Decimal), "#,##0.00")
+        lbl_descuento.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(16).Value.ToString(), Decimal), "#,##0.00")
+        lbl_total.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(17).Value.ToString(), Decimal), "#,##0.00")
         lbl_oc.Text = Me.dtgvp.Rows(e.RowIndex).Cells(18).Value.ToString()
         id_mov = Me.dtgvp.Rows(e.RowIndex).Cells(19).Value.ToString()
         estado_mov = Me.dtgvp.Rows(e.RowIndex).Cells(20).Value.ToString()
 
 
         usuario_c = Me.dtgvp.Rows(e.RowIndex).Cells(22).Value.ToString()
+        Try
+            var_fila = dtgvp.CurrentRow.Index
+        Catch
+        End Try
 
 
         If p_vales = 0 Then
@@ -315,6 +347,13 @@ Public Class Requerimientos_movimientos
             btn_eliminar.Enabled = True
 
 
+            If estado_mov = 0 Then
+                btn_autoriza.Enabled = False
+
+            Else
+                btn_autoriza.Enabled = True
+
+            End If
 
 
 
@@ -380,6 +419,8 @@ Public Class Requerimientos_movimientos
                 ElseIf tipo = 1 Then
                     MessageBox.Show("Movimiento eliminado con éxito", "¡Correcto!", MessageBoxButtons.OK)
                 End If
+
+
             ElseIf p_vales = 1 Then
 
                 If tipo = 0 Then
@@ -546,6 +587,16 @@ end"
 
                             modificar()
 
+                            Try
+                                dtgvp.CurrentCell = dtgvp.Rows(var_fila + 1).Cells(0)
+                            Catch ex As Exception
+
+                            End Try
+
+                            Try
+                                var_fila = dtgvp.CurrentRow.Index
+                            Catch
+                            End Try
 
                         Else
                             MessageBox.Show("Acción no completada", "Modificación")
@@ -582,10 +633,6 @@ end"
                 Else
 
 
-
-
-
-
                     Dim Pregunta As Integer
 
 
@@ -595,16 +642,25 @@ end"
                     If Pregunta = vbYes Then
 
 
-                            modificar()
+                        modificar()
+                        Try
+                            dtgvp.CurrentCell = dtgvp.Rows(var_fila + 1).Cells(0)
+                        Catch ex As Exception
 
+                        End Try
 
-                        Else
-                            MessageBox.Show("Acción no completada", "Modificación")
-                        End If
+                        Try
+                            var_fila = dtgvp.CurrentRow.Index
+                        Catch
+                        End Try
 
-
-
+                    Else
+                        MessageBox.Show("Acción no completada", "Modificación")
                     End If
+
+
+
+                End If
 
             End If
 
@@ -618,35 +674,27 @@ end"
 
     Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
 
-
-
-
-
-
         tipo = 1
 
 
-
-
-
         If usuario_c = id Then
-                    Dim Pregunta As Integer
+            Dim Pregunta As Integer
 
 
-                    Pregunta = MsgBox("¿Desea eliminar el movimiento? Recuerde que esta acción es irreversible", vbYesNo + vbExclamation + vbDefaultButton2, "Eliminación")
+            Pregunta = MsgBox("¿Desea eliminar el movimiento? Recuerde que esta acción es irreversible", vbYesNo + vbExclamation + vbDefaultButton2, "Eliminación")
 
 
-                    If Pregunta = vbYes Then
+            If Pregunta = vbYes Then
 
 
-                        modificar()
+                modificar()
 
 
-                    Else
-                        MessageBox.Show("Acción no completada", "Eliminación")
-                    End If
+            Else
+                MessageBox.Show("Acción no completada", "Eliminación")
+            End If
 
-                Else
+        Else
 
             MessageBox.Show("No puede eliminar un requerimiento que no fue creado por usted", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
@@ -668,5 +716,131 @@ end"
         Next
     End Sub
 
+    Private Sub btn_pdf_Click(sender As Object, e As EventArgs) Handles btn_pdf.Click
 
+        cnn.Close()
+        cnn.Open()
+        Dim auto As SqlCommand = New SqlCommand("
+
+insert into [Asahi].[dbo].[Temp_MovimientoRequerimiento] values (@id)
+
+", cnn)
+
+
+        Dim auto2 As SqlCommand = New SqlCommand("
+
+delete from [Asahi].[dbo].[Temp_MovimientoRequerimiento]
+
+", cnn)
+
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        Dim RI As String
+
+        Try
+            auto2.ExecuteNonQuery()
+
+            For Each fila In dtgvp.Rows
+                If fila.Cells("x").Value = True Then
+                    auto.Parameters.Clear()
+
+                    auto.Parameters.Add("@id", SqlDbType.Int).Value = (fila.Cells(19).Value)
+
+                    auto.ExecuteNonQuery()
+
+
+                End If
+
+            Next
+            generar_reporte()
+
+        Catch ex As Exception
+            MessageBox.Show("Error al actualizar registro, consulte al administrador")
+            MessageBox.Show(ex.ToString)
+            cnn.Close()
+        Finally
+            cnn.Close()
+
+        End Try
+
+
+    End Sub
+
+
+    Sub generar_reporte()
+        ContenedorReporteRequerimiento.Show()
+    End Sub
+
+    Private Sub btn_autoriza_Click(sender As Object, e As EventArgs) Handles btn_autoriza.Click
+        autorizar()
+    End Sub
+
+
+    Sub autorizar()
+        cnn.Close()
+        cnn.Open()
+        Dim auto As SqlCommand = New SqlCommand("
+
+   
+
+
+   update  [Asahi].[dbo].[Com_RequerimientoMovimiento] set estado = 4  where id_movimiento = @id
+
+
+", cnn)
+
+
+
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        Dim RI As String
+
+        Try
+
+
+            For Each fila In dtgvp.Rows
+                If fila.Cells("x").Value = True Then
+                    auto.Parameters.Clear()
+
+                    auto.Parameters.Add("@id", SqlDbType.Int).Value = (fila.Cells(19).Value)
+
+                    auto.ExecuteNonQuery()
+
+
+                End If
+
+            Next
+
+            MessageBox.Show("Autorización realizada con éxito", "¡Correcto!", MessageBoxButtons.OK)
+            cargagrid()
+
+        Catch ex As Exception
+            MessageBox.Show("Error al actualizar registro, consulte al administrador")
+            MessageBox.Show(ex.ToString)
+            cnn.Close()
+        Finally
+            cnn.Close()
+
+        End Try
+
+    End Sub
+
+    Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
+        Modulo_verpo.id = lbl_oc.Text
+        Modulo_verpo.serie = "A"
+        Modulo_verpo.tipo = 0
+        Dim Req_misPo As New MisPOPrincipal(id, depto, permiso, nombre, 0)
+
+
+
+        Req_misPo.Show()
+    End Sub
 End Class
+
+
+Module Modulo_verpo
+
+    Public id As Integer
+    Public serie As String
+    Public tipo As Integer
+
+
+End Module

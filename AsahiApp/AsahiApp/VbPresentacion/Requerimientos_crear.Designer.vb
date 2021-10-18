@@ -37,6 +37,7 @@ Partial Class Requerimientos_crear
         Me.txt_liga = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.dtp1 = New System.Windows.Forms.DateTimePicker()
+        Me.btn_guardar = New System.Windows.Forms.Button()
         Me.txt_descr = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lbl_familia = New System.Windows.Forms.Label()
@@ -70,7 +71,6 @@ Partial Class Requerimientos_crear
         Me.comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Quitar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btn_selec = New System.Windows.Forms.Button()
-        Me.btn_guardar = New System.Windows.Forms.Button()
         Me.btn_doc = New System.Windows.Forms.Button()
         Me.txt_comentarios = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -249,6 +249,17 @@ Partial Class Requerimientos_crear
         Me.dtp1.Name = "dtp1"
         Me.dtp1.Size = New System.Drawing.Size(100, 20)
         Me.dtp1.TabIndex = 1
+        '
+        'btn_guardar
+        '
+        Me.btn_guardar.Image = Global.Presentacion.My.Resources.Resources.prenomina
+        Me.btn_guardar.Location = New System.Drawing.Point(359, 352)
+        Me.btn_guardar.Name = "btn_guardar"
+        Me.btn_guardar.Size = New System.Drawing.Size(124, 57)
+        Me.btn_guardar.TabIndex = 6
+        Me.btn_guardar.Text = "Agregar Item"
+        Me.btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_guardar.UseVisualStyleBackColor = True
         '
         'txt_descr
         '
@@ -612,17 +623,6 @@ Partial Class Requerimientos_crear
         Me.btn_selec.UseVisualStyleBackColor = False
         Me.btn_selec.Visible = False
         '
-        'btn_guardar
-        '
-        Me.btn_guardar.Image = Global.Presentacion.My.Resources.Resources.prenomina
-        Me.btn_guardar.Location = New System.Drawing.Point(359, 352)
-        Me.btn_guardar.Name = "btn_guardar"
-        Me.btn_guardar.Size = New System.Drawing.Size(124, 57)
-        Me.btn_guardar.TabIndex = 6
-        Me.btn_guardar.Text = "Agregar Item"
-        Me.btn_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_guardar.UseVisualStyleBackColor = True
-        '
         'btn_doc
         '
         Me.btn_doc.ForeColor = System.Drawing.Color.Black
@@ -659,6 +659,7 @@ Partial Class Requerimientos_crear
         Me.Label12.Size = New System.Drawing.Size(76, 13)
         Me.Label12.TabIndex = 425
         Me.Label12.Text = "Comentarios"
+        Me.Label12.Visible = False
         '
         'Requerimientos_crear
         '

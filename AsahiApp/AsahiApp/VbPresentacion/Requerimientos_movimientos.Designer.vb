@@ -22,8 +22,8 @@ Partial Class Requerimientos_movimientos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Requerimientos_movimientos))
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -63,7 +63,6 @@ Partial Class Requerimientos_movimientos
         Me.lbl_codigo = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.lbl_nparte = New System.Windows.Forms.Label()
-        Me.btn_pdf = New System.Windows.Forms.Button()
         Me.btn_desma = New System.Windows.Forms.Button()
         Me.btn_selec = New System.Windows.Forms.Button()
         Me.dtp_fecharecep = New System.Windows.Forms.DateTimePicker()
@@ -72,6 +71,12 @@ Partial Class Requerimientos_movimientos
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.btn_autoriza = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.btn_pdf = New System.Windows.Forms.Button()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -84,24 +89,24 @@ Partial Class Requerimientos_movimientos
         Me.dtgvp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgvp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgvp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtgvp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.NullValue = Nothing
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.NullValue = Nothing
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle2
         Me.dtgvp.Location = New System.Drawing.Point(12, 12)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
@@ -163,7 +168,7 @@ Partial Class Requerimientos_movimientos
         Me.txt_cantidad.Location = New System.Drawing.Point(545, 338)
         Me.txt_cantidad.MaxLength = 99
         Me.txt_cantidad.Name = "txt_cantidad"
-        Me.txt_cantidad.Size = New System.Drawing.Size(62, 20)
+        Me.txt_cantidad.Size = New System.Drawing.Size(79, 20)
         Me.txt_cantidad.TabIndex = 273
         '
         'Label3
@@ -172,7 +177,7 @@ Partial Class Requerimientos_movimientos
         Me.Label3.BackColor = System.Drawing.SystemColors.Control
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(545, 322)
+        Me.Label3.Location = New System.Drawing.Point(553, 322)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 13)
         Me.Label3.TabIndex = 274
@@ -183,10 +188,10 @@ Partial Class Requerimientos_movimientos
         Me.txt_precio.BackColor = System.Drawing.SystemColors.Control
         Me.txt_precio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_precio.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_precio.Location = New System.Drawing.Point(641, 338)
+        Me.txt_precio.Location = New System.Drawing.Point(647, 338)
         Me.txt_precio.MaxLength = 99
         Me.txt_precio.Name = "txt_precio"
-        Me.txt_precio.Size = New System.Drawing.Size(62, 20)
+        Me.txt_precio.Size = New System.Drawing.Size(75, 20)
         Me.txt_precio.TabIndex = 275
         '
         'Label4
@@ -195,7 +200,7 @@ Partial Class Requerimientos_movimientos
         Me.Label4.BackColor = System.Drawing.SystemColors.Control
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(627, 322)
+        Me.Label4.Location = New System.Drawing.Point(639, 322)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(91, 13)
         Me.Label4.TabIndex = 276
@@ -454,7 +459,7 @@ Partial Class Requerimientos_movimientos
         Me.btn_solicitar.BackColor = System.Drawing.Color.Gainsboro
         Me.btn_solicitar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_solicitar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btn_solicitar.Location = New System.Drawing.Point(677, 578)
+        Me.btn_solicitar.Location = New System.Drawing.Point(556, 578)
         Me.btn_solicitar.Name = "btn_solicitar"
         Me.btn_solicitar.Size = New System.Drawing.Size(120, 35)
         Me.btn_solicitar.TabIndex = 427
@@ -545,36 +550,27 @@ Partial Class Requerimientos_movimientos
         Me.lbl_nparte.TabIndex = 432
         Me.lbl_nparte.Text = "Número de parte"
         '
-        'btn_pdf
-        '
-        Me.btn_pdf.ForeColor = System.Drawing.Color.Black
-        Me.btn_pdf.Image = CType(resources.GetObject("btn_pdf.Image"), System.Drawing.Image)
-        Me.btn_pdf.Location = New System.Drawing.Point(317, 542)
-        Me.btn_pdf.Name = "btn_pdf"
-        Me.btn_pdf.Size = New System.Drawing.Size(68, 71)
-        Me.btn_pdf.TabIndex = 435
-        Me.btn_pdf.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btn_pdf.UseVisualStyleBackColor = False
-        '
         'btn_desma
         '
         Me.btn_desma.ForeColor = System.Drawing.Color.Black
-        Me.btn_desma.Location = New System.Drawing.Point(192, 561)
+        Me.btn_desma.Location = New System.Drawing.Point(193, 547)
         Me.btn_desma.Name = "btn_desma"
         Me.btn_desma.Size = New System.Drawing.Size(78, 35)
         Me.btn_desma.TabIndex = 437
         Me.btn_desma.Text = "Desmarcar"
         Me.btn_desma.UseVisualStyleBackColor = False
+        Me.btn_desma.Visible = False
         '
         'btn_selec
         '
         Me.btn_selec.ForeColor = System.Drawing.Color.Black
-        Me.btn_selec.Location = New System.Drawing.Point(89, 560)
+        Me.btn_selec.Location = New System.Drawing.Point(85, 546)
         Me.btn_selec.Name = "btn_selec"
         Me.btn_selec.Size = New System.Drawing.Size(74, 35)
         Me.btn_selec.TabIndex = 436
         Me.btn_selec.Text = "Seleccionar"
         Me.btn_selec.UseVisualStyleBackColor = False
+        Me.btn_selec.Visible = False
         '
         'dtp_fecharecep
         '
@@ -636,11 +632,82 @@ Partial Class Requerimientos_movimientos
         Me.Label14.TabIndex = 440
         Me.Label14.Text = "CREADO"
         '
+        'btn_autoriza
+        '
+        Me.btn_autoriza.BackColor = System.Drawing.Color.Gainsboro
+        Me.btn_autoriza.Enabled = False
+        Me.btn_autoriza.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_autoriza.ForeColor = System.Drawing.Color.Green
+        Me.btn_autoriza.Location = New System.Drawing.Point(111, 588)
+        Me.btn_autoriza.Name = "btn_autoriza"
+        Me.btn_autoriza.Size = New System.Drawing.Size(120, 35)
+        Me.btn_autoriza.TabIndex = 444
+        Me.btn_autoriza.Text = "Autorizar"
+        Me.btn_autoriza.UseVisualStyleBackColor = False
+        Me.btn_autoriza.Visible = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.LightGreen
+        Me.Panel1.Location = New System.Drawing.Point(552, 44)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(32, 13)
+        Me.Panel1.TabIndex = 446
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.SystemColors.Control
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label20.Location = New System.Drawing.Point(585, 48)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(57, 9)
+        Me.Label20.TabIndex = 445
+        Me.Label20.Text = "AUTORIZADO"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Thistle
+        Me.Panel2.Location = New System.Drawing.Point(671, 5)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(32, 13)
+        Me.Panel2.TabIndex = 448
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.SystemColors.Control
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label22.Location = New System.Drawing.Point(704, 8)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(16, 9)
+        Me.Label22.TabIndex = 447
+        Me.Label22.Text = "PO"
+        '
+        'btn_pdf
+        '
+        Me.btn_pdf.ForeColor = System.Drawing.Color.Black
+        Me.btn_pdf.Image = CType(resources.GetObject("btn_pdf.Image"), System.Drawing.Image)
+        Me.btn_pdf.Location = New System.Drawing.Point(317, 542)
+        Me.btn_pdf.Name = "btn_pdf"
+        Me.btn_pdf.Size = New System.Drawing.Size(68, 71)
+        Me.btn_pdf.TabIndex = 435
+        Me.btn_pdf.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btn_pdf.UseVisualStyleBackColor = False
+        Me.btn_pdf.Visible = False
+        '
         'Requerimientos_movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1034, 625)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Label22)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.btn_autoriza)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Label12)
@@ -746,4 +813,9 @@ Partial Class Requerimientos_movimientos
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label12 As Label
     Friend WithEvents Label14 As Label
+    Friend WithEvents btn_autoriza As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label22 As Label
 End Class

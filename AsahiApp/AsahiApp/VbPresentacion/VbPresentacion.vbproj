@@ -263,6 +263,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="conexion.vb" />
+    <Compile Include="ContenedorCambioTurno.Designer.vb">
+      <DependentUpon>ContenedorCambioTurno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorCambioTurno.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteAumentoSueldoOperador.Designer.vb">
       <DependentUpon>ContenedorReporteAumentoSueldoOperador.vb</DependentUpon>
     </Compile>
@@ -357,6 +363,12 @@
       <DependentUpon>ContenedorReportePlanPersonalTe.vb</DependentUpon>
     </Compile>
     <Compile Include="ContenedorReportePlanPersonalTe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContenedorReporteRequerimiento.Designer.vb">
+      <DependentUpon>ContenedorReporteRequerimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReporteRequerimiento.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ContenedorReporteSalidaComputo.Designer.vb">
@@ -572,6 +584,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet33.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet34.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet34.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet35.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet35.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet4.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -666,6 +688,12 @@
     <Compile Include="ListaProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MisPOPrincipal.Designer.vb">
+      <DependentUpon>MisPOPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MisPOPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modificacion_de_Turno.Designer.vb">
       <DependentUpon>Modificacion_de_Turno.vb</DependentUpon>
     </Compile>
@@ -700,6 +728,12 @@
       <DependentUpon>Requerimientos_movimientos.vb</DependentUpon>
     </Compile>
     <Compile Include="Requerimientos_movimientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requerimientos_PO.Designer.vb">
+      <DependentUpon>Requerimientos_PO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_PO.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Requerimientos_principal.Designer.vb">
@@ -1255,6 +1289,9 @@
     <EmbeddedResource Include="Compras\Frm_ValidarConta.resx">
       <DependentUpon>Frm_ValidarConta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorCambioTurno.resx">
+      <DependentUpon>ContenedorCambioTurno.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteAumentoSueldoOperador.resx">
       <DependentUpon>ContenedorReporteAumentoSueldoOperador.vb</DependentUpon>
     </EmbeddedResource>
@@ -1302,6 +1339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReportePlanPersonalTe.resx">
       <DependentUpon>ContenedorReportePlanPersonalTe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReporteRequerimiento.resx">
+      <DependentUpon>ContenedorReporteRequerimiento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteSalidaComputo.resx">
       <DependentUpon>ContenedorReporteSalidaComputo.vb</DependentUpon>
@@ -1438,6 +1478,9 @@
     <EmbeddedResource Include="MedidasDisciplinarias.resx">
       <DependentUpon>MedidasDisciplinarias.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MisPOPrincipal.resx">
+      <DependentUpon>MisPOPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modificacion_de_Turno.resx">
       <DependentUpon>Modificacion_de_Turno.vb</DependentUpon>
     </EmbeddedResource>
@@ -1465,6 +1508,7 @@
     <EmbeddedResource Include="ReporteAumentoSueldoOperador.rdlc" />
     <EmbeddedResource Include="ReporteAumentoTriOp.rdlc" />
     <EmbeddedResource Include="ReporteCambioPuesto.rdlc" />
+    <EmbeddedResource Include="ReporteCambioTurno.rdlc" />
     <EmbeddedResource Include="ReporteCartaCompromiso.rdlc" />
     <EmbeddedResource Include="ReporteChecadasRh.rdlc" />
     <EmbeddedResource Include="ReporteComision.rdlc" />
@@ -1484,6 +1528,7 @@
     <EmbeddedResource Include="ReportePersonalSemanal2.rdlc" />
     <EmbeddedResource Include="ReportePlanPersonalTE.rdlc" />
     <EmbeddedResource Include="ReportePuestoDepartamento.rdlc" />
+    <EmbeddedResource Include="ReporteReqCompra.rdlc" />
     <EmbeddedResource Include="ReporteSalidaEquipoComputo.rdlc" />
     <EmbeddedResource Include="ReporteShutdown.rdlc" />
     <EmbeddedResource Include="ReporteSolicitudTe.rdlc" />
@@ -1500,6 +1545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_movimientos.resx">
       <DependentUpon>Requerimientos_movimientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_PO.resx">
+      <DependentUpon>Requerimientos_PO.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_principal.resx">
       <DependentUpon>Requerimientos_principal.vb</DependentUpon>
@@ -1913,6 +1961,28 @@
     </None>
     <None Include="DataSet33.xss">
       <DependentUpon>DataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet34.xsc">
+      <DependentUpon>DataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet34.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet34.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet34.xss">
+      <DependentUpon>DataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet35.xsc">
+      <DependentUpon>DataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet35.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet35.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet35.xss">
+      <DependentUpon>DataSet35.xsd</DependentUpon>
     </None>
     <None Include="DataSet4.xsc">
       <DependentUpon>DataSet4.xsd</DependentUpon>
