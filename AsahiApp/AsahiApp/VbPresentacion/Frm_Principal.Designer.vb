@@ -1009,7 +1009,7 @@ Partial Class Frm_Principal
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 13)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "20/09/2021"
+        Me.Label1.Text = "18/10/2021"
         '
         'Frm_Principal
         '
