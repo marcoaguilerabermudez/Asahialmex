@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -365,6 +365,12 @@
     <Compile Include="ContenedorReportePlanPersonalTe.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContenedorReportePO.Designer.vb">
+      <DependentUpon>ContenedorReportePO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContenedorReportePO.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ContenedorReporteRequerimiento.Designer.vb">
       <DependentUpon>ContenedorReporteRequerimiento.vb</DependentUpon>
     </Compile>
@@ -594,6 +600,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet35.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet36.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet36.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet4.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -740,6 +751,12 @@
       <DependentUpon>Requerimientos_principal.vb</DependentUpon>
     </Compile>
     <Compile Include="Requerimientos_principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requerimientos_rechazo.Designer.vb">
+      <DependentUpon>Requerimientos_rechazo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_rechazo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RH\Frm_CreadorCuestionarios.Designer.vb">
@@ -1340,6 +1357,9 @@
     <EmbeddedResource Include="ContenedorReportePlanPersonalTe.resx">
       <DependentUpon>ContenedorReportePlanPersonalTe.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContenedorReportePO.resx">
+      <DependentUpon>ContenedorReportePO.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContenedorReporteRequerimiento.resx">
       <DependentUpon>ContenedorReporteRequerimiento.vb</DependentUpon>
     </EmbeddedResource>
@@ -1527,6 +1547,9 @@
     <EmbeddedResource Include="ReportePersonalSemanal.rdlc" />
     <EmbeddedResource Include="ReportePersonalSemanal2.rdlc" />
     <EmbeddedResource Include="ReportePlanPersonalTE.rdlc" />
+    <EmbeddedResource Include="ReportePO_1.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportePuestoDepartamento.rdlc" />
     <EmbeddedResource Include="ReporteReqCompra.rdlc" />
     <EmbeddedResource Include="ReporteSalidaEquipoComputo.rdlc" />
@@ -1551,6 +1574,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_principal.resx">
       <DependentUpon>Requerimientos_principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_rechazo.resx">
+      <DependentUpon>Requerimientos_rechazo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RH\Frm_CreadorCuestionarios.resx">
       <DependentUpon>Frm_CreadorCuestionarios.vb</DependentUpon>
@@ -1983,6 +2009,17 @@
     </None>
     <None Include="DataSet35.xss">
       <DependentUpon>DataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet36.xsc">
+      <DependentUpon>DataSet36.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet36.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet36.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet36.xss">
+      <DependentUpon>DataSet36.xsd</DependentUpon>
     </None>
     <None Include="DataSet4.xsc">
       <DependentUpon>DataSet4.xsd</DependentUpon>

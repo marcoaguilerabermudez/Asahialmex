@@ -38,17 +38,16 @@ Partial Class Alta_productos
         Me.txt_descr = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btn_solicitar = New System.Windows.Forms.Button()
-        Me.btn_selec = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cbx_anaquel = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.cbx_pasillo = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cbx_nivel = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cbx_ualmacen = New System.Windows.Forms.ComboBox()
         Me.lbl_código = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.cbx_nivel = New System.Windows.Forms.ComboBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.cbx_pasillo = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.cbx_anaquel = New System.Windows.Forms.ComboBox()
         Me.pbx = New System.Windows.Forms.PictureBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -169,7 +168,7 @@ Partial Class Alta_productos
         Me.cbx_fam.Items.AddRange(New Object() {"SUBENSAMBLE-ACABADO", "AJUSTE AL NETO", "SUBENSAMBLE-FUNDICIÓN", "SUBENSAMBLE-CASTING", "REPARACIÓN Y MANTENIMIENTO", "REFACCIONES", "INSUMOS", "SERVICIO Y ARTÍCULO DE LIMPIEZA", "HERRAMIENTAS", "EQUIPO DE SEGURIDAD", "MATERIAL DE EMPAQUE", "ACEITES Y LUBRICANTES", "PERNOS", "ADHESIVOS", "CONSUMIBLES (GASES)", "GAS LP", "UNIFORMES", "EQUIPO DE PLANTA", "PAPELERÍA Y UTILES", "HERRAMIENTAS DE CORTE", "COOLANT", "DIESEL", "ACTIVO FIJO", "SEGURIDAD E HIGIENE", "DAP", "SORTEOS", "ACCESORIOS EQUIPO DE COMPUTO", "MANTENIMIENTO DE PLANTA", "ATENCIÓN AL CLIENTE", "HONORARIOS PERSONAS FISICAS", "MEDICO", "RENTAS DE DEPARTAMENTOS", "OTROS GASTOS", "OTROS GASTOS DEDUCIBLES", "MANTENIMIENTO DE MAQUINARIA", "SOFTWARE Y LICENCIAS", "SEVICIOS ADMINISTRATIVOS HALMEX", "HOSPEDAJE", "VALES DE DESPENSA", "GASOLINA", "SEGURIDAD Y VIGILANCIA", "GASTOS POR DEFECTOS / REWORKS", "FARMACIA", "RECARGOS", "MANTENIMIENTO Y SERVICIOS DE AUTOMOVIL", "INSTALACIÓN DE MAQUINARIA", "GAS NATURAL", "RENTA DE IMPRESORA", "RECOLECCIÓN DE BASURA", "RECOLECCIÓN DE AGUAS RESIDUALES", "COMEDOR", "AGUA", "ENERGIA ELECTRICA", "MANIOBRAS Y FLETES", "GASTOS ADUANALES", "PRIMAS DE SEGUROS", "CAPACITACION", "EQUIPO DE COMPUTO / COMPUTER EQUIPMENT", "PARTES DE ENSAMBLE", "LAVANDERIA", "TELFONO CELULAR", "MANTENIMIENTO DE INSTRUMENTOS DE MEDICIÓN", "AGUA PARA CONSUMO", "HONORARIOS PERSONAS MORALES", "MATERIA PRIMA", "ARRENDAMIENTO DE AUTOMOVILES", "MANIOBRAS Y FLETES EXPEDITADOS", "EQUIPO DE CARGA", "GASTOS DE VIAJE", "GASTOS DE CERTIFICACIÓN", "CUOTAS Y SUSCRIPCIONES", "PROPAGANDA Y PUBLICIDAD", "GASTOS MIGRATORIOS", "CASETAS", "IMPUESTO PREDIAL / LAND TAX", "PROCESOS EXTERNOS", "COMISIONES BANCARIAS", "DESCUENTOS/ DEVOLUCIONES SOBRE COMPRA", "DESPERDICIO", "SUBENSAMBLE-ENSAMBLE", "DTA", "PRV", "SUBENSAMBLE-INSPECCIÓN", "INTERESES PAGADOS", "SUBENSABLE-MAQUINADO", "MULTAS, ACTUALIZACIONES Y RECARGOS", "REGALIAS 5%", "SERVICIOS ADMIN. DE NOMINA", "PRODUCTO TERMINADO"})
         Me.cbx_fam.Location = New System.Drawing.Point(10, 148)
         Me.cbx_fam.Name = "cbx_fam"
-        Me.cbx_fam.Size = New System.Drawing.Size(306, 21)
+        Me.cbx_fam.Size = New System.Drawing.Size(390, 21)
         Me.cbx_fam.TabIndex = 2
         '
         'Label6
@@ -231,16 +230,6 @@ Partial Class Alta_productos
         Me.btn_solicitar.Text = "Crear"
         Me.btn_solicitar.UseVisualStyleBackColor = False
         '
-        'btn_selec
-        '
-        Me.btn_selec.ForeColor = System.Drawing.Color.Black
-        Me.btn_selec.Location = New System.Drawing.Point(326, 146)
-        Me.btn_selec.Name = "btn_selec"
-        Me.btn_selec.Size = New System.Drawing.Size(74, 27)
-        Me.btn_selec.TabIndex = 425
-        Me.btn_selec.Text = "Crear"
-        Me.btn_selec.UseVisualStyleBackColor = False
-        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label11)
@@ -258,6 +247,78 @@ Partial Class Alta_productos
         Me.GroupBox2.TabIndex = 426
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Ubicación"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.SystemColors.Control
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(13, 125)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(53, 13)
+        Me.Label11.TabIndex = 421
+        Me.Label11.Text = "Anaquel"
+        '
+        'cbx_anaquel
+        '
+        Me.cbx_anaquel.BackColor = System.Drawing.Color.White
+        Me.cbx_anaquel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_anaquel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cbx_anaquel.FormattingEnabled = True
+        Me.cbx_anaquel.Items.AddRange(New Object() {"N/A", "TEST"})
+        Me.cbx_anaquel.Location = New System.Drawing.Point(16, 142)
+        Me.cbx_anaquel.Name = "cbx_anaquel"
+        Me.cbx_anaquel.Size = New System.Drawing.Size(246, 21)
+        Me.cbx_anaquel.TabIndex = 420
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.SystemColors.Control
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(13, 75)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(44, 13)
+        Me.Label10.TabIndex = 419
+        Me.Label10.Text = "Pasillo"
+        '
+        'cbx_pasillo
+        '
+        Me.cbx_pasillo.BackColor = System.Drawing.Color.White
+        Me.cbx_pasillo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_pasillo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cbx_pasillo.FormattingEnabled = True
+        Me.cbx_pasillo.Items.AddRange(New Object() {"N/A", "TEST"})
+        Me.cbx_pasillo.Location = New System.Drawing.Point(16, 92)
+        Me.cbx_pasillo.Name = "cbx_pasillo"
+        Me.cbx_pasillo.Size = New System.Drawing.Size(246, 21)
+        Me.cbx_pasillo.TabIndex = 418
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.SystemColors.Control
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(13, 173)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(36, 13)
+        Me.Label7.TabIndex = 417
+        Me.Label7.Text = "Nivel"
+        '
+        'cbx_nivel
+        '
+        Me.cbx_nivel.BackColor = System.Drawing.Color.White
+        Me.cbx_nivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_nivel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cbx_nivel.FormattingEnabled = True
+        Me.cbx_nivel.Items.AddRange(New Object() {"N/A", "TEST"})
+        Me.cbx_nivel.Location = New System.Drawing.Point(16, 190)
+        Me.cbx_nivel.Name = "cbx_nivel"
+        Me.cbx_nivel.Size = New System.Drawing.Size(246, 21)
+        Me.cbx_nivel.TabIndex = 416
         '
         'Label9
         '
@@ -296,78 +357,6 @@ Partial Class Alta_productos
         Me.lbl_código.Text = "Nombre del producto"
         Me.lbl_código.Visible = False
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.SystemColors.Control
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(13, 173)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(36, 13)
-        Me.Label7.TabIndex = 417
-        Me.Label7.Text = "Nivel"
-        '
-        'cbx_nivel
-        '
-        Me.cbx_nivel.BackColor = System.Drawing.Color.White
-        Me.cbx_nivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbx_nivel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cbx_nivel.FormattingEnabled = True
-        Me.cbx_nivel.Items.AddRange(New Object() {"N/A", "TEST"})
-        Me.cbx_nivel.Location = New System.Drawing.Point(16, 190)
-        Me.cbx_nivel.Name = "cbx_nivel"
-        Me.cbx_nivel.Size = New System.Drawing.Size(246, 21)
-        Me.cbx_nivel.TabIndex = 416
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.SystemColors.Control
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(13, 75)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(44, 13)
-        Me.Label10.TabIndex = 419
-        Me.Label10.Text = "Pasillo"
-        '
-        'cbx_pasillo
-        '
-        Me.cbx_pasillo.BackColor = System.Drawing.Color.White
-        Me.cbx_pasillo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbx_pasillo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cbx_pasillo.FormattingEnabled = True
-        Me.cbx_pasillo.Items.AddRange(New Object() {"N/A", "TEST"})
-        Me.cbx_pasillo.Location = New System.Drawing.Point(16, 92)
-        Me.cbx_pasillo.Name = "cbx_pasillo"
-        Me.cbx_pasillo.Size = New System.Drawing.Size(246, 21)
-        Me.cbx_pasillo.TabIndex = 418
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.SystemColors.Control
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(13, 125)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(53, 13)
-        Me.Label11.TabIndex = 421
-        Me.Label11.Text = "Anaquel"
-        '
-        'cbx_anaquel
-        '
-        Me.cbx_anaquel.BackColor = System.Drawing.Color.White
-        Me.cbx_anaquel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbx_anaquel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cbx_anaquel.FormattingEnabled = True
-        Me.cbx_anaquel.Items.AddRange(New Object() {"N/A", "TEST"})
-        Me.cbx_anaquel.Location = New System.Drawing.Point(16, 142)
-        Me.cbx_anaquel.Name = "cbx_anaquel"
-        Me.cbx_anaquel.Size = New System.Drawing.Size(246, 21)
-        Me.cbx_anaquel.TabIndex = 420
-        '
         'pbx
         '
         Me.pbx.ErrorImage = Global.Presentacion.My.Resources.Resources.Logo
@@ -385,7 +374,6 @@ Partial Class Alta_productos
         Me.Controls.Add(Me.pbx)
         Me.Controls.Add(Me.lbl_código)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.btn_selec)
         Me.Controls.Add(Me.btn_solicitar)
         Me.Controls.Add(Me.txt_descr)
         Me.Controls.Add(Me.Label8)
@@ -429,7 +417,6 @@ Partial Class Alta_productos
     Friend WithEvents txt_descr As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents btn_solicitar As Button
-    Friend WithEvents btn_selec As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label9 As Label
     Friend WithEvents cbx_ualmacen As ComboBox

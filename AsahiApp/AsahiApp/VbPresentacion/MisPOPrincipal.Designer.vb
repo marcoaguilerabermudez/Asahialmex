@@ -22,13 +22,12 @@ Partial Class MisPOPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MisPOPrincipal))
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.lbl_req = New System.Windows.Forms.Label()
         Me.btn_solicitar = New System.Windows.Forms.Button()
-        Me.btn_pdf = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtp2 = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -68,6 +67,7 @@ Partial Class MisPOPrincipal
         Me.lbl_po = New System.Windows.Forms.Label()
         Me.lbl_proveedor = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.btn_pdf = New System.Windows.Forms.Button()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -81,24 +81,24 @@ Partial Class MisPOPrincipal
         Me.dtgvp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgvp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgvp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtgvp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.NullValue = Nothing
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.NullValue = Nothing
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle2
         Me.dtgvp.Location = New System.Drawing.Point(12, 131)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.ReadOnly = True
@@ -129,17 +129,6 @@ Partial Class MisPOPrincipal
         Me.btn_solicitar.TabIndex = 436
         Me.btn_solicitar.Text = "Filtrar"
         Me.btn_solicitar.UseVisualStyleBackColor = False
-        '
-        'btn_pdf
-        '
-        Me.btn_pdf.ForeColor = System.Drawing.Color.Black
-        Me.btn_pdf.Image = CType(resources.GetObject("btn_pdf.Image"), System.Drawing.Image)
-        Me.btn_pdf.Location = New System.Drawing.Point(924, 16)
-        Me.btn_pdf.Name = "btn_pdf"
-        Me.btn_pdf.Size = New System.Drawing.Size(68, 71)
-        Me.btn_pdf.TabIndex = 435
-        Me.btn_pdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_pdf.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -582,6 +571,17 @@ Partial Class MisPOPrincipal
         Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 480
         Me.Label6.Text = "Proveedor"
+        '
+        'btn_pdf
+        '
+        Me.btn_pdf.ForeColor = System.Drawing.Color.Black
+        Me.btn_pdf.Image = CType(resources.GetObject("btn_pdf.Image"), System.Drawing.Image)
+        Me.btn_pdf.Location = New System.Drawing.Point(924, 16)
+        Me.btn_pdf.Name = "btn_pdf"
+        Me.btn_pdf.Size = New System.Drawing.Size(68, 71)
+        Me.btn_pdf.TabIndex = 435
+        Me.btn_pdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_pdf.UseVisualStyleBackColor = False
         '
         'MisPOPrincipal
         '

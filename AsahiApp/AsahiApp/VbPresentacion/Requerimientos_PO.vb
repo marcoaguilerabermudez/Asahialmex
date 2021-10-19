@@ -684,4 +684,12 @@ SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(
     Private Sub btn_carga_Click(sender As Object, e As EventArgs) Handles btn_carga.Click
         crearPO()
     End Sub
+
+    Private Sub lbl_total_Click(sender As Object, e As EventArgs) Handles lbl_total.TextChanged
+        If lbl_total.Text = 0 Then
+            btn_carga.Enabled = False
+        Else
+            btn_carga.Enabled = True
+        End If
+    End Sub
 End Class

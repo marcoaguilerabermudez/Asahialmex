@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Net.Mail
+
 Public Class MisPOPrincipal
 
     Dim depto As String
@@ -17,6 +19,8 @@ Public Class MisPOPrincipal
 
     Dim var As Integer
     Dim tipo As Integer
+    Dim codigo As Integer
+    Dim serie As String
 
     Sub New(id As Integer, depto As String, permiso As Integer, nombre As String, p_vales As Integer)
 
@@ -297,6 +301,11 @@ Public Class MisPOPrincipal
             fs = Me.dtgvp.Rows(e.RowIndex).Cells("fecha_solicitud").Value.ToString()
             lbl_fechaS.Text = fc.ToString("dd/MM/yyyy")
 
+
+            codigo = Me.dtgvp.Rows(e.RowIndex).Cells("codigo").Value.ToString()
+            serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie").Value.ToString()
+
+
         Catch
         End Try
 
@@ -334,6 +343,10 @@ Public Class MisPOPrincipal
             fs = Me.dtgvp.Rows(e.RowIndex).Cells("fecha_solicitud").Value.ToString()
             lbl_fechaS.Text = fs.ToString("dd/MM/yyyy")
 
+
+            codigo = Me.dtgvp.Rows(e.RowIndex).Cells("codigo").Value.ToString()
+            serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie").Value.ToString()
+
         Catch
         End Try
 
@@ -348,5 +361,75 @@ Public Class MisPOPrincipal
         End If
     End Sub
 
+    Private Sub btn_pdf_Click(sender As Object, e As EventArgs) Handles btn_pdf.Click
+        ContenedorReportePO.serie = serie
+        ContenedorReportePO.codigo = codigo
+        ContenedorReportePO.Show()
+
+
+        enviarcorreoreincidencia()
+
+    End Sub
+
+    Sub enviarcorreoreincidencia()
+        Dim smtp As New System.Net.Mail.SmtpClient
+        Dim correo As New System.Net.Mail.MailMessage
+        Dim adjunto As System.Net.Mail.Attachment
+
+
+        ''Create an instance of ReportViewer
+
+        'Dim viewer As New Microsoft.Reporting.WinForms.ReportViewer()
+
+        ''Set local report
+        ''NOTE: MyAppNamespace refers to the namespace for the app.
+        'viewer.LocalReport.ReportEmbeddedResource = "AsahiApp.ReportePO_1.rdlc"
+
+        ''Create Report Data Source
+        'Dim rptDataSource As New Microsoft.Reporting.WinForms.ReportDataSource("Product", Data)
+        'viewer.LocalReport.DataSources.Add(rptDataSource)
+
+        ''Export to PDF. Get binary content.
+        'Dim pdfContent As Byte() = viewer.LocalReport.Render("PDF", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+
+        ''Creatr PDF file on disk
+        'Dim pdfPath As String = "C:\temp\report.pdf"
+        'Dim pdfFile As New System.IO.FileStream(pdfPath, System.IO.FileMode.Create)
+        'pdfFile.Write(pdfContent, 0, pdfContent.Length)
+        'pdfFile.Close()
+
+
+
+
+
+        With smtp
+            .Port = 25
+            .Host = "mail.asahialmex.com"
+            .Credentials = New System.Net.NetworkCredential("erik.urbina@asahialmex.com", "wM8zh25_")
+            .EnableSsl = False
+        End With
+        adjunto = New System.Net.Mail.Attachment("V:\" & codigo & ".pdf")
+        With correo
+            .From = New System.Net.Mail.MailAddress("erik.urbina@asahialmex.com")
+            .To.Add("marco.aguilera@asahialmex.com")
+            .Subject = "Asunto del correo"
+            .Body = "<strong>Texto del mensaje de correo</strong>"
+            .IsBodyHtml = True
+            .Priority = System.Net.Mail.MailPriority.Normal
+            .Attachments.Add(adjunto)
+        End With
+
+        Try
+            smtp.Send(correo)
+            MessageBox.Show("Su mensaje de correo ha sido enviado.",
+                            "Correo enviado",
+                             MessageBoxButtons.OK)
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message,
+                            "Error al enviar correo",
+                             MessageBoxButtons.OK)
+        End Try
+
+    End Sub
 
 End Class

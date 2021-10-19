@@ -76,7 +76,14 @@ Partial Class Requerimientos_movimientos
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label22 = New System.Windows.Forms.Label()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.btn_pdf = New System.Windows.Forms.Button()
+        Me.btn_doc = New System.Windows.Forms.Button()
+        Me.txt_liga = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.cbx_fam = New System.Windows.Forms.ComboBox()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -142,7 +149,7 @@ Partial Class Requerimientos_movimientos
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(542, 114)
+        Me.Label1.Location = New System.Drawing.Point(542, 98)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(58, 13)
         Me.Label1.TabIndex = 271
@@ -154,7 +161,7 @@ Partial Class Requerimientos_movimientos
         Me.lbl_producto.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_producto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_producto.ForeColor = System.Drawing.Color.Black
-        Me.lbl_producto.Location = New System.Drawing.Point(543, 132)
+        Me.lbl_producto.Location = New System.Drawing.Point(543, 116)
         Me.lbl_producto.Name = "lbl_producto"
         Me.lbl_producto.Size = New System.Drawing.Size(50, 13)
         Me.lbl_producto.TabIndex = 272
@@ -436,7 +443,7 @@ Partial Class Requerimientos_movimientos
         Me.Label17.BackColor = System.Drawing.SystemColors.Control
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(542, 80)
+        Me.Label17.Location = New System.Drawing.Point(542, 64)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(67, 13)
         Me.Label17.TabIndex = 297
@@ -448,7 +455,7 @@ Partial Class Requerimientos_movimientos
         Me.lbl_comprador.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_comprador.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_comprador.ForeColor = System.Drawing.Color.Black
-        Me.lbl_comprador.Location = New System.Drawing.Point(543, 97)
+        Me.lbl_comprador.Location = New System.Drawing.Point(543, 81)
         Me.lbl_comprador.Name = "lbl_comprador"
         Me.lbl_comprador.Size = New System.Drawing.Size(58, 13)
         Me.lbl_comprador.TabIndex = 298
@@ -484,7 +491,7 @@ Partial Class Requerimientos_movimientos
         Me.Label18.BackColor = System.Drawing.SystemColors.Control
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.Black
-        Me.Label18.Location = New System.Drawing.Point(545, 226)
+        Me.Label18.Location = New System.Drawing.Point(559, 209)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(33, 13)
         Me.Label18.TabIndex = 430
@@ -497,7 +504,7 @@ Partial Class Requerimientos_movimientos
         Me.cbx_area.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.cbx_area.FormattingEnabled = True
         Me.cbx_area.Items.AddRange(New Object() {"ASEGURAMIENTO DE CALIDAD F1", "ASUNTOS GENERALES", "ATENCIÓN AL CLIENTE", "COMPRAS", "CONTABILIDAD", "CONTROL DE MANUFACTURA", "CONTROL DE PRODUCCION", "MOLDES", "SEGURIDAD", "SISTEMAS IT", "INGENIERÍA MAQUINADO", "INGENIERÍA FUNDICIÓN", "INSPECCION PRODUCCION", "FUNDICION 1", "FUNDICION 2", "ACABADO", "ACABADO 2", "CONTROL DE CLIENTES", "MANTENIMIENTO DE PLANTA", "MANTENIMIENTO FUNDICION", "MANTENIMIENTO MAQUINADO", "MAQUINADO F2", "INSPECCIÓN FUNDICION", "INSPECCIÓN MAQUINADO", "MAQUINADO F1", "FUSION", "ASEGURAMIENTO DE CALIDAD F2", "REPARACION DE MOLDES", "PRODUCCIÓN"})
-        Me.cbx_area.Location = New System.Drawing.Point(546, 246)
+        Me.cbx_area.Location = New System.Drawing.Point(601, 206)
         Me.cbx_area.Name = "cbx_area"
         Me.cbx_area.Size = New System.Drawing.Size(306, 21)
         Me.cbx_area.TabIndex = 429
@@ -508,7 +515,7 @@ Partial Class Requerimientos_movimientos
         Me.Label19.BackColor = System.Drawing.SystemColors.Control
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Black
-        Me.Label19.Location = New System.Drawing.Point(542, 150)
+        Me.Label19.Location = New System.Drawing.Point(542, 134)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(46, 13)
         Me.Label19.TabIndex = 433
@@ -520,7 +527,7 @@ Partial Class Requerimientos_movimientos
         Me.lbl_codigo.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_codigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_codigo.ForeColor = System.Drawing.Color.Black
-        Me.lbl_codigo.Location = New System.Drawing.Point(543, 167)
+        Me.lbl_codigo.Location = New System.Drawing.Point(543, 151)
         Me.lbl_codigo.Name = "lbl_codigo"
         Me.lbl_codigo.Size = New System.Drawing.Size(40, 13)
         Me.lbl_codigo.TabIndex = 434
@@ -532,7 +539,7 @@ Partial Class Requerimientos_movimientos
         Me.Label21.BackColor = System.Drawing.SystemColors.Control
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Black
-        Me.Label21.Location = New System.Drawing.Point(542, 184)
+        Me.Label21.Location = New System.Drawing.Point(542, 168)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(101, 13)
         Me.Label21.TabIndex = 431
@@ -544,7 +551,7 @@ Partial Class Requerimientos_movimientos
         Me.lbl_nparte.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_nparte.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_nparte.ForeColor = System.Drawing.Color.Black
-        Me.lbl_nparte.Location = New System.Drawing.Point(543, 202)
+        Me.lbl_nparte.Location = New System.Drawing.Point(543, 186)
         Me.lbl_nparte.Name = "lbl_nparte"
         Me.lbl_nparte.Size = New System.Drawing.Size(86, 13)
         Me.lbl_nparte.TabIndex = 432
@@ -635,7 +642,6 @@ Partial Class Requerimientos_movimientos
         'btn_autoriza
         '
         Me.btn_autoriza.BackColor = System.Drawing.Color.Gainsboro
-        Me.btn_autoriza.Enabled = False
         Me.btn_autoriza.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_autoriza.ForeColor = System.Drawing.Color.Green
         Me.btn_autoriza.Location = New System.Drawing.Point(111, 588)
@@ -686,6 +692,39 @@ Partial Class Requerimientos_movimientos
         Me.Label22.TabIndex = 447
         Me.Label22.Text = "PO"
         '
+        'btn_cancelar
+        '
+        Me.btn_cancelar.BackColor = System.Drawing.Color.Gainsboro
+        Me.btn_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_cancelar.ForeColor = System.Drawing.Color.DarkGoldenrod
+        Me.btn_cancelar.Location = New System.Drawing.Point(729, 578)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(120, 35)
+        Me.btn_cancelar.TabIndex = 449
+        Me.btn_cancelar.Text = "Rechazar"
+        Me.btn_cancelar.UseVisualStyleBackColor = False
+        Me.btn_cancelar.Visible = False
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.DarkGoldenrod
+        Me.Panel5.Location = New System.Drawing.Point(671, 25)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(32, 13)
+        Me.Panel5.TabIndex = 451
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.SystemColors.Control
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label23.Location = New System.Drawing.Point(704, 28)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(55, 9)
+        Me.Label23.TabIndex = 450
+        Me.Label23.Text = "RECHAZADO"
+        '
         'btn_pdf
         '
         Me.btn_pdf.ForeColor = System.Drawing.Color.Black
@@ -698,11 +737,68 @@ Partial Class Requerimientos_movimientos
         Me.btn_pdf.UseVisualStyleBackColor = False
         Me.btn_pdf.Visible = False
         '
+        'btn_doc
+        '
+        Me.btn_doc.ForeColor = System.Drawing.Color.Black
+        Me.btn_doc.Image = Global.Presentacion.My.Resources.Resources.report
+        Me.btn_doc.Location = New System.Drawing.Point(925, 204)
+        Me.btn_doc.Name = "btn_doc"
+        Me.btn_doc.Size = New System.Drawing.Size(97, 54)
+        Me.btn_doc.TabIndex = 452
+        Me.btn_doc.Text = "Documento"
+        Me.btn_doc.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_doc.UseVisualStyleBackColor = False
+        Me.btn_doc.Visible = False
+        '
+        'txt_liga
+        '
+        Me.txt_liga.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_liga.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_liga.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txt_liga.Location = New System.Drawing.Point(12, 603)
+        Me.txt_liga.MaxLength = 99
+        Me.txt_liga.Name = "txt_liga"
+        Me.txt_liga.Size = New System.Drawing.Size(53, 20)
+        Me.txt_liga.TabIndex = 453
+        Me.txt_liga.Visible = False
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.BackColor = System.Drawing.SystemColors.Control
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.ForeColor = System.Drawing.Color.Black
+        Me.Label24.Location = New System.Drawing.Point(546, 242)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(46, 13)
+        Me.Label24.TabIndex = 455
+        Me.Label24.Text = "Familia"
+        '
+        'cbx_fam
+        '
+        Me.cbx_fam.BackColor = System.Drawing.Color.White
+        Me.cbx_fam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_fam.Enabled = False
+        Me.cbx_fam.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cbx_fam.FormattingEnabled = True
+        Me.cbx_fam.Items.AddRange(New Object() {"SUBENSAMBLE-ACABADO", "AJUSTE AL NETO", "SUBENSAMBLE-FUNDICIÓN", "SUBENSAMBLE-CASTING", "REPARACIÓN Y MANTENIMIENTO", "REFACCIONES", "INSUMOS", "SERVICIO Y ARTÍCULO DE LIMPIEZA", "HERRAMIENTAS", "EQUIPO DE SEGURIDAD", "MATERIAL DE EMPAQUE", "ACEITES Y LUBRICANTES", "PERNOS", "ADHESIVOS", "CONSUMIBLES (GASES)", "GAS LP", "UNIFORMES", "EQUIPO DE PLANTA", "PAPELERÍA Y UTILES", "HERRAMIENTAS DE CORTE", "COOLANT", "DIESEL", "ACTIVO FIJO", "SEGURIDAD E HIGIENE", "DAP", "SORTEOS", "ACCESORIOS EQUIPO DE COMPUTO", "MANTENIMIENTO DE PLANTA", "ATENCIÓN AL CLIENTE", "HONORARIOS PERSONAS FISICAS", "MEDICO", "RENTAS DE DEPARTAMENTOS", "OTROS GASTOS", "OTROS GASTOS DEDUCIBLES", "MANTENIMIENTO DE MAQUINARIA", "SOFTWARE Y LICENCIAS", "SEVICIOS ADMINISTRATIVOS HALMEX", "HOSPEDAJE", "VALES DE DESPENSA", "GASOLINA", "SEGURIDAD Y VIGILANCIA", "GASTOS POR DEFECTOS / REWORKS", "FARMACIA", "RECARGOS", "MANTENIMIENTO Y SERVICIOS DE AUTOMOVIL", "INSTALACIÓN DE MAQUINARIA", "GAS NATURAL", "RENTA DE IMPRESORA", "RECOLECCIÓN DE BASURA", "RECOLECCIÓN DE AGUAS RESIDUALES", "COMEDOR", "AGUA", "ENERGIA ELECTRICA", "MANIOBRAS Y FLETES", "GASTOS ADUANALES", "PRIMAS DE SEGUROS", "CAPACITACION", "EQUIPO DE COMPUTO / COMPUTER EQUIPMENT", "PARTES DE ENSAMBLE", "LAVANDERIA", "TELFONO CELULAR", "MANTENIMIENTO DE INSTRUMENTOS DE MEDICIÓN", "AGUA PARA CONSUMO", "HONORARIOS PERSONAS MORALES", "MATERIA PRIMA", "ARRENDAMIENTO DE AUTOMOVILES", "MANIOBRAS Y FLETES EXPEDITADOS", "EQUIPO DE CARGA", "GASTOS DE VIAJE", "GASTOS DE CERTIFICACIÓN", "CUOTAS Y SUSCRIPCIONES", "PROPAGANDA Y PUBLICIDAD", "GASTOS MIGRATORIOS", "CASETAS", "IMPUESTO PREDIAL / LAND TAX", "PROCESOS EXTERNOS", "COMISIONES BANCARIAS", "DESCUENTOS/ DEVOLUCIONES SOBRE COMPRA", "DESPERDICIO", "SUBENSAMBLE-ENSAMBLE", "DTA", "PRV", "SUBENSAMBLE-INSPECCIÓN", "INTERESES PAGADOS", "SUBENSABLE-MAQUINADO", "MULTAS, ACTUALIZACIONES Y RECARGOS", "REGALIAS 5%", "SERVICIOS ADMIN. DE NOMINA", "PRODUCTO TERMINADO"})
+        Me.cbx_fam.Location = New System.Drawing.Point(601, 238)
+        Me.cbx_fam.Name = "cbx_fam"
+        Me.cbx_fam.Size = New System.Drawing.Size(306, 21)
+        Me.cbx_fam.TabIndex = 456
+        '
         'Requerimientos_movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1034, 625)
+        Me.Controls.Add(Me.cbx_fam)
+        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.txt_liga)
+        Me.Controls.Add(Me.btn_doc)
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Label23)
+        Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.Panel1)
@@ -818,4 +914,11 @@ Partial Class Requerimientos_movimientos
     Friend WithEvents Label20 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label22 As Label
+    Friend WithEvents btn_cancelar As Button
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label23 As Label
+    Friend WithEvents btn_doc As Button
+    Friend WithEvents txt_liga As TextBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents cbx_fam As ComboBox
 End Class

@@ -146,7 +146,11 @@ Public Class ListaProductos
             lbl_inv.Text = Me.dtgvp.Rows(e.RowIndex).Cells(6).Value.ToString()
             a = Me.dtgvp.Rows(e.RowIndex).Cells(7).Value.ToString()
             lbl_ulpred.Text = Me.dtgvp.Rows(e.RowIndex).Cells(8).Value.ToString()
-            lbl_ulfec.Text = Me.dtgvp.Rows(e.RowIndex).Cells(9).Value.ToString()
+            Dim fe As Date
+            fe = Me.dtgvp.Rows(e.RowIndex).Cells(9).Value.ToString()
+            lbl_ulfec.Text = fe.ToString("dd/MM/yyyy")
+
+            '.Text = Me.dtgvp.Rows(e.RowIndex).Cells(9).Value.ToString()
             lbl_ulpro.Text = Me.dtgvp.Rows(e.RowIndex).Cells(10).Value.ToString()
             lbl_ulsol.Text = Me.dtgvp.Rows(e.RowIndex).Cells(11).Value.ToString()
             lbl_almacen.Text = Me.dtgvp.Rows(e.RowIndex).Cells(12).Value.ToString()
@@ -168,26 +172,34 @@ Public Class ListaProductos
 
 
 
+
     Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.RowEnter
+        Try
+            lbl_cod.Text = Me.dtgvp.Rows(e.RowIndex).Cells(0).Value.ToString()
+            lbl_nom.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
+            Lbl_numpart.Text = Me.dtgvp.Rows(e.RowIndex).Cells(2).Value.ToString()
+            lbl_umed_com.Text = Me.dtgvp.Rows(e.RowIndex).Cells(3).Value.ToString()
+            lbl_umed_con.Text = Me.dtgvp.Rows(e.RowIndex).Cells(4).Value.ToString()
+            lbl_fam.Text = Me.dtgvp.Rows(e.RowIndex).Cells(5).Value.ToString()
+            lbl_inv.Text = Me.dtgvp.Rows(e.RowIndex).Cells(6).Value.ToString()
+            a = Me.dtgvp.Rows(e.RowIndex).Cells(7).Value.ToString()
+            lbl_ulpred.Text = Me.dtgvp.Rows(e.RowIndex).Cells(8).Value.ToString()
+            Dim fe As Date
+            fe = Me.dtgvp.Rows(e.RowIndex).Cells(9).Value.ToString()
+            lbl_ulfec.Text = fe.ToString("dd/MM/yyyy")
+            lbl_ulpro.Text = Me.dtgvp.Rows(e.RowIndex).Cells(10).Value.ToString()
+            lbl_ulsol.Text = Me.dtgvp.Rows(e.RowIndex).Cells(11).Value.ToString()
+            lbl_almacen.Text = Me.dtgvp.Rows(e.RowIndex).Cells(12).Value.ToString()
 
-        lbl_cod.Text = Me.dtgvp.Rows(e.RowIndex).Cells(0).Value.ToString()
-        lbl_nom.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
-        Lbl_numpart.Text = Me.dtgvp.Rows(e.RowIndex).Cells(2).Value.ToString()
-        lbl_umed_com.Text = Me.dtgvp.Rows(e.RowIndex).Cells(3).Value.ToString()
-        lbl_umed_con.Text = Me.dtgvp.Rows(e.RowIndex).Cells(4).Value.ToString()
-        lbl_fam.Text = Me.dtgvp.Rows(e.RowIndex).Cells(5).Value.ToString()
-        lbl_inv.Text = Me.dtgvp.Rows(e.RowIndex).Cells(6).Value.ToString()
-        a = Me.dtgvp.Rows(e.RowIndex).Cells(7).Value.ToString()
-        lbl_ulpred.Text = Me.dtgvp.Rows(e.RowIndex).Cells(8).Value.ToString()
-        lbl_ulfec.Text = Me.dtgvp.Rows(e.RowIndex).Cells(9).Value.ToString()
-        lbl_ulpro.Text = Me.dtgvp.Rows(e.RowIndex).Cells(10).Value.ToString()
-        lbl_ulsol.Text = Me.dtgvp.Rows(e.RowIndex).Cells(11).Value.ToString()
-        lbl_almacen.Text = Me.dtgvp.Rows(e.RowIndex).Cells(12).Value.ToString()
+            lbl_almacen.Text = Me.dtgvp.Rows(e.RowIndex).Cells(14).Value.ToString()
+            lbl_pasillo.Text = Me.dtgvp.Rows(e.RowIndex).Cells(15).Value.ToString()
+            lbl_anaquel.Text = Me.dtgvp.Rows(e.RowIndex).Cells(16).Value.ToString()
+            lbl_nivel.Text = Me.dtgvp.Rows(e.RowIndex).Cells(17).Value.ToString()
 
-        lbl_almacen.Text = Me.dtgvp.Rows(e.RowIndex).Cells(14).Value.ToString()
-        lbl_pasillo.Text = Me.dtgvp.Rows(e.RowIndex).Cells(15).Value.ToString()
-        lbl_anaquel.Text = Me.dtgvp.Rows(e.RowIndex).Cells(16).Value.ToString()
-        lbl_nivel.Text = Me.dtgvp.Rows(e.RowIndex).Cells(17).Value.ToString()
+        Catch
+        End Try
+
+
     End Sub
 
 
