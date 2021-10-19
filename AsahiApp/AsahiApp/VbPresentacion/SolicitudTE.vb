@@ -90,6 +90,7 @@ select CLAVE, RTRIM(LTRIM(NOMBREN)) + ' ' + RTRIM(LTRIM(NOMBREP)) + ' ' + RTRIM(
    when 7 then '12 Matutino'
    when 8 then '12 Nocturno'
     when 10 then 'Administrativo'
+  when 4 then 'Administrativo'
    when 9 then 'Descanso'
    else 'Error'
    end
@@ -868,6 +869,15 @@ end
                 cbx_textra.Items.Add("12 Matutino")
                 cbx_textra.Items.Add("12 Nocturno")
 
+            ElseIf txt_turno.Text = "Error" Then
+
+                cbx_textra.Items.Clear()
+
+                cbx_textra.Items.Add("12 Matutino")
+                cbx_textra.Items.Add("12 Nocturno")
+                cbx_textra.Items.Add("Matutino")
+                cbx_textra.Items.Add("Vespertino")
+                cbx_textra.Items.Add("Administrativo")
             End If
 
 

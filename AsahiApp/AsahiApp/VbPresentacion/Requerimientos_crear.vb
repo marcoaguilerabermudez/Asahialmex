@@ -345,22 +345,22 @@ end"
                 precio_p = txt_precio.Text
 
 
-                For index = 0 To dtgv_2.RowCount - 1
-                    If dtgv_2.Rows(index).Cells(0).Value = Codigo_p Then
-                        Repetido = True
-                    End If
-                Next
+                'For index = 0 To dtgv_2.RowCount - 1
+                '    If dtgv_2.Rows(index).Cells(0).Value = Codigo_p Then
+                '        Repetido = True
+                '    End If
+                'Next
 
 
-                If Repetido = False Then
-                    dtgv_2.Rows.Add(Codigo_p, Codigo_p + " " + nombre_p, cantidad_p, precio_p, proveedor_p, a, dtp1.Value.ToShortDateString, txt_descr.Text)
+                'If Repetido = False Then
+                dtgv_2.Rows.Add(Codigo_p, Codigo_p + " " + nombre_p, cantidad_p, precio_p, proveedor_p, a, dtp1.Value.ToShortDateString, txt_descr.Text)
                     txt_cantidad.Text = 0
-                Else
+                    'Else
 
-                    MessageBox.Show("El producto ya está agregado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    '    MessageBox.Show("El producto ya está agregado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    'End If
+
                 End If
-
-            End If
 
         End If
 

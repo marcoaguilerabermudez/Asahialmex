@@ -291,7 +291,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -306,7 +305,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -328,7 +327,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -343,7 +341,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -365,7 +363,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -380,7 +377,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -402,7 +399,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -417,7 +413,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -439,7 +435,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -454,7 +449,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -476,7 +471,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -491,7 +485,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -513,7 +507,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -528,7 +521,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -550,7 +543,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -565,7 +557,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -587,7 +579,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -602,7 +593,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -624,7 +615,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -639,7 +629,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -661,7 +651,6 @@
                               <Style>
                                 <FontSize>5pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -676,7 +665,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>DimGray</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>

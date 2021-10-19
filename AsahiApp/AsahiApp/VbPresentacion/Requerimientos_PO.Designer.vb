@@ -1027,6 +1027,7 @@ Partial Class Requerimientos_PO
         '
         Me.cbx_clabe.BackColor = System.Drawing.SystemColors.Control
         Me.cbx_clabe.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.cbx_clabe.Enabled = False
         Me.cbx_clabe.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_clabe.Location = New System.Drawing.Point(63, 501)
         Me.cbx_clabe.MaxLength = 99
@@ -1038,6 +1039,7 @@ Partial Class Requerimientos_PO
         '
         Me.cbx_cuenta.BackColor = System.Drawing.SystemColors.Control
         Me.cbx_cuenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.cbx_cuenta.Enabled = False
         Me.cbx_cuenta.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.cbx_cuenta.Location = New System.Drawing.Point(63, 475)
         Me.cbx_cuenta.MaxLength = 99
@@ -1073,6 +1075,7 @@ Partial Class Requerimientos_PO
         '
         Me.cbx_banco.BackColor = System.Drawing.SystemColors.Control
         Me.cbx_banco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_banco.Enabled = False
         Me.cbx_banco.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.cbx_banco.FormattingEnabled = True
         Me.cbx_banco.Items.AddRange(New Object() {"BANAMEX", "BANCOMEXT", "BANOBRAS", "BBVA BANCOMER", "SANTANDER", "BANJERCITO", "HSBC", "BAJIO", "IXE", "INBURSA", "INTERACCIONES", "MIFEL", "SCOTIABANK", "BANREGIO", "INVEX", "BANSI", "AFIRME", "BANORTE/IXE", "THE ROYAL BANK", "AMERICAN EXPRESS", "BAMSA", "TOKYO", "JP MORGAN", "BMONEX", "VE POR MAS", "ING", "DEUTSCHE", "CREDIT SUISSE", "AZTECA", "AUTOFIN", "BARCLAYS", "COMPARTAMOS", "BANCO FAMSA", "BMULTIVA", "ACTINVER", "WAL-MART", "NAFIN", "INTERCAM BANCO", "BANCOPPEL", "ABC CAPITAL", "UBS BANK", "CONSUBANCO", "VOLKSWAGEN", "CIBANCO", "BBASE", "BANKAOOL", "PAGATODO", "FORJADORES", "INMOBILIARIO", "DONDÉ", "BANCREA", "PROGRESO", "BANCO FINTERRA", "ICBC", "SABADELL", "SHINHAN", "MIZUHO BANK", "BANK OF CHINA", "BANCO S3", "BANSEFI", "HIPOTECARIA FEDERAL", "MONEXCB", "GBM", "MASARI", "VALUE", "ESTRUCTURADORES", "TIBER", "VECTOR", "B&B", "ACCIVAL", "MERRILL LYNCH", "FINAMEX", "VALMEX", "UNICA", "MAPFRE", "PROFUTURO", "CB ACTINVER", "OACTIN", "SKANDIA", "CBDEUTSCHE", "ZURICH", "ZURICHVI", "SU CASITA", "CB INTERCAM", "CI BOLSA", "BULLTICK CB", "STERLING", "FINCOMUN", "HDI SEGUROS", "ORDER", "AKALA", "CB JPMORGAN", "REFORMA", "STP", "TELECOMM", "EVERCORE", "SKANDIA", "SEGMTY", "ASEA", "KUSPIT", "SOFIEXPRESS", "UNAGRA", "OPCIONES EMPRESARIALES DEL NOROESTE", "LIBERTAD", "CLS", "INDEVAL", "BANK OF THE WEST", "BMO HARRIS BANK, N.A", "BRANCH BANKING Y TRUST", "CHINA CONSTRUCTION BANK", "CITIZENS BANK", "COMPASS BANK", "FIFTH THIRD BANK", "HSBC Bank USA", "MUFG BANK MÉXICO, S.A.", "MUFG Bank, Ltd.", "SHENZHEN BANK", "SUMITOMO MITSUI", "WELLS FARGO BANK"})
