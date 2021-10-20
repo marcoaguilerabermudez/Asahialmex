@@ -38,6 +38,7 @@ Public Class MisPOPrincipal
     End Sub
 
     Private Sub MisPOPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim conexion As New conexion()
 
 
@@ -294,12 +295,12 @@ Public Class MisPOPrincipal
 
             Dim fe As Date
             fe = Me.dtgvp.Rows(e.RowIndex).Cells("fecha_entrega").Value.ToString()
-            lbl_fechaE.Text = fc.ToString("dd/MM/yyyy")
+            lbl_fechaE.Text = fe.ToString("dd/MM/yyyy")
 
 
             Dim fs As Date
             fs = Me.dtgvp.Rows(e.RowIndex).Cells("fecha_solicitud").Value.ToString()
-            lbl_fechaS.Text = fc.ToString("dd/MM/yyyy")
+            lbl_fechaS.Text = fs.ToString("dd/MM/yyyy")
 
 
             codigo = Me.dtgvp.Rows(e.RowIndex).Cells("codigo").Value.ToString()
@@ -367,7 +368,7 @@ Public Class MisPOPrincipal
         ContenedorReportePO.Show()
 
 
-        enviarcorreoreincidencia()
+        ' enviarcorreoreincidencia()
 
     End Sub
 

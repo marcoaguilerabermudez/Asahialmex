@@ -776,6 +776,11 @@ Public Class Frm_Principal
         Req_misPo.Show()
     End Sub
 
+    Private Sub RecibirPOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecibirPOToolStripMenuItem.Click
+        Dim Req_RecibirPo As New Requerimientos_RecepcionPO(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, 1)
+        Req_RecibirPo.Show()
+    End Sub
+
 
 
 
