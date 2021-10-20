@@ -90,7 +90,7 @@ select CLAVE, RTRIM(LTRIM(NOMBREN)) + ' ' + RTRIM(LTRIM(NOMBREP)) + ' ' + RTRIM(
    when 7 then '12 Matutino'
    when 8 then '12 Nocturno'
     when 10 then 'Administrativo'
-  when 4 then 'Administrativo'
+  --when 4 then 'Administrativo'
    when 9 then 'Descanso'
    else 'Error'
    end
@@ -782,9 +782,9 @@ end
             If txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 6 OrElse dtp1.Value.DayOfWeek = 0 OrElse dtp1.Value.Date = "16/09/2021") Then
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
+                'cbx_textra.Items.Add("Matutino")
+                'cbx_textra.Items.Add("Nocturno")
+                'cbx_textra.Items.Add("Vespertino")
 
                 cbx_textra.Items.Add("12 Matutino")
                 cbx_textra.Items.Add("12 Nocturno")
@@ -792,8 +792,8 @@ end
 
             ElseIf txt_turno.Text = "Administrativo" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2) Then
                 cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
+                'cbx_textra.Items.Add("Nocturno")
+                'cbx_textra.Items.Add("Vespertino")
                 cbx_textra.Items.Add("12 Matutino")
                 cbx_textra.Items.Add("12 Nocturno")
 
@@ -802,16 +802,16 @@ end
 
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
+                'cbx_textra.Items.Add("Matutino")
+                'cbx_textra.Items.Add("Nocturno")
+                'cbx_textra.Items.Add("Vespertino")
                 cbx_textra.Items.Add("12 Matutino")
                 cbx_textra.Items.Add("12 Nocturno")
             ElseIf txt_turno.Text = "Matutino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
 
                 cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
+                'cbx_textra.Items.Add("Nocturno")
+                'cbx_textra.Items.Add("Vespertino")
                 cbx_textra.Items.Add("12 Matutino")
                 cbx_textra.Items.Add("12 Nocturno")
 
@@ -821,16 +821,16 @@ end
 
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
+                'cbx_textra.Items.Add("Matutino")
+                'cbx_textra.Items.Add("Nocturno")
+                'cbx_textra.Items.Add("Vespertino")
                 cbx_textra.Items.Add("12 Matutino")
                 cbx_textra.Items.Add("12 Nocturno")
 
             ElseIf txt_turno.Text = "Vespertino" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
                 cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
+                'cbx_textra.Items.Add("Matutino")
+                'cbx_textra.Items.Add("Nocturno")
                 cbx_textra.Items.Add("12 Matutino")
                 cbx_textra.Items.Add("12 Nocturno")
 
@@ -841,17 +841,17 @@ end
 
                 cbx_textra.Items.Clear()
                 cbx_textra.Items.Add("Administrativo")
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Nocturno")
-                cbx_textra.Items.Add("Vespertino")
+                'cbx_textra.Items.Add("Matutino")
+                'cbx_textra.Items.Add("Nocturno")
+                'cbx_textra.Items.Add("Vespertino")
                 cbx_textra.Items.Add("12 Matutino")
                 cbx_textra.Items.Add("12 Nocturno")
 
             ElseIf txt_turno.Text = "Nocturno" And (dtp1.Value.DayOfWeek = 1 OrElse dtp1.Value.DayOfWeek = 3 OrElse dtp1.Value.DayOfWeek = 5 OrElse dtp1.Value.DayOfWeek = 4 OrElse dtp1.Value.DayOfWeek = 2 OrElse dtp1.Value.DayOfWeek = 6) Then
 
                 cbx_textra.Items.Clear()
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Vespertino")
+                'cbx_textra.Items.Add("Matutino")
+                'cbx_textra.Items.Add("Vespertino")
                 cbx_textra.Items.Add("12 Matutino")
                 cbx_textra.Items.Add("12 Nocturno")
 
@@ -873,11 +873,11 @@ end
 
                 cbx_textra.Items.Clear()
 
-                cbx_textra.Items.Add("12 Matutino")
-                cbx_textra.Items.Add("12 Nocturno")
-                cbx_textra.Items.Add("Matutino")
-                cbx_textra.Items.Add("Vespertino")
-                cbx_textra.Items.Add("Administrativo")
+                'cbx_textra.Items.Add("12 Matutino")
+                'cbx_textra.Items.Add("12 Nocturno")
+                ''cbx_textra.Items.Add("Matutino")
+                ''cbx_textra.Items.Add("Vespertino")
+                'cbx_textra.Items.Add("Administrativo")
             End If
 
 

@@ -664,7 +664,9 @@ SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(
             dtgvp.Visible = False
             llenacomboproveedor()
             btn_buscar.Enabled = False
-
+            ContenedorReportePO.serie = "A"
+            ContenedorReportePO.codigo = y
+            ContenedorReportePO.Show()
 
 
 
@@ -692,4 +694,6 @@ SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(
             btn_carga.Enabled = True
         End If
     End Sub
+
+
 End Class

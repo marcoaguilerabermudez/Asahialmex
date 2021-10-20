@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -751,6 +751,12 @@
       <DependentUpon>Requerimientos_principal.vb</DependentUpon>
     </Compile>
     <Compile Include="Requerimientos_principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requerimientos_RecepcionPO.Designer.vb">
+      <DependentUpon>Requerimientos_RecepcionPO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_RecepcionPO.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Requerimientos_rechazo.Designer.vb">
@@ -1574,6 +1580,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_principal.resx">
       <DependentUpon>Requerimientos_principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_RecepcionPO.resx">
+      <DependentUpon>Requerimientos_RecepcionPO.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_rechazo.resx">
       <DependentUpon>Requerimientos_rechazo.vb</DependentUpon>
