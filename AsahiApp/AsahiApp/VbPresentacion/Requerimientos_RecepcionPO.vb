@@ -162,6 +162,7 @@ Public Class Requerimientos_RecepcionPO
             Panel1.Visible = True
             Panel2.Visible = True
             Panel5.Visible = True
+            predictivo()
             txt_busca.Focus()
 
             If dtgvp.RowCount < 1 Then
@@ -260,6 +261,139 @@ Public Class Requerimientos_RecepcionPO
 
 
     End Sub
+
+    Sub predictivo()
+        Dim cmd As New SqlCommand("     if " & filtro & " = 0
+begin
+
+
+SELECT  upper([uid]) as 'f'
+  FROM [Asahi].[dbo].[XML_principal]
+  WHERE rfcemisor = '" & lbl_rfc.Text & "'
+
+  end 
+  else if " & filtro & "  = 1
+  begin 
+
+
+  SELECT upper([folio]) as 'f'
+  FROM [Asahi].[dbo].[XML_principal]
+  WHERE rfcemisor = '" & lbl_rfc.Text & "'
+  end  ", cnn)
+        If cnn.State = ConnectionState.Closed Then cnn.Open()
+        Dim ds As New DataSet
+        Dim da As New SqlDataAdapter(cmd)
+        da.Fill(ds, "Autofill")
+
+        Dim col As New AutoCompleteStringCollection
+
+        Dim i As Integer
+
+
+        For i = 0 To ds.Tables(0).Rows.Count - 1
+            col.Add(ds.Tables(0).Rows(i)("f").ToString())
+        Next
+
+
+
+        txt_busca.AutoCompleteSource = AutoCompleteSource.CustomSource
+        txt_busca.AutoCompleteCustomSource = col
+        txt_busca.AutoCompleteMode = AutoCompleteMode.Suggest
+    End Sub
+
+
+    Sub muestraetiqueta()
+        Try
+            Dim lista As New List(Of String)
+            cnn.Close()
+            cnn.Open()
+            Dim SSel As String
+
+
+
+            SSel = ("
+
+
+declare @tipo as int
+set @tipo = " & filtro & "
+
+
+declare @selec as varchar(120)
+set @selec = '" & txt_busca.Text & "'
+
+if @tipo = 0
+begin
+
+
+SELECT  [id]
+      ,upper([uid])
+      ,[rfcemisor]
+      ,[nombre_emisor]
+      ,[serie]
+      ,[folio]
+      ,[fecha]
+      ,[fecha_timbrado]
+      ,[id_provision]
+      ,[estado]
+      ,[moneda]
+      ,[total]
+      ,[subtotal]
+  FROM [Asahi].[dbo].[XML_principal]
+  WHERE [Uid] = @selec
+
+  end 
+  else if @tipo = 1
+  begin 
+  SELECT  [id]
+      ,upper([uid])
+      ,[rfcemisor]
+      ,[nombre_emisor]
+      ,[serie]
+      ,[folio]
+      ,[fecha]
+      ,[fecha_timbrado]
+      ,[id_provision]
+      ,[estado]
+      ,[moneda]
+      ,[total]
+      ,[subtotal]
+  FROM [Asahi].[dbo].[XML_principal]
+  WHERE folio = @selec
+  end ")
+
+            Dim da As SqlDataAdapter
+            Dim ds As New DataSet
+            ds.Clear()
+            da = New SqlDataAdapter(SSel, cnn)
+            da.Fill(ds)
+
+            lbl_foliofact.Text = ds.Tables(0).Rows(0).Item(5)
+            lbl_uuid.Text = ds.Tables(0).Rows(0).Item(1)
+            lbl_subtotalfact.Text = Format(CType(ds.Tables(0).Rows(0).Item(12), Decimal), "#,##0.00")
+            lbl_totalfact.Text = Format(CType(ds.Tables(0).Rows(0).Item(11), Decimal), "#,##0.00")
+
+
+
+
+            cnn.Close()
+
+
+        Catch ex As Exception
+            '  MessageBox.Show(ex.ToString)
+            MessageBox.Show("El registro que está tecleando es incorrecto, revise de nueva cuenta", "¡Aviso!")
+            txt_busca.Clear()
+            txt_busca.Focus()
+            lbl_subtotalfact.Text = 0
+            lbl_foliofact.Text = ""
+            lbl_uuid.Text = ""
+            lbl_totalfact.Text = 0
+
+        End Try
+
+
+
+    End Sub
+
 
 
     Public Sub cellTextBox_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
@@ -540,18 +674,55 @@ Public Class Requerimientos_RecepcionPO
     End Sub
 
     Private Sub rbt_falta_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_falta.CheckedChanged
+
         filtro = 0
-        lbl_txtfiltro.Text = "UUID"
+            predictivo()
+            lbl_txtfiltro.Text = "UUID"
         txt_busca.Text = ""
+        lbl_totalfact.Text = 0
+        lbl_subtotalfact.Text = 0
+        lbl_uuid.Text = ""
+        lbl_foliofact.Text = ""
+
 
     End Sub
 
     Private Sub rbt_retardo_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_retardo.CheckedChanged
         filtro = 1
+        predictivo()
         lbl_txtfiltro.Text = "Folio"
         txt_busca.Text = ""
+        lbl_totalfact.Text = 0
+        lbl_subtotalfact.Text = 0
+        lbl_uuid.Text = ""
+        lbl_foliofact.Text = ""
+    End Sub
+
+    Private Sub btn_doc_Click(sender As Object, e As EventArgs) Handles btn_doc.Click
+        muestraetiqueta()
     End Sub
 
 
+    Private Sub lbl_uuid_TextChanged(sender As Object, e As EventArgs) Handles lbl_uuid.TextChanged
 
+        If lbl_uuid.Text = "" Then
+            dtp1.Enabled = True
+            lbl_subtotalfact.Enabled = True
+            lbl_totalfact.Enabled = True
+        Else
+            dtp1.Enabled = False
+            lbl_subtotalfact.Enabled = False
+            lbl_totalfact.Enabled = False
+        End If
+
+
+    End Sub
+
+    Private Sub txt_busca_TextChanged(sender As Object, e As EventArgs) Handles txt_busca.TextChanged
+        If txt_busca.Text = "" Then
+            btn_doc.Enabled = False
+        Else
+            btn_doc.Enabled = True
+        End If
+    End Sub
 End Class

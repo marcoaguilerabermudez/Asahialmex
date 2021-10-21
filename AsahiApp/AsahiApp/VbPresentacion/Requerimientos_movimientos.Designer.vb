@@ -80,10 +80,10 @@ Partial Class Requerimientos_movimientos
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.btn_pdf = New System.Windows.Forms.Button()
-        Me.btn_doc = New System.Windows.Forms.Button()
         Me.txt_liga = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.cbx_fam = New System.Windows.Forms.ComboBox()
+        Me.btn_doc = New System.Windows.Forms.Button()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -737,19 +737,6 @@ Partial Class Requerimientos_movimientos
         Me.btn_pdf.UseVisualStyleBackColor = False
         Me.btn_pdf.Visible = False
         '
-        'btn_doc
-        '
-        Me.btn_doc.ForeColor = System.Drawing.Color.Black
-        Me.btn_doc.Image = Global.Presentacion.My.Resources.Resources.report
-        Me.btn_doc.Location = New System.Drawing.Point(925, 204)
-        Me.btn_doc.Name = "btn_doc"
-        Me.btn_doc.Size = New System.Drawing.Size(97, 54)
-        Me.btn_doc.TabIndex = 452
-        Me.btn_doc.Text = "Documento"
-        Me.btn_doc.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_doc.UseVisualStyleBackColor = False
-        Me.btn_doc.Visible = False
-        '
         'txt_liga
         '
         Me.txt_liga.BackColor = System.Drawing.SystemColors.Control
@@ -786,6 +773,19 @@ Partial Class Requerimientos_movimientos
         Me.cbx_fam.Name = "cbx_fam"
         Me.cbx_fam.Size = New System.Drawing.Size(306, 21)
         Me.cbx_fam.TabIndex = 456
+        '
+        'btn_doc
+        '
+        Me.btn_doc.ForeColor = System.Drawing.Color.Black
+        Me.btn_doc.Image = Global.Presentacion.My.Resources.Resources.report
+        Me.btn_doc.Location = New System.Drawing.Point(925, 204)
+        Me.btn_doc.Name = "btn_doc"
+        Me.btn_doc.Size = New System.Drawing.Size(97, 54)
+        Me.btn_doc.TabIndex = 452
+        Me.btn_doc.Text = "Documento"
+        Me.btn_doc.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_doc.UseVisualStyleBackColor = False
+        Me.btn_doc.Visible = False
         '
         'Requerimientos_movimientos
         '
@@ -917,8 +917,8 @@ Partial Class Requerimientos_movimientos
     Friend WithEvents btn_cancelar As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label23 As Label
-    Friend WithEvents btn_doc As Button
     Friend WithEvents txt_liga As TextBox
     Friend WithEvents Label24 As Label
     Friend WithEvents cbx_fam As ComboBox
+    Friend WithEvents btn_doc As Button
 End Class

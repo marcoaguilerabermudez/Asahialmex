@@ -585,14 +585,14 @@ Partial Class Frm_Principal
         '
         Me.SolicitudToolStripMenuItem1.Enabled = False
         Me.SolicitudToolStripMenuItem1.Name = "SolicitudToolStripMenuItem1"
-        Me.SolicitudToolStripMenuItem1.Size = New System.Drawing.Size(147, 22)
+        Me.SolicitudToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.SolicitudToolStripMenuItem1.Text = "Solicitud"
         '
         'ValidaciónRHToolStripMenuItem
         '
         Me.ValidaciónRHToolStripMenuItem.Enabled = False
         Me.ValidaciónRHToolStripMenuItem.Name = "ValidaciónRHToolStripMenuItem"
-        Me.ValidaciónRHToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.ValidaciónRHToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ValidaciónRHToolStripMenuItem.Text = "Validación RH"
         '
         'EvaluacionesToolStripMenuItem1
@@ -688,7 +688,6 @@ Partial Class Frm_Principal
         'RequerimientosToolStripMenuItem
         '
         Me.RequerimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.MisRequerimientosToolStripMenuItem, Me.CotizaciónToolStripMenuItem, Me.OrdenDeCompraToolStripMenuItem, Me.RevisarPOToolStripMenuItem, Me.RecibirPOToolStripMenuItem})
-        Me.RequerimientosToolStripMenuItem.Enabled = False
         Me.RequerimientosToolStripMenuItem.Name = "RequerimientosToolStripMenuItem"
         Me.RequerimientosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RequerimientosToolStripMenuItem.Text = "Requerimientos"
@@ -732,7 +731,6 @@ Partial Class Frm_Principal
         'CatálogosToolStripMenuItem
         '
         Me.CatálogosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProveedoresToolStripMenuItem, Me.ProductosToolStripMenuItem})
-        Me.CatálogosToolStripMenuItem.Enabled = False
         Me.CatálogosToolStripMenuItem.Name = "CatálogosToolStripMenuItem"
         Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
