@@ -82,7 +82,7 @@ Partial Class Modificacion_de_Turno
         Me.cbox_turno.AutoCompleteCustomSource.AddRange(New String() {"1 Matutino", "2 Vespertino", "3 Nocturno", "4 Mixto", "5", "6", "7", "8"})
         Me.cbox_turno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbox_turno.FormattingEnabled = True
-        Me.cbox_turno.Items.AddRange(New Object() {"Matutino", "Vespertino", "Nocturno", "Administrativo"})
+        Me.cbox_turno.Items.AddRange(New Object() {"12 M", "12 N", "Administrativo"})
         Me.cbox_turno.Location = New System.Drawing.Point(472, 114)
         Me.cbox_turno.Name = "cbox_turno"
         Me.cbox_turno.Size = New System.Drawing.Size(140, 21)

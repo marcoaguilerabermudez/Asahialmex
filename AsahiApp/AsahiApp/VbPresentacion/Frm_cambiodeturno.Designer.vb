@@ -28,6 +28,7 @@ Partial Class Frm_cambiodeturno
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_cambiodeturno))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btn_preautorizar = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbx_filtro = New System.Windows.Forms.ComboBox()
         Me.btn_cambiarturno = New System.Windows.Forms.Button()
@@ -54,7 +55,6 @@ Partial Class Frm_cambiodeturno
         Me.lbl_clave = New System.Windows.Forms.Label()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.btn_preautorizar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,6 +94,18 @@ Partial Class Frm_cambiodeturno
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Departamento Completo"
         '
+        'btn_preautorizar
+        '
+        Me.btn_preautorizar.BackColor = System.Drawing.Color.LightGray
+        Me.btn_preautorizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_preautorizar.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.btn_preautorizar.Location = New System.Drawing.Point(981, 20)
+        Me.btn_preautorizar.Name = "btn_preautorizar"
+        Me.btn_preautorizar.Size = New System.Drawing.Size(79, 35)
+        Me.btn_preautorizar.TabIndex = 170
+        Me.btn_preautorizar.Text = "Imprimir"
+        Me.btn_preautorizar.UseVisualStyleBackColor = False
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -111,7 +123,7 @@ Partial Class Frm_cambiodeturno
         Me.cbx_filtro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_filtro.ForeColor = System.Drawing.SystemColors.Menu
         Me.cbx_filtro.FormattingEnabled = True
-        Me.cbx_filtro.Items.AddRange(New Object() {"Matutino", "Vespertino", "Nocturno", "Administrativo"})
+        Me.cbx_filtro.Items.AddRange(New Object() {"12 M", "12 N", "Administrativo"})
         Me.cbx_filtro.Location = New System.Drawing.Point(17, 32)
         Me.cbx_filtro.Name = "cbx_filtro"
         Me.cbx_filtro.Size = New System.Drawing.Size(142, 21)
@@ -179,7 +191,7 @@ Partial Class Frm_cambiodeturno
         Me.cbx_turno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_turno.ForeColor = System.Drawing.SystemColors.Menu
         Me.cbx_turno.FormattingEnabled = True
-        Me.cbx_turno.Items.AddRange(New Object() {"Matutino", "Vespertino", "Nocturno", "Administrativo"})
+        Me.cbx_turno.Items.AddRange(New Object() {"12 M", "12 N", "Administrativo"})
         Me.cbx_turno.Location = New System.Drawing.Point(435, 33)
         Me.cbx_turno.Name = "cbx_turno"
         Me.cbx_turno.Size = New System.Drawing.Size(142, 21)
@@ -345,7 +357,7 @@ Partial Class Frm_cambiodeturno
         Me.cbx_indi.Enabled = False
         Me.cbx_indi.ForeColor = System.Drawing.SystemColors.Menu
         Me.cbx_indi.FormattingEnabled = True
-        Me.cbx_indi.Items.AddRange(New Object() {"Matutino", "Vespertino", "Nocturno", "Administrativo"})
+        Me.cbx_indi.Items.AddRange(New Object() {"12 M", "12 N", "Administrativo"})
         Me.cbx_indi.Location = New System.Drawing.Point(174, 214)
         Me.cbx_indi.Name = "cbx_indi"
         Me.cbx_indi.Size = New System.Drawing.Size(142, 21)
@@ -399,18 +411,6 @@ Partial Class Frm_cambiodeturno
         '
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
-        '
-        'btn_preautorizar
-        '
-        Me.btn_preautorizar.BackColor = System.Drawing.Color.LightGray
-        Me.btn_preautorizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_preautorizar.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.btn_preautorizar.Location = New System.Drawing.Point(981, 20)
-        Me.btn_preautorizar.Name = "btn_preautorizar"
-        Me.btn_preautorizar.Size = New System.Drawing.Size(79, 35)
-        Me.btn_preautorizar.TabIndex = 170
-        Me.btn_preautorizar.Text = "Imprimir"
-        Me.btn_preautorizar.UseVisualStyleBackColor = False
         '
         'Frm_cambiodeturno
         '

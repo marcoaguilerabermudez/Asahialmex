@@ -60,7 +60,7 @@ Public Class Modificacion_de_Turno
        when CATALOGO = 1 then 'Matutino'
    when CATALOGO =  2 then 'Vespertino'
    when CATALOGO =  3 then 'Nocturno'
-   when CATALOGO =  4 then 'Administrativo'
+   when CATALOGO =  10 then 'Administrativo'
    when CATALOGO =  5 then 'Mazda día'
    when CATALOGO =  6 then 'Mazda noche'
    when CATALOGO =  7 then '12 M'

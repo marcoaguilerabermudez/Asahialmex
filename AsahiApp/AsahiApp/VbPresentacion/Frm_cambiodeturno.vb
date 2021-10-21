@@ -45,7 +45,7 @@ select CLAVE, RTRIM(LTRIM(NOMBREN)) + ' ' + RTRIM(LTRIM(NOMBREP)) + ' ' + RTRIM(
    when 1 then 'Matutino'
    when 2 then 'Vespertino'
    when 3 then 'Nocturno'
-   when 4 then 'Administrativo'
+   when 10 then 'Administrativo'
    when 5 then 'Mazda día'
    when 6 then 'Mazda noche'
    when 7 then '12 M'
@@ -227,7 +227,10 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
 	  when [CATALOGO] = 1 then 'Matutino'
 	  when [CATALOGO] = 2 then 'Vespertino'
 	  when [CATALOGO] = 3 then 'Nocturno'
-	  when [CATALOGO] = 4 then 'Administrativo'
+	  when [CATALOGO] = 10 then 'Administrativo'
+ when [CATALOGO] = 4 then 'Administrativo'
+      when [CATALOGO] = 7 then '12 M'
+	  when [CATALOGO] = 8 then '12 N'
       end as 'Turno'
   FROM giro.[asahi16].[Supervisor_giro].[Empturno]
   where CLAVE in (@clave) 
