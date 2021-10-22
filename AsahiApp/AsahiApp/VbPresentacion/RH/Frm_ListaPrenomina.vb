@@ -596,6 +596,18 @@ Public Class Frm_ListaPrenomina
                                         .Visible = False
                                     End If
                                 End If
+                            Case "SHU"
+                                If (incColE = inc Or incColS = inc) Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
+
+
                         End Select
                     End With
                 Next
@@ -1374,6 +1386,10 @@ Public Class Frm_ListaPrenomina
                             inc = "CF"
                             cb = Color.GreenYellow
                             cf = Color.Red
+                        Case "Z"
+                            inc = "SHU"
+                            cb = Color.Yellow
+                            cf = Color.Black
                         Case Else
                             inc = "error"
                     End Select
@@ -1460,7 +1476,7 @@ Public Class Frm_ListaPrenomina
             If idTurno < 7 Then
                 For colum = 5 To 7
                     If colum > 5 Then
-                        If idTurno >= 4 Then
+                        If idTurno = 4 Or 10 Then
                             Dim ce As String = "entrada" + Convert.ToString(colum) + ""
                             Dim cs As String = "salida" + Convert.ToString(colum) + ""
                             If Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "" Then
@@ -1476,7 +1492,7 @@ Public Class Frm_ListaPrenomina
                                 Dgv_ListaPrenomina.Rows(fila).Cells(cs).ReadOnly = True
                             End If
                         Else
-                            If colum > 6 Then
+                            If colum = 7 Or colum = 8 Then
                                 Dim ce As String = "entrada" + Convert.ToString(colum) + ""
                                 Dim cs As String = "salida" + Convert.ToString(colum) + ""
                                 If Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "" Then
@@ -1870,6 +1886,8 @@ Public Class Frm_ListaPrenomina
                                     objEmp.TipoIncidencia1 = "A"
                                 Case "SUS"
                                     objEmp.TipoIncidencia1 = "A"
+                                Case "SHU"
+                                    objEmp.TipoIncidencia1 = "A"
                                 Case "DT"
                                     objEmp.TipoIncidencia1 = "HE"
                                 Case Else
@@ -1897,6 +1915,8 @@ Public Class Frm_ListaPrenomina
                                     objEmp.TipoIncidencia2 = "A"
                                 Case "SUS"
                                     objEmp.TipoIncidencia2 = "A"
+                                Case "SHU"
+                                    objEmp.TipoIncidencia1 = "A"
                                 Case "DT"
                                     objEmp.TipoIncidencia2 = "HE"
                                 Case Else
@@ -2051,6 +2071,9 @@ Public Class Frm_ListaPrenomina
             Case "CF"
                 cb = Color.GreenYellow
                 cf = Color.Red
+            Case "SHU"
+                cb = Color.Yellow
+                cf = Color.Black
             Case ""
                 cb = Color.Gray
                 cf = Color.Black
@@ -2087,6 +2110,8 @@ Public Class Frm_ListaPrenomina
                     item.Incidencia1 = "O"
                 Case  "CF"
                     item.Incidencia1 = "J"
+                Case "SHU"
+                    item.Incidencia1 = "Z"
             End Select
             Select Case item.Incidencia2
                 Case "PM"
@@ -2111,6 +2136,8 @@ Public Class Frm_ListaPrenomina
                     item.Incidencia1 = "O"
                 Case "CF"
                     item.Incidencia1 = "J"
+                Case "SHU"
+                    item.Incidencia1 = "Z"
             End Select
         Next
         Return lstEmp
@@ -2666,6 +2693,7 @@ Public Class Frm_ListaPrenomina
             Case "CONSULTA SOSPECHA" : Return "CC"
             Case "SOSPECHOSO ENFERMEDAD" : Return "SO"
             Case "CONFIRMADO" : Return "CF"
+            Case "SHUTDOWN" : Return "SHU"
             Case Else : Return ""
         End Select
     End Function
@@ -2679,6 +2707,9 @@ Public Class Frm_ListaPrenomina
                     Case 4 : Return "08:00:00"
                     Case 5 : Return "07:44:00"
                     Case 6 : Return "20:20:00"
+                    Case 7 : Return "07:00:00"
+                    Case 8 : Return "19:00:00"
+                    Case 10 : Return "07:00:00"
                     Case Else : Return "00:00:00"
                 End Select
             Case "Salida"
@@ -2689,6 +2720,10 @@ Public Class Frm_ListaPrenomina
                     Case 4 : Return "17:00:00"
                     Case 5 : Return "18:21:00"
                     Case 6 : Return "06:21:00"
+                    Case 7 : Return "19:15:00"
+                    Case 8 : Return "07:15:00"
+                    Case 10 : Return "16:00:00"
+
                     Case Else : Return "00:00:00"
                 End Select
             Case Else : Return "00:00:00"

@@ -462,9 +462,6 @@ insert into Asahi.dbo.Vales_Almacen values
             agrega.ExecuteNonQuery()
 
 
-
-
-
         Catch ex As Exception
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
             MessageBox.Show(ex.ToString)
@@ -492,10 +489,6 @@ insert into Asahi.dbo.Vales_Almacen values
 
         cnn.Close()
 
-
-
-
-
         cnn.Close()
 
 
@@ -516,6 +509,7 @@ insert into Asahi.dbo.Vales_Almacen values
                 command.Parameters.AddWithValue("@CantidadMaterial", (fila.Cells("C_3").Value))
                 command.Parameters.AddWithValue("@CambioMaterial", 0)
                 command.Parameters.AddWithValue("@PrestamoMaterial", 0)
+
                 If (fila.Cells("c_cobro").Value) = "Sí" Then
                     command.Parameters.AddWithValue("@Cobro", 1)
                 Else

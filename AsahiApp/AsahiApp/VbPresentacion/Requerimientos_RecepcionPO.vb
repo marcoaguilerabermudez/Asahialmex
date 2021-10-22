@@ -15,6 +15,8 @@ Public Class Requerimientos_RecepcionPO
 
     Dim Cantidad_Requerida As Double
     Dim filtro As Integer
+    Dim y As Integer
+    Dim id_po As Integer
 
 
     Sub New(id As Integer, depto As String, permiso As Integer, nombre As String, p_vales As Integer)
@@ -369,6 +371,7 @@ SELECT  [id]
 
             lbl_foliofact.Text = ds.Tables(0).Rows(0).Item(5)
             lbl_uuid.Text = ds.Tables(0).Rows(0).Item(1)
+            dtp1.Value = ds.Tables(0).Rows(0).Item(6)
             lbl_subtotalfact.Text = Format(CType(ds.Tables(0).Rows(0).Item(12), Decimal), "#,##0.00")
             lbl_totalfact.Text = Format(CType(ds.Tables(0).Rows(0).Item(11), Decimal), "#,##0.00")
 
@@ -532,6 +535,19 @@ SELECT  [id]
     End Sub
 
     Private Sub btn_cargar_Click(sender As Object, e As EventArgs) Handles btn_cargar.Click
+        Dim Pregunta As Integer
+
+        Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+
+
+        If Pregunta = vbYes Then
+            crearrecepcion()
+            insertarfilas()
+        Else
+            MessageBox.Show("Acción no completada", "¡Aviso!")
+        End If
+
 
 
 
@@ -549,6 +565,7 @@ SELECT  [id]
             lbl_proveedor.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Proveedor").Value.ToString()
             serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie_po").Value.ToString()
             lbl_rfc.Text = Me.dtgvp.Rows(e.RowIndex).Cells("RFC").Value.ToString()
+            id_po = Me.dtgvp.Rows(e.RowIndex).Cells("id_po").Value.ToString()
         Catch
         End Try
 
@@ -569,6 +586,7 @@ SELECT  [id]
             lbl_proveedor.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Proveedor").Value.ToString()
             serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie_po").Value.ToString()
             lbl_rfc.Text = Me.dtgvp.Rows(e.RowIndex).Cells("RFC").Value.ToString()
+            id_po = Me.dtgvp.Rows(e.RowIndex).Cells("id_po").Value.ToString()
         Catch
         End Try
 
@@ -725,4 +743,127 @@ SELECT  [id]
             btn_doc.Enabled = True
         End If
     End Sub
+
+
+
+    Sub crearrecepcion()
+        cnn.Close()
+        '  cnn.Open()
+
+        Dim agrega As New SqlCommand("Sp_RecepcionConPO", cnn)
+        cnn.Open()
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        agrega.CommandType = CommandType.StoredProcedure
+
+
+        Try
+
+            agrega.Parameters.Clear()
+
+            agrega.Parameters.Add("@id_po", SqlDbType.Int).Value = id_po
+            agrega.Parameters.Add("@f_factura", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
+            agrega.Parameters.Add("@f_pago", SqlDbType.Date).Value = dtp2.Value.ToShortDateString
+            agrega.Parameters.Add("@subtotal", SqlDbType.Money).Value = lbl_subtotalfact.Text
+            agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_totalfact.Text
+            agrega.Parameters.Add("@moneda", SqlDbType.VarChar, 3).Value = lbl_moneda.Text
+            agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = lbl_uuid.Text
+            agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
+
+
+
+
+
+
+
+            agrega.ExecuteNonQuery()
+
+            ' insertarfilas()
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error, consulte al administrador")
+            MessageBox.Show(ex.ToString)
+            cnn.Close()
+
+            'cargagrid()
+        Finally
+            cnn.Close()
+        End Try
+
+
+    End Sub
+
+
+
+    Sub insertarfilas()
+
+        Dim comando As SqlCommand = New SqlCommand
+        comando.CommandText = "select top 1 id_provision from [Asahi].[dbo].[Com_ProvisionesPrincipal] order by Id_provision desc"
+        comando.Connection = cnn
+        cnn.Close()
+        cnn.Open()
+
+        y = comando.ExecuteScalar()
+
+        cnn.Close()
+
+        cnn.Close()
+
+
+        Dim command As New SqlCommand("Sp_RecepcionConPoMovimiento", cnn)
+        cnn.Open()
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        command.CommandType = CommandType.StoredProcedure
+
+
+
+        Try
+
+            For Each fila In dtgvp.Rows
+                If fila.Cells("x").Value = True Then
+
+                    command.Parameters.Clear()
+
+                    command.Parameters.AddWithValue("@codigo", (fila.Cells("Codigo").Value))
+                    command.Parameters.AddWithValue("@cantidad", (fila.Cells("Recibido").Value))
+                    command.Parameters.AddWithValue("@precio", (fila.Cells("Precio").Value))
+                    command.Parameters.AddWithValue("@subtotal", (fila.Cells("Subtotal").Value))
+                    command.Parameters.AddWithValue("@id_movpo", (fila.Cells("id_mov").Value))
+
+                    command.ExecuteNonQuery()
+                End If
+            Next
+
+            MessageBox.Show("Provisión creada con el folio: " & y & "", "¡Correcto!", MessageBoxButtons.OK)
+            dtgvp.Visible = False
+            lbl_po.Text = ""
+
+            lbl_total.Text = ""
+            lbl_moneda.Text = ""
+            lbl_tc.Text = ""
+            lbl_proveedor.Text = ""
+
+            txt_no.Text = ""
+            'btn_selec.Visible = False
+            'btn_desma.Visible = False
+            'btn_cargar.Visible = False
+            'btn_calcular.Visible = False
+            Panel1.Visible = False
+            Panel2.Visible = False
+            Panel5.Visible = False
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+
+        Finally
+            ' MessageBox.Show("Ocurrió un problema, contacte al área de sistemas.", "Aviso")
+            cnn.Close()
+        End Try
+
+
+
+
+    End Sub
+
 End Class
