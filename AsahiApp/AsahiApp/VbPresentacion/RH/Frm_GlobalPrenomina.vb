@@ -980,7 +980,7 @@ Public Class Frm_GlobalPrenomina
                                 Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
                             End If
                         End If
-                    ElseIf colum = 7 Then
+                    ElseIf colum = 7 Or colum = 8 Then
                         If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
                             Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "D"
                             Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Black

@@ -249,7 +249,7 @@ namespace CsPresentacion
             else if (string.IsNullOrEmpty(cmb_puesto.Text) && string.IsNullOrEmpty(cmb_departamento.Text) && string.IsNullOrEmpty(cmb_genero.Text))
             {
                 Var = 3;
-                lbl_Var.Text = "3";
+                //lbl_Var.Text = "3";
                 Llenar_dgv();
                 lbl_total.Text = dgv_activos.Rows.Count.ToString();
             }

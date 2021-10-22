@@ -15,6 +15,8 @@ Public Class Requerimientos_RecepcionPO
 
     Dim Cantidad_Requerida As Double
     Dim filtro As Integer
+    Dim y As Integer
+    Dim id_po As Integer
 
 
     Sub New(id As Integer, depto As String, permiso As Integer, nombre As String, p_vales As Integer)
@@ -162,6 +164,7 @@ Public Class Requerimientos_RecepcionPO
             Panel1.Visible = True
             Panel2.Visible = True
             Panel5.Visible = True
+            predictivo()
             txt_busca.Focus()
 
             If dtgvp.RowCount < 1 Then
@@ -260,6 +263,140 @@ Public Class Requerimientos_RecepcionPO
 
 
     End Sub
+
+    Sub predictivo()
+        Dim cmd As New SqlCommand("     if " & filtro & " = 0
+begin
+
+
+SELECT  upper([uid]) as 'f'
+  FROM [Asahi].[dbo].[XML_principal]
+  WHERE rfcemisor = '" & lbl_rfc.Text & "'
+
+  end 
+  else if " & filtro & "  = 1
+  begin 
+
+
+  SELECT upper([folio]) as 'f'
+  FROM [Asahi].[dbo].[XML_principal]
+  WHERE rfcemisor = '" & lbl_rfc.Text & "'
+  end  ", cnn)
+        If cnn.State = ConnectionState.Closed Then cnn.Open()
+        Dim ds As New DataSet
+        Dim da As New SqlDataAdapter(cmd)
+        da.Fill(ds, "Autofill")
+
+        Dim col As New AutoCompleteStringCollection
+
+        Dim i As Integer
+
+
+        For i = 0 To ds.Tables(0).Rows.Count - 1
+            col.Add(ds.Tables(0).Rows(i)("f").ToString())
+        Next
+
+
+
+        txt_busca.AutoCompleteSource = AutoCompleteSource.CustomSource
+        txt_busca.AutoCompleteCustomSource = col
+        txt_busca.AutoCompleteMode = AutoCompleteMode.Suggest
+    End Sub
+
+
+    Sub muestraetiqueta()
+        Try
+            Dim lista As New List(Of String)
+            cnn.Close()
+            cnn.Open()
+            Dim SSel As String
+
+
+
+            SSel = ("
+
+
+declare @tipo as int
+set @tipo = " & filtro & "
+
+
+declare @selec as varchar(120)
+set @selec = '" & txt_busca.Text & "'
+
+if @tipo = 0
+begin
+
+
+SELECT  [id]
+      ,upper([uid])
+      ,[rfcemisor]
+      ,[nombre_emisor]
+      ,[serie]
+      ,[folio]
+      ,[fecha]
+      ,[fecha_timbrado]
+      ,[id_provision]
+      ,[estado]
+      ,[moneda]
+      ,[total]
+      ,[subtotal]
+  FROM [Asahi].[dbo].[XML_principal]
+  WHERE [Uid] = @selec
+
+  end 
+  else if @tipo = 1
+  begin 
+  SELECT  [id]
+      ,upper([uid])
+      ,[rfcemisor]
+      ,[nombre_emisor]
+      ,[serie]
+      ,[folio]
+      ,[fecha]
+      ,[fecha_timbrado]
+      ,[id_provision]
+      ,[estado]
+      ,[moneda]
+      ,[total]
+      ,[subtotal]
+  FROM [Asahi].[dbo].[XML_principal]
+  WHERE folio = @selec
+  end ")
+
+            Dim da As SqlDataAdapter
+            Dim ds As New DataSet
+            ds.Clear()
+            da = New SqlDataAdapter(SSel, cnn)
+            da.Fill(ds)
+
+            lbl_foliofact.Text = ds.Tables(0).Rows(0).Item(5)
+            lbl_uuid.Text = ds.Tables(0).Rows(0).Item(1)
+            dtp1.Value = ds.Tables(0).Rows(0).Item(6)
+            lbl_subtotalfact.Text = Format(CType(ds.Tables(0).Rows(0).Item(12), Decimal), "#,##0.00")
+            lbl_totalfact.Text = Format(CType(ds.Tables(0).Rows(0).Item(11), Decimal), "#,##0.00")
+
+
+
+
+            cnn.Close()
+
+
+        Catch ex As Exception
+            '  MessageBox.Show(ex.ToString)
+            MessageBox.Show("El registro que está tecleando es incorrecto, revise de nueva cuenta", "¡Aviso!")
+            txt_busca.Clear()
+            txt_busca.Focus()
+            lbl_subtotalfact.Text = 0
+            lbl_foliofact.Text = ""
+            lbl_uuid.Text = ""
+            lbl_totalfact.Text = 0
+
+        End Try
+
+
+
+    End Sub
+
 
 
     Public Sub cellTextBox_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
@@ -398,6 +535,19 @@ Public Class Requerimientos_RecepcionPO
     End Sub
 
     Private Sub btn_cargar_Click(sender As Object, e As EventArgs) Handles btn_cargar.Click
+        Dim Pregunta As Integer
+
+        Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+
+
+        If Pregunta = vbYes Then
+            crearrecepcion()
+            insertarfilas()
+        Else
+            MessageBox.Show("Acción no completada", "¡Aviso!")
+        End If
+
 
 
 
@@ -415,6 +565,7 @@ Public Class Requerimientos_RecepcionPO
             lbl_proveedor.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Proveedor").Value.ToString()
             serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie_po").Value.ToString()
             lbl_rfc.Text = Me.dtgvp.Rows(e.RowIndex).Cells("RFC").Value.ToString()
+            id_po = Me.dtgvp.Rows(e.RowIndex).Cells("id_po").Value.ToString()
         Catch
         End Try
 
@@ -435,6 +586,7 @@ Public Class Requerimientos_RecepcionPO
             lbl_proveedor.Text = Me.dtgvp.Rows(e.RowIndex).Cells("Proveedor").Value.ToString()
             serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie_po").Value.ToString()
             lbl_rfc.Text = Me.dtgvp.Rows(e.RowIndex).Cells("RFC").Value.ToString()
+            id_po = Me.dtgvp.Rows(e.RowIndex).Cells("id_po").Value.ToString()
         Catch
         End Try
 
@@ -540,18 +692,178 @@ Public Class Requerimientos_RecepcionPO
     End Sub
 
     Private Sub rbt_falta_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_falta.CheckedChanged
+
         filtro = 0
-        lbl_txtfiltro.Text = "UUID"
+            predictivo()
+            lbl_txtfiltro.Text = "UUID"
         txt_busca.Text = ""
+        lbl_totalfact.Text = 0
+        lbl_subtotalfact.Text = 0
+        lbl_uuid.Text = ""
+        lbl_foliofact.Text = ""
+
 
     End Sub
 
     Private Sub rbt_retardo_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_retardo.CheckedChanged
         filtro = 1
+        predictivo()
         lbl_txtfiltro.Text = "Folio"
         txt_busca.Text = ""
+        lbl_totalfact.Text = 0
+        lbl_subtotalfact.Text = 0
+        lbl_uuid.Text = ""
+        lbl_foliofact.Text = ""
+    End Sub
+
+    Private Sub btn_doc_Click(sender As Object, e As EventArgs) Handles btn_doc.Click
+        muestraetiqueta()
     End Sub
 
 
+    Private Sub lbl_uuid_TextChanged(sender As Object, e As EventArgs) Handles lbl_uuid.TextChanged
+
+        If lbl_uuid.Text = "" Then
+            dtp1.Enabled = True
+            lbl_subtotalfact.Enabled = True
+            lbl_totalfact.Enabled = True
+        Else
+            dtp1.Enabled = False
+            lbl_subtotalfact.Enabled = False
+            lbl_totalfact.Enabled = False
+        End If
+
+
+    End Sub
+
+    Private Sub txt_busca_TextChanged(sender As Object, e As EventArgs) Handles txt_busca.TextChanged
+        If txt_busca.Text = "" Then
+            btn_doc.Enabled = False
+        Else
+            btn_doc.Enabled = True
+        End If
+    End Sub
+
+
+
+    Sub crearrecepcion()
+        cnn.Close()
+        '  cnn.Open()
+
+        Dim agrega As New SqlCommand("Sp_RecepcionConPO", cnn)
+        cnn.Open()
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        agrega.CommandType = CommandType.StoredProcedure
+
+
+        Try
+
+            agrega.Parameters.Clear()
+
+            agrega.Parameters.Add("@id_po", SqlDbType.Int).Value = id_po
+            agrega.Parameters.Add("@f_factura", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
+            agrega.Parameters.Add("@f_pago", SqlDbType.Date).Value = dtp2.Value.ToShortDateString
+            agrega.Parameters.Add("@subtotal", SqlDbType.Money).Value = lbl_subtotalfact.Text
+            agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_totalfact.Text
+            agrega.Parameters.Add("@moneda", SqlDbType.VarChar, 3).Value = lbl_moneda.Text
+            agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = lbl_uuid.Text
+            agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
+
+
+
+
+
+
+
+            agrega.ExecuteNonQuery()
+
+            ' insertarfilas()
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error, consulte al administrador")
+            MessageBox.Show(ex.ToString)
+            cnn.Close()
+
+            'cargagrid()
+        Finally
+            cnn.Close()
+        End Try
+
+
+    End Sub
+
+
+
+    Sub insertarfilas()
+
+        Dim comando As SqlCommand = New SqlCommand
+        comando.CommandText = "select top 1 id_provision from [Asahi].[dbo].[Com_ProvisionesPrincipal] order by Id_provision desc"
+        comando.Connection = cnn
+        cnn.Close()
+        cnn.Open()
+
+        y = comando.ExecuteScalar()
+
+        cnn.Close()
+
+        cnn.Close()
+
+
+        Dim command As New SqlCommand("Sp_RecepcionConPoMovimiento", cnn)
+        cnn.Open()
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        command.CommandType = CommandType.StoredProcedure
+
+
+
+        Try
+
+            For Each fila In dtgvp.Rows
+                If fila.Cells("x").Value = True Then
+
+                    command.Parameters.Clear()
+
+                    command.Parameters.AddWithValue("@codigo", (fila.Cells("Codigo").Value))
+                    command.Parameters.AddWithValue("@cantidad", (fila.Cells("Recibido").Value))
+                    command.Parameters.AddWithValue("@precio", (fila.Cells("Precio").Value))
+                    command.Parameters.AddWithValue("@subtotal", (fila.Cells("Subtotal").Value))
+                    command.Parameters.AddWithValue("@id_movpo", (fila.Cells("id_mov").Value))
+
+                    command.ExecuteNonQuery()
+                End If
+            Next
+
+            MessageBox.Show("Provisión creada con el folio: " & y & "", "¡Correcto!", MessageBoxButtons.OK)
+            dtgvp.Visible = False
+            lbl_po.Text = ""
+
+            lbl_total.Text = ""
+            lbl_moneda.Text = ""
+            lbl_tc.Text = ""
+            lbl_proveedor.Text = ""
+
+            txt_no.Text = ""
+            'btn_selec.Visible = False
+            'btn_desma.Visible = False
+            'btn_cargar.Visible = False
+            'btn_calcular.Visible = False
+            Panel1.Visible = False
+            Panel2.Visible = False
+            Panel5.Visible = False
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+
+        Finally
+            ' MessageBox.Show("Ocurrió un problema, contacte al área de sistemas.", "Aviso")
+            cnn.Close()
+        End Try
+
+
+
+
+    End Sub
 
 End Class
