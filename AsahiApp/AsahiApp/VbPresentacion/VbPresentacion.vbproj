@@ -753,6 +753,12 @@
     <Compile Include="Requerimientos_principal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Requerimientos_PrincipalVistaRecepcion.Designer.vb">
+      <DependentUpon>Requerimientos_PrincipalVistaRecepcion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_PrincipalVistaRecepcion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Requerimientos_RecepcionPO.Designer.vb">
       <DependentUpon>Requerimientos_RecepcionPO.vb</DependentUpon>
     </Compile>
@@ -1580,6 +1586,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_principal.resx">
       <DependentUpon>Requerimientos_principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_PrincipalVistaRecepcion.resx">
+      <DependentUpon>Requerimientos_PrincipalVistaRecepcion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_RecepcionPO.resx">
       <DependentUpon>Requerimientos_RecepcionPO.vb</DependentUpon>

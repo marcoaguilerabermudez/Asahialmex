@@ -143,6 +143,7 @@ Public Class Requerimientos_RecepcionPO
             dtgvp.Columns(16).Visible = False
             dtgvp.Columns(17).Visible = False
             dtgvp.Columns(32).Visible = False
+            dtgvp.Columns(33).Visible = False
             'dtgvp.Columns(19).Visible = False
             'dtgvp.Columns(20).Visible = False
             'dtgvp.Columns(21).Visible = False
@@ -495,12 +496,12 @@ SELECT  [id]
 
 
     Private Sub ValidarCantidadRequerida(Objeto As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellEndEdit, dtgvp.CellContentClick
-        If e.ColumnIndex = 30 Then
+        If e.ColumnIndex = 31 Then
             Try
-                Cantidad_Requerida = CDbl(dtgvp.Rows(e.RowIndex).Cells("Recibido").Value)
+                Cantidad_Requerida = CDbl(dtgvp.Rows(e.RowIndex).Cells("Cantidad x recibir").Value)
                 dtgvp.Rows(e.RowIndex).Cells("Totalx").Value = dtgvp.Rows(e.RowIndex).Cells("Recibido").Value * dtgvp.Rows(e.RowIndex).Cells("Total Unitario").Value
                 dtgvp.Rows(e.RowIndex).Cells("Totals").Value = dtgvp.Rows(e.RowIndex).Cells("Recibido").Value * dtgvp.Rows(e.RowIndex).Cells("Subtotal Unitario").Value
-                If Cantidad_Requerida > dtgvp.Rows(e.RowIndex).Cells("Cantidad PO").Value Then
+                If Cantidad_Requerida < CDbl(dtgvp.Rows(e.RowIndex).Cells("Recibido").Value) Then
                     MessageBox.Show("La cantidad que desea guardar es mayor a la que tiene pendiente por recibir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     dtgvp.Rows(e.RowIndex).Cells("Recibido").Value = dtgvp.Rows(e.RowIndex).Cells("Cantidad x recibir").Value
                     dtgvp.Rows(e.RowIndex).Cells("Totalx").Value = dtgvp.Rows(e.RowIndex).Cells("Recibido").Value * dtgvp.Rows(e.RowIndex).Cells("Total Unitario").Value
@@ -519,6 +520,10 @@ SELECT  [id]
         End If
         btn_cargar.Enabled = False
         colores()
+
+
+
+
     End Sub
 
     Private Sub btn_selec_Click(sender As Object, e As EventArgs) Handles btn_selec.Click
@@ -639,10 +644,10 @@ SELECT  [id]
 
 
             Try
-                Cantidad_Requerida = CDbl(dtgvp.Rows(i).Cells("Recibido").Value)
+                Cantidad_Requerida = CDbl(dtgvp.Rows(i).Cells("Cantidad x recibir").Value)
                 dtgvp.Rows(i).Cells("Totalx").Value = dtgvp.Rows(i).Cells("Recibido").Value * dtgvp.Rows(i).Cells("Total Unitario").Value
                 dtgvp.Rows(i).Cells("Totals").Value = dtgvp.Rows(i).Cells("Recibido").Value * dtgvp.Rows(i).Cells("Subtotal Unitario").Value
-                If Cantidad_Requerida > dtgvp.Rows(i).Cells("Cantidad PO").Value Then
+                If Cantidad_Requerida < dtgvp.Rows(i).Cells("Recibido").Value Then
                     MessageBox.Show("La cantidad que desea guardar es mayor a la que tiene pendiente por recibir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     dtgvp.Rows(i).Cells("Recibido").Value = dtgvp.Rows(i).Cells("Cantidad x recibir").Value
                     dtgvp.Rows(i).Cells("Totalx").Value = dtgvp.Rows(i).Cells("Recibido").Value * dtgvp.Rows(i).Cells("Total Unitario").Value
@@ -694,18 +699,18 @@ SELECT  [id]
     Private Sub rbt_falta_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_falta.CheckedChanged
 
         filtro = 0
-            predictivo()
-            lbl_txtfiltro.Text = "UUID"
+        predictivo()
+        lbl_txtfiltro.Text = "UUID"
         txt_busca.Text = ""
         lbl_totalfact.Text = 0
         lbl_subtotalfact.Text = 0
         lbl_uuid.Text = ""
         lbl_foliofact.Text = ""
 
-
     End Sub
 
     Private Sub rbt_retardo_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_retardo.CheckedChanged
+
         filtro = 1
         predictivo()
         lbl_txtfiltro.Text = "Folio"
@@ -714,10 +719,13 @@ SELECT  [id]
         lbl_subtotalfact.Text = 0
         lbl_uuid.Text = ""
         lbl_foliofact.Text = ""
+
     End Sub
 
     Private Sub btn_doc_Click(sender As Object, e As EventArgs) Handles btn_doc.Click
+
         muestraetiqueta()
+
     End Sub
 
 
@@ -732,8 +740,6 @@ SELECT  [id]
             lbl_subtotalfact.Enabled = False
             lbl_totalfact.Enabled = False
         End If
-
-
     End Sub
 
     Private Sub txt_busca_TextChanged(sender As Object, e As EventArgs) Handles txt_busca.TextChanged
@@ -769,16 +775,7 @@ SELECT  [id]
             agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = lbl_uuid.Text
             agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
 
-
-
-
-
-
-
             agrega.ExecuteNonQuery()
-
-            ' insertarfilas()
-
 
         Catch ex As Exception
             MessageBox.Show("Error, consulte al administrador")
@@ -816,7 +813,6 @@ SELECT  [id]
         command.CommandType = CommandType.StoredProcedure
 
 
-
         Try
 
             For Each fila In dtgvp.Rows
@@ -829,6 +825,7 @@ SELECT  [id]
                     command.Parameters.AddWithValue("@precio", (fila.Cells("Precio").Value))
                     command.Parameters.AddWithValue("@subtotal", (fila.Cells("Subtotal").Value))
                     command.Parameters.AddWithValue("@id_movpo", (fila.Cells("id_mov").Value))
+                    command.Parameters.AddWithValue("@id_cotizacion", (fila.Cells("id_cotizacion").Value))
 
                     command.ExecuteNonQuery()
                 End If
@@ -860,9 +857,6 @@ SELECT  [id]
             ' MessageBox.Show("Ocurrió un problema, contacte al área de sistemas.", "Aviso")
             cnn.Close()
         End Try
-
-
-
 
     End Sub
 

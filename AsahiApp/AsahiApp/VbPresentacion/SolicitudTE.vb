@@ -446,16 +446,16 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
   when @turnoa = 'Vespertino' then 2
   when @turnoa = 'Nocturno' then 3
   when @turnoa = 'Administrativo' then 10
- when @turnoa = '12 M' then 7
- when @turnoa = '12 N' then 8
+   when @turnoa = '12 M' then 7
+   when @turnoa = '12 N' then 8
   end,
    case
   when @turnoe = 'Matutino' then 1
   when @turnoe = 'Vespertino' then 2
   when @turnoe = 'Nocturno' then 3
   when @turnoe = 'Administrativo' then 10
- when @turnoa = '12 M' then 7
- when @turnoa = '12 N' then 8
+ when @turnoe = '12 M' then 7
+ when @turnoe = '12 N' then 8
   end,
   @parcial, @motivo, 
    case
@@ -603,8 +603,8 @@ if not exists (select clave from giro.[asahi16].[dbo].[Rh_entradasalida2] where 
   when @turnoe = 'Vespertino' then 2
   when @turnoe = 'Nocturno' then 3
   when @turnoe = 'Administrativo' then 10
- when @turnoa = '12 M' then 7
- when @turnoa = '12 N' then 8
+ when @turnoe = '12 M' then 7
+ when @turnoe = '12 N' then 8
   end and fecha = @fecha)
 begin
  insert into giro.[asahi16].[dbo].[Rh_entradasalida2] (clave,fecha,turno,grupo) 
@@ -622,8 +622,8 @@ values (RIGHT(CONCAT('00000', @clave), 5),@fecha,
   when @turnoe = 'Vespertino' then 2
   when @turnoe = 'Nocturno' then 3
   when @turnoe = 'Administrativo' then 10
- when @turnoa = '12 M' then 7
- when @turnoa = '12 N' then 8
+ when @turnoe = '12 M' then 7
+ when @turnoe = '12 N' then 8
   end)
   end
 
@@ -633,8 +633,8 @@ values (RIGHT(CONCAT('00000', @clave), 5),@fecha,
  when @turnoe = 'Vespertino' then 2
  when @turnoe = 'Nocturno' then 3
 when @turnoe = 'Administrativo' then 10
- when @turnoa = '12 M' then 7
- when @turnoa = '12 N' then 8
+ when @turnoe = '12 M' then 7
+ when @turnoe = '12 N' then 8
 end and fecha = @fecha)
 begin
 insert into [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] (CLAVE, FECHA, ValSuper, ValRh,PlanExtra,TurnoA,TurnoE )
@@ -652,8 +652,8 @@ when @turnoe = 'Matutino' then 1
 when @turnoe = 'Vespertino' then 2
 when @turnoe = 'Nocturno' then 3
 when @turnoe = 'Administrativo' then 10
- when @turnoa = '12 M' then 7
- when @turnoa = '12 N' then 8
+ when @turnoe = '12 M' then 7
+ when @turnoe = '12 N' then 8
 end
 end
 ", cnn)
@@ -720,8 +720,8 @@ when @turnoe = 'Matutino' then 1
 when @turnoe = 'Vespertino' then 2
 when @turnoe = 'Nocturno' then 3
 when @turnoe = 'Administrativo' then 10
- when @turnoa = '12 M' then 7
- when @turnoa = '12 N' then 8
+ when @turnoe = '12 M' then 7
+ when @turnoe = '12 N' then 8
 end
 end
 
