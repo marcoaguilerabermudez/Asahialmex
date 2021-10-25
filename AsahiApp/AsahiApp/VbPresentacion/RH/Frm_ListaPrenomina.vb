@@ -1476,9 +1476,9 @@ Public Class Frm_ListaPrenomina
         For fila = 0 To totalFilas - 2
             idTurno = Dgv_ListaPrenomina.Rows(fila).Cells("idTurno").Value
             If idTurno > 6 Then 'Se cambia < de 7 a > 6 para los nuevos turnos.
-                For colum = 5 To 7
-                    If colum > 5 Then
-                        If idTurno = 10 Then
+                For colum = 4 To 7
+                    If colum > 4 Then
+                        If idTurno <= 10 Then
                             Dim ce As String = "entrada" + Convert.ToString(colum) + ""
                             Dim cs As String = "salida" + Convert.ToString(colum) + ""
                             If Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "" Then
@@ -1493,8 +1493,8 @@ Public Class Frm_ListaPrenomina
                                 Dgv_ListaPrenomina.Rows(fila).Cells(cs).Style.ForeColor = Color.White
                                 Dgv_ListaPrenomina.Rows(fila).Cells(cs).ReadOnly = True
                             End If
-                        Else
-                            If colum = 7 Then
+                        ElseIf colum > 5 Then
+                            If idTurno = 10 Then
                                 Dim ce As String = "entrada" + Convert.ToString(colum) + ""
                                 Dim cs As String = "salida" + Convert.ToString(colum) + ""
                                 If Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "" Then
