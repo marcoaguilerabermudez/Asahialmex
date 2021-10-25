@@ -3,7 +3,9 @@ Imports System.Data.SqlClient
 Imports Microsoft.Reporting.WinForms
 Imports Clases
 Imports Negocio
-Imports Excel = Microsoft.Office.Interop.Excel
+Imports Excel = Microsoft.Office.Interop.Excel 'hola
+Imports Microsoft.ReportingServices.Rendering.ExcelRenderer
+
 Public Class Frm_ListaPrenomina
 #Region "Variables de Clase"
     Dim cadConex As SqlConnection
@@ -140,7 +142,7 @@ Public Class Frm_ListaPrenomina
                 If Me.rangoPermiso = 1 Or Me.rangoPermiso = 3 Then Btn_GuardarBono.Visible = True
             End If
 
-                If sem <> hrs.Semana Then Cmb_Semanas.SelectedItem = hrs.Semana
+            If sem <> hrs.Semana Then Cmb_Semanas.SelectedItem = hrs.Semana
             'Btn_Excel.Visible = False
             Txt_FiltroId.Enabled = False
             Txt_FiltroId.Text = ""
@@ -751,7 +753,7 @@ Public Class Frm_ListaPrenomina
                 Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value = Format(item.HoraEntradaReal1, "HH:mm")
                 Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.BackColor = Color.White
                 If Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").ReadOnly = True
-                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) <item.HoraEntradaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.Red
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal1 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada1").Style.ForeColor = Color.Red
             End If
             If item.HoraSalidaReal1 <> "1/1/1900 12:00:00 AM" Then
                 Dgv_ListaPrenomina.Rows(fila).Cells("salida1").Value = Format(item.HoraSalidaReal1, "HH:mm")
@@ -799,37 +801,37 @@ Public Class Frm_ListaPrenomina
                 Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value = Format(item.HoraEntradaReal5, "HH:mm")
                 Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.BackColor = Color.White
                 If Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").ReadOnly = True
-                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal5 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.Red
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal5 And (item.IdTurno <> 8 Or item.IdTurno <> 7) Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada5").Style.ForeColor = Color.Red
             End If
             If item.HoraSalidaReal5 <> "1/1/1900 12:00:00 AM" Then
                 Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value = Format(item.HoraSalidaReal5, "HH:mm")
                 Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.BackColor = Color.White
                 If Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").ReadOnly = True
-                If item.HoraSalida > item.HoraSalidaReal5 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.Red
+                If item.HoraSalida > item.HoraSalidaReal5 And (item.IdTurno <> 8 Or item.IdTurno <> 7) Then Dgv_ListaPrenomina.Rows(fila).Cells("salida5").Style.ForeColor = Color.Red
             End If
             If item.HoraEntradaReal6 <> "1/1/1900 12:00:00 AM" Then
                 Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value = Format(item.HoraEntradaReal6, "HH:mm")
                 Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.BackColor = Color.White
                 If Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").ReadOnly = True
-                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal6 And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.Red
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal6 And (item.IdTurno <> 8 Or item.IdTurno <> 7 Or item.IdTurno <> 4) Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada6").Style.ForeColor = Color.Red
             End If
             If item.HoraSalidaReal6 <> "1/1/1900 12:00:00 AM" Then
                 Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value = Format(item.HoraSalidaReal6, "HH:mm")
                 Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.BackColor = Color.White
                 If Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").ReadOnly = True
-                If (item.HoraSalida > item.HoraSalidaReal6) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.Red
+                If (item.HoraSalida > item.HoraSalidaReal6) And (item.IdTurno <> 8 Or item.IdTurno <> 7 Or item.IdTurno <> 4) Then Dgv_ListaPrenomina.Rows(fila).Cells("salida6").Style.ForeColor = Color.Red
             End If
             If item.HoraEntradaReal7 <> "1/1/1900 12:00:00 AM" Then
                 Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value = Format(item.HoraEntradaReal7, "HH:mm")
                 Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.BackColor = Color.White
                 If Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").ReadOnly = True
-                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal7 And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.Red
+                If (DateAdd(DateInterval.Minute, 1, Convert.ToDateTime(item.HoraEntrada))) < item.HoraEntradaReal7 And (item.IdTurno <> 8 Or item.IdTurno <> 7 Or item.IdTurno <> 4) Then Dgv_ListaPrenomina.Rows(fila).Cells("entrada7").Style.ForeColor = Color.Red
             End If
             If item.HoraSalidaReal7 <> "1/1/1900 12:00:00 AM" Then
                 Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value = Format(item.HoraSalidaReal7, "HH:mm")
                 Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.BackColor = Color.White
                 If Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Value <> "0" Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").ReadOnly = True
-                If (item.HoraSalida > item.HoraSalidaReal7) And item.IdTurno <> 4 Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.Red
+                If (item.HoraSalida > item.HoraSalidaReal7) And (item.IdTurno <> 8 Or item.IdTurno <> 7 Or item.IdTurno <> 4) Then Dgv_ListaPrenomina.Rows(fila).Cells("salida7").Style.ForeColor = Color.Red
             End If
             Dgv_ListaPrenomina.Rows(fila).Cells("b1").Value = item.Nota1
             Dgv_ListaPrenomina.Rows(fila).Cells("b2").Value = item.Nota2
@@ -1473,10 +1475,10 @@ Public Class Frm_ListaPrenomina
         Dim fila As Integer, colum As Integer, idTurno As Integer
         For fila = 0 To totalFilas - 2
             idTurno = Dgv_ListaPrenomina.Rows(fila).Cells("idTurno").Value
-            If idTurno < 7 Then
+            If idTurno > 6 Then 'Se cambia < de 7 a > 6 para los nuevos turnos.
                 For colum = 5 To 7
                     If colum > 5 Then
-                        If idTurno = 4 Or 10 Then
+                        If idTurno = 10 Then
                             Dim ce As String = "entrada" + Convert.ToString(colum) + ""
                             Dim cs As String = "salida" + Convert.ToString(colum) + ""
                             If Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "" Then
@@ -1492,7 +1494,7 @@ Public Class Frm_ListaPrenomina
                                 Dgv_ListaPrenomina.Rows(fila).Cells(cs).ReadOnly = True
                             End If
                         Else
-                            If colum = 7 Or colum = 8 Then
+                            If colum = 7 Then
                                 Dim ce As String = "entrada" + Convert.ToString(colum) + ""
                                 Dim cs As String = "salida" + Convert.ToString(colum) + ""
                                 If Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "" Then
@@ -2102,13 +2104,13 @@ Public Class Frm_ListaPrenomina
                     item.Incidencia1 = "N"
                 Case "HO"
                     item.Incidencia1 = "H"
-                Case  "VUL"
+                Case "VUL"
                     item.Incidencia1 = "D"
-                Case  "CC"
+                Case "CC"
                     item.Incidencia1 = "K"
-                Case  "SO"
+                Case "SO"
                     item.Incidencia1 = "O"
-                Case  "CF"
+                Case "CF"
                     item.Incidencia1 = "J"
                 Case "SHU"
                     item.Incidencia1 = "Z"
@@ -2245,8 +2247,9 @@ Public Class Frm_ListaPrenomina
         Dim bono As Integer = 0
 
         With Dgv_ListaPrenomina.Rows(fila)
-            If .Cells("idTurno").Value = 4 Or .Cells("idTurno").Value = 5 Or .Cells("idTurno").Value = 6 Then tof = 5
+            If .Cells("idTurno").Value = 4 Or .Cells("idTurno").Value = 5 Or .Cells("idTurno").Value = 6 Or .Cells("idTurno").Value = 10 Then tof = 5
             If .Cells("idTurno").Value = 1 Or .Cells("idTurno").Value = 2 Or .Cells("idTurno").Value = 3 Then tof = 6
+            If .Cells("idTurno").Value = 7 Or .Cells("idTurno").Value = 8 Then tof = 4
             For column = 1 To tof
                 Dim ce As String = "entrada" + Convert.ToString(column) + ""
                 Dim cs As String = "salida" + Convert.ToString(column) + ""
@@ -2675,6 +2678,8 @@ Public Class Frm_ListaPrenomina
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
     End Sub
+
+
 
     Private Function RecuperarDatoInc(ByVal dato As String) As String
         Select Case dato

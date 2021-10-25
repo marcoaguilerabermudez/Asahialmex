@@ -433,4 +433,29 @@ Public Class MisPOPrincipal
 
     End Sub
 
+    Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
+
+        Modulo_vistarecepprincipal.e_codigo = Me.dtgvp.Rows(e.RowIndex).Cells("codigo").Value.ToString()
+        Modulo_vistarecepprincipal.e_serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie").Value.ToString()
+        Modulo_vistarecepprincipal.e_po = lbl_po.Text
+        Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
+
+        Dim Req_PrinRecep As New Requerimientos_PrincipalVistaRecepcion(id, depto, permiso, nombre, p_vales)
+        Req_PrinRecep.Show()
+    End Sub
+
 End Class
+
+
+Module Modulo_vistarecepprincipal
+
+    Public e_codigo As Integer
+    Public e_serie As String
+    Public e_po As String
+    Public e_proveedor As String
+
+
+
+
+End Module
+
