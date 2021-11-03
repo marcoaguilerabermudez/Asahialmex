@@ -117,15 +117,15 @@ Public Class Requerimientos_principal
         If p_vales = 0 Then
 
             Me.Text = "Mis requerimientos"
-            cbx_area.Visible = False
-            lbl_area.Visible = False
+            cbx_area.Enabled = False
+            lbl_area.Enabled = False
             cargagrid()
 
         ElseIf p_vales = 1 Then
 
             Me.Text = "Requerimientos"
-            cbx_area.Visible = True
-            lbl_area.Visible = True
+            cbx_area.Enabled = True
+            lbl_area.Enabled = True
 
         End If
 
@@ -174,7 +174,7 @@ Public Class Requerimientos_principal
         dtgvp.Columns("Fecha").Width = 60
         cnn.Close()
 
-
+        colores()
 
 
     End Sub
@@ -186,10 +186,12 @@ Public Class Requerimientos_principal
 
     Private Sub dtgvp_CellContentClick0(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellClick
         lbl_req.Text = Me.dtgvp.Rows(e.RowIndex).Cells(0).Value.ToString()
+        colores()
     End Sub
 
     Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.RowEnter
         lbl_req.Text = Me.dtgvp.Rows(e.RowIndex).Cells(0).Value.ToString()
+        colores()
     End Sub
 
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
@@ -266,6 +268,23 @@ Public Class Requerimientos_principal
                 a = "48"
         End Select
     End Sub
+
+
+    Sub colores()
+
+        Try
+            For Each row As DataGridViewRow In Me.dtgvp.Rows
+
+                If row.Cells(“Estado”).Value = 0 Then
+                    row.DefaultCellStyle.BackColor = Color.White
+                ElseIf row.Cells(“Estado”).Value = 1 Then
+                    row.DefaultCellStyle.BackColor = Color.LightBlue
+                End If
+            Next
+        Catch
+        End Try
+    End Sub
+
 End Class
 
 Module Modulo_Req_principal

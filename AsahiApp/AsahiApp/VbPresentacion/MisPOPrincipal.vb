@@ -31,10 +31,6 @@ Public Class MisPOPrincipal
         Me.nombre = nombre
         Me.p_vales = p_vales
 
-
-
-
-
     End Sub
 
     Private Sub MisPOPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -208,6 +204,8 @@ Public Class MisPOPrincipal
             dtgvp.Columns(14).Visible = False
             dtgvp.Columns(15).Visible = False
             dtgvp.Columns(16).Visible = False
+            dtgvp.Columns("RFC").Visible = False
+            dtgvp.Columns("Estado").Visible = False
             'dtgvp.Columns(17).Visible = False
             'dtgvp.Columns(18).Visible = False
             'dtgvp.Columns(19).Visible = False
@@ -362,7 +360,7 @@ Public Class MisPOPrincipal
         End If
     End Sub
 
-    Private Sub btn_pdf_Click(sender As Object, e As EventArgs) Handles btn_pdf.Click
+    Private Sub btn_pdf_Click(sender As Object, e As EventArgs)
         ContenedorReportePO.serie = serie
         ContenedorReportePO.codigo = codigo
         ContenedorReportePO.Show()
@@ -438,10 +436,15 @@ Public Class MisPOPrincipal
         Modulo_vistarecepprincipal.e_codigo = Me.dtgvp.Rows(e.RowIndex).Cells("codigo").Value.ToString()
         Modulo_vistarecepprincipal.e_serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie").Value.ToString()
         Modulo_vistarecepprincipal.e_po = lbl_po.Text
+        Modulo_vistarecepprincipal.e_subtotal = lbl_subtotal.Text
+        Modulo_vistarecepprincipal.e_total = lbl_total.Text
+        Modulo_vistarecepprincipal.e_moneda = lbl_moneda.Text
+        Modulo_vistarecepprincipal.e_tc = lbl_tc.Text
+        Modulo_vistarecepprincipal.e_rfc = Me.dtgvp.Rows(e.RowIndex).Cells("RFC").Value.ToString()
         Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
 
-        Dim Req_PrinRecep As New Requerimientos_PrincipalVistaRecepcion(id, depto, permiso, nombre, p_vales)
-        Req_PrinRecep.Show()
+        Dim Req_movPO As New Requerimientos_MovimientosPO(id, depto, permiso, nombre, p_vales)
+        Req_movPO.Show()
     End Sub
 
 End Class
@@ -453,6 +456,22 @@ Module Modulo_vistarecepprincipal
     Public e_serie As String
     Public e_po As String
     Public e_proveedor As String
+    Public e_subtotal As Double
+    Public e_total As Double
+    Public e_moneda As String
+    Public e_tc As Double
+    Public e_rfc As String
+    Public e_provision As Integer
+
+    Public e_ffac As String
+    Public e_fpago As String
+    Public e_fsub As Double
+    Public e_ftotal As Double
+
+
+    Public e_uuid As String
+    Public e_folio As String
+    Public e_estadoprov As Integer
 
 
 

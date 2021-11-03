@@ -22,8 +22,8 @@ Partial Class Requerimientos_movimientos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Requerimientos_movimientos))
         Me.dtgvp = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -84,6 +84,10 @@ Partial Class Requerimientos_movimientos
         Me.Label24 = New System.Windows.Forms.Label()
         Me.cbx_fam = New System.Windows.Forms.ComboBox()
         Me.btn_doc = New System.Windows.Forms.Button()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label26 = New System.Windows.Forms.Label()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -96,24 +100,24 @@ Partial Class Requerimientos_movimientos
         Me.dtgvp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgvp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgvp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dtgvp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.NullValue = Nothing
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.NullValue = Nothing
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle4
         Me.dtgvp.Location = New System.Drawing.Point(12, 12)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
@@ -566,7 +570,6 @@ Partial Class Requerimientos_movimientos
         Me.btn_desma.TabIndex = 437
         Me.btn_desma.Text = "Desmarcar"
         Me.btn_desma.UseVisualStyleBackColor = False
-        Me.btn_desma.Visible = False
         '
         'btn_selec
         '
@@ -577,7 +580,6 @@ Partial Class Requerimientos_movimientos
         Me.btn_selec.TabIndex = 436
         Me.btn_selec.Text = "Seleccionar"
         Me.btn_selec.UseVisualStyleBackColor = False
-        Me.btn_selec.Visible = False
         '
         'dtp_fecharecep
         '
@@ -735,7 +737,6 @@ Partial Class Requerimientos_movimientos
         Me.btn_pdf.TabIndex = 435
         Me.btn_pdf.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btn_pdf.UseVisualStyleBackColor = False
-        Me.btn_pdf.Visible = False
         '
         'txt_liga
         '
@@ -787,11 +788,55 @@ Partial Class Requerimientos_movimientos
         Me.btn_doc.UseVisualStyleBackColor = False
         Me.btn_doc.Visible = False
         '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.LightGray
+        Me.Panel6.Location = New System.Drawing.Point(788, 25)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(32, 13)
+        Me.Panel6.TabIndex = 460
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.BackColor = System.Drawing.SystemColors.Control
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label25.Location = New System.Drawing.Point(822, 28)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(70, 9)
+        Me.Label25.TabIndex = 459
+        Me.Label25.Text = "RECIBIDO TOTAL"
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.Yellow
+        Me.Panel7.Location = New System.Drawing.Point(788, 5)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(32, 13)
+        Me.Panel7.TabIndex = 458
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.BackColor = System.Drawing.SystemColors.Control
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label26.Location = New System.Drawing.Point(821, 8)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(78, 9)
+        Me.Label26.TabIndex = 457
+        Me.Label26.Text = "RECIBIDO PARCIAL"
+        '
         'Requerimientos_movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1034, 625)
+        Me.Controls.Add(Me.Panel6)
+        Me.Controls.Add(Me.Label25)
+        Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.cbx_fam)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.txt_liga)
@@ -921,4 +966,8 @@ Partial Class Requerimientos_movimientos
     Friend WithEvents Label24 As Label
     Friend WithEvents cbx_fam As ComboBox
     Friend WithEvents btn_doc As Button
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Label26 As Label
 End Class

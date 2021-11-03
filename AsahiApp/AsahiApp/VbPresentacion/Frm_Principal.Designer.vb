@@ -112,6 +112,7 @@ Partial Class Frm_Principal
         Me.OrdenDeCompraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RevisarPOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecibirPOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecepcionesPOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CatálogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -687,7 +688,7 @@ Partial Class Frm_Principal
         '
         'RequerimientosToolStripMenuItem
         '
-        Me.RequerimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.MisRequerimientosToolStripMenuItem, Me.CotizaciónToolStripMenuItem, Me.OrdenDeCompraToolStripMenuItem, Me.RevisarPOToolStripMenuItem, Me.RecibirPOToolStripMenuItem})
+        Me.RequerimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.MisRequerimientosToolStripMenuItem, Me.CotizaciónToolStripMenuItem, Me.OrdenDeCompraToolStripMenuItem, Me.RevisarPOToolStripMenuItem, Me.RecibirPOToolStripMenuItem, Me.RecepcionesPOToolStripMenuItem})
         Me.RequerimientosToolStripMenuItem.Enabled = False
         Me.RequerimientosToolStripMenuItem.Name = "RequerimientosToolStripMenuItem"
         Me.RequerimientosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
@@ -728,6 +729,12 @@ Partial Class Frm_Principal
         Me.RecibirPOToolStripMenuItem.Name = "RecibirPOToolStripMenuItem"
         Me.RecibirPOToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
         Me.RecibirPOToolStripMenuItem.Text = "Recibir PO"
+        '
+        'RecepcionesPOToolStripMenuItem
+        '
+        Me.RecepcionesPOToolStripMenuItem.Name = "RecepcionesPOToolStripMenuItem"
+        Me.RecepcionesPOToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.RecepcionesPOToolStripMenuItem.Text = "Recepciones PO"
         '
         'CatálogosToolStripMenuItem
         '
@@ -1174,4 +1181,5 @@ Partial Class Frm_Principal
     Friend WithEvents ListaToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents RevisarPOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecibirPOToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RecepcionesPOToolStripMenuItem As ToolStripMenuItem
 End Class

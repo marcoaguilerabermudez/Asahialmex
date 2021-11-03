@@ -67,7 +67,21 @@ Partial Class MisPOPrincipal
         Me.lbl_po = New System.Windows.Forms.Label()
         Me.lbl_proveedor = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btn_pdf = New System.Windows.Forms.Button()
+        Me.btn_desma = New System.Windows.Forms.Button()
+        Me.btn_selec = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label17 = New System.Windows.Forms.Label()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -99,11 +113,11 @@ Partial Class MisPOPrincipal
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dtgvp.Location = New System.Drawing.Point(12, 131)
+        Me.dtgvp.Location = New System.Drawing.Point(12, 120)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.ReadOnly = True
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(630, 548)
+        Me.dtgvp.Size = New System.Drawing.Size(630, 488)
         Me.dtgvp.TabIndex = 428
         '
         'lbl_req
@@ -430,7 +444,7 @@ Partial Class MisPOPrincipal
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label37.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label37.Location = New System.Drawing.Point(761, 6)
+        Me.Label37.Location = New System.Drawing.Point(374, 6)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(67, 13)
         Me.Label37.TabIndex = 481
@@ -441,7 +455,7 @@ Partial Class MisPOPrincipal
         Me.txt_no.BackColor = System.Drawing.SystemColors.Control
         Me.txt_no.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_no.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_no.Location = New System.Drawing.Point(715, 35)
+        Me.txt_no.Location = New System.Drawing.Point(328, 35)
         Me.txt_no.MaxLength = 99
         Me.txt_no.Name = "txt_no"
         Me.txt_no.Size = New System.Drawing.Size(62, 20)
@@ -454,7 +468,7 @@ Partial Class MisPOPrincipal
         Me.btn_fil2.Enabled = False
         Me.btn_fil2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_fil2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btn_fil2.Location = New System.Drawing.Point(746, 68)
+        Me.btn_fil2.Location = New System.Drawing.Point(359, 68)
         Me.btn_fil2.Name = "btn_fil2"
         Me.btn_fil2.Size = New System.Drawing.Size(120, 35)
         Me.btn_fil2.TabIndex = 482
@@ -466,7 +480,7 @@ Partial Class MisPOPrincipal
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label13.Location = New System.Drawing.Point(833, 18)
+        Me.Label13.Location = New System.Drawing.Point(446, 18)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(36, 13)
         Me.Label13.TabIndex = 485
@@ -478,7 +492,7 @@ Partial Class MisPOPrincipal
         Me.cbx_serie.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.cbx_serie.FormattingEnabled = True
         Me.cbx_serie.Items.AddRange(New Object() {"A", "N"})
-        Me.cbx_serie.Location = New System.Drawing.Point(829, 34)
+        Me.cbx_serie.Location = New System.Drawing.Point(442, 34)
         Me.cbx_serie.Name = "cbx_serie"
         Me.cbx_serie.Size = New System.Drawing.Size(47, 21)
         Me.cbx_serie.TabIndex = 484
@@ -489,7 +503,7 @@ Partial Class MisPOPrincipal
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label8.Location = New System.Drawing.Point(732, 16)
+        Me.Label8.Location = New System.Drawing.Point(345, 16)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(23, 13)
         Me.Label8.TabIndex = 483
@@ -525,7 +539,7 @@ Partial Class MisPOPrincipal
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.Label11)
         Me.Panel2.Controls.Add(Me.Label10)
-        Me.Panel2.Location = New System.Drawing.Point(648, 149)
+        Me.Panel2.Location = New System.Drawing.Point(648, 116)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(344, 493)
         Me.Panel2.TabIndex = 484
@@ -572,22 +586,179 @@ Partial Class MisPOPrincipal
         Me.Label6.TabIndex = 480
         Me.Label6.Text = "Proveedor"
         '
-        'btn_pdf
+        'btn_desma
         '
-        Me.btn_pdf.ForeColor = System.Drawing.Color.Black
-        Me.btn_pdf.Image = CType(resources.GetObject("btn_pdf.Image"), System.Drawing.Image)
-        Me.btn_pdf.Location = New System.Drawing.Point(924, 16)
-        Me.btn_pdf.Name = "btn_pdf"
-        Me.btn_pdf.Size = New System.Drawing.Size(68, 71)
-        Me.btn_pdf.TabIndex = 435
-        Me.btn_pdf.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_pdf.UseVisualStyleBackColor = False
+        Me.btn_desma.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_desma.Location = New System.Drawing.Point(33, 616)
+        Me.btn_desma.Name = "btn_desma"
+        Me.btn_desma.Size = New System.Drawing.Size(90, 32)
+        Me.btn_desma.TabIndex = 518
+        Me.btn_desma.Text = "Desmarcar"
+        Me.btn_desma.UseVisualStyleBackColor = False
+        '
+        'btn_selec
+        '
+        Me.btn_selec.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_selec.Location = New System.Drawing.Point(33, 654)
+        Me.btn_selec.Name = "btn_selec"
+        Me.btn_selec.Size = New System.Drawing.Size(90, 32)
+        Me.btn_selec.TabIndex = 517
+        Me.btn_selec.Text = "Seleccionar"
+        Me.btn_selec.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button1.Enabled = False
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.ForestGreen
+        Me.Button1.Location = New System.Drawing.Point(162, 634)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(120, 35)
+        Me.Button1.TabIndex = 519
+        Me.Button1.Text = "Autorizar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.LightGray
+        Me.Panel6.Location = New System.Drawing.Point(784, 69)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(32, 13)
+        Me.Panel6.TabIndex = 533
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.SystemColors.Control
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label3.Location = New System.Drawing.Point(818, 72)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(70, 9)
+        Me.Label3.TabIndex = 532
+        Me.Label3.Text = "RECIBIDO TOTAL"
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.Yellow
+        Me.Panel7.Location = New System.Drawing.Point(784, 49)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(32, 13)
+        Me.Panel7.TabIndex = 531
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.BackColor = System.Drawing.SystemColors.Control
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label26.Location = New System.Drawing.Point(817, 52)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(78, 9)
+        Me.Label26.TabIndex = 530
+        Me.Label26.Text = "RECIBIDO PARCIAL"
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.DarkGoldenrod
+        Me.Panel5.Location = New System.Drawing.Point(903, 26)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(32, 13)
+        Me.Panel5.TabIndex = 529
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.SystemColors.Control
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label14.Location = New System.Drawing.Point(936, 29)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(53, 9)
+        Me.Label14.TabIndex = 528
+        Me.Label14.Text = "CANCELADA"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Thistle
+        Me.Panel1.Location = New System.Drawing.Point(903, 6)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(32, 13)
+        Me.Panel1.TabIndex = 527
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.SystemColors.Control
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label15.Location = New System.Drawing.Point(936, 9)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(44, 9)
+        Me.Label15.TabIndex = 526
+        Me.Label15.Text = "CERRADA"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.LightGreen
+        Me.Panel3.Location = New System.Drawing.Point(784, 28)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(32, 13)
+        Me.Panel3.TabIndex = 525
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.SystemColors.Control
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label20.Location = New System.Drawing.Point(817, 32)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(57, 9)
+        Me.Label20.TabIndex = 524
+        Me.Label20.Text = "AUTORIZADO"
+        '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.White
+        Me.Panel8.Location = New System.Drawing.Point(784, 6)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(32, 13)
+        Me.Panel8.TabIndex = 522
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.SystemColors.Control
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label17.Location = New System.Drawing.Point(817, 9)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(39, 9)
+        Me.Label17.TabIndex = 520
+        Me.Label17.Text = "CREADO"
         '
         'MisPOPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1004, 691)
+        Me.Controls.Add(Me.Panel6)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Label26)
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Panel8)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btn_desma)
+        Me.Controls.Add(Me.btn_selec)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Panel2)
@@ -597,7 +768,6 @@ Partial Class MisPOPrincipal
         Me.Controls.Add(Me.btn_fil2)
         Me.Controls.Add(Me.btn_solicitar)
         Me.Controls.Add(Me.txt_no)
-        Me.Controls.Add(Me.btn_pdf)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dtp2)
         Me.Controls.Add(Me.Label4)
@@ -618,7 +788,6 @@ Partial Class MisPOPrincipal
     Friend WithEvents dtgvp As DataGridView
     Friend WithEvents lbl_req As Label
     Friend WithEvents btn_solicitar As Button
-    Friend WithEvents btn_pdf As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents dtp2 As DateTimePicker
     Friend WithEvents Label4 As Label
@@ -658,4 +827,19 @@ Partial Class MisPOPrincipal
     Friend WithEvents Label6 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents cbx_serie As ComboBox
+    Friend WithEvents btn_desma As Button
+    Friend WithEvents btn_selec As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Label17 As Label
 End Class

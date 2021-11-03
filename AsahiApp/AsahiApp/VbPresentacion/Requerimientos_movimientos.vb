@@ -78,9 +78,9 @@ Public Class Requerimientos_movimientos
             btn_solicitar.Text = "Guardar"
             lbl_moneda.Enabled = False
             btn_autoriza.Visible = False
-            'btn_pdf.Visible = False
-            'btn_desma.Visible = False
-            'btn_selec.Visible = False
+            btn_pdf.Visible = True
+            btn_desma.Visible = True
+            btn_selec.Visible = True
 
 
         ElseIf p_vales = 1 Then
@@ -196,8 +196,16 @@ Public Class Requerimientos_movimientos
                     row.DefaultCellStyle.BackColor = Color.LightGreen
                 ElseIf row.Cells(“Estado_mov”).Value = 5 Then
                     row.DefaultCellStyle.BackColor = Color.Thistle
+
+
                 ElseIf row.Cells(“Estado_mov”).Value = 6 Then
                     row.DefaultCellStyle.BackColor = Color.DarkGoldenrod
+
+                ElseIf row.Cells(“Estado_mov”).Value = 7 Then
+                    row.DefaultCellStyle.BackColor = Color.Yellow
+
+                ElseIf row.Cells(“Estado_mov”).Value = 8 Then
+                    row.DefaultCellStyle.BackColor = Color.LightGray
 
                 End If
             Next

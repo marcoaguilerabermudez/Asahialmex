@@ -523,7 +523,7 @@ Partial Class Requerimientos_RecepcionPO
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.LightBlue
-        Me.Panel4.Location = New System.Drawing.Point(273, 28)
+        Me.Panel4.Location = New System.Drawing.Point(193, 28)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(32, 13)
         Me.Panel4.TabIndex = 521
@@ -531,7 +531,7 @@ Partial Class Requerimientos_RecepcionPO
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Location = New System.Drawing.Point(273, 8)
+        Me.Panel3.Location = New System.Drawing.Point(193, 8)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(32, 13)
         Me.Panel3.TabIndex = 520
@@ -542,7 +542,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(306, 32)
+        Me.Label1.Location = New System.Drawing.Point(226, 32)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 9)
         Me.Label1.TabIndex = 519
@@ -554,7 +554,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label4.BackColor = System.Drawing.SystemColors.Control
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(306, 11)
+        Me.Label4.Location = New System.Drawing.Point(226, 11)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 9)
         Me.Label4.TabIndex = 518

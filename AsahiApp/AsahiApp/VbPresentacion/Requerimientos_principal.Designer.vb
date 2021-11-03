@@ -35,6 +35,8 @@ Partial Class Requerimientos_principal
         Me.lbl_area = New System.Windows.Forms.Label()
         Me.cbx_area = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -62,7 +64,7 @@ Partial Class Requerimientos_principal
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(182, 9)
+        Me.Label1.Location = New System.Drawing.Point(63, 59)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(35, 13)
         Me.Label1.TabIndex = 167
@@ -71,7 +73,7 @@ Partial Class Requerimientos_principal
         'dtp2
         '
         Me.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp2.Location = New System.Drawing.Point(152, 28)
+        Me.dtp2.Location = New System.Drawing.Point(33, 78)
         Me.dtp2.Name = "dtp2"
         Me.dtp2.Size = New System.Drawing.Size(100, 20)
         Me.dtp2.TabIndex = 166
@@ -81,7 +83,7 @@ Partial Class Requerimientos_principal
         Me.btn_solicitar.BackColor = System.Drawing.Color.Gainsboro
         Me.btn_solicitar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_solicitar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btn_solicitar.Location = New System.Drawing.Point(305, 64)
+        Me.btn_solicitar.Location = New System.Drawing.Point(253, 64)
         Me.btn_solicitar.Name = "btn_solicitar"
         Me.btn_solicitar.Size = New System.Drawing.Size(120, 35)
         Me.btn_solicitar.TabIndex = 426
@@ -127,7 +129,7 @@ Partial Class Requerimientos_principal
         Me.lbl_req.AutoSize = True
         Me.lbl_req.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_req.ForeColor = System.Drawing.Color.Black
-        Me.lbl_req.Location = New System.Drawing.Point(685, 83)
+        Me.lbl_req.Location = New System.Drawing.Point(725, 83)
         Me.lbl_req.Name = "lbl_req"
         Me.lbl_req.Size = New System.Drawing.Size(38, 13)
         Me.lbl_req.TabIndex = 428
@@ -140,7 +142,7 @@ Partial Class Requerimientos_principal
         Me.lbl_area.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_area.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_area.ForeColor = System.Drawing.Color.Black
-        Me.lbl_area.Location = New System.Drawing.Point(481, 12)
+        Me.lbl_area.Location = New System.Drawing.Point(298, 12)
         Me.lbl_area.Name = "lbl_area"
         Me.lbl_area.Size = New System.Drawing.Size(33, 13)
         Me.lbl_area.TabIndex = 430
@@ -153,7 +155,7 @@ Partial Class Requerimientos_principal
         Me.cbx_area.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.cbx_area.FormattingEnabled = True
         Me.cbx_area.Items.AddRange(New Object() {"ASEGURAMIENTO DE CALIDAD F1", "ASUNTOS GENERALES", "ATENCIÓN AL CLIENTE", "COMPRAS", "CONTABILIDAD", "CONTROL DE MANUFACTURA", "CONTROL DE PRODUCCION", "MOLDES", "SEGURIDAD", "SISTEMAS IT", "INGENIERÍA MAQUINADO", "INGENIERÍA FUNDICIÓN", "INSPECCION PRODUCCION", "FUNDICION 1", "FUNDICION 2", "ACABADO", "ACABADO 2", "CONTROL DE CLIENTES", "MANTENIMIENTO DE PLANTA", "MANTENIMIENTO FUNDICION", "MANTENIMIENTO MAQUINADO", "MAQUINADO F2", "INSPECCIÓN FUNDICION", "INSPECCIÓN MAQUINADO", "MAQUINADO F1", "FUSION", "ASEGURAMIENTO DE CALIDAD F2", "REPARACION DE MOLDES", "PRODUCCIÓN"})
-        Me.cbx_area.Location = New System.Drawing.Point(348, 31)
+        Me.cbx_area.Location = New System.Drawing.Point(165, 31)
         Me.cbx_area.Name = "cbx_area"
         Me.cbx_area.Size = New System.Drawing.Size(306, 21)
         Me.cbx_area.TabIndex = 429
@@ -169,11 +171,33 @@ Partial Class Requerimientos_principal
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.LightBlue
+        Me.Panel4.Location = New System.Drawing.Point(534, 12)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(32, 13)
+        Me.Panel4.TabIndex = 536
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.SystemColors.Control
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.Location = New System.Drawing.Point(572, 15)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(97, 9)
+        Me.Label2.TabIndex = 535
+        Me.Label2.Text = "RECEPCIÓN COMPLETA"
+        '
         'Requerimientos_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(777, 635)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lbl_area)
         Me.Controls.Add(Me.cbx_area)
         Me.Controls.Add(Me.lbl_req)
@@ -205,4 +229,6 @@ Partial Class Requerimientos_principal
     Friend WithEvents lbl_req As Label
     Friend WithEvents lbl_area As Label
     Friend WithEvents cbx_area As ComboBox
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label2 As Label
 End Class
