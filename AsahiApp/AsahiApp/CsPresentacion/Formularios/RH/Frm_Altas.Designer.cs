@@ -193,7 +193,7 @@
             this.Panel_principal.Controls.Add(this.btn_pp_siguiente);
             this.Panel_principal.Controls.Add(this.groupBox1);
             this.Panel_principal.Controls.Add(this.groupBox3);
-            this.Panel_principal.Location = new System.Drawing.Point(0, 50);
+            this.Panel_principal.Location = new System.Drawing.Point(0, 1);
             this.Panel_principal.Name = "Panel_principal";
             this.Panel_principal.Size = new System.Drawing.Size(595, 565);
             this.Panel_principal.TabIndex = 0;
@@ -743,7 +743,7 @@
             this.Panel_secundario.Controls.Add(this.btn_ps_anterior);
             this.Panel_secundario.Controls.Add(this.btn_ps_siguiente);
             this.Panel_secundario.Controls.Add(this.grb_nacimiento);
-            this.Panel_secundario.Location = new System.Drawing.Point(1, 2);
+            this.Panel_secundario.Location = new System.Drawing.Point(3, 0);
             this.Panel_secundario.Name = "Panel_secundario";
             this.Panel_secundario.Size = new System.Drawing.Size(595, 566);
             this.Panel_secundario.TabIndex = 1;
@@ -1335,6 +1335,7 @@
             // 
             this.panel_final.Controls.Add(this.Panel_secundario);
             this.panel_final.Controls.Add(this.txt_tel_contacto);
+            this.panel_final.Controls.Add(this.Panel_principal);
             this.panel_final.Controls.Add(this.txt_infonavit);
             this.panel_final.Controls.Add(this.cmb_ruta);
             this.panel_final.Controls.Add(this.label19);
@@ -1354,7 +1355,7 @@
             this.panel_final.Controls.Add(this.btn_finalizar);
             this.panel_final.Controls.Add(this.cmb_escolaridad);
             this.panel_final.Controls.Add(this.btn_fin_anterior);
-            this.panel_final.Location = new System.Drawing.Point(0, 50);
+            this.panel_final.Location = new System.Drawing.Point(0, 51);
             this.panel_final.Name = "panel_final";
             this.panel_final.Size = new System.Drawing.Size(595, 565);
             this.panel_final.TabIndex = 232;
@@ -1546,7 +1547,6 @@
             this.ClientSize = new System.Drawing.Size(596, 619);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);
-            this.Controls.Add(this.Panel_principal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

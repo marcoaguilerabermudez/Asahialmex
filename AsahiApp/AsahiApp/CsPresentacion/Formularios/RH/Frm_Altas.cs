@@ -412,10 +412,11 @@ namespace CsPresentacion
             {
                 Panel_secundario.Visible = true;
                 Panel_principal.Visible = false;
+                panel_final.Visible = false;
                 txt_calle.Focus();
             }
         }
-        private void Btn_ps_siguiente_Click(object sender, EventArgs e)
+        private void Btn_ps_siguiente_Click(object sender, EventArgs e) /// panel principal pasa a panel secundario
         {
             if (string.IsNullOrEmpty(txt_calle.Text))
             {
@@ -455,6 +456,7 @@ namespace CsPresentacion
             {
                 panel_final.Visible = true;
                 Panel_secundario.Visible = false;
+
                 cmb_escolaridad.Focus();
             }
         }

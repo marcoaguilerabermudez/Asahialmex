@@ -329,7 +329,7 @@ begin
 
 SELECT  [id]
       ,upper([uid])
-      ,[rfcemisor]
+      ,[emi_rfc]
       ,[nombre_emisor]
       ,[serie]
       ,[folio]
@@ -348,7 +348,7 @@ SELECT  [id]
   begin 
   SELECT  [id]
       ,upper([uid])
-      ,[rfcemisor]
+       ,[emi_rfc]
       ,[nombre_emisor]
       ,[serie]
       ,[folio]
@@ -382,7 +382,7 @@ SELECT  [id]
 
 
         Catch ex As Exception
-            '  MessageBox.Show(ex.ToString)
+            'MessageBox.Show(ex.ToString)
             MessageBox.Show("El registro que está tecleando es incorrecto, revise de nueva cuenta", "¡Aviso!")
             txt_busca.Clear()
             txt_busca.Focus()
@@ -539,18 +539,50 @@ SELECT  [id]
     End Sub
 
     Private Sub btn_cargar_Click(sender As Object, e As EventArgs) Handles btn_cargar.Click
-        Dim Pregunta As Integer
-
-        Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
 
 
+        If lbl_moneda.Text = "MEX" Then
 
-        If Pregunta = vbYes Then
-            crearrecepcion()
-            insertarfilas()
-        Else
-            MessageBox.Show("Acción no completada", "¡Aviso!")
+            If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.99 Then
+                MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+            ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.99 Then
+                MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+            Else
+                Dim Pregunta As Integer
+
+                Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+                If Pregunta = vbYes Then
+                    crearrecepcion()
+                    insertarfilas()
+                Else
+                    MessageBox.Show("Acción no completada", "¡Aviso!")
+                End If
+            End If
+
+        ElseIf lbl_moneda.Text = "USD" Then
+
+            If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.05 Then
+                MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+            ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.05 Then
+                MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+            Else
+                Dim Pregunta As Integer
+
+                Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+                If Pregunta = vbYes Then
+                    crearrecepcion()
+                    insertarfilas()
+                Else
+                    MessageBox.Show("Acción no completada", "¡Aviso!")
+                End If
+            End If
+
         End If
+
+
+
 
 
 
@@ -733,19 +765,30 @@ SELECT  [id]
         If lbl_uuid.Text = "" Then
             dtp1.Enabled = True
             lbl_subtotalfact.Enabled = True
+            lbl_foliofact.Enabled = True
             lbl_totalfact.Enabled = True
         Else
             dtp1.Enabled = False
             lbl_subtotalfact.Enabled = False
             lbl_totalfact.Enabled = False
+            lbl_foliofact.Enabled = False
         End If
     End Sub
 
     Private Sub txt_busca_TextChanged(sender As Object, e As EventArgs) Handles txt_busca.TextChanged
         If txt_busca.Text = "" Then
             btn_doc.Enabled = False
+
+            lbl_subtotalfact.Text = 0
+            lbl_foliofact.Text = ""
+            lbl_uuid.Text = ""
+            lbl_totalfact.Text = 0
         Else
             btn_doc.Enabled = True
+            lbl_subtotalfact.Text = 0
+            lbl_foliofact.Text = ""
+            lbl_uuid.Text = ""
+            lbl_totalfact.Text = 0
         End If
     End Sub
 
@@ -850,10 +893,12 @@ SELECT  [id]
             lbl_subtotalfact.Text = 0
             lbl_totalfact.Text = 0
             lbl_subtotalfact.Enabled = True
+
             lbl_totalfact.Enabled = True
             dtp1.Enabled = True
             dtp2.Enabled = True
             lbl_foliofact.Text = ""
+            lbl_foliofact.Enabled = True
             lbl_uuid.Text = ""
             btn_cargar.Enabled = False
 

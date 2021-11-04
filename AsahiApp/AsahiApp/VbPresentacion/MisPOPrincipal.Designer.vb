@@ -69,7 +69,7 @@ Partial Class MisPOPrincipal
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btn_desma = New System.Windows.Forms.Button()
         Me.btn_selec = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_autorizar = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -82,8 +82,12 @@ Partial Class MisPOPrincipal
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.btn_cerrar = New System.Windows.Forms.Button()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'dtgvp
@@ -115,7 +119,6 @@ Partial Class MisPOPrincipal
         Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle2
         Me.dtgvp.Location = New System.Drawing.Point(12, 120)
         Me.dtgvp.Name = "dtgvp"
-        Me.dtgvp.ReadOnly = True
         Me.dtgvp.RowHeadersVisible = False
         Me.dtgvp.Size = New System.Drawing.Size(630, 488)
         Me.dtgvp.TabIndex = 428
@@ -541,7 +544,7 @@ Partial Class MisPOPrincipal
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Location = New System.Drawing.Point(648, 116)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(344, 493)
+        Me.Panel2.Size = New System.Drawing.Size(344, 506)
         Me.Panel2.TabIndex = 484
         '
         'Label7
@@ -589,7 +592,7 @@ Partial Class MisPOPrincipal
         'btn_desma
         '
         Me.btn_desma.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_desma.Location = New System.Drawing.Point(33, 616)
+        Me.btn_desma.Location = New System.Drawing.Point(35, 10)
         Me.btn_desma.Name = "btn_desma"
         Me.btn_desma.Size = New System.Drawing.Size(90, 32)
         Me.btn_desma.TabIndex = 518
@@ -599,25 +602,24 @@ Partial Class MisPOPrincipal
         'btn_selec
         '
         Me.btn_selec.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_selec.Location = New System.Drawing.Point(33, 654)
+        Me.btn_selec.Location = New System.Drawing.Point(35, 48)
         Me.btn_selec.Name = "btn_selec"
         Me.btn_selec.Size = New System.Drawing.Size(90, 32)
         Me.btn_selec.TabIndex = 517
         Me.btn_selec.Text = "Seleccionar"
         Me.btn_selec.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btn_autorizar
         '
-        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
-        Me.Button1.Enabled = False
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.ForestGreen
-        Me.Button1.Location = New System.Drawing.Point(162, 634)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(120, 35)
-        Me.Button1.TabIndex = 519
-        Me.Button1.Text = "Autorizar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btn_autorizar.BackColor = System.Drawing.Color.Gainsboro
+        Me.btn_autorizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_autorizar.ForeColor = System.Drawing.Color.ForestGreen
+        Me.btn_autorizar.Location = New System.Drawing.Point(177, 28)
+        Me.btn_autorizar.Name = "btn_autorizar"
+        Me.btn_autorizar.Size = New System.Drawing.Size(120, 35)
+        Me.btn_autorizar.TabIndex = 519
+        Me.btn_autorizar.Text = "Autorizar"
+        Me.btn_autorizar.UseVisualStyleBackColor = False
         '
         'Panel6
         '
@@ -693,7 +695,7 @@ Partial Class MisPOPrincipal
         Me.Label15.BackColor = System.Drawing.SystemColors.Control
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label15.Location = New System.Drawing.Point(936, 9)
+        Me.Label15.Location = New System.Drawing.Point(941, 9)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(44, 9)
         Me.Label15.TabIndex = 526
@@ -713,7 +715,7 @@ Partial Class MisPOPrincipal
         Me.Label20.BackColor = System.Drawing.SystemColors.Control
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label20.Location = New System.Drawing.Point(817, 32)
+        Me.Label20.Location = New System.Drawing.Point(818, 31)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(57, 9)
         Me.Label20.TabIndex = 524
@@ -739,11 +741,49 @@ Partial Class MisPOPrincipal
         Me.Label17.TabIndex = 520
         Me.Label17.Text = "CREADO"
         '
+        'btn_cancelar
+        '
+        Me.btn_cancelar.BackColor = System.Drawing.Color.Gainsboro
+        Me.btn_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_cancelar.ForeColor = System.Drawing.Color.DarkGoldenrod
+        Me.btn_cancelar.Location = New System.Drawing.Point(503, 28)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(120, 35)
+        Me.btn_cancelar.TabIndex = 534
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.UseVisualStyleBackColor = False
+        '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.BackColor = System.Drawing.Color.Gainsboro
+        Me.btn_cerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_cerrar.ForeColor = System.Drawing.Color.Violet
+        Me.btn_cerrar.Location = New System.Drawing.Point(335, 27)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(120, 35)
+        Me.btn_cerrar.TabIndex = 535
+        Me.btn_cerrar.Text = "Cerrar"
+        Me.btn_cerrar.UseVisualStyleBackColor = False
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.btn_cerrar)
+        Me.Panel4.Controls.Add(Me.btn_selec)
+        Me.Panel4.Controls.Add(Me.btn_cancelar)
+        Me.Panel4.Controls.Add(Me.btn_desma)
+        Me.Panel4.Controls.Add(Me.btn_autorizar)
+        Me.Panel4.Location = New System.Drawing.Point(3, 604)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(639, 85)
+        Me.Panel4.TabIndex = 536
+        Me.Panel4.Visible = False
+        '
         'MisPOPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1004, 691)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel7)
@@ -756,9 +796,6 @@ Partial Class MisPOPrincipal
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btn_desma)
-        Me.Controls.Add(Me.btn_selec)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Panel2)
@@ -780,6 +817,7 @@ Partial Class MisPOPrincipal
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -829,7 +867,7 @@ Partial Class MisPOPrincipal
     Friend WithEvents cbx_serie As ComboBox
     Friend WithEvents btn_desma As Button
     Friend WithEvents btn_selec As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_autorizar As Button
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel7 As Panel
@@ -842,4 +880,7 @@ Partial Class MisPOPrincipal
     Friend WithEvents Label20 As Label
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label17 As Label
+    Friend WithEvents btn_cancelar As Button
+    Friend WithEvents btn_cerrar As Button
+    Friend WithEvents Panel4 As Panel
 End Class
