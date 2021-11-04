@@ -214,4 +214,7 @@ Public Class Alta_productos
     Private Sub cbx_ucompra_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_ucompra.SelectedIndexChanged
         cbx_uconsumo.Text = cbx_ucompra.Text
     End Sub
+
+
+
 End Class

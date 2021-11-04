@@ -492,6 +492,10 @@ SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(
             dtgvp.CurrentRow.Cells("desc1").Value = txt_desc1.Text
             dtgvp.CurrentRow.Cells("desc2").Value = txt_desc2.Text
 
+
+            dtgvp.CurrentRow.Cells("Departamento").Value = cbx_area.Text
+            dtgvp.CurrentRow.Cells("Familia").Value = cbx_fam.Text
+
             MessageBox.Show("Movimiento Modificado", "¡Correcto!", MessageBoxButtons.OK)
 
         Catch
@@ -666,6 +670,7 @@ SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(
             btn_buscar.Enabled = False
             ContenedorReportePO.serie = "A"
             ContenedorReportePO.codigo = y
+            btn_carga.Enabled = False
             ContenedorReportePO.Show()
 
 

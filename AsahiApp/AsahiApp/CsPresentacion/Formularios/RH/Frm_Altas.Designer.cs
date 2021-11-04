@@ -77,6 +77,7 @@
             this.cmb_turno = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_nuevo2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Clave = new System.Windows.Forms.TextBox();
             this.Panel_secundario = new System.Windows.Forms.Panel();
@@ -149,7 +150,6 @@
             this.label49 = new System.Windows.Forms.Label();
             this.cmb_escolaridad = new System.Windows.Forms.ComboBox();
             this.btn_fin_anterior = new System.Windows.Forms.Button();
-            this.btn_nuevo2 = new System.Windows.Forms.Button();
             this.Panel_principal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -193,7 +193,7 @@
             this.Panel_principal.Controls.Add(this.btn_pp_siguiente);
             this.Panel_principal.Controls.Add(this.groupBox1);
             this.Panel_principal.Controls.Add(this.groupBox3);
-            this.Panel_principal.Location = new System.Drawing.Point(0, 50);
+            this.Panel_principal.Location = new System.Drawing.Point(0, 1);
             this.Panel_principal.Name = "Panel_principal";
             this.Panel_principal.Size = new System.Drawing.Size(595, 565);
             this.Panel_principal.TabIndex = 0;
@@ -648,14 +648,12 @@
             this.cmb_turno.FormattingEnabled = true;
             this.cmb_turno.Items.AddRange(new object[] {
             "ADMINISTRATIVO",
-            "MATUTINO",
-            "VESPERTINO",
-            "NOCTURNO"});
+            "DÍA",
+            "NOCHE"});
             this.cmb_turno.Location = new System.Drawing.Point(20, 289);
             this.cmb_turno.Name = "cmb_turno";
             this.cmb_turno.Size = new System.Drawing.Size(166, 21);
             this.cmb_turno.TabIndex = 36;
-            this.cmb_turno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_turno_KeyPress);
             // 
             // label16
             // 
@@ -676,6 +674,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(595, 50);
             this.panel1.TabIndex = 1;
+            // 
+            // btn_nuevo2
+            // 
+            this.btn_nuevo2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_nuevo2.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btn_nuevo2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo2.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
+            this.btn_nuevo2.Location = new System.Drawing.Point(113, 24);
+            this.btn_nuevo2.Name = "btn_nuevo2";
+            this.btn_nuevo2.Size = new System.Drawing.Size(26, 23);
+            this.btn_nuevo2.TabIndex = 2;
+            this.btn_nuevo2.UseVisualStyleBackColor = true;
+            this.btn_nuevo2.Click += new System.EventHandler(this.Btn_nuevo2_Click);
             // 
             // label3
             // 
@@ -732,7 +743,7 @@
             this.Panel_secundario.Controls.Add(this.btn_ps_anterior);
             this.Panel_secundario.Controls.Add(this.btn_ps_siguiente);
             this.Panel_secundario.Controls.Add(this.grb_nacimiento);
-            this.Panel_secundario.Location = new System.Drawing.Point(0, 50);
+            this.Panel_secundario.Location = new System.Drawing.Point(3, 0);
             this.Panel_secundario.Name = "Panel_secundario";
             this.Panel_secundario.Size = new System.Drawing.Size(595, 566);
             this.Panel_secundario.TabIndex = 1;
@@ -1322,7 +1333,9 @@
             // 
             // panel_final
             // 
+            this.panel_final.Controls.Add(this.Panel_secundario);
             this.panel_final.Controls.Add(this.txt_tel_contacto);
+            this.panel_final.Controls.Add(this.Panel_principal);
             this.panel_final.Controls.Add(this.txt_infonavit);
             this.panel_final.Controls.Add(this.cmb_ruta);
             this.panel_final.Controls.Add(this.label19);
@@ -1342,7 +1355,7 @@
             this.panel_final.Controls.Add(this.btn_finalizar);
             this.panel_final.Controls.Add(this.cmb_escolaridad);
             this.panel_final.Controls.Add(this.btn_fin_anterior);
-            this.panel_final.Location = new System.Drawing.Point(0, 50);
+            this.panel_final.Location = new System.Drawing.Point(0, 51);
             this.panel_final.Name = "panel_final";
             this.panel_final.Size = new System.Drawing.Size(595, 565);
             this.panel_final.TabIndex = 232;
@@ -1491,7 +1504,7 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(18, 15);
+            this.label49.Location = new System.Drawing.Point(22, 15);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(86, 13);
             this.label49.TabIndex = 217;
@@ -1526,29 +1539,14 @@
             this.btn_fin_anterior.UseVisualStyleBackColor = true;
             this.btn_fin_anterior.Click += new System.EventHandler(this.Btn_fin_anterior_Click);
             // 
-            // btn_nuevo2
-            // 
-            this.btn_nuevo2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_nuevo2.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btn_nuevo2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo2.Image = global::CsPresentacion.Properties.Resources.Action_file_new_icon;
-            this.btn_nuevo2.Location = new System.Drawing.Point(113, 24);
-            this.btn_nuevo2.Name = "btn_nuevo2";
-            this.btn_nuevo2.Size = new System.Drawing.Size(26, 23);
-            this.btn_nuevo2.TabIndex = 2;
-            this.btn_nuevo2.UseVisualStyleBackColor = true;
-            this.btn_nuevo2.Click += new System.EventHandler(this.Btn_nuevo2_Click);
-            // 
             // Frm_Altas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(596, 619);
-            this.Controls.Add(this.Panel_secundario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_final);
-            this.Controls.Add(this.Panel_principal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -16,11 +16,11 @@ Public Class MisPOPrincipal
     Public cadenaCExpress As String
 
     Dim a As String
-
     Dim var As Integer
     Dim tipo As Integer
     Dim codigo As Integer
     Dim serie As String
+    Dim accion As Integer
 
     Sub New(id As Integer, depto As String, permiso As Integer, nombre As String, p_vales As Integer)
 
@@ -30,10 +30,6 @@ Public Class MisPOPrincipal
         Me.permiso = permiso
         Me.nombre = nombre
         Me.p_vales = p_vales
-
-
-
-
 
     End Sub
 
@@ -161,6 +157,12 @@ Public Class MisPOPrincipal
 
     Sub cargagrid()
 
+        Try
+            dtgvp.Columns.Remove("X")
+
+        Catch ex As Exception
+
+        End Try
 
         Try
 
@@ -188,7 +190,7 @@ Public Class MisPOPrincipal
             dtgvp.Columns(3).ReadOnly = True
             dtgvp.Columns(11).ReadOnly = True
             dtgvp.Columns(10).ReadOnly = True
-
+            dtgvp.Columns("total").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
 
 
             dtgvp.Columns(0).Visible = False
@@ -208,6 +210,8 @@ Public Class MisPOPrincipal
             dtgvp.Columns(14).Visible = False
             dtgvp.Columns(15).Visible = False
             dtgvp.Columns(16).Visible = False
+            dtgvp.Columns("RFC").Visible = False
+            dtgvp.Columns("Estado").Visible = False
             'dtgvp.Columns(17).Visible = False
             'dtgvp.Columns(18).Visible = False
             'dtgvp.Columns(19).Visible = False
@@ -223,7 +227,9 @@ Public Class MisPOPrincipal
             cnn.Close()
 
             dtgvp.Visible = True
-
+            AgregarColumna()
+            Panel4.Visible = True
+            colores()
 
             If dtgvp.RowCount < 1 Then
                 MessageBox.Show("No hay ningún registro con los criterios de búsqueda seleccionados", "¡Alerta!")
@@ -243,7 +249,7 @@ Public Class MisPOPrincipal
                 lbl_comprador.Text = ""
                 txt_comen.Text = ""
                 txt_no.Text = ""
-
+                Panel4.Visible = False
 
             End If
 
@@ -270,7 +276,17 @@ Public Class MisPOPrincipal
         cargagrid()
     End Sub
 
+    Sub AgregarColumna()
 
+        Dim cbox As New DataGridViewCheckBoxColumn
+        dtgvp.Columns.Insert(dtgvp.ColumnCount, cbox)
+
+        With cbox
+            .HeaderText = "X"
+            .Name = "X"
+            .Width = 30
+        End With
+    End Sub
 
 
 
@@ -312,7 +328,7 @@ Public Class MisPOPrincipal
 
 
 
-
+        colores()
 
 
     End Sub
@@ -351,7 +367,7 @@ Public Class MisPOPrincipal
         Catch
         End Try
 
-
+        colores()
     End Sub
 
     Private Sub txt_no_TextChanged(sender As Object, e As EventArgs) Handles txt_no.TextChanged
@@ -362,7 +378,7 @@ Public Class MisPOPrincipal
         End If
     End Sub
 
-    Private Sub btn_pdf_Click(sender As Object, e As EventArgs) Handles btn_pdf.Click
+    Private Sub btn_pdf_Click(sender As Object, e As EventArgs)
         ContenedorReportePO.serie = serie
         ContenedorReportePO.codigo = codigo
         ContenedorReportePO.Show()
@@ -376,31 +392,6 @@ Public Class MisPOPrincipal
         Dim smtp As New System.Net.Mail.SmtpClient
         Dim correo As New System.Net.Mail.MailMessage
         Dim adjunto As System.Net.Mail.Attachment
-
-
-        ''Create an instance of ReportViewer
-
-        'Dim viewer As New Microsoft.Reporting.WinForms.ReportViewer()
-
-        ''Set local report
-        ''NOTE: MyAppNamespace refers to the namespace for the app.
-        'viewer.LocalReport.ReportEmbeddedResource = "AsahiApp.ReportePO_1.rdlc"
-
-        ''Create Report Data Source
-        'Dim rptDataSource As New Microsoft.Reporting.WinForms.ReportDataSource("Product", Data)
-        'viewer.LocalReport.DataSources.Add(rptDataSource)
-
-        ''Export to PDF. Get binary content.
-        'Dim pdfContent As Byte() = viewer.LocalReport.Render("PDF", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
-
-        ''Creatr PDF file on disk
-        'Dim pdfPath As String = "C:\temp\report.pdf"
-        'Dim pdfFile As New System.IO.FileStream(pdfPath, System.IO.FileMode.Create)
-        'pdfFile.Write(pdfContent, 0, pdfContent.Length)
-        'pdfFile.Close()
-
-
-
 
 
         With smtp
@@ -438,11 +429,162 @@ Public Class MisPOPrincipal
         Modulo_vistarecepprincipal.e_codigo = Me.dtgvp.Rows(e.RowIndex).Cells("codigo").Value.ToString()
         Modulo_vistarecepprincipal.e_serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie").Value.ToString()
         Modulo_vistarecepprincipal.e_po = lbl_po.Text
+        Modulo_vistarecepprincipal.e_subtotal = lbl_subtotal.Text
+        Modulo_vistarecepprincipal.e_total = lbl_total.Text
+        Modulo_vistarecepprincipal.e_moneda = lbl_moneda.Text
+        Modulo_vistarecepprincipal.e_tc = lbl_tc.Text
+        Modulo_vistarecepprincipal.e_rfc = Me.dtgvp.Rows(e.RowIndex).Cells("RFC").Value.ToString()
         Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
 
-        Dim Req_PrinRecep As New Requerimientos_PrincipalVistaRecepcion(id, depto, permiso, nombre, p_vales)
-        Req_PrinRecep.Show()
+        Dim Req_movPO As New Requerimientos_MovimientosPO(id, depto, permiso, nombre, p_vales)
+        Req_movPO.Show()
+        colores()
     End Sub
+
+    Private Sub btn_autorizar_Click(sender As Object, e As EventArgs) Handles btn_autorizar.Click
+        accion = 1
+        procesar()
+    End Sub
+
+    Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
+        accion = 2
+        procesar()
+    End Sub
+
+    Private Sub btn_cerrar_Click(sender As Object, e As EventArgs) Handles btn_cerrar.Click
+        accion = 3
+        procesar()
+    End Sub
+
+    Private Sub btn_selec_Click(sender As Object, e As EventArgs) Handles btn_selec.Click
+        For Each fila As DataGridViewRow In dtgvp.Rows
+            fila.Cells("X").Value = True
+        Next
+    End Sub
+
+
+    Private Sub btn_desma_Click(sender As Object, e As EventArgs) Handles btn_desma.Click
+        For Each fila As DataGridViewRow In dtgvp.Rows
+            fila.Cells("X").Value = False
+        Next
+    End Sub
+
+
+    Sub procesar()
+        Dim Pregunta As Integer
+
+        If accion = 1 Then
+            Pregunta = MsgBox("¿Desea autorizar la(s) siguiente(s) orden(es) de compra?", vbYesNo + vbExclamation + vbDefaultButton2, "¡Aviso!")
+        ElseIf accion = 2 Then
+            Pregunta = MsgBox("¿Desea cancelar la(s) siguiente(s) orden(es) de compra?", vbYesNo + vbExclamation + vbDefaultButton2, "¡Aviso!")
+        ElseIf accion = 3 Then
+            Pregunta = MsgBox("¿Desea cerrar la(s) siguiente(s) orden(es) de compra?", vbYesNo + vbExclamation + vbDefaultButton2, "¡Aviso!")
+        End If
+
+
+        If Pregunta = vbYes Then
+
+            cnn.Close()
+            cnn.Open()
+
+            Dim auto As SqlCommand = New SqlCommand("
+            declare @var1 as int
+            set @var1 = @var 
+
+            if @var1 = 1
+            begin
+            update [Asahi].[dbo].[com_po_principal] set estado = 1
+            where id = @id and estado = 0
+            end
+            else if @var1= 2
+            begin
+            update [Asahi].[dbo].[com_po_principal] set estado = 2
+            where id = @id and estado in (1,0)
+            end
+            else if @var1= 3
+            begin
+            update [Asahi].[dbo].[com_po_principal] set estado = 3
+            where id = @id and estado in (4)
+            end
+ 
+                
+
+", cnn)
+
+            Dim fila As DataGridViewRow = New DataGridViewRow()
+            Dim RI As String
+
+            Try
+
+                For Each fila In dtgvp.Rows
+                    If fila.Cells("X").Value = True Then
+                        auto.Parameters.Clear()
+                        auto.Parameters.Add("@id", SqlDbType.Int).Value = (fila.Cells("id").Value)
+                        auto.Parameters.Add("@var", SqlDbType.Int).Value = accion
+
+
+
+
+                        auto.ExecuteNonQuery()
+
+
+                        'Else
+                        '    RI = "¡Debe palomear mínimo una casilla para validar!"
+
+                    End If
+
+                Next
+
+                If accion = 1 Then
+                    MessageBox.Show("Orden(es) de compra autorizada(s) correctamente", "¡Aviso!")
+                ElseIf accion = 2 Then
+                    MessageBox.Show("Orden(es) de compra cancelada(s) correctamente", "¡Aviso!")
+                ElseIf accion = 3 Then
+                    MessageBox.Show("Orden(es) de compra cerrada(s) correctamente", "¡Aviso!")
+                End If
+
+
+                cargagrid()
+            Catch ex As Exception
+                MessageBox.Show("Error al actualizar registro, consulte al administrador")
+                MessageBox.Show(ex.ToString)
+                cnn.Close()
+            Finally
+                cnn.Close()
+            End Try
+        Else
+            MessageBox.Show("Acción no completada", "¡Aviso!")
+
+            cnn.Close()
+        End If
+
+
+    End Sub
+
+
+    Sub colores()
+
+        Try
+            For Each row As DataGridViewRow In Me.dtgvp.Rows
+
+                If row.Cells(“Estado”).Value = 0 Then
+                    row.DefaultCellStyle.BackColor = Color.White
+                ElseIf row.Cells(“Estado”).Value = 1 Then
+                    row.DefaultCellStyle.BackColor = Color.LightGreen
+                ElseIf row.Cells(“Estado”).Value = 2 Then
+                    row.DefaultCellStyle.BackColor = Color.DarkGoldenrod
+                ElseIf row.Cells(“Estado”).Value = 3 Then
+                    row.DefaultCellStyle.BackColor = Color.Thistle
+                ElseIf row.Cells(“Estado”).Value = 4 Then
+                    row.DefaultCellStyle.BackColor = Color.Yellow
+                ElseIf row.Cells(“Estado”).Value = 5 Then
+                    row.DefaultCellStyle.BackColor = Color.LightGray
+                End If
+            Next
+        Catch
+        End Try
+    End Sub
+
 
 End Class
 
@@ -453,6 +595,22 @@ Module Modulo_vistarecepprincipal
     Public e_serie As String
     Public e_po As String
     Public e_proveedor As String
+    Public e_subtotal As Double
+    Public e_total As Double
+    Public e_moneda As String
+    Public e_tc As Double
+    Public e_rfc As String
+    Public e_provision As Integer
+
+    Public e_ffac As String
+    Public e_fpago As String
+    Public e_fsub As Double
+    Public e_ftotal As Double
+
+
+    Public e_uuid As String
+    Public e_folio As String
+    Public e_estadoprov As Integer
 
 
 

@@ -956,8 +956,8 @@ Public Class Frm_GlobalPrenomina
                     Dim t As String = "TE" & colum
                     Dim c As String = "CM" & colum
 
-                    If colum = 6 Then
-                        If tu = 4 Or tu = 5 Or tu = 6 Then
+                    If colum = 5 Then
+                        If tu = 7 Or tu = 8 Then
                             If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
                                 Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "D"
                                 Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Black
@@ -980,7 +980,32 @@ Public Class Frm_GlobalPrenomina
                                 Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
                             End If
                         End If
-                    ElseIf colum = 7 Or colum = 8 Then
+
+                    ElseIf colum = 6 Then
+                        If tu = 7 Or tu = 8 Or tu = 10 Then
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "D"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Black
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
+                            End If
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "D"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.BackColor = Color.Black
+                                Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.ForeColor = Color.White
+                            End If
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "D"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.Black
+                                Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.ForeColor = Color.White
+                            End If
+                        Else
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "A"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Green
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
+                            End If
+                        End If
+                    ElseIf colum = 7 Or colum = 8 Or tu = 10 Then
                         If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
                             Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "D"
                             Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Black

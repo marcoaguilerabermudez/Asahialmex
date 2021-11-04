@@ -85,72 +85,68 @@ Public Class Requerimientos_RecepcionPO
             Dim dt As New DataTable
             da.Fill(dt)
             dtgvp.DataSource = dt
-            dtgvp.Columns(7).Width = 65
-            dtgvp.Columns(8).Width = 300
-            dtgvp.Columns(9).Width = 100
-            dtgvp.Columns(10).Width = 60
-            dtgvp.Columns(11).Width = 60
-            dtgvp.Columns(12).Width = 60
+            dtgvp.Columns("Codigo").Width = 65
+            dtgvp.Columns("Nombre").Width = 300
+            dtgvp.Columns("No parte").Width = 100
+            dtgvp.Columns("Departamento").Width = 130
+
+            dtgvp.Columns("Cantidad PO").Width = 60
+            dtgvp.Columns("Cantidad recibida").Width = 60
             dtgvp.Columns(13).Width = 60
             dtgvp.Columns(30).Width = 60
             dtgvp.Columns(31).Width = 60
-            dtgvp.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            dtgvp.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            dtgvp.Columns(14).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            dtgvp.Columns(15).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            dtgvp.Columns(30).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            dtgvp.Columns(31).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            dtgvp.Columns(32).Width = 60
+            'dtgvp.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            'dtgvp.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            'dtgvp.Columns(14).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            'dtgvp.Columns(15).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            'dtgvp.Columns(30).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            'dtgvp.Columns(31).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
 
 
-            dtgvp.Columns(7).ReadOnly = True
-            dtgvp.Columns(8).ReadOnly = True
-            dtgvp.Columns(9).ReadOnly = True
-            dtgvp.Columns(10).ReadOnly = True
-            dtgvp.Columns(11).ReadOnly = True
-            dtgvp.Columns(30).ReadOnly = True
+            dtgvp.Columns("Codigo").ReadOnly = True
+            dtgvp.Columns("Nombre").ReadOnly = True
+            dtgvp.Columns("No parte").ReadOnly = True
+            dtgvp.Columns("Departamento").ReadOnly = True
+            dtgvp.Columns("Cantidad PO").ReadOnly = True
+            dtgvp.Columns("Cantidad recibida").ReadOnly = True
+            dtgvp.Columns("Precio").ReadOnly = True
+            '  dtgvp.Columns("Recibido").ReadOnly = True
             'dtgvp.Columns(14).ReadOnly = True
             'dtgvp.Columns(15).ReadOnly = True
             'dtgvp.Columns(30).ReadOnly = True
 
 
-            dtgvp.Columns(0).Visible = False
-            dtgvp.Columns(1).Visible = False
-            dtgvp.Columns(2).Visible = False
-            dtgvp.Columns(3).Visible = False
-            dtgvp.Columns(4).Visible = False
-            dtgvp.Columns(5).Visible = False
-            dtgvp.Columns(6).Visible = False
-            dtgvp.Columns(12).Visible = False
-            dtgvp.Columns(13).Visible = False
-
-            dtgvp.Columns(18).Visible = False
-            dtgvp.Columns(19).Visible = False
-            dtgvp.Columns(20).Visible = False
-            dtgvp.Columns(21).Visible = False
-            dtgvp.Columns(22).Visible = False
-            dtgvp.Columns(23).Visible = False
-            'dtgvp.Columns(10).Visible = False
-            dtgvp.Columns(24).Visible = False
-            dtgvp.Columns(25).Visible = False
-            dtgvp.Columns(26).Visible = False
-            'dtgvp.Columns(12).Visible = False
-
-            dtgvp.Columns(27).Visible = False
-            dtgvp.Columns(28).Visible = False
-            dtgvp.Columns(29).Visible = False
-            dtgvp.Columns(14).Visible = False
-            dtgvp.Columns(15).Visible = False
-            dtgvp.Columns(16).Visible = False
-            dtgvp.Columns(17).Visible = False
-            dtgvp.Columns(32).Visible = False
-            dtgvp.Columns(33).Visible = False
-            'dtgvp.Columns(19).Visible = False
-            'dtgvp.Columns(20).Visible = False
-            'dtgvp.Columns(21).Visible = False
-            'dtgvp.Columns(22).Visible = False
-            'dtgvp.Columns(23).Visible = False
-            'dtgvp.Columns(24).Visible = False
-            'dtgvp.Columns(25).Visible = False
+            dtgvp.Columns("id_mov").Visible = False
+            dtgvp.Columns("id_po").Visible = False
+            dtgvp.Columns("PO").Visible = False
+            dtgvp.Columns("Proveedor").Visible = False
+            dtgvp.Columns("total_po").Visible = False
+            dtgvp.Columns("Moneda").Visible = False
+            dtgvp.Columns("tc").Visible = False
+            dtgvp.Columns("Cantidad x recibir").Visible = False
+            dtgvp.Columns("Cantidad facturada").Visible = False
+            dtgvp.Columns("Subtotal").Visible = False
+            dtgvp.Columns("Subtotal Unitario").Visible = False
+            dtgvp.Columns("Total").Visible = False
+            dtgvp.Columns("Total Unitario").Visible = False
+            dtgvp.Columns("subtotal_po").Visible = False
+            dtgvp.Columns("iva_po").Visible = False
+            dtgvp.Columns("ret_po").Visible = False
+            dtgvp.Columns("desc_po").Visible = False
+            dtgvp.Columns("fecha_creacion").Visible = False
+            dtgvp.Columns("fecha_solicitud").Visible = False
+            dtgvp.Columns("fecha_entrega").Visible = False
+            dtgvp.Columns("obs_po").Visible = False
+            dtgvp.Columns("id_usuario_crea").Visible = False
+            dtgvp.Columns("cod_po").Visible = False
+            dtgvp.Columns("serie_po").Visible = False
+            dtgvp.Columns("Estado").Visible = False
+            dtgvp.Columns("Precio").Visible = False
+            ' dtgvp.Columns("Recibido").Visible = False
+            dtgvp.Columns("RFC").Visible = False
+            dtgvp.Columns("id_cotizacion").Visible = False
+            dtgvp.Columns("id_req").Visible = False
 
 
 
@@ -179,6 +175,9 @@ Public Class Requerimientos_RecepcionPO
                 lbl_proveedor.Text = ""
 
                 txt_no.Text = ""
+                lbl_t.Text = 0
+                lbl_neto.Text = 0
+
                 'btn_selec.Visible = False
                 'btn_desma.Visible = False
                 'btn_cargar.Visible = False
@@ -272,7 +271,7 @@ begin
 
 SELECT  upper([uid]) as 'f'
   FROM [Asahi].[dbo].[XML_principal]
-  WHERE rfcemisor = '" & lbl_rfc.Text & "'
+  WHERE emi_rfc = '" & lbl_rfc.Text & "' AND id_provision is null
 
   end 
   else if " & filtro & "  = 1
@@ -281,7 +280,7 @@ SELECT  upper([uid]) as 'f'
 
   SELECT upper([folio]) as 'f'
   FROM [Asahi].[dbo].[XML_principal]
-  WHERE rfcemisor = '" & lbl_rfc.Text & "'
+  WHERE emi_rfc = '" & lbl_rfc.Text & "' and id_provision is null
   end  ", cnn)
         If cnn.State = ConnectionState.Closed Then cnn.Open()
         Dim ds As New DataSet
@@ -330,7 +329,7 @@ begin
 
 SELECT  [id]
       ,upper([uid])
-      ,[rfcemisor]
+      ,[emi_rfc]
       ,[nombre_emisor]
       ,[serie]
       ,[folio]
@@ -349,7 +348,7 @@ SELECT  [id]
   begin 
   SELECT  [id]
       ,upper([uid])
-      ,[rfcemisor]
+       ,[emi_rfc]
       ,[nombre_emisor]
       ,[serie]
       ,[folio]
@@ -383,7 +382,7 @@ SELECT  [id]
 
 
         Catch ex As Exception
-            '  MessageBox.Show(ex.ToString)
+            'MessageBox.Show(ex.ToString)
             MessageBox.Show("El registro que está tecleando es incorrecto, revise de nueva cuenta", "¡Aviso!")
             txt_busca.Clear()
             txt_busca.Focus()
@@ -496,7 +495,7 @@ SELECT  [id]
 
 
     Private Sub ValidarCantidadRequerida(Objeto As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellEndEdit, dtgvp.CellContentClick
-        If e.ColumnIndex = 31 Then
+        If e.ColumnIndex = 32 Then
             Try
                 Cantidad_Requerida = CDbl(dtgvp.Rows(e.RowIndex).Cells("Cantidad x recibir").Value)
                 dtgvp.Rows(e.RowIndex).Cells("Totalx").Value = dtgvp.Rows(e.RowIndex).Cells("Recibido").Value * dtgvp.Rows(e.RowIndex).Cells("Total Unitario").Value
@@ -540,18 +539,50 @@ SELECT  [id]
     End Sub
 
     Private Sub btn_cargar_Click(sender As Object, e As EventArgs) Handles btn_cargar.Click
-        Dim Pregunta As Integer
-
-        Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
 
 
+        If lbl_moneda.Text = "MEX" Then
 
-        If Pregunta = vbYes Then
-            crearrecepcion()
-            insertarfilas()
-        Else
-            MessageBox.Show("Acción no completada", "¡Aviso!")
+            If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.99 Then
+                MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+            ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.99 Then
+                MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+            Else
+                Dim Pregunta As Integer
+
+                Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+                If Pregunta = vbYes Then
+                    crearrecepcion()
+                    insertarfilas()
+                Else
+                    MessageBox.Show("Acción no completada", "¡Aviso!")
+                End If
+            End If
+
+        ElseIf lbl_moneda.Text = "USD" Then
+
+            If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.05 Then
+                MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+            ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.05 Then
+                MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+            Else
+                Dim Pregunta As Integer
+
+                Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+                If Pregunta = vbYes Then
+                    crearrecepcion()
+                    insertarfilas()
+                Else
+                    MessageBox.Show("Acción no completada", "¡Aviso!")
+                End If
+            End If
+
         End If
+
+
+
 
 
 
@@ -734,19 +765,30 @@ SELECT  [id]
         If lbl_uuid.Text = "" Then
             dtp1.Enabled = True
             lbl_subtotalfact.Enabled = True
+            lbl_foliofact.Enabled = True
             lbl_totalfact.Enabled = True
         Else
             dtp1.Enabled = False
             lbl_subtotalfact.Enabled = False
             lbl_totalfact.Enabled = False
+            lbl_foliofact.Enabled = False
         End If
     End Sub
 
     Private Sub txt_busca_TextChanged(sender As Object, e As EventArgs) Handles txt_busca.TextChanged
         If txt_busca.Text = "" Then
             btn_doc.Enabled = False
+
+            lbl_subtotalfact.Text = 0
+            lbl_foliofact.Text = ""
+            lbl_uuid.Text = ""
+            lbl_totalfact.Text = 0
         Else
             btn_doc.Enabled = True
+            lbl_subtotalfact.Text = 0
+            lbl_foliofact.Text = ""
+            lbl_uuid.Text = ""
+            lbl_totalfact.Text = 0
         End If
     End Sub
 
@@ -774,6 +816,8 @@ SELECT  [id]
             agrega.Parameters.Add("@moneda", SqlDbType.VarChar, 3).Value = lbl_moneda.Text
             agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = lbl_uuid.Text
             agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
+            agrega.Parameters.Add("@var", SqlDbType.Int).Value = 0
+            agrega.Parameters.Add("@id_provision", SqlDbType.Int).Value = 0
 
             agrega.ExecuteNonQuery()
 
@@ -816,17 +860,19 @@ SELECT  [id]
         Try
 
             For Each fila In dtgvp.Rows
-                If fila.Cells("x").Value = True Then
+                If fila.Cells("x").Value = True And fila.Cells("Recibido").Value > 0 Then
 
                     command.Parameters.Clear()
 
                     command.Parameters.AddWithValue("@codigo", (fila.Cells("Codigo").Value))
+
                     command.Parameters.AddWithValue("@cantidad", (fila.Cells("Recibido").Value))
                     command.Parameters.AddWithValue("@precio", (fila.Cells("Precio").Value))
                     command.Parameters.AddWithValue("@subtotal", (fila.Cells("Subtotal").Value))
                     command.Parameters.AddWithValue("@id_movpo", (fila.Cells("id_mov").Value))
                     command.Parameters.AddWithValue("@id_cotizacion", (fila.Cells("id_cotizacion").Value))
-
+                    command.Parameters.AddWithValue("@req", (fila.Cells("id_req").Value))
+                    command.Parameters.AddWithValue("@id_po", (fila.Cells("id_po").Value))
                     command.ExecuteNonQuery()
                 End If
             Next
@@ -841,6 +887,22 @@ SELECT  [id]
             lbl_proveedor.Text = ""
 
             txt_no.Text = ""
+            txt_busca.Text = ""
+            lbl_t.Text = 0
+            lbl_neto.Text = 0
+            lbl_subtotalfact.Text = 0
+            lbl_totalfact.Text = 0
+            lbl_subtotalfact.Enabled = True
+
+            lbl_totalfact.Enabled = True
+            dtp1.Enabled = True
+            dtp2.Enabled = True
+            lbl_foliofact.Text = ""
+            lbl_foliofact.Enabled = True
+            lbl_uuid.Text = ""
+            btn_cargar.Enabled = False
+
+
             'btn_selec.Visible = False
             'btn_desma.Visible = False
             'btn_cargar.Visible = False
@@ -848,6 +910,7 @@ SELECT  [id]
             Panel1.Visible = False
             Panel2.Visible = False
             Panel5.Visible = False
+
 
 
         Catch ex As Exception

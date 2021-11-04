@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -723,6 +723,18 @@
     <Compile Include="ReporteMedidas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RequerimientosRecepcionesPO.Designer.vb">
+      <DependentUpon>RequerimientosRecepcionesPO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientosRecepcionesPO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requerimientos_CargaXML.Designer.vb">
+      <DependentUpon>Requerimientos_CargaXML.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_CargaXML.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Requerimientos_Comentarios.Designer.vb">
       <DependentUpon>Requerimientos_Comentarios.vb</DependentUpon>
     </Compile>
@@ -741,6 +753,18 @@
     <Compile Include="Requerimientos_movimientos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Requerimientos_MovimientosPO.Designer.vb">
+      <DependentUpon>Requerimientos_MovimientosPO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_MovimientosPO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requerimientos_MuestraMovimientoProvisionPO.Designer.vb">
+      <DependentUpon>Requerimientos_MuestraMovimientoProvisionPO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_MuestraMovimientoProvisionPO.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Requerimientos_PO.Designer.vb">
       <DependentUpon>Requerimientos_PO.vb</DependentUpon>
     </Compile>
@@ -751,6 +775,12 @@
       <DependentUpon>Requerimientos_principal.vb</DependentUpon>
     </Compile>
     <Compile Include="Requerimientos_principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requerimientos_PrincipalRecepciones.Designer.vb">
+      <DependentUpon>Requerimientos_PrincipalRecepciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requerimientos_PrincipalRecepciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Requerimientos_PrincipalVistaRecepcion.Designer.vb">
@@ -1572,6 +1602,12 @@
     <EmbeddedResource Include="Reportes\Rpt_Bono.rdlc" />
     <EmbeddedResource Include="ReporteVales1.rdlc" />
     <EmbeddedResource Include="ReporteXmesCambioDePuesto.rdlc" />
+    <EmbeddedResource Include="RequerimientosRecepcionesPO.resx">
+      <DependentUpon>RequerimientosRecepcionesPO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_CargaXML.resx">
+      <DependentUpon>Requerimientos_CargaXML.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_Comentarios.resx">
       <DependentUpon>Requerimientos_Comentarios.vb</DependentUpon>
     </EmbeddedResource>
@@ -1581,11 +1617,20 @@
     <EmbeddedResource Include="Requerimientos_movimientos.resx">
       <DependentUpon>Requerimientos_movimientos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_MovimientosPO.resx">
+      <DependentUpon>Requerimientos_MovimientosPO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_MuestraMovimientoProvisionPO.resx">
+      <DependentUpon>Requerimientos_MuestraMovimientoProvisionPO.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_PO.resx">
       <DependentUpon>Requerimientos_PO.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_principal.resx">
       <DependentUpon>Requerimientos_principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requerimientos_PrincipalRecepciones.resx">
+      <DependentUpon>Requerimientos_PrincipalRecepciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Requerimientos_PrincipalVistaRecepcion.resx">
       <DependentUpon>Requerimientos_PrincipalVistaRecepcion.vb</DependentUpon>
