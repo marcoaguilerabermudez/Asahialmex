@@ -786,6 +786,12 @@ Public Class Frm_Principal
         Req_RecibirPoP.Show()
     End Sub
 
+    Private Sub ProvisionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProvisionesToolStripMenuItem.Click
+        Dim Req_provisiones As New Provisiones(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, 1)
+        Req_provisiones.Show()
+
+    End Sub
+
 
 
 

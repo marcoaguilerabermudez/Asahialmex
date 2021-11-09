@@ -62,7 +62,6 @@ Partial Class Provisiones
         Me.txt_foc = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.dtpb = New System.Windows.Forms.DateTimePicker()
         Me.Button9 = New System.Windows.Forms.Button()
@@ -72,7 +71,6 @@ Partial Class Provisiones
         Me.Label27 = New System.Windows.Forms.Label()
         Me.dtp2 = New System.Windows.Forms.DateTimePicker()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.btn_parciales = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -133,6 +131,12 @@ Partial Class Provisiones
         Me.Button2 = New System.Windows.Forms.Button()
         Me.dtgv3 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewCheckBoxColumn2 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dtgv, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,6 +169,12 @@ Partial Class Provisiones
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.TabPage1.Controls.Add(Me.Label14)
+        Me.TabPage1.Controls.Add(Me.Label8)
+        Me.TabPage1.Controls.Add(Me.Label4)
+        Me.TabPage1.Controls.Add(Me.Panel5)
+        Me.TabPage1.Controls.Add(Me.Panel6)
+        Me.TabPage1.Controls.Add(Me.Panel7)
         Me.TabPage1.Controls.Add(Me.Button13)
         Me.TabPage1.Controls.Add(Me.Label33)
         Me.TabPage1.Controls.Add(Me.Label34)
@@ -193,7 +203,7 @@ Partial Class Provisiones
         Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button13.Location = New System.Drawing.Point(710, 80)
+        Me.Button13.Location = New System.Drawing.Point(852, 80)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(95, 27)
         Me.Button13.TabIndex = 396
@@ -206,7 +216,7 @@ Partial Class Provisiones
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!)
         Me.Label33.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label33.Location = New System.Drawing.Point(815, 64)
+        Me.Label33.Location = New System.Drawing.Point(957, 64)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(30, 12)
         Me.Label33.TabIndex = 395
@@ -217,7 +227,7 @@ Partial Class Provisiones
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!)
         Me.Label34.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label34.Location = New System.Drawing.Point(815, 35)
+        Me.Label34.Location = New System.Drawing.Point(957, 35)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(32, 12)
         Me.Label34.TabIndex = 394
@@ -232,7 +242,7 @@ Partial Class Provisiones
         Me.dtpa2.Cursor = System.Windows.Forms.Cursors.WaitCursor
         Me.dtpa2.CustomFormat = """yyyy/MM/dd"""
         Me.dtpa2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpa2.Location = New System.Drawing.Point(706, 58)
+        Me.dtpa2.Location = New System.Drawing.Point(848, 58)
         Me.dtpa2.Name = "dtpa2"
         Me.dtpa2.Size = New System.Drawing.Size(103, 20)
         Me.dtpa2.TabIndex = 393
@@ -243,7 +253,7 @@ Partial Class Provisiones
         Me.Label35.AutoSize = True
         Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!)
         Me.Label35.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label35.Location = New System.Drawing.Point(729, 3)
+        Me.Label35.Location = New System.Drawing.Point(871, 3)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(66, 12)
         Me.Label35.TabIndex = 392
@@ -258,7 +268,7 @@ Partial Class Provisiones
         Me.dtpa1.Cursor = System.Windows.Forms.Cursors.WaitCursor
         Me.dtpa1.CustomFormat = """yyyy/MM/dd"""
         Me.dtpa1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpa1.Location = New System.Drawing.Point(706, 29)
+        Me.dtpa1.Location = New System.Drawing.Point(848, 29)
         Me.dtpa1.Name = "dtpa1"
         Me.dtpa1.Size = New System.Drawing.Size(103, 20)
         Me.dtpa1.TabIndex = 391
@@ -269,7 +279,7 @@ Partial Class Provisiones
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button11.Location = New System.Drawing.Point(537, 83)
+        Me.Button11.Location = New System.Drawing.Point(679, 83)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(95, 27)
         Me.Button11.TabIndex = 390
@@ -282,7 +292,7 @@ Partial Class Provisiones
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!)
         Me.Label31.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label31.Location = New System.Drawing.Point(653, 65)
+        Me.Label31.Location = New System.Drawing.Point(795, 65)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(30, 12)
         Me.Label31.TabIndex = 389
@@ -293,7 +303,7 @@ Partial Class Provisiones
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!)
         Me.Label30.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label30.Location = New System.Drawing.Point(653, 33)
+        Me.Label30.Location = New System.Drawing.Point(795, 33)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(32, 12)
         Me.Label30.TabIndex = 388
@@ -308,7 +318,7 @@ Partial Class Provisiones
         Me.dtpf2.Cursor = System.Windows.Forms.Cursors.WaitCursor
         Me.dtpf2.CustomFormat = """yyyy/MM/dd"""
         Me.dtpf2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpf2.Location = New System.Drawing.Point(534, 60)
+        Me.dtpf2.Location = New System.Drawing.Point(676, 60)
         Me.dtpf2.Name = "dtpf2"
         Me.dtpf2.Size = New System.Drawing.Size(103, 20)
         Me.dtpf2.TabIndex = 387
@@ -319,7 +329,7 @@ Partial Class Provisiones
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!)
         Me.Label29.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label29.Location = New System.Drawing.Point(552, 5)
+        Me.Label29.Location = New System.Drawing.Point(694, 5)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(66, 12)
         Me.Label29.TabIndex = 386
@@ -334,7 +344,7 @@ Partial Class Provisiones
         Me.dtpf.Cursor = System.Windows.Forms.Cursors.WaitCursor
         Me.dtpf.CustomFormat = """yyyy/MM/dd"""
         Me.dtpf.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpf.Location = New System.Drawing.Point(534, 30)
+        Me.dtpf.Location = New System.Drawing.Point(676, 30)
         Me.dtpf.Name = "dtpf"
         Me.dtpf.Size = New System.Drawing.Size(103, 20)
         Me.dtpf.TabIndex = 385
@@ -576,10 +586,8 @@ Partial Class Provisiones
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.TabPage2.Controls.Add(Me.Button12)
-        Me.TabPage2.Controls.Add(Me.Button10)
         Me.TabPage2.Controls.Add(Me.GroupBox6)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
-        Me.TabPage2.Controls.Add(Me.btn_parciales)
         Me.TabPage2.Controls.Add(Me.Button7)
         Me.TabPage2.Controls.Add(Me.Label15)
         Me.TabPage2.Controls.Add(Me.Panel1)
@@ -610,19 +618,6 @@ Partial Class Provisiones
         Me.Button12.Text = "PDF"
         Me.Button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.Button12.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Button10.Location = New System.Drawing.Point(216, 520)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(136, 27)
-        Me.Button10.TabIndex = 401
-        Me.Button10.Text = "Refacturar"
-        Me.Button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button10.UseVisualStyleBackColor = True
         '
         'GroupBox6
         '
@@ -750,25 +745,12 @@ Partial Class Provisiones
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'btn_parciales
-        '
-        Me.btn_parciales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_parciales.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_parciales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btn_parciales.Location = New System.Drawing.Point(10, 520)
-        Me.btn_parciales.Name = "btn_parciales"
-        Me.btn_parciales.Size = New System.Drawing.Size(136, 27)
-        Me.btn_parciales.TabIndex = 398
-        Me.btn_parciales.Text = "Facturas Parciales"
-        Me.btn_parciales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.btn_parciales.UseVisualStyleBackColor = True
-        '
         'Button7
         '
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.Salmon
-        Me.Button7.Location = New System.Drawing.Point(687, 520)
+        Me.Button7.Location = New System.Drawing.Point(11, 520)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(136, 27)
         Me.Button7.TabIndex = 397
@@ -895,7 +877,7 @@ Partial Class Provisiones
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(462, 520)
+        Me.Button1.Location = New System.Drawing.Point(401, 521)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(136, 27)
         Me.Button1.TabIndex = 383
@@ -1513,6 +1495,72 @@ Partial Class Provisiones
         Me.DataGridViewCheckBoxColumn2.Name = "DataGridViewCheckBoxColumn2"
         Me.DataGridViewCheckBoxColumn2.Width = 20
         '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.Gold
+        Me.Panel5.Location = New System.Drawing.Point(392, 67)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(32, 13)
+        Me.Panel5.TabIndex = 544
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.Pink
+        Me.Panel6.Location = New System.Drawing.Point(392, 40)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(32, 13)
+        Me.Panel6.TabIndex = 542
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.LightBlue
+        Me.Panel7.Location = New System.Drawing.Point(392, 12)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(32, 13)
+        Me.Panel7.TabIndex = 540
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Label4.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label4.Location = New System.Drawing.Point(429, 11)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(54, 14)
+        Me.Label4.TabIndex = 545
+        Me.Label4.Text = "Con XML"
+        Me.Label4.Visible = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Label8.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label8.Location = New System.Drawing.Point(430, 39)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(49, 14)
+        Me.Label8.TabIndex = 546
+        Me.Label8.Text = "Sin XML"
+        Me.Label8.Visible = False
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Label14.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label14.Location = New System.Drawing.Point(431, 66)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(54, 14)
+        Me.Label14.TabIndex = 547
+        Me.Label14.Text = "XML N/A"
+        Me.Label14.Visible = False
+        '
         'Provisiones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1582,7 +1630,6 @@ Partial Class Provisiones
     Friend WithEvents txt_foc As TextBox
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Button12 As Button
-    Friend WithEvents Button10 As Button
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents dtpb As DateTimePicker
     Friend WithEvents Button9 As Button
@@ -1592,7 +1639,6 @@ Partial Class Provisiones
     Friend WithEvents Label27 As Label
     Friend WithEvents dtp2 As DateTimePicker
     Friend WithEvents Button4 As Button
-    Friend WithEvents btn_parciales As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Label15 As Label
     Friend WithEvents Panel1 As Panel
@@ -1653,4 +1699,10 @@ Partial Class Provisiones
     Friend WithEvents Button2 As Button
     Friend WithEvents dtgv3 As DataGridView
     Friend WithEvents DataGridViewCheckBoxColumn2 As DataGridViewCheckBoxColumn
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel7 As Panel
 End Class

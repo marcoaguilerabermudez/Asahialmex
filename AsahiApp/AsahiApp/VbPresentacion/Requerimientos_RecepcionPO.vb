@@ -831,6 +831,7 @@ SELECT  [id]
             agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = lbl_uuid.Text
             agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
             agrega.Parameters.Add("@var", SqlDbType.Int).Value = 0
+            agrega.Parameters.Add("@folio", SqlDbType.VarChar, 100).Value = lbl_foliofact.Text
             agrega.Parameters.Add("@id_provision", SqlDbType.Int).Value = 0
 
             agrega.ExecuteNonQuery()
