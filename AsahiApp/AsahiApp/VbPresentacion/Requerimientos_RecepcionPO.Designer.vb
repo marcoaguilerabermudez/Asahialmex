@@ -43,6 +43,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lbl_subtotalpo = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lbl_foliofact = New System.Windows.Forms.TextBox()
         Me.lbl_totalfact = New System.Windows.Forms.TextBox()
         Me.lbl_subtotalfact = New System.Windows.Forms.TextBox()
         Me.dtp2 = New System.Windows.Forms.DateTimePicker()
@@ -67,6 +68,8 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lbl_po = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lbl_t = New System.Windows.Forms.TextBox()
+        Me.lbl_neto = New System.Windows.Forms.TextBox()
         Me.btn_desma = New System.Windows.Forms.Button()
         Me.btn_selec = New System.Windows.Forms.Button()
         Me.btn_calcular = New System.Windows.Forms.Button()
@@ -76,9 +79,6 @@ Partial Class Requerimientos_RecepcionPO
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lbl_rfc = New System.Windows.Forms.Label()
-        Me.lbl_foliofact = New System.Windows.Forms.TextBox()
-        Me.lbl_neto = New System.Windows.Forms.TextBox()
-        Me.lbl_t = New System.Windows.Forms.TextBox()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.gbx_tipo.SuspendLayout()
@@ -322,6 +322,17 @@ Partial Class Requerimientos_RecepcionPO
         Me.Panel1.Size = New System.Drawing.Size(548, 210)
         Me.Panel1.TabIndex = 519
         Me.Panel1.Visible = False
+        '
+        'lbl_foliofact
+        '
+        Me.lbl_foliofact.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_foliofact.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.lbl_foliofact.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.lbl_foliofact.Location = New System.Drawing.Point(102, 91)
+        Me.lbl_foliofact.MaxLength = 99
+        Me.lbl_foliofact.Name = "lbl_foliofact"
+        Me.lbl_foliofact.Size = New System.Drawing.Size(221, 20)
+        Me.lbl_foliofact.TabIndex = 542
         '
         'lbl_totalfact
         '
@@ -587,6 +598,32 @@ Partial Class Requerimientos_RecepcionPO
         Me.Panel2.TabIndex = 520
         Me.Panel2.Visible = False
         '
+        'lbl_t
+        '
+        Me.lbl_t.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_t.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.lbl_t.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.lbl_t.Location = New System.Drawing.Point(602, 31)
+        Me.lbl_t.MaxLength = 99
+        Me.lbl_t.Name = "lbl_t"
+        Me.lbl_t.Size = New System.Drawing.Size(138, 20)
+        Me.lbl_t.TabIndex = 542
+        Me.lbl_t.Text = "0"
+        Me.lbl_t.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lbl_neto
+        '
+        Me.lbl_neto.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_neto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.lbl_neto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.lbl_neto.Location = New System.Drawing.Point(602, 5)
+        Me.lbl_neto.MaxLength = 99
+        Me.lbl_neto.Name = "lbl_neto"
+        Me.lbl_neto.Size = New System.Drawing.Size(138, 20)
+        Me.lbl_neto.TabIndex = 541
+        Me.lbl_neto.Text = "0"
+        Me.lbl_neto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'btn_desma
         '
         Me.btn_desma.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -692,43 +729,6 @@ Partial Class Requerimientos_RecepcionPO
         Me.lbl_rfc.Name = "lbl_rfc"
         Me.lbl_rfc.Size = New System.Drawing.Size(0, 13)
         Me.lbl_rfc.TabIndex = 525
-        '
-        'lbl_foliofact
-        '
-        Me.lbl_foliofact.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_foliofact.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.lbl_foliofact.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.lbl_foliofact.Location = New System.Drawing.Point(102, 91)
-        Me.lbl_foliofact.MaxLength = 99
-        Me.lbl_foliofact.Name = "lbl_foliofact"
-        Me.lbl_foliofact.Size = New System.Drawing.Size(127, 20)
-        Me.lbl_foliofact.TabIndex = 542
-        '
-        'lbl_neto
-        '
-        Me.lbl_neto.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_neto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.lbl_neto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.lbl_neto.Location = New System.Drawing.Point(602, 5)
-        Me.lbl_neto.MaxLength = 99
-        Me.lbl_neto.Name = "lbl_neto"
-        Me.lbl_neto.Size = New System.Drawing.Size(138, 20)
-        Me.lbl_neto.TabIndex = 541
-        Me.lbl_neto.Text = "0"
-        Me.lbl_neto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'lbl_t
-        '
-        Me.lbl_t.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_t.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.lbl_t.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.lbl_t.Location = New System.Drawing.Point(602, 31)
-        Me.lbl_t.MaxLength = 99
-        Me.lbl_t.Name = "lbl_t"
-        Me.lbl_t.Size = New System.Drawing.Size(138, 20)
-        Me.lbl_t.TabIndex = 542
-        Me.lbl_t.Text = "0"
-        Me.lbl_t.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Requerimientos_RecepcionPO
         '

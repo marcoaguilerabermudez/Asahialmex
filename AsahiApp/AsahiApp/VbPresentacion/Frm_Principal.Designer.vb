@@ -157,6 +157,7 @@ Partial Class Frm_Principal
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ProvisionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -688,8 +689,7 @@ Partial Class Frm_Principal
         '
         'RequerimientosToolStripMenuItem
         '
-        Me.RequerimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.MisRequerimientosToolStripMenuItem, Me.CotizaciónToolStripMenuItem, Me.OrdenDeCompraToolStripMenuItem, Me.RevisarPOToolStripMenuItem, Me.RecibirPOToolStripMenuItem, Me.RecepcionesPOToolStripMenuItem})
-        Me.RequerimientosToolStripMenuItem.Enabled = False
+        Me.RequerimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.MisRequerimientosToolStripMenuItem, Me.CotizaciónToolStripMenuItem, Me.OrdenDeCompraToolStripMenuItem, Me.RevisarPOToolStripMenuItem, Me.RecibirPOToolStripMenuItem, Me.RecepcionesPOToolStripMenuItem, Me.ProvisionesToolStripMenuItem})
         Me.RequerimientosToolStripMenuItem.Name = "RequerimientosToolStripMenuItem"
         Me.RequerimientosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RequerimientosToolStripMenuItem.Text = "Requerimientos"
@@ -739,7 +739,6 @@ Partial Class Frm_Principal
         'CatálogosToolStripMenuItem
         '
         Me.CatálogosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProveedoresToolStripMenuItem, Me.ProductosToolStripMenuItem})
-        Me.CatálogosToolStripMenuItem.Enabled = False
         Me.CatálogosToolStripMenuItem.Name = "CatálogosToolStripMenuItem"
         Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
@@ -1025,6 +1024,12 @@ Partial Class Frm_Principal
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "20/10/2021"
         '
+        'ProvisionesToolStripMenuItem
+        '
+        Me.ProvisionesToolStripMenuItem.Name = "ProvisionesToolStripMenuItem"
+        Me.ProvisionesToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.ProvisionesToolStripMenuItem.Text = "Provisiones"
+        '
         'Frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1182,4 +1187,5 @@ Partial Class Frm_Principal
     Friend WithEvents RevisarPOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecibirPOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecepcionesPOToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProvisionesToolStripMenuItem As ToolStripMenuItem
 End Class

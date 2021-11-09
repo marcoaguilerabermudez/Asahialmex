@@ -24,6 +24,8 @@ Partial Class Requerimientos_CargaXML
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Requerimientos_CargaXML))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbl_moneda = New System.Windows.Forms.Label()
         Me.btn_quitar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lbl_total = New System.Windows.Forms.Label()
@@ -46,7 +48,6 @@ Partial Class Requerimientos_CargaXML
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.lbl_foliofact = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.lbl_uuid = New System.Windows.Forms.Label()
         Me.gbx_tipo = New System.Windows.Forms.GroupBox()
@@ -54,14 +55,14 @@ Partial Class Requerimientos_CargaXML
         Me.rbt_falta = New System.Windows.Forms.RadioButton()
         Me.lbl_txtfiltro = New System.Windows.Forms.Label()
         Me.txt_busca = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lbl_moneda = New System.Windows.Forms.Label()
+        Me.lbl_foliofact = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.gbx_tipo.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.lbl_foliofact)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.lbl_moneda)
         Me.Panel1.Controls.Add(Me.btn_quitar)
@@ -86,7 +87,6 @@ Partial Class Requerimientos_CargaXML
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label17)
         Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.lbl_foliofact)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.lbl_uuid)
         Me.Panel1.Controls.Add(Me.gbx_tipo)
@@ -96,6 +96,27 @@ Partial Class Requerimientos_CargaXML
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(548, 401)
         Me.Panel1.TabIndex = 520
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label3.Location = New System.Drawing.Point(18, 119)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 13)
+        Me.Label3.TabIndex = 554
+        Me.Label3.Text = "Moneda"
+        '
+        'lbl_moneda
+        '
+        Me.lbl_moneda.AutoSize = True
+        Me.lbl_moneda.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_moneda.ForeColor = System.Drawing.Color.Black
+        Me.lbl_moneda.Location = New System.Drawing.Point(86, 119)
+        Me.lbl_moneda.Name = "lbl_moneda"
+        Me.lbl_moneda.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_moneda.TabIndex = 555
         '
         'btn_quitar
         '
@@ -337,16 +358,6 @@ Partial Class Requerimientos_CargaXML
         Me.Label9.TabIndex = 529
         Me.Label9.Text = "Folio"
         '
-        'lbl_foliofact
-        '
-        Me.lbl_foliofact.AutoSize = True
-        Me.lbl_foliofact.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_foliofact.ForeColor = System.Drawing.Color.Black
-        Me.lbl_foliofact.Location = New System.Drawing.Point(104, 235)
-        Me.lbl_foliofact.Name = "lbl_foliofact"
-        Me.lbl_foliofact.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_foliofact.TabIndex = 530
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -425,26 +436,16 @@ Partial Class Requerimientos_CargaXML
         Me.txt_busca.Size = New System.Drawing.Size(315, 20)
         Me.txt_busca.TabIndex = 524
         '
-        'Label3
+        'lbl_foliofact
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(18, 119)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 13)
-        Me.Label3.TabIndex = 554
-        Me.Label3.Text = "Moneda"
-        '
-        'lbl_moneda
-        '
-        Me.lbl_moneda.AutoSize = True
-        Me.lbl_moneda.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_moneda.ForeColor = System.Drawing.Color.Black
-        Me.lbl_moneda.Location = New System.Drawing.Point(86, 119)
-        Me.lbl_moneda.Name = "lbl_moneda"
-        Me.lbl_moneda.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_moneda.TabIndex = 555
+        Me.lbl_foliofact.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_foliofact.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.lbl_foliofact.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.lbl_foliofact.Location = New System.Drawing.Point(101, 233)
+        Me.lbl_foliofact.MaxLength = 99
+        Me.lbl_foliofact.Name = "lbl_foliofact"
+        Me.lbl_foliofact.Size = New System.Drawing.Size(226, 20)
+        Me.lbl_foliofact.TabIndex = 556
         '
         'Requerimientos_CargaXML
         '
@@ -476,7 +477,6 @@ Partial Class Requerimientos_CargaXML
     Friend WithEvents Label10 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents lbl_foliofact As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents lbl_uuid As Label
     Friend WithEvents gbx_tipo As GroupBox
@@ -498,4 +498,5 @@ Partial Class Requerimientos_CargaXML
     Friend WithEvents btn_quitar As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents lbl_moneda As Label
+    Friend WithEvents lbl_foliofact As TextBox
 End Class

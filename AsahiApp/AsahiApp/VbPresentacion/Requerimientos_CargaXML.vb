@@ -338,7 +338,7 @@ SELECT  [id]
             agrega.Parameters.Add("@f_pago", SqlDbType.Date).Value = dtp2.Value.ToShortDateString
             agrega.Parameters.Add("@subtotalp", SqlDbType.Money).Value = lbl_subtotalfact.Text
             agrega.Parameters.Add("@totalp", SqlDbType.Money).Value = lbl_totalfact.Text
-
+            agrega.Parameters.Add("@folio", SqlDbType.VarChar, 100).Value = lbl_foliofact.Text
 
 
 

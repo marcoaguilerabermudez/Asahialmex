@@ -50,6 +50,7 @@ namespace CsPresentacion
         }
         private void nuevo()
         {
+            Panel_principal.Visible = true;
             lbl_var.Visible = false;
             lbl_var.Text = "1";
             lbl_tipo_ingreso.Text = "NUEVO INGRESO";
