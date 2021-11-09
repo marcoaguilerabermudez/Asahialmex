@@ -66,7 +66,7 @@ Partial Class ActualizaTurnoSolicitud
         Me.cbx_textra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbx_textra.ForeColor = System.Drawing.SystemColors.Menu
         Me.cbx_textra.FormattingEnabled = True
-        Me.cbx_textra.Items.AddRange(New Object() {"Matutino", "Vespertino", "Nocturno", "Administrativo"})
+        Me.cbx_textra.Items.AddRange(New Object() {"12 M", "12 N", "Administrativo"})
         Me.cbx_textra.Location = New System.Drawing.Point(117, 111)
         Me.cbx_textra.Name = "cbx_textra"
         Me.cbx_textra.Size = New System.Drawing.Size(142, 21)

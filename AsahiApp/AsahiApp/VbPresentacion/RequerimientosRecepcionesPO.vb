@@ -9,6 +9,8 @@ Public Class RequerimientosRecepcionesPO
     Dim p_vales As Integer
     Dim id_provision As Integer
     Dim id_po As Integer
+    Dim edo_po As Integer
+
 
     Public cnn As SqlConnection
     Public cnn2 As SqlConnection
@@ -55,6 +57,7 @@ Public Class RequerimientosRecepcionesPO
             'dtgvp.Columns.Remove("XML")
             dtgvp.Columns.Remove("XML")
             dtgvp.Columns.Remove("Eliminar")
+            dtgvp.Columns.Remove("PDF")
         Catch ex As Exception
 
         End Try
@@ -116,6 +119,8 @@ Public Class RequerimientosRecepcionesPO
             dtgvp.Columns("f_fac").Visible = False
             dtgvp.Columns("f_sub").Visible = False
             dtgvp.Columns("id_po").Visible = False
+            dtgvp.Columns("moneda").Visible = False
+            dtgvp.Columns("edo_po").Visible = False
 
             '  cnn.Close()
 
@@ -159,10 +164,13 @@ Public Class RequerimientosRecepcionesPO
         'dtgvp.Columns.Insert(dtgvp.ColumnCount, cbtn)
         Dim cbtn2 As New DataGridViewButtonColumn
         Dim cbtn3 As New DataGridViewButtonColumn
+        Dim cbtn4 As New DataGridViewButtonColumn
 
         If depto = 19 Then
 
             dtgvp.Columns.Insert(dtgvp.ColumnCount, cbtn2)
+
+            dtgvp.Columns.Insert(dtgvp.ColumnCount, cbtn4)
             dtgvp.Columns.Insert(dtgvp.ColumnCount, cbtn3)
             With cbtn2
                 .HeaderText = "XML"
@@ -173,11 +181,18 @@ Public Class RequerimientosRecepcionesPO
                 .HeaderText = "Eliminar"
                 .Name = "Eliminar"
                 .Width = 50
+            End With
+            With cbtn4
+                .HeaderText = "PDF"
+                .Name = "PDF"
+                .Width = 40
             End With
 
         ElseIf depto = 7 Then
 
             dtgvp.Columns.Insert(dtgvp.ColumnCount, cbtn2)
+
+            dtgvp.Columns.Insert(dtgvp.ColumnCount, cbtn4)
             dtgvp.Columns.Insert(dtgvp.ColumnCount, cbtn3)
             With cbtn2
                 .HeaderText = "XML"
@@ -188,6 +203,11 @@ Public Class RequerimientosRecepcionesPO
                 .HeaderText = "Eliminar"
                 .Name = "Eliminar"
                 .Width = 50
+            End With
+            With cbtn4
+                .HeaderText = "PDF"
+                .Name = "PDF"
+                .Width = 40
             End With
         Else
 
@@ -243,125 +263,217 @@ Public Class RequerimientosRecepcionesPO
         lbl_rfc.Text = dtgvp.Rows(e.RowIndex).Cells("RFC").Value
         id_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
         id_po = dtgvp.Rows(e.RowIndex).Cells("id_po").Value
-
-        Try
-            If e.ColumnIndex = 17 Then
-
-                If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 1 Then
-
-                    Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
-                    Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
-                    Modulo_vistarecepprincipal.e_subtotal = dtgvp.Rows(e.RowIndex).Cells("Subtotal").Value
-                    Modulo_vistarecepprincipal.e_total = dtgvp.Rows(e.RowIndex).Cells("Total").Value
-                    Modulo_vistarecepprincipal.e_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
-
-                    Modulo_vistarecepprincipal.e_ffac = dtgvp.Rows(e.RowIndex).Cells("f_fac").Value
-                    Modulo_vistarecepprincipal.e_fpago = dtgvp.Rows(e.RowIndex).Cells("Fecha de pago").Value
-                    Modulo_vistarecepprincipal.e_fsub = dtgvp.Rows(e.RowIndex).Cells("f_sub").Value
-                    Modulo_vistarecepprincipal.e_ftotal = dtgvp.Rows(e.RowIndex).Cells("f_total").Value
-                    Modulo_vistarecepprincipal.e_uuid = CStr(dtgvp.Rows(e.RowIndex).Cells("UUID").Value)
-                    Modulo_vistarecepprincipal.e_folio = dtgvp.Rows(e.RowIndex).Cells("Folio").Value
-                    Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
-
-                    Dim Req_cargaxml As New Requerimientos_CargaXML(id, depto, permiso, nombre, p_vales)
-                    Req_cargaxml.Show()
-                    dtgvp.Visible = False
-                    lbl_proveedor.Text = ""
-                    lbl_rfc.Text = ""
-
-                ElseIf dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 2 Then
-
-                    Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
-                    Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
-                    Modulo_vistarecepprincipal.e_subtotal = dtgvp.Rows(e.RowIndex).Cells("Subtotal").Value
-                    Modulo_vistarecepprincipal.e_total = dtgvp.Rows(e.RowIndex).Cells("Total").Value
-                    Modulo_vistarecepprincipal.e_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
-
-                    Modulo_vistarecepprincipal.e_ffac = dtgvp.Rows(e.RowIndex).Cells("f_fac").Value
-                    Modulo_vistarecepprincipal.e_fpago = dtgvp.Rows(e.RowIndex).Cells("Fecha de pago").Value
-                    Modulo_vistarecepprincipal.e_fsub = dtgvp.Rows(e.RowIndex).Cells("f_sub").Value
-                    Modulo_vistarecepprincipal.e_ftotal = dtgvp.Rows(e.RowIndex).Cells("f_total").Value
-                    Modulo_vistarecepprincipal.e_uuid = CStr(dtgvp.Rows(e.RowIndex).Cells("UUID").Value)
-                    Modulo_vistarecepprincipal.e_folio = dtgvp.Rows(e.RowIndex).Cells("Folio").Value
-                    Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
-
-                    Dim Req_cargaxml As New Requerimientos_CargaXML(id, depto, permiso, nombre, p_vales)
-                    Req_cargaxml.Show()
-                    dtgvp.Visible = False
-                    lbl_proveedor.Text = ""
-                    lbl_rfc.Text = ""
-
-                ElseIf dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 0 Then
-
-                    Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
-                    Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
-                    Modulo_vistarecepprincipal.e_subtotal = dtgvp.Rows(e.RowIndex).Cells("Subtotal").Value
-                    Modulo_vistarecepprincipal.e_total = dtgvp.Rows(e.RowIndex).Cells("Total").Value
-                    Modulo_vistarecepprincipal.e_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
-
-                    Modulo_vistarecepprincipal.e_ffac = Today.Date
-                    Modulo_vistarecepprincipal.e_fpago = dtgvp.Rows(e.RowIndex).Cells("Fecha de pago").Value
-                    Modulo_vistarecepprincipal.e_fsub = 0
-                    Modulo_vistarecepprincipal.e_ftotal = 0
-                    Modulo_vistarecepprincipal.e_uuid = ""
-                    Modulo_vistarecepprincipal.e_folio = ""
-                    Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
-
-                    Dim Req_cargaxml As New Requerimientos_CargaXML(id, depto, permiso, nombre, p_vales)
-                    Req_cargaxml.Show()
-
-                Else
-
-                End If
+        edo_po = dtgvp.Rows(e.RowIndex).Cells("edo_po").Value
 
 
+        If edo_po = 2 Or edo_po = 3 Then
 
+            Try
+                If e.ColumnIndex = 19 Then
 
-            ElseIf e.ColumnIndex = 18 Then
+                    If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 1 Then
 
+                        Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
+                        Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
+                        Modulo_vistarecepprincipal.e_subtotal = dtgvp.Rows(e.RowIndex).Cells("Subtotal").Value
+                        Modulo_vistarecepprincipal.e_total = dtgvp.Rows(e.RowIndex).Cells("Total").Value
+                        Modulo_vistarecepprincipal.e_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
 
-                If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value <> 88 Then
+                        Modulo_vistarecepprincipal.e_ffac = dtgvp.Rows(e.RowIndex).Cells("f_fac").Value
+                        Modulo_vistarecepprincipal.e_fpago = dtgvp.Rows(e.RowIndex).Cells("Fecha de pago").Value
+                        Modulo_vistarecepprincipal.e_fsub = dtgvp.Rows(e.RowIndex).Cells("f_sub").Value
+                        Modulo_vistarecepprincipal.e_ftotal = dtgvp.Rows(e.RowIndex).Cells("f_total").Value
+                        Modulo_vistarecepprincipal.e_uuid = CStr(dtgvp.Rows(e.RowIndex).Cells("UUID").Value)
+                        Modulo_vistarecepprincipal.e_folio = dtgvp.Rows(e.RowIndex).Cells("Folio").Value
+                        Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
+                        Modulo_vistarecepprincipal.e_moneda = dtgvp.Rows(e.RowIndex).Cells("moneda").Value
 
-                    Dim Pregunta As Integer
+                        Dim Req_cargaxml As New Requerimientos_CargaXML(id, depto, permiso, nombre, p_vales)
+                        Req_cargaxml.Show()
+                        dtgvp.Visible = False
+                        lbl_proveedor.Text = ""
+                        lbl_rfc.Text = ""
 
-                    Pregunta = MsgBox("¿Desea eliminar la recepción: " & id_provision & " ? Recuerde que este proceso implica movimientos en inventarios", vbYesNo + vbExclamation + vbDefaultButton2, "")
+                    ElseIf dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 2 Then
 
-                    If Pregunta = vbYes Then
+                        Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
+                        Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
+                        Modulo_vistarecepprincipal.e_subtotal = dtgvp.Rows(e.RowIndex).Cells("Subtotal").Value
+                        Modulo_vistarecepprincipal.e_total = dtgvp.Rows(e.RowIndex).Cells("Total").Value
+                        Modulo_vistarecepprincipal.e_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
 
-                        EliminaProvision()
+                        Modulo_vistarecepprincipal.e_ffac = dtgvp.Rows(e.RowIndex).Cells("f_fac").Value
+                        Modulo_vistarecepprincipal.e_fpago = dtgvp.Rows(e.RowIndex).Cells("Fecha de pago").Value
+                        Modulo_vistarecepprincipal.e_fsub = dtgvp.Rows(e.RowIndex).Cells("f_sub").Value
+                        Modulo_vistarecepprincipal.e_ftotal = dtgvp.Rows(e.RowIndex).Cells("f_total").Value
+                        Modulo_vistarecepprincipal.e_uuid = CStr(dtgvp.Rows(e.RowIndex).Cells("UUID").Value)
+                        Modulo_vistarecepprincipal.e_folio = dtgvp.Rows(e.RowIndex).Cells("Folio").Value
+                        Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
+                        Modulo_vistarecepprincipal.e_moneda = dtgvp.Rows(e.RowIndex).Cells("moneda").Value
+
+                        Dim Req_cargaxml As New Requerimientos_CargaXML(id, depto, permiso, nombre, p_vales)
+                        Req_cargaxml.Show()
+                        dtgvp.Visible = False
+                        lbl_proveedor.Text = ""
+                        lbl_rfc.Text = ""
+
+                    ElseIf dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 0 Then
+
+                        Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
+                        Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
+                        Modulo_vistarecepprincipal.e_subtotal = dtgvp.Rows(e.RowIndex).Cells("Subtotal").Value
+                        Modulo_vistarecepprincipal.e_total = dtgvp.Rows(e.RowIndex).Cells("Total").Value
+                        Modulo_vistarecepprincipal.e_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
+
+                        Modulo_vistarecepprincipal.e_ffac = Today.Date
+                        Modulo_vistarecepprincipal.e_fpago = dtgvp.Rows(e.RowIndex).Cells("Fecha de pago").Value
+                        Modulo_vistarecepprincipal.e_fsub = 0
+                        Modulo_vistarecepprincipal.e_ftotal = 0
+                        Modulo_vistarecepprincipal.e_uuid = ""
+                        Modulo_vistarecepprincipal.e_folio = ""
+                        Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
+                        Modulo_vistarecepprincipal.e_moneda = dtgvp.Rows(e.RowIndex).Cells("moneda").Value
+
+                        Dim Req_cargaxml As New Requerimientos_CargaXML(id, depto, permiso, nombre, p_vales)
+                        Req_cargaxml.Show()
+
                     Else
-                        MessageBox.Show("Acción no completada", "¡Aviso!")
+
                     End If
 
-                Else
+                ElseIf e.ColumnIndex = 21 Then
 
-                    'Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
-                    'Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
-                    'Modulo_vistarecepprincipal.e_subtotal = dtgvp.Rows(e.RowIndex).Cells("Subtotal").Value
-                    'Modulo_vistarecepprincipal.e_total = dtgvp.Rows(e.RowIndex).Cells("Total").Value
-                    'Modulo_vistarecepprincipal.e_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
+                    If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value <> 88 Then
+                        var_filtro = 0
+                        MessageBox.Show("No puede eliminar la recepción porque la PO ya está cerrada o cancelada", "¡Aviso!")
 
-                    'Modulo_vistarecepprincipal.e_ffac = Today.Date
-                    'Modulo_vistarecepprincipal.e_fpago = dtgvp.Rows(e.RowIndex).Cells("Fecha de pago").Value
-                    'Modulo_vistarecepprincipal.e_fsub = 0
-                    'Modulo_vistarecepprincipal.e_ftotal = 0
-                    'Modulo_vistarecepprincipal.e_uuid = ""
-                    'Modulo_vistarecepprincipal.e_folio = ""
-                    'Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
+                    Else
 
-                    'Dim Req_cargaxml As New Requerimientos_CargaXML(id, depto, permiso, nombre, p_vales)
-                    'Req_cargaxml.Show()
+                    End If
+
+
+
+
+
 
                 End If
 
+            Catch EX As Exception
+                MessageBox.Show(EX.ToString)
+            End Try
+
+        Else
+
+            Try
+                If e.ColumnIndex = 19 Then
+
+                    If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 1 Then
+
+                        Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
+                        Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
+                        Modulo_vistarecepprincipal.e_subtotal = dtgvp.Rows(e.RowIndex).Cells("Subtotal").Value
+                        Modulo_vistarecepprincipal.e_total = dtgvp.Rows(e.RowIndex).Cells("Total").Value
+                        Modulo_vistarecepprincipal.e_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
+
+                        Modulo_vistarecepprincipal.e_ffac = dtgvp.Rows(e.RowIndex).Cells("f_fac").Value
+                        Modulo_vistarecepprincipal.e_fpago = dtgvp.Rows(e.RowIndex).Cells("Fecha de pago").Value
+                        Modulo_vistarecepprincipal.e_fsub = dtgvp.Rows(e.RowIndex).Cells("f_sub").Value
+                        Modulo_vistarecepprincipal.e_ftotal = dtgvp.Rows(e.RowIndex).Cells("f_total").Value
+                        Modulo_vistarecepprincipal.e_uuid = CStr(dtgvp.Rows(e.RowIndex).Cells("UUID").Value)
+                        Modulo_vistarecepprincipal.e_folio = dtgvp.Rows(e.RowIndex).Cells("Folio").Value
+                        Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
+                        Modulo_vistarecepprincipal.e_moneda = dtgvp.Rows(e.RowIndex).Cells("moneda").Value
+
+                        Dim Req_cargaxml As New Requerimientos_CargaXML(id, depto, permiso, nombre, p_vales)
+                        Req_cargaxml.Show()
+                        dtgvp.Visible = False
+                        lbl_proveedor.Text = ""
+                        lbl_rfc.Text = ""
+
+                    ElseIf dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 2 Then
+
+                        Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
+                        Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
+                        Modulo_vistarecepprincipal.e_subtotal = dtgvp.Rows(e.RowIndex).Cells("Subtotal").Value
+                        Modulo_vistarecepprincipal.e_total = dtgvp.Rows(e.RowIndex).Cells("Total").Value
+                        Modulo_vistarecepprincipal.e_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
+
+                        Modulo_vistarecepprincipal.e_ffac = dtgvp.Rows(e.RowIndex).Cells("f_fac").Value
+                        Modulo_vistarecepprincipal.e_fpago = dtgvp.Rows(e.RowIndex).Cells("Fecha de pago").Value
+                        Modulo_vistarecepprincipal.e_fsub = dtgvp.Rows(e.RowIndex).Cells("f_sub").Value
+                        Modulo_vistarecepprincipal.e_ftotal = dtgvp.Rows(e.RowIndex).Cells("f_total").Value
+                        Modulo_vistarecepprincipal.e_uuid = CStr(dtgvp.Rows(e.RowIndex).Cells("UUID").Value)
+                        Modulo_vistarecepprincipal.e_folio = dtgvp.Rows(e.RowIndex).Cells("Folio").Value
+                        Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
+                        Modulo_vistarecepprincipal.e_moneda = dtgvp.Rows(e.RowIndex).Cells("moneda").Value
+
+                        Dim Req_cargaxml As New Requerimientos_CargaXML(id, depto, permiso, nombre, p_vales)
+                        Req_cargaxml.Show()
+                        dtgvp.Visible = False
+                        lbl_proveedor.Text = ""
+                        lbl_rfc.Text = ""
+
+                    ElseIf dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 0 Then
+
+                        Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
+                        Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
+                        Modulo_vistarecepprincipal.e_subtotal = dtgvp.Rows(e.RowIndex).Cells("Subtotal").Value
+                        Modulo_vistarecepprincipal.e_total = dtgvp.Rows(e.RowIndex).Cells("Total").Value
+                        Modulo_vistarecepprincipal.e_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
+
+                        Modulo_vistarecepprincipal.e_ffac = Today.Date
+                        Modulo_vistarecepprincipal.e_fpago = dtgvp.Rows(e.RowIndex).Cells("Fecha de pago").Value
+                        Modulo_vistarecepprincipal.e_fsub = 0
+                        Modulo_vistarecepprincipal.e_ftotal = 0
+                        Modulo_vistarecepprincipal.e_uuid = ""
+                        Modulo_vistarecepprincipal.e_folio = ""
+                        Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
+                        Modulo_vistarecepprincipal.e_moneda = dtgvp.Rows(e.RowIndex).Cells("moneda").Value
+
+                        Dim Req_cargaxml As New Requerimientos_CargaXML(id, depto, permiso, nombre, p_vales)
+                        Req_cargaxml.Show()
+
+                    Else
+
+                    End If
+
+                ElseIf e.ColumnIndex = 21 Then
+                    var_filtro = 0
+
+                    If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value <> 88 Then
+
+                        Dim Pregunta As Integer
+
+                        Pregunta = MsgBox("¿Desea eliminar la recepción: " & id_provision & " ? Recuerde que este proceso implica movimientos en inventarios", vbYesNo + vbExclamation + vbDefaultButton2, "")
+
+                        If Pregunta = vbYes Then
+
+                            EliminaProvision()
+                        Else
+                            MessageBox.Show("Acción no completada", "¡Aviso!")
+                        End If
+
+                    Else
+
+                    End If
 
 
+                ElseIf e.ColumnIndex = 20 Then
+                    MessageBox.Show("PDF")
 
-            End If
+                End If
 
-        Catch EX As Exception
-            MessageBox.Show(EX.ToString)
-        End Try
+            Catch EX As Exception
+                MessageBox.Show(EX.ToString)
+            End Try
+
+        End If
+
+        If e.ColumnIndex = 20 Then
+            var_filtro = 1
+            MessageBox.Show("PDF")
+
+        End If
 
     End Sub
 
@@ -372,6 +484,8 @@ Public Class RequerimientosRecepcionesPO
         lbl_rfc.Text = dtgvp.Rows(e.RowIndex).Cells("RFC").Value
         id_provision = dtgvp.Rows(e.RowIndex).Cells("Recepcion").Value
         id_po = dtgvp.Rows(e.RowIndex).Cells("id_po").Value
+
+
     End Sub
 
 
@@ -393,6 +507,7 @@ Public Class RequerimientosRecepcionesPO
             Modulo_vistarecepprincipal.e_uuid = CStr(dtgvp.Rows(e.RowIndex).Cells("UUID").Value)
             Modulo_vistarecepprincipal.e_folio = dtgvp.Rows(e.RowIndex).Cells("Folio").Value
             Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
+            Modulo_vistarecepprincipal.e_moneda = dtgvp.Rows(e.RowIndex).Cells("moneda").Value
         Catch
         End Try
 
@@ -415,6 +530,8 @@ Public Class RequerimientosRecepcionesPO
             agrega.Parameters.Clear()
             agrega.Parameters.Add("@id_provision", SqlDbType.Int).Value = id_provision
             agrega.Parameters.Add("@id_po", SqlDbType.Int).Value = id_po
+            agrega.Parameters.Add("@var", SqlDbType.Int).Value = var_filtro
+            agrega.Parameters.Add("@pdf", SqlDbType.VarChar, 400).Value = id_po
             agrega.ExecuteNonQuery()
 
             cnn.Close()
@@ -424,6 +541,7 @@ Public Class RequerimientosRecepcionesPO
             cargagrid()
 
         Catch ex As Exception
+
             MessageBox.Show("Error, consulte al administrador")
 
             MessageBox.Show(ex.ToString)

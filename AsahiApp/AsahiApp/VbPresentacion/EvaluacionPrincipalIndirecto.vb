@@ -482,6 +482,8 @@ where id_evaluaciones = @ID and estado = 0
             If estado < 13 Then
                 MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
+
+
                 ContenedorReporteIndirecto.id_evaluacion = id_eval
 
                 ContenedorReporteIndirecto.fecha = fecha
@@ -494,6 +496,7 @@ where id_evaluaciones = @ID and estado = 0
             If estado < 10 Then
                 MessageBox.Show("Solamente se pueden imprimir evaluaciones que ya han sido calificadas.", "¡Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
+
                 ContenedorREvaluacionSin.id_evaluaciones = id_eval
                 ContenedorREvaluacionSin.teval = tipo
                 ContenedorREvaluacionSin.fecha = fecha
