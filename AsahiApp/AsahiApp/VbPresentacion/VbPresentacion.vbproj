@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -709,6 +709,12 @@
       <DependentUpon>Modificacion_de_Turno.vb</DependentUpon>
     </Compile>
     <Compile Include="Modificacion_de_Turno.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Provisiones.Designer.vb">
+      <DependentUpon>Provisiones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Provisiones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReimprimeVale.Designer.vb">
@@ -1560,6 +1566,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlanTE.resx">
       <DependentUpon>PlanTE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Provisiones.resx">
+      <DependentUpon>Provisiones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReimprimeMedida.resx">
       <DependentUpon>ReimprimeMedida.vb</DependentUpon>

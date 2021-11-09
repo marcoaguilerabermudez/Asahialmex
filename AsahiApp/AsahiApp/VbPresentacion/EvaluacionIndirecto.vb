@@ -1,5 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports System
 
 Public Class EvaluacionIndirecto
     Dim Cn As New SqlConnection("data source =GIRO\SQLEXPRESS ;initial catalog=AsahiSystem;user id=sa;password=Pa55word")
@@ -577,6 +576,7 @@ Public Class EvaluacionIndirecto
 
 
         'MessageBox.Show(Me.dtgvp.Rows(e.RowIndex).Cells("id_evacrit").Value.ToString())
+        'MessageBox.Show(Me.dtgvp.Rows(e.RowIndex).Cells("id_evacrit").Value.TdtgvString())
 
         pbx_eva.ImageLocation = ("V:\Eva_F\" & Me.dtgvp.Rows(e.RowIndex).Cells("id_evacrit").Value.ToString() & ".jpg")
         Me.pbx_eva.SizeMode = PictureBoxSizeMode.CenterImage

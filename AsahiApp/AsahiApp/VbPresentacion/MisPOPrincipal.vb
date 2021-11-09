@@ -496,15 +496,79 @@ Public Class MisPOPrincipal
             update [Asahi].[dbo].[com_po_principal] set estado = 1
             where id = @id and estado = 0
             end
+
+
             else if @var1= 2
             begin
+
+            UPDATE 
+            t2
+            SET 
+	        t2.Estado = 0 , t2.oc = 0
+            FROM [Asahi].[dbo].[Com_RequerimientoPrincipal] t1
+            JOIN [Asahi].[dbo].[Com_RequerimientoMovimiento] t2
+	        on t2.Id_requerimiento = t1.Id_requerimientoP
+	        join [Asahi].[dbo].[com_PO_movimientos] pomov
+	        on pomov.id_req = t2.Id_movimiento
+             join [Asahi].[dbo].[com_po_principal] poprin
+	         on poprin.id = pomov.id_po
+             WHERE pomov.id_po = @id and poprin.estado in (1,0) 
+
+
+            UPDATE 
+            pomov
+            SET 
+	         pomov.id_req = 0 , pomov.id_cotizacion = 0
+            FROM [Asahi].[dbo].[Com_RequerimientoPrincipal] t1
+            JOIN [Asahi].[dbo].[Com_RequerimientoMovimiento] t2
+	        on t2.Id_requerimiento = t1.Id_requerimientoP
+	        join [Asahi].[dbo].[com_PO_movimientos] pomov
+	        on pomov.id_req = t2.Id_movimiento
+            join [Asahi].[dbo].[com_po_principal] poprin
+	         on poprin.id = pomov.id_po
+             WHERE pomov.id_po = @id and poprin.estado in (1,0) 
+
             update [Asahi].[dbo].[com_po_principal] set estado = 2
             where id = @id and estado in (1,0)
+            
+
+
             end
+
+
             else if @var1= 3
             begin
+
+            UPDATE 
+            pomov
+            SET 
+	         cantidad_recibida = cantidad , cantidad_facturada = cantidad, cantidad_pendiente = 0
+            FROM [Asahi].[dbo].[com_PO_movimientos] pomov
+            join [Asahi].[dbo].[com_po_principal] poprin
+	         on poprin.id = pomov.id_po
+             WHERE pomov.id_po = @id and poprin.estado in (4) 
+
+
+            UPDATE 
+            t2
+            SET 
+	        t2.Estado = 8
+            FROM [Asahi].[dbo].[Com_RequerimientoPrincipal] t1
+            JOIN [Asahi].[dbo].[Com_RequerimientoMovimiento] t2
+	        on t2.Id_requerimiento = t1.Id_requerimientoP
+	        join [Asahi].[dbo].[com_PO_movimientos] pomov
+	        on pomov.id_req = t2.Id_movimiento
+             join [Asahi].[dbo].[com_po_principal] poprin
+	         on poprin.id = pomov.id_po
+             WHERE pomov.id_po = @id and poprin.estado in (4) 
+            
+
             update [Asahi].[dbo].[com_po_principal] set estado = 3
             where id = @id and estado in (4)
+            
+
+
+
             end
  
                 
@@ -583,6 +647,8 @@ Public Class MisPOPrincipal
             Next
         Catch
         End Try
+
+
     End Sub
 
 

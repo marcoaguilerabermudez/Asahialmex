@@ -165,7 +165,7 @@ Public Class Requerimientos_RecepcionPO
             txt_busca.Focus()
 
             If dtgvp.RowCount < 1 Then
-                MessageBox.Show("No hay ningún registro con los criterios de búsqueda seleccionados", "¡Alerta!")
+                MessageBox.Show("No hay ningún registro disponible para recepción con los criterios de búsqueda seleccionados", "¡Alerta!")
                 dtgvp.Visible = False
                 lbl_po.Text = ""
 
@@ -366,7 +366,9 @@ SELECT  [id]
             Dim da As SqlDataAdapter
             Dim ds As New DataSet
             ds.Clear()
+
             da = New SqlDataAdapter(SSel, cnn)
+
             da.Fill(ds)
 
             lbl_foliofact.Text = ds.Tables(0).Rows(0).Item(5)
@@ -384,6 +386,7 @@ SELECT  [id]
         Catch ex As Exception
             'MessageBox.Show(ex.ToString)
             MessageBox.Show("El registro que está tecleando es incorrecto, revise de nueva cuenta", "¡Aviso!")
+
             txt_busca.Clear()
             txt_busca.Focus()
             lbl_subtotalfact.Text = 0
@@ -582,7 +585,16 @@ SELECT  [id]
         End If
 
 
+        'Dim Pregunta As Integer
 
+        'Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+        'If Pregunta = vbYes Then
+        '    crearrecepcion()
+        '    insertarfilas()
+        'Else
+        '    MessageBox.Show("Acción no completada", "¡Aviso!")
+        'End If
 
 
 
@@ -614,6 +626,7 @@ SELECT  [id]
 
     Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.RowEnter
         Try
+
             lbl_po.Text = Me.dtgvp.Rows(e.RowIndex).Cells("PO").Value.ToString()
             lbl_total.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells("total_po").Value.ToString(), Decimal), "#,##0.00")
             lbl_subtotalpo.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells("subtotal_po").Value.ToString(), Decimal), "#,##0.00")
@@ -623,6 +636,7 @@ SELECT  [id]
             serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie_po").Value.ToString()
             lbl_rfc.Text = Me.dtgvp.Rows(e.RowIndex).Cells("RFC").Value.ToString()
             id_po = Me.dtgvp.Rows(e.RowIndex).Cells("id_po").Value.ToString()
+
         Catch
         End Try
 

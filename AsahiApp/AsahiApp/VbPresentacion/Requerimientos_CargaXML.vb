@@ -70,6 +70,7 @@ Public Class Requerimientos_CargaXML
             txt_busca.Text = Modulo_vistarecepprincipal.e_uuid
             btn_doc.Enabled = True
             btn_quitar.Visible = True
+            lbl_moneda.Text = Modulo_vistarecepprincipal.e_moneda
             btn_fil2.Text = "Modificar"
         ElseIf estado_prov = 2 Then
 
@@ -87,6 +88,7 @@ Public Class Requerimientos_CargaXML
             txt_busca.Text = Modulo_vistarecepprincipal.e_uuid
             btn_doc.Enabled = True
             btn_quitar.Visible = True
+            lbl_moneda.Text = Modulo_vistarecepprincipal.e_moneda
             btn_fil2.Text = "Modificar"
         Else
 
@@ -104,6 +106,7 @@ Public Class Requerimientos_CargaXML
             lbl_totalfact.Text = 0
             filtro = 0
             btn_quitar.Visible = False
+            lbl_moneda.Text = Modulo_vistarecepprincipal.e_moneda
             btn_fil2.Text = "Guardar"
         End If
 
@@ -184,7 +187,7 @@ begin
 
 SELECT  [id]
       ,upper([uid])
-      ,[rfcemisor]
+      ,[emi_rfc]
       ,[nombre_emisor]
       ,[serie]
       ,[folio]
@@ -203,7 +206,7 @@ SELECT  [id]
   begin 
   SELECT  [id]
       ,upper([uid])
-      ,[rfcemisor]
+      ,[emi_rfc]
       ,[nombre_emisor]
       ,[serie]
       ,[folio]
@@ -304,6 +307,11 @@ SELECT  [id]
     Private Sub txt_busca_TextChanged(sender As Object, e As EventArgs) Handles txt_busca.TextChanged
         If txt_busca.Text = "" Then
             btn_doc.Enabled = False
+            lbl_uuid.Text = ""
+            lbl_foliofact.Text = ""
+            lbl_subtotalfact.Text = 0
+            lbl_totalfact.Text = 0
+
         Else
             btn_doc.Enabled = True
         End If
@@ -380,43 +388,131 @@ SELECT  [id]
     Private Sub btn_fil2_Click(sender As Object, e As EventArgs) Handles btn_fil2.Click
 
 
-        Dim Pregunta As Integer
-        Dim dif As Double
+        'Dim Pregunta As Integer
+        'Dim dif As Double
+
+
+        'If estado_prov = 1 Then
+        '    var_provision = 2
+
+        '    If CDbl(lbl_total.Text) > CDbl(lbl_totalfact.Text) Then
+        '        MessageBox.Show("El total del XML que desea sustituir es mayor al que desea cambiar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        '    ElseIf CDbl(lbl_total.Text) < CDbl(lbl_totalfact.Text) Then
+        '        MessageBox.Show("El total del XML que desea sustituir es menor al que desea cambiar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        '    ElseIf CDbl(lbl_total.Text) = CDbl(lbl_totalfact.Text) Then
+        '        Pregunta = MsgBox("¿Desea modificar el xml que está ligado a la provisión: " & lbl_provi.Text & " ?", vbYesNo + vbExclamation + vbDefaultButton2, "")
+        '    End If
+
+
+        'ElseIf estado_prov = 0 Then
+        '        var_provision = 0
+
+        '    If CDbl(lbl_total.Text) > CDbl(lbl_totalfact.Text) Then
+        '        MessageBox.Show("El total de la recepción es mayor al total del xml que desea ligar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        '    ElseIf CDbl(lbl_total.Text) < CDbl(lbl_totalfact.Text) Then
+        '        MessageBox.Show("El total de la recepción es menor al total del xml que desea ligar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        '    ElseIf CDbl(lbl_total.Text) = CDbl(lbl_totalfact.Text) Then
+        '        Pregunta = MsgBox("¿Desea ligar el xml a la provisión: " & lbl_provi.Text & " ?", vbYesNo + vbExclamation + vbDefaultButton2, "")
+        '    End If
+
+        'End If
+
+
+
+        'If Pregunta = vbYes Then
+
+        '    CargaModificaInserta()
+        'Else
+        '    MessageBox.Show("Acción no completada", "¡Aviso!")
+        'End If
 
 
         If estado_prov = 1 Then
             var_provision = 2
 
-            If CDbl(lbl_total.Text) > CDbl(lbl_totalfact.Text) Then
-                MessageBox.Show("El total del XML que desea sustituir es mayor al que desea cambiar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            ElseIf CDbl(lbl_total.Text) < CDbl(lbl_totalfact.Text) Then
-                MessageBox.Show("El total del XML que desea sustituir es menor al que desea cambiar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            ElseIf CDbl(lbl_total.Text) = CDbl(lbl_totalfact.Text) Then
-                Pregunta = MsgBox("¿Desea modificar el xml que está ligado a la provisión: " & lbl_provi.Text & " ?", vbYesNo + vbExclamation + vbDefaultButton2, "")
-            End If
 
+
+            If lbl_moneda.Text = "MEX" Then
+
+                If CDbl(lbl_totalfact.Text) - CDbl(lbl_total.Text) > 0.99 Then
+                    MessageBox.Show("El total de la factura es mayor al total de lo que se recibió con anterioridad, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+                ElseIf CDbl(lbl_total.Text) - CDbl(lbl_totalfact.Text) > 0.99 Then
+                    MessageBox.Show("El total de lo que se recibió con anteriridad es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+                Else
+                    Dim Pregunta As Integer
+
+                    Pregunta = MsgBox("¿Desea modificar el xml que está ligado a la provisión: " & lbl_provi.Text & " ?", vbYesNo + vbExclamation + vbDefaultButton2, "")
+
+                    If Pregunta = vbYes Then
+                        CargaModificaInserta()
+                    Else
+                        MessageBox.Show("Acción no completada", "¡Aviso!")
+                    End If
+                End If
+
+            ElseIf lbl_moneda.Text = "USD" Then
+
+                If CDbl(lbl_totalfact.Text) - CDbl(lbl_total.Text) > 0.05 Then
+                    MessageBox.Show("El total de la factura es mayor al total de lo que se recibió con anterioridad, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+                ElseIf CDbl(lbl_total.Text) - CDbl(lbl_totalfact.Text) > 0.05 Then
+                    MessageBox.Show("El total de lo que se recibió con anteriridad es mayor al total de la factura, revise de nuevo sus cantidades y documentos.  (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+                Else
+                    Dim Pregunta As Integer
+
+                    Pregunta = MsgBox("¿Desea modificar el xml que está ligado a la provisión: " & lbl_provi.Text & " ?", vbYesNo + vbExclamation + vbDefaultButton2, "")
+
+                    If Pregunta = vbYes Then
+                        CargaModificaInserta()
+                    Else
+                        MessageBox.Show("Acción no completada", "¡Aviso!")
+                    End If
+                End If
+
+            End If
 
         ElseIf estado_prov = 0 Then
-                var_provision = 0
+            var_provision = 0
 
-            If CDbl(lbl_total.Text) > CDbl(lbl_totalfact.Text) Then
-                MessageBox.Show("El total de la recepción es mayor al total del xml que desea ligar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            ElseIf CDbl(lbl_total.Text) < CDbl(lbl_totalfact.Text) Then
-                MessageBox.Show("El total de la recepción es menor al total del xml que desea ligar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            ElseIf CDbl(lbl_total.Text) = CDbl(lbl_totalfact.Text) Then
-                Pregunta = MsgBox("¿Desea ligar el xml a la provisión: " & lbl_provi.Text & " ?", vbYesNo + vbExclamation + vbDefaultButton2, "")
+
+            If lbl_moneda.Text = "MEX" Then
+
+                If CDbl(lbl_totalfact.Text) - CDbl(lbl_total.Text) > 0.99 Then
+                    MessageBox.Show("El total de la factura es mayor al total de lo que se recibió con anterioridad, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+                ElseIf CDbl(lbl_total.Text) - CDbl(lbl_totalfact.Text) > 0.99 Then
+                    MessageBox.Show("El total de lo que se recibió con anteriridad es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+                Else
+                    Dim Pregunta As Integer
+
+                    Pregunta = MsgBox("¿Desea ligar el xml a la provisión: " & lbl_provi.Text & " ?", vbYesNo + vbExclamation + vbDefaultButton2, "")
+
+                    If Pregunta = vbYes Then
+                        CargaModificaInserta()
+                    Else
+                        MessageBox.Show("Acción no completada", "¡Aviso!")
+                    End If
+                End If
+
+            ElseIf lbl_moneda.Text = "USD" Then
+
+                If CDbl(lbl_totalfact.Text) - CDbl(lbl_total.Text) > 0.05 Then
+                    MessageBox.Show("El total de la factura es mayor al total de lo que se recibió con anterioridad, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+                ElseIf CDbl(lbl_total.Text) - CDbl(lbl_totalfact.Text) > 0.05 Then
+                    MessageBox.Show("El total de lo que se recibió con anteriridad es mayor al total de la factura, revise de nuevo sus cantidades y documentos.  (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+                Else
+                    Dim Pregunta As Integer
+
+                    Pregunta = MsgBox("¿Desea ligar el xml a la provisión: " & lbl_provi.Text & " ?", vbYesNo + vbExclamation + vbDefaultButton2, "")
+
+                    If Pregunta = vbYes Then
+                        CargaModificaInserta()
+                    Else
+                        MessageBox.Show("Acción no completada", "¡Aviso!")
+                    End If
+                End If
+
             End If
-
         End If
 
-
-
-        If Pregunta = vbYes Then
-
-            CargaModificaInserta()
-        Else
-            MessageBox.Show("Acción no completada", "¡Aviso!")
-        End If
 
     End Sub
 End Class

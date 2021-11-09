@@ -227,7 +227,7 @@ Partial Class RequerimientosRecepcionesPO
         Me.dtgvp.Location = New System.Drawing.Point(12, 127)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(892, 370)
+        Me.dtgvp.Size = New System.Drawing.Size(922, 370)
         Me.dtgvp.TabIndex = 547
         Me.dtgvp.Visible = False
         '
@@ -279,7 +279,7 @@ Partial Class RequerimientosRecepcionesPO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(916, 509)
+        Me.ClientSize = New System.Drawing.Size(946, 509)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lbl_rfc)

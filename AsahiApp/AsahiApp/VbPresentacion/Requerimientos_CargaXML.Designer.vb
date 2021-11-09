@@ -54,12 +54,16 @@ Partial Class Requerimientos_CargaXML
         Me.rbt_falta = New System.Windows.Forms.RadioButton()
         Me.lbl_txtfiltro = New System.Windows.Forms.Label()
         Me.txt_busca = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbl_moneda = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.gbx_tipo.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.lbl_moneda)
         Me.Panel1.Controls.Add(Me.btn_quitar)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.lbl_total)
@@ -229,7 +233,7 @@ Partial Class Requerimientos_CargaXML
         Me.lbl_totalfact.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_totalfact.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lbl_totalfact.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.lbl_totalfact.Location = New System.Drawing.Point(409, 302)
+        Me.lbl_totalfact.Location = New System.Drawing.Point(409, 320)
         Me.lbl_totalfact.MaxLength = 99
         Me.lbl_totalfact.Name = "lbl_totalfact"
         Me.lbl_totalfact.Size = New System.Drawing.Size(127, 20)
@@ -242,7 +246,7 @@ Partial Class Requerimientos_CargaXML
         Me.lbl_subtotalfact.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_subtotalfact.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lbl_subtotalfact.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.lbl_subtotalfact.Location = New System.Drawing.Point(409, 272)
+        Me.lbl_subtotalfact.Location = New System.Drawing.Point(409, 290)
         Me.lbl_subtotalfact.MaxLength = 99
         Me.lbl_subtotalfact.Name = "lbl_subtotalfact"
         Me.lbl_subtotalfact.Size = New System.Drawing.Size(127, 20)
@@ -253,7 +257,7 @@ Partial Class Requerimientos_CargaXML
         'dtp2
         '
         Me.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp2.Location = New System.Drawing.Point(102, 293)
+        Me.dtp2.Location = New System.Drawing.Point(102, 311)
         Me.dtp2.Name = "dtp2"
         Me.dtp2.Size = New System.Drawing.Size(100, 20)
         Me.dtp2.TabIndex = 539
@@ -261,7 +265,7 @@ Partial Class Requerimientos_CargaXML
         'dtp1
         '
         Me.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp1.Location = New System.Drawing.Point(103, 264)
+        Me.dtp1.Location = New System.Drawing.Point(103, 282)
         Me.dtp1.Name = "dtp1"
         Me.dtp1.Size = New System.Drawing.Size(100, 20)
         Me.dtp1.TabIndex = 538
@@ -271,7 +275,7 @@ Partial Class Requerimientos_CargaXML
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label15.Location = New System.Drawing.Point(10, 267)
+        Me.Label15.Location = New System.Drawing.Point(10, 285)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(86, 13)
         Me.Label15.TabIndex = 537
@@ -282,7 +286,7 @@ Partial Class Requerimientos_CargaXML
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label16.Location = New System.Drawing.Point(21, 295)
+        Me.Label16.Location = New System.Drawing.Point(21, 313)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(75, 13)
         Me.Label16.TabIndex = 536
@@ -293,7 +297,7 @@ Partial Class Requerimientos_CargaXML
         Me.btn_doc.Enabled = False
         Me.btn_doc.ForeColor = System.Drawing.Color.Black
         Me.btn_doc.Image = Global.Presentacion.My.Resources.Resources.report
-        Me.btn_doc.Location = New System.Drawing.Point(352, 180)
+        Me.btn_doc.Location = New System.Drawing.Point(352, 198)
         Me.btn_doc.Name = "btn_doc"
         Me.btn_doc.Size = New System.Drawing.Size(42, 40)
         Me.btn_doc.TabIndex = 535
@@ -305,7 +309,7 @@ Partial Class Requerimientos_CargaXML
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(308, 303)
+        Me.Label10.Location = New System.Drawing.Point(308, 321)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(95, 16)
         Me.Label10.TabIndex = 532
@@ -316,7 +320,7 @@ Partial Class Requerimientos_CargaXML
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label17.Location = New System.Drawing.Point(338, 273)
+        Me.Label17.Location = New System.Drawing.Point(338, 291)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(65, 16)
         Me.Label17.TabIndex = 534
@@ -327,7 +331,7 @@ Partial Class Requerimientos_CargaXML
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label9.Location = New System.Drawing.Point(64, 218)
+        Me.Label9.Location = New System.Drawing.Point(64, 236)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 529
@@ -338,7 +342,7 @@ Partial Class Requerimientos_CargaXML
         Me.lbl_foliofact.AutoSize = True
         Me.lbl_foliofact.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_foliofact.ForeColor = System.Drawing.Color.Black
-        Me.lbl_foliofact.Location = New System.Drawing.Point(104, 217)
+        Me.lbl_foliofact.Location = New System.Drawing.Point(104, 235)
         Me.lbl_foliofact.Name = "lbl_foliofact"
         Me.lbl_foliofact.Size = New System.Drawing.Size(0, 13)
         Me.lbl_foliofact.TabIndex = 530
@@ -348,7 +352,7 @@ Partial Class Requerimientos_CargaXML
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(59, 244)
+        Me.Label11.Location = New System.Drawing.Point(59, 262)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(38, 13)
         Me.Label11.TabIndex = 527
@@ -359,7 +363,7 @@ Partial Class Requerimientos_CargaXML
         Me.lbl_uuid.AutoSize = True
         Me.lbl_uuid.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_uuid.ForeColor = System.Drawing.Color.Black
-        Me.lbl_uuid.Location = New System.Drawing.Point(104, 244)
+        Me.lbl_uuid.Location = New System.Drawing.Point(104, 262)
         Me.lbl_uuid.Name = "lbl_uuid"
         Me.lbl_uuid.Size = New System.Drawing.Size(0, 13)
         Me.lbl_uuid.TabIndex = 528
@@ -370,7 +374,7 @@ Partial Class Requerimientos_CargaXML
         Me.gbx_tipo.Controls.Add(Me.rbt_falta)
         Me.gbx_tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbx_tipo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.gbx_tipo.Location = New System.Drawing.Point(7, 128)
+        Me.gbx_tipo.Location = New System.Drawing.Point(7, 146)
         Me.gbx_tipo.Name = "gbx_tipo"
         Me.gbx_tipo.Size = New System.Drawing.Size(140, 37)
         Me.gbx_tipo.TabIndex = 526
@@ -405,7 +409,7 @@ Partial Class Requerimientos_CargaXML
         Me.lbl_txtfiltro.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_txtfiltro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_txtfiltro.ForeColor = System.Drawing.Color.Black
-        Me.lbl_txtfiltro.Location = New System.Drawing.Point(13, 175)
+        Me.lbl_txtfiltro.Location = New System.Drawing.Point(13, 193)
         Me.lbl_txtfiltro.Name = "lbl_txtfiltro"
         Me.lbl_txtfiltro.Size = New System.Drawing.Size(38, 13)
         Me.lbl_txtfiltro.TabIndex = 525
@@ -416,10 +420,31 @@ Partial Class Requerimientos_CargaXML
         Me.txt_busca.BackColor = System.Drawing.SystemColors.Control
         Me.txt_busca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_busca.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_busca.Location = New System.Drawing.Point(12, 191)
+        Me.txt_busca.Location = New System.Drawing.Point(12, 209)
         Me.txt_busca.Name = "txt_busca"
         Me.txt_busca.Size = New System.Drawing.Size(315, 20)
         Me.txt_busca.TabIndex = 524
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label3.Location = New System.Drawing.Point(18, 119)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 13)
+        Me.Label3.TabIndex = 554
+        Me.Label3.Text = "Moneda"
+        '
+        'lbl_moneda
+        '
+        Me.lbl_moneda.AutoSize = True
+        Me.lbl_moneda.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_moneda.ForeColor = System.Drawing.Color.Black
+        Me.lbl_moneda.Location = New System.Drawing.Point(86, 119)
+        Me.lbl_moneda.Name = "lbl_moneda"
+        Me.lbl_moneda.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_moneda.TabIndex = 555
         '
         'Requerimientos_CargaXML
         '
@@ -471,4 +496,6 @@ Partial Class Requerimientos_CargaXML
     Friend WithEvents Label4 As Label
     Friend WithEvents lbl_subtotal As Label
     Friend WithEvents btn_quitar As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lbl_moneda As Label
 End Class

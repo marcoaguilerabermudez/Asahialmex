@@ -82,14 +82,11 @@ Public Class Requerimientos_movimientos
             btn_desma.Visible = True
             btn_selec.Visible = True
 
-
         ElseIf p_vales = 1 Then
 
             Me.Text = "Cotizar movimiento"
             dtp_fecharecep.Visible = True
-
             btn_solicitar.Text = "Cotizar"
-
             dtp1.Enabled = False
             txt_comen.Enabled = False
             btn_autoriza.Visible = True
@@ -100,15 +97,13 @@ Public Class Requerimientos_movimientos
             btn_doc.Visible = True
             cbx_fam.Enabled = True
 
-
-
         End If
 
         AgregarColumna()
         cargagrid()
         areas()
 
-        Dim cmd As New SqlCommand("   select razon_social from [Asahi].[dbo].[com_proveedores] ", cnn)
+        Dim cmd As New SqlCommand("select razon_social from [Asahi].[dbo].[com_proveedores] ", cnn)
         If cnn.State = ConnectionState.Closed Then cnn.Open()
         Dim ds As New DataSet
         Dim da As New SqlDataAdapter(cmd)
@@ -185,6 +180,15 @@ Public Class Requerimientos_movimientos
         End Try
 
 
+
+
+
+        colores()
+
+    End Sub
+
+
+    Sub colores()
         Try
             For Each row As DataGridViewRow In Me.dtgvp.Rows
 
@@ -211,12 +215,7 @@ Public Class Requerimientos_movimientos
             Next
         Catch
         End Try
-
-
-
-
     End Sub
-
 
     Private Sub dtgvp_CellContentClick0(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellClick
         Try
@@ -295,10 +294,18 @@ Public Class Requerimientos_movimientos
 
                 End If
 
+                If estado_mov = 5 Or estado_mov = 7 Or estado_mov = 8 Then
+                    btn_autoriza.Enabled = False
+                    btn_solicitar.Enabled = False
+                    btn_cancelar.Enabled = False
+                    btn_eliminar.Enabled = False
+                End If
+
             End If
         Catch
         End Try
 
+        colores()
     End Sub
 
     Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.RowEnter
@@ -375,10 +382,16 @@ Public Class Requerimientos_movimientos
 
             End If
 
+            If estado_mov = 5 Or estado_mov = 7 Or estado_mov = 8 Then
+                btn_autoriza.Enabled = False
+                btn_solicitar.Enabled = False
+                btn_cancelar.Enabled = False
+                btn_eliminar.Enabled = False
+            End If
 
 
         End If
-
+            colores()
     End Sub
 
 
@@ -414,11 +427,14 @@ Public Class Requerimientos_movimientos
             command.Parameters.AddWithValue("@familia", cbx_fam.Text)
 
             If p_vales = 0 Then
+
                 command.Parameters.AddWithValue("@estado", 0)
                 command.Parameters.AddWithValue("@moneda", "N/A")
                 command.Parameters.AddWithValue("@fecha_recep", dtp1.Value.ToShortDateString)
                 command.Parameters.AddWithValue("@comprador", 0)
+
             ElseIf p_vales = 1 Then
+
                 command.Parameters.AddWithValue("@estado", 1)
                 command.Parameters.AddWithValue("@moneda", lbl_moneda.Text)
                 command.Parameters.AddWithValue("@fecha_recep", dtp_fecharecep.Value.ToShortDateString)
