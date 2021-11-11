@@ -37,6 +37,7 @@ Public Class Provisiones
 
         End If
         var_filtro = 0
+        cargagridconta()
     End Sub
 
     Sub New(id As Integer, depto As String, permiso As Integer, nombre As String, p_vales As Integer)
@@ -61,11 +62,11 @@ Public Class Provisiones
 
 
 
-            Dim da As New SqlDataAdapter("Sp_muestragridmodificaRecepcionconPO", cnn)
+            Dim da As New SqlDataAdapter("Sp_MuestraProvisiones", cnn)
 
             da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.SelectCommand.Parameters.AddWithValue("@codigo", dtp1.Value.ToShortDateString)
-            da.SelectCommand.Parameters.AddWithValue("@serie", dtp2.Value.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@desde", dtpf.Value.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@hasta", dtpf2.Value.ToShortDateString)
             da.SelectCommand.Parameters.AddWithValue("@var", var_filtro)
 
             'MessageBox.Show(txt_no.Text)
@@ -74,24 +75,36 @@ Public Class Provisiones
             Dim dt As New DataTable
             da.Fill(dt)
             dtgv.DataSource = dt
-            dtgv.Columns("Id_provision").Visible = False
-            dtgv.Columns("Add").Visible = False
-            dtgv.Columns("Val1").Visible = False
-            dtgv.Columns("Val2").Visible = False
-            dtgv.Columns("Val3").Visible = False
-            dtgv.Columns("Val4").Visible = False
-            dtgv.Columns("Ruta").Visible = False
-            dtgv.Columns("StatusConta").Visible = False
+            dtgv.Columns("Id_prov").Visible = False
+            dtgv.Columns("id_po").Visible = False
+            dtgv.Columns("Codigo").Visible = False
+            dtgv.Columns("Serie").Visible = False
+            dtgv.Columns("UUID").Visible = False
             dtgv.Columns("ObservaConta").Visible = False
-            dtgv.Columns("FechaPagoReal").Visible = False
-            dtgv.Columns("o").Visible = False
-            dtgv.Columns("serie").Visible = False
-            dtgv.Columns("Oc").Width = 65
-            dtgv.Columns("Compra").Width = 65
-            dtgv.Columns("Factura").Width = 75
+            dtgv.Columns("Ruta").Visible = False
+            dtgv.Columns("Edo_prov").Visible = False
+            dtgv.Columns("edo_po").Visible = False
+            dtgv.Columns("Fecha_Pago_Real").Visible = False
+            'dtgv.Columns("FechaPagoReal").Visible = False
+            'dtgv.Columns("o").Visible = False
+            'dtgv.Columns("serie").Visible = False
+            dtgv.Columns("PO").Width = 65
+
+            dtgv.Columns("Folio_factura").Width = 80
             dtgv.Columns("Proveedor").Width = 150
             dtgv.Columns("Moneda").Width = 60
 
+            dtgv.Columns("Moneda").ReadOnly = True
+            dtgv.Columns("PO").ReadOnly = True
+            dtgv.Columns("Folio_factura").ReadOnly = True
+            dtgv.Columns("Proveedor").ReadOnly = True
+            dtgv.Columns("RFC").ReadOnly = True
+            dtgv.Columns("Monto_PO").ReadOnly = True
+            dtgv.Columns("Monto_Factura").ReadOnly = True
+            dtgv.Columns("Fecha_Factura").ReadOnly = True
+            dtgv.Columns("Nombre_Emisor").ReadOnly = True
+            dtgv.Columns("RFC_Emisor").ReadOnly = True
+            dtgv.Columns("frecepcion").ReadOnly = True
 
             If dtgv.RowCount < 1 Then
                 MessageBox.Show("No hay ningún registro con los criterios de búsqueda seleccionados", "¡Alerta!")
@@ -100,6 +113,165 @@ Public Class Provisiones
 
 
             colores()
+
+
+
+
+            'If (depto <> 19 Or depto <> 7) Then
+            '    dtgvp.Columns.Remove("X")
+            'End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+
+
+
+
+    End Sub
+
+
+    Sub cargagridvalidado()
+
+
+        cnn.Close()
+        cnn.Open()
+        '   MessageBox.Show(cnn.ToString)
+        Try
+
+
+
+            Dim da As New SqlDataAdapter("Sp_MuestraProvisiones", cnn)
+
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            da.SelectCommand.Parameters.AddWithValue("@desde", dtp1.Value.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@hasta", dtp2.Value.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@var", 2)
+
+            'MessageBox.Show(txt_no.Text)
+            'MessageBox.Show(cbx_serie.Text)
+
+            Dim dt As New DataTable
+            da.Fill(dt)
+            dgv2.DataSource = dt
+
+            dgv2.Columns("Id_provcompra").Visible = False
+            dgv2.Columns("Id_provision").Visible = False
+            dgv2.Columns("id_po").Visible = False
+            dgv2.Columns("Codigo").Visible = False
+            dgv2.Columns("Serie").Visible = False
+
+            'dtgv3.Columns("ObservaConta").Visible = False
+            dgv2.Columns("Ruta").Visible = False
+            dgv2.Columns("UUID").Visible = False
+            dgv2.Columns("EstatusConta").Visible = False
+
+            dgv2.Columns("PO").Width = 65
+
+            dgv2.Columns("Factura").Width = 80
+            dgv2.Columns("Proveedor").Width = 150
+            dgv2.Columns("Moneda").Width = 60
+
+            dgv2.Columns("FechaVal").ReadOnly = True
+            dgv2.Columns("PO").ReadOnly = True
+            dgv2.Columns("Factura").ReadOnly = True
+            dgv2.Columns("Proveedor").ReadOnly = True
+            dgv2.Columns("MontoFact").ReadOnly = True
+
+            dgv2.Columns("FechaFactura").ReadOnly = True
+            dgv2.Columns("FechaPagoReal").ReadOnly = True
+            dgv2.Columns("MontoOc").ReadOnly = True
+            dgv2.Columns("Moneda").ReadOnly = True
+            dgv2.Columns("EstatusPago").ReadOnly = True
+            dgv2.Columns("EstatusConta").ReadOnly = True
+            dgv2.Columns("RFC").ReadOnly = True
+            dgv2.Columns("RFCEmisor").ReadOnly = True
+            dgv2.Columns("NombreEmisor").ReadOnly = True
+
+
+
+            colores()
+
+
+
+
+            'If (depto <> 19 Or depto <> 7) Then
+            '    dtgvp.Columns.Remove("X")
+            'End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+
+
+
+
+    End Sub
+
+
+
+    Sub cargagridconta()
+
+
+        cnn.Close()
+        cnn.Open()
+        '   MessageBox.Show(cnn.ToString)
+        Try
+
+
+
+            Dim da As New SqlDataAdapter("Sp_MuestraProvisiones", cnn)
+
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            da.SelectCommand.Parameters.AddWithValue("@desde", dtpf.Value.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@hasta", dtpf2.Value.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@var", 3)
+
+            'MessageBox.Show(txt_no.Text)
+            'MessageBox.Show(cbx_serie.Text)
+
+            Dim dt As New DataTable
+            da.Fill(dt)
+            dtgv3.DataSource = dt
+
+            dtgv3.Columns("Id_provcompra").Visible = False
+            dtgv3.Columns("Id_provision").Visible = False
+            dtgv3.Columns("id_po").Visible = False
+            dtgv3.Columns("Codigo").Visible = False
+            dtgv3.Columns("Serie").Visible = False
+
+            'dtgv3.Columns("ObservaConta").Visible = False
+            dtgv3.Columns("Ruta").Visible = False
+            dtgv3.Columns("UUID").Visible = False
+            'dtgv3.Columns("edo_po").Visible = False
+            'dtgv3.Columns("Fecha_Pago_Real").Visible = False
+            'dtgv.Columns("FechaPagoReal").Visible = False
+            'dtgv.Columns("o").Visible = False
+            'dtgv.Columns("serie").Visible = False
+            dtgv3.Columns("PO").Width = 65
+
+            dtgv3.Columns("Factura").Width = 80
+            dtgv3.Columns("Proveedor").Width = 150
+            dtgv3.Columns("Moneda").Width = 60
+
+            dtgv3.Columns("FechaVal").ReadOnly = True
+            dtgv3.Columns("PO").ReadOnly = True
+            dtgv3.Columns("Factura").ReadOnly = True
+            dtgv3.Columns("Proveedor").ReadOnly = True
+            dtgv3.Columns("MontoFact").ReadOnly = True
+            dtgv3.Columns("MontoPago").ReadOnly = True
+            dtgv3.Columns("FechaFactura").ReadOnly = True
+            dtgv3.Columns("FechaPagoFact").ReadOnly = True
+
+
+            dtgv3.Columns("ObservaCompra").ReadOnly = True
+            dtgv3.Columns("Moneda").ReadOnly = True
+            dtgv3.Columns("Estatus").ReadOnly = True
+
+
+
+
+
 
 
 
@@ -138,6 +310,298 @@ Public Class Provisiones
         Catch
         End Try
 
+
+        Try
+            For Each row As DataGridViewRow In Me.dgv2.Rows
+
+                If row.Cells(“EstatusConta”).Value = "A" Then
+                    row.DefaultCellStyle.BackColor = Color.LightBlue
+                ElseIf row.Cells(“EstatusConta”).Value = "R" Then
+                    row.DefaultCellStyle.BackColor = Color.LightPink
+                ElseIf row.Cells(“EstatusConta”).Value = "M" Then
+                    row.DefaultCellStyle.BackColor = Color.Gold
+                Else
+                    row.DefaultCellStyle.BackColor = Color.White
+                End If
+            Next
+        Catch
+        End Try
+
+
     End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        cargagrid()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        cargagridvalidado()
+    End Sub
+
+    Private Sub rbt_retardo_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_ffac.CheckedChanged
+        var_filtro = 1
+    End Sub
+
+    Private Sub rbt_falta_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_frecep.CheckedChanged
+        var_filtro = 0
+    End Sub
+
+
+    Sub insertarfilas()
+
+
+        cnn.Close()
+
+
+        Dim command As New SqlCommand("Sp_ValidaModificaAutorizaProvisiones", cnn)
+        cnn.Open()
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        command.CommandType = CommandType.StoredProcedure
+
+
+        Try
+
+            For Each fila In dtgv.Rows
+                If fila.Cells("x").Value = True And fila.Cells("Edo_prov").Value > 0 Then
+
+                    command.Parameters.Clear()
+
+                    command.Parameters.AddWithValue("@var", 0)
+                    command.Parameters.AddWithValue("@id_prov", (fila.Cells("Id_prov").Value))
+                    command.Parameters.AddWithValue("@id_po", (fila.Cells("id_po").Value))
+                    command.Parameters.AddWithValue("@codigo", (fila.Cells("Codigo").Value))
+                    command.Parameters.AddWithValue("@serie", (fila.Cells("Serie").Value))
+                    command.Parameters.AddWithValue("@folio_factura", (fila.Cells("Folio_factura").Value))
+                    command.Parameters.AddWithValue("@uuid", (fila.Cells("UUID").Value))
+                    command.Parameters.AddWithValue("@proveedor", (fila.Cells("Proveedor").Value))
+                    command.Parameters.AddWithValue("@rfc", (fila.Cells("RFC").Value))
+                    command.Parameters.AddWithValue("@monto_po", (fila.Cells("Monto_PO").Value))
+                    command.Parameters.AddWithValue("@monto_fact", (fila.Cells("Monto_Factura").Value))
+                    command.Parameters.AddWithValue("@monto_pago", (fila.Cells("Monto_Pago").Value))
+                    command.Parameters.AddWithValue("@fecha_factura", (fila.Cells("Fecha_Factura").Value))
+                    command.Parameters.AddWithValue("@fecha_pago", (fila.Cells("Fecha_Pago").Value))
+                    command.Parameters.AddWithValue("@nombre_emisor", (fila.Cells("Nombre_Emisor").Value))
+                    command.Parameters.AddWithValue("@rfc_emisor", (fila.Cells("RFC_Emisor").Value))
+                    command.Parameters.AddWithValue("@estatus", (fila.Cells("Estatus").Value))
+                    command.Parameters.AddWithValue("@ruta", (fila.Cells("Ruta").Value))
+                    command.Parameters.AddWithValue("@observacompra", (fila.Cells("ObservaCompra").Value))
+                    command.Parameters.AddWithValue("@usuariocompras", id)
+
+                    command.Parameters.AddWithValue("@estatuspago", "")
+                    command.Parameters.AddWithValue("@observaconta", "")
+                    command.Parameters.AddWithValue("@id_provcompra", 0)
+
+
+
+
+
+                    command.ExecuteNonQuery()
+                End If
+            Next
+
+            MessageBox.Show("Registro(s) validado(s)", "¡Correcto!", MessageBoxButtons.OK)
+            cargagrid()
+
+
+            'btn_selec.Visible = False
+            'btn_desma.Visible = False
+            'btn_cargar.Visible = False
+            ''btn_calcular.Visible = False
+            'Panel1.Visible = False
+            'Panel2.Visible = False
+            'Panel5.Visible = False
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+
+        Finally
+            ' MessageBox.Show("Ocurrió un problema, contacte al área de sistemas.", "Aviso")
+            cnn.Close()
+        End Try
+
+    End Sub
+
+    Sub ValidaConta()
+
+
+        cnn.Close()
+
+
+        Dim command As New SqlCommand("Sp_ValidaModificaAutorizaProvisiones", cnn)
+        cnn.Open()
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        command.CommandType = CommandType.StoredProcedure
+
+
+        Try
+
+            For Each fila In dtgv3.Rows
+                If fila.Cells(0).Value = True Then
+
+                    command.Parameters.Clear()
+
+                    command.Parameters.AddWithValue("@var", 3)
+                    command.Parameters.AddWithValue("@id_prov", (fila.Cells("Id_provision").Value))
+                    command.Parameters.AddWithValue("@id_po", (fila.Cells("Id_po").Value))
+                    command.Parameters.AddWithValue("@codigo", (fila.Cells("Codigo").Value))
+                    command.Parameters.AddWithValue("@serie", (fila.Cells("Serie").Value))
+                    command.Parameters.AddWithValue("@folio_factura", (fila.Cells("Factura").Value))
+                    command.Parameters.AddWithValue("@uuid", (fila.Cells("UUID").Value))
+                    command.Parameters.AddWithValue("@proveedor", (fila.Cells("Proveedor").Value))
+                    command.Parameters.AddWithValue("@rfc", "")
+                    command.Parameters.AddWithValue("@monto_po", 0)
+                    command.Parameters.AddWithValue("@monto_fact", 0)
+                    command.Parameters.AddWithValue("@monto_pago", 0)
+                    command.Parameters.AddWithValue("@fecha_factura", (fila.Cells("FechaFactura").Value))
+                    command.Parameters.AddWithValue("@fecha_pago", (fila.Cells("FechaPagoReal").Value))
+                    command.Parameters.AddWithValue("@nombre_emisor", (fila.Cells("Proveedor").Value))
+                    command.Parameters.AddWithValue("@rfc_emisor", "")
+                    command.Parameters.AddWithValue("@estatus", (fila.Cells("EstatusConta").Value))
+                    command.Parameters.AddWithValue("@ruta", (fila.Cells("ruta").Value))
+                    command.Parameters.AddWithValue("@observacompra", (fila.Cells("ObservaCompra").Value))
+                    command.Parameters.AddWithValue("@usuariocompras", id)
+
+                    command.Parameters.AddWithValue("@estatuspago", (fila.Cells("EstatusPago").Value))
+                    command.Parameters.AddWithValue("@observaconta", (fila.Cells("ObservaConta").Value))
+                    command.Parameters.AddWithValue("@id_provcompra", (fila.Cells("Id_provcompra").Value))
+
+
+
+
+
+                    command.ExecuteNonQuery()
+                End If
+            Next
+
+            MessageBox.Show("Registro(s) validado(s)", "¡Correcto!", MessageBoxButtons.OK)
+            cargagridconta()
+
+
+            'btn_selec.Visible = False
+            'btn_desma.Visible = False
+            'btn_cargar.Visible = False
+            'btn_calcular.Visible = False
+            'Panel1.Visible = False
+            'Panel2.Visible = False
+            'Panel5.Visible = False
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+
+        Finally
+            ' MessageBox.Show("Ocurrió un problema, contacte al área de sistemas.", "Aviso")
+            cnn.Close()
+        End Try
+
+    End Sub
+
+
+
+
+
+    Private Sub btn_valida_Click(sender As Object, e As EventArgs) Handles btn_valida.Click
+        insertarfilas()
+    End Sub
+
+    Private Sub dtgv_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgv.CellContentClick
+
+        Try
+            colores()
+        Catch
+        End Try
+    End Sub
+
+
+    Sub colores(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dtgv3.CellFormatting
+        Dim TipoTrade As String
+        If dtgv3.Columns(e.ColumnIndex).Name.Equals("Estatus") Then
+
+            TipoTrade = (dtgv3.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString)
+
+            If TipoTrade = "C" Then
+                e.CellStyle.BackColor = Color.DarkGreen
+                e.CellStyle.ForeColor = Color.White
+                e.CellStyle.SelectionBackColor = Color.DarkGreen
+                e.CellStyle.SelectionForeColor = Color.White
+            End If
+
+            If TipoTrade = "P" Then
+                e.CellStyle.BackColor = Color.LightBlue
+                e.CellStyle.ForeColor = Color.Black
+                e.CellStyle.SelectionBackColor = Color.LightBlue
+                e.CellStyle.SelectionForeColor = Color.Black
+            End If
+        End If
+
+
+
+
+
+        If dtgv3.Columns(e.ColumnIndex).Name.Equals("Moneda") Then
+
+            TipoTrade = (dtgv3.Rows(e.RowIndex).Cells(e.ColumnIndex).Value)
+
+            If TipoTrade = "MEX" Then
+                e.CellStyle.BackColor = Color.DarkGreen
+                e.CellStyle.ForeColor = Color.White
+                e.CellStyle.SelectionBackColor = Color.DarkGreen
+                e.CellStyle.SelectionForeColor = Color.White
+            End If
+
+            If TipoTrade = "USD" Then
+                e.CellStyle.BackColor = Color.White
+                e.CellStyle.ForeColor = Color.Blue
+                e.CellStyle.SelectionBackColor = Color.White
+                e.CellStyle.SelectionForeColor = Color.Blue
+            End If
+
+
+            If TipoTrade = "YEN" Then
+                e.CellStyle.BackColor = Color.PaleVioletRed
+                e.CellStyle.ForeColor = Color.White
+                e.CellStyle.SelectionBackColor = Color.PaleVioletRed
+                e.CellStyle.SelectionForeColor = Color.White
+            End If
+        End If
+
+
+
+
+        If dtgv3.Columns(e.ColumnIndex).Name.Equals("EstatusConta") Then
+
+            TipoTrade = (dtgv3.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString)
+
+            If TipoTrade = "A" Then
+                e.CellStyle.BackColor = Color.DarkGreen
+                e.CellStyle.ForeColor = Color.White
+                e.CellStyle.SelectionBackColor = Color.DarkGreen
+                e.CellStyle.SelectionForeColor = Color.White
+            End If
+
+            If TipoTrade = "R" Then
+                e.CellStyle.BackColor = Color.Red
+                e.CellStyle.ForeColor = Color.White
+                e.CellStyle.SelectionBackColor = Color.Red
+                e.CellStyle.SelectionForeColor = Color.White
+            End If
+
+            If TipoTrade = "M" Then
+                e.CellStyle.BackColor = Color.Gold
+                e.CellStyle.ForeColor = Color.Black
+                e.CellStyle.SelectionBackColor = Color.Gold
+                e.CellStyle.SelectionForeColor = Color.Black
+            End If
+        End If
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        ValidaConta()
+    End Sub
+
 
 End Class

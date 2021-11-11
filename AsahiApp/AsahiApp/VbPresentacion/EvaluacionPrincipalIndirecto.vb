@@ -228,60 +228,64 @@ Public Class EvaluacionPrincipalIndirecto
             dtgvp.DataSource = dt
 
             Cn.Close()
+
+
+            dtgvp.Columns("Pues").Visible = False
+            dtgvp.Columns("Dep").Visible = False
+            dtgvp.Columns("Estado").Visible = False
+            dtgvp.Columns("id").Visible = False
+            dtgvp.Columns("liberacion").Visible = False
+            dtgvp.Columns("aprobacion").Visible = False
+            dtgvp.Columns("evaluacion").Visible = True
+            dtgvp.Columns("fecha").Visible = False
+            dtgvp.Columns("total_eval").Visible = False
+            dtgvp.Columns("Total_Autoeval").Visible = False
+            dtgvp.Columns("Total_Objetivos").Visible = False
+            dtgvp.Columns("Total_Mejora").Visible = False
+            dtgvp.Columns("autoeval").Visible = False
+
+
+            dtgvp.Columns("evaluacion").Visible = False
+            dtgvp.Columns("id_depto").Visible = False
+            dtgvp.Columns("id_puesto").Visible = False
+
+            For Each row As DataGridViewRow In Me.dtgvp.Rows
+
+
+                If row.Cells(“Estado”).Value = 0 Then
+                    row.DefaultCellStyle.BackColor = Color.White
+                ElseIf row.Cells(“Estado”).Value = 1 Then
+                    row.DefaultCellStyle.BackColor = Color.Gold
+                ElseIf row.Cells(“Estado”).Value = 10 And row.Cells(“Tiempo”).Value <> "3 meses" Then
+                    row.DefaultCellStyle.BackColor = Color.Pink
+                ElseIf row.Cells(“Estado”).Value = 10 And row.Cells(“Tiempo”).Value = "3 meses" Then
+                    row.DefaultCellStyle.BackColor = Color.LightBlue
+                ElseIf row.Cells(“Estado”).Value = 11 Then
+                    row.DefaultCellStyle.BackColor = Color.Pink
+                ElseIf row.Cells(“Estado”).Value = 12 Then
+                    row.DefaultCellStyle.BackColor = Color.Pink
+                ElseIf row.Cells(“Estado”).Value = 13 Then
+                    row.DefaultCellStyle.BackColor = Color.LightBlue
+                ElseIf row.Cells(“Estado”).Value = 14 Then
+                    row.DefaultCellStyle.BackColor = Color.LightGreen
+                End If
+
+            Next
+
+
+            Me.dtgvp.Columns("Clave").ReadOnly = True
+            Me.dtgvp.Columns("Ingreso").ReadOnly = True
+            Me.dtgvp.Columns("Tiempo").ReadOnly = True
+            Me.dtgvp.Columns("Departamento").ReadOnly = True
+            Me.dtgvp.Columns("Empleado").ReadOnly = True
+            Me.dtgvp.Columns("Puesto").ReadOnly = True
+            Me.dtgvp.Columns("fecha").ReadOnly = True
+
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            Me.Dispose()
+            MessageBox.Show("No cuenta con los permisos necesarios, consulte al admnistrador", "¡Aviso!")
+
         End Try
-
-        dtgvp.Columns("Pues").Visible = False
-        dtgvp.Columns("Dep").Visible = False
-        dtgvp.Columns("Estado").Visible = False
-        dtgvp.Columns("id").Visible = False
-        dtgvp.Columns("liberacion").Visible = False
-        dtgvp.Columns("aprobacion").Visible = False
-        dtgvp.Columns("evaluacion").Visible = True
-        dtgvp.Columns("fecha").Visible = False
-        dtgvp.Columns("total_eval").Visible = False
-        dtgvp.Columns("Total_Autoeval").Visible = False
-        dtgvp.Columns("Total_Objetivos").Visible = False
-        dtgvp.Columns("Total_Mejora").Visible = False
-        dtgvp.Columns("autoeval").Visible = False
-
-
-        dtgvp.Columns("evaluacion").Visible = False
-        dtgvp.Columns("id_depto").Visible = False
-        dtgvp.Columns("id_puesto").Visible = False
-
-        For Each row As DataGridViewRow In Me.dtgvp.Rows
-
-
-            If row.Cells(“Estado”).Value = 0 Then
-                row.DefaultCellStyle.BackColor = Color.White
-            ElseIf row.Cells(“Estado”).Value = 1 Then
-                row.DefaultCellStyle.BackColor = Color.Gold
-            ElseIf row.Cells(“Estado”).Value = 10 And row.Cells(“Tiempo”).Value <> "3 meses" Then
-                row.DefaultCellStyle.BackColor = Color.Pink
-            ElseIf row.Cells(“Estado”).Value = 10 And row.Cells(“Tiempo”).Value = "3 meses" Then
-                row.DefaultCellStyle.BackColor = Color.LightBlue
-            ElseIf row.Cells(“Estado”).Value = 11 Then
-                row.DefaultCellStyle.BackColor = Color.Pink
-            ElseIf row.Cells(“Estado”).Value = 12 Then
-                row.DefaultCellStyle.BackColor = Color.Pink
-            ElseIf row.Cells(“Estado”).Value = 13 Then
-                row.DefaultCellStyle.BackColor = Color.LightBlue
-            ElseIf row.Cells(“Estado”).Value = 14 Then
-                row.DefaultCellStyle.BackColor = Color.LightGreen
-            End If
-
-        Next
-
-
-        Me.dtgvp.Columns("Clave").ReadOnly = True
-        Me.dtgvp.Columns("Ingreso").ReadOnly = True
-        Me.dtgvp.Columns("Tiempo").ReadOnly = True
-        Me.dtgvp.Columns("Departamento").ReadOnly = True
-        Me.dtgvp.Columns("Empleado").ReadOnly = True
-        Me.dtgvp.Columns("Puesto").ReadOnly = True
-        Me.dtgvp.Columns("fecha").ReadOnly = True
 
     End Sub
 
