@@ -1005,27 +1005,38 @@ Public Class Frm_GlobalPrenomina
                                 Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
                             End If
                         End If
-                    ElseIf colum = 7 Or colum = 8 Or tu = 10 Then
-                        If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
-                            Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "D"
-                            Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Black
-                            Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
-                        End If
-                        If Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "" Then
-                            Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "D"
-                            Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.BackColor = Color.Black
-                            Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.ForeColor = Color.White
-                        End If
-                        If Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "" Then
-                            Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "D"
-                            Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.Black
-                            Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.ForeColor = Color.White
+                    ElseIf colum = 7 Then
+                        If tu = 7 Or tu = 8 Or tu = 10 Then
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "D"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Black
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
+                            End If
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(t).Value = "D"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.BackColor = Color.Black
+                                Dgv_Prenomina_Global.Rows(fila).Cells(t).Style.ForeColor = Color.White
+                            End If
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(c).Value = "D"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.BackColor = Color.Black
+                                Dgv_Prenomina_Global.Rows(fila).Cells(c).Style.ForeColor = Color.White
+                            End If
+                        Else
+                            If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "A"
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Green
+                                Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
+
+                            End If
                         End If
                     Else
+
                         If Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "" Then
                             Dgv_Prenomina_Global.Rows(fila).Cells(d).Value = "A"
                             Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.BackColor = Color.Green
                             Dgv_Prenomina_Global.Rows(fila).Cells(d).Style.ForeColor = Color.White
+
                         End If
                     End If
                 Next
@@ -1186,7 +1197,7 @@ Public Class Frm_GlobalPrenomina
                                             V = .Cells("hrsAprobadas").Value
                                             dia = Convert.ToDateTime(.Cells("fecha").Value).DayOfWeek
                                             turno = .Cells("turno").Value
-                                            If dia <> 6 And dia <> 0 Or (dia = 6 And turno <> 4) Then
+                                            If dia > 0 And dia < 5 Or (dia = 5 And turno = 10) Then
                                                 If V > 180 Then
                                                     H2 = 180
                                                     H3 = V - 180
@@ -1282,75 +1293,75 @@ Public Class Frm_GlobalPrenomina
                                                     End If
                                                 End If
                                                 H = H2 + H
-                                            ElseIf dia = 6 Or dia = 0 Then
-                                                If dia = 6 And turno = 4 Then
-                                                    '   If V > 540 Then
-                                                    If H >= 540 Then
-                                                        H3 = V
+                                            ElseIf dia >= 6 Or dia = 0 Or (dia = 5 And turno < 10) Then
+                                                ' If dia = 6 And turno = 10 Then
+                                                '   If V > 540 Then
+                                                If H >= 540 Then
+                                                    H3 = V
 
-                                                        VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
-                                                        Dim objInci2 As New Incidencias
+                                                    VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+                                                    Dim objInci2 As New Incidencias
 
-                                                        objInci.Incidencia = 3
-                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                        objInci.Valor = VV3
-                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                    ElseIf (H + V) <= 540 Then
+                                                    objInci.Incidencia = 3
+                                                    objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                    objInci.Valor = VV3
+                                                    objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                ElseIf (H + V) <= 540 Then
 
-                                                        H2 = V
+                                                    H2 = V
 
-                                                        VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
-                                                        ' VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
-                                                        '  Dim objInci2 As New Incidencias
+                                                    VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+                                                    ' VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+                                                    '  Dim objInci2 As New Incidencias
 
-                                                        'objInci2.IdEmpleado = id
-                                                        'objInci2.Semana = sema
-                                                        'objInci2.Año = Lbl_año.Text
-                                                        objInci.Incidencia = 2
-                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                        objInci.Valor = VV
-                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                        'lstInc.Add(objInci2)
-
-                                                        'objInci.Incidencia = 3
-                                                        'objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                        'objInci.Valor = VV3
-                                                        'objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-
-                                                    ElseIf (H + V) > 540 Then
-                                                        HH = 540 - H
-                                                        HS = V - HH
-                                                        H3 = HS
-                                                        H2 = HH
-                                                        VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
-                                                        VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
-                                                        Dim objInci2 As New Incidencias
-
-                                                        objInci2.IdEmpleado = id
-                                                        objInci2.Semana = sema
-                                                        objInci2.Año = Lbl_año.Text
-                                                        objInci2.Incidencia = 2
-                                                        objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                        objInci2.Valor = VV
-                                                        objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                        lstInc.Add(objInci2)
-
-                                                        objInci.Incidencia = 3
-                                                        objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
-                                                        objInci.Valor = VV3
-                                                        objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
-                                                    End If
-
-
-                                                ElseIf dia = 0 Then
-                                                    VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
-
+                                                    'objInci2.IdEmpleado = id
+                                                    'objInci2.Semana = sema
+                                                    'objInci2.Año = Lbl_año.Text
                                                     objInci.Incidencia = 2
                                                     objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
                                                     objInci.Valor = VV
                                                     objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                    'lstInc.Add(objInci2)
+
+                                                    'objInci.Incidencia = 3
+                                                    'objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                    'objInci.Valor = VV3
+                                                    'objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+
+                                                ElseIf (H + V) > 540 Then
+                                                    HH = 540 - H
+                                                    HS = V - HH
+                                                    H3 = HS
+                                                    H2 = HH
+                                                    VV = Format(Int(H2 / 60) + (((H2 / 60 - Int(H2 / 60)) / 1.666)), "0.00")
+                                                    VV3 = Format(Int(H3 / 60) + (((H3 / 60 - Int(H3 / 60)) / 1.666)), "0.00")
+                                                    Dim objInci2 As New Incidencias
+
+                                                    objInci2.IdEmpleado = id
+                                                    objInci2.Semana = sema
+                                                    objInci2.Año = Lbl_año.Text
+                                                    objInci2.Incidencia = 2
+                                                    objInci2.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                    objInci2.Valor = VV
+                                                    objInci2.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
+                                                    lstInc.Add(objInci2)
+
+                                                    objInci.Incidencia = 3
+                                                    objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                    objInci.Valor = VV3
+                                                    objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
                                                 End If
+
+
+                                            ElseIf dia = 0 Then
+                                                VV = Format(Int(V / 60) + (((V / 60 - Int(V / 60)) / 1.666)), "0.00")
+
+                                                objInci.Incidencia = 2
+                                                objInci.FechaInc = Format(.Cells("fecha").Value, "dd/MM/yyyy")
+                                                objInci.Valor = VV
+                                                objInci.FechaActual = Format(Date.Now, "dd/MM/yyyy HH:mm:ss")
                                             End If
+                                           ' End If
 #Region "Coment"
                                             'If V <= 540 Then
                                             '    If H <= 540 Then
