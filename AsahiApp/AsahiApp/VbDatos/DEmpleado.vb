@@ -431,7 +431,7 @@ where vig.Clave = " & noEmp, oCon)
         Dim lstHr As New LEmpleado()
         Try
             oCon.Open()
-            Dim query As New SqlCommand("SELECT 'MAÑANA 6:55 a 15:25' as Horario union SELECT 'TARDE 15:25 a 11:25' union SELECT 'NOCHE 11:25 a 7:00' union SELECT 'ADMINISTRATIVO 8:00 a 17:00' union SELECT 'MAZDA DIA 6:00 a 18:00' union SELECT 'MAZDA NOCHE 18:00 a 6:00' union SELECT 'DIA 7:00 a 19:00' union SELECT 'NOCHE 19:00 a 7:00'", oCon)
+            Dim query As New SqlCommand("SELECT 'ADMINISTRATIVO 7:00 a 16:00'  union SELECT 'DIA 7:00 a 19:15' union SELECT 'NOCHE 19:00 a 7:15' union SELECT 'MAÑANA 6:55 a 15:25' as Horario union SELECT 'TARDE 15:25 a 11:25' union SELECT 'NOCHE 11:25 a 7:00'", oCon)
             query.CommandTimeout = 120
             Dim dr As SqlDataReader
             dr = query.ExecuteReader

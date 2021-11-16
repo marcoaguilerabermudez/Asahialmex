@@ -329,7 +329,11 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
           when @turnoe = '12 M' then 7
              when @turnoe = '12 N' then 8
           end,
-          @parcial, @motivo, 
+     case
+        when @parcial > 11 and @turnoe = '12 M' then @parcial - 1
+        when @parcial > 11.5 and @turnoe = '12 N' then @parcial - 0.5
+        ELSE @parcial end
+, @motivo, 
            case
           when @turnoe = 'Matutino' then '01/01/1900 06:55:00'
           when @turnoe = 'Vespertino' then '01/01/1900 15:25:00'
@@ -457,7 +461,10 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
  when @turnoe = '12 M' then 7
  when @turnoe = '12 N' then 8
   end,
-  @parcial, @motivo, 
+   case
+        when @parcial > 11 and @turnoe = '12 M' then @parcial - 1
+        when @parcial > 11.5 and @turnoe = '12 N' then @parcial - 0.5
+        ELSE @parcial end, @motivo, 
    case
   when @turnoe = 'Matutino' then '01/01/1900 06:55:00'
   when @turnoe = 'Vespertino' then '01/01/1900 15:25:00'
@@ -933,9 +940,9 @@ end
         ElseIf cbx_textra.Text = "Administrativo" Then
             txt_horas.Text = 9
         ElseIf cbx_textra.Text = "12 M" Then
-            txt_horas.Text = 12
+            txt_horas.Text = 11
         ElseIf cbx_textra.Text = "12 N" Then
-            txt_horas.Text = 12
+            txt_horas.Text = 11.5
         End If
     End Sub
 

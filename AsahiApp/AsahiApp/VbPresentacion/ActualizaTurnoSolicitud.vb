@@ -128,9 +128,9 @@ Public Class ActualizaTurnoSolicitud
         ElseIf cbx_textra.Text = "Nocturno" Then
             txt_horas.Text = 7.5
         ElseIf cbx_textra.Text = "12 M" Then
-            txt_horas.Text = 12
+            txt_horas.Text = 11
         ElseIf cbx_textra.Text = "12 N" Then
-            txt_horas.Text = 12
+            txt_horas.Text = 11.5
 
         End If
 
