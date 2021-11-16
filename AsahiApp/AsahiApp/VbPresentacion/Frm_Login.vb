@@ -31,6 +31,7 @@ Public Class Frm_Login
             Me.cadenaCExpress = conexion.cadenaConexExpressFor
         End If
         Dim up As String = UserPrincipal.Current.SamAccountName
+
         If up <> "" And up <> "luis.limon" And up <> "francisco.mojica" And up <> "erik.urbina" And up <> "marco.aguilera" Then
             Txt_NombreUsuario.Text = up
             Txt_Contraseña.Select()

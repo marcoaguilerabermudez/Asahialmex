@@ -608,6 +608,16 @@ Public Class Frm_ListaPrenomina
                                         .Visible = False
                                     End If
                                 End If
+                            Case "OMI"
+                                If (incColE = inc Or incColS = inc) Then
+                                    If .Visible = False Then
+                                        .Visible = True
+                                    End If
+                                ElseIf columna = 1 Then
+                                    If .Visible = True Then
+                                        .Visible = False
+                                    End If
+                                End If
 
 
                         End Select
@@ -1392,6 +1402,10 @@ Public Class Frm_ListaPrenomina
                             inc = "SHU"
                             cb = Color.Yellow
                             cf = Color.Black
+                        Case "I"
+                            inc = "OMI"
+                            cb = Color.Beige
+                            cf = Color.Black
                         Case Else
                             inc = "error"
                     End Select
@@ -1478,7 +1492,7 @@ Public Class Frm_ListaPrenomina
             If idTurno > 6 Then 'Se cambia < de 7 a > 6 para los nuevos turnos.
                 For colum = 4 To 7
                     If colum > 4 Then
-                        If idTurno <= 10 Then
+                        If idTurno < 10 Then
                             Dim ce As String = "entrada" + Convert.ToString(colum) + ""
                             Dim cs As String = "salida" + Convert.ToString(colum) + ""
                             If Dgv_ListaPrenomina.Rows(fila).Cells(ce).Value = "" Then
@@ -1890,6 +1904,8 @@ Public Class Frm_ListaPrenomina
                                     objEmp.TipoIncidencia1 = "A"
                                 Case "SHU"
                                     objEmp.TipoIncidencia1 = "A"
+                                Case "OMI"
+                                    objEmp.TipoIncidencia1 = "A"
                                 Case "DT"
                                     objEmp.TipoIncidencia1 = "HE"
                                 Case Else
@@ -1918,6 +1934,8 @@ Public Class Frm_ListaPrenomina
                                 Case "SUS"
                                     objEmp.TipoIncidencia2 = "A"
                                 Case "SHU"
+                                    objEmp.TipoIncidencia1 = "A"
+                                Case "OMI"
                                     objEmp.TipoIncidencia1 = "A"
                                 Case "DT"
                                     objEmp.TipoIncidencia2 = "HE"
@@ -2076,6 +2094,9 @@ Public Class Frm_ListaPrenomina
             Case "SHU"
                 cb = Color.Yellow
                 cf = Color.Black
+            Case "OMI"
+                cb = Color.Beige
+                cf = Color.Black
             Case ""
                 cb = Color.Gray
                 cf = Color.Black
@@ -2114,6 +2135,8 @@ Public Class Frm_ListaPrenomina
                     item.Incidencia1 = "J"
                 Case "SHU"
                     item.Incidencia1 = "Z"
+                Case "OMI"
+                    item.Incidencia1 = "I"
             End Select
             Select Case item.Incidencia2
                 Case "PM"
@@ -2140,6 +2163,8 @@ Public Class Frm_ListaPrenomina
                     item.Incidencia1 = "J"
                 Case "SHU"
                     item.Incidencia1 = "Z"
+                Case "OMI"
+                    item.Incidencia1 = "I"
             End Select
         Next
         Return lstEmp
@@ -2680,7 +2705,6 @@ Public Class Frm_ListaPrenomina
     End Sub
 
 
-
     Private Function RecuperarDatoInc(ByVal dato As String) As String
         Select Case dato
             Case "FALTA" : Return "F"
@@ -2699,6 +2723,7 @@ Public Class Frm_ListaPrenomina
             Case "SOSPECHOSO ENFERMEDAD" : Return "SO"
             Case "CONFIRMADO" : Return "CF"
             Case "SHUTDOWN" : Return "SHU"
+            Case "SIN CHECADA" : Return "OMI"
             Case Else : Return ""
         End Select
     End Function

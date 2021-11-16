@@ -831,14 +831,14 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox1">
+                                          <Textbox Name="CLAVE">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=Fields!CLAVE.Value</Value>
                                                     <Style>
                                                       <FontFamily>arial</FontFamily>
                                                       <FontSize>16pt</FontSize>
@@ -853,7 +853,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox1</rd:DefaultName>
+                                            <rd:DefaultName>CLAVE</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>None</Style>

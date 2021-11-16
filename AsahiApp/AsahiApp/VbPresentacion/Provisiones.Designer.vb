@@ -51,19 +51,15 @@ Partial Class Provisiones
         Me.dtgv = New System.Windows.Forms.DataGridView()
         Me.x = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_fpr = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_ffa = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_fem = New System.Windows.Forms.TextBox()
         Me.lbl_idcli = New System.Windows.Forms.Label()
         Me.txt_foc = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.dtpb = New System.Windows.Forms.DateTimePicker()
@@ -89,20 +85,13 @@ Partial Class Provisiones
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.txt_status = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.txt_f6 = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txt_f3 = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.txt_f4 = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.txt_f2 = New System.Windows.Forms.TextBox()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.txt_f5 = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.txt_f1 = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.btn_marcar = New System.Windows.Forms.Button()
         Me.btn_desma = New System.Windows.Forms.Button()
@@ -113,8 +102,6 @@ Partial Class Provisiones
         Me.btn_status = New System.Windows.Forms.Button()
         Me.txt_cantidad = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.t9 = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.t3 = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -134,8 +121,6 @@ Partial Class Provisiones
         Me.Button2 = New System.Windows.Forms.Button()
         Me.dtgv3 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewCheckBoxColumn2 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.gbx_tipo.SuspendLayout()
@@ -431,16 +416,10 @@ Partial Class Provisiones
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.TextBox9)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.txt_fpr)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.TextBox8)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txt_ffa)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txt_fem)
         Me.GroupBox1.Controls.Add(Me.lbl_idcli)
         Me.GroupBox1.Controls.Add(Me.txt_foc)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.Control
@@ -451,31 +430,6 @@ Partial Class Provisiones
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "FILTROS"
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label9.Location = New System.Drawing.Point(250, 63)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(47, 14)
-        Me.Label9.TabIndex = 375
-        Me.Label9.Text = "Factura"
-        Me.Label9.Visible = False
-        '
-        'TextBox9
-        '
-        Me.TextBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.TextBox9.ForeColor = System.Drawing.SystemColors.Menu
-        Me.TextBox9.Location = New System.Drawing.Point(223, 80)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox9.TabIndex = 374
-        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox9.Visible = False
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -483,7 +437,7 @@ Partial Class Provisiones
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label10.Location = New System.Drawing.Point(255, 12)
+        Me.Label10.Location = New System.Drawing.Point(255, 33)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(63, 14)
         Me.Label10.TabIndex = 373
@@ -494,36 +448,11 @@ Partial Class Provisiones
         Me.txt_fpr.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.txt_fpr.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_fpr.ForeColor = System.Drawing.SystemColors.Menu
-        Me.txt_fpr.Location = New System.Drawing.Point(214, 32)
+        Me.txt_fpr.Location = New System.Drawing.Point(214, 53)
         Me.txt_fpr.Name = "txt_fpr"
         Me.txt_fpr.Size = New System.Drawing.Size(153, 20)
         Me.txt_fpr.TabIndex = 372
         Me.txt_fpr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label7.Location = New System.Drawing.Point(36, 63)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(47, 14)
-        Me.Label7.TabIndex = 371
-        Me.Label7.Text = "Factura"
-        Me.Label7.Visible = False
-        '
-        'TextBox8
-        '
-        Me.TextBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.TextBox8.ForeColor = System.Drawing.SystemColors.Menu
-        Me.TextBox8.Location = New System.Drawing.Point(7, 80)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox8.TabIndex = 370
-        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox8.Visible = False
         '
         'Label2
         '
@@ -532,7 +461,7 @@ Partial Class Provisiones
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label2.Location = New System.Drawing.Point(133, 15)
+        Me.Label2.Location = New System.Drawing.Point(133, 36)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(47, 14)
         Me.Label2.TabIndex = 369
@@ -543,35 +472,11 @@ Partial Class Provisiones
         Me.txt_ffa.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.txt_ffa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_ffa.ForeColor = System.Drawing.SystemColors.Menu
-        Me.txt_ffa.Location = New System.Drawing.Point(117, 32)
+        Me.txt_ffa.Location = New System.Drawing.Point(117, 53)
         Me.txt_ffa.Name = "txt_ffa"
         Me.txt_ffa.Size = New System.Drawing.Size(80, 20)
         Me.txt_ffa.TabIndex = 368
         Me.txt_ffa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(137, 61)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 14)
-        Me.Label1.TabIndex = 366
-        Me.Label1.Text = "Empresa"
-        '
-        'txt_fem
-        '
-        Me.txt_fem.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.txt_fem.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_fem.ForeColor = System.Drawing.SystemColors.Menu
-        Me.txt_fem.Location = New System.Drawing.Point(129, 80)
-        Me.txt_fem.Name = "txt_fem"
-        Me.txt_fem.Size = New System.Drawing.Size(68, 20)
-        Me.txt_fem.TabIndex = 365
-        Me.txt_fem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbl_idcli
         '
@@ -580,7 +485,7 @@ Partial Class Provisiones
         Me.lbl_idcli.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_idcli.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.lbl_idcli.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl_idcli.Location = New System.Drawing.Point(3, 16)
+        Me.lbl_idcli.Location = New System.Drawing.Point(3, 37)
         Me.lbl_idcli.Name = "lbl_idcli"
         Me.lbl_idcli.Size = New System.Drawing.Size(104, 14)
         Me.lbl_idcli.TabIndex = 364
@@ -591,7 +496,7 @@ Partial Class Provisiones
         Me.txt_foc.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.txt_foc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_foc.ForeColor = System.Drawing.SystemColors.Menu
-        Me.txt_foc.Location = New System.Drawing.Point(13, 33)
+        Me.txt_foc.Location = New System.Drawing.Point(13, 54)
         Me.txt_foc.Name = "txt_foc"
         Me.txt_foc.Size = New System.Drawing.Size(77, 20)
         Me.txt_foc.TabIndex = 0
@@ -623,12 +528,31 @@ Partial Class Provisiones
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Provisionadas"
         '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!)
+        Me.Label29.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label29.Location = New System.Drawing.Point(460, 72)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(70, 12)
+        Me.Label29.TabIndex = 404
+        Me.Label29.Text = " MODIFICADO"
+        '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.Color.Gold
+        Me.Panel9.Location = New System.Drawing.Point(441, 68)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(13, 20)
+        Me.Panel9.TabIndex = 403
+        '
         'Button12
         '
         Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button12.Location = New System.Drawing.Point(491, 98)
+        Me.Button12.Location = New System.Drawing.Point(491, 93)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(65, 27)
         Me.Button12.TabIndex = 402
@@ -906,16 +830,10 @@ Partial Class Provisiones
         '
         Me.GroupBox4.Controls.Add(Me.Label32)
         Me.GroupBox4.Controls.Add(Me.txt_status)
-        Me.GroupBox4.Controls.Add(Me.Label17)
-        Me.GroupBox4.Controls.Add(Me.txt_f6)
         Me.GroupBox4.Controls.Add(Me.Label18)
         Me.GroupBox4.Controls.Add(Me.txt_f3)
-        Me.GroupBox4.Controls.Add(Me.Label19)
-        Me.GroupBox4.Controls.Add(Me.txt_f4)
         Me.GroupBox4.Controls.Add(Me.Label23)
         Me.GroupBox4.Controls.Add(Me.txt_f2)
-        Me.GroupBox4.Controls.Add(Me.Label24)
-        Me.GroupBox4.Controls.Add(Me.txt_f5)
         Me.GroupBox4.Controls.Add(Me.Label25)
         Me.GroupBox4.Controls.Add(Me.txt_f1)
         Me.GroupBox4.ForeColor = System.Drawing.SystemColors.Control
@@ -933,7 +851,7 @@ Partial Class Provisiones
         Me.Label32.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label32.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label32.Location = New System.Drawing.Point(262, 61)
+        Me.Label32.Location = New System.Drawing.Point(266, 63)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(87, 14)
         Me.Label32.TabIndex = 389
@@ -943,36 +861,11 @@ Partial Class Provisiones
         '
         Me.txt_status.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.txt_status.ForeColor = System.Drawing.SystemColors.Menu
-        Me.txt_status.Location = New System.Drawing.Point(272, 78)
+        Me.txt_status.Location = New System.Drawing.Point(276, 80)
         Me.txt_status.Name = "txt_status"
         Me.txt_status.Size = New System.Drawing.Size(67, 20)
         Me.txt_status.TabIndex = 388
         Me.txt_status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label17.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label17.Location = New System.Drawing.Point(252, 60)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(47, 14)
-        Me.Label17.TabIndex = 387
-        Me.Label17.Text = "Factura"
-        Me.Label17.Visible = False
-        '
-        'txt_f6
-        '
-        Me.txt_f6.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.txt_f6.ForeColor = System.Drawing.SystemColors.Menu
-        Me.txt_f6.Location = New System.Drawing.Point(223, 77)
-        Me.txt_f6.Name = "txt_f6"
-        Me.txt_f6.Size = New System.Drawing.Size(100, 20)
-        Me.txt_f6.TabIndex = 386
-        Me.txt_f6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txt_f6.Visible = False
         '
         'Label18
         '
@@ -981,7 +874,7 @@ Partial Class Provisiones
         Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label18.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label18.Location = New System.Drawing.Point(297, 13)
+        Me.Label18.Location = New System.Drawing.Point(280, 16)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(63, 14)
         Me.Label18.TabIndex = 385
@@ -992,36 +885,11 @@ Partial Class Provisiones
         Me.txt_f3.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.txt_f3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_f3.ForeColor = System.Drawing.SystemColors.Menu
-        Me.txt_f3.Location = New System.Drawing.Point(232, 31)
+        Me.txt_f3.Location = New System.Drawing.Point(215, 34)
         Me.txt_f3.Name = "txt_f3"
         Me.txt_f3.Size = New System.Drawing.Size(196, 20)
         Me.txt_f3.TabIndex = 384
         Me.txt_f3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label19.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label19.Location = New System.Drawing.Point(37, 61)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(47, 14)
-        Me.Label19.TabIndex = 383
-        Me.Label19.Text = "Factura"
-        Me.Label19.Visible = False
-        '
-        'txt_f4
-        '
-        Me.txt_f4.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.txt_f4.ForeColor = System.Drawing.SystemColors.Menu
-        Me.txt_f4.Location = New System.Drawing.Point(8, 78)
-        Me.txt_f4.Name = "txt_f4"
-        Me.txt_f4.Size = New System.Drawing.Size(100, 20)
-        Me.txt_f4.TabIndex = 382
-        Me.txt_f4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txt_f4.Visible = False
         '
         'Label23
         '
@@ -1030,7 +898,7 @@ Partial Class Provisiones
         Me.Label23.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label23.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label23.Location = New System.Drawing.Point(143, 13)
+        Me.Label23.Location = New System.Drawing.Point(32, 63)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(47, 14)
         Me.Label23.TabIndex = 381
@@ -1041,35 +909,11 @@ Partial Class Provisiones
         Me.txt_f2.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.txt_f2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_f2.ForeColor = System.Drawing.SystemColors.Menu
-        Me.txt_f2.Location = New System.Drawing.Point(118, 30)
+        Me.txt_f2.Location = New System.Drawing.Point(7, 80)
         Me.txt_f2.Name = "txt_f2"
         Me.txt_f2.Size = New System.Drawing.Size(100, 20)
         Me.txt_f2.TabIndex = 380
         Me.txt_f2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.Label24.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label24.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label24.Location = New System.Drawing.Point(137, 60)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(53, 14)
-        Me.Label24.TabIndex = 379
-        Me.Label24.Text = "Empresa"
-        '
-        'txt_f5
-        '
-        Me.txt_f5.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.txt_f5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_f5.ForeColor = System.Drawing.SystemColors.Menu
-        Me.txt_f5.Location = New System.Drawing.Point(129, 79)
-        Me.txt_f5.Name = "txt_f5"
-        Me.txt_f5.Size = New System.Drawing.Size(68, 20)
-        Me.txt_f5.TabIndex = 378
-        Me.txt_f5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label25
         '
@@ -1098,7 +942,6 @@ Partial Class Provisiones
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.TabPage3.Controls.Add(Me.Button8)
         Me.TabPage3.Controls.Add(Me.Panel4)
         Me.TabPage3.Controls.Add(Me.Button6)
         Me.TabPage3.Controls.Add(Me.GroupBox5)
@@ -1110,19 +953,6 @@ Partial Class Provisiones
         Me.TabPage3.Size = New System.Drawing.Size(1001, 553)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Contabilidad"
-        '
-        'Button8
-        '
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button8.Location = New System.Drawing.Point(742, 89)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(136, 27)
-        Me.Button8.TabIndex = 399
-        Me.Button8.Text = "Facturas Parciales"
-        Me.Button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button8.UseVisualStyleBackColor = True
         '
         'Panel4
         '
@@ -1227,8 +1057,6 @@ Partial Class Provisiones
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.Label26)
-        Me.GroupBox3.Controls.Add(Me.t9)
         Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.t3)
         Me.GroupBox3.Controls.Add(Me.Label20)
@@ -1253,29 +1081,6 @@ Partial Class Provisiones
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "FILTROS"
         '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.Label26.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label26.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label26.Location = New System.Drawing.Point(541, 41)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(53, 14)
-        Me.Label26.TabIndex = 381
-        Me.Label26.Text = "Empresa"
-        '
-        't9
-        '
-        Me.t9.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.t9.ForeColor = System.Drawing.SystemColors.Menu
-        Me.t9.Location = New System.Drawing.Point(532, 58)
-        Me.t9.Name = "t9"
-        Me.t9.Size = New System.Drawing.Size(68, 20)
-        Me.t9.TabIndex = 380
-        Me.t9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -1283,7 +1088,7 @@ Partial Class Provisiones
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label12.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label12.Location = New System.Drawing.Point(278, 16)
+        Me.Label12.Location = New System.Drawing.Point(317, 16)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(47, 14)
         Me.Label12.TabIndex = 379
@@ -1293,7 +1098,7 @@ Partial Class Provisiones
         '
         Me.t3.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.t3.ForeColor = System.Drawing.SystemColors.Menu
-        Me.t3.Location = New System.Drawing.Point(242, 33)
+        Me.t3.Location = New System.Drawing.Point(281, 33)
         Me.t3.Name = "t3"
         Me.t3.Size = New System.Drawing.Size(119, 20)
         Me.t3.TabIndex = 378
@@ -1306,7 +1111,7 @@ Partial Class Provisiones
         Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label20.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label20.Location = New System.Drawing.Point(415, 16)
+        Me.Label20.Location = New System.Drawing.Point(492, 16)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(63, 14)
         Me.Label20.TabIndex = 377
@@ -1319,7 +1124,7 @@ Partial Class Provisiones
         Me.Label21.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label21.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label21.Location = New System.Drawing.Point(401, 65)
+        Me.Label21.Location = New System.Drawing.Point(478, 65)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(88, 14)
         Me.Label21.TabIndex = 375
@@ -1329,7 +1134,7 @@ Partial Class Provisiones
         '
         Me.t8.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.t8.ForeColor = System.Drawing.SystemColors.Menu
-        Me.t8.Location = New System.Drawing.Point(396, 82)
+        Me.t8.Location = New System.Drawing.Point(473, 82)
         Me.t8.Name = "t8"
         Me.t8.Size = New System.Drawing.Size(100, 20)
         Me.t8.TabIndex = 374
@@ -1342,7 +1147,7 @@ Partial Class Provisiones
         Me.Label22.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label22.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label22.Location = New System.Drawing.Point(244, 65)
+        Me.Label22.Location = New System.Drawing.Point(283, 65)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(117, 14)
         Me.Label22.TabIndex = 373
@@ -1352,7 +1157,7 @@ Partial Class Provisiones
         '
         Me.t4.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.t4.ForeColor = System.Drawing.SystemColors.Menu
-        Me.t4.Location = New System.Drawing.Point(373, 33)
+        Me.t4.Location = New System.Drawing.Point(450, 33)
         Me.t4.Name = "t4"
         Me.t4.Size = New System.Drawing.Size(141, 20)
         Me.t4.TabIndex = 376
@@ -1362,7 +1167,7 @@ Partial Class Provisiones
         '
         Me.t7.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.t7.ForeColor = System.Drawing.SystemColors.Menu
-        Me.t7.Location = New System.Drawing.Point(251, 82)
+        Me.t7.Location = New System.Drawing.Point(290, 82)
         Me.t7.Name = "t7"
         Me.t7.Size = New System.Drawing.Size(100, 20)
         Me.t7.TabIndex = 372
@@ -1375,7 +1180,7 @@ Partial Class Provisiones
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label11.Location = New System.Drawing.Point(150, 64)
+        Me.Label11.Location = New System.Drawing.Point(165, 64)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(50, 14)
         Me.Label11.TabIndex = 371
@@ -1385,7 +1190,7 @@ Partial Class Provisiones
         '
         Me.t6.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.t6.ForeColor = System.Drawing.SystemColors.Menu
-        Me.t6.Location = New System.Drawing.Point(127, 82)
+        Me.t6.Location = New System.Drawing.Point(142, 82)
         Me.t6.Name = "t6"
         Me.t6.Size = New System.Drawing.Size(100, 20)
         Me.t6.TabIndex = 370
@@ -1398,7 +1203,7 @@ Partial Class Provisiones
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label3.Location = New System.Drawing.Point(152, 14)
+        Me.Label3.Location = New System.Drawing.Point(167, 14)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(42, 14)
         Me.Label3.TabIndex = 369
@@ -1408,7 +1213,7 @@ Partial Class Provisiones
         '
         Me.t2.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.t2.ForeColor = System.Drawing.SystemColors.Menu
-        Me.t2.Location = New System.Drawing.Point(127, 33)
+        Me.t2.Location = New System.Drawing.Point(142, 33)
         Me.t2.Name = "t2"
         Me.t2.Size = New System.Drawing.Size(100, 20)
         Me.t2.TabIndex = 368
@@ -1511,25 +1316,6 @@ Partial Class Provisiones
         Me.DataGridViewCheckBoxColumn2.Name = "DataGridViewCheckBoxColumn2"
         Me.DataGridViewCheckBoxColumn2.Width = 20
         '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!)
-        Me.Label29.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label29.Location = New System.Drawing.Point(460, 72)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(70, 12)
-        Me.Label29.TabIndex = 404
-        Me.Label29.Text = " MODIFICADO"
-        '
-        'Panel9
-        '
-        Me.Panel9.BackColor = System.Drawing.Color.Gold
-        Me.Panel9.Location = New System.Drawing.Point(441, 68)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(13, 20)
-        Me.Panel9.TabIndex = 403
-        '
         'Provisiones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1581,16 +1367,10 @@ Partial Class Provisiones
     Friend WithEvents dtgv As DataGridView
     Friend WithEvents x As DataGridViewCheckBoxColumn
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox9 As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents txt_fpr As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox8 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txt_ffa As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txt_fem As TextBox
     Friend WithEvents lbl_idcli As Label
     Friend WithEvents txt_foc As TextBox
     Friend WithEvents TabPage2 As TabPage
@@ -1619,20 +1399,13 @@ Partial Class Provisiones
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label32 As Label
     Friend WithEvents txt_status As TextBox
-    Friend WithEvents Label17 As Label
-    Friend WithEvents txt_f6 As TextBox
     Friend WithEvents Label18 As Label
     Friend WithEvents txt_f3 As TextBox
-    Friend WithEvents Label19 As Label
-    Friend WithEvents txt_f4 As TextBox
     Friend WithEvents Label23 As Label
     Friend WithEvents txt_f2 As TextBox
-    Friend WithEvents Label24 As Label
-    Friend WithEvents txt_f5 As TextBox
     Friend WithEvents Label25 As Label
     Friend WithEvents txt_f1 As TextBox
     Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents Button8 As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents btn_marcar As Button
     Friend WithEvents btn_desma As Button
@@ -1643,8 +1416,6 @@ Partial Class Provisiones
     Friend WithEvents btn_status As Button
     Friend WithEvents txt_cantidad As TextBox
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Label26 As Label
-    Friend WithEvents t9 As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents t3 As TextBox
     Friend WithEvents Label20 As Label
