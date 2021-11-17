@@ -327,7 +327,7 @@ where vig.vigencia = 'VIGENTE' and clave = " & parametro1 & "")
           when @turnoe = 'Nocturno' then 3
           when @turnoe = 'Administrativo' then 10
           when @turnoe = '12 M' then 7
-             when @turnoe = '12 N' then 8
+          when @turnoe = '12 N' then 8
           end,
      case
         when @parcial > 11 and @turnoe = '12 M' then @parcial - 1

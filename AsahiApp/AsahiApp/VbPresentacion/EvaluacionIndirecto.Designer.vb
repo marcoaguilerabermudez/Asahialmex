@@ -1016,6 +1016,7 @@ Partial Class EvaluacionIndirecto
         Me.gbx_indicadores.Controls.Add(Me.rdb_indicadores2)
         Me.gbx_indicadores.Controls.Add(Me.rdb_indicadores)
         Me.gbx_indicadores.Controls.Add(Me.btn_editaindicadores)
+        Me.gbx_indicadores.Enabled = False
         Me.gbx_indicadores.Location = New System.Drawing.Point(876, 80)
         Me.gbx_indicadores.Name = "gbx_indicadores"
         Me.gbx_indicadores.Size = New System.Drawing.Size(315, 112)
@@ -1223,6 +1224,7 @@ Partial Class EvaluacionIndirecto
         Me.gbx_objetivos.Controls.Add(Me.rdb_objetivos2)
         Me.gbx_objetivos.Controls.Add(Me.rdb_objetivos)
         Me.gbx_objetivos.Controls.Add(Me.btn_editaobjetivos)
+        Me.gbx_objetivos.Enabled = False
         Me.gbx_objetivos.Location = New System.Drawing.Point(852, 100)
         Me.gbx_objetivos.Name = "gbx_objetivos"
         Me.gbx_objetivos.Size = New System.Drawing.Size(315, 112)

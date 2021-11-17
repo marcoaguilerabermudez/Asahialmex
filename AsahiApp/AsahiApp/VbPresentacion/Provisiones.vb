@@ -600,8 +600,8 @@ Public Class Provisiones
         Try
 
             For Each fila In dgv2.Rows
-                If fila.Cells(0).Value = True And fila.Cells("EstatusConta").Value <> "A" Then
-
+                If fila.Cells(0).Value = True Then
+                    'And fila.Cells("Estatus_Conta").Value <> 1
                     command.Parameters.Clear()
 
                     command.Parameters.AddWithValue("@var", 4)
@@ -630,6 +630,7 @@ Public Class Provisiones
                     command.Parameters.AddWithValue("@id_provcompra", (fila.Cells("Id_provcompra").Value))
 
                     command.ExecuteNonQuery()
+                    'MessageBox.Show((fila.Cells("Id_provcompra").Value))
                 End If
             Next
 
