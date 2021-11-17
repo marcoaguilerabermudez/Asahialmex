@@ -559,6 +559,7 @@ Partial Class Provisiones
         Me.Button12.Text = "PDF"
         Me.Button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.Button12.UseVisualStyleBackColor = True
+        Me.Button12.Visible = False
         '
         'GroupBox6
         '
@@ -1004,9 +1005,9 @@ Partial Class Provisiones
         Me.GroupBox5.Controls.Add(Me.btn_status)
         Me.GroupBox5.Controls.Add(Me.txt_cantidad)
         Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.GroupBox5.Location = New System.Drawing.Point(664, 5)
+        Me.GroupBox5.Location = New System.Drawing.Point(671, 19)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(301, 79)
+        Me.GroupBox5.Size = New System.Drawing.Size(255, 79)
         Me.GroupBox5.TabIndex = 390
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Status y Monto"
@@ -1014,7 +1015,7 @@ Partial Class Provisiones
         'dtpp
         '
         Me.dtpp.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpp.Location = New System.Drawing.Point(34, 18)
+        Me.dtpp.Location = New System.Drawing.Point(80, 16)
         Me.dtpp.Name = "dtpp"
         Me.dtpp.Size = New System.Drawing.Size(94, 20)
         Me.dtpp.TabIndex = 393
@@ -1031,13 +1032,14 @@ Partial Class Provisiones
         Me.Button3.Text = "Monto"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Visible = False
         '
         'btn_status
         '
         Me.btn_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_status.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_status.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btn_status.Location = New System.Drawing.Point(27, 46)
+        Me.btn_status.Location = New System.Drawing.Point(73, 44)
         Me.btn_status.Name = "btn_status"
         Me.btn_status.Size = New System.Drawing.Size(109, 27)
         Me.btn_status.TabIndex = 391
@@ -1054,6 +1056,7 @@ Partial Class Provisiones
         Me.txt_cantidad.Size = New System.Drawing.Size(116, 20)
         Me.txt_cantidad.TabIndex = 386
         Me.txt_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_cantidad.Visible = False
         '
         'GroupBox3
         '
