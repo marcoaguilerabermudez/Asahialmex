@@ -50,6 +50,7 @@ Public Class Provisiones
     Sub New(id As Integer, depto As String, permiso As Integer, nombre As String, p_vales As Integer)
 
         InitializeComponent()
+
         Me.id = id
         Me.depto = depto
         Me.permiso = permiso
@@ -163,6 +164,89 @@ Public Class Provisiones
             da.SelectCommand.Parameters.AddWithValue("@desde", dtp1.Value.ToShortDateString)
             da.SelectCommand.Parameters.AddWithValue("@hasta", dtp2.Value.ToShortDateString)
             da.SelectCommand.Parameters.AddWithValue("@var", 2)
+
+            'MessageBox.Show(txt_no.Text)
+            'MessageBox.Show(cbx_serie.Text)
+
+            dt2.Clear()
+            da.Fill(dt2)
+            dgv2.DataSource = dt2
+
+            dgv2.Columns("Id_provcompra").Visible = False
+            dgv2.Columns("Id_provision").Visible = False
+            dgv2.Columns("id_po").Visible = False
+            dgv2.Columns("Codigo").Visible = False
+            dgv2.Columns("Serie").Visible = False
+
+            'dtgv3.Columns("ObservaConta").Visible = False
+            dgv2.Columns("Ruta").Visible = False
+            dgv2.Columns("UUID").Visible = False
+            dgv2.Columns("EstatusConta").Visible = False
+            dgv2.Columns("Estatus_Conta").Visible = False
+
+            dgv2.Columns("PO").Width = 65
+
+            dgv2.Columns("Factura").Width = 80
+            dgv2.Columns("Proveedor").Width = 150
+            dgv2.Columns("Moneda").Width = 60
+
+            dgv2.Columns("FechaVal").ReadOnly = True
+            dgv2.Columns("PO").ReadOnly = True
+            dgv2.Columns("Factura").ReadOnly = True
+            dgv2.Columns("Proveedor").ReadOnly = True
+            dgv2.Columns("MontoFact").ReadOnly = True
+
+            dgv2.Columns("FechaFactura").ReadOnly = True
+            dgv2.Columns("FechaPagoReal").ReadOnly = True
+            dgv2.Columns("MontoOc").ReadOnly = True
+            dgv2.Columns("Moneda").ReadOnly = True
+            dgv2.Columns("EstatusPago").ReadOnly = True
+            dgv2.Columns("EstatusConta").ReadOnly = True
+            dgv2.Columns("RFC").ReadOnly = True
+            dgv2.Columns("RFCEmisor").ReadOnly = True
+            dgv2.Columns("NombreEmisor").ReadOnly = True
+
+
+
+            colores()
+
+
+
+
+            'If (depto <> 19 Or depto <> 7) Then
+            '    dtgvp.Columns.Remove("X")
+            'End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+
+
+
+
+    End Sub
+
+
+    Sub cargagridvalidadoxPago()
+
+
+        cnn.Close()
+        cnn.Open()
+        '   MessageBox.Show(cnn.ToString)
+
+
+
+
+        Try
+
+
+
+            Dim da As New SqlDataAdapter("Sp_MuestraProvisiones", cnn)
+
+            da.SelectCommand.CommandType = CommandType.StoredProcedure
+            da.SelectCommand.Parameters.AddWithValue("@desde", dtpb.Value.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@hasta", dtp2.Value.ToShortDateString)
+            da.SelectCommand.Parameters.AddWithValue("@var", 4)
 
             'MessageBox.Show(txt_no.Text)
             'MessageBox.Show(cbx_serie.Text)
@@ -354,6 +438,10 @@ Public Class Provisiones
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         cargagridvalidado()
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        cargagridvalidadoxPago()
     End Sub
 
     Private Sub rbt_retardo_CheckedChanged(sender As Object, e As EventArgs) Handles rbt_ffac.CheckedChanged
@@ -563,7 +651,7 @@ Public Class Provisiones
                 End If
             Next
 
-            MessageBox.Show("Registro(s) validado(s)", "¡Correcto!", MessageBoxButtons.OK)
+            MessageBox.Show("Registro(s) modificados(s)", "¡Correcto!", MessageBoxButtons.OK)
             cargagridvalidado()
 
 
@@ -774,8 +862,11 @@ Public Class Provisiones
     End Sub
 
     Sub filtrar_dtgv1()
-        dt.DefaultView.RowFilter = "PO LIKE '%" & txt_foc.Text & "%' and Folio_factura LIKE '%" & txt_ffa.Text & "%' and Proveedor LIKE '%" & txt_fpr.Text & "%' "
-        colores()
+        Try
+            dt.DefaultView.RowFilter = "PO LIKE '%" & txt_foc.Text & "%' and Folio_factura LIKE '%" & txt_ffa.Text & "%' and Proveedor LIKE '%" & txt_fpr.Text & "%' "
+            colores()
+        Catch
+        End Try
     End Sub
 
     Private Sub txt_foc_TextChanged2(sender As Object, e As EventArgs) Handles txt_f1.TextChanged, txt_f2.TextChanged, txt_f3.TextChanged, txt_status.TextChanged
@@ -783,8 +874,11 @@ Public Class Provisiones
     End Sub
 
     Sub filtrar_dtgv2()
-        dt2.DefaultView.RowFilter = "PO LIKE '%" & txt_f1.Text & "%' and Factura LIKE '%" & txt_f2.Text & "%' and Proveedor LIKE '%" & txt_f3.Text & "%' and EstatusConta LIKE '%" & txt_status.Text & "%' "
-        colores()
+        Try
+            dt2.DefaultView.RowFilter = "PO LIKE '%" & txt_f1.Text & "%' and Factura LIKE '%" & txt_f2.Text & "%' and Proveedor LIKE '%" & txt_f3.Text & "%' and EstatusConta LIKE '%" & txt_status.Text & "%' "
+            colores()
+        Catch
+        End Try
     End Sub
 
 
@@ -793,8 +887,11 @@ Public Class Provisiones
     End Sub
 
     Sub filtrar_dtgv3()
-        dt3.DefaultView.RowFilter = "PO LIKE '%" & t1.Text & "%' and EstatusConta LIKE '%" & t2.Text & "%' and Factura LIKE '%" & t3.Text & "%' and Proveedor LIKE '%" & t4.Text & "%' and Serie LIKE '%" & t5.Text & "%' and Moneda LIKE '%" & t6.Text & "%' and  CONVERT ( FechaVal, System.String) LIKE '%" & t7.Text & "%' and CONVERT ( FechaPagoFact, System.String) LIKE '%" & t8.Text & "%' "
-        ' colores()
+        Try
+            dt3.DefaultView.RowFilter = "PO LIKE '%" & t1.Text & "%' and EstatusConta LIKE '%" & t2.Text & "%' and Factura LIKE '%" & t3.Text & "%' and Proveedor LIKE '%" & t4.Text & "%' and Serie LIKE '%" & t5.Text & "%' and Moneda LIKE '%" & t6.Text & "%' and  CONVERT ( FechaVal, System.String) LIKE '%" & t7.Text & "%' and CONVERT ( FechaPagoFact, System.String) LIKE '%" & t8.Text & "%' "
+            ' colores()
+        Catch
+        End Try
     End Sub
 
 

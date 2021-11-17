@@ -168,6 +168,7 @@ Public Class Frm_GlobalPrenomina
         End If
     End Sub
     Private Sub Btn_Mostrar_Click(sender As Object, e As EventArgs) Handles Btn_Mostrar.Click
+        frm_wait.Show()
         If open = True Then
             Dim fecha As Date
             Dim lstEmp As New LEmpleado
@@ -176,6 +177,7 @@ Public Class Frm_GlobalPrenomina
             fecha = Format(Dtp_FechaInicioSemana.Value, "dd/MM/yyyy")
             ProcesoPrenominaGlobal(lstEmp, fecha)
         End If
+        frm_wait.Close()
     End Sub
     Private Sub Btn_Incidencias_Click(sender As Object, e As EventArgs) Handles Btn_Incidencias.Click
         'Dgv_Lista.Visible = True

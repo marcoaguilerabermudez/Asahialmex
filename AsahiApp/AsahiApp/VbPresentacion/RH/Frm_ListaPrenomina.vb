@@ -176,7 +176,8 @@ Public Class Frm_ListaPrenomina
     Private Sub Btn_Mostrar_Click(sender As Object, e As EventArgs) Handles Btn_Mostrar.Click
         'Cursor = Cursors.WaitCursor
         'Timer1.Start()
-
+        frm_wait.Show()
+        Frmwait.Show()
         If open = True Then
             Dim fecha As Date
             Dim año As Integer, semana As Integer
@@ -195,6 +196,8 @@ Public Class Frm_ListaPrenomina
             If Me.rangoPermiso = 1 Or Me.rangoPermiso = 2 Then Btn_Reporte.Visible = True
             Me.fin = 1
         End If
+        frm_wait.Close()
+        Frmwait.Close()
     End Sub
     Private Sub Bgw_HiloSegundoPlano_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Bgw_HiloSegundoPlano.DoWork
 
