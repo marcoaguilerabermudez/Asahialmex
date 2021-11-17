@@ -569,19 +569,20 @@ Public Class EvaluacionIndirecto
         End Try
 
 
-
-        txt_observaciones.Text = Me.dtgvp.Rows(e.RowIndex).Cells("nota").Value.ToString()
-
-
-        'MessageBox.Show(Me.dtgvp.Rows(e.RowIndex).Cells("id_evacrit").Value.ToString())
-        'MessageBox.Show(Me.dtgvp.Rows(e.RowIndex).Cells("id_evacrit").Value.TdtgvString())
-
-        pbx_eva.ImageLocation = ("V:\Eva_F\" & Me.dtgvp.Rows(e.RowIndex).Cells("id_evacrit").Value.ToString() & ".jpg")
-        Me.pbx_eva.SizeMode = PictureBoxSizeMode.CenterImage
-        Me.pbx_eva.BorderStyle = BorderStyle.Fixed3D
-        pbx_eva.SizeMode = PictureBoxSizeMode.StretchImage
+        Try
+            txt_observaciones.Text = Me.dtgvp.Rows(e.RowIndex).Cells("nota").Value.ToString()
 
 
+            'MessageBox.Show(Me.dtgvp.Rows(e.RowIndex).Cells("id_evacrit").Value.ToString())
+            'MessageBox.Show(Me.dtgvp.Rows(e.RowIndex).Cells("id_evacrit").Value.TdtgvString())
+
+            pbx_eva.ImageLocation = ("V:\Eva_F\" & Me.dtgvp.Rows(e.RowIndex).Cells("id_evacrit").Value.ToString() & ".jpg")
+            Me.pbx_eva.SizeMode = PictureBoxSizeMode.CenterImage
+            Me.pbx_eva.BorderStyle = BorderStyle.Fixed3D
+            pbx_eva.SizeMode = PictureBoxSizeMode.StretchImage
+
+        Catch
+        End Try
 
 
 
