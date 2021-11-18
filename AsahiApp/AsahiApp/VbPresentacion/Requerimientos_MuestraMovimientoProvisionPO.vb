@@ -5,17 +5,25 @@ Public Class Requerimientos_MuestraMovimientoProvisionPO
     Public cnn2 As SqlConnection
     Public cadenaConex As String
     Public cadenaCExpress As String
+    Dim edo_provi As Integer
 
     Private Sub Requerimientos_MuestraMovimientoProvisionPO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
+            lbl_rfc.Text = Modulo_vistarecepprincipal.e_rfc
+            lbl_proveedor.Text = Modulo_vistarecepprincipal.e_proveedor
+            lbl_moneda.Text = Modulo_vistarecepprincipal.e_moneda
+
             lbl_foliofact.Text = Modulo_vistarecepprincipal.e_folio
             lbl_uuid.Text = Modulo_vistarecepprincipal.e_uuid
-            lbl_provision.Text = Modulo_vistarecepprincipal.e_provision
+            lbl_prov.Text = Modulo_vistarecepprincipal.e_provision
+            edo_provi = Modulo_vistarecepprincipal.e_estadoprov
             dtp1.Value = Modulo_vistarecepprincipal.e_ffac
             dtp2.Value = Modulo_vistarecepprincipal.e_fpago
             lbl_subtotalfact.Text = Modulo_vistarecepprincipal.e_fsub
             lbl_totalfact.Text = Modulo_vistarecepprincipal.e_ftotal
+
+
         Catch
         End Try
 
@@ -38,6 +46,17 @@ Public Class Requerimientos_MuestraMovimientoProvisionPO
 
         End If
 
+
+
+        If edo_provi = 99 Then
+            Panel1.Visible = True
+            Panel2.Visible = True
+        Else
+            Panel1.Visible = False
+            Panel2.Visible = False
+
+        End If
+
         cargagrid()
     End Sub
 
@@ -56,7 +75,7 @@ Public Class Requerimientos_MuestraMovimientoProvisionPO
             Dim da As New SqlDataAdapter("Sp_muestragridmodificaRecepcionconPO", cnn)
 
             da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.SelectCommand.Parameters.AddWithValue("@codigo", lbl_provision.Text)
+            da.SelectCommand.Parameters.AddWithValue("@codigo", lbl_prov.Text)
             da.SelectCommand.Parameters.AddWithValue("@serie", 0)
             da.SelectCommand.Parameters.AddWithValue("@coal", "")
             da.SelectCommand.Parameters.AddWithValue("@id_cotizacion", 0)

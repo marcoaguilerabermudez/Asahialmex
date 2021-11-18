@@ -121,6 +121,9 @@ Partial Class Provisiones
         Me.Button2 = New System.Windows.Forms.Button()
         Me.dtgv3 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewCheckBoxColumn2 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.gbx_tipo.SuspendLayout()
@@ -137,6 +140,7 @@ Partial Class Provisiones
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dtgv3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel10.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -155,6 +159,8 @@ Partial Class Provisiones
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.Controls.Add(Me.Panel10)
         Me.TabPage1.Controls.Add(Me.gbx_tipo)
         Me.TabPage1.Controls.Add(Me.Label14)
         Me.TabPage1.Controls.Add(Me.Label8)
@@ -1319,6 +1325,36 @@ Partial Class Provisiones
         Me.DataGridViewCheckBoxColumn2.Name = "DataGridViewCheckBoxColumn2"
         Me.DataGridViewCheckBoxColumn2.Width = 20
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label1.Location = New System.Drawing.Point(430, 93)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(115, 14)
+        Me.Label1.TabIndex = 550
+        Me.Label1.Text = "Pago contra factura"
+        '
+        'Panel10
+        '
+        Me.Panel10.BackColor = System.Drawing.Color.Gold
+        Me.Panel10.Controls.Add(Me.Panel11)
+        Me.Panel10.Location = New System.Drawing.Point(392, 94)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(32, 13)
+        Me.Panel10.TabIndex = 549
+        '
+        'Panel11
+        '
+        Me.Panel11.BackColor = System.Drawing.Color.LightGray
+        Me.Panel11.Location = New System.Drawing.Point(0, 0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(32, 13)
+        Me.Panel11.TabIndex = 543
+        '
         'Provisiones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1354,6 +1390,7 @@ Partial Class Provisiones
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.dtgv3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel10.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1450,4 +1487,7 @@ Partial Class Provisiones
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label29 As Label
     Friend WithEvents Panel9 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Panel11 As Panel
 End Class

@@ -24,6 +24,8 @@ Public Class Provisiones
     Dim filtro As Integer
     Dim y As Integer
     Dim id_po As Integer
+
+
     Private Sub Provisiones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim conexion As New conexion()
 
@@ -45,6 +47,7 @@ Public Class Provisiones
         End If
         var_filtro = 0
         cargagridconta()
+        dtpf.Value = DateAdd(DateInterval.Day, -10, Today.Date)
     End Sub
 
     Sub New(id As Integer, depto As String, permiso As Integer, nombre As String, p_vales As Integer)
@@ -179,6 +182,7 @@ Public Class Provisiones
             dgv2.Columns("Serie").Visible = False
 
             'dtgv3.Columns("ObservaConta").Visible = False
+
             dgv2.Columns("Ruta").Visible = False
             dgv2.Columns("UUID").Visible = False
             dgv2.Columns("EstatusConta").Visible = False
@@ -407,6 +411,8 @@ Public Class Provisiones
                     row.DefaultCellStyle.BackColor = Color.Gold
                 ElseIf row.Cells(“Edo_prov”).Value = 88 Then
                     row.DefaultCellStyle.BackColor = Color.Red
+                ElseIf row.Cells(“Edo_prov”).Value = 99 Then
+                    row.DefaultCellStyle.BackColor = Color.LightGray
                 End If
             Next
         Catch
@@ -497,10 +503,6 @@ Public Class Provisiones
                     command.Parameters.AddWithValue("@observaconta", "")
                     command.Parameters.AddWithValue("@id_provcompra", 0)
 
-
-
-
-
                     command.ExecuteNonQuery()
                 End If
             Next
@@ -582,6 +584,7 @@ Public Class Provisiones
             Next
 
             MessageBox.Show("Registro(s) validado(s)", "¡Correcto!", MessageBoxButtons.OK)
+
             cargagridconta()
 
 
@@ -596,6 +599,7 @@ Public Class Provisiones
 
 
         Catch ex As Exception
+
             MessageBox.Show(ex.ToString)
 
         Finally
@@ -764,6 +768,7 @@ Public Class Provisiones
 
     Sub colores(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dtgv3.CellFormatting
         Dim TipoTrade As String
+
         If dtgv3.Columns(e.ColumnIndex).Name.Equals("Estatus") Then
 
             TipoTrade = (dtgv3.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString)
