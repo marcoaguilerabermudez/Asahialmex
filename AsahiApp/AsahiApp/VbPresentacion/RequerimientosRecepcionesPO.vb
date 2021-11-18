@@ -39,6 +39,7 @@ Public Class RequerimientosRecepcionesPO
 
     End Sub
 
+
     Sub New(id As Integer, depto As String, permiso As Integer, nombre As String, p_vales As Integer)
 
         InitializeComponent()
@@ -238,6 +239,8 @@ Public Class RequerimientosRecepcionesPO
                     row.DefaultCellStyle.BackColor = Color.Gold
                 ElseIf row.Cells(“Edo_prov”).Value = 88 Then
                     row.DefaultCellStyle.BackColor = Color.Red
+                ElseIf row.Cells(“Edo_prov”).Value = 99 Then
+                    row.DefaultCellStyle.BackColor = Color.LightGray
                 End If
             Next
         Catch
@@ -440,7 +443,7 @@ Public Class RequerimientosRecepcionesPO
                 ElseIf e.ColumnIndex = 21 Then
                     var_filtro = 0
 
-                    If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value <> 88 Then
+                    If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value <> (88) And dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value <> (99) Then
 
                         Dim Pregunta As Integer
 
@@ -453,8 +456,19 @@ Public Class RequerimientosRecepcionesPO
                             MessageBox.Show("Acción no completada", "¡Aviso!")
                         End If
 
-                    Else
+                    ElseIf dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = (99) Then
 
+
+                        Dim Pregunta As Integer
+
+                        Pregunta = MsgBox("¿Desea eliminar la recepción: " & id_provision & " ? Al ser un pago contra factura, no genera movimientos en inventario", vbYesNo + vbExclamation + vbDefaultButton2, "")
+
+                        If Pregunta = vbYes Then
+                            var_filtro = 2
+                            EliminaProvision()
+                        Else
+                            MessageBox.Show("Acción no completada", "¡Aviso!")
+                        End If
                     End If
 
 
@@ -492,7 +506,8 @@ Public Class RequerimientosRecepcionesPO
 
     Private Sub ValidarCantidadRequerida3(Objeto As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
 
-
+        Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
+        Modulo_vistarecepprincipal.e_moneda = dtgvp.Rows(e.RowIndex).Cells("moneda").Value
         Try
             Modulo_vistarecepprincipal.e_rfc = lbl_rfc.Text
             Modulo_vistarecepprincipal.e_proveedor = lbl_proveedor.Text
@@ -506,8 +521,9 @@ Public Class RequerimientosRecepcionesPO
             Modulo_vistarecepprincipal.e_ftotal = dtgvp.Rows(e.RowIndex).Cells("f_total").Value
             Modulo_vistarecepprincipal.e_uuid = CStr(dtgvp.Rows(e.RowIndex).Cells("UUID").Value)
             Modulo_vistarecepprincipal.e_folio = dtgvp.Rows(e.RowIndex).Cells("Folio").Value
-            Modulo_vistarecepprincipal.e_estadoprov = dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value
-            Modulo_vistarecepprincipal.e_moneda = dtgvp.Rows(e.RowIndex).Cells("moneda").Value
+            Modulo_vistarecepprincipal.e_folio = dtgvp.Rows(e.RowIndex).Cells("tc").Value
+
+
         Catch
         End Try
 

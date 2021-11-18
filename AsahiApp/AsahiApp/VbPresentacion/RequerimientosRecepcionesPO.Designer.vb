@@ -44,6 +44,8 @@ Partial Class RequerimientosRecepcionesPO
         Me.lbl_rfc = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -258,7 +260,7 @@ Partial Class RequerimientosRecepcionesPO
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.Red
-        Me.Panel5.Location = New System.Drawing.Point(589, 78)
+        Me.Panel5.Location = New System.Drawing.Point(736, 73)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(32, 13)
         Me.Panel5.TabIndex = 551
@@ -269,17 +271,39 @@ Partial Class RequerimientosRecepcionesPO
         Me.Label3.BackColor = System.Drawing.SystemColors.Control
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(624, 82)
+        Me.Label3.Location = New System.Drawing.Point(771, 77)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(54, 9)
         Me.Label3.TabIndex = 550
         Me.Label3.Text = "CANCELADO"
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.LightGray
+        Me.Panel6.Location = New System.Drawing.Point(590, 73)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(32, 13)
+        Me.Panel6.TabIndex = 553
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.SystemColors.Control
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label5.Location = New System.Drawing.Point(625, 77)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(103, 9)
+        Me.Label5.TabIndex = 552
+        Me.Label5.Text = "PAGO CONTRA FACTURA"
         '
         'RequerimientosRecepcionesPO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(946, 509)
+        Me.Controls.Add(Me.Panel6)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lbl_rfc)
@@ -329,4 +353,6 @@ Partial Class RequerimientosRecepcionesPO
     Friend WithEvents lbl_rfc As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label5 As Label
 End Class

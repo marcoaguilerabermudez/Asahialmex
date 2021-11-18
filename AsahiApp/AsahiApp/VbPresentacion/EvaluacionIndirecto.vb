@@ -60,6 +60,10 @@ Public Class EvaluacionIndirecto
         Me.pbx.BorderStyle = BorderStyle.Fixed3D
         pbx.SizeMode = PictureBoxSizeMode.StretchImage
 
+        If idemp = 5141 OrElse idemp = 260 Then
+            gbx_indicadores.Enabled = True
+            gbx_objetivos.Enabled = True
+        End If
 
         '  Muestragrid()
 

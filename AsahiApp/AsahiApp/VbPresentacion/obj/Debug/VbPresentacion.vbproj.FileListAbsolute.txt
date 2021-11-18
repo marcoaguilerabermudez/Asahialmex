@@ -1630,3 +1630,4 @@ C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentac
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.RequerimientosRecepcionesPO.resources
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Requerimientos_MuestraMovimientoProvisionPO.resources
 C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.Provisiones.resources
+C:\Users\erik.urbina.ASAHI\Source\Repos\Asahialmex\AsahiApp\AsahiApp\VbPresentacion\obj\Debug\Presentacion.frm_wait.resources

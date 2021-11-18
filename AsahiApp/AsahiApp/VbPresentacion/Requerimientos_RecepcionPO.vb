@@ -161,6 +161,7 @@ Public Class Requerimientos_RecepcionPO
             Panel1.Visible = True
             Panel2.Visible = True
             Panel5.Visible = True
+            CheckBox1.Visible = True
             predictivo()
             txt_busca.Focus()
 
@@ -185,6 +186,7 @@ Public Class Requerimientos_RecepcionPO
                 Panel1.Visible = False
                 Panel2.Visible = False
                 Panel5.Visible = False
+                CheckBox1.Visible = False
 
             End If
 
@@ -542,45 +544,65 @@ SELECT  [id]
     End Sub
 
     Private Sub btn_cargar_Click(sender As Object, e As EventArgs) Handles btn_cargar.Click
+        If CheckBox1.Checked = False Then
 
 
-        If lbl_moneda.Text = "MEX" Then
 
-            If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.99 Then
-                MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
-            ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.99 Then
-                MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
-            Else
-                Dim Pregunta As Integer
+            If lbl_moneda.Text = "MEX" Then
 
-                Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
-
-                If Pregunta = vbYes Then
-                    crearrecepcion()
-                    insertarfilas()
+                If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.99 Then
+                    MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+                ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.99 Then
+                    MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
                 Else
-                    MessageBox.Show("Acción no completada", "¡Aviso!")
+                    Dim Pregunta As Integer
+
+                    Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+                    If Pregunta = vbYes Then
+                        crearrecepcion()
+                        insertarfilas()
+                    Else
+                        MessageBox.Show("Acción no completada", "¡Aviso!")
+                    End If
                 End If
+
+            ElseIf lbl_moneda.Text = "USD" Then
+
+                If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.05 Then
+                    MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+                ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.05 Then
+                    MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+                Else
+                    Dim Pregunta As Integer
+
+                    Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+                    If Pregunta = vbYes Then
+                        crearrecepcion()
+                        insertarfilas()
+                    Else
+                        MessageBox.Show("Acción no completada", "¡Aviso!")
+                    End If
+                End If
+
             End If
 
-        ElseIf lbl_moneda.Text = "USD" Then
 
-            If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.05 Then
-                MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
-            ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.05 Then
-                MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+        Else
+
+            Dim Pregunta As Integer
+
+            Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado? Recuerde que esto es una recepción contra factura.", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+            If Pregunta = vbYes Then
+                crearrecepcion()
+                insertarfilas()
             Else
-                Dim Pregunta As Integer
-
-                Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
-
-                If Pregunta = vbYes Then
-                    crearrecepcion()
-                    insertarfilas()
-                Else
-                    MessageBox.Show("Acción no completada", "¡Aviso!")
-                End If
+                MessageBox.Show("Acción no completada", "¡Aviso!")
             End If
+
+
 
         End If
 
@@ -822,17 +844,34 @@ SELECT  [id]
 
             agrega.Parameters.Clear()
 
-            agrega.Parameters.Add("@id_po", SqlDbType.Int).Value = id_po
-            agrega.Parameters.Add("@f_factura", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
-            agrega.Parameters.Add("@f_pago", SqlDbType.Date).Value = dtp2.Value.ToShortDateString
-            agrega.Parameters.Add("@subtotal", SqlDbType.Money).Value = lbl_subtotalfact.Text
-            agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_totalfact.Text
-            agrega.Parameters.Add("@moneda", SqlDbType.VarChar, 3).Value = lbl_moneda.Text
-            agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = lbl_uuid.Text
-            agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
-            agrega.Parameters.Add("@var", SqlDbType.Int).Value = 0
-            agrega.Parameters.Add("@folio", SqlDbType.VarChar, 100).Value = lbl_foliofact.Text
-            agrega.Parameters.Add("@id_provision", SqlDbType.Int).Value = 0
+            If CheckBox1.Checked = False Then
+
+                agrega.Parameters.Add("@id_po", SqlDbType.Int).Value = id_po
+                agrega.Parameters.Add("@f_factura", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
+                agrega.Parameters.Add("@f_pago", SqlDbType.Date).Value = dtp2.Value.ToShortDateString
+                agrega.Parameters.Add("@subtotal", SqlDbType.Money).Value = lbl_subtotalfact.Text
+                agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_totalfact.Text
+                agrega.Parameters.Add("@moneda", SqlDbType.VarChar, 3).Value = lbl_moneda.Text
+                agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = lbl_uuid.Text
+                agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
+                agrega.Parameters.Add("@var", SqlDbType.Int).Value = 0
+                agrega.Parameters.Add("@folio", SqlDbType.VarChar, 100).Value = lbl_foliofact.Text
+                agrega.Parameters.Add("@id_provision", SqlDbType.Int).Value = 0
+            Else
+
+                agrega.Parameters.Add("@id_po", SqlDbType.Int).Value = id_po
+                agrega.Parameters.Add("@f_factura", SqlDbType.Date).Value = Today.Date
+                agrega.Parameters.Add("@f_pago", SqlDbType.Date).Value = Today.Date
+                agrega.Parameters.Add("@subtotal", SqlDbType.Money).Value = lbl_neto.Text
+                agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_t.Text
+                agrega.Parameters.Add("@moneda", SqlDbType.VarChar, 3).Value = lbl_moneda.Text
+                agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = ""
+                agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
+                agrega.Parameters.Add("@var", SqlDbType.Int).Value = 0
+                agrega.Parameters.Add("@folio", SqlDbType.VarChar, 100).Value = "Pago contra Factura"
+                agrega.Parameters.Add("@id_provision", SqlDbType.Int).Value = 0
+
+            End If
 
             agrega.ExecuteNonQuery()
 
@@ -879,16 +918,36 @@ SELECT  [id]
 
                     command.Parameters.Clear()
 
-                    command.Parameters.AddWithValue("@codigo", (fila.Cells("Codigo").Value))
+                    If CheckBox1.Checked = False Then
 
-                    command.Parameters.AddWithValue("@cantidad", (fila.Cells("Recibido").Value))
-                    command.Parameters.AddWithValue("@precio", (fila.Cells("Precio").Value))
-                    command.Parameters.AddWithValue("@subtotal", (fila.Cells("Subtotal").Value))
-                    command.Parameters.AddWithValue("@id_movpo", (fila.Cells("id_mov").Value))
-                    command.Parameters.AddWithValue("@id_cotizacion", (fila.Cells("id_cotizacion").Value))
-                    command.Parameters.AddWithValue("@req", (fila.Cells("id_req").Value))
-                    command.Parameters.AddWithValue("@id_po", (fila.Cells("id_po").Value))
+
+                        command.Parameters.AddWithValue("@codigo", (fila.Cells("Codigo").Value))
+
+                        command.Parameters.AddWithValue("@cantidad", (fila.Cells("Recibido").Value))
+                        command.Parameters.AddWithValue("@precio", (fila.Cells("Precio").Value))
+                        command.Parameters.AddWithValue("@subtotal", (fila.Cells("Subtotal").Value))
+                        command.Parameters.AddWithValue("@id_movpo", (fila.Cells("id_mov").Value))
+                        command.Parameters.AddWithValue("@id_cotizacion", (fila.Cells("id_cotizacion").Value))
+                        command.Parameters.AddWithValue("@req", (fila.Cells("id_req").Value))
+                        command.Parameters.AddWithValue("@id_po", (fila.Cells("id_po").Value))
+                        command.Parameters.AddWithValue("@var", 0)
+
+                    Else
+                        command.Parameters.AddWithValue("@codigo", (fila.Cells("Codigo").Value))
+
+                        command.Parameters.AddWithValue("@cantidad", (fila.Cells("Recibido").Value))
+                        command.Parameters.AddWithValue("@precio", (fila.Cells("Precio").Value))
+                        command.Parameters.AddWithValue("@subtotal", (fila.Cells("Subtotal").Value))
+                        command.Parameters.AddWithValue("@id_movpo", (fila.Cells("id_mov").Value))
+                        command.Parameters.AddWithValue("@id_cotizacion", (fila.Cells("id_cotizacion").Value))
+                        command.Parameters.AddWithValue("@req", (fila.Cells("id_req").Value))
+                        command.Parameters.AddWithValue("@id_po", (fila.Cells("id_po").Value))
+                        command.Parameters.AddWithValue("@var", 1)
+
+                    End If
+
                     command.ExecuteNonQuery()
+
                 End If
             Next
 
@@ -925,6 +984,7 @@ SELECT  [id]
             Panel1.Visible = False
             Panel2.Visible = False
             Panel5.Visible = False
+            CheckBox1.Visible = False
 
 
 
@@ -938,4 +998,12 @@ SELECT  [id]
 
     End Sub
 
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            Panel1.Enabled = False
+        Else
+            Panel1.Enabled = True
+
+        End If
+    End Sub
 End Class

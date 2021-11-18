@@ -79,6 +79,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lbl_rfc = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.gbx_tipo.SuspendLayout()
@@ -183,10 +184,10 @@ Partial Class Requerimientos_RecepcionPO
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dtgvp.Location = New System.Drawing.Point(12, 221)
+        Me.dtgvp.Location = New System.Drawing.Point(12, 238)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(921, 358)
+        Me.dtgvp.Size = New System.Drawing.Size(921, 341)
         Me.dtgvp.TabIndex = 492
         Me.dtgvp.Visible = False
         '
@@ -317,9 +318,9 @@ Partial Class Requerimientos_RecepcionPO
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Location = New System.Drawing.Point(385, 5)
+        Me.Panel1.Location = New System.Drawing.Point(385, 36)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(548, 210)
+        Me.Panel1.Size = New System.Drawing.Size(548, 196)
         Me.Panel1.TabIndex = 519
         Me.Panel1.Visible = False
         '
@@ -328,10 +329,10 @@ Partial Class Requerimientos_RecepcionPO
         Me.lbl_foliofact.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_foliofact.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lbl_foliofact.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.lbl_foliofact.Location = New System.Drawing.Point(102, 91)
+        Me.lbl_foliofact.Location = New System.Drawing.Point(102, 89)
         Me.lbl_foliofact.MaxLength = 99
         Me.lbl_foliofact.Name = "lbl_foliofact"
-        Me.lbl_foliofact.Size = New System.Drawing.Size(221, 20)
+        Me.lbl_foliofact.Size = New System.Drawing.Size(225, 20)
         Me.lbl_foliofact.TabIndex = 542
         '
         'lbl_totalfact
@@ -339,7 +340,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.lbl_totalfact.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_totalfact.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lbl_totalfact.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.lbl_totalfact.Location = New System.Drawing.Point(409, 177)
+        Me.lbl_totalfact.Location = New System.Drawing.Point(409, 172)
         Me.lbl_totalfact.MaxLength = 99
         Me.lbl_totalfact.Name = "lbl_totalfact"
         Me.lbl_totalfact.Size = New System.Drawing.Size(127, 20)
@@ -352,7 +353,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.lbl_subtotalfact.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_subtotalfact.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lbl_subtotalfact.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.lbl_subtotalfact.Location = New System.Drawing.Point(409, 147)
+        Me.lbl_subtotalfact.Location = New System.Drawing.Point(409, 142)
         Me.lbl_subtotalfact.MaxLength = 99
         Me.lbl_subtotalfact.Name = "lbl_subtotalfact"
         Me.lbl_subtotalfact.Size = New System.Drawing.Size(127, 20)
@@ -363,7 +364,7 @@ Partial Class Requerimientos_RecepcionPO
         'dtp2
         '
         Me.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp2.Location = New System.Drawing.Point(102, 173)
+        Me.dtp2.Location = New System.Drawing.Point(102, 168)
         Me.dtp2.Name = "dtp2"
         Me.dtp2.Size = New System.Drawing.Size(100, 20)
         Me.dtp2.TabIndex = 539
@@ -371,7 +372,7 @@ Partial Class Requerimientos_RecepcionPO
         'dtp1
         '
         Me.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp1.Location = New System.Drawing.Point(103, 144)
+        Me.dtp1.Location = New System.Drawing.Point(103, 139)
         Me.dtp1.Name = "dtp1"
         Me.dtp1.Size = New System.Drawing.Size(100, 20)
         Me.dtp1.TabIndex = 538
@@ -381,7 +382,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label15.Location = New System.Drawing.Point(10, 147)
+        Me.Label15.Location = New System.Drawing.Point(10, 142)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(86, 13)
         Me.Label15.TabIndex = 537
@@ -392,7 +393,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label16.Location = New System.Drawing.Point(21, 175)
+        Me.Label16.Location = New System.Drawing.Point(21, 170)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(75, 13)
         Me.Label16.TabIndex = 536
@@ -403,7 +404,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.btn_doc.Enabled = False
         Me.btn_doc.ForeColor = System.Drawing.Color.Black
         Me.btn_doc.Image = Global.Presentacion.My.Resources.Resources.report
-        Me.btn_doc.Location = New System.Drawing.Point(352, 55)
+        Me.btn_doc.Location = New System.Drawing.Point(351, 64)
         Me.btn_doc.Name = "btn_doc"
         Me.btn_doc.Size = New System.Drawing.Size(42, 40)
         Me.btn_doc.TabIndex = 535
@@ -415,7 +416,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(308, 178)
+        Me.Label10.Location = New System.Drawing.Point(308, 173)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(95, 16)
         Me.Label10.TabIndex = 532
@@ -426,7 +427,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label17.Location = New System.Drawing.Point(338, 148)
+        Me.Label17.Location = New System.Drawing.Point(338, 143)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(65, 16)
         Me.Label17.TabIndex = 534
@@ -437,7 +438,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label9.Location = New System.Drawing.Point(64, 95)
+        Me.Label9.Location = New System.Drawing.Point(64, 93)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 529
@@ -448,7 +449,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(59, 121)
+        Me.Label11.Location = New System.Drawing.Point(59, 119)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(38, 13)
         Me.Label11.TabIndex = 527
@@ -459,7 +460,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.lbl_uuid.AutoSize = True
         Me.lbl_uuid.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_uuid.ForeColor = System.Drawing.Color.Black
-        Me.lbl_uuid.Location = New System.Drawing.Point(104, 121)
+        Me.lbl_uuid.Location = New System.Drawing.Point(104, 119)
         Me.lbl_uuid.Name = "lbl_uuid"
         Me.lbl_uuid.Size = New System.Drawing.Size(0, 13)
         Me.lbl_uuid.TabIndex = 528
@@ -470,7 +471,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.gbx_tipo.Controls.Add(Me.rbt_falta)
         Me.gbx_tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbx_tipo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.gbx_tipo.Location = New System.Drawing.Point(7, 10)
+        Me.gbx_tipo.Location = New System.Drawing.Point(7, 7)
         Me.gbx_tipo.Name = "gbx_tipo"
         Me.gbx_tipo.Size = New System.Drawing.Size(140, 37)
         Me.gbx_tipo.TabIndex = 526
@@ -505,7 +506,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.lbl_txtfiltro.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_txtfiltro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_txtfiltro.ForeColor = System.Drawing.Color.Black
-        Me.lbl_txtfiltro.Location = New System.Drawing.Point(13, 50)
+        Me.lbl_txtfiltro.Location = New System.Drawing.Point(13, 48)
         Me.lbl_txtfiltro.Name = "lbl_txtfiltro"
         Me.lbl_txtfiltro.Size = New System.Drawing.Size(38, 13)
         Me.lbl_txtfiltro.TabIndex = 525
@@ -516,7 +517,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.txt_busca.BackColor = System.Drawing.SystemColors.Control
         Me.txt_busca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_busca.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_busca.Location = New System.Drawing.Point(12, 66)
+        Me.txt_busca.Location = New System.Drawing.Point(12, 64)
         Me.txt_busca.Name = "txt_busca"
         Me.txt_busca.Size = New System.Drawing.Size(315, 20)
         Me.txt_busca.TabIndex = 524
@@ -524,7 +525,7 @@ Partial Class Requerimientos_RecepcionPO
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.LightBlue
-        Me.Panel4.Location = New System.Drawing.Point(193, 28)
+        Me.Panel4.Location = New System.Drawing.Point(409, 40)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(32, 13)
         Me.Panel4.TabIndex = 521
@@ -532,7 +533,7 @@ Partial Class Requerimientos_RecepcionPO
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Location = New System.Drawing.Point(193, 8)
+        Me.Panel3.Location = New System.Drawing.Point(409, 20)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(32, 13)
         Me.Panel3.TabIndex = 520
@@ -543,7 +544,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(226, 32)
+        Me.Label1.Location = New System.Drawing.Point(442, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 9)
         Me.Label1.TabIndex = 519
@@ -555,7 +556,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Label4.BackColor = System.Drawing.SystemColors.Control
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(226, 11)
+        Me.Label4.Location = New System.Drawing.Point(442, 23)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 9)
         Me.Label4.TabIndex = 518
@@ -705,7 +706,7 @@ Partial Class Requerimientos_RecepcionPO
         Me.Panel5.Controls.Add(Me.lbl_proveedor)
         Me.Panel5.Location = New System.Drawing.Point(-2, 65)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(381, 150)
+        Me.Panel5.Size = New System.Drawing.Size(381, 167)
         Me.Panel5.TabIndex = 521
         Me.Panel5.Visible = False
         '
@@ -730,11 +731,23 @@ Partial Class Requerimientos_RecepcionPO
         Me.lbl_rfc.Size = New System.Drawing.Size(0, 13)
         Me.lbl_rfc.TabIndex = 525
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(393, 10)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(120, 17)
+        Me.CheckBox1.TabIndex = 543
+        Me.CheckBox1.Text = "Pago contra factura"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.CheckBox1.Visible = False
+        '
         'Requerimientos_RecepcionPO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(945, 645)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -818,4 +831,5 @@ Partial Class Requerimientos_RecepcionPO
     Friend WithEvents lbl_foliofact As TextBox
     Friend WithEvents lbl_t As TextBox
     Friend WithEvents lbl_neto As TextBox
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
