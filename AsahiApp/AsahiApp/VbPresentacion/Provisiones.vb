@@ -558,7 +558,7 @@ Public Class Provisiones
                     command.Parameters.AddWithValue("@folio_factura", (fila.Cells("Factura").Value))
                     command.Parameters.AddWithValue("@uuid", (fila.Cells("UUID").Value))
                     command.Parameters.AddWithValue("@proveedor", (fila.Cells("Proveedor").Value))
-                    command.Parameters.AddWithValue("@rfc", "")
+                    command.Parameters.AddWithValue("@rfc", (fila.Cells("Estatus").Value))
                     command.Parameters.AddWithValue("@monto_po", 0)
                     command.Parameters.AddWithValue("@monto_fact", 0)
                     command.Parameters.AddWithValue("@monto_pago", 0)
@@ -784,6 +784,13 @@ Public Class Provisiones
                 e.CellStyle.BackColor = Color.LightBlue
                 e.CellStyle.ForeColor = Color.Black
                 e.CellStyle.SelectionBackColor = Color.LightBlue
+                e.CellStyle.SelectionForeColor = Color.Black
+            End If
+
+            If TipoTrade = "PCF" Then
+                e.CellStyle.BackColor = Color.Gold
+                e.CellStyle.ForeColor = Color.Black
+                e.CellStyle.SelectionBackColor = Color.Gold
                 e.CellStyle.SelectionForeColor = Color.Black
             End If
         End If

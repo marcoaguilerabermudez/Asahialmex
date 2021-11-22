@@ -46,13 +46,15 @@ Partial Class RequerimientosRecepcionesPO
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.LightGreen
-        Me.Panel3.Location = New System.Drawing.Point(736, 44)
+        Me.Panel3.Location = New System.Drawing.Point(736, 35)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(32, 13)
         Me.Panel3.TabIndex = 540
@@ -63,7 +65,7 @@ Partial Class RequerimientosRecepcionesPO
         Me.Label10.BackColor = System.Drawing.SystemColors.Control
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(772, 48)
+        Me.Label10.Location = New System.Drawing.Point(772, 39)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(128, 9)
         Me.Label10.TabIndex = 539
@@ -72,7 +74,7 @@ Partial Class RequerimientosRecepcionesPO
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Gold
-        Me.Panel2.Location = New System.Drawing.Point(736, 16)
+        Me.Panel2.Location = New System.Drawing.Point(736, 7)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(32, 13)
         Me.Panel2.TabIndex = 538
@@ -83,7 +85,7 @@ Partial Class RequerimientosRecepcionesPO
         Me.Label4.BackColor = System.Drawing.SystemColors.Control
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(772, 20)
+        Me.Label4.Location = New System.Drawing.Point(772, 11)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 9)
         Me.Label4.TabIndex = 537
@@ -92,7 +94,7 @@ Partial Class RequerimientosRecepcionesPO
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Pink
-        Me.Panel1.Location = New System.Drawing.Point(589, 44)
+        Me.Panel1.Location = New System.Drawing.Point(589, 35)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(32, 13)
         Me.Panel1.TabIndex = 536
@@ -103,7 +105,7 @@ Partial Class RequerimientosRecepcionesPO
         Me.Label8.BackColor = System.Drawing.SystemColors.Control
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label8.Location = New System.Drawing.Point(624, 48)
+        Me.Label8.Location = New System.Drawing.Point(624, 39)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(90, 9)
         Me.Label8.TabIndex = 535
@@ -112,7 +114,7 @@ Partial Class RequerimientosRecepcionesPO
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.LightBlue
-        Me.Panel4.Location = New System.Drawing.Point(589, 16)
+        Me.Panel4.Location = New System.Drawing.Point(589, 7)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(32, 13)
         Me.Panel4.TabIndex = 534
@@ -123,7 +125,7 @@ Partial Class RequerimientosRecepcionesPO
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(627, 19)
+        Me.Label1.Location = New System.Drawing.Point(627, 10)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 9)
         Me.Label1.TabIndex = 533
@@ -260,7 +262,7 @@ Partial Class RequerimientosRecepcionesPO
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.Red
-        Me.Panel5.Location = New System.Drawing.Point(736, 73)
+        Me.Panel5.Location = New System.Drawing.Point(736, 64)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(32, 13)
         Me.Panel5.TabIndex = 551
@@ -271,7 +273,7 @@ Partial Class RequerimientosRecepcionesPO
         Me.Label3.BackColor = System.Drawing.SystemColors.Control
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(771, 77)
+        Me.Label3.Location = New System.Drawing.Point(771, 68)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(54, 9)
         Me.Label3.TabIndex = 550
@@ -280,7 +282,7 @@ Partial Class RequerimientosRecepcionesPO
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.LightGray
-        Me.Panel6.Location = New System.Drawing.Point(590, 73)
+        Me.Panel6.Location = New System.Drawing.Point(590, 64)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(32, 13)
         Me.Panel6.TabIndex = 553
@@ -291,17 +293,39 @@ Partial Class RequerimientosRecepcionesPO
         Me.Label5.BackColor = System.Drawing.SystemColors.Control
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label5.Location = New System.Drawing.Point(625, 77)
+        Me.Label5.Location = New System.Drawing.Point(625, 68)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(103, 9)
         Me.Label5.TabIndex = 552
         Me.Label5.Text = "PAGO CONTRA FACTURA"
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.Coral
+        Me.Panel7.Location = New System.Drawing.Point(651, 92)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(32, 13)
+        Me.Panel7.TabIndex = 555
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.SystemColors.Control
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label6.Location = New System.Drawing.Point(686, 95)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(149, 9)
+        Me.Label6.TabIndex = 554
+        Me.Label6.Text = "PAGO CONTRA FACTURA APROBADO"
         '
         'RequerimientosRecepcionesPO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(946, 509)
+        Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Panel5)
@@ -355,4 +379,6 @@ Partial Class RequerimientosRecepcionesPO
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label5 As Label
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Label6 As Label
 End Class

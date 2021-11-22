@@ -235,6 +235,8 @@ Public Class RequerimientosRecepcionesPO
                     row.DefaultCellStyle.BackColor = Color.Pink
                 ElseIf row.Cells(“Edo_prov”).Value = 2 Then
                     row.DefaultCellStyle.BackColor = Color.LightGreen
+                ElseIf row.Cells(“Edo_prov”).Value = 3 Then
+                    row.DefaultCellStyle.BackColor = Color.Coral
                 ElseIf row.Cells(“Edo_prov”).Value = 20 Then
                     row.DefaultCellStyle.BackColor = Color.Gold
                 ElseIf row.Cells(“Edo_prov”).Value = 88 Then
