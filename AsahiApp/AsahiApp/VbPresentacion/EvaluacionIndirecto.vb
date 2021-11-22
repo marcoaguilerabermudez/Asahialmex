@@ -165,6 +165,7 @@ Public Class EvaluacionIndirecto
             lbl_n.Text = ds.Tables(0).Rows(0).Item(0)
             lbl_suspension.Text = ds.Tables(0).Rows(0).Item(0)
 
+
             lbl_f.Text = ds.Tables(0).Rows(0).Item(1)
             lbl_puntajeFI.Text = ds.Tables(0).Rows(0).Item(1)
 

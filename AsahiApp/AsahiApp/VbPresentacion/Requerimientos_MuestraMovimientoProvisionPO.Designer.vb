@@ -51,6 +51,8 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.lbl_prov = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lbl_rfc = New System.Windows.Forms.Label()
         Me.lbl_moneda = New System.Windows.Forms.Label()
@@ -60,14 +62,9 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lbl_t = New System.Windows.Forms.TextBox()
         Me.lbl_neto = New System.Windows.Forms.TextBox()
-        Me.btn_desma = New System.Windows.Forms.Button()
-        Me.btn_selec = New System.Windows.Forms.Button()
-        Me.btn_calcular = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btn_cargar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lbl_prov = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS_Ausentismos_Fecha1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -147,6 +144,7 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
         '
         Me.lbl_foliofact.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_foliofact.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.lbl_foliofact.Enabled = False
         Me.lbl_foliofact.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.lbl_foliofact.Location = New System.Drawing.Point(102, 89)
         Me.lbl_foliofact.MaxLength = 99
@@ -396,6 +394,27 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
         Me.Panel5.Size = New System.Drawing.Size(381, 192)
         Me.Panel5.TabIndex = 550
         '
+        'lbl_prov
+        '
+        Me.lbl_prov.AutoSize = True
+        Me.lbl_prov.BackColor = System.Drawing.SystemColors.Control
+        Me.lbl_prov.ForeColor = System.Drawing.Color.Black
+        Me.lbl_prov.Location = New System.Drawing.Point(89, 160)
+        Me.lbl_prov.Name = "lbl_prov"
+        Me.lbl_prov.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_prov.TabIndex = 527
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label8.Location = New System.Drawing.Point(15, 160)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(59, 13)
+        Me.Label8.TabIndex = 526
+        Me.Label8.Text = "Provisión"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -463,9 +482,6 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
         '
         Me.Panel2.Controls.Add(Me.lbl_t)
         Me.Panel2.Controls.Add(Me.lbl_neto)
-        Me.Panel2.Controls.Add(Me.btn_desma)
-        Me.Panel2.Controls.Add(Me.btn_selec)
-        Me.Panel2.Controls.Add(Me.btn_calcular)
         Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.btn_cargar)
         Me.Panel2.Controls.Add(Me.Label2)
@@ -479,6 +495,7 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
         '
         Me.lbl_t.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_t.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.lbl_t.Enabled = False
         Me.lbl_t.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.lbl_t.Location = New System.Drawing.Point(602, 31)
         Me.lbl_t.MaxLength = 99
@@ -492,6 +509,7 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
         '
         Me.lbl_neto.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_neto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.lbl_neto.Enabled = False
         Me.lbl_neto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
         Me.lbl_neto.Location = New System.Drawing.Point(602, 5)
         Me.lbl_neto.MaxLength = 99
@@ -500,36 +518,6 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
         Me.lbl_neto.TabIndex = 541
         Me.lbl_neto.Text = "0"
         Me.lbl_neto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btn_desma
-        '
-        Me.btn_desma.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_desma.Location = New System.Drawing.Point(7, 19)
-        Me.btn_desma.Name = "btn_desma"
-        Me.btn_desma.Size = New System.Drawing.Size(90, 32)
-        Me.btn_desma.TabIndex = 516
-        Me.btn_desma.Text = "Desmarcar"
-        Me.btn_desma.UseVisualStyleBackColor = False
-        '
-        'btn_selec
-        '
-        Me.btn_selec.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_selec.Location = New System.Drawing.Point(111, 19)
-        Me.btn_selec.Name = "btn_selec"
-        Me.btn_selec.Size = New System.Drawing.Size(90, 32)
-        Me.btn_selec.TabIndex = 515
-        Me.btn_selec.Text = "Seleccionar"
-        Me.btn_selec.UseVisualStyleBackColor = False
-        '
-        'btn_calcular
-        '
-        Me.btn_calcular.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_calcular.Location = New System.Drawing.Point(277, 19)
-        Me.btn_calcular.Name = "btn_calcular"
-        Me.btn_calcular.Size = New System.Drawing.Size(90, 32)
-        Me.btn_calcular.TabIndex = 518
-        Me.btn_calcular.Text = "Calcular"
-        Me.btn_calcular.UseVisualStyleBackColor = False
         '
         'Label14
         '
@@ -545,13 +533,12 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
         'btn_cargar
         '
         Me.btn_cargar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_cargar.Location = New System.Drawing.Point(373, 19)
+        Me.btn_cargar.Location = New System.Drawing.Point(821, 15)
         Me.btn_cargar.Name = "btn_cargar"
         Me.btn_cargar.Size = New System.Drawing.Size(90, 32)
         Me.btn_cargar.TabIndex = 515
         Me.btn_cargar.Text = "Recibir"
         Me.btn_cargar.UseVisualStyleBackColor = False
-        Me.btn_cargar.Visible = False
         '
         'Label2
         '
@@ -563,27 +550,6 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
         Me.Label2.Size = New System.Drawing.Size(65, 16)
         Me.Label2.TabIndex = 512
         Me.Label2.Text = "Subtotal"
-        '
-        'lbl_prov
-        '
-        Me.lbl_prov.AutoSize = True
-        Me.lbl_prov.BackColor = System.Drawing.SystemColors.Control
-        Me.lbl_prov.ForeColor = System.Drawing.Color.Black
-        Me.lbl_prov.Location = New System.Drawing.Point(89, 160)
-        Me.lbl_prov.Name = "lbl_prov"
-        Me.lbl_prov.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_prov.TabIndex = 527
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label8.Location = New System.Drawing.Point(15, 160)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(59, 13)
-        Me.Label8.TabIndex = 526
-        Me.Label8.Text = "Provisión"
         '
         'Requerimientos_MuestraMovimientoProvisionPO
         '
@@ -647,9 +613,6 @@ Partial Class Requerimientos_MuestraMovimientoProvisionPO
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lbl_t As TextBox
     Friend WithEvents lbl_neto As TextBox
-    Friend WithEvents btn_desma As Button
-    Friend WithEvents btn_selec As Button
-    Friend WithEvents btn_calcular As Button
     Friend WithEvents Label14 As Label
     Friend WithEvents btn_cargar As Button
     Friend WithEvents Label2 As Label
