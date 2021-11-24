@@ -88,7 +88,7 @@ Public Class EvaluacionPrincipalIndirecto
 
 
 
-        If depto = "04" OrElse depto = "19" OrElse depto = "07" Then
+        If depto = "04" OrElse depto = "19" OrElse depto = "07" OrElse depto = "0" Then
             Label1.Visible = True
 
             '  cbx_depto.Visible = True
@@ -181,7 +181,7 @@ Public Class EvaluacionPrincipalIndirecto
 
             Dim da As New SqlDataAdapter(cmd)
 
-            da.SelectCommand.Parameters.AddWithValue("@depto", depto)
+            da.SelectCommand.Parameters.AddWithValue("@depto", id)
             da.SelectCommand.Parameters.AddWithValue("@clave", id)
 
             Dim dt As New DataTable
@@ -214,12 +214,18 @@ Public Class EvaluacionPrincipalIndirecto
 
             Dim da As New SqlDataAdapter("Sp_muestraevaluacionesIndirecto", Cn)
             da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.SelectCommand.Parameters.AddWithValue("@depto", depto)
+            If id <> 0 Then
+                da.SelectCommand.Parameters.AddWithValue("@depto", depto)
+                da.SelectCommand.Parameters.AddWithValue("@puesto", id_puesto)
+            Else
+                da.SelectCommand.Parameters.AddWithValue("@depto", id)
+                da.SelectCommand.Parameters.AddWithValue("@puesto", id)
+            End If
             da.SelectCommand.Parameters.AddWithValue("@descripcion_depto", cbx_depto.Text)
             da.SelectCommand.Parameters.AddWithValue("@mes", mes)
             da.SelectCommand.Parameters.AddWithValue("@año", cbx_año.Text)
             da.SelectCommand.Parameters.AddWithValue("@tipoeva", cbx_tipoeva.Text)
-            da.SelectCommand.Parameters.AddWithValue("@puesto", id_puesto)
+
             da.SelectCommand.Parameters.AddWithValue("@clave", id)
 
 
@@ -282,7 +288,8 @@ Public Class EvaluacionPrincipalIndirecto
             Me.dtgvp.Columns("fecha").ReadOnly = True
 
         Catch ex As Exception
-            Me.Dispose()
+            ' Me.Dispose()
+            MessageBox.Show(ex.Message)
             MessageBox.Show("No cuenta con los permisos necesarios, consulte al admnistrador", "¡Aviso!")
 
         End Try

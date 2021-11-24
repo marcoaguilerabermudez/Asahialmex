@@ -68,6 +68,7 @@ Partial Class EvaluacionPersonal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_observaciones = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_reestablecer = New System.Windows.Forms.Button()
         Me.p_psg = New System.Windows.Forms.Label()
         Me.p_faltaj = New System.Windows.Forms.Label()
         Me.p_faltai = New System.Windows.Forms.Label()
@@ -76,7 +77,7 @@ Partial Class EvaluacionPersonal
         Me.lbl_puntajm = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.pbx_eva = New System.Windows.Forms.PictureBox()
-        Me.btn_reestablecer = New System.Windows.Forms.Button()
+        Me.lbl_amonestacionesd = New System.Windows.Forms.Label()
         Me.gpx_incidencias.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -201,6 +202,7 @@ Partial Class EvaluacionPersonal
         '
         'gpx_incidencias
         '
+        Me.gpx_incidencias.Controls.Add(Me.lbl_amonestacionesd)
         Me.gpx_incidencias.Controls.Add(Me.lbl_amonestaciones)
         Me.gpx_incidencias.Controls.Add(Me.Label17)
         Me.gpx_incidencias.Controls.Add(Me.lbl_mejora)
@@ -633,6 +635,19 @@ Partial Class EvaluacionPersonal
         Me.Panel1.Size = New System.Drawing.Size(992, 161)
         Me.Panel1.TabIndex = 250
         '
+        'btn_reestablecer
+        '
+        Me.btn_reestablecer.BackColor = System.Drawing.Color.Gainsboro
+        Me.btn_reestablecer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_reestablecer.ForeColor = System.Drawing.Color.OrangeRed
+        Me.btn_reestablecer.Location = New System.Drawing.Point(339, 73)
+        Me.btn_reestablecer.Name = "btn_reestablecer"
+        Me.btn_reestablecer.Size = New System.Drawing.Size(102, 42)
+        Me.btn_reestablecer.TabIndex = 246
+        Me.btn_reestablecer.Text = "Reestablecer"
+        Me.btn_reestablecer.UseVisualStyleBackColor = False
+        Me.btn_reestablecer.Visible = False
+        '
         'p_psg
         '
         Me.p_psg.AutoSize = True
@@ -725,18 +740,16 @@ Partial Class EvaluacionPersonal
         Me.pbx_eva.TabIndex = 253
         Me.pbx_eva.TabStop = False
         '
-        'btn_reestablecer
+        'lbl_amonestacionesd
         '
-        Me.btn_reestablecer.BackColor = System.Drawing.Color.Gainsboro
-        Me.btn_reestablecer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_reestablecer.ForeColor = System.Drawing.Color.OrangeRed
-        Me.btn_reestablecer.Location = New System.Drawing.Point(339, 73)
-        Me.btn_reestablecer.Name = "btn_reestablecer"
-        Me.btn_reestablecer.Size = New System.Drawing.Size(102, 42)
-        Me.btn_reestablecer.TabIndex = 246
-        Me.btn_reestablecer.Text = "Reestablecer"
-        Me.btn_reestablecer.UseVisualStyleBackColor = False
-        Me.btn_reestablecer.Visible = False
+        Me.lbl_amonestacionesd.AutoSize = True
+        Me.lbl_amonestacionesd.BackColor = System.Drawing.Color.SteelBlue
+        Me.lbl_amonestacionesd.ForeColor = System.Drawing.Color.White
+        Me.lbl_amonestacionesd.Location = New System.Drawing.Point(178, 129)
+        Me.lbl_amonestacionesd.Name = "lbl_amonestacionesd"
+        Me.lbl_amonestacionesd.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_amonestacionesd.TabIndex = 253
+        Me.lbl_amonestacionesd.Text = "0"
         '
         'EvaluacionPersonal
         '
@@ -825,4 +838,5 @@ Partial Class EvaluacionPersonal
     Friend WithEvents lbl_amonestaciones As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents btn_reestablecer As Button
+    Friend WithEvents lbl_amonestacionesd As Label
 End Class

@@ -428,6 +428,9 @@ Public Class Provisiones
                     row.DefaultCellStyle.BackColor = Color.LightPink
                 ElseIf row.Cells(“EstatusConta”).Value = "M" Then
                     row.DefaultCellStyle.BackColor = Color.Gold
+                ElseIf row.Cells(“EstatusConta”).Value = "PA" Then
+                    row.DefaultCellStyle.BackColor = Color.LightGreen
+
                 Else
                     row.DefaultCellStyle.BackColor = Color.White
                 End If
@@ -765,6 +768,12 @@ Public Class Provisiones
         End Try
     End Sub
 
+    Private Sub dtgv_CellContentClick2(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dtgv.EditingControlShowing, dgv2.EditingControlShowing, dtgv3.EditingControlShowing
+        If TypeOf e.Control Is TextBox Then
+            DirectCast(e.Control, TextBox).CharacterCasing = CharacterCasing.Upper
+        End If
+
+    End Sub
 
     Sub colores(ByVal sender As Object, ByVal e As DataGridViewCellFormattingEventArgs) Handles dtgv3.CellFormatting
         Dim TipoTrade As String
@@ -853,6 +862,21 @@ Public Class Provisiones
                 e.CellStyle.SelectionBackColor = Color.Gold
                 e.CellStyle.SelectionForeColor = Color.Black
             End If
+
+            If TipoTrade = "PA" Then
+                e.CellStyle.BackColor = Color.LightBlue
+                e.CellStyle.ForeColor = Color.Black
+                e.CellStyle.SelectionBackColor = Color.LightBlue
+                e.CellStyle.SelectionForeColor = Color.Black
+            End If
+
+            If TipoTrade = "PAR" Then
+                e.CellStyle.BackColor = Color.LightGray
+                e.CellStyle.ForeColor = Color.Black
+                e.CellStyle.SelectionBackColor = Color.LightGray
+                e.CellStyle.SelectionForeColor = Color.Black
+            End If
+
         End If
 
     End Sub

@@ -129,6 +129,7 @@ Partial Class EvaluacionIndirecto
         Me.Label35 = New System.Windows.Forms.Label()
         Me.btn_evaluar3 = New System.Windows.Forms.Button()
         Me.dtgvtest = New System.Windows.Forms.DataGridView()
+        Me.lbl_amonestacionesd = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.gpx_incidencias.SuspendLayout()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -374,6 +375,7 @@ Partial Class EvaluacionIndirecto
         '
         'gpx_incidencias
         '
+        Me.gpx_incidencias.Controls.Add(Me.lbl_amonestacionesd)
         Me.gpx_incidencias.Controls.Add(Me.lbl_puntajeRetardo)
         Me.gpx_incidencias.Controls.Add(Me.lbl_puntajePSG)
         Me.gpx_incidencias.Controls.Add(Me.Label25)
@@ -1435,6 +1437,17 @@ Partial Class EvaluacionIndirecto
         Me.dtgvtest.Size = New System.Drawing.Size(408, 332)
         Me.dtgvtest.TabIndex = 255
         '
+        'lbl_amonestacionesd
+        '
+        Me.lbl_amonestacionesd.AutoSize = True
+        Me.lbl_amonestacionesd.BackColor = System.Drawing.Color.SteelBlue
+        Me.lbl_amonestacionesd.ForeColor = System.Drawing.Color.White
+        Me.lbl_amonestacionesd.Location = New System.Drawing.Point(458, 110)
+        Me.lbl_amonestacionesd.Name = "lbl_amonestacionesd"
+        Me.lbl_amonestacionesd.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_amonestacionesd.TabIndex = 269
+        Me.lbl_amonestacionesd.Text = "0"
+        '
         'EvaluacionIndirecto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1571,4 +1584,5 @@ Partial Class EvaluacionIndirecto
     Friend WithEvents rdb_objetivos2 As RadioButton
     Friend WithEvents rdb_objetivos As RadioButton
     Friend WithEvents btn_editaobjetivos As Button
+    Friend WithEvents lbl_amonestacionesd As Label
 End Class

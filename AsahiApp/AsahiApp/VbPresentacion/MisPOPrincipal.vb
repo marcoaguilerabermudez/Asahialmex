@@ -492,7 +492,7 @@ Public Class MisPOPrincipal
             set @var1 = @var 
 
             if @var1 = 1
-            begin
+            'begin
             update [Asahi].[dbo].[com_po_principal] set estado = 1
             where id = @id and estado = 0
             end
