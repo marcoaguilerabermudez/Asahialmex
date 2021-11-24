@@ -100,6 +100,7 @@ Public Class EvaluacionPersonal
             lbl_meses.Text = ds.Tables(0).Rows(0).Item(7)
             lbl_mejora.Text = ds.Tables(0).Rows(0).Item(8)
             lbl_amonestaciones.Text = ds.Tables(0).Rows(0).Item(9)
+            lbl_amonestacionesd.Text = ds.Tables(0).Rows(0).Item(10)
             faltas = CInt(lbl_f.Text) + CInt(lbl_n.Text) + CInt(lbl_p.Text)
 
 
@@ -175,6 +176,7 @@ Public Class EvaluacionPersonal
             da.SelectCommand.Parameters.AddWithValue("@meses", lbl_meses.Text)
             da.SelectCommand.Parameters.AddWithValue("@p_mejora", lbl_mejora.Text)
             da.SelectCommand.Parameters.AddWithValue("@p_amon", lbl_amonestaciones.Text)
+            da.SelectCommand.Parameters.AddWithValue("@p_amon2", lbl_amonestacionesd.Text)
 
             Dim dt As New DataTable
             da.Fill(dt)

@@ -49,7 +49,7 @@ Public Class Requerimientos_MuestraMovimientoProvisionPO
 
 
 
-        If edo_provi = 3 Then
+        If edo_provi = 3 Or edo_provi = 100 Then
             Panel1.Visible = True
             Panel2.Visible = True
         Else
@@ -124,7 +124,7 @@ Public Class Requerimientos_MuestraMovimientoProvisionPO
             dtgvp.Columns("UUID").Visible = False
             dtgvp.Columns("totals").Visible = False
             dtgvp.Columns("totalx").Visible = False
-            ' dtgvp.Columns("id_mov").Visible = False
+            dtgvp.Columns("id_mov").Visible = False
 
             '  cnn.Close()
 
@@ -474,7 +474,11 @@ SELECT  [id]
             agrega.Parameters.Add("@moneda", SqlDbType.VarChar, 3).Value = lbl_moneda.Text
             agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = lbl_uuid.Text
             agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
-            agrega.Parameters.Add("@var", SqlDbType.Int).Value = 1
+            If edo_provi = 3 Then
+                agrega.Parameters.Add("@var", SqlDbType.Int).Value = 1
+            ElseIf edo_provi = 100 Then
+                agrega.Parameters.Add("@var", SqlDbType.Int).Value = 2
+            End If
             agrega.Parameters.Add("@folio", SqlDbType.VarChar, 100).Value = lbl_foliofact.Text
             agrega.Parameters.Add("@id_provision", SqlDbType.Int).Value = lbl_prov.Text
 
@@ -527,7 +531,7 @@ SELECT  [id]
                 command.Parameters.AddWithValue("@subtotal", 0)
                 command.Parameters.AddWithValue("@id_movpo", (fila.Cells("id_mov").Value))
                 command.Parameters.AddWithValue("@id_cotizacion", 0)
-                command.Parameters.AddWithValue("@req", (fila.Cells("Requerimiento").Value))
+                command.Parameters.AddWithValue("@req", (fila.Cells("id_reqmov").Value))
                 command.Parameters.AddWithValue("@id_po", lbl_prov.Text)
                 command.Parameters.AddWithValue("@var", 2)
 

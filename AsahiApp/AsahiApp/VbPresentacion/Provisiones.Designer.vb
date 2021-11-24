@@ -31,6 +31,9 @@ Partial Class Provisiones
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Provisiones))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.gbx_tipo = New System.Windows.Forms.GroupBox()
         Me.rbt_ffac = New System.Windows.Forms.RadioButton()
         Me.rbt_frecep = New System.Windows.Forms.RadioButton()
@@ -121,11 +124,11 @@ Partial Class Provisiones
         Me.Button2 = New System.Windows.Forms.Button()
         Me.dtgv3 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewCheckBoxColumn2 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel12 = New System.Windows.Forms.Panel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.Panel10.SuspendLayout()
         Me.gbx_tipo.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.dtgv, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,7 +143,6 @@ Partial Class Provisiones
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dtgv3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel10.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -183,6 +185,36 @@ Partial Class Provisiones
         Me.TabPage1.Size = New System.Drawing.Size(1001, 553)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Por Provisionar"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label1.Location = New System.Drawing.Point(430, 93)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(115, 14)
+        Me.Label1.TabIndex = 550
+        Me.Label1.Text = "Pago contra factura"
+        '
+        'Panel10
+        '
+        Me.Panel10.BackColor = System.Drawing.Color.Gold
+        Me.Panel10.Controls.Add(Me.Panel11)
+        Me.Panel10.Location = New System.Drawing.Point(392, 94)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(32, 13)
+        Me.Panel10.TabIndex = 549
+        '
+        'Panel11
+        '
+        Me.Panel11.BackColor = System.Drawing.Color.LightGray
+        Me.Panel11.Location = New System.Drawing.Point(0, 0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(32, 13)
+        Me.Panel11.TabIndex = 543
         '
         'gbx_tipo
         '
@@ -511,6 +543,8 @@ Partial Class Provisiones
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.TabPage2.Controls.Add(Me.Label7)
+        Me.TabPage2.Controls.Add(Me.Panel12)
         Me.TabPage2.Controls.Add(Me.Label29)
         Me.TabPage2.Controls.Add(Me.Panel9)
         Me.TabPage2.Controls.Add(Me.Button12)
@@ -558,7 +592,7 @@ Partial Class Provisiones
         Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button12.Location = New System.Drawing.Point(491, 93)
+        Me.Button12.Location = New System.Drawing.Point(892, 98)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(65, 27)
         Me.Button12.TabIndex = 402
@@ -1325,35 +1359,24 @@ Partial Class Provisiones
         Me.DataGridViewCheckBoxColumn2.Name = "DataGridViewCheckBoxColumn2"
         Me.DataGridViewCheckBoxColumn2.Width = 20
         '
-        'Label1
+        'Label7
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(430, 93)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(115, 14)
-        Me.Label1.TabIndex = 550
-        Me.Label1.Text = "Pago contra factura"
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!)
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label7.Location = New System.Drawing.Point(460, 93)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(78, 12)
+        Me.Label7.TabIndex = 406
+        Me.Label7.Text = "PREAPROBADO"
         '
-        'Panel10
+        'Panel12
         '
-        Me.Panel10.BackColor = System.Drawing.Color.Gold
-        Me.Panel10.Controls.Add(Me.Panel11)
-        Me.Panel10.Location = New System.Drawing.Point(392, 94)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(32, 13)
-        Me.Panel10.TabIndex = 549
-        '
-        'Panel11
-        '
-        Me.Panel11.BackColor = System.Drawing.Color.LightGray
-        Me.Panel11.Location = New System.Drawing.Point(0, 0)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(32, 13)
-        Me.Panel11.TabIndex = 543
+        Me.Panel12.BackColor = System.Drawing.Color.LightGreen
+        Me.Panel12.Location = New System.Drawing.Point(441, 89)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(13, 20)
+        Me.Panel12.TabIndex = 405
         '
         'Provisiones
         '
@@ -1369,6 +1392,7 @@ Partial Class Provisiones
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
         Me.gbx_tipo.ResumeLayout(False)
         Me.gbx_tipo.PerformLayout()
         Me.Panel5.ResumeLayout(False)
@@ -1390,7 +1414,6 @@ Partial Class Provisiones
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.dtgv3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel10.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1490,4 +1513,6 @@ Partial Class Provisiones
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Panel11 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Panel12 As Panel
 End Class

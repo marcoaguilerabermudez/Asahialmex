@@ -246,7 +246,8 @@ Public Class EvaluacionIndirecto
             da.SelectCommand.Parameters.AddWithValue("@p_psg", 0)
             da.SelectCommand.Parameters.AddWithValue("@meses", 0)
             da.SelectCommand.Parameters.AddWithValue("@p_mejora", 0)
-            da.SelectCommand.Parameters.AddWithValue("@p_amon", 0)
+            da.SelectCommand.Parameters.AddWithValue("@p_amon", lbl_amonestaciones.Text)
+            da.SelectCommand.Parameters.AddWithValue("@p_amon2", lbl_amonestacionesd.Text)
 
             Dim dt As New DataTable
             da.Fill(dt)
