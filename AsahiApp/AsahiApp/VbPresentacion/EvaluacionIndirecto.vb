@@ -188,6 +188,7 @@ Public Class EvaluacionIndirecto
             lbl_meses.Text = ds.Tables(0).Rows(0).Item(7)
             lbl_mejora.Text = ds.Tables(0).Rows(0).Item(8)
             lbl_amonestaciones.Text = ds.Tables(0).Rows(0).Item(9)
+            lbl_amonestacionesd.Text = ds.Tables(0).Rows(0).Item(10)
             faltas = CInt(lbl_f.Text) + CInt(lbl_n.Text) + CInt(lbl_p.Text)
 
             puntajeincidencias = CDbl(lbl_suspension.Text) + CDbl(lbl_puntajeFI.Text) + CDbl(lbl_puntajePSG.Text) + CDbl(lbl_puntajeFJ.Text) + CDbl(lbl_puntajeRetardo.Text)

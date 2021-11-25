@@ -125,6 +125,7 @@ Public Class Requerimientos_MuestraMovimientoProvisionPO
             dtgvp.Columns("totals").Visible = False
             dtgvp.Columns("totalx").Visible = False
             dtgvp.Columns("id_mov").Visible = False
+            dtgvp.Columns("id_reqmov").Visible = False
 
             '  cnn.Close()
 

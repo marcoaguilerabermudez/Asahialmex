@@ -811,6 +811,7 @@ Partial Class MisPOPrincipal
         Me.Controls.Add(Me.dtp1)
         Me.Controls.Add(Me.dtgvp)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "MisPOPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mis PO"
