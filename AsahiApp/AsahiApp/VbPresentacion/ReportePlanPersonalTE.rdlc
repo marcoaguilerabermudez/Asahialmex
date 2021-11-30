@@ -660,9 +660,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Switch( (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Enero" ,8 * 23 * Fields!Plan.Value,
-(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Enero" ,8 * 20 * Fields!Plan.Value,
- (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Febrero" ,8 * 23 * Fields!Plan.Value,
+                              <Value>=Switch( (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Enero" ,12 * 17 * Fields!Plan.Value,
+(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Enero" ,8 * 21 * Fields!Plan.Value,
+ (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Febrero" ,12 * 16 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Febrero" ,8 * 20 * Fields!Plan.Value,
  (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Marzo" ,8 * 23 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Marzo" ,8 * 20 * Fields!Plan.Value,
@@ -694,8 +694,8 @@
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Agosto-Septiembre-Octubre" ,8 * 22 * Fields!Plan.Value,
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 25 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 21 * Fields!Plan.Value,
-(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Diciembre-Enero-Febrero" ,12 * 18 * Fields!Plan.Value,
-(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Diciembre-Enero-Febrero" ,8 * 23 * Fields!Plan.Value)</Value>
+(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Diciembre" ,12 * 18 * Fields!Plan.Value,
+(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Diciembre" ,8 * 23 * Fields!Plan.Value)</Value>
                               <Style>
                                 <Format>0;(0)</Format>
                               </Style>
@@ -998,9 +998,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Switch( (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Enero" ,8 * 23 * Fields!Plan.Value,
-(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Enero" ,8 * 20 * Fields!Plan.Value,
- (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Febrero" ,8 * 23 * Fields!Plan.Value,
+                              <Value>=Sum(Switch( (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Enero" ,12 * 17 * Fields!Plan.Value,
+(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Enero" ,8 * 21 * Fields!Plan.Value,
+ (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Febrero" ,12 * 16 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Febrero" ,8 * 20 * Fields!Plan.Value,
  (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Marzo" ,8 * 23 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Marzo" ,8 * 20 * Fields!Plan.Value,
@@ -1032,8 +1032,8 @@
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Agosto-Septiembre-Octubre" ,8 * 22 * Fields!Plan.Value,
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 25 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 21 * Fields!Plan.Value,
-(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Diciembre-Enero-Febrero" ,12 * 18 * Fields!Plan.Value,
-(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Diciembre-Enero-Febrero" ,8 * 23 * Fields!Plan.Value))</Value>
+(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Diciembre" ,12 * 18 * Fields!Plan.Value,
+(Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Diciembre" ,8 * 23 * Fields!Plan.Value))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
