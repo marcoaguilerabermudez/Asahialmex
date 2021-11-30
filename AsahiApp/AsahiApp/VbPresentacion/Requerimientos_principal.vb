@@ -185,25 +185,30 @@ Public Class Requerimientos_principal
 
 
     Private Sub dtgvp_CellContentClick0(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellClick
-        lbl_req.Text = Me.dtgvp.Rows(e.RowIndex).Cells(0).Value.ToString()
-        colores()
+
+        If e.ColumnIndex = 0 Then
+            Try
+                System.Diagnostics.Process.Start(Me.dtgvp.Rows(e.RowIndex).Cells("Documentos").Value.ToString())
+            Catch ex As Exception
+                MessageBox.Show("No tiene ningún documento anexado", "¡Aviso!")
+            End Try
+        Else
+            lbl_req.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
+            colores()
+
+
+        End If
     End Sub
 
     Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.RowEnter
-        lbl_req.Text = Me.dtgvp.Rows(e.RowIndex).Cells(0).Value.ToString()
+        lbl_req.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
         colores()
     End Sub
 
     Private Sub dtgvp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellDoubleClick
-        Modulo_Req_principal.e_id = Me.dtgvp.Rows(e.RowIndex).Cells(0).Value.ToString()
-
-
-
-
+        Modulo_Req_principal.e_id = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
         Dim Req_mov As New Requerimientos_movimientos(id, depto, permiso, nombre, p_vales)
         Req_mov.Show()
-
-
     End Sub
 
     Private Sub cbx_area_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_area.SelectedIndexChanged
@@ -267,6 +272,7 @@ Public Class Requerimientos_principal
             Case "PRODUCCIÓN"
                 a = "48"
         End Select
+
     End Sub
 
 
