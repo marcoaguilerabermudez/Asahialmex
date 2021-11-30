@@ -76,7 +76,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>-2022    </Value>
+                <Value xml:space="preserve">    </Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                   <FontSize>14pt</FontSize>
