@@ -76,7 +76,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value xml:space="preserve">    </Value>
+                <Value>-2022    </Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                   <FontSize>14pt</FontSize>
@@ -1635,14 +1635,6 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!mes.Value, "DataSet1")</Value>
-                <Style>
-                  <FontFamily>MS UI Gothic</FontFamily>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>-2022</Value>
                 <Style>
                   <FontFamily>MS UI Gothic</FontFamily>
                   <FontSize>14pt</FontSize>
