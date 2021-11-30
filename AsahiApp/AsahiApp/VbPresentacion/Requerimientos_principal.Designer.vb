@@ -37,6 +37,7 @@ Partial Class Requerimientos_principal
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PDF = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -108,6 +109,7 @@ Partial Class Requerimientos_principal
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dtgvp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtgvp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgvp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PDF})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -191,6 +193,13 @@ Partial Class Requerimientos_principal
         Me.Label2.TabIndex = 535
         Me.Label2.Text = "RECEPCIÓN COMPLETA"
         '
+        'PDF
+        '
+        Me.PDF.HeaderText = "PDF"
+        Me.PDF.Name = "PDF"
+        Me.PDF.ReadOnly = True
+        Me.PDF.Width = 40
+        '
         'Requerimientos_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -231,4 +240,5 @@ Partial Class Requerimientos_principal
     Friend WithEvents cbx_area As ComboBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label2 As Label
+    Friend WithEvents PDF As DataGridViewButtonColumn
 End Class

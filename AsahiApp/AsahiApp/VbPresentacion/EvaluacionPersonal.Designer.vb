@@ -22,8 +22,8 @@ Partial Class EvaluacionPersonal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EvaluacionPersonal))
         Me.lbl_puesto = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -36,6 +36,7 @@ Partial Class EvaluacionPersonal
         Me.lbl_evaluacion = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.gpx_incidencias = New System.Windows.Forms.GroupBox()
+        Me.lbl_amonestacionesd = New System.Windows.Forms.Label()
         Me.lbl_amonestaciones = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.lbl_mejora = New System.Windows.Forms.Label()
@@ -77,7 +78,6 @@ Partial Class EvaluacionPersonal
         Me.lbl_puntajm = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.pbx_eva = New System.Windows.Forms.PictureBox()
-        Me.lbl_amonestacionesd = New System.Windows.Forms.Label()
         Me.gpx_incidencias.SuspendLayout()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -233,6 +233,17 @@ Partial Class EvaluacionPersonal
         Me.gpx_incidencias.TabIndex = 197
         Me.gpx_incidencias.TabStop = False
         Me.gpx_incidencias.Text = "Kárdex de incidencias"
+        '
+        'lbl_amonestacionesd
+        '
+        Me.lbl_amonestacionesd.AutoSize = True
+        Me.lbl_amonestacionesd.BackColor = System.Drawing.Color.SteelBlue
+        Me.lbl_amonestacionesd.ForeColor = System.Drawing.Color.White
+        Me.lbl_amonestacionesd.Location = New System.Drawing.Point(178, 129)
+        Me.lbl_amonestacionesd.Name = "lbl_amonestacionesd"
+        Me.lbl_amonestacionesd.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_amonestacionesd.TabIndex = 253
+        Me.lbl_amonestacionesd.Text = "0"
         '
         'lbl_amonestaciones
         '
@@ -520,24 +531,24 @@ Partial Class EvaluacionPersonal
         Me.dtgvp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dtgvp.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dtgvp.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgvp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.Format = "0.00"
-        DataGridViewCellStyle4.NullValue = Nothing
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgvp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.Format = "0.00"
+        DataGridViewCellStyle2.NullValue = Nothing
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgvp.DefaultCellStyle = DataGridViewCellStyle2
         Me.dtgvp.Location = New System.Drawing.Point(4, 170)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
@@ -658,7 +669,6 @@ Partial Class EvaluacionPersonal
         Me.p_psg.Size = New System.Drawing.Size(13, 13)
         Me.p_psg.TabIndex = 210
         Me.p_psg.Text = "0"
-        Me.p_psg.Visible = False
         '
         'p_faltaj
         '
@@ -670,7 +680,6 @@ Partial Class EvaluacionPersonal
         Me.p_faltaj.Size = New System.Drawing.Size(13, 13)
         Me.p_faltaj.TabIndex = 209
         Me.p_faltaj.Text = "0"
-        Me.p_faltaj.Visible = False
         '
         'p_faltai
         '
@@ -682,7 +691,6 @@ Partial Class EvaluacionPersonal
         Me.p_faltai.Size = New System.Drawing.Size(13, 13)
         Me.p_faltai.TabIndex = 208
         Me.p_faltai.Text = "0"
-        Me.p_faltai.Visible = False
         '
         'p_ret
         '
@@ -694,7 +702,6 @@ Partial Class EvaluacionPersonal
         Me.p_ret.Size = New System.Drawing.Size(13, 13)
         Me.p_ret.TabIndex = 207
         Me.p_ret.Text = "0"
-        Me.p_ret.Visible = False
         '
         'p_sus
         '
@@ -706,7 +713,6 @@ Partial Class EvaluacionPersonal
         Me.p_sus.Size = New System.Drawing.Size(13, 13)
         Me.p_sus.TabIndex = 206
         Me.p_sus.Text = "0"
-        Me.p_sus.Visible = False
         '
         'lbl_puntajm
         '
@@ -739,17 +745,6 @@ Partial Class EvaluacionPersonal
         Me.pbx_eva.Size = New System.Drawing.Size(531, 338)
         Me.pbx_eva.TabIndex = 253
         Me.pbx_eva.TabStop = False
-        '
-        'lbl_amonestacionesd
-        '
-        Me.lbl_amonestacionesd.AutoSize = True
-        Me.lbl_amonestacionesd.BackColor = System.Drawing.Color.SteelBlue
-        Me.lbl_amonestacionesd.ForeColor = System.Drawing.Color.White
-        Me.lbl_amonestacionesd.Location = New System.Drawing.Point(178, 129)
-        Me.lbl_amonestacionesd.Name = "lbl_amonestacionesd"
-        Me.lbl_amonestacionesd.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_amonestacionesd.TabIndex = 253
-        Me.lbl_amonestacionesd.Text = "0"
         '
         'EvaluacionPersonal
         '

@@ -39,13 +39,31 @@ Public Class Requerimientos_movimientos
 
     Sub AgregarColumna()
         Dim cbox As New DataGridViewCheckBoxColumn
+
         dtgvp.Columns.Insert(dtgvp.ColumnCount, cbox)
+
         With cbox
             .HeaderText = "x"
             .Name = "x"
             .Width = 40
         End With
+
+
     End Sub
+
+
+    Sub agregarcolumna2()
+        Dim cbutton As New DataGridViewButtonColumn
+
+        dtgvp.Columns.Insert(dtgvp.ColumnCount, cbutton)
+
+        With cbutton
+            .HeaderText = "PDF"
+            .Name = "PDF"
+            .Width = 40
+        End With
+    End Sub
+
 
     Private Sub Requerimientos_movimientos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -101,7 +119,10 @@ Public Class Requerimientos_movimientos
 
         AgregarColumna()
         cargagrid()
+
         areas()
+        agregarcolumna2()
+
 
         Dim cmd As New SqlCommand("select razon_social from [Asahi].[dbo].[com_proveedores] ", cnn)
         If cnn.State = ConnectionState.Closed Then cnn.Open()
@@ -142,7 +163,7 @@ Public Class Requerimientos_movimientos
             Dim dt As New DataTable
             da.Fill(dt)
             dtgvp.DataSource = dt
-            dtgvp.Columns(1).Width = 480
+            dtgvp.Columns(1).Width = 440
             dtgvp.Columns(1).ReadOnly = True
             dtgvp.Columns(2).Visible = False
             dtgvp.Columns(3).Visible = False
@@ -182,10 +203,11 @@ Public Class Requerimientos_movimientos
 
 
 
-
         colores()
 
     End Sub
+
+
 
 
     Sub colores()
@@ -218,94 +240,108 @@ Public Class Requerimientos_movimientos
     End Sub
 
     Private Sub dtgvp_CellContentClick0(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellClick
-        Try
-            lbl_producto.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
-            lbl_comprador.Text = Me.dtgvp.Rows(e.RowIndex).Cells(2).Value.ToString()
-            lbl_codigo.Text = Me.dtgvp.Rows(e.RowIndex).Cells(3).Value.ToString()
-            lbl_nparte.Text = Me.dtgvp.Rows(e.RowIndex).Cells(4).Value.ToString()
-            cbx_area.Text = Me.dtgvp.Rows(e.RowIndex).Cells(5).Value.ToString()
-            txt_proveedor.Text = Me.dtgvp.Rows(e.RowIndex).Cells(6).Value.ToString()
-            txt_cantidad.Text = Me.dtgvp.Rows(e.RowIndex).Cells(7).Value.ToString()
-            txt_precio.Text = Me.dtgvp.Rows(e.RowIndex).Cells(8).Value.ToString()
-            dtp1.Value = Me.dtgvp.Rows(e.RowIndex).Cells(9).Value.ToString()
-            lbl_fecharecep.Text = Me.dtgvp.Rows(e.RowIndex).Cells(10).Value.ToString()
-            lbl_moneda.Text = Me.dtgvp.Rows(e.RowIndex).Cells(11).Value.ToString()
-            txt_comen.Text = Me.dtgvp.Rows(e.RowIndex).Cells(12).Value.ToString()
-            lbl_subtotal.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(13).Value.ToString(), Decimal), "#,##0.00")
-            lbl_impuestos.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(14).Value.ToString(), Decimal), "#,##0.00")
-            lbl_retenciones.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(15).Value.ToString(), Decimal), "#,##0.00")
-            lbl_descuento.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(16).Value.ToString(), Decimal), "#,##0.00")
-            lbl_total.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(17).Value.ToString(), Decimal), "#,##0.00")
-            lbl_oc.Text = Me.dtgvp.Rows(e.RowIndex).Cells(18).Value.ToString()
-            id_mov = Me.dtgvp.Rows(e.RowIndex).Cells(19).Value.ToString()
-            estado_mov = Me.dtgvp.Rows(e.RowIndex).Cells(20).Value.ToString()
-            rechazo = Me.dtgvp.Rows(e.RowIndex).Cells(28).Value.ToString()
-            txt_liga.Text = Me.dtgvp.Rows(e.RowIndex).Cells(29).Value.ToString()
-            cbx_fam.Text = Me.dtgvp.Rows(e.RowIndex).Cells(30).Value.ToString()
 
-            usuario_c = Me.dtgvp.Rows(e.RowIndex).Cells(22).Value.ToString()
+        If e.ColumnIndex = 31 Then
             Try
-                var_fila = dtgvp.CurrentRow.Index
-            Catch
+                System.Diagnostics.Process.Start(Me.dtgvp.Rows(e.RowIndex).Cells("doc").Value.ToString())
+            Catch ex As Exception
+                MessageBox.Show("No tiene ningún documento anexado", "¡Aviso!")
             End Try
+        Else
+            Try
+                lbl_producto.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
+                lbl_comprador.Text = Me.dtgvp.Rows(e.RowIndex).Cells(2).Value.ToString()
+                lbl_codigo.Text = Me.dtgvp.Rows(e.RowIndex).Cells(3).Value.ToString()
+                lbl_nparte.Text = Me.dtgvp.Rows(e.RowIndex).Cells(4).Value.ToString()
+                cbx_area.Text = Me.dtgvp.Rows(e.RowIndex).Cells(5).Value.ToString()
+                txt_proveedor.Text = Me.dtgvp.Rows(e.RowIndex).Cells(6).Value.ToString()
+                txt_cantidad.Text = Me.dtgvp.Rows(e.RowIndex).Cells(7).Value.ToString()
+                txt_precio.Text = Me.dtgvp.Rows(e.RowIndex).Cells(8).Value.ToString()
+                dtp1.Value = Me.dtgvp.Rows(e.RowIndex).Cells(9).Value.ToString()
+                lbl_fecharecep.Text = Me.dtgvp.Rows(e.RowIndex).Cells(10).Value.ToString()
+                lbl_moneda.Text = Me.dtgvp.Rows(e.RowIndex).Cells(11).Value.ToString()
+                txt_comen.Text = Me.dtgvp.Rows(e.RowIndex).Cells(12).Value.ToString()
+                lbl_subtotal.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(13).Value.ToString(), Decimal), "#,##0.00")
+                lbl_impuestos.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(14).Value.ToString(), Decimal), "#,##0.00")
+                lbl_retenciones.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(15).Value.ToString(), Decimal), "#,##0.00")
+                lbl_descuento.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(16).Value.ToString(), Decimal), "#,##0.00")
+                lbl_total.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(17).Value.ToString(), Decimal), "#,##0.00")
+                lbl_oc.Text = Me.dtgvp.Rows(e.RowIndex).Cells(18).Value.ToString()
+                id_mov = Me.dtgvp.Rows(e.RowIndex).Cells(19).Value.ToString()
+                estado_mov = Me.dtgvp.Rows(e.RowIndex).Cells(20).Value.ToString()
+                rechazo = Me.dtgvp.Rows(e.RowIndex).Cells(28).Value.ToString()
+                txt_liga.Text = Me.dtgvp.Rows(e.RowIndex).Cells(29).Value.ToString()
+                cbx_fam.Text = Me.dtgvp.Rows(e.RowIndex).Cells(30).Value.ToString()
+
+                usuario_c = Me.dtgvp.Rows(e.RowIndex).Cells(22).Value.ToString()
+
+                Try
+                    var_fila = dtgvp.CurrentRow.Index
+                Catch
+                End Try
 
 
 
-            If p_vales = 0 Then
-                If estado_mov = 0 Or estado_mov = 6 Then
+                If p_vales = 0 Then
+                    If estado_mov = 0 Or estado_mov = 6 Then
+                        cbx_area.Enabled = True
+                        txt_proveedor.Enabled = True
+                        txt_cantidad.Enabled = True
+                        txt_precio.Enabled = True
+                        txt_comen.Enabled = True
+                        dtp1.Enabled = True
+                        btn_solicitar.Enabled = True
+                        btn_eliminar.Enabled = True
+
+                    Else
+                        cbx_area.Enabled = False
+                        txt_proveedor.Enabled = False
+                        txt_cantidad.Enabled = False
+                        txt_precio.Enabled = False
+                        txt_comen.Enabled = False
+                        dtp1.Enabled = False
+                        btn_solicitar.Enabled = False
+                        btn_eliminar.Enabled = False
+
+                    End If
+
+                ElseIf p_vales = 1 Then
+
                     cbx_area.Enabled = True
                     txt_proveedor.Enabled = True
                     txt_cantidad.Enabled = True
                     txt_precio.Enabled = True
-                    txt_comen.Enabled = True
-                    dtp1.Enabled = True
+                    txt_comen.Enabled = False
+                    dtp1.Enabled = False
                     btn_solicitar.Enabled = True
                     btn_eliminar.Enabled = True
 
-                Else
-                    cbx_area.Enabled = False
-                    txt_proveedor.Enabled = False
-                    txt_cantidad.Enabled = False
-                    txt_precio.Enabled = False
-                    txt_comen.Enabled = False
-                    dtp1.Enabled = False
-                    btn_solicitar.Enabled = False
-                    btn_eliminar.Enabled = False
+
+                    If estado_mov = 0 Then
+                        btn_autoriza.Enabled = False
+
+                    Else
+                        btn_autoriza.Enabled = True
+
+                    End If
+
+                    If estado_mov = 5 Or estado_mov = 7 Or estado_mov = 8 Then
+                        btn_autoriza.Enabled = False
+                        btn_solicitar.Enabled = False
+                        btn_cancelar.Enabled = False
+                        btn_eliminar.Enabled = False
+                    End If
 
                 End If
+            Catch
+            End Try
 
-            ElseIf p_vales = 1 Then
+            colores()
 
-                cbx_area.Enabled = True
-                txt_proveedor.Enabled = True
-                txt_cantidad.Enabled = True
-                txt_precio.Enabled = True
-                txt_comen.Enabled = False
-                dtp1.Enabled = False
-                btn_solicitar.Enabled = True
-                btn_eliminar.Enabled = True
+        End If
 
 
-                If estado_mov = 0 Then
-                    btn_autoriza.Enabled = False
 
-                Else
-                    btn_autoriza.Enabled = True
-
-                End If
-
-                If estado_mov = 5 Or estado_mov = 7 Or estado_mov = 8 Then
-                    btn_autoriza.Enabled = False
-                    btn_solicitar.Enabled = False
-                    btn_cancelar.Enabled = False
-                    btn_eliminar.Enabled = False
-                End If
-
-            End If
-        Catch
-        End Try
-
-        colores()
     End Sub
 
     Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.RowEnter
@@ -696,12 +732,6 @@ end"
                             End Try
 
                         End If
-
-
-
-
-
-
                     Else
                         MessageBox.Show("Acción no completada", "Modificación")
                     End If

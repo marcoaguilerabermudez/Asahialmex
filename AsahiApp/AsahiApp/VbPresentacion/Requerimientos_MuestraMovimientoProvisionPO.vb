@@ -163,6 +163,7 @@ Public Class Requerimientos_MuestraMovimientoProvisionPO
     Sub totales()
 
         Try
+
             Dim Total As Double
             Dim Total1 As Double
 
@@ -176,6 +177,7 @@ Public Class Requerimientos_MuestraMovimientoProvisionPO
 
 
             lbl_neto.Text = Format(CType(Total, Decimal), "#,##0.00")
+
             lbl_t.Text = Format(CType(Total1, Decimal), "#,##0.00")
 
         Catch
@@ -194,27 +196,30 @@ Public Class Requerimientos_MuestraMovimientoProvisionPO
                 If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.99 Then
                     MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
                 ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.99 Then
-                    MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
-                Else
+                MessageBox.Show("El total de lo que está recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+            Else
                     Dim Pregunta As Integer
 
                     Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
 
-                    If Pregunta = vbYes Then
+                If Pregunta = vbYes Then
                     crearrecepcion()
                     insertarfilas()
                 Else
+
                     MessageBox.Show("Acción no completada", "¡Aviso!")
-                    End If
+
                 End If
+
+            End If
 
             ElseIf lbl_moneda.Text = "USD" Then
 
                 If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.05 Then
                     MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
                 ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.05 Then
-                    MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
-                Else
+                MessageBox.Show("El total de lo que está recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+            Else
                     Dim Pregunta As Integer
 
                     Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
@@ -430,6 +435,8 @@ SELECT  [id]
             lbl_totalfact.Enabled = False
             lbl_foliofact.Enabled = False
         End If
+
+
     End Sub
 
     Private Sub txt_busca_TextChanged(sender As Object, e As EventArgs) Handles txt_busca.TextChanged
