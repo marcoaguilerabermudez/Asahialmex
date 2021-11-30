@@ -694,7 +694,7 @@
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Agosto-Septiembre-Octubre" ,8 * 22 * Fields!Plan.Value,
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 25 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 21 * Fields!Plan.Value,
-(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Diciembre-Enero-Febrero" ,12 * 13 * Fields!Plan.Value,
+(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Diciembre-Enero-Febrero" ,12 * 18 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Diciembre-Enero-Febrero" ,8 * 23 * Fields!Plan.Value)</Value>
                               <Style>
                                 <Format>0;(0)</Format>
@@ -1032,7 +1032,7 @@
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Agosto-Septiembre-Octubre" ,8 * 22 * Fields!Plan.Value,
 (Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 25 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Septiembre-Octubre-Noviembre" ,8 * 21 * Fields!Plan.Value,
-(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Diciembre-Enero-Febrero" ,12 * 13 * Fields!Plan.Value,
+(Fields!Puesto.Value = "OPERADOR" or Fields!Puesto.Value = "LÍDER")  and Fields!mes.Value = "Diciembre-Enero-Febrero" ,12 * 18 * Fields!Plan.Value,
 (Fields!Puesto.Value &lt;&gt; "OPERADOR" or Fields!Puesto.Value &lt;&gt; "LÍDER")  and Fields!mes.Value = "Diciembre-Enero-Febrero" ,8 * 23 * Fields!Plan.Value))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
