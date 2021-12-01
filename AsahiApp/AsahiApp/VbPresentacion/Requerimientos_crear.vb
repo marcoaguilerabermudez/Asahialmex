@@ -449,7 +449,7 @@ declare @FolioVale as integer
 set @FolioVale = (select top 1 Id_requerimientoP from [Asahi].[dbo].[Com_RequerimientoPrincipal] order by Id_requerimientoP desc) + 1
 
 insert into [Asahi].[dbo].[Com_RequerimientoPrincipal] values
-(@id, @depto, getdate(), @comentarios, 0, @documento)
+(@id, @depto, getdate(), @comentarios, 0, @documento,null)
 ", cnn)
 
 
@@ -464,6 +464,7 @@ insert into [Asahi].[dbo].[Com_RequerimientoPrincipal] values
 
 
             agrega.Parameters.Add("@documento", SqlDbType.NVarChar, (300)).Value = txt_liga.Text
+
             agrega.Parameters.Add("@comentarios", SqlDbType.NVarChar, (99)).Value = txt_comentarios.Text
 
 
@@ -475,6 +476,7 @@ insert into [Asahi].[dbo].[Com_RequerimientoPrincipal] values
 
 
         Catch ex As Exception
+
             MessageBox.Show("Error al actualizar registro, consulte al administrador")
             MessageBox.Show(ex.ToString)
             cnn.Close()
@@ -523,7 +525,6 @@ insert into [Asahi].[dbo].[Com_RequerimientoPrincipal] values
 
 
                 command.Parameters.AddWithValue("@cantidad", (fila.Cells("Cantidad").Value))
-
                 command.Parameters.AddWithValue("@codigo", (fila.Cells("c_1").Value))
                 command.Parameters.AddWithValue("@precio", (fila.Cells("Precio").Value))
                 command.Parameters.AddWithValue("@proveedor", (fila.Cells("Proveedor").Value))

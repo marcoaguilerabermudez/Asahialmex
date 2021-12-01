@@ -527,7 +527,7 @@ SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(
         Dim agrega As SqlCommand = New SqlCommand("  
  insert into [Asahi].[dbo].[com_po_principal] values ((SELECT TOP 1 [codigo] FROM [Asahi].[dbo].[com_po_principal] WHERE serie <> 'N'  ORDER BY codigo desc) + 1 , 'A', @proveedor, @moneda, @tc, getdate(), @fecha_solicitud, @fecha_entrega,
   (SELECT ltrim(rtrim([id])) FROM [Asahi].[dbo].[cat_Bancos]  where  ltrim(rtrim([valor])) = @banco) , @cuenta, @clabe, @subtotal, @imp_ret,
-   @imp_tras, @descuento, @total, @observaciones, 0, @id_usuario, null)
+   @imp_tras, @descuento, @total, @observaciones, 0, @id_usuario, null,null)
 ", cnn)
 
 
