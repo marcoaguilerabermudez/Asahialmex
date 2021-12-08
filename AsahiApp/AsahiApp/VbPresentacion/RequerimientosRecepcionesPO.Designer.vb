@@ -50,6 +50,7 @@ Partial Class RequerimientosRecepcionesPO
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.txt_pdf = New System.Windows.Forms.TextBox()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -341,11 +342,25 @@ Partial Class RequerimientosRecepcionesPO
         Me.Label7.TabIndex = 556
         Me.Label7.Text = "PAGO CONTRA FACTURA RECHAZADO"
         '
+        'txt_pdf
+        '
+        Me.txt_pdf.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_pdf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_pdf.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txt_pdf.Location = New System.Drawing.Point(285, 88)
+        Me.txt_pdf.MaxLength = 3000
+        Me.txt_pdf.Name = "txt_pdf"
+        Me.txt_pdf.Size = New System.Drawing.Size(62, 20)
+        Me.txt_pdf.TabIndex = 558
+        Me.txt_pdf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_pdf.Visible = False
+        '
         'RequerimientosRecepcionesPO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(946, 509)
+        Me.Controls.Add(Me.txt_pdf)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Panel7)
@@ -407,4 +422,5 @@ Partial Class RequerimientosRecepcionesPO
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label7 As Label
+    Friend WithEvents txt_pdf As TextBox
 End Class

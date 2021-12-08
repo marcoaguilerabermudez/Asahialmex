@@ -552,28 +552,28 @@ Partial Class Frm_Principal
         '
         Me.SolicitudToolStripMenuItem.Enabled = False
         Me.SolicitudToolStripMenuItem.Name = "SolicitudToolStripMenuItem"
-        Me.SolicitudToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.SolicitudToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SolicitudToolStripMenuItem.Text = "Solicitud"
         '
         'ValidaciónToolStripMenuItem
         '
         Me.ValidaciónToolStripMenuItem.Enabled = False
         Me.ValidaciónToolStripMenuItem.Name = "ValidaciónToolStripMenuItem"
-        Me.ValidaciónToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.ValidaciónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ValidaciónToolStripMenuItem.Text = "Validación"
         '
         'ValidaciónRHToolStripMenuItem1
         '
         Me.ValidaciónRHToolStripMenuItem1.Enabled = False
         Me.ValidaciónRHToolStripMenuItem1.Name = "ValidaciónRHToolStripMenuItem1"
-        Me.ValidaciónRHToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
+        Me.ValidaciónRHToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ValidaciónRHToolStripMenuItem1.Text = "Validación RH"
         '
         'ActualizaRegistrosToolStripMenuItem
         '
         Me.ActualizaRegistrosToolStripMenuItem.Enabled = False
         Me.ActualizaRegistrosToolStripMenuItem.Name = "ActualizaRegistrosToolStripMenuItem"
-        Me.ActualizaRegistrosToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.ActualizaRegistrosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ActualizaRegistrosToolStripMenuItem.Text = "Actualiza Registros"
         '
         'FormatoDeServiciosMúltiplesToolStripMenuItem

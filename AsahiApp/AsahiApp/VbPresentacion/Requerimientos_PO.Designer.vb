@@ -190,11 +190,11 @@ Partial Class Requerimientos_PO
         Me.lbl_usd.BackColor = System.Drawing.SystemColors.Control
         Me.lbl_usd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_usd.ForeColor = System.Drawing.Color.Black
-        Me.lbl_usd.Location = New System.Drawing.Point(839, 24)
+        Me.lbl_usd.Location = New System.Drawing.Point(875, 23)
         Me.lbl_usd.Name = "lbl_usd"
-        Me.lbl_usd.Size = New System.Drawing.Size(110, 13)
+        Me.lbl_usd.Size = New System.Drawing.Size(30, 13)
         Me.lbl_usd.TabIndex = 176
-        Me.lbl_usd.Text = "Cargar tipo de cambio"
+        Me.lbl_usd.Text = "USD"
         '
         'lbl_yen
         '

@@ -122,6 +122,7 @@ Public Class RequerimientosRecepcionesPO
             dtgvp.Columns("id_po").Visible = False
             dtgvp.Columns("moneda").Visible = False
             dtgvp.Columns("edo_po").Visible = False
+            dtgvp.Columns("pdf").Visible = False
 
             '  cnn.Close()
 
@@ -478,7 +479,64 @@ Public Class RequerimientosRecepcionesPO
 
 
                 ElseIf e.ColumnIndex = 20 Then
-                    MessageBox.Show("PDF")
+                    If Me.dtgvp.Columns(e.ColumnIndex).Name = "PDF" Then
+
+                        Dim folder As New OpenFileDialog
+                        Dim result As DialogResult = folder.ShowDialog()
+
+                        If result = DialogResult.OK Then
+                            For Each fila As DataGridViewRow In dtgvp.Rows
+                                If fila.Cells(1).Selected Then
+                                    fila.Cells("pdf").Value = folder.FileName
+                                End If
+                            Next
+
+
+
+
+                            cnn.Open()
+                            Dim cmd As New SqlCommand("UPDATE [Asahi].[dbo].[Com_ProvisionesPrincipal] SET pdf = @Ruta  WHERE Id_provision = @ID ", cnn)
+                            'Dim cmd1 As New SqlCommand("UPDATE [AsahiSystem].[dbo].[Oc_Conta3] SET Ruta = @Ruta  WHERE ID = @ID ", conexion)
+                            Dim respuesta As String
+
+                            Try
+                                For Each fila In dtgvp.Rows
+                                    If fila.Cells(1).Selected Then
+
+                                        cmd.Parameters.Clear()
+
+                                        'cmd1.Parameters.Clear()
+
+                                        cmd.Parameters.Add("@ID", SqlDbType.Int).Value = (fila.Cells("Recepcion").Value)
+                                        cmd.Parameters.Add("@Ruta", SqlDbType.Text).Value = (fila.Cells("pdf").Value)
+                                        'cmd1.Parameters.Add("@ID", SqlDbType.Int).Value = txt_id.Text.ToString
+                                        'cmd1.Parameters.Add("@Ruta", SqlDbType.Text).Value = (fila.Cells("Ruta").Value)
+
+                                        cmd.ExecuteNonQuery()
+                                        'cmd1.ExecuteNonQuery()
+
+
+                                    End If
+
+                                Next
+                                respuesta = "Guardado correctamente"
+
+                                MessageBox.Show(respuesta)
+
+                            Catch ex As Exception
+                                MessageBox.Show("Salió sin guardar ningún documento", "¡Aviso!")
+                            Finally
+                                cnn.Close()
+                            End Try
+
+                        Else
+                            MessageBox.Show("Salió sin guardar ningún documento", "¡Aviso!")
+
+                        End If
+
+
+                    End If
+                    colores()
 
                 End If
 
@@ -490,7 +548,64 @@ Public Class RequerimientosRecepcionesPO
 
         If e.ColumnIndex = 20 Then
             var_filtro = 1
-            MessageBox.Show("PDF")
+            If Me.dtgvp.Columns(e.ColumnIndex).Name = "PDF" Then
+
+                Dim folder As New OpenFileDialog
+                Dim result As DialogResult = folder.ShowDialog()
+
+                If result = DialogResult.OK Then
+                    For Each fila As DataGridViewRow In dtgvp.Rows
+                        If fila.Cells(1).Selected Then
+                            fila.Cells("pdf").Value = folder.FileName
+                        End If
+                    Next
+
+
+
+
+                    cnn.Open()
+                    Dim cmd As New SqlCommand("UPDATE [Asahi].[dbo].[Com_ProvisionesPrincipal] SET pdf = @Ruta  WHERE Id_provision = @ID ", cnn)
+                    'Dim cmd1 As New SqlCommand("UPDATE [AsahiSystem].[dbo].[Oc_Conta3] SET Ruta = @Ruta  WHERE ID = @ID ", conexion)
+                    Dim respuesta As String
+
+                    Try
+                        For Each fila In dtgvp.Rows
+                            If fila.Cells(1).Selected Then
+
+                                cmd.Parameters.Clear()
+
+                                'cmd1.Parameters.Clear()
+
+                                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = (fila.Cells("Recepcion").Value)
+                                cmd.Parameters.Add("@Ruta", SqlDbType.Text).Value = (fila.Cells("pdf").Value)
+                                'cmd1.Parameters.Add("@ID", SqlDbType.Int).Value = txt_id.Text.ToString
+                                'cmd1.Parameters.Add("@Ruta", SqlDbType.Text).Value = (fila.Cells("Ruta").Value)
+
+                                cmd.ExecuteNonQuery()
+                                'cmd1.ExecuteNonQuery()
+
+
+                            End If
+
+                        Next
+                        respuesta = "Guardado correctamente"
+
+                        MessageBox.Show(respuesta)
+
+                    Catch ex As Exception
+                        MessageBox.Show("Salió sin guardar ningún documento", "¡Aviso!")
+                    Finally
+                        cnn.Close()
+                    End Try
+
+                Else
+                    MessageBox.Show("Salió sin guardar ningún documento", "¡Aviso!")
+
+                End If
+
+
+            End If
+            colores()
 
         End If
 

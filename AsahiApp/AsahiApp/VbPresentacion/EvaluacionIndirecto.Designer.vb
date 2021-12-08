@@ -50,6 +50,7 @@ Partial Class EvaluacionIndirecto
         Me.lbl2 = New System.Windows.Forms.Label()
         Me.lbl1 = New System.Windows.Forms.Label()
         Me.gpx_incidencias = New System.Windows.Forms.GroupBox()
+        Me.lbl_amonestacionesd = New System.Windows.Forms.Label()
         Me.lbl_puntajeRetardo = New System.Windows.Forms.Label()
         Me.lbl_puntajePSG = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
@@ -129,7 +130,6 @@ Partial Class EvaluacionIndirecto
         Me.Label35 = New System.Windows.Forms.Label()
         Me.btn_evaluar3 = New System.Windows.Forms.Button()
         Me.dtgvtest = New System.Windows.Forms.DataGridView()
-        Me.lbl_amonestacionesd = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.gpx_incidencias.SuspendLayout()
         CType(Me.pbx, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -417,6 +417,17 @@ Partial Class EvaluacionIndirecto
         Me.gpx_incidencias.TabStop = False
         Me.gpx_incidencias.Text = "Kárdex de incidencias"
         '
+        'lbl_amonestacionesd
+        '
+        Me.lbl_amonestacionesd.AutoSize = True
+        Me.lbl_amonestacionesd.BackColor = System.Drawing.Color.SteelBlue
+        Me.lbl_amonestacionesd.ForeColor = System.Drawing.Color.White
+        Me.lbl_amonestacionesd.Location = New System.Drawing.Point(458, 110)
+        Me.lbl_amonestacionesd.Name = "lbl_amonestacionesd"
+        Me.lbl_amonestacionesd.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_amonestacionesd.TabIndex = 269
+        Me.lbl_amonestacionesd.Text = "0"
+        '
         'lbl_puntajeRetardo
         '
         Me.lbl_puntajeRetardo.AutoSize = True
@@ -607,6 +618,7 @@ Partial Class EvaluacionIndirecto
         Me.Button1.TabIndex = 246
         Me.Button1.Text = "Revisión"
         Me.Button1.UseVisualStyleBackColor = False
+        Me.Button1.Visible = False
         '
         'lbl_r
         '
@@ -1436,17 +1448,6 @@ Partial Class EvaluacionIndirecto
         Me.dtgvtest.RowHeadersVisible = False
         Me.dtgvtest.Size = New System.Drawing.Size(408, 332)
         Me.dtgvtest.TabIndex = 255
-        '
-        'lbl_amonestacionesd
-        '
-        Me.lbl_amonestacionesd.AutoSize = True
-        Me.lbl_amonestacionesd.BackColor = System.Drawing.Color.SteelBlue
-        Me.lbl_amonestacionesd.ForeColor = System.Drawing.Color.White
-        Me.lbl_amonestacionesd.Location = New System.Drawing.Point(458, 110)
-        Me.lbl_amonestacionesd.Name = "lbl_amonestacionesd"
-        Me.lbl_amonestacionesd.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_amonestacionesd.TabIndex = 269
-        Me.lbl_amonestacionesd.Text = "0"
         '
         'EvaluacionIndirecto
         '

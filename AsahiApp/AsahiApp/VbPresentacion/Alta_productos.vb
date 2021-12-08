@@ -161,7 +161,7 @@ Public Class Alta_productos
             command.ExecuteNonQuery()
 
             Dim comando As SqlCommand = New SqlCommand
-            comando.CommandText = " SELECT (concat('COAL', RIGHT('00000' + Ltrim(Rtrim((select top 1 convert(int,substring(codigo,5,20)) from [Asahi].[dbo].[Com_productos] order by convert(int,substring(codigo,5,20)) desc))),5)))"
+            comando.CommandText = "   SELECT (concat('COP', (select top 1 convert(int,substring(codigo,4,20)) from [Asahi].[dbo].[Com_productos] ORDER BY convert(int,substring(codigo,4,20)) desc )) )"
             comando.Connection = cnn
             cnn.Close()
             cnn.Open()

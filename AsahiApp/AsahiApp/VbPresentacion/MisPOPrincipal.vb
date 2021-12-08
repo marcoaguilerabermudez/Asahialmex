@@ -41,7 +41,9 @@ Public Class MisPOPrincipal
         If Strings.Left(conexion.getIp(), 6) = "172.16" Then
 
             Me.cadenaConex = conexion.conexionCont
+
             Me.cnn = conexion.conexionContpaq2
+
             Me.cnn2 = conexion.cadenaConexExpress1
             Me.cadenaCExpress = conexion.cadenaConexExpress
 
@@ -65,7 +67,7 @@ Public Class MisPOPrincipal
             btn_fil2.Enabled = True
 
             txt_no.Text = Modulo_verpo.id
-            cbx_serie.Text = "A"
+            cbx_serie.Text = Modulo_verpo.serie
             var = 0
 
 
@@ -155,7 +157,7 @@ Public Class MisPOPrincipal
     End Sub
 
 
-    Sub cargagrid()
+    Public Sub cargagrid()
 
         Try
             dtgvp.Columns.Remove("X")
@@ -449,6 +451,7 @@ Public Class MisPOPrincipal
     Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
         accion = 2
         procesar()
+
     End Sub
 
     Private Sub btn_cerrar_Click(sender As Object, e As EventArgs) Handles btn_cerrar.Click
@@ -491,6 +494,9 @@ Public Class MisPOPrincipal
             declare @var1 as int
             set @var1 = @var 
 
+    declare @observaciones as varchar(50)
+    set @observaciones = '" & txt_cancel.Text & "'
+
             if @var1 = 1
             begin
             update [Asahi].[dbo].[com_po_principal] set estado = 1
@@ -505,6 +511,7 @@ Public Class MisPOPrincipal
             t2
             SET 
 	        t2.Estado = 0 , t2.oc = 0
+
             FROM [Asahi].[dbo].[Com_RequerimientoPrincipal] t1
             JOIN [Asahi].[dbo].[Com_RequerimientoMovimiento] t2
 	        on t2.Id_requerimiento = t1.Id_requerimientoP
@@ -528,7 +535,7 @@ Public Class MisPOPrincipal
 	         on poprin.id = pomov.id_po
              WHERE pomov.id_po = @id and poprin.estado in (1,0) 
 
-            update [Asahi].[dbo].[com_po_principal] set estado = 2
+            update [Asahi].[dbo].[com_po_principal] set estado = 2, observaciones = concat(observaciones,' ', @observaciones)
             where id = @id and estado in (1,0)
             
 
@@ -609,6 +616,7 @@ Public Class MisPOPrincipal
 
 
                 cargagrid()
+                txt_cancel.Clear()
             Catch ex As Exception
                 MessageBox.Show("Error al actualizar registro, consulte al administrador")
                 MessageBox.Show(ex.ToString)
@@ -677,6 +685,8 @@ Module Modulo_vistarecepprincipal
     Public e_uuid As String
     Public e_folio As String
     Public e_estadoprov As Integer
+    Public OrigenCancel As Integer
+
 
 
 

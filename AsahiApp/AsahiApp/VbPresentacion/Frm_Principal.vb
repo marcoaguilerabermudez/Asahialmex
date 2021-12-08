@@ -65,7 +65,7 @@ Public Class Frm_Principal
             SolicitudToolStripMenuItem1.Enabled = True
             ValidaciónRHToolStripMenuItem.Enabled = True
             ValidaciónRHToolStripMenuItem1.Enabled = True
-            ActualizaRegistrosToolStripMenuItem.Enabled = True
+            ' ActualizaRegistrosToolStripMenuItem.Enabled = True
             MedidasDisciplinariasToolStripMenuItem.Enabled = True
             ' EvaluacionesToolStripMenuItem1.Enabled = True
 
@@ -791,7 +791,6 @@ Public Class Frm_Principal
         Req_provisiones.Show()
 
     End Sub
-
 
 
 

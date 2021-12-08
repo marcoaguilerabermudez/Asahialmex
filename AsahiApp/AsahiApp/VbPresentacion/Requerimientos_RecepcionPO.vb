@@ -1,5 +1,11 @@
 ﻿Imports System.Data.SqlClient
 
+''Variable 'excep'
+'0 -> Proveedores comunes
+'1 -> Proveedores que puerden tomar facturas de diferentes emisores
+'2 -> Proveedores en los que se debe cuadrar el monto de la factura con la PO
+
+
 Public Class Requerimientos_RecepcionPO
     Dim var_filtro As Integer
     Dim depto As String
@@ -17,6 +23,7 @@ Public Class Requerimientos_RecepcionPO
     Dim filtro As Integer
     Dim y As Integer
     Dim id_po As Integer
+    Dim excep As Integer
 
 
     Sub New(id As Integer, depto As String, permiso As Integer, nombre As String, p_vales As Integer)
@@ -147,7 +154,9 @@ Public Class Requerimientos_RecepcionPO
             dtgvp.Columns("RFC").Visible = False
             dtgvp.Columns("id_cotizacion").Visible = False
             dtgvp.Columns("id_req").Visible = False
-
+            dtgvp.Columns("Departamento").Visible = False
+            dtgvp.Columns("Familia").Visible = False
+            dtgvp.Columns("rete_4").Visible = False
 
 
             cnn.Close()
@@ -166,6 +175,7 @@ Public Class Requerimientos_RecepcionPO
             txt_busca.Focus()
 
             If dtgvp.RowCount < 1 Then
+
                 MessageBox.Show("No hay ningún registro disponible para recepción con los criterios de búsqueda seleccionados", "¡Alerta!")
                 dtgvp.Visible = False
                 lbl_po.Text = ""
@@ -271,18 +281,18 @@ Public Class Requerimientos_RecepcionPO
 begin
 
 
-SELECT  upper([uid]) as 'f'
-  FROM [Asahi].[dbo].[XML_principal]
-  WHERE emi_rfc = '" & lbl_rfc.Text & "' AND id_provision is null
+SELECT  upper([uuid]) as 'f'
+  FROM [Asahi].[dbo].[Netsuite_XML]
+  WHERE RFCEmisor = '" & lbl_rfc.Text & "' AND id_provision is null
 
   end 
   else if " & filtro & "  = 1
   begin 
 
 
-  SELECT upper([folio]) as 'f'
-  FROM [Asahi].[dbo].[XML_principal]
-  WHERE emi_rfc = '" & lbl_rfc.Text & "' and id_provision is null
+  SELECT upper([Folio]) as 'f'
+  FROM [Asahi].[dbo].[Netsuite_XML]
+  WHERE RFCEmisor = '" & lbl_rfc.Text & "' and id_provision is null
   end  ", cnn)
         If cnn.State = ConnectionState.Closed Then cnn.Open()
         Dim ds As New DataSet
@@ -313,8 +323,8 @@ SELECT  upper([uid]) as 'f'
             cnn.Open()
             Dim SSel As String
 
-
-
+            '  " & lbl_total.Text & "
+            '   " & lbl_subtotalpo.Text & "
             SSel = ("
 
 
@@ -329,41 +339,52 @@ if @tipo = 0
 begin
 
 
-SELECT  [id]
-      ,upper([uid])
-      ,[emi_rfc]
-      ,[nombre_emisor]
-      ,[serie]
+SELECT  [UUID]
+      ,upper([UUID])
+      ,[RFCEmisor]
+      ,[RazonSocialEmisor]
+      ,'a'
       ,[folio]
-      ,[fecha]
-      ,[fecha_timbrado]
+      ,[FechaTimbrado]
+      ,[FechaTimbrado]
       ,[id_provision]
       ,[estado]
       ,[moneda]
-      ,[total]
-      ,[subtotal]
-  FROM [Asahi].[dbo].[XML_principal]
-  WHERE [Uid] = @selec
+      ,
+[total] 
 
+,
+[subtotal]
+
+  FROM [Asahi].[dbo].[Netsuite_XML]
+  WHERE [UUID] = @selec
   end 
+
+
   else if @tipo = 1
   begin 
-  SELECT  [id]
-      ,upper([uid])
-       ,[emi_rfc]
-      ,[nombre_emisor]
-      ,[serie]
+  SELECT  [UUID]
+      ,upper([UUID])
+      ,[RFCEmisor]
+      ,[RazonSocialEmisor]
+      ,'a'
       ,[folio]
-      ,[fecha]
-      ,[fecha_timbrado]
+      ,[FechaTimbrado]
+      ,[FechaTimbrado]
       ,[id_provision]
       ,[estado]
       ,[moneda]
-      ,[total]
-      ,[subtotal]
-  FROM [Asahi].[dbo].[XML_principal]
+      ,
+[total] 
+
+ ,
+[subtotal]
+
+  FROM [Asahi].[dbo].[Netsuite_XML]
   WHERE folio = @selec
-  end ")
+  end 
+
+")
 
             Dim da As SqlDataAdapter
             Dim ds As New DataSet
@@ -381,12 +402,11 @@ SELECT  [id]
 
 
 
-
             cnn.Close()
 
 
         Catch ex As Exception
-            'MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.ToString)
             MessageBox.Show("El registro que está tecleando es incorrecto, revise de nueva cuenta", "¡Aviso!")
 
             txt_busca.Clear()
@@ -500,7 +520,7 @@ SELECT  [id]
 
 
     Private Sub ValidarCantidadRequerida(Objeto As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellEndEdit, dtgvp.CellContentClick
-        If e.ColumnIndex = 32 Then
+        If e.ColumnIndex = 31 Then
             Try
                 Cantidad_Requerida = CDbl(dtgvp.Rows(e.RowIndex).Cells("Cantidad x recibir").Value)
                 dtgvp.Rows(e.RowIndex).Cells("Totalx").Value = dtgvp.Rows(e.RowIndex).Cells("Recibido").Value * dtgvp.Rows(e.RowIndex).Cells("Total Unitario").Value
@@ -549,12 +569,30 @@ SELECT  [id]
 
 
             If lbl_moneda.Text = "MEX" Then
+                If excep = 0 Then
 
-                If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.99 Then
-                    MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
-                ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.99 Then
-                    MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
-                Else
+
+
+                    If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.99 Then
+
+                        MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+                    ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.99 Then
+                        MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 99 centavos)", "¡Aviso!")
+                    Else
+                        Dim Pregunta As Integer
+
+                        Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+                        If Pregunta = vbYes Then
+                            crearrecepcion()
+                            insertarfilas()
+                        Else
+                            MessageBox.Show("Acción no completada", "¡Aviso!")
+                        End If
+                    End If
+
+                ElseIf excep = 2 Then
+
                     Dim Pregunta As Integer
 
                     Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
@@ -565,15 +603,29 @@ SELECT  [id]
                     Else
                         MessageBox.Show("Acción no completada", "¡Aviso!")
                     End If
+
                 End If
 
             ElseIf lbl_moneda.Text = "USD" Then
+                If excep = 0 Then
 
-                If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.05 Then
-                    MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
-                ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.05 Then
-                    MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
-                Else
+                    If CDbl(lbl_totalfact.Text) - CDbl(lbl_t.Text) > 0.05 Then
+                        MessageBox.Show("El total de la factura es mayor al total de lo que está recibiendo, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+                    ElseIf CDbl(lbl_t.Text) - CDbl(lbl_totalfact.Text) > 0.05 Then
+                        MessageBox.Show("El total de lo que estpa recibiendo es mayor al total de la factura, revise de nuevo sus cantidades y documentos. (Recuerde que tiene una tolerancia de 5 centavos)", "¡Aviso!")
+                    Else
+                        Dim Pregunta As Integer
+
+                        Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
+
+                        If Pregunta = vbYes Then
+                            crearrecepcion()
+                            insertarfilas()
+                        Else
+                            MessageBox.Show("Acción no completada", "¡Aviso!")
+                        End If
+                    End If
+                ElseIf excep = 2 Then
                     Dim Pregunta As Integer
 
                     Pregunta = MsgBox("¿Desea cargar el registro con las cantidades que ha registrado?", vbYesNo + vbExclamation + vbDefaultButton2, "Crear documento de provisión")
@@ -584,11 +636,11 @@ SELECT  [id]
                     Else
                         MessageBox.Show("Acción no completada", "¡Aviso!")
                     End If
+
+
                 End If
 
             End If
-
-
         Else
 
             Dim Pregunta As Integer
@@ -636,6 +688,7 @@ SELECT  [id]
             serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie_po").Value.ToString()
             lbl_rfc.Text = Me.dtgvp.Rows(e.RowIndex).Cells("RFC").Value.ToString()
             id_po = Me.dtgvp.Rows(e.RowIndex).Cells("id_po").Value.ToString()
+            excep = Me.dtgvp.Rows(e.RowIndex).Cells("rete_4").Value.ToString()
         Catch
         End Try
 
@@ -658,7 +711,7 @@ SELECT  [id]
             serie = Me.dtgvp.Rows(e.RowIndex).Cells("serie_po").Value.ToString()
             lbl_rfc.Text = Me.dtgvp.Rows(e.RowIndex).Cells("RFC").Value.ToString()
             id_po = Me.dtgvp.Rows(e.RowIndex).Cells("id_po").Value.ToString()
-
+            excep = Me.dtgvp.Rows(e.RowIndex).Cells("rete_4").Value.ToString()
         Catch
         End Try
 
@@ -675,15 +728,11 @@ SELECT  [id]
             Dim Total As Double
             Dim Total1 As Double
 
-
-
-
             Dim Col As Integer = Me.dtgvp.CurrentCell.ColumnIndex
             For Each row As DataGridViewRow In Me.dtgvp.Rows
                 If row.Cells("x").Value = True Then
                     Total += Val(row.Cells("Totals").Value)
                     Total1 += Val(row.Cells("Totalx").Value)
-
 
                 End If
             Next
@@ -691,11 +740,6 @@ SELECT  [id]
 
             lbl_neto.Text = Format(CType(Total, Decimal), "#,##0.00")
             lbl_t.Text = Format(CType(Total1, Decimal), "#,##0.00")
-
-
-
-
-
 
         Catch
         End Try
@@ -790,9 +834,7 @@ SELECT  [id]
     End Sub
 
     Private Sub btn_doc_Click(sender As Object, e As EventArgs) Handles btn_doc.Click
-
         muestraetiqueta()
-
     End Sub
 
 
@@ -810,6 +852,7 @@ SELECT  [id]
             lbl_foliofact.Enabled = False
         End If
     End Sub
+
 
     Private Sub txt_busca_TextChanged(sender As Object, e As EventArgs) Handles txt_busca.TextChanged
         If txt_busca.Text = "" Then
@@ -849,8 +892,14 @@ SELECT  [id]
                 agrega.Parameters.Add("@id_po", SqlDbType.Int).Value = id_po
                 agrega.Parameters.Add("@f_factura", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
                 agrega.Parameters.Add("@f_pago", SqlDbType.Date).Value = dtp2.Value.ToShortDateString
-                agrega.Parameters.Add("@subtotal", SqlDbType.Money).Value = lbl_subtotalfact.Text
-                agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_totalfact.Text
+                If excep = 0 Then
+                    agrega.Parameters.Add("@subtotal", SqlDbType.Money).Value = lbl_subtotalfact.Text
+                    agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_totalfact.Text
+                ElseIf excep = 2 Then
+                    agrega.Parameters.Add("@subtotal", SqlDbType.Money).Value = lbl_subtotalpo.Text
+                    agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_total.Text
+                End If
+
                 agrega.Parameters.Add("@moneda", SqlDbType.VarChar, 3).Value = lbl_moneda.Text
                 agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = lbl_uuid.Text
                 agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
