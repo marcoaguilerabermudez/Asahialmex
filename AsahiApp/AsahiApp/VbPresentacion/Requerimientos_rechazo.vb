@@ -10,6 +10,7 @@ Public Class Requerimientos_rechazo
     Dim permiso As Integer
     Dim nombre As String
     Dim p_vales As Integer
+    Dim origen As Integer
 
     Public cnn As SqlConnection
     Public cnn2 As SqlConnection
@@ -24,6 +25,7 @@ Public Class Requerimientos_rechazo
         nombre = Modulo_verpo.e_nombre
         p_vales = Modulo_verpo.e_p_vales
         txt_comen.Text = Modulo_verpo.e_rechazo
+
 
 
         If p_vales = 0 Then
@@ -48,7 +50,6 @@ Public Class Requerimientos_rechazo
             Me.cadenaCExpress = conexion.cadenaConexExpressFor
 
         End If
-
 
 
 
@@ -111,8 +112,12 @@ Public Class Requerimientos_rechazo
 
     Private Sub Form1_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
 
+
         Dim Req_mov As New Requerimientos_movimientos(id, depto, permiso, nombre, p_vales)
-        Req_mov.Show()
+            Req_mov.Show()
+
+
+
 
 
     End Sub

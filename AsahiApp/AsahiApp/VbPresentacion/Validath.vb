@@ -125,6 +125,7 @@ Public Class Validath
 update [AsahiSystem].[dbo].[Rh_IncidenciasPrincipal] set incidencia = @inci, ValSuper = 1 , timestampval = getdate()
 ,TE = 
 case
+
 when @te = 0.25 then 15
 when @te = 0.50 then 30
 when @te = 0.75 then 45
@@ -133,7 +134,7 @@ when @te = 1.25 then 75
 when @te = 1.50 then 90
 when @te = 1.75 then 105
 when @te = 2.00 then 120
-when @te = 2.25 then 135
+when @te = 2.25 then 135 
 when @te = 2.50 then 150
 when @te = 2.75 then 165
 when @te = 3.00 then 180
@@ -177,6 +178,7 @@ end
 where Id_RhIncidenciasprincipal = @id and valsuper in (0,1)
 
 	update solicitud set Parcial = CASE
+      WHEN [TE] < 60 then 0  
 	  WHEN [TE] BETWEEN 60 AND 74 THEN 1
 	  WHEN [TE] BETWEEN 75 AND 89    THEN 1.25
 	  WHEN [TE] BETWEEN 90 AND 104  THEN 1.5

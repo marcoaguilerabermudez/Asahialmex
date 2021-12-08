@@ -193,9 +193,11 @@ Public Class Requerimientos_principal
                 MessageBox.Show("No tiene ningún documento anexado", "¡Aviso!")
             End Try
         Else
-            lbl_req.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
-            colores()
-
+            Try
+                lbl_req.Text = Me.dtgvp.Rows(e.RowIndex).Cells(1).Value.ToString()
+                colores()
+            Catch
+            End Try
 
         End If
     End Sub

@@ -79,7 +79,7 @@ Partial Class Requerimientos_MovimientosPO
         Me.dtgvp.Location = New System.Drawing.Point(4, 162)
         Me.dtgvp.Name = "dtgvp"
         Me.dtgvp.RowHeadersVisible = False
-        Me.dtgvp.Size = New System.Drawing.Size(780, 376)
+        Me.dtgvp.Size = New System.Drawing.Size(947, 376)
         Me.dtgvp.TabIndex = 493
         Me.dtgvp.Visible = False
         '
@@ -254,7 +254,7 @@ Partial Class Requerimientos_MovimientosPO
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.LightBlue
-        Me.Panel4.Location = New System.Drawing.Point(551, 32)
+        Me.Panel4.Location = New System.Drawing.Point(820, 32)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(32, 13)
         Me.Panel4.TabIndex = 526
@@ -262,7 +262,7 @@ Partial Class Requerimientos_MovimientosPO
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Location = New System.Drawing.Point(551, 12)
+        Me.Panel3.Location = New System.Drawing.Point(820, 12)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(32, 13)
         Me.Panel3.TabIndex = 525
@@ -273,7 +273,7 @@ Partial Class Requerimientos_MovimientosPO
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(584, 36)
+        Me.Label1.Location = New System.Drawing.Point(853, 36)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 9)
         Me.Label1.TabIndex = 524
@@ -285,7 +285,7 @@ Partial Class Requerimientos_MovimientosPO
         Me.Label4.BackColor = System.Drawing.SystemColors.Control
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(584, 15)
+        Me.Label4.Location = New System.Drawing.Point(853, 15)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 9)
         Me.Label4.TabIndex = 523
@@ -295,7 +295,7 @@ Partial Class Requerimientos_MovimientosPO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(793, 550)
+        Me.ClientSize = New System.Drawing.Size(960, 550)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Label1)

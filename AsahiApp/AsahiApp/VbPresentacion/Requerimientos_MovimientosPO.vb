@@ -67,15 +67,21 @@ Public Class Requerimientos_MovimientosPO
     Sub colores()
 
         Try
+
             For Each row As DataGridViewRow In Me.dtgvp.Rows
 
                 If row.Cells(“Estado”).Value = 0 Then
+
                     row.DefaultCellStyle.BackColor = Color.White
+
                 ElseIf row.Cells(“Estado”).Value = 1 Then
+
                     row.DefaultCellStyle.BackColor = Color.LightBlue
+
                 End If
             Next
         Catch
+
         End Try
     End Sub
 
@@ -99,7 +105,9 @@ Public Class Requerimientos_MovimientosPO
             cnn.Open()
 
             Dim da As New SqlDataAdapter("Sp_muestrarecepcion", cnn)
+
             da.SelectCommand.CommandType = CommandType.StoredProcedure
+
             da.SelectCommand.Parameters.AddWithValue("@codigo", codigo)
 
             da.SelectCommand.Parameters.AddWithValue("@serie", serie)
@@ -166,12 +174,12 @@ Public Class Requerimientos_MovimientosPO
             dtgvp.Columns("cod_po").Visible = False
             dtgvp.Columns("serie_po").Visible = False
             dtgvp.Columns("Estado").Visible = False
-            dtgvp.Columns("Precio").Visible = False
+            ' dtgvp.Columns("Precio").Visible = False
             dtgvp.Columns("Recibido").Visible = False
             dtgvp.Columns("RFC").Visible = False
             dtgvp.Columns("id_cotizacion").Visible = False
             dtgvp.Columns("id_req").Visible = False
-
+            dtgvp.Columns("rete_4").Visible = False
 
             cnn.Close()
 

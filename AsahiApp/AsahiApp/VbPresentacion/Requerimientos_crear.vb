@@ -449,7 +449,7 @@ declare @FolioVale as integer
 set @FolioVale = (select top 1 Id_requerimientoP from [Asahi].[dbo].[Com_RequerimientoPrincipal] order by Id_requerimientoP desc) + 1
 
 insert into [Asahi].[dbo].[Com_RequerimientoPrincipal] values
-(@id, @depto, getdate(), @comentarios, 0, @documento,null)
+(@id, @depto, getdate(), @comentarios, 0, @documento,null,null)
 ", cnn)
 
 

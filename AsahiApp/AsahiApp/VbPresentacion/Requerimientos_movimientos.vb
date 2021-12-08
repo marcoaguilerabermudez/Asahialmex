@@ -118,10 +118,11 @@ Public Class Requerimientos_movimientos
         End If
 
         AgregarColumna()
+
         cargagrid()
 
         areas()
-        agregarcolumna2()
+
 
 
         Dim cmd As New SqlCommand("select razon_social from [Asahi].[dbo].[com_proveedores] ", cnn)
@@ -195,6 +196,8 @@ Public Class Requerimientos_movimientos
             dtgvp.Columns(28).Visible = False
             dtgvp.Columns(29).Visible = False
             dtgvp.Columns(30).Visible = False
+            dtgvp.Columns(31).Visible = False
+            dtgvp.Columns(32).Visible = False
             cnn.Close()
 
         Catch
@@ -241,7 +244,7 @@ Public Class Requerimientos_movimientos
 
     Private Sub dtgvp_CellContentClick0(sender As Object, e As DataGridViewCellEventArgs) Handles dtgvp.CellClick
 
-        If e.ColumnIndex = 31 Then
+        If e.ColumnIndex = 33 Then
             Try
                 System.Diagnostics.Process.Start(Me.dtgvp.Rows(e.RowIndex).Cells("doc").Value.ToString())
             Catch ex As Exception
@@ -266,7 +269,8 @@ Public Class Requerimientos_movimientos
                 lbl_retenciones.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(15).Value.ToString(), Decimal), "#,##0.00")
                 lbl_descuento.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(16).Value.ToString(), Decimal), "#,##0.00")
                 lbl_total.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(17).Value.ToString(), Decimal), "#,##0.00")
-                lbl_oc.Text = Me.dtgvp.Rows(e.RowIndex).Cells(18).Value.ToString()
+                lbl_oc.Text = Me.dtgvp.Rows(e.RowIndex).Cells(31).Value.ToString()
+                lbl_serie.Text = Me.dtgvp.Rows(e.RowIndex).Cells(32).Value.ToString()
                 id_mov = Me.dtgvp.Rows(e.RowIndex).Cells(19).Value.ToString()
                 estado_mov = Me.dtgvp.Rows(e.RowIndex).Cells(20).Value.ToString()
                 rechazo = Me.dtgvp.Rows(e.RowIndex).Cells(28).Value.ToString()
@@ -362,7 +366,8 @@ Public Class Requerimientos_movimientos
         lbl_retenciones.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(15).Value.ToString(), Decimal), "#,##0.00")
         lbl_descuento.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(16).Value.ToString(), Decimal), "#,##0.00")
         lbl_total.Text = Format(CType(Me.dtgvp.Rows(e.RowIndex).Cells(17).Value.ToString(), Decimal), "#,##0.00")
-        lbl_oc.Text = Me.dtgvp.Rows(e.RowIndex).Cells(18).Value.ToString()
+        lbl_oc.Text = Me.dtgvp.Rows(e.RowIndex).Cells(31).Value.ToString()
+        lbl_serie.Text = Me.dtgvp.Rows(e.RowIndex).Cells(32).Value.ToString()
         id_mov = Me.dtgvp.Rows(e.RowIndex).Cells(19).Value.ToString()
         estado_mov = Me.dtgvp.Rows(e.RowIndex).Cells(20).Value.ToString()
         cbx_fam.Text = Me.dtgvp.Rows(e.RowIndex).Cells(30).Value.ToString()
@@ -664,7 +669,7 @@ end"
                             Try
                                 dtgvp.CurrentCell = dtgvp.Rows(var_fila + 1).Cells(0)
                             Catch ex As Exception
-
+                                MessageBox.Show(ex.ToString)
                             End Try
 
                             Try
@@ -922,7 +927,7 @@ delete from [Asahi].[dbo].[Temp_MovimientoRequerimiento]
 
             Try
                 Modulo_verpo.id = lbl_oc.Text
-                Modulo_verpo.serie = "A"
+                Modulo_verpo.serie = lbl_serie.Text
                 Modulo_verpo.tipo = 0
                 Dim Req_misPo As New MisPOPrincipal(id, depto, permiso, nombre, 0)
 

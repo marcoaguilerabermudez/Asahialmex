@@ -51,7 +51,7 @@ Public Class Requerimientos_PO
         'cargagrid()
         'agregarcolumna2()
         id_moneada = 0
-
+        tc()
     End Sub
 
 
@@ -64,6 +64,52 @@ Public Class Requerimientos_PO
         Me.nombre = nombre
         Me.p_vales = p_vales
 
+    End Sub
+
+
+
+    Sub tc()
+
+        Try
+            Dim Dt As DataTable
+
+            Dim Da As New SqlDataAdapter
+            Dim Cmd As New SqlCommand
+
+
+            With Cmd
+                .CommandType = CommandType.Text
+                .CommandText = "
+
+
+
+SELECT TOP 1 [id]
+      ,[fecha]
+      ,[moneda]
+      ,[tc]
+  FROM [Asahi].[dbo].[com_tc]
+  where moneda = 2
+
+ 
+"
+                .Connection = cnn
+            End With
+
+            Da.SelectCommand = Cmd
+            Dt = New DataTable
+            Da.Fill(Dt)
+
+
+            Dim ds As New DataSet
+            Da.Fill(ds)
+
+            lbl_usd.Text = ds.Tables(0).Rows(0).Item(3)
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
     End Sub
 
 
@@ -527,7 +573,7 @@ SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(
         Dim agrega As SqlCommand = New SqlCommand("  
  insert into [Asahi].[dbo].[com_po_principal] values ((SELECT TOP 1 [codigo] FROM [Asahi].[dbo].[com_po_principal] WHERE serie <> 'N'  ORDER BY codigo desc) + 1 , 'A', @proveedor, @moneda, @tc, getdate(), @fecha_solicitud, @fecha_entrega,
   (SELECT ltrim(rtrim([id])) FROM [Asahi].[dbo].[cat_Bancos]  where  ltrim(rtrim([valor])) = @banco) , @cuenta, @clabe, @subtotal, @imp_ret,
-   @imp_tras, @descuento, @total, @observaciones, 0, @id_usuario, null,null)
+   @imp_tras, @descuento, @total, @observaciones, 0, @id_usuario, null,0)
 ", cnn)
 
 
@@ -544,7 +590,7 @@ SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(
             If id_moneada = 1 Then
                 agrega.Parameters.Add("@tc", SqlDbType.Money).Value = 1
             ElseIf id_moneada = 2 Then
-                agrega.Parameters.Add("@tc", SqlDbType.Money).Value = 1 'lbl_usd.text 
+                agrega.Parameters.Add("@tc", SqlDbType.Money).Value = lbl_usd.Text
             ElseIf id_moneada = 3 Then
                 agrega.Parameters.Add("@tc", SqlDbType.Money).Value = 1 'lbl_yen.text 
             End If

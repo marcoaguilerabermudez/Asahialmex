@@ -905,6 +905,7 @@ end
     End Sub
 
     Private Sub btn_solicitar_Click(sender As Object, e As EventArgs) Handles btn_solicitar.Click
+
         If txt_motivo.Text = "" Then
             MessageBox.Show("Debe poner un motivo que justifique su tiempo extra", "¡Aviso!")
         Else
@@ -923,6 +924,7 @@ end
         Muestragrid()
         'muestraetiqueta()
     End Sub
+
 
     Private Sub cbx_textra_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_textra.SelectedIndexChanged
         If cbx_textra.Text = "Matutino" Then
