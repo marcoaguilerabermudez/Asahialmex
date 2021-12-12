@@ -45,13 +45,17 @@ Public Class MisPOPrincipal
             Me.cnn = conexion.conexionContpaq2
 
             Me.cnn2 = conexion.cadenaConexExpress1
+
             Me.cadenaCExpress = conexion.cadenaConexExpress
 
         Else
 
             Me.cadenaConex = conexion.cadenaConexFor
+
             Me.cnn = conexion.conexionContpaqFor2
+
             Me.cnn2 = conexion.conexionExpressFor
+
             Me.cadenaCExpress = conexion.cadenaConexExpressFor
 
         End If
@@ -510,7 +514,7 @@ Public Class MisPOPrincipal
             UPDATE 
             t2
             SET 
-	        t2.Estado = 0 , t2.oc = 0
+	        t2.Estado = 1 , t2.oc = 0
 
             FROM [Asahi].[dbo].[Com_RequerimientoPrincipal] t1
             JOIN [Asahi].[dbo].[Com_RequerimientoMovimiento] t2
@@ -538,7 +542,7 @@ Public Class MisPOPrincipal
             update [Asahi].[dbo].[com_po_principal] set estado = 2, observaciones = concat(observaciones,' ', @observaciones)
             where id = @id and estado in (1,0)
             
-
+            
 
             end
 

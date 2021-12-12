@@ -127,9 +127,9 @@ Public Class Requerimientos_CargaXML
 begin
 
 
-SELECT  upper([uid]) as 'f'
-  FROM [Asahi].[dbo].[XML_principal]
-  WHERE emi_rfc = '" & lbl_rfc.Text & "' AND id_provision is null
+SELECT  upper([uuid]) as 'f'
+  FROM [Asahi].[dbo].[Netsuite_XML]
+  WHERE RFCEmisor = '" & lbl_rfc.Text & "' AND id_provision is null
 
   end 
   else if " & filtro & "  = 1
@@ -137,8 +137,8 @@ SELECT  upper([uid]) as 'f'
 
 
   SELECT upper([folio]) as 'f'
-  FROM [Asahi].[dbo].[XML_principal]
-  WHERE emi_rfc = '" & lbl_rfc.Text & "' and id_provision is null
+  FROM [Asahi].[dbo].[Netsuite_XML]
+  WHERE RFCEmisor = '" & lbl_rfc.Text & "' and id_provision is null
   end  ", cnn)
         If cnn.State = ConnectionState.Closed Then cnn.Open()
         Dim ds As New DataSet
@@ -185,39 +185,47 @@ if @tipo = 0
 begin
 
 
-SELECT  [id]
-      ,upper([uid])
-      ,[emi_rfc]
-      ,[nombre_emisor]
-      ,[serie]
+SELECT  [UUID]
+      ,upper([UUID])
+      ,[RFCEmisor]
+      ,[RazonSocialEmisor]
+      ,'a'
       ,[folio]
-      ,[fecha]
-      ,[fecha_timbrado]
+      ,[FechaTimbrado]
+      ,[FechaTimbrado]
       ,[id_provision]
       ,[estado]
       ,[moneda]
-      ,[total]
-      ,[subtotal]
-  FROM [Asahi].[dbo].[XML_principal]
-  WHERE [Uid] = @selec
+      ,
+[total] 
+
+,
+[subtotal]
+
+  FROM [Asahi].[dbo].[Netsuite_XML]
+  WHERE [Uuid] = @selec
 
   end 
   else if @tipo = 1
   begin 
-  SELECT  [id]
-      ,upper([uid])
-      ,[emi_rfc]
-      ,[nombre_emisor]
-      ,[serie]
+SELECT  [UUID]
+      ,upper([UUID])
+      ,[RFCEmisor]
+      ,[RazonSocialEmisor]
+      ,'a'
       ,[folio]
-      ,[fecha]
-      ,[fecha_timbrado]
+      ,[FechaTimbrado]
+      ,[FechaTimbrado]
       ,[id_provision]
       ,[estado]
       ,[moneda]
-      ,[total]
-      ,[subtotal]
-  FROM [Asahi].[dbo].[XML_principal]
+      ,
+[total]  
+
+,
+[subtotal]
+
+  FROM [Asahi].[dbo].[Netsuite_XML]
   WHERE folio = @selec
   end ")
 
@@ -240,7 +248,7 @@ SELECT  [id]
 
 
         Catch ex As Exception
-            '  MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.ToString)
             MessageBox.Show("El registro que está tecleando es incorrecto, revise de nueva cuenta", "¡Aviso!")
             txt_busca.Clear()
             txt_busca.Focus()

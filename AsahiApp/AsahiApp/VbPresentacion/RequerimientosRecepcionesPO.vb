@@ -122,7 +122,7 @@ Public Class RequerimientosRecepcionesPO
             dtgvp.Columns("id_po").Visible = False
             dtgvp.Columns("moneda").Visible = False
             dtgvp.Columns("edo_po").Visible = False
-            dtgvp.Columns("pdf").Visible = False
+            dtgvp.Columns("pdf1").Visible = False
 
             '  cnn.Close()
 
@@ -278,7 +278,7 @@ Public Class RequerimientosRecepcionesPO
         If edo_po = 2 Or edo_po = 3 Then
 
             Try
-                If e.ColumnIndex = 19 Then
+                If e.ColumnIndex = 20 Then
 
                     If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 1 Then
 
@@ -350,7 +350,7 @@ Public Class RequerimientosRecepcionesPO
 
                     End If
 
-                ElseIf e.ColumnIndex = 21 Then
+                ElseIf e.ColumnIndex = 22 Then
 
                     If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value <> 88 Then
                         var_filtro = 0
@@ -374,7 +374,7 @@ Public Class RequerimientosRecepcionesPO
         Else
 
             Try
-                If e.ColumnIndex = 19 Then
+                If e.ColumnIndex = 20 Then
 
                     If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value = 1 Then
 
@@ -446,7 +446,7 @@ Public Class RequerimientosRecepcionesPO
 
                     End If
 
-                ElseIf e.ColumnIndex = 21 Then
+                ElseIf e.ColumnIndex = 22 Then
                     var_filtro = 0
 
                     If dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value <> (88) And dtgvp.Rows(e.RowIndex).Cells("Edo_prov").Value <> (99) Then
@@ -478,7 +478,7 @@ Public Class RequerimientosRecepcionesPO
                     End If
 
 
-                ElseIf e.ColumnIndex = 20 Then
+                ElseIf e.ColumnIndex = 21 Then
                     If Me.dtgvp.Columns(e.ColumnIndex).Name = "PDF" Then
 
                         Dim folder As New OpenFileDialog
@@ -546,68 +546,68 @@ Public Class RequerimientosRecepcionesPO
 
         End If
 
-        If e.ColumnIndex = 20 Then
-            var_filtro = 1
-            If Me.dtgvp.Columns(e.ColumnIndex).Name = "PDF" Then
+        'If e.ColumnIndex = 21 Then
+        '    var_filtro = 1
+        '    If Me.dtgvp.Columns(e.ColumnIndex).Name = "PDF" Then
 
-                Dim folder As New OpenFileDialog
-                Dim result As DialogResult = folder.ShowDialog()
+        '        Dim folder As New OpenFileDialog
+        '        Dim result As DialogResult = folder.ShowDialog()
 
-                If result = DialogResult.OK Then
-                    For Each fila As DataGridViewRow In dtgvp.Rows
-                        If fila.Cells(1).Selected Then
-                            fila.Cells("pdf").Value = folder.FileName
-                        End If
-                    Next
-
-
+        '        If result = DialogResult.OK Then
+        '            For Each fila As DataGridViewRow In dtgvp.Rows
+        '                If fila.Cells(1).Selected Then
+        '                    fila.Cells("pdf").Value = folder.FileName
+        '                End If
+        '            Next
 
 
-                    cnn.Open()
-                    Dim cmd As New SqlCommand("UPDATE [Asahi].[dbo].[Com_ProvisionesPrincipal] SET pdf = @Ruta  WHERE Id_provision = @ID ", cnn)
-                    'Dim cmd1 As New SqlCommand("UPDATE [AsahiSystem].[dbo].[Oc_Conta3] SET Ruta = @Ruta  WHERE ID = @ID ", conexion)
-                    Dim respuesta As String
-
-                    Try
-                        For Each fila In dtgvp.Rows
-                            If fila.Cells(1).Selected Then
-
-                                cmd.Parameters.Clear()
-
-                                'cmd1.Parameters.Clear()
-
-                                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = (fila.Cells("Recepcion").Value)
-                                cmd.Parameters.Add("@Ruta", SqlDbType.Text).Value = (fila.Cells("pdf").Value)
-                                'cmd1.Parameters.Add("@ID", SqlDbType.Int).Value = txt_id.Text.ToString
-                                'cmd1.Parameters.Add("@Ruta", SqlDbType.Text).Value = (fila.Cells("Ruta").Value)
-
-                                cmd.ExecuteNonQuery()
-                                'cmd1.ExecuteNonQuery()
 
 
-                            End If
+        '            cnn.Open()
+        '            Dim cmd As New SqlCommand("UPDATE [Asahi].[dbo].[Com_ProvisionesPrincipal] SET pdf = @Ruta  WHERE Id_provision = @ID ", cnn)
+        '            'Dim cmd1 As New SqlCommand("UPDATE [AsahiSystem].[dbo].[Oc_Conta3] SET Ruta = @Ruta  WHERE ID = @ID ", conexion)
+        '            Dim respuesta As String
 
-                        Next
-                        respuesta = "Guardado correctamente"
+        '            Try
+        '                For Each fila In dtgvp.Rows
+        '                    If fila.Cells(1).Selected Then
 
-                        MessageBox.Show(respuesta)
+        '                        cmd.Parameters.Clear()
 
-                    Catch ex As Exception
-                        MessageBox.Show("Salió sin guardar ningún documento", "¡Aviso!")
-                    Finally
-                        cnn.Close()
-                    End Try
+        '                        'cmd1.Parameters.Clear()
 
-                Else
-                    MessageBox.Show("Salió sin guardar ningún documento", "¡Aviso!")
+        '                        cmd.Parameters.Add("@ID", SqlDbType.Int).Value = (fila.Cells("Recepcion").Value)
+        '                        cmd.Parameters.Add("@Ruta", SqlDbType.Text).Value = (fila.Cells("pdf").Value)
+        '                        'cmd1.Parameters.Add("@ID", SqlDbType.Int).Value = txt_id.Text.ToString
+        '                        'cmd1.Parameters.Add("@Ruta", SqlDbType.Text).Value = (fila.Cells("Ruta").Value)
 
-                End If
+        '                        cmd.ExecuteNonQuery()
+        '                        'cmd1.ExecuteNonQuery()
 
 
-            End If
-            colores()
+        '                    End If
 
-        End If
+        '                Next
+        '                respuesta = "Guardado correctamente"
+
+        '                MessageBox.Show(respuesta)
+
+        '            Catch ex As Exception
+        '                MessageBox.Show("Salió sin guardar ningún documento", "¡Aviso!")
+        '            Finally
+        '                cnn.Close()
+        '            End Try
+
+        '        Else
+        '            MessageBox.Show("Salió sin guardar ningún documento", "¡Aviso!")
+
+        '        End If
+
+
+        '    End If
+        '    colores()
+
+        'End If
 
     End Sub
 

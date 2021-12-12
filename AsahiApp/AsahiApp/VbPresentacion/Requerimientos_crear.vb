@@ -27,6 +27,7 @@ Public Class Requerimientos_crear
 
 
     Public Sub NumerosyDecimal(ByVal CajaTexto As Windows.Forms.TextBox, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -38,6 +39,7 @@ Public Class Requerimientos_crear
         Else
             e.Handled = True
         End If
+
     End Sub
 
 
@@ -470,8 +472,6 @@ insert into [Asahi].[dbo].[Com_RequerimientoPrincipal] values
 
 
             agrega.ExecuteNonQuery()
-
-
 
 
 
