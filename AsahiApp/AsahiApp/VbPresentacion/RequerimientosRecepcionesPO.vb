@@ -211,6 +211,29 @@ Public Class RequerimientosRecepcionesPO
                 .Name = "PDF"
                 .Width = 40
             End With
+
+        ElseIf depto = 6 Then
+
+            dtgvp.Columns.Insert(dtgvp.ColumnCount, cbtn2)
+
+            dtgvp.Columns.Insert(dtgvp.ColumnCount, cbtn4)
+            dtgvp.Columns.Insert(dtgvp.ColumnCount, cbtn3)
+            With cbtn2
+                .HeaderText = "XML"
+                .Name = "XML"
+                .Width = 40
+            End With
+            With cbtn3
+                .HeaderText = "Eliminar"
+                .Name = "Eliminar"
+                .Width = 50
+            End With
+            With cbtn4
+                .HeaderText = "PDF"
+                .Name = "PDF"
+                .Width = 40
+            End With
+
         Else
 
         End If

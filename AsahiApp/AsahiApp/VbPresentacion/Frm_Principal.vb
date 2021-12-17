@@ -792,6 +792,11 @@ Public Class Frm_Principal
 
     End Sub
 
+    Private Sub ListaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListaToolStripMenuItem.Click
+        Dim Lista_pro As New ListaProveedores(Me.emp.IdEmpleado, Me.emp.IdDepartamento, Me.emp.rh_permiso, Me.emp.NombreCompletoGiro, Me.emp.IdPermisoV)
+        Lista_pro.Show()
+    End Sub
+
 
 
 
