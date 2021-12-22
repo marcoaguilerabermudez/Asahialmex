@@ -158,7 +158,6 @@ Partial Class Frm_Principal
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.MATRIXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -167,7 +166,7 @@ Partial Class Frm_Principal
         Me.Men_Principal.AutoSize = False
         Me.Men_Principal.BackColor = System.Drawing.Color.SteelBlue
         Me.Men_Principal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
-        Me.Men_Principal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.ControlDePruducciónToolStripMenuItem, Me.CalidadToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AlmacénToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.MATRIXToolStripMenuItem})
+        Me.Men_Principal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.ControlDePruducciónToolStripMenuItem, Me.CalidadToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AlmacénToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.Men_Principal.Location = New System.Drawing.Point(0, 0)
         Me.Men_Principal.Name = "Men_Principal"
         Me.Men_Principal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -185,13 +184,13 @@ Partial Class Frm_Principal
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'RecursosHumanosToolStripMenuItem
@@ -1031,12 +1030,6 @@ Partial Class Frm_Principal
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "12/12/2021"
         '
-        'MATRIXToolStripMenuItem
-        '
-        Me.MATRIXToolStripMenuItem.Name = "MATRIXToolStripMenuItem"
-        Me.MATRIXToolStripMenuItem.Size = New System.Drawing.Size(60, 26)
-        Me.MATRIXToolStripMenuItem.Text = "MATRIX"
-        '
         'Frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1195,5 +1188,4 @@ Partial Class Frm_Principal
     Friend WithEvents RecibirPOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecepcionesPOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProvisionesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MATRIXToolStripMenuItem As ToolStripMenuItem
 End Class
