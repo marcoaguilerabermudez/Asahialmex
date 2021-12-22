@@ -227,7 +227,12 @@ SELECT TOP 1 [id]
 
 
 
-SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(rtrim(clabe)), moneda, correo
+SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(rtrim(clabe)), moneda, 
+case
+when correo is null then ''
+else
+correo
+end
   FROM [Asahi].[dbo].[com_proveedores] prov
  left join [Asahi].[dbo].[com_pv_bancos] pv_ban
   on pv_ban.id_prov = prov.id
@@ -258,6 +263,7 @@ SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
+
     End Sub
 
 
@@ -744,7 +750,10 @@ SELECT PROV.ID, razon_social , ltrim(rtrim(valor)), ltrim(rtrim(cuenta)), ltrim(
         Else
             btn_carga.Enabled = True
         End If
+        Eleccion.Show()
     End Sub
 
 
 End Class
+
+

@@ -133,8 +133,8 @@
   <data name="actualizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actualizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="customer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\customer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="adjuntar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adjuntar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -159,6 +159,9 @@
   </data>
   <data name="go-back256_24856" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\go-back256_24856.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="matri" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\matri.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pagina-blanca-de-origami" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pagina-blanca-de-origami.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,6 +205,9 @@
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1486504328-bullet-list-menu-lines-points-items-options_81334" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1486504328-bullet-list-menu-lines-points-items-options_81334.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Acumulado1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Acumulado1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,8 +217,8 @@
   <data name="systemtask_sistema_3126" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\systemtask_sistema_3126.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1486504328-bullet-list-menu-lines-points-items-options_81334" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1486504328-bullet-list-menu-lines-points-items-options_81334.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="customer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1492533500-arrow-41_83313" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1492533500-arrow-41_83313.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,7 +232,7 @@
   <data name="prenomina" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prenomina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="adjuntar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adjuntar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="matri1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\matri1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

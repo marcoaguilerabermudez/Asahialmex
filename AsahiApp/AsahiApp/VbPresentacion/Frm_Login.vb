@@ -180,6 +180,7 @@ Public Class Frm_Login
 
             Me.Close()
         End If
+
     End Sub
     Public Function Devuelve_Id(ByVal Domain As String, ByVal username As String, ByVal pwd As String, ByVal Propiedad As String) As Integer
         Dim domainAndUsername As String = (Domain & "\") + username

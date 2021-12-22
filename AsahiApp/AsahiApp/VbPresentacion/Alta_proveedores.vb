@@ -69,9 +69,6 @@ Public Class Alta_proveedores
             btn_quitar.Visible = False
         End If
 
-
-
-
         llenacombobanco()
         colores()
     End Sub
@@ -134,11 +131,6 @@ SELECT nombre
     End Sub
 
 
-
-
-
-
-
     Private Sub dtgvp_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles dtgv_cuentas.RowEnter
         Try
             id_cuenta = Me.dtgv_cuentas.Rows(e.RowIndex).Cells("id").Value.ToString()
@@ -151,8 +143,6 @@ SELECT nombre
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_quitar.Click
 
     End Sub
-
-
 
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
@@ -187,9 +177,6 @@ SELECT nombre
         Else
             MessageBox.Show("Acción no completada", "¡Aviso!")
         End If
-
-
-
 
     End Sub
 
@@ -265,14 +252,15 @@ SELECT nombre
 
             command.Parameters.Clear()
 
-                command.Parameters.AddWithValue("@moneda", cbx_monedacuenta.Text)
-                command.Parameters.AddWithValue("@nombre", txt_banco.Text)
-                command.Parameters.AddWithValue("@cuenta", txt_cuenta.Text)
-                command.Parameters.AddWithValue("@clabe", txt_clabe.Text)
-                command.Parameters.AddWithValue("@tipo", cbx_tipo.Text)
-                command.Parameters.AddWithValue("@aba", txt_aba.Text)
-                command.Parameters.AddWithValue("@swift", txt_swift.Text)
-                command.Parameters.AddWithValue("@iban", txt_iban.Text)
+            command.Parameters.AddWithValue("@moneda", cbx_monedacuenta.Text)
+            command.Parameters.AddWithValue("@nombre", txt_banco.Text)
+            command.Parameters.AddWithValue("@cuenta", txt_cuenta.Text)
+            command.Parameters.AddWithValue("@clabe", txt_clabe.Text)
+            command.Parameters.AddWithValue("@tipo", cbx_tipo.Text)
+            command.Parameters.AddWithValue("@aba", txt_aba.Text)
+            command.Parameters.AddWithValue("@swift", txt_swift.Text)
+            command.Parameters.AddWithValue("@iban", txt_iban.Text)
+
             command.Parameters.AddWithValue("@var", actualiza_elimina_cuenta)
             If actualiza_elimina_cuenta = 1 Then
                 command.Parameters.AddWithValue("@id", 0)
@@ -391,6 +379,8 @@ SELECT nombre
             txt_banco.Text = ""
 
             Try
+
+
                 dtgv_cuentas.Rows.Clear()
 
             Catch

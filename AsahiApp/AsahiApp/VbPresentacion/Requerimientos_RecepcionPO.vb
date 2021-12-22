@@ -893,8 +893,10 @@ SELECT  [UUID]
                 agrega.Parameters.Add("@f_factura", SqlDbType.Date).Value = dtp1.Value.ToShortDateString
                 agrega.Parameters.Add("@f_pago", SqlDbType.Date).Value = dtp2.Value.ToShortDateString
                 If excep = 0 Then
+
                     agrega.Parameters.Add("@subtotal", SqlDbType.Money).Value = lbl_subtotalfact.Text
                     agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_totalfact.Text
+
                 ElseIf excep = 2 Then
                     agrega.Parameters.Add("@subtotal", SqlDbType.Money).Value = lbl_subtotalpo.Text
                     agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_total.Text
@@ -915,8 +917,11 @@ SELECT  [UUID]
                 agrega.Parameters.Add("@total", SqlDbType.Money).Value = lbl_t.Text
                 agrega.Parameters.Add("@moneda", SqlDbType.VarChar, 3).Value = lbl_moneda.Text
                 agrega.Parameters.Add("@uuid", SqlDbType.VarChar, 150).Value = ""
+
                 agrega.Parameters.Add("@rfc", SqlDbType.VarChar, 50).Value = lbl_rfc.Text
+
                 agrega.Parameters.Add("@var", SqlDbType.Int).Value = 0
+
                 agrega.Parameters.Add("@folio", SqlDbType.VarChar, 100).Value = "Pago contra Factura"
                 agrega.Parameters.Add("@id_provision", SqlDbType.Int).Value = 0
 

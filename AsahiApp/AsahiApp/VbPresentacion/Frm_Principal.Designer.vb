@@ -158,6 +158,7 @@ Partial Class Frm_Principal
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.MATRIXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -166,7 +167,7 @@ Partial Class Frm_Principal
         Me.Men_Principal.AutoSize = False
         Me.Men_Principal.BackColor = System.Drawing.Color.SteelBlue
         Me.Men_Principal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
-        Me.Men_Principal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.ControlDePruducciónToolStripMenuItem, Me.CalidadToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AlmacénToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.Men_Principal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.ControlDePruducciónToolStripMenuItem, Me.CalidadToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AlmacénToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.MATRIXToolStripMenuItem})
         Me.Men_Principal.Location = New System.Drawing.Point(0, 0)
         Me.Men_Principal.Name = "Men_Principal"
         Me.Men_Principal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -666,7 +667,7 @@ Partial Class Frm_Principal
         '
         Me.ProvicionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProvicionesToolStripMenuItem1, Me.AutorizaContabilidadToolStripMenuItem})
         Me.ProvicionesToolStripMenuItem.Name = "ProvicionesToolStripMenuItem"
-        Me.ProvicionesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProvicionesToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.ProvicionesToolStripMenuItem.Text = "Provisiones"
         '
         'ProvicionesToolStripMenuItem1
@@ -684,14 +685,14 @@ Partial Class Frm_Principal
         'ConsultaXMLToolStripMenuItem
         '
         Me.ConsultaXMLToolStripMenuItem.Name = "ConsultaXMLToolStripMenuItem"
-        Me.ConsultaXMLToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ConsultaXMLToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.ConsultaXMLToolStripMenuItem.Text = "Consulta XML"
         '
         'RequerimientosToolStripMenuItem
         '
         Me.RequerimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.MisRequerimientosToolStripMenuItem, Me.CotizaciónToolStripMenuItem, Me.OrdenDeCompraToolStripMenuItem, Me.RevisarPOToolStripMenuItem, Me.RecibirPOToolStripMenuItem, Me.RecepcionesPOToolStripMenuItem, Me.ProvisionesToolStripMenuItem})
         Me.RequerimientosToolStripMenuItem.Name = "RequerimientosToolStripMenuItem"
-        Me.RequerimientosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RequerimientosToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.RequerimientosToolStripMenuItem.Text = "Requerimientos"
         '
         'NuevoToolStripMenuItem
@@ -746,33 +747,33 @@ Partial Class Frm_Principal
         '
         Me.CatálogosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProveedoresToolStripMenuItem, Me.ProductosToolStripMenuItem})
         Me.CatálogosToolStripMenuItem.Name = "CatálogosToolStripMenuItem"
-        Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
         '
         'ProveedoresToolStripMenuItem
         '
         Me.ProveedoresToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem1, Me.ListaToolStripMenuItem})
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'AltaToolStripMenuItem1
         '
         Me.AltaToolStripMenuItem1.Name = "AltaToolStripMenuItem1"
-        Me.AltaToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.AltaToolStripMenuItem1.Size = New System.Drawing.Size(98, 22)
         Me.AltaToolStripMenuItem1.Text = "Alta"
         '
         'ListaToolStripMenuItem
         '
         Me.ListaToolStripMenuItem.Name = "ListaToolStripMenuItem"
-        Me.ListaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListaToolStripMenuItem.Size = New System.Drawing.Size(98, 22)
         Me.ListaToolStripMenuItem.Text = "Lista"
         '
         'ProductosToolStripMenuItem
         '
         Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem2, Me.ListaToolStripMenuItem1})
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'AltaToolStripMenuItem2
@@ -1030,6 +1031,12 @@ Partial Class Frm_Principal
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "12/12/2021"
         '
+        'MATRIXToolStripMenuItem
+        '
+        Me.MATRIXToolStripMenuItem.Name = "MATRIXToolStripMenuItem"
+        Me.MATRIXToolStripMenuItem.Size = New System.Drawing.Size(60, 26)
+        Me.MATRIXToolStripMenuItem.Text = "MATRIX"
+        '
         'Frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1188,4 +1195,5 @@ Partial Class Frm_Principal
     Friend WithEvents RecibirPOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecepcionesPOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProvisionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MATRIXToolStripMenuItem As ToolStripMenuItem
 End Class
