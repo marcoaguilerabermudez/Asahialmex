@@ -113,8 +113,12 @@
                                                   <TextRun>
                                                     <Value>=Fields!NOMBRE.Value</Value>
                                                     <Style>
-                                                      <FontWeight>Bold</FontWeight>
-                                                      <TextDecoration>Underline</TextDecoration>
+                                                      <FontStyle>Normal</FontStyle>
+                                                      <FontFamily>Calibri</FontFamily>
+                                                      <FontSize>11pt</FontSize>
+                                                      <FontWeight>Normal</FontWeight>
+                                                      <TextDecoration>None</TextDecoration>
+                                                      <Color>#000000</Color>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -461,7 +465,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!REFERENCIA.Value</Value>
+                                                    <Value>=Fields!TELEFONO.Value</Value>
                                                     <Style />
                                                   </TextRun>
                                                 </TextRuns>
@@ -533,11 +537,11 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Tel: </Value>
+                                                    <Value>NSS: </Value>
                                                     <Style />
                                                   </TextRun>
                                                   <TextRun>
-                                                    <Value>=Fields!TELEFONO.Value</Value>
+                                                    <Value>=Fields!AFILIACION.Value</Value>
                                                     <Style />
                                                   </TextRun>
                                                 </TextRuns>
@@ -609,11 +613,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>N.S.S: </Value>
-                                                    <Style />
-                                                  </TextRun>
-                                                  <TextRun>
-                                                    <Value>=Fields!AFILIACION.Value</Value>
+                                                    <Value />
                                                     <Style />
                                                   </TextRun>
                                                 </TextRuns>
@@ -912,7 +912,6 @@
                             </BackgroundImage>
                           </Style>
                         </Rectangle>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>

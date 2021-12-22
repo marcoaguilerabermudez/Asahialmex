@@ -158,6 +158,7 @@ Partial Class Frm_Principal
         Me.Lbl_Version = New System.Windows.Forms.Label()
         Me.Lbl_NombreUser = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.MATRIXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Men_Principal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -166,7 +167,7 @@ Partial Class Frm_Principal
         Me.Men_Principal.AutoSize = False
         Me.Men_Principal.BackColor = System.Drawing.Color.SteelBlue
         Me.Men_Principal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
-        Me.Men_Principal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.ControlDePruducciónToolStripMenuItem, Me.CalidadToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AlmacénToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.Men_Principal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.RecursosHumanosToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.ControlDePruducciónToolStripMenuItem, Me.CalidadToolStripMenuItem, Me.FinanzasToolStripMenuItem, Me.AlmacénToolStripMenuItem, Me.AyudaToolStripMenuItem, Me.MATRIXToolStripMenuItem})
         Me.Men_Principal.Location = New System.Drawing.Point(0, 0)
         Me.Men_Principal.Name = "Men_Principal"
         Me.Men_Principal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -552,28 +553,28 @@ Partial Class Frm_Principal
         '
         Me.SolicitudToolStripMenuItem.Enabled = False
         Me.SolicitudToolStripMenuItem.Name = "SolicitudToolStripMenuItem"
-        Me.SolicitudToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SolicitudToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.SolicitudToolStripMenuItem.Text = "Solicitud"
         '
         'ValidaciónToolStripMenuItem
         '
         Me.ValidaciónToolStripMenuItem.Enabled = False
         Me.ValidaciónToolStripMenuItem.Name = "ValidaciónToolStripMenuItem"
-        Me.ValidaciónToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ValidaciónToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.ValidaciónToolStripMenuItem.Text = "Validación"
         '
         'ValidaciónRHToolStripMenuItem1
         '
         Me.ValidaciónRHToolStripMenuItem1.Enabled = False
         Me.ValidaciónRHToolStripMenuItem1.Name = "ValidaciónRHToolStripMenuItem1"
-        Me.ValidaciónRHToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ValidaciónRHToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
         Me.ValidaciónRHToolStripMenuItem1.Text = "Validación RH"
         '
         'ActualizaRegistrosToolStripMenuItem
         '
         Me.ActualizaRegistrosToolStripMenuItem.Enabled = False
         Me.ActualizaRegistrosToolStripMenuItem.Name = "ActualizaRegistrosToolStripMenuItem"
-        Me.ActualizaRegistrosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ActualizaRegistrosToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.ActualizaRegistrosToolStripMenuItem.Text = "Actualiza Registros"
         '
         'FormatoDeServiciosMúltiplesToolStripMenuItem
@@ -1028,7 +1029,13 @@ Partial Class Frm_Principal
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(65, 13)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "20/10/2021"
+        Me.Label1.Text = "12/12/2021"
+        '
+        'MATRIXToolStripMenuItem
+        '
+        Me.MATRIXToolStripMenuItem.Name = "MATRIXToolStripMenuItem"
+        Me.MATRIXToolStripMenuItem.Size = New System.Drawing.Size(60, 26)
+        Me.MATRIXToolStripMenuItem.Text = "MATRIX"
         '
         'Frm_Principal
         '
@@ -1188,4 +1195,5 @@ Partial Class Frm_Principal
     Friend WithEvents RecibirPOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecepcionesPOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProvisionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MATRIXToolStripMenuItem As ToolStripMenuItem
 End Class

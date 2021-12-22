@@ -47,10 +47,6 @@ Public Class Requerimientos_CargaXML
 
         End If
 
-
-
-
-
         estado_prov = Modulo_vistarecepprincipal.e_estadoprov
 
 
@@ -72,6 +68,7 @@ Public Class Requerimientos_CargaXML
             btn_quitar.Visible = True
             lbl_moneda.Text = Modulo_vistarecepprincipal.e_moneda
             btn_fil2.Text = "Modificar"
+
         ElseIf estado_prov = 2 Then
 
             lbl_proveedor.Text = Modulo_vistarecepprincipal.e_proveedor
@@ -356,6 +353,7 @@ SELECT  [UUID]
             cnn.Close()
 
             MessageBox.Show("Acción completada correctmento", "¡Aviso!")
+
             Me.Dispose()
 
 

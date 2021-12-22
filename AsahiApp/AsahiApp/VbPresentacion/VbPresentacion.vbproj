@@ -30,7 +30,7 @@
     <PublisherName>Asahi Sistemas</PublisherName>
     <SuiteName>SistemasApps</SuiteName>
     <MinimumRequiredVersion>1.0.0.220</MinimumRequiredVersion>
-    <ApplicationRevision>33</ApplicationRevision>
+    <ApplicationRevision>35</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -663,6 +663,12 @@
     <Compile Include="DataSet\Dts_BonoMensual.vb">
       <DependentUpon>Dts_BonoMensual.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Eleccion.Designer.vb">
+      <DependentUpon>Eleccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eleccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_cambiodeturno.Designer.vb">
       <DependentUpon>Frm_cambiodeturno.vb</DependentUpon>
     </Compile>
@@ -703,6 +709,12 @@
       <DependentUpon>ListaProveedores.vb</DependentUpon>
     </Compile>
     <Compile Include="ListaProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matrix.Designer.vb">
+      <DependentUpon>Matrix.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Matrix.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MisPOPrincipal.Designer.vb">
@@ -1462,6 +1474,9 @@
     <EmbeddedResource Include="Detalle2oee.resx">
       <DependentUpon>Detalle2oee.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Eleccion.resx">
+      <DependentUpon>Eleccion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EligeEvaluación.resx">
       <DependentUpon>EligeEvaluación.vb</DependentUpon>
     </EmbeddedResource>
@@ -1551,6 +1566,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaProveedores.resx">
       <DependentUpon>ListaProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matrix.resx">
+      <DependentUpon>Matrix.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MedidasDisciplinarias.resx">
       <DependentUpon>MedidasDisciplinarias.vb</DependentUpon>
@@ -2517,6 +2535,8 @@
     <None Include="Resources\prueba-de-educacion.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\adjuntar %281%29.png" />
+    <None Include="Resources\matri.jpg" />
+    <None Include="Resources\matri1.jpg" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
