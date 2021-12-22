@@ -63,8 +63,10 @@ Partial Class MisPOPrincipal
         Me.cbx_serie = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txt_cancel = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lbl_po = New System.Windows.Forms.Label()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.lbl_proveedor = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btn_desma = New System.Windows.Forms.Button()
@@ -82,10 +84,9 @@ Partial Class MisPOPrincipal
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_cerrar = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.txt_cancel = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -549,6 +550,18 @@ Partial Class MisPOPrincipal
         Me.Panel2.Size = New System.Drawing.Size(344, 573)
         Me.Panel2.TabIndex = 484
         '
+        'txt_cancel
+        '
+        Me.txt_cancel.BackColor = System.Drawing.SystemColors.Control
+        Me.txt_cancel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_cancel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.txt_cancel.Location = New System.Drawing.Point(11, 488)
+        Me.txt_cancel.MaxLength = 100
+        Me.txt_cancel.Multiline = True
+        Me.txt_cancel.Name = "txt_cancel"
+        Me.txt_cancel.Size = New System.Drawing.Size(246, 75)
+        Me.txt_cancel.TabIndex = 535
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -569,6 +582,18 @@ Partial Class MisPOPrincipal
         Me.lbl_po.Name = "lbl_po"
         Me.lbl_po.Size = New System.Drawing.Size(0, 13)
         Me.lbl_po.TabIndex = 483
+        '
+        'btn_cancelar
+        '
+        Me.btn_cancelar.BackColor = System.Drawing.Color.Gainsboro
+        Me.btn_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_cancelar.ForeColor = System.Drawing.Color.DarkGoldenrod
+        Me.btn_cancelar.Location = New System.Drawing.Point(263, 524)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(70, 27)
+        Me.btn_cancelar.TabIndex = 534
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.UseVisualStyleBackColor = False
         '
         'lbl_proveedor
         '
@@ -743,18 +768,6 @@ Partial Class MisPOPrincipal
         Me.Label17.TabIndex = 520
         Me.Label17.Text = "CREADO"
         '
-        'btn_cancelar
-        '
-        Me.btn_cancelar.BackColor = System.Drawing.Color.Gainsboro
-        Me.btn_cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cancelar.ForeColor = System.Drawing.Color.DarkGoldenrod
-        Me.btn_cancelar.Location = New System.Drawing.Point(263, 524)
-        Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(70, 27)
-        Me.btn_cancelar.TabIndex = 534
-        Me.btn_cancelar.Text = "Cancelar"
-        Me.btn_cancelar.UseVisualStyleBackColor = False
-        '
         'btn_cerrar
         '
         Me.btn_cerrar.BackColor = System.Drawing.Color.Gainsboro
@@ -779,23 +792,24 @@ Partial Class MisPOPrincipal
         Me.Panel4.TabIndex = 536
         Me.Panel4.Visible = False
         '
-        'txt_cancel
+        'Button1
         '
-        Me.txt_cancel.BackColor = System.Drawing.SystemColors.Control
-        Me.txt_cancel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_cancel.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.txt_cancel.Location = New System.Drawing.Point(11, 488)
-        Me.txt_cancel.MaxLength = 100
-        Me.txt_cancel.Multiline = True
-        Me.txt_cancel.Name = "txt_cancel"
-        Me.txt_cancel.Size = New System.Drawing.Size(246, 75)
-        Me.txt_cancel.TabIndex = 535
+        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Violet
+        Me.Button1.Location = New System.Drawing.Point(658, 46)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(120, 35)
+        Me.Button1.TabIndex = 537
+        Me.Button1.Text = "Cerrar"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'MisPOPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1004, 691)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Label3)
@@ -898,4 +912,5 @@ Partial Class MisPOPrincipal
     Friend WithEvents btn_cerrar As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents txt_cancel As TextBox
+    Friend WithEvents Button1 As Button
 End Class

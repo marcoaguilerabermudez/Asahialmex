@@ -229,6 +229,7 @@ Public Class Requerimientos_crear
         dtgvp.Columns(1).Width = 350
         dtgvp.Columns(0).ReadOnly = True
         dtgvp.Columns(1).ReadOnly = True
+
         cnn.Close()
 
     End Sub

@@ -184,13 +184,13 @@ Partial Class Frm_Principal
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.SalirToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'SalirToolStripMenuItem1
         '
         Me.SalirToolStripMenuItem1.Name = "SalirToolStripMenuItem1"
-        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.SalirToolStripMenuItem1.Text = "Salir"
         '
         'RecursosHumanosToolStripMenuItem
@@ -666,7 +666,7 @@ Partial Class Frm_Principal
         '
         Me.ProvicionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProvicionesToolStripMenuItem1, Me.AutorizaContabilidadToolStripMenuItem})
         Me.ProvicionesToolStripMenuItem.Name = "ProvicionesToolStripMenuItem"
-        Me.ProvicionesToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.ProvicionesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProvicionesToolStripMenuItem.Text = "Provisiones"
         '
         'ProvicionesToolStripMenuItem1
@@ -684,14 +684,14 @@ Partial Class Frm_Principal
         'ConsultaXMLToolStripMenuItem
         '
         Me.ConsultaXMLToolStripMenuItem.Name = "ConsultaXMLToolStripMenuItem"
-        Me.ConsultaXMLToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.ConsultaXMLToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ConsultaXMLToolStripMenuItem.Text = "Consulta XML"
         '
         'RequerimientosToolStripMenuItem
         '
         Me.RequerimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.MisRequerimientosToolStripMenuItem, Me.CotizaciónToolStripMenuItem, Me.OrdenDeCompraToolStripMenuItem, Me.RevisarPOToolStripMenuItem, Me.RecibirPOToolStripMenuItem, Me.RecepcionesPOToolStripMenuItem, Me.ProvisionesToolStripMenuItem})
         Me.RequerimientosToolStripMenuItem.Name = "RequerimientosToolStripMenuItem"
-        Me.RequerimientosToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.RequerimientosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RequerimientosToolStripMenuItem.Text = "Requerimientos"
         '
         'NuevoToolStripMenuItem
@@ -746,7 +746,7 @@ Partial Class Frm_Principal
         '
         Me.CatálogosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProveedoresToolStripMenuItem, Me.ProductosToolStripMenuItem})
         Me.CatálogosToolStripMenuItem.Name = "CatálogosToolStripMenuItem"
-        Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.CatálogosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CatálogosToolStripMenuItem.Text = "Catálogos"
         '
         'ProveedoresToolStripMenuItem

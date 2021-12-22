@@ -381,18 +381,21 @@ end
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+        ContenedorReportePO.serie = "A"
+        ContenedorReportePO.codigo = 12
+        btn_carga.Enabled = False
+        ContenedorReportePO.Show()
 
 
 
 
-
-        Panel1.Visible = True
-        Panel2.Visible = False
-        btn_desma.Visible = True
-        btn_selec.Visible = True
-        llenacuentas()
-        cargagrid()
-        dtgvp.Visible = True
+        'Panel1.Visible = True
+        'Panel2.Visible = False
+        'btn_desma.Visible = True
+        'btn_selec.Visible = True
+        'llenacuentas()
+        'cargagrid()
+        'dtgvp.Visible = True
 
     End Sub
 
@@ -721,7 +724,7 @@ end
             llenacomboproveedor()
             btn_buscar.Enabled = False
             ContenedorReportePO.serie = "A"
-            ContenedorReportePO.codigo = y
+            ContenedorReportePO.codigo = 12
             btn_carga.Enabled = False
             ContenedorReportePO.Show()
 
@@ -750,7 +753,7 @@ end
         Else
             btn_carga.Enabled = True
         End If
-        Eleccion.Show()
+
     End Sub
 
 
