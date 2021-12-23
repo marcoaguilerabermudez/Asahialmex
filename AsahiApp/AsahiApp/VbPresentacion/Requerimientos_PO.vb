@@ -129,6 +129,7 @@ SELECT TOP 1 [id]
     End Sub
 
     Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_cantidad.KeyPress, txt_precio.KeyPress, txt_iva.KeyPress, txt_iesp.KeyPress, txt_isr.KeyPress, txt_impex.KeyPress, txt_retiva.KeyPress, txt_retcel.KeyPress, txt_retisr.KeyPress, txt_retex.KeyPress, txt_desc1.KeyPress, txt_desc2.KeyPress
+
         NumerosyDecimal(txt_cantidad, e)
         NumerosyDecimal(txt_precio, e)
         NumerosyDecimal(txt_iva, e)
@@ -381,21 +382,17 @@ end
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        ContenedorReportePO.serie = "A"
-        ContenedorReportePO.codigo = 12
-        btn_carga.Enabled = False
-        ContenedorReportePO.Show()
 
 
 
 
-        'Panel1.Visible = True
-        'Panel2.Visible = False
-        'btn_desma.Visible = True
-        'btn_selec.Visible = True
-        'llenacuentas()
-        'cargagrid()
-        'dtgvp.Visible = True
+        Panel1.Visible = True
+        Panel2.Visible = False
+        btn_desma.Visible = True
+        btn_selec.Visible = True
+        llenacuentas()
+        cargagrid()
+        dtgvp.Visible = True
 
     End Sub
 

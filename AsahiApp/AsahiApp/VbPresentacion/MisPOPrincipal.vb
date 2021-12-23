@@ -663,7 +663,11 @@ Public Class MisPOPrincipal
 
     End Sub
 
-
+    Private Sub btn_pdf_Click_1(sender As Object, e As EventArgs) Handles btn_pdf.Click
+        ContenedorReportePO.serie = serie
+        ContenedorReportePO.codigo = codigo
+        ContenedorReportePO.Show()
+    End Sub
 End Class
 
 
