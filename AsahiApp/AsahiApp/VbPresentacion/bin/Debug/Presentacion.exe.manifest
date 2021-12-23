@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Presentacion.exe" version="1.0.1.35" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
+  <asmv1:assemblyIdentity name="Presentacion.exe" version="1.0.1.38" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Presentacion" version="1.0.0.331" language="neutral" processorArchitecture="amd64" />
@@ -193,7 +193,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jt68xZbeOhjIa2aT9h3Juy0oq088mqppfIkPSUe24OY=</dsig:DigestValue>
+        <dsig:DigestValue>p59GoGLwOwN6ynPZCtPi6lblLg4TtCSrz4on++4Cj4o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1093,7 +1093,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nhriFZFMhQNky/97tav/Bk/RkvLx5PeVq70qugx7J4k=</dsig:DigestValue>
+        <dsig:DigestValue>lLcgAnBg1/4ES/EF3rBxID4A6fKtMynq9VmvM5bV0og=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1105,7 +1105,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>05JpdCZiB/RPq74JUFIiadaaOYfLgWeERQ7cFcf4KFI=</dsig:DigestValue>
+        <dsig:DigestValue>JkNz6udHL3iz3OyI5IPk6l44hVGw/LALKRGAonUGk8g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1117,7 +1117,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wfRo4MyGjr2jSq9CzvveW+g12KGLAVSvJ1UFVDLU92o=</dsig:DigestValue>
+        <dsig:DigestValue>245XD7FoTmtW/kSGLTTQDkg1IoSRts3iNx8E5Fy0dWM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

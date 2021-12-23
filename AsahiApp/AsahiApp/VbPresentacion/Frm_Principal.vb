@@ -797,9 +797,6 @@ Public Class Frm_Principal
         Lista_pro.Show()
     End Sub
 
-    Private Sub MATRIXToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MATRIXToolStripMenuItem.Click
-        Matrix.Show()
-    End Sub
 
 
 

@@ -82,13 +82,13 @@ Partial Class Requerimientos_movimientos
         Me.btn_pdf = New System.Windows.Forms.Button()
         Me.txt_liga = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.cbx_fam = New System.Windows.Forms.ComboBox()
         Me.btn_doc = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.lbl_serie = New System.Windows.Forms.Label()
+        Me.cbx_fam = New System.Windows.Forms.ComboBox()
         CType(Me.dtgvp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -763,19 +763,6 @@ Partial Class Requerimientos_movimientos
         Me.Label24.TabIndex = 455
         Me.Label24.Text = "Familia"
         '
-        'cbx_fam
-        '
-        Me.cbx_fam.BackColor = System.Drawing.Color.White
-        Me.cbx_fam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbx_fam.Enabled = False
-        Me.cbx_fam.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cbx_fam.FormattingEnabled = True
-        Me.cbx_fam.Items.AddRange(New Object() {"SUBENSAMBLE-ACABADO", "AJUSTE AL NETO", "SUBENSAMBLE-FUNDICIÓN", "SUBENSAMBLE-CASTING", "REPARACIÓN Y MANTENIMIENTO", "REFACCIONES", "INSUMOS", "SERVICIO Y ARTÍCULO DE LIMPIEZA", "HERRAMIENTAS", "EQUIPO DE SEGURIDAD", "MATERIAL DE EMPAQUE", "ACEITES Y LUBRICANTES", "PERNOS", "ADHESIVOS", "CONSUMIBLES (GASES)", "GAS LP", "UNIFORMES", "EQUIPO DE PLANTA", "PAPELERÍA Y UTILES", "HERRAMIENTAS DE CORTE", "COOLANT", "DIESEL", "ACTIVO FIJO", "SEGURIDAD E HIGIENE", "DAP", "SORTEOS", "ACCESORIOS EQUIPO DE COMPUTO", "MANTENIMIENTO DE PLANTA", "ATENCIÓN AL CLIENTE", "HONORARIOS PERSONAS FISICAS", "MEDICO", "RENTAS DE DEPARTAMENTOS", "OTROS GASTOS", "OTROS GASTOS DEDUCIBLES", "MANTENIMIENTO DE MAQUINARIA", "SOFTWARE Y LICENCIAS", "SEVICIOS ADMINISTRATIVOS HALMEX", "HOSPEDAJE", "VALES DE DESPENSA", "GASOLINA", "SEGURIDAD Y VIGILANCIA", "GASTOS POR DEFECTOS / REWORKS", "FARMACIA", "RECARGOS", "MANTENIMIENTO Y SERVICIOS DE AUTOMOVIL", "INSTALACIÓN DE MAQUINARIA", "GAS NATURAL", "RENTA DE IMPRESORA", "RECOLECCIÓN DE BASURA", "RECOLECCIÓN DE AGUAS RESIDUALES", "COMEDOR", "AGUA", "ENERGIA ELECTRICA", "MANIOBRAS Y FLETES", "GASTOS ADUANALES", "PRIMAS DE SEGUROS", "CAPACITACION", "EQUIPO DE COMPUTO / COMPUTER EQUIPMENT", "PARTES DE ENSAMBLE", "LAVANDERIA", "TELFONO CELULAR", "MANTENIMIENTO DE INSTRUMENTOS DE MEDICIÓN", "AGUA PARA CONSUMO", "HONORARIOS PERSONAS MORALES", "MATERIA PRIMA", "ARRENDAMIENTO DE AUTOMOVILES", "MANIOBRAS Y FLETES EXPEDITADOS", "EQUIPO DE CARGA", "GASTOS DE VIAJE", "GASTOS DE CERTIFICACIÓN", "CUOTAS Y SUSCRIPCIONES", "PROPAGANDA Y PUBLICIDAD", "GASTOS MIGRATORIOS", "CASETAS", "IMPUESTO PREDIAL / LAND TAX", "PROCESOS EXTERNOS", "COMISIONES BANCARIAS", "DESCUENTOS/ DEVOLUCIONES SOBRE COMPRA", "DESPERDICIO", "SUBENSAMBLE-ENSAMBLE", "DTA", "PRV", "SUBENSAMBLE-INSPECCIÓN", "INTERESES PAGADOS", "SUBENSABLE-MAQUINADO", "MULTAS, ACTUALIZACIONES Y RECARGOS", "REGALIAS 5%", "SERVICIOS ADMIN. DE NOMINA", "PRODUCTO TERMINADO"})
-        Me.cbx_fam.Location = New System.Drawing.Point(601, 238)
-        Me.cbx_fam.Name = "cbx_fam"
-        Me.cbx_fam.Size = New System.Drawing.Size(306, 21)
-        Me.cbx_fam.TabIndex = 456
-        '
         'btn_doc
         '
         Me.btn_doc.ForeColor = System.Drawing.Color.Black
@@ -841,17 +828,29 @@ Partial Class Requerimientos_movimientos
         Me.lbl_serie.TabIndex = 461
         Me.lbl_serie.Text = "Orden de compra"
         '
+        'cbx_fam
+        '
+        Me.cbx_fam.BackColor = System.Drawing.Color.White
+        Me.cbx_fam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_fam.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cbx_fam.FormattingEnabled = True
+        Me.cbx_fam.Items.AddRange(New Object() {"SUBENSAMBLE-ACABADO", "AJUSTE AL NETO", "SUBENSAMBLE-FUNDICIÓN", "SUBENSAMBLE-CASTING", "REPARACIÓN Y MANTENIMIENTO", "REFACCIONES", "INSUMOS", "SERVICIO Y ARTÍCULO DE LIMPIEZA", "HERRAMIENTAS", "EQUIPO DE SEGURIDAD", "MATERIAL DE EMPAQUE", "ACEITES Y LUBRICANTES", "PERNOS", "ADHESIVOS", "CONSUMIBLES (GASES)", "GAS LP", "UNIFORMES", "EQUIPO DE PLANTA", "PAPELERÍA Y UTILES", "HERRAMIENTAS DE CORTE", "COOLANT", "DIESEL", "ACTIVO FIJO", "SEGURIDAD E HIGIENE", "DAP", "SORTEOS", "ACCESORIOS EQUIPO DE COMPUTO", "MANTENIMIENTO DE PLANTA", "ATENCIÓN AL CLIENTE", "HONORARIOS PERSONAS FISICAS", "MEDICO", "RENTAS DE DEPARTAMENTOS", "OTROS GASTOS", "OTROS GASTOS DEDUCIBLES", "MANTENIMIENTO DE MAQUINARIA", "SOFTWARE Y LICENCIAS", "SEVICIOS ADMINISTRATIVOS HALMEX", "HOSPEDAJE", "VALES DE DESPENSA", "GASOLINA", "SEGURIDAD Y VIGILANCIA", "GASTOS POR DEFECTOS / REWORKS", "FARMACIA", "RECARGOS", "MANTENIMIENTO Y SERVICIOS DE AUTOMOVIL", "INSTALACIÓN DE MAQUINARIA", "GAS NATURAL", "RENTA DE IMPRESORA", "RECOLECCIÓN DE BASURA", "RECOLECCIÓN DE AGUAS RESIDUALES", "COMEDOR", "AGUA", "ENERGIA ELECTRICA", "MANIOBRAS Y FLETES", "GASTOS ADUANALES", "PRIMAS DE SEGUROS", "CAPACITACION", "EQUIPO DE COMPUTO / COMPUTER EQUIPMENT", "PARTES DE ENSAMBLE", "LAVANDERIA", "TELFONO CELULAR", "MANTENIMIENTO DE INSTRUMENTOS DE MEDICIÓN", "AGUA PARA CONSUMO", "HONORARIOS PERSONAS MORALES", "MATERIA PRIMA", "ARRENDAMIENTO DE AUTOMOVILES", "MANIOBRAS Y FLETES EXPEDITADOS", "EQUIPO DE CARGA", "GASTOS DE VIAJE", "GASTOS DE CERTIFICACIÓN", "CUOTAS Y SUSCRIPCIONES", "PROPAGANDA Y PUBLICIDAD", "GASTOS MIGRATORIOS", "CASETAS", "IMPUESTO PREDIAL / LAND TAX", "PROCESOS EXTERNOS", "COMISIONES BANCARIAS", "DESCUENTOS/ DEVOLUCIONES SOBRE COMPRA", "DESPERDICIO", "SUBENSAMBLE-ENSAMBLE", "DTA", "PRV", "SUBENSAMBLE-INSPECCIÓN", "INTERESES PAGADOS", "SUBENSABLE-MAQUINADO", "MULTAS, ACTUALIZACIONES Y RECARGOS", "REGALIAS 5%", "SERVICIOS ADMIN. DE NOMINA", "PRODUCTO TERMINADO", "TELEFONO", "IMPUESTOS Y DERECHOS", "ARRENDAMIENTO DE SOFTWARE", "TRANSPORTE", "GASTOS NO DEDUCIBLES", "Gastos no reúnen req. fiscales", "TELECOMUNICACIONES", "MANTENIMIENTO DE EDIFICIO", "SERVICIO APOYO A PRODUCCION", "CONTRUCCION EN PROCESO", "IGI/IGE", "Asistencia Tecnica", "ARTÍCULOS DE LIMPIEZA", "GASTOS MEDICOS EMPLEADOS", "ADI", "AWNC", "DENSO", "JATCO", "YASUNAGA", "ZF", "Cliente", "Familias"})
+        Me.cbx_fam.Location = New System.Drawing.Point(601, 237)
+        Me.cbx_fam.Name = "cbx_fam"
+        Me.cbx_fam.Size = New System.Drawing.Size(306, 21)
+        Me.cbx_fam.TabIndex = 462
+        '
         'Requerimientos_movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1034, 625)
+        Me.Controls.Add(Me.cbx_fam)
         Me.Controls.Add(Me.lbl_serie)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Label26)
-        Me.Controls.Add(Me.cbx_fam)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.txt_liga)
         Me.Controls.Add(Me.btn_doc)
@@ -978,11 +977,11 @@ Partial Class Requerimientos_movimientos
     Friend WithEvents Label23 As Label
     Friend WithEvents txt_liga As TextBox
     Friend WithEvents Label24 As Label
-    Friend WithEvents cbx_fam As ComboBox
     Friend WithEvents btn_doc As Button
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label25 As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Label26 As Label
     Friend WithEvents lbl_serie As Label
+    Friend WithEvents cbx_fam As ComboBox
 End Class
