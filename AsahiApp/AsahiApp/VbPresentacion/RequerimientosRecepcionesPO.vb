@@ -37,6 +37,7 @@ Public Class RequerimientosRecepcionesPO
 
         End If
 
+
     End Sub
 
 
@@ -516,7 +517,7 @@ Public Class RequerimientosRecepcionesPO
 
 
 
-
+                            cnn.Close()
                             cnn.Open()
                             Dim cmd As New SqlCommand("UPDATE [Asahi].[dbo].[Com_ProvisionesPrincipal] SET pdf = @Ruta  WHERE Id_provision = @ID ", cnn)
                             'Dim cmd1 As New SqlCommand("UPDATE [AsahiSystem].[dbo].[Oc_Conta3] SET Ruta = @Ruta  WHERE ID = @ID ", conexion)

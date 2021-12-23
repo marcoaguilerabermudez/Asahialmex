@@ -395,6 +395,7 @@ Public Class MisPOPrincipal
     End Sub
 
     Sub enviarcorreoreincidencia()
+
         Dim smtp As New System.Net.Mail.SmtpClient
         Dim correo As New System.Net.Mail.MailMessage
         Dim adjunto As System.Net.Mail.Attachment
